@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -103,44 +104,118 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
           useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              const Spacer(flex: 1),
-              AudioTrueFalseInstruction(color: theme.primaryColor),
-              const Spacer(flex: 2),
-              AudioTrueFalseTuner(
-                onTap: () {
-                  _soundService.playTts(quest.textToSpeak ?? "");
-                  _hapticService.selection();
-                },
-                color: theme.primaryColor,
-              ),
-              const Spacer(flex: 2),
-              Expanded(
-                flex: 8,
-                child: AudioTrueFalseScreenDisplay(
-                  statement: quest.statement ?? "",
-                  color: theme.primaryColor,
-                  tuningValue: _tuningValue,
+          child: quest == null ? const SizedBox() : LayoutBuilder(
+            builder: (context, constraints) {
+              final maxHeight = constraints.maxHeight;
+              final isCompact = maxHeight < 580;
+
+              final double estimatedContentHeight = 20.h + 40.h + (isCompact ? 70.h : 90.h) + (isCompact ? 130.h : 180.h) + 120.h + 20.h;
+              final remainingHeight = maxHeight - estimatedContentHeight;
+
+              final double gapUnit = remainingHeight > 0 ? remainingHeight / 7 : 0;
+              final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
+              final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+              final double gapTuner = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+              final double gapDisplay = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+              final double gapBottom = remainingHeight > 0 ? (gapUnit * 1.5).clamp(12.0, 30.0) : 12.0;
+
+              return SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(minHeight: maxHeight),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(height: gapTop),
+                          isCompact 
+                            ? SizedBox(height: 35.h, child: FittedBox(fit: BoxFit.scaleDown, child: AudioTrueFalseInstruction(color: theme.primaryColor)))
+                            : AudioTrueFalseInstruction(color: theme.primaryColor),
+                          SizedBox(height: gapInstruction),
+                          isCompact
+                            ? SizedBox(
+                                height: 70.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: AudioTrueFalseTuner(
+                                    onTap: () {
+                                      _soundService.playTts(quest.textToSpeak ?? "");
+                                      _hapticService.selection();
+                                    },
+                                    color: theme.primaryColor,
+                                  ),
+                                ),
+                              )
+                            : AudioTrueFalseTuner(
+                                onTap: () {
+                                  _soundService.playTts(quest.textToSpeak ?? "");
+                                  _hapticService.selection();
+                                },
+                                color: theme.primaryColor,
+                              ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(height: gapTuner),
+                          SizedBox(
+                            height: isCompact ? 130.h : 180.h,
+                            child: AudioTrueFalseScreenDisplay(
+                              statement: quest.statement ?? "",
+                              color: theme.primaryColor,
+                              tuningValue: _tuningValue,
+                            ),
+                          ),
+                          SizedBox(height: gapDisplay),
+                          isCompact
+                            ? SizedBox(
+                                height: 100.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: SizedBox(
+                                    width: constraints.maxWidth,
+                                    child: AudioTrueFalsePolarizedFilters(
+                                      tuningValue: _tuningValue,
+                                      isAnswered: _isAnswered,
+                                      isCorrectState: _isCorrect,
+                                      color: theme.primaryColor,
+                                      onChanged: (v) {
+                                        setState(() => _tuningValue = v);
+                                        _hapticService.selection();
+                                      },
+                                      onChangeEnd: (v) {
+                                        if (v > 0.9) _submitAnswer(true, quest.correctAnswer ?? "");
+                                        if (v < 0.1) _submitAnswer(false, quest.correctAnswer ?? "");
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : AudioTrueFalsePolarizedFilters(
+                                tuningValue: _tuningValue,
+                                isAnswered: _isAnswered,
+                                isCorrectState: _isCorrect,
+                                color: theme.primaryColor,
+                                onChanged: (v) {
+                                  setState(() => _tuningValue = v);
+                                  _hapticService.selection();
+                                },
+                                onChangeEnd: (v) {
+                                  if (v > 0.9) _submitAnswer(true, quest.correctAnswer ?? "");
+                                  if (v < 0.1) _submitAnswer(false, quest.correctAnswer ?? "");
+                                },
+                              ),
+                          SizedBox(height: gapBottom),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              const Spacer(flex: 2),
-              AudioTrueFalsePolarizedFilters(
-                tuningValue: _tuningValue,
-                isAnswered: _isAnswered,
-                isCorrectState: _isCorrect,
-                color: theme.primaryColor,
-                onChanged: (v) {
-                  setState(() => _tuningValue = v);
-                  _hapticService.selection();
-                },
-                onChangeEnd: (v) {
-                  if (v > 0.9) _submitAnswer(true, quest.correctAnswer ?? "");
-                  if (v < 0.1) _submitAnswer(false, quest.correctAnswer ?? "");
-                },
-              ),
-              const Spacer(flex: 1),
-            ],
+              );
+            },
           ),
         );
       },

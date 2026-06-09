@@ -116,51 +116,101 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
         
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
-          showConfetti: _showConfetti, useScrolling: true,
+          showConfetti: _showConfetti, useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(height: 20.h),
-              AudioFillBlanksInstruction(color: theme.primaryColor),
-              SizedBox(height: 40.h),
-              AudioFillBlanksJar(
-                color: theme.primaryColor,
-                onTap: () {
-                  _soundService.playTts(quest.textToSpeak ?? "");
-                  _hapticService.selection();
-                },
-              ),
-              SizedBox(height: 40.h),
-              SizedBox(
-                height: 220.h,
-                child: AudioFillBlanksCanvas(
-                  text: quest.textWithBlanks ?? "",
-                  revealProgress: _revealProgress,
-                  onSmear: _onSmear,
-                  primaryColor: theme.primaryColor,
-                  isDark: isDark,
-                ),
-              ),
-              SizedBox(height: 40.h),
-              AudioFillBlanksInput(
-                controller: _controller,
-                isAnswered: _isAnswered,
-                primaryColor: theme.primaryColor,
-              ),
-              SizedBox(height: 40.h),
-              if (!_isAnswered)
-                ScaleButton(
-                  onTap: () => _submitAnswer(quest.correctAnswer ?? ""),
-                  child: Container(
-                    width: double.infinity, height: 60.h,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: theme.primaryColor),
-                    child: Center(child: Text("SUBMIT TRANSCRIPTION", style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
+          child: quest == null ? const SizedBox() : LayoutBuilder(
+            builder: (context, constraints) {
+              final maxHeight = constraints.maxHeight;
+              final isCompact = maxHeight < 580;
+
+              final double estimatedContentHeight = 20.h + 40.h + (isCompact ? 80.h : 100.h) + (isCompact ? 150.h : 220.h) + 60.h + (_isAnswered ? 0.h : 60.h) + 20.h;
+              final remainingHeight = maxHeight - estimatedContentHeight;
+
+              final double gapUnit = remainingHeight > 0 ? remainingHeight / 7 : 0;
+              final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
+              final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(10.0, 24.0) : 10.0;
+              final double gapJar = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+              final double gapCanvas = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+              final double gapInput = remainingHeight > 0 ? (gapUnit * 1).clamp(10.0, 20.0) : 10.0;
+              final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(10.0, 24.0) : 10.0;
+
+              return SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(minHeight: maxHeight),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(height: gapTop),
+                          isCompact 
+                            ? SizedBox(height: 35.h, child: FittedBox(fit: BoxFit.scaleDown, child: AudioFillBlanksInstruction(color: theme.primaryColor)))
+                            : AudioFillBlanksInstruction(color: theme.primaryColor),
+                          SizedBox(height: gapInstruction),
+                          isCompact
+                            ? SizedBox(
+                                height: 80.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: AudioFillBlanksJar(
+                                    color: theme.primaryColor,
+                                    onTap: () {
+                                      _soundService.playTts(quest.textToSpeak ?? "");
+                                      _hapticService.selection();
+                                    },
+                                  ),
+                                ),
+                              )
+                            : AudioFillBlanksJar(
+                                color: theme.primaryColor,
+                                onTap: () {
+                                  _soundService.playTts(quest.textToSpeak ?? "");
+                                  _hapticService.selection();
+                                },
+                              ),
+                          SizedBox(height: gapJar),
+                          SizedBox(
+                            height: isCompact ? 150.h : 220.h,
+                            child: AudioFillBlanksCanvas(
+                              text: quest.textWithBlanks ?? "",
+                              revealProgress: _revealProgress,
+                              onSmear: _onSmear,
+                              primaryColor: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(height: gapCanvas),
+                          AudioFillBlanksInput(
+                            controller: _controller,
+                            isAnswered: _isAnswered,
+                            primaryColor: theme.primaryColor,
+                          ),
+                          SizedBox(height: gapInput),
+                          if (!_isAnswered)
+                            ScaleButton(
+                              onTap: () => _submitAnswer(quest.correctAnswer ?? ""),
+                              child: Container(
+                                width: double.infinity, height: isCompact ? 50.h : 60.h,
+                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: theme.primaryColor),
+                                child: Center(child: Text("SUBMIT TRANSCRIPTION", style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
+                              ),
+                            ),
+                          SizedBox(height: gapBottom),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
-              SizedBox(height: 20.h),
-            ],
+              );
+            },
           ),
         );
       },

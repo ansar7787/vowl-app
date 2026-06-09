@@ -170,7 +170,7 @@ class _HatchingPageState extends State<HatchingPage> {
             else
               const VowlMascot(
                 state: VowlMascotState.happy,
-                size: 200,
+                size: 140,
               ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
           ],
         ),
@@ -263,7 +263,7 @@ class _HatchingPageState extends State<HatchingPage> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 40.w),
       child: ScaleButton(
-        onTap: () => context.go('/'),
+        onTap: () => context.go('/home'),
         child: Container(
           height: 60.h,
           width: double.infinity,

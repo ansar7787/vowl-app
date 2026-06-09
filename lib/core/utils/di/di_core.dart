@@ -40,26 +40,37 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<FirebaseStorage>(() => FirebaseStorage.instance);
   sl.registerLazySingleton<GoogleSignIn>(() => GoogleSignIn());
   sl.registerLazySingleton<InternetConnection>(() => InternetConnection());
-  sl.registerLazySingleton<FirebaseRemoteConfig>(() => FirebaseRemoteConfig.instance);
+  sl.registerLazySingleton<FirebaseRemoteConfig>(
+    () => FirebaseRemoteConfig.instance,
+  );
 
   // ==========================================
   // CORE SYSTEMS & INFRASTRUCTURE
   // ==========================================
   sl.registerLazySingleton<SecurityService>(() => SecurityService());
-  sl.registerLazySingleton<RemoteConfigService>(() => RemoteConfigService(sl<FirebaseRemoteConfig>()));
+  sl.registerLazySingleton<RemoteConfigService>(
+    () => RemoteConfigService(sl<FirebaseRemoteConfig>()),
+  );
   sl.registerLazySingleton<NotificationService>(() => NotificationService());
-  sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl<InternetConnection>()));
-  sl.registerLazySingleton<SeedingService>(() => SeedingService(sl<FirebaseFirestore>()));
+  sl.registerLazySingleton<NetworkInfo>(
+    () => NetworkInfoImpl(sl<InternetConnection>()),
+  );
+  sl.registerLazySingleton<SeedingService>(
+    () => SeedingService(sl<FirebaseFirestore>()),
+  );
   sl.registerLazySingleton<SoundService>(() => SoundService(sl<TtsService>()));
   sl.registerLazySingleton<HapticService>(() => HapticService());
   sl.registerLazySingleton<SmartTutor>(() => const LocalSmartTutor());
   sl.registerLazySingleton<AdService>(() => AdService());
-  sl.registerLazySingleton<PaymentService>(() => PaymentService(
-        getCurrentUser: sl<GetCurrentUser>(),
-        firestore: sl<FirebaseFirestore>(),
-      ));
+  sl.registerLazySingleton<PaymentService>(
+    () => PaymentService(
+      getCurrentUser: sl<GetCurrentUser>(),
+      firestore: sl<FirebaseFirestore>(),
+    ),
+  );
   sl.registerLazySingleton<SubscriptionPlansService>(
-      () => SubscriptionPlansService(firestore: sl<FirebaseFirestore>()));
+    () => SubscriptionPlansService(firestore: sl<FirebaseFirestore>()),
+  );
   sl.registerLazySingleton<SpeechService>(() => SpeechService());
   sl.registerLazySingleton<QuestUploadService>(() => QuestUploadService());
   sl.registerLazySingleton<TtsService>(() => TtsService());
@@ -67,13 +78,21 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<KidsAudioService>(() => KidsAudioService());
   sl.registerLazySingleton<AssetQuestService>(() => AssetQuestService());
   sl.registerLazySingleton<StoryService>(() => StoryService());
-  sl.registerLazySingleton<PraiseService>(() => PraiseService(sl<TtsService>()));
+  sl.registerLazySingleton<PraiseService>(
+    () => PraiseService(sl<TtsService>()),
+  );
   sl.registerLazySingleton<AnalyticsService>(() => AnalyticsService());
   sl.registerLazySingleton<ReviewService>(() => ReviewService());
 
   // ==========================================
   // NAVIGATION CONTROLLERS
   // ==========================================
-  sl.registerLazySingleton<ScrollController>(() => ScrollController(), instanceName: 'home');
-  sl.registerLazySingleton<ScrollController>(() => ScrollController(), instanceName: 'games');
+  sl.registerLazySingleton<ScrollController>(
+    () => ScrollController(),
+    instanceName: 'home',
+  );
+  sl.registerLazySingleton<ScrollController>(
+    () => ScrollController(),
+    instanceName: 'games',
+  );
 }

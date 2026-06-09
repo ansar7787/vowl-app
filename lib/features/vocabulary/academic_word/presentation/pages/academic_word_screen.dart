@@ -120,6 +120,9 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
               : LayoutBuilder(
                   builder: (context, constraints) {
                     _lastConstraints = constraints;
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
+
                     return Stack(
                       alignment: Alignment.center,
                       clipBehavior: Clip.none,
@@ -137,16 +140,32 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
                         ),
 
                         Positioned(
-                          top: 130.h,
-                          child: AcademicWordThesisPaper(
-                            passage: quest.passage ?? "",
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            slotKey: _slotKey,
-                            isAnswered: _isAnswered,
-                            isCorrect: _isCorrect,
-                            correctAnswer: quest.correctAnswer,
-                          ),
+                          top: isCompact ? 60.h : 110.h,
+                          child: isCompact
+                              ? SizedBox(
+                                  height: 140.h,
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: AcademicWordThesisPaper(
+                                      passage: quest.passage ?? "",
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      slotKey: _slotKey,
+                                      isAnswered: _isAnswered,
+                                      isCorrect: _isCorrect,
+                                      correctAnswer: quest.correctAnswer,
+                                    ),
+                                  ),
+                                )
+                              : AcademicWordThesisPaper(
+                                  passage: quest.passage ?? "",
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                  slotKey: _slotKey,
+                                  isAnswered: _isAnswered,
+                                  isCorrect: _isCorrect,
+                                  correctAnswer: quest.correctAnswer,
+                                ),
                         ),
 
                         ...List.generate(quest.options?.length ?? 0, (i) {
@@ -162,13 +181,21 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
                             onDragStart: (_) => _onShardDragStart(i),
                             onDragUpdate: (d) => _onShardDragUpdate(i, d),
                             onDragEnd: (_) => _onShardDragEnd(i, quest),
-                            initialPosition: _getShardInitialPosition(i, quest.options?.length ?? 4),
+                            initialPosition: _getShardInitialPosition(i, quest.options?.length ?? 4, maxHeight),
                           );
                         }),
 
                         Positioned(
-                          top: 50.h,
-                          child: AcademicWordInstruction(color: theme.primaryColor),
+                          top: isCompact ? 10.h : 35.h,
+                          child: isCompact
+                              ? SizedBox(
+                                  height: 35.h,
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: AcademicWordInstruction(color: theme.primaryColor),
+                                  ),
+                                )
+                              : AcademicWordInstruction(color: theme.primaryColor),
                         ),
                       ],
                     );
@@ -204,7 +231,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
     final targetCenter = slotPos + slotBox.size.center(Offset.zero);
     final targetOffsetFromCenter = targetCenter - stackCenter;
     
-    final currentPos = _getShardCurrentPosition(_activeShardIndex!);
+    final currentPos = _getShardCurrentPosition(_activeShardIndex!, _lastConstraints!.maxHeight);
     
     // Check distance between shard center and slot center
     return (currentPos - targetOffsetFromCenter).distance < 80.r;
@@ -249,15 +276,16 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
     }
   }
 
-  Offset _getShardCurrentPosition(int index) {
-    final initial = _getShardInitialPosition(index, (_lastQuest?.options?.length ?? 4));
+  Offset _getShardCurrentPosition(int index, double maxHeight) {
+    final initial = _getShardInitialPosition(index, (_lastQuest?.options?.length ?? 4), maxHeight);
     return initial + _dragOffset;
   }
 
-  Offset _getShardInitialPosition(int index, int total) {
-    final vStep = 90.h;
+  Offset _getShardInitialPosition(int index, int total, double maxHeight) {
+    final isCompact = maxHeight < 580;
+    final vStep = isCompact ? 55.h : 90.h;
     final hStep = 160.w;
-    final startY = 160.h; // Relative to center
+    final startY = isCompact ? 95.h : 160.h; // Relative to center
     
     // 2x2 Grid Layout
     final row = index ~/ 2;

@@ -122,7 +122,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(height: 24.h),
                     Text(
                       'Mute Game Sounds?',
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 24.sp,
                         fontWeight: FontWeight.w900,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -132,7 +133,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Text(
                       'Clear audio and guidance are key to mastering your quests. Are you sure you want to silence them?',
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 15.sp,
                         fontWeight: FontWeight.w500,
                         color: isDark
@@ -165,7 +167,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         child: Center(
                           child: Text(
                             'Keep It On',
-                            style: TextStyle(fontFamily: 'Outfit', 
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w800,
                               color: Colors.white,
@@ -185,7 +188,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       child: Text(
                         'Mute Anyway',
-                        style: TextStyle(fontFamily: 'Outfit', 
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w700,
                         ),
@@ -249,8 +253,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 SizedBox(height: 20.h),
                                 ProfileHeader(
                                   user: user,
-                                  onEditName: () => _showEditNameSheet(context, user.displayName ?? ''),
-                                  onEditPhoto: () => _showImageSourceSheet(context),
+                                  onEditName: () => _showEditNameSheet(
+                                    context,
+                                    user.displayName ?? '',
+                                  ),
+                                  onEditPhoto: () =>
+                                      _showImageSourceSheet(context),
                                 ),
                               ],
                             ),
@@ -316,7 +324,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Text(
       title,
-      style: TextStyle(fontFamily: 'Outfit', 
+      style: TextStyle(
+        fontFamily: 'Outfit',
         fontSize: 22.sp,
         fontWeight: FontWeight.w900,
         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -355,7 +364,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   Text(
                     'UPGRADE TO PREMIUM',
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       color: Theme.of(context).brightness == Brightness.dark
                           ? Colors.white
                           : const Color(0xFF0F172A),
@@ -367,7 +377,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   SizedBox(height: 4.h),
                   Text(
                     'Get 2x Coins, No Ads & VIP Gifts',
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       color: Theme.of(context).brightness == Brightness.dark
                           ? Colors.white38
                           : Colors.black38,
@@ -400,6 +411,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      useRootNavigator: true,
       backgroundColor: Colors.transparent,
       builder: (context) => BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
@@ -437,7 +449,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     Text(
                       'Update Identity',
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 24.sp,
                         fontWeight: FontWeight.w900,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -447,7 +460,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(height: 8.h),
                     Text(
                       'Your name is visible to other explorers in the realm.',
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 14.sp,
                         color: isDark ? Colors.white60 : Colors.black54,
                       ),
@@ -468,7 +482,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: TextField(
                         controller: nameController,
                         autofocus: true,
-                        style: TextStyle(fontFamily: 'Outfit', 
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w600,
                           color: isDark
@@ -477,7 +492,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         decoration: InputDecoration(
                           hintText: 'Enter new name',
-                          hintStyle: TextStyle(fontFamily: 'Outfit', color: Colors.grey),
+                          hintStyle: TextStyle(
+                            fontFamily: 'Outfit',
+                            color: Colors.grey,
+                          ),
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.symmetric(
                             horizontal: 24.w,
@@ -518,7 +536,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         child: Center(
                           child: Text(
                             'Save Changes',
-                            style: TextStyle(fontFamily: 'Outfit', 
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w800,
                               color: Colors.white,
@@ -561,6 +580,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
       backgroundColor: Colors.transparent,
       builder: (context) => BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
@@ -579,6 +599,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 width: 40.w,
@@ -591,7 +612,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(height: 32.h),
               Text(
                 'Avatar Projection',
-                style: TextStyle(fontFamily: 'Outfit', 
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w900,
                   color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -602,7 +625,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Text(
                 'Choose a source to capture your manifestation.',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),
@@ -657,39 +681,48 @@ class _ProfileScreenState extends State<ProfileScreen> {
       child: GlassTile(
         borderRadius: BorderRadius.circular(32.r),
         padding: EdgeInsets.symmetric(vertical: 32.h),
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.all(16.r),
-              decoration: BoxDecoration(
-                color: const Color(0xFF2563EB).withValues(alpha: 0.1),
-                shape: BoxShape.circle,
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.all(16.r),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF2563EB).withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(icon, color: const Color(0xFF2563EB), size: 32.r),
               ),
-              child: Icon(icon, color: const Color(0xFF2563EB), size: 32.r),
-            ),
-            SizedBox(height: 16.h),
-            Text(
-              label,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w800,
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white
-                    : const Color(0xFF1E293B),
+              SizedBox(height: 16.h),
+              Text(
+                label,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w800,
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white
+                      : const Color(0xFF1E293B),
+                ),
               ),
-            ),
-            SizedBox(height: 4.h),
-            Text(
-              subtitle,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w500,
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white38
-                    : Colors.black38,
+              SizedBox(height: 4.h),
+              Text(
+                subtitle,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white38
+                      : Colors.black38,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -701,10 +734,6 @@ class ProfileShimmerLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: CircularProgressIndicator(),
-      ),
-    );
+    return const Scaffold(body: Center(child: CircularProgressIndicator()));
   }
 }

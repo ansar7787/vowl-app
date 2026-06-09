@@ -219,6 +219,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);
+    final mediaQuery = MediaQuery.of(context);
 
     if (_isListening && _pullForce < 1.0) {
       Future.delayed(const Duration(milliseconds: 16), () {
@@ -278,79 +279,207 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
         final String initialBlankSentence = _formatBlankSentence(rawSentence, missingWord);
         final String completedSentence = rawSentence;
 
-        return SpeakingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
-          onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-                  child: Column(
-                    children: [
-                      SpeakMissingWordInstruction(
-                        primaryColor: theme.primaryColor,
-                        isWordPlaced: _isWordPlaced,
-                      ),
-                      SizedBox(height: 16.h),
+        return MediaQuery(
+          data: mediaQuery.copyWith(
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
+          ),
+          child: SpeakingBaseLayout(
+            gameType: widget.gameType,
+            level: widget.level,
+            isAnswered: _isAnswered,
+            isCorrect: _isCorrect,
+            showConfetti: _showConfetti,
+            onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
+            onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
+            child: quest == null
+                ? const SizedBox()
+                : LayoutBuilder(
+                    builder: (context, constraints) {
+                      final maxHeight = constraints.maxHeight;
+                      final bool isCompact = maxHeight < 580;
+                      
+                      final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 70.h : 100.h) + (isCompact ? 100.h : 140.h) + (isCompact ? 60.h : 80.h);
+                      final remainingHeight = maxHeight - estimatedContentHeight;
+                      
+                      final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
+                      final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
+                      final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 16.0) : 8.0;
+                      final double gapSentence = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+                      final double gapTelemetry = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 30.0) : 12.0;
+                      final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
 
-                      SpeakMissingWordVortexSentence(
-                        text: _isWordPlaced ? completedSentence : initialBlankSentence,
-                        insertedWord: _isWordPlaced ? (_selectedWord ?? "") : "",
-                        primaryColor: theme.primaryColor,
-                        isDark: isDark,
-                      ),
-                      SizedBox(height: 20.h),
-
-                      if (!_isWordPlaced)
-                        SpeakMissingWordMagnetArena(
-                          dynamicOptions: _dynamicOptions,
-                          selectedWord: _selectedWord,
-                          pullForce: _pullForce,
-                          primaryColor: theme.primaryColor,
-                          isDark: isDark,
-                          vortexController: _vortexController,
-                          onPullStart: _onPullStart,
-                          onPullEnd: _onPullEnd,
-                        ),
-
-                      if (_isWordPlaced) ...[
-                        SpeakMissingWordTelemetryCard(
-                          spokenText: _spokenText,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 30.h),
-                        
-                        if (!_isAnswered)
-                          SpeakMissingWordTactileMic(
-                            isSpeechActive: _isSpeechActive,
-                            primaryColor: theme.primaryColor,
-                            onLongPressStart: _startSpeechListening,
-                            onLongPressEnd: () => _stopSpeechListening(completedSentence),
+                      return SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            minHeight: maxHeight,
                           ),
-                      ],
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapTop),
+                                    isCompact 
+                                      ? SizedBox(
+                                          height: 32.h,
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            child: SpeakMissingWordInstruction(
+                                              primaryColor: theme.primaryColor,
+                                              isWordPlaced: _isWordPlaced,
+                                            ),
+                                          ),
+                                        )
+                                      : SpeakMissingWordInstruction(
+                                          primaryColor: theme.primaryColor,
+                                          isWordPlaced: _isWordPlaced,
+                                        ),
+                                    SizedBox(height: gapInstruction),
+                                    
+                                    isCompact
+                                      ? SizedBox(
+                                          height: 90.h,
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            child: SizedBox(
+                                              width: constraints.maxWidth - 16.w,
+                                              child: SpeakMissingWordVortexSentence(
+                                                text: _isWordPlaced ? completedSentence : initialBlankSentence,
+                                                insertedWord: _isWordPlaced ? (_selectedWord ?? "") : "",
+                                                primaryColor: theme.primaryColor,
+                                                isDark: isDark,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      : SpeakMissingWordVortexSentence(
+                                          text: _isWordPlaced ? completedSentence : initialBlankSentence,
+                                          insertedWord: _isWordPlaced ? (_selectedWord ?? "") : "",
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                        ),
+                                    SizedBox(height: gapSentence),
 
-                      AnimatedCrossFade(
-                        firstChild: const SizedBox(),
-                        secondChild: SpeakMissingWordExplanationCard(
-                          quest: quest,
-                          isCorrect: _isCorrect ?? false,
-                          isDark: isDark,
+                                    if (!_isWordPlaced)
+                                      isCompact
+                                        ? SizedBox(
+                                            height: 110.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width: constraints.maxWidth - 16.w,
+                                                child: SpeakMissingWordMagnetArena(
+                                                  dynamicOptions: _dynamicOptions,
+                                                  selectedWord: _selectedWord,
+                                                  pullForce: _pullForce,
+                                                  primaryColor: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  vortexController: _vortexController,
+                                                  onPullStart: _onPullStart,
+                                                  onPullEnd: _onPullEnd,
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        : SpeakMissingWordMagnetArena(
+                                            dynamicOptions: _dynamicOptions,
+                                            selectedWord: _selectedWord,
+                                            pullForce: _pullForce,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            vortexController: _vortexController,
+                                            onPullStart: _onPullStart,
+                                            onPullEnd: _onPullEnd,
+                                          ),
+
+                                    if (_isWordPlaced)
+                                      isCompact
+                                        ? SizedBox(
+                                            height: 70.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width: constraints.maxWidth - 16.w,
+                                                child: SpeakMissingWordTelemetryCard(
+                                                  spokenText: _spokenText,
+                                                  isDark: isDark,
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        : SpeakMissingWordTelemetryCard(
+                                            spokenText: _spokenText,
+                                            isDark: isDark,
+                                          ),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapTelemetry),
+                                    if (_isWordPlaced && !_isAnswered)
+                                      isCompact
+                                        ? SizedBox(
+                                            height: 70.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SpeakMissingWordTactileMic(
+                                                isSpeechActive: _isSpeechActive,
+                                                primaryColor: theme.primaryColor,
+                                                onLongPressStart: _startSpeechListening,
+                                                onLongPressEnd: () => _stopSpeechListening(completedSentence),
+                                              ),
+                                            ),
+                                          )
+                                        : SpeakMissingWordTactileMic(
+                                            isSpeechActive: _isSpeechActive,
+                                            primaryColor: theme.primaryColor,
+                                            onLongPressStart: _startSpeechListening,
+                                            onLongPressEnd: () => _stopSpeechListening(completedSentence),
+                                          ),
+
+                                    AnimatedCrossFade(
+                                      firstChild: const SizedBox(),
+                                      secondChild: isCompact
+                                        ? SizedBox(
+                                            height: 100.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width: constraints.maxWidth - 16.w,
+                                                child: SpeakMissingWordExplanationCard(
+                                                  quest: quest,
+                                                  isCorrect: _isCorrect ?? false,
+                                                  isDark: isDark,
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        : SpeakMissingWordExplanationCard(
+                                            quest: quest,
+                                            isCorrect: _isCorrect ?? false,
+                                            isDark: isDark,
+                                          ),
+                                      crossFadeState: _isAnswered
+                                          ? CrossFadeState.showSecond
+                                          : CrossFadeState.showFirst,
+                                      duration: const Duration(milliseconds: 400),
+                                    ),
+                                    SizedBox(height: gapBottom),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
-                        crossFadeState: _isAnswered
-                            ? CrossFadeState.showSecond
-                            : CrossFadeState.showFirst,
-                        duration: const Duration(milliseconds: 400),
-                      ),
-                      SizedBox(height: 80.h),
-                    ],
+                      );
+                    },
                   ),
-                ),
+          ),
         );
       },
     );

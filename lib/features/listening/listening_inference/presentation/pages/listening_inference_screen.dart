@@ -108,44 +108,125 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> wit
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
-          useScrolling: true,
+          useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(height: 10.h),
-              ListeningInferenceInstruction(color: theme.primaryColor),
-              SizedBox(height: 10.h),
-              ListeningInferenceRadarCore(
-                onTap: () {
-                  _soundService.playTts(quest.textToSpeak ?? "");
-                  _hapticService.selection();
-                },
-                pulseController: _pulseController,
-                color: theme.primaryColor,
-              ),
-              SizedBox(height: 30.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Text(
-                  quest.question?.toUpperCase() ?? "INFER THE ACTOR",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w900, color: theme.primaryColor, letterSpacing: 1.2),
+          child: quest == null ? const SizedBox() : LayoutBuilder(
+            builder: (context, constraints) {
+              final maxHeight = constraints.maxHeight;
+              final isCompact = maxHeight < 580;
+
+              final double estimatedContentHeight = 10.h + 40.h + (isCompact ? 90.h : 130.h) + 40.h + (isCompact ? 110.h : 150.h) + 20.h;
+              final remainingHeight = maxHeight - estimatedContentHeight;
+
+              final double gapUnit = remainingHeight > 0 ? remainingHeight / 7 : 0;
+              final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
+              final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1.5).clamp(8.0, 20.0) : 8.0;
+              final double gapRadar = remainingHeight > 0 ? (gapUnit * 1.5).clamp(8.0, 20.0) : 8.0;
+              final double gapQuestion = remainingHeight > 0 ? (gapUnit * 1.5).clamp(8.0, 20.0) : 8.0;
+              final double gapBottom = remainingHeight > 0 ? (gapUnit * 2).clamp(10.0, 24.0) : 10.0;
+
+              return SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(minHeight: maxHeight),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(height: gapTop),
+                          isCompact 
+                            ? SizedBox(height: 35.h, child: FittedBox(fit: BoxFit.scaleDown, child: ListeningInferenceInstruction(color: theme.primaryColor)))
+                            : ListeningInferenceInstruction(color: theme.primaryColor),
+                          SizedBox(height: gapInstruction),
+                          isCompact
+                            ? SizedBox(
+                                height: 90.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: ListeningInferenceRadarCore(
+                                    onTap: () {
+                                      _soundService.playTts(quest.textToSpeak ?? "");
+                                      _hapticService.selection();
+                                    },
+                                    pulseController: _pulseController,
+                                    color: theme.primaryColor,
+                                  ),
+                                ),
+                              )
+                            : ListeningInferenceRadarCore(
+                                onTap: () {
+                                  _soundService.playTts(quest.textToSpeak ?? "");
+                                  _hapticService.selection();
+                                },
+                                pulseController: _pulseController,
+                                color: theme.primaryColor,
+                              ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(height: gapRadar),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            child: isCompact
+                              ? SizedBox(
+                                  height: 30.h,
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: Text(
+                                      quest.question?.toUpperCase() ?? "INFER THE ACTOR",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w900, color: theme.primaryColor, letterSpacing: 1.2),
+                                    ),
+                                  ),
+                                )
+                              : Text(
+                                  quest.question?.toUpperCase() ?? "INFER THE ACTOR",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w900, color: theme.primaryColor, letterSpacing: 1.2),
+                                ),
+                          ),
+                          SizedBox(height: gapQuestion),
+                          isCompact
+                            ? SizedBox(
+                                height: 110.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: SizedBox(
+                                    width: constraints.maxWidth,
+                                    child: ListeningInferenceGrid(
+                                      options: quest.options ?? [],
+                                      correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+                                      color: theme.primaryColor,
+                                      isAnswered: _isAnswered,
+                                      isCorrectState: _isCorrect,
+                                      selectedIndex: _selectedIndex,
+                                      onSubmitAnswer: (index) => _submitAnswer(index, quest.correctAnswerIndex ?? 0),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : ListeningInferenceGrid(
+                                options: quest.options ?? [],
+                                correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+                                color: theme.primaryColor,
+                                isAnswered: _isAnswered,
+                                isCorrectState: _isCorrect,
+                                selectedIndex: _selectedIndex,
+                                onSubmitAnswer: (index) => _submitAnswer(index, quest.correctAnswerIndex ?? 0),
+                              ),
+                          SizedBox(height: gapBottom),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(height: 30.h),
-              ListeningInferenceGrid(
-                options: quest.options ?? [],
-                correctAnswerIndex: quest.correctAnswerIndex ?? 0,
-                color: theme.primaryColor,
-                isAnswered: _isAnswered,
-                isCorrectState: _isCorrect,
-                selectedIndex: _selectedIndex,
-                onSubmitAnswer: (index) => _submitAnswer(index, quest.correctAnswerIndex ?? 0),
-              ),
-              SizedBox(height: 30.h),
-            ],
+              );
+            },
           ),
         );
       },

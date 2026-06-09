@@ -134,9 +134,16 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                     ? state.currentQuest
                     : null;
 
-                return Scaffold(
-                  resizeToAvoidBottomInset: false, // Keep background static
-                  backgroundColor: theme.backgroundColors[1],
+                return MediaQuery(
+                  data: MediaQuery.of(context).copyWith(
+                    textScaler: MediaQuery.of(context).textScaler.clamp(
+                      minScaleFactor: 0.8,
+                      maxScaleFactor: 1.1,
+                    ),
+                  ),
+                  child: Scaffold(
+                    resizeToAvoidBottomInset: false, // Keep background static
+                    backgroundColor: theme.backgroundColors[1],
                   body: Stack(
                     children: [
                       Container(
@@ -298,8 +305,9 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                       if (widget.showConfetti) const GameConfetti(),
                     ],
                   ),
-                );
-              },
+                ),
+              );
+            },
             ),
           );
         },

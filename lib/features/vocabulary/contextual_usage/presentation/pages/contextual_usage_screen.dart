@@ -148,54 +148,119 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
   }
 
   Widget _buildUnfoldContent(VocabularyQuest quest, Color color, bool isDark) {
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(height: 60.h),
-          Text(
-            "USAGE UNFOLD",
-            style: TextStyle(fontFamily: 'RobotoMono', 
-              fontSize: 11.sp,
-              color: color,
-              letterSpacing: 8,
-              fontWeight: FontWeight.bold,
-            ),
-          ).animate().fadeIn(duration: 800.ms).shimmer(duration: 2.seconds),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final maxHeight = constraints.maxHeight;
+        final isCompact = maxHeight < 580;
 
-          SizedBox(height: 40.h),
-          
-          ContextualUsageCard(
-            question: quest.question ?? "",
-            color: color,
-            isDark: isDark,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            selectedOption: _selectedOption,
-          ),
+        final double estimatedContentHeight = (isCompact ? 40.h : 60.h) + (isCompact ? 100.h : 150.h) + (isCompact ? 80.h : 120.h) + 20.h;
+        final remainingHeight = maxHeight - estimatedContentHeight;
 
-          SizedBox(height: 80.h),
+        final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+        final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(10.0, 40.0) : 10.0;
+        final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(15.0, 40.0) : 15.0;
+        final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(20.0, 60.0) : 20.0;
 
-          Wrap(
-            spacing: 16.w, 
-            runSpacing: 16.h,
-            alignment: WrapAlignment.center,
-            children: (quest.options ?? []).map((o) {
-              return ContextualUsageOptionChip(
-                text: o,
-                color: color,
-                isDark: isDark,
-                isSelected: _selectedOption == o,
-                isCorrect: _isCorrect,
-                onTap: () => _submitAnswer(o, quest.correctAnswer ?? ""),
-              );
-            }).toList(),
-          ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.2, curve: Curves.easeOutCubic),
-          SizedBox(height: 40.h),
-        ],
-      ),
+        return Column(
+          children: [
+            SizedBox(height: gapTop),
+            isCompact
+                ? SizedBox(
+                    height: 25.h,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        "USAGE UNFOLD",
+                        style: TextStyle(
+                          fontFamily: 'RobotoMono',
+                          fontSize: 11.sp,
+                          color: color,
+                          letterSpacing: 8,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  )
+                : Text(
+                    "USAGE UNFOLD",
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
+                      fontSize: 11.sp,
+                      color: color,
+                      letterSpacing: 8,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ).animate().fadeIn(duration: 800.ms).shimmer(duration: 2.seconds),
+
+            SizedBox(height: gapMiddle),
+
+            isCompact
+                ? SizedBox(
+                    height: 120.h,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: SizedBox(
+                        width: constraints.maxWidth - 40.w,
+                        child: ContextualUsageCard(
+                          question: quest.question ?? "",
+                          color: color,
+                          isDark: isDark,
+                          isAnswered: _isAnswered,
+                          isCorrect: _isCorrect,
+                          selectedOption: _selectedOption,
+                        ),
+                      ),
+                    ),
+                  )
+                : Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: ContextualUsageCard(
+                      question: quest.question ?? "",
+                      color: color,
+                      isDark: isDark,
+                      isAnswered: _isAnswered,
+                      isCorrect: _isCorrect,
+                      selectedOption: _selectedOption,
+                    ),
+                  ),
+
+            SizedBox(height: gapMiddle),
+
+            isCompact
+                ? SizedBox(
+                    height: 100.h,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: SizedBox(
+                        width: constraints.maxWidth,
+                        child: _buildChipsWrap(quest, color, isDark, isCompact),
+                      ),
+                    ),
+                  )
+                : _buildChipsWrap(quest, color, isDark, isCompact),
+            SizedBox(height: gapBottom),
+          ],
+        );
+      },
     );
+  }
+
+  Widget _buildChipsWrap(VocabularyQuest quest, Color color, bool isDark, bool isCompact) {
+    return Wrap(
+      spacing: 16.w, 
+      runSpacing: isCompact ? 10.h : 16.h,
+      alignment: WrapAlignment.center,
+      children: (quest.options ?? []).map((o) {
+        return ContextualUsageOptionChip(
+          text: o,
+          color: color,
+          isDark: isDark,
+          isSelected: _selectedOption == o,
+          isCorrect: _isCorrect,
+          onTap: () => _submitAnswer(o, quest.correctAnswer ?? ""),
+        );
+      }).toList(),
+    ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.2, curve: Curves.easeOutCubic);
   }
 
 }

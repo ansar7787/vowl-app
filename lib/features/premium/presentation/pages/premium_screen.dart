@@ -13,7 +13,6 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
-import 'package:vowl/features/premium/presentation/widgets/premium_plan_card_v2.dart';
 
 class PremiumScreen extends StatefulWidget {
   const PremiumScreen({super.key});
@@ -365,7 +364,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     return Column(
       children: List.generate(_plans.length, (index) {
         final plan = _plans[index];
-        return PremiumPlanCardV2(
+        return PremiumPlanCard(
           plan: plan,
           isSelected: _selectedPlanIndex == index,
           onTap: () {

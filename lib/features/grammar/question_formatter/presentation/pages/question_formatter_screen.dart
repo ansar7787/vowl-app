@@ -155,92 +155,109 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Column(
-                  children: [
-                    SizedBox(height: 10.h),
-                    QuestionFormatterInstruction(primaryColor: theme.primaryColor),
-                    SizedBox(height: 20.h),
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isCompact = constraints.maxHeight < 580;
 
-                    // 3D Inverter Context Card
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      child: Transform(
-                        transform: Matrix4.identity()
-                          ..setEntry(3, 2, 0.001)
-                          ..rotateX(_crankRotation),
-                        alignment: Alignment.center,
-                        child: Container(
-                          width: double.infinity,
-                          padding: EdgeInsets.all(28.r),
-                          decoration: BoxDecoration(
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.05)
-                                : Colors.black.withValues(alpha: 0.03),
-                            borderRadius: BorderRadius.circular(28.r),
-                            border: Border.all(
-                              color: theme.primaryColor.withValues(alpha: 0.2),
-                              width: 1.5,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: theme.primaryColor.withValues(alpha: 0.05),
-                                blurRadius: 30,
-                                spreadRadius: 5,
+                    return Column(
+                      children: [
+                        SizedBox(height: isCompact ? 4.h : 10.h),
+                        isCompact
+                            ? SizedBox(
+                                height: 25.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: QuestionFormatterInstruction(primaryColor: theme.primaryColor),
+                                ),
+                              )
+                            : QuestionFormatterInstruction(primaryColor: theme.primaryColor),
+                        SizedBox(height: isCompact ? 8.h : 20.h),
+
+                        // 3D Inverter Context Card
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          child: Transform(
+                            transform: Matrix4.identity()
+                              ..setEntry(3, 2, 0.001)
+                              ..rotateX(_crankRotation),
+                            alignment: Alignment.center,
+                            child: Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.all(isCompact ? 16.r : 28.r),
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.05)
+                                    : Colors.black.withValues(alpha: 0.03),
+                                borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
+                                border: Border.all(
+                                  color: theme.primaryColor.withValues(alpha: 0.2),
+                                  width: 1.5,
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: theme.primaryColor.withValues(alpha: 0.05),
+                                    blurRadius: 30,
+                                    spreadRadius: 5,
+                                  ),
+                                ],
                               ),
-                            ],
+                              child: Text(
+                                quest.sentence ?? "Missing statement.",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit', 
+                                  fontSize: isCompact ? 16.sp : 22.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: isDark ? Colors.white : Colors.black87,
+                                ),
+                              ),
+                            ),
                           ),
-                          child: Text(
-                            quest.sentence ?? "Missing statement.",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              fontSize: 22.sp,
-                              fontWeight: FontWeight.w600,
-                              color: isDark ? Colors.white : Colors.black87,
+                        )
+                        .animate()
+                        .fadeIn(duration: 600.ms)
+                        .scale(begin: const Offset(0.9, 0.9), end: const Offset(1, 1)),
+
+                        SizedBox(height: isCompact ? 16.h : 48.h),
+
+                        // Game Mechanic Area
+                        Expanded(
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                if (!_isAnswered && _crankRotation.abs() < 6.28)
+                                  QuestionFormatterCrank(
+                                    crankRotation: _crankRotation,
+                                    isAnswered: _isAnswered,
+                                    isDark: isDark,
+                                    primaryColor: theme.primaryColor,
+                                    onPanUpdate: _onCrankUpdate,
+                                    onAutoSpin: _autoSpin,
+                                  )
+                                else if (!_isAnswered)
+                                  _buildQuestionOptions(
+                                    options,
+                                    quest.correctAnswerIndex ?? 0,
+                                    theme.primaryColor,
+                                    isDark,
+                                    isCompact,
+                                  )
+                                else
+                                  _buildResult(
+                                    quest.correctAnswer ?? "",
+                                    theme.primaryColor,
+                                    isDark,
+                                    isCompact,
+                                  ),
+                              ],
                             ),
                           ),
                         ),
-                      ),
-                    )
-                    .animate()
-                    .fadeIn(duration: 600.ms)
-                    .scale(begin: const Offset(0.9, 0.9), end: const Offset(1, 1)),
 
-                    SizedBox(height: 48.h),
-
-                    // Game Mechanic Area
-                    Expanded(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            if (!_isAnswered && _crankRotation.abs() < 6.28)
-                              QuestionFormatterCrank(
-                                crankRotation: _crankRotation,
-                                isAnswered: _isAnswered,
-                                isDark: isDark,
-                                primaryColor: theme.primaryColor,
-                                onPanUpdate: _onCrankUpdate,
-                                onAutoSpin: _autoSpin,
-                              )
-                            else if (!_isAnswered)
-                              _buildQuestionOptions(
-                                options,
-                                quest.correctAnswerIndex ?? 0,
-                                theme.primaryColor,
-                                isDark,
-                              )
-                            else
-                              _buildResult(
-                                quest.correctAnswer ?? "",
-                                theme.primaryColor,
-                                isDark,
-                              ),
-                          ],
-                        ),
-                      ),
-                    ),
-
-                    SizedBox(height: 40.h),
-                  ],
+                        SizedBox(height: isCompact ? 12.h : 40.h),
+                      ],
+                    );
+                  },
                 ),
         );
       },
@@ -252,21 +269,22 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
     int correctIndex,
     Color primaryColor,
     bool isDark,
+    bool isCompact,
   ) {
     return Column(
       children: options.asMap().entries.map((entry) {
         return Padding(
-          padding: EdgeInsets.only(bottom: 16.h, left: 24.w, right: 24.w),
+          padding: EdgeInsets.only(bottom: isCompact ? 8.h : 16.h, left: 24.w, right: 24.w),
           child: ScaleButton(
             onTap: () => _onOptionSelect(entry.key, correctIndex),
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.all(20.r),
+              padding: EdgeInsets.all(isCompact ? 12.r : 20.r),
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.white.withValues(alpha: 0.05)
                     : Colors.black.withValues(alpha: 0.03),
-                borderRadius: BorderRadius.circular(20.r),
+                borderRadius: BorderRadius.circular(isCompact ? 14.r : 20.r),
                 border: Border.all(
                   color: primaryColor.withValues(alpha: 0.2),
                   width: 1.5,
@@ -275,8 +293,9 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
               child: Center(
                 child: Text(
                   entry.value,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 18.sp,
+                  style: TextStyle(
+                    fontFamily: 'Outfit', 
+                    fontSize: isCompact ? 14.sp : 18.sp,
                     fontWeight: FontWeight.bold,
                     color: primaryColor,
                   ),
@@ -289,17 +308,17 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
     ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0);
   }
 
-  Widget _buildResult(String result, Color primaryColor, bool isDark) {
+  Widget _buildResult(String result, Color primaryColor, bool isDark, bool isCompact) {
     final bool correct = _isCorrect == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Container(
-        padding: EdgeInsets.all(28.r),
+        padding: EdgeInsets.all(isCompact ? 14.r : 28.r),
         decoration: BoxDecoration(
           color: displayColor.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(28.r),
+          borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
           border: Border.all(
             color: displayColor.withValues(alpha: 0.3),
             width: 2,
@@ -310,24 +329,26 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
             Icon(
               correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
               color: displayColor,
-              size: 40.r,
+              size: isCompact ? 28.r : 40.r,
             ),
-            SizedBox(height: 16.h),
+            SizedBox(height: isCompact ? 6.h : 16.h),
             Text(
               correct ? "CORRECT!" : "INCORRECT",
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 16.sp,
+              style: TextStyle(
+                fontFamily: 'Outfit', 
+                fontSize: isCompact ? 13.sp : 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
                 letterSpacing: 2,
               ),
             ),
-            SizedBox(height: 8.h),
+            SizedBox(height: isCompact ? 4.h : 8.h),
             Text(
               result,
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 22.sp,
+              style: TextStyle(
+                fontFamily: 'Outfit', 
+                fontSize: isCompact ? 16.sp : 22.sp,
                 fontWeight: FontWeight.bold,
                 color: displayColor,
               ),

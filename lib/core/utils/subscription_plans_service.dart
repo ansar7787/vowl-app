@@ -13,7 +13,7 @@ class SubscriptionPlansService {
   static const Duration _cacheExpiry = Duration(hours: 1);
 
   SubscriptionPlansService({required FirebaseFirestore firestore})
-      : _firestore = firestore;
+    : _firestore = firestore;
 
   /// Fetch subscription plans from Firebase (with caching)
   Future<List<SubscriptionPlan>> fetchPlans() async {

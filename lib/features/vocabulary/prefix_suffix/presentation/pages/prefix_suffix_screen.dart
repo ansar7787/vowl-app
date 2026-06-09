@@ -56,16 +56,19 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
 
   void _onRoverRelease(VocabularyQuest quest) {
     if (_isAnswered) return;
+    if (_lastConstraints == null) return;
     
+    final isCompact = _lastConstraints!.maxHeight < 580;
     final options = quest.options ?? [];
     int? dockedIndex;
     
-    // Check collision with terminals - INCREASED RADIUS (90.r) for better touch feedback
+    // Check collision with terminals - dynamically scale collision radius
+    final double collisionDistance = isCompact ? 65.r : 90.r;
     for (int i = 0; i < options.length; i++) {
       final terminalPos = _getTerminalPosition(i, options.length, _lastConstraints!);
       final roverPos = Offset.zero + _dragOffset; 
       
-      if ((roverPos - terminalPos).distance < 90.r) {
+      if ((roverPos - terminalPos).distance < collisionDistance) {
         dockedIndex = i;
         break;
       }
@@ -119,14 +122,15 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     final screenSize = MediaQuery.of(context).size;
     final double safeMaxWidth = constraints.maxWidth.isFinite ? constraints.maxWidth : screenSize.width;
     final double safeMaxHeight = constraints.maxHeight.isFinite ? constraints.maxHeight : (screenSize.height * 0.6);
+    final isCompact = safeMaxHeight < 580;
 
     // Dynamic Responsive Positioning (Diamond/Corner Grid)
     double hDist = (safeMaxWidth - 120.w) / 2;
-    double vDist = (safeMaxHeight - 180.h) / 2;
+    double vDist = (safeMaxHeight - (isCompact ? 130.h : 180.h)) / 2;
     
     // Use a smaller radius if the screen is tiny
-    hDist = hDist.clamp(80.w, 140.w);
-    vDist = vDist.clamp(100.h, 160.h);
+    hDist = hDist.clamp(isCompact ? 60.w : 80.w, 140.w);
+    vDist = vDist.clamp(isCompact ? 70.h : 100.h, 160.h);
 
     switch (index) {
       case 0: return Offset(-hDist, -vDist); // Top Left
@@ -215,6 +219,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
               final screenSize = MediaQuery.of(context).size;
               final double safeWidth = constraints.maxWidth.isFinite ? constraints.maxWidth : screenSize.width;
               final double safeHeight = constraints.maxHeight.isFinite ? constraints.maxHeight : (screenSize.height * 0.6);
+              final isCompact = safeHeight < 580;
 
               return SizedBox(
                 width: safeWidth,
@@ -234,18 +239,36 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                         primaryColor: theme.primaryColor,
                         isDark: isDark,
                         position: _getTerminalPosition(i, quest.options!.length, constraints),
+                        parentWidth: safeWidth,
+                        parentHeight: safeHeight,
                       ),
                     ),
 
                     // The Root Rover (Central Draggable)
-                    PrefixSuffixRootRover(
-                      rootWord: quest.rootWord ?? "???",
-                      primaryColor: theme.primaryColor,
-                      isDark: isDark,
-                      dragOffset: _dragOffset,
-                      onPanUpdate: _onRoverDrag,
-                      onPanEnd: (_) => _onRoverRelease(quest),
-                    ),
+                    isCompact
+                        ? SizedBox(
+                            width: 100.w,
+                            height: 100.h,
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: PrefixSuffixRootRover(
+                                rootWord: quest.rootWord ?? "???",
+                                primaryColor: theme.primaryColor,
+                                isDark: isDark,
+                                dragOffset: _dragOffset,
+                                onPanUpdate: _onRoverDrag,
+                                onPanEnd: (_) => _onRoverRelease(quest),
+                              ),
+                            ),
+                          )
+                        : PrefixSuffixRootRover(
+                            rootWord: quest.rootWord ?? "???",
+                            primaryColor: theme.primaryColor,
+                            isDark: isDark,
+                            dragOffset: _dragOffset,
+                            onPanUpdate: _onRoverDrag,
+                            onPanEnd: (_) => _onRoverRelease(quest),
+                          ),
                   ],
                 ),
               );

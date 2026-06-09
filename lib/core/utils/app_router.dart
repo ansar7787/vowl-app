@@ -121,8 +121,8 @@ class AppRouter {
           }
           return null;
         } else {
-          // If they are verified and try to access auth or verification screens, send them home
-          if (isAuthRoute || state.uri.path == verifyEmailRoute) {
+          // If they are verified and try to access auth, verification, or root screen (/), send them home
+          if (isAuthRoute || state.uri.path == verifyEmailRoute || state.uri.path == '/') {
             return homeRoute;
           }
         }

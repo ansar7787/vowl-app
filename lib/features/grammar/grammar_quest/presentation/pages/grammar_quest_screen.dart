@@ -130,27 +130,52 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Column(
-                  children: [
-                    SizedBox(height: 20.h),
-                    GrammarQuestInstruction(primaryColor: theme.primaryColor),
-                    SizedBox(height: 32.h),
-                    GrammarQuestSentence(
-                      text: quest.sentence ?? quest.question ?? "",
-                      isDark: isDark,
-                    ),
-                    SizedBox(height: 60.h),
-                    GrammarQuestCompass(
-                      options: options,
-                      correctAnswerIndex: quest.correctAnswerIndex ?? 0,
-                      primaryColor: theme.primaryColor,
-                      isDark: isDark,
-                      isAnswered: _isAnswered,
-                      isCorrect: _isCorrect,
-                      onQuadrantSelect: (index) => _onQuadrantSelect(index, quest.correctAnswerIndex ?? 0),
-                    ),
-                    SizedBox(height: 40.h),
-                  ],
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
+
+                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 60.h : 90.h) + (isCompact ? 180.r : 280.r) + 40.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
+
+                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 15.0) : 4.0;
+                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(6.0, 20.0) : 6.0;
+                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
+
+                    return Column(
+                      children: [
+                        SizedBox(height: gapTop),
+                        isCompact
+                            ? SizedBox(
+                                height: 25.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: GrammarQuestInstruction(primaryColor: theme.primaryColor),
+                                ),
+                              )
+                            : GrammarQuestInstruction(primaryColor: theme.primaryColor),
+                        SizedBox(height: gapMiddle),
+                        GrammarQuestSentence(
+                          text: quest.sentence ?? quest.question ?? "",
+                          isDark: isDark,
+                          isCompact: isCompact,
+                        ),
+                        SizedBox(height: gapMiddle * 1.5),
+                        GrammarQuestCompass(
+                          options: options,
+                          correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+                          primaryColor: theme.primaryColor,
+                          isDark: isDark,
+                          isAnswered: _isAnswered,
+                          isCorrect: _isCorrect,
+                          onQuadrantSelect: (index) => _onQuadrantSelect(index, quest.correctAnswerIndex ?? 0),
+                          isCompact: isCompact,
+                        ),
+                        SizedBox(height: gapBottom),
+                      ],
+                    );
+                  },
                 ),
         );
       },

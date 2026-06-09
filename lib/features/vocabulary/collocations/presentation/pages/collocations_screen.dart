@@ -159,97 +159,144 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           },
           onHint: () =>
               context.read<VocabularyBloc>().add(VocabularyHintUsed()),
-          useScrolling: true,
+          useScrolling: false,
           child: quest == null
               ? const SizedBox()
-              : _buildPairPopGame(
-                  quest,
-                  theme.primaryColor,
-                  isDark,
-                  (state is VocabularyLoaded) ? state.isFinalFailure : false,
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
+
+                    final double estimatedContentHeight = 20.h + 40.h + (isCompact ? 80.h : 110.h) + (isCompact ? 100.h : 180.h) + 20.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
+
+                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 6 : 0;
+                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
+                    final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 30.0) : 10.0;
+                    final double gapAnchor = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 40.0) : 10.0;
+                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 60.0) : 12.0;
+
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            SizedBox(height: gapTop),
+                            isCompact
+                                ? SizedBox(
+                                    height: 35.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: _buildInstruction(theme.primaryColor, isDark),
+                                    ),
+                                  )
+                                : _buildInstruction(theme.primaryColor, isDark),
+                            SizedBox(height: gapInstruction),
+                            isCompact
+                                ? SizedBox(
+                                    height: 80.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: CollocationAnchorBubble(
+                                        text: quest.word ?? "",
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                      ),
+                                    ),
+                                  )
+                                : CollocationAnchorBubble(
+                                    text: quest.word ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                          ],
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            SizedBox(height: gapAnchor),
+                            isCompact
+                                ? SizedBox(
+                                    height: 100.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: SizedBox(
+                                        width: constraints.maxWidth,
+                                        child: _buildOptionsWrap(quest, theme.primaryColor, isDark, state is VocabularyLoaded ? state.isFinalFailure : false, isCompact),
+                                      ),
+                                    ),
+                                  )
+                                : _buildOptionsWrap(quest, theme.primaryColor, isDark, state is VocabularyLoaded ? state.isFinalFailure : false, isCompact),
+                            SizedBox(height: gapBottom),
+                          ],
+                        ),
+                      ],
+                    );
+                  },
                 ),
         );
       },
     );
   }
 
-  Widget _buildPairPopGame(
+  Widget _buildOptionsWrap(
     VocabularyQuest quest,
     Color color,
     bool isDark,
     bool isFinalFailure,
+    bool isCompact,
   ) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        SizedBox(height: 10.h),
-        _buildInstruction(color, isDark),
-        SizedBox(height: 30.h),
-
-        // Anchor Word Bubble
-        Center(
-          child: CollocationAnchorBubble(
-            text: quest.word ?? "",
-            color: color,
-            isDark: isDark,
-          ),
-        ),
-
-        SizedBox(height: 40.h),
-
-        // Options Bubbles
-        Wrap(
-          spacing: 20.w,
-          runSpacing: 40.h,
-          alignment: WrapAlignment.center,
-          children: (quest.options ?? []).asMap().entries.map((entry) {
-            return CollocationOptionBubble(
-              text: entry.value,
-              correct: quest.correctAnswer ?? "",
-              color: color,
-              isDark: isDark,
-              isAnswered: _isAnswered,
-              isCorrect: _isCorrect,
-              selectedOption: _selectedOption,
-              isFinalFailure: isFinalFailure,
-              index: entry.key,
-              onTap: () {
-                if (!_isAnswered) {
-                  _hapticService.light();
-                  _submitAnswer(entry.value, quest.correctAnswer ?? "");
-                }
-              },
-            );
-          }).toList(),
-        ),
-        SizedBox(height: 60.h),
-      ],
+    return Wrap(
+      spacing: 20.w,
+      runSpacing: isCompact ? 15.h : 30.h,
+      alignment: WrapAlignment.center,
+      children: (quest.options ?? []).asMap().entries.map((entry) {
+        return CollocationOptionBubble(
+          text: entry.value,
+          correct: quest.correctAnswer ?? "",
+          color: color,
+          isDark: isDark,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
+          selectedOption: _selectedOption,
+          isFinalFailure: isFinalFailure,
+          index: entry.key,
+          onTap: () {
+            if (!_isAnswered) {
+              _hapticService.light();
+              _submitAnswer(entry.value, quest.correctAnswer ?? "");
+            }
+          },
+        );
+      }).toList(),
     );
   }
 
   Widget _buildInstruction(Color color, bool isDark) {
     return Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-          decoration: BoxDecoration(
-            color: isDark
-                ? color.withValues(alpha: 0.1)
-                : color.withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(30.r),
-            border: Border.all(color: color.withValues(alpha: 0.3)),
-          ),
-          child: Text(
-            "FUSE THE COLLOCATION PAIR",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'RobotoMono', 
-              fontSize: 12.sp,
-              fontWeight: FontWeight.bold,
-              color: color,
-              letterSpacing: 1.5,
-            ),
-          ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(duration: 2.seconds);
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: isDark
+            ? color.withValues(alpha: 0.1)
+            : color.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
+      ),
+      child: Text(
+        "FUSE THE COLLOCATION PAIR",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontFamily: 'RobotoMono',
+          fontSize: 12.sp,
+          fontWeight: FontWeight.bold,
+          color: color,
+          letterSpacing: 1.5,
+        ),
+      ),
+    )
+    .animate(onPlay: (c) => c.repeat(reverse: true))
+    .shimmer(duration: 2.seconds);
   }
 
 }

@@ -13,6 +13,7 @@ import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_la
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_instruction_header.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_painters.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_warp_gate.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_word_shard.dart';
@@ -104,7 +105,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
   void _onShardDragEnd(int index, VocabularyQuest quest) {
     if (_isAnswered || _activeShardIndex != index) return;
+    if (_lastConstraints == null) return;
 
+    final isCompact = _lastConstraints!.maxHeight < 580;
     final currentOffset = _shardOffsets[index] ?? Offset.zero;
     final options = quest.options ?? [];
     final selectedText = options[index];
@@ -116,7 +119,8 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     );
     final currentPos = shardInitialPos + currentOffset;
 
-    if (currentPos.distance < 100.r) {
+    final double snapDistance = isCompact ? 65.r : 100.r;
+    if (currentPos.distance < snapDistance) {
       _warpShard(index, selectedText, quest);
     } else {
       // Snap back
@@ -169,12 +173,13 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     final double safeHeight = constraints.maxHeight.isFinite
         ? constraints.maxHeight
         : (screenSize.height * 0.6);
+    final isCompact = safeHeight < 580;
 
     double hDist = (safeWidth - 100.w) / 2;
-    double vDist = (safeHeight - 120.h) / 2;
+    double vDist = (safeHeight - (isCompact ? 95.h : 120.h)) / 2;
 
-    hDist = hDist.clamp(90.w, 130.w);
-    vDist = vDist.clamp(120.h, 140.h);
+    hDist = hDist.clamp(isCompact ? 65.w : 90.w, 130.w);
+    vDist = vDist.clamp(isCompact ? 90.h : 120.h, 140.h);
 
     switch (index) {
       case 0:
@@ -290,6 +295,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                     final double safeHeight = constraints.maxHeight.isFinite
                         ? constraints.maxHeight
                         : (screenSize.height * 0.6);
+                    final isCompact = safeHeight < 580;
 
                     return SizedBox(
                       width: safeWidth,
@@ -307,11 +313,24 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                               ),
                             ),
                           ),
-                          SynonymWarpGate(
-                            word: quest.word ?? "",
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                          ),
+                          isCompact
+                              ? SizedBox(
+                                  width: 140.r,
+                                  height: 140.r,
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: SynonymWarpGate(
+                                      word: quest.word ?? "",
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                    ),
+                                  ),
+                                )
+                              : SynonymWarpGate(
+                                  word: quest.word ?? "",
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                ),
                           ...List.generate(quest.options?.length ?? 0, (i) {
                             if (_activeShardIndex == i &&
                                 _shardTrails[i] != null) {
@@ -347,29 +366,68 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                             return const SizedBox.shrink();
                           }),
                           ...List.generate(quest.options?.length ?? 0, (i) {
-                            return SynonymWordShard(
-                              index: i,
-                              text: quest.options![i],
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                              initialPos: _getShardInitialPosition(
-                                i,
-                                quest.options!.length,
-                                constraints,
-                              ),
-                              offset: _shardOffsets[i] ?? Offset.zero,
-                              isWarping: _isWarping[i] ?? false,
-                              isActive: _activeShardIndex == i,
-                              safeWidth: safeWidth,
-                              safeHeight: safeHeight,
-                              onPanStart: (d) => _onShardDragStart(i, d),
-                              onPanUpdate: (d) => _onShardDragUpdate(i, d),
-                              onPanEnd: () => _onShardDragEnd(i, quest),
-                            );
+                            return isCompact
+                                ? Positioned(
+                                    left: safeWidth / 2 + _getShardInitialPosition(i, quest.options!.length, constraints).dx + (_shardOffsets[i] ?? Offset.zero).dx - 45.w,
+                                    top: safeHeight / 2 + _getShardInitialPosition(i, quest.options!.length, constraints).dy + (_shardOffsets[i] ?? Offset.zero).dy - 25.h,
+                                    child: SizedBox(
+                                      width: 90.w,
+                                      height: 50.h,
+                                      child: FittedBox(
+                                        fit: BoxFit.scaleDown,
+                                        child: SizedBox(
+                                          width: 120.w,
+                                          height: 60.h,
+                                          child: SynonymWordShard(
+                                            index: i,
+                                            text: quest.options![i],
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            initialPos: Offset.zero,
+                                            offset: Offset.zero,
+                                            isWarping: _isWarping[i] ?? false,
+                                            isActive: _activeShardIndex == i,
+                                            safeWidth: safeWidth,
+                                            safeHeight: safeHeight,
+                                            onPanStart: (d) => _onShardDragStart(i, d),
+                                            onPanUpdate: (d) => _onShardDragUpdate(i, d),
+                                            onPanEnd: () => _onShardDragEnd(i, quest),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                : SynonymWordShard(
+                                    index: i,
+                                    text: quest.options![i],
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    initialPos: _getShardInitialPosition(
+                                      i,
+                                      quest.options!.length,
+                                      constraints,
+                                    ),
+                                    offset: _shardOffsets[i] ?? Offset.zero,
+                                    isWarping: _isWarping[i] ?? false,
+                                    isActive: _activeShardIndex == i,
+                                    safeWidth: safeWidth,
+                                    safeHeight: safeHeight,
+                                    onPanStart: (d) => _onShardDragStart(i, d),
+                                    onPanUpdate: (d) => _onShardDragUpdate(i, d),
+                                    onPanEnd: () => _onShardDragEnd(i, quest),
+                                  );
                           }),
                           Positioned(
-                            top: 10.h,
-                            child: _buildInstruction(theme.primaryColor),
+                            top: isCompact ? 2.h : 10.h,
+                            child: isCompact
+                                ? SizedBox(
+                                    height: 25.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: SynonymInstructionHeader(color: theme.primaryColor),
+                                    ),
+                                  )
+                                : SynonymInstructionHeader(color: theme.primaryColor),
                           ),
                         ],
                       ),
@@ -380,54 +438,5 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
       },
     );
   }
-
-  Widget _buildInstruction(Color color) {
-    return Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(30.r),
-            border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
-            boxShadow: [
-              BoxShadow(
-                color: color.withValues(alpha: 0.1),
-                blurRadius: 20,
-                spreadRadius: -5,
-              ),
-            ],
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.cyclone_rounded, size: 16.r, color: color),
-              SizedBox(width: 10.w),
-              Text(
-                "WARP THE SYNONYM SHARD",
-                style: TextStyle(fontFamily: 'RobotoMono', 
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.bold,
-                  color: color,
-                  letterSpacing: 2,
-                  shadows: [
-                    Shadow(color: color.withValues(alpha: 0.5), blurRadius: 10),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(
-          duration: 3.seconds,
-          color: Colors.white.withValues(alpha: 0.3),
-        )
-        .scale(
-          begin: const Offset(1, 1),
-          end: const Offset(1.05, 1.05),
-          duration: 2.seconds,
-          curve: Curves.easeInOut,
-        );
-  }
-
 }
 

@@ -178,57 +178,108 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                       ),
                     ),
 
-                    SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: Column(
-                        children: [
-                          SizedBox(height: 40.h), // Re-added top spacing!
-                          _buildVaultStatus(theme.primaryColor, isDark),
-                          SizedBox(height: 20.h),
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 580;
 
-                          // LCD Display
-                          PhrasalVerbsLcd(
-                            text: quest.hint?.replaceFirst("DEFINITION: ", "") ??
-                                "ANALYZING VAULT...",
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                          ),
+                        final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 70.h : 90.h) + (isCompact ? 110.h : 160.h) + (isCompact ? 90.h : 130.h) + 20.h;
+                        final remainingHeight = maxHeight - estimatedContentHeight;
 
-                          SizedBox(height: 30.h),
+                        final double gapUnit = remainingHeight > 0 ? remainingHeight / 6 : 0;
+                        final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 24.0) : 6.0;
+                        final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 30.0) : 10.0;
+                        final double gapBottom = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 40.0) : 12.0;
 
-                          // The Central Vault Handle
-                          PhrasalVerbsVaultHandle(
-                            verb: quest.word ?? "VERB",
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            vaultController: _vaultController,
-                          ),
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapTop),
+                                isCompact
+                                    ? SizedBox(
+                                        height: 30.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: _buildVaultStatus(theme.primaryColor, isDark),
+                                        ),
+                                      )
+                                    : _buildVaultStatus(theme.primaryColor, isDark),
+                                SizedBox(height: gapMiddle),
 
-                          SizedBox(height: 30.h),
+                                // LCD Display
+                                isCompact
+                                    ? SizedBox(
+                                        height: 70.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: SizedBox(
+                                            width: constraints.maxWidth - 40.w,
+                                            child: PhrasalVerbsLcd(
+                                              text: quest.hint?.replaceFirst("DEFINITION: ", "") ?? "ANALYZING VAULT...",
+                                              color: theme.primaryColor,
+                                              isDark: isDark,
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    : Padding(
+                                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                        child: PhrasalVerbsLcd(
+                                          text: quest.hint?.replaceFirst("DEFINITION: ", "") ?? "ANALYZING VAULT...",
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                        ),
+                                      ),
+                              ],
+                            ),
 
-                          // Key Options (Particles)
-                          Wrap(
-                            spacing: 15.w,
-                            runSpacing: 15.h,
-                            alignment: WrapAlignment.center,
-                            children: (quest.options ?? []).asMap().entries.map((entry) {
-                              return PhrasalVerbsOptionKey(
-                                text: entry.value,
-                                correct: quest.correctAnswer ?? "",
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                isAnswered: _isAnswered,
-                                isCorrect: _isCorrect,
-                                selectedOption: _selectedOption,
-                                isFinalFailure: isFinalFailure,
-                                index: entry.key,
-                                onTap: () => _submitChoice(entry.value, quest.correctAnswer ?? ""),
-                              );
-                            }).toList(),
-                          ),
-                          SizedBox(height: 20.h),
-                        ],
-                      ),
+                            // The Central Vault Handle
+                            isCompact
+                                ? SizedBox(
+                                    height: 110.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: PhrasalVerbsVaultHandle(
+                                        verb: quest.word ?? "VERB",
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        vaultController: _vaultController,
+                                      ),
+                                    ),
+                                  )
+                                : PhrasalVerbsVaultHandle(
+                                    verb: quest.word ?? "VERB",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    vaultController: _vaultController,
+                                  ),
+
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapMiddle),
+                                // Key Options (Particles)
+                                isCompact
+                                    ? SizedBox(
+                                        height: 90.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: SizedBox(
+                                            width: constraints.maxWidth,
+                                            child: _buildOptionsWrap(quest, theme.primaryColor, isDark, isFinalFailure, isCompact),
+                                          ),
+                                        ),
+                                      )
+                                    : _buildOptionsWrap(quest, theme.primaryColor, isDark, isFinalFailure, isCompact),
+                                SizedBox(height: gapBottom),
+                              ],
+                            ),
+                          ],
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -239,31 +290,59 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
 
   Widget _buildVaultStatus(Color color, bool isDark) {
     return Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(30.r),
-            border: Border.all(color: color.withValues(alpha: 0.3)),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.vpn_key_rounded, size: 16.r, color: color),
+          SizedBox(width: 10.w),
+          Text(
+            "VAULT SECURITY: L-${widget.level}",
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.bold,
+              color: color,
+              letterSpacing: 2,
+            ),
           ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.vpn_key_rounded, size: 16.r, color: color),
-              SizedBox(width: 10.w),
-              Text(
-                "VAULT SECURITY: L-${widget.level}",
-                style: TextStyle(fontFamily: 'RobotoMono', 
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.bold,
-                  color: color,
-                  letterSpacing: 2,
-                ),
-              ),
-            ],
-          ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(duration: 3.seconds);
+        ],
+      ),
+    )
+    .animate(onPlay: (c) => c.repeat(reverse: true))
+    .shimmer(duration: 3.seconds);
   }
 
+  Widget _buildOptionsWrap(
+    VocabularyQuest quest,
+    Color color,
+    bool isDark,
+    bool isFinalFailure,
+    bool isCompact,
+  ) {
+    return Wrap(
+      spacing: 15.w,
+      runSpacing: isCompact ? 10.h : 15.h,
+      alignment: WrapAlignment.center,
+      children: (quest.options ?? []).asMap().entries.map((entry) {
+        return PhrasalVerbsOptionKey(
+          text: entry.value,
+          correct: quest.correctAnswer ?? "",
+          color: color,
+          isDark: isDark,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
+          selectedOption: _selectedOption,
+          isFinalFailure: isFinalFailure,
+          index: entry.key,
+          onTap: () => _submitChoice(entry.value, quest.correctAnswer ?? ""),
+        );
+      }).toList(),
+    );
+  }
 }

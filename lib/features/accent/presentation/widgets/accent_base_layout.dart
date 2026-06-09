@@ -214,7 +214,9 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
                                                     SizedBox(height: 8.h),
                                                     Text(widget.subtitle, textAlign: TextAlign.center, style: TextStyle(fontFamily: 'Outfit', fontSize: 24.sp, fontWeight: FontWeight.w900, color: isDark ? Colors.white : const Color(0xFF0F172A))).animate().fadeIn().slideY(begin: 0.1),
                                                     SizedBox(height: 32.h),
-                                                    widget.child,
+                                                    Expanded(
+                                                      child: widget.child,
+                                                    ),
                                                   ],
                                                 ),
                                               ),

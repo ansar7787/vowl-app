@@ -132,49 +132,75 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Column(
-                  children: [
-                    SizedBox(height: 10.h),
-                    ConjunctionsInstruction(primaryColor: theme.primaryColor),
-                    SizedBox(height: 20.h),
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
 
-                    // Magnetic Junction Bridge
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            _buildIslandPiece(parts.first, isDark, theme.primaryColor),
-                            SizedBox(height: 24.h),
-                            _buildMagneticJunction(
-                              options,
-                              quest.correctAnswerIndex ?? 0,
-                              theme.primaryColor,
-                              isDark,
+                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 50.h : 80.h) * 2 + (isCompact ? 50.h : 70.h) + (isCompact ? 50.h : 80.h) + 40.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
+
+                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 15.0) : 4.0;
+                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(6.0, 20.0) : 6.0;
+                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
+
+                    return Column(
+                      children: [
+                        SizedBox(height: gapTop),
+                        isCompact
+                            ? SizedBox(
+                                height: 25.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: ConjunctionsInstruction(primaryColor: theme.primaryColor),
+                                ),
+                              )
+                            : ConjunctionsInstruction(primaryColor: theme.primaryColor),
+                        SizedBox(height: gapMiddle),
+
+                        // Magnetic Junction Bridge
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                _buildIslandPiece(parts.first, isDark, theme.primaryColor, isCompact),
+                                SizedBox(height: isCompact ? 12.h : 24.h),
+                                _buildMagneticJunction(
+                                  options,
+                                  quest.correctAnswerIndex ?? 0,
+                                  theme.primaryColor,
+                                  isDark,
+                                  isCompact,
+                                ),
+                                SizedBox(height: isCompact ? 12.h : 24.h),
+                                if (parts.length > 1 && parts.last.isNotEmpty)
+                                  _buildIslandPiece(parts.last, isDark, theme.primaryColor, isCompact)
+                                      .animate()
+                                      .fadeIn(delay: 400.ms),
+                                if (_isAnswered) ...[
+                                  SizedBox(height: isCompact ? 10.h : 20.h),
+                                  _buildCorrectResult(quest, theme.primaryColor, isDark, isCompact),
+                                ],
+                              ],
                             ),
-                            SizedBox(height: 24.h),
-                            if (parts.length > 1 && parts.last.isNotEmpty)
-                              _buildIslandPiece(parts.last, isDark, theme.primaryColor)
-                                  .animate()
-                                  .fadeIn(delay: 400.ms),
-                            if (_isAnswered) ...[
-                              SizedBox(height: 20.h),
-                              _buildCorrectResult(quest, theme.primaryColor, isDark),
-                            ],
-                          ],
+                          ),
                         ),
-                      ),
-                    ),
+                        SizedBox(height: gapMiddle),
 
-                    ConjunctionsBrickSheet(
-                      options: options,
-                      placedBrick: _placedBrick,
-                      primaryColor: theme.primaryColor,
-                      isDark: isDark,
-                    ),
-                    SizedBox(height: 40.h),
-                  ],
+                        ConjunctionsBrickSheet(
+                          options: options,
+                          placedBrick: _placedBrick,
+                          primaryColor: theme.primaryColor,
+                          isDark: isDark,
+                          isCompact: isCompact,
+                        ),
+                        SizedBox(height: gapBottom),
+                      ],
+                    );
+                  },
                 ),
         );
       },
@@ -186,6 +212,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
     int correctIndex,
     Color primaryColor,
     bool isDark,
+    bool isCompact,
   ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) => _onBridge(details.data, correctIndex, options),
@@ -196,11 +223,11 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
             : (isHighlight ? primaryColor : primaryColor.withValues(alpha: 0.3));
 
         return Container(
-          width: 180.w,
-          height: 70.h,
+          width: isCompact ? 140.w : 180.w,
+          height: isCompact ? 48.h : 70.h,
           decoration: BoxDecoration(
             color: nodeColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(20.r),
+            borderRadius: BorderRadius.circular(isCompact ? 14.r : 20.r),
             border: Border.all(
               color: nodeColor.withValues(alpha: 0.4),
               width: 2,
@@ -219,21 +246,23 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
             child: _placedBrick != null
                 ? Text(
                     _placedBrick!.toUpperCase(),
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 20.sp,
+                    style: TextStyle(
+                      fontFamily: 'Outfit', 
+                      fontSize: isCompact ? 14.sp : 20.sp,
                       fontWeight: FontWeight.w900,
                       color: nodeColor,
                     ),
                   ).animate().scale(duration: 400.ms, curve: Curves.elasticOut)
                 : (isHighlight
-                    ? Icon(Icons.bolt_rounded, color: primaryColor, size: 28.r)
+                    ? Icon(Icons.bolt_rounded, color: primaryColor, size: isCompact ? 20.r : 28.r)
                         .animate()
                         .scale()
                         .shimmer()
                     : Text(
                         "JUNCTION",
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 10.sp,
+                        style: TextStyle(
+                          fontFamily: 'Outfit', 
+                          fontSize: isCompact ? 8.sp : 10.sp,
                           fontWeight: FontWeight.w900,
                           color: primaryColor.withValues(alpha: 0.4),
                           letterSpacing: 2,
@@ -245,20 +274,26 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
     );
   }
 
-  Widget _buildIslandPiece(String text, bool isDark, Color primaryColor) {
+  Widget _buildIslandPiece(
+    String text,
+    bool isDark,
+    Color primaryColor,
+    bool isCompact,
+  ) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(22.r),
+      padding: EdgeInsets.all(isCompact ? 12.r : 22.r),
       decoration: BoxDecoration(
         color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(isCompact ? 14.r : 24.r),
         border: Border.all(color: primaryColor.withValues(alpha: 0.1), width: 1.5),
       ),
       child: Text(
         text.trim(),
         textAlign: TextAlign.center,
-        style: TextStyle(fontFamily: 'Outfit', 
-          fontSize: 18.sp,
+        style: TextStyle(
+          fontFamily: 'Outfit', 
+          fontSize: isCompact ? 14.sp : 18.sp,
           color: isDark ? Colors.white : Colors.black87,
           height: 1.4,
         ),
@@ -266,15 +301,20 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
     );
   }
 
-  Widget _buildCorrectResult(GrammarQuest quest, Color primaryColor, bool isDark) {
+  Widget _buildCorrectResult(
+    GrammarQuest quest,
+    Color primaryColor,
+    bool isDark,
+    bool isCompact,
+  ) {
     final bool correct = _isCorrect == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Container(
-      padding: EdgeInsets.all(20.r),
+      padding: EdgeInsets.all(isCompact ? 10.r : 20.r),
       decoration: BoxDecoration(
         color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
         border: Border.all(
           color: displayColor.withValues(alpha: 0.3),
           width: 2,
@@ -285,24 +325,26 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
           Icon(
             correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
             color: displayColor,
-            size: 36.r,
+            size: isCompact ? 24.r : 36.r,
           ),
-          SizedBox(height: 10.h),
+          SizedBox(height: isCompact ? 4.h : 10.h),
           Text(
             correct ? "CORRECT!" : "INCORRECT",
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 15.sp,
+            style: TextStyle(
+              fontFamily: 'Outfit', 
+              fontSize: isCompact ? 12.sp : 15.sp,
               fontWeight: FontWeight.w900,
               color: displayColor,
               letterSpacing: 2,
             ),
           ),
-          if (quest.explanation != null) ...[
+          if (!isCompact && quest.explanation != null) ...[
             SizedBox(height: 10.h),
             Text(
               quest.explanation!,
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 color: isDark ? Colors.white60 : Colors.black54,
               ),

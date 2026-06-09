@@ -73,6 +73,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
     String? selected,
     Color primaryColor,
     bool isDark,
+    bool isCompact,
   ) {
     final parts = template.contains("____")
         ? template.split("____")
@@ -85,7 +86,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
           alignment: PlaceholderAlignment.middle,
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 8.w),
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+            padding: EdgeInsets.symmetric(horizontal: isCompact ? 8.w : 12.w, vertical: isCompact ? 2.h : 4.h),
             decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
@@ -98,8 +99,9 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
             ),
             child: Text(
               selected ?? "      ",
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 22.sp,
+              style: TextStyle(
+                fontFamily: 'Outfit', 
+                fontSize: isCompact ? 16.sp : 22.sp,
                 fontWeight: FontWeight.bold,
                 color: primaryColor,
               ),
@@ -170,85 +172,110 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Column(
-                  children: [
-                    SizedBox(height: 10.h),
-                    PrepositionChoiceInstruction(primaryColor: theme.primaryColor),
-                    SizedBox(height: 20.h),
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
 
-                    // Context Card
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.all(22.r),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.05)
-                              : Colors.black.withValues(alpha: 0.03),
-                          borderRadius: BorderRadius.circular(28.r),
-                          border: Border.all(
-                            color: theme.primaryColor.withValues(alpha: 0.15),
-                            width: 1.5,
-                          ),
-                        ),
-                        child: RichText(
-                          textAlign: TextAlign.center,
-                          text: TextSpan(
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              fontSize: 20.sp,
-                              color: isDark ? Colors.white : Colors.black87,
-                              height: 1.5,
+                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 50.h : 80.h) + (isCompact ? 160.h : 260.h) + 40.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
+
+                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 15.0) : 4.0;
+                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(6.0, 20.0) : 6.0;
+                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
+
+                    return Column(
+                      children: [
+                        SizedBox(height: gapTop),
+                        isCompact
+                            ? SizedBox(
+                                height: 25.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: PrepositionChoiceInstruction(primaryColor: theme.primaryColor),
+                                ),
+                              )
+                            : PrepositionChoiceInstruction(primaryColor: theme.primaryColor),
+                        SizedBox(height: gapMiddle),
+
+                        // Context Card
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          child: Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.05)
+                                  : Colors.black.withValues(alpha: 0.03),
+                              borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
+                              border: Border.all(
+                                color: theme.primaryColor.withValues(alpha: 0.15),
+                                width: 1.5,
+                              ),
                             ),
-                            children: _buildSentenceWithBlank(
-                              quest.sentenceWithBlank ?? quest.question ?? "____ sentence.",
-                              _isAnswered && _targetNode != -1 ? options[_targetNode] : null,
-                              theme.primaryColor,
-                              isDark,
+                            child: RichText(
+                              textAlign: TextAlign.center,
+                              text: TextSpan(
+                                style: TextStyle(
+                                  fontFamily: 'Outfit', 
+                                  fontSize: isCompact ? 15.sp : 20.sp,
+                                  color: isDark ? Colors.white : Colors.black87,
+                                  height: 1.5,
+                                ),
+                                children: _buildSentenceWithBlank(
+                                  quest.sentenceWithBlank ?? quest.question ?? "____ sentence.",
+                                  _isAnswered && _targetNode != -1 ? options[_targetNode] : null,
+                                  theme.primaryColor,
+                                  isDark,
+                                  isCompact,
+                                ),
+                              ),
                             ),
                           ),
+                        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
+                        // Result Feedback
+                        if (_isAnswered) ...[
+                          SizedBox(height: isCompact ? 8.h : 24.h),
+                          _buildResult(quest, theme.primaryColor, isDark, isCompact),
+                        ],
+
+                        // Path Canvas
+                        Expanded(
+                          child: _buildPathCanvas(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark, isCompact),
                         ),
-                      ),
-                    ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
 
-                    // Result Feedback
-                    if (_isAnswered) ...[
-                      SizedBox(height: 24.h),
-                      _buildResult(quest, theme.primaryColor, isDark),
-                    ],
-
-                    // Path Canvas
-                    Expanded(
-                      child: _buildPathCanvas(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
-                    ),
-
-                    SizedBox(height: 40.h),
-                  ],
+                        SizedBox(height: gapBottom),
+                      ],
+                    );
+                  },
                 ),
         );
       },
     );
   }
 
-  Widget _buildPathCanvas(List<String> options, int correctIndex, Color primaryColor, bool isDark) {
+  Widget _buildPathCanvas(List<String> options, int correctIndex, Color primaryColor, bool isDark, bool isCompact) {
     return LayoutBuilder(builder: (context, constraints) {
-      final startPoint = Offset(constraints.maxWidth / 2, 40.h);
+      final startPoint = Offset(constraints.maxWidth / 2, isCompact ? 20.h : 40.h);
       final List<Offset> nodePoints = [];
       final int count = options.length;
-      final double bottomY = constraints.maxHeight - 100.h;
+      final double bottomY = constraints.maxHeight - (isCompact ? 40.h : 100.h);
 
       if (count <= 3) {
         nodePoints.addAll([
-          Offset(80.w, bottomY),
+          Offset(isCompact ? 50.w : 80.w, bottomY),
           Offset(constraints.maxWidth / 2, bottomY),
-          Offset(constraints.maxWidth - 80.w, bottomY),
+          Offset(constraints.maxWidth - (isCompact ? 50.w : 80.w), bottomY),
         ].take(count));
       } else {
         nodePoints.addAll([
-          Offset(90.w, bottomY - 100.h),
-          Offset(constraints.maxWidth - 90.w, bottomY - 100.h),
-          Offset(90.w, bottomY),
-          Offset(constraints.maxWidth - 90.w, bottomY),
+          Offset(isCompact ? 60.w : 90.w, bottomY - (isCompact ? 50.h : 100.h)),
+          Offset(constraints.maxWidth - (isCompact ? 60.w : 90.w), bottomY - (isCompact ? 50.h : 100.h)),
+          Offset(isCompact ? 60.w : 90.w, bottomY),
+          Offset(constraints.maxWidth - (isCompact ? 60.w : 90.w), bottomY),
         ]);
       }
 
@@ -259,7 +286,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
             _points.add(details.localPosition);
           });
           for (int i = 0; i < nodePoints.length; i++) {
-            if ((details.localPosition - nodePoints[i]).distance < 50.r) {
+            if ((details.localPosition - nodePoints[i]).distance < (isCompact ? 30.r : 50.r)) {
               _onPathEnd(i, correctIndex);
             }
           }
@@ -283,17 +310,17 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
     });
   }
 
-  Widget _buildResult(GrammarQuest quest, Color primaryColor, bool isDark) {
+  Widget _buildResult(GrammarQuest quest, Color primaryColor, bool isDark, bool isCompact) {
     final bool correct = _isCorrect == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Container(
-        padding: EdgeInsets.all(24.r),
+        padding: EdgeInsets.all(isCompact ? 12.r : 24.r),
         decoration: BoxDecoration(
           color: displayColor.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(24.r),
+          borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
           border: Border.all(
             color: displayColor.withValues(alpha: 0.3),
             width: 2,
@@ -304,24 +331,26 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
             Icon(
               correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
               color: displayColor,
-              size: 40.r,
+              size: isCompact ? 24.r : 40.r,
             ),
-            SizedBox(height: 12.h),
+            SizedBox(height: isCompact ? 4.h : 12.h),
             Text(
               correct ? "CORRECT!" : "INCORRECT",
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 16.sp,
+              style: TextStyle(
+                fontFamily: 'Outfit', 
+                fontSize: isCompact ? 12.sp : 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
                 letterSpacing: 2,
               ),
             ),
-            if (quest.explanation != null) ...[
+            if (!isCompact && quest.explanation != null) ...[
               SizedBox(height: 12.h),
               Text(
                 quest.explanation!,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit', 
                   fontSize: 13.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),

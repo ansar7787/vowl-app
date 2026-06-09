@@ -185,37 +185,65 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
               ? GameShimmerLoading(primaryColor: theme.primaryColor)
               : LayoutBuilder(
                   builder: (context, constraints) {
-                    // Calculate dynamic card height based on available space
-                    // Subtracting some space for instruction and hints
-                    final availableHeight = constraints.maxHeight;
-                    final cardHeight = (availableHeight * 0.65)
-                        .clamp(300.0, 450.0);
-                    final cardWidth = (constraints.maxWidth * 0.85)
-                        .clamp(280.0, 320.0);
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
 
-                    return SingleChildScrollView(
-                      physics: const NeverScrollableScrollPhysics(), // Keep swipe gestures clean
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                    // Calculate dynamic card height based on available space
+                    final cardHeight = (maxHeight * (isCompact ? 0.50 : 0.60))
+                        .clamp(200.0, 450.0);
+                    final cardWidth = (constraints.maxWidth * (isCompact ? 0.78 : 0.85))
+                        .clamp(240.0, 320.0);
+
+                    final double estimatedContentHeight = (isCompact ? 25.h : 35.h) + cardHeight + (isCompact ? 30.h : 50.h);
+                    final remainingHeight = maxHeight - estimatedContentHeight;
+
+                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
+                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(12.0, 30.0) : 12.0;
+
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            SizedBox(height: 8.h),
-                            _buildInstruction(theme.primaryColor),
-                            SizedBox(height: 16.h),
+                            SizedBox(height: gapTop),
+                            isCompact
+                                ? SizedBox(
+                                    height: 25.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: _buildInstruction(theme.primaryColor),
+                                    ),
+                                  )
+                                : _buildInstruction(theme.primaryColor),
+                            SizedBox(height: gapMiddle),
                             _buildCardStack(
                               quest,
                               theme.primaryColor,
                               isDark,
                               cardWidth,
-                              cardHeight * 0.95, // Slight reduction to safely fit
+                              cardHeight,
                             ),
-                            SizedBox(height: 20.h),
-                            FlashcardSwipeHints(color: theme.primaryColor),
-                            SizedBox(height: 12.h),
                           ],
                         ),
-                      ),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            isCompact
+                                ? SizedBox(
+                                    height: 35.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: FlashcardSwipeHints(color: theme.primaryColor),
+                                    ),
+                                  )
+                                : FlashcardSwipeHints(color: theme.primaryColor),
+                            SizedBox(height: gapBottom),
+                          ],
+                        ),
+                      ],
                     );
                   },
                 ),

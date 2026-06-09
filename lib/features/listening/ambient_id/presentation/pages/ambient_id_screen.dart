@@ -108,35 +108,103 @@ class _AmbientIdScreenState extends State<AmbientIdScreen> with SingleTickerProv
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
-          useScrolling: true,
+          useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(height: 10.h),
-              AmbientIdInstruction(color: theme.primaryColor),
-              SizedBox(height: 20.h),
-              AmbientIdSonarField(
-                options: quest.options ?? [],
-                correctAnswerIndex: quest.correctAnswerIndex ?? 0,
-                color: theme.primaryColor,
-                radarController: _radarController,
-                isAnswered: _isAnswered,
-                isCorrectState: _isCorrect,
-                selectedIndex: _selectedIndex,
-                onSubmitAnswer: (index) => _submitAnswer(index, quest.correctAnswerIndex ?? 0),
-              ),
-              SizedBox(height: 20.h),
-              AmbientIdEmitterNode(
-                onTap: () {
-                  _soundService.playTts(quest.textToSpeak ?? "");
-                  _hapticService.selection();
-                },
-                color: theme.primaryColor,
-              ),
-              SizedBox(height: 30.h),
-            ],
+          child: quest == null ? const SizedBox() : LayoutBuilder(
+            builder: (context, constraints) {
+              final maxHeight = constraints.maxHeight;
+              final isCompact = maxHeight < 580;
+
+              final double estimatedContentHeight = 10.h + 40.h + (isCompact ? 250.h : 380.h) + 80.h + 30.h;
+              final remainingHeight = maxHeight - estimatedContentHeight;
+
+              final double gapUnit = remainingHeight > 0 ? remainingHeight / 6 : 0;
+              final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 12.0) : 6.0;
+              final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 20.0) : 10.0;
+              final double gapSonar = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 20.0) : 10.0;
+              final double gapBottom = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 30.0) : 12.0;
+
+              return SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(minHeight: maxHeight),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(height: gapTop),
+                          isCompact 
+                            ? SizedBox(height: 35.h, child: FittedBox(fit: BoxFit.scaleDown, child: AmbientIdInstruction(color: theme.primaryColor)))
+                            : AmbientIdInstruction(color: theme.primaryColor),
+                          SizedBox(height: gapInstruction),
+                          isCompact
+                            ? SizedBox(
+                                height: 250.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: SizedBox(
+                                    width: constraints.maxWidth,
+                                    child: AmbientIdSonarField(
+                                      options: quest.options ?? [],
+                                      correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+                                      color: theme.primaryColor,
+                                      radarController: _radarController,
+                                      isAnswered: _isAnswered,
+                                      isCorrectState: _isCorrect,
+                                      selectedIndex: _selectedIndex,
+                                      onSubmitAnswer: (index) => _submitAnswer(index, quest.correctAnswerIndex ?? 0),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : AmbientIdSonarField(
+                                options: quest.options ?? [],
+                                correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+                                color: theme.primaryColor,
+                                radarController: _radarController,
+                                isAnswered: _isAnswered,
+                                isCorrectState: _isCorrect,
+                                selectedIndex: _selectedIndex,
+                                onSubmitAnswer: (index) => _submitAnswer(index, quest.correctAnswerIndex ?? 0),
+                              ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(height: gapSonar),
+                          isCompact
+                            ? SizedBox(
+                                height: 75.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: AmbientIdEmitterNode(
+                                    onTap: () {
+                                      _soundService.playTts(quest.textToSpeak ?? "");
+                                      _hapticService.selection();
+                                    },
+                                    color: theme.primaryColor,
+                                  ),
+                                ),
+                              )
+                            : AmbientIdEmitterNode(
+                                onTap: () {
+                                  _soundService.playTts(quest.textToSpeak ?? "");
+                                  _hapticService.selection();
+                                },
+                                color: theme.primaryColor,
+                              ),
+                          SizedBox(height: gapBottom),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
           ),
         );
       },

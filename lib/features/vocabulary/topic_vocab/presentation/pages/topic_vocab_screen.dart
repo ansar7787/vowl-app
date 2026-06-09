@@ -210,16 +210,17 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
             builder: (context, constraints) {
               final maxHeight = constraints.maxHeight;
               final maxWidth = constraints.maxWidth;
+              final isCompact = maxHeight < 580;
 
-              // Define relative positions as percentages of the actual available height
+              // Define relative positions as percentages of the actual available height or absolute sizes
               final counterTop = 0.0;
-              final instructionTop = maxHeight * 0.08;
-              final machineTop = maxHeight * 0.27;
+              final instructionTop = isCompact ? 25.h : maxHeight * 0.08;
+              final machineTop = isCompact ? 95.h : maxHeight * 0.27;
               
               // Word is positioned relative to bottom to work nicely with flicking physics
-              final wordBottom = maxHeight * 0.40;
-              final flyingWordBottom = maxHeight * 0.40;
-              final binBottom = maxHeight * 0.02;
+              final wordBottom = isCompact ? 135.h : maxHeight * 0.40;
+              final flyingWordBottom = isCompact ? 135.h : maxHeight * 0.40;
+              final binBottom = isCompact ? 4.h : maxHeight * 0.02;
 
               return SizedBox(
                 height: maxHeight,
@@ -243,14 +244,30 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                     // 2. INSTRUCTION
                     Positioned(
                       top: instructionTop, 
-                      child: _buildInstruction(displayInstruction, theme.primaryColor),
+                      child: isCompact
+                          ? SizedBox(
+                              height: 60.h,
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: _buildInstruction(displayInstruction, theme.primaryColor),
+                              ),
+                            )
+                          : _buildInstruction(displayInstruction, theme.primaryColor),
                     ),
 
                     // 3. EMISSION MACHINE
                     Positioned(
                       top: machineTop,
                       child: RepaintBoundary(
-                        child: TopicMachineHead(primaryColor: theme.primaryColor, emoji: quest?.topicEmoji ?? "📦"),
+                        child: isCompact
+                            ? SizedBox(
+                                height: 75.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: TopicMachineHead(primaryColor: theme.primaryColor, emoji: quest?.topicEmoji ?? "📦"),
+                                ),
+                              )
+                            : TopicMachineHead(primaryColor: theme.primaryColor, emoji: quest?.topicEmoji ?? "📦"),
                       ),
                     ),
 
@@ -259,11 +276,24 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                       bottom: binBottom,
                       left: 8.w, // Added premium visual margin from the edge
                       child: RepaintBoundary(
-                        child: TopicContainmentBin(
-                          index: 0, label: buckets[0], color: theme.primaryColor, isDark: isDark, 
-                          correctAnswer: correctAnswer, currentWord: currentWord, 
-                          words: _wordsInBins[0] ?? [], isHintActive: _isHintActive,
-                        ),
+                        child: isCompact
+                            ? SizedBox(
+                                width: 110.w,
+                                height: 140.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: TopicContainmentBin(
+                                    index: 0, label: buckets[0], color: theme.primaryColor, isDark: isDark, 
+                                    correctAnswer: correctAnswer, currentWord: currentWord, 
+                                    words: _wordsInBins[0] ?? [], isHintActive: _isHintActive,
+                                  ),
+                                ),
+                              )
+                            : TopicContainmentBin(
+                                index: 0, label: buckets[0], color: theme.primaryColor, isDark: isDark, 
+                                correctAnswer: correctAnswer, currentWord: currentWord, 
+                                words: _wordsInBins[0] ?? [], isHintActive: _isHintActive,
+                              ),
                       ),
                     ),
                     if (buckets.length > 1)
@@ -271,11 +301,24 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                         bottom: binBottom,
                         right: 8.w, // Added premium visual margin from the edge
                         child: RepaintBoundary(
-                          child: TopicContainmentBin(
-                            index: 1, label: buckets[1], color: theme.primaryColor, isDark: isDark, 
-                            correctAnswer: correctAnswer, currentWord: currentWord, 
-                            words: _wordsInBins[1] ?? [], isHintActive: _isHintActive,
-                          ),
+                          child: isCompact
+                              ? SizedBox(
+                                  width: 110.w,
+                                  height: 140.h,
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: TopicContainmentBin(
+                                      index: 1, label: buckets[1], color: theme.primaryColor, isDark: isDark, 
+                                      correctAnswer: correctAnswer, currentWord: currentWord, 
+                                      words: _wordsInBins[1] ?? [], isHintActive: _isHintActive,
+                                    ),
+                                  ),
+                                )
+                              : TopicContainmentBin(
+                                  index: 1, label: buckets[1], color: theme.primaryColor, isDark: isDark, 
+                                  correctAnswer: correctAnswer, currentWord: currentWord, 
+                                  words: _wordsInBins[1] ?? [], isHintActive: _isHintActive,
+                                ),
                         ),
                       ),
                     
@@ -283,14 +326,28 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                     if (!_isAnswered && currentWord.isNotEmpty && _flickedWord == null) 
                       Positioned(
                         bottom: wordBottom,
-                        child: TopicDraggableWord(
-                          word: currentWord, 
-                          primaryColor: theme.primaryColor, 
-                          isDark: isDark,
-                          onFlick: (v) => _handleFlick(v, currentWord, buckets, correctAnswer),
-                        ).animate(key: ValueKey("word_$_currentWordIndex"))
-                         .move(begin: const Offset(0, -100), end: Offset.zero, duration: 500.ms, curve: Curves.bounceOut)
-                         .fadeIn(),
+                        child: isCompact
+                            ? SizedBox(
+                                width: 110.w,
+                                height: 55.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: TopicDraggableWord(
+                                    word: currentWord, 
+                                    primaryColor: theme.primaryColor, 
+                                    isDark: isDark,
+                                    onFlick: (v) => _handleFlick(v, currentWord, buckets, correctAnswer),
+                                  ),
+                                ),
+                              )
+                            : TopicDraggableWord(
+                                word: currentWord, 
+                                primaryColor: theme.primaryColor, 
+                                isDark: isDark,
+                                onFlick: (v) => _handleFlick(v, currentWord, buckets, correctAnswer),
+                              ).animate(key: ValueKey("word_$_currentWordIndex"))
+                               .move(begin: const Offset(0, -100), end: Offset.zero, duration: 500.ms, curve: Curves.bounceOut)
+                               .fadeIn(),
                       ),
 
                     // Flying Word Animation
@@ -318,7 +375,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                         ).animate()
                          .move(
                            begin: Offset.zero, 
-                           end: Offset(_flickTarget == 0 ? -110.w : 110.w, maxHeight * 0.28), 
+                           end: Offset(_flickTarget == 0 ? -110.w : 110.w, isCompact ? 100.h : maxHeight * 0.28), 
                            duration: 400.ms, 
                            curve: Curves.easeInBack,
                          )

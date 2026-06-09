@@ -162,6 +162,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);
+    final mediaQuery = MediaQuery.of(context);
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
       listener: (context, state) {
@@ -205,70 +206,181 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
           _acceptedSubstrings = quest.acceptedSynonyms ?? [];
         }
 
-        return SpeakingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
-          onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-                  child: Column(
-                    children: [
-                      SituationSpeakingHeader(primaryColor: theme.primaryColor),
-                      SizedBox(height: 16.h),
+        return MediaQuery(
+          data: mediaQuery.copyWith(
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
+          ),
+          child: SpeakingBaseLayout(
+            gameType: widget.gameType,
+            level: widget.level,
+            isAnswered: _isAnswered,
+            isCorrect: _isCorrect,
+            showConfetti: _showConfetti,
+            onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
+            onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
+            child: quest == null
+                ? const SizedBox()
+                : LayoutBuilder(
+                    builder: (context, constraints) {
+                      final maxHeight = constraints.maxHeight;
+                      final bool isCompact = maxHeight < 580;
+                      
+                      final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 80.h : 110.h) + (isCompact ? 100.h : 140.h) + (isCompact ? 60.h : 80.h);
+                      final remainingHeight = maxHeight - estimatedContentHeight;
+                      
+                      final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
+                      final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
+                      final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 16.0) : 8.0;
+                      final double gapScrubber = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+                      final double gapTelemetry = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+                      final double gapMic = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 30.0) : 12.0;
+                      final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
 
-                      SituationSpeakingFogScrubberPanel(
-                        quest: quest,
-                        primaryColor: theme.primaryColor,
-                        isDark: isDark,
-                        scrubProgress: _scrubProgress,
-                        timeVal: _timeVal,
-                        onScrubUpdate: _onScrubUpdate,
-                        onPlayTts: () => _soundService.playTts(quest.situationText ?? ""),
-                      ),
-                      SizedBox(height: 20.h),
+                      return SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            minHeight: maxHeight,
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapTop),
+                                    isCompact 
+                                      ? SizedBox(
+                                          height: 32.h,
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            child: SituationSpeakingHeader(primaryColor: theme.primaryColor),
+                                          ),
+                                        )
+                                      : SituationSpeakingHeader(primaryColor: theme.primaryColor),
+                                    SizedBox(height: gapInstruction),
+                                    
+                                    isCompact
+                                      ? SizedBox(
+                                          height: 120.h,
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            child: SizedBox(
+                                              width: constraints.maxWidth - 16.w,
+                                              child: SituationSpeakingFogScrubberPanel(
+                                                quest: quest,
+                                                primaryColor: theme.primaryColor,
+                                                isDark: isDark,
+                                                scrubProgress: _scrubProgress,
+                                                timeVal: _timeVal,
+                                                onScrubUpdate: _onScrubUpdate,
+                                                onPlayTts: () => _soundService.playTts(quest.situationText ?? ""),
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      : SituationSpeakingFogScrubberPanel(
+                                          quest: quest,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          scrubProgress: _scrubProgress,
+                                          timeVal: _timeVal,
+                                          onScrubUpdate: _onScrubUpdate,
+                                          onPlayTts: () => _soundService.playTts(quest.situationText ?? ""),
+                                        ),
+                                    SizedBox(height: gapScrubber),
 
-                      if (_spokenText.isNotEmpty) ...[
-                        SituationSpeakingTelemetryCard(
-                          spokenText: _spokenText,
-                          isDark: isDark,
+                                    if (_spokenText.isNotEmpty)
+                                      isCompact
+                                        ? SizedBox(
+                                            height: 70.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width: constraints.maxWidth - 16.w,
+                                                child: SituationSpeakingTelemetryCard(
+                                                  spokenText: _spokenText,
+                                                  isDark: isDark,
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        : SituationSpeakingTelemetryCard(
+                                            spokenText: _spokenText,
+                                            isDark: isDark,
+                                          ),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapTelemetry),
+                                    AnimatedCrossFade(
+                                      firstChild: const SizedBox(),
+                                      secondChild: isCompact
+                                        ? SizedBox(
+                                            height: 100.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width: constraints.maxWidth - 16.w,
+                                                child: SituationSpeakingExplanationCard(
+                                                  quest: quest,
+                                                  isCorrect: _isCorrect ?? false,
+                                                  isDark: isDark,
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        : SituationSpeakingExplanationCard(
+                                            quest: quest,
+                                            isCorrect: _isCorrect ?? false,
+                                            isDark: isDark,
+                                          ),
+                                      crossFadeState: _isAnswered
+                                          ? CrossFadeState.showSecond
+                                          : CrossFadeState.showFirst,
+                                      duration: const Duration(milliseconds: 400),
+                                    ),
+                                    SizedBox(height: gapMic),
+
+                                    if (!_isAnswered)
+                                      isCompact
+                                        ? SizedBox(
+                                            height: 70.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SituationSpeakingScrubbedMicTrigger(
+                                                isListening: _isListening,
+                                                scrubProgress: _scrubProgress,
+                                                primaryColor: theme.primaryColor,
+                                                isDark: isDark,
+                                                onLongPressStart: _startSpeechListening,
+                                                onLongPressEnd: _stopSpeechListening,
+                                              ),
+                                            ),
+                                          )
+                                        : SituationSpeakingScrubbedMicTrigger(
+                                            isListening: _isListening,
+                                            scrubProgress: _scrubProgress,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            onLongPressStart: _startSpeechListening,
+                                            onLongPressEnd: _stopSpeechListening,
+                                          ),
+                                    SizedBox(height: gapBottom),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
-                        SizedBox(height: 20.h),
-                      ],
-
-                      AnimatedCrossFade(
-                        firstChild: const SizedBox(),
-                        secondChild: SituationSpeakingExplanationCard(
-                          quest: quest,
-                          isCorrect: _isCorrect ?? false,
-                          isDark: isDark,
-                        ),
-                        crossFadeState: _isAnswered
-                            ? CrossFadeState.showSecond
-                            : CrossFadeState.showFirst,
-                        duration: const Duration(milliseconds: 400),
-                      ),
-                      SizedBox(height: 30.h),
-
-                      if (!_isAnswered)
-                        SituationSpeakingScrubbedMicTrigger(
-                          isListening: _isListening,
-                          scrubProgress: _scrubProgress,
-                          primaryColor: theme.primaryColor,
-                          isDark: isDark,
-                          onLongPressStart: _startSpeechListening,
-                          onLongPressEnd: _stopSpeechListening,
-                        ),
-                      SizedBox(height: 50.h),
-                    ],
+                      );
+                    },
                   ),
-                ),
+          ),
         );
       },
     );

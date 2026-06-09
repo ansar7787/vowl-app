@@ -180,33 +180,88 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
               });
             }
           },
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(height: 10.h),
-                _buildInstruction(theme.primaryColor),
-                SizedBox(height: 25.h),
-                _buildReactionCore(
-                  quest,
-                  root,
-                  activeSuffix,
-                  theme.primaryColor,
-                  isDark,
+          child: quest == null
+              ? const SizedBox()
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
+
+                    // Spacing calculations
+                    final double estimatedContentHeight = (isCompact ? 20.h : 40.h) + (isCompact ? 120.h : 180.h) + (options.length * (isCompact ? 46.h : 72.h)) + 20.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
+
+                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 20.0) : 6.0;
+                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 25.0) : 10.0;
+                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 30.0) : 12.0;
+
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            SizedBox(height: gapTop),
+                            isCompact
+                                ? SizedBox(
+                                    height: 25.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: _buildInstruction(theme.primaryColor),
+                                    ),
+                                  )
+                                : _buildInstruction(theme.primaryColor),
+                            SizedBox(height: gapMiddle),
+
+                            // Reaction Core
+                            isCompact
+                                ? SizedBox(
+                                    height: 120.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: SizedBox(
+                                        width: constraints.maxWidth,
+                                        child: _buildReactionCore(
+                                          quest,
+                                          root,
+                                          activeSuffix,
+                                          theme.primaryColor,
+                                          isDark,
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                : _buildReactionCore(
+                                    quest,
+                                    root,
+                                    activeSuffix,
+                                    theme.primaryColor,
+                                    isDark,
+                                  ),
+                          ],
+                        ),
+
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            SizedBox(height: gapMiddle),
+                            // Injection Rails
+                            _buildInjectionRails(
+                              options,
+                              root,
+                              quest.correctAnswer ?? "",
+                              theme.primaryColor,
+                              isDark,
+                              isCompact,
+                            ),
+                            SizedBox(height: gapBottom),
+                          ],
+                        ),
+                      ],
+                    );
+                  },
                 ),
-                SizedBox(height: 30.h),
-                _buildInjectionRails(
-                  options,
-                  root,
-                  quest?.correctAnswer ?? "",
-                  theme.primaryColor,
-                  isDark,
-                ),
-                SizedBox(height: 20.h),
-              ],
-            ),
-          ),
         );
       },
     );
@@ -391,30 +446,38 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
     String correct,
     Color color,
     bool isDark,
+    bool isCompact,
   ) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(
         children: options.asMap().entries.map((entry) {
           return Padding(
-            padding: EdgeInsets.only(bottom: 12.h),
+            padding: EdgeInsets.only(bottom: isCompact ? 6.h : 12.h),
             child: SizedBox(
               width: 1.sw,
-              height: 60.h,
-              child: MorphInjectionRail(
-                index: entry.key,
-                suffix: entry.value,
-                color: color,
-                isDark: isDark,
-                isBlocked: _isAnswered,
-                onMorph: (suffix) {
-                  _submitMorph(suffix, root, correct, entry.key);
-                },
-                onHover: (index) {
-                  if (!_isAnswered) {
-                    setState(() => _hoveringSuffixIndex = index);
-                  }
-                },
+              height: isCompact ? 40.h : 60.h,
+              child: FittedBox(
+                fit: BoxFit.fill,
+                child: SizedBox(
+                  width: 1.sw - 48.w,
+                  height: 60.h,
+                  child: MorphInjectionRail(
+                    index: entry.key,
+                    suffix: entry.value,
+                    color: color,
+                    isDark: isDark,
+                    isBlocked: _isAnswered,
+                    onMorph: (suffix) {
+                      _submitMorph(suffix, root, correct, entry.key);
+                    },
+                    onHover: (index) {
+                      if (!_isAnswered) {
+                        setState(() => _hoveringSuffixIndex = index);
+                      }
+                    },
+                  ),
+                ),
               ),
             ),
           );

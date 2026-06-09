@@ -149,6 +149,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen> with Si
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);
+    final mediaQuery = MediaQuery.of(context);
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
       listener: (context, state) {
@@ -191,67 +192,175 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen> with Si
           _acceptedSynonyms = quest.acceptedSynonyms ?? [];
         }
 
-        return SpeakingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
-          onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-                  child: Column(
-                    children: [
-                      DialogueRoleplayHeader(primaryColor: theme.primaryColor),
-                      SizedBox(height: 16.h),
+        return MediaQuery(
+          data: mediaQuery.copyWith(
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
+          ),
+          child: SpeakingBaseLayout(
+            gameType: widget.gameType,
+            level: widget.level,
+            isAnswered: _isAnswered,
+            isCorrect: _isCorrect,
+            showConfetti: _showConfetti,
+            onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
+            onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
+            child: quest == null
+                ? const SizedBox()
+                : LayoutBuilder(
+                    builder: (context, constraints) {
+                      final maxHeight = constraints.maxHeight;
+                      final bool isCompact = maxHeight < 580;
+                      
+                      final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 80.h : 110.h) + (isCompact ? 100.h : 140.h) + (isCompact ? 60.h : 80.h);
+                      final remainingHeight = maxHeight - estimatedContentHeight;
+                      
+                      final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
+                      final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
+                      final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 16.0) : 8.0;
+                      final double gapStage = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+                      final double gapTelemetry = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+                      final double gapMic = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 30.0) : 12.0;
+                      final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
 
-                      DialogueRoleplayExchangeStage(
-                        quest: quest,
-                        primaryColor: theme.primaryColor,
-                        isDark: isDark,
-                        timeVal: _timeVal,
-                        isAnswered: _isAnswered,
-                        isCorrect: _isCorrect ?? false,
-                      ),
-                      SizedBox(height: 20.h),
+                      return SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            minHeight: maxHeight,
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapTop),
+                                    isCompact 
+                                      ? SizedBox(
+                                          height: 32.h,
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            child: DialogueRoleplayHeader(primaryColor: theme.primaryColor),
+                                          ),
+                                        )
+                                      : DialogueRoleplayHeader(primaryColor: theme.primaryColor),
+                                    SizedBox(height: gapInstruction),
+                                    
+                                    isCompact
+                                      ? SizedBox(
+                                          height: 120.h,
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            child: SizedBox(
+                                              width: constraints.maxWidth - 16.w,
+                                              child: DialogueRoleplayExchangeStage(
+                                                quest: quest,
+                                                primaryColor: theme.primaryColor,
+                                                isDark: isDark,
+                                                timeVal: _timeVal,
+                                                isAnswered: _isAnswered,
+                                                isCorrect: _isCorrect ?? false,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      : DialogueRoleplayExchangeStage(
+                                          quest: quest,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          timeVal: _timeVal,
+                                          isAnswered: _isAnswered,
+                                          isCorrect: _isCorrect ?? false,
+                                        ),
+                                    SizedBox(height: gapStage),
 
-                      if (_spokenText.isNotEmpty) ...[
-                        DialogueRoleplayTelemetryCard(
-                          spokenText: _spokenText,
-                          isDark: isDark,
+                                    if (_spokenText.isNotEmpty)
+                                      isCompact
+                                        ? SizedBox(
+                                            height: 70.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width: constraints.maxWidth - 16.w,
+                                                child: DialogueRoleplayTelemetryCard(
+                                                  spokenText: _spokenText,
+                                                  isDark: isDark,
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        : DialogueRoleplayTelemetryCard(
+                                            spokenText: _spokenText,
+                                            isDark: isDark,
+                                          ),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapTelemetry),
+                                    AnimatedCrossFade(
+                                      firstChild: const SizedBox(),
+                                      secondChild: isCompact
+                                        ? SizedBox(
+                                            height: 100.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width: constraints.maxWidth - 16.w,
+                                                child: DialogueRoleplayExplanationCard(
+                                                  quest: quest,
+                                                  isCorrect: _isCorrect ?? false,
+                                                  isDark: isDark,
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        : DialogueRoleplayExplanationCard(
+                                            quest: quest,
+                                            isCorrect: _isCorrect ?? false,
+                                            isDark: isDark,
+                                          ),
+                                      crossFadeState: _isAnswered
+                                          ? CrossFadeState.showSecond
+                                          : CrossFadeState.showFirst,
+                                      duration: const Duration(milliseconds: 400),
+                                    ),
+                                    SizedBox(height: gapMic),
+
+                                    if (!_isAnswered)
+                                      isCompact
+                                        ? SizedBox(
+                                            height: 70.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: DialogueRoleplayMicTrigger(
+                                                isListening: _isListening,
+                                                primaryColor: theme.primaryColor,
+                                                onLongPressStart: _startSpeechListening,
+                                                onLongPressEnd: _stopSpeechListening,
+                                              ),
+                                            ),
+                                          )
+                                        : DialogueRoleplayMicTrigger(
+                                            isListening: _isListening,
+                                            primaryColor: theme.primaryColor,
+                                            onLongPressStart: _startSpeechListening,
+                                            onLongPressEnd: _stopSpeechListening,
+                                          ),
+                                    SizedBox(height: gapBottom),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
-                        SizedBox(height: 20.h),
-                      ],
-
-                      AnimatedCrossFade(
-                        firstChild: const SizedBox(),
-                        secondChild: DialogueRoleplayExplanationCard(
-                          quest: quest,
-                          isCorrect: _isCorrect ?? false,
-                          isDark: isDark,
-                        ),
-                        crossFadeState: _isAnswered
-                            ? CrossFadeState.showSecond
-                            : CrossFadeState.showFirst,
-                        duration: const Duration(milliseconds: 400),
-                      ),
-                      SizedBox(height: 30.h),
-
-                      if (!_isAnswered)
-                        DialogueRoleplayMicTrigger(
-                          isListening: _isListening,
-                          primaryColor: theme.primaryColor,
-                          onLongPressStart: _startSpeechListening,
-                          onLongPressEnd: _stopSpeechListening,
-                        ),
-                      SizedBox(height: 50.h),
-                    ],
+                      );
+                    },
                   ),
-                ),
+          ),
         );
       },
     );

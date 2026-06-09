@@ -7,6 +7,8 @@ class PrefixSuffixDockingTerminal extends StatelessWidget {
   final Color primaryColor;
   final bool isDark;
   final Offset position;
+  final double parentWidth;
+  final double parentHeight;
 
   const PrefixSuffixDockingTerminal({
     super.key,
@@ -15,15 +17,15 @@ class PrefixSuffixDockingTerminal extends StatelessWidget {
     required this.primaryColor,
     required this.isDark,
     required this.position,
+    required this.parentWidth,
+    required this.parentHeight,
   });
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-
     return Positioned(
-      left: screenSize.width / 2 + position.dx - 40.w,
-      top: (screenSize.height * 0.6) / 2 + position.dy - 35.h,
+      left: parentWidth / 2 + position.dx - 40.w,
+      top: parentHeight / 2 + position.dy - 35.h,
       child: Container(
         width: 80.w,
         height: 70.h,

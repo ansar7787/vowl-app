@@ -167,125 +167,151 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Column(
-                  children: [
-                    SizedBox(height: 10.h),
-                    ModalsSelectionInstruction(primaryColor: theme.primaryColor),
-                    SizedBox(height: 20.h),
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
 
-                    // Context Card with Fill-in-the-Blank
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.all(22.r),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.05)
-                              : Colors.black.withValues(alpha: 0.03),
-                          borderRadius: BorderRadius.circular(28.r),
-                          border: Border.all(
-                            color: theme.primaryColor.withValues(alpha: 0.15),
-                            width: 1.5,
-                          ),
-                        ),
-                        child: RichText(
-                          textAlign: TextAlign.center,
-                          text: TextSpan(
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              fontSize: 20.sp,
-                              color: isDark ? Colors.white : Colors.black87,
-                              height: 1.5,
-                            ),
-                            children: _buildSentenceWithBlank(
-                              quest.question ?? "___ sentence.",
-                              options[_selectedIndex],
-                              theme.primaryColor,
-                              isDark,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 50.h : 80.h) + (isCompact ? 180.r : 280.r) + (isCompact ? 40.h : 65.h) + 40.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    // Result Feedback
-                    if (_isAnswered) ...[
-                      SizedBox(height: 24.h),
-                      _buildResult(quest, theme.primaryColor, isDark),
-                    ],
+                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 15.0) : 4.0;
+                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(6.0, 20.0) : 6.0;
+                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
 
-                    // Rotary Dial
-                    Expanded(
-                      child: ModalsRotaryDial(
-                        options: options,
-                        isAnswered: _isAnswered,
-                        isDark: isDark,
-                        primaryColor: theme.primaryColor,
-                        onSelectionChanged: (index) {
-                          setState(() => _selectedIndex = index);
-                        },
-                      ),
-                    ),
+                    return Column(
+                      children: [
+                        SizedBox(height: gapTop),
+                        isCompact
+                            ? SizedBox(
+                                height: 25.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: ModalsSelectionInstruction(primaryColor: theme.primaryColor),
+                                ),
+                              )
+                            : ModalsSelectionInstruction(primaryColor: theme.primaryColor),
+                        SizedBox(height: gapMiddle),
 
-                    // Submit Button
-                    if (!_isAnswered)
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 40.w),
-                        child: ScaleButton(
-                          onTap: () => _submitAnswer(quest.correctAnswerIndex ?? 0),
+                        // Context Card with Fill-in-the-Blank
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
                           child: Container(
                             width: double.infinity,
-                            height: 65.h,
+                            padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(22.r),
-                              gradient: LinearGradient(
-                                colors: [
-                                  theme.primaryColor,
-                                  theme.primaryColor.withValues(alpha: 0.8),
-                                ],
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.05)
+                                  : Colors.black.withValues(alpha: 0.03),
+                              borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
+                              border: Border.all(
+                                color: theme.primaryColor.withValues(alpha: 0.15),
+                                width: 1.5,
                               ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: theme.primaryColor.withValues(alpha: 0.3),
-                                  blurRadius: 15,
-                                  offset: const Offset(0, 5),
-                                ),
-                              ],
                             ),
-                            child: Center(
-                              child: Text(
-                                "LOCK CONFIGURATION",
-                                style: TextStyle(fontFamily: 'Outfit', 
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                  letterSpacing: 2,
+                            child: RichText(
+                              textAlign: TextAlign.center,
+                              text: TextSpan(
+                                style: TextStyle(
+                                  fontFamily: 'Outfit', 
+                                  fontSize: isCompact ? 15.sp : 20.sp,
+                                  color: isDark ? Colors.white : Colors.black87,
+                                  height: 1.5,
+                                ),
+                                children: _buildSentenceWithBlank(
+                                  quest.question ?? "___ sentence.",
+                                  options[_selectedIndex],
+                                  theme.primaryColor,
+                                  isDark,
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ),
+                        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
 
-                    SizedBox(height: 40.h),
-                  ],
+                        // Result Feedback
+                        if (_isAnswered) ...[
+                          SizedBox(height: isCompact ? 8.h : 24.h),
+                          _buildResult(quest, theme.primaryColor, isDark, isCompact),
+                        ],
+
+                        // Rotary Dial
+                        Expanded(
+                          child: ModalsRotaryDial(
+                            options: options,
+                            isAnswered: _isAnswered,
+                            isDark: isDark,
+                            primaryColor: theme.primaryColor,
+                            onSelectionChanged: (index) {
+                              setState(() => _selectedIndex = index);
+                            },
+                            isCompact: isCompact,
+                          ),
+                        ),
+
+                        // Submit Button
+                        if (!_isAnswered)
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 40.w),
+                            child: ScaleButton(
+                              onTap: () => _submitAnswer(quest.correctAnswerIndex ?? 0),
+                              child: Container(
+                                width: double.infinity,
+                                height: isCompact ? 48.h : 65.h,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(isCompact ? 14.r : 22.r),
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      theme.primaryColor,
+                                      theme.primaryColor.withValues(alpha: 0.8),
+                                    ],
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: theme.primaryColor.withValues(alpha: 0.3),
+                                      blurRadius: 15,
+                                      offset: const Offset(0, 5),
+                                    ),
+                                  ],
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    "LOCK CONFIGURATION",
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit', 
+                                      fontSize: isCompact ? 12.sp : 14.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                      letterSpacing: 2,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+
+                        SizedBox(height: gapBottom),
+                      ],
+                    );
+                  },
                 ),
         );
       },
     );
   }
 
-  Widget _buildResult(GameQuest quest, Color primaryColor, bool isDark) {
+  Widget _buildResult(GameQuest quest, Color primaryColor, bool isDark, bool isCompact) {
     final bool correct = _isCorrect == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Container(
-        padding: EdgeInsets.all(24.r),
+        padding: EdgeInsets.all(isCompact ? 12.r : 24.r),
         decoration: BoxDecoration(
           color: displayColor.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(24.r),
+          borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
           border: Border.all(
             color: displayColor.withValues(alpha: 0.3),
             width: 2,
@@ -296,24 +322,26 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
             Icon(
               correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
               color: displayColor,
-              size: 40.r,
+              size: isCompact ? 24.r : 40.r,
             ),
-            SizedBox(height: 12.h),
+            SizedBox(height: isCompact ? 4.h : 12.h),
             Text(
               correct ? "CORRECT!" : "INCORRECT",
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 16.sp,
+              style: TextStyle(
+                fontFamily: 'Outfit', 
+                fontSize: isCompact ? 12.sp : 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
                 letterSpacing: 2,
               ),
             ),
-            if (quest.explanation != null) ...[
+            if (!isCompact && quest.explanation != null) ...[
               SizedBox(height: 12.h),
               Text(
                 quest.explanation!,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit', 
                   fontSize: 13.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),

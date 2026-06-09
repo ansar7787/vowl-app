@@ -155,6 +155,8 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
               final lives = (state is ListeningLoaded) ? state.livesRemaining : 3;
               final currentQuest = (state is ListeningLoaded) ? state.currentQuest : null;
 
+              final mediaQuery = MediaQuery.of(localContext);
+
               return PopScope(
                 canPop: isComplete,
                 onPopInvokedWithResult: (didPop, result) {
@@ -164,12 +166,16 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
                     onQuit: () => Navigator.of(localContext).pop(),
                   );
                 },
-                child: Scaffold(
-                  backgroundColor: theme.backgroundColors[1],
-                  resizeToAvoidBottomInset: false, // Keep background static
-                  body: Stack(
-                    children: [
-                      Container(color: theme.backgroundColors[1]), // Prevent white splash
+                child: MediaQuery(
+                  data: mediaQuery.copyWith(
+                    textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
+                  ),
+                  child: Scaffold(
+                    backgroundColor: theme.backgroundColors[1],
+                    resizeToAvoidBottomInset: false, // Keep background static
+                    body: Stack(
+                      children: [
+                        Container(color: theme.backgroundColors[1]), // Prevent white splash
                       MeshGradientBackground(colors: theme.backgroundColors),
                       if (state is ListeningLoading) GameShimmerLoading(primaryColor: theme.primaryColor)
                       else ...[
@@ -256,10 +262,11 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
                     ],
                   ),
                 ),
-              );
-            },
-          );
-        },
+              ),
+            );
+          },
+        );
+      },
       ),
     );
   }

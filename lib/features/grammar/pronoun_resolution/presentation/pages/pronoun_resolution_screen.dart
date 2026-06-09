@@ -128,59 +128,84 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Column(
-                  children: [
-                    SizedBox(height: 10.h),
-                    PronounResolutionInstruction(primaryColor: theme.primaryColor),
-                    SizedBox(height: 20.h),
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
 
-                    // Context Card
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.all(22.r),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.05)
-                              : Colors.black.withValues(alpha: 0.03),
-                          borderRadius: BorderRadius.circular(28.r),
-                          border: Border.all(
-                            color: theme.primaryColor.withValues(alpha: 0.15),
-                            width: 1.5,
+                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 50.h : 80.h) + (isCompact ? 160.h : 260.h) + 40.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
+
+                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 15.0) : 4.0;
+                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(6.0, 20.0) : 6.0;
+                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
+
+                    return Column(
+                      children: [
+                        SizedBox(height: gapTop),
+                        isCompact
+                            ? SizedBox(
+                                height: 25.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: PronounResolutionInstruction(primaryColor: theme.primaryColor),
+                                ),
+                              )
+                            : PronounResolutionInstruction(primaryColor: theme.primaryColor),
+                        SizedBox(height: gapMiddle),
+
+                        // Context Card
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          child: Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.05)
+                                  : Colors.black.withValues(alpha: 0.03),
+                              borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
+                              border: Border.all(
+                                color: theme.primaryColor.withValues(alpha: 0.15),
+                                width: 1.5,
+                              ),
+                            ),
+                            child: Text(
+                              quest.sentence ?? "The antecedent is missing from the gravity field.",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit', 
+                                fontSize: isCompact ? 14.sp : 18.sp,
+                                color: isDark ? Colors.white70 : Colors.black87,
+                                height: 1.4,
+                              ),
+                            ),
+                          ),
+                        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
+                        // Result
+                        if (_isAnswered) ...[
+                          SizedBox(height: isCompact ? 8.h : 20.h),
+                          _buildResult(quest, theme.primaryColor, isDark, isCompact),
+                        ],
+
+                        // Game Arena
+                        Expanded(
+                          child: _buildGravityWell(
+                            options,
+                            quest.correctAnswerIndex ?? 0,
+                            quest.targetWord ?? "it",
+                            theme.primaryColor,
+                            isDark,
+                            isCompact,
                           ),
                         ),
-                        child: Text(
-                          quest.sentence ?? "The antecedent is missing from the gravity field.",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 18.sp,
-                            color: isDark ? Colors.white70 : Colors.black87,
-                            height: 1.4,
-                          ),
-                        ),
-                      ),
-                    ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
 
-                    // Result
-                    if (_isAnswered) ...[
-                      SizedBox(height: 20.h),
-                      _buildResult(quest, theme.primaryColor, isDark),
-                    ],
-
-                    // Game Arena
-                    Expanded(
-                      child: _buildGravityWell(
-                        options,
-                        quest.correctAnswerIndex ?? 0,
-                        quest.targetWord ?? "it",
-                        theme.primaryColor,
-                        isDark,
-                      ),
-                    ),
-
-                    SizedBox(height: 40.h),
-                  ],
+                        SizedBox(height: gapBottom),
+                      ],
+                    );
+                  },
                 ),
         );
       },
@@ -193,19 +218,21 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
     String pronoun,
     Color primaryColor,
     bool isDark,
+    bool isCompact,
   ) {
     return LayoutBuilder(builder: (context, constraints) {
       final centerPoint = Offset(
         constraints.maxWidth / 2,
-        constraints.maxHeight / 2 + 20.h,
+        constraints.maxHeight / 2 + (isCompact ? 10.h : 20.h),
       );
       final nodeCount = options.length;
+      final double orbitRadius = isCompact ? 80.r : 130.r;
 
       final nodePoints = List.generate(nodeCount, (i) {
         final angle = (i * (2 * pi / nodeCount)) - (pi / 2);
         return Offset(
-          centerPoint.dx + cos(angle) * 130.r,
-          centerPoint.dy + sin(angle) * 130.r,
+          centerPoint.dx + cos(angle) * orbitRadius,
+          centerPoint.dy + sin(angle) * orbitRadius,
         );
       });
 
@@ -242,23 +269,24 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
             targetNode: _targetIndex,
             pronoun: pronoun,
             isDark: isDark,
+            isCompact: isCompact,
           ),
         ),
       );
     });
   }
 
-  Widget _buildResult(GrammarQuest quest, Color primaryColor, bool isDark) {
+  Widget _buildResult(GrammarQuest quest, Color primaryColor, bool isDark, bool isCompact) {
     final bool correct = _isCorrect == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Container(
-        padding: EdgeInsets.all(24.r),
+        padding: EdgeInsets.all(isCompact ? 12.r : 24.r),
         decoration: BoxDecoration(
           color: displayColor.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(24.r),
+          borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
           border: Border.all(
             color: displayColor.withValues(alpha: 0.3),
             width: 2,
@@ -269,24 +297,26 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
             Icon(
               correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
               color: displayColor,
-              size: 40.r,
+              size: isCompact ? 24.r : 40.r,
             ),
-            SizedBox(height: 12.h),
+            SizedBox(height: isCompact ? 4.h : 12.h),
             Text(
               correct ? "CORRECT!" : "INCORRECT",
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 16.sp,
+              style: TextStyle(
+                fontFamily: 'Outfit', 
+                fontSize: isCompact ? 12.sp : 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
                 letterSpacing: 2,
               ),
             ),
-            if (quest.explanation != null) ...[
+            if (!isCompact && quest.explanation != null) ...[
               SizedBox(height: 12.h),
               Text(
                 quest.explanation!,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit', 
                   fontSize: 13.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),

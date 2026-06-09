@@ -143,56 +143,105 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          useScrolling: true,
+          useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    SizedBox(height: 5.h),
-                    FastSpeechDecoderInstruction(color: theme.primaryColor),
-                    SizedBox(height: 20.h),
-                    ValueListenableBuilder<double>(
-                      valueListenable: _dialRotation,
-                      builder: (context, rotation, _) {
-                        // Mapping 0.0-1.0 rotation to 0.3-0.9 TTS speed
-                        double speed = 0.3 + (rotation * 0.6);
-                        return Column(
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
+
+                    // Let's estimate content height: 
+                    // Instruction: ~40.h, Gauges/Core: isCompact ? 160.h : 220.h, Vents: ~180.h
+                    final double estimatedContentHeight = 10.h + 40.h + (isCompact ? 160.h : 220.h) + 180.h + 20.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
+
+                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 7 : 0;
+                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
+                    final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1.5).clamp(8.0, 20.0) : 8.0;
+                    final double gapCenter = remainingHeight > 0 ? (gapUnit * 1.5).clamp(8.0, 20.0) : 8.0;
+                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2).clamp(10.0, 24.0) : 10.0;
+
+                    return SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(minHeight: maxHeight),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            FastSpeechDecoderGauges(
-                              speed: speed * 2,
-                              color: theme.primaryColor,
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapTop),
+                                isCompact 
+                                  ? SizedBox(height: 35.h, child: FittedBox(fit: BoxFit.scaleDown, child: FastSpeechDecoderInstruction(color: theme.primaryColor)))
+                                  : FastSpeechDecoderInstruction(color: theme.primaryColor),
+                                SizedBox(height: gapInstruction),
+                                ValueListenableBuilder<double>(
+                                  valueListenable: _dialRotation,
+                                  builder: (context, rotation, _) {
+                                    double speed = 0.3 + (rotation * 0.6);
+                                    
+                                    final coreWidget = Column(
+                                      children: [
+                                        FastSpeechDecoderGauges(
+                                          speed: speed * 2,
+                                          color: theme.primaryColor,
+                                        ),
+                                        SizedBox(height: isCompact ? 10.h : 20.h),
+                                        FastSpeechDecoderCore(
+                                          textToSpeak: quest.textToSpeak ?? "",
+                                          speed: speed,
+                                          color: theme.primaryColor,
+                                          rotation: rotation,
+                                          onRotate: _onRotate,
+                                          onTapTts: () {
+                                            _soundService.playTts(quest.textToSpeak ?? "", speed: speed);
+                                            _hapticService.selection();
+                                          },
+                                        ),
+                                      ],
+                                    );
+
+                                    return isCompact
+                                      ? SizedBox(
+                                          height: 160.h,
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            child: SizedBox(
+                                              width: constraints.maxWidth,
+                                              child: coreWidget,
+                                            ),
+                                          ),
+                                        )
+                                      : coreWidget;
+                                  },
+                                ),
+                              ],
                             ),
-                            SizedBox(height: 20.h),
-                            FastSpeechDecoderCore(
-                              textToSpeak: quest.textToSpeak ?? "",
-                              speed: speed,
-                              color: theme.primaryColor,
-                              rotation: rotation,
-                              onRotate: _onRotate,
-                              onTapTts: () {
-                                _soundService.playTts(quest.textToSpeak ?? "", speed: speed);
-                                _hapticService.selection();
-                              },
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapCenter),
+                                FastSpeechDecoderSteamVents(
+                                  options: quest.options ?? [],
+                                  correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+                                  color: theme.primaryColor,
+                                  isAnswered: _isAnswered,
+                                  isCorrectState: _isCorrect,
+                                  selectedIndex: _selectedIndex,
+                                  onSubmitAnswer: (index) => _submitAnswer(index, quest.correctAnswerIndex ?? 0),
+                                ),
+                                SizedBox(height: gapBottom),
+                              ],
                             ),
                           ],
-                        );
-                      },
-                    ),
-                    SizedBox(height: 25.h),
-                    FastSpeechDecoderSteamVents(
-                      options: quest.options ?? [],
-                      correctAnswerIndex: quest.correctAnswerIndex ?? 0,
-                      color: theme.primaryColor,
-                      isAnswered: _isAnswered,
-                      isCorrectState: _isCorrect,
-                      selectedIndex: _selectedIndex,
-                      onSubmitAnswer: (index) => _submitAnswer(index, quest.correctAnswerIndex ?? 0),
-                    ),
-                    SizedBox(height: 20.h),
-                  ],
+                        ),
+                      ),
+                    );
+                  },
                 ),
         );
       },

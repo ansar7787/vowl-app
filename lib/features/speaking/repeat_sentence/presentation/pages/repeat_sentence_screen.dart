@@ -196,72 +196,197 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
+        final mediaQuery = MediaQuery.of(context);
 
-        return SpeakingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
-          onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-                  child: Column(
-                    children: [
-                      RepeatSentenceInstruction(primaryColor: theme.primaryColor),
-                      SizedBox(height: 16.h),
+        return MediaQuery(
+          data: mediaQuery.copyWith(
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
+          ),
+          child: SpeakingBaseLayout(
+            gameType: widget.gameType,
+            level: widget.level,
+            isAnswered: _isAnswered,
+            isCorrect: _isCorrect,
+            showConfetti: _showConfetti,
+            onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
+            onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
+            child: quest == null
+                ? const SizedBox()
+                : LayoutBuilder(
+                    builder: (context, constraints) {
+                      final maxHeight = constraints.maxHeight;
+                      final bool isCompact = maxHeight < 580;
                       
-                      RepeatSentenceAuditionCard(
-                        quest: quest,
-                        primaryColor: theme.primaryColor,
-                        isDark: isDark,
-                        onPlayTts: () => _soundService.playTts(quest.textToSpeak ?? ""),
-                      ),
-                      SizedBox(height: 24.h),
+                      final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 70.h : 100.h) + (isCompact ? 60.h : 80.h) + (isCompact ? 60.h : 80.h);
+                      final remainingHeight = maxHeight - estimatedContentHeight;
+                      
+                      final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
+                      final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
+                      final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 16.0) : 8.0;
+                      final double gapCard = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+                      final double gapChamber = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+                      final double gapTelemetry = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 30.0) : 12.0;
+                      final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
 
-                      RepeatSentenceWaveChamber(
-                        progress: _progress,
-                        isListening: _isListening,
-                        themeColor: theme.primaryColor,
-                        amplitudes: _waveAmplitudes,
-                        isDark: isDark,
-                      ),
-                      SizedBox(height: 24.h),
+                      return SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            minHeight: maxHeight,
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapTop),
+                                    isCompact 
+                                      ? SizedBox(
+                                          height: 32.h,
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            child: RepeatSentenceInstruction(primaryColor: theme.primaryColor),
+                                          ),
+                                        )
+                                      : RepeatSentenceInstruction(primaryColor: theme.primaryColor),
+                                    SizedBox(height: gapInstruction),
+                                    
+                                    isCompact
+                                      ? SizedBox(
+                                          height: 100.h,
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            child: SizedBox(
+                                              width: constraints.maxWidth - 16.w,
+                                              child: RepeatSentenceAuditionCard(
+                                                quest: quest,
+                                                primaryColor: theme.primaryColor,
+                                                isDark: isDark,
+                                                onPlayTts: () => _soundService.playTts(quest.textToSpeak ?? ""),
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      : RepeatSentenceAuditionCard(
+                                          quest: quest,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onPlayTts: () => _soundService.playTts(quest.textToSpeak ?? ""),
+                                        ),
+                                    SizedBox(height: gapCard),
 
-                      RepeatSentenceTelemetryCard(
-                        spokenText: _spokenText,
-                        isDark: isDark,
-                      ),
-                      SizedBox(height: 30.h),
+                                    isCompact
+                                      ? SizedBox(
+                                          height: 80.h,
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            child: SizedBox(
+                                              width: constraints.maxWidth - 16.w,
+                                              child: RepeatSentenceWaveChamber(
+                                                progress: _progress,
+                                                isListening: _isListening,
+                                                themeColor: theme.primaryColor,
+                                                amplitudes: _waveAmplitudes,
+                                                isDark: isDark,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      : RepeatSentenceWaveChamber(
+                                          progress: _progress,
+                                          isListening: _isListening,
+                                          themeColor: theme.primaryColor,
+                                          amplitudes: _waveAmplitudes,
+                                          isDark: isDark,
+                                        ),
+                                    SizedBox(height: gapChamber),
 
-                      if (!_isAnswered)
-                        RepeatSentenceTactileMic(
-                          isListening: _isListening,
-                          primaryColor: theme.primaryColor,
-                          onLongPressStart: _startSpeechListening,
-                          onLongPressEnd: () => _stopSpeechListening(quest.textToSpeak ?? ""),
+                                    isCompact
+                                      ? SizedBox(
+                                          height: 70.h,
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            child: SizedBox(
+                                              width: constraints.maxWidth - 16.w,
+                                              child: RepeatSentenceTelemetryCard(
+                                                spokenText: _spokenText,
+                                                isDark: isDark,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      : RepeatSentenceTelemetryCard(
+                                          spokenText: _spokenText,
+                                          isDark: isDark,
+                                        ),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapTelemetry),
+                                    if (!_isAnswered)
+                                      isCompact
+                                        ? SizedBox(
+                                            height: 70.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: RepeatSentenceTactileMic(
+                                                isListening: _isListening,
+                                                primaryColor: theme.primaryColor,
+                                                onLongPressStart: _startSpeechListening,
+                                                onLongPressEnd: () => _stopSpeechListening(quest.textToSpeak ?? ""),
+                                              ),
+                                            ),
+                                          )
+                                        : RepeatSentenceTactileMic(
+                                            isListening: _isListening,
+                                            primaryColor: theme.primaryColor,
+                                            onLongPressStart: _startSpeechListening,
+                                            onLongPressEnd: () => _stopSpeechListening(quest.textToSpeak ?? ""),
+                                          ),
+
+                                    AnimatedCrossFade(
+                                      firstChild: const SizedBox(),
+                                      secondChild: isCompact
+                                        ? SizedBox(
+                                            height: 100.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width: constraints.maxWidth - 16.w,
+                                                child: RepeatSentenceExplanationCard(
+                                                  quest: quest,
+                                                  isCorrect: _isCorrect ?? false,
+                                                  isDark: isDark,
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        : RepeatSentenceExplanationCard(
+                                            quest: quest,
+                                            isCorrect: _isCorrect ?? false,
+                                            isDark: isDark,
+                                          ),
+                                      crossFadeState: _isAnswered
+                                          ? CrossFadeState.showSecond
+                                          : CrossFadeState.showFirst,
+                                      duration: const Duration(milliseconds: 400),
+                                    ),
+                                    SizedBox(height: gapBottom),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
-
-                      AnimatedCrossFade(
-                        firstChild: const SizedBox(),
-                        secondChild: RepeatSentenceExplanationCard(
-                          quest: quest,
-                          isCorrect: _isCorrect ?? false,
-                          isDark: isDark,
-                        ),
-                        crossFadeState: _isAnswered
-                            ? CrossFadeState.showSecond
-                            : CrossFadeState.showFirst,
-                        duration: const Duration(milliseconds: 400),
-                      ),
-                      SizedBox(height: 80.h),
-                    ],
+                      );
+                    },
                   ),
-                ),
+          ),
         );
       },
     );

@@ -131,40 +131,65 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Column(
-                  children: [
-                    SizedBox(height: 10.h),
-                    ClauseConnectorInstruction(primaryColor: theme.primaryColor),
-                    SizedBox(height: 20.h),
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
 
-                    // Magnetic Energy Port
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            _buildHolographicPlate(clauseA, theme.primaryColor, isDark),
-                            SizedBox(height: 16.h),
-                            _buildMagneticPort(quest, options, theme.primaryColor, isDark),
-                            SizedBox(height: 16.h),
-                            _buildHolographicPlate(clauseB, theme.primaryColor, isDark)
-                                .animate()
-                                .fadeIn(delay: 300.ms),
-                          ],
+                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 50.h : 80.h) * 2 + (isCompact ? 50.h : 80.h) + (isCompact ? 60.h : 100.h) + 40.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
+
+                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 15.0) : 4.0;
+                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(6.0, 20.0) : 6.0;
+                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
+
+                    return Column(
+                      children: [
+                        SizedBox(height: gapTop),
+                        isCompact
+                            ? SizedBox(
+                                height: 25.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: ClauseConnectorInstruction(primaryColor: theme.primaryColor),
+                                ),
+                              )
+                            : ClauseConnectorInstruction(primaryColor: theme.primaryColor),
+                        SizedBox(height: gapMiddle),
+
+                        // Magnetic Energy Port Container
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                _buildHolographicPlate(clauseA, theme.primaryColor, isDark, isCompact),
+                                SizedBox(height: isCompact ? 10.h : 16.h),
+                                _buildMagneticPort(quest, options, theme.primaryColor, isDark, isCompact),
+                                SizedBox(height: isCompact ? 10.h : 16.h),
+                                _buildHolographicPlate(clauseB, theme.primaryColor, isDark, isCompact)
+                                    .animate()
+                                    .fadeIn(delay: 300.ms),
+                              ],
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
+                        SizedBox(height: gapMiddle),
 
-                    if (!_isAnswered)
-                      _buildConnectorPalette(
-                        options,
-                        theme.primaryColor,
-                        isDark,
-                        quest.correctAnswerIndex ?? 0,
-                      ),
-                    SizedBox(height: 40.h),
-                  ],
+                        if (!_isAnswered)
+                          _buildConnectorPalette(
+                            options,
+                            theme.primaryColor,
+                            isDark,
+                            quest.correctAnswerIndex ?? 0,
+                            isCompact,
+                          ),
+                        SizedBox(height: gapBottom),
+                      ],
+                    );
+                  },
                 ),
         );
       },
@@ -176,6 +201,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
     List<String> options,
     Color primaryColor,
     bool isDark,
+    bool isCompact,
   ) {
     return DragTarget<String>(
       onWillAcceptWithDetails: (details) => !_isAnswered,
@@ -188,8 +214,8 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
             : (isHighlight ? primaryColor : primaryColor.withValues(alpha: 0.3));
 
         return Container(
-          width: 220.w,
-          height: 80.h,
+          width: isCompact ? 180.w : 220.w,
+          height: isCompact ? 50.h : 80.h,
           decoration: BoxDecoration(
             color: portColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(20.r),
@@ -213,12 +239,14 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                     _draggingConnector ?? "---",
                     primaryColor,
                     isDark,
+                    isCompact,
                     isCorrect: _isCorrect,
                   ).animate().scale(duration: 400.ms, curve: Curves.elasticOut)
                 : Text(
                     isHighlight ? "RELEASE TO SNAP" : "ENERGY PORT",
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 10.sp,
+                    style: TextStyle(
+                      fontFamily: 'Outfit', 
+                      fontSize: isCompact ? 8.sp : 10.sp,
                       fontWeight: FontWeight.w900,
                       color: portColor.withValues(alpha: 0.6),
                       letterSpacing: 2,
@@ -230,20 +258,26 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
     );
   }
 
-  Widget _buildHolographicPlate(String text, Color primaryColor, bool isDark) {
+  Widget _buildHolographicPlate(
+    String text,
+    Color primaryColor,
+    bool isDark,
+    bool isCompact,
+  ) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(22.r),
+      padding: EdgeInsets.all(isCompact ? 12.r : 22.r),
       decoration: BoxDecoration(
         color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
         border: Border.all(color: primaryColor.withValues(alpha: 0.15), width: 1.5),
       ),
       child: Text(
         text.trim(),
         textAlign: TextAlign.center,
-        style: TextStyle(fontFamily: 'Outfit', 
-          fontSize: 18.sp,
+        style: TextStyle(
+          fontFamily: 'Outfit', 
+          fontSize: isCompact ? 14.sp : 18.sp,
           color: isDark ? Colors.white : Colors.black87,
           height: 1.4,
           fontWeight: FontWeight.w500,
@@ -257,24 +291,25 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
     Color primaryColor,
     bool isDark,
     int correctIndex,
+    bool isCompact,
   ) {
     return Wrap(
       alignment: WrapAlignment.center,
-      spacing: 16.w,
-      runSpacing: 16.h,
+      spacing: isCompact ? 10.w : 16.w,
+      runSpacing: isCompact ? 10.h : 16.h,
       children: options.map((opt) => Draggable<String>(
         data: opt,
         feedback: Material(
           color: Colors.transparent,
-          child: _buildConnector(opt, primaryColor, isDark, isDragging: true),
+          child: _buildConnector(opt, primaryColor, isDark, isCompact, isDragging: true),
         ),
         childWhenDragging: Opacity(
           opacity: 0.2,
-          child: _buildConnector(opt, primaryColor, isDark),
+          child: _buildConnector(opt, primaryColor, isDark, isCompact),
         ),
         child: GestureDetector(
           onTap: () => _onSnap(opt, correctIndex, options),
-          child: _buildConnector(opt, primaryColor, isDark),
+          child: _buildConnector(opt, primaryColor, isDark, isCompact),
         ),
       )).toList(),
     );
@@ -283,7 +318,8 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
   Widget _buildConnector(
     String text,
     Color primaryColor,
-    bool isDark, {
+    bool isDark,
+    bool isCompact, {
     bool isDragging = false,
     bool? isCorrect,
   }) {
@@ -295,10 +331,13 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
     }
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 14.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: isCompact ? 16.w : 24.w,
+        vertical: isCompact ? 8.h : 14.h,
+      ),
       decoration: BoxDecoration(
         color: isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(16.r),
+        borderRadius: BorderRadius.circular(isCompact ? 12.r : 16.r),
         border: Border.all(color: borderColor, width: 2),
         boxShadow: [
           if (isDragging || isCorrect != null)
@@ -311,8 +350,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
       ),
       child: Text(
         text.toUpperCase(),
-        style: TextStyle(fontFamily: 'Outfit', 
-          fontSize: 15.sp,
+        style: TextStyle(
+          fontFamily: 'Outfit', 
+          fontSize: isCompact ? 12.sp : 15.sp,
           fontWeight: FontWeight.w900,
           color: isCorrect == true
               ? Colors.greenAccent

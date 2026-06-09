@@ -154,58 +154,83 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Column(
-                  children: [
-                    SizedBox(height: 10.h),
-                    DirectIndirectSpeechInstruction(primaryColor: theme.primaryColor),
-                    SizedBox(height: 20.h),
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
 
-                    // Holographic Mirror
-                    DirectIndirectSpeechMirror(
-                      rotation: _rotation,
-                      directText: displayDirect,
-                      indirectText: displayIndirect,
-                      isCorrect: _isCorrect,
-                      isDark: isDark,
-                      primaryColor: theme.primaryColor,
-                    ),
+                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 130.h : 180.h) + (isCompact ? 30.h : 50.h) + 40.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    SizedBox(height: 50.h),
+                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 15.0) : 4.0;
+                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(6.0, 20.0) : 6.0;
+                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
 
-                    // Reflection Options
-                    Expanded(
-                      child: SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: Column(
-                          children: [
-                            Wrap(
-                              alignment: WrapAlignment.center,
-                              spacing: 12.w,
-                              runSpacing: 12.h,
-                              children: List.generate(
-                                options.length,
-                                (i) => _buildReflectionChip(
-                                  options[i],
-                                  i,
-                                  quest.correctAnswerIndex ?? 0,
-                                  theme.primaryColor,
-                                  isDark,
+                    return Column(
+                      children: [
+                        SizedBox(height: gapTop),
+                        isCompact
+                            ? SizedBox(
+                                height: 25.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: DirectIndirectSpeechInstruction(primaryColor: theme.primaryColor),
                                 ),
-                              ),
-                            ),
-                            if (_isAnswered) ...[
-                              SizedBox(height: 30.h),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: _buildCorrectResult(quest, theme.primaryColor, isDark),
-                              ),
-                            ],
-                            SizedBox(height: 40.h),
-                          ],
+                              )
+                            : DirectIndirectSpeechInstruction(primaryColor: theme.primaryColor),
+                        SizedBox(height: gapMiddle),
+
+                        // Holographic Mirror
+                        DirectIndirectSpeechMirror(
+                          rotation: _rotation,
+                          directText: displayDirect,
+                          indirectText: displayIndirect,
+                          isCorrect: _isCorrect,
+                          isDark: isDark,
+                          primaryColor: theme.primaryColor,
+                          isCompact: isCompact,
                         ),
-                      ),
-                    ),
-                  ],
+
+                        SizedBox(height: isCompact ? 12.h : 30.h),
+
+                        // Reflection Options
+                        Expanded(
+                          child: SingleChildScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            child: Column(
+                              children: [
+                                Wrap(
+                                  alignment: WrapAlignment.center,
+                                  spacing: isCompact ? 8.w : 12.w,
+                                  runSpacing: isCompact ? 8.h : 12.h,
+                                  children: List.generate(
+                                    options.length,
+                                    (i) => _buildReflectionChip(
+                                      options[i],
+                                      i,
+                                      quest.correctAnswerIndex ?? 0,
+                                      theme.primaryColor,
+                                      isDark,
+                                      isCompact,
+                                    ),
+                                  ),
+                                ),
+                                if (_isAnswered) ...[
+                                  SizedBox(height: isCompact ? 12.h : 30.h),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                    child: _buildCorrectResult(quest, theme.primaryColor, isDark, isCompact),
+                                  ),
+                                ],
+                                SizedBox(height: gapBottom),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
                 ),
         );
       },
@@ -218,6 +243,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
     int correctIndex,
     Color primaryColor,
     bool isDark,
+    bool isCompact,
   ) {
     final isSelected = _selectedReflection == index;
     final isCorrect = _isAnswered && index == correctIndex;
@@ -229,8 +255,8 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
         width: double.infinity,
         margin: EdgeInsets.symmetric(horizontal: 24.w),
         child: GlassTile(
-          padding: EdgeInsets.all(20.r),
-          borderRadius: BorderRadius.circular(24.r),
+          padding: EdgeInsets.all(isCompact ? 12.r : 20.r),
+          borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
           color: isCorrect
               ? Colors.greenAccent.withValues(alpha: 0.2)
               : (isWrong
@@ -247,8 +273,9 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
           child: Text(
             text,
             textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 15.sp,
+            style: TextStyle(
+              fontFamily: 'Outfit', 
+              fontSize: isCompact ? 13.sp : 15.sp,
               fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
               color: isCorrect
                   ? Colors.greenAccent
@@ -261,15 +288,20 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
     );
   }
 
-  Widget _buildCorrectResult(GrammarQuest quest, Color primaryColor, bool isDark) {
+  Widget _buildCorrectResult(
+    GrammarQuest quest,
+    Color primaryColor,
+    bool isDark,
+    bool isCompact,
+  ) {
     final bool correct = _isCorrect == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Container(
-      padding: EdgeInsets.all(20.r),
+      padding: EdgeInsets.all(isCompact ? 10.r : 20.r),
       decoration: BoxDecoration(
         color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
         border: Border.all(
           color: displayColor.withValues(alpha: 0.3),
           width: 2,
@@ -280,24 +312,26 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
           Icon(
             correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
             color: displayColor,
-            size: 36.r,
+            size: isCompact ? 24.r : 36.r,
           ),
-          SizedBox(height: 10.h),
+          SizedBox(height: isCompact ? 4.h : 10.h),
           Text(
             correct ? "CORRECT!" : "INCORRECT",
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 15.sp,
+            style: TextStyle(
+              fontFamily: 'Outfit', 
+              fontSize: isCompact ? 12.sp : 15.sp,
               fontWeight: FontWeight.w900,
               color: displayColor,
               letterSpacing: 2,
             ),
           ),
-          if (quest.explanation != null) ...[
+          if (!isCompact && quest.explanation != null) ...[
             SizedBox(height: 10.h),
             Text(
               quest.explanation!,
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 color: isDark ? Colors.white60 : Colors.black54,
               ),

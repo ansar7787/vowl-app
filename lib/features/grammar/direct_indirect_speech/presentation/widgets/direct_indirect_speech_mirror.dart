@@ -10,6 +10,7 @@ class DirectIndirectSpeechMirror extends StatelessWidget {
   final bool? isCorrect;
   final bool isDark;
   final Color primaryColor;
+  final bool isCompact;
 
   const DirectIndirectSpeechMirror({
     super.key,
@@ -19,6 +20,7 @@ class DirectIndirectSpeechMirror extends StatelessWidget {
     required this.isCorrect,
     required this.isDark,
     required this.primaryColor,
+    this.isCompact = false,
   });
 
   @override
@@ -37,9 +39,9 @@ class DirectIndirectSpeechMirror extends StatelessWidget {
             ..rotateY(value),
           alignment: Alignment.center,
           child: Container(
-            width: 320.w,
+            width: isCompact ? 280.w : 320.w,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(32.r),
+              borderRadius: BorderRadius.circular(isCompact ? 20.r : 32.r),
               boxShadow: [
                 BoxShadow(
                   color: (isFront ? primaryColor : backColor).withValues(alpha: 0.2),
@@ -49,8 +51,8 @@ class DirectIndirectSpeechMirror extends StatelessWidget {
               ],
             ),
             child: GlassTile(
-              padding: EdgeInsets.all(32.r),
-              borderRadius: BorderRadius.circular(32.r),
+              padding: EdgeInsets.all(isCompact ? 16.r : 32.r),
+              borderRadius: BorderRadius.circular(isCompact ? 20.r : 32.r),
               color: (isFront ? primaryColor : backColor).withValues(alpha: 0.1),
               child: Transform(
                 transform: Matrix4.identity()..rotateY(isFront ? 0 : 3.14),
@@ -67,19 +69,19 @@ class DirectIndirectSpeechMirror extends StatelessWidget {
                       child: Text(
                         isFront ? "DIRECT SPEECH" : "REPORTED SPEECH",
                         style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 10.sp,
+                          fontSize: isCompact ? 8.sp : 10.sp,
                           fontWeight: FontWeight.w900,
                           color: isFront ? primaryColor : backColor,
                           letterSpacing: 1.5,
                         ),
                       ),
                     ),
-                    SizedBox(height: 24.h),
+                    SizedBox(height: isCompact ? 12.h : 24.h),
                     Text(
                       isFront ? directText : indirectText,
                       textAlign: TextAlign.center,
                       style: TextStyle(fontFamily: 'Outfit', 
-                        fontSize: 22.sp,
+                        fontSize: isCompact ? 16.sp : 22.sp,
                         color: isDark ? Colors.white : Colors.black87,
                         fontWeight: FontWeight.bold,
                         height: 1.4,

@@ -7,6 +7,7 @@ class SpeechVortex extends StatelessWidget {
   final String label;
   final Color color;
   final Alignment alignment;
+  final bool isCompact;
 
   const SpeechVortex({
     super.key,
@@ -14,6 +15,7 @@ class SpeechVortex extends StatelessWidget {
     required this.label,
     required this.color,
     required this.alignment,
+    this.isCompact = false,
   });
 
   @override
@@ -21,9 +23,9 @@ class SpeechVortex extends StatelessWidget {
     return Align(
       alignment: alignment,
       child: Container(
-        width: 120.r, 
-        height: 120.r,
-        margin: EdgeInsets.all(10.r),
+        width: isCompact ? 85.r : 120.r, 
+        height: isCompact ? 85.r : 120.r,
+        margin: EdgeInsets.all(isCompact ? 4.r : 10.r),
         child: Stack(
           alignment: Alignment.center,
           children: [
@@ -41,8 +43,9 @@ class SpeechVortex extends StatelessWidget {
             ).animate(onPlay: (c) => c.repeat()).rotate(duration: 3.seconds),
             Text(
               label.toUpperCase(), 
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 10.sp, 
+              style: TextStyle(
+                fontFamily: 'Outfit', 
+                fontSize: isCompact ? 8.sp : 10.sp, 
                 fontWeight: FontWeight.w900, 
                 color: color, 
                 letterSpacing: 1,

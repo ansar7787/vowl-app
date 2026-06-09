@@ -16,6 +16,7 @@ class GrammarQuestCompass extends StatefulWidget {
   final bool isAnswered;
   final bool? isCorrect;
   final Function(int index) onQuadrantSelect;
+  final bool isCompact;
 
   const GrammarQuestCompass({
     super.key,
@@ -26,6 +27,7 @@ class GrammarQuestCompass extends StatefulWidget {
     required this.isAnswered,
     this.isCorrect,
     required this.onQuadrantSelect,
+    this.isCompact = false,
   });
 
   @override
@@ -113,8 +115,9 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
 
   @override
   Widget build(BuildContext context) {
-    final size = 280.r;
+    final size = widget.isCompact ? 180.r : 280.r;
     final center = Offset(size / 2, size / 2);
+    final needleHeight = widget.isCompact ? 110.h : 170.h;
 
     return GestureDetector(
       onPanUpdate: (details) => _handleDragUpdate(details, center),
@@ -127,8 +130,8 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
           boxShadow: [
             BoxShadow(
               color: widget.primaryColor.withValues(alpha: 0.1),
-              blurRadius: 40,
-              spreadRadius: 5,
+              blurRadius: widget.isCompact ? 20 : 40,
+              spreadRadius: widget.isCompact ? 2 : 5,
             ),
           ],
         ),
@@ -198,7 +201,7 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                       duration: const Duration(milliseconds: 400),
                       opacity: isSelected ? 1.0 : 0.0,
                       child: Container(
-                        width: 40.w,
+                        width: widget.isCompact ? 25.w : 40.w,
                         height: size * 0.45,
                         margin: EdgeInsets.only(bottom: size * 0.45),
                         decoration: BoxDecoration(
@@ -225,7 +228,7 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                           child: Container(
                             constraints: BoxConstraints(maxWidth: size * 0.35),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(12.r),
+                              borderRadius: BorderRadius.circular(widget.isCompact ? 8.r : 12.r),
                               child: BackdropFilter(
                                 filter: ui.ImageFilter.blur(
                                   sigmaX: 8,
@@ -233,8 +236,8 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                                 ),
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: 12.w,
-                                    vertical: 6.h,
+                                    horizontal: widget.isCompact ? 8.w : 12.w,
+                                    vertical: widget.isCompact ? 4.h : 6.h,
                                   ),
                                   decoration: BoxDecoration(
                                     color: isSelected
@@ -246,7 +249,7 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                                               : Colors.black.withValues(
                                                   alpha: 0.06,
                                                 )),
-                                    borderRadius: BorderRadius.circular(12.r),
+                                    borderRadius: BorderRadius.circular(widget.isCompact ? 8.r : 12.r),
                                     border: Border.all(
                                       color: isSelected
                                           ? Colors.white
@@ -259,8 +262,9 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                                     textAlign: TextAlign.center,
                                     maxLines: 2,
                                     overflow: TextOverflow.visible,
-                                    style: TextStyle(fontFamily: 'Outfit', 
-                                      fontSize: 10.sp,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit', 
+                                      fontSize: widget.isCompact ? 8.sp : 10.sp,
                                       fontWeight: FontWeight.w900,
                                       color: isSelected
                                           ? Colors.white
@@ -297,22 +301,22 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                     offset: const Offset(3, 3),
                     child: _buildNeedleShape(
                       Colors.black.withValues(alpha: 0.2),
-                      170.h,
+                      needleHeight,
                     ),
                   ),
                   // Asymmetric HUD Vector Needle
-                  _buildNeedleShape(widget.primaryColor, 170.h, isGlass: true),
+                  _buildNeedleShape(widget.primaryColor, needleHeight, isGlass: true),
                   // Pointer Emitter (Top)
                   Positioned(
-                    top: 5.h,
+                    top: widget.isCompact ? 2.h : 5.h,
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
                         // Pulsing Halo (Visual Feedback)
                         RepaintBoundary(
                           child: Container(
-                            width: 24.r,
-                            height: 24.r,
+                            width: widget.isCompact ? 16.r : 24.r,
+                            height: widget.isCompact ? 16.r : 24.r,
                             decoration: BoxDecoration(
                               color: widget.primaryColor.withValues(
                                 alpha: 0.3,
@@ -331,8 +335,8 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                         // Emitter Core
                         RepaintBoundary(
                           child: Container(
-                            width: 12.r,
-                            height: 12.r,
+                            width: widget.isCompact ? 8.r : 12.r,
+                            height: widget.isCompact ? 8.r : 12.r,
                             decoration: BoxDecoration(
                               color: Colors.white,
                               shape: BoxShape.circle,
@@ -350,8 +354,8 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                             ),
                             child: Center(
                               child: Container(
-                                width: 4.r,
-                                height: 4.r,
+                                width: widget.isCompact ? 2.r : 4.r,
+                                height: widget.isCompact ? 2.r : 4.r,
                                 decoration: BoxDecoration(
                                   color: widget.primaryColor,
                                   shape: BoxShape.circle,
@@ -367,13 +371,13 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                   Positioned(
                     bottom: 0,
                     child: Container(
-                      width: 16.r,
-                      height: 16.r,
+                      width: widget.isCompact ? 10.r : 16.r,
+                      height: widget.isCompact ? 10.r : 16.r,
                       decoration: const BoxDecoration(shape: BoxShape.circle),
                       child: Center(
                         child: Container(
-                          width: 6.r,
-                          height: 6.r,
+                          width: widget.isCompact ? 4.r : 6.r,
+                          height: widget.isCompact ? 4.r : 6.r,
                           decoration: BoxDecoration(
                             color: widget.primaryColor.withValues(alpha: 0.4),
                             shape: BoxShape.circle,
@@ -387,8 +391,8 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
             ),
             // Central Hub (Refractive Glass)
             Container(
-              width: 60.r,
-              height: 60.r,
+              width: widget.isCompact ? 40.r : 60.r,
+              height: widget.isCompact ? 40.r : 60.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
@@ -398,8 +402,8 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
               ),
               child: Center(
                 child: Container(
-                  width: 10.r,
-                  height: 10.r,
+                  width: widget.isCompact ? 6.r : 10.r,
+                  height: widget.isCompact ? 6.r : 10.r,
                   decoration: BoxDecoration(
                     color: widget.primaryColor,
                     shape: BoxShape.circle,
@@ -416,7 +420,7 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
   Widget _buildNeedleShape(Color color, double height, {bool isGlass = false}) {
     return RepaintBoundary(
       child: CustomPaint(
-        size: Size(32.r, height),
+        size: Size(widget.isCompact ? 20.r : 32.r, height),
         painter: SentinelNeedlePainter(color: color, isGlass: isGlass),
       ),
     );

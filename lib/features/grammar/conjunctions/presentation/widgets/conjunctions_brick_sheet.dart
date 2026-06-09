@@ -6,19 +6,22 @@ class ConjunctionsBrickSheet extends StatelessWidget {
   final Color primaryColor;
   final bool isDark;
 
+  final bool isCompact;
+
   const ConjunctionsBrickSheet({
     super.key,
     required this.options,
     required this.placedBrick,
     required this.primaryColor,
     required this.isDark,
+    this.isCompact = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      spacing: 16.w,
-      runSpacing: 16.h,
+      spacing: isCompact ? 10.w : 16.w,
+      runSpacing: isCompact ? 10.h : 16.h,
       alignment: WrapAlignment.center,
       children: options.map((opt) => _buildBrick(opt)).toList(),
     );
@@ -34,7 +37,10 @@ class ConjunctionsBrickSheet extends StatelessWidget {
         child: _buildTactileBrick(text),
       ),
       child: isPlaced
-          ? const SizedBox(width: 80, height: 50)
+          ? SizedBox(
+              width: isCompact ? 60.w : 80.w,
+              height: isCompact ? 35.h : 50.h,
+            )
           : _buildTactileBrick(text),
     );
   }
@@ -43,10 +49,13 @@ class ConjunctionsBrickSheet extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+        padding: EdgeInsets.symmetric(
+          horizontal: isCompact ? 14.w : 20.w,
+          vertical: isCompact ? 6.h : 12.h,
+        ),
         decoration: BoxDecoration(
           color: isDark ? Colors.grey[900] : Colors.white,
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(isCompact ? 8.r : 12.r),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.3),
@@ -59,7 +68,7 @@ class ConjunctionsBrickSheet extends StatelessWidget {
         child: Text(
           text.toUpperCase(),
           style: TextStyle(fontFamily: 'Outfit', 
-            fontSize: 16.sp,
+            fontSize: isCompact ? 12.sp : 16.sp,
             fontWeight: FontWeight.w900,
             color: primaryColor,
           ),

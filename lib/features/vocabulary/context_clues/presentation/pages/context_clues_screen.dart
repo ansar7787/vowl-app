@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -12,9 +11,14 @@ import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_la
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
-import 'package:vowl/features/vocabulary/context_clues/presentation/widgets/context_clues_painters.dart';
-import 'package:vowl/features/vocabulary/context_clues/presentation/widgets/context_clues_scanner.dart';
-import 'package:vowl/features/vocabulary/context_clues/presentation/widgets/context_clues_evidence_tags.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+
+// Extracted Optimized Widgets
+import '../widgets/context_clues_case_header.dart';
+import '../widgets/context_clues_case_file_background.dart';
+import '../widgets/context_clues_evidence_sentence.dart';
+import '../widgets/context_clues_scanner.dart';
+import '../widgets/context_clues_evidence_tags.dart';
 
 class ContextCluesScreen extends StatefulWidget {
   final int level;
@@ -29,8 +33,7 @@ class ContextCluesScreen extends StatefulWidget {
   State<ContextCluesScreen> createState() => _ContextCluesScreenState();
 }
 
-class _ContextCluesScreenState extends State<ContextCluesScreen>
-    with TickerProviderStateMixin {
+class _ContextCluesScreenState extends State<ContextCluesScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
@@ -41,9 +44,6 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
   String? _selectedOption;
-
-  // Clue discovery tracking
-  final Set<int> _discoveredClues = {};
 
   @override
   void initState() {
@@ -78,7 +78,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
 
     _lensPosition.value = Offset(newX, newY);
 
-    // Simulate finding a clue (simple probability for effect, or based on position)
+    // Simulate finding a clue
     if (_lensPosition.value.distance % 40 < 5) {
       _hapticService.selection();
     }
@@ -128,7 +128,6 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
               _isCorrect = null;
               _selectedOption = null;
               _lensPosition.value = Offset.zero;
-              _discoveredClues.clear();
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
             setState(() {
@@ -184,14 +183,12 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
             if (currentState is VocabularyLoaded &&
                 !currentState.isFinalFailure &&
                 _isCorrect == false) {
-              // Mastery Loop: Retry the same question
               setState(() {
                 _isAnswered = false;
                 _isCorrect = null;
                 _selectedOption = null;
               });
             } else {
-              // Progress to next question
               context.read<VocabularyBloc>().add(NextQuestion());
             }
           },
@@ -215,219 +212,112 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
     Color color,
     bool isFinalFailure,
   ) {
-    return Column(
-      children: [
-        // Header
-        _buildCaseHeader(color),
-        SizedBox(height: 10.h),
-        Text(
-          "DRAG LENS TO REVEAL CLUES",
-          style: TextStyle(fontFamily: 'RobotoMono', 
-            fontSize: 9.sp,
-            color: color.withValues(alpha: 0.4),
-            letterSpacing: 1,
-          ),
-        ),
-        SizedBox(height: 20.h),
-        Expanded(
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              return Stack(
-                alignment: Alignment.center,
-                clipBehavior: Clip.none,
-                children: [
-                  // 1. The Paper/Case File Background
-                  Positioned.fill(child: _buildCaseFileBackground()),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final maxHeight = constraints.maxHeight;
+        final isCompact = maxHeight < 580;
 
-                  // 2. The Evidence Sentence
-                  _buildEvidenceSentence(quest.sentence ?? "", color),
+        final double estimatedContentHeight = (isCompact ? 40.h : 60.h) + (isCompact ? 10.h : 20.h) + (isCompact ? 90.h : 110.h) + 30.h;
+        final remainingHeight = maxHeight - estimatedContentHeight;
 
-                  // 3. The Interactive Scanner
-                  if (!_isAnswered)
-                    ValueListenableBuilder<Offset>(
-                      valueListenable: _lensPosition,
-                      builder: (context, pos, _) {
-                        return Positioned(
-                          left: (constraints.maxWidth / 2) + pos.dx - 90.r,
-                          top: (constraints.maxHeight / 2) + pos.dy - 90.r,
-                          child: GestureDetector(
-                            onPanUpdate: (d) => _onLensMove(d, constraints),
-                            child: ContextCluesScanner(color: color),
-                          ),
-                        );
-                      },
+        final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+        final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 12.0) : 4.0;
+        final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(8.0, 20.0) : 8.0;
+        final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
+
+        return Column(
+          children: [
+            SizedBox(height: gapTop),
+            isCompact
+                ? SizedBox(
+                    height: 35.h,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: ContextCluesCaseHeader(
+                        level: widget.level,
+                        questIndex: _lastProcessedIndex,
+                        color: color,
+                      ),
                     ),
-                ],
-              );
-            },
-          ),
-        ),
-
-        // 4. Evidence Tags (Options)
-        ContextCluesEvidenceTags(
-          options: quest.options ?? [],
-          correct: quest.correctAnswer ?? "",
-          color: color,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          selectedOption: _selectedOption,
-          isFinalFailure: isFinalFailure,
-          onOptionSelected: (o) => _submitAnswer(o, quest.correctAnswer ?? ""),
-        ),
-        SizedBox(height: 30.h),
-      ],
-    );
-  }
-
-  Widget _buildCaseHeader(Color color) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 10.h),
-      child: Column(
-        children: [
-          Text(
-            "LINGUISTIC FORENSIC UNIT",
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 10.sp,
-              letterSpacing: 5,
-              color: color.withValues(alpha: 0.6),
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 4.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 40.w,
-                height: 1,
-                color: color.withValues(alpha: 0.2),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.w),
-                child: Text(
-                  "CASE #${widget.level}-${_lastProcessedIndex + 1}",
-                  style: TextStyle(fontFamily: 'RobotoMono', 
-                    fontSize: 12.sp,
+                  )
+                : ContextCluesCaseHeader(
+                    level: widget.level,
+                    questIndex: _lastProcessedIndex,
                     color: color,
-                    fontWeight: FontWeight.bold,
                   ),
-                ),
+            SizedBox(height: 4.h),
+            Text(
+              "DRAG LENS TO REVEAL CLUES",
+              style: TextStyle(
+                fontFamily: 'RobotoMono',
+                fontSize: 9.sp,
+                color: color.withValues(alpha: 0.4),
+                letterSpacing: 1,
               ),
-              Container(
-                width: 40.w,
-                height: 1,
-                color: color.withValues(alpha: 0.2),
-              ),
-            ],
-          ),
-        ],
-      ).animate().fadeIn().slideY(begin: -0.2),
-    );
-  }
-
-  Widget _buildCaseFileBackground() {
-    return Container(
-      margin: EdgeInsets.all(10.r),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(4.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          ),
-        ],
-      ),
-      child: CustomPaint(painter: PaperGridPainter()),
-    );
-  }
-
-  final GlobalKey _sentenceKey = GlobalKey();
-
-  Widget _buildEvidenceSentence(String sentence, Color color) {
-    final parts = sentence.split("[TARGET]");
-
-    return Container(
-      key: _sentenceKey,
-      padding: EdgeInsets.symmetric(horizontal: 30.w),
-      child: ValueListenableBuilder<Offset>(
-        valueListenable: _lensPosition,
-        builder: (context, pos, _) {
-          return RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              children: [
-                _buildTextSpan(parts[0], pos, color, _sentenceKey),
-                WidgetSpan(
-                  child: _buildRedactedBlock(color),
-                  alignment: PlaceholderAlignment.middle,
-                ),
-                if (parts.length > 1)
-                  _buildTextSpan(parts[1], pos, color, _sentenceKey),
-              ],
             ),
-          );
-        },
-      ),
-    );
-  }
-
-  TextSpan _buildTextSpan(
-    String text,
-    Offset lensPos,
-    Color color,
-    GlobalKey parentKey,
-  ) {
-    final words = text.split(" ");
-    return TextSpan(
-      children: words.map((word) {
-        return TextSpan(
-          text: "$word ",
-          style: TextStyle(fontFamily: 'RobotoMono', 
-            fontSize: 20.sp,
-            height: 1.6,
-            color: Colors.black.withValues(alpha: 0.8),
-            fontWeight: FontWeight.w500,
-          ),
+            SizedBox(height: gapMiddle),
+            Expanded(
+              child: LayoutBuilder(
+                builder: (context, innerConstraints) {
+                  return Stack(
+                    alignment: Alignment.center,
+                    clipBehavior: Clip.none,
+                    children: [
+                      const Positioned.fill(
+                        child: ContextCluesCaseFileBackground(),
+                      ),
+                      ContextCluesEvidenceSentence(
+                        sentence: quest.sentence ?? "",
+                        color: color,
+                        isCompact: isCompact,
+                        isAnswered: _isAnswered,
+                        isCorrect: _isCorrect,
+                        selectedOption: _selectedOption,
+                      ),
+                      if (!_isAnswered)
+                        ValueListenableBuilder<Offset>(
+                          valueListenable: _lensPosition,
+                          builder: (context, pos, _) {
+                            final lensSize = isCompact ? 100.r : 160.r;
+                            return Positioned(
+                              left: (innerConstraints.maxWidth / 2) + pos.dx - (lensSize / 2),
+                              top: (innerConstraints.maxHeight / 2) + pos.dy - (lensSize / 2),
+                              child: GestureDetector(
+                                onPanUpdate: (d) => _onLensMove(d, innerConstraints),
+                                child: isCompact
+                                    ? SizedBox(
+                                        width: lensSize,
+                                        height: lensSize,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: ContextCluesScanner(color: color),
+                                        ),
+                                      )
+                                    : ContextCluesScanner(color: color),
+                              ),
+                            );
+                          },
+                        ),
+                    ],
+                  );
+                },
+              ),
+            ),
+            SizedBox(height: gapMiddle),
+            ContextCluesEvidenceTags(
+              options: quest.options ?? [],
+              correct: quest.correctAnswer ?? "",
+              color: color,
+              isAnswered: _isAnswered,
+              isCorrect: _isCorrect,
+              selectedOption: _selectedOption,
+              isFinalFailure: isFinalFailure,
+              onOptionSelected: (o) => _submitAnswer(o, quest.correctAnswer ?? ""),
+            ),
+            SizedBox(height: gapBottom),
+          ],
         );
-      }).toList(),
+      },
     );
-  }
-
-  Widget _buildRedactedBlock(Color color) {
-    if (_isAnswered) {
-      return Container(
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
-        decoration: BoxDecoration(
-          color: _isCorrect == true
-              ? Colors.green.withValues(alpha: 0.1)
-              : Colors.red.withValues(alpha: 0.1),
-          border: Border.all(
-            color: _isCorrect == true ? Colors.green : Colors.red,
-            width: 1,
-          ),
-        ),
-        child: Text(
-          _selectedOption?.toUpperCase() ?? "???",
-          style: TextStyle(fontFamily: 'RobotoMono', 
-            fontSize: 20.sp,
-            fontWeight: FontWeight.bold,
-            color: _isCorrect == true ? Colors.green : Colors.red,
-          ),
-        ),
-      ).animate().scale(duration: 400.ms, curve: Curves.elasticOut);
-    }
-
-    return Container(
-          width: 100.w,
-          height: 24.h,
-          decoration: BoxDecoration(
-            color: const Color(0xFF1A1A1A),
-            borderRadius: BorderRadius.circular(2.r),
-          ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(duration: 2.seconds, color: Colors.white10);
   }
 }

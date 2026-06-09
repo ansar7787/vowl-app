@@ -155,116 +155,149 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
   }
 
   Widget _buildChatInterface(VocabularyQuest quest, Color color, bool isDark) {
-    return Column(
-      children: [
-        SizedBox(height: 40.h),
-        Container(
-          padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 20.w),
-          margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(15.r),
-            border: Border.all(color: color.withValues(alpha: 0.1)),
-          ),
-          child: Row(
-            children: [
-              Container(
-                width: 8.r,
-                height: 8.r,
-                decoration: const BoxDecoration(
-                  color: Colors.greenAccent,
-                  shape: BoxShape.circle,
-                ),
-              ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
-              SizedBox(width: 10.w),
-              Text(
-                "EMOJIFY: SECURE CHANNEL",
-                style: TextStyle(fontFamily: 'RobotoMono', 
-                  fontSize: 10.sp,
-                  color: color,
-                  letterSpacing: 2,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const Spacer(),
-              Icon(Icons.lock_outline_rounded, size: 14.r, color: color),
-            ],
-          ),
-        ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final maxHeight = constraints.maxHeight;
+        final isCompact = maxHeight < 580;
 
-        Expanded(
-          child: ListView(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-            children: [
-              IdiomsSystemMessage(text: "INCOMING TRANSMISSION...", color: color),
-              SizedBox(height: 20.h),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
+        final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 40.h : 60.h) + (isCompact ? 100.h : 180.h) + (isCompact ? 20.h : 40.h);
+        final remainingHeight = maxHeight - estimatedContentHeight;
+
+        final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+        final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(10.0, 30.0) : 10.0;
+        final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
+        final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(15.0, 40.0) : 15.0;
+
+        return Column(
+          children: [
+            SizedBox(height: gapTop),
+            isCompact
+                ? SizedBox(
+                    height: 30.h,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: _buildHeaderBadge(color),
+                    ),
+                  )
+                : _buildHeaderBadge(color),
+
+            SizedBox(height: gapMiddle),
+
+            Expanded(
+              child: ListView(
+                physics: const BouncingScrollPhysics(),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
                 children: [
-                  CircleAvatar(
-                    radius: 18.r,
-                    backgroundColor: color.withValues(alpha: 0.2),
-                    child: Icon(Icons.psychology_alt_rounded, size: 20.r, color: color),
-                  ),
-                  SizedBox(width: 10.w),
-                  IdiomsStrangerMessage(emojis: quest.topicEmoji ?? "❓", color: color, isDark: isDark),
-                ],
-              ),
-
-              if (_selectedOption != null) ...[
-                SizedBox(height: 24.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    IdiomsUserMessage(text: _selectedOption!, color: color, isCorrect: _isCorrect, isDark: isDark),
-                    SizedBox(width: 10.w),
-                    CircleAvatar(
-                      radius: 18.r,
-                      backgroundColor: color.withValues(alpha: 0.1),
-                      child: Icon(
-                        Icons.face_retouching_natural_rounded,
-                        size: 20.r,
-                        color: color,
+                  IdiomsSystemMessage(text: "INCOMING TRANSMISSION...", color: color),
+                  SizedBox(height: isCompact ? 10.h : 20.h),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      CircleAvatar(
+                        radius: isCompact ? 14.r : 18.r,
+                        backgroundColor: color.withValues(alpha: 0.2),
+                        child: Icon(Icons.psychology_alt_rounded, size: isCompact ? 16.r : 20.r, color: color),
                       ),
+                      SizedBox(width: 10.w),
+                      IdiomsStrangerMessage(emojis: quest.topicEmoji ?? "❓", color: color, isDark: isDark),
+                    ],
+                  ),
+
+                  if (_selectedOption != null) ...[
+                    SizedBox(height: isCompact ? 14.h : 24.h),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        IdiomsUserMessage(text: _selectedOption!, color: color, isCorrect: _isCorrect, isDark: isDark),
+                        SizedBox(width: 10.w),
+                        CircleAvatar(
+                          radius: isCompact ? 14.r : 18.r,
+                          backgroundColor: color.withValues(alpha: 0.1),
+                          child: Icon(
+                            Icons.face_retouching_natural_rounded,
+                            size: isCompact ? 16.r : 20.r,
+                            color: color,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
-                ),
-              ],
 
-              if (_isAnswered && _isCorrect == false) ...[
-                SizedBox(height: 15.h),
-                IdiomsSystemMessage(text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.", color: Colors.redAccent),
-              ],
-            ],
+                  if (_isAnswered && _isCorrect == false) ...[
+                    SizedBox(height: 10.h),
+                    IdiomsSystemMessage(text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.", color: Colors.redAccent),
+                  ],
+                ],
+              ),
+            ),
+            
+            SizedBox(height: gapMiddle),
+
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Wrap(
+                spacing: 12.w,
+                runSpacing: isCompact ? 8.h : 12.h,
+                alignment: WrapAlignment.center,
+                children: (quest.options ?? []).map((o) {
+                  return IdiomsOptionChip(
+                    text: o,
+                    correct: quest.correctAnswer ?? "",
+                    color: color,
+                    isDark: isDark,
+                    isAnswered: _isAnswered,
+                    isCorrect: _isCorrect,
+                    selectedOption: _selectedOption,
+                    onTap: () => _submitAnswer(o, quest.correctAnswer ?? ""),
+                  );
+                }).toList(),
+              ),
+            )
+            .animate()
+            .fadeIn(delay: 800.ms)
+            .slideY(begin: 0.3, curve: Curves.easeOutCubic),
+            SizedBox(height: gapBottom),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildHeaderBadge(Color color) {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 20.w),
+      margin: EdgeInsets.symmetric(horizontal: 20.w),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(15.r),
+        border: Border.all(color: color.withValues(alpha: 0.1)),
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 8.r,
+            height: 8.r,
+            decoration: const BoxDecoration(
+              color: Colors.greenAccent,
+              shape: BoxShape.circle,
+            ),
+          ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
+          SizedBox(width: 10.w),
+          Text(
+            "EMOJIFY: SECURE CHANNEL",
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
+              fontSize: 10.sp,
+              color: color,
+              letterSpacing: 2,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Wrap(
-            spacing: 12.w,
-            runSpacing: 12.h,
-            alignment: WrapAlignment.center,
-            children: (quest.options ?? []).map((o) {
-              return IdiomsOptionChip(
-                text: o,
-                correct: quest.correctAnswer ?? "",
-                color: color,
-                isDark: isDark,
-                isAnswered: _isAnswered,
-                isCorrect: _isCorrect,
-                selectedOption: _selectedOption,
-                onTap: () => _submitAnswer(o, quest.correctAnswer ?? ""),
-              );
-            }).toList(),
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 800.ms)
-        .slideY(begin: 0.3, curve: Curves.easeOutCubic),
-        SizedBox(height: 40.h),
-      ],
+          const Spacer(),
+          Icon(Icons.lock_outline_rounded, size: 14.r, color: color),
+        ],
+      ),
     );
   }
 }

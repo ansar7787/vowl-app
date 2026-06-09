@@ -24,7 +24,9 @@ class WordLinkingPromptCard extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          const TechPatternOverlay(opacity: 0.05),
+          const Positioned.fill(
+            child: TechPatternOverlay(opacity: 0.05),
+          ),
           Text(
             "Word linking (liaison) seamlessly connects speech, merging a word's final sound into the next word's initial sound. Can you locate where linking happens?",
             textAlign: TextAlign.center,

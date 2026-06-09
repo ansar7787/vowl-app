@@ -79,7 +79,9 @@ void main() async {
   // Safe helper for Firebase initialization
   Future<FirebaseApp?> safeInitializeFirebase() async {
     try {
-      return await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+      return await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
     } catch (e) {
       debugPrint("Critical: Firebase failed to initialize: $e");
       return null;
@@ -103,7 +105,10 @@ void main() async {
     try {
       FirebaseFirestore.instance.settings = const Settings(
         persistenceEnabled: true,
-        cacheSizeBytes: 50 * 1024 * 1024, // 50MB - prevents storage exhaustion on low-end devices
+        cacheSizeBytes:
+            50 *
+            1024 *
+            1024, // 50MB - prevents storage exhaustion on low-end devices
       );
     } catch (e) {
       debugPrint("Warning: Firestore settings failed to apply: $e");
@@ -125,7 +130,8 @@ void main() async {
   // Initialize Crashlytics
   if (firebaseApp != null) {
     try {
-      FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+      FlutterError.onError =
+          FirebaseCrashlytics.instance.recordFlutterFatalError;
       PlatformDispatcher.instance.onError = (error, stack) {
         FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
         return true;
@@ -151,7 +157,11 @@ void main() async {
       } catch (e, stack) {
         debugPrint("Error initializing AdService: $e");
         if (firebaseApp != null) {
-          FirebaseCrashlytics.instance.recordError(e, stack, reason: 'AdService initialization failed');
+          FirebaseCrashlytics.instance.recordError(
+            e,
+            stack,
+            reason: 'AdService initialization failed',
+          );
         }
       }
 
@@ -160,7 +170,11 @@ void main() async {
       } catch (e, stack) {
         debugPrint("Error initializing RemoteConfigService: $e");
         if (firebaseApp != null) {
-          FirebaseCrashlytics.instance.recordError(e, stack, reason: 'RemoteConfigService initialization failed');
+          FirebaseCrashlytics.instance.recordError(
+            e,
+            stack,
+            reason: 'RemoteConfigService initialization failed',
+          );
         }
       }
 
@@ -168,14 +182,22 @@ void main() async {
         // ignore: deprecated_member_use
         await FirebaseAppCheck.instance.activate(
           // ignore: deprecated_member_use
-          appleProvider: kDebugMode ? AppleProvider.debug : AppleProvider.deviceCheck,
+          appleProvider: kDebugMode
+              ? AppleProvider.debug
+              : AppleProvider.deviceCheck,
           // ignore: deprecated_member_use
-          androidProvider: kDebugMode ? AndroidProvider.debug : AndroidProvider.playIntegrity,
+          androidProvider: kDebugMode
+              ? AndroidProvider.debug
+              : AndroidProvider.playIntegrity,
         );
       } catch (e, stack) {
         debugPrint("Error activating Firebase App Check: $e");
         if (firebaseApp != null) {
-          FirebaseCrashlytics.instance.recordError(e, stack, reason: 'FirebaseAppCheck activation failed');
+          FirebaseCrashlytics.instance.recordError(
+            e,
+            stack,
+            reason: 'FirebaseAppCheck activation failed',
+          );
         }
       }
 
@@ -185,7 +207,11 @@ void main() async {
       } catch (e, stack) {
         debugPrint("Error initializing NotificationService: $e");
         if (firebaseApp != null) {
-          FirebaseCrashlytics.instance.recordError(e, stack, reason: 'NotificationService initialization failed');
+          FirebaseCrashlytics.instance.recordError(
+            e,
+            stack,
+            reason: 'NotificationService initialization failed',
+          );
         }
       }
     });
@@ -237,9 +263,15 @@ class _MyAppState extends State<MyApp> {
         return MultiBlocProvider(
           providers: [
             BlocProvider<AuthBloc>(create: (context) => di.sl<AuthBloc>()),
-            BlocProvider<EconomyBloc>(create: (context) => di.sl<EconomyBloc>()),
-            BlocProvider<ProgressionBloc>(create: (context) => di.sl<ProgressionBloc>()),
-            BlocProvider<ProfileBloc>(create: (context) => di.sl<ProfileBloc>()),
+            BlocProvider<EconomyBloc>(
+              create: (context) => di.sl<EconomyBloc>(),
+            ),
+            BlocProvider<ProgressionBloc>(
+              create: (context) => di.sl<ProgressionBloc>(),
+            ),
+            BlocProvider<ProfileBloc>(
+              create: (context) => di.sl<ProfileBloc>(),
+            ),
             BlocProvider<ThemeCubit>(create: (context) => di.sl<ThemeCubit>()),
           ],
           child: BlocBuilder<ThemeCubit, ThemeState>(
@@ -287,7 +319,8 @@ class _MyAppState extends State<MyApp> {
                             ],
                             child: BlocBuilder<AuthBloc, AuthState>(
                               builder: (context, authState) {
-                                final isLoggingOut = authState.status == AuthStatus.loggingOut;
+                                final isLoggingOut =
+                                    authState.status == AuthStatus.loggingOut;
 
                                 return LoadingOverlay(
                                   isLoading: isLoggingOut,

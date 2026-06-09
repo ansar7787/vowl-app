@@ -105,93 +105,108 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
           showConfetti: _showConfetti,
           onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 10.h),
-              SubjectVerbAgreementInstruction(primaryColor: theme.primaryColor),
-              SizedBox(height: 24.h),
+          child: quest == null ? const SizedBox() : LayoutBuilder(
+            builder: (context, constraints) {
+              final isCompact = constraints.maxHeight < 580;
 
-              // Atmospheric Harmony Hub
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(24.r),
-                  decoration: BoxDecoration(
-                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
-                    borderRadius: BorderRadius.circular(32.r),
-                    border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2), width: 1.5),
-                    boxShadow: [
-                      BoxShadow(color: theme.primaryColor.withValues(alpha: 0.05), blurRadius: 40, spreadRadius: 5)
-                    ],
-                  ),
-                  child: Text(
-                    quest.question ?? "Complete the agreement...",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 22.sp,
-                      color: isDark ? Colors.white : Colors.black87,
-                      height: 1.5,
-                      fontWeight: FontWeight.w600,
+              return Column(
+                children: [
+                  SizedBox(height: isCompact ? 4.h : 10.h),
+                  isCompact
+                      ? SizedBox(
+                          height: 25.h,
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: SubjectVerbAgreementInstruction(primaryColor: theme.primaryColor),
+                          ),
+                        )
+                      : SubjectVerbAgreementInstruction(primaryColor: theme.primaryColor),
+                  SizedBox(height: isCompact ? 10.h : 24.h),
+
+                  // Atmospheric Harmony Hub
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(isCompact ? 14.r : 24.r),
+                      decoration: BoxDecoration(
+                        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                        borderRadius: BorderRadius.circular(isCompact ? 20.r : 32.r),
+                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2), width: 1.5),
+                        boxShadow: [
+                          BoxShadow(color: theme.primaryColor.withValues(alpha: 0.05), blurRadius: 40, spreadRadius: 5)
+                        ],
+                      ),
+                      child: Text(
+                        quest.question ?? "Complete the agreement...",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit', 
+                          fontSize: isCompact ? 16.sp : 22.sp,
+                          color: isDark ? Colors.white : Colors.black87,
+                          height: 1.5,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ).animate().fadeIn(duration: 800.ms).slideY(begin: 0.1, end: 0),
+
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 30.w),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          // Tuner Rails
+                          Container(
+                            height: isCompact ? 3.h : 4.h,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  theme.primaryColor.withValues(alpha: 0.0),
+                                  theme.primaryColor.withValues(alpha: 0.4),
+                                  theme.primaryColor.withValues(alpha: 0.0),
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          // Verb Terminals
+                          GestureDetector(
+                            onTap: () => _onConnect(0, quest.correctAnswerIndex ?? 0),
+                            child: _buildVerbTerminal(0, options[0], theme.primaryColor, Alignment.centerLeft, quest.correctAnswerIndex ?? 0, isCompact),
+                          ),
+                          GestureDetector(
+                            onTap: () => _onConnect(1, quest.correctAnswerIndex ?? 0),
+                            child: _buildVerbTerminal(1, options[1], theme.primaryColor, Alignment.centerRight, quest.correctAnswerIndex ?? 0, isCompact),
+                          ),
+
+                          // The Quantum Core (Harmony Slider)
+                          GestureDetector(
+                            onPanUpdate: _isAnswered ? null : (details) {
+                              final double newDx = (_ringOffset.dx + details.delta.dx).clamp(isCompact ? -100.w : -130.w, isCompact ? 100.w : 130.w);
+                              setState(() {
+                                _ringOffset = Offset(newDx, 0.0);
+                              });
+                              _checkHarmony(quest.correctAnswerIndex ?? 0);
+                            },
+                            onPanEnd: _isAnswered ? null : (details) {
+                              setState(() => _ringOffset = Offset.zero);
+                            },
+                            child: Transform.translate(
+                              offset: _ringOffset,
+                              child: _buildQuantumCore(theme.primaryColor, isCompact),
+                            ),
+                          ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ).animate().fadeIn(duration: 800.ms).slideY(begin: 0.1, end: 0),
-
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30.w),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      // Tuner Rails
-                      Container(
-                        height: 4.h,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              theme.primaryColor.withValues(alpha: 0.0),
-                              theme.primaryColor.withValues(alpha: 0.4),
-                              theme.primaryColor.withValues(alpha: 0.0),
-                            ],
-                          ),
-                        ),
-                      ),
-
-                      // Verb Terminals
-                      GestureDetector(
-                        onTap: () => _onConnect(0, quest.correctAnswerIndex ?? 0),
-                        child: _buildVerbTerminal(0, options[0], theme.primaryColor, Alignment.centerLeft, quest.correctAnswerIndex ?? 0),
-                      ),
-                      GestureDetector(
-                        onTap: () => _onConnect(1, quest.correctAnswerIndex ?? 0),
-                        child: _buildVerbTerminal(1, options[1], theme.primaryColor, Alignment.centerRight, quest.correctAnswerIndex ?? 0),
-                      ),
-
-                      // The Quantum Core (Harmony Slider)
-                      GestureDetector(
-                        onPanUpdate: _isAnswered ? null : (details) {
-                          final double newDx = (_ringOffset.dx + details.delta.dx).clamp(-130.w, 130.w);
-                          setState(() {
-                            _ringOffset = Offset(newDx, 0.0);
-                          });
-                          _checkHarmony(quest.correctAnswerIndex ?? 0);
-                        },
-                        onPanEnd: _isAnswered ? null : (details) {
-                          setState(() => _ringOffset = Offset.zero);
-                        },
-                        child: Transform.translate(
-                          offset: _ringOffset,
-                          child: _buildQuantumCore(theme.primaryColor),
-                        ),
-                      ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 40.h),
-            ],
+                  SizedBox(height: isCompact ? 12.h : 40.h),
+                ],
+              );
+            },
           ),
         );
       },
@@ -207,14 +222,15 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
     }
   }
 
-  Widget _buildVerbTerminal(int index, String verb, Color primaryColor, Alignment alignment, int correctIndex) {
+  Widget _buildVerbTerminal(int index, String verb, Color primaryColor, Alignment alignment, int correctIndex, bool isCompact) {
     final isCorrect = _isAnswered && _isCorrect == true && index == correctIndex;
     final isWrong = _isAnswered && _isCorrect == false && index != correctIndex;
+    final terminalSize = isCompact ? 80.r : 110.r;
 
     return Align(
       alignment: alignment,
       child: Container(
-        width: 110.r, height: 110.r,
+        width: terminalSize, height: terminalSize,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: isCorrect
@@ -222,14 +238,15 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
               : (isWrong ? Colors.redAccent.withValues(alpha: 0.1) : Colors.transparent),
           border: Border.all(
             color: isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : primaryColor.withValues(alpha: 0.2)),
-            width: 2.5.r,
+            width: isCompact ? 2.r : 2.5.r,
           ),
         ),
         child: Center(
           child: Text(
             verb.toUpperCase(),
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 16.sp,
+            style: TextStyle(
+              fontFamily: 'Outfit', 
+              fontSize: isCompact ? 13.sp : 16.sp,
               fontWeight: FontWeight.bold,
               color: isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : primaryColor),
             ),
@@ -239,21 +256,23 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
     );
   }
 
-  Widget _buildQuantumCore(Color primaryColor) {
+  Widget _buildQuantumCore(Color primaryColor, bool isCompact) {
     final Color coreColor = _isAnswered
         ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent)
         : primaryColor;
+    final coreSize = isCompact ? 50.r : 70.r;
+    final innerSize = isCompact ? 14.r : 20.r;
 
     return Container(
-      width: 70.r, height: 70.r,
+      width: coreSize, height: coreSize,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: coreColor,
-        boxShadow: [BoxShadow(color: coreColor.withValues(alpha: 0.4), blurRadius: 20, spreadRadius: 2)],
+        boxShadow: [BoxShadow(color: coreColor.withValues(alpha: 0.4), blurRadius: isCompact ? 14 : 20, spreadRadius: 2)],
       ),
       child: Center(
         child: Container(
-          width: 20.r, height: 20.r,
+          width: innerSize, height: innerSize,
           decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
         ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 1.seconds),
       ),

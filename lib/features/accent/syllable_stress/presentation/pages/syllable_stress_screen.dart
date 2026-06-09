@@ -123,58 +123,158 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded) ? state.currentQuest as AccentQuest? : null;
         final syllables = quest?.syllables ?? [];
+        final mediaQuery = MediaQuery.of(context);
 
-        return AccentBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
-          showConfetti: _showConfetti,
-          onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
-          onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
-          child: quest == null ? const SizedBox() : SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Column(
-                children: [
-                  SizedBox(height: 16.h),
-                  SyllableStressInstruction(color: theme.primaryColor),
-                  SizedBox(height: 24.h),
-                  
-                  SyllableStressPromptCard(
-                    word: quest.word ?? "",
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                  ),
-                  SizedBox(height: 32.h),
-                  
-                  SyllableStressPulseSpeaker(
-                    text: quest.textToSpeak ?? "",
-                    color: theme.primaryColor,
-                    onPlayTts: _playTts,
-                  ),
-                  SizedBox(height: 48.h),
-                  
-                  SyllableStressDrumConsole(
-                    syllables: syllables,
-                    correctIndex: quest.correctAnswerIndex ?? 0,
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                    isAnswered: _isAnswered,
-                    selectedIndex: _selectedIndex,
-                    onPadTap: _onPadTap,
-                  ),
-                  
-                  if (_isAnswered) ...[
-                    SizedBox(height: 40.h),
-                    SyllableStressExplanationCard(
-                      quest: quest,
-                      color: theme.primaryColor,
-                      isDark: isDark,
-                      isCorrect: _isCorrect,
+        return MediaQuery(
+          data: mediaQuery.copyWith(
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
+          ),
+          child: AccentBaseLayout(
+            gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+            showConfetti: _showConfetti,
+            onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
+            onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+            child: quest == null ? const SizedBox() : LayoutBuilder(
+              builder: (context, constraints) {
+                final maxHeight = constraints.maxHeight;
+                final bool isCompact = maxHeight < 580;
+                
+                final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 80.h : 110.h) + (isCompact ? 130.h : 172.h) + (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
+                final remainingHeight = maxHeight - estimatedContentHeight;
+                
+                final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
+                final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 24.0) : 8.0;
+                final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 24.0) : 8.0;
+                final double gapPrompt = remainingHeight > 0 ? (gapUnit * 1.5).clamp(12.0, 32.0) : 12.0;
+                final double gapSpeaker = remainingHeight > 0 ? (gapUnit * 2).clamp(16.0, 48.0) : 16.0;
+                final double gapSlider = remainingHeight > 0 ? (gapUnit * 1.5).clamp(12.0, 40.0) : 12.0;
+                final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
+
+                return SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: maxHeight,
                     ),
-                  ],
-                  SizedBox(height: 60.h),
-                ],
-              ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SizedBox(height: gapTop),
+                              isCompact 
+                                ? SizedBox(
+                                    height: 32.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: SyllableStressInstruction(color: theme.primaryColor),
+                                    ),
+                                  )
+                                : SyllableStressInstruction(color: theme.primaryColor),
+                              SizedBox(height: gapInstruction),
+                              
+                              isCompact 
+                                ? SizedBox(
+                                    height: 90.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: SyllableStressPromptCard(
+                                        word: quest.word ?? "",
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                      ),
+                                    ),
+                                  )
+                                : SyllableStressPromptCard(
+                                    word: quest.word ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                              SizedBox(height: gapPrompt),
+                              
+                              isCompact
+                                ? SizedBox(
+                                    width: 80.r,
+                                    height: 80.r,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: SyllableStressPulseSpeaker(
+                                        text: quest.textToSpeak ?? "",
+                                        color: theme.primaryColor,
+                                        onPlayTts: _playTts,
+                                      ),
+                                    ),
+                                  )
+                                : SyllableStressPulseSpeaker(
+                                    text: quest.textToSpeak ?? "",
+                                    color: theme.primaryColor,
+                                    onPlayTts: _playTts,
+                                  ),
+                            ],
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SizedBox(height: gapSpeaker),
+                              isCompact
+                                ? SizedBox(
+                                    height: 110.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: SyllableStressDrumConsole(
+                                        syllables: syllables,
+                                        correctIndex: quest.correctAnswerIndex ?? 0,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        isAnswered: _isAnswered,
+                                        selectedIndex: _selectedIndex,
+                                        onPadTap: _onPadTap,
+                                      ),
+                                    ),
+                                  )
+                                : SyllableStressDrumConsole(
+                                    syllables: syllables,
+                                    correctIndex: quest.correctAnswerIndex ?? 0,
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    isAnswered: _isAnswered,
+                                    selectedIndex: _selectedIndex,
+                                    onPadTap: _onPadTap,
+                                  ),
+                              if (_isAnswered) ...[
+                                SizedBox(height: gapSlider),
+                                isCompact
+                                  ? SizedBox(
+                                      height: 110.h,
+                                      child: FittedBox(
+                                        fit: BoxFit.scaleDown,
+                                        child: SyllableStressExplanationCard(
+                                          quest: quest,
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                          isCorrect: _isCorrect,
+                                        ),
+                                      ),
+                                    )
+                                  : SyllableStressExplanationCard(
+                                      quest: quest,
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      isCorrect: _isCorrect,
+                                    ),
+                              ],
+                              SizedBox(height: gapBottom),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
           ),
         );

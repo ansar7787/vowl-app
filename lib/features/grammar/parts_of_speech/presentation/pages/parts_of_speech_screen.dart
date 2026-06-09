@@ -112,65 +112,92 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
           showConfetti: _showConfetti,
           onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 10.h),
-              SpeechInstruction(primaryColor: theme.primaryColor),
-              SizedBox(height: 20.h),
-              
-              SpeechContextCard(
-                quest: quest,
-                primaryColor: theme.primaryColor,
-                isDark: isDark,
-              ),
+          child: quest == null
+              ? const SizedBox()
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
 
-              Expanded(
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    // Vortex Buckets (Corners)
-                    SpeechVortex(index: 0, label: options[0], color: Colors.blueAccent, alignment: Alignment.topLeft),
-                    SpeechVortex(index: 1, label: options[1], color: Colors.purpleAccent, alignment: Alignment.topRight),
-                    SpeechVortex(index: 2, label: options[2], color: Colors.orangeAccent, alignment: Alignment.bottomLeft),
-                    SpeechVortex(index: 3, label: options[3], color: Colors.greenAccent, alignment: Alignment.bottomRight),
-                    
-                    // The Word to Flick
-                    if (!_isAnswered)
-                      GestureDetector(
-                        onPanUpdate: (details) {
-                          setState(() => _dragOffset += details.delta);
-                          _checkCollision(quest.correctAnswerIndex ?? 0);
-                        },
-                        onPanEnd: (details) {
-                          setState(() => _dragOffset = Offset.zero);
-                        },
-                        child: Transform.translate(
-                          offset: _dragOffset,
-                          child: Transform.rotate(
-                            angle: _dragOffset.dx / 100,
-                            child: SpeechDraggableWord(
-                              word: quest.targetWord ?? quest.word ?? "??",
-                              primaryColor: theme.primaryColor,
-                              isDark: isDark,
-                            ),
+                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 50.h : 80.h) + (isCompact ? 160.h : 260.h) + 40.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
+
+                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 15.0) : 4.0;
+                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(6.0, 20.0) : 6.0;
+                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
+
+                    return Column(
+                      children: [
+                        SizedBox(height: gapTop),
+                        isCompact
+                            ? SizedBox(
+                                height: 25.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: SpeechInstruction(primaryColor: theme.primaryColor),
+                                ),
+                              )
+                            : SpeechInstruction(primaryColor: theme.primaryColor),
+                        SizedBox(height: gapMiddle),
+
+                        SpeechContextCard(
+                          quest: quest,
+                          primaryColor: theme.primaryColor,
+                          isDark: isDark,
+                          isCompact: isCompact,
+                        ),
+
+                        Expanded(
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              // Vortex Buckets (Corners)
+                              SpeechVortex(index: 0, label: options[0], color: Colors.blueAccent, alignment: Alignment.topLeft, isCompact: isCompact),
+                              SpeechVortex(index: 1, label: options[1], color: Colors.purpleAccent, alignment: Alignment.topRight, isCompact: isCompact),
+                              SpeechVortex(index: 2, label: options[2], color: Colors.orangeAccent, alignment: Alignment.bottomLeft, isCompact: isCompact),
+                              SpeechVortex(index: 3, label: options[3], color: Colors.greenAccent, alignment: Alignment.bottomRight, isCompact: isCompact),
+
+                              // The Word to Flick
+                              if (!_isAnswered)
+                                GestureDetector(
+                                  onPanUpdate: (details) {
+                                    setState(() => _dragOffset += details.delta);
+                                    _checkCollision(quest.correctAnswerIndex ?? 0, isCompact: isCompact);
+                                  },
+                                  onPanEnd: (details) {
+                                    setState(() => _dragOffset = Offset.zero);
+                                  },
+                                  child: Transform.translate(
+                                    offset: _dragOffset,
+                                    child: Transform.rotate(
+                                      angle: _dragOffset.dx / 100,
+                                      child: SpeechDraggableWord(
+                                        word: quest.targetWord ?? quest.word ?? "??",
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        isCompact: isCompact,
+                                      ),
+                                    ),
+                                  ),
+                                ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+                            ],
                           ),
                         ),
-                      ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
-                  ],
+                        SizedBox(height: gapBottom),
+                      ],
+                    );
+                  },
                 ),
-              ),
-              SizedBox(height: 40.h),
-            ],
-          ),
         );
       },
     );
   }
 
-  void _checkCollision(int correctIndex) {
+  void _checkCollision(int correctIndex, {required bool isCompact}) {
     // Calculate the distance from the center (Radial Distance)
     final double distance = _dragOffset.distance;
-    final double activationThreshold = 100.r;
+    final double activationThreshold = isCompact ? 60.r : 100.r;
 
     if (distance > activationThreshold) {
       // Determine which quadrant the word is in
@@ -185,6 +212,5 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
       }
     }
   }
-
 }
 

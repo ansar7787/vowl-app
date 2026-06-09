@@ -11,6 +11,8 @@ class ArticleFloatingOrb extends StatefulWidget {
   final bool isSelected;
   final bool isCorrectAnswer;
 
+  final bool isCompact;
+
   const ArticleFloatingOrb({
     super.key,
     required this.article,
@@ -21,6 +23,7 @@ class ArticleFloatingOrb extends StatefulWidget {
     required this.isAnswered,
     required this.isSelected,
     required this.isCorrectAnswer,
+    this.isCompact = false,
   });
 
   @override
@@ -36,8 +39,8 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
   @override
   void initState() {
     super.initState();
-    _top = widget.index * 70.h + 20.h;
-    _left = (widget.index % 2 == 0) ? 45.w : 210.w;
+    _top = widget.index * (widget.isCompact ? 40.h : 70.h) + (widget.isCompact ? 5.h : 20.h);
+    _left = (widget.index % 2 == 0) ? (widget.isCompact ? 55.w : 45.w) : (widget.isCompact ? 220.w : 210.w);
     _driftController = AnimationController(
       vsync: this,
       duration: Duration(seconds: 4 + widget.index),
@@ -143,8 +146,8 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
             child: GestureDetector(
               onTap: widget.onTap,
               child: Container(
-                width: 90.r,
-                height: 90.r,
+                width: widget.isCompact ? 65.r : 90.r,
+                height: widget.isCompact ? 65.r : 90.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: RadialGradient(
@@ -158,7 +161,7 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
                   child: Text(
                     widget.article.toUpperCase(),
                     style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 18.sp,
+                      fontSize: widget.isCompact ? 14.sp : 18.sp,
                       fontWeight: FontWeight.w900,
                       color: textColor,
                     ),

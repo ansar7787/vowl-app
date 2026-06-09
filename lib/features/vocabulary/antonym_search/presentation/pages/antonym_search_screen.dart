@@ -136,6 +136,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
           child: LayoutBuilder(
             builder: (context, constraints) {
               _lastConstraints = constraints;
+              final maxHeight = constraints.maxHeight;
+              final isCompact = maxHeight < 580;
+
               return Stack(
                 clipBehavior: Clip.none,
                 children: [
@@ -154,12 +157,26 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                   ),
 
                   Center(
-                    child: AntonymNebulaCore(
-                      word: quest?.word ?? "",
-                      color: targetColor,
-                      isDark: isDark,
-                      targetIsPositive: _targetIsPositive,
-                    ),
+                    child: isCompact
+                        ? SizedBox(
+                            width: 140.w,
+                            height: 140.w,
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: AntonymNebulaCore(
+                                word: quest?.word ?? "",
+                                color: targetColor,
+                                isDark: isDark,
+                                targetIsPositive: _targetIsPositive,
+                              ),
+                            ),
+                          )
+                        : AntonymNebulaCore(
+                            word: quest?.word ?? "",
+                            color: targetColor,
+                            isDark: isDark,
+                            targetIsPositive: _targetIsPositive,
+                          ),
                   ),
 
                   ...List.generate(
@@ -180,7 +197,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                   ),
 
                   if (_activeShardIndex != null)
-                    _buildPlasmaThunder(targetColor),
+                    _buildPlasmaThunder(targetColor, isCompact),
                 ],
               );
             },
@@ -190,12 +207,11 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     );
   }
 
-
-
   Offset _getInitialPosition(int index) {
     if (_lastConstraints == null) return Offset.zero;
     final w = _lastConstraints!.maxWidth;
     final h = _lastConstraints!.maxHeight;
+    final isCompact = h < 580;
     final isLeft = index % 2 == 0;
     final int total = _lastQuest?.options?.length ?? 4;
     final int halfTotal = (total / 2).ceil();
@@ -204,24 +220,22 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     double yPos;
     if (total <= 4) {
       // 2 at top, 2 at bottom
-      yPos = isBottomHalf ? (h * 0.75) : (h * 0.25);
+      yPos = isBottomHalf ? (h * (isCompact ? 0.71 : 0.75)) : (h * (isCompact ? 0.29 : 0.25));
     } else {
       // Standard grid for 6 or 8 cards
       if (index < 2) {
-        yPos = h * 0.18;
+        yPos = h * (isCompact ? 0.22 : 0.18);
       } else if (index < 4) {
-        yPos = h * 0.32;
+        yPos = h * (isCompact ? 0.35 : 0.32);
       } else if (index < 6) {
-        yPos = h * 0.68;
+        yPos = h * (isCompact ? 0.65 : 0.68);
       } else {
-        yPos = h * 0.82;
+        yPos = h * (isCompact ? 0.78 : 0.82);
       }
     }
 
     return Offset(isLeft ? (w * 0.25) : (w * 0.75), yPos);
   }
-
-
 
   void _onShardStart(int index) {
     if (_isAnswered || _isFused[index] == true) return;
@@ -237,7 +251,10 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     );
     final initial = _getInitialPosition(index);
     final currentY = initial.dy + (_shardOffsets[index]?.dy ?? 0);
-    if (currentY < 120.h || currentY > 680.h) _hapticService.selection();
+    final isCompact = (_lastConstraints?.maxHeight ?? 600) < 580;
+    final triggerTop = isCompact ? 100.h : 120.h;
+    final triggerBottom = (_lastConstraints?.maxHeight ?? 600) - (isCompact ? 100.h : 120.h);
+    if (currentY < triggerTop || currentY > triggerBottom) _hapticService.selection();
   }
 
   void _onShardEnd(int index) {
@@ -248,8 +265,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
 
     // Use actual constraints for reliable detection
     final maxHeight = _lastConstraints!.maxHeight;
-    final bool nearTop = currentY < 130.h;
-    final bool nearBottom = currentY > (maxHeight - 130.h);
+    final isCompact = maxHeight < 580;
+    final bool nearTop = currentY < (isCompact ? 100.h : 130.h);
+    final bool nearBottom = currentY > (maxHeight - (isCompact ? 100.h : 130.h));
 
     if (nearTop || nearBottom) {
       final bool toPositive = nearTop;
@@ -297,15 +315,16 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     context.read<VocabularyBloc>().add(SubmitAnswer(false));
   }
 
-  Widget _buildPlasmaThunder(Color color) {
+  Widget _buildPlasmaThunder(Color color, bool isCompact) {
     if (_activeShardIndex == null || _lastConstraints == null) {
       return const SizedBox();
     }
     final initial = _getInitialPosition(_activeShardIndex!);
     final offset = _shardOffsets[_activeShardIndex!] ?? Offset.zero;
     final current = initial + offset;
-    final bool toTop = current.dy < 380.h;
-    final targetY = toTop ? 90.h : (_lastConstraints!.maxHeight - 90.h);
+    final maxHeight = _lastConstraints!.maxHeight;
+    final bool toTop = current.dy < (maxHeight / 2);
+    final targetY = toTop ? (isCompact ? 70.h : 90.h) : (maxHeight - (isCompact ? 70.h : 90.h));
 
     return IgnorePointer(
       child: CustomPaint(

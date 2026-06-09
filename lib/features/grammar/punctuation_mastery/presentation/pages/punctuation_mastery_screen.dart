@@ -139,114 +139,135 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Column(
-                  children: [
-                    SizedBox(height: 10.h),
-                    PunctuationMasteryInstruction(primaryColor: theme.primaryColor),
-                    SizedBox(height: 20.h),
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isCompact = constraints.maxHeight < 580;
 
-                    // Context Card with Sticker Slots
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.all(22.r),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.05)
-                              : Colors.black.withValues(alpha: 0.03),
-                          borderRadius: BorderRadius.circular(28.r),
-                          border: Border.all(
-                            color: theme.primaryColor.withValues(alpha: 0.15),
-                            width: 1.5,
-                          ),
-                        ),
-                        child: _buildStickerSentence(
-                          quest.sentence ?? "Missing sentence.",
-                          theme.primaryColor,
-                          isDark,
-                        ),
-                      ),
-                    ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+                    return Column(
+                      children: [
+                        SizedBox(height: isCompact ? 4.h : 10.h),
+                        isCompact
+                            ? SizedBox(
+                                height: 25.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: PunctuationMasteryInstruction(primaryColor: theme.primaryColor),
+                                ),
+                              )
+                            : PunctuationMasteryInstruction(primaryColor: theme.primaryColor),
+                        SizedBox(height: isCompact ? 8.h : 20.h),
 
-                    // Result
-                    if (_isAnswered) ...[
-                      SizedBox(height: 32.h),
-                      _buildResult(quest, theme.primaryColor, isDark),
-                    ],
-
-                    SizedBox(height: 48.h),
-
-                    // Sticker Sheet
-                    if (!_isAnswered)
-                      PunctuationStickerSheet(
-                        marks: marks,
-                        primaryColor: theme.primaryColor,
-                      ),
-
-                    const Spacer(),
-
-                    // Submit Button
-                    if (!_isAnswered)
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: ScaleButton(
-                          onTap: () => _submitAnswer(quest),
+                        // Context Card with Sticker Slots
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
                           child: Container(
                             width: double.infinity,
-                            height: 65.h,
+                            padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(24.r),
-                              gradient: LinearGradient(
-                                colors: [
-                                  theme.primaryColor,
-                                  theme.primaryColor.withValues(alpha: 0.8),
-                                ],
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.05)
+                                  : Colors.black.withValues(alpha: 0.03),
+                              borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
+                              border: Border.all(
+                                color: theme.primaryColor.withValues(alpha: 0.15),
+                                width: 1.5,
                               ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: theme.primaryColor.withValues(alpha: 0.4),
-                                  blurRadius: 25,
-                                  offset: const Offset(0, 12),
-                                ),
-                              ],
                             ),
-                            child: Center(
-                              child: Text(
-                                "FINALIZE ARCHITECTURE",
-                                style: TextStyle(fontFamily: 'Outfit', 
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                  letterSpacing: 2,
+                            child: _buildStickerSentence(
+                              quest.sentence ?? "Missing sentence.",
+                              theme.primaryColor,
+                              isDark,
+                              isCompact,
+                            ),
+                          ),
+                        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
+                        // Result
+                        if (_isAnswered) ...[
+                          SizedBox(height: isCompact ? 12.h : 32.h),
+                          _buildResult(quest, theme.primaryColor, isDark, isCompact),
+                        ],
+
+                        SizedBox(height: isCompact ? 16.h : 48.h),
+
+                        // Sticker Sheet
+                        if (!_isAnswered)
+                          PunctuationStickerSheet(
+                            marks: marks,
+                            primaryColor: theme.primaryColor,
+                          ),
+
+                        const Spacer(),
+
+                        // Submit Button
+                        if (!_isAnswered)
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: ScaleButton(
+                              onTap: () => _submitAnswer(quest),
+                              child: Container(
+                                width: double.infinity,
+                                height: isCompact ? 48.h : 65.h,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      theme.primaryColor,
+                                      theme.primaryColor.withValues(alpha: 0.8),
+                                    ],
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: theme.primaryColor.withValues(alpha: 0.4),
+                                      blurRadius: 25,
+                                      offset: const Offset(0, 12),
+                                    ),
+                                  ],
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    "FINALIZE ARCHITECTURE",
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit', 
+                                      fontSize: isCompact ? 13.sp : 16.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                      letterSpacing: 2,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ),
 
-                    SizedBox(height: 40.h),
-                  ],
+                        SizedBox(height: isCompact ? 12.h : 40.h),
+                      ],
+                    );
+                  },
                 ),
         );
       },
     );
   }
 
-  Widget _buildStickerSentence(String sentence, Color primaryColor, bool isDark) {
+  Widget _buildStickerSentence(String sentence, Color primaryColor, bool isDark, bool isCompact) {
     final words = sentence.split(" ");
+    final double slotSize = isCompact ? 26.r : 34.r;
+    final double wordFontSize = isCompact ? 15.sp : 20.sp;
+    final double markFontSize = isCompact ? 15.sp : 20.sp;
+
     return Wrap(
       alignment: WrapAlignment.center,
       crossAxisAlignment: WrapCrossAlignment.center,
       spacing: 4.w,
-      runSpacing: 12.h,
+      runSpacing: isCompact ? 6.h : 12.h,
       children: List.generate(words.length * 2, (index) {
         if (index % 2 == 0) {
           return Text(
             words[index ~/ 2],
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 20.sp,
+            style: TextStyle(
+              fontFamily: 'Outfit', 
+              fontSize: wordFontSize,
               color: isDark ? Colors.white : Colors.black87,
             ),
           );
@@ -258,8 +279,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
             builder: (context, candidateData, rejectedData) {
               final isHighlight = candidateData.isNotEmpty;
               return Container(
-                width: 34.r,
-                height: 34.r,
+                width: slotSize,
+                height: slotSize,
                 decoration: BoxDecoration(
                   color: mark != null
                       ? primaryColor
@@ -293,15 +314,16 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                           },
                           child: Text(
                             mark,
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              fontSize: 20.sp,
+                            style: TextStyle(
+                              fontFamily: 'Outfit', 
+                              fontSize: markFontSize,
                               fontWeight: FontWeight.w900,
                               color: Colors.white,
                             ),
                           ).animate().shimmer(duration: 2.seconds),
                         )
                       : (isHighlight
-                          ? Icon(Icons.add, color: primaryColor, size: 18.r)
+                          ? Icon(Icons.add, color: primaryColor, size: isCompact ? 14.r : 18.r)
                           : null),
                 ),
               )
@@ -314,17 +336,17 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     );
   }
 
-  Widget _buildResult(GameQuest quest, Color primaryColor, bool isDark) {
+  Widget _buildResult(GameQuest quest, Color primaryColor, bool isDark, bool isCompact) {
     final bool correct = _isCorrect == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Container(
-        padding: EdgeInsets.all(24.r),
+        padding: EdgeInsets.all(isCompact ? 12.r : 24.r),
         decoration: BoxDecoration(
           color: displayColor.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(24.r),
+          borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
           border: Border.all(
             color: displayColor.withValues(alpha: 0.3),
             width: 2,
@@ -335,44 +357,48 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
             Icon(
               correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
               color: displayColor,
-              size: 40.r,
+              size: isCompact ? 24.r : 40.r,
             ),
-            SizedBox(height: 12.h),
+            SizedBox(height: isCompact ? 4.h : 12.h),
             Text(
               correct ? "CORRECT!" : "INCORRECT",
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 16.sp,
+              style: TextStyle(
+                fontFamily: 'Outfit', 
+                fontSize: isCompact ? 12.sp : 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
                 letterSpacing: 2,
               ),
             ),
-            SizedBox(height: 12.h),
+            SizedBox(height: isCompact ? 4.h : 12.h),
             Text(
               "CORRECT SENTENCE:",
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 12.sp,
+              style: TextStyle(
+                fontFamily: 'Outfit', 
+                fontSize: isCompact ? 10.sp : 12.sp,
                 fontWeight: FontWeight.bold,
                 color: isDark ? Colors.white60 : Colors.black54,
                 letterSpacing: 1,
               ),
             ),
-            SizedBox(height: 6.h),
+            SizedBox(height: isCompact ? 3.h : 6.h),
             Text(
               quest.correctAnswer ?? "",
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 20.sp,
+              style: TextStyle(
+                fontFamily: 'Outfit', 
+                fontSize: isCompact ? 14.sp : 20.sp,
                 fontWeight: FontWeight.w600,
                 color: displayColor,
               ),
             ),
-            if (quest.explanation != null) ...[
+            if (!isCompact && quest.explanation != null) ...[
               SizedBox(height: 12.h),
               Text(
                 quest.explanation!,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit', 
                   fontSize: 13.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),

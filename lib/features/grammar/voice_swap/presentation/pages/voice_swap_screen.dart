@@ -127,42 +127,55 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Column(
-                  children: [
-                    SizedBox(height: 10.h),
-                    VoiceSwapInstruction(primaryColor: theme.primaryColor),
-                    SizedBox(height: 20.h),
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isCompact = constraints.maxHeight < 580;
 
-                    // Context Card
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      child: Container(
-                        padding: EdgeInsets.all(22.r),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.05)
-                              : Colors.black.withValues(alpha: 0.03),
-                          borderRadius: BorderRadius.circular(24.r),
-                          border: Border.all(
-                            color: theme.primaryColor.withValues(alpha: 0.15),
-                            width: 1.5,
+                    return Column(
+                      children: [
+                        SizedBox(height: isCompact ? 4.h : 10.h),
+                        isCompact
+                            ? SizedBox(
+                                height: 25.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: VoiceSwapInstruction(primaryColor: theme.primaryColor),
+                                ),
+                              )
+                            : VoiceSwapInstruction(primaryColor: theme.primaryColor),
+                        SizedBox(height: isCompact ? 8.h : 20.h),
+
+                        // Context Card
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          child: Container(
+                            padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.05)
+                                  : Colors.black.withValues(alpha: 0.03),
+                              borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
+                              border: Border.all(
+                                color: theme.primaryColor.withValues(alpha: 0.15),
+                                width: 1.5,
+                              ),
+                            ),
+                            child: Text(
+                              quest.sentence ?? "",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit', 
+                                fontSize: isCompact ? 15.sp : 20.sp,
+                                color: isDark ? Colors.white : Colors.black87,
+                                height: 1.5,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
                           ),
-                        ),
-                        child: Text(
-                          quest.sentence ?? "",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 20.sp,
-                            color: isDark ? Colors.white : Colors.black87,
-                            height: 1.5,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    )
-                    .animate()
-                    .fadeIn(duration: 600.ms)
-                    .slideY(begin: 0.2, end: 0),
+                        )
+                        .animate()
+                        .fadeIn(duration: 600.ms)
+                        .slideY(begin: 0.2, end: 0),
 
                     SizedBox(height: 60.h),
 
@@ -176,7 +189,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                     ),
 
                     if (_isAnswered) ...[
-                      SizedBox(height: 32.h),
+                      SizedBox(height: isCompact ? 12.h : 32.h),
                       VoiceSwapResult(
                         isCorrect: _isCorrect == true,
                         quest: quest,
@@ -191,9 +204,9 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                         onTap: () => _submitAnswer(quest),
                         child: Container(
                           width: double.infinity,
-                          height: 65.h,
+                          height: isCompact ? 48.h : 65.h,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20.r),
+                            borderRadius: BorderRadius.circular(isCompact ? 14.r : 20.r),
                             gradient: LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
@@ -205,19 +218,20 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                             boxShadow: [
                               BoxShadow(
                                 color: theme.primaryColor.withValues(alpha: 0.4),
-                                blurRadius: 20,
-                                offset: const Offset(0, 8),
+                                blurRadius: isCompact ? 12 : 20,
+                                offset: Offset(0, isCompact ? 4 : 8),
                               ),
                             ],
                           ),
                           child: Center(
                             child: Text(
                               "ENGAGE TRANSMUTER",
-                              style: TextStyle(fontFamily: 'Outfit', 
-                                fontSize: 16.sp,
+                              style: TextStyle(
+                                fontFamily: 'Outfit', 
+                                fontSize: isCompact ? 13.sp : 16.sp,
                                 fontWeight: FontWeight.w900,
                                 color: Colors.white,
-                                letterSpacing: 3,
+                                letterSpacing: isCompact ? 2 : 3,
                               ),
                             ),
                           ),
@@ -226,8 +240,10 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                       .animate(onPlay: (c) => c.repeat(reverse: true))
                       .shimmer(duration: 2.seconds, color: Colors.white24),
 
-                    SizedBox(height: 40.h),
+                    SizedBox(height: isCompact ? 12.h : 40.h),
                   ],
+                );
+                  },
                 ),
         );
       },

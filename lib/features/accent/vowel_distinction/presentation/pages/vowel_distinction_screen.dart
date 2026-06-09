@@ -16,7 +16,6 @@ import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowe
 import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_pulse_speaker.dart';
 import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_spectral_slider.dart';
 import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_explanation_card.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 class VowelDistinctionScreen extends StatefulWidget {
   final int level;
@@ -43,10 +42,20 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
   double _sliderValue = 0.5;
   int? _selectedIndex;
 
+  Timer? _mismatchResetTimer;
+  Timer? _autoplayTimer;
+
   @override
   void initState() {
     super.initState();
     context.read<AccentBloc>().add(FetchAccentQuests(gameType: widget.gameType, level: widget.level));
+  }
+
+  @override
+  void dispose() {
+    _mismatchResetTimer?.cancel();
+    _autoplayTimer?.cancel();
+    super.dispose();
   }
 
   void _playTts(String text) {
@@ -86,7 +95,8 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
       setState(() { _isAnswered = true; _isCorrect = false; });
       context.read<AccentBloc>().add(SubmitAnswer(false));
       
-      Future.delayed(2.seconds, () {
+      _mismatchResetTimer?.cancel();
+      _mismatchResetTimer = Timer(const Duration(seconds: 2), () {
         if (mounted) {
           setState(() {
             _isAnswered = false;
@@ -119,7 +129,8 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
             if (quest != null && quest.textToSpeak != null) {
-              Future.delayed(500.milliseconds, () {
+              _autoplayTimer?.cancel();
+              _autoplayTimer = Timer(const Duration(milliseconds: 500), () {
                 if (mounted) {
                   _soundService.playTts(quest.textToSpeak!);
                 }
@@ -138,60 +149,162 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded) ? state.currentQuest as AccentQuest? : null;
         final options = quest?.options ?? ["A", "B"];
+        final mediaQuery = MediaQuery.of(context);
 
-        return AccentBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
-          showConfetti: _showConfetti,
-          onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
-          onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
-          child: quest == null ? const SizedBox() : SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Column(
-                children: [
-                  SizedBox(height: 16.h),
-                  VowelDistinctionInstruction(color: theme.primaryColor),
-                  SizedBox(height: 24.h),
-                  
-                  VowelDistinctionPromptCard(
-                    word: quest.word ?? "",
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                  ),
-                  SizedBox(height: 32.h),
-                  
-                  VowelDistinctionPulseSpeaker(
-                    text: quest.textToSpeak ?? "",
-                    color: theme.primaryColor,
-                    onPlayTts: _playTts,
-                  ),
-                  SizedBox(height: 48.h),
-                  
-                  VowelDistinctionSpectralSlider(
-                    options: options,
-                    correctIndex: quest.correctAnswerIndex ?? 0,
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                    isAnswered: _isAnswered,
-                    selectedIndex: _selectedIndex,
-                    sliderValue: _sliderValue,
-                    onSubmitChoice: _submitChoice,
-                    onSliderUpdate: _onSliderUpdate,
-                  ),
-                  
-                  if (_isAnswered) ...[
-                    SizedBox(height: 40.h),
-                    VowelDistinctionExplanationCard(
-                      quest: quest,
-                      color: theme.primaryColor,
-                      isDark: isDark,
-                      isCorrect: _isCorrect,
+        return MediaQuery(
+          data: mediaQuery.copyWith(
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
+          ),
+          child: AccentBaseLayout(
+            gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+            showConfetti: _showConfetti,
+            onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
+            onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+            child: quest == null ? const SizedBox() : LayoutBuilder(
+              builder: (context, constraints) {
+                final maxHeight = constraints.maxHeight;
+                final bool isCompact = maxHeight < 580;
+                
+                final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 80.h : 110.h) + (isCompact ? 130.h : 172.h) + (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
+                final remainingHeight = maxHeight - estimatedContentHeight;
+                
+                final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
+                final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 24.0) : 8.0;
+                final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 24.0) : 8.0;
+                final double gapPrompt = remainingHeight > 0 ? (gapUnit * 1.5).clamp(12.0, 32.0) : 12.0;
+                final double gapSpeaker = remainingHeight > 0 ? (gapUnit * 2).clamp(16.0, 48.0) : 16.0;
+                final double gapSlider = remainingHeight > 0 ? (gapUnit * 1.5).clamp(12.0, 40.0) : 12.0;
+                final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
+
+                return SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: maxHeight,
                     ),
-                  ],
-                  SizedBox(height: 60.h),
-                ],
-              ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SizedBox(height: gapTop),
+                              isCompact 
+                                ? SizedBox(
+                                    height: 32.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: VowelDistinctionInstruction(color: theme.primaryColor),
+                                    ),
+                                  )
+                                : VowelDistinctionInstruction(color: theme.primaryColor),
+                              SizedBox(height: gapInstruction),
+                              
+                              isCompact 
+                                ? SizedBox(
+                                    height: 90.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: VowelDistinctionPromptCard(
+                                        word: quest.word ?? "",
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                      ),
+                                    ),
+                                  )
+                                : VowelDistinctionPromptCard(
+                                    word: quest.word ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                              SizedBox(height: gapPrompt),
+                              
+                              isCompact
+                                ? SizedBox(
+                                    width: 80.r,
+                                    height: 80.r,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: VowelDistinctionPulseSpeaker(
+                                        text: quest.textToSpeak ?? "",
+                                        color: theme.primaryColor,
+                                        onPlayTts: _playTts,
+                                      ),
+                                    ),
+                                  )
+                                : VowelDistinctionPulseSpeaker(
+                                    text: quest.textToSpeak ?? "",
+                                    color: theme.primaryColor,
+                                    onPlayTts: _playTts,
+                                  ),
+                            ],
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SizedBox(height: gapSpeaker),
+                              isCompact
+                                ? SizedBox(
+                                    height: 110.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: VowelDistinctionSpectralSlider(
+                                        options: options,
+                                        correctIndex: quest.correctAnswerIndex ?? 0,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        isAnswered: _isAnswered,
+                                        selectedIndex: _selectedIndex,
+                                        sliderValue: _sliderValue,
+                                        onSubmitChoice: _submitChoice,
+                                        onSliderUpdate: _onSliderUpdate,
+                                      ),
+                                    ),
+                                  )
+                                : VowelDistinctionSpectralSlider(
+                                    options: options,
+                                    correctIndex: quest.correctAnswerIndex ?? 0,
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    isAnswered: _isAnswered,
+                                    selectedIndex: _selectedIndex,
+                                    sliderValue: _sliderValue,
+                                    onSubmitChoice: _submitChoice,
+                                    onSliderUpdate: _onSliderUpdate,
+                                  ),
+                              if (_isAnswered) ...[
+                                SizedBox(height: gapSlider),
+                                isCompact
+                                  ? SizedBox(
+                                      height: 110.h,
+                                      child: FittedBox(
+                                        fit: BoxFit.scaleDown,
+                                        child: VowelDistinctionExplanationCard(
+                                          quest: quest,
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                          isCorrect: _isCorrect,
+                                        ),
+                                      ),
+                                    )
+                                  : VowelDistinctionExplanationCard(
+                                      quest: quest,
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      isCorrect: _isCorrect,
+                                    ),
+                              ],
+                              SizedBox(height: gapBottom),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
           ),
         );

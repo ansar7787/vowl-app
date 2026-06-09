@@ -12,6 +12,7 @@ class PronounResolutionGravityPainter extends CustomPainter {
   final int targetNode;
   final String pronoun;
   final bool isDark;
+  final bool isCompact;
 
   PronounResolutionGravityPainter({
     required this.rotation,
@@ -24,14 +25,25 @@ class PronounResolutionGravityPainter extends CustomPainter {
     required this.targetNode,
     required this.pronoun,
     required this.isDark,
+    this.isCompact = false,
   });
 
   @override
   void paint(Canvas canvas, Size size) {
+    final double orbitRadius = isCompact ? 80.r : 130.r;
+    final double nodeW = isCompact ? 75.w : 110.w;
+    final double nodeH = isCompact ? 32.h : 45.h;
+    final double nodeRadius = isCompact ? 8.r : 12.r;
+    final double labelSize = isCompact ? 10.sp : 14.sp;
+    final double coreOuter = isCompact ? 25.r : 40.r;
+    final double coreInner = isCompact ? 22.r : 35.r;
+    final double beamWidth = isCompact ? 8.r : 12.r;
+    final double beamExtend = isCompact ? 100.r : 160.r;
+
     // Draw Orbital Rings
     canvas.drawCircle(
       centerPoint,
-      130.r,
+      orbitRadius,
       Paint()
         ..color = primaryColor.withValues(alpha: 0.05)
         ..style = PaintingStyle.stroke
@@ -47,15 +59,15 @@ class PronounResolutionGravityPainter extends CustomPainter {
           : (isWrong ? Colors.redAccent : primaryColor);
 
       // Node Container (Glass Morph)
-      final rect = Rect.fromCenter(center: nodes[i], width: 110.w, height: 45.h);
+      final rect = Rect.fromCenter(center: nodes[i], width: nodeW, height: nodeH);
       canvas.drawRRect(
-        RRect.fromRectAndRadius(rect, Radius.circular(12.r)),
+        RRect.fromRectAndRadius(rect, Radius.circular(nodeRadius)),
         Paint()
           ..color = nodeColor.withValues(alpha: 0.1)
           ..style = PaintingStyle.fill,
       );
       canvas.drawRRect(
-        RRect.fromRectAndRadius(rect, Radius.circular(12.r)),
+        RRect.fromRectAndRadius(rect, Radius.circular(nodeRadius)),
         Paint()
           ..color = nodeColor.withValues(alpha: 0.3)
           ..style = PaintingStyle.stroke
@@ -65,8 +77,9 @@ class PronounResolutionGravityPainter extends CustomPainter {
       final textPainter = TextPainter(
         text: TextSpan(
           text: options[i].toUpperCase(),
-          style: TextStyle(fontFamily: 'Outfit', 
-            fontSize: 14.sp,
+          style: TextStyle(
+            fontFamily: 'Outfit', 
+            fontSize: labelSize,
             fontWeight: FontWeight.bold,
             color: isHit
                 ? Colors.greenAccent
@@ -91,7 +104,7 @@ class PronounResolutionGravityPainter extends CustomPainter {
 
       final beamPaint = Paint()
         ..color = beamColor.withValues(alpha: 0.3)
-        ..strokeWidth = 12.r
+        ..strokeWidth = beamWidth
         ..strokeCap = StrokeCap.round
         ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
 
@@ -102,8 +115,8 @@ class PronounResolutionGravityPainter extends CustomPainter {
       final beamEnd = isAnswered
           ? nodes[targetNode]
           : Offset(
-              centerPoint.dx + cos(rotation) * 160.r,
-              centerPoint.dy + sin(rotation) * 160.r,
+              centerPoint.dx + cos(rotation) * beamExtend,
+              centerPoint.dy + sin(rotation) * beamExtend,
             );
       canvas.drawLine(centerPoint, beamEnd, beamPaint);
       canvas.drawLine(centerPoint, beamEnd, beamCore);
@@ -115,18 +128,19 @@ class PronounResolutionGravityPainter extends CustomPainter {
         : primaryColor;
     canvas.drawCircle(
       centerPoint,
-      40.r,
+      coreOuter,
       Paint()
         ..color = coreColor
         ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10),
     );
-    canvas.drawCircle(centerPoint, 35.r, Paint()..color = coreColor);
+    canvas.drawCircle(centerPoint, coreInner, Paint()..color = coreColor);
 
     final pronounPainter = TextPainter(
       text: TextSpan(
         text: pronoun.toUpperCase(),
-        style: TextStyle(fontFamily: 'Outfit', 
-          fontSize: 14.sp,
+        style: TextStyle(
+          fontFamily: 'Outfit', 
+          fontSize: labelSize,
           fontWeight: FontWeight.w900,
           color: Colors.white,
         ),
@@ -144,5 +158,6 @@ class PronounResolutionGravityPainter extends CustomPainter {
   bool shouldRepaint(covariant PronounResolutionGravityPainter oldDelegate) =>
       oldDelegate.rotation != rotation ||
       oldDelegate.isAnswered != isAnswered ||
-      oldDelegate.targetNode != targetNode;
+      oldDelegate.targetNode != targetNode ||
+      oldDelegate.isCompact != isCompact;
 }
