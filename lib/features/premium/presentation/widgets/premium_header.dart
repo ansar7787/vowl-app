@@ -17,7 +17,7 @@ class PremiumHeader extends StatelessWidget {
               if (context.canPop()) {
                 context.pop();
               } else {
-                context.go('/');
+                context.go('/home');
               }
             },
             icon: Icon(

@@ -24,6 +24,7 @@ import 'package:vowl/core/utils/security_service.dart';
 import 'package:vowl/core/utils/remote_config_service.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/review_service.dart';
+import 'package:vowl/core/utils/subscription_plans_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
@@ -57,6 +58,8 @@ Future<void> initExternalAndCore(GetIt sl) async {
         getCurrentUser: sl<GetCurrentUser>(),
         firestore: sl<FirebaseFirestore>(),
       ));
+  sl.registerLazySingleton<SubscriptionPlansService>(
+      () => SubscriptionPlansService(firestore: sl<FirebaseFirestore>()));
   sl.registerLazySingleton<SpeechService>(() => SpeechService());
   sl.registerLazySingleton<QuestUploadService>(() => QuestUploadService());
   sl.registerLazySingleton<TtsService>(() => TtsService());
