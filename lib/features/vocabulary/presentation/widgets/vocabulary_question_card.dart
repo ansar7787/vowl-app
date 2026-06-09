@@ -16,63 +16,81 @@ class VocabularyQuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: isDark
-            ? Colors.white.withValues(alpha: 0.05)
-            : Colors.white.withValues(alpha: 0.7),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: theme.primaryColor.withValues(alpha: 0.3),
-          width: 1.5,
+    final Color primaryColor =
+        (theme?.primaryColor as Color?) ??
+        Theme.of(context).colorScheme.primary;
+
+    final Color textColor = isDark ? Colors.white : Colors.black87;
+    final Color bgColor = isDark
+        ? Colors.white.withValues(alpha: 0.05)
+        : Colors.white.withValues(alpha: 0.7);
+
+    final String displayWord = quest.word ?? quest.prompt ?? 'Quest';
+
+    return Semantics(
+      label:
+          '${quest.instruction}. $displayWord${quest.sentence != null ? ". ${quest.sentence}" : ""}',
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(20.r),
+        decoration: BoxDecoration(
+          color: bgColor,
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(
+            color: primaryColor.withValues(alpha: 0.3),
+            width: 1.5,
+          ),
         ),
-      ),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Text(
-                  quest.instruction.toUpperCase(),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w800,
-                    color: theme.primaryColor,
-                    letterSpacing: 2,
-                  ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // No more redundant Row wrapper
+            Text(
+              quest.instruction.toUpperCase(),
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w800,
+                color: primaryColor,
+                letterSpacing: 2,
+              ),
+            ),
+            SizedBox(height: 12.h),
+            // softWrap + maxLines prevents RenderFlex on long words
+            Text(
+              displayWord,
+              textAlign: TextAlign.center,
+              softWrap: true,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 28.sp,
+                fontWeight: FontWeight.w700,
+                color: textColor,
+              ),
+            ),
+            if (quest.sentence != null) ...[
+              SizedBox(height: 12.h),
+              Text(
+                quest.sentence!,
+                textAlign: TextAlign.center,
+                maxLines: 5,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 15.sp,
+                  color: textColor.withValues(alpha: 0.7),
+                  fontStyle: FontStyle.italic,
+                  height: 1.4,
                 ),
               ),
             ],
-          ),
-          SizedBox(height: 12.h),
-          Text(
-            quest.word ?? quest.prompt ?? "Quest",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 28.sp,
-              fontWeight: FontWeight.w700,
-              color: isDark ? Colors.white : Colors.black87,
-            ),
-          ),
-          if (quest.sentence != null) ...[
-            SizedBox(height: 12.h),
-            Text(
-              quest.sentence!,
-              textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 15.sp,
-                color: (isDark ? Colors.white : Colors.black87).withValues(
-                  alpha: 0.7,
-                ),
-                fontStyle: FontStyle.italic,
-                height: 1.4,
-              ),
-            ),
           ],
-        ],
+        ),
       ),
     );
   }
