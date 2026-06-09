@@ -8,7 +8,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
+import 'package:vowl/features/vocabulary/presentation/pages/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
@@ -127,9 +127,15 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
         }
       },
       builder: (context, state) {
-        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+        final theme = LevelThemeHelper.getTheme(
+          'vocabulary',
+          level: widget.level,
+        );
 
-        if (state is VocabularyLoading || (state is! VocabularyGameComplete && state is! VocabularyLoaded && state is! VocabularyError)) {
+        if (state is VocabularyLoading ||
+            (state is! VocabularyGameComplete &&
+                state is! VocabularyLoaded &&
+                state is! VocabularyError)) {
           return Scaffold(
             backgroundColor: const Color(0xFF0F172A),
             body: GameShimmerLoading(primaryColor: theme.primaryColor),
@@ -138,15 +144,18 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
 
         final isDark = Theme.of(context).brightness == Brightness.dark;
 
-
-        final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
+        final quest = (state is VocabularyLoaded)
+            ? state.currentQuest
+            : _lastQuest;
         final options = quest?.options ?? [];
         final root = quest?.rootWord ?? quest?.word ?? "";
 
-
         // Use hovering suffix if dragging, otherwise use active selection
         final displaySuffixIndex = _hoveringSuffixIndex ?? _activeSuffixIndex;
-        final activeSuffix = (displaySuffixIndex != null && options.isNotEmpty && displaySuffixIndex < options.length)
+        final activeSuffix =
+            (displaySuffixIndex != null &&
+                options.isNotEmpty &&
+                displaySuffixIndex < options.length)
             ? options[displaySuffixIndex]
             : null;
 
@@ -164,8 +173,12 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
             final options = quest?.options ?? [];
             int? correctIdx;
             for (int i = 0; i < options.length; i++) {
-              final cleanS = options[i].replaceAll('-', '').trim().toLowerCase();
-              if (correct.toLowerCase().endsWith(cleanS) || correct.toLowerCase().contains(cleanS)) {
+              final cleanS = options[i]
+                  .replaceAll('-', '')
+                  .trim()
+                  .toLowerCase();
+              if (correct.toLowerCase().endsWith(cleanS) ||
+                  correct.toLowerCase().contains(cleanS)) {
                 correctIdx = i;
                 break;
               }
@@ -188,13 +201,25 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                     final isCompact = maxHeight < 580;
 
                     // Spacing calculations
-                    final double estimatedContentHeight = (isCompact ? 20.h : 40.h) + (isCompact ? 120.h : 180.h) + (options.length * (isCompact ? 46.h : 72.h)) + 20.h;
+                    final double estimatedContentHeight =
+                        (isCompact ? 20.h : 40.h) +
+                        (isCompact ? 120.h : 180.h) +
+                        (options.length * (isCompact ? 46.h : 72.h)) +
+                        20.h;
                     final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 20.0) : 6.0;
-                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 25.0) : 10.0;
-                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 30.0) : 12.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 5
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(6.0, 20.0)
+                        : 6.0;
+                    final double gapMiddle = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(10.0, 25.0)
+                        : 10.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 2).clamp(12.0, 30.0)
+                        : 12.0;
 
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -208,7 +233,9 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                     height: 25.h,
                                     child: FittedBox(
                                       fit: BoxFit.scaleDown,
-                                      child: _buildInstruction(theme.primaryColor),
+                                      child: _buildInstruction(
+                                        theme.primaryColor,
+                                      ),
                                     ),
                                   )
                                 : _buildInstruction(theme.primaryColor),
@@ -277,7 +304,8 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
       ),
       child: Text(
         "SLIDE FUEL CELLS INTO THE REACTION CORE",
-        style: TextStyle(fontFamily: 'Outfit', 
+        style: TextStyle(
+          fontFamily: 'Outfit',
           fontSize: 9.sp,
           fontWeight: FontWeight.w900,
           color: color,
@@ -377,7 +405,8 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                         ? (quest?.correctAnswer ?? "")
                                         : root)
                                     .toUpperCase(),
-                                style: TextStyle(fontFamily: 'RobotoMono', 
+                                style: TextStyle(
+                                  fontFamily: 'RobotoMono',
                                   fontSize: 24.sp,
                                   fontWeight: FontWeight.w900,
                                   color: isDark
@@ -395,7 +424,8 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                 ),
                                 Text(
                                   suffix.toUpperCase(),
-                                  style: TextStyle(fontFamily: 'RobotoMono', 
+                                  style: TextStyle(
+                                    fontFamily: 'RobotoMono',
                                     fontSize: 20.sp,
                                     fontWeight: FontWeight.bold,
                                     color: color,
@@ -486,4 +516,3 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
     );
   }
 }
-

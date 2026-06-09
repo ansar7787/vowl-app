@@ -8,7 +8,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
+import 'package:vowl/features/vocabulary/presentation/pages/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
@@ -220,7 +220,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     double yPos;
     if (total <= 4) {
       // 2 at top, 2 at bottom
-      yPos = isBottomHalf ? (h * (isCompact ? 0.71 : 0.75)) : (h * (isCompact ? 0.29 : 0.25));
+      yPos = isBottomHalf
+          ? (h * (isCompact ? 0.71 : 0.75))
+          : (h * (isCompact ? 0.29 : 0.25));
     } else {
       // Standard grid for 6 or 8 cards
       if (index < 2) {
@@ -253,8 +255,11 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     final currentY = initial.dy + (_shardOffsets[index]?.dy ?? 0);
     final isCompact = (_lastConstraints?.maxHeight ?? 600) < 580;
     final triggerTop = isCompact ? 100.h : 120.h;
-    final triggerBottom = (_lastConstraints?.maxHeight ?? 600) - (isCompact ? 100.h : 120.h);
-    if (currentY < triggerTop || currentY > triggerBottom) _hapticService.selection();
+    final triggerBottom =
+        (_lastConstraints?.maxHeight ?? 600) - (isCompact ? 100.h : 120.h);
+    if (currentY < triggerTop || currentY > triggerBottom) {
+      _hapticService.selection();
+    }
   }
 
   void _onShardEnd(int index) {
@@ -267,7 +272,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     final maxHeight = _lastConstraints!.maxHeight;
     final isCompact = maxHeight < 580;
     final bool nearTop = currentY < (isCompact ? 100.h : 130.h);
-    final bool nearBottom = currentY > (maxHeight - (isCompact ? 100.h : 130.h));
+    final bool nearBottom =
+        currentY > (maxHeight - (isCompact ? 100.h : 130.h));
 
     if (nearTop || nearBottom) {
       final bool toPositive = nearTop;
@@ -324,7 +330,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     final current = initial + offset;
     final maxHeight = _lastConstraints!.maxHeight;
     final bool toTop = current.dy < (maxHeight / 2);
-    final targetY = toTop ? (isCompact ? 70.h : 90.h) : (maxHeight - (isCompact ? 70.h : 90.h));
+    final targetY = toTop
+        ? (isCompact ? 70.h : 90.h)
+        : (maxHeight - (isCompact ? 70.h : 90.h));
 
     return IgnorePointer(
       child: CustomPaint(
@@ -337,5 +345,3 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     );
   }
 }
-
-

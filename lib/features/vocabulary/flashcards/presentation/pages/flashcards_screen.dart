@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
+import 'package:vowl/features/vocabulary/presentation/pages/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -144,16 +144,24 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
         }
       },
       builder: (context, state) {
-        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+        final theme = LevelThemeHelper.getTheme(
+          'vocabulary',
+          level: widget.level,
+        );
 
-        if (state is VocabularyLoading || (state is! VocabularyGameComplete && state is! VocabularyLoaded && state is! VocabularyError)) {
+        if (state is VocabularyLoading ||
+            (state is! VocabularyGameComplete &&
+                state is! VocabularyLoaded &&
+                state is! VocabularyError)) {
           return Scaffold(
             backgroundColor: const Color(0xFF0F172A),
             body: GameShimmerLoading(primaryColor: theme.primaryColor),
           );
         }
 
-        final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
+        final quest = (state is VocabularyLoaded)
+            ? state.currentQuest
+            : _lastQuest;
 
         return VocabularyBaseLayout(
           gameType: widget.gameType,
@@ -164,23 +172,23 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           useScrolling: false,
           onHint: () {
-          if (!_isFlipped) {
-            setState(() {
-              _isFlipped = true;
-              _isHintActive = true;
-            });
-            // Flip back after 4 seconds to maintain the "test" aspect
-            Future.delayed(const Duration(seconds: 4), () {
-              if (!context.mounted) return;
-              if (_isHintActive) {
-                setState(() {
-                  _isFlipped = false;
-                  _isHintActive = false;
-                });
-              }
-            });
-          }
-        },
+            if (!_isFlipped) {
+              setState(() {
+                _isFlipped = true;
+                _isHintActive = true;
+              });
+              // Flip back after 4 seconds to maintain the "test" aspect
+              Future.delayed(const Duration(seconds: 4), () {
+                if (!context.mounted) return;
+                if (_isHintActive) {
+                  setState(() {
+                    _isFlipped = false;
+                    _isHintActive = false;
+                  });
+                }
+              });
+            }
+          },
           child: quest == null
               ? GameShimmerLoading(primaryColor: theme.primaryColor)
               : LayoutBuilder(
@@ -191,16 +199,28 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                     // Calculate dynamic card height based on available space
                     final cardHeight = (maxHeight * (isCompact ? 0.50 : 0.60))
                         .clamp(200.0, 450.0);
-                    final cardWidth = (constraints.maxWidth * (isCompact ? 0.78 : 0.85))
-                        .clamp(240.0, 320.0);
+                    final cardWidth =
+                        (constraints.maxWidth * (isCompact ? 0.78 : 0.85))
+                            .clamp(240.0, 320.0);
 
-                    final double estimatedContentHeight = (isCompact ? 25.h : 35.h) + cardHeight + (isCompact ? 30.h : 50.h);
+                    final double estimatedContentHeight =
+                        (isCompact ? 25.h : 35.h) +
+                        cardHeight +
+                        (isCompact ? 30.h : 50.h);
                     final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
-                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(12.0, 30.0) : 12.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 5
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(6.0, 16.0)
+                        : 6.0;
+                    final double gapMiddle = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                        : 10.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 2.5).clamp(12.0, 30.0)
+                        : 12.0;
 
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -214,7 +234,9 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                                     height: 25.h,
                                     child: FittedBox(
                                       fit: BoxFit.scaleDown,
-                                      child: _buildInstruction(theme.primaryColor),
+                                      child: _buildInstruction(
+                                        theme.primaryColor,
+                                      ),
                                     ),
                                   )
                                 : _buildInstruction(theme.primaryColor),
@@ -236,10 +258,14 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                                     height: 35.h,
                                     child: FittedBox(
                                       fit: BoxFit.scaleDown,
-                                      child: FlashcardSwipeHints(color: theme.primaryColor),
+                                      child: FlashcardSwipeHints(
+                                        color: theme.primaryColor,
+                                      ),
                                     ),
                                   )
-                                : FlashcardSwipeHints(color: theme.primaryColor),
+                                : FlashcardSwipeHints(
+                                    color: theme.primaryColor,
+                                  ),
                             SizedBox(height: gapBottom),
                           ],
                         ),
@@ -268,7 +294,8 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
           Flexible(
             child: Text(
               "SWIPE RIGHT TO MASTER, LEFT TO REVIEW",
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 9.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor,

@@ -6,7 +6,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
+import 'package:vowl/features/vocabulary/presentation/pages/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -62,7 +62,12 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
     );
   }
 
-  void _handleFlick(double velocity, String word, List<String> buckets, String correctAnswer) {
+  void _handleFlick(
+    double velocity,
+    String word,
+    List<String> buckets,
+    String correctAnswer,
+  ) {
     if (_isAnswered || _flickedWord != null) return;
 
     setState(() {
@@ -71,7 +76,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
 
       _flickedWord = word;
       _flickTarget = targetBin;
-      
+
       final bloc = context.read<VocabularyBloc>();
       // Delay the actual state update to allow animation to play
       Future.delayed(const Duration(milliseconds: 100), () {
@@ -81,7 +86,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
           _wordsInBins[targetBin]?.add(word);
           _flickedWord = null;
           _flickTarget = null;
-          _isHintActive = false; 
+          _isHintActive = false;
 
           if (_currentWordIndex < (wordsPerQuest(buckets) - 1)) {
             _currentWordIndex++;
@@ -93,7 +98,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
     });
   }
 
-  int wordsPerQuest(List<String> buckets) => (buckets.length * 2 + 1).clamp(3, 5);
+  int wordsPerQuest(List<String> buckets) =>
+      (buckets.length * 2 + 1).clamp(3, 5);
 
   void _performBatchCheck(String correctAnswer, VocabularyBloc bloc) {
     bool allCorrect = true;
@@ -126,11 +132,11 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
   bool _validateChoice(String word, String bucket, String correctAnswer) {
     final cleanWord = word.trim().toLowerCase();
     final cleanLabel = bucket.trim().toLowerCase();
-    
+
     final target1 = "$cleanLabel:$cleanWord";
     final target2 = "$cleanLabel: $cleanWord";
     final lowerAnswer = correctAnswer.toLowerCase();
-    
+
     return lowerAnswer.contains(target1) || lowerAnswer.contains(target2);
   }
 
@@ -170,36 +176,51 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
             enableDoubleUp: true,
           );
         } else if (state is VocabularyGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
-        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+        final theme = LevelThemeHelper.getTheme(
+          'vocabulary',
+          level: widget.level,
+        );
 
-        if (state is VocabularyLoading || (state is! VocabularyGameComplete && state is! VocabularyLoaded && state is! VocabularyError)) {
+        if (state is VocabularyLoading ||
+            (state is! VocabularyGameComplete &&
+                state is! VocabularyLoaded &&
+                state is! VocabularyError)) {
           return Scaffold(
             backgroundColor: const Color(0xFF0F172A),
             body: GameShimmerLoading(primaryColor: theme.primaryColor),
           );
         }
 
-        final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
+        final quest = (state is VocabularyLoaded)
+            ? state.currentQuest
+            : _lastQuest;
 
         final options = quest?.options ?? [];
         final buckets = quest?.topicBuckets ?? ["A", "B"];
-        final currentWord = _currentWordIndex < options.length ? options[_currentWordIndex] : "";
+        final currentWord = _currentWordIndex < options.length
+            ? options[_currentWordIndex]
+            : "";
         final correctAnswer = quest?.correctAnswer ?? "";
-        
+
         String displayInstruction = quest?.instruction ?? "";
-        if (displayInstruction.toLowerCase().contains("choose the correct answer")) {
+        if (displayInstruction.toLowerCase().contains(
+          "choose the correct answer",
+        )) {
           displayInstruction = "SORT THE WORDS INTO BINS";
         }
 
         return VocabularyBaseLayout(
-          gameType: widget.gameType, 
-          level: widget.level, 
-          isAnswered: _isAnswered, 
-          isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           useScrolling: false,
@@ -216,7 +237,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
               final counterTop = 0.0;
               final instructionTop = isCompact ? 25.h : maxHeight * 0.08;
               final machineTop = isCompact ? 95.h : maxHeight * 0.27;
-              
+
               // Word is positioned relative to bottom to work nicely with flicking physics
               final wordBottom = isCompact ? 135.h : maxHeight * 0.40;
               final flyingWordBottom = isCompact ? 135.h : maxHeight * 0.40;
@@ -234,8 +255,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                       top: counterTop,
                       child: RepaintBoundary(
                         child: TopicBatchCounter(
-                          count: _userChoices.length, 
-                          total: options.length, 
+                          count: _userChoices.length,
+                          total: options.length,
                           color: theme.primaryColor,
                         ),
                       ),
@@ -243,16 +264,22 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
 
                     // 2. INSTRUCTION
                     Positioned(
-                      top: instructionTop, 
+                      top: instructionTop,
                       child: isCompact
                           ? SizedBox(
                               height: 60.h,
                               child: FittedBox(
                                 fit: BoxFit.scaleDown,
-                                child: _buildInstruction(displayInstruction, theme.primaryColor),
+                                child: _buildInstruction(
+                                  displayInstruction,
+                                  theme.primaryColor,
+                                ),
                               ),
                             )
-                          : _buildInstruction(displayInstruction, theme.primaryColor),
+                          : _buildInstruction(
+                              displayInstruction,
+                              theme.primaryColor,
+                            ),
                     ),
 
                     // 3. EMISSION MACHINE
@@ -264,10 +291,16 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                 height: 75.h,
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
-                                  child: TopicMachineHead(primaryColor: theme.primaryColor, emoji: quest?.topicEmoji ?? "📦"),
+                                  child: TopicMachineHead(
+                                    primaryColor: theme.primaryColor,
+                                    emoji: quest?.topicEmoji ?? "📦",
+                                  ),
                                 ),
                               )
-                            : TopicMachineHead(primaryColor: theme.primaryColor, emoji: quest?.topicEmoji ?? "📦"),
+                            : TopicMachineHead(
+                                primaryColor: theme.primaryColor,
+                                emoji: quest?.topicEmoji ?? "📦",
+                              ),
                       ),
                     ),
 
@@ -283,16 +316,26 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
                                   child: TopicContainmentBin(
-                                    index: 0, label: buckets[0], color: theme.primaryColor, isDark: isDark, 
-                                    correctAnswer: correctAnswer, currentWord: currentWord, 
-                                    words: _wordsInBins[0] ?? [], isHintActive: _isHintActive,
+                                    index: 0,
+                                    label: buckets[0],
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    correctAnswer: correctAnswer,
+                                    currentWord: currentWord,
+                                    words: _wordsInBins[0] ?? [],
+                                    isHintActive: _isHintActive,
                                   ),
                                 ),
                               )
                             : TopicContainmentBin(
-                                index: 0, label: buckets[0], color: theme.primaryColor, isDark: isDark, 
-                                correctAnswer: correctAnswer, currentWord: currentWord, 
-                                words: _wordsInBins[0] ?? [], isHintActive: _isHintActive,
+                                index: 0,
+                                label: buckets[0],
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                correctAnswer: correctAnswer,
+                                currentWord: currentWord,
+                                words: _wordsInBins[0] ?? [],
+                                isHintActive: _isHintActive,
                               ),
                       ),
                     ),
@@ -308,22 +351,34 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                   child: FittedBox(
                                     fit: BoxFit.scaleDown,
                                     child: TopicContainmentBin(
-                                      index: 1, label: buckets[1], color: theme.primaryColor, isDark: isDark, 
-                                      correctAnswer: correctAnswer, currentWord: currentWord, 
-                                      words: _wordsInBins[1] ?? [], isHintActive: _isHintActive,
+                                      index: 1,
+                                      label: buckets[1],
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      correctAnswer: correctAnswer,
+                                      currentWord: currentWord,
+                                      words: _wordsInBins[1] ?? [],
+                                      isHintActive: _isHintActive,
                                     ),
                                   ),
                                 )
                               : TopicContainmentBin(
-                                  index: 1, label: buckets[1], color: theme.primaryColor, isDark: isDark, 
-                                  correctAnswer: correctAnswer, currentWord: currentWord, 
-                                  words: _wordsInBins[1] ?? [], isHintActive: _isHintActive,
+                                  index: 1,
+                                  label: buckets[1],
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                  correctAnswer: correctAnswer,
+                                  currentWord: currentWord,
+                                  words: _wordsInBins[1] ?? [],
+                                  isHintActive: _isHintActive,
                                 ),
                         ),
                       ),
-                    
+
                     // Draggable Word Core
-                    if (!_isAnswered && currentWord.isNotEmpty && _flickedWord == null) 
+                    if (!_isAnswered &&
+                        currentWord.isNotEmpty &&
+                        _flickedWord == null)
                       Positioned(
                         bottom: wordBottom,
                         child: isCompact
@@ -333,54 +388,90 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
                                   child: TopicDraggableWord(
-                                    word: currentWord, 
-                                    primaryColor: theme.primaryColor, 
+                                    word: currentWord,
+                                    primaryColor: theme.primaryColor,
                                     isDark: isDark,
-                                    onFlick: (v) => _handleFlick(v, currentWord, buckets, correctAnswer),
+                                    onFlick: (v) => _handleFlick(
+                                      v,
+                                      currentWord,
+                                      buckets,
+                                      correctAnswer,
+                                    ),
                                   ),
                                 ),
                               )
                             : TopicDraggableWord(
-                                word: currentWord, 
-                                primaryColor: theme.primaryColor, 
-                                isDark: isDark,
-                                onFlick: (v) => _handleFlick(v, currentWord, buckets, correctAnswer),
-                              ).animate(key: ValueKey("word_$_currentWordIndex"))
-                               .move(begin: const Offset(0, -100), end: Offset.zero, duration: 500.ms, curve: Curves.bounceOut)
-                               .fadeIn(),
+                                    word: currentWord,
+                                    primaryColor: theme.primaryColor,
+                                    isDark: isDark,
+                                    onFlick: (v) => _handleFlick(
+                                      v,
+                                      currentWord,
+                                      buckets,
+                                      correctAnswer,
+                                    ),
+                                  )
+                                  .animate(
+                                    key: ValueKey("word_$_currentWordIndex"),
+                                  )
+                                  .move(
+                                    begin: const Offset(0, -100),
+                                    end: Offset.zero,
+                                    duration: 500.ms,
+                                    curve: Curves.bounceOut,
+                                  )
+                                  .fadeIn(),
                       ),
 
                     // Flying Word Animation
                     if (_flickedWord != null)
                       Positioned(
                         bottom: flyingWordBottom,
-                        child: Container(
-                          width: 140.w, 
-                          height: 70.h,  
-                          decoration: BoxDecoration(
-                            color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                            borderRadius: BorderRadius.circular(12.r),
-                            border: Border.all(color: theme.primaryColor.withValues(alpha: 0.5), width: 1.5),
-                          ),
-                          child: Center(
-                            child: Text(
-                              _flickedWord!.toUpperCase(),
-                              style: TextStyle(fontFamily: 'RobotoMono', 
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.bold,
-                                color: isDark ? Colors.white : Colors.black87,
-                              ),
-                            ),
-                          ),
-                        ).animate()
-                         .move(
-                           begin: Offset.zero, 
-                           end: Offset(_flickTarget == 0 ? -110.w : 110.w, isCompact ? 100.h : maxHeight * 0.28), 
-                           duration: 400.ms, 
-                           curve: Curves.easeInBack,
-                         )
-                         .scale(begin: const Offset(1,1), end: const Offset(0.2, 0.2))
-                         .fadeOut(),
+                        child:
+                            Container(
+                                  width: 140.w,
+                                  height: 70.h,
+                                  decoration: BoxDecoration(
+                                    color: isDark
+                                        ? const Color(0xFF1E293B)
+                                        : Colors.white,
+                                    borderRadius: BorderRadius.circular(12.r),
+                                    border: Border.all(
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.5,
+                                      ),
+                                      width: 1.5,
+                                    ),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      _flickedWord!.toUpperCase(),
+                                      style: TextStyle(
+                                        fontFamily: 'RobotoMono',
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.bold,
+                                        color: isDark
+                                            ? Colors.white
+                                            : Colors.black87,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                                .animate()
+                                .move(
+                                  begin: Offset.zero,
+                                  end: Offset(
+                                    _flickTarget == 0 ? -110.w : 110.w,
+                                    isCompact ? 100.h : maxHeight * 0.28,
+                                  ),
+                                  duration: 400.ms,
+                                  curve: Curves.easeInBack,
+                                )
+                                .scale(
+                                  begin: const Offset(1, 1),
+                                  end: const Offset(0.2, 0.2),
+                                )
+                                .fadeOut(),
                       ),
                   ],
                 ),
@@ -396,22 +487,54 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-          decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(8.r), boxShadow: [BoxShadow(color: color, blurRadius: 10)]),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.swipe_right_rounded, color: Colors.white, size: 12.r),
-              SizedBox(width: 4.w),
-              Text("FLICK TO SORT", style: TextStyle(fontFamily: 'RobotoMono', fontSize: 10.sp, fontWeight: FontWeight.bold, color: Colors.white)),
-            ],
-          ),
-        ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1,1), end: const Offset(1.1, 1.1)),
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(8.r),
+                boxShadow: [BoxShadow(color: color, blurRadius: 10)],
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.swipe_right_rounded,
+                    color: Colors.white,
+                    size: 12.r,
+                  ),
+                  SizedBox(width: 4.w),
+                  Text(
+                    "FLICK TO SORT",
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            )
+            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
         SizedBox(height: 12.h),
         Container(
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-          decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5)),
-          child: Text(text.toUpperCase(), style: TextStyle(fontFamily: 'RobotoMono', fontSize: 10.sp, fontWeight: FontWeight.bold, color: color.withValues(alpha: 0.9), letterSpacing: 1.5), textAlign: TextAlign.center),
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(30.r),
+            border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
+          ),
+          child: Text(
+            text.toUpperCase(),
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
+              fontSize: 10.sp,
+              fontWeight: FontWeight.bold,
+              color: color.withValues(alpha: 0.9),
+              letterSpacing: 1.5,
+            ),
+            textAlign: TextAlign.center,
+          ),
         ),
       ],
     );

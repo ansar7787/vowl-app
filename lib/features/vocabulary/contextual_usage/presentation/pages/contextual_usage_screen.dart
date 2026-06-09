@@ -8,7 +8,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
+import 'package:vowl/features/vocabulary/presentation/pages/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
@@ -20,9 +20,9 @@ class ContextualUsageScreen extends StatefulWidget {
   final int level;
   final GameSubtype gameType;
   const ContextualUsageScreen({
-    super.key, 
-    required this.level, 
-    this.gameType = GameSubtype.contextualUsage
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.contextualUsage,
   });
 
   @override
@@ -32,7 +32,7 @@ class ContextualUsageScreen extends StatefulWidget {
 class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -43,7 +43,9 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<VocabularyBloc>().add(FetchVocabularyQuests(gameType: widget.gameType, level: widget.level));
+    context.read<VocabularyBloc>().add(
+      FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   void _submitAnswer(String selected, String correct) {
@@ -53,7 +55,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
       _isAnswered = true;
     });
 
-    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+    bool isCorrect =
+        selected.trim().toLowerCase() == correct.trim().toLowerCase();
     Future.delayed(600.ms, () {
       if (!mounted) return;
       if (isCorrect) {
@@ -95,17 +98,34 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
         }
         if (state is VocabularyGameComplete) {
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'USAGE EXPERT!', enableDoubleUp: true);
+          GameDialogHelper.showCompletion(
+            context,
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'USAGE EXPERT!',
+            enableDoubleUp: true,
+          );
         } else if (state is VocabularyGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
-        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
-        final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
+        final theme = LevelThemeHelper.getTheme(
+          'vocabulary',
+          level: widget.level,
+        );
+        final quest = (state is VocabularyLoaded)
+            ? state.currentQuest
+            : _lastQuest;
         final loadedState = state is VocabularyLoaded ? state : null;
 
-        if (state is VocabularyLoading || (quest == null && state is! VocabularyGameComplete && state is! VocabularyError)) {
+        if (state is VocabularyLoading ||
+            (quest == null &&
+                state is! VocabularyGameComplete &&
+                state is! VocabularyError)) {
           return Scaffold(
             backgroundColor: const Color(0xFF0F172A),
             body: GameShimmerLoading(primaryColor: theme.primaryColor),
@@ -123,7 +143,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
-          onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+          onHint: () =>
+              context.read<VocabularyBloc>().add(VocabularyHintUsed()),
           useScrolling: false,
           disablePadding: true,
           child: quest == null
@@ -153,13 +174,23 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
         final maxHeight = constraints.maxHeight;
         final isCompact = maxHeight < 580;
 
-        final double estimatedContentHeight = (isCompact ? 40.h : 60.h) + (isCompact ? 100.h : 150.h) + (isCompact ? 80.h : 120.h) + 20.h;
+        final double estimatedContentHeight =
+            (isCompact ? 40.h : 60.h) +
+            (isCompact ? 100.h : 150.h) +
+            (isCompact ? 80.h : 120.h) +
+            20.h;
         final remainingHeight = maxHeight - estimatedContentHeight;
 
         final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-        final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(10.0, 40.0) : 10.0;
-        final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(15.0, 40.0) : 15.0;
-        final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(20.0, 60.0) : 20.0;
+        final double gapTop = remainingHeight > 0
+            ? (gapUnit * 1).clamp(10.0, 40.0)
+            : 10.0;
+        final double gapMiddle = remainingHeight > 0
+            ? (gapUnit * 1.5).clamp(15.0, 40.0)
+            : 15.0;
+        final double gapBottom = remainingHeight > 0
+            ? (gapUnit * 2.5).clamp(20.0, 60.0)
+            : 20.0;
 
         return Column(
           children: [
@@ -182,15 +213,18 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                     ),
                   )
                 : Text(
-                    "USAGE UNFOLD",
-                    style: TextStyle(
-                      fontFamily: 'RobotoMono',
-                      fontSize: 11.sp,
-                      color: color,
-                      letterSpacing: 8,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ).animate().fadeIn(duration: 800.ms).shimmer(duration: 2.seconds),
+                        "USAGE UNFOLD",
+                        style: TextStyle(
+                          fontFamily: 'RobotoMono',
+                          fontSize: 11.sp,
+                          color: color,
+                          letterSpacing: 8,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                      .animate()
+                      .fadeIn(duration: 800.ms)
+                      .shimmer(duration: 2.seconds),
 
             SizedBox(height: gapMiddle),
 
@@ -245,22 +279,29 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
     );
   }
 
-  Widget _buildChipsWrap(VocabularyQuest quest, Color color, bool isDark, bool isCompact) {
+  Widget _buildChipsWrap(
+    VocabularyQuest quest,
+    Color color,
+    bool isDark,
+    bool isCompact,
+  ) {
     return Wrap(
-      spacing: 16.w, 
-      runSpacing: isCompact ? 10.h : 16.h,
-      alignment: WrapAlignment.center,
-      children: (quest.options ?? []).map((o) {
-        return ContextualUsageOptionChip(
-          text: o,
-          color: color,
-          isDark: isDark,
-          isSelected: _selectedOption == o,
-          isCorrect: _isCorrect,
-          onTap: () => _submitAnswer(o, quest.correctAnswer ?? ""),
-        );
-      }).toList(),
-    ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.2, curve: Curves.easeOutCubic);
+          spacing: 16.w,
+          runSpacing: isCompact ? 10.h : 16.h,
+          alignment: WrapAlignment.center,
+          children: (quest.options ?? []).map((o) {
+            return ContextualUsageOptionChip(
+              text: o,
+              color: color,
+              isDark: isDark,
+              isSelected: _selectedOption == o,
+              isCorrect: _isCorrect,
+              onTap: () => _submitAnswer(o, quest.correctAnswer ?? ""),
+            );
+          }).toList(),
+        )
+        .animate()
+        .fadeIn(delay: 600.ms)
+        .slideY(begin: 0.2, curve: Curves.easeOutCubic);
   }
-
 }

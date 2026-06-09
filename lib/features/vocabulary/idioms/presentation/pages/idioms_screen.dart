@@ -8,7 +8,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
+import 'package:vowl/features/vocabulary/presentation/pages/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
@@ -32,7 +32,7 @@ class IdiomsScreen extends StatefulWidget {
 class _IdiomsScreenState extends State<IdiomsScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -43,7 +43,9 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<VocabularyBloc>().add(FetchVocabularyQuests(gameType: widget.gameType, level: widget.level));
+    context.read<VocabularyBloc>().add(
+      FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   void _submitAnswer(String selected, String correct) {
@@ -53,8 +55,9 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
       _isAnswered = true;
     });
 
-    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
-    
+    bool isCorrect =
+        selected.trim().toLowerCase() == correct.trim().toLowerCase();
+
     Future.delayed(600.ms, () {
       if (!mounted) return;
       if (isCorrect) {
@@ -104,15 +107,26 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
             enableDoubleUp: true,
           );
         } else if (state is VocabularyGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
-        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
-        final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
+        final theme = LevelThemeHelper.getTheme(
+          'vocabulary',
+          level: widget.level,
+        );
+        final quest = (state is VocabularyLoaded)
+            ? state.currentQuest
+            : _lastQuest;
         final loadedState = state is VocabularyLoaded ? state : null;
 
-        if (state is VocabularyLoading || (quest == null && state is! VocabularyGameComplete && state is! VocabularyError)) {
+        if (state is VocabularyLoading ||
+            (quest == null &&
+                state is! VocabularyGameComplete &&
+                state is! VocabularyError)) {
           return Scaffold(
             backgroundColor: const Color(0xFF0F172A),
             body: GameShimmerLoading(primaryColor: theme.primaryColor),
@@ -130,7 +144,8 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
-          onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+          onHint: () =>
+              context.read<VocabularyBloc>().add(VocabularyHintUsed()),
           useScrolling: false,
           disablePadding: true,
           child: quest == null
@@ -160,13 +175,23 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
         final maxHeight = constraints.maxHeight;
         final isCompact = maxHeight < 580;
 
-        final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 40.h : 60.h) + (isCompact ? 100.h : 180.h) + (isCompact ? 20.h : 40.h);
+        final double estimatedContentHeight =
+            (isCompact ? 30.h : 40.h) +
+            (isCompact ? 40.h : 60.h) +
+            (isCompact ? 100.h : 180.h) +
+            (isCompact ? 20.h : 40.h);
         final remainingHeight = maxHeight - estimatedContentHeight;
 
         final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-        final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(10.0, 30.0) : 10.0;
-        final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-        final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(15.0, 40.0) : 15.0;
+        final double gapTop = remainingHeight > 0
+            ? (gapUnit * 1).clamp(10.0, 30.0)
+            : 10.0;
+        final double gapMiddle = remainingHeight > 0
+            ? (gapUnit * 1.5).clamp(10.0, 24.0)
+            : 10.0;
+        final double gapBottom = remainingHeight > 0
+            ? (gapUnit * 2.5).clamp(15.0, 40.0)
+            : 15.0;
 
         return Column(
           children: [
@@ -188,7 +213,10 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                 physics: const BouncingScrollPhysics(),
                 padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
                 children: [
-                  IdiomsSystemMessage(text: "INCOMING TRANSMISSION...", color: color),
+                  IdiomsSystemMessage(
+                    text: "INCOMING TRANSMISSION...",
+                    color: color,
+                  ),
                   SizedBox(height: isCompact ? 10.h : 20.h),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -196,10 +224,18 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                       CircleAvatar(
                         radius: isCompact ? 14.r : 18.r,
                         backgroundColor: color.withValues(alpha: 0.2),
-                        child: Icon(Icons.psychology_alt_rounded, size: isCompact ? 16.r : 20.r, color: color),
+                        child: Icon(
+                          Icons.psychology_alt_rounded,
+                          size: isCompact ? 16.r : 20.r,
+                          color: color,
+                        ),
                       ),
                       SizedBox(width: 10.w),
-                      IdiomsStrangerMessage(emojis: quest.topicEmoji ?? "❓", color: color, isDark: isDark),
+                      IdiomsStrangerMessage(
+                        emojis: quest.topicEmoji ?? "❓",
+                        color: color,
+                        isDark: isDark,
+                      ),
                     ],
                   ),
 
@@ -209,7 +245,12 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        IdiomsUserMessage(text: _selectedOption!, color: color, isCorrect: _isCorrect, isDark: isDark),
+                        IdiomsUserMessage(
+                          text: _selectedOption!,
+                          color: color,
+                          isCorrect: _isCorrect,
+                          isDark: isDark,
+                        ),
                         SizedBox(width: 10.w),
                         CircleAvatar(
                           radius: isCompact ? 14.r : 18.r,
@@ -226,37 +267,41 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
 
                   if (_isAnswered && _isCorrect == false) ...[
                     SizedBox(height: 10.h),
-                    IdiomsSystemMessage(text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.", color: Colors.redAccent),
+                    IdiomsSystemMessage(
+                      text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.",
+                      color: Colors.redAccent,
+                    ),
                   ],
                 ],
               ),
             ),
-            
+
             SizedBox(height: gapMiddle),
 
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: Wrap(
-                spacing: 12.w,
-                runSpacing: isCompact ? 8.h : 12.h,
-                alignment: WrapAlignment.center,
-                children: (quest.options ?? []).map((o) {
-                  return IdiomsOptionChip(
-                    text: o,
-                    correct: quest.correctAnswer ?? "",
-                    color: color,
-                    isDark: isDark,
-                    isAnswered: _isAnswered,
-                    isCorrect: _isCorrect,
-                    selectedOption: _selectedOption,
-                    onTap: () => _submitAnswer(o, quest.correctAnswer ?? ""),
-                  );
-                }).toList(),
-              ),
-            )
-            .animate()
-            .fadeIn(delay: 800.ms)
-            .slideY(begin: 0.3, curve: Curves.easeOutCubic),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  child: Wrap(
+                    spacing: 12.w,
+                    runSpacing: isCompact ? 8.h : 12.h,
+                    alignment: WrapAlignment.center,
+                    children: (quest.options ?? []).map((o) {
+                      return IdiomsOptionChip(
+                        text: o,
+                        correct: quest.correctAnswer ?? "",
+                        color: color,
+                        isDark: isDark,
+                        isAnswered: _isAnswered,
+                        isCorrect: _isCorrect,
+                        selectedOption: _selectedOption,
+                        onTap: () =>
+                            _submitAnswer(o, quest.correctAnswer ?? ""),
+                      );
+                    }).toList(),
+                  ),
+                )
+                .animate()
+                .fadeIn(delay: 800.ms)
+                .slideY(begin: 0.3, curve: Curves.easeOutCubic),
             SizedBox(height: gapBottom),
           ],
         );

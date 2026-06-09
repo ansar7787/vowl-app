@@ -8,7 +8,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
+import 'package:vowl/features/vocabulary/presentation/pages/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
@@ -167,14 +167,29 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                     final maxHeight = constraints.maxHeight;
                     final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight = 20.h + 40.h + (isCompact ? 80.h : 110.h) + (isCompact ? 100.h : 180.h) + 20.h;
+                    final double estimatedContentHeight =
+                        20.h +
+                        40.h +
+                        (isCompact ? 80.h : 110.h) +
+                        (isCompact ? 100.h : 180.h) +
+                        20.h;
                     final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 6 : 0;
-                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
-                    final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 30.0) : 10.0;
-                    final double gapAnchor = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 40.0) : 10.0;
-                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 60.0) : 12.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 6
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(6.0, 16.0)
+                        : 6.0;
+                    final double gapInstruction = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(10.0, 30.0)
+                        : 10.0;
+                    final double gapAnchor = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(10.0, 40.0)
+                        : 10.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 2).clamp(12.0, 60.0)
+                        : 12.0;
 
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -188,7 +203,10 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                     height: 35.h,
                                     child: FittedBox(
                                       fit: BoxFit.scaleDown,
-                                      child: _buildInstruction(theme.primaryColor, isDark),
+                                      child: _buildInstruction(
+                                        theme.primaryColor,
+                                        isDark,
+                                      ),
                                     ),
                                   )
                                 : _buildInstruction(theme.primaryColor, isDark),
@@ -223,11 +241,27 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                       fit: BoxFit.scaleDown,
                                       child: SizedBox(
                                         width: constraints.maxWidth,
-                                        child: _buildOptionsWrap(quest, theme.primaryColor, isDark, state is VocabularyLoaded ? state.isFinalFailure : false, isCompact),
+                                        child: _buildOptionsWrap(
+                                          quest,
+                                          theme.primaryColor,
+                                          isDark,
+                                          state is VocabularyLoaded
+                                              ? state.isFinalFailure
+                                              : false,
+                                          isCompact,
+                                        ),
                                       ),
                                     ),
                                   )
-                                : _buildOptionsWrap(quest, theme.primaryColor, isDark, state is VocabularyLoaded ? state.isFinalFailure : false, isCompact),
+                                : _buildOptionsWrap(
+                                    quest,
+                                    theme.primaryColor,
+                                    isDark,
+                                    state is VocabularyLoaded
+                                        ? state.isFinalFailure
+                                        : false,
+                                    isCompact,
+                                  ),
                             SizedBox(height: gapBottom),
                           ],
                         ),
@@ -275,28 +309,27 @@ class _CollocationsScreenState extends State<CollocationsScreen>
 
   Widget _buildInstruction(Color color, bool isDark) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: isDark
-            ? color.withValues(alpha: 0.1)
-            : color.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
-      ),
-      child: Text(
-        "FUSE THE COLLOCATION PAIR",
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontFamily: 'RobotoMono',
-          fontSize: 12.sp,
-          fontWeight: FontWeight.bold,
-          color: color,
-          letterSpacing: 1.5,
-        ),
-      ),
-    )
-    .animate(onPlay: (c) => c.repeat(reverse: true))
-    .shimmer(duration: 2.seconds);
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+          decoration: BoxDecoration(
+            color: isDark
+                ? color.withValues(alpha: 0.1)
+                : color.withValues(alpha: 0.05),
+            borderRadius: BorderRadius.circular(30.r),
+            border: Border.all(color: color.withValues(alpha: 0.3)),
+          ),
+          child: Text(
+            "FUSE THE COLLOCATION PAIR",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.bold,
+              color: color,
+              letterSpacing: 1.5,
+            ),
+          ),
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .shimmer(duration: 2.seconds);
   }
-
 }

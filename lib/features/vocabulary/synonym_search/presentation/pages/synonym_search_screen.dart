@@ -9,7 +9,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
+import 'package:vowl/features/vocabulary/presentation/pages/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
@@ -238,9 +238,15 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
         }
       },
       builder: (context, state) {
-        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+        final theme = LevelThemeHelper.getTheme(
+          'vocabulary',
+          level: widget.level,
+        );
 
-        if (state is VocabularyLoading || (state is! VocabularyGameComplete && state is! VocabularyLoaded && state is! VocabularyError)) {
+        if (state is VocabularyLoading ||
+            (state is! VocabularyGameComplete &&
+                state is! VocabularyLoaded &&
+                state is! VocabularyError)) {
           return Scaffold(
             backgroundColor: const Color(0xFF0F172A),
             body: GameShimmerLoading(primaryColor: theme.primaryColor),
@@ -268,11 +274,13 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
             for (int i = 0; i < options.length; i++) {
               if (options[i].toLowerCase() == correct) {
                 setState(() {
-                  _shardOffsets[i] = _getShardInitialPosition(
-                    i,
-                    options.length,
-                    _lastConstraints!,
-                  ) * -0.2;
+                  _shardOffsets[i] =
+                      _getShardInitialPosition(
+                        i,
+                        options.length,
+                        _lastConstraints!,
+                      ) *
+                      -0.2;
                 });
                 Future.delayed(1.seconds, () {
                   if (mounted && !_isAnswered) {
@@ -368,8 +376,24 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                           ...List.generate(quest.options?.length ?? 0, (i) {
                             return isCompact
                                 ? Positioned(
-                                    left: safeWidth / 2 + _getShardInitialPosition(i, quest.options!.length, constraints).dx + (_shardOffsets[i] ?? Offset.zero).dx - 45.w,
-                                    top: safeHeight / 2 + _getShardInitialPosition(i, quest.options!.length, constraints).dy + (_shardOffsets[i] ?? Offset.zero).dy - 25.h,
+                                    left:
+                                        safeWidth / 2 +
+                                        _getShardInitialPosition(
+                                          i,
+                                          quest.options!.length,
+                                          constraints,
+                                        ).dx +
+                                        (_shardOffsets[i] ?? Offset.zero).dx -
+                                        45.w,
+                                    top:
+                                        safeHeight / 2 +
+                                        _getShardInitialPosition(
+                                          i,
+                                          quest.options!.length,
+                                          constraints,
+                                        ).dy +
+                                        (_shardOffsets[i] ?? Offset.zero).dy -
+                                        25.h,
                                     child: SizedBox(
                                       width: 90.w,
                                       height: 50.h,
@@ -389,9 +413,12 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                             isActive: _activeShardIndex == i,
                                             safeWidth: safeWidth,
                                             safeHeight: safeHeight,
-                                            onPanStart: (d) => _onShardDragStart(i, d),
-                                            onPanUpdate: (d) => _onShardDragUpdate(i, d),
-                                            onPanEnd: () => _onShardDragEnd(i, quest),
+                                            onPanStart: (d) =>
+                                                _onShardDragStart(i, d),
+                                            onPanUpdate: (d) =>
+                                                _onShardDragUpdate(i, d),
+                                            onPanEnd: () =>
+                                                _onShardDragEnd(i, quest),
                                           ),
                                         ),
                                       ),
@@ -413,7 +440,8 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                     safeWidth: safeWidth,
                                     safeHeight: safeHeight,
                                     onPanStart: (d) => _onShardDragStart(i, d),
-                                    onPanUpdate: (d) => _onShardDragUpdate(i, d),
+                                    onPanUpdate: (d) =>
+                                        _onShardDragUpdate(i, d),
                                     onPanEnd: () => _onShardDragEnd(i, quest),
                                   );
                           }),
@@ -424,10 +452,14 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                     height: 25.h,
                                     child: FittedBox(
                                       fit: BoxFit.scaleDown,
-                                      child: SynonymInstructionHeader(color: theme.primaryColor),
+                                      child: SynonymInstructionHeader(
+                                        color: theme.primaryColor,
+                                      ),
                                     ),
                                   )
-                                : SynonymInstructionHeader(color: theme.primaryColor),
+                                : SynonymInstructionHeader(
+                                    color: theme.primaryColor,
+                                  ),
                           ),
                         ],
                       ),
@@ -439,4 +471,3 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     );
   }
 }
-

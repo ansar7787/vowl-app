@@ -8,7 +8,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
+import 'package:vowl/features/vocabulary/presentation/pages/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
@@ -183,13 +183,27 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                         final maxHeight = constraints.maxHeight;
                         final isCompact = maxHeight < 580;
 
-                        final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 70.h : 90.h) + (isCompact ? 110.h : 160.h) + (isCompact ? 90.h : 130.h) + 20.h;
-                        final remainingHeight = maxHeight - estimatedContentHeight;
+                        final double estimatedContentHeight =
+                            (isCompact ? 30.h : 40.h) +
+                            (isCompact ? 70.h : 90.h) +
+                            (isCompact ? 110.h : 160.h) +
+                            (isCompact ? 90.h : 130.h) +
+                            20.h;
+                        final remainingHeight =
+                            maxHeight - estimatedContentHeight;
 
-                        final double gapUnit = remainingHeight > 0 ? remainingHeight / 6 : 0;
-                        final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 24.0) : 6.0;
-                        final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 30.0) : 10.0;
-                        final double gapBottom = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 40.0) : 12.0;
+                        final double gapUnit = remainingHeight > 0
+                            ? remainingHeight / 6
+                            : 0;
+                        final double gapTop = remainingHeight > 0
+                            ? (gapUnit * 1).clamp(6.0, 24.0)
+                            : 6.0;
+                        final double gapMiddle = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(10.0, 30.0)
+                            : 10.0;
+                        final double gapBottom = remainingHeight > 0
+                            ? (gapUnit * 2).clamp(12.0, 40.0)
+                            : 12.0;
 
                         return Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -203,10 +217,16 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                         height: 30.h,
                                         child: FittedBox(
                                           fit: BoxFit.scaleDown,
-                                          child: _buildVaultStatus(theme.primaryColor, isDark),
+                                          child: _buildVaultStatus(
+                                            theme.primaryColor,
+                                            isDark,
+                                          ),
                                         ),
                                       )
-                                    : _buildVaultStatus(theme.primaryColor, isDark),
+                                    : _buildVaultStatus(
+                                        theme.primaryColor,
+                                        isDark,
+                                      ),
                                 SizedBox(height: gapMiddle),
 
                                 // LCD Display
@@ -218,7 +238,12 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                           child: SizedBox(
                                             width: constraints.maxWidth - 40.w,
                                             child: PhrasalVerbsLcd(
-                                              text: quest.hint?.replaceFirst("DEFINITION: ", "") ?? "ANALYZING VAULT...",
+                                              text:
+                                                  quest.hint?.replaceFirst(
+                                                    "DEFINITION: ",
+                                                    "",
+                                                  ) ??
+                                                  "ANALYZING VAULT...",
                                               color: theme.primaryColor,
                                               isDark: isDark,
                                             ),
@@ -226,9 +251,16 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                         ),
                                       )
                                     : Padding(
-                                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 20.w,
+                                        ),
                                         child: PhrasalVerbsLcd(
-                                          text: quest.hint?.replaceFirst("DEFINITION: ", "") ?? "ANALYZING VAULT...",
+                                          text:
+                                              quest.hint?.replaceFirst(
+                                                "DEFINITION: ",
+                                                "",
+                                              ) ??
+                                              "ANALYZING VAULT...",
                                           color: theme.primaryColor,
                                           isDark: isDark,
                                         ),
@@ -269,11 +301,23 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                           fit: BoxFit.scaleDown,
                                           child: SizedBox(
                                             width: constraints.maxWidth,
-                                            child: _buildOptionsWrap(quest, theme.primaryColor, isDark, isFinalFailure, isCompact),
+                                            child: _buildOptionsWrap(
+                                              quest,
+                                              theme.primaryColor,
+                                              isDark,
+                                              isFinalFailure,
+                                              isCompact,
+                                            ),
                                           ),
                                         ),
                                       )
-                                    : _buildOptionsWrap(quest, theme.primaryColor, isDark, isFinalFailure, isCompact),
+                                    : _buildOptionsWrap(
+                                        quest,
+                                        theme.primaryColor,
+                                        isDark,
+                                        isFinalFailure,
+                                        isCompact,
+                                      ),
                                 SizedBox(height: gapBottom),
                               ],
                             ),
@@ -290,32 +334,32 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
 
   Widget _buildVaultStatus(Color color, bool isDark) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.vpn_key_rounded, size: 16.r, color: color),
-          SizedBox(width: 10.w),
-          Text(
-            "VAULT SECURITY: L-${widget.level}",
-            style: TextStyle(
-              fontFamily: 'RobotoMono',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.bold,
-              color: color,
-              letterSpacing: 2,
-            ),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(30.r),
+            border: Border.all(color: color.withValues(alpha: 0.3)),
           ),
-        ],
-      ),
-    )
-    .animate(onPlay: (c) => c.repeat(reverse: true))
-    .shimmer(duration: 3.seconds);
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.vpn_key_rounded, size: 16.r, color: color),
+              SizedBox(width: 10.w),
+              Text(
+                "VAULT SECURITY: L-${widget.level}",
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                  letterSpacing: 2,
+                ),
+              ),
+            ],
+          ),
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .shimmer(duration: 3.seconds);
   }
 
   Widget _buildOptionsWrap(

@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
+import 'package:vowl/features/vocabulary/presentation/pages/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
@@ -217,13 +217,23 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
         final maxHeight = constraints.maxHeight;
         final isCompact = maxHeight < 580;
 
-        final double estimatedContentHeight = (isCompact ? 40.h : 60.h) + (isCompact ? 10.h : 20.h) + (isCompact ? 90.h : 110.h) + 30.h;
+        final double estimatedContentHeight =
+            (isCompact ? 40.h : 60.h) +
+            (isCompact ? 10.h : 20.h) +
+            (isCompact ? 90.h : 110.h) +
+            30.h;
         final remainingHeight = maxHeight - estimatedContentHeight;
 
         final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-        final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 12.0) : 4.0;
-        final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(8.0, 20.0) : 8.0;
-        final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
+        final double gapTop = remainingHeight > 0
+            ? (gapUnit * 1).clamp(4.0, 12.0)
+            : 4.0;
+        final double gapMiddle = remainingHeight > 0
+            ? (gapUnit * 1.5).clamp(8.0, 20.0)
+            : 8.0;
+        final double gapBottom = remainingHeight > 0
+            ? (gapUnit * 2.5).clamp(10.0, 30.0)
+            : 10.0;
 
         return Column(
           children: [
@@ -280,17 +290,26 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                           builder: (context, pos, _) {
                             final lensSize = isCompact ? 100.r : 160.r;
                             return Positioned(
-                              left: (innerConstraints.maxWidth / 2) + pos.dx - (lensSize / 2),
-                              top: (innerConstraints.maxHeight / 2) + pos.dy - (lensSize / 2),
+                              left:
+                                  (innerConstraints.maxWidth / 2) +
+                                  pos.dx -
+                                  (lensSize / 2),
+                              top:
+                                  (innerConstraints.maxHeight / 2) +
+                                  pos.dy -
+                                  (lensSize / 2),
                               child: GestureDetector(
-                                onPanUpdate: (d) => _onLensMove(d, innerConstraints),
+                                onPanUpdate: (d) =>
+                                    _onLensMove(d, innerConstraints),
                                 child: isCompact
                                     ? SizedBox(
                                         width: lensSize,
                                         height: lensSize,
                                         child: FittedBox(
                                           fit: BoxFit.scaleDown,
-                                          child: ContextCluesScanner(color: color),
+                                          child: ContextCluesScanner(
+                                            color: color,
+                                          ),
                                         ),
                                       )
                                     : ContextCluesScanner(color: color),
@@ -312,7 +331,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
               isCorrect: _isCorrect,
               selectedOption: _selectedOption,
               isFinalFailure: isFinalFailure,
-              onOptionSelected: (o) => _submitAnswer(o, quest.correctAnswer ?? ""),
+              onOptionSelected: (o) =>
+                  _submitAnswer(o, quest.correctAnswer ?? ""),
             ),
             SizedBox(height: gapBottom),
           ],
