@@ -1,25 +1,27 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_action_buttons.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_swipe_back.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_swipe_front.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/pages/vocabulary_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
-import 'dart:math';
-import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
-import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_swipe_front.dart';
-import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_swipe_back.dart';
-import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_swipe_hints.dart';
 
 class FlashcardsScreen extends StatefulWidget {
   final int level;
   final GameSubtype gameType;
+
   const FlashcardsScreen({
     super.key,
     required this.level,
@@ -31,8 +33,8 @@ class FlashcardsScreen extends StatefulWidget {
 }
 
 class _FlashcardsScreenState extends State<FlashcardsScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+  final HapticService _hapticService = di.sl<HapticService>();
+  final SoundService _soundService = di.sl<SoundService>();
 
   Offset _dragOffset = Offset.zero;
   double _dragAngle = 0.0;
@@ -55,14 +57,17 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
 
   void _onHorizontalDragUpdate(DragUpdateDetails details) {
     if (_isAnswered) return;
-    if (_isRetrying) setState(() => _isRetrying = false);
+
+    if (_isRetrying) {
+      setState(() => _isRetrying = false);
+    }
 
     final oldOffset = _dragOffset;
+
     setState(() {
       _dragOffset = Offset(_dragOffset.dx + details.delta.dx, 0);
       _dragAngle = _dragOffset.dx / 500;
 
-      // Better haptic throttle: trigger only every 20 pixels of horizontal movement
       if ((_dragOffset.dx - oldOffset.dx).abs() > 0 &&
           (_dragOffset.dx.abs() % 20 < 2)) {
         _hapticService.selection();
@@ -70,9 +75,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
     });
   }
 
-  void _onHorizontalDragEnd(DragEndDetails details) {
+  void _onHorizontalDragEnd(DragEndDetails details, double threshold) {
     if (_isAnswered) return;
-    if (_dragOffset.dx.abs() > 150) {
+
+    if (_dragOffset.dx.abs() > threshold) {
       _submitAnswer(_dragOffset.dx > 0);
     } else {
       setState(() {
@@ -84,6 +90,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
 
   void _submitAnswer(bool mastered) {
     if (_isAnswered) return;
+
     if (mastered) {
       _hapticService.success();
       _soundService.playCorrect();
@@ -91,11 +98,13 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
       _hapticService.error();
       _soundService.playWrong();
     }
+
     setState(() {
       _isAnswered = true;
       _isCorrect = mastered;
       _dragOffset = Offset(mastered ? 1000 : -1000, 0);
     });
+
     context.read<VocabularyBloc>().add(SubmitAnswer(mastered));
   }
 
@@ -117,16 +126,19 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
               _isRetrying = isRetry;
               _isCorrect = null;
               _isFlipped = false;
+              _isHintActive = false;
               _dragOffset = Offset.zero;
               _dragAngle = 0.0;
             });
           }
         }
+
         if (state is VocabularyGameComplete) {
           if (!_showConfetti) {
             final xp = state.xpEarned;
             final coins = state.coinsEarned;
             setState(() => _showConfetti = true);
+
             if (!context.mounted) return;
             GameDialogHelper.showCompletion(
               context,
@@ -159,7 +171,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
           );
         }
 
-        final quest = (state is VocabularyLoaded)
+        final quest = state is VocabularyLoaded
             ? state.currentQuest
             : _lastQuest;
 
@@ -177,7 +189,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                 _isFlipped = true;
                 _isHintActive = true;
               });
-              // Flip back after 4 seconds to maintain the "test" aspect
+
               Future.delayed(const Duration(seconds: 4), () {
                 if (!context.mounted) return;
                 if (_isHintActive) {
@@ -193,83 +205,78 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
               ? GameShimmerLoading(primaryColor: theme.primaryColor)
               : LayoutBuilder(
                   builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
+                    final width = constraints.maxWidth;
+                    final height = constraints.maxHeight;
+                    final isLandscape = width > height;
+                    final isTablet = width >= 600;
+                    final isSmallHeight = height < 640;
 
-                    // Calculate dynamic card height based on available space
-                    final cardHeight = (maxHeight * (isCompact ? 0.50 : 0.60))
-                        .clamp(200.0, 450.0);
-                    final cardWidth =
-                        (constraints.maxWidth * (isCompact ? 0.78 : 0.85))
-                            .clamp(240.0, 320.0);
+                    final horizontalPadding = isTablet ? 24.w : 12.w;
 
-                    final double estimatedContentHeight =
-                        (isCompact ? 25.h : 35.h) +
-                        cardHeight +
-                        (isCompact ? 30.h : 50.h);
-                    final remainingHeight = maxHeight - estimatedContentHeight;
+                    final cardMaxWidth = isTablet
+                        ? min(width * 0.60, 440.0)
+                        : min(width - (horizontalPadding * 2), 372.0);
 
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 5
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(6.0, 16.0)
-                        : 6.0;
-                    final double gapMiddle = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                        : 10.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2.5).clamp(12.0, 30.0)
-                        : 12.0;
+                    final cardWidth = cardMaxWidth.clamp(
+                      250.0,
+                      width - (horizontalPadding * 2),
+                    );
 
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            SizedBox(height: gapTop),
-                            isCompact
-                                ? SizedBox(
-                                    height: 25.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: _buildInstruction(
-                                        theme.primaryColor,
-                                      ),
-                                    ),
-                                  )
-                                : _buildInstruction(theme.primaryColor),
-                            SizedBox(height: gapMiddle),
-                            _buildCardStack(
-                              quest,
-                              theme.primaryColor,
-                              isDark,
-                              cardWidth,
-                              cardHeight,
-                            ),
-                          ],
+                    final cardHeight = isLandscape
+                        ? (height * 0.60).clamp(220.0, 360.0)
+                        : isTablet
+                        ? (height * 0.50).clamp(290.0, 460.0)
+                        : (height * 0.60).clamp(250.0, 440.0);
+
+                    final swipeThreshold = max(
+                      90.0,
+                      min(150.0, cardWidth * 0.38),
+                    );
+
+                    final topSpacing = isSmallHeight ? 18.h : 12.h;
+                    final instructionToCard = isSmallHeight ? 22.h : 28.h;
+                    final cardToActions = isSmallHeight ? 22.h : 28.h;
+                    final actionsToBottom = isSmallHeight ? 10.h : 14.h;
+
+                    return SafeArea(
+                      bottom: true,
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding,
                         ),
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            isCompact
-                                ? SizedBox(
-                                    height: 35.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: FlashcardSwipeHints(
-                                        color: theme.primaryColor,
-                                      ),
-                                    ),
-                                  )
-                                : FlashcardSwipeHints(
-                                    color: theme.primaryColor,
-                                  ),
-                            SizedBox(height: gapBottom),
-                          ],
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(minHeight: height),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(height: topSpacing),
+                              _buildInstruction(theme.primaryColor),
+                              SizedBox(height: instructionToCard),
+                              Center(
+                                child: _buildCardStack(
+                                  quest,
+                                  theme.primaryColor,
+                                  isDark,
+                                  cardWidth,
+                                  cardHeight,
+                                  swipeThreshold,
+                                ),
+                              ),
+                              SizedBox(height: cardToActions),
+                              FlashcardActionButtons(
+                                isFlipped: _isFlipped,
+                                isTransitioning: _isAnswered || _isRetrying,
+                                theme: theme,
+                                isDark: isDark,
+                                onAgain: () => _submitAnswer(false),
+                                onGotIt: () => _submitAnswer(true),
+                              ),
+                              SizedBox(height: actionsToBottom),
+                            ],
+                          ),
                         ),
-                      ],
+                      ),
                     );
                   },
                 ),
@@ -279,35 +286,37 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
   }
 
   Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.swipe_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 8.w),
-          Flexible(
-            child: Text(
-              "SWIPE RIGHT TO MASTER, LEFT TO REVIEW",
+    return ConstrainedBox(
+      constraints: BoxConstraints(maxWidth: 430.w),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: primaryColor.withValues(alpha: 0.10),
+          borderRadius: BorderRadius.circular(30.r),
+          border: Border.all(color: primaryColor.withValues(alpha: 0.20)),
+        ),
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          spacing: 8.w,
+          runSpacing: 4.h,
+          children: [
+            Icon(Icons.swipe_rounded, size: 14.r, color: primaryColor),
+            Text(
+              'SWIPE RIGHT TO MASTER, LEFT TO REVIEW',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 9.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor,
-                letterSpacing: 1.2,
+                letterSpacing: 1.1,
               ),
-              overflow: TextOverflow.visible,
-              textAlign: TextAlign.center,
             ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.2, end: 0);
+          ],
+        ),
+      ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.2, end: 0),
+    );
   }
 
   Widget _buildCardStack(
@@ -316,6 +325,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
     bool isDark,
     double width,
     double height,
+    double swipeThreshold,
   ) {
     final frontCard = FlashcardSwipeFront(
       quest: quest,
@@ -324,6 +334,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
       width: width,
       height: height,
     );
+
     final backCard = FlashcardSwipeBack(
       quest: quest,
       color: color,
@@ -335,7 +346,8 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
 
     return GestureDetector(
       onHorizontalDragUpdate: _onHorizontalDragUpdate,
-      onHorizontalDragEnd: _onHorizontalDragEnd,
+      onHorizontalDragEnd: (details) =>
+          _onHorizontalDragEnd(details, swipeThreshold),
       onTap: () {
         _hapticService.light();
         setState(() => _isFlipped = !_isFlipped);
@@ -343,11 +355,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          // Bottom Card Decoration (Shadow/Stack effect)
           Transform.translate(
             offset: const Offset(0, 10),
             child: Container(
-              width: width * 0.95,
+              width: width * 0.96,
               height: height,
               decoration: BoxDecoration(
                 color: isDark
@@ -357,16 +368,14 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
               ),
             ),
           ),
-
-          // Main Interactive Card
           RepaintBoundary(
             child: AnimatedContainer(
-              duration: (_isAnswered || _isRetrying) ? 400.ms : 0.ms,
+              duration: (_isAnswered || _isRetrying) ? 400.ms : Duration.zero,
               curve: Curves.easeOutBack,
               transform: Matrix4.identity()
                 ..setTranslationRaw(_dragOffset.dx, _dragOffset.dy, 0.0)
                 ..rotateZ(_dragAngle),
-              child: TweenAnimationBuilder(
+              child: TweenAnimationBuilder<double>(
                 tween: Tween<double>(begin: 0, end: _isFlipped ? 1 : 0),
                 duration: 400.ms,
                 curve: Curves.easeInOutBack,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FlashcardSwipeFront extends StatelessWidget {
   final dynamic quest;
@@ -23,7 +23,7 @@ class FlashcardSwipeFront extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
@@ -39,55 +39,83 @@ class FlashcardSwipeFront extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            padding: EdgeInsets.all(20.r),
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-            ),
-            child: Text(
-              quest.topicEmoji ?? "🏷️",
-              style: TextStyle(fontSize: 56.sp),
-            ),
-          ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
-          SizedBox(height: 32.h),
-          FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Text(
-              quest.word?.toUpperCase() ?? "",
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 32.sp,
-                fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : Colors.black87,
-                letterSpacing: 4,
-              ),
-            ),
-          ),
-          const Spacer(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final compactHeight = constraints.maxHeight < 260;
+          final compactWidth = constraints.maxWidth < 290;
+
+          final emojiFont = compactHeight ? 44.sp : 58.sp;
+          final titleFont = compactWidth ? 28.sp : 34.sp;
+          final titleLetterSpacing = compactWidth ? 2.5 : 3.5;
+          final emojiPadding = compactHeight ? 16.r : 20.r;
+
+          return Column(
             children: [
-              Icon(
-                Icons.touch_app_rounded,
-                size: 14.r,
-                color: color.withValues(alpha: 0.5),
-              ),
-              SizedBox(width: 8.w),
-              Text(
-                "TAP TO FLIP",
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 10.sp,
-                  color: color.withValues(alpha: 0.5),
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 2,
+              const Spacer(flex: 2),
+              Container(
+                padding: EdgeInsets.all(emojiPadding),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.10),
+                  shape: BoxShape.circle,
+                ),
+                child: Text(
+                  quest.topicEmoji ?? "🏷️",
+                  style: TextStyle(fontSize: emojiFont),
+                ),
+              ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
+              SizedBox(height: compactHeight ? 16.h : 24.h),
+              Flexible(
+                flex: 4,
+                child: Center(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      quest.word?.toUpperCase() ?? "",
+                      maxLines: 1,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: titleFont,
+                        fontWeight: FontWeight.w900,
+                        color: isDark ? Colors.white : Colors.black87,
+                        letterSpacing: titleLetterSpacing,
+                      ),
+                    ),
+                  ),
                 ),
               ),
+              const Spacer(flex: 1),
+              Wrap(
+                alignment: WrapAlignment.center,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                spacing: 8.w,
+                runSpacing: 4.h,
+                children: [
+                  Icon(
+                    Icons.touch_app_rounded,
+                    size: 14.r,
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.72)
+                        : color.withValues(alpha: 0.72),
+                  ),
+                  Text(
+                    "TAP TO FLIP",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.72)
+                          : color.withValues(alpha: 0.72),
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 2.h),
             ],
-          ),
-        ],
+          );
+        },
       ),
     );
   }
