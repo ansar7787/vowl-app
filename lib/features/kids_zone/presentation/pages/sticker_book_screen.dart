@@ -341,11 +341,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
         dividerColor: Colors.transparent,
         indicator: BoxDecoration(
           color: Colors.orange,
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: Colors.orangeAccent,
-            width: 1.5,
-          ),
+          borderRadius: BorderRadius.circular(100.r),
           boxShadow: [
             BoxShadow(
               color: Colors.orange.withValues(alpha: 0.3),
@@ -373,7 +369,8 @@ class _StickerBookScreenState extends State<StickerBookScreen>
 
           return Tab(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              alignment: Alignment.center,
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -382,7 +379,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                     SizedBox(width: 8.w),
                     // We use an opacity hack to make the badge look good whether selected or not
                     Opacity(
-                      opacity: 0.8,
+                      opacity: 0.9,
                       child: Container(
                         padding: EdgeInsets.all(4.r),
                         decoration: BoxDecoration(
