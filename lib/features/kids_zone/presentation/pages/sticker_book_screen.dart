@@ -331,38 +331,33 @@ class _StickerBookScreenState extends State<StickerBookScreen>
     return Container(
       height: 44.h,
       margin: EdgeInsets.symmetric(vertical: 8.h),
-      child: ListView.separated(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        scrollDirection: Axis.horizontal,
+      child: TabBar(
+        controller: _tabController,
+        isScrollable: true,
         physics: const BouncingScrollPhysics(),
-        itemCount: _categories.length,
-        separatorBuilder: (context, index) => SizedBox(width: 16.w),
-        itemBuilder: (context, index) {
-          final cat = _categories[index];
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        indicatorSize: TabBarIndicatorSize.label,
+        labelPadding: EdgeInsets.symmetric(horizontal: 8.w),
+        dividerColor: Colors.transparent,
+        indicator: BoxDecoration(
+          color: isMidnight ? Colors.white24 : (isDark ? Colors.white12 : const Color(0xFFF1F5F9)),
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: isMidnight ? Colors.white54 : (isDark ? Colors.white30 : Colors.grey.shade300),
+            width: 1,
+          ),
+        ),
+        tabs: _categories.map((cat) {
+          final index = _categories.indexOf(cat);
           final earned = _getCategoryEarnedCount(cat);
           final isSelected = _tabController.index == index;
 
-          return ScaleButton(
-            onTap: () => setState(() => _tabController.animateTo(index)),
+          return Tab(
             child: AnimatedContainer(
-              duration: 300.ms,
-              curve: Curves.easeOutCubic,
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+              duration: 200.ms,
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
               decoration: BoxDecoration(
-                color: isSelected
-                    ? (isMidnight
-                          ? Colors.white24
-                          : (isDark ? Colors.white12 : const Color(0xFFF1F5F9)))
-                    : Colors.transparent,
                 borderRadius: BorderRadius.circular(20.r),
-                border: Border.all(
-                  color: isSelected
-                      ? (isMidnight
-                            ? Colors.white54
-                            : (isDark ? Colors.white30 : Colors.grey.shade300))
-                      : Colors.transparent,
-                  width: 1,
-                ),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -372,16 +367,10 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 14.sp,
-                      fontWeight: isSelected
-                          ? FontWeight.w900
-                          : FontWeight.w600,
+                      fontWeight: isSelected ? FontWeight.w900 : FontWeight.w600,
                       color: isSelected
-                          ? (isDark || isMidnight
-                                ? Colors.white
-                                : const Color(0xFF0F172A))
-                          : (isDark || isMidnight
-                                ? Colors.white54
-                                : Colors.grey.shade600),
+                          ? (isDark || isMidnight ? Colors.white : const Color(0xFF0F172A))
+                          : (isDark || isMidnight ? Colors.white54 : Colors.grey.shade600),
                     ),
                   ),
                   if (earned > 0) ...[
@@ -390,12 +379,8 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                       padding: EdgeInsets.all(4.r),
                       decoration: BoxDecoration(
                         color: isSelected
-                            ? (isMidnight || isDark
-                                  ? Colors.white24
-                                  : Colors.grey.shade300)
-                            : (isMidnight || isDark
-                                  ? Colors.white12
-                                  : Colors.grey.shade200),
+                            ? (isMidnight || isDark ? Colors.white24 : Colors.grey.shade300)
+                            : (isMidnight || isDark ? Colors.white12 : Colors.grey.shade200),
                         shape: BoxShape.circle,
                       ),
                       child: Text(
@@ -405,12 +390,8 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w900,
                           color: isSelected
-                              ? (isDark || isMidnight
-                                    ? Colors.white
-                                    : const Color(0xFF0F172A))
-                              : (isDark || isMidnight
-                                    ? Colors.white70
-                                    : Colors.grey.shade600),
+                              ? (isDark || isMidnight ? Colors.white : const Color(0xFF0F172A))
+                              : (isDark || isMidnight ? Colors.white70 : Colors.grey.shade600),
                         ),
                       ),
                     ),
@@ -419,7 +400,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
               ),
             ),
           );
-        },
+        }).toList(),
       ),
     );
   }
