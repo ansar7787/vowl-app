@@ -368,22 +368,37 @@ class _StickerBookScreenState extends State<StickerBookScreen>
               animation: _tabController.animation!,
               builder: (context, child) {
                 // Calculate selection percentage (1.0 = fully selected, 0.0 = completely unselected)
-                final double diff = (_tabController.animation!.value - index).abs();
+                final double diff = (_tabController.animation!.value - index)
+                    .abs();
                 final double selectPercent = (1.0 - diff).clamp(0.0, 1.0);
 
                 // Base unselected colors
-                final unselectedColor = isMidnight || isDark ? Colors.white12 : const Color(0xFFF1F5F9);
-                final unselectedBorderColor = isMidnight || isDark ? Colors.white24 : Colors.grey.shade300;
+                final unselectedColor = isMidnight || isDark
+                    ? Colors.white12
+                    : const Color(0xFFF1F5F9);
+                final unselectedBorderColor = isMidnight || isDark
+                    ? Colors.white24
+                    : Colors.grey.shade300;
 
                 return Container(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     // Cross-fade the unselected pill background to transparent as the Orange TabBar indicator slides behind it
-                    color: Color.lerp(unselectedColor, Colors.transparent, selectPercent),
+                    color: Color.lerp(
+                      unselectedColor,
+                      Colors.transparent,
+                      selectPercent,
+                    ),
                     borderRadius: BorderRadius.circular(100.r),
                     border: Border.all(
-                      color: Color.lerp(unselectedBorderColor, Colors.transparent, selectPercent) ?? Colors.transparent,
+                      color:
+                          Color.lerp(
+                            unselectedBorderColor,
+                            Colors.transparent,
+                            selectPercent,
+                          ) ??
+                          Colors.transparent,
                       width: 1,
                     ),
                   ),
