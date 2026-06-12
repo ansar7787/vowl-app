@@ -339,6 +339,8 @@ class _StickerBookScreenState extends State<StickerBookScreen>
         indicatorSize: TabBarIndicatorSize.label,
         labelPadding: EdgeInsets.symmetric(horizontal: 8.w),
         dividerColor: Colors.transparent,
+        splashFactory: NoSplash.splashFactory,
+        overlayColor: WidgetStateProperty.all(Colors.transparent),
         indicator: BoxDecoration(
           color: Colors.orange,
           borderRadius: BorderRadius.circular(100.r),
