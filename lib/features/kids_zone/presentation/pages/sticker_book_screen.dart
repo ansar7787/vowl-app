@@ -344,13 +344,6 @@ class _StickerBookScreenState extends State<StickerBookScreen>
         indicator: BoxDecoration(
           color: Colors.orange,
           borderRadius: BorderRadius.circular(100.r),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.orange.withValues(alpha: 0.3),
-              blurRadius: 8,
-              offset: const Offset(0, 3),
-            ),
-          ],
         ),
         labelColor: Colors.white,
         unselectedLabelColor: isDark || isMidnight
