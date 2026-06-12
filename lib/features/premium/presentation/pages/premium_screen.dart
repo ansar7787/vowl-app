@@ -12,6 +12,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
 
 class PremiumScreen extends StatefulWidget {
@@ -127,7 +128,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
         if (mounted) {
           // Refresh user state to reflect premium status
-          context.read<AuthBloc>().add(AuthReloadUser());
+          context.read<AuthBloc>().add(const AuthRefreshUser());
 
           di.sl<HapticService>().success();
           setState(() {
@@ -160,7 +161,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
         _isProcessing = false;
         _paymentCompleted = true;
         _paymentSuccess = false;
-        _errorMessage = response.message ?? 'Payment failed. Please try again.';
+        _errorMessage = response.message != null && response.message!.isNotEmpty
+            ? 'Error ${response.code}: ${response.message}'
+            : 'Payment failed. Please try again or use a different method.';
       });
     }
   }
@@ -314,6 +317,11 @@ class _PremiumScreenState extends State<PremiumScreen> {
   }
 
   Widget _buildPlanList() {
+    final user = context.read<AuthBloc>().state.user;
+    if (user != null && user.isPremium) {
+      return _buildActiveSubscriptionCard(user);
+    }
+
     if (_isLoadingPlans) {
       return Center(
         child: CircularProgressIndicator(
@@ -373,6 +381,50 @@ class _PremiumScreenState extends State<PremiumScreen> {
           },
         );
       }),
+    );
+  }
+
+  Widget _buildActiveSubscriptionCard(UserEntity user) {
+    final expiryDate = user.premiumExpiryDate;
+    final formattedDate = expiryDate != null 
+        ? '${expiryDate.day}/${expiryDate.month}/${expiryDate.year}'
+        : 'Lifetime';
+
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(24.r),
+      decoration: BoxDecoration(
+        color: const Color(0xFF10B981).withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: const Color(0xFF10B981).withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(Icons.verified_rounded, color: const Color(0xFF10B981), size: 48.r),
+          SizedBox(height: 16.h),
+          Text(
+            'ACTIVE PRO SUBSCRIPTION',
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              color: const Color(0xFF10B981),
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 1.5,
+            ),
+          ),
+          SizedBox(height: 8.h),
+          Text(
+            'Your Vowl Premium access is active.\nValid until: $formattedDate',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
     );
   }
 

@@ -8,7 +8,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
-import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
+import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
@@ -31,13 +33,14 @@ class EmergencyHubScreen extends StatefulWidget {
   State<EmergencyHubScreen> createState() => _EmergencyHubScreenState();
 }
 
-class _EmergencyHubScreenState extends State<EmergencyHubScreen> with TickerProviderStateMixin {
+class _EmergencyHubScreenState extends State<EmergencyHubScreen>
+    with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   late AnimationController _pulseController;
   late TextEditingController _codeController;
-  
+
   int _lastProcessedIndex = -1;
   double _rotation = 0.0; // Valve rotation progress (0.0 to 1.0)
   bool _isAnswered = false;
@@ -51,10 +54,12 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen> with TickerProv
       vsync: this,
       duration: const Duration(seconds: 2),
     )..repeat();
-    
+
     _codeController = TextEditingController();
-    
-    context.read<RoleplayBloc>().add(FetchRoleplayQuests(gameType: widget.gameType, level: widget.level));
+
+    context.read<RoleplayBloc>().add(
+      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   @override
@@ -98,7 +103,10 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen> with TickerProv
     if (_isAnswered) return;
 
     final String cleanInput = input.trim().replaceAll(' ', '').toLowerCase();
-    final String cleanCorrect = correctAnswer.trim().replaceAll(' ', '').toLowerCase();
+    final String cleanCorrect = correctAnswer
+        .trim()
+        .replaceAll(' ', '')
+        .toLowerCase();
 
     // Check if code matches AND safety valve is rotated past 85% to pressurize the lock
     final bool codeMatches = cleanInput == cleanCorrect;
@@ -173,15 +181,20 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen> with TickerProv
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 10.h,
+                  ),
                   child: Column(
                     children: [
                       const EmergencyHubInstruction(),
                       SizedBox(height: 16.h),
-                      
+
                       // Critical dispatcher prompt telex
                       EmergencyHubTelexCard(
-                        telex: quest.dispatcherQuestion ?? "AWAITING BROADCAST VECTOR DETAILS...",
+                        telex:
+                            quest.dispatcherQuestion ??
+                            "AWAITING BROADCAST VECTOR DETAILS...",
                         isDark: isDark,
                       ),
                       SizedBox(height: 20.h),
@@ -209,17 +222,28 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen> with TickerProv
                       // Dispatch lock confirm trigger button
                       if (!_isAnswered && _codeController.text.isNotEmpty)
                         ScaleButton(
-                          onTap: () => _submitCode(_codeController.text, quest.correctAnswer ?? ""),
+                          onTap: () => _submitCode(
+                            _codeController.text,
+                            quest.correctAnswer ?? "",
+                          ),
                           child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 48.w, vertical: 14.h),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 48.w,
+                              vertical: 14.h,
+                            ),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30.r),
                               gradient: const LinearGradient(
-                                colors: [Colors.redAccent, Colors.deepOrangeAccent],
+                                colors: [
+                                  Colors.redAccent,
+                                  Colors.deepOrangeAccent,
+                                ],
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.redAccent.withValues(alpha: 0.45),
+                                  color: Colors.redAccent.withValues(
+                                    alpha: 0.45,
+                                  ),
                                   blurRadius: 15,
                                 ),
                               ],
@@ -227,11 +251,16 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen> with TickerProv
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Icon(Icons.flash_on_rounded, color: Colors.white, size: 18.r),
+                                Icon(
+                                  Icons.flash_on_rounded,
+                                  color: Colors.white,
+                                  size: 18.r,
+                                ),
                                 SizedBox(width: 8.w),
                                 Text(
                                   "LAUNCH EMERGENCY BEACON",
-                                  style: TextStyle(fontFamily: 'RobotoMono', 
+                                  style: TextStyle(
+                                    fontFamily: 'RobotoMono',
                                     fontSize: 12.sp,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,

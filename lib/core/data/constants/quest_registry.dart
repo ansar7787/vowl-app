@@ -116,6 +116,8 @@ abstract class QuestRegistry {
     'correctionWriting': 'writing',
     'dailyJournal': 'writing',
     'describeSituationWriting': 'writing',
+    'essayDrafting': 'writing',
+    'fixTheSentence': 'writing',
     'opinionWriting': 'writing',
     'sentenceBuilder': 'writing',
     'shortAnswerWriting': 'writing',

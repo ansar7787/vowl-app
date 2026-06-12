@@ -23,7 +23,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_reward_ad_card
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/home/presentation/widgets/home_quick_stats.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
-import 'package:vowl/features/home/presentation/utils/notification_priming_helper.dart';
+import 'package:vowl/features/home/presentation/widgets/inline_notification_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -46,9 +46,6 @@ class _HomeScreenState extends State<HomeScreen> {
       if (context.read<AuthBloc>().state.status == AuthStatus.authenticated) {
         context.read<EconomyBloc>().add(const EconomyCheckDailyRewardRequested());
       }
-      final user = context.read<AuthBloc>().state.user;
-      final streak = user?.currentStreak ?? 0;
-      NotificationPrimingHelper.checkAndPrompt(context, streak);
     });
   }
 
@@ -158,7 +155,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
-                              SizedBox(height: 20.h),
+                              SizedBox(height: 24.h),
+                              InlineNotificationCard(streak: user.currentStreak),
                               GlobalProgressCard(
                                 user: user,
                                 globalRank: _globalRank,

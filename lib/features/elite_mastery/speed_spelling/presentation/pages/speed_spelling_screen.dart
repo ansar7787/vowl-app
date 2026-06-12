@@ -10,12 +10,11 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
-import '../../../presentation/widgets/elite_base_layout.dart';
+import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import '../widgets/speed_spelling_input_field.dart';
 import '../widgets/speed_spelling_character_deck.dart';
-
 
 class SpeedSpellingScreen extends StatefulWidget {
   final int level;
@@ -181,7 +180,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
           isAnswered: _isAnswered,
           state: state,
           isCorrect: _isCorrect,
-          isFinalFailure: (state is EliteMasteryLoaded) ? (state.isFinalFailure || state.livesRemaining <= 0) : false,
+          isFinalFailure: (state is EliteMasteryLoaded)
+              ? (state.isFinalFailure || state.livesRemaining <= 0)
+              : false,
           showConfetti: _showConfetti,
           title: "LEXICAL BLITZ",
           subtitle: quest?.instruction ?? "Master the Spelling",
@@ -200,7 +201,8 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             final bloc = context.read<EliteMasteryBloc>();
             final s = bloc.state;
             if (s is EliteMasteryLoaded) {
-              if (s.currentQuest.hint != null && s.currentQuest.hint!.isNotEmpty) {
+              if (s.currentQuest.hint != null &&
+                  s.currentQuest.hint!.isNotEmpty) {
                 if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
                 bloc.add(ShowEliteHint());
               } else {
@@ -233,16 +235,13 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.error_outline_rounded,
-              color: Colors.white,
-              size: 48.r,
-            ),
+            Icon(Icons.error_outline_rounded, color: Colors.white, size: 48.r),
             SizedBox(height: 16.h),
             Text(
               state.message,
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 color: Colors.white,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
@@ -251,23 +250,21 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             SizedBox(height: 24.h),
             ScaleButton(
               onTap: () => context.read<EliteMasteryBloc>().add(
-                    FetchEliteMasteryQuests(
-                      gameType: widget.gameType,
-                      level: widget.level,
-                    ),
-                  ),
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 24.w,
-                  vertical: 12.h,
+                FetchEliteMasteryQuests(
+                  gameType: widget.gameType,
+                  level: widget.level,
                 ),
+              ),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16.r),
                 ),
                 child: Text(
                   "RETRY",
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     color: theme.primaryColor,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 1.2,
@@ -370,7 +367,8 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
               child: Center(
                 child: Text(
                   "SUBMIT",
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,

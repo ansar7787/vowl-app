@@ -396,19 +396,17 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
   }
 
   Widget _buildTabSwitcher(bool isDark, Color primaryColor, Color textColor) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24.w),
-      padding: EdgeInsets.all(6.r),
-      decoration: BoxDecoration(
-        color: textColor.withValues(alpha: 0.05),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: GlassTile(
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: textColor.withValues(alpha: 0.1)),
-      ),
-      child: Row(
-        children: [
-          _buildTabItem(0, 'COMPANION', primaryColor),
-          _buildTabItem(1, 'BOUTIQUE', primaryColor),
-        ],
+        padding: EdgeInsets.all(6.r),
+        child: Row(
+          children: [
+            _buildTabItem(0, 'COMPANION', primaryColor),
+            _buildTabItem(1, 'BOUTIQUE', primaryColor),
+          ],
+        ),
       ),
     );
   }
@@ -424,24 +422,35 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
             _tabController.animateTo(index);
           });
         },
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 12.h),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOutCubic,
+          padding: EdgeInsets.symmetric(vertical: 14.h),
           decoration: BoxDecoration(
             color: isSelected
-                ? primaryColor.withValues(alpha: 0.15)
+                ? primaryColor.withValues(alpha: 0.2)
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(18.r),
-            border: isSelected
-                ? Border.all(color: primaryColor.withValues(alpha: 0.4))
-                : null,
+            border: Border.all(
+              color: isSelected
+                  ? primaryColor.withValues(alpha: 0.5)
+                  : Colors.transparent,
+            ),
+            boxShadow: isSelected ? [
+              BoxShadow(
+                color: primaryColor.withValues(alpha: 0.2),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              )
+            ] : [],
           ),
           child: Text(
             label,
             textAlign: TextAlign.center,
             style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 11.sp,
+              fontSize: 12.sp,
               fontWeight: FontWeight.w900,
-              color: isSelected ? primaryColor : Colors.grey,
+              color: isSelected ? primaryColor : Colors.grey.withValues(alpha: 0.8),
               letterSpacing: 1.5,
             ),
           ),
@@ -590,6 +599,8 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
       child: GlassTile(
         borderRadius: BorderRadius.circular(24.r),
         child: Container(
+          width: double.infinity,
+          height: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(24.r),
             border: Border.all(
@@ -789,6 +800,8 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
     return GlassTile(
       borderRadius: BorderRadius.circular(24.r),
       child: Container(
+        width: double.infinity,
+        height: double.infinity,
         padding: EdgeInsets.all(16.r),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24.r),
@@ -797,6 +810,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
           ),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
               child:

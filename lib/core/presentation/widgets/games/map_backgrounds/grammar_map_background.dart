@@ -30,13 +30,10 @@ class GrammarMapBackground extends StatelessWidget {
               top: (i * 180).h,
               left: (i % 2 == 0) ? 0 : null,
               right: (i % 2 != 0) ? 0 : null,
-              child: Opacity(
-                opacity: 0.1,
-                child: Container(
-                  width: 300.w,
-                  height: 2.h,
-                  color: const Color(0xFF10B981),
-                ),
+              child: Container(
+                width: 300.w,
+                height: 2.h,
+                color: const Color(0xFF10B981).withValues(alpha: 0.1),
               )
               .animate(onPlay: (c) => c.repeat())
               .shimmer(duration: (2 + i).seconds, color: Colors.white)

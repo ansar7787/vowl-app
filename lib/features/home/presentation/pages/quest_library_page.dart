@@ -439,11 +439,19 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
       child: Container(
         height: 52.h,
         decoration: BoxDecoration(
-          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
-            color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.1),
+            color: const Color(0xFF3B82F6).withValues(alpha: 0.4),
+            width: 1.5,
           ),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFF3B82F6).withValues(alpha: 0.1),
+              blurRadius: 12,
+              offset: const Offset(0, 4),
+            ),
+          ],
         ),
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Row(
@@ -661,8 +669,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                   color: Colors.white,
                   size: 32.r,
                 ),
-              ).animate(onPlay: (c) => c.repeat(reverse: true))
-               .moveY(begin: 0, end: -5, duration: 2.seconds, curve: Curves.easeInOutQuad),
+              ).animate().moveY(begin: 10, end: 0, duration: 400.ms, curve: Curves.easeOutBack),
             ),
           ],
         ),
@@ -695,7 +702,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
               ),
             ],
           ),
-        ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
+        ),
       ),
     );
   }
@@ -713,7 +720,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
           "NEW",
           style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white),
         ),
-      ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 1.5.seconds);
+      ).animate().shimmer(duration: 1.seconds);
     }
 
     return Container(

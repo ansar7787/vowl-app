@@ -27,17 +27,14 @@ class ListeningMapBackground extends StatelessWidget {
           // Acoustic Pulses
           ...List.generate(5, (i) {
             return Center(
-              child: Opacity(
-                opacity: 0.1,
-                child: Container(
-                  width: (200 + i * 200).r,
-                  height: (200 + i * 200).r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: const Color(0xFF6366F1),
-                      width: 2,
-                    ),
+              child: Container(
+                width: (200 + i * 200).r,
+                height: (200 + i * 200).r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                    width: 2,
                   ),
                 ),
               )

@@ -16,6 +16,7 @@ import 'package:vowl/features/settings/presentation/widgets/legal_constants.dart
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:permission_handler/permission_handler.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -38,14 +39,40 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Future<void> _loadPackageInfo() async {
     final info = await PackageInfo.fromPlatform();
     final prefs = await SharedPreferences.getInstance();
+    
+    // Check actual system permission to keep UI in sync
+    final isGranted = await Permission.notification.isGranted;
+    final savedPref = prefs.getBool('notifications_enabled') ?? true;
+    
     setState(() {
       _appVersion = info.version;
       _buildNumber = info.buildNumber;
-      _notificationsEnabled = prefs.getBool('notifications_enabled') ?? true;
+      _notificationsEnabled = savedPref && isGranted;
     });
   }
 
   Future<void> _toggleNotifications(bool value) async {
+    if (value) {
+      // Trying to enable
+      final isGranted = await Permission.notification.isGranted;
+      final isDenied = await Permission.notification.isPermanentlyDenied;
+      if (!isGranted) {
+        if (isDenied) {
+          // If denied, we must send them to OS settings
+          await openAppSettings();
+          return; // They'll return later, and we'll check status then
+        } else {
+          // Request permission natively
+          final status = await Permission.notification.request();
+          if (!status.isGranted) return; // User denied
+        }
+      }
+    } else {
+      // Trying to disable
+      final confirm = await SettingsDialogs.showDisableNotificationConfirmation(context);
+      if (confirm != true) return; // User cancelled
+    }
+
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('notifications_enabled', value);
     setState(() => _notificationsEnabled = value);

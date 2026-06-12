@@ -30,13 +30,10 @@ class SpeakingMapBackground extends StatelessWidget {
               top: (i * 300).h,
               left: (i % 2 == 0) ? -100.w : null,
               right: (i % 2 != 0) ? -100.w : null,
-              child: Opacity(
-                opacity: 0.08,
-                child: Icon(
-                  Icons.graphic_eq_rounded,
-                  size: 400.r,
-                  color: const Color(0xFF8B5CF6),
-                ),
+              child: Icon(
+                Icons.graphic_eq_rounded,
+                size: 400.r,
+                color: const Color(0xFF8B5CF6).withValues(alpha: 0.08),
               )
               .animate(onPlay: (c) => c.repeat(reverse: true))
               .scale(

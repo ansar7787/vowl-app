@@ -187,9 +187,19 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
         final newStreak = updatedUser.currentStreak;
         if (milestones.containsKey(newStreak) && !updatedUser.claimedStreakMilestones.contains(newStreak)) {
            final reward = milestones[newStreak]!;
+           final newHistory = List<Map<String, dynamic>>.from(updatedUser.coinHistory);
+           newHistory.insert(0, {
+             'title': 'Auto-Claimed Milestone ($newStreak Days)',
+             'amount': reward,
+             'isEarned': true,
+             'date': DateTime.now().toIso8601String(),
+           });
+           if (newHistory.length > 10) newHistory.removeLast();
+
            updatedUser = updatedUser.copyWith(
               coins: updatedUser.coins + reward,
               claimedStreakMilestones: [...updatedUser.claimedStreakMilestones, newStreak],
+              coinHistory: newHistory,
            );
         }
 
@@ -309,9 +319,19 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       return;
     }
     
+    final newHistory = List<Map<String, dynamic>>.from(user.coinHistory);
+    newHistory.insert(0, {
+      'title': 'Purchased Golden Scroll',
+      'amount': -event.cost,
+      'isEarned': false,
+      'date': DateTime.now().toIso8601String(),
+    });
+    if (newHistory.length > 10) newHistory.removeLast();
+
     final updatedUser = user.copyWith(
       coins: user.coins - event.cost,
       hasPermanentXPBoost: true,
+      coinHistory: newHistory,
     );
     
     final result = await updateUser(UpdateUserParams(user: updatedUser));
@@ -334,9 +354,19 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     final user = authBloc.state.user;
     if (user == null) return;
     
+    final newHistory = List<Map<String, dynamic>>.from(user.coinHistory);
+    newHistory.insert(0, {
+      'title': 'Streak Milestone Reward',
+      'amount': event.reward,
+      'isEarned': true,
+      'date': DateTime.now().toIso8601String(),
+    });
+    if (newHistory.length > 10) newHistory.removeLast();
+
     final updatedUser = user.copyWith(
       coins: user.coins + event.reward,
       claimedStreakMilestones: [...user.claimedStreakMilestones, event.milestone],
+      coinHistory: newHistory,
     );
     
     final result = await updateUser(UpdateUserParams(user: updatedUser));
@@ -351,9 +381,19 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     final user = authBloc.state.user;
     if (user == null) return;
     
+    final newHistory = List<Map<String, dynamic>>.from(user.coinHistory);
+    newHistory.insert(0, {
+      'title': 'Level Milestone Reward',
+      'amount': event.reward,
+      'isEarned': true,
+      'date': DateTime.now().toIso8601String(),
+    });
+    if (newHistory.length > 10) newHistory.removeLast();
+
     final updatedUser = user.copyWith(
       coins: user.coins + event.reward,
       claimedLevelMilestones: [...user.claimedLevelMilestones, event.milestone],
+      coinHistory: newHistory,
     );
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(

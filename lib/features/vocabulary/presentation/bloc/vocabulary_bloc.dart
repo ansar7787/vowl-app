@@ -1,241 +1,33 @@
 import 'package:dartz/dartz.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../features/auth/domain/usecases/update_user_rewards.dart';
-import '../../../../features/auth/domain/usecases/update_category_stats.dart';
-import '../../../../features/auth/domain/usecases/update_unlocked_level.dart';
-import '../../../../features/auth/domain/usecases/update_user_coins.dart';
-import '../../../../features/auth/domain/usecases/award_badge.dart';
-import '../../../../features/auth/domain/usecases/use_hint.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/network/network_info.dart';
-import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
-import '../../domain/entities/vocabulary_quest.dart';
-import '../../domain/usecases/get_vocabulary_quests.dart';
-import '../../../../core/domain/entities/game_quest.dart';
-import '../../../../core/usecases/usecase.dart';
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/auth/domain/usecases/award_badge.dart';
+import 'package:vowl/features/auth/domain/usecases/update_category_stats.dart';
+import 'package:vowl/features/auth/domain/usecases/update_unlocked_level.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
+import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
+import 'package:vowl/features/vocabulary/domain/usecases/get_vocabulary_quests.dart';
 
-// ─────────────────────────────────────────────
-// CATCH-ERROR HELPER
-// ─────────────────────────────────────────────
+import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_event.dart';
+import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_state.dart';
 
+export 'vocabulary_event.dart';
+export 'vocabulary_state.dart';
+
+// ─── Error-swallow helper ─────────────────────────────────────────────────────
+
+/// Silently absorbs a [Failure] from a persistence use-case so that individual
+/// reward failures never crash an in-progress game session.
 Either<Failure, void> _swallow(Object _) => const Right(null);
 
-// ─────────────────────────────────────────────
-// CONSTANTS
-// ─────────────────────────────────────────────
-
-/// Central reward constants — change once, reflected everywhere.
-class VocabularyRewardConstants {
-  const VocabularyRewardConstants._();
-
-  static const int baseXp = 10;
-  static const int baseCoins = 10;
-  static const int initialLives = 3;
-  static const int reviveLives = 1;
-  static const int maxQuestsPerLevel = 3;
-  static const int wrongCountBeforeMasteryLoop = 2;
-  static const String masteryBadgeId = 'vocabulary_master';
-}
-
-// ─────────────────────────────────────────────
-// EVENTS
-// ─────────────────────────────────────────────
-
-abstract class VocabularyEvent extends Equatable {
-  const VocabularyEvent();
-
-  @override
-  List<Object?> get props => [];
-}
-
-class FetchVocabularyQuests extends VocabularyEvent {
-  final GameSubtype gameType;
-  final int level;
-
-  const FetchVocabularyQuests({required this.gameType, required this.level});
-
-  @override
-  List<Object?> get props => [gameType, level];
-}
-
-class SubmitAnswer extends VocabularyEvent {
-  final bool isCorrect;
-
-  const SubmitAnswer(this.isCorrect);
-
-  @override
-  List<Object?> get props => [isCorrect];
-}
-
-class NextQuestion extends VocabularyEvent {
-  const NextQuestion();
-}
-
-class RetryCurrentQuestion extends VocabularyEvent {
-  const RetryCurrentQuestion();
-}
-
-class RestartLevel extends VocabularyEvent {
-  const RestartLevel();
-}
-
-class VocabularyHintUsed extends VocabularyEvent {
-  const VocabularyHintUsed();
-}
-
-class RestoreLife extends VocabularyEvent {
-  const RestoreLife();
-}
-
-/// Was a complete no-op stub — added count to hintsAvailable state.
-class AddHint extends VocabularyEvent {
-  final int count;
-
-  const AddHint(this.count);
-
-  @override
-  List<Object?> get props => [count];
-}
-
-// ─────────────────────────────────────────────
-// STATES
-// ─────────────────────────────────────────────
-
-abstract class VocabularyState extends Equatable {
-  const VocabularyState();
-
-  @override
-  List<Object?> get props => [];
-}
-
-class VocabularyInitial extends VocabularyState {
-  const VocabularyInitial();
-}
-
-class VocabularyLoading extends VocabularyState {
-  const VocabularyLoading();
-}
-
-class VocabularyLoaded extends VocabularyState {
-  final List<VocabularyQuest> quests;
-  final int currentIndex;
-  final int livesRemaining;
-  final bool? lastAnswerCorrect;
-  final bool hintUsed;
-  final int wrongCount;
-  final bool isFinalFailure;
-
-  ///  Added hintsAvailable so AddHint event has a state destination.
-  final int hintsAvailable;
-
-  const VocabularyLoaded({
-    required this.quests,
-    required this.currentIndex,
-    required this.livesRemaining,
-    this.lastAnswerCorrect,
-    this.hintUsed = false,
-    this.wrongCount = 0,
-    this.isFinalFailure = false,
-    this.hintsAvailable = 0,
-  });
-
-  /// Bounds-checked getter — clear assert instead of cryptic RangeError.
-  VocabularyQuest get currentQuest {
-    assert(
-      currentIndex >= 0 && currentIndex < quests.length,
-      'currentIndex ($currentIndex) out of bounds (${quests.length})',
-    );
-    return quests[currentIndex];
-  }
-
-  /// Safe nullable getter — use this in UI to avoid crashes.
-  VocabularyQuest? get currentQuestOrNull =>
-      (currentIndex >= 0 && currentIndex < quests.length)
-      ? quests[currentIndex]
-      : null;
-
-  @override
-  List<Object?> get props => [
-    quests,
-    currentIndex,
-    livesRemaining,
-    lastAnswerCorrect,
-    hintUsed,
-    wrongCount,
-    isFinalFailure,
-    hintsAvailable,
-  ];
-
-  VocabularyLoaded copyWith({
-    List<VocabularyQuest>? quests,
-    int? currentIndex,
-    int? livesRemaining,
-    bool? lastAnswerCorrect,
-    bool? hintUsed,
-    int? wrongCount,
-    bool? isFinalFailure,
-    int? hintsAvailable,
-
-    ///  Explicit flag to intentionally clear lastAnswerCorrect.
-    /// Passing lastAnswerCorrect: null previously reset it unintentionally.
-    bool clearLastAnswerCorrect = false,
-  }) {
-    return VocabularyLoaded(
-      quests: quests ?? this.quests,
-      currentIndex: currentIndex ?? this.currentIndex,
-      livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: clearLastAnswerCorrect
-          ? null
-          : (lastAnswerCorrect ?? this.lastAnswerCorrect),
-      hintUsed: hintUsed ?? this.hintUsed,
-      wrongCount: wrongCount ?? this.wrongCount,
-      isFinalFailure: isFinalFailure ?? this.isFinalFailure,
-      hintsAvailable: hintsAvailable ?? this.hintsAvailable,
-    );
-  }
-}
-
-class VocabularyError extends VocabularyState {
-  final String message;
-  final String? technicalError;
-
-  const VocabularyError(this.message, {this.technicalError});
-
-  @override
-  List<Object?> get props => [message, technicalError];
-}
-
-class VocabularyGameComplete extends VocabularyState {
-  final int xpEarned;
-  final int coinsEarned;
-  final int questCount;
-
-  const VocabularyGameComplete({
-    required this.xpEarned,
-    required this.coinsEarned,
-    required this.questCount,
-  });
-
-  @override
-  List<Object?> get props => [xpEarned, coinsEarned, questCount];
-}
-
-class VocabularyGameOver extends VocabularyState {
-  final List<VocabularyQuest> quests;
-  final int currentIndex;
-
-  const VocabularyGameOver({required this.quests, required this.currentIndex});
-
-  @override
-  List<Object?> get props => [quests, currentIndex];
-}
-
-// ─────────────────────────────────────────────
-// BLOC
-// ─────────────────────────────────────────────
+// ─── BLoC ─────────────────────────────────────────────────────────────────────
 
 class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
   final GetVocabularyQuests getQuests;
@@ -249,7 +41,6 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
   final UseHint useHint;
   final NetworkInfo networkInfo;
 
-  //  Private — internal state, not public API.
   String? _currentGameType;
   int? _currentLevel;
 
@@ -278,9 +69,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     on<AddHint>(_onAddHint);
   }
 
-  // ─────────────────────────────────────────────
-  // FETCH QUESTS — O(n) dedup, O(n) space
-  // ─────────────────────────────────────────────
+  // ── Fetch — O(n) dedup, O(n) space ───────────────────────────────────────
 
   Future<void> _onFetchQuests(
     FetchVocabularyQuests event,
@@ -288,12 +77,9 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
   ) async {
     _currentGameType = event.gameType.name;
     _currentLevel = event.level;
-
     emit(const VocabularyLoading());
 
-    //  Offline check before network call.
-    final isConnected = await networkInfo.isConnected;
-    if (!isConnected) {
+    if (!await networkInfo.isConnected) {
       emit(
         const VocabularyError(
           'No internet connection. Please check your network and try again.',
@@ -304,40 +90,55 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     }
 
     try {
-      final quests = await getQuests(event.gameType.name, event.level);
-
-      if (quests.isEmpty) {
-        emit(
-          VocabularyError(
-            "We couldn't find any quests for this level yet.",
-            technicalError:
-                'Empty quest list for category: ${event.gameType.name}, level: ${event.level}',
-          ),
-        );
-        return;
-      }
-
-      // Dedup by id, preserve JSON order — O(n)
-      final seen = <String>{};
-      final unique = <VocabularyQuest>[];
-      for (final q in quests) {
-        if (seen.add(q.id)) unique.add(q);
-      }
-
-      final limited = unique
-          .take(VocabularyRewardConstants.maxQuestsPerLevel)
-          .toList();
-
-      emit(
-        VocabularyLoaded(
-          quests: limited,
-          currentIndex: 0,
-          livesRemaining: VocabularyRewardConstants.initialLives,
+      // FIX: typed params object replaces positional (String, int) arguments,
+      // matching the UseCase<Output, Params> contract used project-wide.
+      final result = await getQuests(
+        GetVocabularyQuestsParams(
+          gameType: event.gameType.name,
+          level: event.level,
         ),
       );
-    } catch (e, stackTrace) {
+
+      result.fold(
+        (failure) {
+          emit(
+            VocabularyError(
+              'Failed to load quests. Please try again.',
+              technicalError: failure.message,
+            ),
+          );
+        },
+        (quests) {
+          if (quests.isEmpty) {
+            emit(
+              VocabularyError(
+                "We couldn't find any quests for this level yet.",
+                technicalError:
+                    'Empty quest list: ${event.gameType.name} / ${event.level}',
+              ),
+            );
+            return;
+          }
+
+          // O(n) dedup by id, preserve server order, then cap at maxQuestsPerLevel.
+          final seen = <String>{};
+          final limited = quests
+              .where((q) => seen.add(q.id))
+              .take(VocabularyRewardConstants.maxQuestsPerLevel)
+              .toList();
+
+          emit(
+            VocabularyLoaded(
+              quests: limited,
+              currentIndex: 0,
+              livesRemaining: VocabularyRewardConstants.initialLives,
+            ),
+          );
+        },
+      );
+    } catch (e, st) {
       assert(() {
-        debugPrint('[VocabularyBloc] _onFetchQuests: $e\n$stackTrace');
+        debugPrint('[VocabularyBloc] _onFetchQuests: $e\n$st');
         return true;
       }());
       emit(
@@ -349,9 +150,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     }
   }
 
-  // ─────────────────────────────────────────────
-  // SUBMIT ANSWER — O(n) worst case (mastery loop append)
-  // ─────────────────────────────────────────────
+  // ── Submit answer — O(n) mastery path / O(1) normal ───────────────────────
 
   Future<void> _onSubmitAnswer(
     SubmitAnswer event,
@@ -376,12 +175,12 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
       await hapticService.error();
 
       final newLives = s.livesRemaining - 1;
-      final newWrongCount = s.wrongCount + 1;
+      final newWrong = s.wrongCount + 1;
       final isFinal =
-          newWrongCount >=
-          VocabularyRewardConstants.wrongCountBeforeMasteryLoop;
+          newWrong >= VocabularyRewardConstants.wrongCountBeforeMasteryLoop;
 
-      // Mastery Loop: append failed quest for second attempt
+      // Mastery loop: append failed quest so the player must answer it
+      // correctly before the level ends.
       final updatedQuests = isFinal ? [...s.quests, s.currentQuest] : s.quests;
 
       emit(
@@ -389,16 +188,14 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
           quests: updatedQuests,
           livesRemaining: newLives,
           lastAnswerCorrect: false,
-          wrongCount: isFinal ? 0 : newWrongCount,
+          wrongCount: isFinal ? 0 : newWrong,
           isFinalFailure: isFinal || newLives <= 0,
         ),
       );
     }
   }
 
-  // ─────────────────────────────────────────────
-  // NEXT QUESTION — O(1)
-  // ─────────────────────────────────────────────
+  // ── Next question — O(1) ──────────────────────────────────────────────────
 
   Future<void> _onNextQuestion(
     NextQuestion event,
@@ -412,9 +209,8 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
       return;
     }
 
-    final isOnLastQuest = s.currentIndex >= s.quests.length - 1;
-
-    if (isOnLastQuest) {
+    final isLast = s.currentIndex >= s.quests.length - 1;
+    if (isLast) {
       if (s.lastAnswerCorrect == true) {
         await _handleLevelComplete(s, emit);
       } else {
@@ -438,21 +234,19 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     }
   }
 
-  //  Emit completion state FIRST (UI unblocks immediately),
-  // then run persistence in parallel via Future.wait.
   Future<void> _handleLevelComplete(
     VocabularyLoaded s,
     Emitter<VocabularyState> emit,
   ) async {
-    soundService.playLevelComplete();
+    await soundService.playLevelComplete();
 
-    const totalXp = VocabularyRewardConstants.baseXp;
-    const totalCoins = VocabularyRewardConstants.baseCoins;
+    const xp = VocabularyRewardConstants.baseXp;
+    const coins = VocabularyRewardConstants.baseCoins;
 
     emit(
       VocabularyGameComplete(
-        xpEarned: totalXp,
-        coinsEarned: totalCoins,
+        xpEarned: xp,
+        coinsEarned: coins,
         questCount: s.quests.length,
       ),
     );
@@ -461,17 +255,14 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
       final gameType = _currentGameType!;
       final level = _currentLevel!;
 
-      //  Parallel persistence — was sequential (4× latency).
-      // FIX: .catchError uses _swallow which returns Either<Failure, void>
-      // matching the use-case return type. Empty {} body was causing:
-      // "onError handler must return Either<Failure, void>" compile error.
+      // Parallel persistence — O(1) concurrent dispatch vs O(4) sequential.
       await Future.wait([
         updateUserRewards(
           UpdateUserRewardsParams(
             gameType: gameType,
             level: level,
-            xpIncrease: totalXp,
-            coinIncrease: totalCoins,
+            xpIncrease: xp,
+            coinIncrease: coins,
           ),
         ).catchError(_swallow),
         updateCategoryStats(
@@ -480,6 +271,8 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
         updateUnlockedLevel(
           UpdateUnlockedLevelParams(categoryId: gameType, newLevel: level + 1),
         ).catchError(_swallow),
+        // NOTE: AwardBadge must be idempotent at the use-case level —
+        // it is called on every level completion.
         awardBadge(
           VocabularyRewardConstants.masteryBadgeId,
         ).catchError(_swallow),
@@ -487,73 +280,57 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     }
   }
 
-  // ─────────────────────────────────────────────
-  // RETRY
-  // ─────────────────────────────────────────────
+  // ── Retry — O(1) ─────────────────────────────────────────────────────────
 
-  void _onRetryQuestion(
-    RetryCurrentQuestion event,
-    Emitter<VocabularyState> emit,
-  ) {
+  void _onRetryQuestion(RetryCurrentQuestion _, Emitter<VocabularyState> emit) {
     if (state is! VocabularyLoaded) return;
-    final s = state as VocabularyLoaded;
-    emit(s.copyWith(clearLastAnswerCorrect: true, hintUsed: false));
+    emit(
+      (state as VocabularyLoaded).copyWith(
+        clearLastAnswerCorrect: true,
+        hintUsed: false,
+      ),
+    );
   }
 
-  // ─────────────────────────────────────────────
-  // RESTART
-  // ─────────────────────────────────────────────
+  // ── Restart — O(k) enum scan ──────────────────────────────────────────────
 
   Future<void> _onRestartLevel(
-    RestartLevel event,
+    RestartLevel _,
     Emitter<VocabularyState> emit,
   ) async {
-    if (_currentGameType != null && _currentLevel != null) {
-      // Safe firstWhere — orElse returns null instead of StateError.
-      final matchedType = GameSubtype.values.cast<GameSubtype?>().firstWhere(
-        (e) => e?.name == _currentGameType,
-        orElse: () => null,
-      );
-      if (matchedType != null) {
-        add(
-          FetchVocabularyQuests(gameType: matchedType, level: _currentLevel!),
-        );
-      } else {
-        emit(const VocabularyInitial());
-      }
+    if (_currentGameType == null || _currentLevel == null) {
+      emit(const VocabularyInitial());
+      return;
+    }
+    final matched = GameSubtype.values.cast<GameSubtype?>().firstWhere(
+      (e) => e?.name == _currentGameType,
+      orElse: () => null,
+    );
+    if (matched != null) {
+      add(FetchVocabularyQuests(gameType: matched, level: _currentLevel!));
     } else {
       emit(const VocabularyInitial());
     }
   }
 
-  // ─────────────────────────────────────────────
-  // HINT
-  // ─────────────────────────────────────────────
+  // ── Hint — O(1) ───────────────────────────────────────────────────────────
 
   Future<void> _onUseHint(
-    VocabularyHintUsed event,
+    VocabularyHintUsed _,
     Emitter<VocabularyState> emit,
   ) async {
     if (state is! VocabularyLoaded) return;
     final s = state as VocabularyLoaded;
     if (s.hintUsed) return;
-
-    final result = await useHint(NoParams());
-    //  Handle failure case explicitly — was silently ignored.
-    result.fold(
-      (_) {}, // Left — failure, no state change
-      (_) {
-        emit(s.copyWith(hintUsed: true));
-        hapticService.selection();
-      },
-    );
+    (await useHint(NoParams())).fold((_) {}, (_) {
+      emit(s.copyWith(hintUsed: true));
+      hapticService.selection();
+    });
   }
 
-  // ─────────────────────────────────────────────
-  // RESTORE LIFE (Revive)
-  // ─────────────────────────────────────────────
+  // ── Restore life — O(1) ───────────────────────────────────────────────────
 
-  void _onRestoreLife(RestoreLife event, Emitter<VocabularyState> emit) {
+  void _onRestoreLife(RestoreLife _, Emitter<VocabularyState> emit) {
     if (state is! VocabularyGameOver) return;
     final s = state as VocabularyGameOver;
     emit(
@@ -561,16 +338,11 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
         quests: s.quests,
         currentIndex: s.currentIndex,
         livesRemaining: VocabularyRewardConstants.reviveLives,
-        lastAnswerCorrect: null,
-        hintUsed: false,
       ),
     );
   }
 
-  // ─────────────────────────────────────────────
-  // ADD HINT
-  //  Was a complete no-op. Now updates hintsAvailable.
-  // ─────────────────────────────────────────────
+  // ── Add hint — O(1) ───────────────────────────────────────────────────────
 
   void _onAddHint(AddHint event, Emitter<VocabularyState> emit) {
     if (state is! VocabularyLoaded) return;

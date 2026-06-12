@@ -14,17 +14,30 @@ import 'package:vowl/features/elite_mastery/domain/usecases/get_elite_mastery_qu
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
 
 class MockGetEliteMasteryQuests extends Mock implements GetEliteMasteryQuests {}
+
 class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
+
 class MockUpdateCategoryStats extends Mock implements UpdateCategoryStats {}
+
 class MockUpdateUnlockedLevel extends Mock implements UpdateUnlockedLevel {}
+
 class MockUseHint extends Mock implements UseHint {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockHapticService extends Mock implements HapticService {}
 
-class FakeGetEliteMasteryQuestParams extends Fake implements GetEliteMasteryQuestParams {}
-class FakeUpdateUserRewardsParams extends Fake implements UpdateUserRewardsParams {}
-class FakeUpdateCategoryStatsParams extends Fake implements UpdateCategoryStatsParams {}
-class FakeUpdateUnlockedLevelParams extends Fake implements UpdateUnlockedLevelParams {}
+class FakeGetEliteMasteryQuestParams extends Fake
+    implements GetEliteMasteryQuestParams {}
+
+class FakeUpdateUserRewardsParams extends Fake
+    implements UpdateUserRewardsParams {}
+
+class FakeUpdateCategoryStatsParams extends Fake
+    implements UpdateCategoryStatsParams {}
+
+class FakeUpdateUnlockedLevelParams extends Fake
+    implements UpdateUnlockedLevelParams {}
 
 void main() {
   late EliteMasteryBloc bloc;
@@ -80,13 +93,16 @@ void main() {
     blocTest<EliteMasteryBloc, EliteMasteryState>(
       'should emit [Loading, Loaded] when data is fetched successfully',
       build: () {
-        when(() => mockGetQuests(any())).thenAnswer((_) async => const Right(tQuests));
+        when(
+          () => mockGetQuests(any()),
+        ).thenAnswer((_) async => const Right(tQuests));
         return bloc;
       },
-      act: (bloc) => bloc.add(FetchEliteMasteryQuests(gameType: tGameType, level: tLevel)),
+      act: (bloc) =>
+          bloc.add(FetchEliteMasteryQuests(gameType: tGameType, level: tLevel)),
       expect: () => [
         EliteMasteryLoading(),
-        EliteMasteryLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3),
+        EliteMasteryLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3, gameType: tGameType, level: tLevel),
       ],
     );
   });
@@ -96,6 +112,8 @@ void main() {
       quests: tQuests,
       currentIndex: 0,
       livesRemaining: 3,
+      gameType: tGameType,
+      level: tLevel,
     );
 
     blocTest<EliteMasteryBloc, EliteMasteryState>(
@@ -107,9 +125,7 @@ void main() {
       },
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(SubmitEliteAnswer(true)),
-      expect: () => [
-        tLoadedState.copyWith(lastAnswerCorrect: true),
-      ],
+      expect: () => [tLoadedState.copyWith(lastAnswerCorrect: true)],
     );
 
     blocTest<EliteMasteryBloc, EliteMasteryState>(

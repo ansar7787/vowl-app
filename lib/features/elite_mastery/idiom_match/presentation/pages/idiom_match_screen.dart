@@ -11,11 +11,10 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
-import '../../../presentation/widgets/elite_base_layout.dart';
+import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import '../widgets/idiom_match_options_panel.dart';
-
 
 class IdiomMatchScreen extends StatefulWidget {
   final int level;
@@ -146,7 +145,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
           );
         } else if (state is EliteMasteryLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          
+
           if (_lastQuestId != state.currentQuest.id || livesChanged) {
             _lastQuestId = state.currentQuest.id;
             _isAnswered = false;
@@ -204,7 +203,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
           isAnswered: _isAnswered,
           state: state,
           isCorrect: _isCorrect,
-          isFinalFailure: (state is EliteMasteryLoaded) ? (state.isFinalFailure || state.livesRemaining <= 0) : false,
+          isFinalFailure: (state is EliteMasteryLoaded)
+              ? (state.isFinalFailure || state.livesRemaining <= 0)
+              : false,
           showConfetti: _showConfetti,
           title: "IDIOM MASTER",
           subtitle: quest?.instruction ?? "Match the idiom to its real meaning",
@@ -262,7 +263,8 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
             Text(
               state.message,
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 color: Colors.white,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
@@ -284,7 +286,8 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                 ),
                 child: Text(
                   "RETRY",
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     color: theme.primaryColor,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 1.2,
@@ -338,15 +341,16 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
           child: Column(
             children: [
               Icon(
-                Icons.auto_awesome_rounded, 
-                color: isDark ? Colors.white : theme.primaryColor, 
+                Icons.auto_awesome_rounded,
+                color: isDark ? Colors.white : theme.primaryColor,
                 size: 32.r,
               ),
               SizedBox(height: 16.h),
               Text(
                 quest.idiom ?? "??",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 22.sp,
                   fontWeight: FontWeight.w700,
                   color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -375,11 +379,11 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
           correctAnswerIndex: quest.correctAnswerIndex ?? 0,
           isDark: isDark,
           primaryColor: theme.primaryColor,
-          onOptionSelected: (index) => _onOptionSelected(index, quest.correctAnswerIndex),
+          onOptionSelected: (index) =>
+              _onOptionSelected(index, quest.correctAnswerIndex),
         ),
         SizedBox(height: 20.h),
       ],
     );
   }
 }
-

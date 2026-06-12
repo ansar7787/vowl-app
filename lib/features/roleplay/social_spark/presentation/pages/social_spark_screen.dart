@@ -8,7 +8,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
-import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
+import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
@@ -30,17 +32,18 @@ class SocialSparkScreen extends StatefulWidget {
   State<SocialSparkScreen> createState() => _SocialSparkScreenState();
 }
 
-class _SocialSparkScreenState extends State<SocialSparkScreen> with TickerProviderStateMixin {
+class _SocialSparkScreenState extends State<SocialSparkScreen>
+    with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   late AnimationController _pulseController;
-  
+
   int _lastProcessedIndex = -1;
-  
+
   // Track selected words by their original shuffled index to support duplicate words flawlessly
   final List<int> _selectedIndices = [];
-  
+
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -53,7 +56,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen> with TickerProvid
       duration: const Duration(seconds: 2),
     )..repeat(reverse: true);
 
-    context.read<RoleplayBloc>().add(FetchRoleplayQuests(gameType: widget.gameType, level: widget.level));
+    context.read<RoleplayBloc>().add(
+      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   @override
@@ -90,14 +95,19 @@ class _SocialSparkScreenState extends State<SocialSparkScreen> with TickerProvid
 
   void _submitAnswer(List<String> shuffledWords, String correctAnswer) {
     if (_isAnswered || _selectedIndices.isEmpty) return;
-    
+
     // Assemble sentence in correct tapped order
-    final String result = _selectedIndices.map((idx) => shuffledWords[idx]).join(' ');
-    
+    final String result = _selectedIndices
+        .map((idx) => shuffledWords[idx])
+        .join(' ');
+
     // Sanitize punctuation comparisons cleanly
     final sanitizedResult = result.replaceAll(' ?', '?').trim().toLowerCase();
-    final sanitizedAnswer = correctAnswer.replaceAll(' ?', '?').trim().toLowerCase();
-    
+    final sanitizedAnswer = correctAnswer
+        .replaceAll(' ?', '?')
+        .trim()
+        .toLowerCase();
+
     final bool isCorrect = sanitizedResult == sanitizedAnswer;
 
     setState(() {
@@ -157,7 +167,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen> with TickerProvid
         final words = quest?.shuffledWords ?? [];
 
         // Build active joined text representation
-        final String currentText = _selectedIndices.map((idx) => words[idx]).join(' ');
+        final String currentText = _selectedIndices
+            .map((idx) => words[idx])
+            .join(' ');
 
         return RoleplayBaseLayout(
           gameType: widget.gameType,
@@ -171,12 +183,15 @@ class _SocialSparkScreenState extends State<SocialSparkScreen> with TickerProvid
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 10.h,
+                  ),
                   child: Column(
                     children: [
                       SocialSparkInstruction(primaryColor: theme.primaryColor),
                       SizedBox(height: 16.h),
-                      
+
                       SocialSparkConnectionMonitor(
                         text: currentText,
                         color: theme.primaryColor,
@@ -185,7 +200,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen> with TickerProvid
                         isCorrect: _isCorrect,
                       ),
                       SizedBox(height: 20.h),
-                      
+
                       SocialSparkGalaxyBoard(
                         words: words,
                         color: theme.primaryColor,
@@ -206,19 +221,33 @@ class _SocialSparkScreenState extends State<SocialSparkScreen> with TickerProvid
                             ScaleButton(
                               onTap: _clearSelection,
                               child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 24.w,
+                                  vertical: 12.h,
+                                ),
                                 decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  color: theme.primaryColor.withValues(
+                                    alpha: 0.1,
+                                  ),
                                   borderRadius: BorderRadius.circular(30.r),
-                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                  border: Border.all(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.3,
+                                    ),
+                                  ),
                                 ),
                                 child: Row(
                                   children: [
-                                    Icon(Icons.refresh_rounded, color: theme.primaryColor, size: 18.r),
+                                    Icon(
+                                      Icons.refresh_rounded,
+                                      color: theme.primaryColor,
+                                      size: 18.r,
+                                    ),
                                     SizedBox(width: 6.w),
                                     Text(
                                       "CLEAR PATH",
-                                      style: TextStyle(fontFamily: 'Outfit', 
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.bold,
                                         color: theme.primaryColor,
@@ -230,28 +259,44 @@ class _SocialSparkScreenState extends State<SocialSparkScreen> with TickerProvid
                             ),
                             SizedBox(width: 16.w),
                             ScaleButton(
-                              onTap: () => _submitAnswer(words, quest.correctAnswer ?? ""),
+                              onTap: () => _submitAnswer(
+                                words,
+                                quest.correctAnswer ?? "",
+                              ),
                               child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 12.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 32.w,
+                                  vertical: 12.h,
+                                ),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30.r),
                                   gradient: LinearGradient(
-                                    colors: [theme.primaryColor, theme.primaryColor.withValues(alpha: 0.8)],
+                                    colors: [
+                                      theme.primaryColor,
+                                      theme.primaryColor.withValues(alpha: 0.8),
+                                    ],
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: theme.primaryColor.withValues(alpha: 0.35),
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.35,
+                                      ),
                                       blurRadius: 15,
                                     ),
                                   ],
                                 ),
                                 child: Row(
                                   children: [
-                                    Icon(Icons.bolt_rounded, color: Colors.white, size: 18.r),
+                                    Icon(
+                                      Icons.bolt_rounded,
+                                      color: Colors.white,
+                                      size: 18.r,
+                                    ),
                                     SizedBox(width: 6.w),
                                     Text(
                                       "IGNITE SPARK",
-                                      style: TextStyle(fontFamily: 'Outfit', 
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,

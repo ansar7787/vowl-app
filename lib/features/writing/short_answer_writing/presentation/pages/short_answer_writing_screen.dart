@@ -6,7 +6,9 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
-import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
+import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
+import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
+import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_instruction.dart';
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_quill_prompt.dart';
@@ -29,7 +31,7 @@ class ShortAnswerScreen extends StatefulWidget {
 
 class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
   final _answerController = TextEditingController();
-  
+
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -42,7 +44,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<WritingBloc>().add(FetchWritingQuests(gameType: widget.gameType, level: widget.level));
+    context.read<WritingBloc>().add(
+      FetchWritingQuests(gameType: widget.gameType, level: widget.level),
+    );
     _answerController.addListener(_onTextChanged);
   }
 
@@ -63,47 +67,52 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
 
   void _submitAnswer(List<String> targetKeywords) {
     if (_isAnswered || _answerController.text.trim().isEmpty) return;
-    
+
     final text = _answerController.text.trim().toLowerCase();
-    
+
     int matchedCount = 0;
     for (var kw in targetKeywords) {
       if (text.contains(kw.toLowerCase())) {
         matchedCount++;
       }
     }
-    
-    bool isMinLengthMet = _wordCount >= 10; 
-    bool isKeywordsMet = matchedCount >= 2; 
+
+    bool isMinLengthMet = _wordCount >= 10;
+    bool isKeywordsMet = matchedCount >= 2;
 
     if (isMinLengthMet && isKeywordsMet) {
-      setState(() { 
-        _isAnswered = true; 
-        _isCorrect = true; 
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
       });
       context.read<WritingBloc>().add(SubmitAnswer(true));
     } else {
-      setState(() { 
+      setState(() {
         _attempts++;
         if (_attempts >= 2) {
-          _isAnswered = true; 
+          _isAnswered = true;
           _isCorrect = false;
         }
       });
       context.read<WritingBloc>().add(SubmitAnswer(false));
-      
+
       if (_attempts < 2) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            backgroundColor: isDark ? Colors.redAccent : const Color(0xFFDC2626),
+            backgroundColor: isDark
+                ? Colors.redAccent
+                : const Color(0xFFDC2626),
             content: Text(
-              !isMinLengthMet 
-                ? "Your response is too short! Try to expand your ideas." 
-                : "Make sure to include at least 2 of the highlighted booster keywords!",
-              style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.bold),
+              !isMinLengthMet
+                  ? "Your response is too short! Try to expand your ideas."
+                  : "Make sure to include at least 2 of the highlighted booster keywords!",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          )
+          ),
         );
       }
     }
@@ -118,7 +127,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
       listener: (context, state) {
         if (state is WritingLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          if (state.currentIndex != _lastProcessedIndex ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -133,98 +144,126 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
         }
         if (state is WritingGameComplete) {
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'CREATIVE AUTHOR!', enableDoubleUp: true);
+          GameDialogHelper.showCompletion(
+            context,
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'CREATIVE AUTHOR!',
+            enableDoubleUp: true,
+          );
         } else if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<WritingBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<WritingBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
-        final WritingQuest? quest = (state is WritingLoaded) ? state.currentQuest as WritingQuest? : null;
-        
-        final targetKeywords = quest?.options ?? ["bacteria", "sulfide", "chemosynthesis"];
+        final WritingQuest? quest = (state is WritingLoaded)
+            ? state.currentQuest as WritingQuest?
+            : null;
+
+        final targetKeywords =
+            quest?.options ?? ["bacteria", "sulfide", "chemosynthesis"];
 
         return WritingBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
           isFinalFailure: _attempts >= 2,
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: quest == null ? const SizedBox() : SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Column(
-                children: [
-                  SizedBox(height: 16.h),
-                  ShortAnswerInstruction(primaryColor: theme.primaryColor),
-                  SizedBox(height: 24.h),
-                  
-                  ShortAnswerQuillPrompt(
-                    prompt: quest.prompt ?? "",
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                  ),
-                  SizedBox(height: 24.h),
-                  
-                  ShortAnswerBoosterTokens(
-                    keywords: targetKeywords,
-                    text: _answerController.text,
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                  ),
-                  SizedBox(height: 24.h),
-                  
-                  ShortAnswerInkwell(
-                    controller: _answerController,
-                    isAnswered: _isAnswered,
-                    wordCount: _wordCount,
-                    inkLevel: _inkLevel,
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                  ),
-                  SizedBox(height: 36.h),
-                  
-                  if (!_isAnswered)
-                    ScaleButton(
-                      onTap: () => _submitAnswer(targetKeywords),
-                      child: Container(
-                        width: double.infinity, height: 60.h,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.r), 
-                          color: _wordCount >= 10 ? theme.primaryColor : Colors.grey, 
-                          boxShadow: [
-                            if (_wordCount >= 10) 
-                              BoxShadow(color: theme.primaryColor.withValues(alpha: 0.3), blurRadius: 15)
-                          ]
+          child: quest == null
+              ? const SizedBox()
+              : SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 16.h),
+                        ShortAnswerInstruction(
+                          primaryColor: theme.primaryColor,
                         ),
-                        child: Center(
-                          child: Text(
-                            "SEAL WITH WAX", 
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              fontSize: 16.sp, 
-                              fontWeight: FontWeight.w900, 
-                              color: Colors.white, 
-                              letterSpacing: 2
-                            )
-                          )
+                        SizedBox(height: 24.h),
+
+                        ShortAnswerQuillPrompt(
+                          prompt: quest.prompt ?? "",
+                          color: theme.primaryColor,
+                          isDark: isDark,
                         ),
-                      ),
+                        SizedBox(height: 24.h),
+
+                        ShortAnswerBoosterTokens(
+                          keywords: targetKeywords,
+                          text: _answerController.text,
+                          color: theme.primaryColor,
+                          isDark: isDark,
+                        ),
+                        SizedBox(height: 24.h),
+
+                        ShortAnswerInkwell(
+                          controller: _answerController,
+                          isAnswered: _isAnswered,
+                          wordCount: _wordCount,
+                          inkLevel: _inkLevel,
+                          color: theme.primaryColor,
+                          isDark: isDark,
+                        ),
+                        SizedBox(height: 36.h),
+
+                        if (!_isAnswered)
+                          ScaleButton(
+                            onTap: () => _submitAnswer(targetKeywords),
+                            child: Container(
+                              width: double.infinity,
+                              height: 60.h,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20.r),
+                                color: _wordCount >= 10
+                                    ? theme.primaryColor
+                                    : Colors.grey,
+                                boxShadow: [
+                                  if (_wordCount >= 10)
+                                    BoxShadow(
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.3,
+                                      ),
+                                      blurRadius: 15,
+                                    ),
+                                ],
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "SEAL WITH WAX",
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                    letterSpacing: 2,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+
+                        if (_isAnswered) ...[
+                          SizedBox(height: 30.h),
+                          ShortAnswerExplanationCard(
+                            quest: quest,
+                            isCorrect: _isCorrect == true,
+                            primaryColor: theme.primaryColor,
+                            isDark: isDark,
+                          ),
+                        ],
+                        SizedBox(height: 60.h),
+                      ],
                     ),
-                  
-                  if (_isAnswered) ...[
-                    SizedBox(height: 30.h),
-                    ShortAnswerExplanationCard(
-                      quest: quest,
-                      isCorrect: _isCorrect == true,
-                      primaryColor: theme.primaryColor,
-                      isDark: isDark,
-                    ),
-                  ],
-                  SizedBox(height: 60.h),
-                ],
-              ),
-            ),
-          ),
+                  ),
+                ),
         );
       },
     );

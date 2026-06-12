@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -24,7 +24,8 @@ class QuestionFormatterScreen extends StatefulWidget {
   });
 
   @override
-  State<QuestionFormatterScreen> createState() => _QuestionFormatterScreenState();
+  State<QuestionFormatterScreen> createState() =>
+      _QuestionFormatterScreenState();
 }
 
 class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
@@ -55,9 +56,10 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
       duration: const Duration(milliseconds: 1000),
     );
     late final Animation<double> animation;
-    animation = Tween<double>(begin: _crankRotation, end: 6.28).animate(
-      CurvedAnimation(parent: controller, curve: Curves.easeInOutBack),
-    );
+    animation = Tween<double>(
+      begin: _crankRotation,
+      end: 6.28,
+    ).animate(CurvedAnimation(parent: controller, curve: Curves.easeInOutBack));
     animation.addListener(() {
       setState(() => _crankRotation = animation.value);
     });
@@ -106,20 +108,21 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final livesRestored =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
-          if (isNewQuestion || isRetry || livesChanged) {
+          if (isNewQuestion || isRetry || livesRestored) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _crankRotation = 0.0;
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
           _lastLives = state.livesRemaining;
@@ -142,7 +145,9 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
-        final options = quest?.options ?? ["Is he...?", "Does he...?", "Has he...?", "Was he...?"];
+        final options =
+            quest?.options ??
+            ["Is he...?", "Does he...?", "Has he...?", "Was he...?"];
 
         return GrammarBaseLayout(
           gameType: widget.gameType,
@@ -167,56 +172,73 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                 height: 25.h,
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
-                                  child: QuestionFormatterInstruction(primaryColor: theme.primaryColor),
+                                  child: QuestionFormatterInstruction(
+                                    primaryColor: theme.primaryColor,
+                                  ),
                                 ),
                               )
-                            : QuestionFormatterInstruction(primaryColor: theme.primaryColor),
+                            : QuestionFormatterInstruction(
+                                primaryColor: theme.primaryColor,
+                              ),
                         SizedBox(height: isCompact ? 8.h : 20.h),
 
                         // 3D Inverter Context Card
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                          child: Transform(
-                            transform: Matrix4.identity()
-                              ..setEntry(3, 2, 0.001)
-                              ..rotateX(_crankRotation),
-                            alignment: Alignment.center,
-                            child: Container(
-                              width: double.infinity,
-                              padding: EdgeInsets.all(isCompact ? 16.r : 28.r),
-                              decoration: BoxDecoration(
-                                color: isDark
-                                    ? Colors.white.withValues(alpha: 0.05)
-                                    : Colors.black.withValues(alpha: 0.03),
-                                borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
-                                border: Border.all(
-                                  color: theme.primaryColor.withValues(alpha: 0.2),
-                                  width: 1.5,
-                                ),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: theme.primaryColor.withValues(alpha: 0.05),
-                                    blurRadius: 30,
-                                    spreadRadius: 5,
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Transform(
+                                transform: Matrix4.identity()
+                                  ..setEntry(3, 2, 0.001)
+                                  ..rotateX(_crankRotation),
+                                alignment: Alignment.center,
+                                child: Container(
+                                  width: double.infinity,
+                                  padding: EdgeInsets.all(
+                                    isCompact ? 16.r : 28.r,
                                   ),
-                                ],
-                              ),
-                              child: Text(
-                                quest.sentence ?? "Missing statement.",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit', 
-                                  fontSize: isCompact ? 16.sp : 22.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: isDark ? Colors.white : Colors.black87,
+                                  decoration: BoxDecoration(
+                                    color: isDark
+                                        ? Colors.white.withValues(alpha: 0.05)
+                                        : Colors.black.withValues(alpha: 0.03),
+                                    borderRadius: BorderRadius.circular(
+                                      isCompact ? 18.r : 28.r,
+                                    ),
+                                    border: Border.all(
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.2,
+                                      ),
+                                      width: 1.5,
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.05,
+                                        ),
+                                        blurRadius: 30,
+                                        spreadRadius: 5,
+                                      ),
+                                    ],
+                                  ),
+                                  child: Text(
+                                    quest.sentence ?? "Missing statement.",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: isCompact ? 16.sp : 22.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: isDark
+                                          ? Colors.white
+                                          : Colors.black87,
+                                    ),
+                                  ),
                                 ),
                               ),
+                            )
+                            .animate()
+                            .fadeIn(duration: 600.ms)
+                            .scale(
+                              begin: const Offset(0.9, 0.9),
+                              end: const Offset(1, 1),
                             ),
-                          ),
-                        )
-                        .animate()
-                        .fadeIn(duration: 600.ms)
-                        .scale(begin: const Offset(0.9, 0.9), end: const Offset(1, 1)),
 
                         SizedBox(height: isCompact ? 16.h : 48.h),
 
@@ -274,7 +296,11 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
     return Column(
       children: options.asMap().entries.map((entry) {
         return Padding(
-          padding: EdgeInsets.only(bottom: isCompact ? 8.h : 16.h, left: 24.w, right: 24.w),
+          padding: EdgeInsets.only(
+            bottom: isCompact ? 8.h : 16.h,
+            left: 24.w,
+            right: 24.w,
+          ),
           child: ScaleButton(
             onTap: () => _onOptionSelect(entry.key, correctIndex),
             child: Container(
@@ -294,7 +320,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                 child: Text(
                   entry.value,
                   style: TextStyle(
-                    fontFamily: 'Outfit', 
+                    fontFamily: 'Outfit',
                     fontSize: isCompact ? 14.sp : 18.sp,
                     fontWeight: FontWeight.bold,
                     color: primaryColor,
@@ -308,7 +334,12 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
     ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0);
   }
 
-  Widget _buildResult(String result, Color primaryColor, bool isDark, bool isCompact) {
+  Widget _buildResult(
+    String result,
+    Color primaryColor,
+    bool isDark,
+    bool isCompact,
+  ) {
     final bool correct = _isCorrect == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
@@ -335,7 +366,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
             Text(
               correct ? "CORRECT!" : "INCORRECT",
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: isCompact ? 13.sp : 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
@@ -347,7 +378,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
               result,
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: isCompact ? 16.sp : 22.sp,
                 fontWeight: FontWeight.bold,
                 color: displayColor,

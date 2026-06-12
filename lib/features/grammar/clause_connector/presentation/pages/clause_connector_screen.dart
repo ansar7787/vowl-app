@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/clause_connector/presentation/widgets/clause_connector_instruction.dart';
@@ -79,20 +79,21 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final livesRestored =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
-          if (isNewQuestion || isRetry || livesChanged) {
+          if (isNewQuestion || isRetry || livesRestored) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _draggingConnector = null;
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
           _lastLives = state.livesRemaining;
@@ -115,7 +116,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
-        final parts = (quest?.question ?? "Clause A ____ Clause B").split(' ____ ');
+        final parts = (quest?.question ?? "Clause A ____ Clause B").split(
+          ' ____ ',
+        );
         final clauseA = parts[0];
         final clauseB = parts.length > 1 ? parts[1] : "...";
         final options = quest?.options ?? [];
@@ -136,13 +139,26 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                     final maxHeight = constraints.maxHeight;
                     final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 50.h : 80.h) * 2 + (isCompact ? 50.h : 80.h) + (isCompact ? 60.h : 100.h) + 40.h;
+                    final double estimatedContentHeight =
+                        (isCompact ? 30.h : 40.h) +
+                        (isCompact ? 50.h : 80.h) * 2 +
+                        (isCompact ? 50.h : 80.h) +
+                        (isCompact ? 60.h : 100.h) +
+                        40.h;
                     final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 15.0) : 4.0;
-                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(6.0, 20.0) : 6.0;
-                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 5
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(4.0, 15.0)
+                        : 4.0;
+                    final double gapMiddle = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                        : 6.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                        : 10.0;
 
                     return Column(
                       children: [
@@ -152,10 +168,14 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                                 height: 25.h,
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
-                                  child: ClauseConnectorInstruction(primaryColor: theme.primaryColor),
+                                  child: ClauseConnectorInstruction(
+                                    primaryColor: theme.primaryColor,
+                                  ),
                                 ),
                               )
-                            : ClauseConnectorInstruction(primaryColor: theme.primaryColor),
+                            : ClauseConnectorInstruction(
+                                primaryColor: theme.primaryColor,
+                              ),
                         SizedBox(height: gapMiddle),
 
                         // Magnetic Energy Port Container
@@ -165,13 +185,27 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                _buildHolographicPlate(clauseA, theme.primaryColor, isDark, isCompact),
+                                _buildHolographicPlate(
+                                  clauseA,
+                                  theme.primaryColor,
+                                  isDark,
+                                  isCompact,
+                                ),
                                 SizedBox(height: isCompact ? 10.h : 16.h),
-                                _buildMagneticPort(quest, options, theme.primaryColor, isDark, isCompact),
+                                _buildMagneticPort(
+                                  quest,
+                                  options,
+                                  theme.primaryColor,
+                                  isDark,
+                                  isCompact,
+                                ),
                                 SizedBox(height: isCompact ? 10.h : 16.h),
-                                _buildHolographicPlate(clauseB, theme.primaryColor, isDark, isCompact)
-                                    .animate()
-                                    .fadeIn(delay: 300.ms),
+                                _buildHolographicPlate(
+                                  clauseB,
+                                  theme.primaryColor,
+                                  isDark,
+                                  isCompact,
+                                ).animate().fadeIn(delay: 300.ms),
                               ],
                             ),
                           ),
@@ -211,7 +245,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
         final isHighlight = candidateData.isNotEmpty;
         final portColor = _isAnswered
             ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent)
-            : (isHighlight ? primaryColor : primaryColor.withValues(alpha: 0.3));
+            : (isHighlight
+                  ? primaryColor
+                  : primaryColor.withValues(alpha: 0.3));
 
         return Container(
           width: isCompact ? 180.w : 220.w,
@@ -230,7 +266,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                   color: portColor.withValues(alpha: 0.2),
                   blurRadius: 20,
                   spreadRadius: 2,
-                )
+                ),
             ],
           ),
           child: Center(
@@ -245,7 +281,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                 : Text(
                     isHighlight ? "RELEASE TO SNAP" : "ENERGY PORT",
                     style: TextStyle(
-                      fontFamily: 'Outfit', 
+                      fontFamily: 'Outfit',
                       fontSize: isCompact ? 8.sp : 10.sp,
                       fontWeight: FontWeight.w900,
                       color: portColor.withValues(alpha: 0.6),
@@ -268,15 +304,20 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
       width: double.infinity,
       padding: EdgeInsets.all(isCompact ? 12.r : 22.r),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.05)
+            : Colors.black.withValues(alpha: 0.03),
         borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.15), width: 1.5),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.15),
+          width: 1.5,
+        ),
       ),
       child: Text(
         text.trim(),
         textAlign: TextAlign.center,
         style: TextStyle(
-          fontFamily: 'Outfit', 
+          fontFamily: 'Outfit',
           fontSize: isCompact ? 14.sp : 18.sp,
           color: isDark ? Colors.white : Colors.black87,
           height: 1.4,
@@ -297,21 +338,31 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
       alignment: WrapAlignment.center,
       spacing: isCompact ? 10.w : 16.w,
       runSpacing: isCompact ? 10.h : 16.h,
-      children: options.map((opt) => Draggable<String>(
-        data: opt,
-        feedback: Material(
-          color: Colors.transparent,
-          child: _buildConnector(opt, primaryColor, isDark, isCompact, isDragging: true),
-        ),
-        childWhenDragging: Opacity(
-          opacity: 0.2,
-          child: _buildConnector(opt, primaryColor, isDark, isCompact),
-        ),
-        child: GestureDetector(
-          onTap: () => _onSnap(opt, correctIndex, options),
-          child: _buildConnector(opt, primaryColor, isDark, isCompact),
-        ),
-      )).toList(),
+      children: options
+          .map(
+            (opt) => Draggable<String>(
+              data: opt,
+              feedback: Material(
+                color: Colors.transparent,
+                child: _buildConnector(
+                  opt,
+                  primaryColor,
+                  isDark,
+                  isCompact,
+                  isDragging: true,
+                ),
+              ),
+              childWhenDragging: Opacity(
+                opacity: 0.2,
+                child: _buildConnector(opt, primaryColor, isDark, isCompact),
+              ),
+              child: GestureDetector(
+                onTap: () => _onSnap(opt, correctIndex, options),
+                child: _buildConnector(opt, primaryColor, isDark, isCompact),
+              ),
+            ),
+          )
+          .toList(),
     );
   }
 
@@ -336,7 +387,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
         vertical: isCompact ? 8.h : 14.h,
       ),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.05),
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : Colors.black.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(isCompact ? 12.r : 16.r),
         border: Border.all(color: borderColor, width: 2),
         boxShadow: [
@@ -345,20 +398,20 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
               color: borderColor.withValues(alpha: 0.2),
               blurRadius: 20,
               spreadRadius: 5,
-            )
+            ),
         ],
       ),
       child: Text(
         text.toUpperCase(),
         style: TextStyle(
-          fontFamily: 'Outfit', 
+          fontFamily: 'Outfit',
           fontSize: isCompact ? 12.sp : 15.sp,
           fontWeight: FontWeight.w900,
           color: isCorrect == true
               ? Colors.greenAccent
               : (isCorrect == false
-                  ? Colors.redAccent
-                  : (isDark ? Colors.white : Colors.black87)),
+                    ? Colors.redAccent
+                    : (isDark ? Colors.white : Colors.black87)),
           letterSpacing: 1.5,
         ),
       ),

@@ -8,7 +8,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
-import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
+import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
@@ -31,13 +33,14 @@ class GourmetOrderScreen extends StatefulWidget {
   State<GourmetOrderScreen> createState() => _GourmetOrderScreenState();
 }
 
-class _GourmetOrderScreenState extends State<GourmetOrderScreen> with TickerProviderStateMixin {
+class _GourmetOrderScreenState extends State<GourmetOrderScreen>
+    with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   late AnimationController _steamController;
   late AnimationController _pulseController;
-  
+
   int _lastProcessedIndex = -1;
   final List<String> _selectedItems = [];
   bool _isAnswered = false;
@@ -56,7 +59,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen> with TickerProv
       duration: const Duration(seconds: 2),
     )..repeat(reverse: true);
 
-    context.read<RoleplayBloc>().add(FetchRoleplayQuests(gameType: widget.gameType, level: widget.level));
+    context.read<RoleplayBloc>().add(
+      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   @override
@@ -98,11 +103,16 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen> with TickerProv
 
   void _submitAnswer(String correctAnswer) {
     if (_isAnswered || _selectedItems.isEmpty) return;
-    
-    final targets = correctAnswer.split(',').map((e) => e.trim().toLowerCase()).toList();
+
+    final targets = correctAnswer
+        .split(',')
+        .map((e) => e.trim().toLowerCase())
+        .toList();
     final current = _selectedItems.map((e) => e.trim().toLowerCase()).toList();
-    
-    bool isCorrect = targets.length == current.length && targets.every((t) => current.contains(t));
+
+    bool isCorrect =
+        targets.length == current.length &&
+        targets.every((t) => current.contains(t));
 
     setState(() {
       _isAnswered = true;
@@ -172,7 +182,10 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen> with TickerProv
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 10.h,
+                  ),
                   child: Column(
                     children: [
                       GourmetOrderInstruction(primaryColor: theme.primaryColor),
@@ -221,19 +234,33 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen> with TickerProv
                             ScaleButton(
                               onTap: _clearItems,
                               child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 24.w,
+                                  vertical: 12.h,
+                                ),
                                 decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  color: theme.primaryColor.withValues(
+                                    alpha: 0.1,
+                                  ),
                                   borderRadius: BorderRadius.circular(30.r),
-                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                  border: Border.all(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.3,
+                                    ),
+                                  ),
                                 ),
                                 child: Row(
                                   children: [
-                                    Icon(Icons.refresh_rounded, color: theme.primaryColor, size: 18.r),
+                                    Icon(
+                                      Icons.refresh_rounded,
+                                      color: theme.primaryColor,
+                                      size: 18.r,
+                                    ),
                                     SizedBox(width: 6.w),
                                     Text(
                                       "CLEAR PLATTER",
-                                      style: TextStyle(fontFamily: 'Outfit', 
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.bold,
                                         color: theme.primaryColor,
@@ -245,28 +272,42 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen> with TickerProv
                             ),
                             SizedBox(width: 16.w),
                             ScaleButton(
-                              onTap: () => _submitAnswer(quest.correctAnswer ?? ""),
+                              onTap: () =>
+                                  _submitAnswer(quest.correctAnswer ?? ""),
                               child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 12.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 32.w,
+                                  vertical: 12.h,
+                                ),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30.r),
                                   gradient: LinearGradient(
-                                    colors: [theme.primaryColor, theme.primaryColor.withValues(alpha: 0.8)],
+                                    colors: [
+                                      theme.primaryColor,
+                                      theme.primaryColor.withValues(alpha: 0.8),
+                                    ],
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: theme.primaryColor.withValues(alpha: 0.35),
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.35,
+                                      ),
                                       blurRadius: 15,
                                     ),
                                   ],
                                 ),
                                 child: Row(
                                   children: [
-                                    Icon(Icons.restaurant_menu_rounded, color: Colors.white, size: 18.r),
+                                    Icon(
+                                      Icons.restaurant_menu_rounded,
+                                      color: Colors.white,
+                                      size: 18.r,
+                                    ),
                                     SizedBox(width: 6.w),
                                     Text(
                                       "SERVE PLATTER",
-                                      style: TextStyle(fontFamily: 'Outfit', 
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,

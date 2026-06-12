@@ -29,13 +29,10 @@ class VocabularyMapBackground extends StatelessWidget {
             return Positioned(
               top: (i * 150).h,
               left: (i * 30).w % 1.sw,
-              child: Opacity(
-                opacity: 0.2,
-                child: Icon(
-                  Icons.history_edu_rounded,
-                  size: 60.r,
-                  color: const Color(0xFFF59E0B),
-                ),
+              child: Icon(
+                Icons.history_edu_rounded,
+                size: 60.r,
+                color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
               )
               .animate(onPlay: (c) => c.repeat())
               .shimmer(duration: (2 + i).seconds, color: Colors.white)

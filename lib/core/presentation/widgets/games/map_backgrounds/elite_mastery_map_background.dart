@@ -30,13 +30,10 @@ class EliteMasteryMapBackground extends StatelessWidget {
             return Positioned(
               top: (i * 180).h,
               left: (i * 45).w % 1.sw,
-              child: Opacity(
-                opacity: 0.12,
-                child: Icon(
-                  isStar ? Icons.auto_awesome_rounded : Icons.workspace_premium_rounded,
-                  size: (isStar ? 40 : 60).r,
-                  color: const Color(0xFFF59E0B),
-                ),
+              child: Icon(
+                isStar ? Icons.auto_awesome_rounded : Icons.workspace_premium_rounded,
+                size: (isStar ? 40 : 60).r,
+                color: const Color(0xFFF59E0B).withValues(alpha: 0.12),
               )
               .animate(onPlay: (c) => c.repeat())
               .shimmer(duration: (2 + (i % 3)).seconds, color: Colors.white)

@@ -673,7 +673,7 @@ class VowlCoinsScreen extends StatelessWidget {
   // ── Coin History Ledger (Vision 2026) ──
   Widget _buildCoinHistory(BuildContext context, UserEntity user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final history = user.coinHistory;
+    final recentHistory = user.coinHistory.reversed.take(10).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -710,7 +710,7 @@ class VowlCoinsScreen extends StatelessWidget {
           ],
         ),
         SizedBox(height: 16.h),
-        if (history.isEmpty)
+        if (recentHistory.isEmpty)
           GlassTile(
             padding: EdgeInsets.all(32.r),
             borderRadius: BorderRadius.circular(32.r),
@@ -746,13 +746,13 @@ class VowlCoinsScreen extends StatelessWidget {
             ),
           )
         else
-          ...history.asMap().entries.map((entry) {
+          ...recentHistory.asMap().entries.map((entry) {
             final idx = entry.key;
             final txn = entry.value;
             final isEarned =
                 (txn['isEarned'] == true) ||
-                (txn['amount'] != null && (txn['amount'] as int) > 0);
-            final amount = txn['amount'] as int? ?? 0;
+                (txn['amount'] != null && (txn['amount'] as num) > 0);
+            final amount = (txn['amount'] as num?)?.toInt() ?? 0;
             final title = txn['title'] as String? ?? 'Transaction';
             final dateStr = txn['date'] as String?;
 

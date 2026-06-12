@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/article_insertion/presentation/widgets/article_insertion_instruction.dart';
@@ -80,31 +80,40 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
     for (int i = 0; i < parts.length; i++) {
       spans.add(TextSpan(text: parts[i]));
       if (i < parts.length - 1) {
-        spans.add(WidgetSpan(
-          alignment: PlaceholderAlignment.middle,
-          child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 8.w),
-            padding: EdgeInsets.symmetric(horizontal: isCompact ? 8.w : 12.w, vertical: isCompact ? 2.h : 4.h),
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: selected != null
-                      ? primaryColor
-                      : (isDark ? Colors.white38 : Colors.black38),
-                  width: 2,
-                ),
-              ),
-            ),
-            child: Text(
-              selected ?? "      ",
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: isCompact ? 18.sp : 22.sp,
-                fontWeight: FontWeight.bold,
-                color: primaryColor,
-              ),
-            ),
-          ).animate(target: selected != null ? 1 : 0).shimmer(duration: 2.seconds),
-        ));
+        spans.add(
+          WidgetSpan(
+            alignment: PlaceholderAlignment.middle,
+            child:
+                Container(
+                      margin: EdgeInsets.symmetric(horizontal: 8.w),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: isCompact ? 8.w : 12.w,
+                        vertical: isCompact ? 2.h : 4.h,
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: selected != null
+                                ? primaryColor
+                                : (isDark ? Colors.white38 : Colors.black38),
+                            width: 2,
+                          ),
+                        ),
+                      ),
+                      child: Text(
+                        selected ?? "      ",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: isCompact ? 18.sp : 22.sp,
+                          fontWeight: FontWeight.bold,
+                          color: primaryColor,
+                        ),
+                      ),
+                    )
+                    .animate(target: selected != null ? 1 : 0)
+                    .shimmer(duration: 2.seconds),
+          ),
+        );
       }
     }
     return spans;
@@ -119,20 +128,21 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final livesRestored =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
-          if (isNewQuestion || isRetry || livesChanged) {
+          if (isNewQuestion || isRetry || livesRestored) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _selectedArticle = null;
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
           _lastLives = state.livesRemaining;
@@ -174,13 +184,24 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                     final maxHeight = constraints.maxHeight;
                     final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 90.h : 130.h) + 40.h;
+                    final double estimatedContentHeight =
+                        (isCompact ? 30.h : 40.h) +
+                        (isCompact ? 90.h : 130.h) +
+                        40.h;
                     final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 20.0) : 6.0;
-                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 25.0) : 10.0;
-                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(15.0, 40.0) : 15.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 5
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(6.0, 20.0)
+                        : 6.0;
+                    final double gapMiddle = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(10.0, 25.0)
+                        : 10.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 2.5).clamp(15.0, 40.0)
+                        : 15.0;
 
                     return Column(
                       children: [
@@ -190,47 +211,62 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                 height: 25.h,
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
-                                  child: ArticleInsertionInstruction(primaryColor: theme.primaryColor),
+                                  child: ArticleInsertionInstruction(
+                                    primaryColor: theme.primaryColor,
+                                  ),
                                 ),
                               )
-                            : ArticleInsertionInstruction(primaryColor: theme.primaryColor),
+                            : ArticleInsertionInstruction(
+                                primaryColor: theme.primaryColor,
+                              ),
                         SizedBox(height: gapMiddle),
 
                         // Context Card
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                          child: Container(
-                            padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.05)
-                                  : Colors.black.withValues(alpha: 0.03),
-                              borderRadius: BorderRadius.circular(28.r),
-                              border: Border.all(
-                                color: theme.primaryColor.withValues(alpha: 0.15),
-                                width: 1.5,
-                              ),
-                            ),
-                            child: RichText(
-                              textAlign: TextAlign.center,
-                              text: TextSpan(
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: isCompact ? 16.sp : 20.sp,
-                                  color: isDark ? Colors.white : Colors.black87,
-                                  height: 1.5,
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Container(
+                                padding: EdgeInsets.all(
+                                  isCompact ? 14.r : 22.r,
                                 ),
-                                children: _buildSentenceWithBlank(
-                                  quest.sentence ?? quest.question ?? "___ sentence.",
-                                  _selectedArticle,
-                                  theme.primaryColor,
-                                  isDark,
-                                  isCompact,
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.05)
+                                      : Colors.black.withValues(alpha: 0.03),
+                                  borderRadius: BorderRadius.circular(28.r),
+                                  border: Border.all(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.15,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                                child: RichText(
+                                  textAlign: TextAlign.center,
+                                  text: TextSpan(
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: isCompact ? 16.sp : 20.sp,
+                                      color: isDark
+                                          ? Colors.white
+                                          : Colors.black87,
+                                      height: 1.5,
+                                    ),
+                                    children: _buildSentenceWithBlank(
+                                      quest.sentence ??
+                                          quest.question ??
+                                          "___ sentence.",
+                                      _selectedArticle,
+                                      theme.primaryColor,
+                                      isDark,
+                                      isCompact,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+                            )
+                            .animate()
+                            .fadeIn(duration: 600.ms)
+                            .slideY(begin: 0.2, end: 0),
 
                         // Floating Orb Bubble Area
                         Expanded(
@@ -245,7 +281,9 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                 isDark: isDark,
                                 isAnswered: _isAnswered,
                                 isSelected: _selectedArticle == article,
-                                isCorrectAnswer: article.toLowerCase() == correctAnswer.toLowerCase(),
+                                isCorrectAnswer:
+                                    article.toLowerCase() ==
+                                    correctAnswer.toLowerCase(),
                                 isCompact: isCompact,
                               );
                             }).toList(),

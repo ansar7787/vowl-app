@@ -7,7 +7,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
-import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
+import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
+import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
+import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_instruction.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_emitter.dart';
@@ -29,7 +31,7 @@ class SoundImageMatchScreen extends StatefulWidget {
 class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   Offset _lensPosition = const Offset(150, 150);
   bool _isAnswered = false;
   bool? _isCorrect;
@@ -41,7 +43,9 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
+    context.read<ListeningBloc>().add(
+      FetchListeningQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   void _onScan(Offset position) {
@@ -59,12 +63,20 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() { _isAnswered = true; _isCorrect = true; _selectedIndex = index; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
+        _selectedIndex = index;
+      });
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() { _isAnswered = true; _isCorrect = false; _selectedIndex = index; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+        _selectedIndex = index;
+      });
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
   }
@@ -78,7 +90,8 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
           final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final livesChanged =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
@@ -98,103 +111,148 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
         }
         if (state is ListeningGameComplete) {
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'THEMATIC LINKER!', enableDoubleUp: true);
+          GameDialogHelper.showCompletion(
+            context,
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'THEMATIC LINKER!',
+            enableDoubleUp: true,
+          );
         } else if (state is ListeningGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ListeningBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<ListeningBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
-        
+
         return ListeningBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null ? const SizedBox() : LayoutBuilder(
-            builder: (context, constraints) {
-              final maxHeight = constraints.maxHeight;
-              final isCompact = maxHeight < 580;
+          child: quest == null
+              ? const SizedBox()
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
 
-              final double estimatedContentHeight = 20.h + 40.h + (isCompact ? 60.h : 95.h) + (isCompact ? 220.h : 350.h) + 20.h;
-              final remainingHeight = maxHeight - estimatedContentHeight;
+                    final double estimatedContentHeight =
+                        20.h +
+                        40.h +
+                        (isCompact ? 60.h : 95.h) +
+                        (isCompact ? 220.h : 350.h) +
+                        20.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
 
-              final double gapUnit = remainingHeight > 0 ? remainingHeight / 7 : 0;
-              final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
-              final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1.5).clamp(8.0, 20.0) : 8.0;
-              final double gapEmitter = remainingHeight > 0 ? (gapUnit * 1.5).clamp(8.0, 20.0) : 8.0;
-              final double gapBottom = remainingHeight > 0 ? (gapUnit * 2).clamp(10.0, 24.0) : 10.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 7
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(6.0, 16.0)
+                        : 6.0;
+                    final double gapInstruction = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
+                        : 8.0;
+                    final double gapEmitter = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
+                        : 8.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 2).clamp(10.0, 24.0)
+                        : 10.0;
 
-              return SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(minHeight: maxHeight),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SizedBox(height: gapTop),
-                          isCompact 
-                            ? SizedBox(height: 35.h, child: FittedBox(fit: BoxFit.scaleDown, child: SoundImageMatchInstruction(color: theme.primaryColor)))
-                            : SoundImageMatchInstruction(color: theme.primaryColor),
-                          SizedBox(height: gapInstruction),
-                          isCompact
-                            ? SizedBox(
-                                height: 60.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: SoundImageMatchEmitter(
-                                    onTap: () {
-                                      _soundService.playTts(quest.textToSpeak ?? "");
-                                      _hapticService.selection();
-                                    },
+                    return SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(minHeight: maxHeight),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapTop),
+                                isCompact
+                                    ? SizedBox(
+                                        height: 35.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: SoundImageMatchInstruction(
+                                            color: theme.primaryColor,
+                                          ),
+                                        ),
+                                      )
+                                    : SoundImageMatchInstruction(
+                                        color: theme.primaryColor,
+                                      ),
+                                SizedBox(height: gapInstruction),
+                                isCompact
+                                    ? SizedBox(
+                                        height: 60.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: SoundImageMatchEmitter(
+                                            onTap: () {
+                                              _soundService.playTts(
+                                                quest.textToSpeak ?? "",
+                                              );
+                                              _hapticService.selection();
+                                            },
+                                            color: theme.primaryColor,
+                                          ),
+                                        ),
+                                      )
+                                    : SoundImageMatchEmitter(
+                                        onTap: () {
+                                          _soundService.playTts(
+                                            quest.textToSpeak ?? "",
+                                          );
+                                          _hapticService.selection();
+                                        },
+                                        color: theme.primaryColor,
+                                      ),
+                              ],
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapEmitter),
+                                SizedBox(
+                                  height: isCompact ? 220.h : 350.h,
+                                  child: SoundImageMatchScannerField(
+                                    options: quest.options ?? [],
+                                    correctAnswerIndex:
+                                        quest.correctAnswerIndex ?? 0,
                                     color: theme.primaryColor,
+                                    isAnswered: _isAnswered,
+                                    isCorrectState: _isCorrect,
+                                    selectedIndex: _selectedIndex,
+                                    lensPosition: _lensPosition,
+                                    onScan: _onScan,
+                                    onSelect: (index) => _submitAnswer(
+                                      index,
+                                      quest.correctAnswerIndex ?? 0,
+                                    ),
                                   ),
                                 ),
-                              )
-                            : SoundImageMatchEmitter(
-                                onTap: () {
-                                  _soundService.playTts(quest.textToSpeak ?? "");
-                                  _hapticService.selection();
-                                },
-                                color: theme.primaryColor,
-                              ),
-                        ],
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SizedBox(height: gapEmitter),
-                          SizedBox(
-                            height: isCompact ? 220.h : 350.h,
-                            child: SoundImageMatchScannerField(
-                              options: quest.options ?? [],
-                              correctAnswerIndex: quest.correctAnswerIndex ?? 0,
-                              color: theme.primaryColor,
-                              isAnswered: _isAnswered,
-                              isCorrectState: _isCorrect,
-                              selectedIndex: _selectedIndex,
-                              lensPosition: _lensPosition,
-                              onScan: _onScan,
-                              onSelect: (index) => _submitAnswer(index, quest.correctAnswerIndex ?? 0),
+                                SizedBox(height: gapBottom),
+                              ],
                             ),
-                          ),
-                          SizedBox(height: gapBottom),
-                        ],
+                          ],
+                        ),
                       ),
-                    ],
-                  ),
+                    );
+                  },
                 ),
-              );
-            },
-          ),
         );
       },
     );
   }
-
 }
-

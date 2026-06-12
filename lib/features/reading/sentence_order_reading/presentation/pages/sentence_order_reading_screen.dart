@@ -8,7 +8,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
-import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
+import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/sentence_order_reading/presentation/widgets/sentence_order_reading_instruction.dart';
@@ -26,13 +26,15 @@ class SentenceOrderReadingScreen extends StatefulWidget {
   });
 
   @override
-  State<SentenceOrderReadingScreen> createState() => _SentenceOrderReadingScreenState();
+  State<SentenceOrderReadingScreen> createState() =>
+      _SentenceOrderReadingScreenState();
 }
 
-class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen> {
+class _SentenceOrderReadingScreenState
+    extends State<SentenceOrderReadingScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   List<String> _currentOrder = [];
   bool _isAnswered = false;
   bool? _isCorrect;
@@ -43,7 +45,9 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
   @override
   void initState() {
     super.initState();
-    context.read<ReadingBloc>().add(FetchReadingQuests(gameType: widget.gameType, level: widget.level));
+    context.read<ReadingBloc>().add(
+      FetchReadingQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   void _onReorder(int oldIndex, int newIndex) {
@@ -58,7 +62,7 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
 
   void _submitAnswer(List<int> correctOrder, List<String> original) {
     if (_isAnswered) return;
-    
+
     bool isCorrect = true;
     for (int i = 0; i < _currentOrder.length; i++) {
       if (_currentOrder[i] != original[correctOrder[i]]) {
@@ -70,12 +74,18 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() { _isAnswered = true; _isCorrect = true; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
+      });
       context.read<ReadingBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() { _isAnswered = true; _isCorrect = false; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
       context.read<ReadingBloc>().add(SubmitAnswer(false));
     }
   }
@@ -90,14 +100,17 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
         if (state is ReadingLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
           final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final livesChanged =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _currentOrder = List<String>.from(state.currentQuest.shuffledSentences ?? []);
+              _currentOrder = List<String>.from(
+                state.currentQuest.shuffledSentences ?? [],
+              );
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
             setState(() {
@@ -109,70 +122,93 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
         }
         if (state is ReadingGameComplete) {
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'LOGIC FLOW EXPERT!', enableDoubleUp: true);
+          GameDialogHelper.showCompletion(
+            context,
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'LOGIC FLOW EXPERT!',
+            enableDoubleUp: true,
+          );
         } else if (state is ReadingGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ReadingBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<ReadingBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
-        final ReadingQuest? quest = (state is ReadingLoaded) ? state.currentQuest as ReadingQuest? : null;
-        
+        final ReadingQuest? quest = (state is ReadingLoaded)
+            ? state.currentQuest as ReadingQuest?
+            : null;
+
         return ReadingBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
-          child: quest == null ? const SizedBox() : SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Column(
-                children: [
-                  SizedBox(height: 16.h),
-                  SentenceOrderReadingInstruction(primaryColor: theme.primaryColor),
-                  SizedBox(height: 24.h),
-                  ReorderableListView(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    proxyDecorator: (child, index, animation) => _buildProxy(child, animation, theme.primaryColor),
-                    onReorder: _onReorder,
-                    children: List.generate(_currentOrder.length, (index) => SentenceOrderReadingStoneSlab(
-                      key: ValueKey(_currentOrder[index]),
-                      text: _currentOrder[index],
-                      index: index,
-                      color: theme.primaryColor,
-                      isDark: isDark,
-                    )),
+          child: quest == null
+              ? const SizedBox()
+              : SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 16.h),
+                        SentenceOrderReadingInstruction(
+                          primaryColor: theme.primaryColor,
+                        ),
+                        SizedBox(height: 24.h),
+                        ReorderableListView(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          proxyDecorator: (child, index, animation) =>
+                              _buildProxy(child, animation, theme.primaryColor),
+                          onReorder: _onReorder,
+                          children: List.generate(
+                            _currentOrder.length,
+                            (index) => SentenceOrderReadingStoneSlab(
+                              key: ValueKey(_currentOrder[index]),
+                              text: _currentOrder[index],
+                              index: index,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                          ),
+                        ),
+                        if (!_isAnswered) ...[
+                          SizedBox(height: 24.h),
+                          SentenceOrderReadingCapstone(
+                            color: theme.primaryColor,
+                            onTap: () {
+                              _hapticService.heavy();
+                              _submitAnswer(
+                                quest.correctOrder ?? [],
+                                quest.shuffledSentences ?? [],
+                              );
+                            },
+                          ),
+                        ],
+                        if (_isAnswered) ...[
+                          SizedBox(height: 30.h),
+                          SentenceOrderReadingResult(
+                            quest: quest,
+                            isCorrect: _isCorrect == true,
+                            isDark: isDark,
+                          ),
+                        ],
+                        SizedBox(height: 50.h),
+                      ],
+                    ),
                   ),
-                  if (!_isAnswered) ...[
-                    SizedBox(height: 24.h),
-                    SentenceOrderReadingCapstone(
-                      color: theme.primaryColor,
-                      onTap: () {
-                        _hapticService.heavy();
-                        _submitAnswer(quest.correctOrder ?? [], quest.shuffledSentences ?? []);
-                      },
-                    ),
-                  ],
-                  if (_isAnswered) ...[
-                    SizedBox(height: 30.h),
-                    SentenceOrderReadingResult(
-                      quest: quest,
-                      isCorrect: _isCorrect == true,
-                      isDark: isDark,
-                    ),
-                  ],
-                  SizedBox(height: 50.h),
-                ],
-              ),
-            ),
-          ),
+                ),
         );
       },
     );
   }
-
-
 
   Widget _buildProxy(Widget child, Animation<double> animation, Color color) {
     return AnimatedBuilder(
@@ -185,7 +221,13 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
             color: Colors.transparent,
             child: Container(
               decoration: BoxDecoration(
-                boxShadow: [BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 20, spreadRadius: 5)],
+                boxShadow: [
+                  BoxShadow(
+                    color: color.withValues(alpha: 0.3),
+                    blurRadius: 20,
+                    spreadRadius: 5,
+                  ),
+                ],
               ),
               child: child,
             ),
@@ -195,6 +237,4 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
       child: child,
     );
   }
-
 }
-

@@ -8,15 +8,20 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
-import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_header.dart';
+import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
 
-class VocabularyHeader extends StatelessWidget {
+/// Header row: progress + lives, briefing info button, conditional hint button.
+///
+/// [SoundService] is resolved once in [initState] — not on every [build] call.
+class VocabularyHeader extends StatefulWidget {
   final VocabularyState state;
   final int level;
   final double progress;
   final int lives;
-  final dynamic theme;
+  final VocabLevelTheme theme;
   final bool isDark;
   final bool isAnswered;
   final GameSubtype gameType;
@@ -40,40 +45,50 @@ class VocabularyHeader extends StatelessWidget {
   });
 
   @override
+  State<VocabularyHeader> createState() => _VocabularyHeaderState();
+}
+
+class _VocabularyHeaderState extends State<VocabularyHeader> {
+  late final SoundService _soundService;
+
+  @override
+  void initState() {
+    super.initState();
+    _soundService = di.sl<SoundService>();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final hintShouldGlow = lives < 3 && !isAnswered;
-    final currentQuest = state is VocabularyLoaded
-        ? (state as VocabularyLoaded).currentQuestOrNull
+    final hintShouldGlow = widget.lives < 3 && !widget.isAnswered;
+    final loadedState = widget.state is VocabularyLoaded
+        ? widget.state as VocabularyLoaded
         : null;
-    final hintUsed = state is VocabularyLoaded
-        ? (state as VocabularyLoaded).hintUsed
-        : false;
-    final Color primaryColor = theme.primaryColor as Color;
+    final currentQuest = loadedState?.currentQuestOrNull;
+    final hintUsed = loadedState?.hintUsed ?? false;
+    final primaryColor = widget.theme.primaryColor;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Row(
         children: [
-          // Progress + lives header
+          // ── Progress + lives ──────────────────────────────────────────
           Expanded(
-            child: FlashcardHeader(
-              level: level,
-              progress: progress,
-              lives: lives,
-              streak: state is VocabularyLoaded
-                  ? (state as VocabularyLoaded).currentIndex
-                  : 0,
-              theme: theme,
-              isDark: isDark,
-              onBack: onExit,
+            child: GameProgressHeader(
+              level: widget.level,
+              progress: widget.progress,
+              lives: widget.lives,
+              streak: loadedState?.currentIndex ?? 0,
+              theme: widget.theme.source,
+              isDark: widget.isDark,
+              onBack: widget.onExit,
             ),
           ),
 
-          // Info / briefing button
+          // ── Briefing info button ──────────────────────────────────────
           Padding(
             padding: EdgeInsets.only(left: 8.w),
             child: ScaleButton(
-              onTap: onBriefingShow,
+              onTap: widget.onBriefingShow,
               child: Container(
                 padding: EdgeInsets.all(6.r),
                 decoration: BoxDecoration(
@@ -92,43 +107,55 @@ class VocabularyHeader extends StatelessWidget {
             ),
           ),
 
-          // Hint button — only shown when quest is active
-          if (currentQuest != null && !isAnswered)
+          // ── Hint button ───────────────────────────────────────────────
+          if (currentQuest != null && !widget.isAnswered)
             Padding(
               padding: EdgeInsets.only(left: 8.w),
-              child:
-                  QuestHintButton(
-                        used: hintUsed,
-                        primaryColor: primaryColor,
-                        hintText: gameType == GameSubtype.topicVocab
-                            ? null
-                            : currentQuest.hint,
-                        soundService: di.sl<SoundService>(),
-                        onTap: () {
-                          context.read<VocabularyBloc>().add(
-                            const VocabularyHintUsed(),
-                          );
-                          context.read<EconomyBloc>().add(
-                            const EconomyConsumeHintRequested(),
-                          );
-                          onHint();
-                        },
-                      )
-                      .animate(
-                        target: hintShouldGlow ? 1 : 0,
-                        onPlay: (c) => c.repeat(reverse: true),
-                      )
-                      .shimmer(
-                        color: Colors.white.withValues(alpha: 0.5),
-                        duration: 1.seconds,
-                      )
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.1, 1.1),
-                      ),
+              child: _buildHintButton(
+                hintUsed: hintUsed,
+                hintShouldGlow: hintShouldGlow,
+                primaryColor: primaryColor,
+                currentQuest: currentQuest,
+              ),
             ),
         ],
       ),
     );
+  }
+
+  Widget _buildHintButton({
+    required bool hintUsed,
+    required bool hintShouldGlow,
+    required Color primaryColor,
+    required VocabularyQuest currentQuest,
+  }) {
+    final button = QuestHintButton(
+      used: hintUsed,
+      primaryColor: primaryColor,
+      hintText: widget.gameType == GameSubtype.topicVocab
+          ? null
+          : currentQuest.hint,
+      soundService: _soundService,
+      onTap: () {
+        context.read<VocabularyBloc>().add(const VocabularyHintUsed());
+        context.read<EconomyBloc>().add(const EconomyConsumeHintRequested());
+        widget.onHint();
+      },
+    );
+
+    if (!hintShouldGlow) return button;
+
+    // ValueKey forces a fresh AnimationController when glow state toggles,
+    // preventing the repeat loop from continuing after hintShouldGlow → false.
+    return button
+        .animate(
+          key: ValueKey<bool>(hintShouldGlow),
+          onPlay: (c) => c.repeat(reverse: true),
+        )
+        .shimmer(
+          color: Colors.white.withValues(alpha: 0.5),
+          duration: 1.seconds,
+        )
+        .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1));
   }
 }

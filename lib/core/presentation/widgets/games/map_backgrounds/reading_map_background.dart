@@ -29,13 +29,10 @@ class ReadingMapBackground extends StatelessWidget {
             return Positioned(
               top: (i * 250).h,
               left: (i % 3 == 0) ? 20.w : (i % 3 == 1 ? 150.w : 300.w),
-              child: Opacity(
-                opacity: 0.1,
-                child: Icon(
-                  Icons.auto_stories_rounded,
-                  size: 80.r,
-                  color: const Color(0xFF06B6D4),
-                ),
+              child: Icon(
+                Icons.auto_stories_rounded,
+                size: 80.r,
+                color: const Color(0xFF06B6D4).withValues(alpha: 0.1),
               )
               .animate(onPlay: (c) => c.repeat())
               .moveY(

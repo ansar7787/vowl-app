@@ -3,7 +3,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/usecases/award_badge.dart';
@@ -17,20 +16,33 @@ import 'package:vowl/features/speaking/domain/usecases/get_speaking_quest.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 
 class MockGetSpeakingQuest extends Mock implements GetSpeakingQuest {}
-class MockUpdateUserCoins extends Mock implements UpdateUserCoins {}
-class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
-class MockUpdateCategoryStats extends Mock implements UpdateCategoryStats {}
-class MockUpdateUnlockedLevel extends Mock implements UpdateUnlockedLevel {}
-class MockAwardBadge extends Mock implements AwardBadge {}
-class MockSoundService extends Mock implements SoundService {}
-class MockHapticService extends Mock implements HapticService {}
-class MockUseHint extends Mock implements UseHint {}
-class MockNetworkInfo extends Mock implements NetworkInfo {}
 
-class FakeQuestParams extends Fake implements QuestParams {}
-class FakeUpdateUserRewardsParams extends Fake implements UpdateUserRewardsParams {}
-class FakeUpdateCategoryStatsParams extends Fake implements UpdateCategoryStatsParams {}
-class FakeUpdateUnlockedLevelParams extends Fake implements UpdateUnlockedLevelParams {}
+class MockUpdateUserCoins extends Mock implements UpdateUserCoins {}
+
+class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
+
+class MockUpdateCategoryStats extends Mock implements UpdateCategoryStats {}
+
+class MockUpdateUnlockedLevel extends Mock implements UpdateUnlockedLevel {}
+
+class MockAwardBadge extends Mock implements AwardBadge {}
+
+class MockSoundService extends Mock implements SoundService {}
+
+class MockHapticService extends Mock implements HapticService {}
+
+class MockUseHint extends Mock implements UseHint {}
+
+class FakeGetSpeakingQuestParams extends Fake implements GetSpeakingQuestParams {}
+
+class FakeUpdateUserRewardsParams extends Fake
+    implements UpdateUserRewardsParams {}
+
+class FakeUpdateCategoryStatsParams extends Fake
+    implements UpdateCategoryStatsParams {}
+
+class FakeUpdateUnlockedLevelParams extends Fake
+    implements UpdateUnlockedLevelParams {}
 
 void main() {
   late SpeakingBloc bloc;
@@ -43,10 +55,10 @@ void main() {
   late MockSoundService mockSoundService;
   late MockHapticService mockHapticService;
   late MockUseHint mockUseHint;
-  late MockNetworkInfo mockNetworkInfo;
+
 
   setUpAll(() {
-    registerFallbackValue(FakeQuestParams());
+    registerFallbackValue(FakeGetSpeakingQuestParams());
     registerFallbackValue(FakeUpdateUserRewardsParams());
     registerFallbackValue(FakeUpdateCategoryStatsParams());
     registerFallbackValue(FakeUpdateUnlockedLevelParams());
@@ -63,7 +75,7 @@ void main() {
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
     mockUseHint = MockUseHint();
-    mockNetworkInfo = MockNetworkInfo();
+
 
     bloc = SpeakingBloc(
       getQuest: mockGetQuest,
@@ -75,7 +87,7 @@ void main() {
       soundService: mockSoundService,
       hapticService: mockHapticService,
       useHint: mockUseHint,
-      networkInfo: mockNetworkInfo,
+
     );
   });
 
@@ -95,13 +107,16 @@ void main() {
     blocTest<SpeakingBloc, SpeakingState>(
       'should emit [Loading, Loaded] when data is fetched successfully',
       build: () {
-        when(() => mockGetQuest(any())).thenAnswer((_) async => const Right(tQuests));
+        when(
+          () => mockGetQuest(any()),
+        ).thenAnswer((_) async => const Right(tQuests));
         return bloc;
       },
-      act: (bloc) => bloc.add(FetchSpeakingQuests(gameType: tGameType, level: tLevel)),
+      act: (bloc) =>
+          bloc.add(FetchSpeakingQuests(gameType: tGameType, level: tLevel)),
       expect: () => [
         SpeakingLoading(),
-        SpeakingLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3),
+        SpeakingLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3, gameType: tGameType, level: tLevel),
       ],
     );
   });
@@ -111,6 +126,8 @@ void main() {
       quests: tQuests,
       currentIndex: 0,
       livesRemaining: 3,
+      gameType: tGameType,
+      level: tLevel,
     );
 
     blocTest<SpeakingBloc, SpeakingState>(
@@ -122,9 +139,7 @@ void main() {
       },
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(SubmitAnswer(true)),
-      expect: () => [
-        tLoadedState.copyWith(lastAnswerCorrect: true),
-      ],
+      expect: () => [tLoadedState.copyWith(lastAnswerCorrect: true)],
     );
 
     blocTest<SpeakingBloc, SpeakingState>(

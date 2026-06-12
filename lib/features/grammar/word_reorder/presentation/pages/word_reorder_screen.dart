@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reorder_instruction.dart';
 import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reorder_floating_tile.dart';
@@ -30,8 +30,8 @@ class WordReorderScreen extends StatefulWidget {
 class _WordReorderScreenState extends State<WordReorderScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  List<int> _availableIndices = [];
-  List<int> _assembledIndices = [];
+  final List<int> _availableIndices = [];
+  final List<int> _assembledIndices = [];
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -102,22 +102,21 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final livesRestored =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
-          if (isNewQuestion || isRetry || livesChanged) {
+          if (isNewQuestion || isRetry || livesRestored) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _assembledIndices = [];
-              final wordsCount = state.currentQuest.shuffledWords?.length ?? 0;
-              _availableIndices = List.generate(wordsCount, (i) => i);
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
           _lastLives = state.livesRemaining;
@@ -145,8 +144,8 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
         final correctOrder = quest?.correctOrder ?? [];
         final expectedNextIndex =
             (hintUsed && _assembledIndices.length < correctOrder.length)
-                ? correctOrder[_assembledIndices.length]
-                : -1;
+            ? correctOrder[_assembledIndices.length]
+            : -1;
 
         return GrammarBaseLayout(
           gameType: widget.gameType,

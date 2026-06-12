@@ -1,7 +1,6 @@
-import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../domain/entities/listening_quest.dart';
-import '../../../../core/domain/entities/game_quest.dart';
 import '../../../../core/network/network_info.dart';
 import '../../../../core/utils/sound_service.dart';
 import '../../../../core/utils/haptic_service.dart';
@@ -13,133 +12,24 @@ import '../../../../features/auth/domain/usecases/award_badge.dart';
 import '../../../../features/auth/domain/usecases/use_hint.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../../domain/usecases/get_listening_quests.dart';
+import 'listening_event.dart';
+import 'listening_state.dart';
+import 'listening_analytics.dart';
 
-// --- EVENTS ---
-abstract class ListeningEvent extends Equatable {
-  @override
-  List<Object?> get props => [];
-}
+// ── Tuneable constants ────────────────────────────────────────────────────────
 
-class FetchListeningQuests extends ListeningEvent {
-  final dynamic gameType;
-  final int level;
-  FetchListeningQuests({required this.gameType, required this.level});
+const int _kMaxLives = 3;
+const int _kQuestionsPerLevel = 3;
+const int _kXpReward = 10;
+const int _kCoinReward = 10;
+const int _kWrongBeforeFinal = 2;
+const int _kMaxSaveRetries = 3;
+const String _kListeningBadge = 'listening_master';
 
-  @override
-  List<Object?> get props => [gameType, level];
-}
+// ─────────────────────────────────────────────────────────────────────────────
 
-class SubmitAnswer extends ListeningEvent {
-  final bool isCorrect;
-  SubmitAnswer(this.isCorrect);
-
-  @override
-  List<Object?> get props => [isCorrect];
-}
-
-class NextQuestion extends ListeningEvent {}
-
-class RestartLevel extends ListeningEvent {}
-
-class ListeningHintUsed extends ListeningEvent {}
-
-class RetryCurrentQuestion extends ListeningEvent {}
-
-class RetryCurrentListeningQuestion extends ListeningEvent {}
-
-class RestoreLife extends ListeningEvent {}
-
-// --- STATES ---
-abstract class ListeningState extends Equatable {
-  @override
-  List<Object?> get props => [];
-}
-
-class ListeningInitial extends ListeningState {}
-
-class ListeningLoading extends ListeningState {}
-
-class ListeningLoaded extends ListeningState {
-  final List<ListeningQuest> quests;
-  final int currentIndex;
-  final int livesRemaining;
-  final bool? lastAnswerCorrect;
-  final bool hintUsed;
-  final int wrongCount;
-  final bool isFinalFailure;
-
-  ListeningQuest get currentQuest => quests[currentIndex];
-
-  ListeningLoaded({
-    required this.quests,
-    required this.currentIndex,
-    required this.livesRemaining,
-    this.lastAnswerCorrect,
-    this.hintUsed = false,
-    this.wrongCount = 0,
-    this.isFinalFailure = false,
-  });
-
-  @override
-  List<Object?> get props => [quests, currentIndex, livesRemaining, lastAnswerCorrect, hintUsed, wrongCount, isFinalFailure];
-
-  ListeningLoaded copyWith({
-    List<ListeningQuest>? quests,
-    int? currentIndex,
-    int? livesRemaining,
-    bool? lastAnswerCorrect,
-    bool? hintUsed,
-    int? wrongCount,
-    bool? isFinalFailure,
-  }) {
-    return ListeningLoaded(
-      quests: quests ?? this.quests,
-      currentIndex: currentIndex ?? this.currentIndex,
-      livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: lastAnswerCorrect,
-      hintUsed: hintUsed ?? this.hintUsed,
-      wrongCount: wrongCount ?? this.wrongCount,
-      isFinalFailure: isFinalFailure ?? this.isFinalFailure,
-    );
-  }
-}
-
-class ListeningError extends ListeningState {
-  final String message;
-  final String? technicalError;
-  ListeningError(this.message, {this.technicalError});
-
-  @override
-  List<Object?> get props => [message, technicalError];
-}
-
-class ListeningGameComplete extends ListeningState {
-  final int xpEarned;
-  final int coinsEarned;
-  final int questCount;
-  ListeningGameComplete({
-    required this.xpEarned,
-    required this.coinsEarned,
-    required this.questCount,
-  });
-
-  @override
-  List<Object?> get props => [xpEarned, coinsEarned, questCount];
-}
-
-class ListeningGameOver extends ListeningState {
-  final List<ListeningQuest> quests;
-  final int currentIndex;
-  ListeningGameOver({required this.quests, required this.currentIndex});
-
-  @override
-  List<Object?> get props => [quests, currentIndex];
-}
-
-// --- BLOC ---
 class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
   final GetListeningQuests getQuest;
-  final UpdateUserCoins updateUserCoins;
   final UpdateUserRewards updateUserRewards;
   final UpdateCategoryStats updateCategoryStats;
   final UpdateUnlockedLevel updateUnlockedLevel;
@@ -149,12 +39,15 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
   final UseHint useHint;
   final NetworkInfo networkInfo;
 
-  String? currentGameType;
-  int? currentLevel;
+  /// Analytics are optional — defaults to no-op so tests require no mocking.
+  final ListeningAnalytics analytics;
+
+  // Stored when FetchListeningQuests fires; used in background-save lambdas.
+  String? _currentGameType;
+  int? _currentLevel;
 
   ListeningBloc({
     required this.getQuest,
-    required this.updateUserCoins,
     required this.updateUserRewards,
     required this.updateCategoryStats,
     required this.updateUnlockedLevel,
@@ -163,189 +56,275 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     required this.hapticService,
     required this.useHint,
     required this.networkInfo,
-  }) : super(ListeningInitial()) {
-    on<RetryCurrentListeningQuestion>((event, emit) {
-      if (state is ListeningLoaded) {
-        final s = state as ListeningLoaded;
-        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
-      }
-    });
+    this.analytics = const NoOpListeningAnalytics(),
+    // Backward-compat shim: accepted but intentionally unused.
+    // Remove once DI registrations are cleaned up (coinIncrease is handled
+    // ignore: avoid_unused_constructor_parameters
+    UpdateUserCoins? updateUserCoins,
+  }) : super(const ListeningInitial()) {
+    on<FetchListeningQuests>(_onFetch);
+    on<SubmitAnswer>(_onSubmitAnswer);
+    on<NextQuestion>(_onNextQuestion);
+    on<RetryCurrentQuestion>(_onRetry);
+    on<ListeningHintUsed>(_onHintUsed);
+    on<RestoreLife>(_onRestoreLife);
+    on<RestartLevel>(_onRestartLevel);
+  }
 
-    on<RetryCurrentQuestion>((event, emit) {
-      if (state is ListeningLoaded) {
-        final s = state as ListeningLoaded;
-        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
-      }
-    });
+  // ── FetchListeningQuests ──────────────────────────────────────────────────
 
-    on<FetchListeningQuests>((event, emit) async {
-      currentGameType = event.gameType is GameSubtype
-          ? (event.gameType as GameSubtype).name
-          : event.gameType.toString();
-      currentLevel = event.level;
-
-      emit(ListeningLoading());
-      try {
-        final GameSubtype subtype = event.gameType is GameSubtype
-            ? event.gameType
-            : GameSubtype.fromString(event.gameType.toString(), fallback: GameSubtype.audioMultipleChoice);
-        
-        final result = await getQuest(subtype, event.level);
-
-        result.fold((failure) => emit(ListeningError(failure.message)), (quests) {
-          if (quests.isEmpty) {
-            emit(ListeningError("Check back later for new quests!"));
-          } else {
-            // ENSURE STICKY 3 QUESTIONS PER LEVEL
-            final limitedQuests = quests.take(3).toList();
-            emit(
-              ListeningLoaded(
-                quests: limitedQuests,
-                currentIndex: 0,
-                livesRemaining: 3,
+  Future<void> _onFetch(
+    FetchListeningQuests event,
+    Emitter<ListeningState> emit,
+  ) async {
+    _currentGameType = event.gameType.name;
+    _currentLevel = event.level;
+    emit(const ListeningLoading());
+    try {
+      final result = await getQuest(
+        GetListeningQuestsParams(gameType: event.gameType, level: event.level),
+      );
+      result.fold(
+        (failure) => emit(ListeningError(failure.message)),
+        (quests) => quests.isEmpty
+            ? emit(const ListeningError('Check back later for new quests!'))
+            : emit(
+                ListeningLoaded(
+                  quests: quests.take(_kQuestionsPerLevel).toList(),
+                  currentIndex: 0,
+                  livesRemaining: _kMaxLives,
+                ),
               ),
-            );
-          }
-        });
-      } catch (e) {
-        emit(ListeningError("Failed to fetch quests: $e"));
-      }
-    });
+      );
+    } catch (e, stack) {
+      debugPrint('[ListeningBloc] fetch error: $e\n$stack');
+      emit(
+        ListeningError(
+          'Failed to load quests. Please try again.',
+          technicalError: e.toString(),
+        ),
+      );
+    }
+  }
 
-    on<SubmitAnswer>((event, emit) async {
-      final currentState = state;
-      if (currentState is! ListeningLoaded || currentState.livesRemaining <= 0 || currentState.lastAnswerCorrect != null) return;
+  // ── SubmitAnswer ──────────────────────────────────────────────────────────
 
-      // Lock double-tap submissions immediately
-      final initialTransition = currentState.copyWith(lastAnswerCorrect: event.isCorrect);
-      emit(initialTransition);
+  void _onSubmitAnswer(SubmitAnswer event, Emitter<ListeningState> emit) {
+    final s = state;
+    if (s is! ListeningLoaded ||
+        s.livesRemaining <= 0 ||
+        s.lastAnswerCorrect != null) {
+      return;
+    }
 
-      if (event.isCorrect) {
-        soundService.playCorrect();
-        hapticService.success();
-        
-        emit(currentState.copyWith(
+    analytics.onAnswerSubmitted(
+      gameType: _currentGameType ?? '',
+      level: _currentLevel ?? 0,
+      questionIndex: s.currentIndex,
+      isCorrect: event.isCorrect,
+    );
+
+    if (event.isCorrect) {
+      soundService.playCorrect();
+      hapticService.success();
+      emit(
+        s.copyWith(
           lastAnswerCorrect: true,
           wrongCount: 0,
           isFinalFailure: false,
-        ));
-      } else {
-        soundService.playWrong();
-        hapticService.error();
-        
-        final newLives = currentState.livesRemaining - 1;
-        final newWrongCount = currentState.wrongCount + 1;
-        bool isFinal = newWrongCount >= 2;
-
-        List<ListeningQuest> updatedQuests = currentState.quests;
-        if (isFinal) {
-          updatedQuests = List<ListeningQuest>.from(currentState.quests);
-          updatedQuests.add(currentState.currentQuest);
-        }
-
-        emit(currentState.copyWith(
-          quests: updatedQuests,
+        ),
+      );
+    } else {
+      soundService.playWrong();
+      hapticService.error();
+      final newLives = s.livesRemaining - 1;
+      final newWrongCount = s.wrongCount + 1;
+      final isFinal = newWrongCount >= _kWrongBeforeFinal;
+      emit(
+        s.copyWith(
+          quests: isFinal
+              ? (List<ListeningQuest>.from(s.quests)..add(s.currentQuest))
+              : null,
           livesRemaining: newLives,
           lastAnswerCorrect: false,
           wrongCount: isFinal ? 0 : newWrongCount,
           isFinalFailure: isFinal || newLives <= 0,
-        ));
-      }
-    });
+        ),
+      );
+    }
+  }
 
-    on<NextQuestion>((event, emit) async {
-      final currentState = state;
-      if (currentState is! ListeningLoaded) return;
+  // ── NextQuestion ──────────────────────────────────────────────────────────
 
-      if (currentState.livesRemaining <= 0) {
-        emit(ListeningGameOver(
-          quests: currentState.quests,
-          currentIndex: currentState.currentIndex,
-        ));
-        return;
-      }
+  Future<void> _onNextQuestion(
+    NextQuestion event,
+    Emitter<ListeningState> emit,
+  ) async {
+    final s = state;
+    if (s is! ListeningLoaded) return;
 
-      if (currentState.currentIndex + 1 < currentState.quests.length) {
-        if (currentState.lastAnswerCorrect == true || currentState.isFinalFailure) {
-          emit(currentState.copyWith(
-            currentIndex: currentState.currentIndex + 1,
-            lastAnswerCorrect: null,
-            hintUsed: false,
-            wrongCount: 0,
-            isFinalFailure: false,
-          ));
-        } else {
-          // First-time wrong answer, stay and retry
-          emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
-        }
-      } else if (currentState.lastAnswerCorrect == true) {
-        soundService.playLevelComplete();
-        const int totalXp = 10;
-        const int totalCoins = 10;
+    if (s.livesRemaining <= 0) {
+      analytics.onGameOver(
+        gameType: _currentGameType ?? '',
+        level: _currentLevel ?? 0,
+        questionsCompleted: s.currentIndex,
+      );
+      emit(ListeningGameOver(quests: s.quests, currentIndex: s.currentIndex));
+      return;
+    }
 
-        // 1. Emit completion immediately for UI responsiveness and lock transition
-        emit(ListeningGameComplete(
-          xpEarned: totalXp,
-          coinsEarned: totalCoins,
-          questCount: currentState.quests.length,
-        ));
+    final hasMore = s.currentIndex + 1 < s.quests.length;
 
-        // 2. Background Save
-        if (currentGameType != null && currentLevel != null) {
-          await Future.wait([
-            updateUserRewards(UpdateUserRewardsParams(
-              gameType: currentGameType!,
-              level: currentLevel!,
-              xpIncrease: 10,
-              coinIncrease: 10,
-            )),
-            updateCategoryStats(UpdateCategoryStatsParams(
-              categoryId: currentGameType!,
-              isCorrect: true,
-            )),
-            updateUnlockedLevel(UpdateUnlockedLevelParams(
-              categoryId: currentGameType!,
-              newLevel: currentLevel! + 1,
-            )),
-            awardBadge('listening_master'),
-          ]);
-        }
-      } else {
-        // Wrong answer on the very last quest
-        emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
-      }
-    });
+    if (hasMore) {
+      final canAdvance = s.lastAnswerCorrect == true || s.isFinalFailure;
+      emit(
+        canAdvance
+            ? s.copyWith(
+                currentIndex: s.currentIndex + 1,
+                lastAnswerCorrect: null,
+                hintUsed: false,
+                wrongCount: 0,
+                isFinalFailure: false,
+              )
+            : s.copyWith(lastAnswerCorrect: null, hintUsed: false),
+      );
+    } else if (s.lastAnswerCorrect == true) {
+      await _completeLevel(s, emit);
+    } else {
+      // Wrong on the final question — allow one more attempt.
+      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+    }
+  }
 
-    on<ListeningHintUsed>((event, emit) async {
-      if (state is ListeningLoaded) {
-        final s = state as ListeningLoaded;
-        if (s.hintUsed) return;
+  // ── RetryCurrentQuestion ──────────────────────────────────────────────────
 
-        final result = await useHint(NoParams());
-        if (result.isRight()) {
-          emit(s.copyWith(hintUsed: true));
-          hapticService.selection();
-        }
-      }
-    });
+  void _onRetry(RetryCurrentQuestion event, Emitter<ListeningState> emit) {
+    if (state is ListeningLoaded) {
+      final s = state as ListeningLoaded;
+      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+    }
+  }
 
-    on<RestoreLife>((event, emit) {
-      if (state is ListeningGameOver) {
-        final s = state as ListeningGameOver;
-        emit(
-          ListeningLoaded(
-            quests: s.quests,
-            currentIndex: s.currentIndex,
-            livesRemaining: 1,
-            lastAnswerCorrect: null,
-            hintUsed: false,
-          ),
+  // ── ListeningHintUsed ─────────────────────────────────────────────────────
+
+  Future<void> _onHintUsed(
+    ListeningHintUsed event,
+    Emitter<ListeningState> emit,
+  ) async {
+    if (state is! ListeningLoaded) return;
+    final s = state as ListeningLoaded;
+    if (s.hintUsed) return;
+
+    final result = await useHint(NoParams());
+    result.fold(
+      (failure) =>
+          debugPrint('[ListeningBloc] UseHint failed: ${failure.message}'),
+      (_) {
+        analytics.onHintUsed(
+          gameType: _currentGameType ?? '',
+          level: _currentLevel ?? 0,
+          questionIndex: s.currentIndex,
         );
-      }
-    });
+        emit(s.copyWith(hintUsed: true));
+        hapticService.selection();
+      },
+    );
+  }
 
-    on<RestartLevel>((event, emit) {
-      emit(ListeningInitial());
-    });
+  // ── RestoreLife ───────────────────────────────────────────────────────────
+
+  void _onRestoreLife(RestoreLife event, Emitter<ListeningState> emit) {
+    if (state is! ListeningGameOver) return;
+    final s = state as ListeningGameOver;
+    analytics.onLifeRestored(
+      gameType: _currentGameType ?? '',
+      level: _currentLevel ?? 0,
+    );
+    emit(
+      ListeningLoaded(
+        quests: s.quests,
+        currentIndex: s.currentIndex,
+        livesRemaining: 1,
+        lastAnswerCorrect: null,
+        hintUsed: false,
+        wrongCount: 0,
+        isFinalFailure: false,
+      ),
+    );
+  }
+
+  // ── RestartLevel ──────────────────────────────────────────────────────────
+
+  void _onRestartLevel(RestartLevel event, Emitter<ListeningState> emit) =>
+      emit(const ListeningInitial());
+
+  // ── Private helpers ───────────────────────────────────────────────────────
+
+  /// Emits [ListeningGameComplete] immediately for snappy UI, then persists
+  /// rewards in the background with up to [_kMaxSaveRetries] retries using
+  /// exponential back-off so transient network errors don't silently lose XP.
+  Future<void> _completeLevel(
+    ListeningLoaded s,
+    Emitter<ListeningState> emit,
+  ) async {
+    soundService.playLevelComplete();
+    emit(
+      const ListeningGameComplete(
+        xpEarned: _kXpReward,
+        coinsEarned: _kCoinReward,
+        questCount: _kQuestionsPerLevel,
+      ),
+    );
+
+    analytics.onLevelComplete(
+      gameType: _currentGameType ?? '',
+      level: _currentLevel ?? 0,
+      xpEarned: _kXpReward,
+      coinsEarned: _kCoinReward,
+    );
+
+    if (_currentGameType == null || _currentLevel == null) return;
+    await _saveWithRetry();
+  }
+
+  Future<void> _saveWithRetry() async {
+    for (int attempt = 1; attempt <= _kMaxSaveRetries; attempt++) {
+      try {
+        await Future.wait([
+          updateUserRewards(
+            UpdateUserRewardsParams(
+              gameType: _currentGameType!,
+              level: _currentLevel!,
+              xpIncrease: _kXpReward,
+              coinIncrease: _kCoinReward,
+            ),
+          ),
+          updateCategoryStats(
+            UpdateCategoryStatsParams(
+              categoryId: _currentGameType!,
+              isCorrect: true,
+            ),
+          ),
+          updateUnlockedLevel(
+            UpdateUnlockedLevelParams(
+              categoryId: _currentGameType!,
+              newLevel: _currentLevel! + 1,
+            ),
+          ),
+          awardBadge(_kListeningBadge),
+        ]);
+        return; // success
+      } catch (e, stack) {
+        debugPrint(
+          '[ListeningBloc] Reward save attempt $attempt/$_kMaxSaveRetries '
+          'failed: $e\n$stack',
+        );
+        if (attempt < _kMaxSaveRetries) {
+          // Exponential back-off: 1 s, 2 s, 4 s
+          await Future.delayed(Duration(seconds: 1 << (attempt - 1)));
+        }
+      }
+    }
+    debugPrint('[ListeningBloc] All $_kMaxSaveRetries save attempts failed.');
   }
 }

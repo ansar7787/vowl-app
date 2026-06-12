@@ -566,16 +566,16 @@ class AdventureXPScreen extends StatelessWidget {
       {
         'title': 'Streak Shield',
         'desc': 'Protects progress (+1 Freeze)',
-        'cost': 400,
+        'cost': 150,
         'icon': Icons.shield_rounded,
         'color': const Color(0xFF10B981),
         'type': 'shield',
       },
       {
-        'title': 'Time Warp',
-        'desc': '2x Multiplier (1hr active)',
-        'cost': 250,
-        'icon': Icons.timer_outlined,
+        'title': 'Double XP',
+        'desc': '2x Multiplier (24hr active)',
+        'cost': 300,
+        'icon': Icons.bolt_rounded,
         'color': const Color(0xFF3B82F6),
         'type': 'warp',
         'active':

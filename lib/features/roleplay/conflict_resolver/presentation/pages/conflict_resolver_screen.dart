@@ -9,7 +9,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
-import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
+import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
@@ -31,13 +33,14 @@ class ConflictResolverScreen extends StatefulWidget {
   State<ConflictResolverScreen> createState() => _ConflictResolverScreenState();
 }
 
-class _ConflictResolverScreenState extends State<ConflictResolverScreen> with TickerProviderStateMixin {
+class _ConflictResolverScreenState extends State<ConflictResolverScreen>
+    with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   late AnimationController _waveController;
   late AnimationController _pulseController;
-  
+
   int _lastProcessedIndex = -1;
   double _rotation = 0.0; // Slider score level (0.0 to 1.0)
   bool _isAnswered = false;
@@ -56,7 +59,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen> with Ti
       duration: const Duration(seconds: 2),
     )..repeat(reverse: true);
 
-    context.read<RoleplayBloc>().add(FetchRoleplayQuests(gameType: widget.gameType, level: widget.level));
+    context.read<RoleplayBloc>().add(
+      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   @override
@@ -85,7 +90,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen> with Ti
 
     // Calculate angle in radians (-pi to pi)
     double angle = math.atan2(dy, dx);
-    
+
     // Normalize to 0 to 2pi
     if (angle < 0) {
       angle += 2 * math.pi;
@@ -176,10 +181,15 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen> with Ti
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 10.h,
+                  ),
                   child: Column(
                     children: [
-                      ConflictResolverInstruction(primaryColor: theme.primaryColor),
+                      ConflictResolverInstruction(
+                        primaryColor: theme.primaryColor,
+                      ),
                       SizedBox(height: 16.h),
                       ConflictResolverConflictCard(
                         scene: quest.scene ?? "",
@@ -205,15 +215,23 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen> with Ti
                         ScaleButton(
                           onTap: () => _submitAnswer(empathyTarget),
                           child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 48.w, vertical: 14.h),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 48.w,
+                              vertical: 14.h,
+                            ),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30.r),
                               gradient: LinearGradient(
-                                colors: [theme.primaryColor, theme.primaryColor.withValues(alpha: 0.8)],
+                                colors: [
+                                  theme.primaryColor,
+                                  theme.primaryColor.withValues(alpha: 0.8),
+                                ],
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: theme.primaryColor.withValues(alpha: 0.35),
+                                  color: theme.primaryColor.withValues(
+                                    alpha: 0.35,
+                                  ),
                                   blurRadius: 15,
                                 ),
                               ],
@@ -221,11 +239,16 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen> with Ti
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Icon(Icons.security_rounded, color: Colors.white, size: 18.r),
+                                Icon(
+                                  Icons.security_rounded,
+                                  color: Colors.white,
+                                  size: 18.r,
+                                ),
                                 SizedBox(width: 8.w),
                                 Text(
                                   "LOCK HARMONIC FREQUENCY",
-                                  style: TextStyle(fontFamily: 'Outfit', 
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
                                     fontSize: 12.sp,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,

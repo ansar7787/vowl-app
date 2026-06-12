@@ -7,7 +7,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
-import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
+import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
+import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
+import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_instruction.dart';
@@ -107,7 +109,8 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
           final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final livesChanged =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
@@ -160,16 +163,37 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                     final maxHeight = constraints.maxHeight;
                     final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight = 20.h + 40.h + (isCompact ? 80.h : 110.h) + (isCompact ? 130.h : 180.h) + (isCompact ? 130.h : 180.h) + (_isAnswered ? 0.h : 60.h) + 20.h;
+                    final double estimatedContentHeight =
+                        20.h +
+                        40.h +
+                        (isCompact ? 80.h : 110.h) +
+                        (isCompact ? 130.h : 180.h) +
+                        (isCompact ? 130.h : 180.h) +
+                        (_isAnswered ? 0.h : 60.h) +
+                        20.h;
                     final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
-                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
-                    final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1.5).clamp(8.0, 20.0) : 8.0;
-                    final double gapOscilloscope = remainingHeight > 0 ? (gapUnit * 1.5).clamp(8.0, 20.0) : 8.0;
-                    final double gapTimeline = remainingHeight > 0 ? (gapUnit * 1.5).clamp(8.0, 20.0) : 8.0;
-                    final double gapSegments = remainingHeight > 0 ? (gapUnit * 1.5).clamp(8.0, 20.0) : 8.0;
-                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 24.0) : 8.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 8
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(6.0, 16.0)
+                        : 6.0;
+                    final double gapInstruction = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
+                        : 8.0;
+                    final double gapOscilloscope = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
+                        : 8.0;
+                    final double gapTimeline = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
+                        : 8.0;
+                    final double gapSegments = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
+                        : 8.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(8.0, 24.0)
+                        : 8.0;
 
                     return SingleChildScrollView(
                       physics: const BouncingScrollPhysics(),
@@ -182,31 +206,45 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 SizedBox(height: gapTop),
-                                isCompact 
-                                  ? SizedBox(height: 35.h, child: FittedBox(fit: BoxFit.scaleDown, child: AudioSentenceOrderInstruction(color: theme.primaryColor)))
-                                  : AudioSentenceOrderInstruction(color: theme.primaryColor),
+                                isCompact
+                                    ? SizedBox(
+                                        height: 35.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: AudioSentenceOrderInstruction(
+                                            color: theme.primaryColor,
+                                          ),
+                                        ),
+                                      )
+                                    : AudioSentenceOrderInstruction(
+                                        color: theme.primaryColor,
+                                      ),
                                 SizedBox(height: gapInstruction),
                                 isCompact
-                                  ? SizedBox(
-                                      height: 80.h,
-                                      child: FittedBox(
-                                        fit: BoxFit.scaleDown,
-                                        child: AudioSentenceOrderOscilloscope(
-                                          onTap: () {
-                                            _soundService.playTts(quest.textToSpeak ?? "");
-                                            _hapticService.selection();
-                                          },
-                                          color: theme.primaryColor,
+                                    ? SizedBox(
+                                        height: 80.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: AudioSentenceOrderOscilloscope(
+                                            onTap: () {
+                                              _soundService.playTts(
+                                                quest.textToSpeak ?? "",
+                                              );
+                                              _hapticService.selection();
+                                            },
+                                            color: theme.primaryColor,
+                                          ),
                                         ),
+                                      )
+                                    : AudioSentenceOrderOscilloscope(
+                                        onTap: () {
+                                          _soundService.playTts(
+                                            quest.textToSpeak ?? "",
+                                          );
+                                          _hapticService.selection();
+                                        },
+                                        color: theme.primaryColor,
                                       ),
-                                    )
-                                  : AudioSentenceOrderOscilloscope(
-                                      onTap: () {
-                                        _soundService.playTts(quest.textToSpeak ?? "");
-                                        _hapticService.selection();
-                                      },
-                                      color: theme.primaryColor,
-                                    ),
                                 SizedBox(height: gapOscilloscope),
                                 SizedBox(
                                   height: isCompact ? 130.h : 180.h,
@@ -244,18 +282,20 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                 SizedBox(height: gapSegments),
                                 if (!_isAnswered)
                                   ScaleButton(
-                                    onTap: () => _submitAnswer(quest.textToSpeak ?? ""),
+                                    onTap: () =>
+                                        _submitAnswer(quest.textToSpeak ?? ""),
                                     child: Container(
                                       width: double.infinity,
                                       height: isCompact ? 50.h : 65.h,
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20.r),
+                                        borderRadius: BorderRadius.circular(
+                                          20.r,
+                                        ),
                                         color: theme.primaryColor,
                                         boxShadow: [
                                           BoxShadow(
-                                            color: theme.primaryColor.withValues(
-                                              alpha: 0.3,
-                                            ),
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.3),
                                             blurRadius: 15,
                                             offset: const Offset(0, 5),
                                           ),
@@ -264,7 +304,8 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                       child: Center(
                                         child: Text(
                                           "CALIBRATE SIGNAL",
-                                          style: TextStyle(fontFamily: 'Outfit', 
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
                                             fontSize: 16.sp,
                                             fontWeight: FontWeight.w900,
                                             color: Colors.white,
@@ -287,5 +328,4 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
       },
     );
   }
-
 }

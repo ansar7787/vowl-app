@@ -8,7 +8,6 @@ import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart'
 
 class VocabularyFeedbackCard extends StatelessWidget {
   final VocabularyState state;
-  final dynamic theme;
   final bool isDark;
   final bool? isCorrect;
   final bool isFinalFailure;
@@ -17,7 +16,6 @@ class VocabularyFeedbackCard extends StatelessWidget {
   const VocabularyFeedbackCard({
     super.key,
     required this.state,
-    required this.theme,
     required this.isDark,
     required this.isCorrect,
     required this.isFinalFailure,
@@ -44,12 +42,13 @@ class VocabularyFeedbackCard extends StatelessWidget {
     final success = isCorrect ?? false;
     final lives = s.livesRemaining;
 
-    final List<Color> gradient = success
-        ? const [Color(0xFF2DD4BF), Color(0xFF10B981)]
-        : const [Color(0xFFF43F5E), Color(0xFFE11D48)];
-    final Color shadowColor = success
-        ? const Color(0xFF10B981)
-        : const Color(0xFFE11D48);
+    const successGradient = [Color(0xFF2DD4BF), Color(0xFF10B981)];
+    const failureGradient = [Color(0xFFF43F5E), Color(0xFFE11D48)];
+    const successShadow = Color(0xFF10B981);
+    const failureShadow = Color(0xFFE11D48);
+
+    final List<Color> gradient = success ? successGradient : failureGradient;
+    final Color shadowColor = success ? successShadow : failureShadow;
     final IconData icon = success
         ? Icons.check_circle_rounded
         : Icons.error_rounded;
@@ -65,83 +64,95 @@ class VocabularyFeedbackCard extends StatelessWidget {
         ? _resolveCorrectAnswer(s)
         : null;
 
-    return ClipRRect(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-      child: BackdropFilter(
-        filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-        child: Container(
-          width: double.infinity,
-          padding: EdgeInsets.all(28.r),
-          decoration: BoxDecoration(
-            color: isDark
-                ? Colors.black.withValues(alpha: 0.6)
-                : Colors.white.withValues(alpha: 0.8),
-            borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.1),
-              width: 1.5,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.2),
-                blurRadius: 40,
-                offset: const Offset(0, -10),
-              ),
-            ],
-          ),
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // ── Header row ───────────────────────────────
-                _FeedbackHeader(title: title, icon: icon, gradient: gradient),
-
-                // ── Correct answer box ───────────────────────
-                if (correctAnswerText != null) ...[
-                  SizedBox(height: 16.h),
-                  _CorrectAnswerBox(
-                    text: correctAnswerText,
-                    color: shadowColor,
-                    isDark: isDark,
+    // RepaintBoundary prevents the BackdropFilter compositing layer from
+    // being invalidated by ancestor/sibling widget repaints (e.g. mascot
+    // animations, BLoC state changes).
+    return RepaintBoundary(
+      child: ClipRRect(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+        child:
+            BackdropFilter(
+              filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(28.r),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.black.withValues(alpha: 0.6)
+                      : Colors.white.withValues(alpha: 0.8),
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(40.r),
                   ),
-                ],
-
-                // ── Explanation box ──────────────────────────
-                if (s.currentQuestOrNull?.explanation != null &&
-                    (success || s.isFinalFailure)) ...[
-                  SizedBox(height: 16.h),
-                  _ExplanationBox(
-                    explanation: s.currentQuestOrNull!.explanation!,
-                    accentColor: shadowColor,
-                    isDark: isDark,
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.1),
+                    width: 1.5,
                   ),
-                ],
-
-                SizedBox(height: 28.h),
-
-                // ── Continue / Try Again button ──────────────
-                _ContinueButton(
-                  label: buttonText,
-                  gradient: gradient,
-                  shadowColor: shadowColor,
-                  onTap: onContinue,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.2),
+                      blurRadius: 40,
+                      offset: const Offset(0, -10),
+                    ),
+                  ],
                 ),
-              ],
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // ── Header row ──────────────────────────────────────
+                      _FeedbackHeader(
+                        title: title,
+                        icon: icon,
+                        gradient: gradient,
+                      ),
+
+                      // ── Correct answer box ──────────────────────────────
+                      if (correctAnswerText != null) ...[
+                        SizedBox(height: 16.h),
+                        _CorrectAnswerBox(
+                          text: correctAnswerText,
+                          color: shadowColor,
+                          isDark: isDark,
+                        ),
+                      ],
+
+                      // ── Explanation box ─────────────────────────────────
+                      if (s.currentQuestOrNull?.explanation != null &&
+                          (success || s.isFinalFailure)) ...[
+                        SizedBox(height: 16.h),
+                        _ExplanationBox(
+                          explanation: s.currentQuestOrNull!.explanation!,
+                          accentColor: shadowColor,
+                          isDark: isDark,
+                        ),
+                      ],
+
+                      SizedBox(height: 28.h),
+
+                      // ── Continue / Try Again button ─────────────────────
+                      _ContinueButton(
+                        label: buttonText,
+                        gradient: gradient,
+                        shadowColor: shadowColor,
+                        onTap: onContinue,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ).animate().slideY(
+              begin: 1,
+              end: 0,
+              curve: Curves.easeOutCubic,
+              duration: 500.ms,
             ),
-          ),
-        ),
       ),
-    ).animate().slideY(
-      begin: 1,
-      end: 0,
-      curve: Curves.easeOutCubic,
-      duration: 500.ms,
     );
   }
 }
 
-// ─── Private sub-widgets ──────────────────────────────────────
+// ─── Private sub-widgets ──────────────────────────────────────────────────────
 
 class _FeedbackHeader extends StatelessWidget {
   final String title;
@@ -167,8 +178,9 @@ class _FeedbackHeader extends StatelessWidget {
           child: Icon(icon, color: Colors.white, size: 28.r),
         ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
         SizedBox(width: 16.w),
+        // LayoutBuilder measures the available width so the gradient shader
+        // matches the exact text bounds instead of a hardcoded value.
         Expanded(
-          // Shader built from actual measured width — not hardcoded 200px
           child: LayoutBuilder(
             builder: (context, constraints) {
               final shader = LinearGradient(

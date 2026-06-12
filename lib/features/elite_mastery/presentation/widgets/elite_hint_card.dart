@@ -38,8 +38,9 @@ class EliteHintCard extends StatelessWidget {
               Icon(Icons.lightbulb_rounded, color: primaryColor, size: 20.r),
               SizedBox(width: 10.w),
               Text(
-                "NEED A HINT?",
-                style: TextStyle(fontFamily: 'Outfit', 
+                'NEED A HINT?',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w900,
                   color: primaryColor,
@@ -64,8 +65,9 @@ class EliteHintCard extends StatelessWidget {
               Icon(Icons.lightbulb_rounded, color: primaryColor, size: 24.r),
               SizedBox(width: 12.w),
               Text(
-                "EXPERT HINT",
-                style: TextStyle(fontFamily: 'Outfit', 
+                'EXPERT HINT',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
                   color: primaryColor,
@@ -76,13 +78,18 @@ class EliteHintCard extends StatelessWidget {
           ),
           SizedBox(height: 12.h),
           Text(
-            hintText ?? "Try looking for context clues in the structure!",
-            style: TextStyle(fontFamily: 'Outfit', 
+            hintText ?? 'Try looking for context clues in the structure!',
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 16.sp,
               fontWeight: FontWeight.w600,
               color: isDark ? Colors.white70 : Colors.black87,
             ),
             textAlign: TextAlign.center,
+            // Prevents long backend hints from overflowing their container
+            // on small phones or with accessibility text scaling enabled.
+            maxLines: 4,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),

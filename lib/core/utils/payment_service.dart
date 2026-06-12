@@ -93,8 +93,8 @@ class RazorpayPaymentService implements PaymentService {
       'name': 'Vowl',
       'description': description,
       'prefill': {
-        'contact': contact,
-        'email': email,
+        if (contact.isNotEmpty) 'contact': contact,
+        if (email.isNotEmpty) 'email': email,
       },
       'external': {
         'wallets': ['paytm'],

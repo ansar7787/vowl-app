@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -51,7 +51,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
     if (_isAnswered || quest == null) return;
 
     final selectedVoice = _isPassive ? "Passive" : "Active";
-    bool isCorrect = selectedVoice.toLowerCase() ==
+    bool isCorrect =
+        selectedVoice.toLowerCase() ==
         (quest.correctAnswerCategory?.toLowerCase() ??
             quest.correctAnswer?.toLowerCase());
 
@@ -79,20 +80,21 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final livesRestored =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
-          if (isNewQuestion || isRetry || livesChanged) {
+          if (isNewQuestion || isRetry || livesRestored) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _isPassive = false;
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
           _lastLives = state.livesRemaining;
@@ -139,110 +141,131 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                                 height: 25.h,
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
-                                  child: VoiceSwapInstruction(primaryColor: theme.primaryColor),
+                                  child: VoiceSwapInstruction(
+                                    primaryColor: theme.primaryColor,
+                                  ),
                                 ),
                               )
-                            : VoiceSwapInstruction(primaryColor: theme.primaryColor),
+                            : VoiceSwapInstruction(
+                                primaryColor: theme.primaryColor,
+                              ),
                         SizedBox(height: isCompact ? 8.h : 20.h),
 
                         // Context Card
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                          child: Container(
-                            padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.05)
-                                  : Colors.black.withValues(alpha: 0.03),
-                              borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
-                              border: Border.all(
-                                color: theme.primaryColor.withValues(alpha: 0.15),
-                                width: 1.5,
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Container(
+                                padding: EdgeInsets.all(
+                                  isCompact ? 14.r : 22.r,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.05)
+                                      : Colors.black.withValues(alpha: 0.03),
+                                  borderRadius: BorderRadius.circular(
+                                    isCompact ? 16.r : 24.r,
+                                  ),
+                                  border: Border.all(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.15,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                                child: Text(
+                                  quest.sentence ?? "",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: isCompact ? 15.sp : 20.sp,
+                                    color: isDark
+                                        ? Colors.white
+                                        : Colors.black87,
+                                    height: 1.5,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
                               ),
-                            ),
-                            child: Text(
-                              quest.sentence ?? "",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit', 
-                                fontSize: isCompact ? 15.sp : 20.sp,
-                                color: isDark ? Colors.white : Colors.black87,
-                                height: 1.5,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        )
-                        .animate()
-                        .fadeIn(duration: 600.ms)
-                        .slideY(begin: 0.2, end: 0),
+                            )
+                            .animate()
+                            .fadeIn(duration: 600.ms)
+                            .slideY(begin: 0.2, end: 0),
 
-                    SizedBox(height: 60.h),
+                        SizedBox(height: 60.h),
 
-                    // Voice Toggle
-                    VoiceSwapToggle(
-                      isPassive: _isPassive,
-                      isAnswered: _isAnswered,
-                      primaryColor: theme.primaryColor,
-                      isDark: isDark,
-                      onToggle: (val) => setState(() => _isPassive = val),
-                    ),
-
-                    if (_isAnswered) ...[
-                      SizedBox(height: isCompact ? 12.h : 32.h),
-                      VoiceSwapResult(
-                        isCorrect: _isCorrect == true,
-                        quest: quest,
-                        isDark: isDark,
-                      ),
-                    ],
-
-                    const Spacer(),
-
-                    if (!_isAnswered)
-                      ScaleButton(
-                        onTap: () => _submitAnswer(quest),
-                        child: Container(
-                          width: double.infinity,
-                          height: isCompact ? 48.h : 65.h,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(isCompact ? 14.r : 20.r),
-                            gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                theme.primaryColor,
-                                theme.primaryColor.withValues(alpha: 0.8),
-                              ],
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: theme.primaryColor.withValues(alpha: 0.4),
-                                blurRadius: isCompact ? 12 : 20,
-                                offset: Offset(0, isCompact ? 4 : 8),
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                            child: Text(
-                              "ENGAGE TRANSMUTER",
-                              style: TextStyle(
-                                fontFamily: 'Outfit', 
-                                fontSize: isCompact ? 13.sp : 16.sp,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white,
-                                letterSpacing: isCompact ? 2 : 3,
-                              ),
-                            ),
-                          ),
+                        // Voice Toggle
+                        VoiceSwapToggle(
+                          isPassive: _isPassive,
+                          isAnswered: _isAnswered,
+                          primaryColor: theme.primaryColor,
+                          isDark: isDark,
+                          onToggle: (val) => setState(() => _isPassive = val),
                         ),
-                      )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .shimmer(duration: 2.seconds, color: Colors.white24),
 
-                    SizedBox(height: isCompact ? 12.h : 40.h),
-                  ],
-                );
+                        if (_isAnswered) ...[
+                          SizedBox(height: isCompact ? 12.h : 32.h),
+                          VoiceSwapResult(
+                            isCorrect: _isCorrect == true,
+                            quest: quest,
+                            isDark: isDark,
+                          ),
+                        ],
+
+                        const Spacer(),
+
+                        if (!_isAnswered)
+                          ScaleButton(
+                                onTap: () => _submitAnswer(quest),
+                                child: Container(
+                                  width: double.infinity,
+                                  height: isCompact ? 48.h : 65.h,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(
+                                      isCompact ? 14.r : 20.r,
+                                    ),
+                                    gradient: LinearGradient(
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter,
+                                      colors: [
+                                        theme.primaryColor,
+                                        theme.primaryColor.withValues(
+                                          alpha: 0.8,
+                                        ),
+                                      ],
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.4,
+                                        ),
+                                        blurRadius: isCompact ? 12 : 20,
+                                        offset: Offset(0, isCompact ? 4 : 8),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "ENGAGE TRANSMUTER",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: isCompact ? 13.sp : 16.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                        letterSpacing: isCompact ? 2 : 3,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                              .shimmer(
+                                duration: 2.seconds,
+                                color: Colors.white24,
+                              ),
+
+                        SizedBox(height: isCompact ? 12.h : 40.h),
+                      ],
+                    );
                   },
                 ),
         );

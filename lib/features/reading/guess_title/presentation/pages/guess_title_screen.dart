@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
-import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
+import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_instruction.dart';
@@ -31,7 +31,7 @@ class GuessTitleScreen extends StatefulWidget {
 class _GuessTitleScreenState extends State<GuessTitleScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   String? _selectedTitle;
   bool _isAnswered = false;
   bool? _isCorrect;
@@ -42,12 +42,15 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<ReadingBloc>().add(FetchReadingQuests(gameType: widget.gameType, level: widget.level));
+    context.read<ReadingBloc>().add(
+      FetchReadingQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   void _submitAnswer(String selected, String correct) {
     if (_isAnswered) return;
-    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+    bool isCorrect =
+        selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
     setState(() {
       _isAnswered = true;
@@ -76,7 +79,8 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
         if (state is ReadingLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
           final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final livesChanged =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
@@ -95,60 +99,77 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
         }
         if (state is ReadingGameComplete) {
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'TITLE EXPERT!', enableDoubleUp: true);
+          GameDialogHelper.showCompletion(
+            context,
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'TITLE EXPERT!',
+            enableDoubleUp: true,
+          );
         } else if (state is ReadingGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ReadingBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<ReadingBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
-        final ReadingQuest? quest = (state is ReadingLoaded) ? state.currentQuest as ReadingQuest? : null;
-        
+        final ReadingQuest? quest = (state is ReadingLoaded)
+            ? state.currentQuest as ReadingQuest?
+            : null;
+
         return ReadingBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
-          child: quest == null ? const SizedBox() : SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Column(
-                children: [
-                  SizedBox(height: 16.h),
-                  GuessTitleInstruction(primaryColor: theme.primaryColor),
-                  SizedBox(height: 24.h),
-                  GuessTitleCargoCrate(
-                    passage: quest.passage ?? "",
-                    correct: quest.correctAnswer ?? "",
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                    selectedTitle: _selectedTitle,
-                    isAnswered: _isAnswered,
-                    isCorrect: _isCorrect,
-                    onAccept: (title) => _submitAnswer(title, quest.correctAnswer ?? ""),
-                  ),
-                  SizedBox(height: 32.h),
-                  GuessTitleLabelRack(
-                    labels: quest.options ?? [],
-                    correct: quest.correctAnswer ?? "",
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                    selectedTitle: _selectedTitle,
-                    isAnswered: _isAnswered,
-                  ),
-                  if (_isAnswered) ...[
-                    SizedBox(height: 30.h),
-                    GuessTitleResult(
-                      quest: quest,
-                      isCorrect: _isCorrect == true,
-                      isDark: isDark,
+          child: quest == null
+              ? const SizedBox()
+              : SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 16.h),
+                        GuessTitleInstruction(primaryColor: theme.primaryColor),
+                        SizedBox(height: 24.h),
+                        GuessTitleCargoCrate(
+                          passage: quest.passage ?? "",
+                          correct: quest.correctAnswer ?? "",
+                          color: theme.primaryColor,
+                          isDark: isDark,
+                          selectedTitle: _selectedTitle,
+                          isAnswered: _isAnswered,
+                          isCorrect: _isCorrect,
+                          onAccept: (title) =>
+                              _submitAnswer(title, quest.correctAnswer ?? ""),
+                        ),
+                        SizedBox(height: 32.h),
+                        GuessTitleLabelRack(
+                          labels: quest.options ?? [],
+                          correct: quest.correctAnswer ?? "",
+                          color: theme.primaryColor,
+                          isDark: isDark,
+                          selectedTitle: _selectedTitle,
+                          isAnswered: _isAnswered,
+                        ),
+                        if (_isAnswered) ...[
+                          SizedBox(height: 30.h),
+                          GuessTitleResult(
+                            quest: quest,
+                            isCorrect: _isCorrect == true,
+                            isDark: isDark,
+                          ),
+                        ],
+                        SizedBox(height: 60.h),
+                      ],
                     ),
-                  ],
-                  SizedBox(height: 60.h),
-                ],
-              ),
-            ),
-          ),
+                  ),
+                ),
         );
       },
     );

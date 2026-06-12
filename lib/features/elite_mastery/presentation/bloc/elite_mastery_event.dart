@@ -1,6 +1,8 @@
 part of 'elite_mastery_bloc.dart';
 
 abstract class EliteMasteryEvent extends Equatable {
+  const EliteMasteryEvent();
+
   @override
   List<Object?> get props => [];
 }
@@ -8,7 +10,8 @@ abstract class EliteMasteryEvent extends Equatable {
 class FetchEliteMasteryQuests extends EliteMasteryEvent {
   final GameSubtype gameType;
   final int level;
-  FetchEliteMasteryQuests({required this.gameType, required this.level});
+
+  const FetchEliteMasteryQuests({required this.gameType, required this.level});
 
   @override
   List<Object?> get props => [gameType, level];
@@ -16,21 +19,37 @@ class FetchEliteMasteryQuests extends EliteMasteryEvent {
 
 class SubmitEliteAnswer extends EliteMasteryEvent {
   final bool isCorrect;
-  SubmitEliteAnswer(this.isCorrect);
+
+  const SubmitEliteAnswer(this.isCorrect);
 
   @override
   List<Object?> get props => [isCorrect];
 }
 
-class NextEliteQuestion extends EliteMasteryEvent {}
+class NextEliteQuestion extends EliteMasteryEvent {
+  const NextEliteQuestion();
+}
 
-class RetryEliteQuestion extends EliteMasteryEvent {}
+class RetryEliteQuestion extends EliteMasteryEvent {
+  const RetryEliteQuestion();
+}
 
-class RestoreEliteLife extends EliteMasteryEvent {}
+class RestoreEliteLife extends EliteMasteryEvent {
+  const RestoreEliteLife();
+}
 
-class ShowEliteHint extends EliteMasteryEvent {}
-class MarkEliteHintUsed extends EliteMasteryEvent {}
+class ShowEliteHint extends EliteMasteryEvent {
+  const ShowEliteHint();
+}
 
-class AddLifeFromAd extends EliteMasteryEvent {}
+class MarkEliteHintUsed extends EliteMasteryEvent {
+  const MarkEliteHintUsed();
+}
 
-class EliteTutorPass extends EliteMasteryEvent {}
+class AddLifeFromAd extends EliteMasteryEvent {
+  const AddLifeFromAd();
+}
+
+class EliteTutorPass extends EliteMasteryEvent {
+  const EliteTutorPass();
+}

@@ -8,7 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_base_layout.dart';
+import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_feedback_panel.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_instruction.dart';
@@ -40,12 +40,16 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<AccentBloc>().add(FetchAccentQuests(gameType: widget.gameType, level: widget.level));
+    context.read<AccentBloc>().add(
+      FetchAccentQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   void _triggerAutoPlay(AccentQuest quest) {
     final instruction = quest.instruction;
-    final String targetLocale = instruction.contains("British") ? "en-GB" : "en-US";
+    final String targetLocale = instruction.contains("British")
+        ? "en-GB"
+        : "en-US";
     _soundService.playTts(quest.word ?? "", locale: targetLocale);
   }
 
@@ -108,7 +112,9 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is AccentLoaded) ? state.currentQuest as AccentQuest? : null;
+        final quest = (state is AccentLoaded)
+            ? state.currentQuest as AccentQuest?
+            : null;
 
         String brPr = "";
         String amPr = "";
@@ -141,22 +147,36 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
                       final bool isCompact = maxHeight < 580;
-                      
-                      final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 80.h : 110.h) + (isCompact ? 130.h : 172.h) + (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
-                      final remainingHeight = maxHeight - estimatedContentHeight;
-                      
-                      final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
-                      final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 24.0) : 8.0;
-                      final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 24.0) : 8.0;
-                      final double gapSpeaker = remainingHeight > 0 ? (gapUnit * 2).clamp(16.0, 48.0) : 16.0;
-                      final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
+
+                      final double estimatedContentHeight =
+                          24.h +
+                          (isCompact ? 90.h : 120.h) +
+                          (isCompact ? 80.h : 110.h) +
+                          (isCompact ? 130.h : 172.h) +
+                          (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
+                      final remainingHeight =
+                          maxHeight - estimatedContentHeight;
+
+                      final double gapUnit = remainingHeight > 0
+                          ? remainingHeight / 8
+                          : 0;
+                      final double gapTop = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(8.0, 24.0)
+                          : 8.0;
+                      final double gapInstruction = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(8.0, 24.0)
+                          : 8.0;
+                      final double gapSpeaker = remainingHeight > 0
+                          ? (gapUnit * 2).clamp(16.0, 48.0)
+                          : 16.0;
+                      final double gapBottom = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(12.0, 40.0)
+                          : 12.0;
 
                       return SingleChildScrollView(
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
-                          constraints: BoxConstraints(
-                            minHeight: maxHeight,
-                          ),
+                          constraints: BoxConstraints(minHeight: maxHeight),
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 16.w),
                             child: Column(
@@ -166,51 +186,58 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTop),
-                                    isCompact 
-                                      ? SizedBox(
-                                          height: 32.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: DialectDrillInstruction(
-                                              instruction: quest.instruction,
-                                              accentColor: theme.primaryColor,
-                                            ),
-                                          ),
-                                        )
-                                      : DialectDrillInstruction(
-                                          instruction: quest.instruction,
-                                          accentColor: theme.primaryColor,
-                                        ),
-                                    SizedBox(height: gapInstruction),
-                                    
-                                    isCompact 
-                                      ? SizedBox(
-                                          height: 190.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 32.w,
-                                              child: DialectDrillHologramConsole(
-                                                quest: quest,
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
-                                                isAnswered: _isAnswered,
-                                                isCorrect: _isCorrect,
-                                                onPlayTargetAudio: () => _triggerAutoPlay(quest),
-                                                onSubmitAnswer: _submitAnswer,
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 32.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: DialectDrillInstruction(
+                                                instruction: quest.instruction,
+                                                accentColor: theme.primaryColor,
                                               ),
                                             ),
+                                          )
+                                        : DialectDrillInstruction(
+                                            instruction: quest.instruction,
+                                            accentColor: theme.primaryColor,
                                           ),
-                                        )
-                                      : DialectDrillHologramConsole(
-                                          quest: quest,
-                                          color: theme.primaryColor,
-                                          isDark: isDark,
-                                          isAnswered: _isAnswered,
-                                          isCorrect: _isCorrect,
-                                          onPlayTargetAudio: () => _triggerAutoPlay(quest),
-                                          onSubmitAnswer: _submitAnswer,
-                                        ),
+                                    SizedBox(height: gapInstruction),
+
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 190.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 32.w,
+                                                child:
+                                                    DialectDrillHologramConsole(
+                                                      quest: quest,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      isAnswered: _isAnswered,
+                                                      isCorrect: _isCorrect,
+                                                      onPlayTargetAudio: () =>
+                                                          _triggerAutoPlay(
+                                                            quest,
+                                                          ),
+                                                      onSubmitAnswer:
+                                                          _submitAnswer,
+                                                    ),
+                                              ),
+                                            ),
+                                          )
+                                        : DialectDrillHologramConsole(
+                                            quest: quest,
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            isAnswered: _isAnswered,
+                                            isCorrect: _isCorrect,
+                                            onPlayTargetAudio: () =>
+                                                _triggerAutoPlay(quest),
+                                            onSubmitAnswer: _submitAnswer,
+                                          ),
                                   ],
                                 ),
                                 Column(
@@ -218,59 +245,92 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                   children: [
                                     SizedBox(height: gapSpeaker),
                                     isCompact
-                                      ? SizedBox(
-                                          height: 120.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 32.w,
-                                              child: AnimatedCrossFade(
-                                                firstChild: DialectDrillStatusTelemetry(
+                                        ? SizedBox(
+                                            height: 120.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 32.w,
+                                                child: AnimatedCrossFade(
+                                                  firstChild:
+                                                      DialectDrillStatusTelemetry(
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                      ),
+                                                  secondChild: DialectFeedbackPanel(
+                                                    isCorrect:
+                                                        _isCorrect ?? false,
+                                                    word: quest.word ?? "",
+                                                    britishPronunciation:
+                                                        brPr.isEmpty
+                                                        ? (quest.word ?? "")
+                                                        : brPr,
+                                                    americanPronunciation:
+                                                        amPr.isEmpty
+                                                        ? (quest.word ?? "")
+                                                        : amPr,
+                                                    hint:
+                                                        quest.hint ??
+                                                        "Dialect variants represent rich cultural history.",
+                                                    isDark: isDark,
+                                                    isMidnight: false,
+                                                    onPlayAudio:
+                                                        (text, locale) {
+                                                          _soundService.playTts(
+                                                            text,
+                                                            locale: locale,
+                                                          );
+                                                        },
+                                                  ),
+                                                  crossFadeState: _isAnswered
+                                                      ? CrossFadeState
+                                                            .showSecond
+                                                      : CrossFadeState
+                                                            .showFirst,
+                                                  duration: const Duration(
+                                                    milliseconds: 400,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        : AnimatedCrossFade(
+                                            firstChild:
+                                                DialectDrillStatusTelemetry(
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
                                                 ),
-                                                secondChild: DialectFeedbackPanel(
-                                                  isCorrect: _isCorrect ?? false,
-                                                  word: quest.word ?? "",
-                                                  britishPronunciation: brPr.isEmpty ? (quest.word ?? "") : brPr,
-                                                  americanPronunciation: amPr.isEmpty ? (quest.word ?? "") : amPr,
-                                                  hint: quest.hint ?? "Dialect variants represent rich cultural history.",
-                                                  isDark: isDark,
-                                                  isMidnight: false,
-                                                  onPlayAudio: (text, locale) {
-                                                    _soundService.playTts(text, locale: locale);
-                                                  },
-                                                ),
-                                                crossFadeState: _isAnswered
-                                                    ? CrossFadeState.showSecond
-                                                    : CrossFadeState.showFirst,
-                                                duration: const Duration(milliseconds: 400),
-                                              ),
+                                            secondChild: DialectFeedbackPanel(
+                                              isCorrect: _isCorrect ?? false,
+                                              word: quest.word ?? "",
+                                              britishPronunciation: brPr.isEmpty
+                                                  ? (quest.word ?? "")
+                                                  : brPr,
+                                              americanPronunciation:
+                                                  amPr.isEmpty
+                                                  ? (quest.word ?? "")
+                                                  : amPr,
+                                              hint:
+                                                  quest.hint ??
+                                                  "Dialect variants represent rich cultural history.",
+                                              isDark: isDark,
+                                              isMidnight: false,
+                                              onPlayAudio: (text, locale) {
+                                                _soundService.playTts(
+                                                  text,
+                                                  locale: locale,
+                                                );
+                                              },
+                                            ),
+                                            crossFadeState: _isAnswered
+                                                ? CrossFadeState.showSecond
+                                                : CrossFadeState.showFirst,
+                                            duration: const Duration(
+                                              milliseconds: 400,
                                             ),
                                           ),
-                                        )
-                                      : AnimatedCrossFade(
-                                          firstChild: DialectDrillStatusTelemetry(
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                          ),
-                                          secondChild: DialectFeedbackPanel(
-                                            isCorrect: _isCorrect ?? false,
-                                            word: quest.word ?? "",
-                                            britishPronunciation: brPr.isEmpty ? (quest.word ?? "") : brPr,
-                                            americanPronunciation: amPr.isEmpty ? (quest.word ?? "") : amPr,
-                                            hint: quest.hint ?? "Dialect variants represent rich cultural history.",
-                                            isDark: isDark,
-                                            isMidnight: false,
-                                            onPlayAudio: (text, locale) {
-                                              _soundService.playTts(text, locale: locale);
-                                            },
-                                          ),
-                                          crossFadeState: _isAnswered
-                                              ? CrossFadeState.showSecond
-                                              : CrossFadeState.showFirst,
-                                          duration: const Duration(milliseconds: 400),
-                                        ),
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),

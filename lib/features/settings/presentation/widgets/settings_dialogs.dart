@@ -332,6 +332,115 @@ class SettingsDialogs {
     );
   }
 
+  static Future<bool?> showDisableNotificationConfirmation(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    di.sl<HapticService>().warning();
+    return showGeneralDialog<bool>(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: '',
+      barrierColor: Colors.black54,
+      transitionDuration: const Duration(milliseconds: 300),
+      pageBuilder: (dialogContext, anim1, anim2) => Center(
+        child: Material(
+          color: Colors.transparent,
+          child: GlassTile(
+            width: 320.w,
+            padding: EdgeInsets.all(32.r),
+            borderRadius: BorderRadius.circular(40.r),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(20.r),
+                  decoration: BoxDecoration(
+                    color: Colors.orange.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.notifications_off_rounded,
+                    color: Colors.orange,
+                    size: 40.r,
+                  ),
+                ),
+                SizedBox(height: 24.h),
+                Text(
+                  'Disable Notifications?',
+                  style: TextStyle(fontFamily: 'Outfit', 
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 16.h),
+                Text(
+                  'Owly won\'t be able to remind you to practice. You might lose your learning streak!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontFamily: 'Outfit', 
+                    fontSize: 14.sp,
+                    color: isDark ? Colors.white60 : Colors.black54,
+                    height: 1.5,
+                  ),
+                ),
+                SizedBox(height: 32.h),
+                Column(
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(dialogContext, false);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          foregroundColor: Colors.white,
+                          padding: EdgeInsets.symmetric(vertical: 16.h),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.r),
+                          ),
+                        ),
+                        child: Text(
+                          'Keep Reminders On',
+                          style: TextStyle(fontFamily: 'Outfit', 
+                            fontWeight: FontWeight.w900,
+                            fontSize: 16.sp,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 12.h),
+                    TextButton(
+                      onPressed: () => Navigator.pop(dialogContext, true),
+                      child: Text(
+                        'Yes, Disable',
+                        style: TextStyle(fontFamily: 'Outfit', 
+                          color: Colors.red.withValues(alpha: 0.8),
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      transitionBuilder: (dialogContext, anim1, anim2, child) {
+        return FadeTransition(
+          opacity: anim1,
+          child: ScaleTransition(
+            scale: Tween<double>(begin: 0.95, end: 1.0).animate(
+              CurvedAnimation(parent: anim1, curve: Curves.easeOutCubic),
+            ),
+            child: child,
+          ),
+        );
+      },
+    );
+  }
+
   static void showPasswordReset(BuildContext context, String email) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     di.sl<HapticService>().warning();

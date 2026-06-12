@@ -15,23 +15,37 @@ import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/domain/usecases/get_reading_quest.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
-import 'package:vowl/features/speaking/domain/usecases/get_speaking_quest.dart';
 
 class MockGetReadingQuest extends Mock implements GetReadingQuest {}
+
 class MockUpdateUserCoins extends Mock implements UpdateUserCoins {}
+
 class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
+
 class MockUpdateCategoryStats extends Mock implements UpdateCategoryStats {}
+
 class MockUpdateUnlockedLevel extends Mock implements UpdateUnlockedLevel {}
+
 class MockAwardBadge extends Mock implements AwardBadge {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockUseHint extends Mock implements UseHint {}
+
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
-class FakeQuestParams extends Fake implements QuestParams {}
-class FakeUpdateUserRewardsParams extends Fake implements UpdateUserRewardsParams {}
-class FakeUpdateCategoryStatsParams extends Fake implements UpdateCategoryStatsParams {}
-class FakeUpdateUnlockedLevelParams extends Fake implements UpdateUnlockedLevelParams {}
+class FakeGetReadingQuestParams extends Fake implements GetReadingQuestParams {}
+
+class FakeUpdateUserRewardsParams extends Fake
+    implements UpdateUserRewardsParams {}
+
+class FakeUpdateCategoryStatsParams extends Fake
+    implements UpdateCategoryStatsParams {}
+
+class FakeUpdateUnlockedLevelParams extends Fake
+    implements UpdateUnlockedLevelParams {}
 
 void main() {
   late ReadingBloc bloc;
@@ -47,7 +61,7 @@ void main() {
   late MockNetworkInfo mockNetworkInfo;
 
   setUpAll(() {
-    registerFallbackValue(FakeQuestParams());
+    registerFallbackValue(FakeGetReadingQuestParams());
     registerFallbackValue(FakeUpdateUserRewardsParams());
     registerFallbackValue(FakeUpdateCategoryStatsParams());
     registerFallbackValue(FakeUpdateUnlockedLevelParams());
@@ -95,10 +109,13 @@ void main() {
     blocTest<ReadingBloc, ReadingState>(
       'should emit [Loading, Loaded] when data is fetched successfully',
       build: () {
-        when(() => mockGetQuest(any())).thenAnswer((_) async => const Right(tQuests));
+        when(
+          () => mockGetQuest(any()),
+        ).thenAnswer((_) async => const Right(tQuests));
         return bloc;
       },
-      act: (bloc) => bloc.add(FetchReadingQuests(gameType: tGameType, level: tLevel)),
+      act: (bloc) =>
+          bloc.add(FetchReadingQuests(gameType: tGameType, level: tLevel)),
       expect: () => [
         ReadingLoading(),
         ReadingLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3),
@@ -122,9 +139,7 @@ void main() {
       },
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(SubmitAnswer(true)),
-      expect: () => [
-        tLoadedState.copyWith(lastAnswerCorrect: true),
-      ],
+      expect: () => [tLoadedState.copyWith(lastAnswerCorrect: true)],
     );
 
     blocTest<ReadingBloc, ReadingState>(

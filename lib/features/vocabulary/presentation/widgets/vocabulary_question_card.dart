@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
 
 class VocabularyQuestionCard extends StatelessWidget {
   final VocabularyQuest quest;
-  final dynamic theme;
+  final VocabLevelTheme? theme;
   final bool isDark;
 
   const VocabularyQuestionCard({
@@ -17,19 +18,26 @@ class VocabularyQuestionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color primaryColor =
-        (theme?.primaryColor as Color?) ??
-        Theme.of(context).colorScheme.primary;
-
+        theme?.primaryColor ?? Theme.of(context).colorScheme.primary;
     final Color textColor = isDark ? Colors.white : Colors.black87;
     final Color bgColor = isDark
         ? Colors.white.withValues(alpha: 0.05)
         : Colors.white.withValues(alpha: 0.7);
 
+    // Cached once — avoids repeated null-coalescing and toUpperCase on rebuild.
     final String displayWord = quest.word ?? quest.prompt ?? 'Quest';
+    final String instruction = quest.instruction.toUpperCase();
+
+    final compositeLabel =
+        '$instruction. $displayWord'
+        '${quest.sentence != null ? ". ${quest.sentence}" : ""}';
 
     return Semantics(
-      label:
-          '${quest.instruction}. $displayWord${quest.sentence != null ? ". ${quest.sentence}" : ""}',
+      label: compositeLabel,
+      // FIX: excludeSemantics: true prevents screen readers from announcing
+      // both this composite label AND each individual child Text widget,
+      // which would cause the content to be read twice.
+      excludeSemantics: true,
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.all(20.r),
@@ -44,9 +52,8 @@ class VocabularyQuestionCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // No more redundant Row wrapper
             Text(
-              quest.instruction.toUpperCase(),
+              instruction,
               textAlign: TextAlign.center,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
@@ -59,7 +66,7 @@ class VocabularyQuestionCard extends StatelessWidget {
               ),
             ),
             SizedBox(height: 12.h),
-            // softWrap + maxLines prevents RenderFlex on long words
+            // softWrap + maxLines guards against RenderFlex on long words.
             Text(
               displayWord,
               textAlign: TextAlign.center,

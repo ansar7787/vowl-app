@@ -30,13 +30,10 @@ class AccentMapBackground extends StatelessWidget {
               top: (200 + i * 200).h,
               left: -100.w,
               right: -100.w,
-              child: Opacity(
-                opacity: 0.1,
-                child: Icon(
-                  Icons.waves_rounded,
-                  size: 500.r,
-                  color: const Color(0xFF818CF8),
-                ),
+              child: Icon(
+                Icons.waves_rounded,
+                size: 500.r,
+                color: const Color(0xFF818CF8).withValues(alpha: 0.1),
               )
               .animate(onPlay: (c) => c.repeat(reverse: true))
               .moveX(

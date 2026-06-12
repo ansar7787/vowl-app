@@ -4,40 +4,51 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/features/grammar/domain/usecases/get_grammar_quest.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/usecases/award_badge.dart';
 import 'package:vowl/features/auth/domain/usecases/update_category_stats.dart';
 import 'package:vowl/features/auth/domain/usecases/update_unlocked_level.dart';
-import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
-import 'package:vowl/features/grammar/domain/usecases/get_grammar_quest.dart';
 import 'package:vowl/features/grammar/domain/usecases/preload_grammar_quest.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/speaking/domain/usecases/get_speaking_quest.dart';
 
 class MockGetGrammarQuest extends Mock implements GetGrammarQuest {}
+
 class MockPreloadGrammarQuest extends Mock implements PreloadGrammarQuest {}
-class MockUpdateUserCoins extends Mock implements UpdateUserCoins {}
+
+
 class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
+
 class MockUpdateCategoryStats extends Mock implements UpdateCategoryStats {}
+
 class MockUpdateUnlockedLevel extends Mock implements UpdateUnlockedLevel {}
+
 class MockAwardBadge extends Mock implements AwardBadge {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockUseHint extends Mock implements UseHint {}
 
-class FakeQuestParams extends Fake implements QuestParams {}
-class FakeUpdateUserRewardsParams extends Fake implements UpdateUserRewardsParams {}
-class FakeUpdateCategoryStatsParams extends Fake implements UpdateCategoryStatsParams {}
-class FakeUpdateUnlockedLevelParams extends Fake implements UpdateUnlockedLevelParams {}
+class FakeGetGrammarQuestParams extends Fake implements GetGrammarQuestParams {}
+
+class FakeUpdateUserRewardsParams extends Fake
+    implements UpdateUserRewardsParams {}
+
+class FakeUpdateCategoryStatsParams extends Fake
+    implements UpdateCategoryStatsParams {}
+
+class FakeUpdateUnlockedLevelParams extends Fake
+    implements UpdateUnlockedLevelParams {}
 
 void main() {
   late GrammarBloc bloc;
   late MockGetGrammarQuest mockGetQuest;
   late MockPreloadGrammarQuest mockPreloadQuest;
-  late MockUpdateUserCoins mockUpdateUserCoins;
   late MockUpdateUserRewards mockUpdateUserRewards;
   late MockUpdateCategoryStats mockUpdateCategoryStats;
   late MockUpdateUnlockedLevel mockUpdateUnlockedLevel;
@@ -47,7 +58,7 @@ void main() {
   late MockUseHint mockUseHint;
 
   setUpAll(() {
-    registerFallbackValue(FakeQuestParams());
+    registerFallbackValue(FakeGetGrammarQuestParams());
     registerFallbackValue(FakeUpdateUserRewardsParams());
     registerFallbackValue(FakeUpdateCategoryStatsParams());
     registerFallbackValue(FakeUpdateUnlockedLevelParams());
@@ -56,7 +67,6 @@ void main() {
   setUp(() {
     mockGetQuest = MockGetGrammarQuest();
     mockPreloadQuest = MockPreloadGrammarQuest();
-    mockUpdateUserCoins = MockUpdateUserCoins();
     mockUpdateUserRewards = MockUpdateUserRewards();
     mockUpdateCategoryStats = MockUpdateCategoryStats();
     mockUpdateUnlockedLevel = MockUpdateUnlockedLevel();
@@ -68,7 +78,6 @@ void main() {
     bloc = GrammarBloc(
       getQuest: mockGetQuest,
       preloadQuest: mockPreloadQuest,
-      updateUserCoins: mockUpdateUserCoins,
       updateUserRewards: mockUpdateUserRewards,
       updateCategoryStats: mockUpdateCategoryStats,
       updateUnlockedLevel: mockUpdateUnlockedLevel,
@@ -95,10 +104,13 @@ void main() {
     blocTest<GrammarBloc, GrammarState>(
       'should emit [Loading, Loaded] when data is fetched successfully',
       build: () {
-        when(() => mockGetQuest(any())).thenAnswer((_) async => const Right(tQuests));
+        when(
+          () => mockGetQuest(any()),
+        ).thenAnswer((_) async => const Right(tQuests));
         return bloc;
       },
-      act: (bloc) => bloc.add(FetchGrammarQuests(gameType: tGameType, level: tLevel)),
+      act: (bloc) =>
+          bloc.add(FetchGrammarQuests(gameType: tGameType, level: tLevel)),
       expect: () => [
         GrammarLoading(),
         GrammarLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3),
@@ -122,9 +134,7 @@ void main() {
       },
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(SubmitAnswer(true)),
-      expect: () => [
-        tLoadedState.copyWith(lastAnswerCorrect: true),
-      ],
+      expect: () => [tLoadedState.copyWith(answerStatus: AnswerStatus.correct)],
     );
 
     blocTest<GrammarBloc, GrammarState>(
@@ -139,7 +149,7 @@ void main() {
       expect: () => [
         tLoadedState.copyWith(
           livesRemaining: 2,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 1,
           isFinalFailure: false,
         ),
@@ -158,7 +168,7 @@ void main() {
       expect: () => [
         tLoadedState.copyWith(
           livesRemaining: 1,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 0,
           isFinalFailure: true,
           quests: [...tQuests, tQuests[0]],

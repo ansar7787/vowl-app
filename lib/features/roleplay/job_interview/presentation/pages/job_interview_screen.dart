@@ -7,7 +7,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
-import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
+import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_instruction.dart';
@@ -29,18 +31,19 @@ class JobInterviewScreen extends StatefulWidget {
   State<JobInterviewScreen> createState() => _JobInterviewScreenState();
 }
 
-class _JobInterviewScreenState extends State<JobInterviewScreen> with TickerProviderStateMixin {
+class _JobInterviewScreenState extends State<JobInterviewScreen>
+    with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   late AnimationController _reactorController;
-  
+
   int _lastProcessedIndex = -1;
   int? _selectedIndex;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  
+
   // Track professionalism thermometer score (default start at 0.5)
   double _mercuryLevel = 0.5;
 
@@ -52,7 +55,9 @@ class _JobInterviewScreenState extends State<JobInterviewScreen> with TickerProv
       duration: const Duration(seconds: 4),
     )..repeat();
 
-    context.read<RoleplayBloc>().add(FetchRoleplayQuests(gameType: widget.gameType, level: widget.level));
+    context.read<RoleplayBloc>().add(
+      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   @override
@@ -79,7 +84,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen> with TickerProv
       _selectedIndex = index;
       _isAnswered = true;
       _isCorrect = isCorrect;
-      
+
       // Update professionalism mercury meter dynamically
       if (isCorrect) {
         _mercuryLevel = (_mercuryLevel + 0.25).clamp(0.0, 1.0);
@@ -151,7 +156,10 @@ class _JobInterviewScreenState extends State<JobInterviewScreen> with TickerProv
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 10.h,
+                  ),
                   child: Column(
                     children: [
                       JobInterviewInstruction(primaryColor: theme.primaryColor),

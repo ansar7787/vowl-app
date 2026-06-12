@@ -5,7 +5,8 @@ import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/painters/visual_config_background.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/pages/vocabulary_base_layout.dart';
+import 'package:vowl/features/vocabulary/presentation/models/vocabulary_scaffold_config.dart';
+import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_header.dart';
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_body_area.dart';
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_peeking_mascot.dart';
@@ -15,9 +16,14 @@ import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_error_v
 
 class VocabularyScaffold extends StatelessWidget {
   final VocabularyState state;
-  final dynamic theme;
+
+  /// Typed theme snapshot — use [VocabLevelTheme.from] at the call-site.
+  final VocabLevelTheme theme;
   final bool isDark;
-  final VocabularyBaseLayout config;
+
+  /// Flat config DTO (replaces the former VocabularyBaseLayout reference).
+  final VocabularyScaffoldConfig config;
+
   final bool showBriefing;
   final VoidCallback onBriefingDismiss;
   final VoidCallback onBriefingShow;
@@ -35,6 +41,8 @@ class VocabularyScaffold extends StatelessWidget {
     required this.onExitPressed,
   });
 
+  // ── Derived values ────────────────────────────────────────────────────────
+
   double get _progress {
     if (state is VocabularyLoaded) {
       final s = state as VocabularyLoaded;
@@ -43,9 +51,14 @@ class VocabularyScaffold extends StatelessWidget {
     return state is VocabularyGameComplete ? 1.0 : 0.0;
   }
 
-  int get _lives => state is VocabularyLoaded
-      ? (state as VocabularyLoaded).livesRemaining
-      : 3;
+  int get _lives {
+    if (state is VocabularyLoaded) {
+      return (state as VocabularyLoaded).livesRemaining;
+    }
+    return VocabularyRewardConstants.initialLives;
+  }
+
+  // ── Build ─────────────────────────────────────────────────────────────────
 
   @override
   Widget build(BuildContext context) {
@@ -55,12 +68,13 @@ class VocabularyScaffold extends StatelessWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: theme.backgroundColors[1] as Color,
+      backgroundColor: theme.backgroundColors[1],
       body: Stack(
         children: [
-          // ── Layer 1: Background ──────────────────────────────
-          Container(color: theme.backgroundColors[1] as Color),
-          MeshGradientBackground(colors: theme.backgroundColors as List<Color>),
+          // ── Layer 1: Background ─────────────────────────────────────────
+          ColoredBox(color: theme.backgroundColors[1]),
+          MeshGradientBackground(colors: theme.backgroundColors),
+
           if (currentQuest?.visualConfig != null)
             Positioned.fill(
               child: RepaintBoundary(
@@ -70,16 +84,25 @@ class VocabularyScaffold extends StatelessWidget {
               ),
             ),
 
-          // ── Layer 2: Content or Error ────────────────────────
+          // ── Layer 2: Content, Loading, or Error ─────────────────────────
           if (state is VocabularyError)
             VocabularyErrorView(
               message: (state as VocabularyError).message,
-              primaryColor: theme.primaryColor as Color,
+              primaryColor: theme.primaryColor,
               onRetry: () => context.read<VocabularyBloc>().add(
                 FetchVocabularyQuests(
                   gameType: config.gameType,
                   level: config.level,
                 ),
+              ),
+            )
+          else if (state is VocabularyLoading)
+            // Show a spinner while quests are fetching so the user sees
+            // feedback instead of a blank background.
+            Center(
+              child: CircularProgressIndicator(
+                color: theme.primaryColor,
+                strokeWidth: 3,
               ),
             )
           else
@@ -130,7 +153,7 @@ class VocabularyScaffold extends StatelessWidget {
               ),
             ),
 
-          // ── Layer 3: Feedback Card ───────────────────────────
+          // ── Layer 3: Feedback Card ──────────────────────────────────────
           if (config.isAnswered &&
               config.isCorrect != null &&
               state is! VocabularyGameOver &&
@@ -141,7 +164,6 @@ class VocabularyScaffold extends StatelessWidget {
               right: 0,
               child: VocabularyFeedbackCard(
                 state: state,
-                theme: theme,
                 isDark: isDark,
                 isCorrect: config.isCorrect,
                 isFinalFailure: config.isFinalFailure,
@@ -149,7 +171,7 @@ class VocabularyScaffold extends StatelessWidget {
               ),
             ),
 
-          // ── Layer 4: Briefing Overlay ────────────────────────
+          // ── Layer 4: Briefing Overlay ───────────────────────────────────
           if (showBriefing)
             VocabularyBriefingLayer(
               gameType: config.gameType,
@@ -158,7 +180,7 @@ class VocabularyScaffold extends StatelessWidget {
               onStart: onBriefingDismiss,
             ),
 
-          // ── Layer 5: Confetti ────────────────────────────────
+          // ── Layer 5: Confetti ───────────────────────────────────────────
           if (config.showConfetti) const GameConfetti(),
         ],
       ),

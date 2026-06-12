@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -24,7 +24,8 @@ class PunctuationMasteryScreen extends StatefulWidget {
   });
 
   @override
-  State<PunctuationMasteryScreen> createState() => _PunctuationMasteryScreenState();
+  State<PunctuationMasteryScreen> createState() =>
+      _PunctuationMasteryScreenState();
 }
 
 class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
@@ -64,7 +65,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
       if (i < words.length - 1) result += " ";
     }
 
-    bool isCorrect = result.trim().toLowerCase() == (quest.correctAnswer ?? "").trim().toLowerCase();
+    bool isCorrect =
+        result.trim().toLowerCase() ==
+        (quest.correctAnswer ?? "").trim().toLowerCase();
 
     if (isCorrect) {
       _hapticService.success();
@@ -90,20 +93,21 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final livesRestored =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
-          if (isNewQuestion || isRetry || livesChanged) {
+          if (isNewQuestion || isRetry || livesRestored) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _placedStickers.clear();
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
           _lastLives = state.livesRemaining;
@@ -151,41 +155,59 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                 height: 25.h,
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
-                                  child: PunctuationMasteryInstruction(primaryColor: theme.primaryColor),
+                                  child: PunctuationMasteryInstruction(
+                                    primaryColor: theme.primaryColor,
+                                  ),
                                 ),
                               )
-                            : PunctuationMasteryInstruction(primaryColor: theme.primaryColor),
+                            : PunctuationMasteryInstruction(
+                                primaryColor: theme.primaryColor,
+                              ),
                         SizedBox(height: isCompact ? 8.h : 20.h),
 
                         // Context Card with Sticker Slots
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                          child: Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.05)
-                                  : Colors.black.withValues(alpha: 0.03),
-                              borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
-                              border: Border.all(
-                                color: theme.primaryColor.withValues(alpha: 0.15),
-                                width: 1.5,
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.all(
+                                  isCompact ? 14.r : 22.r,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.05)
+                                      : Colors.black.withValues(alpha: 0.03),
+                                  borderRadius: BorderRadius.circular(
+                                    isCompact ? 18.r : 28.r,
+                                  ),
+                                  border: Border.all(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.15,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                                child: _buildStickerSentence(
+                                  quest.sentence ?? "Missing sentence.",
+                                  theme.primaryColor,
+                                  isDark,
+                                  isCompact,
+                                ),
                               ),
-                            ),
-                            child: _buildStickerSentence(
-                              quest.sentence ?? "Missing sentence.",
-                              theme.primaryColor,
-                              isDark,
-                              isCompact,
-                            ),
-                          ),
-                        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+                            )
+                            .animate()
+                            .fadeIn(duration: 600.ms)
+                            .slideY(begin: 0.2, end: 0),
 
                         // Result
                         if (_isAnswered) ...[
                           SizedBox(height: isCompact ? 12.h : 32.h),
-                          _buildResult(quest, theme.primaryColor, isDark, isCompact),
+                          _buildResult(
+                            quest,
+                            theme.primaryColor,
+                            isDark,
+                            isCompact,
+                          ),
                         ],
 
                         SizedBox(height: isCompact ? 16.h : 48.h),
@@ -209,7 +231,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                 width: double.infinity,
                                 height: isCompact ? 48.h : 65.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
+                                  borderRadius: BorderRadius.circular(
+                                    isCompact ? 16.r : 24.r,
+                                  ),
                                   gradient: LinearGradient(
                                     colors: [
                                       theme.primaryColor,
@@ -218,7 +242,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: theme.primaryColor.withValues(alpha: 0.4),
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.4,
+                                      ),
                                       blurRadius: 25,
                                       offset: const Offset(0, 12),
                                     ),
@@ -228,7 +254,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                   child: Text(
                                     "FINALIZE ARCHITECTURE",
                                     style: TextStyle(
-                                      fontFamily: 'Outfit', 
+                                      fontFamily: 'Outfit',
                                       fontSize: isCompact ? 13.sp : 16.sp,
                                       fontWeight: FontWeight.w900,
                                       color: Colors.white,
@@ -250,7 +276,12 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     );
   }
 
-  Widget _buildStickerSentence(String sentence, Color primaryColor, bool isDark, bool isCompact) {
+  Widget _buildStickerSentence(
+    String sentence,
+    Color primaryColor,
+    bool isDark,
+    bool isCompact,
+  ) {
     final words = sentence.split(" ");
     final double slotSize = isCompact ? 26.r : 34.r;
     final double wordFontSize = isCompact ? 15.sp : 20.sp;
@@ -266,7 +297,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
           return Text(
             words[index ~/ 2],
             style: TextStyle(
-              fontFamily: 'Outfit', 
+              fontFamily: 'Outfit',
               fontSize: wordFontSize,
               color: isDark ? Colors.white : Colors.black87,
             ),
@@ -279,56 +310,64 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
             builder: (context, candidateData, rejectedData) {
               final isHighlight = candidateData.isNotEmpty;
               return Container(
-                width: slotSize,
-                height: slotSize,
-                decoration: BoxDecoration(
-                  color: mark != null
-                      ? primaryColor
-                      : (isHighlight
-                          ? primaryColor.withValues(alpha: 0.3)
-                          : Colors.transparent),
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: isHighlight || mark != null
-                        ? primaryColor
-                        : primaryColor.withValues(alpha: 0.15),
-                    width: isHighlight ? 2 : 1.5,
-                    style: mark != null ? BorderStyle.none : BorderStyle.solid,
-                  ),
-                  boxShadow: [
-                    if (mark != null)
-                      BoxShadow(
-                        color: primaryColor.withValues(alpha: 0.3),
-                        blurRadius: 10,
-                        spreadRadius: 1,
+                    width: slotSize,
+                    height: slotSize,
+                    decoration: BoxDecoration(
+                      color: mark != null
+                          ? primaryColor
+                          : (isHighlight
+                                ? primaryColor.withValues(alpha: 0.3)
+                                : Colors.transparent),
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: isHighlight || mark != null
+                            ? primaryColor
+                            : primaryColor.withValues(alpha: 0.15),
+                        width: isHighlight ? 2 : 1.5,
+                        style: mark != null
+                            ? BorderStyle.none
+                            : BorderStyle.solid,
                       ),
-                  ],
-                ),
-                child: Center(
-                  child: mark != null
-                      ? GestureDetector(
-                          onTap: () {
-                            if (_isAnswered) return;
-                            _hapticService.selection();
-                            setState(() => _placedStickers.remove(slotIndex));
-                          },
-                          child: Text(
-                            mark,
-                            style: TextStyle(
-                              fontFamily: 'Outfit', 
-                              fontSize: markFontSize,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.white,
-                            ),
-                          ).animate().shimmer(duration: 2.seconds),
-                        )
-                      : (isHighlight
-                          ? Icon(Icons.add, color: primaryColor, size: isCompact ? 14.r : 18.r)
-                          : null),
-                ),
-              )
-              .animate(target: mark != null ? 1 : 0)
-              .scale(duration: 300.ms, curve: Curves.easeOutBack);
+                      boxShadow: [
+                        if (mark != null)
+                          BoxShadow(
+                            color: primaryColor.withValues(alpha: 0.3),
+                            blurRadius: 10,
+                            spreadRadius: 1,
+                          ),
+                      ],
+                    ),
+                    child: Center(
+                      child: mark != null
+                          ? GestureDetector(
+                              onTap: () {
+                                if (_isAnswered) return;
+                                _hapticService.selection();
+                                setState(
+                                  () => _placedStickers.remove(slotIndex),
+                                );
+                              },
+                              child: Text(
+                                mark,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: markFontSize,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                ),
+                              ).animate().shimmer(duration: 2.seconds),
+                            )
+                          : (isHighlight
+                                ? Icon(
+                                    Icons.add,
+                                    color: primaryColor,
+                                    size: isCompact ? 14.r : 18.r,
+                                  )
+                                : null),
+                    ),
+                  )
+                  .animate(target: mark != null ? 1 : 0)
+                  .scale(duration: 300.ms, curve: Curves.easeOutBack);
             },
           );
         }
@@ -336,7 +375,12 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     );
   }
 
-  Widget _buildResult(GameQuest quest, Color primaryColor, bool isDark, bool isCompact) {
+  Widget _buildResult(
+    GameQuest quest,
+    Color primaryColor,
+    bool isDark,
+    bool isCompact,
+  ) {
     final bool correct = _isCorrect == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
@@ -363,7 +407,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
             Text(
               correct ? "CORRECT!" : "INCORRECT",
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: isCompact ? 12.sp : 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
@@ -374,7 +418,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
             Text(
               "CORRECT SENTENCE:",
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: isCompact ? 10.sp : 12.sp,
                 fontWeight: FontWeight.bold,
                 color: isDark ? Colors.white60 : Colors.black54,
@@ -386,7 +430,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
               quest.correctAnswer ?? "",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: isCompact ? 14.sp : 20.sp,
                 fontWeight: FontWeight.w600,
                 color: displayColor,
@@ -398,7 +442,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                 quest.explanation!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'Outfit', 
+                  fontFamily: 'Outfit',
                   fontSize: 13.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),

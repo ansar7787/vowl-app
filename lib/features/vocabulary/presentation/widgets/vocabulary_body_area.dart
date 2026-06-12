@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-/// Wraps the game child widget in either a scrollable or static layout.
-/// Handles keyboard inset padding automatically.
 class VocabularyBodyArea extends StatelessWidget {
   final Widget child;
   final bool isAnswered;
@@ -23,6 +21,8 @@ class VocabularyBodyArea extends StatelessWidget {
       left: 24.w,
       right: 24.w,
       top: 40.h,
+      // Reserve space for the feedback card when answered; otherwise add
+      // the keyboard inset so the content is never obscured.
       bottom:
           (isAnswered ? 200.h : 40.h) +
           MediaQuery.of(context).viewInsets.bottom,

@@ -10,7 +10,6 @@ import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
-import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 
 class StickerBookScreen extends StatefulWidget {
@@ -30,6 +29,9 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
     super.initState();
     _confettiController = ConfettiController(duration: const Duration(seconds: 3));
     _tabController = TabController(length: _categories.length, vsync: this);
+    _tabController.addListener(() {
+      if (mounted) setState(() {});
+    });
   }
 
   @override
@@ -84,6 +86,7 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
                     Expanded(
                       child: TabBarView(
                         controller: _tabController,
+                        physics: const BouncingScrollPhysics(),
                         children: _categories.map((cat) => _buildStickerGrid(cat, state, isDark, isMidnight)).toList(),
                       ),
                     ),
@@ -102,9 +105,12 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
                     Colors.blue,
                     Colors.yellow,
                     Colors.purple,
+                    Colors.greenAccent,
                   ],
-                  maxBlastForce: 20,
-                  minBlastForce: 10,
+                  maxBlastForce: 25,
+                  minBlastForce: 15,
+                  emissionFrequency: 0.05,
+                  numberOfParticles: 50,
                 ),
               ),
             ],
@@ -124,7 +130,23 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
     bool isMidnight,
   ) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+      margin: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 10.h),
+      padding: EdgeInsets.all(24.r),
+      decoration: BoxDecoration(
+        color: isMidnight ? Colors.white.withValues(alpha: 0.05) : (isDark ? const Color(0xFF1E293B) : Colors.white),
+        borderRadius: BorderRadius.circular(40.r),
+        boxShadow: isMidnight ? null : [
+          BoxShadow(
+            color: Colors.orange.withValues(alpha: 0.15),
+            blurRadius: 30,
+            offset: const Offset(0, 10),
+          ),
+        ],
+        border: Border.all(
+          color: Colors.orange.withValues(alpha: 0.3),
+          width: 3,
+        ),
+      ),
       child: Column(
         children: [
           Row(
@@ -135,183 +157,209 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
                 child: Container(
                   padding: EdgeInsets.all(12.r),
                   decoration: BoxDecoration(
-                    color: isMidnight ? Colors.white.withValues(alpha: 0.05) : (isDark ? Colors.white10 : Colors.white),
+                    color: Colors.orange.withValues(alpha: 0.15),
                     shape: BoxShape.circle,
-                    boxShadow: (isDark || isMidnight) ? null : [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.08),
-                        blurRadius: 15,
-                        offset: const Offset(0, 5),
-                      ),
-                    ],
-                    border: Border.all(
-                      color: isMidnight ? Colors.white.withValues(alpha: 0.1) : (isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05)),
-                    ),
                   ),
                   child: Icon(
                     Icons.arrow_back_ios_new_rounded,
-                    color: (isDark || isMidnight) ? Colors.white70 : const Color(0xFF1E293B),
-                    size: 20,
+                    color: Colors.orange[800],
+                    size: 20.r,
                   ),
                 ),
               ),
-              Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-                    decoration: BoxDecoration(
-                      color: Colors.orange.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(20.r),
-                      border: Border.all(
-                        color: Colors.orange.withValues(alpha: 0.1),
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        VowlMascot(size: 24.r),
-                        SizedBox(width: 8.w),
-                        Text(
-                          "$earned / $max",
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.orange[800],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(width: 10.w),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFEF4444).withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(20.r),
-                      border: Border.all(
-                        color: const Color(0xFFEF4444).withValues(alpha: 0.1),
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.toys_rounded,
-                          color: const Color(0xFFEF4444),
-                          size: 16.sp,
-                        ),
-                        SizedBox(width: 8.w),
-                        Text(
-                          "${user.kidsCoins}",
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            color: const Color(0xFFEF4444),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          SizedBox(height: 20.h),
-          Column(
-            children: [
-              Text(
-                "STICKERS ALBUM",
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 28.sp,
-                  fontWeight: FontWeight.w900,
-                  color: (isDark || isMidnight) ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),
-                  letterSpacing: -0.5,
-                  height: 1,
-                ),
-              ),
-              SizedBox(height: 12.h),
-              // MODERN 2026 PROGRESS CAPSULE
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
                 decoration: BoxDecoration(
-                  color: isMidnight ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
-                  borderRadius: BorderRadius.circular(20.r),
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFFFF9800), Color(0xFFFF5722)],
+                  ),
+                  borderRadius: BorderRadius.circular(30.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.orange.withValues(alpha: 0.4),
+                      blurRadius: 15,
+                      offset: const Offset(0, 6),
+                    ),
+                  ],
                 ),
                 child: Row(
-                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Stack(
-                      children: [
-                        Container(
-                          width: 120.w,
-                          height: 8.h,
-                          decoration: BoxDecoration(
-                            color: Colors.black.withValues(alpha: 0.05),
-                            borderRadius: BorderRadius.circular(4.r),
-                          ),
-                        ),
-                        AnimatedContainer(
-                          duration: 800.ms,
-                          width: 120.w * (earned / max).clamp(0.0, 1.0),
-                          height: 8.h,
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(colors: [Colors.orange, Colors.deepOrange]),
-                            borderRadius: BorderRadius.circular(4.r),
-                            boxShadow: [BoxShadow(color: Colors.orange.withValues(alpha: 0.3), blurRadius: 6)],
-                          ),
-                        ),
-                      ],
+                    Text(
+                      mascotEmoji,
+                      style: TextStyle(fontSize: 18.sp),
                     ),
                     SizedBox(width: 8.w),
                     Text(
-                      "${((earned / max) * 100).toInt()}%",
+                      "$earned / $max",
                       style: TextStyle(fontFamily: 'Outfit', 
-                        fontSize: 10.sp,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w900,
-                        color: Colors.orange[800],
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.05, 1.05),
+                duration: 2.seconds,
+                curve: Curves.easeInOutSine,
+              ),
+            ],
+          ),
+          SizedBox(height: 24.h),
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "MY STICKER ALBUM",
+                      style: TextStyle(fontFamily: 'Outfit', 
+                        fontSize: 26.sp,
+                        fontWeight: FontWeight.w900,
+                        color: (isDark || isMidnight) ? Colors.white : const Color(0xFF0F172A),
+                        letterSpacing: -0.5,
+                        height: 1.1,
+                      ),
+                    ),
+                    SizedBox(height: 12.h),
+                    // Modern 2026 Progress Bar
+                    Container(
+                      height: 16.h,
+                      decoration: BoxDecoration(
+                        color: Colors.black.withValues(alpha: 0.05),
+                        borderRadius: BorderRadius.circular(8.r),
+                        border: Border.all(color: Colors.black.withValues(alpha: 0.02)),
+                      ),
+                      child: Stack(
+                        children: [
+                          AnimatedContainer(
+                            duration: 1.seconds,
+                            curve: Curves.easeOutCirc,
+                            width: (MediaQuery.of(context).size.width - 128.w) * (earned / max).clamp(0.0, 1.0),
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(colors: [Color(0xFFFF9800), Color(0xFFFF5722)]),
+                              borderRadius: BorderRadius.circular(8.r),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.orange.withValues(alpha: 0.5),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 2),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
               ),
+              SizedBox(width: 16.w),
+              Container(
+                padding: EdgeInsets.all(16.r),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Colors.purple.shade300, Colors.deepPurple.shade400],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(color: Colors.purple.withValues(alpha: 0.4), blurRadius: 15, offset: const Offset(0, 6)),
+                  ],
+                ),
+                child: Icon(Icons.school_rounded, color: Colors.white, size: 36.r),
+              ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 3.seconds).shake(duration: 2.seconds, hz: 2),
             ],
-          ).animate().fadeIn().scale(delay: 200.ms),
+          ),
         ],
       ),
-    );
+    ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.1, end: 0, curve: Curves.easeOutBack);
   }
 
   Widget _buildCategoryTabs(bool isDark, bool isMidnight) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10.h),
-      child: TabBar(
-        controller: _tabController,
-        isScrollable: true,
-        dividerColor: Colors.transparent,
-        indicatorColor: Colors.orange,
-        indicatorWeight: 4,
-        labelColor: (isDark || isMidnight) ? Colors.white : const Color(0xFF1E293B),
-        unselectedLabelColor: (isDark || isMidnight) ? Colors.white38 : Colors.black26,
-        labelStyle: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, fontSize: 14.sp),
-        tabs: _categories.map((cat) {
+      height: 60.h,
+      margin: EdgeInsets.symmetric(vertical: 16.h),
+      child: ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        itemCount: _categories.length,
+        separatorBuilder: (context, index) => SizedBox(width: 16.w),
+        itemBuilder: (context, index) {
+          final cat = _categories[index];
           final earned = _getCategoryEarnedCount(cat);
-          return Tab(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(cat.toUpperCase().replaceAll('_', ' ')),
-                if (earned > 0)
-                  Container(
-                    margin: EdgeInsets.only(top: 4.h),
-                    width: 30.w,
-                    height: 3.h,
-                    decoration: BoxDecoration(
-                      color: Colors.orange.withValues(alpha: earned / 4),
-                      borderRadius: BorderRadius.circular(2.r),
+          final isSelected = _tabController.index == index;
+
+          return ScaleButton(
+            onTap: () => setState(() => _tabController.animateTo(index)),
+            child: AnimatedContainer(
+              duration: 400.ms,
+              curve: Curves.easeOutBack,
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+              decoration: BoxDecoration(
+                color: isSelected 
+                    ? Colors.orange 
+                    : (isMidnight ? Colors.white.withValues(alpha: 0.08) : Colors.white.withValues(alpha: 0.9)),
+                borderRadius: BorderRadius.circular(30.r),
+                boxShadow: isSelected ? [
+                  BoxShadow(
+                    color: Colors.orange.withValues(alpha: 0.5),
+                    blurRadius: 20,
+                    offset: const Offset(0, 8),
+                  ),
+                ] : [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.05),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+                border: Border.all(
+                  color: isSelected ? Colors.orangeAccent : Colors.transparent,
+                  width: 2,
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    cat.toUpperCase().replaceAll('_', ' '),
+                    style: TextStyle(fontFamily: 'Outfit', 
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isSelected 
+                          ? Colors.white 
+                          : (isDark ? Colors.white70 : const Color(0xFF1E293B)),
                     ),
                   ),
-              ],
+                  if (earned > 0) ...[
+                    SizedBox(width: 12.w),
+                    Container(
+                      padding: EdgeInsets.all(6.r),
+                      decoration: BoxDecoration(
+                        color: isSelected ? Colors.white30 : Colors.orange.withValues(alpha: 0.2),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Text(
+                        "$earned",
+                        style: TextStyle(fontFamily: 'Outfit', 
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isSelected ? Colors.white : Colors.orange[800],
+                        ),
+                      ),
+                    ),
+                  ],
+                ],
+              ),
             ),
           );
-        }).toList(),
+        },
       ),
     );
   }
@@ -332,12 +380,13 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
     final earnedStickers = state.user?.kidsStickers ?? [];
 
     return GridView.builder(
-      padding: EdgeInsets.all(20.r),
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+      physics: const BouncingScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 20.w,
-        mainAxisSpacing: 20.w,
-        childAspectRatio: 0.9,
+        crossAxisSpacing: 24.w,
+        mainAxisSpacing: 24.h,
+        childAspectRatio: 0.85,
       ),
       itemCount: milestones.length,
       itemBuilder: (context, mIndex) {
@@ -375,6 +424,7 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
     final equippedStickerId = user?.kidsEquippedSticker;
     final isEquipped = equippedStickerId == stickerId;
     final stickerEmoji = KidsAssets.getStickerEmoji(stickerId);
+    final rarityColor = _getLevelColor(level);
 
     return ScaleButton(
       onTap: isUnlocked
@@ -397,16 +447,16 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text(
-                    "🚀 Complete $level quests in this category to unlock this sticker!",
+                    "🔒 Complete $level quests in this category to unlock this sticker!",
                     style: TextStyle(fontFamily: 'Outfit', 
                       fontWeight: FontWeight.bold,
                       color: level == 200 ? Colors.black87 : Colors.white,
                     ),
                   ),
-                  backgroundColor: _getLevelColor(level).withValues(alpha: 0.9),
+                  backgroundColor: rarityColor.withValues(alpha: 0.95),
                   behavior: SnackBarBehavior.floating,
-                  margin: EdgeInsets.all(20.r),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.r)),
+                  margin: EdgeInsets.all(24.r),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.r)),
                   duration: const Duration(seconds: 2),
                 ),
               );
@@ -414,118 +464,176 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
       child: Container(
         decoration: BoxDecoration(
           color: isUnlocked
-              ? (isMidnight ? Colors.white.withValues(alpha: 0.05) : (isDark ? Colors.white.withValues(alpha: 0.08) : Colors.white))
-              : (isMidnight ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.02)),
+              ? (isMidnight ? rarityColor.withValues(alpha: 0.15) : Colors.white)
+              : (isMidnight ? Colors.black26 : Colors.black.withValues(alpha: 0.03)),
           borderRadius: BorderRadius.circular(32.r),
           boxShadow: isUnlocked
               ? [
                   BoxShadow(
-                    color: level == 200 
-                        ? Colors.amber.withValues(alpha: 0.5)
-                        : (isEquipped ? Colors.orange.withValues(alpha: 0.3) : Colors.black.withValues(alpha: 0.1)),
-                    blurRadius: level == 200 ? 30 : 20,
-                    spreadRadius: level == 200 ? 2 : 0,
-                    offset: const Offset(0, 10),
+                    color: rarityColor.withValues(alpha: isMidnight ? 0.3 : 0.4),
+                    blurRadius: level >= 100 ? 30 : 20,
+                    offset: const Offset(0, 12),
+                    spreadRadius: isEquipped ? 4 : 0,
                   ),
                 ]
-              : null,
+              : [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.05),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
           border: Border.all(
             color: isUnlocked 
-                ? _getLevelColor(level) 
-                : (isMidnight ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05)),
-            width: isEquipped ? 4.0 : 5.0, // Thick borders for medal look
+                ? rarityColor 
+                : (isDark ? Colors.white24 : Colors.black12),
+            width: isUnlocked ? (isEquipped ? 6.0 : 4.0) : 2.0,
           ),
         ),
         child: Stack(
           alignment: Alignment.center,
           children: [
+            // Holographic Background Effects for Unlocked Rare/Legendary
             if (isUnlocked && level >= 100)
               Positioned.fill(
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(32.r),
-                    gradient: RadialGradient(
-                      colors: [
-                        (level == 200 ? Colors.amber : Colors.orange).withValues(alpha: 0.2),
-                        Colors.transparent,
-                      ],
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(28.r),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.white.withValues(alpha: 0.5),
+                          Colors.transparent,
+                          Colors.white.withValues(alpha: 0.2),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
                     ),
+                  ).animate(onPlay: (c) => c.repeat()).shimmer(
+                    duration: 3.seconds,
+                    color: rarityColor.withValues(alpha: 0.6),
                   ),
-                ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
+                ),
               ),
+
+            // Dotted placeholder shadow for locked
+            if (!isUnlocked)
+               Center(
+                 child: Opacity(
+                   opacity: 0.15,
+                   child: Text(
+                     stickerEmoji,
+                     style: TextStyle(fontSize: 60.sp),
+                   ),
+                 ),
+               ),
+
+            // Content
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    isUnlocked ? stickerEmoji : "❓",
-                    style: TextStyle(
-                      fontSize: level == 200 ? 60.sp : 48.sp,
-                      shadows: isUnlocked && level == 200 ? [
-                        const Shadow(color: Colors.amber, blurRadius: 20),
-                      ] : null,
-                    ),
-                  ).animate(onPlay: (c) => c.repeat(reverse: true))
-                   .scale(
-                     begin: const Offset(1, 1),
-                     end: level == 200 ? const Offset(1.2, 1.2) : const Offset(1.05, 1.05),
-                     duration: 1.seconds,
-                   ),
+                  if (isUnlocked)
+                    Text(
+                      stickerEmoji,
+                      style: TextStyle(
+                        fontSize: level == 200 ? 64.sp : 54.sp,
+                        shadows: level >= 100 ? [
+                          Shadow(color: rarityColor, blurRadius: 25),
+                        ] : null,
+                      ),
+                    ).animate(onPlay: (c) => c.repeat(reverse: true))
+                     .scale(
+                       begin: const Offset(1, 1),
+                       end: level == 200 ? const Offset(1.15, 1.15) : const Offset(1.05, 1.05),
+                       duration: 2.seconds,
+                       curve: Curves.easeInOutBack,
+                     ),
+                  
                   if (isUnlocked) ...[
-                    SizedBox(height: 8.h),
+                    SizedBox(height: 16.h),
                     _buildRarityLabel(level),
                   ],
                 ],
               ),
             ),
+            
+            // Locked Overlay Text Badge
             if (!isUnlocked)
               Positioned(
-                bottom: 15.h,
+                bottom: 16.h,
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                  padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
                   decoration: BoxDecoration(
-                    color: Colors.black.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(10.r),
+                    color: isDark ? Colors.black54 : Colors.white70,
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(color: isDark ? Colors.white24 : Colors.black12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.1),
+                        blurRadius: 5,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
                   ),
-                  child: Text(
-                    "QUEST $level",
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w900,
-                      color: (isDark || isMidnight) ? Colors.white38 : Colors.black26,
-                    ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.lock_rounded, size: 14.r, color: isDark ? Colors.white70 : Colors.black54),
+                      SizedBox(width: 6.w),
+                      Text(
+                        "LVL $level",
+                        style: TextStyle(fontFamily: 'Outfit', 
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w900,
+                          color: (isDark || isMidnight) ? Colors.white70 : const Color(0xFF1E293B),
+                          letterSpacing: 1,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
+
+            // Equipped Checkmark Badge
             if (isEquipped)
               Positioned(
                 top: 12.r,
                 right: 12.r,
                 child: Container(
-                  padding: EdgeInsets.all(4.r),
-                  decoration: const BoxDecoration(
-                    color: Colors.orange,
+                  padding: EdgeInsets.all(8.r),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
                     shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: rarityColor.withValues(alpha: 0.6),
+                        blurRadius: 10,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                    border: Border.all(color: rarityColor, width: 3),
                   ),
-                  child: Icon(Icons.check, color: Colors.white, size: 10.r),
+                  child: Icon(Icons.check_rounded, color: rarityColor, size: 16.r),
                 ),
-              ).animate().scale(duration: 300.ms, curve: Curves.bounceOut),
+              ).animate().scale(duration: 500.ms, curve: Curves.elasticOut),
           ],
         ),
       ),
-    ).animate().fadeIn(delay: (index * 50).ms).scale(duration: 300.ms);
+    ).animate().fadeIn(delay: (index * 50).ms).slideY(begin: 0.15, end: 0, duration: 500.ms, curve: Curves.easeOutBack);
   }
 
   Color _getLevelColor(int level) {
     switch (level) {
       case 10:
-        return const Color(0xFF4CAF50); // Green
+        return const Color(0xFF10B981); // Vibrant Emerald
       case 50:
-        return const Color(0xFFCD7F32); // Bronze
+        return const Color(0xFFF59E0B); // Bright Bronze/Amber
       case 100:
-        return const Color(0xFFC0C0C0); // Silver
+        return const Color(0xFF94A3B8); // Shiny Silver
       case 200:
-        return const Color(0xFFFFD700); // Gold
+        return const Color(0xFFFFD700); // Radiant Gold
       default:
         return Colors.grey;
     }
@@ -549,19 +657,19 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
     }
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.2),
-        borderRadius: BorderRadius.circular(8.r),
-        border: Border.all(color: color.withValues(alpha: 0.5), width: 1),
+        color: color.withValues(alpha: 0.15),
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: color.withValues(alpha: 0.6), width: 1.5),
       ),
       child: Text(
         label,
         style: TextStyle(fontFamily: 'Outfit', 
-          fontSize: 8.sp,
+          fontSize: 10.sp,
           fontWeight: FontWeight.w900,
           color: color,
-          letterSpacing: 1,
+          letterSpacing: 1.5,
         ),
       ),
     );

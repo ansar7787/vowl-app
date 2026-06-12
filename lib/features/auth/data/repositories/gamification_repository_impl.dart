@@ -277,9 +277,13 @@ class GamificationRepositoryImpl implements GamificationRepository {
         history.insert(0, entry);
         if (history.length > 10) history.removeLast();
 
+        final currentStreak = (snapshot.data()?['currentStreak'] as num?)?.toInt() ?? 0;
+        final newStreak = currentStreak <= 1 ? 2 : currentStreak + 1;
+
         transaction.update(docRef, {
           'coins': currentCoins - cost,
           'coinHistory': history,
+          'currentStreak': newStreak,
         });
       });
       return const Right(null);

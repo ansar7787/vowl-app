@@ -92,7 +92,7 @@ void main() {
     blocTest<VocabularyBloc, VocabularyState>(
       'should emit [Loading, Loaded] when data is fetched successfully',
       build: () {
-        when(() => mockGetQuests(any(), any())).thenAnswer((_) async => tQuests);
+        when(() => mockGetQuests(any())).thenAnswer((_) async => const Right(tQuests));
         return bloc;
       },
       act: (bloc) => bloc.add(FetchVocabularyQuests(gameType: tGameType, level: tLevel)),
@@ -101,14 +101,14 @@ void main() {
         VocabularyLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3),
       ],
       verify: (_) {
-        verify(() => mockGetQuests(tGameType.name, tLevel));
+        verify(() => mockGetQuests(GetVocabularyQuestsParams(gameType: tGameType.name, level: tLevel)));
       },
     );
 
     blocTest<VocabularyBloc, VocabularyState>(
       'should emit [Loading, Error] when data fetch fails',
       build: () {
-        when(() => mockGetQuests(any(), any())).thenThrow(Exception('failed'));
+        when(() => mockGetQuests(any())).thenThrow(Exception('failed'));
         return bloc;
       },
       act: (bloc) => bloc.add(FetchVocabularyQuests(gameType: tGameType, level: tLevel)),

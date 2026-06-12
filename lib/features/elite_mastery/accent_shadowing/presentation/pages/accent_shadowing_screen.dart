@@ -12,12 +12,11 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/core/utils/text_similarity_helper.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
-import '../../../presentation/widgets/elite_base_layout.dart';
+import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import '../widgets/accent_shadowing_target_panel.dart';
 import '../widgets/accent_shadowing_mic_trigger.dart';
-
 
 class AccentShadowingScreen extends StatefulWidget {
   final int level;
@@ -49,10 +48,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
   void initState() {
     super.initState();
     context.read<EliteMasteryBloc>().add(
-          FetchEliteMasteryQuests(
-            gameType: widget.gameType,
-            level: widget.level,
-          ),
+      FetchEliteMasteryQuests(gameType: widget.gameType, level: widget.level),
     );
   }
 
@@ -78,17 +74,24 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             if (mounted) {
               setState(() {
                 _lastWords = text;
-                _matchedIndices = TextSimilarityHelper.getMatchedIndices(text, targetText);
+                _matchedIndices = TextSimilarityHelper.getMatchedIndices(
+                  text,
+                  targetText,
+                );
               });
-              
+
               // Auto-Catch: Wait 1 second before finishing to feel more natural
-              final targetWords = targetText.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).toList();
-              if (_matchedIndices.length >= targetWords.length && targetWords.isNotEmpty) {
-                 Future.delayed(const Duration(seconds: 1), () {
-                   if (mounted && _isListening) {
-                     _toggleListening(targetText); 
-                   }
-                 });
+              final targetWords = targetText
+                  .split(RegExp(r'\s+'))
+                  .where((w) => w.isNotEmpty)
+                  .toList();
+              if (_matchedIndices.length >= targetWords.length &&
+                  targetWords.isNotEmpty) {
+                Future.delayed(const Duration(seconds: 1), () {
+                  if (mounted && _isListening) {
+                    _toggleListening(targetText);
+                  }
+                });
               }
             }
           },
@@ -109,13 +112,17 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
 
   void _checkResult(String spoken, String target) {
     if (_isAnswered) return;
-    
+
     // Ultra-lenient threshold for difficult accent games (tongue twisters)
     // Lenient threshold for difficult accent games, balanced with length safety
-    bool isCorrect = TextSimilarityHelper.isMatch(spoken, target, threshold: 0.70);
+    bool isCorrect = TextSimilarityHelper.isMatch(
+      spoken,
+      target,
+      threshold: 0.70,
+    );
 
     _attempts++;
-    
+
     if (isCorrect) {
       setState(() {
         _isAnswered = true;
@@ -136,7 +143,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
       });
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
     }
-    
+
     // Reset processing lock after check
     setState(() => _isProcessing = false);
   }
@@ -155,7 +162,12 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
-    final theme = LevelThemeHelper.getTheme(widget.gameType.name, level: widget.level, isDark: isDark, isMidnight: isMidnight);
+    final theme = LevelThemeHelper.getTheme(
+      widget.gameType.name,
+      level: widget.level,
+      isDark: isDark,
+      isMidnight: isMidnight,
+    );
 
     return BlocConsumer<EliteMasteryBloc, EliteMasteryState>(
       listener: (context, state) {
@@ -170,7 +182,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           );
         } else if (state is EliteMasteryLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          
+
           if (state.lastAnswerCorrect == null || livesChanged) {
             setState(() {
               _isAnswered = false;
@@ -207,7 +219,9 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           isAnswered: _isAnswered,
           state: state,
           isCorrect: _isCorrect,
-          isFinalFailure: (state is EliteMasteryLoaded) ? (state.isFinalFailure || state.livesRemaining <= 0) : false,
+          isFinalFailure: (state is EliteMasteryLoaded)
+              ? (state.isFinalFailure || state.livesRemaining <= 0)
+              : false,
           showConfetti: _showConfetti,
           title: "ACCENT SHADOWING",
           subtitle: quest?.instruction ?? "Speak clearly to match the accent",
@@ -224,7 +238,8 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             final bloc = context.read<EliteMasteryBloc>();
             final s = bloc.state;
             if (s is EliteMasteryLoaded) {
-              if (s.currentQuest.hint != null && s.currentQuest.hint!.isNotEmpty) {
+              if (s.currentQuest.hint != null &&
+                  s.currentQuest.hint!.isNotEmpty) {
                 if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
                 bloc.add(ShowEliteHint());
               } else {
@@ -257,16 +272,13 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.error_outline_rounded,
-              color: Colors.white,
-              size: 48.r,
-            ),
+            Icon(Icons.error_outline_rounded, color: Colors.white, size: 48.r),
             SizedBox(height: 16.h),
             Text(
               state.message,
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 color: Colors.white,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
@@ -275,23 +287,21 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             SizedBox(height: 24.h),
             ScaleButton(
               onTap: () => context.read<EliteMasteryBloc>().add(
-                    FetchEliteMasteryQuests(
-                      gameType: widget.gameType,
-                      level: widget.level,
-                    ),
-                  ),
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 24.w,
-                  vertical: 12.h,
+                FetchEliteMasteryQuests(
+                  gameType: widget.gameType,
+                  level: widget.level,
                 ),
+              ),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16.r),
                 ),
                 child: Text(
                   "RETRY",
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     color: theme.primaryColor,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 1.2,
@@ -312,13 +322,13 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         opacity: 0.5,
         child: AbsorbPointer(
           child: _buildGameUI(
-            context, 
+            context,
             EliteMasteryLoaded(
               quests: state.quests,
               currentIndex: state.currentIndex,
               livesRemaining: 0,
-            ), 
-            isDark, 
+            ),
+            isDark,
             theme,
           ),
         ),
@@ -327,7 +337,12 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     return const SizedBox.shrink();
   }
 
-  Widget _buildGameUI(BuildContext context, EliteMasteryLoaded state, bool isDark, ThemeResult theme) {
+  Widget _buildGameUI(
+    BuildContext context,
+    EliteMasteryLoaded state,
+    bool isDark,
+    ThemeResult theme,
+  ) {
     final quest = state.currentQuest;
 
     return Column(
@@ -354,8 +369,20 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         if (_lastWords.isNotEmpty)
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-            decoration: BoxDecoration(color: theme.primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(15.r)),
-            child: Text(_lastWords, style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w600, color: theme.primaryColor), textAlign: TextAlign.center),
+            decoration: BoxDecoration(
+              color: theme.primaryColor.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(15.r),
+            ),
+            child: Text(
+              _lastWords,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600,
+                color: theme.primaryColor,
+              ),
+              textAlign: TextAlign.center,
+            ),
           ).animate().fadeIn(),
         SizedBox(height: 40.h),
         AccentShadowingMicTrigger(
@@ -370,4 +397,3 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     );
   }
 }
-

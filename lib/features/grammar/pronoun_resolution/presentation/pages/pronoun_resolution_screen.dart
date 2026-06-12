@@ -8,7 +8,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
@@ -25,7 +25,8 @@ class PronounResolutionScreen extends StatefulWidget {
   });
 
   @override
-  State<PronounResolutionScreen> createState() => _PronounResolutionScreenState();
+  State<PronounResolutionScreen> createState() =>
+      _PronounResolutionScreenState();
 }
 
 class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
@@ -78,21 +79,21 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final livesRestored =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
-          if (isNewQuestion || isRetry || livesChanged) {
+          if (isNewQuestion || isRetry || livesRestored) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _rotation = 0.0;
-              _targetIndex = -1;
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
           _lastLives = state.livesRemaining;
@@ -114,7 +115,9 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
         }
       },
       builder: (context, state) {
-        final GrammarQuest? quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final GrammarQuest? quest = (state is GrammarLoaded)
+            ? state.currentQuest
+            : null;
         final options = quest?.options ?? ["NOUN A", "NOUN B", "NOUN C"];
 
         return GrammarBaseLayout(
@@ -133,13 +136,25 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
                     final maxHeight = constraints.maxHeight;
                     final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 50.h : 80.h) + (isCompact ? 160.h : 260.h) + 40.h;
+                    final double estimatedContentHeight =
+                        (isCompact ? 30.h : 40.h) +
+                        (isCompact ? 50.h : 80.h) +
+                        (isCompact ? 160.h : 260.h) +
+                        40.h;
                     final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 15.0) : 4.0;
-                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(6.0, 20.0) : 6.0;
-                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 5
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(4.0, 15.0)
+                        : 4.0;
+                    final double gapMiddle = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                        : 6.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                        : 10.0;
 
                     return Column(
                       children: [
@@ -149,45 +164,66 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
                                 height: 25.h,
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
-                                  child: PronounResolutionInstruction(primaryColor: theme.primaryColor),
+                                  child: PronounResolutionInstruction(
+                                    primaryColor: theme.primaryColor,
+                                  ),
                                 ),
                               )
-                            : PronounResolutionInstruction(primaryColor: theme.primaryColor),
+                            : PronounResolutionInstruction(
+                                primaryColor: theme.primaryColor,
+                              ),
                         SizedBox(height: gapMiddle),
 
                         // Context Card
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                          child: Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.05)
-                                  : Colors.black.withValues(alpha: 0.03),
-                              borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
-                              border: Border.all(
-                                color: theme.primaryColor.withValues(alpha: 0.15),
-                                width: 1.5,
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.all(
+                                  isCompact ? 14.r : 22.r,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.05)
+                                      : Colors.black.withValues(alpha: 0.03),
+                                  borderRadius: BorderRadius.circular(
+                                    isCompact ? 18.r : 28.r,
+                                  ),
+                                  border: Border.all(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.15,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                                child: Text(
+                                  quest.sentence ??
+                                      "The antecedent is missing from the gravity field.",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: isCompact ? 14.sp : 18.sp,
+                                    color: isDark
+                                        ? Colors.white70
+                                        : Colors.black87,
+                                    height: 1.4,
+                                  ),
+                                ),
                               ),
-                            ),
-                            child: Text(
-                              quest.sentence ?? "The antecedent is missing from the gravity field.",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit', 
-                                fontSize: isCompact ? 14.sp : 18.sp,
-                                color: isDark ? Colors.white70 : Colors.black87,
-                                height: 1.4,
-                              ),
-                            ),
-                          ),
-                        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+                            )
+                            .animate()
+                            .fadeIn(duration: 600.ms)
+                            .slideY(begin: 0.2, end: 0),
 
                         // Result
                         if (_isAnswered) ...[
                           SizedBox(height: isCompact ? 8.h : 20.h),
-                          _buildResult(quest, theme.primaryColor, isDark, isCompact),
+                          _buildResult(
+                            quest,
+                            theme.primaryColor,
+                            isDark,
+                            isCompact,
+                          ),
                         ],
 
                         // Game Arena
@@ -220,63 +256,70 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
     bool isDark,
     bool isCompact,
   ) {
-    return LayoutBuilder(builder: (context, constraints) {
-      final centerPoint = Offset(
-        constraints.maxWidth / 2,
-        constraints.maxHeight / 2 + (isCompact ? 10.h : 20.h),
-      );
-      final nodeCount = options.length;
-      final double orbitRadius = isCompact ? 80.r : 130.r;
-
-      final nodePoints = List.generate(nodeCount, (i) {
-        final angle = (i * (2 * pi / nodeCount)) - (pi / 2);
-        return Offset(
-          centerPoint.dx + cos(angle) * orbitRadius,
-          centerPoint.dy + sin(angle) * orbitRadius,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final centerPoint = Offset(
+          constraints.maxWidth / 2,
+          constraints.maxHeight / 2 + (isCompact ? 10.h : 20.h),
         );
-      });
+        final nodeCount = options.length;
+        final double orbitRadius = isCompact ? 80.r : 130.r;
 
-      return GestureDetector(
-        onPanUpdate: (details) {
-          if (_isAnswered) return;
-          final localPos = details.localPosition;
-          setState(() {
-            _rotation = atan2(
-              localPos.dy - centerPoint.dy,
-              localPos.dx - centerPoint.dx,
-            );
-          });
-          for (int i = 0; i < nodePoints.length; i++) {
-            final nodeAngle = atan2(
-              nodePoints[i].dy - centerPoint.dy,
-              nodePoints[i].dx - centerPoint.dx,
-            );
-            if ((_rotation - nodeAngle).abs() < 0.15) {
-              _onFire(i, correctIndex);
+        final nodePoints = List.generate(nodeCount, (i) {
+          final angle = (i * (2 * pi / nodeCount)) - (pi / 2);
+          return Offset(
+            centerPoint.dx + cos(angle) * orbitRadius,
+            centerPoint.dy + sin(angle) * orbitRadius,
+          );
+        });
+
+        return GestureDetector(
+          onPanUpdate: (details) {
+            if (_isAnswered) return;
+            final localPos = details.localPosition;
+            setState(() {
+              _rotation = atan2(
+                localPos.dy - centerPoint.dy,
+                localPos.dx - centerPoint.dx,
+              );
+            });
+            for (int i = 0; i < nodePoints.length; i++) {
+              final nodeAngle = atan2(
+                nodePoints[i].dy - centerPoint.dy,
+                nodePoints[i].dx - centerPoint.dx,
+              );
+              if ((_rotation - nodeAngle).abs() < 0.15) {
+                _onFire(i, correctIndex);
+              }
             }
-          }
-        },
-        child: CustomPaint(
-          size: Size.infinite,
-          painter: PronounResolutionGravityPainter(
-            rotation: _rotation,
-            centerPoint: centerPoint,
-            nodes: nodePoints,
-            options: options,
-            primaryColor: primaryColor,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect ?? false,
-            targetNode: _targetIndex,
-            pronoun: pronoun,
-            isDark: isDark,
-            isCompact: isCompact,
+          },
+          child: CustomPaint(
+            size: Size.infinite,
+            painter: PronounResolutionGravityPainter(
+              rotation: _rotation,
+              centerPoint: centerPoint,
+              nodes: nodePoints,
+              options: options,
+              primaryColor: primaryColor,
+              isAnswered: _isAnswered,
+              isCorrect: _isCorrect ?? false,
+              targetNode: _targetIndex,
+              pronoun: pronoun,
+              isDark: isDark,
+              isCompact: isCompact,
+            ),
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 
-  Widget _buildResult(GrammarQuest quest, Color primaryColor, bool isDark, bool isCompact) {
+  Widget _buildResult(
+    GrammarQuest quest,
+    Color primaryColor,
+    bool isDark,
+    bool isCompact,
+  ) {
     final bool correct = _isCorrect == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
@@ -303,7 +346,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
             Text(
               correct ? "CORRECT!" : "INCORRECT",
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: isCompact ? 12.sp : 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
@@ -316,7 +359,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
                 quest.explanation!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'Outfit', 
+                  fontFamily: 'Outfit',
                   fontSize: 13.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),

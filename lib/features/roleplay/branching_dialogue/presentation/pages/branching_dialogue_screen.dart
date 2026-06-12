@@ -7,7 +7,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
-import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
+import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_instruction.dart';
@@ -25,20 +27,22 @@ class BranchingDialogueScreen extends StatefulWidget {
   });
 
   @override
-  State<BranchingDialogueScreen> createState() => _BranchingDialogueScreenState();
+  State<BranchingDialogueScreen> createState() =>
+      _BranchingDialogueScreenState();
 }
 
-class _BranchingDialogueScreenState extends State<BranchingDialogueScreen> with TickerProviderStateMixin {
+class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
+    with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   late AnimationController _springController;
-  
+
   int _lastProcessedIndex = -1;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  
+
   // Drag and drop mechanics relative points
   Offset _probeOffset = Offset.zero;
   int? _hoveredIndex;
@@ -51,14 +55,20 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen> with 
       vsync: this,
       duration: const Duration(milliseconds: 300),
     );
-    
+
     _springController.addListener(() {
       setState(() {
-        _probeOffset = Offset.lerp(_probeOffset, Offset.zero, _springController.value)!;
+        _probeOffset = Offset.lerp(
+          _probeOffset,
+          Offset.zero,
+          _springController.value,
+        )!;
       });
     });
 
-    context.read<RoleplayBloc>().add(FetchRoleplayQuests(gameType: widget.gameType, level: widget.level));
+    context.read<RoleplayBloc>().add(
+      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   @override
@@ -76,12 +86,16 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen> with 
     _springController.stop();
   }
 
-  void _onProbeDragUpdate(DragUpdateDetails details, Offset launchCenter, List<Offset> terminalCenters) {
+  void _onProbeDragUpdate(
+    DragUpdateDetails details,
+    Offset launchCenter,
+    List<Offset> terminalCenters,
+  ) {
     if (_isAnswered) return;
-    
+
     setState(() {
       _probeOffset += details.delta;
-      
+
       // Clamp boundaries inside bounds
       final double distance = _probeOffset.distance;
       if (distance > 240.h) {
@@ -128,7 +142,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen> with 
 
   void _submitChoice(int index, int correct) {
     if (_isAnswered) return;
-    
+
     final isCorrect = index == correct;
     setState(() {
       _isAnswered = true;
@@ -202,10 +216,15 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen> with 
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 10.h,
+                  ),
                   child: Column(
                     children: [
-                      BranchingDialogueInstruction(primaryColor: theme.primaryColor),
+                      BranchingDialogueInstruction(
+                        primaryColor: theme.primaryColor,
+                      ),
                       SizedBox(height: 16.h),
                       BranchingDialoguePersonaConsole(
                         quest: quest,

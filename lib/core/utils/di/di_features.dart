@@ -183,7 +183,6 @@ void _initSpeaking(GetIt sl) {
       soundService: sl<SoundService>(),
       hapticService: sl<HapticService>(),
       useHint: sl<UseHint>(),
-      networkInfo: sl<NetworkInfo>(),
     ),
   );
 }
@@ -205,7 +204,6 @@ void _initGrammar(GetIt sl) {
     () => GrammarBloc(
       getQuest: sl<GetGrammarQuest>(),
       preloadQuest: sl<PreloadGrammarQuest>(),
-      updateUserCoins: sl<UpdateUserCoins>(),
       updateUserRewards: sl<UpdateUserRewards>(),
       updateCategoryStats: sl<UpdateCategoryStats>(),
       updateUnlockedLevel: sl<UpdateUnlockedLevel>(),

@@ -29,20 +29,17 @@ class WritingMapBackground extends StatelessWidget {
             return Positioned(
               top: (i * 200).h,
               left: (i % 2 == 0) ? -50.w : 250.w,
-              child: Opacity(
-                opacity: 0.15,
-                child: Container(
-                  width: 200.w,
-                  height: 400.h,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        const Color(0xFF3B82F6).withValues(alpha: 0.3),
-                        Colors.transparent,
-                      ],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
+              child: Container(
+                width: 200.w,
+                height: 400.h,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      const Color(0xFF3B82F6).withValues(alpha: 0.045), // 0.3 * 0.15
+                      Colors.transparent,
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
                   ),
                 ),
               )

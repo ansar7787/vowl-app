@@ -1,3 +1,5 @@
+import 'dart:developer' as dev;
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/usecases/usecase.dart';
@@ -23,8 +25,14 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
   final SoundService soundService;
   final HapticService hapticService;
 
-  GameSubtype? currentGameType;
-  int? currentLevel;
+  // ── Game constants ──────────────────────────────────────────────────────────
+  static const int _maxLives = 3;
+  static const int _questsPerLevel = 3;
+  static const int _maxWrongAttempts = 2;
+  static const int _xpReward = 10;
+  static const int _coinReward = 10;
+
+  // ── Constructor ─────────────────────────────────────────────────────────────
 
   EliteMasteryBloc({
     required this.getQuests,
@@ -34,222 +42,295 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     required this.useHint,
     required this.soundService,
     required this.hapticService,
-  }) : super(EliteMasteryInitial()) {
-    on<RetryEliteQuestion>((event, emit) {
-      if (state is EliteMasteryLoaded) {
-        final s = state as EliteMasteryLoaded;
-        emit(s.copyWith(resetLastAnswer: true, isHintUsed: false));
+  }) : super(const EliteMasteryInitial()) {
+    on<RetryEliteQuestion>(_onRetryEliteQuestion);
+    on<FetchEliteMasteryQuests>(_onFetchEliteMasteryQuests);
+    on<SubmitEliteAnswer>(_onSubmitEliteAnswer);
+    on<NextEliteQuestion>(_onNextEliteQuestion);
+    on<ShowEliteHint>(_onShowEliteHint);
+    on<MarkEliteHintUsed>(_onMarkEliteHintUsed);
+    on<AddLifeFromAd>(_onAddLifeFromAd);
+    on<RestoreEliteLife>(_onRestoreEliteLife);
+    on<EliteTutorPass>(_onEliteTutorPass);
+  }
+
+  // ── Handlers ────────────────────────────────────────────────────────────────
+
+  void _onRetryEliteQuestion(
+    RetryEliteQuestion event,
+    Emitter<EliteMasteryState> emit,
+  ) {
+    if (state is! EliteMasteryLoaded) return;
+    final s = state as EliteMasteryLoaded;
+    emit(s.copyWith(resetLastAnswer: true, isHintUsed: false));
+  }
+
+  Future<void> _onFetchEliteMasteryQuests(
+    FetchEliteMasteryQuests event,
+    Emitter<EliteMasteryState> emit,
+  ) async {
+    emit(const EliteMasteryLoading());
+
+    final result = await getQuests(
+      GetEliteMasteryQuestParams(gameType: event.gameType, level: event.level),
+    );
+
+    result.fold((failure) => emit(EliteMasteryError(failure.message)), (
+      quests,
+    ) {
+      if (quests.isEmpty) {
+        emit(const EliteMasteryError('No quests found for this level.'));
+        return;
       }
-    });
-
-    on<FetchEliteMasteryQuests>((event, emit) async {
-      currentGameType = event.gameType;
-      currentLevel = event.level;
-      emit(EliteMasteryLoading());
-
-      // Fetch quests through the usecase (which uses AssetQuestService LRU cache)
-      final result = await getQuests(
-        GetEliteMasteryQuestParams(gameType: event.gameType, level: event.level),
-      );
-      result.fold(
-        (failure) => emit(EliteMasteryError(failure.message)),
-        (quests) {
-          if (quests.isEmpty) {
-            emit(EliteMasteryError("No quests found for this level."));
-          } else {
-            // Take only 3 questions per level for exact elite experience
-            final levelQuests = quests.take(3).toList();
-            emit(EliteMasteryLoaded(
-              quests: levelQuests,
-              currentIndex: 0,
-              livesRemaining: 3,
-            ));
-          }
-        },
+      emit(
+        EliteMasteryLoaded(
+          gameType: event.gameType,
+          level: event.level,
+          quests: quests.take(_questsPerLevel).toList(),
+          currentIndex: 0,
+          livesRemaining: _maxLives,
+        ),
       );
     });
+  }
 
-    on<SubmitEliteAnswer>((event, emit) async {
-      final currentState = state;
-      if (currentState is! EliteMasteryLoaded || currentState.livesRemaining <= 0 || currentState.lastAnswerCorrect != null) return;
+  void _onSubmitEliteAnswer(
+    SubmitEliteAnswer event,
+    Emitter<EliteMasteryState> emit,
+  ) {
+    final currentState = state;
+    if (currentState is! EliteMasteryLoaded ||
+        currentState.livesRemaining <= 0 ||
+        currentState.lastAnswerCorrect != null) {
+      return;
+    }
 
-      // Synchronously lock state transition to prevent double-tap race conditions
-      final lockedState = currentState.copyWith(lastAnswerCorrect: event.isCorrect);
-      emit(lockedState);
+    if (!event.isCorrect) {
+      final newLives = currentState.livesRemaining - 1;
+      final newWrongCount = currentState.wrongCount + 1;
+      final isFinal = newWrongCount >= _maxWrongAttempts;
 
-      if (!event.isCorrect) {
-        final newLives = currentState.livesRemaining - 1;
-        final newWrongCount = currentState.wrongCount + 1;
-        bool isFinal = newWrongCount >= 2;
+      final updatedQuests = isFinal
+          ? (List<EliteMasteryQuest>.from(currentState.quests)
+              ..add(currentState.currentQuest))
+          : currentState.quests;
 
-        List<EliteMasteryQuest> updatedQuests = currentState.quests;
-        if (isFinal) {
-          updatedQuests = List<EliteMasteryQuest>.from(currentState.quests);
-          updatedQuests.add(currentState.currentQuest);
-        }
+      soundService.playWrong();
+      hapticService.error();
 
-        // Trigger audio/haptics in a non-blocking fashion
-        soundService.playWrong();
-        hapticService.error();
-
-        emit(currentState.copyWith(
+      emit(
+        currentState.copyWith(
           livesRemaining: newLives,
           lastAnswerCorrect: false,
           quests: updatedQuests,
           wrongCount: isFinal ? 0 : newWrongCount,
           isFinalFailure: isFinal || newLives <= 0,
-        ));
-      } else {
-        soundService.playCorrect();
-        hapticService.success();
-        emit(currentState.copyWith(
+        ),
+      );
+    } else {
+      soundService.playCorrect();
+      hapticService.success();
+      emit(
+        currentState.copyWith(
           lastAnswerCorrect: true,
           wrongCount: 0,
           isFinalFailure: false,
-        ));
+        ),
+      );
+    }
+  }
+
+  Future<void> _onNextEliteQuestion(
+    NextEliteQuestion event,
+    Emitter<EliteMasteryState> emit,
+  ) async {
+    final currentState = state;
+    if (currentState is! EliteMasteryLoaded) return;
+
+    // ── Out of lives ─────────────────────────────────────────────────────────
+    if (currentState.livesRemaining <= 0) {
+      emit(
+        EliteMasteryGameOver(
+          gameType: currentState.gameType,
+          level: currentState.level,
+          quests: currentState.quests,
+          currentIndex: currentState.currentIndex,
+        ),
+      );
+      return;
+    }
+
+    final hasMoreQuests =
+        currentState.currentIndex + 1 < currentState.quests.length;
+
+    if (hasMoreQuests) {
+      if (currentState.lastAnswerCorrect == true ||
+          currentState.isFinalFailure) {
+        emit(
+          currentState.copyWith(
+            currentIndex: currentState.currentIndex + 1,
+            resetLastAnswer: true,
+            isHintVisible: false,
+            isHintUsed: false,
+            wrongCount: 0,
+            isFinalFailure: false,
+          ),
+        );
+      } else {
+        emit(
+          currentState.copyWith(resetLastAnswer: true, isHintVisible: false),
+        );
       }
-    });
+    } else if (currentState.lastAnswerCorrect == true) {
+      // ── Level complete ────────────────────────────────────────────────────
+      soundService.playLevelComplete();
 
-    on<NextEliteQuestion>((event, emit) async {
-      final currentState = state;
-      if (currentState is EliteMasteryLoaded) {
-        if (currentState.livesRemaining <= 0) {
-          emit(EliteMasteryGameOver(
-            quests: currentState.quests,
-            currentIndex: currentState.currentIndex,
-          ));
-          return;
-        }
+      emit(
+        EliteMasteryGameComplete(
+          xpEarned: _xpReward,
+          coinsEarned: _coinReward,
+          questCount: currentState.quests.length,
+        ),
+      );
 
-        if (currentState.currentIndex + 1 < currentState.quests.length) {
-          if (currentState.lastAnswerCorrect == true || currentState.isFinalFailure) {
-            emit(currentState.copyWith(
-              currentIndex: currentState.currentIndex + 1,
-              resetLastAnswer: true,
-              isHintVisible: false,
-              isHintUsed: false,
-              wrongCount: 0,
-              isFinalFailure: false,
-            ));
-          } else {
-            // First-time wrong answer, stay and retry
-            emit(currentState.copyWith(lastAnswerCorrect: null, isHintVisible: false));
-          }
-        } else if (currentState.lastAnswerCorrect == true) {
-          // Level Completed!
-          soundService.playLevelComplete();
-          
-          // Calculate total rewards
-          const int finalXp = 10;
-          const int finalCoins = 10;
+      // Resolve nullable fields — both are always set by the BLoC in
+      // production, but are nullable for backward compatibility with
+      // existing tests and mock states.
+      final gameTypeName = currentState.gameType?.name;
+      final level = currentState.level;
 
-          emit(EliteMasteryGameComplete(
-            xpEarned: finalXp,
-            coinsEarned: finalCoins,
-            questCount: currentState.quests.length,
-          ));
-
-          if (currentGameType != null && currentLevel != null) {
-            await Future.wait([
-              updateUserRewards(UpdateUserRewardsParams(
-                gameType: currentGameType!.name,
-                level: currentLevel!,
-                xpIncrease: finalXp,
-                coinIncrease: finalCoins,
-              )),
-              updateCategoryStats(UpdateCategoryStatsParams(
-                categoryId: currentGameType!.name,
-                isCorrect: true,
-              )),
-              updateUnlockedLevel(UpdateUnlockedLevelParams(
-                categoryId: currentGameType!.name,
-                newLevel: currentLevel! + 1,
-              )),
-            ]);
-          }
-        } else {
-          // Wrong answer on the very last quest
-          emit(currentState.copyWith(lastAnswerCorrect: null, isHintVisible: false));
-        }
+      if (gameTypeName == null || level == null) {
+        dev.log(
+          'Reward update skipped: gameType or level not present in state. '
+          'This is expected in test environments; unexpected in production.',
+          name: 'EliteMasteryBloc',
+        );
+        return;
       }
-    });
 
-    on<ShowEliteHint>((event, emit) async {
-      final currentState = state;
-      if (currentState is EliteMasteryLoaded) {
-        hapticService.selection();
-        emit(currentState.copyWith(isHintVisible: true));
+      try {
+        await Future.wait([
+          updateUserRewards(
+            UpdateUserRewardsParams(
+              gameType: gameTypeName,
+              level: level,
+              xpIncrease: _xpReward,
+              coinIncrease: _coinReward,
+            ),
+          ),
+          updateCategoryStats(
+            UpdateCategoryStatsParams(
+              categoryId: gameTypeName,
+              isCorrect: true,
+            ),
+          ),
+          updateUnlockedLevel(
+            UpdateUnlockedLevelParams(
+              categoryId: gameTypeName,
+              newLevel: level + 1,
+            ),
+          ),
+        ]);
+      } catch (e, st) {
+        dev.log(
+          'Failed to persist level-completion rewards',
+          name: 'EliteMasteryBloc',
+          error: e,
+          stackTrace: st,
+        );
       }
-    });
+    } else {
+      // Wrong answer on the last quest — stay and retry.
+      emit(currentState.copyWith(resetLastAnswer: true, isHintVisible: false));
+    }
+  }
 
-    on<MarkEliteHintUsed>((event, emit) async {
-      final currentState = state;
-      if (currentState is EliteMasteryLoaded) {
-        final result = await useHint(NoParams());
-        if (result.isRight()) {
-          emit(currentState.copyWith(isHintUsed: true));
-        }
-      }
-    });
+  void _onShowEliteHint(ShowEliteHint event, Emitter<EliteMasteryState> emit) {
+    if (state is! EliteMasteryLoaded) return;
+    hapticService.selection();
+    emit((state as EliteMasteryLoaded).copyWith(isHintVisible: true));
+  }
 
-    on<AddLifeFromAd>((event, emit) {
-      final currentState = state;
-      if (state is EliteMasteryGameOver) {
-        final s = state as EliteMasteryGameOver;
-        emit(EliteMasteryLoaded(
-          quests: s.quests,
-          currentIndex: s.currentIndex,
-          livesRemaining: 1,
-          lastAnswerCorrect: null,
-          isHintVisible: false,
-        ));
-      } else if (currentState is EliteMasteryLoaded) {
-         emit(currentState.copyWith(livesRemaining: currentState.livesRemaining + 1));
-      }
-    });
+  Future<void> _onMarkEliteHintUsed(
+    MarkEliteHintUsed event,
+    Emitter<EliteMasteryState> emit,
+  ) async {
+    if (state is! EliteMasteryLoaded) return;
+    final currentState = state as EliteMasteryLoaded;
+    final result = await useHint(NoParams());
+    if (result.isRight()) {
+      emit(currentState.copyWith(isHintUsed: true));
+    }
+  }
 
-    on<RestoreEliteLife>((event, emit) {
-      if (state is EliteMasteryGameOver) {
-        final s = state as EliteMasteryGameOver;
-        emit(EliteMasteryLoaded(
-          quests: s.quests,
-          currentIndex: s.currentIndex,
-          livesRemaining: 1,
-          lastAnswerCorrect: null,
-        ));
-      }
-    });
+  void _onAddLifeFromAd(AddLifeFromAd event, Emitter<EliteMasteryState> emit) {
+    if (state is EliteMasteryGameOver) {
+      emit(_restoreFromGameOver(state as EliteMasteryGameOver));
+    } else if (state is EliteMasteryLoaded) {
+      final s = state as EliteMasteryLoaded;
+      emit(s.copyWith(livesRemaining: s.livesRemaining + 1));
+    }
+  }
 
-    on<EliteTutorPass>((event, emit) async {
-      final currentState = state;
-      if (currentState is EliteMasteryLoaded) {
-        // Restore the life lost in the previous attempt
-        int newLives = currentState.livesRemaining + 1;
-        if (newLives > 3) newLives = 3; // Cap at max
-        
-        final updatedQuests = List<EliteMasteryQuest>.from(currentState.quests);
-        if (updatedQuests.length > 3) updatedQuests.removeLast();
-        
-        soundService.playCorrect();
-        hapticService.success();
-        
-        emit(currentState.copyWith(
+  void _onRestoreEliteLife(
+    RestoreEliteLife event,
+    Emitter<EliteMasteryState> emit,
+  ) {
+    if (state is EliteMasteryGameOver) {
+      emit(_restoreFromGameOver(state as EliteMasteryGameOver));
+    }
+  }
+
+  Future<void> _onEliteTutorPass(
+    EliteTutorPass event,
+    Emitter<EliteMasteryState> emit,
+  ) async {
+    final currentState = state;
+
+    if (currentState is EliteMasteryLoaded) {
+      final newLives = (currentState.livesRemaining + 1).clamp(0, _maxLives);
+      final updatedQuests = List<EliteMasteryQuest>.from(currentState.quests);
+      if (updatedQuests.length > _questsPerLevel) updatedQuests.removeLast();
+
+      soundService.playCorrect();
+      hapticService.success();
+
+      emit(
+        currentState.copyWith(
           livesRemaining: newLives,
           lastAnswerCorrect: true,
           quests: updatedQuests,
-        ));
-      } else if (currentState is EliteMasteryGameOver) {
-        // Restore from Game Over
-        soundService.playCorrect();
-        hapticService.success();
-        
-        emit(EliteMasteryLoaded(
+        ),
+      );
+    } else if (currentState is EliteMasteryGameOver) {
+      soundService.playCorrect();
+      hapticService.success();
+
+      emit(
+        EliteMasteryLoaded(
+          gameType: currentState.gameType,
+          level: currentState.level,
           quests: currentState.quests,
           currentIndex: currentState.currentIndex,
-          livesRemaining: 1, // Start with 1 life after rescue
+          livesRemaining: 1,
           lastAnswerCorrect: true,
-        ));
-      }
-    });
+        ),
+      );
+    }
+  }
+
+  // ── Helpers ─────────────────────────────────────────────────────────────────
+
+  /// Builds a recovery [EliteMasteryLoaded] from [EliteMasteryGameOver] with
+  /// one life remaining.  Shared by [_onAddLifeFromAd] and [_onRestoreEliteLife]
+  /// to keep construction logic in one place.
+  EliteMasteryLoaded _restoreFromGameOver(EliteMasteryGameOver s) {
+    return EliteMasteryLoaded(
+      gameType: s.gameType,
+      level: s.level,
+      quests: s.quests,
+      currentIndex: s.currentIndex,
+      livesRemaining: 1,
+    );
   }
 }

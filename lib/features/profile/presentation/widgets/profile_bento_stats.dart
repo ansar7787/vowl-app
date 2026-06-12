@@ -273,7 +273,7 @@ class ProfileBentoStats extends StatelessWidget {
         borderRadius: BorderRadius.circular(28.r),
         padding: EdgeInsets.all(20.w),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               padding: EdgeInsets.all(8.r),

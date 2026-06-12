@@ -7,7 +7,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
-import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
+import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
+import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
+import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_instruction.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_tuner.dart';
@@ -30,7 +32,7 @@ class AudioTrueFalseScreen extends StatefulWidget {
 class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   double _tuningValue = 0.5;
   bool _isAnswered = false;
   bool? _isCorrect;
@@ -41,23 +43,31 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
+    context.read<ListeningBloc>().add(
+      FetchListeningQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
-
 
   void _submitAnswer(bool verdict, String correct) {
     if (_isAnswered) return;
-    bool isCorrect = verdict.toString().toLowerCase() == correct.trim().toLowerCase();
+    bool isCorrect =
+        verdict.toString().toLowerCase() == correct.trim().toLowerCase();
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() { _isAnswered = true; _isCorrect = true; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
+      });
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() { _isAnswered = true; _isCorrect = false; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
   }
@@ -71,7 +81,8 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
           final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final livesChanged =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
@@ -90,137 +101,206 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
         }
         if (state is ListeningGameComplete) {
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'FACT VERDICTOR!', enableDoubleUp: true);
+          GameDialogHelper.showCompletion(
+            context,
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'FACT VERDICTOR!',
+            enableDoubleUp: true,
+          );
         } else if (state is ListeningGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ListeningBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<ListeningBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
-        
+
         return ListeningBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null ? const SizedBox() : LayoutBuilder(
-            builder: (context, constraints) {
-              final maxHeight = constraints.maxHeight;
-              final isCompact = maxHeight < 580;
+          child: quest == null
+              ? const SizedBox()
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
 
-              final double estimatedContentHeight = 20.h + 40.h + (isCompact ? 70.h : 90.h) + (isCompact ? 130.h : 180.h) + 120.h + 20.h;
-              final remainingHeight = maxHeight - estimatedContentHeight;
+                    final double estimatedContentHeight =
+                        20.h +
+                        40.h +
+                        (isCompact ? 70.h : 90.h) +
+                        (isCompact ? 130.h : 180.h) +
+                        120.h +
+                        20.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
 
-              final double gapUnit = remainingHeight > 0 ? remainingHeight / 7 : 0;
-              final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
-              final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-              final double gapTuner = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-              final double gapDisplay = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-              final double gapBottom = remainingHeight > 0 ? (gapUnit * 1.5).clamp(12.0, 30.0) : 12.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 7
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(6.0, 16.0)
+                        : 6.0;
+                    final double gapInstruction = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                        : 10.0;
+                    final double gapTuner = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                        : 10.0;
+                    final double gapDisplay = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                        : 10.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(12.0, 30.0)
+                        : 12.0;
 
-              return SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(minHeight: maxHeight),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SizedBox(height: gapTop),
-                          isCompact 
-                            ? SizedBox(height: 35.h, child: FittedBox(fit: BoxFit.scaleDown, child: AudioTrueFalseInstruction(color: theme.primaryColor)))
-                            : AudioTrueFalseInstruction(color: theme.primaryColor),
-                          SizedBox(height: gapInstruction),
-                          isCompact
-                            ? SizedBox(
-                                height: 70.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: AudioTrueFalseTuner(
-                                    onTap: () {
-                                      _soundService.playTts(quest.textToSpeak ?? "");
-                                      _hapticService.selection();
-                                    },
-                                    color: theme.primaryColor,
-                                  ),
-                                ),
-                              )
-                            : AudioTrueFalseTuner(
-                                onTap: () {
-                                  _soundService.playTts(quest.textToSpeak ?? "");
-                                  _hapticService.selection();
-                                },
-                                color: theme.primaryColor,
-                              ),
-                        ],
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SizedBox(height: gapTuner),
-                          SizedBox(
-                            height: isCompact ? 130.h : 180.h,
-                            child: AudioTrueFalseScreenDisplay(
-                              statement: quest.statement ?? "",
-                              color: theme.primaryColor,
-                              tuningValue: _tuningValue,
+                    return SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(minHeight: maxHeight),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapTop),
+                                isCompact
+                                    ? SizedBox(
+                                        height: 35.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: AudioTrueFalseInstruction(
+                                            color: theme.primaryColor,
+                                          ),
+                                        ),
+                                      )
+                                    : AudioTrueFalseInstruction(
+                                        color: theme.primaryColor,
+                                      ),
+                                SizedBox(height: gapInstruction),
+                                isCompact
+                                    ? SizedBox(
+                                        height: 70.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: AudioTrueFalseTuner(
+                                            onTap: () {
+                                              _soundService.playTts(
+                                                quest.textToSpeak ?? "",
+                                              );
+                                              _hapticService.selection();
+                                            },
+                                            color: theme.primaryColor,
+                                          ),
+                                        ),
+                                      )
+                                    : AudioTrueFalseTuner(
+                                        onTap: () {
+                                          _soundService.playTts(
+                                            quest.textToSpeak ?? "",
+                                          );
+                                          _hapticService.selection();
+                                        },
+                                        color: theme.primaryColor,
+                                      ),
+                              ],
                             ),
-                          ),
-                          SizedBox(height: gapDisplay),
-                          isCompact
-                            ? SizedBox(
-                                height: 100.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: SizedBox(
-                                    width: constraints.maxWidth,
-                                    child: AudioTrueFalsePolarizedFilters(
-                                      tuningValue: _tuningValue,
-                                      isAnswered: _isAnswered,
-                                      isCorrectState: _isCorrect,
-                                      color: theme.primaryColor,
-                                      onChanged: (v) {
-                                        setState(() => _tuningValue = v);
-                                        _hapticService.selection();
-                                      },
-                                      onChangeEnd: (v) {
-                                        if (v > 0.9) _submitAnswer(true, quest.correctAnswer ?? "");
-                                        if (v < 0.1) _submitAnswer(false, quest.correctAnswer ?? "");
-                                      },
-                                    ),
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapTuner),
+                                SizedBox(
+                                  height: isCompact ? 130.h : 180.h,
+                                  child: AudioTrueFalseScreenDisplay(
+                                    statement: quest.statement ?? "",
+                                    color: theme.primaryColor,
+                                    tuningValue: _tuningValue,
                                   ),
                                 ),
-                              )
-                            : AudioTrueFalsePolarizedFilters(
-                                tuningValue: _tuningValue,
-                                isAnswered: _isAnswered,
-                                isCorrectState: _isCorrect,
-                                color: theme.primaryColor,
-                                onChanged: (v) {
-                                  setState(() => _tuningValue = v);
-                                  _hapticService.selection();
-                                },
-                                onChangeEnd: (v) {
-                                  if (v > 0.9) _submitAnswer(true, quest.correctAnswer ?? "");
-                                  if (v < 0.1) _submitAnswer(false, quest.correctAnswer ?? "");
-                                },
-                              ),
-                          SizedBox(height: gapBottom),
-                        ],
+                                SizedBox(height: gapDisplay),
+                                isCompact
+                                    ? SizedBox(
+                                        height: 100.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: SizedBox(
+                                            width: constraints.maxWidth,
+                                            child:
+                                                AudioTrueFalsePolarizedFilters(
+                                                  tuningValue: _tuningValue,
+                                                  isAnswered: _isAnswered,
+                                                  isCorrectState: _isCorrect,
+                                                  color: theme.primaryColor,
+                                                  onChanged: (v) {
+                                                    setState(
+                                                      () => _tuningValue = v,
+                                                    );
+                                                    _hapticService.selection();
+                                                  },
+                                                  onChangeEnd: (v) {
+                                                    if (v > 0.9) {
+                                                      _submitAnswer(
+                                                        true,
+                                                        quest.correctAnswer ??
+                                                            "",
+                                                      );
+                                                    }
+                                                    if (v < 0.1) {
+                                                      _submitAnswer(
+                                                        false,
+                                                        quest.correctAnswer ??
+                                                            "",
+                                                      );
+                                                    }
+                                                  },
+                                                ),
+                                          ),
+                                        ),
+                                      )
+                                    : AudioTrueFalsePolarizedFilters(
+                                        tuningValue: _tuningValue,
+                                        isAnswered: _isAnswered,
+                                        isCorrectState: _isCorrect,
+                                        color: theme.primaryColor,
+                                        onChanged: (v) {
+                                          setState(() => _tuningValue = v);
+                                          _hapticService.selection();
+                                        },
+                                        onChangeEnd: (v) {
+                                          if (v > 0.9) {
+                                            _submitAnswer(
+                                              true,
+                                              quest.correctAnswer ?? "",
+                                            );
+                                          }
+                                          if (v < 0.1) {
+                                            _submitAnswer(
+                                              false,
+                                              quest.correctAnswer ?? "",
+                                            );
+                                          }
+                                        },
+                                      ),
+                                SizedBox(height: gapBottom),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ],
-                  ),
+                    );
+                  },
                 ),
-              );
-            },
-          ),
         );
       },
     );
   }
-
 }
-

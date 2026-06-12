@@ -15,21 +15,37 @@ import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/domain/usecases/get_roleplay_quest.dart';
 import 'package:vowl/features/roleplay/domain/usecases/preload_roleplay_quests.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 
 class MockGetRoleplayQuest extends Mock implements GetRoleplayQuest {}
+
 class MockPreloadRoleplayQuests extends Mock implements PreloadRoleplayQuests {}
+
 class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
+
 class MockUpdateCategoryStats extends Mock implements UpdateCategoryStats {}
+
 class MockUpdateUnlockedLevel extends Mock implements UpdateUnlockedLevel {}
+
 class MockAwardBadge extends Mock implements AwardBadge {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockUseHint extends Mock implements UseHint {}
+
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
-class FakeUpdateUserRewardsParams extends Fake implements UpdateUserRewardsParams {}
-class FakeUpdateCategoryStatsParams extends Fake implements UpdateCategoryStatsParams {}
-class FakeUpdateUnlockedLevelParams extends Fake implements UpdateUnlockedLevelParams {}
+class FakeUpdateUserRewardsParams extends Fake
+    implements UpdateUserRewardsParams {}
+
+class FakeUpdateCategoryStatsParams extends Fake
+    implements UpdateCategoryStatsParams {}
+
+class FakeUpdateUnlockedLevelParams extends Fake
+    implements UpdateUnlockedLevelParams {}
 
 void main() {
   late RoleplayBloc bloc;
@@ -91,11 +107,13 @@ void main() {
     blocTest<RoleplayBloc, RoleplayState>(
       'should emit [Loading, Loaded] when data is fetched successfully',
       build: () {
-        when(() => mockGetQuest(gameType: any(named: 'gameType'), level: any(named: 'level')))
-            .thenAnswer((_) async => Right(tQuests));
+        when(
+          () => mockGetQuest(any()),
+        ).thenAnswer((_) async => Right(tQuests));
         return bloc;
       },
-      act: (bloc) => bloc.add(FetchRoleplayQuests(gameType: tGameType, level: tLevel)),
+      act: (bloc) =>
+          bloc.add(FetchRoleplayQuests(gameType: tGameType, level: tLevel)),
       expect: () => [
         RoleplayLoading(),
         RoleplayLoaded(
@@ -128,9 +146,7 @@ void main() {
       },
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(SubmitAnswer(true)),
-      expect: () => [
-        tLoadedState.copyWith(lastAnswerCorrect: true),
-      ],
+      expect: () => [tLoadedState.copyWith(lastAnswerCorrect: true)],
     );
 
     blocTest<RoleplayBloc, RoleplayState>(

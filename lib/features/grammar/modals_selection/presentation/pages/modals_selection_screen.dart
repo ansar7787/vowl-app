@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -79,31 +79,40 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
     for (int i = 0; i < parts.length; i++) {
       spans.add(TextSpan(text: parts[i]));
       if (i < parts.length - 1) {
-        spans.add(WidgetSpan(
-          alignment: PlaceholderAlignment.middle,
-          child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 8.w),
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: selected != null
-                      ? primaryColor
-                      : (isDark ? Colors.white38 : Colors.black38),
-                  width: 2,
-                ),
-              ),
-            ),
-            child: Text(
-              selected ?? "      ",
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 22.sp,
-                fontWeight: FontWeight.bold,
-                color: primaryColor,
-              ),
-            ),
-          ).animate(target: selected != null ? 1 : 0).shimmer(duration: 2.seconds),
-        ));
+        spans.add(
+          WidgetSpan(
+            alignment: PlaceholderAlignment.middle,
+            child:
+                Container(
+                      margin: EdgeInsets.symmetric(horizontal: 8.w),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12.w,
+                        vertical: 4.h,
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: selected != null
+                                ? primaryColor
+                                : (isDark ? Colors.white38 : Colors.black38),
+                            width: 2,
+                          ),
+                        ),
+                      ),
+                      child: Text(
+                        selected ?? "      ",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 22.sp,
+                          fontWeight: FontWeight.bold,
+                          color: primaryColor,
+                        ),
+                      ),
+                    )
+                    .animate(target: selected != null ? 1 : 0)
+                    .shimmer(duration: 2.seconds),
+          ),
+        );
       }
     }
     return spans;
@@ -118,20 +127,21 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final livesRestored =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
-          if (isNewQuestion || isRetry || livesChanged) {
+          if (isNewQuestion || isRetry || livesRestored) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _selectedIndex = 0;
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
           _lastLives = state.livesRemaining;
@@ -172,13 +182,26 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                     final maxHeight = constraints.maxHeight;
                     final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 50.h : 80.h) + (isCompact ? 180.r : 280.r) + (isCompact ? 40.h : 65.h) + 40.h;
+                    final double estimatedContentHeight =
+                        (isCompact ? 30.h : 40.h) +
+                        (isCompact ? 50.h : 80.h) +
+                        (isCompact ? 180.r : 280.r) +
+                        (isCompact ? 40.h : 65.h) +
+                        40.h;
                     final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 15.0) : 4.0;
-                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(6.0, 20.0) : 6.0;
-                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 5
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(4.0, 15.0)
+                        : 4.0;
+                    final double gapMiddle = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                        : 6.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                        : 10.0;
 
                     return Column(
                       children: [
@@ -188,52 +211,72 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                                 height: 25.h,
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
-                                  child: ModalsSelectionInstruction(primaryColor: theme.primaryColor),
+                                  child: ModalsSelectionInstruction(
+                                    primaryColor: theme.primaryColor,
+                                  ),
                                 ),
                               )
-                            : ModalsSelectionInstruction(primaryColor: theme.primaryColor),
+                            : ModalsSelectionInstruction(
+                                primaryColor: theme.primaryColor,
+                              ),
                         SizedBox(height: gapMiddle),
 
                         // Context Card with Fill-in-the-Blank
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                          child: Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.05)
-                                  : Colors.black.withValues(alpha: 0.03),
-                              borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
-                              border: Border.all(
-                                color: theme.primaryColor.withValues(alpha: 0.15),
-                                width: 1.5,
-                              ),
-                            ),
-                            child: RichText(
-                              textAlign: TextAlign.center,
-                              text: TextSpan(
-                                style: TextStyle(
-                                  fontFamily: 'Outfit', 
-                                  fontSize: isCompact ? 15.sp : 20.sp,
-                                  color: isDark ? Colors.white : Colors.black87,
-                                  height: 1.5,
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.all(
+                                  isCompact ? 14.r : 22.r,
                                 ),
-                                children: _buildSentenceWithBlank(
-                                  quest.question ?? "___ sentence.",
-                                  options[_selectedIndex],
-                                  theme.primaryColor,
-                                  isDark,
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.05)
+                                      : Colors.black.withValues(alpha: 0.03),
+                                  borderRadius: BorderRadius.circular(
+                                    isCompact ? 18.r : 28.r,
+                                  ),
+                                  border: Border.all(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.15,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                                child: RichText(
+                                  textAlign: TextAlign.center,
+                                  text: TextSpan(
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: isCompact ? 15.sp : 20.sp,
+                                      color: isDark
+                                          ? Colors.white
+                                          : Colors.black87,
+                                      height: 1.5,
+                                    ),
+                                    children: _buildSentenceWithBlank(
+                                      quest.question ?? "___ sentence.",
+                                      options[_selectedIndex],
+                                      theme.primaryColor,
+                                      isDark,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+                            )
+                            .animate()
+                            .fadeIn(duration: 600.ms)
+                            .slideY(begin: 0.2, end: 0),
 
                         // Result Feedback
                         if (_isAnswered) ...[
                           SizedBox(height: isCompact ? 8.h : 24.h),
-                          _buildResult(quest, theme.primaryColor, isDark, isCompact),
+                          _buildResult(
+                            quest,
+                            theme.primaryColor,
+                            isDark,
+                            isCompact,
+                          ),
                         ],
 
                         // Rotary Dial
@@ -255,12 +298,15 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 40.w),
                             child: ScaleButton(
-                              onTap: () => _submitAnswer(quest.correctAnswerIndex ?? 0),
+                              onTap: () =>
+                                  _submitAnswer(quest.correctAnswerIndex ?? 0),
                               child: Container(
                                 width: double.infinity,
                                 height: isCompact ? 48.h : 65.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(isCompact ? 14.r : 22.r),
+                                  borderRadius: BorderRadius.circular(
+                                    isCompact ? 14.r : 22.r,
+                                  ),
                                   gradient: LinearGradient(
                                     colors: [
                                       theme.primaryColor,
@@ -269,7 +315,9 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: theme.primaryColor.withValues(alpha: 0.3),
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.3,
+                                      ),
                                       blurRadius: 15,
                                       offset: const Offset(0, 5),
                                     ),
@@ -279,7 +327,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                                   child: Text(
                                     "LOCK CONFIGURATION",
                                     style: TextStyle(
-                                      fontFamily: 'Outfit', 
+                                      fontFamily: 'Outfit',
                                       fontSize: isCompact ? 12.sp : 14.sp,
                                       fontWeight: FontWeight.w900,
                                       color: Colors.white,
@@ -301,7 +349,12 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
     );
   }
 
-  Widget _buildResult(GameQuest quest, Color primaryColor, bool isDark, bool isCompact) {
+  Widget _buildResult(
+    GameQuest quest,
+    Color primaryColor,
+    bool isDark,
+    bool isCompact,
+  ) {
     final bool correct = _isCorrect == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
@@ -328,7 +381,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
             Text(
               correct ? "CORRECT!" : "INCORRECT",
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: isCompact ? 12.sp : 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
@@ -341,7 +394,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                 quest.explanation!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'Outfit', 
+                  fontFamily: 'Outfit',
                   fontSize: 13.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),

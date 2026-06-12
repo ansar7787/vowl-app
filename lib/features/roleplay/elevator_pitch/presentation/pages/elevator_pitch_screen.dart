@@ -10,7 +10,9 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
-import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
+import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_instruction.dart';
@@ -32,25 +34,27 @@ class ElevatorPitchScreen extends StatefulWidget {
   State<ElevatorPitchScreen> createState() => _ElevatorPitchScreenState();
 }
 
-class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> with TickerProviderStateMixin {
+class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
+    with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   final _speechService = di.sl<SpeechService>();
-  
+
   late AnimationController _waveController;
   Timer? _gravityTimer;
-  
+
   int _lastProcessedIndex = -1;
   bool _isListening = false;
   String _spokenText = "";
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  
+
   // Real-time Physics variables
-  double _capsuleY = 0.4;    // Position of capsule inside elevator shaft (0.0 to 1.0)
-  double _greenZoneY = 0.5;  // Center position of green target zone (0.0 to 1.0)
-  
+  double _capsuleY =
+      0.4; // Position of capsule inside elevator shaft (0.0 to 1.0)
+  double _greenZoneY = 0.5; // Center position of green target zone (0.0 to 1.0)
+
   // Game scores
   int _ticksRecorded = 0;
   int _ticksInAlignment = 0;
@@ -63,7 +67,9 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> with TickerPr
       duration: const Duration(seconds: 1),
     )..repeat();
 
-    context.read<RoleplayBloc>().add(FetchRoleplayQuests(gameType: widget.gameType, level: widget.level));
+    context.read<RoleplayBloc>().add(
+      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   @override
@@ -96,7 +102,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> with TickerPr
     _ticksRecorded = 0;
     _ticksInAlignment = 0;
     _gravityTimer?.cancel();
-    
+
     _gravityTimer = Timer.periodic(const Duration(milliseconds: 50), (timer) {
       if (!mounted || _isAnswered || !_isListening) {
         timer.cancel();
@@ -108,7 +114,8 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> with TickerPr
         _capsuleY = (_capsuleY + 0.007).clamp(0.0, 1.0);
 
         // 2. Green target zone floats using a smooth harmonic sine wave
-        final double elapsedSec = DateTime.now().millisecondsSinceEpoch / 1000.0;
+        final double elapsedSec =
+            DateTime.now().millisecondsSinceEpoch / 1000.0;
         _greenZoneY = 0.5 + 0.3 * math.sin(elapsedSec * 1.6);
 
         // 3. Increment calibration alignments
@@ -124,7 +131,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> with TickerPr
   void _startListening() async {
     if (_isAnswered) return;
     _hapticService.selection();
-    
+
     setState(() {
       _isListening = true;
       _spokenText = "Voice capturing initiated...";
@@ -164,8 +171,10 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> with TickerPr
     }
 
     // Alignment accuracy score
-    final double alignmentAccuracy = _ticksRecorded > 0 ? (_ticksInAlignment / _ticksRecorded) : 0.0;
-    
+    final double alignmentAccuracy = _ticksRecorded > 0
+        ? (_ticksInAlignment / _ticksRecorded)
+        : 0.0;
+
     // Core requirements:
     // 1. alignmentAccuracy >= 40% (stayed inside the drifting green elevator target bounds)
     // 2. Length of spoken text >= 12 chars
@@ -241,10 +250,15 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> with TickerPr
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 10.h,
+                  ),
                   child: Column(
                     children: [
-                      ElevatorPitchInstruction(primaryColor: theme.primaryColor),
+                      ElevatorPitchInstruction(
+                        primaryColor: theme.primaryColor,
+                      ),
                       SizedBox(height: 16.h),
                       ElevatorPitchPromptCard(
                         prompt: quest.prompt ?? "",

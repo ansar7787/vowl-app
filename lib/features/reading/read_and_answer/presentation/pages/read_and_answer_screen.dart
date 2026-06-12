@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
-import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
+import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_instruction.dart';
@@ -32,7 +32,7 @@ class ReadAndAnswerScreen extends StatefulWidget {
 class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -43,24 +43,33 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<ReadingBloc>().add(FetchReadingQuests(gameType: widget.gameType, level: widget.level));
+    context.read<ReadingBloc>().add(
+      FetchReadingQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   void _onChoiceTap(int index, String selected, String correct) {
     if (_isAnswered) return;
     setState(() => _selectedIndex = index);
 
-    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+    bool isCorrect =
+        selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() { _isAnswered = true; _isCorrect = true; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
+      });
       context.read<ReadingBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() { _isAnswered = true; _isCorrect = false; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
       context.read<ReadingBloc>().add(SubmitAnswer(false));
     }
   }
@@ -75,7 +84,8 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
         if (state is ReadingLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
           final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final livesChanged =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
@@ -94,65 +104,82 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
         }
         if (state is ReadingGameComplete) {
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'ZEN READER!', enableDoubleUp: true);
+          GameDialogHelper.showCompletion(
+            context,
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'ZEN READER!',
+            enableDoubleUp: true,
+          );
         } else if (state is ReadingGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ReadingBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<ReadingBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
-        final ReadingQuest? quest = (state is ReadingLoaded) ? state.currentQuest as ReadingQuest? : null;
-        
+        final ReadingQuest? quest = (state is ReadingLoaded)
+            ? state.currentQuest as ReadingQuest?
+            : null;
+
         return ReadingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
           isAnswered: _isAnswered,
-          isCorrect: _isCorrect, 
+          isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           useScrolling: true,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SizedBox(height: 16.h),
-              ReadAndAnswerInstruction(primaryColor: theme.primaryColor),
-              SizedBox(height: 24.h),
-              ReadAndAnswerFloatingPassage(
-                text: quest.passage ?? "",
-                color: theme.primaryColor,
-                isDark: isDark,
-              ),
-              SizedBox(height: 32.h),
-              ReadAndAnswerAnchorPoint(
-                question: quest.question ?? "",
-                color: theme.primaryColor,
-                isDark: isDark,
-              ),
-              SizedBox(height: 32.h),
-              ...List.generate(quest.options?.length ?? 0, (index) {
-                final optionText = quest.options![index];
-                return ReadAndAnswerBuoyOption(
-                  index: index,
-                  text: optionText,
-                  correct: quest.correctAnswer ?? "",
-                  color: theme.primaryColor,
-                  isDark: isDark,
-                  isAnswered: _isAnswered,
-                  selectedIndex: _selectedIndex,
-                  onTap: () => _onChoiceTap(index, optionText, quest.correctAnswer ?? ""),
-                );
-              }),
-              if (_isAnswered) ...[
-                SizedBox(height: 24.h),
-                ReadAndAnswerResult(
-                  quest: quest,
-                  isCorrect: _isCorrect == true,
-                  isDark: isDark,
+          child: quest == null
+              ? const SizedBox()
+              : Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    SizedBox(height: 16.h),
+                    ReadAndAnswerInstruction(primaryColor: theme.primaryColor),
+                    SizedBox(height: 24.h),
+                    ReadAndAnswerFloatingPassage(
+                      text: quest.passage ?? "",
+                      color: theme.primaryColor,
+                      isDark: isDark,
+                    ),
+                    SizedBox(height: 32.h),
+                    ReadAndAnswerAnchorPoint(
+                      question: quest.question ?? "",
+                      color: theme.primaryColor,
+                      isDark: isDark,
+                    ),
+                    SizedBox(height: 32.h),
+                    ...List.generate(quest.options?.length ?? 0, (index) {
+                      final optionText = quest.options![index];
+                      return ReadAndAnswerBuoyOption(
+                        index: index,
+                        text: optionText,
+                        correct: quest.correctAnswer ?? "",
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                        isAnswered: _isAnswered,
+                        selectedIndex: _selectedIndex,
+                        onTap: () => _onChoiceTap(
+                          index,
+                          optionText,
+                          quest.correctAnswer ?? "",
+                        ),
+                      );
+                    }),
+                    if (_isAnswered) ...[
+                      SizedBox(height: 24.h),
+                      ReadAndAnswerResult(
+                        quest: quest,
+                        isCorrect: _isCorrect == true,
+                        isDark: isDark,
+                      ),
+                    ],
+                    SizedBox(height: 40.h),
+                  ],
                 ),
-              ],
-              SizedBox(height: 40.h),
-            ],
-          ),
         );
       },
     );

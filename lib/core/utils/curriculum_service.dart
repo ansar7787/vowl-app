@@ -45,7 +45,7 @@ class CurriculumService {
     bool moreBatches = true;
 
     try {
-      while (moreBatches && batchIndex <= 10) { // Safety cap at 100 levels
+      while (moreBatches && batchIndex <= 20) { // Safety cap at 200 levels
         final start = (batchIndex - 1) * 10 + 1;
         final path = QuestRegistry.getAssetPath(gameType, start);
         

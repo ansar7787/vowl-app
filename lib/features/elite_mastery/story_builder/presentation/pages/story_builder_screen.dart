@@ -11,10 +11,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
-import 'package:vowl/features/elite_mastery/presentation/widgets/elite_base_layout.dart';
+import 'package:vowl/features/elite_mastery/presentation/layout/elite_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import '../widgets/story_builder_narrative_tile.dart';
-
 
 class StoryBuilderScreen extends StatefulWidget {
   final int level;
@@ -154,7 +153,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
         } else if (state is EliteMasteryLoaded) {
           final quest = state.currentQuest;
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          
+
           if (_lastQuestId != quest.id || livesChanged) {
             _lastQuestId = quest.id;
             _isAnswered = false;
@@ -198,7 +197,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
           isAnswered: _isAnswered,
           state: state,
           isCorrect: _isCorrect,
-          isFinalFailure: (state is EliteMasteryLoaded) ? (state.isFinalFailure || state.livesRemaining <= 0) : false,
+          isFinalFailure: (state is EliteMasteryLoaded)
+              ? (state.isFinalFailure || state.livesRemaining <= 0)
+              : false,
           showConfetti: _showConfetti,
           title: "STORY ARCHITECT",
           subtitle: quest?.instruction ?? "Restore the story's narrative flow",
@@ -215,7 +216,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
             final bloc = context.read<EliteMasteryBloc>();
             final s = bloc.state;
             if (s is EliteMasteryLoaded) {
-              if (s.currentQuest.hint != null && s.currentQuest.hint!.isNotEmpty) {
+              if (s.currentQuest.hint != null &&
+                  s.currentQuest.hint!.isNotEmpty) {
                 if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
                 bloc.add(ShowEliteHint());
               } else {
@@ -248,16 +250,13 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.error_outline_rounded,
-              color: Colors.white,
-              size: 48.r,
-            ),
+            Icon(Icons.error_outline_rounded, color: Colors.white, size: 48.r),
             SizedBox(height: 16.h),
             Text(
               state.message,
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 color: Colors.white,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
@@ -266,23 +265,21 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
             SizedBox(height: 24.h),
             ScaleButton(
               onTap: () => context.read<EliteMasteryBloc>().add(
-                    FetchEliteMasteryQuests(
-                      gameType: widget.gameType,
-                      level: widget.level,
-                    ),
-                  ),
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 24.w,
-                  vertical: 12.h,
+                FetchEliteMasteryQuests(
+                  gameType: widget.gameType,
+                  level: widget.level,
                 ),
+              ),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16.r),
                 ),
                 child: Text(
                   "RETRY",
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     color: theme.primaryColor,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 1.2,
@@ -333,13 +330,11 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
           onReorder: _onReorder,
           proxyDecorator: (child, index, animation) => Material(
             color: Colors.transparent,
-            child: child
-                .animate()
-                .scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1.02, 1.02),
-                  duration: 150.ms,
-                ),
+            child: child.animate().scale(
+              begin: const Offset(1, 1),
+              end: const Offset(1.02, 1.02),
+              duration: 150.ms,
+            ),
           ),
           children: [
             for (int i = 0; i < _currentOrder.length; i++)
@@ -388,7 +383,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               child: Center(
                 child: Text(
                   "FINALIZE STORY",
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,
@@ -402,4 +398,3 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     );
   }
 }
-

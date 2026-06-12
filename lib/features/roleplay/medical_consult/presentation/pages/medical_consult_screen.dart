@@ -8,7 +8,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
-import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
+import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
@@ -31,22 +33,23 @@ class MedicalConsultScreen extends StatefulWidget {
   State<MedicalConsultScreen> createState() => _MedicalConsultScreenState();
 }
 
-class _MedicalConsultScreenState extends State<MedicalConsultScreen> with TickerProviderStateMixin {
+class _MedicalConsultScreenState extends State<MedicalConsultScreen>
+    with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   late AnimationController _sweepController;
   late AnimationController _pulseController;
-  
+
   int _lastProcessedIndex = -1;
   final List<String> _diagnosedSymptoms = [];
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  
+
   // Drag coordinate for physical scanning lens
   Offset _scanOffset = Offset.zero;
-  
+
   // Set of unlocked nodes that are locked/resolved by the scanner lens
   final List<String> _scannedGlitches = [];
 
@@ -57,13 +60,15 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen> with Ticker
       vsync: this,
       duration: const Duration(seconds: 3),
     )..repeat();
-    
+
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
     )..repeat(reverse: true);
 
-    context.read<RoleplayBloc>().add(FetchRoleplayQuests(gameType: widget.gameType, level: widget.level));
+    context.read<RoleplayBloc>().add(
+      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   @override
@@ -84,16 +89,27 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen> with Ticker
 
   Offset _getAnatomicalOffset(String text) {
     final lower = text.toLowerCase();
-    if (lower.contains("head") || lower.contains("brain") || lower.contains("sensor") || lower.contains("sensory")) {
+    if (lower.contains("head") ||
+        lower.contains("brain") ||
+        lower.contains("sensor") ||
+        lower.contains("sensory")) {
       return Offset(0, -95.h);
     }
-    if (lower.contains("left limb") || lower.contains("left arm") || lower.contains("left hand")) {
+    if (lower.contains("left limb") ||
+        lower.contains("left arm") ||
+        lower.contains("left hand")) {
       return Offset(-64.w, -5.h);
     }
-    if (lower.contains("right wing") || lower.contains("right limb") || lower.contains("right arm") || lower.contains("right hand")) {
+    if (lower.contains("right wing") ||
+        lower.contains("right limb") ||
+        lower.contains("right arm") ||
+        lower.contains("right hand")) {
       return Offset(64.w, -5.h);
     }
-    if (lower.contains("core") || lower.contains("central") || lower.contains("chest") || lower.contains("heart")) {
+    if (lower.contains("core") ||
+        lower.contains("central") ||
+        lower.contains("chest") ||
+        lower.contains("heart")) {
       return Offset(0, -25.h);
     }
     if (lower.contains("left leg") || lower.contains("left foot")) {
@@ -102,9 +118,12 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen> with Ticker
     return Offset(32.w, 90.h); // Default Right Leg coordinate
   }
 
-  void _onScanUpdate(DragUpdateDetails details, List<String> availableSymptoms) {
+  void _onScanUpdate(
+    DragUpdateDetails details,
+    List<String> availableSymptoms,
+  ) {
     if (_isAnswered) return;
-    
+
     setState(() {
       _scanOffset += details.delta;
     });
@@ -159,10 +178,17 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen> with Ticker
   void _submitDiagnosis(String correctAnswer) {
     if (_isAnswered || _diagnosedSymptoms.isEmpty) return;
 
-    final targets = correctAnswer.split(',').map((e) => e.trim().toLowerCase()).toList();
-    final current = _diagnosedSymptoms.map((e) => e.trim().toLowerCase()).toList();
+    final targets = correctAnswer
+        .split(',')
+        .map((e) => e.trim().toLowerCase())
+        .toList();
+    final current = _diagnosedSymptoms
+        .map((e) => e.trim().toLowerCase())
+        .toList();
 
-    bool isCorrect = targets.length == current.length && targets.every((t) => current.contains(t));
+    bool isCorrect =
+        targets.length == current.length &&
+        targets.every((t) => current.contains(t));
 
     setState(() {
       _isAnswered = true;
@@ -234,10 +260,15 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen> with Ticker
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 10.h,
+                  ),
                   child: Column(
                     children: [
-                      MedicalConsultInstruction(primaryColor: theme.primaryColor),
+                      MedicalConsultInstruction(
+                        primaryColor: theme.primaryColor,
+                      ),
                       SizedBox(height: 16.h),
                       MedicalConsultPatientRecord(
                         prompt: quest.prompt ?? "",
@@ -279,19 +310,33 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen> with Ticker
                             ScaleButton(
                               onTap: _clearDiagnosis,
                               child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 24.w,
+                                  vertical: 12.h,
+                                ),
                                 decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  color: theme.primaryColor.withValues(
+                                    alpha: 0.1,
+                                  ),
                                   borderRadius: BorderRadius.circular(30.r),
-                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                  border: Border.all(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.3,
+                                    ),
+                                  ),
                                 ),
                                 child: Row(
                                   children: [
-                                    Icon(Icons.refresh_rounded, color: theme.primaryColor, size: 18.r),
+                                    Icon(
+                                      Icons.refresh_rounded,
+                                      color: theme.primaryColor,
+                                      size: 18.r,
+                                    ),
                                     SizedBox(width: 6.w),
                                     Text(
                                       "RESET SCAN",
-                                      style: TextStyle(fontFamily: 'Outfit', 
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.bold,
                                         color: theme.primaryColor,
@@ -303,28 +348,42 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen> with Ticker
                             ),
                             SizedBox(width: 16.w),
                             ScaleButton(
-                              onTap: () => _submitDiagnosis(quest.correctAnswer ?? ""),
+                              onTap: () =>
+                                  _submitDiagnosis(quest.correctAnswer ?? ""),
                               child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 12.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 32.w,
+                                  vertical: 12.h,
+                                ),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30.r),
                                   gradient: LinearGradient(
-                                    colors: [theme.primaryColor, theme.primaryColor.withValues(alpha: 0.8)],
+                                    colors: [
+                                      theme.primaryColor,
+                                      theme.primaryColor.withValues(alpha: 0.8),
+                                    ],
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: theme.primaryColor.withValues(alpha: 0.35),
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.35,
+                                      ),
                                       blurRadius: 15,
                                     ),
                                   ],
                                 ),
                                 child: Row(
                                   children: [
-                                    Icon(Icons.medical_services_rounded, color: Colors.white, size: 18.r),
+                                    Icon(
+                                      Icons.medical_services_rounded,
+                                      color: Colors.white,
+                                      size: 18.r,
+                                    ),
                                     SizedBox(width: 6.w),
                                     Text(
                                       "CONFIRM DIAGNOSIS",
-                                      style: TextStyle(fontFamily: 'Outfit', 
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,

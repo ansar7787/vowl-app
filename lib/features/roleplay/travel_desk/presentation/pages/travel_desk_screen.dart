@@ -7,7 +7,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
-import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
+import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_instruction.dart';
@@ -29,19 +31,20 @@ class TravelDeskScreen extends StatefulWidget {
   State<TravelDeskScreen> createState() => _TravelDeskScreenState();
 }
 
-class _TravelDeskScreenState extends State<TravelDeskScreen> with TickerProviderStateMixin {
+class _TravelDeskScreenState extends State<TravelDeskScreen>
+    with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   late AnimationController _rippleController;
   late AnimationController _pulseController;
-  
+
   int _lastProcessedIndex = -1;
   int? _selectedIndex;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  
+
   // Custom drag feedback coordinates
   int? _hoveredIndex;
 
@@ -57,7 +60,9 @@ class _TravelDeskScreenState extends State<TravelDeskScreen> with TickerProvider
       duration: const Duration(seconds: 2),
     )..repeat(reverse: true);
 
-    context.read<RoleplayBloc>().add(FetchRoleplayQuests(gameType: widget.gameType, level: widget.level));
+    context.read<RoleplayBloc>().add(
+      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   @override
@@ -151,7 +156,10 @@ class _TravelDeskScreenState extends State<TravelDeskScreen> with TickerProvider
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 10.h,
+                  ),
                   child: Column(
                     children: [
                       TravelDeskInstruction(primaryColor: theme.primaryColor),
@@ -162,7 +170,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen> with TickerProvider
                         isDark: isDark,
                       ),
                       SizedBox(height: 24.h),
-                      
+
                       // Biometric Passport Book
                       TravelDeskPassportBook(
                         options: options,
@@ -205,7 +213,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen> with TickerProvider
                           isDark: isDark,
                           isCorrect: _isCorrect,
                         ),
-                      
+
                       SizedBox(height: 80.h),
                     ],
                   ),

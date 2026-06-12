@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -26,10 +26,12 @@ class DirectIndirectSpeechScreen extends StatefulWidget {
   });
 
   @override
-  State<DirectIndirectSpeechScreen> createState() => _DirectIndirectSpeechScreenState();
+  State<DirectIndirectSpeechScreen> createState() =>
+      _DirectIndirectSpeechScreenState();
 }
 
-class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen> {
+class _DirectIndirectSpeechScreenState
+    extends State<DirectIndirectSpeechScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
@@ -85,21 +87,21 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final livesRestored =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
-          if (isNewQuestion || isRetry || livesChanged) {
+          if (isNewQuestion || isRetry || livesRestored) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _selectedReflection = -1;
-              _rotation = 0.0;
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
           _lastLives = state.livesRemaining;
@@ -121,12 +123,18 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
         }
       },
       builder: (context, state) {
-        final GrammarQuest? quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final GrammarQuest? quest = (state is GrammarLoaded)
+            ? state.currentQuest
+            : null;
         final rawQuestion = quest?.question ?? "DIRECT SPEECH";
         String displayDirect = quest?.sentence ?? "";
         if (displayDirect.isEmpty) {
           if (rawQuestion.contains(':')) {
-            displayDirect = rawQuestion.split(':').last.replaceAll('"', '').trim();
+            displayDirect = rawQuestion
+                .split(':')
+                .last
+                .replaceAll('"', '')
+                .trim();
           } else {
             displayDirect = rawQuestion;
           }
@@ -159,13 +167,25 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                     final maxHeight = constraints.maxHeight;
                     final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 130.h : 180.h) + (isCompact ? 30.h : 50.h) + 40.h;
+                    final double estimatedContentHeight =
+                        (isCompact ? 30.h : 40.h) +
+                        (isCompact ? 130.h : 180.h) +
+                        (isCompact ? 30.h : 50.h) +
+                        40.h;
                     final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 15.0) : 4.0;
-                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(6.0, 20.0) : 6.0;
-                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 5
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(4.0, 15.0)
+                        : 4.0;
+                    final double gapMiddle = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                        : 6.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                        : 10.0;
 
                     return Column(
                       children: [
@@ -175,10 +195,14 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                                 height: 25.h,
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
-                                  child: DirectIndirectSpeechInstruction(primaryColor: theme.primaryColor),
+                                  child: DirectIndirectSpeechInstruction(
+                                    primaryColor: theme.primaryColor,
+                                  ),
                                 ),
                               )
-                            : DirectIndirectSpeechInstruction(primaryColor: theme.primaryColor),
+                            : DirectIndirectSpeechInstruction(
+                                primaryColor: theme.primaryColor,
+                              ),
                         SizedBox(height: gapMiddle),
 
                         // Holographic Mirror
@@ -219,8 +243,15 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                                 if (_isAnswered) ...[
                                   SizedBox(height: isCompact ? 12.h : 30.h),
                                   Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                    child: _buildCorrectResult(quest, theme.primaryColor, isDark, isCompact),
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 24.w,
+                                    ),
+                                    child: _buildCorrectResult(
+                                      quest,
+                                      theme.primaryColor,
+                                      isDark,
+                                      isCompact,
+                                    ),
                                   ),
                                 ],
                                 SizedBox(height: gapBottom),
@@ -260,26 +291,32 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
           color: isCorrect
               ? Colors.greenAccent.withValues(alpha: 0.2)
               : (isWrong
-                  ? Colors.redAccent.withValues(alpha: 0.2)
-                  : (isSelected ? primaryColor.withValues(alpha: 0.2) : null)),
+                    ? Colors.redAccent.withValues(alpha: 0.2)
+                    : (isSelected
+                          ? primaryColor.withValues(alpha: 0.2)
+                          : null)),
           border: Border.all(
             color: isCorrect
                 ? Colors.greenAccent
                 : (isWrong
-                    ? Colors.redAccent
-                    : (isSelected ? primaryColor : Colors.white.withValues(alpha: 0.1))),
+                      ? Colors.redAccent
+                      : (isSelected
+                            ? primaryColor
+                            : Colors.white.withValues(alpha: 0.1))),
             width: 2,
           ),
           child: Text(
             text,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontFamily: 'Outfit', 
+              fontFamily: 'Outfit',
               fontSize: isCompact ? 13.sp : 15.sp,
               fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
               color: isCorrect
                   ? Colors.greenAccent
-                  : (isWrong ? Colors.redAccent : (isDark ? Colors.white : Colors.black87)),
+                  : (isWrong
+                        ? Colors.redAccent
+                        : (isDark ? Colors.white : Colors.black87)),
               height: 1.4,
             ),
           ),
@@ -318,7 +355,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
           Text(
             correct ? "CORRECT!" : "INCORRECT",
             style: TextStyle(
-              fontFamily: 'Outfit', 
+              fontFamily: 'Outfit',
               fontSize: isCompact ? 12.sp : 15.sp,
               fontWeight: FontWeight.w900,
               color: displayColor,
@@ -331,7 +368,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
               quest.explanation!,
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: 12.sp,
                 color: isDark ? Colors.white60 : Colors.black54,
               ),

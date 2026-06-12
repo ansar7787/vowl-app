@@ -10,26 +10,41 @@ import 'package:vowl/features/auth/domain/usecases/update_category_stats.dart';
 import 'package:vowl/features/auth/domain/usecases/update_unlocked_level.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
-import 'package:vowl/features/speaking/domain/usecases/get_speaking_quest.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/domain/usecases/get_writing_quest.dart';
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
+import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 
 class MockGetWritingQuest extends Mock implements GetWritingQuest {}
+
 class MockUpdateUserCoins extends Mock implements UpdateUserCoins {}
+
 class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
+
 class MockUpdateCategoryStats extends Mock implements UpdateCategoryStats {}
+
 class MockUpdateUnlockedLevel extends Mock implements UpdateUnlockedLevel {}
+
 class MockAwardBadge extends Mock implements AwardBadge {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockUseHint extends Mock implements UseHint {}
 
-class FakeQuestParams extends Fake implements QuestParams {}
-class FakeUpdateUserRewardsParams extends Fake implements UpdateUserRewardsParams {}
-class FakeUpdateCategoryStatsParams extends Fake implements UpdateCategoryStatsParams {}
-class FakeUpdateUnlockedLevelParams extends Fake implements UpdateUnlockedLevelParams {}
+class FakeGetWritingQuestParams extends Fake implements GetWritingQuestParams {}
+
+class FakeUpdateUserRewardsParams extends Fake
+    implements UpdateUserRewardsParams {}
+
+class FakeUpdateCategoryStatsParams extends Fake
+    implements UpdateCategoryStatsParams {}
+
+class FakeUpdateUnlockedLevelParams extends Fake
+    implements UpdateUnlockedLevelParams {}
 
 void main() {
   late WritingBloc bloc;
@@ -44,7 +59,7 @@ void main() {
   late MockUseHint mockUseHint;
 
   setUpAll(() {
-    registerFallbackValue(FakeQuestParams());
+    registerFallbackValue(FakeGetWritingQuestParams());
     registerFallbackValue(FakeUpdateUserRewardsParams());
     registerFallbackValue(FakeUpdateCategoryStatsParams());
     registerFallbackValue(FakeUpdateUnlockedLevelParams());
@@ -91,13 +106,16 @@ void main() {
     blocTest<WritingBloc, WritingState>(
       'should emit [Loading, Loaded] when data is fetched successfully',
       build: () {
-        when(() => mockGetQuest(any())).thenAnswer((_) async => const Right(tQuests));
+        when(
+          () => mockGetQuest(any()),
+        ).thenAnswer((_) async => const Right(tQuests));
         return bloc;
       },
-      act: (bloc) => bloc.add(FetchWritingQuests(gameType: tGameType, level: tLevel)),
+      act: (bloc) =>
+          bloc.add(FetchWritingQuests(gameType: tGameType, level: tLevel)),
       expect: () => [
         WritingLoading(),
-        WritingLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3),
+        WritingLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3, gameType: tGameType, level: tLevel),
       ],
     );
   });
@@ -107,6 +125,8 @@ void main() {
       quests: tQuests,
       currentIndex: 0,
       livesRemaining: 3,
+      gameType: tGameType,
+      level: tLevel,
     );
 
     blocTest<WritingBloc, WritingState>(
@@ -118,9 +138,7 @@ void main() {
       },
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(SubmitAnswer(true)),
-      expect: () => [
-        tLoadedState.copyWith(lastAnswerCorrect: true),
-      ],
+      expect: () => [tLoadedState.copyWith(lastAnswerCorrect: true)],
     );
 
     blocTest<WritingBloc, WritingState>(

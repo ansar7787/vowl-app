@@ -1,6 +1,6 @@
-import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../domain/entities/reading_quest.dart';
+
+import 'package:vowl/features/reading/presentation/constants/reading_constants.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 import '../../../../core/network/network_info.dart';
 import '../../../../core/utils/sound_service.dart';
@@ -13,129 +13,14 @@ import '../../../../features/auth/domain/usecases/use_hint.dart';
 import '../../domain/usecases/get_reading_quest.dart';
 import '../../../../features/auth/domain/usecases/update_user_coins.dart';
 import '../../../../features/auth/domain/usecases/award_badge.dart';
-import '../../../../features/speaking/domain/usecases/get_speaking_quest.dart';
+import 'reading_event.dart';
+import 'reading_state.dart';
 
-// --- EVENTS ---
-abstract class ReadingEvent extends Equatable {
-  @override
-  List<Object?> get props => [];
-}
+// Re-export so existing `import 'reading_bloc.dart'` call-sites resolve events
+// and states without any changes.
+export 'reading_event.dart';
+export 'reading_state.dart';
 
-class FetchReadingQuests extends ReadingEvent {
-  final dynamic gameType;
-  final int level;
-  FetchReadingQuests({required this.gameType, required this.level});
-
-  @override
-  List<Object?> get props => [gameType, level];
-}
-
-class SubmitAnswer extends ReadingEvent {
-  final bool isCorrect;
-  SubmitAnswer(this.isCorrect);
-
-  @override
-  List<Object?> get props => [isCorrect];
-}
-
-class NextQuestion extends ReadingEvent {}
-
-class RestartLevel extends ReadingEvent {}
-
-class ReadingHintUsed extends ReadingEvent {}
-
-class RetryCurrentQuestion extends ReadingEvent {}
-
-class RestoreLife extends ReadingEvent {}
-
-// --- STATES ---
-abstract class ReadingState extends Equatable {
-  @override
-  List<Object?> get props => [];
-}
-
-class ReadingInitial extends ReadingState {}
-
-class ReadingLoading extends ReadingState {}
-
-class ReadingLoaded extends ReadingState {
-  final List<ReadingQuest> quests;
-  final int currentIndex;
-  final int livesRemaining;
-  final bool? lastAnswerCorrect;
-  final bool hintUsed;
-  final int wrongCount;
-  final bool isFinalFailure;
-
-  ReadingQuest get currentQuest => quests[currentIndex];
-
-  ReadingLoaded({
-    required this.quests,
-    required this.currentIndex,
-    required this.livesRemaining,
-    this.lastAnswerCorrect,
-    this.hintUsed = false,
-    this.wrongCount = 0,
-    this.isFinalFailure = false,
-  });
-
-  @override
-  List<Object?> get props => [quests, currentIndex, livesRemaining, lastAnswerCorrect, hintUsed, wrongCount, isFinalFailure];
-
-  ReadingLoaded copyWith({
-    List<ReadingQuest>? quests,
-    int? currentIndex,
-    int? livesRemaining,
-    bool? lastAnswerCorrect,
-    bool? hintUsed,
-    int? wrongCount,
-    bool? isFinalFailure,
-  }) {
-    return ReadingLoaded(
-      quests: quests ?? this.quests,
-      currentIndex: currentIndex ?? this.currentIndex,
-      livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: lastAnswerCorrect,
-      hintUsed: hintUsed ?? this.hintUsed,
-      wrongCount: wrongCount ?? this.wrongCount,
-      isFinalFailure: isFinalFailure ?? this.isFinalFailure,
-    );
-  }
-}
-
-class ReadingError extends ReadingState {
-  final String message;
-  final String? technicalError;
-  ReadingError(this.message, {this.technicalError});
-
-  @override
-  List<Object?> get props => [message, technicalError];
-}
-
-class ReadingGameComplete extends ReadingState {
-  final int xpEarned;
-  final int coinsEarned;
-  final int questCount;
-  ReadingGameComplete({
-    required this.xpEarned,
-    required this.coinsEarned,
-    required this.questCount,
-  });
-
-  @override
-  List<Object?> get props => [xpEarned, coinsEarned, questCount];
-}
-
-class ReadingGameOver extends ReadingState {
-  final List<ReadingQuest> quests;
-  final int currentIndex;
-  ReadingGameOver({required this.quests, required this.currentIndex});
-
-  @override
-  List<Object?> get props => [quests, currentIndex];
-}
-
-// --- BLOC ---
 class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
   final GetReadingQuest getQuest;
   final UpdateUserCoins updateUserCoins;
@@ -148,6 +33,7 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
   final UseHint useHint;
   final NetworkInfo networkInfo;
 
+  /// Set during [FetchReadingQuests]; consumed by the level-completion save.
   String? currentGameType;
   int? currentLevel;
 
@@ -162,160 +48,256 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
     required this.hapticService,
     required this.useHint,
     required this.networkInfo,
-  }) : super(ReadingInitial()) {
-    on<RetryCurrentQuestion>((event, emit) {
-      if (state is ReadingLoaded) {
-        final s = state as ReadingLoaded;
-        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
-      }
-    });
+  }) : super(const ReadingInitial()) {
+    on<RetryCurrentQuestion>(_onRetryCurrentQuestion);
+    on<FetchReadingQuests>(_onFetchReadingQuests);
+    on<SubmitAnswer>(_onSubmitAnswer);
+    on<NextQuestion>(_onNextQuestion);
+    on<ReadingHintUsed>(_onReadingHintUsed);
+    on<RestoreLife>(_onRestoreLife);
+    on<RestartLevel>(_onRestartLevel);
+  }
 
-    on<FetchReadingQuests>((event, emit) async {
-      currentGameType = event.gameType is GameSubtype ? (event.gameType as GameSubtype).name : event.gameType.toString();
-      currentLevel = event.level;
-      emit(ReadingLoading());
-      try {
-        final GameSubtype subtype = event.gameType is GameSubtype
-            ? event.gameType
-            : GameSubtype.fromString(event.gameType.toString(), fallback: GameSubtype.readAndAnswer);
-        final result = await getQuest(QuestParams(gameType: subtype, level: event.level));
-        result.fold((failure) => emit(ReadingError(failure.message, technicalError: failure.toString())), (quests) {
+  // ---------------------------------------------------------------------------
+  // Handlers
+  // ---------------------------------------------------------------------------
+
+  void _onRetryCurrentQuestion(
+    RetryCurrentQuestion event,
+    Emitter<ReadingState> emit,
+  ) {
+    if (state is ReadingLoaded) {
+      emit(
+        (state as ReadingLoaded).copyWith(
+          lastAnswerCorrect: null,
+          hintUsed: false,
+        ),
+      );
+    }
+  }
+
+  Future<void> _onFetchReadingQuests(
+    FetchReadingQuests event,
+    Emitter<ReadingState> emit,
+  ) async {
+    currentGameType = event.gameType is GameSubtype
+        ? (event.gameType as GameSubtype).name
+        : event.gameType.toString();
+    currentLevel = event.level;
+
+    emit(const ReadingLoading());
+
+    try {
+      final GameSubtype subtype = event.gameType is GameSubtype
+          ? event.gameType
+          : GameSubtype.fromString(
+              event.gameType.toString(),
+              fallback: GameSubtype.readAndAnswer,
+            );
+
+      final result = await getQuest(
+        GetReadingQuestParams(gameType: subtype, level: event.level),
+      );
+
+      result.fold(
+        (failure) => emit(
+          ReadingError(failure.message, technicalError: failure.toString()),
+        ),
+        (quests) {
           if (quests.isEmpty) {
-            emit(ReadingError("No comprehension quests found.", technicalError: "Empty list for $currentGameType, Level $currentLevel"));
+            emit(
+              ReadingError(
+                'No comprehension quests found.',
+                technicalError:
+                    'Empty list for $currentGameType, Level $currentLevel',
+              ),
+            );
           } else {
-            final limitedQuests = quests.take(3).toList();
-            emit(ReadingLoaded(quests: limitedQuests, currentIndex: 0, livesRemaining: 3));
+            emit(
+              ReadingLoaded(
+                quests: quests
+                    .take(ReadingGameConfig.maxQuestsPerSession)
+                    .toList(),
+                currentIndex: 0,
+                livesRemaining: ReadingGameConfig.initialLives,
+              ),
+            );
           }
-        });
-      } catch (e) {
-        emit(ReadingError("Failed to fetch reading quests.", technicalError: e.toString()));
-      }
-    });
+        },
+      );
+    } catch (e) {
+      // logger?.error('FetchReadingQuests failed', error: e, stackTrace: st);
+      emit(
+        ReadingError(
+          'Failed to fetch reading quests.',
+          technicalError: e.toString(),
+        ),
+      );
+    }
+  }
 
-    on<SubmitAnswer>((event, emit) async {
-      final currentState = state;
-      if (currentState is! ReadingLoaded || currentState.livesRemaining <= 0 || currentState.lastAnswerCorrect != null) return;
+  /// Processes a player answer. Emits exactly once per call.
+  ///
+  /// The guard [lastAnswerCorrect] != null prevents double-tap processing.
+  /// BLoC serialises events, so by the time a queued second [SubmitAnswer]
+  /// is dequeued, the state already has a non-null value and the guard exits.
+  void _onSubmitAnswer(SubmitAnswer event, Emitter<ReadingState> emit) {
+    final s = state;
+    if (s is! ReadingLoaded ||
+        s.livesRemaining <= 0 ||
+        s.lastAnswerCorrect != null) {
+      return;
+    }
 
-      // Lock out double-tap entries instantly by setting lastAnswerCorrect
-      final initialTransition = currentState.copyWith(lastAnswerCorrect: event.isCorrect);
-      emit(initialTransition);
-
-      if (event.isCorrect) {
-        soundService.playCorrect();
-        hapticService.success();
-        
-        emit(currentState.copyWith(
+    if (event.isCorrect) {
+      soundService.playCorrect();
+      hapticService.success();
+      emit(
+        s.copyWith(
           lastAnswerCorrect: true,
           wrongCount: 0,
           isFinalFailure: false,
-        ));
-      } else {
-        soundService.playWrong();
-        hapticService.error();
-        
-        final newLives = currentState.livesRemaining - 1;
-        final newWrongCount = currentState.wrongCount + 1;
-        bool isFinal = newWrongCount >= 2;
+        ),
+      );
+    } else {
+      soundService.playWrong();
+      hapticService.error();
 
-        List<ReadingQuest> updatedQuests = currentState.quests;
-        if (isFinal) {
-          updatedQuests = List<ReadingQuest>.from(currentState.quests);
-          updatedQuests.add(currentState.currentQuest);
-        }
-        emit(currentState.copyWith(
-          quests: updatedQuests,
+      final newLives = s.livesRemaining - 1;
+      final newWrongCount = s.wrongCount + 1;
+      final isFinal =
+          newWrongCount >= ReadingGameConfig.wrongAnswersBeforeFinal;
+
+      emit(
+        s.copyWith(
+          quests: isFinal ? [...s.quests, s.currentQuest] : s.quests,
           livesRemaining: newLives,
           lastAnswerCorrect: false,
           wrongCount: isFinal ? 0 : newWrongCount,
           isFinalFailure: isFinal || newLives <= 0,
-        ));
-      }
-    });
+        ),
+      );
+    }
+  }
 
-    on<NextQuestion>((event, emit) async {
-      final currentState = state;
-      if (currentState is! ReadingLoaded) return;
+  Future<void> _onNextQuestion(
+    NextQuestion event,
+    Emitter<ReadingState> emit,
+  ) async {
+    final s = state;
+    if (s is! ReadingLoaded) return;
 
-      if (currentState.livesRemaining <= 0) {
-        emit(ReadingGameOver(
-          quests: currentState.quests,
-          currentIndex: currentState.currentIndex,
-        ));
-        return;
-      }
+    if (s.livesRemaining <= 0) {
+      emit(ReadingGameOver(quests: s.quests, currentIndex: s.currentIndex));
+      return;
+    }
 
-      if (currentState.currentIndex + 1 < currentState.quests.length) {
-        if (currentState.lastAnswerCorrect == true || currentState.isFinalFailure) {
-          emit(currentState.copyWith(
-            currentIndex: currentState.currentIndex + 1,
+    final isLastQuestion = s.currentIndex + 1 >= s.quests.length;
+
+    if (!isLastQuestion) {
+      if (s.lastAnswerCorrect == true || s.isFinalFailure) {
+        emit(
+          s.copyWith(
+            currentIndex: s.currentIndex + 1,
             lastAnswerCorrect: null,
             hintUsed: false,
             wrongCount: 0,
             isFinalFailure: false,
-          ));
-        } else {
-          // First-time wrong answer, stay and retry
-          emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
-        }
-      } else if (currentState.lastAnswerCorrect == true) {
-        soundService.playLevelComplete();
-        const int totalXp = 10;
-        const int totalCoins = 10;
-        
-        // 1. Immediate UI Feedback to prevent race condition transitions
-        emit(ReadingGameComplete(
-          xpEarned: totalXp,
-          coinsEarned: totalCoins,
-          questCount: currentState.quests.length,
-        ));
-
-        // 2. Background Save task
-        if (currentGameType != null && currentLevel != null) {
-          await Future.wait([
-            updateUserRewards(UpdateUserRewardsParams(
-              gameType: currentGameType!,
-              level: currentLevel!,
-              xpIncrease: totalXp,
-              coinIncrease: totalCoins,
-            )),
-            updateCategoryStats(UpdateCategoryStatsParams(
-              categoryId: currentGameType!,
-              isCorrect: true,
-            )),
-            updateUnlockedLevel(UpdateUnlockedLevelParams(
-              categoryId: currentGameType!,
-              newLevel: currentLevel! + 1,
-            )),
-            awardBadge('reading_master'),
-          ]);
-        }
+          ),
+        );
       } else {
-        // Wrong answer on the very last quest
-        emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
+        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
       }
-    });
+      return;
+    }
 
-    on<ReadingHintUsed>((event, emit) async {
-      if (state is ReadingLoaded) {
-        final s = state as ReadingLoaded;
-        if (s.hintUsed) return;
-        final result = await useHint(NoParams());
-        if (result.isRight()) {
-          emit(s.copyWith(hintUsed: true));
-          hapticService.selection();
-        }
-      }
-    });
+    if (s.lastAnswerCorrect == true) {
+      soundService.playLevelComplete();
+      emit(
+        ReadingGameComplete(
+          xpEarned: ReadingGameConfig.xpPerLevel,
+          coinsEarned: ReadingGameConfig.coinsPerLevel,
+          questCount: s.quests.length,
+        ),
+      );
+      await _persistLevelCompletion();
+    } else {
+      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+    }
+  }
 
-    on<RestoreLife>((event, emit) {
-      if (state is ReadingGameOver) {
-        final s = state as ReadingGameOver;
-        emit(ReadingLoaded(quests: s.quests, currentIndex: s.currentIndex, livesRemaining: 1, lastAnswerCorrect: null, hintUsed: false));
-      }
-    });
+  Future<void> _onReadingHintUsed(
+    ReadingHintUsed event,
+    Emitter<ReadingState> emit,
+  ) async {
+    final s = state;
+    if (s is! ReadingLoaded || s.hintUsed) return;
+    final result = await useHint(NoParams());
+    if (result.isRight()) {
+      emit(s.copyWith(hintUsed: true));
+      hapticService.selection();
+    }
+  }
 
-    on<RestartLevel>((event, emit) {
-      emit(ReadingInitial());
-    });
+  void _onRestoreLife(RestoreLife event, Emitter<ReadingState> emit) {
+    final s = state;
+    if (s is! ReadingGameOver) return;
+    emit(
+      ReadingLoaded(
+        quests: s.quests,
+        currentIndex: s.currentIndex,
+        livesRemaining: 1,
+      ),
+    );
+  }
+
+  void _onRestartLevel(RestartLevel event, Emitter<ReadingState> emit) {
+    emit(const ReadingInitial());
+  }
+
+  // ---------------------------------------------------------------------------
+  // Private helpers
+  // ---------------------------------------------------------------------------
+
+  /// Persists XP, coins, stats, and badge after a successful level completion.
+  ///
+  /// Called AFTER [ReadingGameComplete] is emitted — a failure here never
+  /// affects the UI. Offline guard prevents pointless requests.
+  Future<void> _persistLevelCompletion() async {
+    if (currentGameType == null || currentLevel == null) return;
+
+    final isOnline = await networkInfo.isConnected;
+    if (!isOnline) {
+      //  Enqueue for offline retry via a PendingRewardsQueue service.
+      return;
+    }
+
+    try {
+      await Future.wait([
+        updateUserRewards(
+          UpdateUserRewardsParams(
+            gameType: currentGameType!,
+            level: currentLevel!,
+            xpIncrease: ReadingGameConfig.xpPerLevel,
+            coinIncrease: ReadingGameConfig.coinsPerLevel,
+          ),
+        ),
+        updateCategoryStats(
+          UpdateCategoryStatsParams(
+            categoryId: currentGameType!,
+            isCorrect: true,
+          ),
+        ),
+        updateUnlockedLevel(
+          UpdateUnlockedLevelParams(
+            categoryId: currentGameType!,
+            newLevel: currentLevel! + 1,
+          ),
+        ),
+        awardBadge('reading_master'),
+      ]);
+    } catch (e) {
+      // logger?.error('Level completion save failed', error: e, stackTrace: st);
+    }
   }
 }

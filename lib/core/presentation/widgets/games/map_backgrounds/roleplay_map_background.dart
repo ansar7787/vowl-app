@@ -29,22 +29,19 @@ class RoleplayMapBackground extends StatelessWidget {
             return Positioned(
               top: -100.h,
               left: (i * 100).w,
-              child: Opacity(
-                opacity: 0.05,
-                child: Transform.rotate(
-                  angle: 0.2,
-                  child: Container(
-                    width: 80.w,
-                    height: 1.sh,
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Color(0xFFF59E0B),
-                          Colors.transparent,
-                        ],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                      ),
+              child: Transform.rotate(
+                angle: 0.2,
+                child: Container(
+                  width: 80.w,
+                  height: 1.sh,
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0x0DF59E0B), // 0xFFF59E0B at alpha 0.05
+                        Colors.transparent,
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
                     ),
                   ),
                 ),

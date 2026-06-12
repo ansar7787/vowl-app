@@ -8,7 +8,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
-import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
+import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_instruction.dart';
@@ -26,22 +28,24 @@ class SituationalResponseScreen extends StatefulWidget {
   });
 
   @override
-  State<SituationalResponseScreen> createState() => _SituationalResponseScreenState();
+  State<SituationalResponseScreen> createState() =>
+      _SituationalResponseScreenState();
 }
 
-class _SituationalResponseScreenState extends State<SituationalResponseScreen> with TickerProviderStateMixin {
+class _SituationalResponseScreenState extends State<SituationalResponseScreen>
+    with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   late AnimationController _timerController;
   late AnimationController _pulseController;
-  
+
   int _lastProcessedIndex = -1;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
   int? _selectedOrbIndex;
-  
+
   // Real-time ticking sound throttling
   int _lastTickSecond = -1;
 
@@ -52,7 +56,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen> w
       vsync: this,
       duration: const Duration(seconds: 12),
     );
-    
+
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
@@ -69,7 +73,9 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen> w
       }
     });
 
-    context.read<RoleplayBloc>().add(FetchRoleplayQuests(gameType: widget.gameType, level: widget.level));
+    context.read<RoleplayBloc>().add(
+      FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   @override
@@ -85,12 +91,14 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen> w
 
   void _checkTickWarnings() {
     if (_isAnswered) return;
-    
+
     // Warn when time is running out (less than 4 seconds remaining)
     final double elapsedRatio = _timerController.value;
     final int remainingSec = (12 * (1.0 - elapsedRatio)).ceil();
-    
-    if (remainingSec <= 4 && remainingSec > 0 && remainingSec != _lastTickSecond) {
+
+    if (remainingSec <= 4 &&
+        remainingSec > 0 &&
+        remainingSec != _lastTickSecond) {
       _lastTickSecond = remainingSec;
       _hapticService.selection();
       _soundService.playHint(); // Play warning beep
@@ -111,20 +119,20 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen> w
     _stopTimer();
     _hapticService.error();
     _soundService.playWrong();
-    
+
     setState(() {
       _isAnswered = true;
       _isCorrect = false;
       _selectedOrbIndex = null;
     });
-    
+
     context.read<RoleplayBloc>().add(SubmitAnswer(false));
   }
 
   void _onOrbTap(int index, int correctIndex) {
     if (_isAnswered) return;
     _stopTimer();
-    
+
     final isCorrect = index == correctIndex;
     setState(() {
       _isAnswered = true;
@@ -199,10 +207,15 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen> w
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 10.h,
+                  ),
                   child: Column(
                     children: [
-                      SituationalResponseInstruction(primaryColor: theme.primaryColor),
+                      SituationalResponseInstruction(
+                        primaryColor: theme.primaryColor,
+                      ),
                       SizedBox(height: 16.h),
                       SituationalResponseSceneDisplay(
                         quest: quest,
@@ -224,7 +237,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen> w
                         onOrbTap: _onOrbTap,
                       ),
                       SizedBox(height: 20.h),
-                      
+
                       // Explanations Card when answered
                       AnimatedCrossFade(
                         firstChild: const SizedBox(),

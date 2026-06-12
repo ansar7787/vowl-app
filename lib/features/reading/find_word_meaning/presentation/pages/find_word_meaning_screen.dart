@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
-import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
+import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_instruction.dart';
@@ -31,7 +31,7 @@ class FindWordMeaningScreen extends StatefulWidget {
 class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   Offset _lensPos = const Offset(200, 300);
   bool _isAnswered = false;
   bool? _isCorrect;
@@ -42,7 +42,9 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<ReadingBloc>().add(FetchReadingQuests(gameType: widget.gameType, level: widget.level));
+    context.read<ReadingBloc>().add(
+      FetchReadingQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   void _onLensMove(Offset position) {
@@ -61,12 +63,18 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() { _isAnswered = true; _isCorrect = true; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
+      });
       context.read<ReadingBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() { _isAnswered = true; _isCorrect = false; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
       context.read<ReadingBloc>().add(SubmitAnswer(false));
     }
   }
@@ -81,7 +89,8 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
         if (state is ReadingLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
           final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final livesChanged =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
@@ -100,60 +109,78 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
         }
         if (state is ReadingGameComplete) {
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'LEXICAL MASTER!', enableDoubleUp: true);
+          GameDialogHelper.showCompletion(
+            context,
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'LEXICAL MASTER!',
+            enableDoubleUp: true,
+          );
         } else if (state is ReadingGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ReadingBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<ReadingBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
-        final ReadingQuest? quest = (state is ReadingLoaded) ? state.currentQuest as ReadingQuest? : null;
-        
+        final ReadingQuest? quest = (state is ReadingLoaded)
+            ? state.currentQuest as ReadingQuest?
+            : null;
+
         return ReadingBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
-          child: quest == null ? const SizedBox() : SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Column(
-                children: [
-                  SizedBox(height: 16.h),
-                  FindWordMeaningInstruction(primaryColor: theme.primaryColor),
-                  SizedBox(height: 24.h),
-                  FindWordMeaningQuestionHeader(
-                    text: quest.question ?? "",
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                  ),
-                  SizedBox(height: 32.h),
-                  FindWordMeaningMagnifierField(
-                    passage: quest.passage ?? "",
-                    correct: quest.targetWord ?? "",
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                    lensPos: _lensPos,
-                    isAnswered: _isAnswered,
-                    onLensMove: _onLensMove,
-                    onWordTap: (word) => _onWordTap(word, quest.targetWord ?? ""),
-                  ),
-                  if (_isAnswered) ...[
-                    SizedBox(height: 30.h),
-                    FindWordMeaningResult(
-                      quest: quest,
-                      isCorrect: _isCorrect == true,
-                      isDark: isDark,
+          child: quest == null
+              ? const SizedBox()
+              : SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 16.h),
+                        FindWordMeaningInstruction(
+                          primaryColor: theme.primaryColor,
+                        ),
+                        SizedBox(height: 24.h),
+                        FindWordMeaningQuestionHeader(
+                          text: quest.question ?? "",
+                          color: theme.primaryColor,
+                          isDark: isDark,
+                        ),
+                        SizedBox(height: 32.h),
+                        FindWordMeaningMagnifierField(
+                          passage: quest.passage ?? "",
+                          correct: quest.targetWord ?? "",
+                          color: theme.primaryColor,
+                          isDark: isDark,
+                          lensPos: _lensPos,
+                          isAnswered: _isAnswered,
+                          onLensMove: _onLensMove,
+                          onWordTap: (word) =>
+                              _onWordTap(word, quest.targetWord ?? ""),
+                        ),
+                        if (_isAnswered) ...[
+                          SizedBox(height: 30.h),
+                          FindWordMeaningResult(
+                            quest: quest,
+                            isCorrect: _isCorrect == true,
+                            isDark: isDark,
+                          ),
+                        ],
+                        SizedBox(height: 40.h),
+                      ],
                     ),
-                  ],
-                  SizedBox(height: 40.h),
-                ],
-              ),
-            ),
-          ),
+                  ),
+                ),
         );
       },
     );
   }
 }
-

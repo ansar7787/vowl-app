@@ -3,9 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FlashcardSwipeHints extends StatelessWidget {
-  final Color color;
-
-  const FlashcardSwipeHints({super.key, required this.color});
+  const FlashcardSwipeHints({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +27,8 @@ class FlashcardSwipeHints extends StatelessWidget {
     );
   }
 }
+
+// ─── Private sub-widget ───────────────────────────────────────────────────────
 
 class _HintIcon extends StatelessWidget {
   final IconData icon;

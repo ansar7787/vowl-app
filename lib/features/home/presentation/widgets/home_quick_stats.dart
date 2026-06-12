@@ -68,9 +68,12 @@ class HomeQuickStats extends StatelessWidget {
       child: GlassTile(
         borderRadius: BorderRadius.circular(20.r),
         padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 8.w),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
             Container(
               padding: EdgeInsets.all(8.r),
               decoration: BoxDecoration(
@@ -102,6 +105,7 @@ class HomeQuickStats extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
           ],
+        ),
         ),
       ),
     );

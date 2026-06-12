@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
@@ -77,21 +77,21 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final livesRestored =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
-          if (isNewQuestion || isRetry || livesChanged) {
+          if (isNewQuestion || isRetry || livesRestored) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _hookPoint = null;
-              _targetFish = -1;
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
           _lastLives = state.livesRemaining;
@@ -113,8 +113,11 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
         }
       },
       builder: (context, state) {
-        final GrammarQuest? quest = (state is GrammarLoaded) ? state.currentQuest : null;
-        final fishOptions = quest?.options ?? ["WHO IS SMART", "WHICH IS RED", "THAT I LIKE"];
+        final GrammarQuest? quest = (state is GrammarLoaded)
+            ? state.currentQuest
+            : null;
+        final fishOptions =
+            quest?.options ?? ["WHO IS SMART", "WHICH IS RED", "THAT I LIKE"];
 
         return GrammarBaseLayout(
           gameType: widget.gameType,
@@ -139,46 +142,67 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
                                 height: 25.h,
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
-                                  child: RelativeClausesInstruction(primaryColor: theme.primaryColor),
+                                  child: RelativeClausesInstruction(
+                                    primaryColor: theme.primaryColor,
+                                  ),
                                 ),
                               )
-                            : RelativeClausesInstruction(primaryColor: theme.primaryColor),
+                            : RelativeClausesInstruction(
+                                primaryColor: theme.primaryColor,
+                              ),
                         SizedBox(height: isCompact ? 8.h : 20.h),
 
                         // Context Card
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                          child: Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.05)
-                                  : Colors.black.withValues(alpha: 0.03),
-                              borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
-                              border: Border.all(
-                                color: theme.primaryColor.withValues(alpha: 0.15),
-                                width: 1.5,
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.all(
+                                  isCompact ? 14.r : 22.r,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.05)
+                                      : Colors.black.withValues(alpha: 0.03),
+                                  borderRadius: BorderRadius.circular(
+                                    isCompact ? 18.r : 28.r,
+                                  ),
+                                  border: Border.all(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.15,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                                child: Text(
+                                  quest.question?.replaceAll('___', '_____') ??
+                                      "The data ____",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: isCompact ? 15.sp : 20.sp,
+                                    color: isDark
+                                        ? Colors.white
+                                        : Colors.black87,
+                                    height: 1.5,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
                               ),
-                            ),
-                            child: Text(
-                              quest.question?.replaceAll('___', '_____') ?? "The data ____",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit', 
-                                fontSize: isCompact ? 15.sp : 20.sp,
-                                color: isDark ? Colors.white : Colors.black87,
-                                height: 1.5,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+                            )
+                            .animate()
+                            .fadeIn(duration: 600.ms)
+                            .slideY(begin: 0.2, end: 0),
 
                         // Result
                         if (_isAnswered) ...[
                           SizedBox(height: isCompact ? 8.h : 20.h),
-                          _buildResult(quest, theme.primaryColor, isDark, isCompact),
+                          _buildResult(
+                            quest,
+                            theme.primaryColor,
+                            isDark,
+                            isCompact,
+                          ),
                         ],
 
                         // Game Arena
@@ -209,53 +233,64 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
     bool isDark,
     bool isCompact,
   ) {
-    return LayoutBuilder(builder: (context, constraints) {
-      final startPoint = Offset(constraints.maxWidth / 2, isCompact ? 20.h : 40.h);
-      final nodeY = constraints.maxHeight - (isCompact ? 80.h : 140.h);
-      final nodePoints = List.generate(nodes.length, (i) {
-        return Offset(
-          50.w + (i * (constraints.maxWidth - 100.w) / (nodes.length - 1)),
-          nodeY,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final startPoint = Offset(
+          constraints.maxWidth / 2,
+          isCompact ? 20.h : 40.h,
         );
-      });
-      final hitRadius = isCompact ? 40.r : 55.r;
+        final nodeY = constraints.maxHeight - (isCompact ? 80.h : 140.h);
+        final nodePoints = List.generate(nodes.length, (i) {
+          return Offset(
+            50.w + (i * (constraints.maxWidth - 100.w) / (nodes.length - 1)),
+            nodeY,
+          );
+        });
+        final hitRadius = isCompact ? 40.r : 55.r;
 
-      return GestureDetector(
-        onPanUpdate: (details) {
-          if (_isAnswered) return;
-          setState(() {
-            _hookPoint = details.localPosition;
-            if (details.localPosition.dy.toInt() % 10 == 0) {
-              _hapticService.selection();
+        return GestureDetector(
+          onPanUpdate: (details) {
+            if (_isAnswered) return;
+            setState(() {
+              _hookPoint = details.localPosition;
+              if (details.localPosition.dy.toInt() % 10 == 0) {
+                _hapticService.selection();
+              }
+            });
+            for (int i = 0; i < nodePoints.length; i++) {
+              if ((details.localPosition - nodePoints[i]).distance <
+                  hitRadius) {
+                _onCatch(i, correctIndex);
+              }
             }
-          });
-          for (int i = 0; i < nodePoints.length; i++) {
-            if ((details.localPosition - nodePoints[i]).distance < hitRadius) {
-              _onCatch(i, correctIndex);
-            }
-          }
-        },
-        onPanEnd: (_) => setState(() => _hookPoint = null),
-        child: CustomPaint(
-          size: Size.infinite,
-          painter: RelativeClausesQuantumPainter(
-            hookPoint: _hookPoint,
-            startPoint: startPoint,
-            nodePoints: nodePoints,
-            nodeLabels: nodes,
-            primaryColor: primaryColor,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            targetNode: _targetFish,
-            isDark: isDark,
-            isCompact: isCompact,
+          },
+          onPanEnd: (_) => setState(() => _hookPoint = null),
+          child: CustomPaint(
+            size: Size.infinite,
+            painter: RelativeClausesQuantumPainter(
+              hookPoint: _hookPoint,
+              startPoint: startPoint,
+              nodePoints: nodePoints,
+              nodeLabels: nodes,
+              primaryColor: primaryColor,
+              isAnswered: _isAnswered,
+              isCorrect: _isCorrect,
+              targetNode: _targetFish,
+              isDark: isDark,
+              isCompact: isCompact,
+            ),
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 
-  Widget _buildResult(GrammarQuest quest, Color primaryColor, bool isDark, bool isCompact) {
+  Widget _buildResult(
+    GrammarQuest quest,
+    Color primaryColor,
+    bool isDark,
+    bool isCompact,
+  ) {
     final bool correct = _isCorrect == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
@@ -282,7 +317,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
             Text(
               correct ? "CORRECT!" : "INCORRECT",
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: isCompact ? 12.sp : 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
@@ -295,7 +330,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
                 quest.explanation!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'Outfit', 
+                  fontFamily: 'Outfit',
                   fontSize: 13.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),

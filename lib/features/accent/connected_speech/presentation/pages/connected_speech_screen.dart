@@ -9,7 +9,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_base_layout.dart';
+import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_instruction.dart';
@@ -47,7 +47,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<AccentBloc>().add(FetchAccentQuests(gameType: widget.gameType, level: widget.level));
+    context.read<AccentBloc>().add(
+      FetchAccentQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   @override
@@ -64,7 +66,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   void _onSliderUpdate(double value, int correct) {
     if (_isAnswered) return;
     _sliderValue = value;
-    
+
     // Auto-lock when reaching ends
     if (value < 0.1) {
       _submitChoice(0, correct);
@@ -79,26 +81,26 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
       _selectedIndex = index;
       _sliderValue = index == 0 ? 0.0 : 1.0;
     });
-    
+
     final bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() { 
-        _isAnswered = true; 
-        _isCorrect = true; 
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
       });
       context.read<AccentBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() { 
-        _isAnswered = true; 
-        _isCorrect = false; 
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
       });
       context.read<AccentBloc>().add(SubmitAnswer(false));
-      
+
       _resetTimer?.cancel();
       _resetTimer = Timer(const Duration(seconds: 2), () {
         if (mounted) {
@@ -122,7 +124,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
       listener: (context, state) {
         if (state is AccentLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          if (state.currentIndex != _lastProcessedIndex ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             _resetTimer?.cancel();
             setState(() {
               _lastProcessedIndex = state.currentIndex;
@@ -145,13 +149,24 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
         }
         if (state is AccentGameComplete) {
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'FLUENCY FLOW!', enableDoubleUp: true);
+          GameDialogHelper.showCompletion(
+            context,
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'FLUENCY FLOW!',
+            enableDoubleUp: true,
+          );
         } else if (state is AccentGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<AccentBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<AccentBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
-        final AccentQuest? quest = (state is AccentLoaded) ? state.currentQuest as AccentQuest? : null;
+        final AccentQuest? quest = (state is AccentLoaded)
+            ? state.currentQuest as AccentQuest?
+            : null;
         final options = quest?.options ?? ["A", "B"];
         final mediaQuery = MediaQuery.of(context);
 
@@ -160,105 +175,126 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: AccentBaseLayout(
-            gameType: widget.gameType, 
-            level: widget.level, 
-            isAnswered: _isAnswered, 
-            isCorrect: _isCorrect, 
+            gameType: widget.gameType,
+            level: widget.level,
+            isAnswered: _isAnswered,
+            isCorrect: _isCorrect,
             showConfetti: _showConfetti,
             onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
             onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
-            child: quest == null ? const SizedBox() : LayoutBuilder(
-              builder: (context, constraints) {
-                final maxHeight = constraints.maxHeight;
-                final bool isCompact = maxHeight < 580;
-                
-                // Estimated content height in ScreenUtil units
-                final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 80.h : 100.h) + (isCompact ? 130.h : 172.h) + (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
-                final remainingHeight = maxHeight - estimatedContentHeight;
-                
-                // Dynamic layout spacers based on remaining height
-                final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
-                final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 24.0) : 8.0;
-                final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 24.0) : 8.0;
-                final double gapPrompt = remainingHeight > 0 ? (gapUnit * 1.5).clamp(12.0, 32.0) : 12.0;
-                final double gapSpeaker = remainingHeight > 0 ? (gapUnit * 2).clamp(16.0, 48.0) : 16.0;
-                final double gapSlider = remainingHeight > 0 ? (gapUnit * 1.5).clamp(12.0, 40.0) : 12.0;
-                final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
-  
-                return SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      minHeight: maxHeight,
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SizedBox(height: gapTop),
-                              ConnectedSpeechInstruction(
-                                primaryColor: theme.primaryColor,
-                                isCompact: isCompact,
-                              ),
-                              SizedBox(height: gapInstruction),
-                              
-                              ConnectedSpeechPromptCard(
-                                word: quest.word ?? "",
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                isCompact: isCompact,
-                              ),
-                              SizedBox(height: gapPrompt),
-                              
-                              ConnectedSpeechPulseSpeaker(
-                                text: quest.textToSpeak ?? "",
-                                color: theme.primaryColor,
-                                onPlayTts: _playTts,
-                                isCompact: isCompact,
-                              ),
-                            ],
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SizedBox(height: gapSpeaker),
-                              ConnectedSpeechSpectralSlider(
-                                key: ValueKey(quest.id),
-                                options: options,
-                                correctIndex: quest.correctAnswerIndex ?? 0,
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                isAnswered: _isAnswered,
-                                selectedIndex: _selectedIndex,
-                                initialSliderValue: _sliderValue,
-                                onSubmitChoice: _submitChoice,
-                                onSliderUpdate: _onSliderUpdate,
-                                isCompact: isCompact,
-                              ),
-                              if (_isAnswered) ...[
-                                SizedBox(height: gapSlider),
-                                ConnectedSpeechExplanationCard(
-                                  quest: quest,
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                  isCorrect: _isCorrect,
-                                  isCompact: isCompact,
+            child: quest == null
+                ? const SizedBox()
+                : LayoutBuilder(
+                    builder: (context, constraints) {
+                      final maxHeight = constraints.maxHeight;
+                      final bool isCompact = maxHeight < 580;
+
+                      // Estimated content height in ScreenUtil units
+                      final double estimatedContentHeight =
+                          24.h +
+                          (isCompact ? 90.h : 120.h) +
+                          (isCompact ? 80.h : 100.h) +
+                          (isCompact ? 130.h : 172.h) +
+                          (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
+                      final remainingHeight =
+                          maxHeight - estimatedContentHeight;
+
+                      // Dynamic layout spacers based on remaining height
+                      final double gapUnit = remainingHeight > 0
+                          ? remainingHeight / 8
+                          : 0;
+                      final double gapTop = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(8.0, 24.0)
+                          : 8.0;
+                      final double gapInstruction = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(8.0, 24.0)
+                          : 8.0;
+                      final double gapPrompt = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(12.0, 32.0)
+                          : 12.0;
+                      final double gapSpeaker = remainingHeight > 0
+                          ? (gapUnit * 2).clamp(16.0, 48.0)
+                          : 16.0;
+                      final double gapSlider = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(12.0, 40.0)
+                          : 12.0;
+                      final double gapBottom = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(12.0, 40.0)
+                          : 12.0;
+
+                      return SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(minHeight: maxHeight),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapTop),
+                                    ConnectedSpeechInstruction(
+                                      primaryColor: theme.primaryColor,
+                                      isCompact: isCompact,
+                                    ),
+                                    SizedBox(height: gapInstruction),
+
+                                    ConnectedSpeechPromptCard(
+                                      word: quest.word ?? "",
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      isCompact: isCompact,
+                                    ),
+                                    SizedBox(height: gapPrompt),
+
+                                    ConnectedSpeechPulseSpeaker(
+                                      text: quest.textToSpeak ?? "",
+                                      color: theme.primaryColor,
+                                      onPlayTts: _playTts,
+                                      isCompact: isCompact,
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapSpeaker),
+                                    ConnectedSpeechSpectralSlider(
+                                      key: ValueKey(quest.id),
+                                      options: options,
+                                      correctIndex:
+                                          quest.correctAnswerIndex ?? 0,
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      isAnswered: _isAnswered,
+                                      selectedIndex: _selectedIndex,
+                                      initialSliderValue: _sliderValue,
+                                      onSubmitChoice: _submitChoice,
+                                      onSliderUpdate: _onSliderUpdate,
+                                      isCompact: isCompact,
+                                    ),
+                                    if (_isAnswered) ...[
+                                      SizedBox(height: gapSlider),
+                                      ConnectedSpeechExplanationCard(
+                                        quest: quest,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        isCorrect: _isCorrect,
+                                        isCompact: isCompact,
+                                      ),
+                                    ],
+                                    SizedBox(height: gapBottom),
+                                  ],
                                 ),
                               ],
-                              SizedBox(height: gapBottom),
-                            ],
+                            ),
                           ),
-                        ],
-                      ),
-                    ),
+                        ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
           ),
         );
       },

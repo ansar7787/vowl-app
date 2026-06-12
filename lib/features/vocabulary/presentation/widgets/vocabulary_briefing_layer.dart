@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
 import 'package:vowl/core/utils/game_instruction_service.dart';
+import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
 
 class VocabularyBriefingLayer extends StatelessWidget {
   final GameSubtype gameType;
   final int level;
-  final dynamic theme;
+  final VocabLevelTheme theme;
   final VoidCallback onStart;
 
   const VocabularyBriefingLayer({
@@ -31,7 +32,7 @@ class VocabularyBriefingLayer extends StatelessWidget {
       actionText: briefing.actionText,
       tip: briefing.tip,
       icon: briefing.icon,
-      primaryColor: theme.primaryColor as Color,
+      primaryColor: theme.primaryColor,
       onStart: onStart,
     );
   }

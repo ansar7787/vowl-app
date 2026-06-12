@@ -1,0 +1,197 @@
+import 'package:equatable/equatable.dart';
+import 'package:vowl/features/roleplay/presentation/constants/roleplay_constants.dart';
+import '../../../../core/domain/entities/game_quest.dart';
+import '../../domain/entities/roleplay_quest.dart';
+
+// ── Helper ─────────────────────────────────────────────────────────────────
+
+/// Result record returned by [processWrongAnswer].
+typedef WrongAnswerResult = ({
+  int newLives,
+  int newWrongCount,
+  bool isFinalFailure,
+  List<RoleplayQuest> updatedQuests,
+});
+
+/// Single source of truth for wrong-answer state transitions.
+///
+/// Used by both [SelectDialogueChoice] and [SubmitAnswer] handlers to
+/// ensure the logic never diverges between the two paths.
+WrongAnswerResult processWrongAnswer(RoleplayLoaded state) {
+  final newLives = state.livesRemaining - 1;
+  final newWrongCount = state.wrongCount + 1;
+  final isFinalDueToWrongCount = newWrongCount >= kRoleplayMaxWrongAttempts;
+  final isFinalFailure = isFinalDueToWrongCount || newLives <= 0;
+
+  // Re-queue the current quest only when the wrong-count cap is reached
+  // *and* the player still has lives. If lives hit zero the game ends
+  // anyway, so re-queueing would be wasted work.
+  var updatedQuests = state.quests;
+  if (isFinalDueToWrongCount && newLives > 0) {
+    updatedQuests = List<RoleplayQuest>.from(state.quests)
+      ..add(state.currentQuest);
+  }
+
+  return (
+    newLives: newLives,
+    // Reset counter when the cap is hit so the re-queued attempt starts fresh.
+    newWrongCount: isFinalDueToWrongCount ? 0 : newWrongCount,
+    isFinalFailure: isFinalFailure,
+    updatedQuests: updatedQuests,
+  );
+}
+
+// ── State hierarchy ────────────────────────────────────────────────────────
+//
+// Standard abstract class hierarchy — compatible with all Dart / Flutter
+// versions. If your project targets Dart 3.0+ you can optionally add the
+// `sealed` modifier to RoleplayState for exhaustive switch checking.
+
+/// Root state class.
+abstract class RoleplayState extends Equatable {
+  const RoleplayState();
+
+  @override
+  List<Object?> get props => [];
+}
+
+// ── Transient states ───────────────────────────────────────────────────────
+
+class RoleplayInitial extends RoleplayState {
+  const RoleplayInitial();
+}
+
+class RoleplayLoading extends RoleplayState {
+  const RoleplayLoading();
+}
+
+// ── Error state ────────────────────────────────────────────────────────────
+
+class RoleplayError extends RoleplayState {
+  const RoleplayError(this.message, {this.technicalError});
+
+  final String message;
+
+  /// Populated for logging purposes only.
+  /// **Never surface this field in the production UI.**
+  final String? technicalError;
+
+  @override
+  List<Object?> get props => [message, technicalError];
+}
+
+// ── Active game state ──────────────────────────────────────────────────────
+
+class RoleplayLoaded extends RoleplayState {
+  const RoleplayLoaded({
+    required this.quests,
+    required this.currentIndex,
+    this.currentNodeId,
+    required this.livesRemaining,
+    this.lastAnswerCorrect,
+    this.hintUsed = false,
+    this.errorMessage,
+    required this.gameType,
+    required this.level,
+    this.wrongCount = 0,
+    this.isFinalFailure = false,
+  });
+
+  final List<RoleplayQuest> quests;
+  final int currentIndex;
+  final String? currentNodeId;
+  final int livesRemaining;
+  final bool? lastAnswerCorrect;
+  final bool hintUsed;
+  final String? errorMessage;
+  final GameSubtype gameType;
+  final int level;
+  final int wrongCount;
+  final bool isFinalFailure;
+
+  RoleplayQuest get currentQuest => quests[currentIndex];
+  DialogueNode? get currentNode =>
+      currentQuest.dialogues?[currentNodeId ?? 'start'];
+
+  @override
+  List<Object?> get props => [
+    quests,
+    currentIndex,
+    currentNodeId,
+    livesRemaining,
+    lastAnswerCorrect,
+    hintUsed,
+    errorMessage,
+    gameType,
+    level,
+    wrongCount,
+    isFinalFailure,
+  ];
+
+  RoleplayLoaded copyWith({
+    List<RoleplayQuest>? quests,
+    int? currentIndex,
+    String? currentNodeId,
+    int? livesRemaining,
+    bool? lastAnswerCorrect,
+    bool? hintUsed,
+    String? errorMessage,
+    GameSubtype? gameType,
+    int? level,
+    int? wrongCount,
+    bool? isFinalFailure,
+  }) => RoleplayLoaded(
+    quests: quests ?? this.quests,
+    currentIndex: currentIndex ?? this.currentIndex,
+    currentNodeId: currentNodeId ?? this.currentNodeId,
+    livesRemaining: livesRemaining ?? this.livesRemaining,
+    lastAnswerCorrect: lastAnswerCorrect,
+    hintUsed: hintUsed ?? this.hintUsed,
+    errorMessage: errorMessage,
+    gameType: gameType ?? this.gameType,
+    level: level ?? this.level,
+    wrongCount: wrongCount ?? this.wrongCount,
+    isFinalFailure: isFinalFailure ?? this.isFinalFailure,
+  );
+}
+
+// ── Terminal states ────────────────────────────────────────────────────────
+
+class RoleplayGameComplete extends RoleplayState {
+  const RoleplayGameComplete({
+    required this.xpEarned,
+    required this.coinsEarned,
+    required this.questCount,
+    required this.lastState,
+  });
+
+  final int xpEarned;
+  final int coinsEarned;
+  final int questCount;
+
+  /// Snapshot of the loaded state at the moment of completion, used by
+  /// the UI to continue rendering the final question while the dialog shows.
+  final RoleplayLoaded lastState;
+
+  @override
+  // Exclude lastState from equality to avoid expensive deep comparison;
+  // a completion event is effectively unique per session.
+  List<Object?> get props => [xpEarned, coinsEarned, questCount];
+}
+
+class RoleplayGameOver extends RoleplayState {
+  const RoleplayGameOver({
+    required this.quests,
+    required this.currentIndex,
+    required this.gameType,
+    required this.level,
+  });
+
+  final List<RoleplayQuest> quests;
+  final int currentIndex;
+  final GameSubtype gameType;
+  final int level;
+
+  @override
+  List<Object?> get props => [quests, currentIndex, gameType, level];
+}

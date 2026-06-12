@@ -8,7 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -25,7 +25,8 @@ class ModifierPlacementScreen extends StatefulWidget {
   });
 
   @override
-  State<ModifierPlacementScreen> createState() => _ModifierPlacementScreenState();
+  State<ModifierPlacementScreen> createState() =>
+      _ModifierPlacementScreenState();
 }
 
 class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
@@ -59,8 +60,12 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
     final resultingWords = List<String>.from(words);
     resultingWords.insert(_targetIndex, modifier);
 
-    final result = resultingWords.join(' ').replaceAll(RegExp(r'\s+'), ' ').trim();
-    bool isCorrect = result.toLowerCase() == (quest.correctAnswer ?? "").toLowerCase();
+    final result = resultingWords
+        .join(' ')
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .trim();
+    bool isCorrect =
+        result.toLowerCase() == (quest.correctAnswer ?? "").toLowerCase();
 
     if (isCorrect) {
       _hapticService.success();
@@ -86,20 +91,21 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final livesRestored =
+              _lastLives != null && state.livesRemaining > _lastLives!;
 
-          if (isNewQuestion || isRetry || livesChanged) {
+          if (isNewQuestion || isRetry || livesRestored) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _targetIndex = -1;
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
           _lastLives = state.livesRemaining;
@@ -144,13 +150,27 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                     final maxHeight = constraints.maxHeight;
                     final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight = (isCompact ? 30.h : 40.h) + (isCompact ? 50.h : 80.h) + (isCompact ? 100.h : 180.h) + (isCompact ? 40.h : 60.h) + (isCompact ? 40.h : 65.h) + 40.h;
+                    final double estimatedContentHeight =
+                        (isCompact ? 30.h : 40.h) +
+                        (isCompact ? 50.h : 80.h) +
+                        (isCompact ? 100.h : 180.h) +
+                        (isCompact ? 40.h : 60.h) +
+                        (isCompact ? 40.h : 65.h) +
+                        40.h;
                     final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-                    final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(4.0, 15.0) : 4.0;
-                    final double gapMiddle = remainingHeight > 0 ? (gapUnit * 1.5).clamp(6.0, 20.0) : 6.0;
-                    final double gapBottom = remainingHeight > 0 ? (gapUnit * 2.5).clamp(10.0, 30.0) : 10.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 5
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(4.0, 15.0)
+                        : 4.0;
+                    final double gapMiddle = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                        : 6.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                        : 10.0;
 
                     return Column(
                       children: [
@@ -160,45 +180,65 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                 height: 25.h,
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
-                                  child: ModifierPlacementInstruction(primaryColor: theme.primaryColor),
+                                  child: ModifierPlacementInstruction(
+                                    primaryColor: theme.primaryColor,
+                                  ),
                                 ),
                               )
-                            : ModifierPlacementInstruction(primaryColor: theme.primaryColor),
+                            : ModifierPlacementInstruction(
+                                primaryColor: theme.primaryColor,
+                              ),
                         SizedBox(height: gapMiddle),
 
                         // Context Card
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                          child: Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.05)
-                                  : Colors.black.withValues(alpha: 0.03),
-                              borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
-                              border: Border.all(
-                                color: theme.primaryColor.withValues(alpha: 0.15),
-                                width: 1.5,
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.all(
+                                  isCompact ? 14.r : 22.r,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.05)
+                                      : Colors.black.withValues(alpha: 0.03),
+                                  borderRadius: BorderRadius.circular(
+                                    isCompact ? 18.r : 28.r,
+                                  ),
+                                  border: Border.all(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.15,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                                child: Text(
+                                  "Insert the modifier '$modifier' into the correct position.",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: isCompact ? 14.sp : 18.sp,
+                                    color: isDark
+                                        ? Colors.white70
+                                        : Colors.black87,
+                                    height: 1.4,
+                                  ),
+                                ),
                               ),
-                            ),
-                            child: Text(
-                              "Insert the modifier '$modifier' into the correct position.",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit', 
-                                fontSize: isCompact ? 14.sp : 18.sp,
-                                color: isDark ? Colors.white70 : Colors.black87,
-                                height: 1.4,
-                              ),
-                            ),
-                          ),
-                        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+                            )
+                            .animate()
+                            .fadeIn(duration: 600.ms)
+                            .slideY(begin: 0.2, end: 0),
 
                         // Result Feedback
                         if (_isAnswered) ...[
                           SizedBox(height: isCompact ? 8.h : 24.h),
-                          _buildResult(quest, theme.primaryColor, isDark, isCompact),
+                          _buildResult(
+                            quest,
+                            theme.primaryColor,
+                            isDark,
+                            isCompact,
+                          ),
                         ],
 
                         // Magnetic Arena
@@ -211,8 +251,10 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                               isAnswered: _isAnswered,
                               isDark: isDark,
                               primaryColor: theme.primaryColor,
-                              onSlotAccepted: (idx) => setState(() => _targetIndex = idx),
-                              onSlotReset: () => setState(() => _targetIndex = -1),
+                              onSlotAccepted: (idx) =>
+                                  setState(() => _targetIndex = idx),
+                              onSlotReset: () =>
+                                  setState(() => _targetIndex = -1),
                               isCompact: isCompact,
                             ),
                           ),
@@ -222,13 +264,29 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                         if (!_isAnswered && _targetIndex == -1)
                           Draggable<String>(
                             data: modifier,
-                            feedback: _buildTactileMagnet(modifier, theme.primaryColor, isDragging: true, isCompact: isCompact),
+                            feedback: _buildTactileMagnet(
+                              modifier,
+                              theme.primaryColor,
+                              isDragging: true,
+                              isCompact: isCompact,
+                            ),
                             childWhenDragging: Opacity(
                               opacity: 0.2,
-                              child: _buildTactileMagnet(modifier, theme.primaryColor, isCompact: isCompact),
+                              child: _buildTactileMagnet(
+                                modifier,
+                                theme.primaryColor,
+                                isCompact: isCompact,
+                              ),
                             ),
-                            child: _buildTactileMagnet(modifier, theme.primaryColor, isCompact: isCompact),
-                          ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+                            child: _buildTactileMagnet(
+                              modifier,
+                              theme.primaryColor,
+                              isCompact: isCompact,
+                            ),
+                          ).animate().scale(
+                            duration: 400.ms,
+                            curve: Curves.easeOutBack,
+                          ),
 
                         // Submit Button
                         if (!_isAnswered && _targetIndex != -1) ...[
@@ -241,7 +299,9 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                 width: double.infinity,
                                 height: isCompact ? 48.h : 65.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(isCompact ? 14.r : 24.r),
+                                  borderRadius: BorderRadius.circular(
+                                    isCompact ? 14.r : 24.r,
+                                  ),
                                   gradient: LinearGradient(
                                     colors: [
                                       theme.primaryColor,
@@ -250,7 +310,9 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: theme.primaryColor.withValues(alpha: 0.4),
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.4,
+                                      ),
                                       blurRadius: 25,
                                       offset: const Offset(0, 12),
                                     ),
@@ -260,7 +322,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                   child: Text(
                                     "FINALIZE SYNTAX",
                                     style: TextStyle(
-                                      fontFamily: 'Outfit', 
+                                      fontFamily: 'Outfit',
                                       fontSize: isCompact ? 13.sp : 16.sp,
                                       fontWeight: FontWeight.w900,
                                       color: Colors.white,
@@ -283,7 +345,12 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
     );
   }
 
-  Widget _buildTactileMagnet(String modifier, Color primaryColor, {bool isDragging = false, bool isCompact = false}) {
+  Widget _buildTactileMagnet(
+    String modifier,
+    Color primaryColor, {
+    bool isDragging = false,
+    bool isCompact = false,
+  }) {
     return Material(
       color: Colors.transparent,
       child: Container(
@@ -304,7 +371,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
         child: Text(
           modifier,
           style: TextStyle(
-            fontFamily: 'Outfit', 
+            fontFamily: 'Outfit',
             fontSize: isCompact ? 15.sp : 20.sp,
             fontWeight: FontWeight.w900,
             color: Colors.white,
@@ -315,7 +382,12 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
     );
   }
 
-  Widget _buildResult(GrammarQuest quest, Color primaryColor, bool isDark, bool isCompact) {
+  Widget _buildResult(
+    GrammarQuest quest,
+    Color primaryColor,
+    bool isDark,
+    bool isCompact,
+  ) {
     final bool correct = _isCorrect == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
@@ -342,7 +414,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
             Text(
               correct ? "CORRECT!" : "INCORRECT",
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: isCompact ? 12.sp : 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
@@ -353,7 +425,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
             Text(
               "CORRECT SYNTAX:",
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: isCompact ? 10.sp : 12.sp,
                 fontWeight: FontWeight.bold,
                 color: isDark ? Colors.white60 : Colors.black54,
@@ -365,7 +437,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
               quest.correctAnswer ?? "",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: isCompact ? 15.sp : 20.sp,
                 fontWeight: FontWeight.w600,
                 color: displayColor,
@@ -377,7 +449,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                 quest.explanation!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'Outfit', 
+                  fontFamily: 'Outfit',
                   fontSize: 13.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),

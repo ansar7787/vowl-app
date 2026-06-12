@@ -65,10 +65,11 @@ class VocabularyErrorView extends StatelessWidget {
   }
 }
 
-// ─── Sub-widgets ─────────────────────────────────────────────
+// ─── Sub-widgets ──────────────────────────────────────────────────────────────
 
 class _ErrorIcon extends StatelessWidget {
   final Color primaryColor;
+
   const _ErrorIcon({required this.primaryColor});
 
   @override
@@ -87,6 +88,7 @@ class _ErrorIcon extends StatelessWidget {
 class _RetryButton extends StatelessWidget {
   final Color primaryColor;
   final VoidCallback onRetry;
+
   const _RetryButton({required this.primaryColor, required this.onRetry});
 
   @override
