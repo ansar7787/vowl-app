@@ -340,58 +340,57 @@ class _StickerBookScreenState extends State<StickerBookScreen>
         labelPadding: EdgeInsets.symmetric(horizontal: 8.w),
         dividerColor: Colors.transparent,
         indicator: BoxDecoration(
-          color: isMidnight ? Colors.white24 : (isDark ? Colors.white12 : const Color(0xFFF1F5F9)),
+          color: isMidnight
+              ? Colors.white24
+              : (isDark ? Colors.white12 : const Color(0xFFF1F5F9)),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
-            color: isMidnight ? Colors.white54 : (isDark ? Colors.white30 : Colors.grey.shade300),
+            color: isMidnight
+                ? Colors.white54
+                : (isDark ? Colors.white30 : Colors.grey.shade300),
             width: 1,
           ),
         ),
+        labelColor: isDark || isMidnight ? Colors.white : const Color(0xFF0F172A),
+        unselectedLabelColor: isDark || isMidnight ? Colors.white54 : Colors.grey.shade600,
+        labelStyle: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w900,
+        ),
+        unselectedLabelStyle: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w600,
+        ),
         tabs: _categories.map((cat) {
-          final index = _categories.indexOf(cat);
           final earned = _getCategoryEarnedCount(cat);
-          final isSelected = _tabController.index == index;
 
           return Tab(
-            child: AnimatedContainer(
-              duration: 200.ms,
+            child: Container(
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.r),
-              ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    cat.toUpperCase().replaceAll('_', ' '),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: isSelected ? FontWeight.w900 : FontWeight.w600,
-                      color: isSelected
-                          ? (isDark || isMidnight ? Colors.white : const Color(0xFF0F172A))
-                          : (isDark || isMidnight ? Colors.white54 : Colors.grey.shade600),
-                    ),
-                  ),
+                  Text(cat.toUpperCase().replaceAll('_', ' ')),
                   if (earned > 0) ...[
                     SizedBox(width: 8.w),
-                    Container(
-                      padding: EdgeInsets.all(4.r),
-                      decoration: BoxDecoration(
-                        color: isSelected
-                            ? (isMidnight || isDark ? Colors.white24 : Colors.grey.shade300)
-                            : (isMidnight || isDark ? Colors.white12 : Colors.grey.shade200),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Text(
-                        "$earned",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isSelected
-                              ? (isDark || isMidnight ? Colors.white : const Color(0xFF0F172A))
-                              : (isDark || isMidnight ? Colors.white70 : Colors.grey.shade600),
+                    // We use an opacity hack to make the badge look good whether selected or not
+                    Opacity(
+                      opacity: 0.8,
+                      child: Container(
+                        padding: EdgeInsets.all(4.r),
+                        decoration: BoxDecoration(
+                          color: isMidnight || isDark ? Colors.white24 : Colors.black12,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Text(
+                          "$earned",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w900,
+                          ),
                         ),
                       ),
                     ),
