@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'dart:async';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -323,11 +324,24 @@ class _PremiumScreenState extends State<PremiumScreen> {
     }
 
     if (_isLoadingPlans) {
-      return Center(
-        child: CircularProgressIndicator(
-          valueColor:
-              AlwaysStoppedAnimation<Color>(const Color(0xFFF59E0B)),
-        ),
+      final isDark = Theme.of(context).brightness == Brightness.dark;
+      return Column(
+        children: List.generate(3, (index) {
+          return Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.h),
+            child: Container(
+              width: double.infinity,
+              height: 100.h,
+              decoration: BoxDecoration(
+                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(20.r),
+              ),
+            ).animate(onPlay: (c) => c.repeat()).shimmer(
+              color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
+              duration: 1500.ms,
+            ),
+          );
+        }),
       );
     }
 

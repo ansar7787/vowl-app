@@ -436,64 +436,75 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   Widget _buildSearchField(bool isDark, Color contentColor) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Container(
-        height: 52.h,
-        decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: const Color(0xFF3B82F6).withValues(alpha: 0.4),
-            width: 1.5,
+      child: GlassTile(
+        borderRadius: BorderRadius.circular(24.r),
+        padding: EdgeInsets.all(2.r),
+        borderColor: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
+        child: Container(
+          height: 56.h,
+          decoration: BoxDecoration(
+            color: isDark 
+                ? Colors.white.withValues(alpha: 0.03) 
+                : Colors.white,
+            borderRadius: BorderRadius.circular(22.r),
+            boxShadow: isDark ? null : [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.03),
+                blurRadius: 15,
+                offset: const Offset(0, 5),
+              ),
+            ],
           ),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xFF3B82F6).withValues(alpha: 0.1),
-              blurRadius: 12,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: Row(
-          children: [
-            Icon(
-              Icons.search_rounded,
-              color: contentColor.withValues(alpha: 0.5),
-              size: 22.r,
-            ),
-            SizedBox(width: 12.w),
-            Expanded(
-              child: TextField(
-                controller: _searchController,
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w600,
-                  color: contentColor,
-                ),
-                decoration: InputDecoration(
-                  hintText: "Search quest names...",
-                  hintStyle: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w500,
-                    color: contentColor.withValues(alpha: 0.4),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: Row(
+            children: [
+              Icon(
+                Icons.search_rounded,
+                color: const Color(0xFF3B82F6),
+                size: 24.r,
+              ),
+              SizedBox(width: 12.w),
+              Expanded(
+                child: TextField(
+                  controller: _searchController,
+                  style: TextStyle(fontFamily: 'Outfit', 
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w600,
+                    color: contentColor,
                   ),
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.zero,
+                  decoration: InputDecoration(
+                    hintText: "Search quests...",
+                    hintStyle: TextStyle(fontFamily: 'Outfit', 
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w500,
+                      color: contentColor.withValues(alpha: 0.4),
+                    ),
+                    border: InputBorder.none,
+                    isDense: true,
+                    contentPadding: EdgeInsets.zero,
+                  ),
                 ),
               ),
-            ),
-            if (_searchQuery.isNotEmpty)
-              ScaleButton(
-                onTap: () {
-                  _searchController.clear();
-                },
-                child: Icon(
-                  Icons.close_rounded,
-                  color: contentColor.withValues(alpha: 0.6),
-                  size: 20.r,
-                ),
-              ),
-          ],
+              if (_searchQuery.isNotEmpty)
+                ScaleButton(
+                  onTap: () {
+                    _searchController.clear();
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(6.r),
+                    decoration: BoxDecoration(
+                      color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      Icons.close_rounded,
+                      color: contentColor.withValues(alpha: 0.6),
+                      size: 16.r,
+                    ),
+                  ),
+                ).animate().scale(duration: 200.ms),
+            ],
+          ),
         ),
       ),
     );

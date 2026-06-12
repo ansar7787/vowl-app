@@ -32,12 +32,7 @@ class ShortAnswerScreen extends StatefulWidget {
 class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
   final _answerController = TextEditingController();
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
   bool _showConfetti = false;
-  int _lastProcessedIndex = -1;
-  int _attempts = 0;
-  int? _lastLives;
   double _inkLevel = 0.0;
   int _wordCount = 0;
 
@@ -65,8 +60,8 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
     });
   }
 
-  void _submitAnswer(List<String> targetKeywords) {
-    if (_isAnswered || _answerController.text.trim().isEmpty) return;
+  void _submitAnswer(List<String> targetKeywords, bool isAnswered) {
+    if (isAnswered || _answerController.text.trim().isEmpty) return;
 
     final text = _answerController.text.trim().toLowerCase();
 
@@ -80,42 +75,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
     bool isMinLengthMet = _wordCount >= 10;
     bool isKeywordsMet = matchedCount >= 2;
 
-    if (isMinLengthMet && isKeywordsMet) {
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(true));
-    } else {
-      setState(() {
-        _attempts++;
-        if (_attempts >= 2) {
-          _isAnswered = true;
-          _isCorrect = false;
-        }
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(false));
+    final isCorrect = isMinLengthMet && isKeywordsMet;
 
-      if (_attempts < 2) {
-        final isDark = Theme.of(context).brightness == Brightness.dark;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            backgroundColor: isDark
-                ? Colors.redAccent
-                : const Color(0xFFDC2626),
-            content: Text(
-              !isMinLengthMet
-                  ? "Your response is too short! Try to expand your ideas."
-                  : "Make sure to include at least 2 of the highlighted booster keywords!",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        );
-      }
-    }
+    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
   }
 
   @override
@@ -124,23 +86,17 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
     return BlocConsumer<WritingBloc, WritingState>(
+      listenWhen: (prev, curr) =>
+          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
+          (curr is WritingGameOver && prev is! WritingGameOver) ||
+          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
-        if (state is WritingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _answerController.clear();
-              _attempts = 0;
-              _inkLevel = 0.0;
-              _wordCount = 0;
-            });
-          }
-          _lastLives = state.livesRemaining;
+        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+          setState(() {
+            _answerController.clear();
+            _inkLevel = 0.0;
+            _wordCount = 0;
+          });
         }
         if (state is WritingGameComplete) {
           setState(() => _showConfetti = true);
@@ -159,19 +115,23 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
         }
       },
       builder: (context, state) {
-        final WritingQuest? quest = (state is WritingLoaded)
+        final isLoaded = state is WritingLoaded;
+        final WritingQuest? quest = isLoaded
             ? state.currentQuest as WritingQuest?
             : null;
 
         final targetKeywords =
             quest?.options ?? ["bacteria", "sulfide", "chemosynthesis"];
+        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
+        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isFinalFailure = isLoaded ? state.isFinalFailure : false;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: _attempts >= 2,
+          isAnswered: isAnswered,
+          isCorrect: isCorrect,
+          isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
@@ -206,7 +166,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
 
                         ShortAnswerInkwell(
                           controller: _answerController,
-                          isAnswered: _isAnswered,
+                          isAnswered: isAnswered,
                           wordCount: _wordCount,
                           inkLevel: _inkLevel,
                           color: theme.primaryColor,
@@ -214,9 +174,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                         ),
                         SizedBox(height: 36.h),
 
-                        if (!_isAnswered)
+                        if (!isAnswered)
                           ScaleButton(
-                            onTap: () => _submitAnswer(targetKeywords),
+                            onTap: () => _submitAnswer(targetKeywords, isAnswered),
                             child: Container(
                               width: double.infinity,
                               height: 60.h,
@@ -250,11 +210,11 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                             ),
                           ),
 
-                        if (_isAnswered) ...[
+                        if (isAnswered) ...[
                           SizedBox(height: 30.h),
                           ShortAnswerExplanationCard(
                             quest: quest,
-                            isCorrect: _isCorrect == true,
+                            isCorrect: isCorrect == true,
                             primaryColor: theme.primaryColor,
                             isDark: isDark,
                           ),

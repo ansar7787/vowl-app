@@ -44,11 +44,7 @@ class _SummarizeStoryWritingScreenState
     DescribeFrameSlot(index: 2),
   ];
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
   bool _showConfetti = false;
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
   double _crankProgress = 0.0;
 
   @override
@@ -59,16 +55,16 @@ class _SummarizeStoryWritingScreenState
     );
   }
 
-  void _onDropFrame(int slotIdx, String sentence) {
-    if (_isAnswered) return;
+  void _onDropFrame(int slotIdx, String sentence, bool isAnswered) {
+    if (isAnswered) return;
     _hapticService.success();
     setState(() {
       _slots[slotIdx].sentence = sentence;
     });
   }
 
-  void _removeFrame(int slotIdx) {
-    if (_isAnswered) return;
+  void _removeFrame(int slotIdx, bool isAnswered) {
+    if (isAnswered) return;
     _hapticService.selection();
     setState(() {
       _slots[slotIdx].sentence = null;
@@ -76,8 +72,8 @@ class _SummarizeStoryWritingScreenState
     });
   }
 
-  void _onCrank(double delta) {
-    if (_isAnswered) return;
+  void _onCrank(double delta, bool isAnswered) {
+    if (isAnswered) return;
 
     final isSlotsFilled = _slots.every((s) => s.sentence != null);
     if (!isSlotsFilled) return;
@@ -91,12 +87,12 @@ class _SummarizeStoryWritingScreenState
     }
 
     if (_crankProgress >= 1.0) {
-      _submitAnswer();
+      _submitAnswer(isAnswered);
     }
   }
 
-  void _submitAnswer() {
-    if (_isAnswered) return;
+  void _submitAnswer(bool isAnswered) {
+    if (isAnswered) return;
 
     final state = context.read<WritingBloc>().state;
     if (state is! WritingLoaded) return;
@@ -119,32 +115,7 @@ class _SummarizeStoryWritingScreenState
       }
     }
 
-    if (isAllCorrect) {
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(true));
-    } else {
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(false));
-
-      Future.delayed(const Duration(milliseconds: 1500), () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-            _crankProgress = 0.0;
-            for (var slot in _slots) {
-              slot.sentence = null;
-            }
-          });
-        }
-      });
-    }
+    context.read<WritingBloc>().add(SubmitAnswer(isAllCorrect));
   }
 
   @override
@@ -153,23 +124,18 @@ class _SummarizeStoryWritingScreenState
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
     return BlocConsumer<WritingBloc, WritingState>(
+      listenWhen: (prev, curr) =>
+          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
+          (curr is WritingGameOver && prev is! WritingGameOver) ||
+          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
-        if (state is WritingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _crankProgress = 0.0;
-              for (var slot in _slots) {
-                slot.sentence = null;
-              }
-            });
-          }
-          _lastLives = state.livesRemaining;
+        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+          setState(() {
+            _crankProgress = 0.0;
+            for (var slot in _slots) {
+              slot.sentence = null;
+            }
+          });
         }
         if (state is WritingGameComplete) {
           setState(() => _showConfetti = true);
@@ -188,18 +154,21 @@ class _SummarizeStoryWritingScreenState
         }
       },
       builder: (context, state) {
-        final WritingQuest? quest = (state is WritingLoaded)
+        final isLoaded = state is WritingLoaded;
+        final WritingQuest? quest = isLoaded
             ? state.currentQuest as WritingQuest?
             : null;
 
         final options = quest?.options ?? [];
         final isSlotsFilled = _slots.every((s) => s.sentence != null);
+        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
+        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
+          isAnswered: isAnswered,
+          isCorrect: isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
@@ -228,8 +197,8 @@ class _SummarizeStoryWritingScreenState
                           slots: _slots,
                           color: theme.primaryColor,
                           isDark: isDark,
-                          onDropFrame: _onDropFrame,
-                          onRemoveFrame: _removeFrame,
+                          onDropFrame: (idx, sentence) => _onDropFrame(idx, sentence, isAnswered),
+                          onRemoveFrame: (idx) => _removeFrame(idx, isAnswered),
                         ),
                         SizedBox(height: 24.h),
 
@@ -241,19 +210,19 @@ class _SummarizeStoryWritingScreenState
                         ),
                         SizedBox(height: 32.h),
 
-                        if (isSlotsFilled && !_isAnswered)
+                        if (isSlotsFilled && !isAnswered)
                           SummarizeStoryProjectorCrank(
                             crankProgress: _crankProgress,
                             color: theme.primaryColor,
                             isDark: isDark,
-                            onCrank: _onCrank,
+                            onCrank: (delta) => _onCrank(delta, isAnswered),
                           ),
 
-                        if (_isAnswered) ...[
+                        if (isAnswered) ...[
                           SizedBox(height: 30.h),
                           SummarizeStoryExplanationCard(
                             quest: quest,
-                            isCorrect: _isCorrect == true,
+                            isCorrect: isCorrect == true,
                             primaryColor: theme.primaryColor,
                             isDark: isDark,
                           ),

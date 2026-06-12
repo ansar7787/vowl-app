@@ -23,7 +23,7 @@ class TrophyRoomScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: isMidnight
           ? const Color(0xFF020617)
-          : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC)),
+          : (isDark ? const Color(0xFF0F172A) : Colors.white),
       body: Stack(
         children: [
           // Dynamic Living Background
@@ -246,7 +246,7 @@ class TrophyRoomScreen extends StatelessWidget {
                       ],
                     ),
                     child: Text("🏆", style: TextStyle(fontSize: 32.sp)),
-                  ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 3.seconds).shake(duration: 2.seconds, hz: 2),
+                  ).animate(onPlay: (c) => c.repeat()).shake(duration: 2.seconds, hz: 2),
                 ],
               ),
             ],
@@ -300,7 +300,7 @@ class TrophyRoomScreen extends StatelessWidget {
           padding: EdgeInsets.all(2.r),
           borderColor: const Color(0xFFF59E0B).withValues(alpha: 0.4),
           child: Container(
-            height: 260.h,
+            height: 180.h,
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(38.r),
@@ -319,8 +319,8 @@ class TrophyRoomScreen extends StatelessWidget {
                 // Animated Holographic Rings
                 ...List.generate(3, (index) {
                   return Container(
-                    width: (150 + (index * 30)).r,
-                    height: (150 + (index * 30)).r,
+                    width: (110 + (index * 25)).r,
+                    height: (110 + (index * 25)).r,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
@@ -336,8 +336,8 @@ class TrophyRoomScreen extends StatelessWidget {
                 
                 // Core Glow
                 Container(
-                  width: 120.r,
-                  height: 120.r,
+                  width: 90.r,
+                  height: 90.r,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     boxShadow: [
@@ -359,7 +359,7 @@ class TrophyRoomScreen extends StatelessWidget {
                       clipBehavior: Clip.none,
                       children: [
                         VowlMascot(
-                          size: 100.r,
+                          size: 75.r,
                           state: VowlMascotState.happy,
                           useFloatingAnimation: true,
                           level: level,
@@ -373,7 +373,7 @@ class TrophyRoomScreen extends StatelessWidget {
                     
                     // Premium Level Badge
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
                           colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
@@ -384,8 +384,8 @@ class TrophyRoomScreen extends StatelessWidget {
                         boxShadow: [
                           BoxShadow(
                             color: const Color(0xFFF59E0B).withValues(alpha: 0.5),
-                            blurRadius: 20,
-                            offset: const Offset(0, 8),
+                            blurRadius: 15,
+                            offset: const Offset(0, 6),
                           ),
                         ],
                         border: Border.all(color: Colors.white.withValues(alpha: 0.3), width: 1.5),
@@ -393,14 +393,14 @@ class TrophyRoomScreen extends StatelessWidget {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.star_rounded, color: Colors.white, size: 18.r),
+                          Icon(Icons.star_rounded, color: Colors.white, size: 14.r),
                           SizedBox(width: 6.w),
                           Text(
                             "LEVEL $level",
                             style: TextStyle(fontFamily: 'Outfit', 
                               color: Colors.white,
                               fontWeight: FontWeight.w900,
-                              fontSize: 16.sp,
+                              fontSize: 14.sp,
                               letterSpacing: 1,
                             ),
                           ),
@@ -473,8 +473,7 @@ class TrophyRoomScreen extends StatelessWidget {
                   ),
                 ),
               ).animate(onPlay: (c) => c.repeat(reverse: true))
-               .moveY(begin: -4, end: 4, duration: 2.seconds, curve: Curves.easeInOutSine)
-               .shimmer(duration: 3.seconds, color: Colors.white54),
+               .moveY(begin: -4, end: 4, duration: 2.seconds, curve: Curves.easeInOutSine),
                
               SizedBox(height: 12.h),
               
@@ -548,16 +547,18 @@ class TrophyRoomScreen extends StatelessWidget {
               child: GlassTile(
                 borderRadius: BorderRadius.circular(24.r),
                 padding: EdgeInsets.all(2.r),
-                borderColor: isEquipped ? const Color(0xFF10B981) : Colors.white.withValues(alpha: 0.1),
+                borderColor: isEquipped ? const Color(0xFF10B981) : ((isDark || isMidnight) ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05)),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(22.r),
                     color: isEquipped 
-                        ? const Color(0xFF10B981).withValues(alpha: 0.15)
-                        : ((isDark || isMidnight) ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.02)),
+                        ? const Color(0xFF10B981)
+                        : ((isDark || isMidnight) ? Colors.white.withValues(alpha: 0.03) : Colors.white),
                     boxShadow: isEquipped ? [
-                      BoxShadow(color: const Color(0xFF10B981).withValues(alpha: 0.3), blurRadius: 15, offset: const Offset(0, 5))
-                    ] : null,
+                      BoxShadow(color: const Color(0xFF10B981).withValues(alpha: 0.4), blurRadius: 15, offset: const Offset(0, 5))
+                    ] : [
+                      if (!isDark && !isMidnight) BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 2))
+                    ],
                   ),
                   child: Stack(
                     alignment: Alignment.center,
@@ -572,25 +573,25 @@ class TrophyRoomScreen extends StatelessWidget {
                             style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w900,
-                              color: (isDark || isMidnight) ? Colors.white : const Color(0xFF0F172A),
+                              color: isEquipped ? Colors.white : ((isDark || isMidnight) ? Colors.white : const Color(0xFF0F172A)),
                             ),
                           ),
                         ],
                       ),
                       if (isEquipped)
                         Positioned(
-                          top: 12.r,
-                          right: 12.r,
+                          top: 10.r,
+                          right: 10.r,
                           child: Container(
                             padding: EdgeInsets.all(6.r),
                             decoration: BoxDecoration(
-                              color: const Color(0xFF10B981),
+                              color: Colors.white,
                               shape: BoxShape.circle,
                               boxShadow: [
-                                BoxShadow(color: const Color(0xFF10B981).withValues(alpha: 0.5), blurRadius: 8, offset: const Offset(0, 3))
+                                BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 8, offset: const Offset(0, 3))
                               ]
                             ),
-                            child: Icon(Icons.check_rounded, color: Colors.white, size: 14.r),
+                            child: Icon(Icons.check_rounded, color: const Color(0xFF10B981), size: 14.r),
                           ),
                         ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
                     ],

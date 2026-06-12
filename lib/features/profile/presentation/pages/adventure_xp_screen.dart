@@ -24,9 +24,19 @@ class AdventureXPScreen extends StatelessWidget {
     return BlocListener<ProgressionBloc, ProgressionState>(
       listener: (context, state) {
         if (state.message != null) {
+          final lowerMsg = state.message!.toLowerCase();
           final isError =
-              state.message!.contains('not enough') ||
-              state.message!.contains('failed');
+              lowerMsg.contains('not enough') ||
+              lowerMsg.contains('failed');
+
+          String displayMessage = state.message!;
+          if (lowerMsg.contains('not enough')) {
+            displayMessage = 'Insufficient Vowl Coins!';
+          } else if (displayMessage.startsWith('Exception: ')) {
+            displayMessage = displayMessage.replaceFirst('Exception: ', '');
+          } else if (displayMessage.startsWith('ServerFailure: ')) {
+            displayMessage = displayMessage.replaceFirst('ServerFailure: ', '');
+          }
 
           di.sl<HapticService>().light();
 
@@ -41,7 +51,7 @@ class AdventureXPScreen extends StatelessWidget {
                   SizedBox(width: 12.w),
                   Expanded(
                     child: Text(
-                      state.message!,
+                      displayMessage,
                       style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
                     ),
                   ),

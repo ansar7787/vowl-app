@@ -19,41 +19,73 @@ class CompleteSentenceExplanationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final displayColor = isCorrect ? Colors.greenAccent : Colors.redAccent;
+    // FIX: dark-mode-aware color — was always greenAccent/redAccent.
+    final displayColor = isCorrect
+        ? (isDark ? Colors.greenAccent : const Color(0xFF16A34A))
+        : (isDark ? Colors.redAccent : const Color(0xFFDC2626));
 
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Icon(isCorrect ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
-          SizedBox(height: 10.h),
-          Text(
-            isCorrect ? "CORRECT!" : "INCORRECT",
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
+    // FIX: local variable avoids repeated null check and force-unwrap.
+    final explanation = quest.explanation;
+
+    final resultLabel = isCorrect ? 'Correct!' : 'Incorrect.';
+    final semanticLabel = explanation != null
+        ? '$resultLabel Explanation: $explanation'
+        : resultLabel;
+
+    Widget card = Semantics(
+      label: semanticLabel,
+      child: Container(
+        padding: EdgeInsets.all(20.r),
+        decoration: BoxDecoration(
+          color: displayColor.withValues(alpha: 0.05),
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(
+            color: displayColor.withValues(alpha: 0.3),
+            width: 2,
           ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
+        ),
+        child: Column(
+          children: [
+            // Decorative icon — text label carries the meaning for a11y.
+            ExcludeSemantics(
+              child: Icon(
+                isCorrect ? Icons.check_circle_rounded : Icons.cancel_rounded,
+                color: displayColor,
+                size: 36.r,
               ),
             ),
+            SizedBox(height: 10.h),
+            Text(
+              isCorrect ? 'CORRECT!' : 'INCORRECT',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w900,
+                color: displayColor,
+                letterSpacing: 2,
+              ),
+            ),
+            if (explanation != null) ...[
+              SizedBox(height: 10.h),
+              Text(
+                explanation,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  color: isDark ? Colors.white60 : Colors.black54,
+                ),
+              ),
+            ],
           ],
-        ],
+        ),
       ),
-    ).animate().shimmer(duration: 2.seconds);
+    );
+
+    // FIX: shimmer only on correct — shimmer signals reward/celebration.
+    // Incorrect answers now shake to reinforce the error clearly.
+    return isCorrect
+        ? card.animate().shimmer(duration: 2.seconds)
+        : card.animate().shake(duration: 400.ms);
   }
 }

@@ -37,11 +37,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
   final _soundService = di.sl<SoundService>();
   final _controller = TextEditingController();
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
   bool _showConfetti = false;
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
   int _wordCount = 0;
   double _journalProgress = 0.0;
 
@@ -69,8 +65,8 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     });
   }
 
-  void _submitAnswer(List<String> targetKeywords) {
-    if (_isAnswered || _controller.text.trim().isEmpty) return;
+  void _submitAnswer(List<String> targetKeywords, bool isAnswered) {
+    if (isAnswered || _controller.text.trim().isEmpty) return;
 
     final text = _controller.text.trim().toLowerCase();
 
@@ -84,30 +80,17 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     bool isMinLengthMet = _wordCount >= 10;
     bool isKeywordsMet = matchedCount >= 2;
 
-    if (isMinLengthMet && isKeywordsMet) {
+    final isCorrect = isMinLengthMet && isKeywordsMet;
+
+    if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          backgroundColor: Colors.redAccent,
-          content: Text(
-            !isMinLengthMet
-                ? "Your log entry is too brief! Share more reflections."
-                : "Try to incorporate at least 2 of the core booster keywords in your log!",
-            style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.bold),
-          ),
-        ),
-      );
     }
+
+    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
   }
 
   @override
@@ -116,22 +99,17 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
     return BlocConsumer<WritingBloc, WritingState>(
+      listenWhen: (prev, curr) =>
+          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
+          (curr is WritingGameOver && prev is! WritingGameOver) ||
+          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
-        if (state is WritingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _controller.clear();
-              _wordCount = 0;
-              _journalProgress = 0.0;
-            });
-          }
-          _lastLives = state.livesRemaining;
+        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+          setState(() {
+            _controller.clear();
+            _wordCount = 0;
+            _journalProgress = 0.0;
+          });
         }
         if (state is WritingGameComplete) {
           setState(() => _showConfetti = true);
@@ -150,18 +128,23 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
         }
       },
       builder: (context, state) {
-        final WritingQuest? quest = (state is WritingLoaded)
+        final isLoaded = state is WritingLoaded;
+        final WritingQuest? quest = isLoaded
             ? state.currentQuest as WritingQuest?
             : null;
 
         final targetKeywords =
             quest?.options ?? ["submersible", "mariana", "trench"];
+        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
+        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isFinalFailure = isLoaded ? state.isFinalFailure : false;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
+          isAnswered: isAnswered,
+          isCorrect: isCorrect,
+          isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
@@ -196,7 +179,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
 
                         DailyJournalScratchArea(
                           controller: _controller,
-                          isAnswered: _isAnswered,
+                          isAnswered: isAnswered,
                           wordCount: _wordCount,
                           journalProgress: _journalProgress,
                           color: theme.primaryColor,
@@ -204,9 +187,9 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                         ),
                         SizedBox(height: 32.h),
 
-                        if (!_isAnswered)
+                        if (!isAnswered)
                           ScaleButton(
-                            onTap: () => _submitAnswer(targetKeywords),
+                            onTap: () => _submitAnswer(targetKeywords, isAnswered),
                             child: Container(
                               width: double.infinity,
                               height: 60.h,
@@ -240,11 +223,11 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                             ),
                           ),
 
-                        if (_isAnswered) ...[
+                        if (isAnswered) ...[
                           SizedBox(height: 30.h),
                           DailyJournalExplanationCard(
                             quest: quest,
-                            isCorrect: _isCorrect == true,
+                            isCorrect: isCorrect == true,
                             primaryColor: theme.primaryColor,
                             isDark: isDark,
                           ),

@@ -29,6 +29,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String _appVersion = '1.0.0';
   String _buildNumber = '1';
   bool _notificationsEnabled = true;
+  bool _isLoading = true;
 
   @override
   void initState() {
@@ -48,6 +49,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       _appVersion = info.version;
       _buildNumber = info.buildNumber;
       _notificationsEnabled = savedPref && isGranted;
+      _isLoading = false;
     });
   }
 
@@ -130,6 +132,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           icon: Icons.notifications_active_rounded,
                           color: Colors.orange,
                           value: _notificationsEnabled,
+                          isLoading: _isLoading,
                           onChanged: _toggleNotifications,
                         ),
                         SettingsTile(

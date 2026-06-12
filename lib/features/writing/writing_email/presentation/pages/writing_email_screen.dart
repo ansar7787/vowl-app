@@ -41,11 +41,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     'SIGN-OFF': null,
   };
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
   bool _showConfetti = false;
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
 
   @override
   void initState() {
@@ -55,8 +51,8 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     );
   }
 
-  void _onSlot(String slotKey, String data) {
-    if (_isAnswered) return;
+  void _onSlot(String slotKey, String data, bool isAnswered) {
+    if (isAnswered) return;
 
     _hapticService.success();
     setState(() {
@@ -69,17 +65,17 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     });
   }
 
-  void _clearSlot(String slotKey) {
-    if (_isAnswered || _slots[slotKey] == null) return;
+  void _clearSlot(String slotKey, bool isAnswered) {
+    if (isAnswered || _slots[slotKey] == null) return;
     _hapticService.selection();
     setState(() {
       _slots[slotKey] = null;
     });
   }
 
-  void _submitAnswer() {
+  void _submitAnswer(bool isAnswered) {
     final state = context.read<WritingBloc>().state;
-    if (state is! WritingLoaded || _isAnswered) return;
+    if (state is! WritingLoaded || isAnswered) return;
 
     final WritingQuest? quest = state.currentQuest as WritingQuest?;
     if (quest == null) return;
@@ -95,32 +91,12 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     bool isSignOffCorrect =
         _slots['SIGN-OFF'] == options[correctOrderIndices[3]];
 
-    if (isSubjectCorrect &&
+    final isCorrect = isSubjectCorrect &&
         isSalutationCorrect &&
         isBodyCorrect &&
-        isSignOffCorrect) {
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(true));
-    } else {
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(false));
+        isSignOffCorrect;
 
-      Future.delayed(const Duration(milliseconds: 1500), () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-            _slots.updateAll((k, v) => null);
-          });
-        }
-      });
-    }
+    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
   }
 
   @override
@@ -129,20 +105,15 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
     return BlocConsumer<WritingBloc, WritingState>(
+      listenWhen: (prev, curr) =>
+          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
+          (curr is WritingGameOver && prev is! WritingGameOver) ||
+          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
-        if (state is WritingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _slots.updateAll((k, v) => null);
-            });
-          }
-          _lastLives = state.livesRemaining;
+        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+          setState(() {
+            _slots.updateAll((k, v) => null);
+          });
         }
         if (state is WritingGameComplete) {
           setState(() => _showConfetti = true);
@@ -161,18 +132,21 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
         }
       },
       builder: (context, state) {
-        final WritingQuest? quest = (state is WritingLoaded)
+        final isLoaded = state is WritingLoaded;
+        final WritingQuest? quest = isLoaded
             ? state.currentQuest as WritingQuest?
             : null;
 
         final options = quest?.options ?? [];
         final slotsFilled = _slots.values.every((v) => v != null);
+        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
+        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
+          isAnswered: isAnswered,
+          isCorrect: isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
@@ -203,8 +177,8 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                             slotValue: _slots[k],
                             color: theme.primaryColor,
                             isDark: isDark,
-                            onSlot: _onSlot,
-                            onClearSlot: _clearSlot,
+                            onSlot: (key, data) => _onSlot(key, data, isAnswered),
+                            onClearSlot: (key) => _clearSlot(key, isAnswered),
                           ),
                         ),
                         SizedBox(height: 24.h),
@@ -217,9 +191,9 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                         ),
                         SizedBox(height: 32.h),
 
-                        if (!_isAnswered)
+                        if (!isAnswered)
                           ScaleButton(
-                            onTap: slotsFilled ? _submitAnswer : null,
+                            onTap: slotsFilled ? () => _submitAnswer(isAnswered) : null,
                             child: Container(
                               width: double.infinity,
                               height: 60.h,
@@ -253,11 +227,11 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                             ),
                           ),
 
-                        if (_isAnswered) ...[
+                        if (isAnswered) ...[
                           SizedBox(height: 30.h),
                           WritingEmailExplanationCard(
                             quest: quest,
-                            isCorrect: _isCorrect == true,
+                            isCorrect: isCorrect == true,
                             primaryColor: theme.primaryColor,
                             isDark: isDark,
                           ),

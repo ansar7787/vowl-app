@@ -125,6 +125,7 @@ class SettingsSwitchTile extends StatelessWidget {
   final IconData icon;
   final Color color;
   final bool value;
+  final bool isLoading;
   final ValueChanged<bool> onChanged;
 
   const SettingsSwitchTile({
@@ -134,6 +135,7 @@ class SettingsSwitchTile extends StatelessWidget {
     required this.icon,
     required this.color,
     required this.value,
+    this.isLoading = false,
     required this.onChanged,
   });
 
@@ -176,14 +178,28 @@ class SettingsSwitchTile extends StatelessWidget {
               ],
             ),
           ),
-          Switch.adaptive(
-            value: value,
-            onChanged: (val) {
-              di.sl<HapticService>().light();
-              onChanged(val);
-            },
-            activeThumbColor: const Color(0xFF2563EB),
-          ),
+          if (isLoading)
+            SizedBox(
+              width: 50.w,
+              height: 30.h,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(15.r),
+                ),
+              ).animate(onPlay: (c) => c.repeat()).shimmer(
+                color: color.withValues(alpha: 0.3),
+              ),
+            )
+          else
+            Switch.adaptive(
+              value: value,
+              onChanged: (val) {
+                di.sl<HapticService>().light();
+                onChanged(val);
+              },
+              activeThumbColor: const Color(0xFF2563EB),
+            ),
         ],
       ),
     );

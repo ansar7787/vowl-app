@@ -38,11 +38,8 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
 
   final List<String> _usedKeywords = [];
   int? _expandedEmojiIndex;
-  bool _isAnswered = false;
-  bool? _isCorrect;
+
   bool _showConfetti = false;
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
   int _wordCount = 0;
 
   @override
@@ -68,16 +65,16 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     });
   }
 
-  void _onEmojiTap(int index) {
-    if (_isAnswered) return;
+  void _onEmojiTap(int index, bool isAnswered) {
+    if (isAnswered) return;
     _hapticService.selection();
     setState(
       () => _expandedEmojiIndex = (_expandedEmojiIndex == index ? null : index),
     );
   }
 
-  void _injectKeyword(String keyword) {
-    if (_isAnswered) return;
+  void _injectKeyword(String keyword, bool isAnswered) {
+    if (isAnswered) return;
     _hapticService.selection();
 
     final text = _textController.text;
@@ -107,8 +104,8 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     });
   }
 
-  void _submitAnswer(int minWords, List<String> availableKeywords) {
-    if (_isAnswered) return;
+  void _submitAnswer(int minWords, List<String> availableKeywords, bool isAnswered) {
+    if (isAnswered) return;
 
     final composedText = _textController.text.trim().toLowerCase();
 
@@ -122,28 +119,9 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     bool isMinWordsMet = _wordCount >= minWords;
     bool isKeywordsMet = matchedCount >= 2;
 
-    if (isMinWordsMet && isKeywordsMet) {
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(true));
-    } else {
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(false));
+    final isCorrect = isMinWordsMet && isKeywordsMet;
 
-      Future.delayed(const Duration(milliseconds: 1500), () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-          });
-        }
-      });
-    }
+    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
   }
 
   @override
@@ -152,22 +130,17 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
     return BlocConsumer<WritingBloc, WritingState>(
+      listenWhen: (prev, curr) =>
+          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
+          (curr is WritingGameOver && prev is! WritingGameOver) ||
+          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
-        if (state is WritingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _usedKeywords.clear();
-              _textController.clear();
-              _expandedEmojiIndex = null;
-            });
-          }
-          _lastLives = state.livesRemaining;
+        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+          setState(() {
+            _usedKeywords.clear();
+            _textController.clear();
+            _expandedEmojiIndex = null;
+          });
         }
         if (state is WritingGameComplete) {
           setState(() => _showConfetti = true);
@@ -186,7 +159,8 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
         }
       },
       builder: (context, state) {
-        final WritingQuest? quest = (state is WritingLoaded)
+        final isLoaded = state is WritingLoaded;
+        final WritingQuest? quest = isLoaded
             ? state.currentQuest
             : null;
 
@@ -204,12 +178,14 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
             .expand((element) => element)
             .toList();
         final minWords = quest?.minWords ?? 15;
+        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
+        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
+          isAnswered: isAnswered,
+          isCorrect: isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
@@ -250,15 +226,15 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                           color: theme.primaryColor,
                           isDark: isDark,
                           expandedEmojiIndex: _expandedEmojiIndex,
-                          onEmojiTap: _onEmojiTap,
-                          onInjectKeyword: _injectKeyword,
+                          onEmojiTap: (idx) => _onEmojiTap(idx, isAnswered),
+                          onInjectKeyword: (kw) => _injectKeyword(kw, isAnswered),
                         ),
                         SizedBox(height: 30.h),
 
-                        if (!_isAnswered)
+                        if (!isAnswered)
                           ScaleButton(
                             onTap: () =>
-                                _submitAnswer(minWords, allKeywordPool),
+                                _submitAnswer(minWords, allKeywordPool, isAnswered),
                             child: Container(
                               width: double.infinity,
                               height: 60.h,
@@ -292,11 +268,11 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                             ),
                           ),
 
-                        if (_isAnswered) ...[
+                        if (isAnswered) ...[
                           SizedBox(height: 30.h),
                           DescribeSituationExplanationCard(
                             quest: quest,
-                            isCorrect: _isCorrect == true,
+                            isCorrect: isCorrect == true,
                             primaryColor: theme.primaryColor,
                             isDark: isDark,
                           ),

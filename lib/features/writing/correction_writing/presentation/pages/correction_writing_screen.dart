@@ -37,11 +37,8 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
   final _soundService = di.sl<SoundService>();
 
   String? _selectedCorrection;
-  bool _isAnswered = false;
-  bool? _isCorrect;
+
   bool _showConfetti = false;
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
 
   @override
   void initState() {
@@ -51,49 +48,31 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
     );
   }
 
-  void _onSelectCorrection(String choice) {
-    if (_isAnswered) return;
+  void _onSelectCorrection(String choice, bool isAnswered) {
+    if (isAnswered) return;
     _hapticService.selection();
     setState(() {
       _selectedCorrection = choice;
     });
   }
 
-  void _submitAnswer() {
+  void _submitAnswer(bool isAnswered) {
     final WritingQuest? quest =
         (context.read<WritingBloc>().state as WritingLoaded).currentQuest
             as WritingQuest?;
-    if (quest == null || _isAnswered || _selectedCorrection == null) return;
+    if (quest == null || isAnswered || _selectedCorrection == null) return;
 
     final bool correct = _selectedCorrection == quest.correctAnswer;
 
     if (correct) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(false));
-
-      Future.delayed(const Duration(milliseconds: 1500), () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-            _selectedCorrection = null;
-          });
-        }
-      });
     }
+    
+    context.read<WritingBloc>().add(SubmitAnswer(correct));
   }
 
   @override
@@ -102,20 +81,15 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
     return BlocConsumer<WritingBloc, WritingState>(
+      listenWhen: (prev, curr) =>
+          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
+          (curr is WritingGameOver && prev is! WritingGameOver) ||
+          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
-        if (state is WritingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedCorrection = null;
-            });
-          }
-          _lastLives = state.livesRemaining;
+        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+          setState(() {
+            _selectedCorrection = null;
+          });
         }
         if (state is WritingGameComplete) {
           setState(() => _showConfetti = true);
@@ -134,17 +108,20 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
         }
       },
       builder: (context, state) {
-        final WritingQuest? quest = (state is WritingLoaded)
+        final isLoaded = state is WritingLoaded;
+        final WritingQuest? quest = isLoaded
             ? state.currentQuest as WritingQuest?
             : null;
 
         final options = quest?.options ?? [];
+        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
+        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
+          isAnswered: isAnswered,
+          isCorrect: isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
@@ -175,14 +152,14 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                           selectedCorrection: _selectedCorrection,
                           color: theme.primaryColor,
                           isDark: isDark,
-                          onSelectCorrection: _onSelectCorrection,
+                          onSelectCorrection: (choice) => _onSelectCorrection(choice, isAnswered),
                         ),
                         SizedBox(height: 36.h),
 
-                        if (!_isAnswered)
+                        if (!isAnswered)
                           ScaleButton(
                             onTap: _selectedCorrection != null
-                                ? _submitAnswer
+                                ? () => _submitAnswer(isAnswered)
                                 : null,
                             child: Container(
                               width: double.infinity,
@@ -217,11 +194,11 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                             ),
                           ),
 
-                        if (_isAnswered) ...[
+                        if (isAnswered) ...[
                           SizedBox(height: 30.h),
                           CorrectionWritingExplanationCard(
                             quest: quest,
-                            isCorrect: _isCorrect == true,
+                            isCorrect: isCorrect == true,
                             primaryColor: theme.primaryColor,
                             isDark: isDark,
                           ),

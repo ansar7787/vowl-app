@@ -1,4 +1,4 @@
-import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,14 +38,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   late dynamic _theme;
 
   final List<String> _assembledPieces = [];
-  bool _isAnswered = false;
-  bool? _isCorrect;
   bool _showConfetti = false;
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-
-  // FIX: cancelable timer — disposed cleanly and cancelled before reassignment.
-  Timer? _wrongAnswerTimer;
 
   // FIX: full whitespace normalization to prevent false mismatches.
   // ".toLowerCase()" alone fails when correctAnswer has double-spaces or
@@ -70,54 +63,27 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
     }
   }
 
-  @override
-  void dispose() {
-    // FIX: always cancel the timer on dispose so it doesn't fire on a
-    // dead widget if the user navigates away within the 1-second window.
-    _wrongAnswerTimer?.cancel();
-    super.dispose();
-  }
-
-  void _onSnap(String piece) {
-    if (_isAnswered) return;
+  void _onSnap(String piece, bool isAnswered) {
+    if (isAnswered) return;
     _hapticService.success();
     setState(() => _assembledPieces.add(piece));
   }
 
-  void _onRemovePiece(int index) {
-    if (_isAnswered) return;
+  void _onRemovePiece(int index, bool isAnswered) {
+    if (isAnswered) return;
     _hapticService.selection();
     setState(() => _assembledPieces.removeAt(index));
   }
 
-  void _submitAnswer(String correct) {
-    if (_isAnswered || _assembledPieces.isEmpty) return;
+  void _submitAnswer(String correct, bool isAnswered) {
+    if (isAnswered || _assembledPieces.isEmpty) return;
 
     // FIX: normalize both sides before comparison.
     final built = _normalizeAnswer(_assembledPieces.join(' '));
     final expected = _normalizeAnswer(correct);
     final isCorrect = built == expected;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = isCorrect;
-    });
     context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
-
-    if (!isCorrect) {
-      // FIX: use a named, cancelable Timer — disposed cleanly in dispose()
-      // and cancelled in the BlocConsumer listener before any state advance.
-      _wrongAnswerTimer?.cancel();
-      _wrongAnswerTimer = Timer(const Duration(seconds: 1), () {
-        if (mounted) {
-          setState(() {
-            _assembledPieces.clear();
-            _isAnswered = false;
-            _isCorrect = null;
-          });
-        }
-      });
-    }
   }
 
   @override
@@ -125,32 +91,16 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return BlocConsumer<WritingBloc, WritingState>(
-      // PERF FIX: only listen on meaningful state changes to reduce rebuilds.
-      listenWhen: (prev, curr) {
-        if (curr is WritingLoaded) {
-          if (prev is! WritingLoaded) return true;
-          return prev.currentIndex != curr.currentIndex ||
-              curr.livesRemaining > prev.livesRemaining ||
-              (curr.lastAnswerCorrect == null && _isAnswered);
-        }
-        return curr is WritingGameComplete || curr is WritingGameOver;
-      },
+      listenWhen: (prev, curr) =>
+          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
+          (curr is WritingGameOver && prev is! WritingGameOver) ||
+          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
-        if (state is WritingLoaded) {
-          final livesRestored = state.livesRemaining > (_lastLives ?? 3);
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesRestored ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
-            // FIX: cancel pending wrong-answer reset before advancing question.
-            _wrongAnswerTimer?.cancel();
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _assembledPieces.clear();
-            });
-          }
-          _lastLives = state.livesRemaining;
+        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+          // New question loaded or retry triggered — clear the selected option.
+          setState(() {
+            _assembledPieces.clear();
+          });
         }
 
         if (state is WritingGameComplete) {
@@ -176,16 +126,22 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           prev.runtimeType != curr.runtimeType ||
           (prev is WritingLoaded &&
               curr is WritingLoaded &&
-              prev.currentIndex != curr.currentIndex),
+              prev.currentIndex != curr.currentIndex) ||
+          (prev is WritingLoaded &&
+              curr is WritingLoaded &&
+              prev.lastAnswerCorrect != curr.lastAnswerCorrect),
       builder: (context, state) {
-        final quest = state is WritingLoaded ? state.currentQuest : null;
+        final isLoaded = state is WritingLoaded;
+        final quest = isLoaded ? state.currentQuest : null;
         final pool = quest?.shuffledWords ?? const [];
+        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
+        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
+          isAnswered: isAnswered,
+          isCorrect: isCorrect,
           showConfetti: _showConfetti,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
@@ -199,13 +155,13 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
                   quest: quest,
                   pool: pool,
                   assembledPieces: _assembledPieces,
-                  isAnswered: _isAnswered,
-                  isCorrect: _isCorrect,
+                  isAnswered: isAnswered,
+                  isCorrect: isCorrect,
                   theme: _theme,
                   isDark: isDark,
-                  onSnap: _onSnap,
-                  onRemovePiece: _onRemovePiece,
-                  onSubmit: () => _submitAnswer(quest.correctAnswer ?? ''),
+                  onSnap: (piece) => _onSnap(piece, isAnswered),
+                  onRemovePiece: (idx) => _onRemovePiece(idx, isAnswered),
+                  onSubmit: () => _submitAnswer(quest.correctAnswer ?? '', isAnswered),
                 ),
         );
       },

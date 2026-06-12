@@ -35,11 +35,8 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
   final _hapticService = di.sl<HapticService>();
 
   final Map<String, String?> _blueprintSlots = {};
-  bool _isAnswered = false;
-  bool? _isCorrect;
+
   bool _showConfetti = false;
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
 
   @override
   void initState() {
@@ -49,8 +46,8 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
     );
   }
 
-  void _onSlot(String slotKey, String data) {
-    if (_isAnswered) return;
+  void _onSlot(String slotKey, String data, bool isAnswered) {
+    if (isAnswered) return;
 
     _hapticService.success();
     setState(() {
@@ -63,17 +60,17 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
     });
   }
 
-  void _clearSlot(String slotKey) {
-    if (_isAnswered || _blueprintSlots[slotKey] == null) return;
+  void _clearSlot(String slotKey, bool isAnswered) {
+    if (isAnswered || _blueprintSlots[slotKey] == null) return;
     _hapticService.selection();
     setState(() {
       _blueprintSlots[slotKey] = null;
     });
   }
 
-  void _submitAnswer() {
+  void _submitAnswer(bool isAnswered) {
     final state = context.read<WritingBloc>().state;
-    if (state is! WritingLoaded || _isAnswered) return;
+    if (state is! WritingLoaded || isAnswered) return;
 
     final quest = state.currentQuest;
     final points = quest.requiredPoints ?? [];
@@ -95,29 +92,9 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
     bool isSlot3Correct =
         _blueprintSlots[points[3]] == options[correctOrderIndices[3]];
 
-    if (isSlot0Correct && isSlot1Correct && isSlot2Correct && isSlot3Correct) {
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(true));
-    } else {
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(false));
+    final isCorrect = isSlot0Correct && isSlot1Correct && isSlot2Correct && isSlot3Correct;
 
-      Future.delayed(const Duration(milliseconds: 1500), () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-            _blueprintSlots.updateAll((k, v) => null);
-          });
-        }
-      });
-    }
+    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
   }
 
   @override
@@ -126,24 +103,19 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
     return BlocConsumer<WritingBloc, WritingState>(
+      listenWhen: (prev, curr) =>
+          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
+          (curr is WritingGameOver && prev is! WritingGameOver) ||
+          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
-        if (state is WritingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _blueprintSlots.clear();
-              final quest = state.currentQuest;
-              for (var point in (quest.requiredPoints ?? [])) {
-                _blueprintSlots[point] = null;
-              }
-            });
-          }
-          _lastLives = state.livesRemaining;
+        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+          setState(() {
+            _blueprintSlots.clear();
+            final quest = state.currentQuest;
+            for (var point in (quest.requiredPoints ?? [])) {
+              _blueprintSlots[point] = null;
+            }
+          });
         }
         if (state is WritingGameComplete) {
           setState(() => _showConfetti = true);
@@ -162,7 +134,8 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
         }
       },
       builder: (context, state) {
-        final WritingQuest? quest = (state is WritingLoaded)
+        final isLoaded = state is WritingLoaded;
+        final WritingQuest? quest = isLoaded
             ? state.currentQuest as WritingQuest?
             : null;
 
@@ -170,12 +143,14 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
         final slotsFilled =
             _blueprintSlots.values.every((v) => v != null) &&
             _blueprintSlots.isNotEmpty;
+        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
+        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
+          isAnswered: isAnswered,
+          isCorrect: isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
@@ -206,8 +181,8 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                             slotValue: _blueprintSlots[k],
                             color: theme.primaryColor,
                             isDark: isDark,
-                            onSlot: _onSlot,
-                            onClearSlot: _clearSlot,
+                            onSlot: (key, data) => _onSlot(key, data, isAnswered),
+                            onClearSlot: (key) => _clearSlot(key, isAnswered),
                           ),
                         ),
                         SizedBox(height: 24.h),
@@ -220,9 +195,9 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                         ),
                         SizedBox(height: 32.h),
 
-                        if (!_isAnswered)
+                        if (!isAnswered)
                           ScaleButton(
-                            onTap: slotsFilled ? _submitAnswer : null,
+                            onTap: slotsFilled ? () => _submitAnswer(isAnswered) : null,
                             child: Container(
                               width: double.infinity,
                               height: 60.h,
@@ -256,11 +231,11 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                             ),
                           ),
 
-                        if (_isAnswered) ...[
+                        if (isAnswered) ...[
                           SizedBox(height: 30.h),
                           EssayDraftingExplanationCard(
                             quest: quest,
-                            isCorrect: _isCorrect == true,
+                            isCorrect: isCorrect == true,
                             primaryColor: theme.primaryColor,
                             isDark: isDark,
                           ),

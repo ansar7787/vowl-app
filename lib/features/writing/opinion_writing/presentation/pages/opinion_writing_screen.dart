@@ -38,11 +38,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
   final List<String> _rightPanArgs = [];
 
   double _scaleRotation = 0.0;
-  bool _isAnswered = false;
-  bool? _isCorrect;
   bool _showConfetti = false;
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
 
   @override
   void initState() {
@@ -52,8 +48,8 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
     );
   }
 
-  void _onDropArg(String arg, bool isLeft) {
-    if (_isAnswered) return;
+  void _onDropArg(String arg, bool isLeft, bool isAnswered) {
+    if (isAnswered) return;
 
     _hapticService.success();
     setState(() {
@@ -71,8 +67,8 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
     });
   }
 
-  void _removeArg(String arg, bool isLeft) {
-    if (_isAnswered) return;
+  void _removeArg(String arg, bool isLeft, bool isAnswered) {
+    if (isAnswered) return;
     _hapticService.selection();
     setState(() {
       if (isLeft) {
@@ -86,9 +82,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
     });
   }
 
-  void _submitAnswer() {
+  void _submitAnswer(bool isAnswered) {
     final state = context.read<WritingBloc>().state;
-    if (state is! WritingLoaded || _isAnswered) return;
+    if (state is! WritingLoaded || isAnswered) return;
 
     final quest = state.currentQuest;
     final options = quest.options ?? [];
@@ -106,31 +102,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
         _rightPanArgs.length == 2 &&
         _rightPanArgs.every((arg) => correctCons.contains(arg));
 
-    if (isLeftCorrect && isRightCorrect) {
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(true));
-    } else {
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
-      context.read<WritingBloc>().add(SubmitAnswer(false));
-
-      Future.delayed(const Duration(milliseconds: 1500), () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-            _leftPanArgs.clear();
-            _rightPanArgs.clear();
-            _scaleRotation = 0.0;
-          });
-        }
-      });
-    }
+    context.read<WritingBloc>().add(SubmitAnswer(isLeftCorrect && isRightCorrect));
   }
 
   @override
@@ -139,22 +111,17 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
     return BlocConsumer<WritingBloc, WritingState>(
+      listenWhen: (prev, curr) =>
+          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
+          (curr is WritingGameOver && prev is! WritingGameOver) ||
+          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
-        if (state is WritingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _leftPanArgs.clear();
-              _rightPanArgs.clear();
-              _scaleRotation = 0.0;
-            });
-          }
-          _lastLives = state.livesRemaining;
+        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+          setState(() {
+            _leftPanArgs.clear();
+            _rightPanArgs.clear();
+            _scaleRotation = 0.0;
+          });
         }
         if (state is WritingGameComplete) {
           setState(() => _showConfetti = true);
@@ -173,18 +140,19 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
         }
       },
       builder: (context, state) {
-        final WritingQuest? quest = (state is WritingLoaded)
-            ? state.currentQuest
-            : null;
+        final isLoaded = state is WritingLoaded;
+        final WritingQuest? quest = isLoaded ? state.currentQuest : null;
 
         final options = quest?.options ?? [];
         final totalPlaced = _leftPanArgs.length + _rightPanArgs.length;
+        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
+        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
+          isAnswered: isAnswered,
+          isCorrect: isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
@@ -215,8 +183,8 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                           rightPanArgs: _rightPanArgs,
                           color: theme.primaryColor,
                           isDark: isDark,
-                          onDropArg: _onDropArg,
-                          onRemoveArg: _removeArg,
+                          onDropArg: (arg, isLeft) => _onDropArg(arg, isLeft, isAnswered),
+                          onRemoveArg: (arg, isLeft) => _removeArg(arg, isLeft, isAnswered),
                         ),
                         SizedBox(height: 32.h),
 
@@ -229,9 +197,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                         ),
                         SizedBox(height: 36.h),
 
-                        if (!_isAnswered)
+                        if (!isAnswered)
                           ScaleButton(
-                            onTap: totalPlaced == 4 ? _submitAnswer : null,
+                            onTap: totalPlaced == 4 ? () => _submitAnswer(isAnswered) : null,
                             child: Container(
                               width: double.infinity,
                               height: 60.h,
@@ -265,11 +233,11 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                             ),
                           ),
 
-                        if (_isAnswered) ...[
+                        if (isAnswered) ...[
                           SizedBox(height: 30.h),
                           OpinionWritingExplanationCard(
                             quest: quest,
-                            isCorrect: _isCorrect == true,
+                            isCorrect: isCorrect == true,
                             primaryColor: theme.primaryColor,
                             isDark: isDark,
                           ),
