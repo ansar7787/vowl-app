@@ -49,7 +49,7 @@ class KidsRoomExitDialog extends StatelessWidget {
                   children: [
                     Expanded(
                       child: ScaleButton(
-                        onTap: () => Navigator.pop(context),
+                        onTap: onExit,
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 10.h),
                           decoration: BoxDecoration(
@@ -58,7 +58,7 @@ class KidsRoomExitDialog extends StatelessWidget {
                           ),
                           child: Center(
                             child: Text(
-                              "STAY",
+                              "EXIT",
                               style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w800,
@@ -72,17 +72,17 @@ class KidsRoomExitDialog extends StatelessWidget {
                     SizedBox(width: 10.w),
                     Expanded(
                       child: ScaleButton(
-                        onTap: onExit,
+                        onTap: () => Navigator.pop(context),
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 10.h),
                           decoration: BoxDecoration(
                             gradient: const LinearGradient(
-                              colors: [Color(0xFFFB7185), Color(0xFFE11D48)],
+                              colors: [Color(0xFF34D399), Color(0xFF10B981)],
                             ),
                             borderRadius: BorderRadius.circular(15.r),
                             boxShadow: [
                               BoxShadow(
-                                color: const Color(0xFFE11D48).withValues(alpha: 0.2),
+                                color: const Color(0xFF10B981).withValues(alpha: 0.2),
                                 blurRadius: 10,
                                 offset: const Offset(0, 4),
                               ),
@@ -90,10 +90,10 @@ class KidsRoomExitDialog extends StatelessWidget {
                           ),
                           child: Center(
                             child: Text(
-                              "EXIT",
+                              "STAY",
                               style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 12.sp,
-                                fontWeight: FontWeight.w800,
+                                fontWeight: FontWeight.w900,
                                 color: Colors.white,
                               ),
                             ),

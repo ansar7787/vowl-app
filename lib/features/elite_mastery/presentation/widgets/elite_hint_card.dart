@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/hint_utility.dart';
 
 class EliteHintCard extends StatelessWidget {
   final String? hintText;
@@ -78,7 +79,9 @@ class EliteHintCard extends StatelessWidget {
           ),
           SizedBox(height: 12.h),
           Text(
-            hintText ?? 'Try looking for context clues in the structure!',
+            HintUtility.isGenericHint(hintText) 
+              ? 'LIFELINE ACTIVATED: Applying dynamic assistance. Eliminating unlikely options often reveals the truth.' 
+              : (hintText ?? 'Try looking for context clues in the structure!'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 16.sp,

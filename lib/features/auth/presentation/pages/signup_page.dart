@@ -15,6 +15,7 @@ import 'package:vowl/features/home/presentation/widgets/vowlbot_auth_companion.d
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/auth/presentation/widgets/signup_widgets.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -233,7 +234,7 @@ class _SignUpViewState extends State<SignUpView> {
                                           onPressed: () =>
                                               context.go(AppRouter.loginRoute),
                                           child: Text(
-                                            'Login',
+                                            context.tr('auth.login'),
                                             style: TextStyle(fontFamily: 'Outfit', 
                                               color: const Color(0xFF2563EB),
                                               fontWeight: FontWeight.w900,

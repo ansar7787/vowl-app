@@ -181,151 +181,156 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
           onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 10.h,
-                  ),
-                  child: Column(
-                    children: [
-                      SocialSparkInstruction(primaryColor: theme.primaryColor),
-                      SizedBox(height: 16.h),
-
-                      SocialSparkConnectionMonitor(
-                        text: currentText,
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                        isAnswered: _isAnswered,
-                        isCorrect: _isCorrect,
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isCompact = constraints.maxHeight < 580;
+                    return SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: isCompact ? 5.h : 10.h,
                       ),
-                      SizedBox(height: 20.h),
+                      child: Column(
+                        children: [
+                          SocialSparkInstruction(primaryColor: theme.primaryColor),
+                          SizedBox(height: isCompact ? 10.h : 16.h),
 
-                      SocialSparkGalaxyBoard(
-                        words: words,
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                        selectedIndices: _selectedIndices,
-                        isAnswered: _isAnswered,
-                        isCorrect: _isCorrect,
-                        pulseValue: _pulseController.value,
-                        onStarTap: _onStarTap,
-                      ),
-                      SizedBox(height: 20.h),
+                          SocialSparkConnectionMonitor(
+                            text: currentText,
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                            isAnswered: _isAnswered,
+                            isCorrect: _isCorrect,
+                          ),
+                          SizedBox(height: isCompact ? 12.h : 20.h),
 
-                      // Trigger Action Buttons
-                      if (!_isAnswered && _selectedIndices.isNotEmpty)
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            ScaleButton(
-                              onTap: _clearSelection,
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 24.w,
-                                  vertical: 12.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(
-                                    alpha: 0.1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(30.r),
-                                  border: Border.all(
-                                    color: theme.primaryColor.withValues(
-                                      alpha: 0.3,
+                          SocialSparkGalaxyBoard(
+                            words: words,
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                            selectedIndices: _selectedIndices,
+                            isAnswered: _isAnswered,
+                            isCorrect: _isCorrect,
+                            pulseValue: _pulseController.value,
+                            onStarTap: _onStarTap,
+                          ),
+                          SizedBox(height: isCompact ? 12.h : 20.h),
+
+                          // Trigger Action Buttons
+                          if (!_isAnswered && _selectedIndices.isNotEmpty)
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                ScaleButton(
+                                  onTap: _clearSelection,
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: isCompact ? 16.w : 24.w,
+                                      vertical: isCompact ? 10.h : 12.h,
                                     ),
-                                  ),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.refresh_rounded,
-                                      color: theme.primaryColor,
-                                      size: 18.r,
-                                    ),
-                                    SizedBox(width: 6.w),
-                                    Text(
-                                      "CLEAR PATH",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.bold,
-                                        color: theme.primaryColor,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 16.w),
-                            ScaleButton(
-                              onTap: () => _submitAnswer(
-                                words,
-                                quest.correctAnswer ?? "",
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 32.w,
-                                  vertical: 12.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30.r),
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      theme.primaryColor,
-                                      theme.primaryColor.withValues(alpha: 0.8),
-                                    ],
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
+                                    decoration: BoxDecoration(
                                       color: theme.primaryColor.withValues(
-                                        alpha: 0.35,
+                                        alpha: 0.1,
                                       ),
-                                      blurRadius: 15,
-                                    ),
-                                  ],
-                                ),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.bolt_rounded,
-                                      color: Colors.white,
-                                      size: 18.r,
-                                    ),
-                                    SizedBox(width: 6.w),
-                                    Text(
-                                      "IGNITE SPARK",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                        letterSpacing: 1.5,
+                                      borderRadius: BorderRadius.circular(30.r),
+                                      border: Border.all(
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.3,
+                                        ),
                                       ),
                                     ),
-                                  ],
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.refresh_rounded,
+                                          color: theme.primaryColor,
+                                          size: isCompact ? 16.r : 18.r,
+                                        ),
+                                        SizedBox(width: 6.w),
+                                        Text(
+                                          "CLEAR PATH",
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: isCompact ? 10.sp : 12.sp,
+                                            fontWeight: FontWeight.bold,
+                                            color: theme.primaryColor,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          ],
-                        ).animate().fadeIn(duration: 300.ms),
+                                SizedBox(width: isCompact ? 10.w : 16.w),
+                                ScaleButton(
+                                  onTap: () => _submitAnswer(
+                                    words,
+                                    quest.correctAnswer ?? "",
+                                  ),
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: isCompact ? 20.w : 32.w,
+                                      vertical: isCompact ? 10.h : 12.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30.r),
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          theme.primaryColor,
+                                          theme.primaryColor.withValues(alpha: 0.8),
+                                        ],
+                                      ),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.35,
+                                          ),
+                                          blurRadius: isCompact ? 10 : 15,
+                                        ),
+                                      ],
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.bolt_rounded,
+                                          color: Colors.white,
+                                          size: isCompact ? 16.r : 18.r,
+                                        ),
+                                        SizedBox(width: 6.w),
+                                        Text(
+                                          "IGNITE SPARK",
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: isCompact ? 10.sp : 12.sp,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                            letterSpacing: 1.5,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ).animate().fadeIn(duration: 300.ms),
 
-                      // Post-answer review cards
-                      AnimatedCrossFade(
-                        firstChild: const SizedBox(),
-                        secondChild: SocialSparkExplanationCard(
-                          quest: quest,
-                          isDark: isDark,
-                          isCorrect: _isCorrect,
-                        ),
-                        crossFadeState: _isAnswered
-                            ? CrossFadeState.showSecond
-                            : CrossFadeState.showFirst,
-                        duration: const Duration(milliseconds: 400),
+                          // Post-answer review cards
+                          AnimatedCrossFade(
+                            firstChild: const SizedBox(),
+                            secondChild: SocialSparkExplanationCard(
+                              quest: quest,
+                              isDark: isDark,
+                              isCorrect: _isCorrect,
+                            ),
+                            crossFadeState: _isAnswered
+                                ? CrossFadeState.showSecond
+                                : CrossFadeState.showFirst,
+                            duration: const Duration(milliseconds: 400),
+                          ),
+                          SizedBox(height: isCompact ? 40.h : 80.h),
+                        ],
                       ),
-                      SizedBox(height: 80.h),
-                    ],
-                  ),
+                    );
+                  },
                 ),
         );
       },

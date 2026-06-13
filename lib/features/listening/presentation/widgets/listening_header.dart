@@ -160,7 +160,10 @@ class _HintButton extends StatelessWidget {
           QuestHintButton(
                 used: used,
                 primaryColor: theme.primaryColor,
-                hintText: quest.hint as String,
+                // Suppress the generic JSON text hint for Listening games.
+                // Instead, the BaseLayout intercepts this to visually
+                // show a custom snackbar and auto-replay the audio track.
+                hintText: null,
                 soundService: soundService,
                 onTap: onHint,
               )

@@ -1,4 +1,3 @@
-import 'package:vowl/core/utils/sound_service.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -16,8 +14,6 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
-import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 
 // Decoupled sub-widgets
 import 'package:vowl/features/profile/presentation/widgets/profile_header.dart';
@@ -25,6 +21,7 @@ import 'package:vowl/features/profile/presentation/widgets/profile_bento_stats.d
 import 'package:vowl/features/profile/presentation/widgets/profile_badges_list.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_stickers_progress.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_preferences_list.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -34,174 +31,11 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  bool _soundEnabled = true;
   final ImagePicker _picker = ImagePicker();
 
   @override
   void initState() {
     super.initState();
-    _loadSoundSettings();
-  }
-
-  Future<void> _loadSoundSettings() async {
-    final prefs = await SharedPreferences.getInstance();
-    if (mounted) {
-      setState(() {
-        _soundEnabled = prefs.getBool('sound_enabled') ?? true;
-      });
-    }
-  }
-
-  Future<void> _toggleSound(bool value) async {
-    if (!value) {
-      final confirmed = await _showSoundConfirmationDialog();
-      if (!confirmed) return;
-    }
-
-    setState(() {
-      _soundEnabled = value;
-    });
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('sound_enabled', value);
-
-    di.sl<SoundService>().setMuted(!value);
-
-    final kidsAudio = di.sl<KidsAudioService>();
-    final kidsTTS = di.sl<KidsTTSService>();
-
-    if (!value) {
-      await kidsAudio.stopBgm();
-      await kidsTTS.stop();
-    }
-  }
-
-  Future<bool> _showSoundConfirmationDialog() async {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return await showDialog<bool>(
-          context: context,
-          builder: (context) => BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-            child: Dialog(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              child: Container(
-                padding: EdgeInsets.all(32.r),
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? const Color(0xFF1E293B).withValues(alpha: 0.9)
-                      : Colors.white.withValues(alpha: 0.9),
-                  borderRadius: BorderRadius.circular(40.r),
-                  border: Border.all(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : Colors.black.withValues(alpha: 0.05),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.2),
-                      blurRadius: 30,
-                      offset: const Offset(0, 15),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(20.r),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFFACC15).withValues(alpha: 0.15),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.volume_off_rounded,
-                        color: const Color(0xFFFACC15),
-                        size: 48.sp,
-                      ),
-                    ),
-                    SizedBox(height: 24.h),
-                    Text(
-                      'Mute Game Sounds?',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      ),
-                    ),
-                    SizedBox(height: 12.h),
-                    Text(
-                      'Clear audio and guidance are key to mastering your quests. Are you sure you want to silence them?',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w500,
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.6)
-                            : const Color(0xFF64748B),
-                        height: 1.5,
-                      ),
-                    ),
-                    SizedBox(height: 32.h),
-                    ScaleButton(
-                      onTap: () => Navigator.pop(context, false),
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 18.h),
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF2563EB), Color(0xFF4F46E5)],
-                          ),
-                          borderRadius: BorderRadius.circular(20.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(
-                                0xFF2563EB,
-                              ).withValues(alpha: 0.3),
-                              blurRadius: 15,
-                              offset: const Offset(0, 8),
-                            ),
-                          ],
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Keep It On',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 12.h),
-                    TextButton(
-                      onPressed: () => Navigator.pop(context, true),
-                      style: TextButton.styleFrom(
-                        foregroundColor: isDark
-                            ? Colors.white.withValues(alpha: 0.4)
-                            : const Color(0xFF94A3B8),
-                        padding: EdgeInsets.symmetric(vertical: 12.h),
-                      ),
-                      child: Text(
-                        'Mute Anyway',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ) ??
-        false;
   }
 
   @override
@@ -297,12 +131,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ProfileStickersProgress(user: user),
 
                             SizedBox(height: 40.h),
-                            _buildSectionHeader(context, 'App Preferences'),
+                            _buildSectionHeader(
+                              context,
+                              context.tr('settings.app_preferences'),
+                            ),
                             SizedBox(height: 20.h),
                             ProfilePreferencesList(
                               user: user,
-                              soundEnabled: _soundEnabled,
-                              onSoundToggle: _toggleSound,
+                              soundEnabled: false,
+                              onSoundToggle: (_) {},
                             ),
 
                             SizedBox(height: 140.h),

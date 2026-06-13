@@ -11,6 +11,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_ren
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class TrophyRoomScreen extends StatelessWidget {
   const TrophyRoomScreen({super.key});
@@ -51,7 +52,7 @@ class TrophyRoomScreen extends StatelessWidget {
                         SizedBox(height: 16.h),
                         _buildMascotStage(context, isDark, isMidnight),
                         SizedBox(height: 48.h),
-                        _buildSectionTitle("TROPHIES & BADGES", isDark, isMidnight),
+                        _buildSectionTitle(context.tr('profile.trophies_badges'), isDark, isMidnight),
                         SizedBox(height: 20.h),
                       ],
                     ),
@@ -67,7 +68,7 @@ class TrophyRoomScreen extends StatelessWidget {
                       if (badges.isEmpty) {
                         return SliverToBoxAdapter(
                           child: _buildEmptySection(
-                            "No trophies yet. Keep completing lessons and challenges to earn your first shiny badge!",
+                            context.tr('profile.no_trophies'),
                             isDark,
                             isMidnight,
                             icon: Icons.military_tech_rounded,
@@ -100,7 +101,7 @@ class TrophyRoomScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(height: 48.h),
-                        _buildSectionTitle("COLLECTIBLES VAULT", isDark, isMidnight),
+                        _buildSectionTitle(context.tr('profile.collectibles_vault'), isDark, isMidnight),
                         SizedBox(height: 20.h),
                         _buildFurnitureSection(context, isDark, isMidnight),
                         SizedBox(height: 100.h),
@@ -210,7 +211,7 @@ class TrophyRoomScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "MY TROPHY ROOM",
+                          context.tr('profile.trophy_room'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 26.sp,
                             fontWeight: FontWeight.w900,
@@ -221,7 +222,7 @@ class TrophyRoomScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 8.h),
                         Text(
-                          "Show off your legendary achievements!",
+                          context.tr('profile.trophy_subtitle'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 14.sp,
                             color: (isDark || isMidnight) ? Colors.white54 : const Color(0xFF64748B),
@@ -396,7 +397,7 @@ class TrophyRoomScreen extends StatelessWidget {
                           Icon(Icons.star_rounded, color: Colors.white, size: 14.r),
                           SizedBox(width: 6.w),
                           Text(
-                            "LEVEL $level",
+                            context.tr('profile.level', args: [level.toString()]),
                             style: TextStyle(fontFamily: 'Outfit', 
                               color: Colors.white,
                               fontWeight: FontWeight.w900,
@@ -512,7 +513,7 @@ class TrophyRoomScreen extends StatelessWidget {
 
         if (owned.isEmpty) {
           return _buildEmptySection(
-            "The vault is empty. Play games to unlock legendary furniture for your mascot!", 
+            context.tr('profile.empty_vault'), 
             isDark, 
             isMidnight,
             icon: Icons.inventory_2_rounded

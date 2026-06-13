@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/features/auth/presentation/bloc/signup_cubit.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class SignUpNameInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
@@ -274,7 +275,7 @@ class SignUpButton extends StatelessWidget {
                     strokeWidth: 2,
                   ),
                 )
-              : const Text('Create Account'),
+              : Text(context.tr('auth.signup')),
         );
       },
     );

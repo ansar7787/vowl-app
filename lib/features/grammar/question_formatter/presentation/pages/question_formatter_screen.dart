@@ -13,6 +13,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/question_formatter/presentation/widgets/question_formatter_instruction.dart';
 import 'package:vowl/features/grammar/question_formatter/presentation/widgets/question_formatter_crank.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class QuestionFormatterScreen extends StatefulWidget {
   final int level;
@@ -364,7 +365,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
             ),
             SizedBox(height: isCompact ? 6.h : 16.h),
             Text(
-              correct ? "CORRECT!" : "INCORRECT",
+              correct ? context.tr('games.correct').toUpperCase() : context.tr('games.incorrect_caps'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: isCompact ? 13.sp : 16.sp,

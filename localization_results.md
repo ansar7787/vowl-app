@@ -1,0 +1,271 @@
+# Full Localization Verification Tracker
+
+This tracker verifies all 262 strings in `en.json` against the codebase.
+
+- [x] ✅ **common.cancel**: `Cancel` -> CLEAR
+- [x] ✅ **common.save**: `Save` -> CLEAR
+- [x] ✅ **common.done**: `Done` -> CLEAR
+- [x] ✅ **common.ok**: `OK` -> CLEAR
+- [x] ✅ **common.yes**: `Yes` -> CLEAR
+- [x] ✅ **common.no**: `No` -> CLEAR
+- [x] ✅ **common.back**: `Back` -> CLEAR
+- [x] ✅ **common.next**: `Next` -> CLEAR
+- [x] ✅ **common.retry**: `Retry` -> CLEAR
+- [x] ✅ **common.loading**: `Loading...` -> CLEAR
+- [x] ✅ **common.error**: `Something went wrong` -> CLEAR
+- [x] ✅ **common.success**: `Success!` -> CLEAR
+- [x] ✅ **common.coming_soon**: `Coming Soon` -> CLEAR
+- [x] ✅ **common.see_all**: `SEE ALL` -> CLEAR
+- [x] ✅ **common.search**: `Search` -> CLEAR
+- [x] ✅ **common.close**: `Close` -> CLEAR
+- [x] ✅ **common.delete**: `Delete` -> CLEAR
+- [x] ✅ **common.confirm**: `Confirm` -> CLEAR
+- [x] ✅ **common.continue_text**: `Continue` -> CLEAR
+- [x] ✅ **common.see_results**: `See Results` -> CLEAR
+- [x] ✅ **auth.signup**: `Create Account` -> CLEAR
+- [x] ✅ **auth.login**: `Login` -> CLEAR
+- [x] ✅ **auth.send_reset_link**: `Send Reset Link` -> CLEAR
+- [x] ✅ **auth.sign_in_with_google**: `Sign in with Google` -> CLEAR
+- [x] ✅ **home.kids_zone_title**: `Kids Learning Zone` -> CLEAR
+- [x] ✅ **home.kids_zone_subtitle**: `22 educational games for early learners` -> CLEAR
+- [x] ✅ **home.quest_arena_title**: `Quest Arena` -> CLEAR
+- [x] ✅ **home.quest_arena_subtitle**: `9-step real-world journey` -> CLEAR
+- [x] ✅ **home.quest_arena_steps**: `9 STEPS` -> CLEAR
+- [x] ✅ **home.elite_companion_title**: `Elite Companion & Stats` -> CLEAR
+- [x] ✅ **home.elite_companion_subtitle**: `Your mascot and adventure stats` -> CLEAR
+- [x] ✅ **home.discovery_hub_title**: `Discovery Hub` -> CLEAR
+- [x] ✅ **home.discovery_hub_subtitle**: `4 curated quest sequences` -> CLEAR
+- [x] ✅ **home.hoot_of_wisdom**: `Hoot of Wisdom` -> CLEAR
+- [x] ✅ **home.rank_operative**: `RANK: VOWL OPERATIVE` -> CLEAR
+- [x] ✅ **home.level**: `LEVEL {}` -> CLEAR
+- [x] ✅ **home.completed_percent**: `{}% COMPLETED` -> CLEAR
+- [x] ✅ **home.early_learners**: `EARLY LEARNERS` -> CLEAR
+- [x] ✅ **home.junior_adventure**: `JUNIOR
+ADVENTURE` -> CLEAR
+- [x] ✅ **home.junior_adventure_subtitle**: `22 playful missions for
+young explorers!` -> CLEAR
+- [x] ✅ **home.badges**: `BADGES` -> CLEAR
+- [x] ✅ **home.level_label**: `LEVEL` -> CLEAR
+- [x] ✅ **home.total_xp**: `TOTAL XP` -> CLEAR
+- [x] ✅ **home.greeting_default**: `Salutations` -> CLEAR
+- [x] ✅ **home.greeting_morning**: `Good Morning` -> CLEAR
+- [x] ✅ **home.greeting_afternoon**: `Good Afternoon` -> CLEAR
+- [x] ✅ **home.greeting_evening**: `Good Evening` -> CLEAR
+- [x] ✅ **home.greeting_night**: `Good Night` -> CLEAR
+- [x] ✅ **home.quest_journey**: `QUEST JOURNEY` -> CLEAR
+- [x] ✅ **home.total_levels_cleared**: `Total Levels Cleared` -> CLEAR
+- [x] ✅ **home.rank**: `RANK` -> CLEAR
+- [x] ✅ **home.levels_suffix**: ` / {} Levels` -> CLEAR
+- [x] ✅ **home.percent_complete**: `{}% Complete` -> CLEAR
+- [x] ✅ **home.levels_count**: `{} levels` -> CLEAR
+- [x] ✅ **home.streak**: `STREAK` -> CLEAR
+- [x] ✅ **home.coins**: `COINS` -> CLEAR
+- [x] ✅ **home.kids**: `KIDS` -> CLEAR
+- [x] ✅ **home.step**: `STEP {}` -> CLEAR
+- [x] ✅ **home.levels_cleared_max**: `{} / {} LEVELS` -> CLEAR
+- [x] ✅ **home.discovery_foryou_title**: `For You` -> CLEAR
+- [x] ✅ **home.discovery_foryou_subtitle**: `Smart recommendation based on your progress` -> CLEAR
+- [x] ✅ **home.discovery_dailyduo_title**: `Daily Duo` -> CLEAR
+- [x] ✅ **home.discovery_dailyduo_subtitle**: `Vocal warm-up followed by reading mastery` -> CLEAR
+- [x] ✅ **home.discovery_speedblitz_title**: `Speed Blitz` -> CLEAR
+- [x] ✅ **home.discovery_speedblitz_subtitle**: `High-speed challenges to sharpen focus` -> CLEAR
+- [x] ✅ **home.discovery_grammarpro_title**: `Grammar Pro` -> CLEAR
+- [x] ✅ **home.discovery_grammarpro_subtitle**: `Elite structural drills for sentence mastery` -> CLEAR
+- [x] ✅ **home.discovery_diff_adaptive**: `Adaptive` -> CLEAR
+- [x] ✅ **home.discovery_diff_medium**: `Medium` -> CLEAR
+- [x] ✅ **home.discovery_diff_hard**: `Hard` -> CLEAR
+- [x] ✅ **home.discovery_diff_expert**: `Expert` -> CLEAR
+- [x] ✅ **home.quests_count**: `{} QUESTS` -> CLEAR
+- [x] ✅ **home.hoot_title_fallback**: `OWLY'S HOOT` -> CLEAR
+- [x] ✅ **home.hoot_wisdom**: `OWLY'S WISDOM` -> CLEAR
+- [x] ✅ **home.hoot_daily_motivation**: `DAILY MOTIVATION` -> CLEAR
+- [x] ✅ **home.hoot_fallback_msg_1**: `Hoot! Your dedication is truly majestic!` -> CLEAR
+- [x] ✅ **home.hoot_fallback_msg_2**: `Hoot! I'm feeling a bit quiet today. Keep soaring!` -> CLEAR
+- [x] ✅ **home.chest_claimed**: `CLAIMED!` -> CLEAR
+- [x] ✅ **home.chest_vip_gift**: `VIP DAILY GIFT` -> CLEAR
+- [x] ✅ **home.chest_daily_mystery**: `DAILY MYSTERY` -> CLEAR
+- [x] ✅ **home.chest_treasure_unlocked**: `TREASURE UNLOCKED` -> CLEAR
+- [x] ✅ **home.chest_pro_reward**: `YOUR EXCLUSIVE PRO REWARD` -> CLEAR
+- [x] ✅ **home.chest_ready_to_open**: `READY TO OPEN?` -> CLEAR
+- [x] ✅ **home.chest_coins_collected**: `COINS COLLECTED` -> CLEAR
+- [x] ✅ **home.chest_tap_vip_loot**: `TAP TO CLAIM VIP LOOT` -> CLEAR
+- [x] ✅ **home.chest_tap_unveil**: `TAP TO UNVEIL` -> CLEAR
+- [x] ✅ **notification_card.streak_protect**: `Protect your {}-Day Streak!` -> CLEAR
+- [x] ✅ **notification_card.streak_strong**: `{} days strong! Keep it up.` -> CLEAR
+- [x] ✅ **notification_card.streak_unstoppable**: `Unstoppable! Protect your streak.` -> CLEAR
+- [x] ✅ **notification_card.streak_dont_lose**: `Don't lose your {}-day progress!` -> CLEAR
+- [x] ✅ **notification_card.starter_on_roll**: `You are on a roll! 🚀` -> CLEAR
+- [x] ✅ **notification_card.starter_momentum**: `Keep the momentum going!` -> CLEAR
+- [x] ✅ **notification_card.starter_begun**: `Your journey has just begun!` -> CLEAR
+- [x] ✅ **notification_card.morning_quest**: `Morning Quest Ready! ☀️` -> CLEAR
+- [x] ✅ **notification_card.afternoon_practice**: `Afternoon Practice? 🦉` -> CLEAR
+- [x] ✅ **notification_card.evening_boost**: `Evening Knowledge Boost 🌙` -> CLEAR
+- [x] ✅ **notification_card.night_owl**: `Night Owl Training 🌌` -> CLEAR
+- [x] ✅ **notification_card.subtitle_streak**: `Enable notifications so Owly can remind you to protect your streak.` -> CLEAR
+- [x] ✅ **notification_card.subtitle_default**: `Turn on notifications so Owly can remind you to practice daily.` -> CLEAR
+- [x] ✅ **notification_card.remind_me**: `Remind Me` -> CLEAR
+- [x] ✅ **notification_card.not_now**: `Not Now` -> CLEAR
+- [x] ✅ **settings.title**: `Settings` -> CLEAR
+- [x] ✅ **settings.account**: `Account` -> CLEAR
+- [x] ✅ **settings.security_password**: `Security & Password` -> CLEAR
+- [x] ✅ **settings.app_preferences**: `App Preferences` -> CLEAR
+- [x] ✅ **settings.push_notifications**: `Push Notifications` -> CLEAR
+- [x] ✅ **settings.push_notifications_subtitle**: `Stay updated with daily quests` -> CLEAR
+- [x] ✅ **settings.language_selection**: `Language Selection` -> CLEAR
+- [x] ✅ **settings.support_legal**: `Support & Legal` -> CLEAR
+- [x] ✅ **settings.help_center**: `Help Center` -> CLEAR
+- [x] ✅ **settings.terms_of_service**: `Terms of Service` -> CLEAR
+- [x] ✅ **settings.privacy_policy**: `Privacy Policy` -> CLEAR
+- [x] ✅ **settings.app_version**: `App Version` -> CLEAR
+- [x] ✅ **settings.danger_zone**: `Danger Zone` -> CLEAR
+- [x] ✅ **settings.clear_cache**: `Clear App Cache` -> CLEAR
+- [x] ✅ **settings.delete_account**: `Delete Account` -> CLEAR
+- [x] ✅ **settings.sign_out**: `SIGN OUT ACCOUNT` -> CLEAR
+- [x] ✅ **settings.premium_quester**: `PREMIUM QUESTER` -> CLEAR
+- [x] ✅ **settings.free_account**: `FREE ACCOUNT` -> CLEAR
+- [x] ✅ **settings.cache_cleared**: `Cache cleared successfully!` -> CLEAR
+- [x] ✅ **settings.cache_error**: `Error clearing cache` -> CLEAR
+- [x] ✅ **settings.email_error**: `Could not open email app` -> CLEAR
+- [x] ✅ **settings_dialogs.profile_settings**: `Profile Settings` -> CLEAR
+- [x] ✅ **settings_dialogs.display_name**: `Display Name` -> CLEAR
+- [x] ✅ **settings_dialogs.sign_out_title**: `Sign Out?` -> CLEAR
+- [x] ✅ **settings_dialogs.sign_out_body**: `Are you sure you want to leave?
+Your quest progress is safely synced to the cloud.` -> CLEAR
+- [x] ✅ **settings_dialogs.sign_out_confirm**: `Yes, Sign Me Out` -> CLEAR
+- [x] ✅ **settings_dialogs.sign_out_cancel**: `Stay in Quest` -> CLEAR
+- [x] ✅ **settings_dialogs.disable_notifications_title**: `Disable Notifications?` -> CLEAR
+- [x] ✅ **settings_dialogs.disable_notifications_body**: `Owly won't be able to remind you to practice. You might lose your learning streak!` -> CLEAR
+- [x] ✅ **settings_dialogs.keep_reminders**: `Keep Reminders On` -> CLEAR
+- [x] ✅ **settings_dialogs.yes_disable**: `Yes, Disable` -> CLEAR
+- [x] ✅ **settings_dialogs.reset_password_title**: `Reset Password` -> CLEAR
+- [x] ✅ **settings_dialogs.reset_password_body**: `We will send a password recovery email to:
+{}` -> CLEAR
+- [x] ✅ **settings_dialogs.send_link**: `Send Link Now` -> CLEAR
+- [x] ✅ **settings_dialogs.reset_link_sent**: `Reset link sent to {}` -> CLEAR
+- [x] ✅ **settings_dialogs.delete_account_title**: `Delete Account?` -> CLEAR
+- [x] ✅ **settings_dialogs.delete_account_body**: `This action is IRREVERSIBLE. All your progress, coins, and streaks will be permanently lost.` -> CLEAR
+- [x] ✅ **settings_dialogs.delete_everything**: `Delete Everything` -> CLEAR
+- [x] ✅ **settings_dialogs.keep_account**: `Keep My Account` -> CLEAR
+- [x] ✅ **settings_dialogs.final_warning**: `Final Warning` -> CLEAR
+- [x] ✅ **settings_dialogs.type_delete**: `Type "DELETE" below to confirm account removal.` -> CLEAR
+- [x] ✅ **settings_dialogs.delete_forever**: `Yes, Delete Forever` -> CLEAR
+- [x] ✅ **settings_dialogs.nevermind**: `Nevermind` -> CLEAR
+- [x] ✅ **settings_dialogs.coming_soon_title**: `Feature Coming Soon` -> CLEAR
+- [x] ✅ **settings_dialogs.coming_soon_body**: `We're working hard to bring this feature to your quest experience!` -> CLEAR
+- [x] ✅ **language_picker.title**: `Choose Language` -> CLEAR
+- [x] ✅ **language_picker.subtitle**: `Select the language for the app interface. Game content will remain in English.` -> CLEAR
+- [x] ✅ **language_picker.search_hint**: `Search languages...` -> CLEAR
+- [x] ✅ **premium.title**: `Vowl Premium` -> CLEAR
+- [x] ✅ **premium.restore_purchases**: `Restore Purchases` -> CLEAR
+- [x] ✅ **premium.current_plan**: `CURRENT PLAN` -> CLEAR
+- [x] ✅ **premium.popular**: `POPULAR` -> CLEAR
+- [x] ✅ **premium.subscribe**: `Subscribe` -> CLEAR
+- [x] ✅ **premium.per_month**: `/month` -> CLEAR
+- [x] ✅ **premium.per_year**: `/year` -> CLEAR
+- [x] ✅ **premium.free_trial**: `Start Free Trial` -> CLEAR
+- [x] ✅ **premium.already_premium**: `You're already a Premium Quester!` -> CLEAR
+- [x] ✅ **profile.trophy_room**: `MY TROPHY ROOM` -> CLEAR
+- [x] ✅ **profile.trophy_subtitle**: `Show off your legendary achievements!` -> CLEAR
+- [x] ✅ **profile.trophies_badges**: `TROPHIES & BADGES` -> CLEAR
+- [x] ✅ **profile.collectibles_vault**: `COLLECTIBLES VAULT` -> CLEAR
+- [x] ✅ **profile.no_trophies**: `No trophies yet. Keep completing lessons and challenges to earn your first shiny badge!` -> CLEAR
+- [x] ✅ **profile.empty_vault**: `The vault is empty. Play games to unlock legendary furniture for your mascot!` -> CLEAR
+- [x] ✅ **profile.level**: `LEVEL {}` -> CLEAR
+- [x] ✅ **adventure.title**: `Adventure Store` -> CLEAR
+- [x] ✅ **adventure.insufficient_coins**: `Insufficient Vowl Coins!` -> CLEAR
+- [x] ✅ **adventure.purchase_success**: `Purchase successful!` -> CLEAR
+- [x] ✅ **adventure.streak_shield**: `Streak Shield` -> CLEAR
+- [x] ✅ **adventure.double_xp**: `Double XP` -> CLEAR
+- [x] ✅ **adventure.streak_repaired**: `STREAK REPAIRED! 🔥` -> CLEAR
+- [x] ✅ **quest_archive.title**: `QUEST ARCHIVE` -> CLEAR
+- [x] ✅ **quest_archive.search_hint**: `Search quests...` -> CLEAR
+- [x] ✅ **quest_archive.no_results**: `No matching quests found` -> CLEAR
+- [x] ✅ **quest_archive.global_progress**: `GLOBAL ARCHIVE PROGRESS` -> CLEAR
+- [x] ✅ **quest_archive.mastery**: `{}% MASTERY` -> CLEAR
+- [x] ✅ **quest_archive.xp_power**: `XP POWER` -> CLEAR
+- [x] ✅ **quest_archive.quests**: `QUESTS` -> CLEAR
+- [x] ✅ **quest_archive.status**: `STATUS` -> CLEAR
+- [x] ✅ **quest_archive.completed**: `COMPLETED: {}%` -> CLEAR
+- [x] ✅ **quest_archive.new_badge**: `NEW` -> CLEAR
+- [x] ✅ **quest_archive.levels_cleared**: `{}/{} LVLS` -> CLEAR
+- [x] ✅ **quest_archive.status_initiate**: `INITIATE` -> CLEAR
+- [x] ✅ **quest_archive.status_explorer**: `EXPLORER` -> CLEAR
+- [x] ✅ **quest_archive.status_adventurer**: `ADVENTURER` -> CLEAR
+- [x] ✅ **quest_archive.status_champion**: `CHAMPION` -> CLEAR
+- [x] ✅ **quest_archive.status_conqueror**: `CONQUEROR` -> CLEAR
+- [x] ✅ **quest_archive.status_grandmaster**: `GRANDMASTER` -> CLEAR
+- [x] ✅ **quest_archive.status_legendary**: `LEGENDARY` -> CLEAR
+- [x] ✅ **categories.all**: `ALL` -> CLEAR
+- [x] ✅ **categories.vocabulary**: `VOCABULARY` -> CLEAR
+- [x] ✅ **categories.grammar**: `GRAMMAR` -> CLEAR
+- [x] ✅ **categories.speaking**: `SPEAKING` -> CLEAR
+- [x] ✅ **categories.listening**: `LISTENING` -> CLEAR
+- [x] ✅ **categories.reading**: `READING` -> CLEAR
+- [x] ✅ **categories.writing**: `WRITING` -> CLEAR
+- [x] ✅ **categories.accent**: `ACCENT` -> CLEAR
+- [x] ✅ **categories.roleplay**: `ROLEPLAY` -> CLEAR
+- [x] ✅ **categories.elite**: `ELITE` -> CLEAR
+- [x] ✅ **loading_overlay.securing_data**: `Securing your quest data` -> CLEAR
+- [x] ✅ **onboarding.welcome**: `Welcome to Vowl!` -> CLEAR
+- [x] ✅ **onboarding.get_started**: `Get Started` -> CLEAR
+- [x] ✅ **onboarding.skip**: `Skip` -> CLEAR
+- [x] ✅ **games.correct**: `Correct!` -> CLEAR
+- [x] ✅ **games.incorrect**: `Incorrect!` -> CLEAR
+- [x] ✅ **games.time_up**: `Time's Up!` -> CLEAR
+- [x] ✅ **games.lives_remaining**: `{} lives remaining` -> CLEAR
+- [x] ✅ **games.no_lives**: `No lives left!` -> CLEAR
+- [x] ✅ **games.hint**: `Hint` -> CLEAR
+- [x] ✅ **games.explanation**: `Explanation` -> CLEAR
+- [x] ✅ **games.next_question**: `Next Question` -> CLEAR
+- [x] ✅ **games.level_complete**: `Level Complete!` -> CLEAR
+- [x] ✅ **games.great_job**: `Great Job!` -> CLEAR
+- [x] ✅ **games.try_again**: `Try Again` -> CLEAR
+- [x] ✅ **games.score**: `Score: {}` -> CLEAR
+- [x] ✅ **games.xp_earned**: `+{} XP` -> CLEAR
+- [x] ✅ **games.coins_earned**: `+{} Coins` -> CLEAR
+- [x] ✅ **games.excellent**: `EXCELLENT!` -> CLEAR
+- [x] ✅ **games.not_quite**: `NOT QUITE!` -> CLEAR
+- [x] ✅ **games.not_quite_capitalized**: `Not quite` -> CLEAR
+- [x] ✅ **games.lets_review**: `Let's Review` -> CLEAR
+- [x] ✅ **games.accent_comparison**: `Accent Comparison` -> CLEAR
+- [x] ✅ **games.british**: `British` -> CLEAR
+- [x] ✅ **games.american**: `American` -> CLEAR
+- [x] ✅ **games.conversation_complete**: `Conversation Complete 🎉` -> CLEAR
+- [x] ✅ **games.next_roleplay**: `Next Roleplay` -> CLEAR
+- [x] ✅ **games.see_results**: `SEE RESULTS` -> CLEAR
+- [x] ✅ **games.explanation_caps**: `EXPLANATION:` -> CLEAR
+- [x] ✅ **games.semantic_correct_continue**: `Correct! Tap to continue.` -> CLEAR
+- [x] ✅ **games.semantic_incorrect_explanation**: `Incorrect. The correct answer is: {}. Tap to {}.` -> CLEAR
+- [x] ✅ **games.semantic_incorrect_try_again**: `Incorrect. Tap to try again.` -> CLEAR
+- [x] ✅ **games.correct_caps**: `CORRECT!` -> CLEAR
+- [x] ✅ **games.incorrect_caps**: `INCORRECT` -> CLEAR
+- [x] ✅ **games.kids_error_title**: `NICE TRY!` -> CLEAR
+- [x] ✅ **games.kids_error_body**: `This level is taking a nap.
+Check back soon! 🎈` -> CLEAR
+- [x] ✅ **games.kids_awesome**: `AWESOME!` -> CLEAR
+- [x] ✅ **games.kids_oh_no**: `OH NO!` -> CLEAR
+- [x] ✅ **games.kids_success_msg**: `Great job! Keep going! ✨` -> CLEAR
+- [x] ✅ **games.kids_review_msg**: `Nice try! Let's review this later! 💡` -> CLEAR
+- [x] ✅ **games.kids_try_again_msg**: `Almost there! Try again! ✨` -> CLEAR
+- [x] ✅ **games.kids_nudge**: `Focus! Use a hint if you need help saving your last life.` -> CLEAR
+- [x] ✅ **games.kids_level_up**: `LEVEL UP!` -> CLEAR
+- [x] ✅ **games.kids_new_sticker**: `NEW STICKER UNLOCKED!` -> CLEAR
+- [x] ✅ **games.kids_double_rewards**: `DOUBLE REWARDS` -> CLEAR
+- [x] ✅ **games.kids_rewards_doubled**: `REWARDS DOUBLED!` -> CLEAR
+- [x] ✅ **games.kids_game_over**: `GAME OVER` -> CLEAR
+- [x] ✅ **games.kids_game_over_subtitle**: `Don't give up! You were so close! 💪` -> CLEAR
+- [x] ✅ **games.kids_resume_game**: `RESUME GAME` -> CLEAR
+- [x] ✅ **games.kids_exit_to_map**: `EXIT TO MAP` -> CLEAR
+- [x] ✅ **games.kids_quit_title**: `Leaving so soon? 😢` -> CLEAR
+- [x] ✅ **games.kids_quit_subtitle**: `Your progress in this level will be lost! Are you sure you want to quit?` -> CLEAR
+- [x] ✅ **games.kids_quit_button**: `QUIT` -> CLEAR
+- [x] ✅ **games.kids_play_on**: `PLAY ON!` -> CLEAR
+- [x] ✅ **games.kids_coins**: `KIDS COINS` -> CLEAR
+- [x] ✅ **games.watch_and_earn**: `WATCH & EARN` -> CLEAR
+- [x] ✅ **games.get_10_coins**: `Get 10 Kids Coins` -> CLEAR
+- [x] ✅ **games.repeat**: `REPEAT` -> CLEAR
+- [x] ✅ **games.got_it**: `GOT IT` -> CLEAR
+- [x] ✅ **games.kids_drop_here**: `DROP HERE!` -> CLEAR
+- [x] ✅ **games.kids_tap_wake**: `TAP TO WAKE UP ☀️` -> CLEAR
+- [x] ✅ **games.kids_zzz**: `Zzz...` -> CLEAR
+- [x] ✅ **games.kids_under_construction**: `Oops! Level {} is still under construction! 🚧` -> CLEAR

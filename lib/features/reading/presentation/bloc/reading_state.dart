@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import '../../domain/entities/reading_quest.dart';
 
+
 // ---------------------------------------------------------------------------
 // copyWith sentinel
 // ---------------------------------------------------------------------------
@@ -53,7 +54,7 @@ class ReadingLoaded extends ReadingState {
   final int wrongCount;
 
   /// True when the correct answer has been revealed and the player
-  /// must tap "Continue" to move on (question re-queued at the end).
+  /// must tap context.tr('common.continue_text') to move on (question re-queued at the end).
   final bool isFinalFailure;
 
   /// Always valid while in this state — [currentIndex] is guarded by the BLoC.

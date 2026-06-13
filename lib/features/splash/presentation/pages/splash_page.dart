@@ -17,6 +17,7 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   bool _timerFinished = false;
+  bool _hasNavigated = false;
   Timer? _timer;
 
   @override
@@ -43,7 +44,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void _checkNavigation() {
-    if (!_timerFinished) return;
+    if (!_timerFinished || _hasNavigated) return;
     
     final authState = context.read<AuthBloc>().state;
     if (authState.status == AuthStatus.unknown) {
@@ -52,6 +53,7 @@ class _SplashPageState extends State<SplashPage> {
       return;
     }
 
+    _hasNavigated = true;
     debugPrint('SplashPage: Navigating with status: ${authState.status}');
     // Router redirect logic will handle where to go (Home or Login)
     context.go(AppRouter.homeRoute);

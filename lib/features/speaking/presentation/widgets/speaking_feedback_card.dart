@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Bottom-sheet style feedback card shown after each answer.
 ///
 /// Handles three outcomes:
-///   • Correct answer → green card, "CONTINUE" button.
-///   • First wrong answer → red card, "TRY AGAIN" button.
+///   • Correct answer → green card, context.tr('common.continue_text').toUpperCase() button.
+///   • First wrong answer → red card, context.tr('games.try_again').toUpperCase() button.
 ///   • Final failure (2nd wrong or 0 lives) → red card, explanation,
-///     "CONTINUE" or "SEE RESULTS" depending on lives remaining.
+///     context.tr('common.continue_text').toUpperCase() or context.tr('common.see_results').toUpperCase() depending on lives remaining.
 ///
 /// All interactive and informational elements carry [Semantics] labels
 /// for full screen-reader compatibility.
@@ -48,22 +49,22 @@ class SpeakingFeedbackCard extends StatelessWidget {
   IconData get _icon =>
       success ? Icons.check_circle_rounded : Icons.error_rounded;
 
-  String get _title => success ? 'EXCELLENT!' : 'NOT QUITE!';
+  String _title(BuildContext context) => success ? context.tr('games.excellent') : context.tr('games.not_quite');
 
-  String get _buttonText {
-    if (success) return 'CONTINUE';
-    if (isFinalFailure) return livesRemaining == 0 ? 'SEE RESULTS' : 'CONTINUE';
-    return 'TRY AGAIN';
+  String _buttonText(BuildContext context) {
+    if (success) return context.tr('common.continue_text').toUpperCase();
+    if (isFinalFailure) return livesRemaining == 0 ? context.tr('games.see_results') : context.tr('common.continue_text').toUpperCase();
+    return context.tr('games.try_again').toUpperCase();
   }
 
-  String get _buttonSemanticLabel {
-    if (success) return 'Correct! Continue to the next question';
+  String _buttonSemanticLabel(BuildContext context) {
+    if (success) return context.tr('games.semantic_correct_continue');
     if (isFinalFailure) {
       return livesRemaining == 0
-          ? 'See your final results'
-          : 'Continue to the next question';
+          ? context.tr('games.semantic_incorrect_explanation', args: ['', context.tr('games.see_results')])
+          : context.tr('games.semantic_incorrect_explanation', args: ['', context.tr('common.continue_text')]);
     }
-    return 'Try this question again';
+    return context.tr('games.semantic_incorrect_try_again');
   }
 
   // ---------------------------------------------------------------------------
@@ -89,13 +90,13 @@ class SpeakingFeedbackCard extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _buildResultRow(),
+          _buildResultRow(context),
           if (explanation != null) ...[
             SizedBox(height: 16.h),
-            _buildExplanation(),
+            _buildExplanation(context),
           ],
           SizedBox(height: 28.h),
-          _buildContinueButton(),
+          _buildContinueButton(context),
         ],
       ),
     ).animate().slideY(
@@ -110,11 +111,11 @@ class SpeakingFeedbackCard extends StatelessWidget {
   // Result row: icon + title
   // ---------------------------------------------------------------------------
 
-  Widget _buildResultRow() {
+  Widget _buildResultRow(BuildContext context) {
     return Row(
       children: [
         Semantics(
-          label: success ? 'Correct answer' : 'Incorrect answer',
+          label: success ? context.tr('games.correct') : context.tr('games.incorrect'),
           child: Container(
             padding: EdgeInsets.all(8.r),
             decoration: BoxDecoration(
@@ -130,10 +131,10 @@ class SpeakingFeedbackCard extends StatelessWidget {
         Expanded(
           child: Semantics(
             header: true,
-            label: _title,
+            label: _title(context),
             child: ExcludeSemantics(
               child: Text(
-                _title,
+                _title(context),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 24.sp,
@@ -156,10 +157,10 @@ class SpeakingFeedbackCard extends StatelessWidget {
   // Explanation box (shown on final failure only)
   // ---------------------------------------------------------------------------
 
-  Widget _buildExplanation() {
+  Widget _buildExplanation(BuildContext context) {
     final text = explanation!;
     return Semantics(
-          label: 'Explanation: $text',
+          label: '${context.tr('games.explanation')}: $text',
           child: Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
@@ -184,7 +185,7 @@ class SpeakingFeedbackCard extends StatelessWidget {
                       ),
                       SizedBox(width: 8.w),
                       Text(
-                        'EXPLANATION:',
+                        context.tr('games.explanation_caps'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,
@@ -225,10 +226,10 @@ class SpeakingFeedbackCard extends StatelessWidget {
   // Continue / Try-again button
   // ---------------------------------------------------------------------------
 
-  Widget _buildContinueButton() {
+  Widget _buildContinueButton(BuildContext context) {
     return Semantics(
       button: true,
-      label: _buttonSemanticLabel,
+      label: _buttonSemanticLabel(context),
       child: ScaleButton(
         onTap: onContinue,
         child: Container(
@@ -252,7 +253,7 @@ class SpeakingFeedbackCard extends StatelessWidget {
           child: Center(
             child: ExcludeSemantics(
               child: Text(
-                _buttonText,
+                _buttonText(context),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 18.sp,

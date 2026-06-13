@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_state.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Slide-up feedback card shown after a player submits an answer.
 ///
@@ -42,17 +43,17 @@ class AccentFeedbackCard extends StatelessWidget {
         : const Color(0xFFE11D48);
 
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
-    final title = success ? 'EXCELLENT!' : 'NOT QUITE!';
+    final title = success ? context.tr('games.excellent') : context.tr('games.not_quite');
 
     // Explanation is only shown on the second wrong attempt (Mastery Loop).
     final showExplanation = !success && state.isFinalFailure;
     final explanation = showExplanation ? state.currentQuest.explanation : null;
 
     final buttonText = success
-        ? 'CONTINUE'
+        ? context.tr('common.continue_text').toUpperCase()
         : (state.isFinalFailure
-              ? (lives == 0 ? 'SEE RESULTS' : 'CONTINUE')
-              : 'TRY AGAIN');
+              ? (lives == 0 ? context.tr('games.see_results') : context.tr('common.continue_text').toUpperCase())
+              : context.tr('games.try_again').toUpperCase());
 
     return Container(
       width: double.infinity,
@@ -90,8 +91,8 @@ class AccentFeedbackCard extends StatelessWidget {
                 child: Semantics(
                   header: true,
                   label: success
-                      ? 'Correct! Excellent!'
-                      : 'Wrong answer. Not quite!',
+                      ? context.tr('games.correct')
+                      : context.tr('games.incorrect'),
                   child: ExcludeSemantics(
                     // Gradient-painted text is not readable by TalkBack/VoiceOver;
                     // the parent Semantics node carries the accessible label.
@@ -145,7 +146,7 @@ class AccentFeedbackCard extends StatelessWidget {
                           ),
                           SizedBox(width: 8.w),
                           Text(
-                            'EXPLANATION:',
+                            context.tr('games.explanation_caps'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
@@ -160,7 +161,7 @@ class AccentFeedbackCard extends StatelessWidget {
                       // maxLines guards against long explanations overflowing on
                       // small phones or at large accessibility text scale factors.
                       Semantics(
-                        label: 'Explanation: $explanation',
+                        label: '${context.tr('games.explanation')}: $explanation',
                         child: Text(
                           explanation,
                           maxLines: 4,

@@ -24,6 +24,7 @@ import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/presentation/painters/category_path_painter.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/glass_map_header.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/shimmer_map_placeholder.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// A premium, highly-performant quest category selection map.
 /// 
@@ -111,6 +112,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     if (user != null) {
       final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
       final beat = di.sl<StoryService>().getStoryBeat(
+        context,
         widget.gameType,
         unlockedLevel,
       );
@@ -631,7 +633,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "LEVEL",
+                                      context.tr('home.level_label'),
                                       style: TextStyle(fontFamily: 'Outfit', 
                                         fontSize: 8.sp,
                                         fontWeight: FontWeight.w900,
@@ -822,6 +824,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
           VowlMascot(
             size: 55.r,
             useFloatingAnimation: true,
+            mascotId: context.read<AuthBloc>().state.user?.vowlMascot ?? 'vowl_prime',
           ).animate().scale(curve: Curves.elasticOut, duration: 500.ms),
           CustomPaint(
             size: Size(12.w, 8.h),

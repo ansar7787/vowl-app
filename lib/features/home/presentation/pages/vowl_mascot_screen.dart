@@ -722,7 +722,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                         .rotate(duration: 5.seconds)
                         .shimmer(color: primaryColor.withValues(alpha: 0.2)),
                     Text(
-                      VowlAssets.mascotMap[user.vowlMascot ?? 'vowl_prime']!,
+                      VowlAssets.getMascotEmoji(user.vowlMascot ?? 'vowl_prime'),
                       style: TextStyle(fontSize: 42.sp),
                     ),
                   ],
@@ -742,9 +742,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                         ),
                       ),
                       Text(
-                        VowlAssets
-                            .mascotNames[user.vowlMascot ?? 'vowl_prime']!
-                            .toUpperCase(),
+                        VowlAssets.getMascotName(user.vowlMascot ?? 'vowl_prime').toUpperCase(),
                         style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w900,
@@ -762,8 +760,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                           SizedBox(width: 6.w),
                           Text(
                             user.vowlEquippedAccessory != null
-                                ? VowlAssets.accessoryNames[user
-                                      .vowlEquippedAccessory!]!
+                                ? VowlAssets.getAccessoryName(user.vowlEquippedAccessory!)
                                 : 'NO AUGMENTATIONS',
                             style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 11.sp,

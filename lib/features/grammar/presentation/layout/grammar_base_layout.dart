@@ -21,7 +21,8 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_error_widget.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_feedback_card.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_game_header.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_mascot_overlay.dart';
+import 'package:vowl/features/grammar/presentation/widgets/grammar_peeking_mascot.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Shared scaffold for all grammar question-type screens.
 ///
@@ -143,14 +144,13 @@ class _GrammarBaseLayoutState extends State<GrammarBaseLayout> {
 
     if (droppedToLast && !_hasSpokenNudge) {
       _hasSpokenNudge = true;
+      final nudgeMessage = context.tr('games.kids_nudge');
       Future.delayed(
         const Duration(milliseconds: GrammarConstants.lastLifeNudgeDelayMs),
         () async {
           if (!mounted) return;
           await _ttsService.stop();
-          await _ttsService.speak(
-            'Focus! Use a hint if you need help saving your last life.',
-          );
+          await _ttsService.speak(nudgeMessage);
           _hapticService.warning();
         },
       );
@@ -241,7 +241,7 @@ class _GrammarBaseLayoutState extends State<GrammarBaseLayout> {
                           Positioned(
                             top: -20.h,
                             left: 20.w,
-                            child: GrammarMascotOverlay(
+                            child: GrammarPeekingMascot(
                               state: state,
                               lives: lives,
                               isCorrect: widget.isCorrect,
@@ -294,6 +294,7 @@ class _GrammarBaseLayoutState extends State<GrammarBaseLayout> {
 
   Widget _buildBriefingOverlay() {
     final briefing = GameInstructionService.getBriefing(
+      context,
       widget.gameType,
       'Grammar',
       level: widget.level,

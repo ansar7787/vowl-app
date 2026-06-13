@@ -9,10 +9,14 @@ class VowlAssets {
   static const Map<String, String> mascotMap = {
     'vowl_prime': '🦉',
     'silver_wing': '🦅',
-    'night_oracle': '🔮',
-    'phantom_hoot': '🪶',
-    'golden_talon': '🏅',
-    'moss_feather': '🍃',
+    'crystal_swan': '🦢',
+    'neon_parrot': '🦜',
+    'night_bat': '🦇',
+    'emerald_peacock': '🦚',
+    'golden_dragon': '🐉',
+    'shadow_wolf': '🐺',
+    'frost_penguin': '🐧',
+    'cosmic_unicorn': '🦄',
   };
 
   // Vowlbot Assets (Dynamic Branding)
@@ -24,62 +28,100 @@ class VowlAssets {
   static const Map<String, String> mascotNames = {
     'vowl_prime': 'Vowl Prime',
     'silver_wing': 'Silver Wing',
-    'night_oracle': 'Night Oracle',
-    'phantom_hoot': 'Phantom Hoot',
-    'golden_talon': 'Golden Talon',
-    'moss_feather': 'Moss Feather',
+    'crystal_swan': 'Crystal Swan',
+    'neon_parrot': 'Neon Parrot',
+    'night_bat': 'Night Oracle Bat',
+    'emerald_peacock': 'Emerald Peacock',
+    'golden_dragon': 'Golden Dragon',
+    'shadow_wolf': 'Shadow Wolf',
+    'frost_penguin': 'Frost Penguin',
+    'cosmic_unicorn': 'Cosmic Unicorn',
   };
 
   static const Map<String, String> mascotTraits = {
     'vowl_prime': 'Ancient Sage of Vowels',
     'silver_wing': 'Master of the Swift Skies',
-    'night_oracle': 'Watcher of the Moonlit Nest',
-    'phantom_hoot': 'Spirit of the Silent Flight',
-    'golden_talon': 'Oracle of the Golden Song',
-    'moss_feather': 'Keeper of the Emerald Leaves',
+    'crystal_swan': 'Grace of the Pure Syllable',
+    'neon_parrot': 'Echo of the Cyber Jungle',
+    'night_bat': 'Watcher of the Moonlit Nest',
+    'emerald_peacock': 'Keeper of the Vibrant Feathers',
+    'golden_dragon': 'Oracle of the Golden Flame',
+    'shadow_wolf': 'Spirit of the Silent Forest',
+    'frost_penguin': 'Navigator of the Ice Tundra',
+    'cosmic_unicorn': 'Traveler of the Infinite Stars',
   };
 
   // Accessories for Vowl (Purchasable with Vowl Coins)
   static const Map<String, String> accessoryMap = {
     'scholar_cap': '🎓',
+    'red_scarf': '🧣',
+    'cyber_visor': '🥽',
+    'magic_wand': '🪄',
+    'golden_bell': '🔔',
     'frost_aura': '❄️',
-    'night_vision': '🕶️',
+    'wind_whistler': '🌪️',
     'phoenix_wings': '🔥',
-    'dragon_heart': '💎',
-    'wind_whistler': '🌬️',
+    'dragon_gem': '💎',
+    'golden_crown': '👑',
+    'starlight_aura': '✨',
+    'mystic_amulet': '🧿',
   };
 
   static const Map<String, String> accessoryNames = {
     'scholar_cap': 'Scholar\'s Cap',
+    'red_scarf': 'Crimson Scarf',
+    'cyber_visor': 'Cyber Visor',
+    'magic_wand': 'Arcane Wand',
+    'golden_bell': 'Golden Bell',
     'frost_aura': 'Frost Aura',
-    'night_vision': 'Night Vision',
-    'phoenix_wings': 'Phoenix Wings',
-    'dragon_heart': 'Dragon Heart',
-    'wind_whistler': 'Wind Whistler',
+    'wind_whistler': 'Cyclone Aura',
+    'phoenix_wings': 'Phoenix Fire',
+    'dragon_gem': 'Dragon Gem',
+    'golden_crown': 'Royal Crown',
+    'starlight_aura': 'Starlight Aura',
+    'mystic_amulet': 'Mystic Amulet',
   };
 
   static const Map<String, int> accessoryPrices = {
-    'scholar_cap': 250,
-    'frost_aura': 1200,
-    'night_vision': 100,
-    'phoenix_wings': 3500,
-    'dragon_heart': 5000,
-    'wind_whistler': 1800,
+    'scholar_cap': 1500,
+    'red_scarf': 2500,
+    'cyber_visor': 4000,
+    'magic_wand': 6000,
+    'golden_bell': 8500,
+    'frost_aura': 12000,
+    'wind_whistler': 15000,
+    'phoenix_wings': 25000,
+    'dragon_gem': 40000,
+    'golden_crown': 65000,
+    'starlight_aura': 85000,
+    'mystic_amulet': 100000,
   };
 
   static const Map<String, Color> itemColors = {
+    // Mascots
     'vowl_prime': Color(0xFF3B82F6), // Premium Blue
     'silver_wing': Color(0xFF64748B), // Slate Grey
-    'night_oracle': Color(0xFF6366F1), // Indigo
-    'phantom_hoot': Color(0xFF10B981), // Emerald
-    'golden_talon': Color(0xFFF59E0B), // Amber
-    'moss_feather': Color(0xFF10B981), // Forest Green
+    'crystal_swan': Color(0xFFE0F2FE), // Ice Blue
+    'neon_parrot': Color(0xFFEC4899), // Neon Pink
+    'night_bat': Color(0xFF6366F1), // Indigo
+    'emerald_peacock': Color(0xFF10B981), // Emerald
+    'golden_dragon': Color(0xFFF59E0B), // Gold
+    'shadow_wolf': Color(0xFF334155), // Dark Slate
+    'frost_penguin': Color(0xFF06B6D4), // Frost Cyan
+    'cosmic_unicorn': Color(0xFF8B5CF6), // Deep Purple
+    // Accessories
     'scholar_cap': Color(0xFF4F46E5), // Scholar Indigo
+    'red_scarf': Color(0xFFEF4444), // Crimson Red
+    'cyber_visor': Color(0xFF14B8A6), // Cyber Teal
+    'magic_wand': Color(0xFFD946EF), // Magic Fuchsia
+    'golden_bell': Color(0xFFFBBF24), // Bell Gold
     'frost_aura': Color(0xFF06B6D4), // Frost Cyan
-    'night_vision': Color(0xFF475569), // Dark Vision Slate
-    'phoenix_wings': Color(0xFFEF4444), // Phoenix Red
-    'dragon_heart': Color(0xFFEC4899), // Dragon Pink
-    'wind_whistler': Color(0xFF0EA5E9), // Sky Blue
+    'wind_whistler': Color(0xFF64748B), // Storm Grey
+    'phoenix_wings': Color(0xFFF97316), // Phoenix Orange
+    'dragon_gem': Color(0xFFEC4899), // Dragon Pink
+    'golden_crown': Color(0xFFF59E0B), // Royal Amber
+    'starlight_aura': Color(0xFFFEF08A), // Starlight Yellow
+    'mystic_amulet': Color(0xFF8B5CF6), // Mystic Purple
   };
 
   // ============================================================

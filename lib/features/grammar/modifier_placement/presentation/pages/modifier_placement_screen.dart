@@ -14,6 +14,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/modifier_placement/presentation/widgets/modifier_placement_instruction.dart';
 import 'package:vowl/features/grammar/modifier_placement/presentation/widgets/modifier_magnetic_arena.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ModifierPlacementScreen extends StatefulWidget {
   final int level;
@@ -412,7 +413,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
             ),
             SizedBox(height: isCompact ? 4.h : 12.h),
             Text(
-              correct ? "CORRECT!" : "INCORRECT",
+              correct ? context.tr('games.correct').toUpperCase() : context.tr('games.incorrect_caps'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: isCompact ? 12.sp : 16.sp,

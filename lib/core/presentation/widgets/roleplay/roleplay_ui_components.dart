@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class CharacterAvatar extends StatelessWidget {
   final String name;
@@ -224,7 +225,7 @@ class ConversationEndScreen extends StatelessWidget {
                   SlideEffect(begin: Offset(0, 0.2), end: Offset.zero),
                 ],
                 child: Text(
-                  "Conversation Complete 🎉",
+                  context.tr('games.conversation_complete'),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -236,7 +237,7 @@ class ConversationEndScreen extends StatelessWidget {
               ),
               SizedBox(height: 32.h),
               RoleplayStatCard(
-                label: "Score: ${(scorePercent * 100).toInt()}%",
+                label: context.tr('games.score', args: ["${(scorePercent * 100).toInt()}%"]),
                 iconData: Icons.star_rounded,
                 baseColor: Colors.amber,
               ),
@@ -246,7 +247,7 @@ class ConversationEndScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: RoleplayStatCard(
-                      label: "+$earnedXp XP",
+                      label: context.tr('games.xp_earned', args: ["$earnedXp"]),
                       iconData: Icons.bolt_rounded,
                       baseColor: Colors.orange,
                     ),
@@ -254,7 +255,7 @@ class ConversationEndScreen extends StatelessWidget {
                   SizedBox(width: 16.w),
                   Expanded(
                     child: RoleplayStatCard(
-                      label: "+$earnedCoins Coins",
+                      label: context.tr('games.coins_earned', args: ["$earnedCoins"]),
                       iconData: Icons.monetization_on_rounded,
                       baseColor: const Color(0xFFFFD700),
                     ),
@@ -290,7 +291,7 @@ class ConversationEndScreen extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        "Next Roleplay",
+                        context.tr('games.next_roleplay'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 18.sp,

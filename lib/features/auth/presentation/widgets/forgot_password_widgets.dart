@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/features/home/presentation/widgets/vowlbot_auth_companion.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ForgotPasswordHeader extends StatelessWidget {
   final FocusNode emailFocus;
@@ -165,7 +166,7 @@ class SendResetLinkButton extends StatelessWidget {
                 strokeWidth: 2,
               ),
             )
-          : const Text('Send Reset Link'),
+          : Text(context.tr('auth.send_reset_link')),
     );
   }
 }
@@ -190,7 +191,7 @@ class RememberPasswordFooter extends StatelessWidget {
         TextButton(
           onPressed: () => context.go(AppRouter.loginRoute),
           child: Text(
-            'Login',
+            context.tr('auth.login'),
             style: TextStyle(fontFamily: 'Outfit', 
               color: const Color(0xFF2563EB),
               fontWeight: FontWeight.w900,

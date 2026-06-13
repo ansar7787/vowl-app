@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'dart:math' as math;
+import 'package:vowl/core/utils/locale_service.dart';
 
 class PremiumGameHeader extends StatelessWidget {
   final double progress;
@@ -347,7 +348,7 @@ class PremiumHintOverlay extends StatelessWidget {
               ),
               SizedBox(height: 16.h),
               Text(
-                "HINT",
+                context.tr('games.hint').toUpperCase(),
                 style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w900,
@@ -375,7 +376,7 @@ class PremiumHintOverlay extends StatelessWidget {
                     ),
                   ),
                   onPressed: onClose,
-                  child: const Text("GOT IT"),
+                  child: Text(context.tr('games.got_it')),
                 ),
               ),
             ],

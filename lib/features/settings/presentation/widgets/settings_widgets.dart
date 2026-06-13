@@ -7,6 +7,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class SettingsSectionTitle extends StatelessWidget {
@@ -101,6 +102,8 @@ class SettingsTile extends StatelessWidget {
                         ? Colors.red
                         : (isDark ? Colors.white : const Color(0xFF0F172A)),
                   ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               if (trailing != null)
@@ -174,6 +177,8 @@ class SettingsSwitchTile extends StatelessWidget {
                     color: isDark ? Colors.white38 : Colors.grey[600],
                     fontWeight: FontWeight.w500,
                   ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),
@@ -264,14 +269,16 @@ class SettingsLogoutButton extends StatelessWidget {
                         ),
                       ),
                       SizedBox(width: 16.w),
-                      Text(
-                        'SIGN OUT ACCOUNT',
+                       Text(
+                        context.tr('settings.sign_out'),
                         style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w900,
                           color: Colors.red,
                           letterSpacing: 1.5,
                         ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
@@ -391,6 +398,8 @@ class SettingsProfileSection extends StatelessWidget {
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
                     letterSpacing: -0.5,
                   ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 Text(
                   currentUser.email,
@@ -426,13 +435,17 @@ class SettingsProfileSection extends StatelessWidget {
                         size: 12.r,
                       ),
                       SizedBox(width: 6.w),
-                      Text(
-                        currentUser.isPremium ? 'PREMIUM QUESTER' : 'FREE ACCOUNT',
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.blue,
-                          letterSpacing: 1,
+                      Flexible(
+                        child: Text(
+                          currentUser.isPremium ? context.tr('settings.premium_quester') : context.tr('settings.free_account'),
+                          style: TextStyle(fontFamily: 'Outfit', 
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.blue,
+                            letterSpacing: 1,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ],

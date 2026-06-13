@@ -14,6 +14,7 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class AdventureXPScreen extends StatelessWidget {
   const AdventureXPScreen({super.key});
@@ -31,7 +32,7 @@ class AdventureXPScreen extends StatelessWidget {
 
           String displayMessage = state.message!;
           if (lowerMsg.contains('not enough')) {
-            displayMessage = 'Insufficient Vowl Coins!';
+            displayMessage = context.tr('adventure.insufficient_coins');
           } else if (displayMessage.startsWith('Exception: ')) {
             displayMessage = displayMessage.replaceFirst('Exception: ', '');
           } else if (displayMessage.startsWith('ServerFailure: ')) {
@@ -574,7 +575,7 @@ class AdventureXPScreen extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final offers = [
       {
-        'title': 'Streak Shield',
+        'title': context.tr('adventure.streak_shield'),
         'desc': 'Protects progress (+1 Freeze)',
         'cost': 150,
         'icon': Icons.shield_rounded,
@@ -582,7 +583,7 @@ class AdventureXPScreen extends StatelessWidget {
         'type': 'shield',
       },
       {
-        'title': 'Double XP',
+        'title': context.tr('adventure.double_xp'),
         'desc': '2x Multiplier (24hr active)',
         'cost': 300,
         'icon': Icons.bolt_rounded,
@@ -615,7 +616,7 @@ class AdventureXPScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'ADVENTURE STORE',
+                    context.tr('adventure.title').toUpperCase(),
                     style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w900,

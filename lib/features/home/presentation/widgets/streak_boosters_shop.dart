@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
@@ -114,9 +115,9 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                         Haptics.vibrate(HapticsType.success);
                       } catch (_) {}
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text("STREAK REPAIRED! 🔥"),
-                          backgroundColor: Color(0xFF10B981),
+                        SnackBar(
+                          content: Text(context.tr('adventure.streak_repaired')),
+                          backgroundColor: const Color(0xFF10B981),
                         ),
                       );
                     },
@@ -126,7 +127,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
         SizedBox(height: 16.h),
         _buildShopItem(
           context,
-          title: 'STREAK SHIELD',
+          title: context.tr('adventure.streak_shield').toUpperCase(),
           subtitle: 'A mystical barrier that prevents streak loss.',
           icon: LucideIcons.shieldCheck,
           color: const Color(0xFF38BDF8),
@@ -135,7 +136,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           currentCoins: user.coins,
           onTap: () => _handlePurchase(
             context,
-            name: 'Streak Shield',
+            name: context.tr('adventure.streak_shield'),
             cost: 150,
             currentCoins: user.coins,
             action: () => context.read<ProgressionBloc>().add(
@@ -156,7 +157,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           currentCoins: user.coins,
           onTap: () => _handlePurchase(
             context,
-            name: 'Double XP',
+            name: context.tr('adventure.double_xp'),
             cost: 300,
             currentCoins: user.coins,
             action: () => context.read<ProgressionBloc>().add(

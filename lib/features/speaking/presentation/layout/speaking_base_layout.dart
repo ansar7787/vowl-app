@@ -22,13 +22,13 @@ import 'package:vowl/features/speaking/presentation/widgets/speaking_feedback_ca
 import 'package:vowl/features/speaking/presentation/widgets/speaking_game_header.dart';
 import 'package:vowl/features/speaking/presentation/widgets/speaking_peeking_mascot.dart';
 import 'package:vowl/features/speaking/presentation/widgets/speaking_voice_pulse_bg.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 // ---------------------------------------------------------------------------
 // Layout constants
 // ---------------------------------------------------------------------------
 
-const String _kLastLifeNudge =
-    'Focus! Use a hint if you need help saving your last life.';
+
 const int _kNudgeDelayMs = 1200;
 const int _kBriefingTriggerLevel = 1;
 const int _kBriefingTutorialLevel = 100;
@@ -105,6 +105,8 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
 
   late bool _showBriefing;
   Timer? _nudgeTimer;
+
+  String get _kLastLifeNudge => context.tr('games.kids_nudge');
 
   // ---------------------------------------------------------------------------
   // Lifecycle
@@ -416,6 +418,7 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
 
   Widget _briefingOverlay(BuildContext context, dynamic theme) {
     final b = GameInstructionService.getBriefing(
+      context,
       widget.gameType,
       'Speaking',
       level: widget.level,

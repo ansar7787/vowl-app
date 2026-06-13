@@ -154,69 +154,74 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
           onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 10.h,
-                  ),
-                  child: Column(
-                    children: [
-                      TravelDeskInstruction(primaryColor: theme.primaryColor),
-                      SizedBox(height: 16.h),
-                      TravelDeskCustomsTerminal(
-                        prompt: quest.prompt ?? "",
-                        color: theme.primaryColor,
-                        isDark: isDark,
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isCompact = constraints.maxHeight < 580;
+                    return SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: isCompact ? 5.h : 10.h,
                       ),
-                      SizedBox(height: 24.h),
+                      child: Column(
+                        children: [
+                          TravelDeskInstruction(primaryColor: theme.primaryColor),
+                          SizedBox(height: isCompact ? 10.h : 16.h),
+                          TravelDeskCustomsTerminal(
+                            prompt: quest.prompt ?? "",
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                          ),
+                          SizedBox(height: isCompact ? 16.h : 24.h),
 
-                      // Biometric Passport Book
-                      TravelDeskPassportBook(
-                        options: options,
-                        color: theme.primaryColor,
-                        correctIndex: quest.correctAnswerIndex ?? 0,
-                        isDark: isDark,
-                        selectedIndex: _selectedIndex,
-                        hoveredIndex: _hoveredIndex,
-                        isAnswered: _isAnswered,
-                        isCorrect: _isCorrect,
-                        rippleAnimation: _rippleController,
-                        onSubmitStamp: _submitStamp,
-                        onHoverChanged: (index) {
-                          _hapticService.selection();
-                          setState(() => _hoveredIndex = index);
-                        },
-                        onHoverEnded: () {
-                          setState(() => _hoveredIndex = null);
-                        },
-                        onDragStarted: () {},
+                          // Biometric Passport Book
+                          TravelDeskPassportBook(
+                            options: options,
+                            color: theme.primaryColor,
+                            correctIndex: quest.correctAnswerIndex ?? 0,
+                            isDark: isDark,
+                            selectedIndex: _selectedIndex,
+                            hoveredIndex: _hoveredIndex,
+                            isAnswered: _isAnswered,
+                            isCorrect: _isCorrect,
+                            rippleAnimation: _rippleController,
+                            onSubmitStamp: _submitStamp,
+                            onHoverChanged: (index) {
+                              _hapticService.selection();
+                              setState(() => _hoveredIndex = index);
+                            },
+                            onHoverEnded: () {
+                              setState(() => _hoveredIndex = null);
+                            },
+                            onDragStarted: () {},
+                          ),
+                          SizedBox(height: isCompact ? 20.h : 32.h),
+
+                          // Stamp slammed terminal console
+                          if (!_isAnswered)
+                            TravelDeskStampStation(
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                              onDragStarted: () {
+                                _hapticService.selection();
+                                _soundService.playHint();
+                              },
+                              onDragEnded: () {
+                                setState(() => _hoveredIndex = null);
+                              },
+                            )
+                          else
+                            TravelDeskExplanationCard(
+                              quest: quest,
+                              isDark: isDark,
+                              isCorrect: _isCorrect,
+                            ),
+
+                          SizedBox(height: isCompact ? 40.h : 80.h),
+                        ],
                       ),
-                      SizedBox(height: 32.h),
-
-                      // Stamp slammed terminal console
-                      if (!_isAnswered)
-                        TravelDeskStampStation(
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                          onDragStarted: () {
-                            _hapticService.selection();
-                            _soundService.playHint();
-                          },
-                          onDragEnded: () {
-                            setState(() => _hoveredIndex = null);
-                          },
-                        )
-                      else
-                        TravelDeskExplanationCard(
-                          quest: quest,
-                          isDark: isDark,
-                          isCorrect: _isCorrect,
-                        ),
-
-                      SizedBox(height: 80.h),
-                    ],
-                  ),
+                    );
+                  },
                 ),
         );
       },

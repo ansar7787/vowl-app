@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class BentoArena extends StatelessWidget {
   const BentoArena({super.key, required this.user});
@@ -189,7 +190,7 @@ class _BentoCategoryTile extends StatelessWidget {
                               Border.all(color: color.withValues(alpha: 0.3)),
                         ),
                         child: Text(
-                          'STEP $step',
+                          context.tr('home.step', args: [step.toString()]),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w900,
@@ -220,7 +221,7 @@ class _BentoCategoryTile extends StatelessWidget {
                       _bentoProgressLine(context, progress, color),
                       SizedBox(height: 6.h),
                       Text(
-                        '$totalCleared / $maxLevels LEVELS',
+                        context.tr('home.levels_cleared_max', args: [totalCleared.toString(), maxLevels.toString()]),
                         style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w800,

@@ -10,6 +10,7 @@ import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart'
 import 'package:vowl/features/vocabulary/presentation/models/vocabulary_scaffold_config.dart';
 import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_scaffold.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -83,7 +84,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
     Future.delayed(_kNudgeDelay, () {
       if (!mounted) return;
       _ttsService.speak(
-        'Focus! Use a hint if you need help saving your last life.',
+        context.tr('games.kids_nudge'),
       );
       _hapticService.warning();
     });

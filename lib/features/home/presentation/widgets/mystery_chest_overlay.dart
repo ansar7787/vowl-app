@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:confetti/confetti.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class MysteryChestOverlay extends StatelessWidget {
   const MysteryChestOverlay({
@@ -70,8 +71,8 @@ class MysteryChestOverlay extends StatelessWidget {
                   // Title with premium glow
                   Text(
                     isOpened
-                        ? 'CLAIMED!'
-                        : (isPremium ? 'VIP DAILY GIFT' : 'DAILY MYSTERY'),
+                        ? context.tr('home.chest_claimed')
+                        : (isPremium ? context.tr('home.chest_vip_gift') : context.tr('home.chest_daily_mystery')),
                     style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: isPremium && !isOpened ? 26.sp : 28.sp,
                       fontWeight: FontWeight.w900,
@@ -100,10 +101,10 @@ class MysteryChestOverlay extends StatelessWidget {
 
                   Text(
                     isOpened
-                        ? 'TREASURE UNLOCKED'
+                        ? context.tr('home.chest_treasure_unlocked')
                         : (isPremium
-                              ? 'YOUR EXCLUSIVE PRO REWARD'
-                              : 'READY TO OPEN?'),
+                              ? context.tr('home.chest_pro_reward')
+                              : context.tr('home.chest_ready_to_open')),
                     style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
@@ -250,7 +251,7 @@ class MysteryChestOverlay extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    'COINS COLLECTED',
+                                    context.tr('home.chest_coins_collected'),
                                     style: TextStyle(fontFamily: 'Outfit', 
                                       fontSize: 10.sp,
                                       fontWeight: FontWeight.w800,
@@ -272,7 +273,7 @@ class MysteryChestOverlay extends StatelessWidget {
                   if (!isOpened) ...[
                     SizedBox(height: 60.h),
                     Text(
-                          isPremium ? 'TAP TO CLAIM VIP LOOT' : 'TAP TO UNVEIL',
+                          isPremium ? context.tr('home.chest_tap_vip_loot') : context.tr('home.chest_tap_unveil'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w800,

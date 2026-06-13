@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+
 /// Base class for all reading feature events.
 abstract class ReadingEvent extends Equatable {
   const ReadingEvent();
@@ -31,7 +32,7 @@ class SubmitAnswer extends ReadingEvent {
   List<Object?> get props => [isCorrect];
 }
 
-/// Player tapped "Continue" / "Try Again" to advance the game loop.
+/// Player tapped context.tr('common.continue_text') / context.tr('games.try_again') to advance the game loop.
 class NextQuestion extends ReadingEvent {
   const NextQuestion();
 }

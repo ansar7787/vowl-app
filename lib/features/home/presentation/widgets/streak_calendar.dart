@@ -47,7 +47,47 @@ class StreakCalendar extends StatelessWidget {
                   letterSpacing: 1.5,
                 ),
               ),
+              const Spacer(),
+              if (user.level >= 50)
+                Tooltip(
+                  message: 'XP Level 50 Mastery: Permanent Streak Protection Active',
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(
+                        color: const Color(0xFF10B981).withValues(alpha: 0.3),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.security_rounded, color: const Color(0xFF10B981), size: 12.r),
+                        SizedBox(width: 4.w),
+                        Text(
+                          'PROTECTED',
+                          style: TextStyle(fontFamily: 'Outfit', 
+                            fontSize: 9.sp,
+                            fontWeight: FontWeight.w900,
+                            color: const Color(0xFF10B981),
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ).animate().shimmer(duration: 2000.ms, delay: 1000.ms),
+                ),
             ],
+          ),
+          SizedBox(height: 6.h),
+          Text(
+            'Complete a quest and earn XP to light your daily flame.',
+            style: TextStyle(fontFamily: 'Outfit', 
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w500,
+              color: isDark ? Colors.white54 : const Color(0xFF64748B),
+            ),
           ),
           SizedBox(height: 20.h),
           _buildModernCalendar(context),
@@ -75,7 +115,23 @@ class StreakCalendar extends StatelessWidget {
             user.lastLoginDate!.month == now.month &&
             user.lastLoginDate!.year == now.year;
 
-        final bool isPlayed = xp > 0 || (isToday && isSameLoginDay && user.currentStreak > 0);
+        final nowAtMidnight = DateTime(now.year, now.month, now.day);
+        final dayAtMidnight = DateTime(day.year, day.month, day.day);
+        final daysAgo = nowAtMidnight.difference(dayAtMidnight).inDays;
+
+        bool isStreakDay = false;
+        if (daysAgo >= 0) {
+          if (isSameLoginDay) {
+            // User played today, so streak counts from today (daysAgo = 0) backwards
+            isStreakDay = daysAgo < user.currentStreak;
+          } else {
+            // User hasn't played today yet, so streak counts from yesterday (daysAgo = 1) backwards
+            isStreakDay = daysAgo > 0 && daysAgo <= user.currentStreak;
+          }
+        }
+
+        final bool isPlayed = xp > 0 || isStreakDay;
+        final bool isFrozen = xp == 0 && isStreakDay && daysAgo > 0;
         final isFuture = day.isAfter(now);
 
         final dayName = DateFormat('E').format(day);
@@ -95,7 +151,7 @@ class StreakCalendar extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10.h),
-              _buildDayIndicator(context, isPlayed, isToday, isFuture, xp),
+              _buildDayIndicator(context, isPlayed, isToday, isFuture, xp, isFrozen),
               SizedBox(height: 10.h),
               Text(
                 '${day.day}',
@@ -118,15 +174,25 @@ class StreakCalendar extends StatelessWidget {
     bool isToday,
     bool isFuture,
     int xp,
+    bool isFrozen,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    
+    // Determine the gradient based on whether it's frozen or played
+    Gradient? dayGradient;
+    if (!isFuture && isPlayed) {
+      if (isFrozen) {
+        dayGradient = const LinearGradient(colors: [Color(0xFF38BDF8), Color(0xFF3B82F6)]); // Ice Blue
+      } else {
+        dayGradient = const LinearGradient(colors: [Color(0xFFF97316), Color(0xFFEF4444)]); // Fire Orange
+      }
+    }
+
     return Container(
       width: 36.r,
       height: 36.r,
       decoration: BoxDecoration(
-        gradient: (!isFuture && isPlayed)
-            ? const LinearGradient(colors: [Color(0xFFF97316), Color(0xFFEF4444)])
-            : null,
+        gradient: dayGradient,
         color: isFuture
             ? (isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05))
             : (!isPlayed
@@ -144,7 +210,9 @@ class StreakCalendar extends StatelessWidget {
         boxShadow: (!isFuture && isPlayed)
             ? [
                 BoxShadow(
-                  color: const Color(0xFFF97316).withValues(alpha: 0.3),
+                  color: isFrozen 
+                      ? const Color(0xFF38BDF8).withValues(alpha: 0.3) 
+                      : const Color(0xFFF97316).withValues(alpha: 0.3),
                   blurRadius: 10,
                   spreadRadius: 2,
                   offset: const Offset(0, 4),
@@ -164,7 +232,11 @@ class StreakCalendar extends StatelessWidget {
         child: isFuture
             ? null
             : (isPlayed
-                ? Icon(LucideIcons.flame, color: Colors.white, size: 18.r)
+                ? Icon(
+                    isFrozen ? LucideIcons.snowflake : LucideIcons.flame, 
+                    color: Colors.white, 
+                    size: isFrozen ? 16.r : 18.r
+                  )
                 : (isToday
                     ? Icon(LucideIcons.circle, color: Colors.blueAccent, size: 8.r)
                         .animate(onPlay: (c) => c.repeat(reverse: true))

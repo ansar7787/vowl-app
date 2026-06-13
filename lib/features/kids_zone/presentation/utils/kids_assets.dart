@@ -8,16 +8,16 @@ class KidsAssets {
     'shapes': ['📐', '🔺', '💠', '💎'],
     'animals': ['🦁', '🐯', '🐘', '🐲'],
     'fruits': ['🍎', '🍓', '🍇', '🍍'],
-    'family': ['👪', '🏠', '💖', '👨‍👩‍👧‍👦'],
+    'family': ['👪', '🫂', '💌', '👨‍👩‍👧‍👦'],
     'school': ['🎒', '📚', '✏️', '🏅'],
-    'verbs': ['🏃', '🤸', '🏊', '⚡'],
-    'routine': ['🛁', '🦷', '👕', '🌟'],
-    'emotions': ['😊', '🤩', '💖', '🌈'],
+    'verbs': ['🏃', '🤸', '🏊', '🛹'],
+    'routine': ['🛁', '🦷', '🧼', '🌟'],
+    'emotions': ['😊', '🤩', '🥰', '🤪'],
     'prepositions': ['📦', '📥', '📍', '🗺️'],
-    'phonics': ['🔊', '👂', '🗣️', '📢'],
+    'phonics': ['🔊', '🎶', '🗣️', '📢'],
     'time': ['⏰', '📅', '⏳', '🏁'],
-    'opposites': ['⚖️', '🌓', '🔄', '🎯'],
-    'day_night': ['🌓', '☀️', '🌙', '🌌'],
+    'opposites': ['⚖️', '🆚', '🔄', '☯️'],
+    'day_night': ['🌅', '☀️', '🌙', '🌌'],
     'nature': ['🌿', '🌳', '🏔️', '🌋'],
     'home_kids': ['🏠', '🛋️', '🛌', '🏰'],
     'food_kids': ['🍕', '🍔', '🍰', '🍳'],
@@ -46,6 +46,9 @@ class KidsAssets {
     'hat_chef': '👨‍🍳',
     'alien_antenna': '👽',
     'ninja_band': '🥷',
+    'headphones_cool': '🎧',
+    'skateboard_pro': '🛹',
+    'shoes_neon': '👟',
   };
 
   static final List<Map<String, dynamic>> shopItems = [
@@ -201,6 +204,31 @@ class KidsAssets {
       'color': const Color(0xFF64748B),
       'category': 'Clothes',
     },
+    // COOL KIDS CATEGORY (7-9 Years)
+    {
+      'id': 'headphones_cool',
+      'name': 'Gamer Audio',
+      'price': 800,
+      'icon': '🎧',
+      'color': const Color(0xFF8B5CF6),
+      'category': 'Toys',
+    },
+    {
+      'id': 'skateboard_pro',
+      'name': 'Pro Skater',
+      'price': 1200,
+      'icon': '🛹',
+      'color': const Color(0xFF10B981),
+      'category': 'Toys',
+    },
+    {
+      'id': 'shoes_neon',
+      'name': 'Neon Kicks',
+      'price': 900,
+      'icon': '👟',
+      'color': const Color(0xFFF43F5E),
+      'category': 'Clothes',
+    },
     // NEW BUDDIES CATEGORY
     {
       'id': 'mascot_unicorn',
@@ -235,6 +263,15 @@ class KidsAssets {
     'mascot_unicorn': '🦄',
     'mascot_robot': '🤖',
     'mascot_lion': '🦁',
+  };
+
+  static const Map<String, String> mascotNames = {
+    'owly': 'Owly',
+    'foxie': 'Foxie',
+    'dino': 'Dino',
+    'mascot_unicorn': 'Magic Unicorn',
+    'mascot_robot': 'Sparky Robot',
+    'mascot_lion': 'Leo the Brave',
   };
 
   static String getStickerEmoji(String stickerId) {

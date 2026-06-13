@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -95,7 +96,7 @@ class _RetryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: 'Retry',
+      label: context.tr('common.retry'),
       child: ScaleButton(
         onTap: onRetry,
         child: Container(
@@ -117,7 +118,7 @@ class _RetryButton extends StatelessWidget {
               const Icon(Icons.refresh_rounded, color: Colors.white),
               SizedBox(width: 8.w),
               Text(
-                'TRY AGAIN',
+                context.tr('games.try_again').toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,

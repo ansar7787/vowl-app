@@ -214,55 +214,60 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
           onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 10.h,
-                  ),
-                  child: Column(
-                    children: [
-                      BranchingDialogueInstruction(
-                        primaryColor: theme.primaryColor,
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isCompact = constraints.maxHeight < 580;
+                    return SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: isCompact ? 5.h : 10.h,
                       ),
-                      SizedBox(height: 16.h),
-                      BranchingDialoguePersonaConsole(
-                        quest: quest,
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                        onListen: () => _triggerAutoPlay(quest),
-                      ),
-                      SizedBox(height: 20.h),
-                      BranchingDialogueConsoleBoard(
-                        options: options,
-                        correctIndex: quest.correctAnswerIndex ?? 0,
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                        probeOffset: _probeOffset,
-                        hoveredIndex: _hoveredIndex,
-                        selectedIndex: _selectedIndex,
-                        isAnswered: _isAnswered,
-                        onProbeDragStart: _onProbeDragStart,
-                        onProbeDragUpdate: _onProbeDragUpdate,
-                        onProbeDragEnd: _onProbeDragEnd,
-                      ),
-                      SizedBox(height: 20.h),
+                      child: Column(
+                        children: [
+                          BranchingDialogueInstruction(
+                            primaryColor: theme.primaryColor,
+                          ),
+                          SizedBox(height: isCompact ? 10.h : 16.h),
+                          BranchingDialoguePersonaConsole(
+                            quest: quest,
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                            onListen: () => _triggerAutoPlay(quest),
+                          ),
+                          SizedBox(height: isCompact ? 12.h : 20.h),
+                          BranchingDialogueConsoleBoard(
+                            options: options,
+                            correctIndex: quest.correctAnswerIndex ?? 0,
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                            probeOffset: _probeOffset,
+                            hoveredIndex: _hoveredIndex,
+                            selectedIndex: _selectedIndex,
+                            isAnswered: _isAnswered,
+                            onProbeDragStart: _onProbeDragStart,
+                            onProbeDragUpdate: _onProbeDragUpdate,
+                            onProbeDragEnd: _onProbeDragEnd,
+                          ),
+                          SizedBox(height: isCompact ? 12.h : 20.h),
 
-                      AnimatedCrossFade(
-                        firstChild: const SizedBox(),
-                        secondChild: BranchingDialogueExplanationCard(
-                          quest: quest,
-                          isDark: isDark,
-                          isCorrect: _isCorrect,
-                        ),
-                        crossFadeState: _isAnswered
-                            ? CrossFadeState.showSecond
-                            : CrossFadeState.showFirst,
-                        duration: const Duration(milliseconds: 400),
+                          AnimatedCrossFade(
+                            firstChild: const SizedBox(),
+                            secondChild: BranchingDialogueExplanationCard(
+                              quest: quest,
+                              isDark: isDark,
+                              isCorrect: _isCorrect,
+                            ),
+                            crossFadeState: _isAnswered
+                                ? CrossFadeState.showSecond
+                                : CrossFadeState.showFirst,
+                            duration: const Duration(milliseconds: 400),
+                          ),
+                          SizedBox(height: isCompact ? 40.h : 80.h), // Safe spacing for base layouts
+                        ],
                       ),
-                      SizedBox(height: 80.h), // Safe spacing for base layouts
-                    ],
-                  ),
+                    );
+                  },
                 ),
         );
       },

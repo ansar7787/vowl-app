@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/constants/badge_constants.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
@@ -23,8 +24,8 @@ class AdventureLevelScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
-    final bgColor = isMidnight 
-        ? Colors.black 
+    final bgColor = isMidnight
+        ? Colors.black
         : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
 
     return Scaffold(
@@ -86,7 +87,8 @@ class AdventureLevelScreen extends StatelessWidget {
                               SizedBox(width: 6.w),
                               Text(
                                 'Adventure Level',
-                                style: TextStyle(fontFamily: 'Outfit', 
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w800,
                                   color: isDark
@@ -117,7 +119,8 @@ class AdventureLevelScreen extends StatelessWidget {
                                     SizedBox(width: 4.w),
                                     Text(
                                       '${user.coins}',
-                                      style: TextStyle(fontFamily: 'Outfit', 
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.w800,
                                         color: const Color(0xFF10B981),
@@ -214,7 +217,8 @@ class AdventureLevelScreen extends StatelessWidget {
                   children: [
                     Text(
                       "GLOBAL RANK",
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
                         color: color,
@@ -224,7 +228,8 @@ class AdventureLevelScreen extends StatelessWidget {
                     SizedBox(height: 2.h),
                     Text(
                       "Level $level",
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 26.sp,
                         fontWeight: FontWeight.w900,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -236,7 +241,8 @@ class AdventureLevelScreen extends StatelessWidget {
                       children: [
                         Text(
                           "MASTER EXPLORER",
-                          style: TextStyle(fontFamily: 'Outfit', 
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w700,
                             color: isDark ? Colors.white38 : Colors.black38,
@@ -325,7 +331,8 @@ class AdventureLevelScreen extends StatelessWidget {
               children: [
                 Text(
                   'NEXT MILESTONE',
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w900,
                     color: const Color(0xFF3B82F6),
@@ -335,7 +342,8 @@ class AdventureLevelScreen extends StatelessWidget {
                 SizedBox(height: 4.h),
                 Text(
                   'Level $nextLevel',
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -343,7 +351,8 @@ class AdventureLevelScreen extends StatelessWidget {
                 ),
                 Text(
                   '$xpNeeded XP more to ascend',
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w600,
                     color: isDark ? Colors.white38 : Colors.black38,
@@ -393,7 +402,8 @@ class AdventureLevelScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Text(
             'LEVEL MASTERY PERKS',
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
               color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -450,7 +460,8 @@ class AdventureLevelScreen extends StatelessWidget {
                           ),
                           child: Text(
                             isActive ? 'ACTIVE' : 'LOCKED',
-                            style: TextStyle(fontFamily: 'Outfit', 
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w900,
                               color: isActive
@@ -464,7 +475,8 @@ class AdventureLevelScreen extends StatelessWidget {
                     const Spacer(),
                     Text(
                       perk['title'] as String,
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w800,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -473,8 +485,9 @@ class AdventureLevelScreen extends StatelessWidget {
                     Text(
                       isActive
                           ? perk['desc'] as String
-                          : 'Unlocks at Level ${perk['level']}',
-                      style: TextStyle(fontFamily: 'Outfit', 
+                          : 'Unlocks at XP Level ${perk['level']}',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w500,
                         color: isDark ? Colors.white38 : Colors.black38,
@@ -499,7 +512,8 @@ class AdventureLevelScreen extends StatelessWidget {
       children: [
         Text(
           'UPCOMING MILESTONES',
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 12.sp,
             fontWeight: FontWeight.w900,
             color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -583,7 +597,8 @@ class AdventureLevelScreen extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
                       color: isDark
@@ -595,7 +610,8 @@ class AdventureLevelScreen extends StatelessWidget {
                   ),
                   Text(
                     isClaimed ? 'Reward Claimed' : description,
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
                       color: isDark ? Colors.white54 : const Color(0xFF64748B),
@@ -631,7 +647,8 @@ class AdventureLevelScreen extends StatelessWidget {
                     ),
                     child: Text(
                       'CLAIM',
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
@@ -665,7 +682,7 @@ class AdventureLevelScreen extends StatelessWidget {
         'color': const Color(0xFFFBBF24),
       },
       {
-        'title': 'Grand Master',
+        'title': 'Grand Master Pack',
         'desc': 'Get 25 Hints',
         'cost': 20000,
         'amount': 25,
@@ -681,7 +698,8 @@ class AdventureLevelScreen extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 0),
           child: Text(
             'HINT SHOP',
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
               color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -699,7 +717,7 @@ class AdventureLevelScreen extends StatelessWidget {
         ),
         SizedBox(height: 16.h),
         SizedBox(
-          height: 90.h,
+          height: 100.h,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -737,29 +755,46 @@ class AdventureLevelScreen extends StatelessWidget {
                       ),
                       SizedBox(width: 10.w),
                       Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              item['title'] as String,
-                              style: TextStyle(fontFamily: 'Outfit', 
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w800,
-                                color: isDark
-                                    ? Colors.white
-                                    : const Color(0xFF0F172A),
-                              ),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: SingleChildScrollView(
+                            physics: const NeverScrollableScrollPhysics(),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  item['title'] as String,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: isDark
+                                        ? Colors.white
+                                        : const Color(0xFF0F172A),
+                                  ),
+                                ),
+                                Text(
+                                  item['desc'] as String,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w500,
+                                    color: isDark ? Colors.white54 : Colors.black54,
+                                  ),
+                                ),
+                                Text(
+                                  '${item['cost']} Coins',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: const Color(0xFF10B981),
+                                  ),
+                                ),
+                              ],
                             ),
-                            Text(
-                              '${item['cost']} Coins',
-                              style: TextStyle(fontFamily: 'Outfit', 
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w600,
-                                color: const Color(0xFF10B981),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
                       ),
                     ],
@@ -823,7 +858,8 @@ class AdventureLevelScreen extends StatelessWidget {
                 SizedBox(height: 16.h),
                 Text(
                   amount > 5 ? 'GRAND MASTER PACK' : 'STRATEGIC HINT PACK',
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -833,7 +869,8 @@ class AdventureLevelScreen extends StatelessWidget {
                 Text(
                   'Exchange $cost Vowl Coins for ${amount == 1 ? "1 hint" : "$amount hints"}.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 14.sp,
                     color: isDark ? Colors.white70 : const Color(0xFF64748B),
                   ),
@@ -844,7 +881,7 @@ class AdventureLevelScreen extends StatelessWidget {
                     Expanded(
                       child: TextButton(
                         onPressed: () => Navigator.of(ctx).pop(),
-                        child: Text('CANCEL'),
+                        child: Text(context.tr('common.cancel').toUpperCase()),
                       ),
                     ),
                     SizedBox(width: 16.w),
@@ -856,12 +893,15 @@ class AdventureLevelScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(ctx).pop();
                           context.read<EconomyBloc>().add(
-                            EconomyPurchaseHintRequested(cost, hintAmount: amount),
+                            EconomyPurchaseHintRequested(
+                              cost,
+                              hintAmount: amount,
+                            ),
                           );
                           di.sl<HapticService>().heavy();
                           _showSuccessSnackbar(context, amount);
                         },
-                        child: Text('CONFIRM'),
+                        child: Text(context.tr('common.confirm').toUpperCase()),
                       ),
                     ),
                   ],
@@ -887,4 +927,3 @@ class AdventureLevelScreen extends StatelessWidget {
     );
   }
 }
-

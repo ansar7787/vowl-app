@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/hint_utility.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -39,9 +40,15 @@ class QuestHintButton extends StatelessWidget {
             if (canUseHint) {
               soundService.playHint();
               onTap();
+              
               if (hintText != null) {
+                final isDynamic = HintUtility.isGenericHint(hintText);
+                final displayText = isDynamic 
+                    ? "PRO TIP: Look for context clues! Eliminating unlikely options often reveals the truth." 
+                    : hintText!;
+                
                 // Speak the hint text
-                di.sl<TtsService>().speak(hintText!);
+                di.sl<TtsService>().speak(isDynamic ? "Pro tip: Look for context clues." : hintText!);
                 
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -83,7 +90,7 @@ class QuestHintButton extends StatelessWidget {
                               shape: BoxShape.circle,
                             ),
                             child: Icon(
-                              Icons.auto_awesome_rounded,
+                              isDynamic ? Icons.bolt_rounded : Icons.auto_awesome_rounded,
                               color: Colors.white,
                               size: 20.r,
                             ),
@@ -95,7 +102,7 @@ class QuestHintButton extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "MASTER'S HINT",
+                                  isDynamic ? "VOWL PRO TIP" : "MASTER'S HINT",
                                   style: TextStyle(fontFamily: 'Outfit', 
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w900,
@@ -105,7 +112,7 @@ class QuestHintButton extends StatelessWidget {
                                 ),
                                 SizedBox(height: 2.h),
                                 Text(
-                                  hintText!,
+                                  displayText,
                                   style: TextStyle(fontFamily: 'Outfit', 
                                     fontSize: 15.sp,
                                     fontWeight: FontWeight.w600,

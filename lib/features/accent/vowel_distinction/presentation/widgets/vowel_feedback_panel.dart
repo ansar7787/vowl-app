@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'vowel_length_visualizer.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class VowelFeedbackPanel extends StatelessWidget {
   final AccentQuest quest;
@@ -51,7 +52,7 @@ class VowelFeedbackPanel extends StatelessWidget {
                   ),
                   SizedBox(width: 8.w),
                   Text(
-                    isCorrect ? "Correct!" : "Not quite",
+                    isCorrect ? context.tr('games.correct') : context.tr('games.not_quite_capitalized'),
                     style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 20.sp,
                       fontWeight: FontWeight.bold,

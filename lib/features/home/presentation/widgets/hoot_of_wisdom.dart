@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class HootOfWisdom extends StatefulWidget {
   const HootOfWisdom({super.key});
@@ -14,7 +16,7 @@ class HootOfWisdom extends StatefulWidget {
 }
 
 class _HootOfWisdomState extends State<HootOfWisdom> {
-  String _hootTitle = "OWLY'S HOOT";
+  String? _hootTitle;
   String _hootText = "...";
   bool _isLoading = true;
 
@@ -33,7 +35,7 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
       final String dateKey = DateFormat('MM-dd').format(now);
       final String specificKey = DateFormat('yyyy-MM-dd').format(now);
 
-      String title = "OWLY'S WISDOM";
+      String? title;
       String text = "";
 
       // 1. Check Specific Date (e.g. 2026-04-28)
@@ -48,12 +50,13 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
       } 
       // 3. Fallback to Random Wisdom
       else {
-        title = "DAILY MOTIVATION";
+        title = null;
         final List<dynamic> fallbacks = data['fallbacks'] ?? [];
         if (fallbacks.isNotEmpty) {
           text = fallbacks[Random().nextInt(fallbacks.length)];
         } else {
-          text = "Hoot! Your dedication is truly majestic!";
+          // This will be replaced in build with localized text
+          text = "";
         }
       }
 
@@ -67,7 +70,8 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
     } catch (e) {
       if (mounted) {
         setState(() {
-          _hootText = "Hoot! I'm feeling a bit quiet today. Keep soaring!";
+          // This will be replaced in build with localized text
+          _hootText = "";
           _isLoading = false;
         });
       }
@@ -126,7 +130,7 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
                   Row(
                     children: [
                       Text(
-                        _hootTitle,
+                        _hootTitle ?? context.tr('home.hoot_daily_motivation'),
                         style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w900,
@@ -135,7 +139,11 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
                         ),
                       ),
                       SizedBox(width: 8.w),
-                      Text("🦉", style: TextStyle(fontSize: 22.sp)),
+                      VowlMascot(
+                        size: 26.r,
+                        useFloatingAnimation: false,
+                        state: VowlMascotState.neutral,
+                      ),
                     ],
                   ),
                 ],
@@ -144,7 +152,7 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
               
               // 3. The Wisdom Text
               Text(
-                _hootText,
+                _hootText.isEmpty ? context.tr('home.hoot_fallback_msg_2') : _hootText,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 15.sp,

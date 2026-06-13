@@ -4,6 +4,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class LeaderboardRankTile extends StatelessWidget {
   final UserEntity user;
@@ -50,7 +51,8 @@ class LeaderboardRankTile extends StatelessWidget {
               width: 36.w,
               child: Text(
                 '$rank',
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w900,
                   color: isMe
@@ -94,8 +96,10 @@ class LeaderboardRankTile extends StatelessWidget {
                     children: [
                       Flexible(
                         child: Text(
-                          (user.displayName ?? 'Player').toUpperCase(),
-                          style: TextStyle(fontFamily: 'Outfit', 
+                          (user.displayName ?? context.tr('leaderboard.player'))
+                              .toUpperCase(),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
                             fontSize: 13.sp,
                             fontWeight: FontWeight.w800,
                             color: MeshGradientBackground.getContrastColor(
@@ -130,8 +134,9 @@ class LeaderboardRankTile extends StatelessWidget {
                               borderRadius: BorderRadius.circular(6.r),
                             ),
                             child: Text(
-                              'YOU',
-                              style: TextStyle(fontFamily: 'Outfit', 
+                              context.tr('leaderboard.you'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
                                 fontSize: 7.sp,
                                 fontWeight: FontWeight.w900,
                                 color: const Color(0xFF60A5FA),
@@ -145,7 +150,8 @@ class LeaderboardRankTile extends StatelessWidget {
                   SizedBox(height: 2.h),
                   Text(
                     '${user.totalExp} XP · ${user.currentStreak}🔥',
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w600,
                       color: isDark
@@ -165,8 +171,9 @@ class LeaderboardRankTile extends StatelessWidget {
                 border: Border.all(color: tierColor.withValues(alpha: 0.15)),
               ),
               child: Text(
-                '$levelsCleared LVS',
-                style: TextStyle(fontFamily: 'Outfit', 
+                context.tr('leaderboard.lvs', args: [levelsCleared.toString()]),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 11.sp,
                   fontWeight: FontWeight.w900,
                   color: tierColor,

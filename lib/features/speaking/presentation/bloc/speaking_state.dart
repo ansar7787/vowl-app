@@ -45,6 +45,8 @@ class SpeakingLoaded extends SpeakingState {
   final bool hintUsed;
   final int wrongCount;
   final bool isFinalFailure;
+  final List<int> removedIndices;
+  final bool isLetterRevealed;
 
   /// Session-immutable: the game type this level belongs to.
   final GameSubtype gameType;
@@ -64,6 +66,8 @@ class SpeakingLoaded extends SpeakingState {
     this.hintUsed = false,
     this.wrongCount = 0,
     this.isFinalFailure = false,
+    this.removedIndices = const [],
+    this.isLetterRevealed = false,
   });
 
   @override
@@ -75,6 +79,8 @@ class SpeakingLoaded extends SpeakingState {
     hintUsed,
     wrongCount,
     isFinalFailure,
+    removedIndices,
+    isLetterRevealed,
     gameType,
     level,
   ];
@@ -87,6 +93,8 @@ class SpeakingLoaded extends SpeakingState {
     bool? hintUsed,
     int? wrongCount,
     bool? isFinalFailure,
+    List<int>? removedIndices,
+    bool? isLetterRevealed,
     // gameType and level are session-immutable; intentionally excluded.
   }) {
     return SpeakingLoaded(
@@ -99,6 +107,8 @@ class SpeakingLoaded extends SpeakingState {
       hintUsed: hintUsed ?? this.hintUsed,
       wrongCount: wrongCount ?? this.wrongCount,
       isFinalFailure: isFinalFailure ?? this.isFinalFailure,
+      removedIndices: removedIndices ?? this.removedIndices,
+      isLetterRevealed: isLetterRevealed ?? this.isLetterRevealed,
     );
   }
 }

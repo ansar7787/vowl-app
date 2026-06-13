@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// A premium, responsive screen displayed when a requested quest is not available.
 /// 
@@ -124,7 +125,7 @@ class QuestUnavailableScreen extends StatelessWidget {
                         ),
                         child: Center(
                           child: Text(
-                            "TRY AGAIN",
+                            context.tr('games.try_again').toUpperCase(),
                             style: TextStyle(fontFamily: 'Outfit', 
                               color: Colors.white,
                               fontSize: 16.sp,

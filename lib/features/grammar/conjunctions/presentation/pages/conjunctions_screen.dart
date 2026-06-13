@@ -13,6 +13,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/conjunctions/presentation/widgets/conjunctions_instruction.dart';
 import 'package:vowl/features/grammar/conjunctions/presentation/widgets/conjunctions_brick_sheet.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ConjunctionsScreen extends StatefulWidget {
   final int level;
@@ -376,7 +377,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
           ),
           SizedBox(height: isCompact ? 4.h : 10.h),
           Text(
-            correct ? "CORRECT!" : "INCORRECT",
+            correct ? context.tr('games.correct').toUpperCase() : context.tr('games.incorrect_caps'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: isCompact ? 12.sp : 15.sp,

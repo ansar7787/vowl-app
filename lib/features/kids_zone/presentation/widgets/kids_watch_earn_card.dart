@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class KidsWatchEarnCard extends StatelessWidget {
   final Function(BuildContext, String, {bool isError}) showNotification;
@@ -79,7 +80,7 @@ class KidsWatchEarnCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "WATCH & EARN",
+                        context.tr('games.watch_and_earn'),
                         style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w900,

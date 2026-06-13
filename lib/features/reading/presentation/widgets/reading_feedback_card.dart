@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Bottom-sheet style feedback card shown after the player answers.
 ///
@@ -54,12 +55,12 @@ class ReadingFeedbackCard extends StatelessWidget {
   IconData get _icon =>
       _success ? Icons.check_circle_rounded : Icons.error_rounded;
 
-  String get _title => _success ? 'EXCELLENT!' : 'NOT QUITE!';
+  String _title(BuildContext context) => _success ? context.tr('games.excellent') : context.tr('games.not_quite');
 
-  String get _buttonText {
-    if (_success) return 'CONTINUE';
-    if (isFinalFailure) return lives == 0 ? 'SEE RESULTS' : 'CONTINUE';
-    return 'TRY AGAIN';
+  String _buttonText(BuildContext context) {
+    if (_success) return context.tr('common.continue_text').toUpperCase();
+    if (isFinalFailure) return lives == 0 ? context.tr('games.see_results') : context.tr('common.continue_text').toUpperCase();
+    return context.tr('games.try_again').toUpperCase();
   }
 
   // Only show the explanation block when correctAnswer is available.
@@ -69,14 +70,14 @@ class ReadingFeedbackCard extends StatelessWidget {
       isFinalFailure &&
       (currentQuest.correctAnswer?.isNotEmpty ?? false);
 
-  String get _semanticLabel {
-    if (_success) return 'Correct! Tap to continue.';
+  String _semanticLabel(BuildContext context) {
+    if (_success) return context.tr('games.semantic_correct_continue');
     if (_showExplanation) {
       // _showExplanation guards non-null; ?? keeps the static analyser happy.
       final answer = currentQuest.correctAnswer ?? '';
-      return 'Incorrect. The correct answer is: $answer. Tap to $_buttonText.';
+      return context.tr('games.semantic_incorrect_explanation', args: [answer, _buttonText(context)]);
     }
-    return 'Incorrect. Tap to try again.';
+    return context.tr('games.semantic_incorrect_try_again');
   }
 
   // ---------------------------------------------------------------------------
@@ -90,7 +91,7 @@ class ReadingFeedbackCard extends StatelessWidget {
     return Semantics(
       // Announce the full result as soon as the card appears.
       liveRegion: true,
-      label: _semanticLabel,
+      label: _semanticLabel(context),
       // Prevent the child tree from producing redundant announcements.
       excludeSemantics: true,
       child: Container(
@@ -110,10 +111,10 @@ class ReadingFeedbackCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _buildResultRow(reduceMotion),
+            _buildResultRow(context, reduceMotion),
             if (_showExplanation) ...[
               SizedBox(height: 16.h),
-              _buildExplanationCard(reduceMotion),
+              _buildExplanationCard(context, reduceMotion),
             ],
             SizedBox(height: 28.h),
             _buildContinueButton(context, reduceMotion),
@@ -127,7 +128,7 @@ class ReadingFeedbackCard extends StatelessWidget {
   // Sub-widgets
   // ---------------------------------------------------------------------------
 
-  Widget _buildResultRow(bool reduceMotion) {
+  Widget _buildResultRow(BuildContext context, bool reduceMotion) {
     Widget iconWidget = Container(
       padding: EdgeInsets.all(8.r),
       decoration: BoxDecoration(
@@ -162,7 +163,7 @@ class ReadingFeedbackCard extends StatelessWidget {
               shaderCallback: (bounds) =>
                   LinearGradient(colors: _gradient).createShader(bounds),
               child: Text(
-                _title,
+                _title(context),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 24.sp,
@@ -179,7 +180,7 @@ class ReadingFeedbackCard extends StatelessWidget {
     );
   }
 
-  Widget _buildExplanationCard(bool reduceMotion) {
+  Widget _buildExplanationCard(BuildContext context, bool reduceMotion) {
     Widget card = Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
@@ -205,7 +206,7 @@ class ReadingFeedbackCard extends StatelessWidget {
               ),
               SizedBox(width: 8.w),
               Text(
-                'EXPLANATION:',
+                context.tr('games.explanation_caps'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
@@ -244,7 +245,7 @@ class ReadingFeedbackCard extends StatelessWidget {
 
   Widget _buildContinueButton(BuildContext context, bool reduceMotion) {
     Widget button = Semantics(
-      label: _buttonText,
+      label: _buttonText(context),
       button: true,
       // excludeSemantics: false — let the button be focusable independently
       // (though the card-level liveRegion already announced the result).
@@ -270,7 +271,7 @@ class ReadingFeedbackCard extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              _buttonText,
+              _buttonText(context),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 18.sp,

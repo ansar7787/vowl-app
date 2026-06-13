@@ -15,11 +15,12 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class VictoryScreen extends StatefulWidget {
   final int xp;
   final int coins;
-  final String title;
+  final String? title;
   final String description;
   final String category; // 'accent', 'grammar', etc.
   final String gameType; // 'vowelDistinction', 'minimalPairs', etc.
@@ -29,7 +30,7 @@ class VictoryScreen extends StatefulWidget {
     super.key,
     required this.xp,
     required this.coins,
-    this.title = 'LEVEL COMPLETE!',
+    this.title,
     this.description = 'You are mastering your accent with precision!',
     required this.category,
     required this.gameType,
@@ -143,7 +144,7 @@ class _VictoryScreenState extends State<VictoryScreen> {
 
   Widget _buildTitle(bool isDark) {
     return Text(
-      widget.title,
+      widget.title ?? context.tr('games.level_complete').toUpperCase(),
       textAlign: TextAlign.center,
       style: TextStyle(fontFamily: 'Outfit', 
         fontSize: 32.sp,
@@ -188,7 +189,7 @@ class _VictoryScreenState extends State<VictoryScreen> {
                     : Colors.black.withValues(alpha: 0.1),
               ),
               _buildRewardItem(
-                'COINS',
+                context.tr('home.coins'),
                 widget.coins,
                 Icons.generating_tokens_rounded,
                 const Color(0xFFFFD700),
@@ -306,7 +307,7 @@ class _VictoryScreenState extends State<VictoryScreen> {
             ),
             child: Center(
               child: Text(
-                "CONTINUE",
+                context.tr('common.continue_text').toUpperCase(),
                 style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w700,

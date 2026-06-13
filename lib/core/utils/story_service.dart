@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Immutable model representing a narrative milestones/narrative trigger.
 class StoryBeat {
@@ -24,7 +25,7 @@ abstract class StoryService {
   factory StoryService() = StoryServiceImpl;
 
   /// Resolves a storytelling narrative beat or milestone reward text.
-  StoryBeat? getStoryBeat(String categoryId, int level);
+  StoryBeat? getStoryBeat(BuildContext context, String categoryId, int level);
 }
 
 /// Concrete high-performance implementation of [StoryService] utilizing static const script pools.
@@ -410,7 +411,7 @@ class StoryServiceImpl implements StoryService {
   StoryServiceImpl();
 
   @override
-  StoryBeat? getStoryBeat(String categoryId, int level) {
+  StoryBeat? getStoryBeat(BuildContext context, String categoryId, int level) {
     if (!milestones.contains(level)) return null;
 
     final int beatIndex = milestones.indexOf(level);
@@ -421,8 +422,8 @@ class StoryServiceImpl implements StoryService {
       // Check Granular Modern First
       if (modernGameScripts.containsKey(categoryId)) {
         return StoryBeat(
-          title: "NEW QUEST",
-          text: modernGameScripts[categoryId]!,
+          title: context.tr('story.new_quest'),
+          text: context.tr('story_scripts.$categoryId', fallback: modernGameScripts[categoryId]!),
           mascotEmoji: _getMascotEmoji(categoryId),
           themeColor: _getCategoryColor(categoryId),
         );
@@ -431,8 +432,8 @@ class StoryServiceImpl implements StoryService {
       // Check Kids (using cleanId)
       if (kidsScripts.containsKey(cleanId)) {
         return StoryBeat(
-          title: "NEW QUEST",
-          text: kidsScripts[cleanId]![0],
+          title: context.tr('story.new_quest'),
+          text: context.tr('story_scripts.$cleanId', fallback: kidsScripts[cleanId]![0]),
           mascotEmoji: _getMascotEmoji(cleanId),
           themeColor: _getCategoryColor(cleanId),
         );
@@ -448,10 +449,10 @@ class StoryServiceImpl implements StoryService {
           : "Vowl";
 
       return StoryBeat(
-        title: "NEW QUEST",
+        title: context.tr('story.new_quest'),
         text: isKids 
-            ? "A new adventure is waiting for you in the $categoryName world! Let's explore and learn together! ✨"
-            : "A new challenge awaits in the $categoryName Nexus. Your path to mastery begins with this first step. Good luck!",
+            ? context.tr('story.fallback_kids', args: [categoryName])
+            : context.tr('story.fallback_modern', args: [categoryName]),
         mascotEmoji: isKids ? "✨" : "🚀",
         themeColor: _getCategoryColor(cleanId),
       );
@@ -462,8 +463,8 @@ class StoryServiceImpl implements StoryService {
       final script = kidsScripts[cleanId]!;
       if (beatIndex < script.length) {
         return StoryBeat(
-          title: "ADVENTURE LOG",
-          text: script[beatIndex],
+          title: context.tr('story.adventure_log'),
+          text: context.tr('story_scripts.${cleanId}_beat_$beatIndex', fallback: script[beatIndex]),
           mascotEmoji: _getMascotEmoji(cleanId),
           themeColor: _getCategoryColor(cleanId),
         );
@@ -476,8 +477,8 @@ class StoryServiceImpl implements StoryService {
       final script = legacyAdultScripts[broadId]!;
       if (beatIndex < script.length && script[beatIndex].isNotEmpty) {
         return StoryBeat(
-          title: "SYSTEM UPDATE",
-          text: script[beatIndex],
+          title: context.tr('story.system_update'),
+          text: context.tr('story_scripts.${broadId}_beat_$beatIndex', fallback: script[beatIndex]),
           mascotEmoji: _getMascotEmoji(categoryId),
           themeColor: _getCategoryColor(categoryId),
         );

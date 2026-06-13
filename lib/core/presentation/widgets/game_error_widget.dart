@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class GameErrorWidget extends StatelessWidget {
   final String title;
@@ -106,7 +107,7 @@ class GameErrorWidget extends StatelessWidget {
                       ],
                     ),
                     child: Text(
-                      'TRY AGAIN',
+                      context.tr('games.try_again').toUpperCase(),
                       textAlign: TextAlign.center,
                       style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,

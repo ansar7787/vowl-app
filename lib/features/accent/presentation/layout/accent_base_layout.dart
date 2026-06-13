@@ -124,12 +124,13 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
         // Trigger voice + haptic nudge exactly once when lives drop to 1.
         if (_lastLives == 2 && state.livesRemaining == 1 && !_hasSpokenNudge) {
           _hasSpokenNudge = true;
+          final nudgeMsg = AccentGameConstants.nudgeMessage(context);
           Future.delayed(
-            Duration(milliseconds: AccentGameConstants.nudgeDelayMs),
+            const Duration(milliseconds: AccentGameConstants.nudgeDelayMs),
             () {
               if (!mounted) return;
               _ttsService.stop();
-              _ttsService.speak(AccentGameConstants.nudgeMessage);
+              _ttsService.speak(nudgeMsg);
               _hapticService.warning();
             },
           );
@@ -311,6 +312,7 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
 
   Widget _buildBriefingOverlay(Color primaryColor) {
     final briefing = GameInstructionService.getBriefing(
+      context,
       widget.gameType,
       'Accent',
       level: widget.level,

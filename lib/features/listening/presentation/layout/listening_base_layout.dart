@@ -24,6 +24,7 @@ import 'package:vowl/features/listening/presentation/widgets/listening_base_layo
 import 'package:vowl/features/listening/presentation/widgets/listening_feedback_card.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_header.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_peeking_mascot.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 // =============================================================================
 // ListeningBaseLayout
@@ -134,8 +135,8 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
   Timer? _nudgeTimer;
 
   static const Duration _kNudgeDelay = Duration(milliseconds: 1200);
-  static const String _kNudgeMessage =
-      'Focus! Use a hint if you need help saving your last life.';
+  String get _kNudgeMessage =>
+      context.tr('games.kids_nudge');
 
   @override
   void initState() {
@@ -230,6 +231,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
         // Resolved once — not called 6× per frame.
         final briefing = _showBriefing
             ? GameInstructionService.getBriefing(
+                context,
                 widget.gameType,
                 'Listening',
                 level: widget.level,
@@ -373,6 +375,88 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
   void _dispatchHint(BuildContext context) {
     context.read<ListeningBloc>().add(const ListeningHintUsed());
     widget.onHint();
+
+    // ── OUTSTANDING VISUAL HINT (No JSON required) ──
+    // Show a custom UI snackbar without clashing with the audio playback
+    ScaffoldMessenger.of(context).hideCurrentSnackBar();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        duration: const Duration(seconds: 4),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        behavior: SnackBarBehavior.floating,
+        content: Container(
+          padding: EdgeInsets.all(16.r),
+          decoration: BoxDecoration(
+            color: LevelThemeHelper.getTheme(
+              widget.gameType.name,
+              isDark: Theme.of(context).brightness == Brightness.dark,
+            ).primaryColor.withValues(alpha: 0.9),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: Colors.white.withValues(alpha: 0.3),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                blurRadius: 15,
+                offset: const Offset(0, 8),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Container(
+                padding: EdgeInsets.all(8.r),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.2),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(Icons.graphic_eq_rounded, color: Colors.white, size: 20.r),
+              ),
+              SizedBox(width: 14.w),
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "AUDIO CLUE ACTIVATED",
+                      style: TextStyle(
+                        fontFamily: 'Outfit', 
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 1.5,
+                        color: Colors.white.withValues(alpha: 0.7),
+                      ),
+                    ),
+                    SizedBox(height: 2.h),
+                    Text(
+                      "Listen carefully to the replay...",
+                      style: TextStyle(
+                        fontFamily: 'Outfit', 
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                        height: 1.2,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+
+    // Wait 1 second so the "hint.mp3" sound finishes playing
+    // before we automatically replay the main game audio clip.
+    Future.delayed(const Duration(milliseconds: 1000), () {
+      if (!mounted) return;
+      _handleAudioPlay();
+    });
   }
 
   void _showBriefingOverlay() => setState(() => _showBriefing = true);

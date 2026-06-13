@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class LoginEmailInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
@@ -231,7 +232,7 @@ class LoginButton extends StatelessWidget {
                     strokeWidth: 2,
                   ),
                 )
-              : const Text('Login'),
+              : Text(context.tr('auth.login')),
         );
       },
     );
@@ -276,7 +277,7 @@ class GoogleLoginButton extends StatelessWidget {
                     const Icon(Icons.g_mobiledata, size: 32),
                     SizedBox(width: 8.w),
                     Text(
-                      'Sign in with Google',
+                      context.tr('auth.sign_in_with_google'),
                       style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp),
                     ),
                   ],

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 
 /// Floating mascot + speech bubble in the top-left of the body area.
@@ -24,44 +25,33 @@ class VocabularyPeekingMascot extends StatelessWidget {
     required this.isAnswered,
   });
 
-  // ── Helpers ───────────────────────────────────────────────────────────────
 
-  VowlMascotState _getMascotState() {
-    if (state is VocabularyGameComplete) return VowlMascotState.happy;
-    if (state is VocabularyGameOver) return VowlMascotState.worried;
-    if (state is VocabularyLoaded) {
-      if (isCorrect == true) return VowlMascotState.happy;
-      if (lives < 3 && !isAnswered) return VowlMascotState.worried;
-      if (isCorrect == false) return VowlMascotState.thinking;
-    }
-    return VowlMascotState.neutral;
-  }
 
-  String _getMessage(String mascotName) {
-    if (isCorrect == true) return 'Lexical Master! ✨';
-    if (state is VocabularyGameComplete) return 'Vocabulary King! 🏆';
-    if (lives < 3 && !isAnswered) return 'Hint for help! 💡';
-    if (isCorrect == false) return 'Check the definition! 📖';
-    return '$mascotName is learning! 🦉';
-  }
 
-  /// Converts a snake_case mascot id (e.g. `vowl_prime`) to a display name
-  /// (e.g. `Vowl Prime`).  Static so it can be unit-tested without a widget.
-  static String formatMascotName(String mascotId) {
-    return mascotId
-        .split('_')
-        .map((w) => w.isNotEmpty ? '${w[0].toUpperCase()}${w.substring(1)}' : w)
-        .join(' ');
-  }
 
   // ── Build ─────────────────────────────────────────────────────────────────
 
   @override
   Widget build(BuildContext context) {
-    final mascotId =
-        context.read<AuthBloc>().state.user?.vowlMascot ?? 'vowl_prime';
-    final mascotName = formatMascotName(mascotId);
-    final message = _getMessage(mascotName);
+    final mascotId = context.read<AuthBloc>().state.user?.vowlMascot ?? 'vowl_prime';
+    
+    final message = MascotMessageHelper.getMessage(
+      context,
+      category: 'vocabulary',
+      mascotId: mascotId,
+      isComplete: state is VocabularyGameComplete,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
+    
+    final mascotState = MascotMessageHelper.getMascotState(
+      isComplete: state is VocabularyGameComplete,
+      isGameOver: state is VocabularyGameOver,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,7 +100,7 @@ class VocabularyPeekingMascot extends StatelessWidget {
         ),
         Semantics(
           label: 'Game mascot',
-          child: VowlMascot(state: _getMascotState(), size: 45.r)
+          child: VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId)
               .animate(onPlay: (c) => c.repeat(reverse: true))
               .moveY(
                 begin: 0,

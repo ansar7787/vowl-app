@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+
 class LeaderboardHeader extends StatelessWidget {
   final DateTime lastUpdated;
 
@@ -12,7 +14,7 @@ class LeaderboardHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final timeAgo = _formatTimeAgo(lastUpdated);
+    final timeAgo = _formatTimeAgo(context, lastUpdated);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +44,7 @@ class LeaderboardHeader extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'LEADERBOARD',
+                        context.tr('leaderboard.title'),
                         style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 22.sp,
                           fontWeight: FontWeight.w900,
@@ -86,7 +88,7 @@ class LeaderboardHeader extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    'Ranked by total quest experience',
+                    context.tr('leaderboard.subtitle'),
                     style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w600,
@@ -102,11 +104,11 @@ class LeaderboardHeader extends StatelessWidget {
     ).animate().fadeIn(duration: 500.ms);
   }
 
-  String _formatTimeAgo(DateTime dateTime) {
+  String _formatTimeAgo(BuildContext context, DateTime dateTime) {
     final difference = DateTime.now().difference(dateTime);
-    if (difference.inMinutes < 1) return 'JUST NOW';
-    if (difference.inMinutes < 60) return '${difference.inMinutes}M AGO';
-    if (difference.inHours < 24) return '${difference.inHours}H AGO';
-    return '${difference.inDays}D AGO';
+    if (difference.inMinutes < 1) return context.tr('leaderboard.just_now');
+    if (difference.inMinutes < 60) return context.tr('leaderboard.mins_ago', args: [difference.inMinutes.toString()]);
+    if (difference.inHours < 24) return context.tr('leaderboard.hours_ago', args: [difference.inHours.toString()]);
+    return context.tr('leaderboard.days_ago', args: [difference.inDays.toString()]);
   }
 }

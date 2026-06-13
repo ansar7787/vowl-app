@@ -7,6 +7,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class LeaderboardRankCard extends StatelessWidget {
   final List<UserEntity> allUsers;
@@ -114,7 +115,7 @@ class LeaderboardRankCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        isRanked ? 'YOUR STANDING' : 'JOIN THE COMPETITION',
+                        isRanked ? context.tr('leaderboard.your_standing') : context.tr('leaderboard.join_competition'),
                         style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 8.sp,
                           fontWeight: FontWeight.w900,
@@ -123,7 +124,7 @@ class LeaderboardRankCard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        currentUser.displayName?.toUpperCase() ?? 'PLAYER',
+                        currentUser.displayName?.toUpperCase() ?? context.tr('leaderboard.player'),
                         style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w900,
@@ -166,7 +167,7 @@ class LeaderboardRankCard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'LEVELS',
+                        context.tr('leaderboard.levels'),
                         style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 7.sp,
                           fontWeight: FontWeight.w800,
@@ -213,8 +214,8 @@ class LeaderboardRankCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  '${(progress * 100).toStringAsFixed(1)}% of all quests',
+                  Text(
+                    context.tr('leaderboard.all_quests', args: [(progress * 100).toStringAsFixed(1)]),
                   style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 9.sp,
                     fontWeight: FontWeight.w700,

@@ -13,6 +13,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/relative_clauses/presentation/widgets/relative_clauses_instruction.dart';
 import 'package:vowl/features/grammar/relative_clauses/presentation/widgets/relative_clauses_quantum_painter.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class RelativeClausesScreen extends StatefulWidget {
   final int level;
@@ -315,7 +316,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
             ),
             SizedBox(height: isCompact ? 4.h : 12.h),
             Text(
-              correct ? "CORRECT!" : "INCORRECT",
+              correct ? context.tr('games.correct').toUpperCase() : context.tr('games.incorrect_caps'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: isCompact ? 12.sp : 16.sp,

@@ -23,6 +23,7 @@ import 'package:vowl/features/reading/presentation/widgets/reading_feedback_card
 import 'package:vowl/features/reading/presentation/widgets/reading_header.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_passage_area.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Orchestration-only layout for all reading game screens.
 ///
@@ -167,7 +168,7 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
             if (!mounted) return;
             _ttsService.stop();
             _ttsService.speak(
-              'Focus! Use a hint if you need help saving your last life.',
+              context.tr('games.kids_nudge'),
             );
             _hapticService.warning();
           });
@@ -216,6 +217,7 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
         // Briefing object is resolved once per build pass — not per property.
         final briefing = _showBriefing
             ? GameInstructionService.getBriefing(
+                context,
                 widget.gameType,
                 'Reading',
                 level: widget.level,

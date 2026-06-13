@@ -16,8 +16,12 @@ import 'package:vowl/features/settings/presentation/widgets/legal_constants.dart
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/settings/presentation/widgets/language_picker_sheet.dart';
 import 'package:permission_handler/permission_handler.dart';
-
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
+import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
 
@@ -29,6 +33,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String _appVersion = '1.0.0';
   String _buildNumber = '1';
   bool _notificationsEnabled = true;
+  bool _soundEnabled = true;
   bool _isLoading = true;
 
   @override
@@ -44,11 +49,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
     // Check actual system permission to keep UI in sync
     final isGranted = await Permission.notification.isGranted;
     final savedPref = prefs.getBool('notifications_enabled') ?? true;
+    final soundPref = prefs.getBool('sound_enabled') ?? true;
     
     setState(() {
       _appVersion = info.version;
       _buildNumber = info.buildNumber;
       _notificationsEnabled = savedPref && isGranted;
+      _soundEnabled = soundPref;
       _isLoading = false;
     });
   }
@@ -82,6 +89,29 @@ class _SettingsScreenState extends State<SettingsScreen> {
     di.sl<NotificationService>().onNotificationPreferenceChanged(value);
   }
 
+  Future<void> _toggleSound(bool value) async {
+    if (!value) {
+      final confirmed = await SettingsDialogs.showDisableSoundConfirmation(context);
+      if (confirmed != true) return;
+    }
+
+    setState(() {
+      _soundEnabled = value;
+    });
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('sound_enabled', value);
+
+    di.sl<SoundService>().setMuted(!value);
+
+    final kidsAudio = di.sl<KidsAudioService>();
+    final kidsTTS = di.sl<KidsTTSService>();
+
+    if (!value) {
+      await kidsAudio.stopBgm();
+      await kidsTTS.stop();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -110,10 +140,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         isDark: isDark,
                       ),
                       SizedBox(height: 32.h),
-                      SettingsSectionTitle(title: 'Account', isDark: isDark),
+                      SettingsSectionTitle(title: context.tr('settings.account'), isDark: isDark),
                       SettingsGroup(children: [
                         SettingsTile(
-                          title: 'Security & Password',
+                          title: context.tr('settings.security_password'),
                           icon: Icons.lock_person_rounded,
                           color: Colors.blue,
                           onTap: () => SettingsDialogs.showPasswordReset(
@@ -124,11 +154,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ]),
 
                       SizedBox(height: 32.h),
-                      SettingsSectionTitle(title: 'App Preferences', isDark: isDark),
+                      SettingsSectionTitle(title: context.tr('settings.app_preferences'), isDark: isDark),
                       SettingsGroup(children: [
                         SettingsSwitchTile(
-                          title: 'Push Notifications',
-                          subtitle: 'Stay updated with daily quests',
+                          title: 'Sound Effects',
+                          subtitle: 'Play game sounds & feedback',
+                          icon: Icons.volume_up_rounded,
+                          color: Colors.pink,
+                          value: _soundEnabled,
+                          isLoading: _isLoading,
+                          onChanged: _toggleSound,
+                        ),
+                        SettingsSwitchTile(
+                          title: context.tr('settings.push_notifications'),
+                          subtitle: context.tr('settings.push_notifications_subtitle'),
                           icon: Icons.notifications_active_rounded,
                           color: Colors.orange,
                           value: _notificationsEnabled,
@@ -136,15 +175,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           onChanged: _toggleNotifications,
                         ),
                         SettingsTile(
-                          title: 'Language Selection',
+                          title: context.tr('settings.language_selection'),
                           icon: Icons.language_rounded,
                           color: Colors.teal,
-                          onTap: () => SettingsDialogs.showComingSoon(context),
+                          onTap: () => LanguagePickerSheet.show(context),
                           trailing: Text(
-                            'English (US)',
+                            '${di.sl<LocaleService>().currentLocaleFlag} ${di.sl<LocaleService>().currentLocaleName}',
                             style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 12.sp,
-                              color: Colors.blue,
+                              color: Colors.teal,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
@@ -152,28 +191,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ]),
 
                       SizedBox(height: 32.h),
-                      SettingsSectionTitle(title: 'Support & Legal', isDark: isDark),
+                      SettingsSectionTitle(title: context.tr('settings.support_legal'), isDark: isDark),
                       SettingsGroup(children: [
                         SettingsTile(
-                          title: 'Help Center',
+                          title: context.tr('settings.help_center'),
                           icon: Icons.help_center_rounded,
                           color: Colors.green,
                           onTap: () => _handleSupportLink(context),
                         ),
                         SettingsTile(
-                          title: 'Terms of Service',
+                          title: context.tr('settings.terms_of_service'),
                           icon: Icons.description_rounded,
                           color: Colors.blueGrey,
-                          onTap: () => _handleLegalLink(context, 'Terms of Service'),
+                          onTap: () => _handleLegalLink(context, context.tr('settings.terms_of_service')),
                         ),
                         SettingsTile(
-                          title: 'Privacy Policy',
+                          title: context.tr('settings.privacy_policy'),
                           icon: Icons.policy_rounded,
                           color: Colors.blueGrey,
-                          onTap: () => _handleLegalLink(context, 'Privacy Policy'),
+                          onTap: () => _handleLegalLink(context, context.tr('settings.privacy_policy')),
                         ),
                         SettingsTile(
-                          title: 'App Version',
+                          title: context.tr('settings.app_version'),
                           icon: Icons.info_outline_rounded,
                           color: Colors.grey,
                           trailing: Text(
@@ -188,16 +227,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ]),
 
                       SizedBox(height: 32.h),
-                      SettingsSectionTitle(title: 'Danger Zone', isDark: isDark),
+                      SettingsSectionTitle(title: context.tr('settings.danger_zone'), isDark: isDark),
                       SettingsGroup(children: [
                         SettingsTile(
-                          title: 'Clear App Cache',
+                          title: context.tr('settings.clear_cache'),
                           icon: Icons.cleaning_services_rounded,
                           color: Colors.amber,
                           onTap: () => _handleClearCache(context),
                         ),
                         SettingsTile(
-                          title: 'Delete Account',
+                          title: context.tr('settings.delete_account'),
                           icon: Icons.delete_forever_rounded,
                           color: Colors.red,
                           onTap: () => SettingsDialogs.showDeleteAccount(context),
@@ -252,7 +291,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         },
       ),
       title: Text(
-        'Settings',
+        context.tr('settings.title'),
         style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 22.sp,
           fontWeight: FontWeight.w800,
@@ -277,7 +316,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     } else {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not open email app')),
+          SnackBar(content: Text(context.tr('settings.email_error'))),
         );
       }
     }
@@ -290,7 +329,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   void _handleLegalLink(BuildContext context, String title) {
-    final content = title == 'Terms of Service' 
+    final content = title == context.tr('settings.terms_of_service') 
         ? LegalConstants.termsOfService 
         : LegalConstants.privacyPolicy;
 
@@ -315,7 +354,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              'Cache cleared successfully!',
+              context.tr('settings.cache_cleared'),
               style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w700),
             ),
             backgroundColor: Colors.green,

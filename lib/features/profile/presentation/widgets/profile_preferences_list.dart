@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ProfilePreferencesList extends StatelessWidget {
   final UserEntity user;
@@ -28,14 +29,6 @@ class ProfilePreferencesList extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 4.w),
       child: Column(
         children: [
-          _buildSwitchTile(
-            context,
-            'Sound Effects',
-            Icons.volume_up_rounded,
-            Colors.pink,
-            soundEnabled,
-            onSoundToggle,
-          ),
           if (user.isAdmin) ...[
             Divider(
               height: 1,
@@ -64,7 +57,7 @@ class ProfilePreferencesList extends StatelessWidget {
           ),
           _buildPreferenceTile(
             context,
-            'Settings',
+            context.tr('settings.title'),
             Icons.settings_rounded,
             Colors.grey,
             () {
@@ -115,67 +108,6 @@ class ProfilePreferencesList extends StatelessWidget {
               Icons.chevron_right_rounded,
               color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
               size: 20.r,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSwitchTile(
-    BuildContext context,
-    String title,
-    IconData icon,
-    Color color,
-    bool value,
-    ValueChanged<bool>? onChanged,
-  ) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final bool isDisabled = onChanged == null;
-
-    return Opacity(
-      opacity: isDisabled ? 0.5 : 1.0,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.all(10.r),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(12.r),
-              ),
-              child: Icon(icon, color: color, size: 22.r),
-            ),
-            SizedBox(width: 16.w),
-            Expanded(
-              child: Text(
-                title,
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : const Color(0xFF1E293B),
-                ),
-              ),
-            ),
-            Transform.scale(
-              scale: 0.8,
-              child: Switch(
-                value: value,
-                onChanged: isDisabled
-                    ? null
-                    : (v) {
-                        di.sl<HapticService>().selection();
-                        onChanged(v);
-                      },
-                activeThumbColor: color,
-                activeTrackColor: color.withValues(alpha: 0.2),
-                inactiveThumbColor: isDark ? Colors.white60 : Colors.white,
-                inactiveTrackColor: isDark
-                    ? Colors.white24
-                    : const Color(0xFFE2E8F0),
-                trackOutlineColor: WidgetStateProperty.all(Colors.transparent),
-              ),
             ),
           ],
         ),

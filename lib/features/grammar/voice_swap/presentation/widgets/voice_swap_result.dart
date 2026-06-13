@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class VoiceSwapResult extends StatelessWidget {
   final bool isCorrect;
@@ -42,7 +43,7 @@ class VoiceSwapResult extends StatelessWidget {
             ),
             SizedBox(height: 12.h),
             Text(
-              isCorrect ? "CORRECT!" : "INCORRECT",
+              isCorrect ? context.tr('games.correct').toUpperCase() : context.tr('games.incorrect_caps'),
               style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w900,

@@ -253,6 +253,15 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
             });
           }
           _lastLives = state.livesRemaining;
+
+          if (state.isLetterRevealed && _dynamicOptions.length > 1) {
+            final correctWord = state.currentQuest.missingWord?.toLowerCase() ?? "";
+            if (_dynamicOptions.contains(correctWord)) {
+              setState(() {
+                _dynamicOptions = [correctWord];
+              });
+            }
+          }
         }
         if (state is SpeakingGameComplete) {
           setState(() => _showConfetti = true);

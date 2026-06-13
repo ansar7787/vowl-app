@@ -18,6 +18,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_ren
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 // Decoupled sub-widgets
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_top_bar.dart';
@@ -225,7 +226,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                         children: [
                                           Icon(Icons.touch_app_rounded, color: Colors.white, size: 20.sp),
                                           SizedBox(width: 10.w),
-                                          Text("TAP TO WAKE UP ☀️", 
+                                          Text(context.tr('games.kids_tap_wake'), 
                                             style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 1)),
                                         ],
                                       ),
@@ -475,6 +476,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             ? VowlMascotState.happy 
                             : VowlMascotState.neutral),
                     useFloatingAnimation: !_isSleeping,
+                    isKidsMode: true,
                   ),
                 ],
               ).animate(onPlay: (c) => c.repeat(reverse: true))
@@ -488,7 +490,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             if (_isSleeping)
               Positioned(
                 top: -30.h,
-                child: Text("Zzz...", style: TextStyle(fontFamily: 'Outfit', color: Colors.white70, fontSize: 18.sp, fontWeight: FontWeight.bold))
+                child: Text(context.tr('games.kids_zzz'), style: TextStyle(fontFamily: 'Outfit', color: Colors.white70, fontSize: 18.sp, fontWeight: FontWeight.bold))
                     .animate(onPlay: (c) => c.repeat())
                     .moveY(begin: 0, end: -30, duration: 2.seconds)
                     .fadeOut(),

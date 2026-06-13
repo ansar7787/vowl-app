@@ -8,6 +8,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/home/presentation/widgets/global_progress_card.dart';
 import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_repository.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
@@ -24,6 +25,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/home/presentation/widgets/home_quick_stats.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/widgets/inline_notification_card.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -175,9 +177,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             children: [
                               SizedBox(height: 25.h),
-                              const HomeSectionHeader(
-                                title: 'Kids Learning Zone',
-                                subtitle: '22 educational games for early learners',
+                              HomeSectionHeader(
+                                title: context.tr('home.kids_zone_title'),
+                                subtitle: context.tr('home.kids_zone_subtitle'),
+                                localizedTitleKey: 'home.kids_zone_title',
+                                localizedSubtitleKey: 'home.kids_zone_subtitle',
                                 categoryColor: Color(0xFFF43F5E),
                               ),
                               SizedBox(height: 18.h),
@@ -198,8 +202,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               SizedBox(height: 30.h),
                               HomeSectionHeader(
-                                title: 'Quest Arena',
-                                subtitle: '9-step real-world journey',
+                                title: context.tr('home.quest_arena_title'),
+                                subtitle: context.tr('home.quest_arena_subtitle'),
+                                localizedTitleKey: 'home.quest_arena_title',
+                                localizedSubtitleKey: 'home.quest_arena_subtitle',
                                 categoryColor: const Color(0xFF6366F1),
                                 onSeeAll: () => context.push(AppRouter.libraryRoute),
                                 badge: Container(
@@ -222,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       SizedBox(width: 4.w),
                                       Text(
-                                        '9 STEPS',
+                                        context.tr('home.quest_arena_steps'),
                                         style: TextStyle(fontFamily: 'Outfit', 
                                           fontSize: 8.sp,
                                           fontWeight: FontWeight.w900,
@@ -247,9 +253,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             children: [
                               SizedBox(height: 0),
-                              const HomeSectionHeader(
-                                title: 'Elite Companion & Stats',
-                                subtitle: 'Your mascot and adventure stats',
+                              HomeSectionHeader(
+                                title: context.tr('home.elite_companion_title'),
+                                subtitle: context.tr('home.elite_companion_subtitle'),
+                                localizedTitleKey: 'home.elite_companion_title',
+                                localizedSubtitleKey: 'home.elite_companion_subtitle',
                                 categoryColor: Color(0xFF10B981),
                               ),
                               SizedBox(height: 12.h),
@@ -263,9 +271,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
 
                       // 6. DISCOVERY HUB (Audio Deck)
-                      const HomeSliverSectionHeader(
-                        title: 'Discovery Hub',
-                        subtitle: '4 curated quest sequences',
+                      HomeSliverSectionHeader(
+                        title: context.tr('home.discovery_hub_title'),
+                        subtitle: context.tr('home.discovery_hub_subtitle'),
                         categoryColor: Color(0xFF3B82F6),
                       ),
                       SliverToBoxAdapter(

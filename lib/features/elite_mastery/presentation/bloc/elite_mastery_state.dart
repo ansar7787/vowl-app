@@ -36,6 +36,8 @@ class EliteMasteryLoaded extends EliteMasteryState {
   final bool isHintUsed;
   final int wrongCount;
   final bool isFinalFailure;
+  final List<int> removedIndices;
+  final bool isLetterRevealed;
 
   EliteMasteryQuest get currentQuest => quests[currentIndex];
 
@@ -51,6 +53,8 @@ class EliteMasteryLoaded extends EliteMasteryState {
     this.isHintUsed = false,
     this.wrongCount = 0,
     this.isFinalFailure = false,
+    this.removedIndices = const [],
+    this.isLetterRevealed = false,
   });
 
   @override
@@ -65,6 +69,8 @@ class EliteMasteryLoaded extends EliteMasteryState {
     isHintUsed,
     wrongCount,
     isFinalFailure,
+    removedIndices,
+    isLetterRevealed,
   ];
 
   /// Returns a copy with the supplied fields replaced.
@@ -83,6 +89,8 @@ class EliteMasteryLoaded extends EliteMasteryState {
     bool? isHintUsed,
     int? wrongCount,
     bool? isFinalFailure,
+    List<int>? removedIndices,
+    bool? isLetterRevealed,
     bool resetLastAnswer = false,
   }) {
     return EliteMasteryLoaded(
@@ -98,6 +106,8 @@ class EliteMasteryLoaded extends EliteMasteryState {
       isHintUsed: isHintUsed ?? this.isHintUsed,
       wrongCount: wrongCount ?? this.wrongCount,
       isFinalFailure: isFinalFailure ?? this.isFinalFailure,
+      removedIndices: removedIndices ?? this.removedIndices,
+      isLetterRevealed: isLetterRevealed ?? this.isLetterRevealed,
     );
   }
 }

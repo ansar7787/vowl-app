@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class DialectFeedbackPanel extends StatelessWidget {
   final bool isCorrect;
@@ -56,7 +57,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      isCorrect ? "Correct!" : "Let's Review",
+                      isCorrect ? context.tr('games.correct') : context.tr('games.lets_review'),
                       style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 22.sp,
                         fontWeight: FontWeight.bold,
@@ -64,7 +65,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "Accent Comparison",
+                      context.tr('games.accent_comparison'),
                       style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
@@ -105,7 +106,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "British: ",
+                      "${context.tr('games.british')}: ",
                       style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
@@ -129,7 +130,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "American: ",
+                      "${context.tr('games.american')}: ",
                       style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
@@ -167,7 +168,7 @@ class DialectFeedbackPanel extends StatelessWidget {
             children: [
               Expanded(
                 child: _buildAudioButton(
-                  title: "BRITISH",
+                  title: context.tr('games.british').toUpperCase(),
                   icon: Icons.record_voice_over_rounded,
                   textToPlay: word,
                   locale: "en-GB",
@@ -181,7 +182,7 @@ class DialectFeedbackPanel extends StatelessWidget {
               SizedBox(width: 16.w),
               Expanded(
                 child: _buildAudioButton(
-                  title: "AMERICAN",
+                  title: context.tr('games.american').toUpperCase(),
                   icon: Icons.record_voice_over_rounded,
                   textToPlay: word,
                   locale: "en-US",

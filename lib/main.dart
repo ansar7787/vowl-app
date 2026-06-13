@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/connectivity_wrapper.dart';
@@ -11,6 +12,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/security_service.dart';
 import 'package:vowl/core/utils/remote_config_service.dart';
 import 'package:vowl/core/utils/notification_service.dart';
@@ -291,16 +293,29 @@ class _MyAppState extends State<MyApp> {
                       ? Brightness.light
                       : Brightness.dark,
                 ),
-                child: MaterialApp.router(
-                  title: 'Vowl',
-                  debugShowCheckedModeBanner: false,
-                  theme: AppTheme.lightTheme,
-                  darkTheme: state.isMidnight
-                      ? AppTheme.midnightTheme
-                      : AppTheme.darkTheme,
-                  themeMode: state.themeMode,
-                  routerConfig: AppRouter.router,
-                  builder: (context, child) {
+                child: ListenableBuilder(
+                  listenable: di.sl<LocaleService>(),
+                  builder: (context, _) {
+                    final localeService = di.sl<LocaleService>();
+                    return MaterialApp.router(
+                      title: 'Vowl',
+                      debugShowCheckedModeBanner: false,
+                      theme: AppTheme.lightTheme,
+                      darkTheme: state.isMidnight
+                          ? AppTheme.midnightTheme
+                          : AppTheme.darkTheme,
+                      themeMode: state.themeMode,
+                      locale: localeService.currentLocale,
+                      supportedLocales: LocaleService.supportedLocales
+                          .map((l) => l.locale)
+                          .toList(),
+                      localizationsDelegates: const [
+                        GlobalMaterialLocalizations.delegate,
+                        GlobalWidgetsLocalizations.delegate,
+                        GlobalCupertinoLocalizations.delegate,
+                      ],
+                      routerConfig: AppRouter.router,
+                      builder: (context, child) {
                     return GlobalErrorBoundary(
                       child: ConnectivityWrapper(
                         child: GlobalAudioFeedbackListener(
@@ -324,7 +339,7 @@ class _MyAppState extends State<MyApp> {
 
                                 return LoadingOverlay(
                                   isLoading: isLoggingOut,
-                                  message: 'Securing your quest data',
+                                  message: context.tr('loading_overlay.securing_data'),
                                   child: Container(
                                     color: state.isMidnight
                                         ? Colors.black
@@ -339,6 +354,8 @@ class _MyAppState extends State<MyApp> {
                           ),
                         ),
                       ),
+                    );
+                  },
                     );
                   },
                 ),

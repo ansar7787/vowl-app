@@ -7,6 +7,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:confetti/confetti.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class KidsFeedbackOverlay extends StatelessWidget {
   final bool isCorrect;
@@ -106,7 +107,7 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
                   
                   // MAIN TITLE
                   Text(
-                    widget.isCorrect ? "AWESOME!" : "OH NO!",
+                    widget.isCorrect ? context.tr('games.kids_awesome') : context.tr('games.kids_oh_no'),
                     style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 44.sp,
                       fontWeight: FontWeight.w900,
@@ -130,10 +131,10 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
                     ),
                     child: Text(
                       widget.isCorrect 
-                        ? "Great job! Keep going! ✨" 
+                        ? context.tr('games.kids_success_msg') 
                         : (widget.attempts >= 2 
-                           ? "Nice try! Let's review this later! 💡" 
-                           : "Almost there! Try again! ✨"),
+                           ? context.tr('games.kids_review_msg') 
+                           : context.tr('games.kids_try_again_msg')),
                       style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w700,
@@ -198,7 +199,7 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "CONTINUE",
+                              context.tr('common.continue_text').toUpperCase(),
                               style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 18.sp,
                                 fontWeight: FontWeight.w900,

@@ -258,161 +258,166 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
           onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 10.h,
-                  ),
-                  child: Column(
-                    children: [
-                      MedicalConsultInstruction(
-                        primaryColor: theme.primaryColor,
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isCompact = constraints.maxHeight < 580;
+                    return SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: isCompact ? 5.h : 10.h,
                       ),
-                      SizedBox(height: 16.h),
-                      MedicalConsultPatientRecord(
-                        prompt: quest.prompt ?? "",
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                      ),
-                      SizedBox(height: 20.h),
+                      child: Column(
+                        children: [
+                          MedicalConsultInstruction(
+                            primaryColor: theme.primaryColor,
+                          ),
+                          SizedBox(height: isCompact ? 10.h : 16.h),
+                          MedicalConsultPatientRecord(
+                            prompt: quest.prompt ?? "",
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                          ),
+                          SizedBox(height: isCompact ? 16.h : 20.h),
 
-                      // Holographic scan bay
-                      MedicalConsultScanBay(
-                        symptoms: symptoms,
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                        scanOffset: _scanOffset,
-                        scannedGlitches: _scannedGlitches,
-                        sweepAnimation: _sweepController,
-                        onScanUpdate: _onScanUpdate,
-                      ),
-                      SizedBox(height: 24.h),
+                          // Holographic scan bay
+                          MedicalConsultScanBay(
+                            symptoms: symptoms,
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                            scanOffset: _scanOffset,
+                            scannedGlitches: _scannedGlitches,
+                            sweepAnimation: _sweepController,
+                            onScanUpdate: _onScanUpdate,
+                          ),
+                          SizedBox(height: isCompact ? 16.h : 24.h),
 
-                      // Diagnostic symptoms tiles
-                      MedicalConsultDiagnosticTray(
-                        symptoms: symptoms,
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                        scannedGlitches: _scannedGlitches,
-                        diagnosedSymptoms: _diagnosedSymptoms,
-                        isAnswered: _isAnswered,
-                        isCorrect: _isCorrect,
-                        onSymptomTapped: _onSymptomTapped,
-                      ),
-                      SizedBox(height: 28.h),
+                          // Diagnostic symptoms tiles
+                          MedicalConsultDiagnosticTray(
+                            symptoms: symptoms,
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                            scannedGlitches: _scannedGlitches,
+                            diagnosedSymptoms: _diagnosedSymptoms,
+                            isAnswered: _isAnswered,
+                            isCorrect: _isCorrect,
+                            onSymptomTapped: _onSymptomTapped,
+                          ),
+                          SizedBox(height: isCompact ? 20.h : 28.h),
 
-                      // Submit controls
-                      if (!_isAnswered && _diagnosedSymptoms.isNotEmpty)
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            ScaleButton(
-                              onTap: _clearDiagnosis,
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 24.w,
-                                  vertical: 12.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(
-                                    alpha: 0.1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(30.r),
-                                  border: Border.all(
-                                    color: theme.primaryColor.withValues(
-                                      alpha: 0.3,
+                          // Submit controls
+                          if (!_isAnswered && _diagnosedSymptoms.isNotEmpty)
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                ScaleButton(
+                                  onTap: _clearDiagnosis,
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: isCompact ? 16.w : 24.w,
+                                      vertical: isCompact ? 10.h : 12.h,
                                     ),
-                                  ),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.refresh_rounded,
-                                      color: theme.primaryColor,
-                                      size: 18.r,
-                                    ),
-                                    SizedBox(width: 6.w),
-                                    Text(
-                                      "RESET SCAN",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.bold,
-                                        color: theme.primaryColor,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 16.w),
-                            ScaleButton(
-                              onTap: () =>
-                                  _submitDiagnosis(quest.correctAnswer ?? ""),
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 32.w,
-                                  vertical: 12.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30.r),
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      theme.primaryColor,
-                                      theme.primaryColor.withValues(alpha: 0.8),
-                                    ],
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
+                                    decoration: BoxDecoration(
                                       color: theme.primaryColor.withValues(
-                                        alpha: 0.35,
+                                        alpha: 0.1,
                                       ),
-                                      blurRadius: 15,
-                                    ),
-                                  ],
-                                ),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.medical_services_rounded,
-                                      color: Colors.white,
-                                      size: 18.r,
-                                    ),
-                                    SizedBox(width: 6.w),
-                                    Text(
-                                      "CONFIRM DIAGNOSIS",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                        letterSpacing: 1.5,
+                                      borderRadius: BorderRadius.circular(30.r),
+                                      border: Border.all(
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.3,
+                                        ),
                                       ),
                                     ),
-                                  ],
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.refresh_rounded,
+                                          color: theme.primaryColor,
+                                          size: isCompact ? 16.r : 18.r,
+                                        ),
+                                        SizedBox(width: 6.w),
+                                        Text(
+                                          "RESET SCAN",
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: isCompact ? 10.sp : 12.sp,
+                                            fontWeight: FontWeight.bold,
+                                            color: theme.primaryColor,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          ],
-                        ).animate().fadeIn(duration: 300.ms),
+                                SizedBox(width: isCompact ? 10.w : 16.w),
+                                ScaleButton(
+                                  onTap: () =>
+                                      _submitDiagnosis(quest.correctAnswer ?? ""),
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: isCompact ? 20.w : 32.w,
+                                      vertical: isCompact ? 10.h : 12.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30.r),
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          theme.primaryColor,
+                                          theme.primaryColor.withValues(alpha: 0.8),
+                                        ],
+                                      ),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.35,
+                                          ),
+                                          blurRadius: isCompact ? 10 : 15,
+                                        ),
+                                      ],
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.medical_services_rounded,
+                                          color: Colors.white,
+                                          size: isCompact ? 16.r : 18.r,
+                                        ),
+                                        SizedBox(width: 6.w),
+                                        Text(
+                                          "CONFIRM DIAGNOSIS",
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: isCompact ? 10.sp : 12.sp,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                            letterSpacing: 1.5,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ).animate().fadeIn(duration: 300.ms),
 
-                      // Explanations cards post-selection
-                      AnimatedCrossFade(
-                        firstChild: const SizedBox(),
-                        secondChild: MedicalConsultExplanationCard(
-                          quest: quest,
-                          isDark: isDark,
-                          isCorrect: _isCorrect,
-                        ),
-                        crossFadeState: _isAnswered
-                            ? CrossFadeState.showSecond
-                            : CrossFadeState.showFirst,
-                        duration: const Duration(milliseconds: 400),
+                          // Explanations cards post-selection
+                          AnimatedCrossFade(
+                            firstChild: const SizedBox(),
+                            secondChild: MedicalConsultExplanationCard(
+                              quest: quest,
+                              isDark: isDark,
+                              isCorrect: _isCorrect,
+                            ),
+                            crossFadeState: _isAnswered
+                                ? CrossFadeState.showSecond
+                                : CrossFadeState.showFirst,
+                            duration: const Duration(milliseconds: 400),
+                          ),
+                          SizedBox(height: isCompact ? 40.h : 80.h),
+                        ],
                       ),
-                      SizedBox(height: 80.h),
-                    ],
-                  ),
+                    );
+                  },
                 ),
         );
       },

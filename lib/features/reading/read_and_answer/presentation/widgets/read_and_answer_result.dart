@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ReadAndAnswerResult extends StatelessWidget {
   final ReadingQuest quest;
@@ -75,7 +76,7 @@ class ReadAndAnswerResult extends StatelessWidget {
                 ),
                 SizedBox(width: 10.w),
                 Text(
-                  isCorrect ? 'CORRECT INSIGHT!' : 'INCORRECT',
+                  isCorrect ? 'CORRECT INSIGHT!' : context.tr('games.incorrect_caps'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,

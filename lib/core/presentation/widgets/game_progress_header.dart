@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Compact progress + lives header shared across all 9 game categories.
 class GameProgressHeader extends StatelessWidget {
@@ -43,7 +44,7 @@ class GameProgressHeader extends StatelessWidget {
             height: 44.h,
             child: Semantics(
               button: true,
-              label: 'Back',
+              label: context.tr('common.back'),
               child: IconButton(
                 onPressed: onBack,
                 padding: EdgeInsets.zero,

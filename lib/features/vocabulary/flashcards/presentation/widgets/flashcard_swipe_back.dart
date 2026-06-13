@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class FlashcardSwipeBack extends StatelessWidget {
   // FIX: was dynamic — now VocabularyQuest for full compile-time safety.
@@ -132,7 +133,7 @@ class FlashcardSwipeBack extends StatelessWidget {
                         quest.explanation!.isNotEmpty) ...[
                       SizedBox(height: compact ? 18.h : 24.h),
                       Text(
-                        'EXPLANATION',
+                        context.tr('games.explanation').toUpperCase(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Outfit',

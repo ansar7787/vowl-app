@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-
+import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import '../bloc/elite_mastery_bloc.dart';
 
 /// Floating mascot widget that peeks from the top-left of the game area.
@@ -19,7 +19,7 @@ import '../bloc/elite_mastery_bloc.dart';
 /// The mascot reads [AuthBloc] via [BlocSelector] so it only rebuilds when
 /// the player's mascot identifier changes (account switch), not on every
 /// auth-state update.
-class EliteMascotBubble extends StatelessWidget {
+class ElitePeekingMascot extends StatelessWidget {
   final EliteMasteryState state;
 
   /// Lives remaining — controls which motivational message is shown.
@@ -31,9 +31,9 @@ class EliteMascotBubble extends StatelessWidget {
   /// Result of the last answer, or `null` if no answer submitted yet.
   final bool? isCorrect;
 
-  static const int _kMaxLives = 3;
 
-  const EliteMascotBubble({
+
+  const ElitePeekingMascot({
     super.key,
     required this.state,
     required this.lives,
@@ -48,8 +48,22 @@ class EliteMascotBubble extends StatelessWidget {
     return BlocSelector<AuthBloc, AuthState, String>(
       selector: (authState) => authState.user?.vowlMascot ?? 'vowl_prime',
       builder: (context, mascotId) {
-        final mascotState = _computeMascotState();
-        final message = _computeMessage(mascotId);
+        final mascotState = MascotMessageHelper.getMascotState(
+          isComplete: state is EliteMasteryGameComplete,
+          isGameOver: state is EliteMasteryGameOver,
+          isAnswered: isAnswered,
+          isCorrect: isCorrect,
+          lives: lives,
+        );
+        final message = MascotMessageHelper.getMessage(
+          context,
+          category: 'elite_mastery',
+          mascotId: mascotId,
+          isComplete: state is EliteMasteryGameComplete,
+          isAnswered: isAnswered,
+          isCorrect: isCorrect,
+          lives: lives,
+        );
 
         // ExcludeSemantics: the mascot bubble is motivational / decorative.
         // The TTS service already speaks nudges at the right moment; having a
@@ -74,33 +88,7 @@ class EliteMascotBubble extends StatelessWidget {
     );
   }
 
-  VowlMascotState _computeMascotState() {
-    if (state is EliteMasteryGameComplete) return VowlMascotState.happy;
-    if (state is EliteMasteryGameOver) return VowlMascotState.worried;
-    if (isAnswered) {
-      return isCorrect == true
-          ? VowlMascotState.happy
-          : VowlMascotState.thinking;
-    }
-    return VowlMascotState.neutral;
-  }
 
-  String _computeMessage(String mascotId) {
-    if (isCorrect == true) return 'Legendary insight! ✨';
-    if (lives < _kMaxLives && !isAnswered) return 'A hint could help! 💡';
-    if (isCorrect == false) return 'Almost there! 🔍';
-    if (state is EliteMasteryGameComplete) return 'Mastery Achieved! 🏆';
-
-    // Safe capitalisation: filter empty segments to guard against IDs like
-    // "vowl__prime" or "_vowl" that produce empty split tokens.
-    final displayName = mascotId
-        .split('_')
-        .where((segment) => segment.isNotEmpty)
-        .map((segment) => '${segment[0].toUpperCase()}${segment.substring(1)}')
-        .join(' ');
-
-    return '$displayName is watching! 🦉';
-  }
 }
 
 // ── Private sub-widgets ─────────────────────────────────────────────────────

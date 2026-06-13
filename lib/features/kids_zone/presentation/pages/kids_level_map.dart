@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
@@ -91,6 +92,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     if (user != null) {
       final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
       final beat = di.sl<StoryService>().getStoryBeat(
+        context,
         widget.gameType,
         unlockedLevel,
       );
@@ -296,6 +298,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                       color: Colors.black54,
                       child: StoryDialogueBox(
                         beat: _activeStoryBeat!,
+                        isKidsMode: true,
                         onDismiss: () {
                           setState(() {
                             _activeStoryBeat = null;
@@ -902,7 +905,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
       );
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text("Oops! Level $level is still under construction! 🚧"),
+          content: Text(context.tr('games.kids_under_construction').replaceFirst('{}', level.toString())),
           backgroundColor: Colors.orange,
         ),
       );

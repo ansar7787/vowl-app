@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class CategoryShelf extends StatelessWidget {
   const CategoryShelf({super.key, required this.user, required this.subtypes});
@@ -84,7 +85,7 @@ class _GameEntryCard extends StatelessWidget {
                   child: Icon(metadata.icon, color: displayColor, size: 22.r),
                 ),
                 // Progress Indicator or New Badge
-                _buildCardIndicator(displayColor),
+                _buildCardIndicator(context, displayColor),
               ],
             ),
             Column(
@@ -130,7 +131,7 @@ class _GameEntryCard extends StatelessWidget {
     );
   }
 
-  Widget _buildCardIndicator(Color color) {
+  Widget _buildCardIndicator(BuildContext context, Color color) {
     final currentLevel = user.unlockedLevels[subtype.name] ?? 1;
     final isNew = currentLevel == 1 && !user.categoryStats.containsKey(subtype.name);
 
@@ -143,7 +144,7 @@ class _GameEntryCard extends StatelessWidget {
           border: Border.all(color: color.withValues(alpha: 0.3)),
         ),
         child: Text(
-          'NEW',
+          context.tr('quest_archive.new_badge'),
           style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 8.sp,
             fontWeight: FontWeight.w900,

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 
 class VocabularyFeedbackCard extends StatelessWidget {
@@ -52,13 +53,13 @@ class VocabularyFeedbackCard extends StatelessWidget {
     final IconData icon = success
         ? Icons.check_circle_rounded
         : Icons.error_rounded;
-    final String title = success ? 'EXCELLENT!' : 'NOT QUITE!';
+    final String title = success ? context.tr('games.excellent') : context.tr('games.not_quite');
     final bool showCorrectAnswer = !success && s.isFinalFailure;
     final String buttonText = success
-        ? 'CONTINUE'
+        ? context.tr('common.continue_text').toUpperCase()
         : (s.isFinalFailure
-              ? (lives == 0 ? 'SEE RESULTS' : 'CONTINUE')
-              : 'TRY AGAIN');
+              ? (lives == 0 ? context.tr('common.see_results').toUpperCase() : context.tr('common.continue_text').toUpperCase())
+              : context.tr('games.try_again').toUpperCase());
 
     final correctAnswerText = showCorrectAnswer
         ? _resolveCorrectAnswer(s)

@@ -9,6 +9,8 @@ import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 
 class KidsGameDialogs {
   static Future<void> showCompletionDialog({
@@ -29,141 +31,324 @@ class KidsGameDialogs {
         builder: (context, setDialogState) {
           return BackdropFilter(
             filter: ui.ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-            child: AlertDialog(
-              backgroundColor: (isDark ? const Color(0xFF1E293B) : Colors.white).withValues(alpha: 0.9),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(32.r),
-                side: BorderSide(color: Colors.white.withValues(alpha: 0.2), width: 2),
-              ),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  // ICON HEADER
-                  Container(
-                    padding: EdgeInsets.all(20.r),
-                    decoration: BoxDecoration(
-                      color: primaryColor.withValues(alpha: 0.1),
-                      shape: BoxShape.circle,
+            child: Stack(
+              children: [
+                const Positioned.fill(
+                  child: IgnorePointer(child: GameConfetti(shouldPop: false)),
+                ),
+                Center(
+                  child: AlertDialog(
+                    backgroundColor:
+                        (isDark ? const Color(0xFF1E293B) : Colors.white)
+                            .withValues(alpha: 0.95),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32.r),
+                      side: BorderSide(
+                        color: primaryColor.withValues(alpha: 0.5),
+                        width: 3,
+                      ),
                     ),
-                    child: Text("🏆", style: TextStyle(fontSize: 48.sp)),
-                  ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
-                  
-                  SizedBox(height: 20.h),
-                  Text("LEVEL UP!", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: primaryColor, fontSize: 32.sp, letterSpacing: 2)),
-                  SizedBox(height: 24.h),
-                  
-                  // REWARDS CARD
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-                    decoration: BoxDecoration(
-                      color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
-                      borderRadius: BorderRadius.circular(24.r),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        _buildReward(state.coinsEarned * (rewardsDoubled ? 2 : 1), "🚗"),
-                        SizedBox(width: 30.w),
-                        _buildReward(state.xpEarned * (rewardsDoubled ? 2 : 1), "🌟"),
-                      ],
-                    ),
-                  ),
-
-                  if (state.stickerAwarded != null) ...[
-                    SizedBox(height: 20.h),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-                      decoration: BoxDecoration(color: Colors.amber.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(15.r)),
-                      child: Row(
+                    elevation: 24,
+                    shadowColor: primaryColor.withValues(alpha: 0.4),
+                    content: SingleChildScrollView(
+                      child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.auto_awesome_rounded, color: Colors.amber, size: 18.sp),
-                          SizedBox(width: 8.w),
-                          Text("NEW STICKER UNLOCKED!", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w800, color: Colors.amber, fontSize: 12.sp)),
+                          // ICON HEADER
+                          Container(
+                            padding: EdgeInsets.all(12.r),
+                            decoration: BoxDecoration(
+                              color: primaryColor.withValues(alpha: 0.1),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Text(
+                              "🏆",
+                              style: TextStyle(fontSize: 32.sp),
+                            ),
+                          ).animate().scale(
+                            duration: 600.ms,
+                            curve: Curves.elasticOut,
+                          ),
+
+                          SizedBox(height: 16.h),
+                          Text(
+                            context.tr('games.kids_level_up'),
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontWeight: FontWeight.w900,
+                              color: primaryColor,
+                              fontSize: 22.sp,
+                              letterSpacing: 1.5,
+                            ),
+                          ),
+                          SizedBox(height: 20.h),
+
+                          // REWARDS CARD
+                          Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.symmetric(vertical: 16.h),
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.03)
+                                  : Colors.black.withValues(alpha: 0.02),
+                              borderRadius: BorderRadius.circular(24.r),
+                              border: Border.all(
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.05)
+                                    : Colors.black.withValues(alpha: 0.05),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                _buildReward(
+                                  context,
+                                  state.coinsEarned * (rewardsDoubled ? 3 : 1),
+                                  "🌟",
+                                  context.tr('games.kids_coins').isEmpty ||
+                                          context.tr('games.kids_coins') ==
+                                              'games.kids_coins'
+                                      ? 'KIDS COINS'
+                                      : context.tr('games.kids_coins'),
+                                  Colors.amber,
+                                ),
+                                Container(
+                                  width: 1.5,
+                                  height: 50.h,
+                                  color: Colors.grey.withValues(alpha: 0.2),
+                                ),
+                                _buildReward(
+                                  context,
+                                  state.xpEarned,
+                                  "⚡",
+                                  context.tr('games.kids_xp').isEmpty ||
+                                          context.tr('games.kids_xp') ==
+                                              'games.kids_xp'
+                                      ? 'XP'
+                                      : context.tr('games.kids_xp'),
+                                  Colors.blueAccent,
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          if (state.stickerAwarded != null) ...[
+                            SizedBox(height: 24.h),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20.w,
+                                vertical: 12.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.amber.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(20.r),
+                                border: Border.all(
+                                  color: Colors.amber.withValues(alpha: 0.3),
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.auto_awesome_rounded,
+                                    color: Colors.amber,
+                                    size: 22.sp,
+                                  ),
+                                  SizedBox(width: 12.w),
+                                  Text(
+                                    context.tr('games.kids_new_sticker'),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontWeight: FontWeight.w800,
+                                      color: Colors.amber[700],
+                                      fontSize: 14.sp,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ).animate().scale(curve: Curves.elasticOut),
+                          ],
+
+                          SizedBox(height: 32.h),
+
+                          if (!rewardsDoubled) ...[
+                            Text(
+                              context
+                                          .tr('games.triple_reward_desc')
+                                          .isNotEmpty &&
+                                      context.tr('games.triple_reward_desc') !=
+                                          'games.triple_reward_desc'
+                                  ? context.tr('games.triple_reward_desc')
+                                  : "Watch an ad to get 3x Coins!",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontWeight: FontWeight.w700,
+                                fontSize: 13.sp,
+                                color: isDark
+                                    ? Colors.grey[400]
+                                    : Colors.grey[600],
+                              ),
+                              textAlign: TextAlign.center,
+                            ).animate().fadeIn(delay: 600.ms),
+                            SizedBox(height: 12.h),
+                            ScaleButton(
+                                  onTap: () {
+                                    adService.showRewardedAd(
+                                      isPremium: isPremium,
+                                      onUserEarnedReward: (_) {
+                                        context.read<KidsBloc>().add(
+                                          ClaimDoubleKidsRewards(
+                                            (context.read<KidsBloc>().state
+                                                    as KidsLoaded)
+                                                .gameType,
+                                            (context.read<KidsBloc>().state
+                                                    as KidsLoaded)
+                                                .level,
+                                          ),
+                                        );
+                                        setDialogState(
+                                          () => rewardsDoubled = true,
+                                        );
+                                      },
+                                      onDismissed: () {},
+                                    );
+                                  },
+                                  child: Container(
+                                    width: double.infinity,
+                                    height: 48.h,
+                                    decoration: BoxDecoration(
+                                      gradient: const LinearGradient(
+                                        colors: [
+                                          Color(0xFFFFD700),
+                                          Color(0xFFFF9500),
+                                        ],
+                                        begin: Alignment.topLeft,
+                                        end: Alignment.bottomRight,
+                                      ),
+                                      borderRadius: BorderRadius.circular(20.r),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: const Color(
+                                            0xFFFF9500,
+                                          ).withValues(alpha: 0.4),
+                                          blurRadius: 16,
+                                          offset: const Offset(0, 6),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Center(
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Icon(
+                                            Icons.play_circle_fill_rounded,
+                                            color: Colors.white,
+                                            size: 20.r,
+                                          ),
+                                          SizedBox(width: 8.w),
+                                          Text(
+                                            "TRIPLE REWARDS",
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontWeight: FontWeight.w900,
+                                              color: Colors.white,
+                                              fontSize: 13.sp,
+                                              letterSpacing: 1,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                )
+                                .animate(onPlay: (c) => c.repeat())
+                                .shimmer(
+                                  duration: 2.seconds,
+                                  color: Colors.white.withValues(alpha: 0.4),
+                                ),
+                          ] else
+                            Container(
+                              width: double.infinity,
+                              height: 48.h,
+                              decoration: BoxDecoration(
+                                color: Colors.green.withValues(alpha: 0.15),
+                                borderRadius: BorderRadius.circular(16.r),
+                                border: Border.all(
+                                  color: Colors.green.withValues(alpha: 0.4),
+                                  width: 2,
+                                ),
+                              ),
+                              child: Center(
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      Icons.check_circle_rounded,
+                                      color: Colors.green,
+                                      size: 18.sp,
+                                    ),
+                                    SizedBox(width: 8.w),
+                                    Text(
+                                      "REWARDS TRIPLED!",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.green,
+                                        fontSize: 12.sp,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ).animate().scale(curve: Curves.easeOutBack),
+
+                          SizedBox(height: 12.h),
+
+                          ScaleButton(
+                            onTap: () {
+                              context.pop(); // Pop dialog
+                              context.pop(); // Pop game screen to return to map
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              height: 48.h,
+                              decoration: BoxDecoration(
+                                color: primaryColor,
+                                borderRadius: BorderRadius.circular(16.r),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: primaryColor.withValues(alpha: 0.3),
+                                    blurRadius: 16,
+                                    offset: const Offset(0, 6),
+                                  ),
+                                ],
+                              ),
+                              child: Center(
+                                child: Text(
+                                  context
+                                      .tr('common.continue_text')
+                                      .toUpperCase(),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                    fontSize: 13.sp,
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
-                  ],
-
-                  SizedBox(height: 32.h),
-                  
-                  if (!rewardsDoubled)
-                    ScaleButton(
-                      onTap: () {
-                        adService.showRewardedAd(
-                          isPremium: isPremium,
-                          onUserEarnedReward: (_) {
-                            context.read<KidsBloc>().add(ClaimDoubleKidsRewards(
-                              (context.read<KidsBloc>().state as KidsLoaded).gameType,
-                              (context.read<KidsBloc>().state as KidsLoaded).level,
-                            ));
-                            setDialogState(() => rewardsDoubled = true);
-                          },
-                          onDismissed: () {},
-                        );
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 14.h),
-                        decoration: BoxDecoration(
-                          color: Colors.amber,
-                          borderRadius: BorderRadius.circular(20.r),
-                          boxShadow: [BoxShadow(color: Colors.amber.withValues(alpha: 0.3), blurRadius: 15, offset: const Offset(0, 8))],
-                        ),
-                        child: Center(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text("DOUBLE REWARDS", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.white, fontSize: 16.sp)),
-                              SizedBox(width: 8.w),
-                              Icon(Icons.play_circle_fill_rounded, color: Colors.white, size: 20.sp),
-                            ],
-                          ),
-                        ),
-                      ),
-                    )
-                  else
-                    Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 14.h),
-                      decoration: BoxDecoration(
-                        color: Colors.green.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(20.r),
-                        border: Border.all(color: Colors.green.withValues(alpha: 0.2)),
-                      ),
-                      child: Center(
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(Icons.check_circle_rounded, color: Colors.green, size: 20.sp),
-                            SizedBox(width: 8.w),
-                            Text("REWARDS DOUBLED!", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.green, fontSize: 16.sp)),
-                          ],
-                        ),
-                      ),
-                    ).animate().scale(curve: Curves.easeOutBack),
-                    
-                  SizedBox(height: 12.h),
-                  
-                  ScaleButton(
-                    onTap: () {
-                      context.pop(); // Pop dialog
-                      context.pop(); // Pop game screen to return to map
-                    },
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 16.h),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: [primaryColor, primaryColor.withValues(alpha: 0.8)]),
-                        borderRadius: BorderRadius.circular(20.r),
-                        boxShadow: [BoxShadow(color: primaryColor.withValues(alpha: 0.3), blurRadius: 15, offset: const Offset(0, 8))],
-                      ),
-                      child: Text("CONTINUE", textAlign: TextAlign.center, style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.white, fontSize: 18.sp, letterSpacing: 1)),
-                    ),
-                  ),
-                ],
-              ),
-            ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+                  ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+                ),
+              ],
+            ),
           );
         },
       ),
@@ -185,7 +370,8 @@ class KidsGameDialogs {
       builder: (context) => BackdropFilter(
         filter: ui.ImageFilter.blur(sigmaX: 12, sigmaY: 12),
         child: AlertDialog(
-          backgroundColor: (isDark ? const Color(0xFF1E293B) : Colors.white).withValues(alpha: 0.9),
+          backgroundColor: (isDark ? const Color(0xFF1E293B) : Colors.white)
+              .withValues(alpha: 0.9),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(32.r),
             side: const BorderSide(color: Colors.redAccent, width: 2),
@@ -195,16 +381,36 @@ class KidsGameDialogs {
             children: [
               Container(
                 padding: EdgeInsets.all(20.r),
-                decoration: BoxDecoration(color: Colors.redAccent.withValues(alpha: 0.1), shape: BoxShape.circle),
+                decoration: BoxDecoration(
+                  color: Colors.redAccent.withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
+                ),
                 child: Text("💔", style: TextStyle(fontSize: 48.sp)),
               ).animate().shake(duration: 600.ms),
-              
+
               SizedBox(height: 20.h),
-              Text("GAME OVER", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.redAccent, fontSize: 32.sp)),
+              Text(
+                context.tr('games.kids_game_over'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontWeight: FontWeight.w900,
+                  color: Colors.redAccent,
+                  fontSize: 32.sp,
+                ),
+              ),
               SizedBox(height: 12.h),
-              Text("Don't give up! You were so close! \u{1F4AA}", textAlign: TextAlign.center, style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, color: isDark ? Colors.white70 : Colors.black54, fontWeight: FontWeight.w600)),
+              Text(
+                context.tr('games.kids_game_over_subtitle'),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  color: isDark ? Colors.white70 : Colors.black54,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
               SizedBox(height: 32.h),
-              
+
               ScaleButton(
                 onTap: () {
                   adService.showRewardedAd(
@@ -220,30 +426,58 @@ class KidsGameDialogs {
                   width: double.infinity,
                   padding: EdgeInsets.symmetric(vertical: 16.h),
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(colors: [Colors.green, Color(0xFF10B981)]),
+                    gradient: const LinearGradient(
+                      colors: [Colors.green, Color(0xFF10B981)],
+                    ),
                     borderRadius: BorderRadius.circular(20.r),
-                    boxShadow: [BoxShadow(color: Colors.green.withValues(alpha: 0.3), blurRadius: 15, offset: const Offset(0, 8))],
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.green.withValues(alpha: 0.3),
+                        blurRadius: 15,
+                        offset: const Offset(0, 8),
+                      ),
+                    ],
                   ),
                   child: Center(
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text("RESUME GAME", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.white, fontSize: 18.sp)),
+                        Text(
+                          context.tr('games.kids_resume_game'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            fontSize: 18.sp,
+                          ),
+                        ),
                         SizedBox(width: 8.w),
-                        Icon(Icons.play_circle_fill_rounded, color: Colors.white, size: 24.sp),
+                        Icon(
+                          Icons.play_circle_fill_rounded,
+                          color: Colors.white,
+                          size: 24.sp,
+                        ),
                       ],
                     ),
                   ),
                 ),
               ),
-              
+
               SizedBox(height: 16.h),
               TextButton(
                 onPressed: () {
                   context.pop(); // Pop dialog
                   context.pop(); // Pop game screen
-                }, 
-                child: Text("EXIT TO MAP", style: TextStyle(fontFamily: 'Outfit', color: Colors.grey, fontWeight: FontWeight.w800, letterSpacing: 1))
+                },
+                child: Text(
+                  context.tr('games.kids_exit_to_map'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 1,
+                  ),
+                ),
               ),
             ],
           ),
@@ -258,121 +492,191 @@ class KidsGameDialogs {
   }) async {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return await showDialog<bool>(
-      context: context,
-      builder: (context) => BackdropFilter(
-        filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-        child: AlertDialog(
-          backgroundColor: (isDark ? const Color(0xFF1E293B) : Colors.white).withValues(alpha: 0.85),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.r),
-            side: BorderSide(color: Colors.white.withValues(alpha: 0.2), width: 1.5),
-          ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // ICON HEADER
-              Container(
-                padding: EdgeInsets.all(16.r),
-                decoration: BoxDecoration(
-                  color: Colors.orange.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(Icons.warning_amber_rounded, color: Colors.orange, size: 40.r),
-              ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
-              
-              SizedBox(height: 20.h),
-              
-              Text(
-                "Leaving so soon? 😢",
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontWeight: FontWeight.w900,
-                  fontSize: 22.sp,
-                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+          context: context,
+          builder: (context) => BackdropFilter(
+            filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            child: AlertDialog(
+              backgroundColor: (isDark ? const Color(0xFF1E293B) : Colors.white)
+                  .withValues(alpha: 0.85),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.r),
+                side: BorderSide(
+                  color: Colors.white.withValues(alpha: 0.2),
+                  width: 1.5,
                 ),
               ),
-              
-              SizedBox(height: 12.h),
-              
-              Text(
-                "Your progress in this level will be lost! Are you sure you want to quit?",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 14.sp,
-                  color: isDark ? Colors.white70 : Colors.black54,
-                ),
-              ),
-              
-              SizedBox(height: 30.h),
-              
-              Row(
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  Expanded(
-                    child: ScaleButton(
-                      onTap: () => Navigator.pop(context, true),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 14.h),
-                        decoration: BoxDecoration(
-                          color: isDark ? Colors.white10 : Colors.grey[200],
-                          borderRadius: BorderRadius.circular(20.r),
-                        ),
-                        child: Text(
-                          "QUIT",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontWeight: FontWeight.w800,
-                            color: isDark ? Colors.white60 : Colors.grey[600],
-                            letterSpacing: 1,
-                          ),
-                        ),
-                      ),
+                  // ICON HEADER
+                  Container(
+                    padding: EdgeInsets.all(16.r),
+                    decoration: BoxDecoration(
+                      color: Colors.orange.withValues(alpha: 0.1),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      Icons.warning_amber_rounded,
+                      color: Colors.orange,
+                      size: 40.r,
+                    ),
+                  ).animate().scale(
+                    duration: 400.ms,
+                    curve: Curves.easeOutBack,
+                  ),
+
+                  SizedBox(height: 20.h),
+
+                  Text(
+                    context.tr('games.kids_quit_title'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontWeight: FontWeight.w900,
+                      fontSize: 22.sp,
+                      color: isDark ? Colors.white : const Color(0xFF1E293B),
                     ),
                   ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ScaleButton(
-                      onTap: () => Navigator.pop(context, false),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 14.h),
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [primaryColor, primaryColor.withValues(alpha: 0.8)],
-                          ),
-                          borderRadius: BorderRadius.circular(20.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: primaryColor.withValues(alpha: 0.3),
-                              blurRadius: 15,
-                              offset: const Offset(0, 5),
+
+                  SizedBox(height: 12.h),
+
+                  Text(
+                    context.tr('games.kids_quit_subtitle'),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      color: isDark ? Colors.white70 : Colors.black54,
+                    ),
+                  ),
+
+                  SizedBox(height: 30.h),
+
+                  Row(
+                    children: [
+                      Expanded(
+                        child: ScaleButton(
+                          onTap: () => Navigator.pop(context, true),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(vertical: 14.h),
+                            decoration: BoxDecoration(
+                              color: isDark ? Colors.white10 : Colors.grey[200],
+                              borderRadius: BorderRadius.circular(20.r),
                             ),
-                          ],
-                        ),
-                        child: Text(
-                          "PLAY ON!",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                            letterSpacing: 1,
+                            child: Text(
+                              context.tr('games.kids_quit_button'),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontWeight: FontWeight.w800,
+                                color: isDark
+                                    ? Colors.white60
+                                    : Colors.grey[600],
+                                letterSpacing: 1,
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                      SizedBox(width: 12.w),
+                      Expanded(
+                        child: ScaleButton(
+                          onTap: () => Navigator.pop(context, false),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(vertical: 14.h),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  primaryColor,
+                                  primaryColor.withValues(alpha: 0.8),
+                                ],
+                              ),
+                              borderRadius: BorderRadius.circular(20.r),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: primaryColor.withValues(alpha: 0.3),
+                                  blurRadius: 15,
+                                  offset: const Offset(0, 5),
+                                ),
+                              ],
+                            ),
+                            child: Text(
+                              context.tr('games.kids_play_on'),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                                letterSpacing: 1,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ],
+            ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
           ),
-        ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
-      ),
-    ) ?? false;
+        ) ??
+        false;
   }
 
-  static Widget _buildReward(int amount, String asset) {
-    return Row(
+  static Widget _buildReward(
+    BuildContext context,
+    int amount,
+    String emoji,
+    String label,
+    Color color,
+  ) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Text(asset, style: TextStyle(fontSize: 26.sp)),
-        SizedBox(width: 8.w),
-        Text(amount.toString(), style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, fontSize: 24.sp)),
+        Container(
+          padding: EdgeInsets.all(8.r),
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.1),
+            shape: BoxShape.circle,
+            border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: 0.15),
+                blurRadius: 10,
+                spreadRadius: 1,
+              ),
+            ],
+          ),
+          child: Text(emoji, style: TextStyle(fontSize: 20.sp)),
+        ).animate().scale(
+          delay: 200.ms,
+          duration: 400.ms,
+          curve: Curves.easeOutBack,
+        ),
+
+        SizedBox(height: 8.h),
+
+        Text(
+          '+$amount',
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontWeight: FontWeight.w900,
+            fontSize: 18.sp,
+            color: color,
+          ),
+        ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2),
+
+        SizedBox(height: 2.h),
+
+        Text(
+          label.toUpperCase(),
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontWeight: FontWeight.w800,
+            fontSize: 9.sp,
+            color: color,
+            letterSpacing: 1.2,
+          ),
+        ).animate().fadeIn(delay: 500.ms),
       ],
     );
   }

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// A premium, theme-adaptive game result panel sliding from the bottom,
 /// featuring isolated confetti particle systems and cached glassmorphic drawing layers.
@@ -205,7 +206,7 @@ class ModernGameResultOverlay extends StatelessWidget {
                           ),
                           onPressed: onContinue,
                           child: Text(
-                            "CONTINUE",
+                            context.tr('common.continue_text').toUpperCase(),
                             style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w900,

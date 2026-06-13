@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -188,7 +189,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                 _buildActionItem(
                                   context,
                                   _ActionItem(
-                                    title: 'Adventure Store',
+                                    title: context.tr('adventure.title'),
                                     subtitle:
                                         'Buy Masteries, Scroll of Wisdom & more',
                                     icon: Icons.storefront_rounded,
@@ -357,7 +358,7 @@ class VowlCoinsScreen extends StatelessWidget {
                           padding: EdgeInsets.symmetric(vertical: 16.h),
                         ),
                         child: Text(
-                          'CANCEL',
+                          context.tr('common.cancel').toUpperCase(),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontWeight: FontWeight.w800,
                             color: isDark
@@ -387,7 +388,7 @@ class VowlCoinsScreen extends StatelessWidget {
                           _showSuccessSnackbar(context, amount);
                         },
                         child: Text(
-                          'CONFIRM',
+                          context.tr('common.confirm').toUpperCase(),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontWeight: FontWeight.w900,
                             color: Colors.white,

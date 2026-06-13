@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Dynamic immutable entity representing resolved visual parameters for active screens.
 class GameBriefing {
@@ -27,20 +28,31 @@ class GameInstructionService {
   const GameInstructionService._();
 
   /// Resolves briefing assets, incorporating Milestone markers for Level 100.
-  static GameBriefing getBriefing(GameSubtype? type, String? fallbackTitle, {int level = 1}) {
+  static GameBriefing getBriefing(BuildContext context, GameSubtype? type, String? fallbackTitle, {int level = 1}) {
     final baseBriefing = _getBaseBriefing(type, fallbackTitle);
 
-    if (level == 100) {
-      return GameBriefing(
-        title: baseBriefing.title,
-        icon: baseBriefing.icon,
-        objective: baseBriefing.objective,
-        rules: baseBriefing.rules,
-        actionText: baseBriefing.actionText,
-        tip: "🏆 MILESTONE: You've reached Level 100! This is an Elite Mastery test. Show us your best! ${baseBriefing.tip}",
-      );
-    }
-    return baseBriefing;
+    final baseKey = type?.name ?? fallbackTitle?.toLowerCase().replaceAll(' ', '_') ?? "default";
+    final title = context.tr('instructions.$baseKey.title', fallback: baseBriefing.title);
+    final objective = context.tr('instructions.$baseKey.objective', fallback: baseBriefing.objective);
+    final actionText = context.tr('instructions.$baseKey.actionText', fallback: baseBriefing.actionText);
+
+    final tipFallback = level == 100 
+      ? "🏆 MILESTONE: You've reached Level 100! This is an Elite Mastery test. Show us your best! ${baseBriefing.tip}"
+      : baseBriefing.tip;
+    final tip = context.tr('instructions.$baseKey.tip', fallback: tipFallback);
+
+    final translatedRules = baseBriefing.rules.asMap().entries.map((e) => 
+      context.tr('instructions.$baseKey.rule_${e.key}', fallback: e.value)
+    ).toList();
+
+    return GameBriefing(
+      title: title,
+      icon: baseBriefing.icon,
+      objective: objective,
+      rules: translatedRules,
+      actionText: actionText,
+      tip: tip,
+    );
   }
 
   static GameBriefing _getBaseBriefing(GameSubtype? type, String? fallbackTitle) {

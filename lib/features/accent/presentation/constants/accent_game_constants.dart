@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+
 /// Single source of truth for all Accent game-tuning constants.
 ///
 /// Keeping these here means a designer or PM can change game balance
@@ -32,8 +35,8 @@ abstract final class AccentGameConstants {
   static const int nudgeDelayMs = 1200;
 
   /// Message spoken when the player drops to their last life.
-  static const String nudgeMessage =
-      'Focus! Use a hint if you need help saving your last life.';
+  static String nudgeMessage(BuildContext context) =>
+      context.tr('games.kids_nudge');
 
   // ── Briefing ──────────────────────────────────────────────────────────────
   /// Levels that auto-show the quest briefing overlay on entry.

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_state.dart';
 
-class GrammarMascotOverlay extends StatelessWidget {
+class GrammarPeekingMascot extends StatelessWidget {
   final GrammarState state;
   final int lives;
   final bool? isCorrect;
@@ -13,7 +14,7 @@ class GrammarMascotOverlay extends StatelessWidget {
   /// Unique identifier for the user's mascot (e.g. `"vowl_prime"`).
   final String mascotId;
 
-  const GrammarMascotOverlay({
+  const GrammarPeekingMascot({
     super.key,
     required this.state,
     required this.lives,
@@ -28,8 +29,22 @@ class GrammarMascotOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mascotState = _resolveMascotState();
-    final message = _resolveMessage();
+    final mascotState = MascotMessageHelper.getMascotState(
+      isComplete: state is GrammarGameComplete,
+      isGameOver: state is GrammarGameOver,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
+    final message = MascotMessageHelper.getMessage(
+      context,
+      category: 'grammar',
+      mascotId: mascotId,
+      isComplete: state is GrammarGameComplete,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,35 +66,7 @@ class GrammarMascotOverlay extends StatelessWidget {
   // Private helpers
   // -------------------------------------------------------------------------
 
-  VowlMascotState _resolveMascotState() {
-    if (state is GrammarGameComplete) return VowlMascotState.happy;
-    if (state is GrammarGameOver) return VowlMascotState.worried;
-    if (state is GrammarLoaded) {
-      if (isCorrect == true) return VowlMascotState.happy;
-      if (lives < 3 && !isAnswered) return VowlMascotState.worried;
-      if (isCorrect == false) return VowlMascotState.thinking;
-    }
-    return VowlMascotState.neutral;
-  }
 
-  String _resolveMessage() {
-    final displayName = _formatMascotName(mascotId);
-    if (state is GrammarGameComplete) return 'Grammar Master! 🏆';
-    if (isCorrect == true) return 'Logical Genius! ✨';
-    if (isCorrect == false) return 'Analyze the structure! 🔬';
-    if (lives < 3 && !isAnswered) return 'Check the logic! 💡';
-    return '$displayName is watching! 🦉';
-  }
-
-  /// Converts a snake_case [mascotId] (e.g. `"vowl_prime"`) to a display
-  /// name (e.g. `"Vowl Prime"`). Guards against empty segments.
-  static String _formatMascotName(String mascotId) {
-    if (mascotId.isEmpty) return 'Vowl';
-    return mascotId
-        .split('_')
-        .map((s) => s.isEmpty ? '' : '${s[0].toUpperCase()}${s.substring(1)}')
-        .join(' ');
-  }
 }
 
 // ---------------------------------------------------------------------------

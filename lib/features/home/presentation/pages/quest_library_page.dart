@@ -14,6 +14,7 @@ import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class QuestLibraryPage extends StatefulWidget {
   const QuestLibraryPage({super.key});
@@ -27,7 +28,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   final ScrollController _scrollController = ScrollController();
   
   String _searchQuery = '';
-  String _selectedCategory = 'ALL';
+  String _selectedCategory = 'all';
 
   // Cache list of categories and clean subtypes to avoid rebuilding lists on every frame
   late final List<String> _categories;
@@ -37,16 +38,16 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   void initState() {
     super.initState();
     _categories = [
-      'ALL',
-      'VOCABULARY',
-      'GRAMMAR',
-      'SPEAKING',
-      'LISTENING',
-      'READING',
-      'WRITING',
-      'ACCENT',
-      'ROLEPLAY',
-      'ELITE'
+      'all',
+      'vocabulary',
+      'grammar',
+      'speaking',
+      'listening',
+      'reading',
+      'writing',
+      'accent',
+      'roleplay',
+      'elite'
     ];
     _allSubtypes = GameSubtype.values.where((s) => !s.isLegacy).toList();
     _searchController.addListener(_onSearchChanged);
@@ -69,7 +70,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   List<GameSubtype> _getFilteredSubtypes() {
     return _allSubtypes.where((subtype) {
       // 1. Filter by category
-      if (_selectedCategory != 'ALL') {
+      if (_selectedCategory != 'all') {
         final catName = subtype.category.name.toLowerCase();
         final selectedLower = _selectedCategory.toLowerCase();
         if (selectedLower == 'elite') {
@@ -161,7 +162,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       hasScrollBody: false,
                       child: Center(
                         child: Text(
-                          "No matching quests found",
+                          context.tr('quest_archive.no_results'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
@@ -259,7 +260,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                     Icon(Icons.auto_stories_rounded, color: const Color(0xFF3B82F6), size: 16.r),
                     SizedBox(width: 8.w),
                     Text(
-                      "QUEST ARCHIVE",
+                      context.tr('quest_archive.title'),
                       style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w900,
@@ -324,7 +325,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "GLOBAL ARCHIVE PROGRESS",
+                        context.tr('quest_archive.global_progress'),
                         style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w800,
@@ -337,7 +338,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                         fit: BoxFit.scaleDown,
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "${(progress * 100).toStringAsFixed(progress < 0.01 && progress > 0 ? 2 : 1)}% MASTERY",
+                          context.tr('quest_archive.mastery', args: [(progress * 100).toStringAsFixed(progress < 0.01 && progress > 0 ? 2 : 1)]),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 22.sp,
                             fontWeight: FontWeight.w900,
@@ -359,7 +360,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
                       child: Text(
-                        "$clearedLevels/$totalLevels LVLS",
+                        context.tr('quest_archive.levels_cleared', args: [clearedLevels.toString(), totalLevels.toString()]),
                         style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w900,
@@ -376,9 +377,9 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             SizedBox(height: 20.h),
             Row(
               children: [
-                Expanded(child: _buildStatMini(Icons.military_tech_rounded, "XP POWER", "${clearedLevels * 10} XP", const Color(0xFF3B82F6), isDark)),
-                Expanded(child: Center(child: _buildStatMini(Icons.auto_stories_rounded, "QUESTS", "${_allSubtypes.length}", const Color(0xFF3B82F6), isDark))),
-                Expanded(child: Align(alignment: Alignment.centerRight, child: _buildStatMini(Icons.stars_rounded, "STATUS", _getGlobalStatus(progress), const Color(0xFF3B82F6), isDark))),
+                Expanded(child: _buildStatMini(Icons.military_tech_rounded, context.tr('quest_archive.xp_power'), "${clearedLevels * 10} XP", const Color(0xFF3B82F6), isDark)),
+                Expanded(child: Center(child: _buildStatMini(Icons.auto_stories_rounded, context.tr('quest_archive.quests'), "${_allSubtypes.length}", const Color(0xFF3B82F6), isDark))),
+                Expanded(child: Align(alignment: Alignment.centerRight, child: _buildStatMini(Icons.stars_rounded, context.tr('quest_archive.status'), _getGlobalStatus(context, progress), const Color(0xFF3B82F6), isDark))),
               ],
             ),
           ],
@@ -387,14 +388,14 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     );
   }
 
-  String _getGlobalStatus(double progress) {
-    if (progress <= 0.0) return "INITIATE";
-    if (progress < 0.15) return "EXPLORER";
-    if (progress < 0.35) return "ADVENTURER";
-    if (progress < 0.55) return "CHAMPION";
-    if (progress < 0.80) return "CONQUEROR";
-    if (progress < 0.99) return "GRANDMASTER";
-    return "LEGENDARY";
+  String _getGlobalStatus(BuildContext context, double progress) {
+    if (progress <= 0.0) return context.tr('quest_archive.status_initiate');
+    if (progress < 0.15) return context.tr('quest_archive.status_explorer');
+    if (progress < 0.35) return context.tr('quest_archive.status_adventurer');
+    if (progress < 0.55) return context.tr('quest_archive.status_champion');
+    if (progress < 0.80) return context.tr('quest_archive.status_conqueror');
+    if (progress < 0.99) return context.tr('quest_archive.status_grandmaster');
+    return context.tr('quest_archive.status_legendary');
   }
 
   Widget _buildStatMini(IconData icon, String label, String value, Color color, bool isDark) {
@@ -407,13 +408,17 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
           children: [
             Icon(icon, color: color, size: 12.r),
             SizedBox(width: 4.w),
-            Text(
-              label,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 8.sp,
-                fontWeight: FontWeight.w800,
-                color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.4),
-                letterSpacing: 1,
+            Flexible(
+              child: Text(
+                label,
+                style: TextStyle(fontFamily: 'Outfit', 
+                  fontSize: 8.sp,
+                  fontWeight: FontWeight.w800,
+                  color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.4),
+                  letterSpacing: 1,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -436,74 +441,68 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   Widget _buildSearchField(bool isDark, Color contentColor) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(24.r),
-        padding: EdgeInsets.all(2.r),
-        borderColor: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
-        child: Container(
-          height: 56.h,
-          decoration: BoxDecoration(
-            color: isDark 
-                ? Colors.white.withValues(alpha: 0.03) 
-                : Colors.white,
-            borderRadius: BorderRadius.circular(22.r),
-            boxShadow: isDark ? null : [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.03),
-                blurRadius: 15,
-                offset: const Offset(0, 5),
-              ),
-            ],
+      child: Container(
+        decoration: BoxDecoration(
+          boxShadow: isDark ? null : [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.03),
+              blurRadius: 15,
+              offset: const Offset(0, 5),
+            ),
+          ],
+        ),
+        child: TextField(
+          controller: _searchController,
+          style: TextStyle(
+            fontFamily: 'Outfit', 
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w500,
+            color: contentColor,
           ),
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Row(
-            children: [
-              Icon(
-                Icons.search_rounded,
-                color: const Color(0xFF3B82F6),
-                size: 24.r,
+          decoration: InputDecoration(
+            hintText: context.tr('quest_archive.search_hint'),
+            hintStyle: TextStyle(
+              fontFamily: 'Outfit', 
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w500,
+              color: contentColor.withValues(alpha: 0.4),
+            ),
+            prefixIcon: Icon(
+              Icons.search_rounded,
+              color: const Color(0xFF3B82F6),
+              size: 24.r,
+            ),
+            suffixIcon: _searchQuery.isNotEmpty
+                ? IconButton(
+                    icon: Icon(Icons.close_rounded, size: 20.r),
+                    color: contentColor.withValues(alpha: 0.6),
+                    onPressed: () => _searchController.clear(),
+                  ).animate().scale(duration: 200.ms)
+                : null,
+            filled: true,
+            fillColor: isDark 
+                ? const Color(0xFF1E293B) // slate-800
+                : Colors.white,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20.r),
+              borderSide: BorderSide(
+                color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
               ),
-              SizedBox(width: 12.w),
-              Expanded(
-                child: TextField(
-                  controller: _searchController,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                    color: contentColor,
-                  ),
-                  decoration: InputDecoration(
-                    hintText: "Search quests...",
-                    hintStyle: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w500,
-                      color: contentColor.withValues(alpha: 0.4),
-                    ),
-                    border: InputBorder.none,
-                    isDense: true,
-                    contentPadding: EdgeInsets.zero,
-                  ),
-                ),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20.r),
+              borderSide: BorderSide(
+                color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
               ),
-              if (_searchQuery.isNotEmpty)
-                ScaleButton(
-                  onTap: () {
-                    _searchController.clear();
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(6.r),
-                    decoration: BoxDecoration(
-                      color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      Icons.close_rounded,
-                      color: contentColor.withValues(alpha: 0.6),
-                      size: 16.r,
-                    ),
-                  ),
-                ).animate().scale(duration: 200.ms),
-            ],
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20.r),
+              borderSide: const BorderSide(
+                color: Color(0xFF3B82F6),
+                width: 2,
+              ),
+            ),
+            contentPadding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
           ),
         ),
       ),
@@ -523,7 +522,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
           final isSelected = _selectedCategory == cat;
           
           Color activeColor = const Color(0xFF3B82F6);
-          if (cat == 'ELITE') activeColor = const Color(0xFFFFD700);
+          if (cat == 'elite') activeColor = const Color(0xFFFFD700);
 
           return Padding(
             padding: EdgeInsets.only(right: 12.w),
@@ -550,7 +549,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                 ),
                 child: Center(
                   child: Text(
-                    cat,
+                    context.tr('categories.${cat.toLowerCase()}').toUpperCase(),
                     style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w900,
@@ -611,7 +610,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                                 borderRadius: BorderRadius.circular(8.r),
                               ),
                               child: Text(
-                                subtype.category.name.toUpperCase(),
+                                context.tr('categories.${subtype.category.name.toLowerCase()}'),
                                 style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 8.sp,
                                   fontWeight: FontWeight.w900,
@@ -631,12 +630,14 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                             color: contentColor,
                             letterSpacing: 1,
                           ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                         SizedBox(height: 8.h),
                         _buildProgressBar(displayColor, currentLevel),
                         SizedBox(height: 8.h),
                         Text(
-                          "COMPLETED: ${(((currentLevel - 1).clamp(0, 200)) / 200 * 100).toInt()}%",
+                          context.tr('quest_archive.completed', args: [(((currentLevel - 1).clamp(0, 200)) / 200 * 100).toInt().toString()]),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 9.sp,
                             fontWeight: FontWeight.w800,
@@ -685,7 +686,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
           ],
         ),
       ),
-    ).animate().fadeIn(duration: 200.ms);
+    );
   }
 
   Widget _buildProgressBar(Color color, int currentLevel, {int total = 200}) {
@@ -728,7 +729,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
           boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 10)],
         ),
         child: Text(
-          "NEW",
+          context.tr('quest_archive.new_badge'),
           style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white),
         ),
       ).animate().shimmer(duration: 1.seconds);

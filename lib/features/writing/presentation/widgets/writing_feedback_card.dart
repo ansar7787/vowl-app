@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 
 // ---------------------------------------------------------------------------
@@ -46,14 +47,14 @@ class WritingFeedbackCard extends StatelessWidget {
         ? const Color(0xFF10B981)
         : const Color(0xFFE11D48);
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
-    final title = success ? 'EXCELLENT!' : 'NOT QUITE!';
+    final title = success ? context.tr('games.excellent') : context.tr('games.not_quite');
 
     final showCorrectAnswer = !success && isFinalFailure;
     final buttonText = success
-        ? 'CONTINUE'
+        ? context.tr('common.continue_text').toUpperCase()
         : (isFinalFailure
-              ? (lives == 0 ? 'SEE RESULTS' : 'CONTINUE')
-              : 'TRY AGAIN');
+              ? (lives == 0 ? context.tr('common.see_results').toUpperCase() : context.tr('common.continue_text').toUpperCase())
+              : context.tr('games.try_again').toUpperCase());
 
     final String? explanation = showCorrectAnswer
         ? s.currentQuest.explanation
@@ -206,7 +207,7 @@ class _ExplanationCard extends StatelessWidget {
                           ),
                         ),
                         child: Text(
-                          'EXPLANATION:',
+                          context.tr('games.explanation_caps'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,

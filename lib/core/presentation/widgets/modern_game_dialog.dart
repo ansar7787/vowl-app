@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// A premium, theme-adaptive glassmorphic dialog panel presenting success briefings,
 /// exit confirmations, or rescue actions, optimized to isolate dynamic repaint ticks.
@@ -19,6 +20,7 @@ class ModernGameDialog extends StatelessWidget {
   final bool isSuccess;
   final bool isRescueLife;
   final bool isExitConfirmation;
+  final Widget? customIcon;
 
   const ModernGameDialog({
     super.key,
@@ -33,6 +35,7 @@ class ModernGameDialog extends StatelessWidget {
     this.isSuccess = true,
     this.isRescueLife = false,
     this.isExitConfirmation = false,
+    this.customIcon,
   });
 
   @override
@@ -60,14 +63,14 @@ class ModernGameDialog extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.all(16.r),
                   decoration: BoxDecoration(
-                    color: primaryColor.withValues(alpha: 0.1),
+                    color: (customIcon != null ? const Color(0xFFF59E0B) : primaryColor).withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
-                  child: isSuccess ? _buildVictoryMascot(context) : Icon(
+                  child: customIcon ?? (isSuccess ? _buildVictoryMascot(context) : Icon(
                     Icons.heart_broken_rounded,
                     color: primaryColor,
                     size: 48.r,
-                  ),
+                  )),
                 ).animate().scale(
                   delay: 200.ms,
                   duration: 500.ms,
@@ -206,7 +209,7 @@ class ModernGameDialog extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
                   ),
                   child: Text(
-                    secondaryButtonText ?? "CANCEL",
+                    secondaryButtonText ?? context.tr('common.cancel').toUpperCase(),
                     style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w800,

@@ -8,6 +8,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.dart';
 
 import '../bloc/elite_mastery_bloc.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Bottom-sheet feedback card displayed after the player answers a question.
 ///
@@ -57,17 +58,17 @@ class EliteFeedbackCard extends StatelessWidget {
   Color get _shadowColor =>
       _success ? const Color(0xFF10B981) : const Color(0xFFE11D48);
 
-  String get _title => _success ? 'EXCELLENT!' : 'NOT QUITE!';
+  String _title(BuildContext context) => _success ? context.tr('games.excellent') : context.tr('games.not_quite');
 
   IconData get _icon =>
       _success ? Icons.check_circle_rounded : Icons.error_rounded;
 
-  String get _buttonLabel {
-    if (_success) return 'CONTINUE';
+  String _buttonLabel(BuildContext context) {
+    if (_success) return context.tr('common.continue_text').toUpperCase();
     if (state.isFinalFailure) {
-      return state.livesRemaining == 0 ? 'SEE RESULTS' : 'CONTINUE';
+      return state.livesRemaining == 0 ? context.tr('games.see_results') : context.tr('common.continue_text').toUpperCase();
     }
-    return 'TRY AGAIN';
+    return context.tr('games.try_again').toUpperCase();
   }
 
   // ── Build ───────────────────────────────────────────────────────────────
@@ -110,12 +111,12 @@ class EliteFeedbackCard extends StatelessWidget {
             // doesn't have to navigate through individual child nodes.
             child: Semantics(
               container: true,
-              label: _buildSemanticLabel(correctAnswerText),
+              label: _buildSemanticLabel(context, correctAnswerText),
               excludeSemantics: true, // children handled by the container label
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  _buildResultRow(),
+                  _buildResultRow(context),
                   if (correctAnswerText != null) ...[
                     SizedBox(height: 16.h),
                     _ExplanationBox(
@@ -126,7 +127,7 @@ class EliteFeedbackCard extends StatelessWidget {
                   ],
                   SizedBox(height: 28.h),
                   _ContinueButton(
-                    label: _buttonLabel,
+                    label: _buttonLabel(context),
                     gradient: _gradient,
                     shadowColor: _shadowColor,
                     onTap: onContinue,
@@ -145,7 +146,7 @@ class EliteFeedbackCard extends StatelessWidget {
     );
   }
 
-  Widget _buildResultRow() {
+  Widget _buildResultRow(BuildContext context) {
     return Row(
       children: [
         // RepaintBoundary: the elastic-scale entrance animation fires once per
@@ -169,7 +170,7 @@ class EliteFeedbackCard extends StatelessWidget {
             shaderCallback: (bounds) =>
                 LinearGradient(colors: _gradient).createShader(bounds),
             child: Text(
-              _title,
+              _title(context),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 24.sp,
@@ -184,12 +185,12 @@ class EliteFeedbackCard extends StatelessWidget {
     );
   }
 
-  String _buildSemanticLabel(String? correctAnswerText) {
-    if (_success) return 'Correct! $_buttonLabel';
+  String _buildSemanticLabel(BuildContext context, String? correctAnswerText) {
+    if (_success) return context.tr('games.semantic_correct_continue');
     if (correctAnswerText != null) {
-      return 'Incorrect. The correct answer was: $correctAnswerText. $_buttonLabel';
+      return context.tr('games.semantic_incorrect_explanation', args: [correctAnswerText, _buttonLabel(context)]);
     }
-    return 'Incorrect. $_buttonLabel';
+    return context.tr('games.semantic_incorrect_try_again');
   }
 
   // ── Answer resolver ─────────────────────────────────────────────────────
@@ -276,7 +277,7 @@ class _ExplanationBox extends StatelessWidget {
                   ),
                   SizedBox(width: 8.w),
                   Text(
-                    'EXPLANATION:',
+                    context.tr('games.explanation_caps'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,

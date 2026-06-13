@@ -7,7 +7,9 @@ import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart' as import_dialogs;
 
 class KidsGameHeader extends StatelessWidget {
   final String title;
@@ -35,12 +37,14 @@ class KidsGameHeader extends StatelessWidget {
 
     if (state is KidsLoaded) {
       final s = state as KidsLoaded;
-      currentIndex = s.currentIndex;
-      totalQuests = s.quests.length;
+      int correctlyAnswered = s.currentIndex - (s.quests.length - s.originalTotalQuests);
+      currentIndex = correctlyAnswered.clamp(0, s.originalTotalQuests);
+      totalQuests = s.originalTotalQuests;
     } else if (state is KidsGameOver) {
       final s = state as KidsGameOver;
-      currentIndex = s.currentIndex;
-      totalQuests = s.quests.length;
+      int correctlyAnswered = s.currentIndex - (s.quests.length - s.originalTotalQuests);
+      currentIndex = correctlyAnswered.clamp(0, s.originalTotalQuests);
+      totalQuests = s.originalTotalQuests;
     }
 
     return Padding(
@@ -178,6 +182,8 @@ class KidsGameHeader extends StatelessWidget {
     final progress = (total > 0 ? (index / total) : 0.0).clamp(0.0, 1.0);
     return Row(
       children: [
+        _buildHintButton(context),
+        SizedBox(width: 12.w),
         Expanded(
           child: Container(
             height: 20.h,
@@ -197,25 +203,27 @@ class KidsGameHeader extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.r),
                   ),
                 ),
-                AnimatedContainer(
-                  duration: 800.ms,
-                  curve: Curves.easeOutCubic,
-                  width: (1.sw - 180.w) * progress,
-                  height: 10.h,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [primaryColor, primaryColor.withValues(alpha: 0.5)],
-                    ),
-                    borderRadius: BorderRadius.circular(10.r),
-                  ),
+                LayoutBuilder(
+                  builder: (context, constraints) {
+                    return AnimatedContainer(
+                      duration: 800.ms,
+                      curve: Curves.easeOutCubic,
+                      width: constraints.maxWidth * progress,
+                      height: 10.h,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [primaryColor, primaryColor.withValues(alpha: 0.5)],
+                        ),
+                        borderRadius: BorderRadius.circular(10.r),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
           ),
         ),
         SizedBox(width: 12.w),
-        _buildHintButton(context),
-        SizedBox(width: 8.w),
         _buildBuddyMascot(context, isDark),
       ],
     );
@@ -230,7 +238,18 @@ class KidsGameHeader extends StatelessWidget {
         final hints = authState.user?.hintCount ?? 0;
         return ScaleButton(
           onTap: () {
-            if (!s.hintUsed) context.read<KidsBloc>().add(UseKidsHint());
+            if (s.hintUsed) return;
+            if (hints > 0) {
+              context.read<KidsBloc>().add(UseKidsHint());
+            } else {
+              import_dialogs.GameDialogHelper.showHintAdDialog(
+                context, 
+                persistToAccount: false,
+                onHintEarned: () {
+                  context.read<KidsBloc>().add(const UseKidsHint(isFree: true));
+                },
+              );
+            }
           },
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
@@ -254,36 +273,59 @@ class KidsGameHeader extends StatelessWidget {
   }
 
   Widget _buildBuddyMascot(BuildContext context, bool isDark) {
-    VowlMascotState mascotState = VowlMascotState.neutral;
-    
+    bool isComplete = state is KidsGameComplete;
+    bool isGameOver = state is KidsGameOver;
+    bool isAnswered = false;
+    bool? isCorrect;
+    int lives = 3;
+
     if (state is KidsLoaded) {
       final s = state as KidsLoaded;
-      if (s.lastAnswerCorrect == true) {
-        mascotState = VowlMascotState.happy;
-      } else if (s.lastAnswerCorrect == false) {
-        mascotState = VowlMascotState.worried;
-      } else if (s.hintUsed) {
-        mascotState = VowlMascotState.thinking;
-      }
-    } else if (state is KidsGameComplete) {
-      mascotState = VowlMascotState.happy;
-    } else if (state is KidsGameOver) {
-      mascotState = VowlMascotState.worried;
+      isAnswered = s.lastAnswerCorrect != null;
+      isCorrect = s.lastAnswerCorrect;
+      lives = s.livesRemaining;
     }
 
-    return Stack(
-      clipBehavior: Clip.none,
-      alignment: Alignment.center,
-      children: [
-        if (hintText != null)
-          Positioned(right: 60.w, top: -10.h, child: _buildSpeechBubble(context, hintText!, isDark)),
-        VowlMascot(
-          isKidsMode: true,
-          size: 50.r,
-          state: mascotState,
-          useFloatingAnimation: true,
-        ),
-      ],
+    final mascotState = MascotMessageHelper.getMascotState(
+      isComplete: isComplete,
+      isGameOver: isGameOver,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
+
+    return BlocBuilder<AuthBloc, AuthState>(
+      builder: (context, authState) {
+        final mascotId = authState.user?.kidsMascot ?? 'owly';
+        final displayMessage = hintText ?? MascotMessageHelper.getMessage(
+          context,
+          category: 'kids',
+          mascotId: mascotId,
+          isComplete: isComplete,
+          isAnswered: isAnswered,
+          isCorrect: isCorrect,
+          lives: lives,
+        );
+
+        return Stack(
+          clipBehavior: Clip.none,
+          alignment: Alignment.center,
+          children: [
+            if (displayMessage.isNotEmpty)
+              Positioned(
+                right: 50.w,
+                top: -15.h,
+                child: _buildSpeechBubble(context, displayMessage, isDark),
+              ),
+            VowlMascot(
+              isKidsMode: true,
+              size: 50.r,
+              state: mascotState,
+              useFloatingAnimation: true,
+            ),
+          ],
+        );
+      },
     );
   }
 
@@ -293,8 +335,8 @@ class KidsGameHeader extends StatelessWidget {
       child: BackdropFilter(
         filter: ui.ImageFilter.blur(sigmaX: 8, sigmaY: 8),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-          constraints: BoxConstraints(maxWidth: 180.w),
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+          constraints: BoxConstraints(maxWidth: 140.w),
           decoration: BoxDecoration(
             color: (isDark ? const Color(0xFF1E293B) : Colors.white).withValues(alpha: 0.7),
             borderRadius: BorderRadius.circular(15.r),
@@ -303,6 +345,6 @@ class KidsGameHeader extends StatelessWidget {
           child: Text(text, style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
         ),
       ),
-    ).animate().fadeIn().scale(begin: const Offset(0.5, 0.5));
+    ).animate().scale(begin: Offset.zero, duration: 400.ms, curve: Curves.easeOutBack);
   }
 }

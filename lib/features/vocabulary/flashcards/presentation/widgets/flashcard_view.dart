@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_card_side.dart';
 import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Alternative flip-card widget for the non-swipe flashcard variant.
 ///
@@ -108,7 +109,7 @@ class FlashcardView extends StatelessWidget {
                       )
                     : FlashcardCardSide(
                         key: const ValueKey(false),
-                        title: 'VOCABULARY',
+                        title: context.tr('categories.vocabulary'),
                         content: quest.word ?? 'Unknown',
                         color: theme.primaryColor,
                         textColor: Colors.white,

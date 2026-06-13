@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 
 /// The small mascot that peeks from the top-left of the content area,
 /// with an animated speech bubble showing context-sensitive messages.
@@ -29,25 +30,28 @@ class ReadingPeekingMascot extends StatelessWidget {
     required this.mascotName,
   });
 
-  VowlMascotState get _mascotState {
-    if (isGameComplete) return VowlMascotState.happy;
-    if (isGameOver) return VowlMascotState.worried;
-    if (isCorrect == true) return VowlMascotState.happy;
-    if (lives < 3 && !isAnswered) return VowlMascotState.worried;
-    if (isCorrect == false) return VowlMascotState.thinking;
-    return VowlMascotState.neutral;
-  }
 
-  String get _message {
-    if (isCorrect == true) return 'Brilliant insight! ✨';
-    if (lives < 3 && !isAnswered) return 'Check the hint! 📚💡';
-    if (isCorrect == false) return 'Look back at the text! 🔍';
-    if (isGameComplete) return 'Reader Extraordinaire! 🏆';
-    return '$mascotName is watching! 🦉';
-  }
 
   @override
   Widget build(BuildContext context) {
+    final message = MascotMessageHelper.getMessage(
+      context,
+      category: 'reading',
+      mascotId: mascotId,
+      isComplete: isGameComplete,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
+    
+    final mascotState = MascotMessageHelper.getMascotState(
+      isComplete: isGameComplete,
+      isGameOver: isGameOver,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
+    
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
 
     Widget bubble = Container(
@@ -60,7 +64,7 @@ class ReadingPeekingMascot extends StatelessWidget {
         ],
       ),
       child: Text(
-        _message,
+        message,
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 11.sp,
@@ -81,7 +85,7 @@ class ReadingPeekingMascot extends StatelessWidget {
     }
 
     Widget mascot = VowlMascot(
-      state: _mascotState,
+      state: mascotState,
       size: 45.r,
       mascotId: mascotId,
     );
@@ -105,7 +109,7 @@ class ReadingPeekingMascot extends StatelessWidget {
       // liveRegion causes screen readers to announce the message whenever
       // it changes — the player hears feedback without touching the phone.
       liveRegion: true,
-      label: _message,
+      label: message,
       // excludeSemantics prevents the child sub-tree from producing
       // additional (redundant) screen reader announcements.
       excludeSemantics: true,

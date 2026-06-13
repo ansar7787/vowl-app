@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class AdminDashboard extends StatefulWidget {
   const AdminDashboard({super.key});
@@ -176,7 +177,7 @@ class _AdminDashboardState extends State<AdminDashboard>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('CANCEL'),
+            child: Text(context.tr('common.cancel').toUpperCase()),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
@@ -280,7 +281,7 @@ class _AdminDashboardState extends State<AdminDashboard>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('CANCEL'),
+            child: Text(context.tr('common.cancel').toUpperCase()),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
@@ -836,7 +837,7 @@ class _AdminDashboardState extends State<AdminDashboard>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('CANCEL'),
+            child: Text(context.tr('common.cancel').toUpperCase()),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),

@@ -16,6 +16,8 @@ import 'package:vowl/features/kids_zone/presentation/widgets/animated_kids_asset
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
 import 'package:vowl/core/utils/game_instruction_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/hint_utility.dart' as import_hint;
 
 class KidsGameBaseScreen extends StatefulWidget {
   final String title;
@@ -79,8 +81,13 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
 
   Future<void> speakHint(String hint) async {
     try {
-      setState(() => _hintText = hint);
-      await di.sl<KidsTTSService>().speak(hint);
+      final isGeneric = import_hint.HintUtility.isGenericHint(hint);
+      final displayHint = isGeneric 
+          ? "Pro Tip: Look closely at the pictures and tap!" 
+          : hint;
+
+      setState(() => _hintText = displayHint);
+      await di.sl<KidsTTSService>().speak(displayHint);
       Future.delayed(const Duration(seconds: 5), () {
         if (mounted) setState(() => _hintText = null);
       });
@@ -131,13 +138,12 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           final justDroppedToLastLife = _lastLives == 2 && state.livesRemaining == 1;
           if (justDroppedToLastLife && !_hasSpokenNudge) {
             _hasSpokenNudge = true;
+            final nudgeMsg = context.tr('games.kids_nudge');
             Future.delayed(const Duration(milliseconds: 1200), () async {
               if (mounted) {
                 final tts = di.sl<KidsTTSService>();
                 if (await tts.isNarrationEnabled()) {
-                  await tts.speak(
-                    "Focus! Use a hint if you need help saving your last life.",
-                  );
+                  await tts.speak(nudgeMsg);
                 }
                 di.sl<HapticService>().warning();
               }
@@ -182,7 +188,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                   Builder(
                     builder: (context) {
                       // Get briefing using the gameType (category) as the fallback title
-                      final briefing = GameInstructionService.getBriefing(null, widget.gameType, level: widget.level);
+                      final briefing = GameInstructionService.getBriefing(context, null, widget.gameType, level: widget.level);
                       return QuestBriefingOverlay(
                         title: briefing.title,
                         objective: briefing.objective,
@@ -223,7 +229,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                     boxShadow: [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.3), blurRadius: 15)],
                   ),
                   child: Row(mainAxisSize: MainAxisSize.min, children: [
-                    Text("NEXT", style: TextStyle(fontFamily: 'Outfit', color: Colors.white, fontWeight: FontWeight.w900, fontSize: 14.sp, letterSpacing: 1)),
+                    Text(context.tr('common.next').toUpperCase(), style: TextStyle(fontFamily: 'Outfit', color: Colors.white, fontWeight: FontWeight.w900, fontSize: 14.sp, letterSpacing: 1)),
                     SizedBox(width: 8.w),
                     Icon(Icons.arrow_forward_rounded, color: Colors.white, size: 20.sp),
                   ]),
@@ -269,7 +275,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
               SizedBox(height: 32.h),
               Text(
-                "NICE TRY!",
+                context.tr('games.kids_error_title'),
                 style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 28.sp,
                   fontWeight: FontWeight.w900,
@@ -279,7 +285,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               ).animate().fadeIn().slideY(begin: 0.2),
               SizedBox(height: 12.h),
               Text(
-                "This level is taking a nap.\nCheck back soon! \u{1F388}",
+                context.tr('games.kids_error_body'),
                 textAlign: TextAlign.center,
                 style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
@@ -310,7 +316,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                       Icon(Icons.refresh_rounded, color: widget.primaryColor, size: 24.r),
                       SizedBox(width: 12.w),
                       Text(
-                        "TRY AGAIN",
+                        context.tr('games.try_again').toUpperCase(),
                         style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w900,

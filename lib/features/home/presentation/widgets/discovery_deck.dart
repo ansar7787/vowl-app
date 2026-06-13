@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class DiscoveryDeck extends StatefulWidget {
   const DiscoveryDeck({
@@ -39,39 +40,39 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
   Widget build(BuildContext context) {
     final discoveryItems = [
       (
-        title: 'For You',
-        subtitle: 'Smart recommendation based on your progress',
+        title: context.tr('home.discovery_foryou_title'),
+        subtitle: context.tr('home.discovery_foryou_subtitle'),
         icon: Icons.lightbulb_outline_rounded,
         color: const Color(0xFF6366F1),
         quests: 3,
-        difficulty: 'Adaptive',
+        difficulty: context.tr('home.discovery_diff_adaptive'),
         onTap: () => widget.onLaunchQuest('smart_recommendation'),
       ),
       (
-        title: 'Daily Duo',
-        subtitle: 'Vocal warm-up followed by reading mastery',
+        title: context.tr('home.discovery_dailyduo_title'),
+        subtitle: context.tr('home.discovery_dailyduo_subtitle'),
         icon: Icons.auto_awesome_motion_rounded,
         color: const Color(0xFF2563EB),
         quests: 2,
-        difficulty: 'Medium',
+        difficulty: context.tr('home.discovery_diff_medium'),
         onTap: () => widget.onLaunchQuest('daily_duo'),
       ),
       (
-        title: 'Speed Blitz',
-        subtitle: 'High-speed challenges to sharpen focus',
+        title: context.tr('home.discovery_speedblitz_title'),
+        subtitle: context.tr('home.discovery_speedblitz_subtitle'),
         icon: Icons.bolt_rounded,
         color: const Color(0xFFF97316),
         quests: 3,
-        difficulty: 'Hard',
+        difficulty: context.tr('home.discovery_diff_hard'),
         onTap: () => widget.onLaunchQuest('speed_blitz'),
       ),
       (
-        title: 'Grammar Pro',
-        subtitle: 'Elite structural drills for sentence mastery',
+        title: context.tr('home.discovery_grammarpro_title'),
+        subtitle: context.tr('home.discovery_grammarpro_subtitle'),
         icon: Icons.verified_user_rounded,
         color: const Color(0xFF10B981),
         quests: 3,
-        difficulty: 'Expert',
+        difficulty: context.tr('home.discovery_diff_expert'),
         onTap: () => widget.onLaunchQuest('grammar_pro'),
       ),
     ];
@@ -214,19 +215,20 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
-                            vertical: 4.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: color.withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(12.r),
-                            border: Border.all(
-                              color: color.withValues(alpha: 0.2),
-                              width: 1,
+                        Expanded(
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 4.h,
                             ),
-                          ),
+                            decoration: BoxDecoration(
+                              color: color.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(12.r),
+                              border: Border.all(
+                                color: color.withValues(alpha: 0.2),
+                                width: 1,
+                              ),
+                            ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -254,18 +256,24 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                                 ],
                               ),
                               SizedBox(width: 8.w),
-                              Text(
-                                title.toUpperCase(),
-                                style: TextStyle(fontFamily: 'Outfit', 
-                                  fontSize: 9.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: color,
-                                  letterSpacing: 2.2,
+                              Flexible(
+                                child: Text(
+                                  title.toUpperCase(),
+                                  style: TextStyle(fontFamily: 'Outfit', 
+                                    fontSize: 9.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: color,
+                                    letterSpacing: 2.2,
+                                  ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                             ],
                           ),
                         ),
+                        ),
+                        SizedBox(width: 8.w),
                         _buildDifficultyBadge(difficulty, color),
                       ],
                     ),
@@ -291,7 +299,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                     // Action Footer
                     Row(
                       children: [
-                        _buildQuestCount(quests, color),
+                        _buildQuestCount(context, quests, color),
                         const Spacer(),
                         _buildStartButton(color),
                       ],
@@ -318,12 +326,16 @@ class _DiscoveryCollectionCard extends StatelessWidget {
         children: [
           Icon(Icons.psychology_rounded, size: 10.r, color: color.withValues(alpha: 0.7)),
           SizedBox(width: 4.w),
-          Text(
-            text.toUpperCase(),
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 8.sp,
-              fontWeight: FontWeight.w800,
-              color: color.withValues(alpha: 0.7),
+          Flexible(
+            child: Text(
+              text.toUpperCase(),
+              style: TextStyle(fontFamily: 'Outfit', 
+                fontSize: 8.sp,
+                fontWeight: FontWeight.w800,
+                color: color.withValues(alpha: 0.7),
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],
@@ -331,7 +343,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
     );
   }
 
-  Widget _buildQuestCount(int count, Color color) {
+  Widget _buildQuestCount(BuildContext context, int count, Color color) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -345,7 +357,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
         ),
         SizedBox(width: 8.w),
         Text(
-          '$count QUESTS',
+          context.tr('home.quests_count', args: [count.toString()]),
           style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 10.sp,
             fontWeight: FontWeight.w900,

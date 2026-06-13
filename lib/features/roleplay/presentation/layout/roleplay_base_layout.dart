@@ -26,6 +26,7 @@ import 'package:vowl/features/roleplay/presentation/constants/roleplay_constants
 import 'package:vowl/features/roleplay/presentation/widgets/roleplay_feedback_card.dart';
 import 'package:vowl/features/roleplay/presentation/widgets/roleplay_peeking_mascot.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Shared scaffold for all Roleplay game variants.
 ///
@@ -200,7 +201,7 @@ class _RoleplayBaseLayoutState extends State<RoleplayBaseLayout> {
           _nudgeTimer = Timer(kRoleplayNudgeDelay, () {
             if (mounted) {
               _ttsService.speak(
-                'Focus! Use a hint if you need help saving your last life.',
+                context.tr('games.kids_nudge'),
               );
               _hapticService.warning();
             }
@@ -431,6 +432,7 @@ class _RoleplayBaseLayoutState extends State<RoleplayBaseLayout> {
 
   Widget _buildBriefingOverlay(BuildContext context, dynamic theme) {
     final briefing = GameInstructionService.getBriefing(
+      context,
       widget.gameType,
       'Roleplay',
       level: widget.level,

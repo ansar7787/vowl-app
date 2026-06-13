@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 
 /// Bottom-sheet style result card shown after the player submits an answer.
@@ -44,7 +45,7 @@ class ListeningFeedbackCard extends StatelessWidget {
     final gradient = success ? _successGradient : _failureGradient;
     final shadowColor = success ? _successShadow : _failureShadow;
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
-    final title = success ? 'EXCELLENT!' : 'NOT QUITE!';
+    final title = success ? context.tr('games.excellent') : context.tr('games.not_quite');
 
     final showExplanation = !success && state.isFinalFailure;
     final explanation = showExplanation ? state.currentQuest.explanation : null;
@@ -52,10 +53,10 @@ class ListeningFeedbackCard extends StatelessWidget {
     // Overflow-safe button label: Flexible + FittedBox handles long
     // translations without the 'letterSpacing: 3' causing overflow.
     final buttonText = success
-        ? 'CONTINUE'
+        ? context.tr('common.continue_text').toUpperCase()
         : (state.isFinalFailure
-              ? (state.livesRemaining == 0 ? 'SEE RESULTS' : 'CONTINUE')
-              : 'TRY AGAIN');
+              ? (state.livesRemaining == 0 ? context.tr('common.see_results').toUpperCase() : context.tr('common.continue_text').toUpperCase())
+              : context.tr('games.try_again').toUpperCase());
 
     return Semantics(
       container: true,
@@ -263,7 +264,7 @@ class _ExplanationCard extends StatelessWidget {
                   ),
                   SizedBox(width: 8.w),
                   Text(
-                    'EXPLANATION:',
+                    context.tr('games.explanation_caps'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,

@@ -61,6 +61,7 @@ void main() {
   group('SubmitKidsAnswer', () {
     final tLoadedState = KidsLoaded(
       quests: tQuests,
+      originalTotalQuests: tQuests.length,
       gameType: 'day_night',
       level: 1,
       currentIndex: 0,

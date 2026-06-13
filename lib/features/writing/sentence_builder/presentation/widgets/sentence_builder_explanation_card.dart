@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class SentenceBuilderExplanationCard extends StatelessWidget {
   final GameQuest quest;
@@ -27,9 +28,9 @@ class SentenceBuilderExplanationCard extends StatelessWidget {
     // the null check or using the force-unwrap `quest.explanation!`.
     final explanation = quest.explanation;
 
-    final resultLabel = isCorrect ? 'Correct!' : 'Incorrect.';
+    final resultLabel = isCorrect ? context.tr('games.correct') : context.tr('games.incorrect');
     final semanticLabel = explanation != null
-        ? '$resultLabel Explanation: $explanation'
+        ? '$resultLabel ${context.tr('games.explanation')}: $explanation'
         : resultLabel;
 
     Widget card = Semantics(
@@ -56,7 +57,7 @@ class SentenceBuilderExplanationCard extends StatelessWidget {
             ),
             SizedBox(height: 10.h),
             Text(
-              isCorrect ? 'CORRECT!' : 'INCORRECT',
+              isCorrect ? context.tr('games.correct_caps') : context.tr('games.incorrect_caps'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 15.sp,

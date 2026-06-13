@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════
 //  MpFocusBadge — Shows phoneme focus (e.g. "Focus: /ɪ/")
@@ -72,7 +73,7 @@ class MpFocusBadge extends StatelessWidget {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-//  MpFeedbackPanel — Shows "Good!" / "Not quite" with hint text
+//  MpFeedbackPanel — Shows "Good!" / context.tr('games.not_quite_capitalized') with hint text
 // ═══════════════════════════════════════════════════════════════════════════
 
 class MpFeedbackPanel extends StatelessWidget {
@@ -127,7 +128,7 @@ class MpFeedbackPanel extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  isCorrect ? 'Good!' : 'Not quite',
+                  isCorrect ? 'Good!' : context.tr('games.not_quite_capitalized'),
                   style: _titleStyle.copyWith(fontSize: 17.sp, color: c),
                 ),
                 if (hint.isNotEmpty) ...[
@@ -152,7 +153,7 @@ class MpFeedbackPanel extends StatelessWidget {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-//  MpRepeatButton — Purple "REPEAT" button for TTS replay
+//  MpRepeatButton — Purple context.tr('games.repeat') button for TTS replay
 // ═══════════════════════════════════════════════════════════════════════════
 
 class MpRepeatButton extends StatelessWidget {
@@ -193,7 +194,7 @@ class MpRepeatButton extends StatelessWidget {
             children: [
               Icon(Icons.replay_rounded, color: Colors.white, size: 22.r),
               SizedBox(width: 10.w),
-              Text('REPEAT', style: _style.copyWith(fontSize: 16.sp)),
+              Text(context.tr('games.repeat'), style: _style.copyWith(fontSize: 16.sp)),
             ],
           ),
         ),

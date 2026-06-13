@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Bottom-sheet card shown when [isAnswered] is true.
 ///
@@ -44,10 +45,10 @@ class RoleplayFeedbackCard extends StatelessWidget {
         ? const Color(0xFF10B981)
         : const Color(0xFFE11D48);
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
-    final title = success ? 'EXCELLENT!' : 'NOT QUITE!';
+    final title = success ? context.tr('games.excellent') : context.tr('games.not_quite');
     final buttonText = success
-        ? 'CONTINUE'
-        : (isFinal ? (lives == 0 ? 'SEE RESULTS' : 'CONTINUE') : 'TRY AGAIN');
+        ? context.tr('common.continue_text').toUpperCase()
+        : (isFinal ? (lives == 0 ? context.tr('games.see_results') : context.tr('common.continue_text').toUpperCase()) : context.tr('games.try_again').toUpperCase());
     final explanation = (!success && isFinal)
         ? loadedState?.currentQuest.explanation
         : null;
@@ -73,10 +74,10 @@ class RoleplayFeedbackCard extends StatelessWidget {
               children: [
                 Semantics(
                   label: success
-                      ? 'Correct! Excellent!'
+                      ? context.tr('games.correct')
                       : (isFinal
-                            ? 'Incorrect. ${explanation != null ? 'Explanation available.' : ''}'
-                            : 'Incorrect. Try again.'),
+                            ? '${context.tr('games.incorrect')} ${explanation != null ? context.tr('games.explanation') : ''}'
+                            : context.tr('games.semantic_incorrect_try_again')),
                   child: _ResultHeader(
                     icon: icon,
                     title: title,
@@ -178,7 +179,7 @@ class _ExplanationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-          label: 'Explanation: $explanation',
+          label: '${context.tr('games.explanation')}: $explanation',
           child: Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
@@ -205,7 +206,7 @@ class _ExplanationCard extends StatelessWidget {
                     SizedBox(width: 8.w),
                     ExcludeSemantics(
                       child: Text(
-                        'EXPLANATION:',
+                        context.tr('games.explanation_caps'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,

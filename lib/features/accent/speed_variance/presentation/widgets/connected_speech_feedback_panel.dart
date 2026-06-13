@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ConnectedSpeechFeedbackPanel extends StatelessWidget {
   final bool isCorrect;
@@ -54,7 +55,7 @@ class ConnectedSpeechFeedbackPanel extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      isCorrect ? "Spot On!" : "Let's Review",
+                      isCorrect ? "Spot On!" : context.tr('games.lets_review'),
                       style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 22.sp,
                         fontWeight: FontWeight.bold,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_state.dart';
 
 /// Animated mascot that peeks in from the top-right corner of the game screen.
@@ -28,40 +29,27 @@ class AccentPeekingMascot extends StatelessWidget {
     required this.isCorrect,
   });
 
-  // ── Mascot visual state ──────────────────────────────────────────────────
 
-  VowlMascotState get _mascotVisualState {
-    if (state is AccentGameComplete) return VowlMascotState.happy;
-    if (state is AccentGameOver) return VowlMascotState.worried;
-    if (isCorrect == true) return VowlMascotState.happy;
-    if (isCorrect == false) return VowlMascotState.thinking;
-    return VowlMascotState.neutral;
-  }
-
-  // ── Speech bubble message ────────────────────────────────────────────────
-
-  String _message(String mascotName) {
-    if (isCorrect == true) return 'Perfect Accent! ✨';
-    if (state is AccentGameComplete) return 'Pronunciation Pro! 🏆';
-    if (isCorrect == false) return 'Try once more! 🎤';
-    if (lives < 3 && isCorrect == null) return 'You can do it! 💡';
-    return '$mascotName is watching! 🦉';
-  }
-
-  // ── Mascot display name ──────────────────────────────────────────────────
-  //
-  // Guards against empty segments produced by consecutive underscores
-  // (e.g. 'vowl__prime' or a trailing '_') that previously caused RangeError.
-
-  String _mascotDisplayName() => mascotId
-      .split('_')
-      .where((segment) => segment.isNotEmpty)
-      .map((segment) => segment[0].toUpperCase() + segment.substring(1))
-      .join(' ');
 
   @override
   Widget build(BuildContext context) {
-    final mascotName = _mascotDisplayName();
+    final message = MascotMessageHelper.getMessage(
+      context,
+      category: 'accent',
+      mascotId: mascotId,
+      isComplete: state is AccentGameComplete,
+      isAnswered: isCorrect != null,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
+
+    final mascotVisualState = MascotMessageHelper.getMascotState(
+      isComplete: state is AccentGameComplete,
+      isGameOver: state is AccentGameOver,
+      isAnswered: isCorrect != null,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
 
     // RepaintBoundary isolates the continuous bob + shimmer animations from
     // the parent Stack so they never trigger an ancestor repaint.
@@ -89,7 +77,7 @@ class AccentPeekingMascot extends StatelessWidget {
                     ],
                   ),
                   child: Text(
-                    _message(mascotName),
+                    message,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 11.sp,
@@ -107,7 +95,7 @@ class AccentPeekingMascot extends StatelessWidget {
 
             // Mascot avatar — bobs up and down continuously
             VowlMascot(
-                  state: _mascotVisualState,
+                  state: mascotVisualState,
                   size: 45.r,
                   mascotId: mascotId,
                 )

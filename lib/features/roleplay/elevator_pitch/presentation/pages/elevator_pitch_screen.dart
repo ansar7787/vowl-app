@@ -248,66 +248,71 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
           onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 10.h,
-                  ),
-                  child: Column(
-                    children: [
-                      ElevatorPitchInstruction(
-                        primaryColor: theme.primaryColor,
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isCompact = constraints.maxHeight < 580;
+                    return SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: isCompact ? 5.h : 10.h,
                       ),
-                      SizedBox(height: 16.h),
-                      ElevatorPitchPromptCard(
-                        prompt: quest.prompt ?? "",
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                      ),
-                      SizedBox(height: 20.h),
+                      child: Column(
+                        children: [
+                          ElevatorPitchInstruction(
+                            primaryColor: theme.primaryColor,
+                          ),
+                          SizedBox(height: isCompact ? 10.h : 16.h),
+                          ElevatorPitchPromptCard(
+                            prompt: quest.prompt ?? "",
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                          ),
+                          SizedBox(height: isCompact ? 12.h : 20.h),
 
-                      // Elevator Physical Chamber Layout
-                      ElevatorPitchChamberConsole(
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                        capsuleY: _capsuleY,
-                        greenZoneY: _greenZoneY,
-                        isListening: _isListening,
-                        spokenText: _spokenText,
-                        waveAnimation: _waveController,
-                        onFireBooster: _fireBooster,
-                      ),
-                      SizedBox(height: 24.h),
+                          // Elevator Physical Chamber Layout
+                          ElevatorPitchChamberConsole(
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                            capsuleY: _capsuleY,
+                            greenZoneY: _greenZoneY,
+                            isListening: _isListening,
+                            spokenText: _spokenText,
+                            waveAnimation: _waveController,
+                            onFireBooster: _fireBooster,
+                          ),
+                          SizedBox(height: isCompact ? 16.h : 24.h),
 
-                      // Speech input capture controls
-                      if (!_isAnswered)
-                        ElevatorPitchRecordControl(
-                          isListening: _isListening,
-                          color: theme.primaryColor,
-                          correctAnswer: quest.correctAnswer ?? "",
-                          onStartListening: _startListening,
-                          onStopListening: _stopListening,
-                        ),
+                          // Speech input capture controls
+                          if (!_isAnswered)
+                            ElevatorPitchRecordControl(
+                              isListening: _isListening,
+                              color: theme.primaryColor,
+                              correctAnswer: quest.correctAnswer ?? "",
+                              onStartListening: _startListening,
+                              onStopListening: _stopListening,
+                            ),
 
-                      // Post-answer explanation cards
-                      AnimatedCrossFade(
-                        firstChild: const SizedBox(),
-                        secondChild: ElevatorPitchExplanationCard(
-                          quest: quest,
-                          isDark: isDark,
-                          isCorrect: _isCorrect,
-                          ticksRecorded: _ticksRecorded,
-                          ticksInAlignment: _ticksInAlignment,
-                        ),
-                        crossFadeState: _isAnswered
-                            ? CrossFadeState.showSecond
-                            : CrossFadeState.showFirst,
-                        duration: const Duration(milliseconds: 400),
+                          // Post-answer explanation cards
+                          AnimatedCrossFade(
+                            firstChild: const SizedBox(),
+                            secondChild: ElevatorPitchExplanationCard(
+                              quest: quest,
+                              isDark: isDark,
+                              isCorrect: _isCorrect,
+                              ticksRecorded: _ticksRecorded,
+                              ticksInAlignment: _ticksInAlignment,
+                            ),
+                            crossFadeState: _isAnswered
+                                ? CrossFadeState.showSecond
+                                : CrossFadeState.showFirst,
+                            duration: const Duration(milliseconds: 400),
+                          ),
+                          SizedBox(height: isCompact ? 40.h : 80.h),
+                        ],
                       ),
-                      SizedBox(height: 80.h),
-                    ],
-                  ),
+                    );
+                  },
                 ),
         );
       },

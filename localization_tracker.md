@@ -1,0 +1,271 @@
+# Full Localization Tracker
+
+This tracker verifies all 262 strings in en.json against the codebase.
+
+- [ ] **common.cancel**: Cancel
+- [ ] **common.save**: Save
+- [ ] **common.done**: Done
+- [ ] **common.ok**: OK
+- [ ] **common.yes**: Yes
+- [ ] **common.no**: No
+- [ ] **common.back**: Back
+- [ ] **common.next**: Next
+- [ ] **common.retry**: Retry
+- [ ] **common.loading**: Loading...
+- [ ] **common.error**: Something went wrong
+- [ ] **common.success**: Success!
+- [ ] **common.coming_soon**: Coming Soon
+- [ ] **common.see_all**: SEE ALL
+- [ ] **common.search**: Search
+- [ ] **common.close**: Close
+- [ ] **common.delete**: Delete
+- [ ] **common.confirm**: Confirm
+- [ ] **common.continue_text**: Continue
+- [ ] **common.see_results**: See Results
+- [ ] **auth.signup**: Create Account
+- [ ] **auth.login**: Login
+- [ ] **auth.send_reset_link**: Send Reset Link
+- [ ] **auth.sign_in_with_google**: Sign in with Google
+- [ ] **home.kids_zone_title**: Kids Learning Zone
+- [ ] **home.kids_zone_subtitle**: 22 educational games for early learners
+- [ ] **home.quest_arena_title**: Quest Arena
+- [ ] **home.quest_arena_subtitle**: 9-step real-world journey
+- [ ] **home.quest_arena_steps**: 9 STEPS
+- [ ] **home.elite_companion_title**: Elite Companion & Stats
+- [ ] **home.elite_companion_subtitle**: Your mascot and adventure stats
+- [ ] **home.discovery_hub_title**: Discovery Hub
+- [ ] **home.discovery_hub_subtitle**: 4 curated quest sequences
+- [ ] **home.hoot_of_wisdom**: Hoot of Wisdom
+- [ ] **home.rank_operative**: RANK: VOWL OPERATIVE
+- [ ] **home.level**: LEVEL {}
+- [ ] **home.completed_percent**: {}% COMPLETED
+- [ ] **home.early_learners**: EARLY LEARNERS
+- [ ] **home.junior_adventure**: JUNIOR
+ADVENTURE
+- [ ] **home.junior_adventure_subtitle**: 22 playful missions for
+young explorers!
+- [ ] **home.badges**: BADGES
+- [ ] **home.level_label**: LEVEL
+- [ ] **home.total_xp**: TOTAL XP
+- [ ] **home.greeting_default**: Salutations
+- [ ] **home.greeting_morning**: Good Morning
+- [ ] **home.greeting_afternoon**: Good Afternoon
+- [ ] **home.greeting_evening**: Good Evening
+- [ ] **home.greeting_night**: Good Night
+- [ ] **home.quest_journey**: QUEST JOURNEY
+- [ ] **home.total_levels_cleared**: Total Levels Cleared
+- [ ] **home.rank**: RANK
+- [ ] **home.levels_suffix**:  / {} Levels
+- [ ] **home.percent_complete**: {}% Complete
+- [ ] **home.levels_count**: {} levels
+- [ ] **home.streak**: STREAK
+- [ ] **home.coins**: COINS
+- [ ] **home.kids**: KIDS
+- [ ] **home.step**: STEP {}
+- [ ] **home.levels_cleared_max**: {} / {} LEVELS
+- [ ] **home.discovery_foryou_title**: For You
+- [ ] **home.discovery_foryou_subtitle**: Smart recommendation based on your progress
+- [ ] **home.discovery_dailyduo_title**: Daily Duo
+- [ ] **home.discovery_dailyduo_subtitle**: Vocal warm-up followed by reading mastery
+- [ ] **home.discovery_speedblitz_title**: Speed Blitz
+- [ ] **home.discovery_speedblitz_subtitle**: High-speed challenges to sharpen focus
+- [ ] **home.discovery_grammarpro_title**: Grammar Pro
+- [ ] **home.discovery_grammarpro_subtitle**: Elite structural drills for sentence mastery
+- [ ] **home.discovery_diff_adaptive**: Adaptive
+- [ ] **home.discovery_diff_medium**: Medium
+- [ ] **home.discovery_diff_hard**: Hard
+- [ ] **home.discovery_diff_expert**: Expert
+- [ ] **home.quests_count**: {} QUESTS
+- [ ] **home.hoot_title_fallback**: OWLY'S HOOT
+- [ ] **home.hoot_wisdom**: OWLY'S WISDOM
+- [ ] **home.hoot_daily_motivation**: DAILY MOTIVATION
+- [ ] **home.hoot_fallback_msg_1**: Hoot! Your dedication is truly majestic!
+- [ ] **home.hoot_fallback_msg_2**: Hoot! I'm feeling a bit quiet today. Keep soaring!
+- [ ] **home.chest_claimed**: CLAIMED!
+- [ ] **home.chest_vip_gift**: VIP DAILY GIFT
+- [ ] **home.chest_daily_mystery**: DAILY MYSTERY
+- [ ] **home.chest_treasure_unlocked**: TREASURE UNLOCKED
+- [ ] **home.chest_pro_reward**: YOUR EXCLUSIVE PRO REWARD
+- [ ] **home.chest_ready_to_open**: READY TO OPEN?
+- [ ] **home.chest_coins_collected**: COINS COLLECTED
+- [ ] **home.chest_tap_vip_loot**: TAP TO CLAIM VIP LOOT
+- [ ] **home.chest_tap_unveil**: TAP TO UNVEIL
+- [ ] **notification_card.streak_protect**: Protect your {}-Day Streak!
+- [ ] **notification_card.streak_strong**: {} days strong! Keep it up.
+- [ ] **notification_card.streak_unstoppable**: Unstoppable! Protect your streak.
+- [ ] **notification_card.streak_dont_lose**: Don't lose your {}-day progress!
+- [ ] **notification_card.starter_on_roll**: You are on a roll! 🚀
+- [ ] **notification_card.starter_momentum**: Keep the momentum going!
+- [ ] **notification_card.starter_begun**: Your journey has just begun!
+- [ ] **notification_card.morning_quest**: Morning Quest Ready! ☀️
+- [ ] **notification_card.afternoon_practice**: Afternoon Practice? 🦉
+- [ ] **notification_card.evening_boost**: Evening Knowledge Boost 🌙
+- [ ] **notification_card.night_owl**: Night Owl Training 🌌
+- [ ] **notification_card.subtitle_streak**: Enable notifications so Owly can remind you to protect your streak.
+- [ ] **notification_card.subtitle_default**: Turn on notifications so Owly can remind you to practice daily.
+- [ ] **notification_card.remind_me**: Remind Me
+- [ ] **notification_card.not_now**: Not Now
+- [ ] **settings.title**: Settings
+- [ ] **settings.account**: Account
+- [ ] **settings.security_password**: Security & Password
+- [ ] **settings.app_preferences**: App Preferences
+- [ ] **settings.push_notifications**: Push Notifications
+- [ ] **settings.push_notifications_subtitle**: Stay updated with daily quests
+- [ ] **settings.language_selection**: Language Selection
+- [ ] **settings.support_legal**: Support & Legal
+- [ ] **settings.help_center**: Help Center
+- [ ] **settings.terms_of_service**: Terms of Service
+- [ ] **settings.privacy_policy**: Privacy Policy
+- [ ] **settings.app_version**: App Version
+- [ ] **settings.danger_zone**: Danger Zone
+- [ ] **settings.clear_cache**: Clear App Cache
+- [ ] **settings.delete_account**: Delete Account
+- [ ] **settings.sign_out**: SIGN OUT ACCOUNT
+- [ ] **settings.premium_quester**: PREMIUM QUESTER
+- [ ] **settings.free_account**: FREE ACCOUNT
+- [ ] **settings.cache_cleared**: Cache cleared successfully!
+- [ ] **settings.cache_error**: Error clearing cache
+- [ ] **settings.email_error**: Could not open email app
+- [ ] **settings_dialogs.profile_settings**: Profile Settings
+- [ ] **settings_dialogs.display_name**: Display Name
+- [ ] **settings_dialogs.sign_out_title**: Sign Out?
+- [ ] **settings_dialogs.sign_out_body**: Are you sure you want to leave?
+Your quest progress is safely synced to the cloud.
+- [ ] **settings_dialogs.sign_out_confirm**: Yes, Sign Me Out
+- [ ] **settings_dialogs.sign_out_cancel**: Stay in Quest
+- [ ] **settings_dialogs.disable_notifications_title**: Disable Notifications?
+- [ ] **settings_dialogs.disable_notifications_body**: Owly won't be able to remind you to practice. You might lose your learning streak!
+- [ ] **settings_dialogs.keep_reminders**: Keep Reminders On
+- [ ] **settings_dialogs.yes_disable**: Yes, Disable
+- [ ] **settings_dialogs.reset_password_title**: Reset Password
+- [ ] **settings_dialogs.reset_password_body**: We will send a password recovery email to:
+{}
+- [ ] **settings_dialogs.send_link**: Send Link Now
+- [ ] **settings_dialogs.reset_link_sent**: Reset link sent to {}
+- [ ] **settings_dialogs.delete_account_title**: Delete Account?
+- [ ] **settings_dialogs.delete_account_body**: This action is IRREVERSIBLE. All your progress, coins, and streaks will be permanently lost.
+- [ ] **settings_dialogs.delete_everything**: Delete Everything
+- [ ] **settings_dialogs.keep_account**: Keep My Account
+- [ ] **settings_dialogs.final_warning**: Final Warning
+- [ ] **settings_dialogs.type_delete**: Type "DELETE" below to confirm account removal.
+- [ ] **settings_dialogs.delete_forever**: Yes, Delete Forever
+- [ ] **settings_dialogs.nevermind**: Nevermind
+- [ ] **settings_dialogs.coming_soon_title**: Feature Coming Soon
+- [ ] **settings_dialogs.coming_soon_body**: We're working hard to bring this feature to your quest experience!
+- [ ] **language_picker.title**: Choose Language
+- [ ] **language_picker.subtitle**: Select the language for the app interface. Game content will remain in English.
+- [ ] **language_picker.search_hint**: Search languages...
+- [ ] **premium.title**: Vowl Premium
+- [ ] **premium.restore_purchases**: Restore Purchases
+- [ ] **premium.current_plan**: CURRENT PLAN
+- [ ] **premium.popular**: POPULAR
+- [ ] **premium.subscribe**: Subscribe
+- [ ] **premium.per_month**: /month
+- [ ] **premium.per_year**: /year
+- [ ] **premium.free_trial**: Start Free Trial
+- [ ] **premium.already_premium**: You're already a Premium Quester!
+- [ ] **profile.trophy_room**: MY TROPHY ROOM
+- [ ] **profile.trophy_subtitle**: Show off your legendary achievements!
+- [ ] **profile.trophies_badges**: TROPHIES & BADGES
+- [ ] **profile.collectibles_vault**: COLLECTIBLES VAULT
+- [ ] **profile.no_trophies**: No trophies yet. Keep completing lessons and challenges to earn your first shiny badge!
+- [ ] **profile.empty_vault**: The vault is empty. Play games to unlock legendary furniture for your mascot!
+- [ ] **profile.level**: LEVEL {}
+- [ ] **adventure.title**: Adventure Store
+- [ ] **adventure.insufficient_coins**: Insufficient Vowl Coins!
+- [ ] **adventure.purchase_success**: Purchase successful!
+- [ ] **adventure.streak_shield**: Streak Shield
+- [ ] **adventure.double_xp**: Double XP
+- [ ] **adventure.streak_repaired**: STREAK REPAIRED! 🔥
+- [ ] **quest_archive.title**: QUEST ARCHIVE
+- [ ] **quest_archive.search_hint**: Search quests...
+- [ ] **quest_archive.no_results**: No matching quests found
+- [ ] **quest_archive.global_progress**: GLOBAL ARCHIVE PROGRESS
+- [ ] **quest_archive.mastery**: {}% MASTERY
+- [ ] **quest_archive.xp_power**: XP POWER
+- [ ] **quest_archive.quests**: QUESTS
+- [ ] **quest_archive.status**: STATUS
+- [ ] **quest_archive.completed**: COMPLETED: {}%
+- [ ] **quest_archive.new_badge**: NEW
+- [ ] **quest_archive.levels_cleared**: {}/{} LVLS
+- [ ] **quest_archive.status_initiate**: INITIATE
+- [ ] **quest_archive.status_explorer**: EXPLORER
+- [ ] **quest_archive.status_adventurer**: ADVENTURER
+- [ ] **quest_archive.status_champion**: CHAMPION
+- [ ] **quest_archive.status_conqueror**: CONQUEROR
+- [ ] **quest_archive.status_grandmaster**: GRANDMASTER
+- [ ] **quest_archive.status_legendary**: LEGENDARY
+- [ ] **categories.all**: ALL
+- [ ] **categories.vocabulary**: VOCABULARY
+- [ ] **categories.grammar**: GRAMMAR
+- [ ] **categories.speaking**: SPEAKING
+- [ ] **categories.listening**: LISTENING
+- [ ] **categories.reading**: READING
+- [ ] **categories.writing**: WRITING
+- [ ] **categories.accent**: ACCENT
+- [ ] **categories.roleplay**: ROLEPLAY
+- [ ] **categories.elite**: ELITE
+- [ ] **loading_overlay.securing_data**: Securing your quest data
+- [ ] **onboarding.welcome**: Welcome to Vowl!
+- [ ] **onboarding.get_started**: Get Started
+- [ ] **onboarding.skip**: Skip
+- [ ] **games.correct**: Correct!
+- [ ] **games.incorrect**: Incorrect!
+- [ ] **games.time_up**: Time's Up!
+- [ ] **games.lives_remaining**: {} lives remaining
+- [ ] **games.no_lives**: No lives left!
+- [ ] **games.hint**: Hint
+- [ ] **games.explanation**: Explanation
+- [ ] **games.next_question**: Next Question
+- [ ] **games.level_complete**: Level Complete!
+- [ ] **games.great_job**: Great Job!
+- [ ] **games.try_again**: Try Again
+- [ ] **games.score**: Score: {}
+- [ ] **games.xp_earned**: +{} XP
+- [ ] **games.coins_earned**: +{} Coins
+- [ ] **games.excellent**: EXCELLENT!
+- [ ] **games.not_quite**: NOT QUITE!
+- [ ] **games.not_quite_capitalized**: Not quite
+- [ ] **games.lets_review**: Let's Review
+- [ ] **games.accent_comparison**: Accent Comparison
+- [ ] **games.british**: British
+- [ ] **games.american**: American
+- [ ] **games.conversation_complete**: Conversation Complete 🎉
+- [ ] **games.next_roleplay**: Next Roleplay
+- [ ] **games.see_results**: SEE RESULTS
+- [ ] **games.explanation_caps**: EXPLANATION:
+- [ ] **games.semantic_correct_continue**: Correct! Tap to continue.
+- [ ] **games.semantic_incorrect_explanation**: Incorrect. The correct answer is: {}. Tap to {}.
+- [ ] **games.semantic_incorrect_try_again**: Incorrect. Tap to try again.
+- [ ] **games.correct_caps**: CORRECT!
+- [ ] **games.incorrect_caps**: INCORRECT
+- [ ] **games.kids_error_title**: NICE TRY!
+- [ ] **games.kids_error_body**: This level is taking a nap.
+Check back soon! 🎈
+- [ ] **games.kids_awesome**: AWESOME!
+- [ ] **games.kids_oh_no**: OH NO!
+- [ ] **games.kids_success_msg**: Great job! Keep going! ✨
+- [ ] **games.kids_review_msg**: Nice try! Let's review this later! 💡
+- [ ] **games.kids_try_again_msg**: Almost there! Try again! ✨
+- [ ] **games.kids_nudge**: Focus! Use a hint if you need help saving your last life.
+- [ ] **games.kids_level_up**: LEVEL UP!
+- [ ] **games.kids_new_sticker**: NEW STICKER UNLOCKED!
+- [ ] **games.kids_double_rewards**: DOUBLE REWARDS
+- [ ] **games.kids_rewards_doubled**: REWARDS DOUBLED!
+- [ ] **games.kids_game_over**: GAME OVER
+- [ ] **games.kids_game_over_subtitle**: Don't give up! You were so close! 💪
+- [ ] **games.kids_resume_game**: RESUME GAME
+- [ ] **games.kids_exit_to_map**: EXIT TO MAP
+- [ ] **games.kids_quit_title**: Leaving so soon? 😢
+- [ ] **games.kids_quit_subtitle**: Your progress in this level will be lost! Are you sure you want to quit?
+- [ ] **games.kids_quit_button**: QUIT
+- [ ] **games.kids_play_on**: PLAY ON!
+- [ ] **games.kids_coins**: KIDS COINS
+- [ ] **games.watch_and_earn**: WATCH & EARN
+- [ ] **games.get_10_coins**: Get 10 Kids Coins
+- [ ] **games.repeat**: REPEAT
+- [ ] **games.got_it**: GOT IT
+- [ ] **games.kids_drop_here**: DROP HERE!
+- [ ] **games.kids_tap_wake**: TAP TO WAKE UP ☀️
+- [ ] **games.kids_zzz**: Zzz...
+- [ ] **games.kids_under_construction**: Oops! Level {} is still under construction! 🚧

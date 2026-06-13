@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 
@@ -28,8 +29,23 @@ class SpeakingPeekingMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final message = _message();
-    final mascotState = _mascotState();
+    final message = MascotMessageHelper.getMessage(
+      context,
+      category: 'speaking',
+      mascotId: mascotId,
+      isComplete: state is SpeakingGameComplete,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
+    
+    final mascotState = MascotMessageHelper.getMascotState(
+      isComplete: state is SpeakingGameComplete,
+      isGameOver: state is SpeakingGameOver,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
@@ -86,26 +102,4 @@ class SpeakingPeekingMascot extends StatelessWidget {
     ).animate().fadeIn().slideX(begin: 0.1, end: 0);
   }
 
-  // ---------------------------------------------------------------------------
-  // Helpers
-  // ---------------------------------------------------------------------------
-
-  String _message() {
-    if (isCorrect == true) return 'Crystal Clear! ✨';
-    if (lives < 3 && !isAnswered) return 'Find your voice! 💡';
-    if (isCorrect == false) return 'Try one more time! 🎤';
-    if (state is SpeakingGameComplete) return 'Oratory Master! 🏆';
-    return '$mascotName is watching! 🦉';
-  }
-
-  VowlMascotState _mascotState() {
-    if (state is SpeakingGameComplete) return VowlMascotState.happy;
-    if (state is SpeakingGameOver) return VowlMascotState.worried;
-    if (state is SpeakingLoaded) {
-      if (isCorrect == true) return VowlMascotState.happy;
-      if (lives < 3 && !isAnswered) return VowlMascotState.worried;
-      if (isCorrect == false) return VowlMascotState.thinking;
-    }
-    return VowlMascotState.neutral;
-  }
 }

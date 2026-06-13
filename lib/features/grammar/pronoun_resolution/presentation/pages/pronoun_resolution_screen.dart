@@ -14,6 +14,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/pronoun_resolution/presentation/widgets/pronoun_resolution_instruction.dart';
 import 'package:vowl/features/grammar/pronoun_resolution/presentation/widgets/pronoun_resolution_gravity_painter.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class PronounResolutionScreen extends StatefulWidget {
   final int level;
@@ -344,7 +345,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
             ),
             SizedBox(height: isCompact ? 4.h : 12.h),
             Text(
-              correct ? "CORRECT!" : "INCORRECT",
+              correct ? context.tr('games.correct').toUpperCase() : context.tr('games.incorrect_caps'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: isCompact ? 12.sp : 16.sp,

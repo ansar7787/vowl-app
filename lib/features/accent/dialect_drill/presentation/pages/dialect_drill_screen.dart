@@ -14,6 +14,7 @@ import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_instruction.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_hologram_console.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_status_telemetry.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class DialectDrillScreen extends StatefulWidget {
   final int level;
@@ -47,7 +48,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
 
   void _triggerAutoPlay(AccentQuest quest) {
     final instruction = quest.instruction;
-    final String targetLocale = instruction.contains("British")
+    final String targetLocale = instruction.contains(context.tr('games.british'))
         ? "en-GB"
         : "en-US";
     _soundService.playTts(quest.word ?? "", locale: targetLocale);

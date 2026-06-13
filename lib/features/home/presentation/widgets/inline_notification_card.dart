@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class InlineNotificationCard extends StatefulWidget {
@@ -113,38 +114,38 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
 
     if (streak >= 3) {
       final streakTitles = [
-        'Protect your $streak-Day Streak!',
-        '$streak days strong! Keep it up.',
-        'Unstoppable! Protect your streak.',
-        "Don't lose your $streak-day progress!"
+        context.tr('notification_card.streak_protect').replaceAll('{}', streak.toString()),
+        context.tr('notification_card.streak_strong').replaceAll('{}', streak.toString()),
+        context.tr('notification_card.streak_unstoppable'),
+        context.tr('notification_card.streak_dont_lose').replaceAll('{}', streak.toString())
       ];
       return streakTitles[hour % streakTitles.length];
     } else if (streak == 1 || streak == 2) {
       final starterTitles = [
-        'You are on a roll! 🚀',
-        'Keep the momentum going!',
-        'Your journey has just begun!',
+        context.tr('notification_card.starter_on_roll'),
+        context.tr('notification_card.starter_momentum'),
+        context.tr('notification_card.starter_begun'),
       ];
       return starterTitles[hour % starterTitles.length];
     }
 
     // Streak is 0
     if (hour < 12) {
-      return 'Morning Quest Ready! ☀️';
+      return context.tr('notification_card.morning_quest');
     } else if (hour < 17) {
-      return 'Afternoon Practice? 🦉';
+      return context.tr('notification_card.afternoon_practice');
     } else if (hour < 21) {
-      return 'Evening Knowledge Boost 🌙';
+      return context.tr('notification_card.evening_boost');
     } else {
-      return 'Night Owl Training 🌌';
+      return context.tr('notification_card.night_owl');
     }
   }
 
   String _getDynamicSubtitle() {
     if (widget.streak >= 3) {
-      return 'Enable notifications so Owly can remind you to protect your streak.';
+      return context.tr('notification_card.subtitle_streak');
     }
-    return 'Turn on notifications so Owly can remind you to practice daily.';
+    return context.tr('notification_card.subtitle_default');
   }
 
   @override
@@ -222,6 +223,8 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                       ? Colors.white
                                       : const Color(0xFF0F172A),
                                 ),
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                             SizedBox(height: 4.h),
@@ -233,6 +236,8 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                 fontWeight: FontWeight.w500,
                                 color: isDark ? Colors.white60 : Colors.black54,
                               ),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
                             ),
                             SizedBox(height: 16.h),
                             Row(
@@ -254,7 +259,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                         ),
                                       ),
                                       child: Text(
-                                        'Remind Me',
+                                        context.tr('notification_card.remind_me'),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 13.sp,
@@ -290,7 +295,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                         ),
                                       ),
                                       child: Text(
-                                        'Not Now',
+                                        context.tr('notification_card.not_now'),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 13.sp,

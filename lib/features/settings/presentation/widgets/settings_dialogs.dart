@@ -9,6 +9,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 
 class SettingsDialogs {
   static void showEditProfile(BuildContext context, UserEntity user) {
@@ -35,12 +36,13 @@ class SettingsDialogs {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Profile Settings',
+                  context.tr('settings_dialogs.profile_settings'),
                   style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
                   ),
+                  textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 32.h),
                 GestureDetector(
@@ -136,7 +138,7 @@ class SettingsDialogs {
                     fontWeight: FontWeight.w600,
                   ),
                   decoration: InputDecoration(
-                    labelText: 'Display Name',
+                    labelText: context.tr('settings_dialogs.display_name'),
                     labelStyle: TextStyle(fontFamily: 'Outfit', color: isDark ? Colors.white38 : Colors.black38),
                     prefixIcon: Icon(
                       Icons.badge_rounded,
@@ -165,7 +167,7 @@ class SettingsDialogs {
                       child: TextButton(
                         onPressed: () => Navigator.pop(context),
                         child: Text(
-                          'Cancel',
+                          context.tr('common.cancel'),
                           style: TextStyle(fontFamily: 'Outfit', color: isDark ? Colors.white38 : Colors.black38),
                         ),
                       ),
@@ -193,7 +195,7 @@ class SettingsDialogs {
                           ),
                         ),
                         child: Text(
-                          'Save',
+                          context.tr('common.save'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontWeight: FontWeight.w900,
                             fontSize: 16.sp,
@@ -256,12 +258,13 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 24.h),
                 Text(
-                  'Sign Out?',
+                  context.tr('settings_dialogs.sign_out_title'),
                   style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
                   ),
+                  textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 16.h),
                 Text(
@@ -292,7 +295,7 @@ class SettingsDialogs {
                           ),
                         ),
                         child: Text(
-                          'Yes, Sign Me Out',
+                          context.tr('settings_dialogs.sign_out_confirm'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontWeight: FontWeight.w900,
                             fontSize: 16.sp,
@@ -304,7 +307,7 @@ class SettingsDialogs {
                     TextButton(
                       onPressed: () => Navigator.pop(dialogContext),
                       child: Text(
-                        'Stay in Quest',
+                        context.tr('settings_dialogs.sign_out_cancel'),
                         style: TextStyle(fontFamily: 'Outfit', 
                           color: isDark ? Colors.white38 : Colors.black38,
                           fontWeight: FontWeight.w700,
@@ -365,7 +368,7 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 24.h),
                 Text(
-                  'Disable Notifications?',
+                  context.tr('settings_dialogs.disable_notifications_title'),
                   style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
@@ -401,7 +404,7 @@ class SettingsDialogs {
                           ),
                         ),
                         child: Text(
-                          'Keep Reminders On',
+                          context.tr('settings_dialogs.keep_reminders'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontWeight: FontWeight.w900,
                             fontSize: 16.sp,
@@ -413,7 +416,116 @@ class SettingsDialogs {
                     TextButton(
                       onPressed: () => Navigator.pop(dialogContext, true),
                       child: Text(
-                        'Yes, Disable',
+                        context.tr('settings_dialogs.yes_disable'),
+                        style: TextStyle(fontFamily: 'Outfit', 
+                          color: Colors.red.withValues(alpha: 0.8),
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      transitionBuilder: (dialogContext, anim1, anim2, child) {
+        return FadeTransition(
+          opacity: anim1,
+          child: ScaleTransition(
+            scale: Tween<double>(begin: 0.95, end: 1.0).animate(
+              CurvedAnimation(parent: anim1, curve: Curves.easeOutCubic),
+            ),
+            child: child,
+          ),
+        );
+      },
+    );
+  }
+
+  static Future<bool?> showDisableSoundConfirmation(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    di.sl<HapticService>().warning();
+    return showGeneralDialog<bool>(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: '',
+      barrierColor: Colors.black54,
+      transitionDuration: const Duration(milliseconds: 300),
+      pageBuilder: (dialogContext, anim1, anim2) => Center(
+        child: Material(
+          color: Colors.transparent,
+          child: GlassTile(
+            width: 320.w,
+            padding: EdgeInsets.all(32.r),
+            borderRadius: BorderRadius.circular(40.r),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(20.r),
+                  decoration: BoxDecoration(
+                    color: Colors.pink.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.volume_off_rounded,
+                    color: Colors.pink,
+                    size: 40.r,
+                  ),
+                ),
+                SizedBox(height: 24.h),
+                Text(
+                  'Mute Game Sounds?',
+                  style: TextStyle(fontFamily: 'Outfit', 
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 16.h),
+                Text(
+                  'Clear audio and guidance are key to mastering your quests. Are you sure you want to silence them?',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontFamily: 'Outfit', 
+                    fontSize: 14.sp,
+                    color: isDark ? Colors.white60 : Colors.black54,
+                    height: 1.5,
+                  ),
+                ),
+                SizedBox(height: 32.h),
+                Column(
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(dialogContext, false);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          foregroundColor: Colors.white,
+                          padding: EdgeInsets.symmetric(vertical: 16.h),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.r),
+                          ),
+                        ),
+                        child: Text(
+                          'Keep It On',
+                          style: TextStyle(fontFamily: 'Outfit', 
+                            fontWeight: FontWeight.w900,
+                            fontSize: 16.sp,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 12.h),
+                    TextButton(
+                      onPressed: () => Navigator.pop(dialogContext, true),
+                      child: Text(
+                        'Mute Anyway',
                         style: TextStyle(fontFamily: 'Outfit', 
                           color: Colors.red.withValues(alpha: 0.8),
                           fontWeight: FontWeight.w700,
@@ -474,7 +586,7 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 24.h),
                 Text(
-                  'Reset Password',
+                  context.tr('settings_dialogs.reset_password_title'),
                   style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
@@ -519,7 +631,7 @@ class SettingsDialogs {
                           ),
                         ),
                         child: Text(
-                          'Send Link Now',
+                          context.tr('settings_dialogs.send_link'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontWeight: FontWeight.w900,
                             fontSize: 16.sp,
@@ -531,7 +643,7 @@ class SettingsDialogs {
                     TextButton(
                       onPressed: () => Navigator.pop(context),
                       child: Text(
-                        'Cancel',
+                        context.tr('common.cancel'),
                         style: TextStyle(fontFamily: 'Outfit', color: isDark ? Colors.white38 : Colors.black38),
                       ),
                     ),
@@ -589,7 +701,7 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 24.h),
                 Text(
-                  'Delete Account?',
+                  context.tr('settings_dialogs.delete_account_title'),
                   style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
@@ -598,7 +710,7 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 16.h),
                 Text(
-                  'This action is IRREVERSIBLE. All your progress, coins, and streaks will be permanently lost.',
+                  context.tr('settings_dialogs.delete_account_body'),
                   textAlign: TextAlign.center,
                   style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
@@ -625,7 +737,7 @@ class SettingsDialogs {
                           ),
                         ),
                         child: Text(
-                          'Delete Everything',
+                          context.tr('settings_dialogs.delete_everything'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontWeight: FontWeight.w900,
                             fontSize: 16.sp,
@@ -637,7 +749,7 @@ class SettingsDialogs {
                     TextButton(
                       onPressed: () => Navigator.pop(dialogContext),
                       child: Text(
-                        'Keep My Account',
+                        context.tr('settings_dialogs.keep_account'),
                         style: TextStyle(fontFamily: 'Outfit', 
                           color: isDark ? Colors.white38 : Colors.black38,
                           fontWeight: FontWeight.w700,
@@ -689,7 +801,7 @@ class SettingsDialogs {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      'Final Warning',
+                      context.tr('settings_dialogs.final_warning'),
                       style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 24.sp,
                         fontWeight: FontWeight.w900,
@@ -698,7 +810,7 @@ class SettingsDialogs {
                     ),
                     SizedBox(height: 16.h),
                     Text(
-                      'Type "DELETE" below to confirm account removal.',
+                      context.tr('settings_dialogs.type_delete'),
                       textAlign: TextAlign.center,
                       style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
@@ -714,7 +826,7 @@ class SettingsDialogs {
                         fontWeight: FontWeight.bold,
                       ),
                       decoration: InputDecoration(
-                        hintText: 'DELETE',
+                        hintText: context.tr('common.delete').toUpperCase(),
                         hintStyle: TextStyle(fontFamily: 'Outfit', color: isDark ? Colors.white10 : Colors.black12),
                         filled: true,
                         fillColor: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
@@ -730,7 +842,7 @@ class SettingsDialogs {
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                            onPressed: confirmController.text == 'DELETE' 
+                            onPressed: confirmController.text == context.tr('common.delete').toUpperCase() 
                               ? () {
                                   Navigator.pop(dialogContext);
                                   authBloc.add(const AuthDeleteAccountRequested());
@@ -746,7 +858,7 @@ class SettingsDialogs {
                               ),
                             ),
                             child: Text(
-                              'Yes, Delete Forever',
+                              context.tr('settings_dialogs.delete_forever'),
                               style: TextStyle(fontFamily: 'Outfit', 
                                 fontWeight: FontWeight.w900,
                                 fontSize: 16.sp,
@@ -758,7 +870,7 @@ class SettingsDialogs {
                         TextButton(
                           onPressed: () => Navigator.pop(dialogContext),
                           child: Text(
-                            'Nevermind',
+                            context.tr('settings_dialogs.nevermind'),
                             style: TextStyle(fontFamily: 'Outfit', color: isDark ? Colors.white38 : Colors.black38),
                           ),
                         ),
@@ -787,9 +899,11 @@ class SettingsDialogs {
 
   static void showComingSoon(
     BuildContext context, {
-    String title = "Feature Coming Soon",
-    String message = "We're working hard to bring this feature to your quest experience!",
+    String? title,
+    String? message,
   }) {
+    final resolvedTitle = title ?? context.tr('settings_dialogs.coming_soon_title');
+    final resolvedMessage = message ?? context.tr('settings_dialogs.coming_soon_body');
     final isDark = Theme.of(context).brightness == Brightness.dark;
     di.sl<HapticService>().selection();
     showGeneralDialog(
@@ -822,7 +936,7 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 24.h),
                 Text(
-                  title,
+                  resolvedTitle,
                   style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
@@ -831,7 +945,7 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 16.h),
                 Text(
-                  message,
+                  resolvedMessage,
                   textAlign: TextAlign.center,
                   style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,

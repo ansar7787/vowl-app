@@ -11,6 +11,7 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class StickerBookScreen extends StatefulWidget {
   const StickerBookScreen({super.key});
@@ -773,7 +774,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
     String label;
     if (level >= 200) {
       color = Colors.amber;
-      label = "LEGENDARY";
+      label = context.tr('quest_archive.status_legendary');
     } else if (level >= 100) {
       color = Colors.orange;
       label = "EPIC";

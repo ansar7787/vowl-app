@@ -13,6 +13,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
 
@@ -364,7 +365,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
             SizedBox(height: 16.h),
             ElevatedButton(
               onPressed: _fetchPlans,
-              child: const Text('Retry'),
+              child: Text(context.tr('common.retry')),
             ),
           ],
         ),

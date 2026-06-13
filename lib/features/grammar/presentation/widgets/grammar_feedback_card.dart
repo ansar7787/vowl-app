@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_state.dart';
 
 /// Bottom-sheet feedback card shown after the user submits an answer.
@@ -55,13 +56,13 @@ class GrammarFeedbackCard extends StatelessWidget {
     final gradient = success ? _successGradient : _failGradient;
     final shadowColor = success ? _successShadow : _failShadow;
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
-    final title = success ? 'EXCELLENT!' : 'NOT QUITE!';
+    final title = success ? context.tr('games.excellent') : context.tr('games.not_quite');
 
     final buttonText = success
-        ? 'CONTINUE'
+        ? context.tr('common.continue_text').toUpperCase()
         : (isFinalFailure
-              ? (lives == 0 ? 'SEE RESULTS' : 'CONTINUE')
-              : 'TRY AGAIN');
+              ? (lives == 0 ? context.tr('common.see_results').toUpperCase() : context.tr('common.continue_text').toUpperCase())
+              : context.tr('games.try_again').toUpperCase());
 
     // Build explanation string for mastery-loop failures.
     String? explanation;
@@ -106,7 +107,7 @@ class GrammarFeedbackCard extends StatelessWidget {
                 _buildResultRow(icon, title, gradient),
                 if (explanation != null) ...[
                   SizedBox(height: 16.h),
-                  _buildExplanationCard(explanation, shadowColor, isDark),
+                  _buildExplanationCard(context, explanation, shadowColor, isDark),
                 ],
                 SizedBox(height: 28.h),
                 _buildActionButton(buttonText, gradient, shadowColor),
@@ -150,6 +151,7 @@ class GrammarFeedbackCard extends StatelessWidget {
   }
 
   Widget _buildExplanationCard(
+    BuildContext context,
     String explanation,
     Color accentColor,
     bool isDark,
@@ -177,7 +179,7 @@ class GrammarFeedbackCard extends StatelessWidget {
                   ),
                   SizedBox(width: 8.w),
                   Text(
-                    'EXPLANATION:',
+                    context.tr('games.explanation_caps'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,

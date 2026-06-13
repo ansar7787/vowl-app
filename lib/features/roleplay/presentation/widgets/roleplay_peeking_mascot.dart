@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
-import 'package:vowl/features/roleplay/presentation/constants/roleplay_constants.dart';
 
 /// Decorative mascot shown peeking from the top-right corner of the content area.
 ///
@@ -36,15 +36,33 @@ class RoleplayPeekingMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final message = MascotMessageHelper.getMessage(
+      context,
+      category: 'roleplay',
+      mascotId: mascotId,
+      isComplete: state is RoleplayGameComplete,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
+
+    final mascotState = MascotMessageHelper.getMascotState(
+      isComplete: state is RoleplayGameComplete,
+      isGameOver: state is RoleplayGameOver,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
+
     return RepaintBoundary(
       child: ExcludeSemantics(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisSize: MainAxisSize.min,
           children: [
-            _SpeechBubble(message: _message),
+            _SpeechBubble(message: message),
             SizedBox(height: 4.h),
-            VowlMascot(state: _mascotState, size: 45.r, mascotId: mascotId)
+            VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId)
                 .animate(onPlay: (c) => c.repeat(reverse: true))
                 .moveY(
                   begin: 0,
@@ -56,33 +74,6 @@ class RoleplayPeekingMascot extends StatelessWidget {
         ).animate().fadeIn().slideX(begin: 0.1, end: 0),
       ),
     );
-  }
-
-  // ── Computed properties ──────────────────────────────────────────────────
-
-  String get _mascotDisplayName => mascotId
-      .split('_')
-      .map((e) => e.isEmpty ? e : e[0].toUpperCase() + e.substring(1))
-      .join(' ');
-
-  String get _message {
-    if (state is RoleplayGameComplete) return 'Charisma King! 🏆';
-    if (isCorrect == true) return 'Social Pro! ✨';
-    if (isCorrect == false) return 'One more try! 🎤';
-    if (lives < kRoleplayLowLifeThreshold && !isAnswered) {
-      return 'Check the hints! 💡';
-    }
-    return '$_mascotDisplayName is watching! 🦉';
-  }
-
-  VowlMascotState get _mascotState {
-    if (state is RoleplayGameComplete) return VowlMascotState.happy;
-    if (state is RoleplayGameOver) return VowlMascotState.worried;
-    if (state is RoleplayLoaded) {
-      if (isCorrect == true) return VowlMascotState.happy;
-      if (isCorrect == false) return VowlMascotState.thinking;
-    }
-    return VowlMascotState.neutral;
   }
 }
 

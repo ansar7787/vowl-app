@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -193,7 +194,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
               decoration: BoxDecoration(color: widget.primaryColor, borderRadius: BorderRadius.circular(12.r)),
-              child: Text("DROP HERE!", style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white)),
+              child: Text(context.tr('games.kids_drop_here'), style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white)),
             ).animate().fadeIn().scale(),
           ),
       ],
@@ -210,20 +211,45 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
         final isCorrect = quest.correctAnswer == option;
         final isAnswered = state.lastAnswerCorrect != null;
 
+        // 50/50 Lifeline Logic
+        bool isRemovedByHint = false;
+        if (state.hintUsed && !isCorrect && options.length > 2) {
+          final distractors = options.where((o) => o != quest.correctAnswer).toList();
+          // Keep the first distractor, eliminate the rest
+          if (option != distractors.first) {
+            isRemovedByHint = true;
+          }
+        }
+
         final optionWidget = _buildOptionCard(option, isAnswered);
 
-        return Draggable<String>(
+        Widget childWidget = Draggable<String>(
           data: option,
-          maxSimultaneousDrags: isAnswered ? 0 : 1,
+          maxSimultaneousDrags: (isAnswered || isRemovedByHint) ? 0 : 1,
           feedback: Material(color: Colors.transparent, child: SizedBox(width: 140.w, child: _buildOptionCard(option, false, isFeedback: true))),
           childWhenDragging: Opacity(opacity: 0.3, child: optionWidget),
           child: ScaleButton(
-            onTap: isAnswered ? null : () {
+            onTap: (isAnswered || isRemovedByHint) ? null : () {
               context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
             },
             child: optionWidget,
           ),
         ).animate().scale(delay: (index * 120).ms, duration: 600.ms, curve: Curves.elasticOut).slideY(begin: 0.3, end: 0);
+
+        if (isRemovedByHint) {
+          return AnimatedOpacity(
+            duration: 600.ms,
+            opacity: 0.0,
+            child: AnimatedScale(
+              duration: 600.ms,
+              scale: 0.5,
+              curve: Curves.easeOutCubic,
+              child: IgnorePointer(child: childWidget),
+            ),
+          );
+        }
+
+        return childWidget;
       }),
     );
   }

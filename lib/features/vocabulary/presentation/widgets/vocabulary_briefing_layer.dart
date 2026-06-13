@@ -21,6 +21,7 @@ class VocabularyBriefingLayer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final briefing = GameInstructionService.getBriefing(
+      context,
       gameType,
       'Vocabulary',
       level: level,

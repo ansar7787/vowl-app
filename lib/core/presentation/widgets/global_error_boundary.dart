@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:go_router/go_router.dart';
+
 
 /// A global error boundary widget that catches widget-tree crashes,
 /// provides system anomaly feedback, and restores Flutter's global builder on dispose.
@@ -93,12 +93,8 @@ class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
                 SizedBox(height: 40.h),
                 ScaleButton(
                   onTap: () {
-                    // Attempt to go home safely
-                    if (context.canPop()) {
-                      context.pop();
-                    } else {
-                      context.go('/home');
-                    }
+                    // Attempt to go home safely by clearing the error state and letting the app rebuild.
+                    // (Cannot use context.go() here since this boundary sits above the Router)
                     if (mounted) {
                       setState(() {
                         _hasError = false;

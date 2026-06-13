@@ -15,6 +15,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class CategoryGamesPage extends StatefulWidget {
   const CategoryGamesPage({super.key, required this.categoryId});
@@ -302,7 +303,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
               children: [
                 Expanded(child: _buildStatMini(Icons.bolt_rounded, "POWER", "${clearedLevels * 10} XP", theme.primaryColor, isDark)),
                 Expanded(child: Center(child: _buildStatMini(Icons.sports_esports_rounded, "GAMES", "${games.length}", theme.primaryColor, isDark))),
-                Expanded(child: Align(alignment: Alignment.centerRight, child: _buildStatMini(Icons.stars_rounded, "RANK", _getRank(progress), theme.primaryColor, isDark))),
+                Expanded(child: Align(alignment: Alignment.centerRight, child: _buildStatMini(Icons.stars_rounded, context.tr('home.rank'), _getRank(progress), theme.primaryColor, isDark))),
               ],
             ),
           ],
@@ -315,10 +316,10 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     if (progress <= 0.0) return "BEGINNER";
     if (progress < 0.15) return "NOVICE";
     if (progress < 0.35) return "SCHOLAR";
-    if (progress < 0.55) return "EXPERT";
+    if (progress < 0.55) return context.tr('home.discovery_diff_expert').toUpperCase();
     if (progress < 0.80) return "VIRTUOSO";
-    if (progress < 0.99) return "GRANDMASTER";
-    return "LEGENDARY";
+    if (progress < 0.99) return context.tr('quest_archive.status_grandmaster');
+    return context.tr('quest_archive.status_legendary');
   }
 
   Widget _buildStatMini(IconData icon, String label, String value, Color color, bool isDark) {
@@ -491,7 +492,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
           boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 10)],
         ),
         child: Text(
-          "NEW",
+          context.tr('quest_archive.new_badge'),
           style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white),
         ),
       ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 1.5.seconds);

@@ -8,6 +8,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/home/presentation/widgets/mastery_avatar.dart';
 import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
 
@@ -134,13 +135,15 @@ class CommandPod extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12.r),
                         ),
                         child: Text(
-                          'RANK: VOWL OPERATIVE',
+                          context.tr('home.rank_operative'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 9.sp,
                             fontWeight: FontWeight.w800,
                             color: const Color(0xFF2563EB),
                             letterSpacing: 1.0,
                           ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ],
@@ -163,27 +166,33 @@ class CommandPod extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              children: [
-                Icon(
-                  Icons.auto_awesome_rounded,
-                  size: 14.r,
-                  color: const Color(0xFF2563EB),
-                ),
-                SizedBox(width: 6.w),
-                Text(
-                  'LEVEL ${user.level}',
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white70 : const Color(0xFF0F172A),
-                    letterSpacing: 1,
+            Expanded(
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.auto_awesome_rounded,
+                    size: 14.r,
+                    color: const Color(0xFF2563EB),
                   ),
-                ),
-              ],
+                  SizedBox(width: 6.w),
+                  Flexible(
+                    child: Text(
+                      context.tr('home.level', args: [user.level.toString()]),
+                      style: TextStyle(fontFamily: 'Outfit', 
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isDark ? Colors.white70 : const Color(0xFF0F172A),
+                        letterSpacing: 1,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
             ),
             Text(
-              '${(progress * 100).toInt()}% COMPLETED',
+              context.tr('home.completed_percent', args: [(progress * 100).toInt().toString()]),
               style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w800,
@@ -324,13 +333,17 @@ class CommandPod extends StatelessWidget {
                                 color: Colors.white,
                               ),
                               SizedBox(width: 4.w),
-                              Text(
-                                "EARLY LEARNERS",
-                                style: TextStyle(fontFamily: 'Outfit', 
-                                  color: Colors.white,
-                                  fontSize: 8.sp,
-                                  fontWeight: FontWeight.w900,
-                                  letterSpacing: 1.5,
+                              Flexible(
+                                child: Text(
+                                  context.tr('home.early_learners'),
+                                  style: TextStyle(fontFamily: 'Outfit', 
+                                    color: Colors.white,
+                                    fontSize: 8.sp,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: 1.5,
+                                  ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                             ],
@@ -338,7 +351,7 @@ class CommandPod extends StatelessWidget {
                         ),
                         SizedBox(height: 8.h),
                         Text(
-                          "JUNIOR\nADVENTURE",
+                          context.tr('home.junior_adventure'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             color: Colors.white,
                             fontSize: 24.sp, // Slightly larger
@@ -346,16 +359,20 @@ class CommandPod extends StatelessWidget {
                             letterSpacing: -0.5,
                             height: 1.0,
                           ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                         SizedBox(height: 4.h),
                         Text(
-                          "22 playful missions for\nyoung explorers!",
+                          context.tr('home.junior_adventure_subtitle'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             color: Colors.white.withValues(alpha: 0.9),
                             fontSize: 11.sp,
                             fontWeight: FontWeight.w600,
                             height: 1.2,
                           ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ],
                     ),
@@ -498,7 +515,7 @@ class CommandPod extends StatelessWidget {
             Expanded(
               child: _buildMiniStatTile(
                 context,
-                'BADGES',
+                context.tr('home.badges'),
                 '${user.badges.length}',
                 Icons.emoji_events_rounded,
                 const Color(0xFFF59E0B),
@@ -509,7 +526,7 @@ class CommandPod extends StatelessWidget {
             Expanded(
               child: _buildMiniStatTile(
                 context,
-                'LEVEL',
+                context.tr('home.level_label'),
                 '${user.level}',
                 Icons.star_rounded,
                 const Color(0xFF3B82F6),
@@ -520,7 +537,7 @@ class CommandPod extends StatelessWidget {
             Expanded(
               child: _buildMiniStatTile(
                 context,
-                'TOTAL XP',
+                context.tr('home.total_xp'),
                 _formatXp(user.totalExp),
                 Icons.bolt_rounded,
                 const Color(0xFFA855F7),
@@ -602,15 +619,15 @@ class CommandPod extends StatelessWidget {
   Widget _buildDynamicGreeting(BuildContext context) {
     final name = user.displayName?.split(' ').first ?? 'Seeker';
     final hour = DateTime.now().hour;
-    String greeting = 'Salutations';
+    String greeting = context.tr('home.greeting_default');
     if (hour >= 5 && hour < 12) {
-      greeting = 'Good Morning';
+      greeting = context.tr('home.greeting_morning');
     } else if (hour >= 12 && hour < 17) {
-      greeting = 'Good Afternoon';
+      greeting = context.tr('home.greeting_afternoon');
     } else if (hour >= 17 && hour < 22) {
-      greeting = 'Good Evening';
+      greeting = context.tr('home.greeting_evening');
     } else {
-      greeting = 'Good Night';
+      greeting = context.tr('home.greeting_night');
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -625,6 +642,8 @@ class CommandPod extends StatelessWidget {
             color: const Color(0xFF2563EB).withValues(alpha: isDark ? 0.7 : 0.9),
             letterSpacing: 0.5,
           ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
         Text(
           name,
@@ -635,6 +654,8 @@ class CommandPod extends StatelessWidget {
             letterSpacing: -1.0,
             height: 1.1,
           ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
       ],
     );

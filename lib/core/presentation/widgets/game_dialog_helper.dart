@@ -9,6 +9,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/widgets/victory_flight_overlay.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════
 //  GameDialogHelper — Shared completion & game-over dialogs for ALL games
@@ -34,31 +35,44 @@ class GameDialogHelper {
   ///
   /// [title] — headline text (e.g. "Phonetic Pro!", "Word Architect!")
   /// [description] — body text (e.g. "You earned 5 XP and 10 Coins!")
-  /// [buttonText] — primary CTA (e.g. "OK", "GREAT", "AWESOME")
+  /// [buttonText] — primary CTA (e.g. context.tr('common.ok'), "GREAT", "AWESOME")
   /// [popResult] — optional result passed to `context.pop(result)`
   /// [enableDoubleUp] — if true, shows a "DOUBLE UP" ad button to 2× rewards
   static void showCompletion(
     BuildContext context, {
     required int xp,
     required int coins,
-    String title = 'Level Complete!',
+    String? title,
     String? description,
-    String buttonText = 'OK',
+    String? buttonText,
     Object? popResult = true,
     bool enableDoubleUp = false,
   }) {
     _sound.playLevelComplete();
     _haptic.success();
 
-    final desc = description ??
-        'You earned $xp XP and $coins Coins!\nWatch an ad to TRIPLE your COINS to ${coins * 3}!';
+    final resolvedTitle = title ?? context.tr('games.level_complete');
+    final authState = context.read<AuthBloc>().state;
+    final userLevel = authState.user?.level ?? 1;
+    final isPremium = authState.user?.isPremium ?? false;
+    final hasMultiplier = userLevel >= 100 || isPremium;
+
+    String coinDesc = 'You earned $xp XP and $coins Coins!';
+    if (hasMultiplier && coins > 0) {
+      coinDesc += '\n✨ XP Level 100 Mastery: 2x Coin Bonus Applied!';
+    }
+    if (!hasMultiplier) {
+      coinDesc += '\nWatch an ad to TRIPLE your COINS to ${coins * 3}!';
+    }
+
+    final desc = description ?? coinDesc;
+    final resolvedButtonText = buttonText ?? context.tr('common.ok').toUpperCase();
 
     // Trigger Victory Flight centrally
-    final authState = context.read<AuthBloc>().state;
     late OverlayEntry entry;
     entry = OverlayEntry(
       builder: (context) => VictoryFlightOverlay(
-        level: authState.user?.level ?? 1,
+        level: userLevel,
         accessoryId: authState.user?.vowlEquippedAccessory,
         onFinished: () => entry.remove(),
       ),
@@ -69,9 +83,9 @@ class GameDialogHelper {
       context: context,
       barrierDismissible: false,
       builder: (c) => ModernGameDialog(
-        title: title,
+        title: resolvedTitle,
         description: desc,
-        buttonText: buttonText,
+        buttonText: resolvedButtonText,
         onButtonPressed: () {
           Navigator.pop(c);
           if (context.mounted) {
@@ -228,7 +242,7 @@ class GameDialogHelper {
         isSuccess: true, // Use positive styling for "staying"
         onButtonPressed: () => Navigator.pop(c),
         isExitConfirmation: true, 
-        adButtonText: 'QUIT',
+        adButtonText: context.tr('games.kids_quit_button'),
         onAdAction: () {
           Navigator.pop(c);
           onQuit();
@@ -241,14 +255,15 @@ class GameDialogHelper {
   static void showHintDialog(
     BuildContext context, {
     required String hint,
-    String title = 'HINT',
+    String? title,
   }) {
+    final resolvedTitle = title ?? context.tr('games.hint').toUpperCase();
     showDialog(
       context: context,
       builder: (c) => ModernGameDialog(
-        title: title,
+        title: resolvedTitle,
         description: hint,
-        buttonText: 'GOT IT',
+        buttonText: context.tr('games.got_it'),
         onButtonPressed: () => Navigator.pop(c),
       ),
     );
@@ -302,58 +317,62 @@ class GameDialogHelper {
   static void showHintAdDialog(
     BuildContext context, {
     VoidCallback? onHintEarned,
+    bool persistToAccount = true,
   }) {
 
     showDialog(
       context: context,
-      builder: (ctx) => Center(
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 32.w),
-          child: ModernGameDialog(
-            title: 'NEED A HINT?',
-            description:
-                'You are out of hints! Watch a quick ad to get 1 Strategic Hint for free.',
-            buttonText: 'NOT NOW',
-            onButtonPressed: () => Navigator.pop(ctx),
-            onAdAction: () {
-              final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-              final adService = di.sl<AdService>();
-              
-              if (!isPremium && !adService.isRewardedAdLoaded) {
-                showPremiumSnackBar(
-                  context, 
-                  "Ad not ready yet. Please try again in a few seconds! ⏳",
-                  icon: Icons.hourglass_empty_rounded,
-                  color: Colors.orange,
-                );
-                return;
-              }
+      builder: (ctx) => ModernGameDialog(
+        title: 'NEED A HINT?',
+        description:
+            'You are out of hints! Watch a quick ad to get 1 Strategic Hint for free.',
+        buttonText: context.tr('notification_card.not_now').toUpperCase(),
+        onButtonPressed: () => Navigator.pop(ctx),
+        onAdAction: () {
+          final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+          final adService = di.sl<AdService>();
+          
+          if (!isPremium && !adService.isRewardedAdLoaded) {
+            showPremiumSnackBar(
+              context, 
+              "Ad not ready yet. Please try again in a few seconds! ⏳",
+              icon: Icons.hourglass_empty_rounded,
+              color: Colors.orange,
+            );
+            return;
+          }
 
-              Navigator.pop(ctx);
-              adService.showHintRewardedAd(
-                isPremium: isPremium,
-                onHintEarned: () {
-                  onHintEarned?.call();
-                  if (!context.mounted) return;
-                  // Also persist to account
-                  context.read<EconomyBloc>().add(
-                    const EconomyPurchaseHintRequested(0, hintAmount: 1),
-                  );
-                  
-                  // Show success feedback
-                  showPremiumSnackBar(
-                    context, 
-                    "REWARD EARNED: +1 Strategic Hint!",
-                    icon: Icons.lightbulb_rounded,
-                    color: const Color(0xFFF59E0B), // Amber color for hints
-                  );
-                },
-                onDismissed: () {},
+          Navigator.pop(ctx);
+          adService.showHintRewardedAd(
+            isPremium: isPremium,
+            onHintEarned: () {
+              onHintEarned?.call();
+              if (!context.mounted) return;
+              
+              if (persistToAccount) {
+                // Also persist to account
+                context.read<EconomyBloc>().add(
+                  const EconomyPurchaseHintRequested(0, hintAmount: 1),
+                );
+              }
+              
+              // Show success feedback
+              showPremiumSnackBar(
+                context, 
+                "REWARD EARNED: +1 Strategic Hint!",
+                icon: Icons.lightbulb_rounded,
+                color: const Color(0xFFF59E0B), // Amber color for hints
               );
             },
-            adButtonText: 'WATCH AD FOR HINT',
-            isSuccess: false,
-          ),
+            onDismissed: () {},
+          );
+        },
+        adButtonText: 'WATCH AD FOR HINT',
+        isRescueLife: true, // This makes the "Not Now" button grey and secondary
+        customIcon: Icon(
+          Icons.lightbulb_rounded,
+          color: const Color(0xFFF59E0B),
+          size: 48.r,
         ),
       ),
     );

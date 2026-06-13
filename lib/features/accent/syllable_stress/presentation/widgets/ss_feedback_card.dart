@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class SsFeedbackCard extends StatelessWidget {
   final bool isCorrect;
@@ -68,7 +69,7 @@ class SsFeedbackCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      isCorrect ? "PERFECT RHYTHM!" : "NOT QUITE",
+                      isCorrect ? "PERFECT RHYTHM!" : context.tr('games.not_quite_capitalized').toUpperCase(),
                       style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w900,
@@ -89,7 +90,7 @@ class SsFeedbackCard extends StatelessWidget {
             ],
           ),
           SizedBox(height: 20.h),
-          _buildHintTip(isDark),
+          _buildHintTip(context, isDark),
           SizedBox(height: 12.h),
           _buildRhythmTip(isDark),
           SizedBox(height: 24.h),
@@ -111,7 +112,7 @@ class SsFeedbackCard extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  "CONTINUE",
+                  context.tr('common.continue_text').toUpperCase(),
                   style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
@@ -127,7 +128,7 @@ class SsFeedbackCard extends StatelessWidget {
     ).animate().slideY(begin: 1.0, curve: Curves.easeOutQuad);
   }
 
-  Widget _buildHintTip(bool isDark) {
+  Widget _buildHintTip(BuildContext context, bool isDark) {
     return Container(
       padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
@@ -144,7 +145,7 @@ class SsFeedbackCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "EXPLANATION",
+                  context.tr('games.explanation').toUpperCase(),
                   style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w900,

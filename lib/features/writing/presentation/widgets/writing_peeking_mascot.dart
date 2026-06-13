@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 
 // ---------------------------------------------------------------------------
@@ -34,9 +35,22 @@ class WritingPeekingMascot extends StatelessWidget {
   Widget build(BuildContext context) {
     final authState = context.read<AuthBloc>().state;
     final mascotId = authState.user?.vowlMascot ?? 'vowl_prime';
-    final mascotName = _formatMascotName(mascotId);
-    final mascotState = _resolveMascotState();
-    final message = _resolveMessage(mascotName);
+    final mascotState = MascotMessageHelper.getMascotState(
+      isComplete: state is WritingGameComplete,
+      isGameOver: state is WritingGameOver,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
+    final message = MascotMessageHelper.getMessage(
+      context,
+      category: 'writing',
+      mascotId: mascotId,
+      isComplete: state is WritingGameComplete,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
 
     // ACCESSIBILITY: The mascot is a decorative animated element.
     // Excluding it prevents screen readers from announcing animation updates.
@@ -51,42 +65,13 @@ class WritingPeekingMascot extends StatelessWidget {
       ).animate().fadeIn().slideX(begin: 0.1, end: 0),
     );
   }
+}
 
   // ---------------------------------------------------------------------------
   // Helpers
   // ---------------------------------------------------------------------------
 
-  /// FIX: Guards against empty segments (e.g. '_vowl' → ['', 'vowl'])
-  /// that previously caused a RangeError on e[0].
-  String _formatMascotName(String mascotId) {
-    return mascotId
-        .split('_')
-        .where((e) => e.isNotEmpty)
-        .map((e) => '${e[0].toUpperCase()}${e.substring(1)}')
-        .join(' ');
-  }
 
-  String _resolveMessage(String mascotName) {
-    return switch (true) {
-      _ when isCorrect == true => 'Literary Genius! ✨',
-      _ when state is WritingGameComplete => 'Author Extraordinaire! 🏆',
-      _ when isCorrect == false => 'Refine the prose! 📜',
-      _ when lives < 3 && !isAnswered => 'Find your voice! 💡',
-      _ => '$mascotName is waiting! 🦉',
-    };
-  }
-
-  VowlMascotState _resolveMascotState() {
-    if (state is WritingGameComplete) return VowlMascotState.happy;
-    if (state is WritingGameOver) return VowlMascotState.worried;
-    if (state is WritingLoaded) {
-      if (isCorrect == true) return VowlMascotState.happy;
-      if (isCorrect == false) return VowlMascotState.thinking;
-      if (lives < 3 && !isAnswered) return VowlMascotState.worried;
-    }
-    return VowlMascotState.neutral;
-  }
-}
 
 // ---------------------------------------------------------------------------
 // Private sub-widgets

@@ -15,6 +15,7 @@ import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_podiu
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_card.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_tile.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class LeaderboardScreen extends StatelessWidget {
   const LeaderboardScreen({super.key});
@@ -43,7 +44,9 @@ class LeaderboardScreen extends StatelessWidget {
                   RefreshIndicator(
                     onRefresh: () async {
                       final completer = Completer<void>();
-                      context.read<LeaderboardBloc>().add(LoadLeaderboard(completer: completer));
+                      context.read<LeaderboardBloc>().add(
+                        LoadLeaderboard(completer: completer),
+                      );
                       await completer.future;
                     },
                     backgroundColor: Colors.transparent,
@@ -64,7 +67,9 @@ class LeaderboardScreen extends StatelessWidget {
                         SliverToBoxAdapter(
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: LeaderboardHeader(lastUpdated: state.lastUpdated),
+                            child: LeaderboardHeader(
+                              lastUpdated: state.lastUpdated,
+                            ),
                           ),
                         ),
 
@@ -97,8 +102,9 @@ class LeaderboardScreen extends StatelessWidget {
                               vertical: 8.h,
                             ),
                             child: Text(
-                              'TOP CHALLENGERS',
-                              style: TextStyle(fontFamily: 'Outfit', 
+                              context.tr('leaderboard.top_challengers'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
                                 fontSize: 10.sp,
                                 fontWeight: FontWeight.w900,
                                 color: isDark ? Colors.white24 : Colors.black26,
@@ -123,14 +129,15 @@ class LeaderboardScreen extends StatelessWidget {
                                 final isMe = currentUser?.id == user.id;
 
                                 return RepaintBoundary(
-                                  child: LeaderboardRankTile(
-                                    user: user,
-                                    rank: rank,
-                                    isMe: isMe,
-                                  )
-                                      .animate(delay: (40 * index).ms)
-                                      .fadeIn(duration: 300.ms)
-                                      .slideX(begin: 0.05, end: 0),
+                                  child:
+                                      LeaderboardRankTile(
+                                            user: user,
+                                            rank: rank,
+                                            isMe: isMe,
+                                          )
+                                          .animate(delay: (40 * index).ms)
+                                          .fadeIn(duration: 300.ms)
+                                          .slideX(begin: 0.05, end: 0),
                                 );
                               },
                               childCount: state.users.length > 3
@@ -145,7 +152,8 @@ class LeaderboardScreen extends StatelessWidget {
                       ],
                     ),
                   )
-                else if (state is LeaderboardLoading || state is LeaderboardInitial)
+                else if (state is LeaderboardLoading ||
+                    state is LeaderboardInitial)
                   const LeaderboardShimmerLoading()
                 else if (state is LeaderboardError)
                   Center(

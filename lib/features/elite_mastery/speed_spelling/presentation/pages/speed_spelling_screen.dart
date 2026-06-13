@@ -2,6 +2,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -163,6 +164,22 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
           if (state.isHintVisible) {
             _hapticService.selection();
           }
+
+          if (state.isLetterRevealed && _currentInput.isEmpty && state.currentQuest.word != null) {
+            final word = state.currentQuest.word!;
+            final revealCount = word.length > 4 ? 2 : 1;
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              if (mounted && _currentInput.isEmpty) {
+                for (int i = 0; i < revealCount; i++) {
+                  final targetChar = word[i];
+                  final idx = _shuffledChars.indexOf(targetChar);
+                  if (idx != -1) {
+                    _onCharTap(targetChar, idx);
+                  }
+                }
+              }
+            });
+          }
         } else if (state is EliteMasteryGameOver) {
           GameDialogHelper.showGameOver(
             context,
@@ -262,7 +279,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
                   borderRadius: BorderRadius.circular(16.r),
                 ),
                 child: Text(
-                  "RETRY",
+                  context.tr('common.retry').toUpperCase(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     color: theme.primaryColor,
@@ -319,66 +336,73 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
       });
     }
 
-    return Column(
-      children: [
-        SpeedSpellingInputField(
-          currentInput: _currentInput,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          attempts: _attempts,
-          isDark: isDark,
-          primaryColor: theme.primaryColor,
-          onBackspace: _onBackspace,
-          onClear: _onClear,
-        ),
-        if (state.isHintVisible) ...[
-          SizedBox(height: 20.h),
-          EliteHintCard(
-            hintText: quest.hint,
-            isVisible: true,
-            onShowHint: () {},
-            primaryColor: theme.primaryColor,
-          ),
-        ],
-        SizedBox(height: 30.h),
-        SpeedSpellingCharacterDeck(
-          shuffledChars: _shuffledChars,
-          isDark: isDark,
-          onCharTap: (char, index) => _onCharTap(char, index),
-        ),
-        SizedBox(height: 32.h),
-        if (!_isAnswered)
-          ScaleButton(
-            onTap: () => _submit(quest.word!),
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 20.h),
-              decoration: BoxDecoration(
-                color: theme.primaryColor,
-                borderRadius: BorderRadius.circular(24.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: theme.primaryColor.withValues(alpha: 0.3),
-                    blurRadius: 20,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isCompact = constraints.maxHeight < 580;
+
+        return Column(
+          children: [
+            SpeedSpellingInputField(
+              currentInput: _currentInput,
+              isAnswered: _isAnswered,
+              isCorrect: _isCorrect,
+              attempts: _attempts,
+              isDark: isDark,
+              primaryColor: theme.primaryColor,
+              onBackspace: _onBackspace,
+              onClear: _onClear,
+            ),
+            if (state.isHintVisible) ...[
+              SizedBox(height: isCompact ? 12.h : 20.h),
+              EliteHintCard(
+                hintText: quest.hint,
+                isVisible: true,
+                onShowHint: () {},
+                primaryColor: theme.primaryColor,
               ),
-              child: Center(
-                child: Text(
-                  "SUBMIT",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    letterSpacing: 2,
+            ],
+            SizedBox(height: isCompact ? 16.h : 30.h),
+            SpeedSpellingCharacterDeck(
+              shuffledChars: _shuffledChars,
+              isDark: isDark,
+              onCharTap: (char, index) => _onCharTap(char, index),
+            ),
+            SizedBox(height: isCompact ? 16.h : 32.h),
+            if (!_isAnswered)
+              ScaleButton(
+                onTap: () => _submit(quest.word!),
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(
+                      vertical: isCompact ? 14.h : 20.h),
+                  decoration: BoxDecoration(
+                    color: theme.primaryColor,
+                    borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: theme.primaryColor.withValues(alpha: 0.3),
+                        blurRadius: isCompact ? 10 : 20,
+                        offset: Offset(0, isCompact ? 5 : 10),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Text(
+                      "SUBMIT",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: isCompact ? 16.sp : 18.sp,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
+                        letterSpacing: isCompact ? 1.5 : 2,
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ),
-      ],
+          ],
+        );
+      },
     );
   }
 }

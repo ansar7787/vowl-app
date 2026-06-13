@@ -13,6 +13,7 @@ import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/features/speaking/domain/usecases/get_speaking_quest.dart';
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/hint_utility.dart';
 import 'speaking_event.dart';
 import 'speaking_state.dart';
 
@@ -138,7 +139,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
   void _onRetry(RetryCurrentQuestion event, Emitter<SpeakingState> emit) {
     final s = state;
     if (s is SpeakingLoaded) {
-      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false, removedIndices: const [], isLetterRevealed: false));
     }
   }
 
@@ -218,7 +219,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       if (wasCorrect) {
         await _handleLevelComplete(s, emit);
       } else {
-        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false, removedIndices: const [], isLetterRevealed: false));
       }
       return;
     }
@@ -231,10 +232,12 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
           hintUsed: false,
           wrongCount: 0,
           isFinalFailure: false,
+          removedIndices: const [],
+          isLetterRevealed: false,
         ),
       );
     } else {
-      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false, removedIndices: const [], isLetterRevealed: false));
     }
   }
 
@@ -309,7 +312,32 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
 
     final latest = state;
     if (latest is SpeakingLoaded && result.isRight()) {
-      emit(latest.copyWith(hintUsed: true));
+      List<int> removedIndices = [];
+      bool isLetterRevealed = false;
+      final quest = latest.currentQuest;
+
+      if (HintUtility.isGenericHint(quest.hint)) {
+        if (quest.options != null && quest.options!.length > 2) {
+          // 50/50 Lifeline
+          final correctIdx = quest.correctAnswerIndex ?? 0;
+          final wrongIndices = <int>[];
+          for (var i = 0; i < quest.options!.length; i++) {
+            if (i != correctIdx) wrongIndices.add(i);
+          }
+          wrongIndices.shuffle();
+          final removeCount = (wrongIndices.length / 2).ceil();
+          removedIndices = wrongIndices.take(removeCount).toList();
+        } else if (quest.missingWord != null) {
+          // Letter Reveal for text input games
+          isLetterRevealed = true;
+        }
+      }
+
+      emit(latest.copyWith(
+        hintUsed: true, 
+        removedIndices: removedIndices, 
+        isLetterRevealed: isLetterRevealed
+      ));
       unawaited(hapticService.selection());
     }
   }

@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 
 class KidsRoomTopBar extends StatelessWidget {
   final UserEntity user;
@@ -57,7 +58,10 @@ class KidsRoomTopBar extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text("🦉", style: TextStyle(fontSize: 16.sp)),
+          Text(
+            KidsAssets.mascotMap[user.kidsMascot] ?? "🦉", 
+            style: TextStyle(fontSize: 16.sp)
+          ),
           SizedBox(width: 8.w),
           Text(
             "BUDDY ROOM",

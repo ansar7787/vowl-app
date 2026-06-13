@@ -8,6 +8,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/constants/app_constants.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// A compact card showing the user's total quest progress across all 8 categories
 /// and their current global leaderboard rank.
@@ -78,17 +79,19 @@ class GlobalProgressCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'QUEST JOURNEY',
+                          context.tr('home.quest_journey'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 8.sp,
                             fontWeight: FontWeight.w900,
                             color: const Color(0xFF6366F1),
                             letterSpacing: 2,
                           ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                         SizedBox(height: 2.h),
                         Text(
-                          'Total Levels Cleared',
+                          context.tr('home.total_levels_cleared'),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w800,
@@ -96,6 +99,8 @@ class GlobalProgressCard extends StatelessWidget {
                                 ? Colors.white
                                 : const Color(0xFF0F172A),
                           ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ],
                     ),
@@ -135,7 +140,7 @@ class GlobalProgressCard extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            'RANK',
+                            context.tr('home.rank'),
                             style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 7.sp,
                               fontWeight: FontWeight.w800,
@@ -168,7 +173,7 @@ class GlobalProgressCard extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: ' / $totalLevels Levels',
+                          text: context.tr('home.levels_suffix', args: [totalLevels.toString()]),
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w700,
@@ -184,7 +189,7 @@ class GlobalProgressCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '$percentage% Complete',
+                        context.tr('home.percent_complete', args: [percentage.toString()]),
                         style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 11.sp,
                           fontWeight: FontWeight.w700,
@@ -282,7 +287,7 @@ class GlobalProgressCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: 3.w),
       child: Tooltip(
-        message: '$count levels',
+        message: context.tr('home.levels_count', args: [count.toString()]),
         child: Container(
           padding: EdgeInsets.all(4.r),
           decoration: BoxDecoration(

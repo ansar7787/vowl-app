@@ -12,6 +12,7 @@ import '../../domain/usecases/get_elite_mastery_quests.dart';
 import '../../../../core/utils/haptic_service.dart';
 import '../../../../core/utils/sound_service.dart';
 import '../../../../features/auth/domain/usecases/use_hint.dart';
+import '../../../../core/utils/hint_utility.dart';
 
 part 'elite_mastery_event.dart';
 part 'elite_mastery_state.dart';
@@ -62,7 +63,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
   ) {
     if (state is! EliteMasteryLoaded) return;
     final s = state as EliteMasteryLoaded;
-    emit(s.copyWith(resetLastAnswer: true, isHintUsed: false));
+    emit(s.copyWith(resetLastAnswer: true, isHintUsed: false, removedIndices: const [], isLetterRevealed: false));
   }
 
   Future<void> _onFetchEliteMasteryQuests(
@@ -174,11 +175,13 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
             isHintUsed: false,
             wrongCount: 0,
             isFinalFailure: false,
+            removedIndices: const [],
+            isLetterRevealed: false,
           ),
         );
       } else {
         emit(
-          currentState.copyWith(resetLastAnswer: true, isHintVisible: false),
+          currentState.copyWith(resetLastAnswer: true, isHintVisible: false, removedIndices: const [], isLetterRevealed: false),
         );
       }
     } else if (currentState.lastAnswerCorrect == true) {
@@ -259,7 +262,27 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     final currentState = state as EliteMasteryLoaded;
     final result = await useHint(NoParams());
     if (result.isRight()) {
-      emit(currentState.copyWith(isHintUsed: true));
+      List<int> removedIndices = [];
+      bool isLetterRevealed = false;
+      final quest = currentState.currentQuest;
+      
+      // If it's a generic hint, trigger dynamic 50/50 lifeline or letter reveal
+      if (HintUtility.isGenericHint(quest.hint)) {
+        if (quest.options != null && quest.options!.length > 2) {
+          final correctIdx = quest.correctAnswerIndex ?? 0;
+          final wrongIndices = <int>[];
+          for (var i = 0; i < quest.options!.length; i++) {
+            if (i != correctIdx) wrongIndices.add(i);
+          }
+          wrongIndices.shuffle();
+          final removeCount = (wrongIndices.length / 2).ceil();
+          removedIndices = wrongIndices.take(removeCount).toList();
+        } else if (quest.word != null) {
+          isLetterRevealed = true;
+        }
+      }
+
+      emit(currentState.copyWith(isHintUsed: true, removedIndices: removedIndices, isLetterRevealed: isLetterRevealed));
     }
   }
 

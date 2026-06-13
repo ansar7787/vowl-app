@@ -2,6 +2,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -163,28 +164,16 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
             });
           }
           _lastLives = state.livesRemaining;
-          // Dynamic Hint Logic: If no specific hint text, reveal one wrong answer
-          if (state.isHintVisible &&
-              (state.currentQuest.hint == null ||
-                  state.currentQuest.hint!.isEmpty)) {
-            final quest = state.currentQuest;
-            if (_wrongIndices.length < (quest.options?.length ?? 0) - 1) {
-              final List<int> potentialWrongs = [];
-              for (int i = 0; i < (quest.options?.length ?? 0); i++) {
-                if (i != quest.correctAnswerIndex &&
-                    !_wrongIndices.contains(i)) {
-                  potentialWrongs.add(i);
+          // Dynamic Hint Logic (50/50 Lifeline) from Bloc
+          if (state.removedIndices.isNotEmpty) {
+            setState(() {
+              for (final originalIdx in state.removedIndices) {
+                final shuffledIdx = _originalIndices.indexOf(originalIdx);
+                if (shuffledIdx != -1 && !_wrongIndices.contains(shuffledIdx)) {
+                  _wrongIndices.add(shuffledIdx);
                 }
               }
-              if (potentialWrongs.isNotEmpty) {
-                final randomWrong = (potentialWrongs..shuffle()).first;
-                setState(() {
-                  if (!_wrongIndices.contains(randomWrong)) {
-                    _wrongIndices.add(randomWrong);
-                  }
-                });
-              }
-            }
+            });
           }
         } else if (state is EliteMasteryGameOver) {
           GameDialogHelper.showGameOver(
@@ -285,7 +274,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                   borderRadius: BorderRadius.circular(16.r),
                 ),
                 child: Text(
-                  "RETRY",
+                  context.tr('common.retry').toUpperCase(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     color: theme.primaryColor,
@@ -330,60 +319,66 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
   ) {
     final quest = state.currentQuest;
 
-    return Column(
-      children: [
-        GlassTile(
-          borderRadius: BorderRadius.circular(32.r),
-          padding: EdgeInsets.all(30.r),
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.25)
-              : Colors.white.withValues(alpha: 0.9),
-          child: Column(
-            children: [
-              Icon(
-                Icons.auto_awesome_rounded,
-                color: isDark ? Colors.white : theme.primaryColor,
-                size: 32.r,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isCompact = constraints.maxHeight < 580;
+
+        return Column(
+          children: [
+            GlassTile(
+              borderRadius: BorderRadius.circular(isCompact ? 24.r : 32.r),
+              padding: EdgeInsets.all(isCompact ? 20.r : 30.r),
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.25)
+                  : Colors.white.withValues(alpha: 0.9),
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.auto_awesome_rounded,
+                    color: isDark ? Colors.white : theme.primaryColor,
+                    size: isCompact ? 26.r : 32.r,
+                  ),
+                  SizedBox(height: isCompact ? 10.h : 16.h),
+                  Text(
+                    quest.idiom ?? "??",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: isCompact ? 18.sp : 22.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      height: 1.2,
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(height: 16.h),
-              Text(
-                quest.idiom ?? "??",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 22.sp,
-                  fontWeight: FontWeight.w700,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
-                  height: 1.2,
-                ),
+            ),
+            if (state.isHintVisible) ...[
+              SizedBox(height: isCompact ? 12.h : 20.h),
+              EliteHintCard(
+                hintText: quest.hint,
+                isVisible: true,
+                onShowHint: () {},
+                primaryColor: theme.primaryColor,
               ),
             ],
-          ),
-        ),
-        if (state.isHintVisible) ...[
-          SizedBox(height: 20.h),
-          EliteHintCard(
-            hintText: quest.hint,
-            isVisible: true,
-            onShowHint: () {},
-            primaryColor: theme.primaryColor,
-          ),
-        ],
-        SizedBox(height: 30.h),
-        IdiomMatchOptionsPanel(
-          shuffledOptions: _shuffledOptions,
-          originalIndices: _originalIndices,
-          selectedIndex: _selectedIndex,
-          wrongIndices: _wrongIndices,
-          isAnswered: _isAnswered,
-          correctAnswerIndex: quest.correctAnswerIndex ?? 0,
-          isDark: isDark,
-          primaryColor: theme.primaryColor,
-          onOptionSelected: (index) =>
-              _onOptionSelected(index, quest.correctAnswerIndex),
-        ),
-        SizedBox(height: 20.h),
-      ],
+            SizedBox(height: isCompact ? 16.h : 30.h),
+            IdiomMatchOptionsPanel(
+              shuffledOptions: _shuffledOptions,
+              originalIndices: _originalIndices,
+              selectedIndex: _selectedIndex,
+              wrongIndices: _wrongIndices,
+              isAnswered: _isAnswered,
+              correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+              isDark: isDark,
+              primaryColor: theme.primaryColor,
+              onOptionSelected: (index) =>
+                  _onOptionSelected(index, quest.correctAnswerIndex),
+            ),
+            SizedBox(height: isCompact ? 12.h : 20.h),
+          ],
+        );
+      },
     );
   }
 }

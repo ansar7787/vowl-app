@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+import 'package:vowl/core/utils/locale_service.dart';
+
 /// A premium, cinematic full-screen briefing overlay presenting quest objectives,
 /// rules, and tips before a level begins, secured with mounted lifecycle guards.
 class QuestBriefingOverlay extends StatefulWidget {
@@ -109,7 +111,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
 
                     // Title
                     Text(
-                      "MISSION BRIEFING",
+                      context.tr('common.mission_briefing').toUpperCase(),
                       style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w900,

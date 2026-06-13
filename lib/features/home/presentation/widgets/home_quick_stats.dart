@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class HomeQuickStats extends StatelessWidget {
   final UserEntity user;
@@ -21,7 +22,7 @@ class HomeQuickStats extends StatelessWidget {
         Expanded(
           child: _buildMiniStatTile(
             context,
-            'STREAK',
+            context.tr('home.streak'),
             '${user.currentStreak}',
             Icons.local_fire_department_rounded,
             const Color(0xFFF97316),
@@ -32,7 +33,7 @@ class HomeQuickStats extends StatelessWidget {
         Expanded(
           child: _buildMiniStatTile(
             context,
-            'COINS',
+            context.tr('home.coins'),
             '${user.coins}',
             Icons.paid_rounded,
             const Color(0xFF10B981),
@@ -43,7 +44,7 @@ class HomeQuickStats extends StatelessWidget {
         Expanded(
           child: _buildMiniStatTile(
             context,
-            'KIDS',
+            context.tr('home.kids'),
             '${user.kidsCoins}',
             Icons.star_rounded,
             const Color(0xFFF59E0B),

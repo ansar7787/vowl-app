@@ -179,115 +179,120 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
           onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 10.h,
-                  ),
-                  child: Column(
-                    children: [
-                      const EmergencyHubInstruction(),
-                      SizedBox(height: 16.h),
-
-                      // Critical dispatcher prompt telex
-                      EmergencyHubTelexCard(
-                        telex:
-                            quest.dispatcherQuestion ??
-                            "AWAITING BROADCAST VECTOR DETAILS...",
-                        isDark: isDark,
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isCompact = constraints.maxHeight < 580;
+                    return SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: isCompact ? 5.h : 10.h,
                       ),
-                      SizedBox(height: 20.h),
+                      child: Column(
+                        children: [
+                          const EmergencyHubInstruction(),
+                          SizedBox(height: isCompact ? 10.h : 16.h),
 
-                      // Retro terminal input text field
-                      EmergencyHubTerminalInput(
-                        controller: _codeController,
-                        correctAnswer: quest.correctAnswer ?? "",
-                        isDark: isDark,
-                        onChanged: () => setState(() {}),
-                      ),
-                      SizedBox(height: 20.h),
-
-                      // Mechanical safety valve chamber
-                      EmergencyHubValveChamber(
-                        correctAnswer: quest.correctAnswer ?? "",
-                        inputText: _codeController.text,
-                        isDark: isDark,
-                        rotation: _rotation,
-                        pulseAnimation: _pulseController,
-                        onValveDragged: _onValveDragged,
-                      ),
-                      SizedBox(height: 24.h),
-
-                      // Dispatch lock confirm trigger button
-                      if (!_isAnswered && _codeController.text.isNotEmpty)
-                        ScaleButton(
-                          onTap: () => _submitCode(
-                            _codeController.text,
-                            quest.correctAnswer ?? "",
+                          // Critical dispatcher prompt telex
+                          EmergencyHubTelexCard(
+                            telex:
+                                quest.dispatcherQuestion ??
+                                "AWAITING BROADCAST VECTOR DETAILS...",
+                            isDark: isDark,
                           ),
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 48.w,
-                              vertical: 14.h,
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30.r),
-                              gradient: const LinearGradient(
-                                colors: [
-                                  Colors.redAccent,
-                                  Colors.deepOrangeAccent,
-                                ],
+                          SizedBox(height: isCompact ? 12.h : 20.h),
+
+                          // Retro terminal input text field
+                          EmergencyHubTerminalInput(
+                            controller: _codeController,
+                            correctAnswer: quest.correctAnswer ?? "",
+                            isDark: isDark,
+                            onChanged: () => setState(() {}),
+                          ),
+                          SizedBox(height: isCompact ? 12.h : 20.h),
+
+                          // Mechanical safety valve chamber
+                          EmergencyHubValveChamber(
+                            correctAnswer: quest.correctAnswer ?? "",
+                            inputText: _codeController.text,
+                            isDark: isDark,
+                            rotation: _rotation,
+                            pulseAnimation: _pulseController,
+                            onValveDragged: _onValveDragged,
+                          ),
+                          SizedBox(height: isCompact ? 16.h : 24.h),
+
+                          // Dispatch lock confirm trigger button
+                          if (!_isAnswered && _codeController.text.isNotEmpty)
+                            ScaleButton(
+                              onTap: () => _submitCode(
+                                _codeController.text,
+                                quest.correctAnswer ?? "",
                               ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.redAccent.withValues(
-                                    alpha: 0.45,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 48.w,
+                                  vertical: isCompact ? 10.h : 14.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30.r),
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Colors.redAccent,
+                                      Colors.deepOrangeAccent,
+                                    ],
                                   ),
-                                  blurRadius: 15,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.redAccent.withValues(
+                                        alpha: 0.45,
+                                      ),
+                                      blurRadius: isCompact ? 10 : 15,
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                  Icons.flash_on_rounded,
-                                  color: Colors.white,
-                                  size: 18.r,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      Icons.flash_on_rounded,
+                                      color: Colors.white,
+                                      size: isCompact ? 16.r : 18.r,
+                                    ),
+                                    SizedBox(width: 8.w),
+                                    Text(
+                                      "LAUNCH EMERGENCY BEACON",
+                                      style: TextStyle(
+                                        fontFamily: 'RobotoMono',
+                                        fontSize: isCompact ? 10.sp : 12.sp,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                SizedBox(width: 8.w),
-                                Text(
-                                  "LAUNCH EMERGENCY BEACON",
-                                  style: TextStyle(
-                                    fontFamily: 'RobotoMono',
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    letterSpacing: 2,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ).animate().fadeIn(duration: 300.ms),
+                              ),
+                            ).animate().fadeIn(duration: 300.ms),
 
-                      // Review details
-                      AnimatedCrossFade(
-                        firstChild: const SizedBox(),
-                        secondChild: EmergencyHubExplanationCard(
-                          quest: quest,
-                          isDark: isDark,
-                          isCorrect: _isCorrect,
-                        ),
-                        crossFadeState: _isAnswered
-                            ? CrossFadeState.showSecond
-                            : CrossFadeState.showFirst,
-                        duration: const Duration(milliseconds: 400),
+                          // Review details
+                          AnimatedCrossFade(
+                            firstChild: const SizedBox(),
+                            secondChild: EmergencyHubExplanationCard(
+                              quest: quest,
+                              isDark: isDark,
+                              isCorrect: _isCorrect,
+                            ),
+                            crossFadeState: _isAnswered
+                                ? CrossFadeState.showSecond
+                                : CrossFadeState.showFirst,
+                            duration: const Duration(milliseconds: 400),
+                          ),
+                          SizedBox(height: isCompact ? 40.h : 80.h),
+                        ],
                       ),
-                      SizedBox(height: 80.h),
-                    ],
-                  ),
+                    );
+                  },
                 ),
         );
       },

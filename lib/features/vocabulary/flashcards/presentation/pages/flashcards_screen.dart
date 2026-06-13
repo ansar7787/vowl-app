@@ -14,6 +14,7 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_game_body.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class FlashcardsScreen extends StatefulWidget {
   final int level;
@@ -293,7 +294,7 @@ class _ErrorScaffold extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 24.h),
-              TextButton(onPressed: onRetry, child: const Text('TRY AGAIN')),
+              TextButton(onPressed: onRetry, child: Text(context.tr('games.try_again').toUpperCase())),
             ],
           ),
         ),

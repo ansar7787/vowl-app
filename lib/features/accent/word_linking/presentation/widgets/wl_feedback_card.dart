@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 
@@ -210,7 +211,7 @@ class WLFeedbackCard extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  "CONTINUE",
+                  context.tr('common.continue_text').toUpperCase(),
                   style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,

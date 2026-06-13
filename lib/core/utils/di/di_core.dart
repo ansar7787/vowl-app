@@ -28,6 +28,7 @@ import 'package:vowl/core/utils/subscription_plans_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/usecases/get_current_user.dart';
 
 /// Initializes core systems, platform boundaries, and base infrastructure.
@@ -48,6 +49,12 @@ Future<void> initExternalAndCore(GetIt sl) async {
   // CORE SYSTEMS & INFRASTRUCTURE
   // ==========================================
   sl.registerLazySingleton<SecurityService>(() => SecurityService());
+
+  // Localization
+  final localeService = LocaleService();
+  sl.registerLazySingleton<LocaleService>(() => localeService);
+  initLocaleServiceReference(localeService);
+  await localeService.init();
   sl.registerLazySingleton<RemoteConfigService>(
     () => RemoteConfigService(sl<FirebaseRemoteConfig>()),
   );

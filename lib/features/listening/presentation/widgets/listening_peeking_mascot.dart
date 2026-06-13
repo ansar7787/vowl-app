@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 
 /// Animated mascot widget that peeks in from the top-left with a contextual
@@ -33,16 +34,23 @@ class ListeningPeekingMascot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Safe title-case conversion — guards empty IDs and double-underscore
-    // separators that would produce empty segments and trigger a RangeError.
-    final mascotName = mascotId
-        .split('_')
-        .where((s) => s.isNotEmpty)
-        .map((s) => '${s[0].toUpperCase()}${s.substring(1)}')
-        .join(' ');
+    final mascotState = MascotMessageHelper.getMascotState(
+      isComplete: state is ListeningGameComplete,
+      isGameOver: state is ListeningGameOver,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
 
-    final message = _resolveMessage(mascotName);
-    final mascotState = _resolveMascotState();
+    final message = MascotMessageHelper.getMessage(
+      context,
+      category: 'listening',
+      mascotId: mascotId,
+      isComplete: state is ListeningGameComplete,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
 
     // The entire peeking mascot is decorative; the game header Semantics node
     // already communicates lives and level to screen readers.
@@ -56,28 +64,9 @@ class ListeningPeekingMascot extends StatelessWidget {
       ).animate().fadeIn().slideY(begin: -0.1, end: 0),
     );
   }
-
-  // ── Message priority matches the original conditional chain exactly. ──────
-
-  String _resolveMessage(String mascotName) {
-    if (isCorrect == true) return 'Perfect Echo! ✨';
-    if (lives < 3 && !isAnswered) return 'Focus your ears! 💡';
-    if (isCorrect == false) return 'Re-listen closely! 📡';
-    if (state is ListeningGameComplete) return 'Audio Specialist! 🏆';
-    return '$mascotName is listening! 🦉';
-  }
-
-  VowlMascotState _resolveMascotState() {
-    if (state is ListeningGameComplete) return VowlMascotState.happy;
-    if (state is ListeningGameOver) return VowlMascotState.worried;
-    if (state is ListeningLoaded) {
-      if (isCorrect == true) return VowlMascotState.happy;
-      if (lives < 3 && !isAnswered) return VowlMascotState.worried;
-      if (isCorrect == false) return VowlMascotState.thinking;
-    }
-    return VowlMascotState.neutral;
-  }
 }
+
+
 
 // ─────────────────────────────────────────────────────────────────────────────
 // _SpeechBubble

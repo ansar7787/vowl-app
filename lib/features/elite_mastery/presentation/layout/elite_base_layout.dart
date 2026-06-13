@@ -18,9 +18,10 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_feedback_card.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_game_header.dart';
-import 'package:vowl/features/elite_mastery/presentation/widgets/elite_mascot_bubble.dart';
+import 'package:vowl/features/elite_mastery/presentation/widgets/elite_peeking_mascot.dart';
 
 import '../bloc/elite_mastery_bloc.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class EliteBaseLayout extends StatefulWidget {
   final GameSubtype gameType;
@@ -84,8 +85,8 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
   // ── Constants ────────────────────────────────────────────────────────────
   static const int _kMaxLives = 3;
   static const Duration _kNudgeDelay = Duration(milliseconds: 1200);
-  static const String _kNudgeMessage =
-      'Focus! Use a hint if you need help saving your last life.';
+  String get _kNudgeMessage =>
+      context.tr('games.kids_nudge');
 
   // ── Lifecycle ────────────────────────────────────────────────────────────
 
@@ -366,7 +367,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                         Positioned(
                           top: -10.h,
                           left: 20.w,
-                          child: EliteMascotBubble(
+                          child: ElitePeekingMascot(
                             state: state,
                             lives: lives,
                             isAnswered: widget.isAnswered,
@@ -409,6 +410,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
   // ignore: avoid_annotating_with_dynamic
   Widget _buildBriefing(dynamic theme) {
     final briefing = GameInstructionService.getBriefing(
+      context,
       widget.gameType,
       widget.title,
       level: widget.level,

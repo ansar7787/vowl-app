@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// A premium page presenting themed multi-part curriculum sequences.
 /// 
@@ -32,11 +33,11 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   String get _sequenceTitle {
     switch (widget.sequenceId) {
       case 'daily_duo':
-        return 'Daily Duo';
+        return context.tr('home.discovery_dailyduo_title');
       case 'speed_blitz':
-        return 'Speed Blitz';
+        return context.tr('home.discovery_speedblitz_title');
       case 'grammar_pro':
-        return 'Grammar Pro';
+        return context.tr('home.discovery_grammarpro_title');
       default:
         return 'Themed Quest';
     }
@@ -234,7 +235,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                               ),
                               child: Text(
                                 _isLaunching
-                                    ? 'LOADING...'
+                                    ? context.tr('common.loading').toUpperCase()
                                     : _currentIndex < widget.quests.length
                                         ? 'START PART ${_currentIndex + 1}'
                                         : 'FINISH QUEST',

@@ -17,6 +17,7 @@ import '../../../presentation/widgets/elite_hint_card.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import '../widgets/accent_shadowing_target_panel.dart';
 import '../widgets/accent_shadowing_mic_trigger.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class AccentShadowingScreen extends StatefulWidget {
   final int level;
@@ -299,7 +300,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                   borderRadius: BorderRadius.circular(16.r),
                 ),
                 child: Text(
-                  "RETRY",
+                  context.tr('common.retry').toUpperCase(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     color: theme.primaryColor,
@@ -345,55 +346,62 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
   ) {
     final quest = state.currentQuest;
 
-    return Column(
-      children: [
-        AccentShadowingTargetPanel(
-          text: quest.text ?? quest.textToSpeak ?? "??",
-          matchedIndices: _matchedIndices,
-          isDark: isDark,
-          primaryColor: theme.primaryColor,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          attempts: _attempts,
-        ),
-        if (state.isHintVisible) ...[
-          SizedBox(height: 20.h),
-          EliteHintCard(
-            hintText: quest.hint,
-            isVisible: true,
-            onShowHint: () {},
-            primaryColor: theme.primaryColor,
-          ),
-        ],
-        SizedBox(height: 30.h),
-        if (_lastWords.isNotEmpty)
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-            decoration: BoxDecoration(
-              color: theme.primaryColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(15.r),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isCompact = constraints.maxHeight < 580;
+
+        return Column(
+          children: [
+            AccentShadowingTargetPanel(
+              text: quest.text ?? quest.textToSpeak ?? "??",
+              matchedIndices: _matchedIndices,
+              isDark: isDark,
+              primaryColor: theme.primaryColor,
+              isAnswered: _isAnswered,
+              isCorrect: _isCorrect,
+              attempts: _attempts,
             ),
-            child: Text(
-              _lastWords,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-                color: theme.primaryColor,
+            if (state.isHintVisible) ...[
+              SizedBox(height: isCompact ? 12.h : 20.h),
+              EliteHintCard(
+                hintText: quest.hint,
+                isVisible: true,
+                onShowHint: () {},
+                primaryColor: theme.primaryColor,
               ),
-              textAlign: TextAlign.center,
+            ],
+            SizedBox(height: isCompact ? 16.h : 30.h),
+            if (_lastWords.isNotEmpty)
+              Container(
+                padding: EdgeInsets.symmetric(
+                    horizontal: 20.w, vertical: isCompact ? 8.h : 12.h),
+                decoration: BoxDecoration(
+                  color: theme.primaryColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(15.r),
+                ),
+                child: Text(
+                  _lastWords,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: isCompact ? 14.sp : 16.sp,
+                    fontWeight: FontWeight.w600,
+                    color: theme.primaryColor,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ).animate().fadeIn(),
+            SizedBox(height: isCompact ? 20.h : 40.h),
+            AccentShadowingMicTrigger(
+              isListening: _isListening,
+              onTap: () => _toggleListening(quest.text ?? quest.textToSpeak ?? ""),
+              onTutorPass: _tutorPass,
+              primaryColor: theme.primaryColor,
+              attempts: _attempts,
+              isAnswered: _isAnswered,
             ),
-          ).animate().fadeIn(),
-        SizedBox(height: 40.h),
-        AccentShadowingMicTrigger(
-          isListening: _isListening,
-          onTap: () => _toggleListening(quest.text ?? quest.textToSpeak ?? ""),
-          onTutorPass: _tutorPass,
-          primaryColor: theme.primaryColor,
-          attempts: _attempts,
-          isAnswered: _isAnswered,
-        ),
-      ],
+          ],
+        );
+      },
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class HomeSectionHeader extends StatelessWidget {
   final String title;
@@ -10,6 +11,9 @@ class HomeSectionHeader extends StatelessWidget {
   final VoidCallback? onSeeAll;
   final Widget? badge;
 
+  final String? localizedTitleKey;
+  final String? localizedSubtitleKey;
+
   const HomeSectionHeader({
     super.key,
     required this.title,
@@ -17,6 +21,8 @@ class HomeSectionHeader extends StatelessWidget {
     required this.categoryColor,
     this.onSeeAll,
     this.badge,
+    this.localizedTitleKey,
+    this.localizedSubtitleKey,
   });
 
   @override
@@ -50,25 +56,36 @@ class HomeSectionHeader extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text(
-                    title.toUpperCase(),
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w900,
-                      color: contrastColor,
-                      letterSpacing: 1.2,
+                  Flexible(
+                    child: Text(
+                      (localizedTitleKey != null
+                              ? context.tr(localizedTitleKey!)
+                              : title)
+                          .toUpperCase(),
+                      style: TextStyle(fontFamily: 'Outfit', 
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w900,
+                        color: contrastColor,
+                        letterSpacing: 1.2,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   if (badge != null) ...[SizedBox(width: 10.w), badge!],
                 ],
               ),
               Text(
-                subtitle,
+                localizedSubtitleKey != null
+                    ? context.tr(localizedSubtitleKey!)
+                    : subtitle,
                 style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 11.sp,
                   fontWeight: FontWeight.w600,
                   color: secondaryColor,
                 ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
             ],
           ),
@@ -84,7 +101,7 @@ class HomeSectionHeader extends StatelessWidget {
                 border: Border.all(color: categoryColor.withValues(alpha: 0.2)),
               ),
               child: Text(
-                'SEE ALL',
+                context.tr('common.see_all'),
                 style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,

@@ -17,6 +17,7 @@ import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class BuddyBoutiqueScreen extends StatefulWidget {
   const BuddyBoutiqueScreen({super.key});
@@ -56,8 +57,8 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
-    final bgColor = isMidnight 
-        ? Colors.black 
+    final bgColor = isMidnight
+        ? Colors.black
         : (isDark ? const Color(0xFF1E3A8A) : const Color(0xFFF8FAFC));
 
     return Scaffold(
@@ -67,7 +68,9 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
           KidsBackgroundRenderer(
             painterName: 'KidsWorldBackground',
             shaderName: 'magic_twinkle',
-            primaryColor: isDark ? const Color(0xFF1E3A8A) : Colors.blue.shade100,
+            primaryColor: isDark
+                ? const Color(0xFF1E3A8A)
+                : Colors.blue.shade100,
             gameType: 'shop',
           ),
           CustomScrollView(
@@ -115,10 +118,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       toolbarHeight: 70.h,
       automaticallyImplyLeading: false,
       title: GlassTile(
-        padding: EdgeInsets.symmetric(
-          horizontal: 12.w,
-          vertical: 8.h,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
         borderRadius: BorderRadius.circular(24.r),
         child: Row(
           children: [
@@ -139,7 +139,8 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
             Expanded(
               child: Text(
                 'Buddy Boutique',
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w800,
                   color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -165,15 +166,23 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: isDark 
-                    ? [Colors.white.withValues(alpha: 0.1), Colors.white.withValues(alpha: 0.02)]
+                colors: isDark
+                    ? [
+                        Colors.white.withValues(alpha: 0.1),
+                        Colors.white.withValues(alpha: 0.02),
+                      ]
                     : [Colors.white, const Color(0xFFF1F5F9)],
               ),
               borderRadius: BorderRadius.circular(35.r),
-              border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1.5),
+              border: Border.all(
+                color: Colors.white.withValues(alpha: 0.2),
+                width: 1.5,
+              ),
               boxShadow: [
                 BoxShadow(
-                  color: (isDark ? Colors.blue : Colors.black).withValues(alpha: 0.1),
+                  color: (isDark ? Colors.blue : Colors.black).withValues(
+                    alpha: 0.1,
+                  ),
                   blurRadius: 30,
                   offset: const Offset(0, 15),
                 ),
@@ -191,24 +200,34 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                         children: [
                           Text(
                             "BUDDY PASSPORT",
-                            style: TextStyle(fontFamily: 'Outfit', 
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w900,
                               letterSpacing: 3,
-                              color: isDark ? Colors.blue[300] : Colors.blue[700],
+                              color: isDark
+                                  ? Colors.blue[300]
+                                  : Colors.blue[700],
                             ),
                           ),
                           Text(
                             "Holographic Identity",
-                            style: TextStyle(fontFamily: 'Outfit', 
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w800,
-                              color: isDark ? Colors.white : const Color(0xFF0F172A),
+                              color: isDark
+                                  ? Colors.white
+                                  : const Color(0xFF0F172A),
                             ),
                           ),
                         ],
                       ),
-                      Icon(Icons.fingerprint_rounded, color: Colors.blue[400], size: 24.r),
+                      Icon(
+                        Icons.fingerprint_rounded,
+                        color: Colors.blue[400],
+                        size: 24.r,
+                      ),
                     ],
                   ),
                   SizedBox(height: 30.h),
@@ -218,22 +237,31 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                     children: [
                       // Glow
                       Container(
-                        width: 140.r,
-                        height: 140.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: RadialGradient(
-                            colors: [Colors.blue.withValues(alpha: 0.2), Colors.transparent],
+                            width: 140.r,
+                            height: 140.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: RadialGradient(
+                                colors: [
+                                  Colors.blue.withValues(alpha: 0.2),
+                                  Colors.transparent,
+                                ],
+                              ),
+                            ),
+                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .scale(
+                            begin: const Offset(0.8, 0.8),
+                            end: const Offset(1.2, 1.2),
+                            duration: 2.seconds,
                           ),
-                        ),
-                      ).animate(onPlay: (c) => c.repeat(reverse: true))
-                       .scale(begin: const Offset(0.8, 0.8), end: const Offset(1.2, 1.2), duration: 2.seconds),
 
                       // Mascot
                       VowlMascot(
                         size: 110.r,
                         useFloatingAnimation: true,
                         state: VowlMascotState.happy,
+                        isKidsMode: true,
                       ),
                     ],
                   ),
@@ -243,11 +271,25 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        _buildPassportTag(_getBuddyRank(user?.level ?? 1), (user?.level ?? 1) > 25 ? Colors.purpleAccent : Colors.green, isDark),
+                        _buildPassportTag(
+                          _getBuddyRank(user?.level ?? 1),
+                          (user?.level ?? 1) > 25
+                              ? Colors.purpleAccent
+                              : Colors.green,
+                          isDark,
+                        ),
                         SizedBox(width: 8.w),
-                        _buildPassportTag("STREAK: ${user?.currentStreak ?? 0}", Colors.orangeAccent, isDark),
+                        _buildPassportTag(
+                          "STREAK: ${user?.currentStreak ?? 0}",
+                          Colors.orangeAccent,
+                          isDark,
+                        ),
                         SizedBox(width: 8.w),
-                        _buildPassportTag("LVL: ${user?.level ?? 1}", Colors.blue, isDark),
+                        _buildPassportTag(
+                          "LVL: ${user?.level ?? 1}",
+                          Colors.blue,
+                          isDark,
+                        ),
                       ],
                     ),
                   ),
@@ -269,24 +311,58 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
             margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
             padding: EdgeInsets.all(24.r),
             decoration: BoxDecoration(
-              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.05)
+                  : Colors.white,
               borderRadius: BorderRadius.circular(32.r),
-              boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 20, offset: const Offset(0, 10))],
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.05),
+                  blurRadius: 20,
+                  offset: const Offset(0, 10),
+                ),
+              ],
             ),
             child: Row(
               children: [
                 Container(
                   padding: EdgeInsets.all(16.r),
-                  decoration: BoxDecoration(color: Colors.redAccent.withValues(alpha: 0.1), shape: BoxShape.circle),
-                  child: const Icon(Icons.star_rounded, color: Colors.amber, size: 32),
+                  decoration: BoxDecoration(
+                    color: Colors.redAccent.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.star_rounded,
+                    color: Colors.amber,
+                    size: 32,
+                  ),
                 ),
                 SizedBox(width: 18.w),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("KIDS COINS", style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.amber, letterSpacing: 2)),
-                      Text("$coins", style: TextStyle(fontFamily: 'Outfit', fontSize: 28.sp, fontWeight: FontWeight.w900, color: isDark ? Colors.white : const Color(0xFF0F172A))),
+                      Text(
+                        context.tr('games.kids_coins'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.amber,
+                          letterSpacing: 2,
+                        ),
+                      ),
+                      Text(
+                        "$coins",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 28.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -310,11 +386,36 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
           dividerColor: Colors.transparent,
           tabAlignment: TabAlignment.start,
           tabs: [
-            _buildTab("All", Icons.apps_rounded, const Color(0xFF6366F1), isDark),
-            _buildTab("Clothes", Icons.checkroom_rounded, const Color(0xFFEC4899), isDark),
-            _buildTab("Toys", Icons.toys_rounded, const Color(0xFFEF4444), isDark),
-            _buildTab("Magic", Icons.auto_awesome_rounded, const Color(0xFFA855F7), isDark),
-            _buildTab("Buddies", Icons.pets_rounded, const Color(0xFF10B981), isDark),
+            _buildTab(
+              "All",
+              Icons.apps_rounded,
+              const Color(0xFF6366F1),
+              isDark,
+            ),
+            _buildTab(
+              "Clothes",
+              Icons.checkroom_rounded,
+              const Color(0xFFEC4899),
+              isDark,
+            ),
+            _buildTab(
+              "Toys",
+              Icons.toys_rounded,
+              const Color(0xFFEF4444),
+              isDark,
+            ),
+            _buildTab(
+              "Magic",
+              Icons.auto_awesome_rounded,
+              const Color(0xFFA855F7),
+              isDark,
+            ),
+            _buildTab(
+              "Buddies",
+              Icons.pets_rounded,
+              const Color(0xFF10B981),
+              isDark,
+            ),
           ],
         ),
       ),
@@ -322,7 +423,9 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
   }
 
   Widget _buildTab(String label, IconData icon, Color color, bool isDark) {
-    final isSelected = _tabController.index == ["All", "Clothes", "Toys", "Magic", "Buddies"].indexOf(label);
+    final isSelected =
+        _tabController.index ==
+        ["All", "Clothes", "Toys", "Magic", "Buddies"].indexOf(label);
     return Tab(
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
@@ -334,7 +437,17 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
           children: [
             Icon(icon, size: 16.r, color: isSelected ? Colors.white : color),
             SizedBox(width: 8.w),
-            Text(label, style: TextStyle(fontFamily: 'Outfit', fontSize: 13.sp, fontWeight: FontWeight.w700, color: isSelected ? Colors.white : (isDark ? Colors.white70 : Colors.black87))),
+            Text(
+              label,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w700,
+                color: isSelected
+                    ? Colors.white
+                    : (isDark ? Colors.white70 : Colors.black87),
+              ),
+            ),
           ],
         ),
       ),
@@ -349,9 +462,17 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         final equipped = user?.kidsEquippedAccessory;
         final categories = ["All", "Clothes", "Toys", "Magic", "Buddies"];
         final currentCategory = categories[_tabController.index];
-        final filteredItems = KidsAssets.shopItems
-            .where((i) => currentCategory == "All" || i['category'] == currentCategory)
-            .toList()..sort((a, b) => (a['price'] as int).compareTo(b['price'] as int));
+        final filteredItems =
+            KidsAssets.shopItems
+                .where(
+                  (i) =>
+                      currentCategory == "All" ||
+                      i['category'] == currentCategory,
+                )
+                .toList()
+              ..sort(
+                (a, b) => (a['price'] as int).compareTo(b['price'] as int),
+              );
 
         return SliverPadding(
           padding: EdgeInsets.all(24.r),
@@ -364,7 +485,13 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
             ),
             delegate: SliverChildBuilderDelegate((context, index) {
               final item = filteredItems[index];
-              return _buildShopItem(context, item, isDark, isOwned: owned.contains(item['id']), isEquipped: equipped == item['id']);
+              return _buildShopItem(
+                context,
+                item,
+                isDark,
+                isOwned: owned.contains(item['id']),
+                isEquipped: equipped == item['id'],
+              );
             }, childCount: filteredItems.length),
           ),
         );
@@ -372,7 +499,13 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     );
   }
 
-  Widget _buildShopItem(BuildContext context, Map<String, dynamic> item, bool isDark, {required bool isOwned, required bool isEquipped}) {
+  Widget _buildShopItem(
+    BuildContext context,
+    Map<String, dynamic> item,
+    bool isDark, {
+    required bool isOwned,
+    required bool isEquipped,
+  }) {
     return ScaleButton(
       onTap: () => _handleItemAction(context, item, isOwned, isEquipped),
       child: ClipRRect(
@@ -381,22 +514,53 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
           child: Container(
             decoration: BoxDecoration(
-              color: isEquipped ? (item['color'] as Color).withValues(alpha: 0.2) : (isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white.withValues(alpha: 0.6)),
+              color: isEquipped
+                  ? (item['color'] as Color).withValues(alpha: 0.2)
+                  : (isDark
+                        ? Colors.white.withValues(alpha: 0.05)
+                        : Colors.white.withValues(alpha: 0.6)),
               borderRadius: BorderRadius.circular(24.r),
-              border: Border.all(color: isEquipped ? (item['color'] as Color) : (isDark ? Colors.white10 : Colors.white), width: 2),
+              border: Border.all(
+                color: isEquipped
+                    ? (item['color'] as Color)
+                    : (isDark ? Colors.white10 : Colors.white),
+                width: 2,
+              ),
             ),
             padding: EdgeInsets.all(16.r),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(item['icon'] as String, style: TextStyle(fontSize: 40.sp)).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1), duration: 2.seconds),
+                Text(item['icon'] as String, style: TextStyle(fontSize: 40.sp))
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .scale(
+                      begin: const Offset(1, 1),
+                      end: const Offset(1.1, 1.1),
+                      duration: 2.seconds,
+                    ),
                 SizedBox(height: 12.h),
-                Text(item['name'] as String, style: TextStyle(fontFamily: 'Outfit', fontSize: 13.sp, fontWeight: FontWeight.w900, color: isDark ? Colors.white : const Color(0xFF1E293B))),
+                Text(
+                  item['name'] as String,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : const Color(0xFF1E293B),
+                  ),
+                ),
                 SizedBox(height: 8.h),
                 if (isEquipped)
-                  _buildItemStatusTag("EQUIPPED", item['color'] as Color, item['color'] as Color)
+                  _buildItemStatusTag(
+                    "EQUIPPED",
+                    item['color'] as Color,
+                    item['color'] as Color,
+                  )
                 else if (isOwned)
-                  _buildItemStatusTag("EQUIP", isDark ? Colors.white10 : Colors.grey[200]!, isDark ? Colors.white70 : Colors.black54)
+                  _buildItemStatusTag(
+                    "EQUIP",
+                    isDark ? Colors.white10 : Colors.grey[200]!,
+                    isDark ? Colors.white70 : Colors.black54,
+                  )
                 else
                   _buildPriceTag(item['price'] as int, item['color'] as Color),
               ],
@@ -410,8 +574,19 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
   Widget _buildItemStatusTag(String label, Color bgColor, Color textColor) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-      decoration: BoxDecoration(color: bgColor.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(12.r)),
-      child: Text(label, style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: textColor)),
+      decoration: BoxDecoration(
+        color: bgColor.withValues(alpha: 0.2),
+        borderRadius: BorderRadius.circular(12.r),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 10.sp,
+          fontWeight: FontWeight.w900,
+          color: textColor,
+        ),
+      ),
     );
   }
 
@@ -419,7 +594,10 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-      decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12.r)),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(12.r),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -427,7 +605,8 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
           SizedBox(width: 4.w),
           Text(
             "$price",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
               color: isDark ? Colors.white70 : Colors.black54,
@@ -438,7 +617,12 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     );
   }
 
-  void _handleItemAction(BuildContext context, Map<String, dynamic> item, bool isOwned, bool isEquipped) {
+  void _handleItemAction(
+    BuildContext context,
+    Map<String, dynamic> item,
+    bool isOwned,
+    bool isEquipped,
+  ) {
     Haptics.vibrate(HapticsType.selection);
     final authBloc = context.read<AuthBloc>();
     final user = authBloc.state.user;
@@ -447,15 +631,21 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
 
     if (isEquipped) {
       if (isMascot) return;
-      context.read<ProfileBloc>().add(const ProfileEquipAccessoryRequested(null));
+      context.read<ProfileBloc>().add(
+        const ProfileEquipAccessoryRequested(null),
+      );
       return;
     }
 
     if (isOwned) {
       if (isMascot) {
-        context.read<ProfileBloc>().add(ProfileUpdateMascotRequested(item['id'] as String));
+        context.read<ProfileBloc>().add(
+          ProfileUpdateMascotRequested(item['id'] as String),
+        );
       } else {
-        context.read<ProfileBloc>().add(ProfileEquipAccessoryRequested(item['id'] as String));
+        context.read<ProfileBloc>().add(
+          ProfileEquipAccessoryRequested(item['id'] as String),
+        );
       }
       return;
     }
@@ -468,17 +658,23 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
 
     _confettiController.play();
     di.sl<SoundService>().playCorrect();
-    
+
     // The Bloc automatically handles deducting coins and adding to owned items
-    context.read<ProfileBloc>().add(ProfileBuyAccessoryRequested(item['id'] as String, item['price'] as int));
-    
+    context.read<ProfileBloc>().add(
+      ProfileBuyAccessoryRequested(item['id'] as String, item['price'] as int),
+    );
+
     // Auto-equip the item they just purchased
     if (isMascot) {
-      context.read<ProfileBloc>().add(ProfileUpdateMascotRequested(item['id'] as String));
+      context.read<ProfileBloc>().add(
+        ProfileUpdateMascotRequested(item['id'] as String),
+      );
     } else {
-      context.read<ProfileBloc>().add(ProfileEquipAccessoryRequested(item['id'] as String));
+      context.read<ProfileBloc>().add(
+        ProfileEquipAccessoryRequested(item['id'] as String),
+      );
     }
-    
+
     _showModernNotification(context, "PURCHASE SUCCESSFUL! ✨");
   }
 
@@ -487,41 +683,77 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       builder: (context, state) {
         final isPremium = state.user?.isPremium ?? false;
         return ScaleButton(
-          onTap: () {
-            di.sl<AdService>().showRewardedAd(
-              isPremium: isPremium,
-              onUserEarnedReward: (reward) {
-                di.sl<SoundService>().playCorrect();
-                context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(10));
-                _showModernNotification(context, "AWARDED 10 KIDS COINS! ⭐✨");
+              onTap: () {
+                di.sl<AdService>().showRewardedAd(
+                  isPremium: isPremium,
+                  onUserEarnedReward: (reward) {
+                    di.sl<SoundService>().playCorrect();
+                    context.read<EconomyBloc>().add(
+                      const EconomyAddKidsCoinsRequested(10),
+                    );
+                    _showModernNotification(
+                      context,
+                      "AWARDED 10 KIDS COINS! ⭐✨",
+                    );
+                  },
+                  onDismissed: () {},
+                );
               },
-              onDismissed: () {},
-            );
-          },
-          child: Container(
-            padding: EdgeInsets.all(24.r),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [const Color(0xFFEF4444), const Color(0xFF991B1B)], begin: Alignment.topLeft, end: Alignment.bottomRight),
-              borderRadius: BorderRadius.circular(32.r),
-            ),
-            child: Row(
-              children: [
-                const Icon(Icons.play_circle_fill_rounded, color: Colors.white, size: 32),
-                SizedBox(width: 20.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("WATCH & EARN", style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white70, letterSpacing: 2)),
-                      Text("Get 10 Kids Coins", style: TextStyle(fontFamily: 'Outfit', fontSize: 18.sp, fontWeight: FontWeight.w800, color: Colors.white)),
-                    ],
+              child: Container(
+                padding: EdgeInsets.all(24.r),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [const Color(0xFFEF4444), const Color(0xFF991B1B)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
+                  borderRadius: BorderRadius.circular(32.r),
                 ),
-                const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white, size: 16),
-              ],
-            ),
-          ),
-        ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 3.seconds, color: Colors.white24);
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.play_circle_fill_rounded,
+                      color: Colors.white,
+                      size: 32,
+                    ),
+                    SizedBox(width: 20.w),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            context.tr('games.watch_and_earn'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white70,
+                              letterSpacing: 2,
+                            ),
+                          ),
+                          Text(
+                            context.tr('games.get_10_coins'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      color: Colors.white,
+                      size: 16,
+                    ),
+                  ],
+                ),
+              ),
+            )
+            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .shimmer(duration: 3.seconds, color: Colors.white24);
       },
     );
   }
@@ -536,43 +768,84 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
   Widget _buildPassportTag(String text, Color color, bool isDark) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-      decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8.r), border: Border.all(color: color.withValues(alpha: 0.2))),
-      child: Text(text, style: TextStyle(fontFamily: 'Outfit', fontSize: 8.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 1)),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(8.r),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 8.sp,
+          fontWeight: FontWeight.w900,
+          color: color,
+          letterSpacing: 1,
+        ),
+      ),
     );
   }
 
-  void _showModernNotification(BuildContext context, String message, {bool isError = false}) {
+  void _showModernNotification(
+    BuildContext context,
+    String message, {
+    bool isError = false,
+  }) {
     final overlay = Overlay.of(context);
     final entry = OverlayEntry(
       builder: (context) => Positioned(
-        top: 60.h, left: 20.w, right: 20.w,
+        top: 60.h,
+        left: 20.w,
+        right: 20.w,
         child: Material(
           color: Colors.transparent,
-          child: GlassTile(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
-            borderRadius: BorderRadius.circular(25.r),
-            borderColor: isError ? Colors.redAccent.withValues(alpha: 0.3) : Colors.greenAccent.withValues(alpha: 0.3),
-            child: Row(
-              children: [
-                Icon(isError ? Icons.warning_amber_rounded : Icons.check_circle_outline_rounded, color: isError ? Colors.redAccent : Colors.greenAccent, size: 24.sp),
-                SizedBox(width: 12.w),
-                Expanded(
-                  child: Text(
-                    message,
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 13.sp,
-                      fontWeight: FontWeight.w800,
-                      color: isError
-                          ? Colors.redAccent
-                          : (Theme.of(context).brightness == Brightness.dark
-                              ? Colors.white
-                              : const Color(0xFF0F172A)),
+          child:
+              GlassTile(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 15.h,
                     ),
-                  ),
-                ),
-              ],
-            ),
-          ).animate().slideY(begin: -1, end: 0, curve: Curves.easeOutBack).fadeIn().then(delay: 2000.ms).fadeOut().slideY(begin: 0, end: -1),
+                    borderRadius: BorderRadius.circular(25.r),
+                    borderColor: isError
+                        ? Colors.redAccent.withValues(alpha: 0.3)
+                        : Colors.greenAccent.withValues(alpha: 0.3),
+                    child: Row(
+                      children: [
+                        Icon(
+                          isError
+                              ? Icons.warning_amber_rounded
+                              : Icons.check_circle_outline_rounded,
+                          color: isError
+                              ? Colors.redAccent
+                              : Colors.greenAccent,
+                          size: 24.sp,
+                        ),
+                        SizedBox(width: 12.w),
+                        Expanded(
+                          child: Text(
+                            message,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w800,
+                              color: isError
+                                  ? Colors.redAccent
+                                  : (Theme.of(context).brightness ==
+                                            Brightness.dark
+                                        ? Colors.white
+                                        : const Color(0xFF0F172A)),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                  .animate()
+                  .slideY(begin: -1, end: 0, curve: Curves.easeOutBack)
+                  .fadeIn()
+                  .then(delay: 2000.ms)
+                  .fadeOut()
+                  .slideY(begin: 0, end: -1),
         ),
       ),
     );

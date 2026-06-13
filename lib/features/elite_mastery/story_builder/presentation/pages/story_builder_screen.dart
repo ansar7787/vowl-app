@@ -2,6 +2,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
@@ -277,7 +278,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                   borderRadius: BorderRadius.circular(16.r),
                 ),
                 child: Text(
-                  "RETRY",
+                  context.tr('common.retry').toUpperCase(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     color: theme.primaryColor,
@@ -322,79 +323,86 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   ) {
     final quest = state.currentQuest;
 
-    return Column(
-      children: [
-        ReorderableListView(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          onReorder: _onReorder,
-          proxyDecorator: (child, index, animation) => Material(
-            color: Colors.transparent,
-            child: child.animate().scale(
-              begin: const Offset(1, 1),
-              end: const Offset(1.02, 1.02),
-              duration: 150.ms,
-            ),
-          ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isCompact = constraints.maxHeight < 580;
+
+        return Column(
           children: [
-            for (int i = 0; i < _currentOrder.length; i++)
-              Padding(
-                key: ValueKey("${quest.id}_${_currentOrder[i]}_$i"),
-                padding: EdgeInsets.only(bottom: 14.h),
-                child: StoryBuilderNarrativeTile(
-                  index: i,
-                  sentence: _currentOrder[i],
-                  quest: quest,
-                  isHintVisible: state.isHintVisible,
-                  isDark: isDark,
-                  theme: theme,
-                  isAnswered: _isAnswered,
-                  isCorrect: _isCorrect,
+            ReorderableListView(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              onReorder: _onReorder,
+              proxyDecorator: (child, index, animation) => Material(
+                color: Colors.transparent,
+                child: child.animate().scale(
+                  begin: const Offset(1, 1),
+                  end: const Offset(1.02, 1.02),
+                  duration: 150.ms,
                 ),
               ),
-          ],
-        ),
-        SizedBox(height: 30.h),
-        if (!_isAnswered)
-          ScaleButton(
-            onTap: () =>
-                _submitOrder(quest.correctOrder, quest.sentences ?? []),
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 20.h),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    theme.primaryColor,
-                    theme.primaryColor.withValues(alpha: 0.8),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(24.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: theme.primaryColor.withValues(alpha: 0.6),
-                    blurRadius: 20,
-                    offset: const Offset(0, 10),
+              children: [
+                for (int i = 0; i < _currentOrder.length; i++)
+                  Padding(
+                    key: ValueKey("${quest.id}_${_currentOrder[i]}_$i"),
+                    padding: EdgeInsets.only(bottom: isCompact ? 10.h : 14.h),
+                    child: StoryBuilderNarrativeTile(
+                      index: i,
+                      sentence: _currentOrder[i],
+                      quest: quest,
+                      isHintVisible: state.isHintVisible,
+                      isDark: isDark,
+                      theme: theme,
+                      isAnswered: _isAnswered,
+                      isCorrect: _isCorrect,
+                    ),
                   ),
-                ],
-              ),
-              child: Center(
-                child: Text(
-                  "FINALIZE STORY",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    letterSpacing: 2.5,
-                  ),
-                ),
-              ),
+              ],
             ),
-          ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2),
-      ],
+            SizedBox(height: isCompact ? 16.h : 30.h),
+            if (!_isAnswered)
+              ScaleButton(
+                onTap: () =>
+                    _submitOrder(quest.correctOrder, quest.sentences ?? []),
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(
+                      vertical: isCompact ? 14.h : 20.h),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        theme.primaryColor,
+                        theme.primaryColor.withValues(alpha: 0.8),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: theme.primaryColor.withValues(alpha: 0.6),
+                        blurRadius: isCompact ? 10 : 20,
+                        offset: Offset(0, isCompact ? 5 : 10),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Text(
+                      "FINALIZE STORY",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: isCompact ? 16.sp : 18.sp,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
+                        letterSpacing: isCompact ? 1.5 : 2.5,
+                      ),
+                    ),
+                  ),
+                ),
+              ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2),
+          ],
+        );
+      },
     );
   }
 }
