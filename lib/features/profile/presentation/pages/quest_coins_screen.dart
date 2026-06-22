@@ -17,6 +17,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/hint_ad_card.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class VowlCoinsScreen extends StatelessWidget {
   const VowlCoinsScreen({super.key});
@@ -275,29 +276,11 @@ class VowlCoinsScreen extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     if (user.coins < cost) {
       di.sl<HapticService>().light();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Row(
-            children: [
-              Icon(
-                Icons.error_outline_rounded,
-                color: Colors.white,
-                size: 20.r,
-              ),
-              SizedBox(width: 8.w),
-              Text(
-                'Insufficient Vowl Coins! Needed: $cost',
-                style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
-              ),
-            ],
-          ),
-          backgroundColor: const Color(0xFFEF4444),
-          behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.r),
-          ),
-        ),
-      );
+      CustomSnackBar.show(
+      context: context,
+      message: 'Insufficient Vowl Coins! Needed: $cost',
+      type: CustomSnackBarType.error,
+    );
       return;
     }
 
@@ -408,37 +391,10 @@ class VowlCoinsScreen extends StatelessWidget {
   }
 
   void _showSuccessSnackbar(BuildContext context, int amount) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.all(4.r),
-              decoration: const BoxDecoration(
-                color: Colors.white24,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(Icons.check_rounded, color: Colors.white, size: 16.r),
-            ),
-            SizedBox(width: 12.w),
-            Text(
-              'INVENTORY UPDATED: +$amount HINTS',
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontWeight: FontWeight.w900,
-                fontSize: 12.sp,
-                letterSpacing: 0.5,
-              ),
-            ),
-          ],
-        ),
-        backgroundColor: const Color(0xFF10B981),
-        behavior: SnackBarBehavior.floating,
-        elevation: 0,
-        margin: EdgeInsets.all(20.r),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.r),
-        ),
-      ),
+    CustomSnackBar.show(
+      context: context,
+      message: 'INVENTORY UPDATED: +$amount HINTS',
+      type: CustomSnackBarType.success,
     );
   }
 

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class ClauseHintButton extends StatelessWidget {
   final bool used;
@@ -38,19 +39,11 @@ class ClauseHintButton extends StatelessWidget {
                   soundService.playHint();
                   onTap();
                   if (hintText != null) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                          hintText!,
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        backgroundColor: primaryColor,
-                        behavior: SnackBarBehavior.floating,
-                      ),
-                    );
+                    CustomSnackBar.show(
+      context: context,
+      message: hintText!,
+      type: CustomSnackBarType.info,
+    );
                   }
                 }
               : null,

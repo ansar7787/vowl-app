@@ -10,6 +10,7 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/widgets/victory_flight_overlay.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════
 //  GameDialogHelper — Shared completion & game-over dialogs for ALL games
@@ -281,36 +282,12 @@ class GameDialogHelper {
     Color? color,
     Duration duration = const Duration(seconds: 3),
   }) {
-    final primaryColor = color ?? const Color(0xFF6366F1); // Indigo default
+    // final primaryColor removed
 
-    ScaffoldMessenger.of(context).removeCurrentSnackBar();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Row(
-          children: [
-            Icon(icon, color: Colors.white, size: 20.r),
-            SizedBox(width: 12.w),
-            Expanded(
-              child: Text(
-                message,
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ],
-        ),
-        behavior: SnackBarBehavior.floating,
-        backgroundColor: primaryColor.withValues(alpha: 0.9),
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        margin: EdgeInsets.all(20.r),
-        duration: duration,
-      ),
+    CustomSnackBar.show(
+      context: context,
+      message: message,
+      type: CustomSnackBarType.info,
     );
   }
 
@@ -378,65 +355,10 @@ class GameDialogHelper {
     );
   }
   static void showHonestyNudge(BuildContext context) {
-    ScaffoldMessenger.of(context).clearSnackBars();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        behavior: SnackBarBehavior.floating,
-        duration: const Duration(seconds: 5),
-        content: Container(
-          padding: EdgeInsets.all(16.r),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.amber[700]!, Colors.orange[900]!],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-            borderRadius: BorderRadius.circular(24.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.2),
-                blurRadius: 12,
-                offset: const Offset(0, 6),
-              ),
-            ],
-          ),
-          child: Row(
-            children: [
-              Icon(Icons.auto_awesome_rounded, color: Colors.white, size: 28.r),
-              SizedBox(width: 16.w),
-              Expanded(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "HONESTY IS MASTERY 🛡️",
-                      style: TextStyle(fontFamily: 'Outfit', 
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900,
-                        fontSize: 13.sp,
-                        letterSpacing: 1.2,
-                      ),
-                    ),
-                    SizedBox(height: 4.h),
-                    Text(
-                      "Your education is our key, not false use or lie. Practice honestly to truly master English! ✨",
-                      style: TextStyle(fontFamily: 'Outfit', 
-                        color: Colors.white.withValues(alpha: 0.9),
-                        fontWeight: FontWeight.w600,
-                        fontSize: 11.sp,
-                        height: 1.3,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+    CustomSnackBar.show(
+      context: context,
+      message: "HONESTY IS MASTERY 🛡️",
+      type: CustomSnackBarType.warning,
     );
   }
 }

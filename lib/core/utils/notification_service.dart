@@ -12,6 +12,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:io';
 import 'dart:async';
+import 'package:vowl/core/utils/app_router.dart';
 
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
@@ -98,7 +99,12 @@ class NotificationService {
       iOS: iosSettings,
     );
 
-    await _localNotifications.initialize(initSettings);
+    await _localNotifications.initialize(
+      initSettings,
+      onDidReceiveNotificationResponse: (NotificationResponse response) {
+        debugPrint('Local Notification tapped! Payload: ${response.payload}');
+      },
+    );
 
     // 4. Create Notification Channels (Android 8.0+)
     if (Platform.isAndroid) {
@@ -146,12 +152,22 @@ class NotificationService {
     // 8. Handle Notification Clicks (When app is in background/terminated)
     _onMessageOpenedAppSubscription = FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       debugPrint('Notification clicked! Path: ${message.data['path']}');
+      _handleNotificationTap(message.data['path'] as String?);
     });
 
     // 9. Check for initial message (if app was terminated and opened by notification)
     RemoteMessage? initialMessage = await FirebaseMessaging.instance.getInitialMessage();
     if (initialMessage != null) {
       debugPrint('App opened from terminated state by notification');
+      _handleNotificationTap(initialMessage.data['path'] as String?);
+    }
+  }
+
+  void _handleNotificationTap(String? path) {
+    if (path != null && path.isNotEmpty) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        AppRouter.router.go(path);
+      });
     }
   }
 
@@ -293,21 +309,34 @@ class NotificationService {
 
     final location = _currentLocation;
     final now = tz.TZDateTime.now(location);
+    // Anchor to exactly 8:00 PM local time tomorrow
+    var scheduledDate = tz.TZDateTime(
+      location,
+      now.year,
+      now.month,
+      now.day,
+      20, // 8 PM
+      0,
+    );
+    
+    // If it's already past 8 PM today, we still want it tomorrow
+    scheduledDate = scheduledDate.add(const Duration(days: 1));
 
     await _localNotifications.zonedSchedule(
       streakReminderNotificationId,
       'Owly is Waiting! 🦉🔥',
       'Your $currentStreak-day streak is in danger! Play now to keep it alive!',
-      now.add(const Duration(hours: 22)),
+      scheduledDate,
       platformDetails,
       androidScheduleMode: useExact 
           ? AndroidScheduleMode.exactAllowWhileIdle 
           : AndroidScheduleMode.inexactAllowWhileIdle,
       uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
+      matchDateTimeComponents: DateTimeComponents.time,
     );
     
     if (kDebugMode) {
-      debugPrint('Scheduled streak reminder for $currentStreak days (22 hours from now)');
+      debugPrint('Scheduled streak reminder for $currentStreak days at 8:00 PM tomorrow local time');
     }
   }
 

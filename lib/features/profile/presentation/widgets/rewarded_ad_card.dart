@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class RewardedAdCard extends StatefulWidget {
   final String title;
@@ -44,24 +45,10 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
 
     if (!mounted) return;
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Row(
-          children: [
-            Icon(Icons.check_circle_rounded, color: Colors.white, size: 20.r),
-            SizedBox(width: 8.w),
-            Text(
-              'Reward Earned! +20 Vowl Coins',
-              style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
-            ),
-          ],
-        ),
-        backgroundColor: const Color(0xFF10B981),
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-      ),
+    CustomSnackBar.show(
+      context: context,
+      message: 'Reward Earned! +20 Vowl Coins',
+      type: CustomSnackBarType.success,
     );
 
     setState(() {

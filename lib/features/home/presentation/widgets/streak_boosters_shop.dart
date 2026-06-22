@@ -11,6 +11,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class StreakBoostersShop extends StatefulWidget {
   final UserEntity user;
@@ -114,11 +115,10 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                       try {
                         Haptics.vibrate(HapticsType.success);
                       } catch (_) {}
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(context.tr('adventure.streak_repaired')),
-                          backgroundColor: const Color(0xFF10B981),
-                        ),
+                      CustomSnackBar.show(
+                        context: context,
+                        message: context.tr('adventure.streak_repaired'),
+                        type: CustomSnackBarType.success,
                       );
                     },
                   );
@@ -182,30 +182,11 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
       try {
         Haptics.vibrate(HapticsType.error);
       } catch (_) {}
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Row(
-            children: [
-              Icon(
-                Icons.error_outline_rounded,
-                color: Colors.white,
-                size: 20.r,
-              ),
-              SizedBox(width: 12.w),
-              Text(
-                "Insufficient Vowl Coins! Needed: $cost",
-                style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
-              ),
-            ],
-          ),
-          backgroundColor: const Color(0xFFEF4444),
-          behavior: SnackBarBehavior.floating,
-          margin: EdgeInsets.all(20.r),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.r),
-          ),
-        ),
-      );
+      CustomSnackBar.show(
+      context: context,
+      message: "Insufficient Vowl Coins! Needed: $cost",
+      type: CustomSnackBarType.error,
+    );
       return;
     }
 
@@ -215,37 +196,10 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
     } catch (_) {}
     action();
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.all(4.r),
-              decoration: const BoxDecoration(
-                color: Colors.white24,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(Icons.check_rounded, color: Colors.white, size: 16.r),
-            ),
-            SizedBox(width: 12.w),
-            Text(
-              "$name Activated!",
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontWeight: FontWeight.w900,
-                fontSize: 12.sp,
-                letterSpacing: 0.5,
-              ),
-            ),
-          ],
-        ),
-        backgroundColor: const Color(0xFF10B981),
-        behavior: SnackBarBehavior.floating,
-        elevation: 0,
-        margin: EdgeInsets.all(20.r),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.r),
-        ),
-      ),
+    CustomSnackBar.show(
+      context: context,
+      message: "$name Activated!",
+      type: CustomSnackBarType.success,
     );
 
     await Future.delayed(const Duration(milliseconds: 1500));

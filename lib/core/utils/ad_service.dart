@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 class AdService {
   // ─── Interstitial Ads ───────────────────────────────────────────────
@@ -13,10 +14,10 @@ class AdService {
   int _completedLevelsSinceLastAd = 0;
 
   /// Show an interstitial every N completed levels.
-  static const int levelsPerInterstitial = 3;
+  static const int levelsPerInterstitial = 2;
 
   /// Minimum minutes between interstitials (safety net).
-  static const int interstitialCooldownMinutes = 3;
+  static const int interstitialCooldownMinutes = 2;
   static const int maxFailedLoadAttempts = 3;
 
   static final AdRequest request = AdRequest(
@@ -76,6 +77,16 @@ class AdService {
     if (adUnitId.isEmpty) {
       if (kDebugMode) {
         debugPrint('AdService: Missing interstitial ad unit ID in .env');
+      } else {
+        // Fix P2: Report missing ad unit IDs in production to avoid silent zero-revenue
+        try {
+          FirebaseCrashlytics.instance.recordError(
+            Exception('Missing interstitial ad unit ID in .env'), 
+            StackTrace.current, 
+            reason: 'AdMob Interstitial ID is empty. Ads will not load.',
+            fatal: true,
+          );
+        } catch (_) {}
       }
       return;
     }
@@ -134,8 +145,8 @@ class AdService {
       return;
     }
 
-    // 3. Frequency check (Enforce levelsPerInterstitial globally)
-    if (_completedLevelsSinceLastAd < levelsPerInterstitial) {
+    // 3. Frequency check (Enforce levelsPerInterstitial globally for level completions)
+    if (isLevelCompletion && _completedLevelsSinceLastAd < levelsPerInterstitial) {
       if (kDebugMode) {
         debugPrint(
           'AdService: Interstitial skipped (Level completion count: $_completedLevelsSinceLastAd/$levelsPerInterstitial)',
@@ -210,6 +221,16 @@ class AdService {
     if (adUnitId.isEmpty) {
       if (kDebugMode) {
         debugPrint('AdService: Missing rewarded ad unit ID in .env');
+      } else {
+        // Fix P2: Report missing ad unit IDs in production to avoid silent zero-revenue
+        try {
+          FirebaseCrashlytics.instance.recordError(
+            Exception('Missing rewarded ad unit ID in .env'), 
+            StackTrace.current, 
+            reason: 'AdMob Rewarded ID is empty. Ads will not load.',
+            fatal: true,
+          );
+        } catch (_) {}
       }
       return;
     }

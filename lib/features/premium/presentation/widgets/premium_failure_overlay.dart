@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class PremiumFailureOverlay extends StatelessWidget {
@@ -117,7 +116,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.r),
                     ),
                     child: Text(
-                      context.tr('common.retry').toUpperCase(),
+                      "RETRY",
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         color: Colors.white,
@@ -140,7 +139,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.r),
                     ),
                     child: Text(
-                      context.tr('common.close').toUpperCase(),
+                      "CLOSE",
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         color: Colors.black,

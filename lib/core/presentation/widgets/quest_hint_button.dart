@@ -9,6 +9,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 /// A premium, interactive gameplay action button providing TTS-enabled hints,
 /// ad-backed rewarded hints, and visual status badges, isolated with a RepaintBoundary.
@@ -50,83 +51,10 @@ class QuestHintButton extends StatelessWidget {
                 // Speak the hint text
                 di.sl<TtsService>().speak(isDynamic ? "Pro tip: Look for context clues." : hintText!);
                 
-                ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    duration: const Duration(seconds: 6),
-                    backgroundColor: Colors.transparent,
-                    elevation: 0,
-                    behavior: SnackBarBehavior.floating,
-                    content: Container(
-                      padding: EdgeInsets.all(16.r),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            primaryColor.withValues(alpha: 0.9),
-                            primaryColor.withValues(alpha: 0.7),
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        borderRadius: BorderRadius.circular(20.r),
-                        border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.3),
-                          width: 1.5,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.2),
-                            blurRadius: 15,
-                            offset: const Offset(0, 8),
-                          ),
-                        ],
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(8.r),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.2),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              isDynamic ? Icons.bolt_rounded : Icons.auto_awesome_rounded,
-                              color: Colors.white,
-                              size: 20.r,
-                            ),
-                          ),
-                          SizedBox(width: 14.w),
-                          Expanded(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  isDynamic ? "VOWL PRO TIP" : "MASTER'S HINT",
-                                  style: TextStyle(fontFamily: 'Outfit', 
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w900,
-                                    letterSpacing: 1.5,
-                                    color: Colors.white.withValues(alpha: 0.7),
-                                  ),
-                                ),
-                                SizedBox(height: 2.h),
-                                Text(
-                                  displayText,
-                                  style: TextStyle(fontFamily: 'Outfit', 
-                                    fontSize: 15.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white,
-                                    height: 1.2,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                CustomSnackBar.show(
+                  context: context,
+                  message: displayText,
+                  type: CustomSnackBarType.info,
                 );
               }
             } else if (!used) {

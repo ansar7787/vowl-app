@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 /// A premium, glassmorphic ad card widget that rewards users with Strategic Hints
 /// after successfully watching a full-length rewarded advertisement.
@@ -146,42 +147,11 @@ class HintAdCard extends StatelessWidget {
       },
       onDismissed: () {
         if (rewardEarned && context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(4.r),
-                    decoration: const BoxDecoration(
-                      color: Colors.white24,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      Icons.check_rounded,
-                      color: Colors.white,
-                      size: 16.r,
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Text(
-                    'Hint Earned! +1 Strategic Hint',
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-              backgroundColor: const Color(0xFF10B981),
-              behavior: SnackBarBehavior.floating,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.r),
-              ),
-              margin: EdgeInsets.all(16.r),
-              duration: const Duration(seconds: 3),
-            ),
-          );
+          CustomSnackBar.show(
+      context: context,
+      message: 'Hint Earned! +1 Strategic Hint',
+      type: CustomSnackBarType.success,
+    );
         }
       },
     );

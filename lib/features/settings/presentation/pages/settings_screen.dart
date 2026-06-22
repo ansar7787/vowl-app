@@ -22,6 +22,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
 
@@ -315,8 +316,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
       await launchUrl(emailLaunchUri);
     } else {
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(context.tr('settings.email_error'))),
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr('settings.email_error'),
+          type: CustomSnackBarType.error,
         );
       }
     }
@@ -351,25 +354,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
         tempDir.deleteSync(recursive: true);
       }
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              context.tr('settings.cache_cleared'),
-              style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w700),
-            ),
-            backgroundColor: Colors.green,
-            behavior: SnackBarBehavior.floating,
-          ),
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr('settings.cache_cleared'),
+          type: CustomSnackBarType.success,
         );
       }
     } catch (e) {
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Error clearing cache: $e'),
-            backgroundColor: Colors.red,
-          ),
-        );
+        CustomSnackBar.show(
+      context: context,
+      message: 'Error clearing cache: $e',
+      type: CustomSnackBarType.error,
+    );
       }
     }
   }

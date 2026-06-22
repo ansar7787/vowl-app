@@ -3,18 +3,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'dart:async';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/payment_service.dart';
-import 'package:vowl/core/utils/subscription_plans_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
 
 class PremiumScreen extends StatefulWidget {
@@ -26,8 +21,6 @@ class PremiumScreen extends StatefulWidget {
 
 class _PremiumScreenState extends State<PremiumScreen> {
   final _paymentService = di.sl<PaymentService>();
-  final _plansService = di.sl<SubscriptionPlansService>();
-
   int _selectedPlanIndex = 1;
   bool _isProcessing = false;
   bool _paymentCompleted = false;
@@ -36,10 +29,32 @@ class _PremiumScreenState extends State<PremiumScreen> {
   String? _transactionId;
   Timer? _paymentTimeout;
 
-  // Plans fetched from Firebase
-  List<SubscriptionPlan> _plans = [];
-  bool _isLoadingPlans = false;
-  String? _plansError;
+  final List<Map<String, dynamic>> _plans = const [
+    {
+      'name': 'Weekly',
+      'price': 39.0,
+      'oldPrice': 49.0,
+      'days': 7,
+      'tag': 'FESTIVE OFFER',
+      'color': Color(0xFFF43F5E),
+    },
+    {
+      'name': 'Monthly',
+      'price': 99.0,
+      'oldPrice': 149.0,
+      'days': 30,
+      'tag': 'MOST POPULAR',
+      'color': Color(0xFF6366F1),
+    },
+    {
+      'name': 'Yearly',
+      'price': 799.0,
+      'oldPrice': 1499.0,
+      'days': 365,
+      'tag': 'BEST VALUE',
+      'color': Color(0xFF10B981),
+    },
+  ];
 
   @override
   void initState() {
@@ -49,37 +64,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
       onFailure: _handlePaymentFailure,
       onExternalWallet: _handleExternalWallet,
     );
-    _fetchPlans();
-  }
-
-  /// Fetch subscription plans from Firebase
-  Future<void> _fetchPlans() async {
-    if (!mounted) return;
-
-    setState(() {
-      _isLoadingPlans = true;
-      _plansError = null;
-    });
-
-    try {
-      final plans = await _plansService.fetchPlans();
-      if (mounted) {
-        setState(() {
-          _plans = plans;
-          _isLoadingPlans = false;
-          // Select "Most Popular" plan by default (usually index 1)
-          _selectedPlanIndex = plans.isNotEmpty ? 1 : 0;
-        });
-      }
-    } catch (e) {
-      if (mounted) {
-        setState(() {
-          _isLoadingPlans = false;
-          _plansError = 'Failed to load plans. Please try again.';
-        });
-        debugPrint('Failed to fetch plans: $e');
-      }
-    }
   }
 
   void _startPaymentTimeout() {
@@ -115,22 +99,15 @@ class _PremiumScreenState extends State<PremiumScreen> {
     try {
       final user = context.read<AuthBloc>().state.user;
       if (user != null) {
-        // Validate email before upgrading
-        if (user.email.isEmpty || !user.email.contains('@')) {
-          throw Exception('Invalid email: ${user.email}');
-        }
-
-        // Prevent re-purchasing if already premium
-        if (user.isPremium) {
-          throw Exception('User is already premium');
-        }
-
         final selectedPlan = _plans[_selectedPlanIndex];
-        await _paymentService.upgradeToPremium(user.id, selectedPlan.days);
+        await _paymentService.upgradeToPremium(
+          user.id,
+          selectedPlan['days'] as int,
+        );
 
         if (mounted) {
           // Refresh user state to reflect premium status
-          context.read<AuthBloc>().add(const AuthRefreshUser());
+          context.read<AuthBloc>().add(AuthReloadUser());
 
           di.sl<HapticService>().success();
           setState(() {
@@ -163,9 +140,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
         _isProcessing = false;
         _paymentCompleted = true;
         _paymentSuccess = false;
-        _errorMessage = response.message != null && response.message!.isNotEmpty
-            ? 'Error ${response.code}: ${response.message}'
-            : 'Payment failed. Please try again or use a different method.';
+        _errorMessage = response.message ?? 'Payment failed. Please try again.';
       });
     }
   }
@@ -319,76 +294,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
   }
 
   Widget _buildPlanList() {
-    final user = context.read<AuthBloc>().state.user;
-    if (user != null && user.isPremium) {
-      return _buildActiveSubscriptionCard(user);
-    }
-
-    if (_isLoadingPlans) {
-      final isDark = Theme.of(context).brightness == Brightness.dark;
-      return Column(
-        children: List.generate(3, (index) {
-          return Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.h),
-            child: Container(
-              width: double.infinity,
-              height: 100.h,
-              decoration: BoxDecoration(
-                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
-                borderRadius: BorderRadius.circular(20.r),
-              ),
-            ).animate(onPlay: (c) => c.repeat()).shimmer(
-              color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
-              duration: 1500.ms,
-            ),
-          );
-        }),
-      );
-    }
-
-    if (_plansError != null) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.error_outline, color: Color(0xFFF43F5E), size: 48),
-            SizedBox(height: 16.h),
-            Text(
-              _plansError!,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                color: Colors.red,
-              ),
-            ),
-            SizedBox(height: 16.h),
-            ElevatedButton(
-              onPressed: _fetchPlans,
-              child: Text(context.tr('common.retry')),
-            ),
-          ],
-        ),
-      );
-    }
-
-    if (_plans.isEmpty) {
-      return Center(
-        child: Text(
-          'No plans available',
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 14.sp,
-          ),
-        ),
-      );
-    }
-
     return Column(
       children: List.generate(_plans.length, (index) {
-        final plan = _plans[index];
         return PremiumPlanCard(
-          plan: plan,
+          plan: _plans[index],
           isSelected: _selectedPlanIndex == index,
           onTap: () {
             di.sl<HapticService>().selection();
@@ -399,116 +308,52 @@ class _PremiumScreenState extends State<PremiumScreen> {
     );
   }
 
-  Widget _buildActiveSubscriptionCard(UserEntity user) {
-    final expiryDate = user.premiumExpiryDate;
-    final formattedDate = expiryDate != null 
-        ? '${expiryDate.day}/${expiryDate.month}/${expiryDate.year}'
-        : 'Lifetime';
-
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(24.r),
-      decoration: BoxDecoration(
-        color: const Color(0xFF10B981).withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: const Color(0xFF10B981).withValues(alpha: 0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Icon(Icons.verified_rounded, color: const Color(0xFF10B981), size: 48.r),
-          SizedBox(height: 16.h),
-          Text(
-            'ACTIVE PRO SUBSCRIPTION',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              color: const Color(0xFF10B981),
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 1.5,
-            ),
-          ),
-          SizedBox(height: 8.h),
-          Text(
-            'Your Vowl Premium access is active.\nValid until: $formattedDate',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _buildCTAButton() {
-    final user = context.read<AuthBloc>().state.user;
-    final isAlreadyPremium = user?.isPremium ?? false;
-    final isButtonDisabled = _isProcessing || _plans.isEmpty || isAlreadyPremium;
-
     return ScaleButton(
-      onTap: isButtonDisabled
+      onTap: _isProcessing
           ? null
           : () {
-              // Check if already premium
-              if (isAlreadyPremium) {
-                _showSnackBar('You are already a premium member!');
-                return;
-              }
-
-              // Validate email
-              if (user == null || user.email.isEmpty || !user.email.contains('@')) {
-                _showSnackBar('Invalid email. Please update your profile.');
-                return;
-              }
-
               di.sl<HapticService>().heavy();
-              setState(() => _isProcessing = true);
-              _startPaymentTimeout();
+              final user = context.read<AuthBloc>().state.user;
+              if (user != null) {
+                setState(() => _isProcessing = true);
+                _startPaymentTimeout();
 
-              final plan = _plans[_selectedPlanIndex];
-              _paymentService.purchaseSubscription(
-                contact: '',
-                email: user.email,
-                amount: plan.price,
-                days: plan.days,
-                planName: plan.name,
-              );
+                final plan = _plans[_selectedPlanIndex];
+                _paymentService.purchaseSubscription(
+                  contact:
+                      '', // Empty is safe - Razorpay will use email if needed
+                  email: user.email,
+                  amount: plan['price'] as double,
+                  days: plan['days'] as int,
+                  planName: plan['name'] as String,
+                );
+              }
             },
       child: Container(
         width: double.infinity,
         height: 60.h,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: isButtonDisabled
-                ? [Colors.grey.shade400, Colors.grey.shade500]
-                : [const Color(0xFFF59E0B), const Color(0xFFEA580C)],
+          gradient: const LinearGradient(
+            colors: [Color(0xFFF59E0B), Color(0xFFEA580C)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
           borderRadius: BorderRadius.circular(20.r),
-          boxShadow: isButtonDisabled
-              ? []
-              : [
-                  BoxShadow(
-                    color: const Color(0x4DF59E0B),
-                    blurRadius: 20,
-                    offset: const Offset(0, 8),
-                  ),
-                ],
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0x4DF59E0B),
+              blurRadius: 20,
+              offset: const Offset(0, 8),
+            ),
+          ],
         ),
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                isAlreadyPremium
-                    ? 'ALREADY PREMIUM'
-                    : _isProcessing
-                        ? 'PROCESSING...'
-                        : 'ACTIVATE PRO ACCESS',
+                _isProcessing ? 'PROCESSING...' : 'ACTIVATE PRO ACCESS',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   color: Colors.white,
@@ -517,7 +362,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   letterSpacing: 1,
                 ),
               ),
-              if (!_isProcessing && !isAlreadyPremium) ...[
+              if (!_isProcessing) ...[
                 SizedBox(width: 10.w),
                 const Icon(
                   Icons.arrow_forward_ios_rounded,
@@ -528,15 +373,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  void _showSnackBar(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        duration: const Duration(seconds: 2),
       ),
     );
   }

@@ -174,12 +174,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       (failure) async {
         String message = failure.message;
         if (message == 'requires-recent-login') {
-          message = 'SECURITY: Please log out and log back in before deleting your account.';
+          await _logOut(NoParams());
+          emit(state.copyWith(
+            status: AuthStatus.unauthenticated,
+            message: () => 'auth_errors.requires_recent_login_delete',
+          ));
+        } else {
+          emit(state.copyWith(
+            status: AuthStatus.authenticated,
+            message: () => message,
+          ));
         }
-        emit(state.copyWith(
-          status: AuthStatus.authenticated,
-          message: () => message,
-        ));
       },
       (_) async {
         await _logOut(NoParams());

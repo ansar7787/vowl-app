@@ -25,6 +25,7 @@ import 'package:vowl/features/listening/presentation/widgets/listening_feedback_
 import 'package:vowl/features/listening/presentation/widgets/listening_header.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_peeking_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 // =============================================================================
 // ListeningBaseLayout
@@ -378,77 +379,10 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
 
     // ── OUTSTANDING VISUAL HINT (No JSON required) ──
     // Show a custom UI snackbar without clashing with the audio playback
-    ScaffoldMessenger.of(context).hideCurrentSnackBar();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        duration: const Duration(seconds: 4),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        behavior: SnackBarBehavior.floating,
-        content: Container(
-          padding: EdgeInsets.all(16.r),
-          decoration: BoxDecoration(
-            color: LevelThemeHelper.getTheme(
-              widget.gameType.name,
-              isDark: Theme.of(context).brightness == Brightness.dark,
-            ).primaryColor.withValues(alpha: 0.9),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.3),
-              width: 1.5,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.2),
-                blurRadius: 15,
-                offset: const Offset(0, 8),
-              ),
-            ],
-          ),
-          child: Row(
-            children: [
-              Container(
-                padding: EdgeInsets.all(8.r),
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.2),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(Icons.graphic_eq_rounded, color: Colors.white, size: 20.r),
-              ),
-              SizedBox(width: 14.w),
-              Expanded(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "AUDIO CLUE ACTIVATED",
-                      style: TextStyle(
-                        fontFamily: 'Outfit', 
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 1.5,
-                        color: Colors.white.withValues(alpha: 0.7),
-                      ),
-                    ),
-                    SizedBox(height: 2.h),
-                    Text(
-                      "Listen carefully to the replay...",
-                      style: TextStyle(
-                        fontFamily: 'Outfit', 
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                        height: 1.2,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+    CustomSnackBar.show(
+      context: context,
+      message: "AUDIO CLUE ACTIVATED",
+      type: CustomSnackBarType.info,
     );
 
     // Wait 1 second so the "hint.mp3" sound finishes playing

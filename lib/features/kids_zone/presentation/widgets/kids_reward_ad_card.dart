@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class KidsRewardAdCard extends StatelessWidget {
   const KidsRewardAdCard({super.key});
@@ -140,26 +141,11 @@ class KidsRewardAdCard extends StatelessWidget {
       },
       onDismissed: () {
         if (rewardEarned && context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Row(
-                children: [
-                  const Icon(Icons.star_rounded, color: Colors.white),
-                  SizedBox(width: 12.w),
-                  Text(
-                    'Great! You earned 10 Kids Coins! ⭐',
-                    style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w700),
-                  ),
-                ],
-              ),
-              backgroundColor: const Color(0xFFF43F5E),
-              behavior: SnackBarBehavior.floating,
-              margin: EdgeInsets.all(16.r),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.r),
-              ),
-            ),
-          );
+          CustomSnackBar.show(
+      context: context,
+      message: 'Great! You earned 10 Kids Coins! ⭐',
+      type: CustomSnackBarType.info,
+    );
         }
       },
     );

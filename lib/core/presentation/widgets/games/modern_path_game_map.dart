@@ -13,6 +13,7 @@ import 'package:vowl/core/presentation/widgets/games/modern_path_painter.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class ModernPathGameMap extends StatelessWidget {
   final String gameType;
@@ -373,24 +374,10 @@ class ModernPathGameMap extends StatelessWidget {
 
   void _showLockedFeedback(BuildContext context, Color color) {
     HapticFeedback.mediumImpact();
-    ScaffoldMessenger.of(context).clearSnackBars();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          'QUEST LOCKED! COMPLETE PREVIOUS LEVELS.',
-          style: TextStyle(fontFamily: 'Outfit', 
-            fontWeight: FontWeight.w900,
-            letterSpacing: 1,
-            fontSize: 12.sp,
-          ),
-        ),
-        backgroundColor: color,
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        margin: EdgeInsets.all(20.r),
-      ),
+    CustomSnackBar.show(
+      context: context,
+      message: 'QUEST LOCKED! COMPLETE PREVIOUS LEVELS.',
+      type: CustomSnackBarType.info,
     );
   }
 }

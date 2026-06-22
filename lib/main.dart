@@ -16,6 +16,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/security_service.dart';
 import 'package:vowl/core/utils/remote_config_service.dart';
 import 'package:vowl/core/utils/notification_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
@@ -141,6 +142,15 @@ void main() async {
     } catch (e) {
       debugPrint("Warning: Crashlytics initialization failed: $e");
     }
+  }
+  
+  // Initialize LocaleService
+  try {
+    final localeService = di.sl<LocaleService>();
+    initLocaleServiceReference(localeService);
+    await localeService.init();
+  } catch (e) {
+    debugPrint("Warning: LocaleService initialization failed: $e");
   }
 
   runApp(const MyApp());
@@ -328,6 +338,21 @@ class _MyAppState extends State<MyApp> {
                                 listener: (context, authState) {
                                   context.read<ProgressionBloc>().add(
                                     const ProgressionCheckDailyStreakRequested(),
+                                  );
+                                },
+                              ),
+                              BlocListener<AuthBloc, AuthState>(
+                                listenWhen: (prev, curr) => prev.message != curr.message && curr.message != null,
+                                listener: (context, authState) {
+                                  final isWarning = authState.message!.contains('security') || authState.message!.contains('cancelled');
+                                  CustomSnackBar.show(
+                                    context: context,
+                                    message: context.tr(authState.message!),
+                                    type: authState.status == AuthStatus.unauthenticated && !isWarning
+                                        ? CustomSnackBarType.error
+                                        : isWarning
+                                            ? CustomSnackBarType.warning
+                                            : CustomSnackBarType.info,
                                   );
                                 },
                               ),

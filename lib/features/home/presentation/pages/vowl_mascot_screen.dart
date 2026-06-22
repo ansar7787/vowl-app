@@ -15,6 +15,7 @@ import 'package:vowl/core/presentation/widgets/banner_ad_widget.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class VowlMascotScreen extends StatefulWidget {
   const VowlMascotScreen({super.key});
@@ -51,75 +52,10 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
     String message,
     bool isSuccess,
   ) {
-    ScaffoldMessenger.of(context).hideCurrentSnackBar();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        behavior: SnackBarBehavior.floating,
-        duration: 3.seconds,
-        content: GlassTile(
-          borderRadius: BorderRadius.circular(20.r),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(
-                color: (isSuccess ? Colors.greenAccent : Colors.redAccent)
-                    .withValues(alpha: 0.3),
-                width: 1.5,
-              ),
-              gradient: LinearGradient(
-                colors: [
-                  (isSuccess ? Colors.green : Colors.red).withValues(
-                    alpha: 0.15,
-                  ),
-                  Colors.transparent,
-                ],
-              ),
-            ),
-            child: Row(
-              children: [
-                Icon(
-                  isSuccess
-                      ? Icons.offline_bolt_rounded
-                      : Icons.report_problem_rounded,
-                  color: isSuccess ? Colors.greenAccent : Colors.redAccent,
-                  size: 24.r,
-                ),
-                SizedBox(width: 16.w),
-                Expanded(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        isSuccess ? 'SYSTEM SYNC FEEDBACK' : 'SECURITY ALERT',
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isSuccess
-                              ? Colors.greenAccent
-                              : Colors.redAccent,
-                          letterSpacing: 2,
-                        ),
-                      ),
-                      Text(
-                        message.toUpperCase(),
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+    CustomSnackBar.show(
+      context: context,
+      message: isSuccess ? 'SYSTEM SYNC FEEDBACK' : 'SECURITY ALERT',
+      type: CustomSnackBarType.error,
     );
   }
 

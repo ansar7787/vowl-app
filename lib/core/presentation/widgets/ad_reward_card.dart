@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class AdRewardCard extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
@@ -132,42 +133,11 @@ class AdRewardCard extends StatelessWidget {
       },
       onDismissed: () {
         if (rewardEarned && context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(4.r),
-                    decoration: const BoxDecoration(
-                      color: Colors.white24,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      Icons.check_rounded,
-                      color: Colors.white,
-                      size: 16.r,
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Text(
-                    'Reward Earned! +20 Vowl Coins',
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-              backgroundColor: const Color(0xFF10B981),
-              behavior: SnackBarBehavior.floating,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.r),
-              ),
-              margin: EdgeInsets.all(16.r),
-              duration: const Duration(seconds: 3),
-            ),
-          );
+          CustomSnackBar.show(
+      context: context,
+      message: 'Reward Earned! +20 Vowl Coins',
+      type: CustomSnackBarType.success,
+    );
         }
       },
     );

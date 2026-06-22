@@ -15,6 +15,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class AdventureXPScreen extends StatelessWidget {
   const AdventureXPScreen({super.key});
@@ -26,9 +27,6 @@ class AdventureXPScreen extends StatelessWidget {
       listener: (context, state) {
         if (state.message != null) {
           final lowerMsg = state.message!.toLowerCase();
-          final isError =
-              lowerMsg.contains('not enough') ||
-              lowerMsg.contains('failed');
 
           String displayMessage = state.message!;
           if (lowerMsg.contains('not enough')) {
@@ -41,33 +39,14 @@ class AdventureXPScreen extends StatelessWidget {
 
           di.sl<HapticService>().light();
 
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Row(
-                children: [
-                  Icon(
-                    isError ? Icons.error_outline : Icons.check_circle_outline,
-                    color: Colors.white,
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: Text(
-                      displayMessage,
-                      style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                ],
-              ),
-              backgroundColor: isError
-                  ? const Color(0xFFEF4444)
-                  : const Color(0xFF10B981),
-              behavior: SnackBarBehavior.floating,
-              margin: EdgeInsets.all(20.r),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.r),
-              ),
-              duration: const Duration(seconds: 2),
-            ),
+          final isError =
+              lowerMsg.contains('not enough') ||
+              lowerMsg.contains('failed');
+
+          CustomSnackBar.show(
+            context: context,
+            message: displayMessage,
+            type: isError ? CustomSnackBarType.error : CustomSnackBarType.success,
           );
         }
       },

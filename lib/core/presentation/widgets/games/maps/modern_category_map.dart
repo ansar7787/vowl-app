@@ -25,6 +25,7 @@ import 'package:vowl/core/presentation/painters/category_path_painter.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/glass_map_header.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/shimmer_map_placeholder.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 /// A premium, highly-performant quest category selection map.
 /// 
@@ -715,25 +716,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
 
   void _showLockedFeedback(BuildContext context, Color color) {
     HapticFeedback.mediumImpact();
-    ScaffoldMessenger.of(context).clearSnackBars();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          'MASTER PREVIOUS LEVELS TO UNLOCK',
-          style: TextStyle(fontFamily: 'Outfit', 
-            fontWeight: FontWeight.w900,
-            fontSize: 12.sp,
-            color: Colors.white,
-          ),
-        ),
-        backgroundColor: color,
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15.r),
-        ),
-        margin: EdgeInsets.all(20.r),
-        duration: 2.seconds,
-      ),
+    CustomSnackBar.show(
+      context: context,
+      message: 'MASTER PREVIOUS LEVELS TO UNLOCK',
+      type: CustomSnackBarType.info,
     );
   }
 

@@ -23,6 +23,7 @@ import 'package:vowl/core/presentation/widgets/story_dialogue_box.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class KidsLevelMap extends StatefulWidget {
   final String gameType;
@@ -903,11 +904,10 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
       debugPrint(
         "KIDS_MAP_ERROR: Route for gameType '${widget.gameType}' not found!",
       );
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(context.tr('games.kids_under_construction').replaceFirst('{}', level.toString())),
-          backgroundColor: Colors.orange,
-        ),
+      CustomSnackBar.show(
+        context: context,
+        message: context.tr('games.kids_under_construction'),
+        type: CustomSnackBarType.warning,
       );
     }
   }

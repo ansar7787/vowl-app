@@ -10,6 +10,7 @@ import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class SettingsDialogs {
   static void showEditProfile(BuildContext context, UserEntity user) {
@@ -614,13 +615,11 @@ class SettingsDialogs {
                             AuthPasswordResetRequested(email),
                           );
                           Navigator.pop(context);
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text('Reset link sent to $email'),
-                              backgroundColor: Colors.blue,
-                              behavior: SnackBarBehavior.floating,
-                            ),
-                          );
+                          CustomSnackBar.show(
+      context: context,
+      message: 'Reset link sent to $email',
+      type: CustomSnackBarType.info,
+    );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,

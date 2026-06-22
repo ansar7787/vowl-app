@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PremiumHero extends StatelessWidget {
@@ -30,7 +31,7 @@ class PremiumHero extends StatelessWidget {
             color: Colors.white,
             size: 36.r,
           ),
-        ),
+        ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 3.seconds),
         SizedBox(height: 16.h),
         Text(
           'Unlimited Growth.',

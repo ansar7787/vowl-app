@@ -12,6 +12,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class StickerBookScreen extends StatefulWidget {
   const StickerBookScreen({super.key});
@@ -531,26 +532,11 @@ class _StickerBookScreenState extends State<StickerBookScreen>
                 }
               : () {
                   Haptics.vibrate(HapticsType.warning);
-                  ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                        "🔒 Complete $level quests in this category to unlock this sticker!",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.bold,
-                          color: level == 200 ? Colors.black87 : Colors.white,
-                        ),
-                      ),
-                      backgroundColor: rarityColor.withValues(alpha: 0.95),
-                      behavior: SnackBarBehavior.floating,
-                      margin: EdgeInsets.all(24.r),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(24.r),
-                      ),
-                      duration: const Duration(seconds: 2),
-                    ),
-                  );
+                  CustomSnackBar.show(
+      context: context,
+      message: "🔒 Complete $level quests in this category to unlock this sticker!",
+      type: CustomSnackBarType.info,
+    );
                 },
           child: Container(
             decoration: BoxDecoration(

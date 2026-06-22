@@ -16,6 +16,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/hint_ad_card.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class AdventureLevelScreen extends StatelessWidget {
   const AdventureLevelScreen({super.key});
@@ -817,16 +818,11 @@ class AdventureLevelScreen extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     if (user.coins < cost) {
       di.sl<HapticService>().light();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            'Insufficient Vowl Coins! Needed: $cost',
-            style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
-          ),
-          backgroundColor: const Color(0xFFEF4444),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
+      CustomSnackBar.show(
+      context: context,
+      message: 'Insufficient Vowl Coins! Needed: $cost',
+      type: CustomSnackBarType.info,
+    );
       return;
     }
 
@@ -915,15 +911,10 @@ class AdventureLevelScreen extends StatelessWidget {
   }
 
   void _showSuccessSnackbar(BuildContext context, int amount) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          'INVENTORY UPDATED: +$amount HINTS',
-          style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900),
-        ),
-        backgroundColor: const Color(0xFF10B981),
-        behavior: SnackBarBehavior.floating,
-      ),
+    CustomSnackBar.show(
+      context: context,
+      message: 'INVENTORY UPDATED: +$amount HINTS',
+      type: CustomSnackBarType.success,
     );
   }
 }
