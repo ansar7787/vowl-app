@@ -5,513 +5,513 @@
     "quests": [
         {
             "id": "ACC_CONNECTEDSPEECH_L191_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "next door",
-            "textToSpeak": "next door",
+            "word": "blue ocean",
+            "textToSpeak": "blue ocean",
             "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /d/)"
+                "Intrusion (intrusive /w/)",
+                "Linking (/w/ links naturally)"
             ],
-            "correctAnswer": "Elision (/t/ disappears)",
+            "correctAnswer": "Intrusion (intrusive /w/)",
             "correctAnswerIndex": 0,
-            "hint": "Listen to the /t/ sound at the end of 'next' - in natural connected speech, is it fully pronounced or does it disappear? (Calibration 191-1)",
-            "explanation": "The phrase \"next door\" demonstrates \"Elision (/t/ disappears)\"."
+            "hint": "'blue' has no 'w' in its spelling at all. So if you hear a /w/ before 'ocean', where did it come from?",
+            "explanation": "Vowel-to-vowel transitions are smoothed out with a linking glide. Since \"blue\" has no written 'w', and \"ocean\" starts with a vowel, this /w/ is purely intrusive — added by the mouth's natural movement, not by spelling."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L191_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "ten cards",
-            "textToSpeak": "ten cards",
+            "word": "must be careful",
+            "textToSpeak": "must be careful",
             "options": [
-                "Elision (/n/ disappears)",
-                "Assimilation (/n/ changes to /ŋ/)"
+                "Elision (/ʌ/ disappears completely)",
+                "Weak Form (/ʌ/ reduces to /ə/)"
             ],
-            "correctAnswer": "Assimilation (/n/ changes to /ŋ/)",
+            "correctAnswer": "Weak Form (/ʌ/ reduces to /ə/)",
             "correctAnswerIndex": 1,
-            "hint": "Listen to the /n/ at the end of 'ten' - because it is followed by the velar consonant /k/, does it change to /ŋ/? (Calibration 191-2)",
-            "explanation": "The phrase \"ten cards\" demonstrates \"Assimilation (/n/ changes to /ŋ/)\"."
+            "hint": "Say the whole sentence \"must be careful\" at normal speed. Listen to 'must' specifically — is its vowel fully pronounced, or softened toward a quick 'uh' sound?",
+            "explanation": "Function words like 'must' rarely keep their full, stressed vowel in connected speech. Instead the vowel reduces to a quick schwa /ə/, making 'must' shorter and less prominent than the content words around it in \"must be careful\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L191_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "must be",
-            "textToSpeak": "must be",
+            "word": "need to study",
+            "textToSpeak": "need to study",
             "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /p/)"
+                "Elision (/uː/ disappears completely)",
+                "Weak Form (/uː/ reduces to /ə/)"
             ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen to the /t/ at the end of 'must' followed by 'be' - does it completely vanish? (Calibration 191-3)",
-            "explanation": "The phrase \"must be\" demonstrates \"Elision (/t/ disappears)\"."
+            "correctAnswer": "Weak Form (/uː/ reduces to /ə/)",
+            "correctAnswerIndex": 1,
+            "hint": "'to' carries no stress in \"need to study\". What happens to its vowel as a result?",
+            "explanation": "Because 'to' isn't the focus of the sentence, speakers reduce its vowel to schwa /ə/ rather than dropping the word entirely. This weak form is what gives English its natural, unstressed rhythm in \"need to study\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L192_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "good boy",
-            "textToSpeak": "good boy",
+            "word": "trying to finish",
+            "textToSpeak": "trying to finish",
             "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ changes to /b/)"
+                "Contraction (\"trying to finish\" reduces to \"tryna finish\")",
+                "Weak Form (only the vowel reduces to schwa)"
             ],
-            "correctAnswer": "Assimilation (/d/ changes to /b/)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen to the /d/ sound in 'good' - does it transform into the bilabial /b/ sound before 'boy'? (Calibration 192-1)",
-            "explanation": "The phrase \"good boy\" demonstrates \"Assimilation (/d/ changes to /b/)\"."
+            "correctAnswer": "Contraction (\"trying to finish\" reduces to \"tryna finish\")",
+            "correctAnswerIndex": 0,
+            "hint": "In fast, informal speech, \"trying to finish\" almost never keeps its full form. What does it usually turn into?",
+            "explanation": "\"tryna finish\" isn't just a casual spelling — it reflects how \"trying to finish\" actually gets compressed in rapid, relaxed speech, with whole sounds merging or disappearing rather than just softening."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L192_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "did you",
-            "textToSpeak": "did you",
+            "word": "delay our flight",
+            "textToSpeak": "delay our flight",
             "options": [
-                "Intrusion (extra /r/)",
-                "Coalescence (/d/ + /j/ becomes /dʒ/)"
+                "Intrusion (intrusive /j/)",
+                "Linking (/j/ links naturally)"
             ],
-            "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen to the merging of the final /d/ in 'did' and initial /j/ in 'you' - does it sound like 'didge-you'? (Calibration 192-2)",
-            "explanation": "The phrase \"did you\" demonstrates \"Coalescence (/d/ + /j/ becomes /dʒ/)\"."
+            "correctAnswer": "Intrusion (intrusive /j/)",
+            "correctAnswerIndex": 0,
+            "hint": "Check the spelling of 'delay' carefully before 'our flight' — is there a written 'j' at the end, or not? That tells you whether this is genuine linking or intrusion.",
+            "explanation": "When one word ends in a vowel and the next begins with a vowel, speakers often insert a small glide to avoid an awkward gap. Here an intrusive /j/ is added between \"delay\" and \"our flight\", even though no 'j' appears in the spelling of either word."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L192_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "media event",
-            "textToSpeak": "media event",
+            "word": "what brand",
+            "textToSpeak": "what brand",
             "options": [
-                "Intrusion (gliding /r/)",
-                "Elision (/a/ disappears)"
+                "Assimilation (/t/ becomes /k/)",
+                "Assimilation (/t/ becomes /p/)"
             ],
-            "correctAnswer": "Intrusion (gliding /r/)",
-            "correctAnswerIndex": 0,
-            "hint": "In non-rhotic accents, listen to the gap between 'media' and 'event' - is a subtle /r/ sound introduced? (Calibration 192-3)",
-            "explanation": "The phrase \"media event\" demonstrates \"Intrusion (gliding /r/)\"."
+            "correctAnswer": "Assimilation (/t/ becomes /p/)",
+            "correctAnswerIndex": 1,
+            "hint": "'what' ends in /t/, and 'brand' begins with a bilabial sound. Which precise sound does /t/ turn into?",
+            "explanation": "Consonants often borrow the place of articulation of whatever follows them. Here /t/ moves to a bilabial position, turning \"what\" into something closer to \"...p\" before \"brand\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L193_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "law and order",
-            "textToSpeak": "law and order",
+            "word": "have to study",
+            "textToSpeak": "have to study",
             "options": [
-                "Intrusion (gliding /r/)",
-                "Assimilation (/d/ becomes /n/)"
+                "Contraction (\"have to study\" reduces to \"hafta study\")",
+                "Weak Form (only the vowel reduces to schwa)"
             ],
-            "correctAnswer": "Intrusion (gliding /r/)",
+            "correctAnswer": "Contraction (\"have to study\" reduces to \"hafta study\")",
             "correctAnswerIndex": 0,
-            "hint": "In non-rhotic accents, listen to the transition between 'law' and 'and' - is a subtle /r/ sound inserted? (Calibration 193-1)",
-            "explanation": "The phrase \"law and order\" demonstrates \"Intrusion (gliding /r/)\"."
+            "hint": "Say \"have to study\" quickly, the way people do in casual conversation. What short, blended form do the words collapse into?",
+            "explanation": "In fast, informal speech, \"have to study\" is often reduced all the way down to \"hafta study\". Unlike a simple weak form, the words don't just lose stress — they blend into a brand-new informal spoken form."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L193_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "don't you",
-            "textToSpeak": "don't you",
+            "word": "hold steady",
+            "textToSpeak": "hold steady",
             "options": [
-                "Coalescence (/t/ + /j/ becomes /tʃ/)",
-                "Elision (/t/ disappears)"
+                "Elision (/d/ disappears)",
+                "Assimilation (/d/ becomes /st/)"
             ],
-            "correctAnswer": "Coalescence (/t/ + /j/ becomes /tʃ/)",
+            "correctAnswer": "Elision (/d/ disappears)",
             "correctAnswerIndex": 0,
-            "hint": "Listen to the merging of final /t/ in 'don't' and initial /j/ in 'you' - does it sound like 'doan-chew'? (Calibration 193-2)",
-            "explanation": "The phrase \"don't you\" demonstrates \"Coalescence (/t/ + /j/ becomes /tʃ/)\"."
+            "hint": "Focus on the consonant cluster at the boundary of 'hold' and 'steady'. What's the simplest, fastest way a native speaker would get through it?",
+            "explanation": "Native speakers simplify heavy consonant clusters by dropping the sound that's hardest to fit in. In \"hold steady\", the /d/ is elided so the phrase flows smoothly into \"steady\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L193_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "white paper",
-            "textToSpeak": "white paper",
+            "word": "would your team",
+            "textToSpeak": "would your team",
             "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ changes to /p/)"
+                "Coalescence (/d/ + /j/ becomes /tʃ/)",
+                "Coalescence (/d/ + /j/ becomes /dʒ/)"
             ],
-            "correctAnswer": "Assimilation (/t/ changes to /p/)",
+            "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
             "correctAnswerIndex": 1,
-            "hint": "Listen to the final /t/ in 'white' before 'paper' - does it assimilate to /p/ sounding like 'whipe paper'? (Calibration 193-3)",
-            "explanation": "The phrase \"white paper\" demonstrates \"Assimilation (/t/ changes to /p/)\"."
+            "hint": "In 'would your team', don't listen for /d/ and /j/ separately — listen for the single fused sound that replaces them both.",
+            "explanation": "This blending of /d/ and /j/ into /dʒ/ is called coalescence. It's extremely common wherever a word like \"would\", ending in /d/, is followed by 'your team'."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L194_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "last night",
-            "textToSpeak": "last night",
+            "word": "a slice of cake",
+            "textToSpeak": "a slice of cake",
             "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /n/)"
+                "Elision (/ɒ/ disappears completely)",
+                "Weak Form (/ɒ/ reduces to /ə/)"
             ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen to 'last night' in fast speech - does the /t/ sound completely drop out? (Calibration 194-1)",
-            "explanation": "The phrase \"last night\" demonstrates \"Elision (/t/ disappears)\"."
+            "correctAnswer": "Weak Form (/ɒ/ reduces to /ə/)",
+            "correctAnswerIndex": 1,
+            "hint": "'of' carries no stress in \"a slice of cake\". What happens to its vowel as a result?",
+            "explanation": "Because 'of' isn't the focus of the sentence, speakers reduce its vowel to schwa /ə/ rather than dropping the word entirely. This weak form is what gives English its natural, unstressed rhythm in \"a slice of cake\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L194_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "next door",
-            "textToSpeak": "next door",
+            "word": "brown paper",
+            "textToSpeak": "brown paper",
             "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /d/)"
+                "Assimilation (/n/ becomes /m/)",
+                "Assimilation (/n/ becomes /ŋ/)"
             ],
-            "correctAnswer": "Elision (/t/ disappears)",
+            "correctAnswer": "Assimilation (/n/ becomes /m/)",
             "correctAnswerIndex": 0,
-            "hint": "Listen to the /t/ sound at the end of 'next' - in natural connected speech, is it fully pronounced or does it disappear? (Calibration 194-2)",
-            "explanation": "The phrase \"next door\" demonstrates \"Elision (/t/ disappears)\"."
+            "hint": "Notice what happens to /n/ in 'brown' right before 'paper'. Exactly which place does it move to?",
+            "explanation": "When /n/ is followed by a bilabial consonant, speakers often shift its place of articulation to match. That's why the /n/ at the end of \"brown\" becomes /m/ before \"paper\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L194_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "ten cards",
-            "textToSpeak": "ten cards",
+            "word": "pizza and pasta",
+            "textToSpeak": "pizza and pasta",
             "options": [
-                "Elision (/n/ disappears)",
-                "Assimilation (/n/ changes to /ŋ/)"
+                "Intrusion (intrusive /r/)",
+                "Linking (/r/ links naturally)"
             ],
-            "correctAnswer": "Assimilation (/n/ changes to /ŋ/)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen to the /n/ at the end of 'ten' - because it is followed by the velar consonant /k/, does it change to /ŋ/? (Calibration 194-3)",
-            "explanation": "The phrase \"ten cards\" demonstrates \"Assimilation (/n/ changes to /ŋ/)\"."
+            "correctAnswer": "Intrusion (intrusive /r/)",
+            "correctAnswerIndex": 0,
+            "hint": "'pizza' has no 'r' in its spelling at all. So if you hear a /r/ before 'and pasta', where did it come from?",
+            "explanation": "Vowel-to-vowel transitions are smoothed out with a linking glide. Since \"pizza\" has no written 'r', and \"and pasta\" starts with a vowel, this /r/ is purely intrusive — added by the mouth's natural movement, not by spelling."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L195_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "must be",
-            "textToSpeak": "must be",
+            "word": "camera app",
+            "textToSpeak": "camera app",
             "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /p/)"
+                "Intrusion (intrusive /r/)",
+                "Linking (/r/ links naturally)"
             ],
-            "correctAnswer": "Elision (/t/ disappears)",
+            "correctAnswer": "Intrusion (intrusive /r/)",
             "correctAnswerIndex": 0,
-            "hint": "Listen to the /t/ at the end of 'must' followed by 'be' - does it completely vanish? (Calibration 195-1)",
-            "explanation": "The phrase \"must be\" demonstrates \"Elision (/t/ disappears)\"."
+            "hint": "Check the spelling of 'camera' carefully before 'app' — is there a written 'r' at the end, or not? That tells you whether this is genuine linking or intrusion.",
+            "explanation": "When one word ends in a vowel and the next begins with a vowel, speakers often insert a small glide to avoid an awkward gap. Here an intrusive /r/ is added between \"camera\" and \"app\", even though no 'r' appears in the spelling of either word."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L195_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "good boy",
-            "textToSpeak": "good boy",
+            "word": "child care",
+            "textToSpeak": "child care",
             "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ changes to /b/)"
+                "Assimilation (/d/ becomes /k/)",
+                "Elision (/d/ disappears)"
             ],
-            "correctAnswer": "Assimilation (/d/ changes to /b/)",
+            "correctAnswer": "Elision (/d/ disappears)",
             "correctAnswerIndex": 1,
-            "hint": "Listen to the /d/ sound in 'good' - does it transform into the bilabial /b/ sound before 'boy'? (Calibration 195-2)",
-            "explanation": "The phrase \"good boy\" demonstrates \"Assimilation (/d/ changes to /b/)\"."
+            "hint": "Focus on the consonant cluster at the boundary of 'child' and 'care'. What's the simplest, fastest way a native speaker would get through it?",
+            "explanation": "Native speakers simplify heavy consonant clusters by dropping the sound that's hardest to fit in. In \"child care\", the /d/ is elided so the phrase flows smoothly into \"care\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L195_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "did you",
-            "textToSpeak": "did you",
+            "word": "come in",
+            "textToSpeak": "come in",
             "options": [
-                "Intrusion (extra /r/)",
-                "Coalescence (/d/ + /j/ becomes /dʒ/)"
+                "Linking (/m/ links to the vowel)",
+                "Elision (/m/ disappears)"
             ],
-            "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen to the merging of the final /d/ in 'did' and initial /j/ in 'you' - does it sound like 'didge-you'? (Calibration 195-3)",
-            "explanation": "The phrase \"did you\" demonstrates \"Coalescence (/d/ + /j/ becomes /dʒ/)\"."
+            "correctAnswer": "Linking (/m/ links to the vowel)",
+            "correctAnswerIndex": 0,
+            "hint": "Listen to the final /m/ in 'come'. Does it disappear, or does it glide smoothly onto the vowel that starts 'in'?",
+            "explanation": "The final consonant /m/ doesn't disappear here — it resyllabifies, attaching itself to the vowel that opens \"in\". This linking is what makes \"come in\" sound joined rather than two separate, choppy words."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L196_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "media event",
-            "textToSpeak": "media event",
+            "word": "see it",
+            "textToSpeak": "see it",
             "options": [
-                "Intrusion (gliding /r/)",
-                "Elision (/a/ disappears)"
+                "Intrusion (intrusive /j/)",
+                "Linking (/j/ links naturally)"
             ],
-            "correctAnswer": "Intrusion (gliding /r/)",
+            "correctAnswer": "Intrusion (intrusive /j/)",
             "correctAnswerIndex": 0,
-            "hint": "In non-rhotic accents, listen to the gap between 'media' and 'event' - is a subtle /r/ sound introduced? (Calibration 196-1)",
-            "explanation": "The phrase \"media event\" demonstrates \"Intrusion (gliding /r/)\"."
+            "hint": "'see' has no 'j' in its spelling at all. So if you hear a /j/ before 'it', where did it come from?",
+            "explanation": "Vowel-to-vowel transitions are smoothed out with a linking glide. Since \"see\" has no written 'j', and \"it\" starts with a vowel, this /j/ is purely intrusive — added by the mouth's natural movement, not by spelling."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L196_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "law and order",
-            "textToSpeak": "law and order",
+            "word": "old friend",
+            "textToSpeak": "old friend",
             "options": [
-                "Intrusion (gliding /r/)",
-                "Assimilation (/d/ becomes /n/)"
+                "Assimilation (/d/ becomes /f/)",
+                "Elision (/d/ disappears)"
             ],
-            "correctAnswer": "Intrusion (gliding /r/)",
-            "correctAnswerIndex": 0,
-            "hint": "In non-rhotic accents, listen to the transition between 'law' and 'and' - is a subtle /r/ sound inserted? (Calibration 196-2)",
-            "explanation": "The phrase \"law and order\" demonstrates \"Intrusion (gliding /r/)\"."
+            "correctAnswer": "Elision (/d/ disappears)",
+            "correctAnswerIndex": 1,
+            "hint": "What happens to the /d/ in 'old' when it meets the consonant that opens 'friend'?",
+            "explanation": "When /d/ sits inside a consonant cluster, speakers usually skip it rather than articulate every sound separately. That's why the /d/ in \"old\" is left out before \"friend\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L196_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "don't you",
-            "textToSpeak": "don't you",
+            "word": "driver arrived",
+            "textToSpeak": "driver arrived",
             "options": [
-                "Coalescence (/t/ + /j/ becomes /tʃ/)",
-                "Elision (/t/ disappears)"
+                "Linking (/r/ links to the vowel)",
+                "Intrusion (extra /r/)"
             ],
-            "correctAnswer": "Coalescence (/t/ + /j/ becomes /tʃ/)",
+            "correctAnswer": "Linking (/r/ links to the vowel)",
             "correctAnswerIndex": 0,
-            "hint": "Listen to the merging of final /t/ in 'don't' and initial /j/ in 'you' - does it sound like 'doan-chew'? (Calibration 196-3)",
-            "explanation": "The phrase \"don't you\" demonstrates \"Coalescence (/t/ + /j/ becomes /tʃ/)\"."
+            "hint": "Check the spelling of 'driver' — it ends with a written 'r'. Listen for whether that /r/ is pronounced before the vowel starting 'arrived'.",
+            "explanation": "Unlike intrusive /r/, this /r/ is already part of the spelling of \"driver\". In non-rhotic accents, a final written 'r' is pronounced exactly when the next word starts with a vowel — that's linking /r/, not intrusion."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L197_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "white paper",
-            "textToSpeak": "white paper",
+            "word": "might have",
+            "textToSpeak": "might have",
             "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ changes to /p/)"
+                "Weak Form (only the vowel reduces to schwa)",
+                "Contraction (\"might have\" reduces to \"might've\")"
             ],
-            "correctAnswer": "Assimilation (/t/ changes to /p/)",
+            "correctAnswer": "Contraction (\"might have\" reduces to \"might've\")",
             "correctAnswerIndex": 1,
-            "hint": "Listen to the final /t/ in 'white' before 'paper' - does it assimilate to /p/ sounding like 'whipe paper'? (Calibration 197-1)",
-            "explanation": "The phrase \"white paper\" demonstrates \"Assimilation (/t/ changes to /p/)\"."
+            "hint": "Say \"might have\" quickly, the way people do in casual conversation. What short, blended form do the words collapse into?",
+            "explanation": "In fast, informal speech, \"might have\" is often reduced all the way down to \"might've\". Unlike a simple weak form, the words don't just lose stress — they blend into a brand-new informal spoken form."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L197_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "last night",
-            "textToSpeak": "last night",
+            "word": "road closed",
+            "textToSpeak": "road closed",
             "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /n/)"
+                "Assimilation (/d/ becomes /b/)",
+                "Assimilation (/d/ becomes /g/)"
             ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen to 'last night' in fast speech - does the /t/ sound completely drop out? (Calibration 197-2)",
-            "explanation": "The phrase \"last night\" demonstrates \"Elision (/t/ disappears)\"."
+            "correctAnswer": "Assimilation (/d/ becomes /g/)",
+            "correctAnswerIndex": 1,
+            "hint": "'road' ends in /d/, and 'closed' begins with a velar sound. Which precise sound does /d/ turn into?",
+            "explanation": "Consonants often borrow the place of articulation of whatever follows them. Here /d/ moves to a velar position, turning \"road\" into something closer to \"...g\" before \"closed\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L197_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "next door",
-            "textToSpeak": "next door",
+            "word": "too easy",
+            "textToSpeak": "too easy",
             "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /d/)"
+                "Intrusion (intrusive /w/)",
+                "Linking (/w/ links naturally)"
             ],
-            "correctAnswer": "Elision (/t/ disappears)",
+            "correctAnswer": "Intrusion (intrusive /w/)",
             "correctAnswerIndex": 0,
-            "hint": "Listen to the /t/ sound at the end of 'next' - in natural connected speech, is it fully pronounced or does it disappear? (Calibration 197-3)",
-            "explanation": "The phrase \"next door\" demonstrates \"Elision (/t/ disappears)\"."
+            "hint": "Check the spelling of 'too' carefully before 'easy' — is there a written 'w' at the end, or not? That tells you whether this is genuine linking or intrusion.",
+            "explanation": "When one word ends in a vowel and the next begins with a vowel, speakers often insert a small glide to avoid an awkward gap. Here an intrusive /w/ is added between \"too\" and \"easy\", even though no 'w' appears in the spelling of either word."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L198_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "ten cards",
-            "textToSpeak": "ten cards",
+            "word": "ten birds",
+            "textToSpeak": "ten birds",
             "options": [
-                "Elision (/n/ disappears)",
-                "Assimilation (/n/ changes to /ŋ/)"
+                "Assimilation (/n/ becomes /ŋ/)",
+                "Assimilation (/n/ becomes /m/)"
             ],
-            "correctAnswer": "Assimilation (/n/ changes to /ŋ/)",
+            "correctAnswer": "Assimilation (/n/ becomes /m/)",
             "correctAnswerIndex": 1,
-            "hint": "Listen to the /n/ at the end of 'ten' - because it is followed by the velar consonant /k/, does it change to /ŋ/? (Calibration 198-1)",
-            "explanation": "The phrase \"ten cards\" demonstrates \"Assimilation (/n/ changes to /ŋ/)\"."
+            "hint": "'ten' ends in /n/, and 'birds' begins with a bilabial sound. Which precise sound does /n/ turn into?",
+            "explanation": "Saying /n/ and then immediately a bilabial consonant takes extra effort, so speakers pre-shift /n/ to /m/ — the bilabial place of \"birds\". That's assimilation at work in \"ten birds\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L198_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "must be",
-            "textToSpeak": "must be",
+            "word": "watch her",
+            "textToSpeak": "watch her",
             "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /p/)"
+                "Linking (the consonant links to the vowel)",
+                "H-Dropping (/h/ disappears)"
             ],
-            "correctAnswer": "Elision (/t/ disappears)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen to the /t/ at the end of 'must' followed by 'be' - does it completely vanish? (Calibration 198-2)",
-            "explanation": "The phrase \"must be\" demonstrates \"Elision (/t/ disappears)\"."
+            "correctAnswer": "H-Dropping (/h/ disappears)",
+            "correctAnswerIndex": 1,
+            "hint": "Listen to the pronoun right after 'watch'. In casual speech, does its initial /h/ survive, or does it vanish?",
+            "explanation": "Weak pronouns like 'him', 'her', and 'his' often lose their initial /h/ in fast, casual speech, especially right after a consonant. Here the /h/ drops, letting \"watch\" flow directly into the vowel that follows in \"her\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L198_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "good boy",
-            "textToSpeak": "good boy",
+            "word": "for her",
+            "textToSpeak": "for her",
             "options": [
-                "Elision (/d/ disappears)",
-                "Assimilation (/d/ changes to /b/)"
+                "Linking (the consonant links to the vowel)",
+                "H-Dropping (/h/ disappears)"
             ],
-            "correctAnswer": "Assimilation (/d/ changes to /b/)",
+            "correctAnswer": "H-Dropping (/h/ disappears)",
             "correctAnswerIndex": 1,
-            "hint": "Listen to the /d/ sound in 'good' - does it transform into the bilabial /b/ sound before 'boy'? (Calibration 198-3)",
-            "explanation": "The phrase \"good boy\" demonstrates \"Assimilation (/d/ changes to /b/)\"."
+            "hint": "'her' starts with a written 'h'. Does fast, casual speech actually pronounce it after 'for'?",
+            "explanation": "The /h/ in \"her\" is one of the weakest sounds in English and disappears easily when unstressed. After the consonant ending \"for\", it's simply left out in relaxed, natural speech."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L199_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "did you",
-            "textToSpeak": "did you",
+            "word": "invite her",
+            "textToSpeak": "invite her",
             "options": [
-                "Intrusion (extra /r/)",
-                "Coalescence (/d/ + /j/ becomes /dʒ/)"
+                "Linking (the consonant links to the vowel)",
+                "H-Dropping (/h/ disappears)"
             ],
-            "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
+            "correctAnswer": "H-Dropping (/h/ disappears)",
             "correctAnswerIndex": 1,
-            "hint": "Listen to the merging of the final /d/ in 'did' and initial /j/ in 'you' - does it sound like 'didge-you'? (Calibration 199-1)",
-            "explanation": "The phrase \"did you\" demonstrates \"Coalescence (/d/ + /j/ becomes /dʒ/)\"."
+            "hint": "'her' starts with a written 'h'. Does fast, casual speech actually pronounce it after 'invite'?",
+            "explanation": "The /h/ in \"her\" is one of the weakest sounds in English and disappears easily when unstressed. After the consonant ending \"invite\", it's simply left out in relaxed, natural speech."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L199_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "media event",
-            "textToSpeak": "media event",
+            "word": "road map",
+            "textToSpeak": "road map",
             "options": [
-                "Intrusion (gliding /r/)",
-                "Elision (/a/ disappears)"
+                "Assimilation (/d/ becomes /b/)",
+                "Assimilation (/d/ becomes /g/)"
             ],
-            "correctAnswer": "Intrusion (gliding /r/)",
+            "correctAnswer": "Assimilation (/d/ becomes /b/)",
             "correctAnswerIndex": 0,
-            "hint": "In non-rhotic accents, listen to the gap between 'media' and 'event' - is a subtle /r/ sound introduced? (Calibration 199-2)",
-            "explanation": "The phrase \"media event\" demonstrates \"Intrusion (gliding /r/)\"."
+            "hint": "Notice what happens to /d/ in 'road' right before 'map'. Exactly which place does it move to?",
+            "explanation": "This is place assimilation: in \"road\", /d/ adapts to the bilabial consonant beginning \"map\", surfacing as /b/ in natural, fast speech."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L199_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "law and order",
-            "textToSpeak": "law and order",
+            "word": "like coffee",
+            "textToSpeak": "like coffee",
             "options": [
-                "Intrusion (gliding /r/)",
-                "Assimilation (/d/ becomes /n/)"
+                "Gemination (the two /k/ sounds merge into one)",
+                "Elision (one /k/ disappears)"
             ],
-            "correctAnswer": "Intrusion (gliding /r/)",
+            "correctAnswer": "Gemination (the two /k/ sounds merge into one)",
             "correctAnswerIndex": 0,
-            "hint": "In non-rhotic accents, listen to the transition between 'law' and 'and' - is a subtle /r/ sound inserted? (Calibration 199-3)",
-            "explanation": "The phrase \"law and order\" demonstrates \"Intrusion (gliding /r/)\"."
+            "hint": "Both 'like' and 'coffee' meet at a /k/ sound. Listen carefully — do you hear two separate /k/ sounds, or one slightly longer one?",
+            "explanation": "When the same consonant ends 'like' and begins 'coffee', speakers don't usually pronounce it twice. Instead the two /k/ sounds merge into a single, slightly lengthened sound — that's gemination, not deletion."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L200_Q1",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "don't you",
-            "textToSpeak": "don't you",
+            "word": "bad luck",
+            "textToSpeak": "bad luck",
             "options": [
-                "Coalescence (/t/ + /j/ becomes /tʃ/)",
-                "Elision (/t/ disappears)"
+                "Elision (/d/ disappears)",
+                "Assimilation (/d/ becomes /l/)"
             ],
-            "correctAnswer": "Coalescence (/t/ + /j/ becomes /tʃ/)",
+            "correctAnswer": "Elision (/d/ disappears)",
             "correctAnswerIndex": 0,
-            "hint": "Listen to the merging of final /t/ in 'don't' and initial /j/ in 'you' - does it sound like 'doan-chew'? (Calibration 200-1)",
-            "explanation": "The phrase \"don't you\" demonstrates \"Coalescence (/t/ + /j/ becomes /tʃ/)\"."
+            "hint": "Focus on the consonant cluster at the boundary of 'bad' and 'luck'. What's the simplest, fastest way a native speaker would get through it?",
+            "explanation": "In connected speech, /d/ is often dropped when it falls between two other consonants. Here, the /d/ at the end of \"bad\" disappears before the consonant that opens \"luck\", so \"bad luck\" is pronounced without it."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L200_Q2",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "white paper",
-            "textToSpeak": "white paper",
+            "word": "this yarn",
+            "textToSpeak": "this yarn",
             "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ changes to /p/)"
+                "Coalescence (/s/ + /j/ becomes /ʃ/)",
+                "Coalescence (/s/ + /j/ becomes /ʒ/)"
             ],
-            "correctAnswer": "Assimilation (/t/ changes to /p/)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen to the final /t/ in 'white' before 'paper' - does it assimilate to /p/ sounding like 'whipe paper'? (Calibration 200-2)",
-            "explanation": "The phrase \"white paper\" demonstrates \"Assimilation (/t/ changes to /p/)\"."
+            "correctAnswer": "Coalescence (/s/ + /j/ becomes /ʃ/)",
+            "correctAnswerIndex": 0,
+            "hint": "In 'this yarn', don't listen for /s/ and /j/ separately — listen for the single fused sound that replaces them both.",
+            "explanation": "This blending of /s/ and /j/ into /ʃ/ is called coalescence. It's extremely common wherever a word like \"this\", ending in /s/, is followed by 'yarn'."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L200_Q3",
-            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+            "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "difficulty": 5,
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "last night",
-            "textToSpeak": "last night",
+            "word": "forgive her",
+            "textToSpeak": "forgive her",
             "options": [
-                "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /n/)"
+                "H-Dropping (/h/ disappears)",
+                "Linking (the consonant links to the vowel)"
             ],
-            "correctAnswer": "Elision (/t/ disappears)",
+            "correctAnswer": "H-Dropping (/h/ disappears)",
             "correctAnswerIndex": 0,
-            "hint": "Listen to 'last night' in fast speech - does the /t/ sound completely drop out? (Calibration 200-3)",
-            "explanation": "The phrase \"last night\" demonstrates \"Elision (/t/ disappears)\"."
+            "hint": "Listen to the pronoun right after 'forgive'. In casual speech, does its initial /h/ survive, or does it vanish?",
+            "explanation": "Weak pronouns like 'him', 'her', and 'his' often lose their initial /h/ in fast, casual speech, especially right after a consonant. Here the /h/ drops, letting \"forgive\" flow directly into the vowel that follows in \"her\"."
         }
     ]
 }
