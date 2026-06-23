@@ -5,248 +5,59 @@
     "quests": [
         {
             "id": "dialectDrill_l1_q1",
-            "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
+            "instruction": "Which pronunciation is American?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Schedule",
+            "word": "Solder",
             "options": [
-                "SHED-yool (British)",
-                "SKED-yool (American)"
+                "SOD-er (American)",
+                "SOHL-der (British)"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
+            "hint": "\"Solder\": This particular word just has to be learned individually — there's no general rule, only convention. Listen for \"SOD-er\" versus \"SOHL-der\"."
         },
         {
             "id": "dialectDrill_l1_q2",
-            "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
+            "instruction": "Which pronunciation is British?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Tomato",
+            "word": "Process",
             "options": [
-                "tuh-MAH-toh (British)",
-                "tuh-MAY-toh (American)"
+                "PROH-sess (British)",
+                "PRAH-sess (American)"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Process\" slowly. This particular word just has to be learned individually — there's no general rule, only convention. One option sounds like \"PRAH-sess\", the other like \"PROH-sess\"."
         },
         {
             "id": "dialectDrill_l1_q3",
-            "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
+            "instruction": "Which pronunciation is American?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Garage",
+            "word": "Wok",
             "options": [
-                "guh-RAHZH (American)",
-                "GARR-ij (British)"
+                "WAHK (American)",
+                "WOK (British)"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
+            "correctAnswerIndex": 0,
+            "hint": "\"Wok\": This vowel rounds toward 'o' in British English, while American English opens it toward 'ah'. Listen for \"WAHK\" versus \"WOK\"."
         },
         {
             "id": "dialectDrill_l2_q1",
             "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Either",
+            "word": "Bog",
             "options": [
-                "EE-ther (American)",
-                "EYE-ther (British)"
+                "BAHG (American)",
+                "BOG (British)"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
+            "hint": "\"Bog\": This vowel rounds toward 'o' in British English, while American English opens it toward 'ah'. Listen for \"BAHG\" versus \"BOG\"."
         },
         {
             "id": "dialectDrill_l2_q2",
             "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Neither",
-            "options": [
-                "NY-ther (British)",
-                "NEE-ther (American)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l2_q3",
-            "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Aluminum",
-            "options": [
-                "al-yoo-MIN-ee-um (British)",
-                "uh-LOO-min-um (American)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l3_q1",
-            "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Vase",
-            "options": [
-                "VAYS (American)",
-                "VAHZ (British)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l3_q2",
-            "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Route",
-            "options": [
-                "ROWT (American)",
-                "ROOT (British)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l3_q3",
-            "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Privacy",
-            "options": [
-                "PRIV-uh-see (British)",
-                "PRY-vuh-see (American)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l4_q1",
-            "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Mobile",
-            "options": [
-                "MOH-byle (British)",
-                "MOH-b'l (American)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l4_q2",
-            "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Advertisement",
-            "options": [
-                "ad-ver-TYZE-ment (American)",
-                "ad-VER-tiss-ment (British)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l4_q3",
-            "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Hostile",
-            "options": [
-                "HOS-t'l (American)",
-                "HOS-tyle (British)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l5_q1",
-            "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Agile",
-            "options": [
-                "AJ-yle (British)",
-                "AJ-il (American)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l5_q2",
-            "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Leisure",
-            "options": [
-                "LEZH-er (British)",
-                "LEE-zher (American)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l5_q3",
-            "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Direct",
-            "options": [
-                "duh-REKT (American)",
-                "dy-REKT (British)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l6_q1",
-            "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
             "subtype": "dialectDrill",
             "interactionType": "choice",
             "word": "Herb",
@@ -254,223 +65,51 @@
                 "ERB (American)",
                 "HERB (British)"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l6_q2",
-            "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Aunt",
-            "options": [
-                "AHNT (British)",
-                "ANT (American)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l6_q3",
-            "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Data",
-            "options": [
-                "DAH-tuh (British)",
-                "DAY-tuh (American)"
-            ],
             "correctAnswerIndex": 1,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
+            "hint": "Say \"Herb\" slowly. This particular word just has to be learned individually — there's no general rule, only convention. One option sounds like \"ERB\", the other like \"HERB\"."
         },
         {
-            "id": "dialectDrill_l7_q1",
-            "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Vitamin",
-            "options": [
-                "VY-tuh-min (American)",
-                "VIT-uh-min (British)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l7_q2",
+            "id": "dialectDrill_l2_q3",
             "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Laboratory",
+            "word": "Jog",
             "options": [
-                "LAB-ruh-tor-ee (American)",
-                "luh-BOR-uh-tree (British)"
+                "JAHG (American)",
+                "JOG (British)"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
+            "hint": "\"Jog\": This vowel rounds toward 'o' in British English, while American English opens it toward 'ah'. Listen for \"JAHG\" versus \"JOG\"."
         },
         {
-            "id": "dialectDrill_l7_q3",
+            "id": "dialectDrill_l3_q1",
             "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Missile",
+            "word": "Pasta",
             "options": [
-                "MISS-yle (British)",
-                "MISS-il (American)"
+                "PAS-tuh (British)",
+                "PAH-stuh (American)"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
+            "hint": "\"Pasta\": This particular word just has to be learned individually — there's no general rule, only convention. Listen for \"PAH-stuh\" versus \"PAS-tuh\"."
         },
         {
-            "id": "dialectDrill_l8_q1",
+            "id": "dialectDrill_l3_q2",
             "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Zebra",
+            "word": "Issue",
             "options": [
-                "ZEB-ruh (British)",
-                "ZEE-bruh (American)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l8_q2",
-            "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Patriot",
-            "options": [
-                "PAY-tree-ut (American)",
-                "PAT-ree-ut (British)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l8_q3",
-            "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Yogurt",
-            "options": [
-                "YOH-gert (American)",
-                "YOG-ert (British)"
+                "ISH-oo (American)",
+                "ISS-yoo (British)"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
+            "hint": "\"Issue\": This particular word just has to be learned individually — there's no general rule, only convention. Listen for \"ISH-oo\" versus \"ISS-yoo\"."
         },
         {
-            "id": "dialectDrill_l9_q1",
-            "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Bouquet",
-            "options": [
-                "Boo-KAY (British)",
-                "Boh-KAY (American)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l9_q2",
+            "id": "dialectDrill_l3_q3",
             "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Docile",
-            "options": [
-                "DOH-syle (British)",
-                "DAH-s'l (American)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l9_q3",
-            "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Futile",
-            "options": [
-                "FYOO-t'l (American)",
-                "FYOO-tyle (British)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l10_q1",
-            "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Fragile",
-            "options": [
-                "FRAJ-il (American)",
-                "FRAJ-yle (British)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l10_q2",
-            "instruction": "Which pronunciation is British?",
-            "difficulty": 1,
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Status",
-            "options": [
-                "STAY-tus (British)",
-                "STAT-us (American)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-            "xpReward": 5,
-            "coinReward": 10
-        },
-        {
-            "id": "dialectDrill_l10_q3",
-            "instruction": "Which pronunciation is American?",
-            "difficulty": 1,
             "subtype": "dialectDrill",
             "interactionType": "choice",
             "word": "Epoch",
@@ -479,9 +118,280 @@
                 "EP-uck (American)"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-            "xpReward": 5,
-            "coinReward": 10
+            "hint": "Say \"Epoch\" slowly. This particular word just has to be learned individually — there's no general rule, only convention. One option sounds like \"EP-uck\", the other like \"EE-pok\"."
+        },
+        {
+            "id": "dialectDrill_l4_q1",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Off",
+            "options": [
+                "AHF (American)",
+                "OF (British)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "\"Off\": This vowel rounds toward 'o' in British English, while American English opens it toward 'ah'. Listen for \"AHF\" versus \"OF\"."
+        },
+        {
+            "id": "dialectDrill_l4_q2",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Hop",
+            "options": [
+                "HOP (British)",
+                "HAHP (American)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Hop\" slowly. This vowel rounds toward 'o' in British English, while American English opens it toward 'ah'. One option sounds like \"HAHP\", the other like \"HOP\"."
+        },
+        {
+            "id": "dialectDrill_l4_q3",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Either",
+            "options": [
+                "EE-ther (American)",
+                "EYE-ther (British)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Either\" slowly. This particular word just has to be learned individually — there's no general rule, only convention. One option sounds like \"EE-ther\", the other like \"EYE-ther\"."
+        },
+        {
+            "id": "dialectDrill_l5_q1",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Drama",
+            "options": [
+                "DRAM-uh (American)",
+                "DRAH-muh (British)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Say \"Drama\" slowly. This particular word just has to be learned individually — there's no general rule, only convention. One option sounds like \"DRAM-uh\", the other like \"DRAH-muh\"."
+        },
+        {
+            "id": "dialectDrill_l5_q2",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Cod",
+            "options": [
+                "KAHD (American)",
+                "KOD (British)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "\"Cod\": This vowel rounds toward 'o' in British English, while American English opens it toward 'ah'. Listen for \"KAHD\" versus \"KOD\"."
+        },
+        {
+            "id": "dialectDrill_l5_q3",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Sorry",
+            "options": [
+                "SORR-ee (British)",
+                "SAH-ree (American)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "\"Sorry\": This particular word just has to be learned individually — there's no general rule, only convention. Listen for \"SAH-ree\" versus \"SORR-ee\"."
+        },
+        {
+            "id": "dialectDrill_l6_q1",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Got",
+            "options": [
+                "GOT (British)",
+                "GAHT (American)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "\"Got\": This vowel rounds toward 'o' in British English, while American English opens it toward 'ah'. Listen for \"GAHT\" versus \"GOT\"."
+        },
+        {
+            "id": "dialectDrill_l6_q2",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Pod",
+            "options": [
+                "PAHD (American)",
+                "POD (British)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "\"Pod\": This vowel rounds toward 'o' in British English, while American English opens it toward 'ah'. Listen for \"PAHD\" versus \"POD\"."
+        },
+        {
+            "id": "dialectDrill_l6_q3",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Vase",
+            "options": [
+                "VAHZ (British)",
+                "VAYS (American)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Say \"Vase\" slowly. This particular word just has to be learned individually — there's no general rule, only convention. One option sounds like \"VAYS\", the other like \"VAHZ\"."
+        },
+        {
+            "id": "dialectDrill_l7_q1",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Khaki",
+            "options": [
+                "KAH-kee (British)",
+                "KAK-ee (American)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Say \"Khaki\" slowly. This particular word just has to be learned individually — there's no general rule, only convention. One option sounds like \"KAK-ee\", the other like \"KAH-kee\"."
+        },
+        {
+            "id": "dialectDrill_l7_q2",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Yogurt",
+            "options": [
+                "YOH-gert (American)",
+                "YOG-ert (British)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "\"Yogurt\": This particular word just has to be learned individually — there's no general rule, only convention. Listen for \"YOH-gert\" versus \"YOG-ert\"."
+        },
+        {
+            "id": "dialectDrill_l7_q3",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Jaguar",
+            "options": [
+                "JAG-yoo-ar (British)",
+                "JAG-wahr (American)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Jaguar\" slowly. This particular word just has to be learned individually — there's no general rule, only convention. One option sounds like \"JAG-wahr\", the other like \"JAG-yoo-ar\"."
+        },
+        {
+            "id": "dialectDrill_l8_q1",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Sob",
+            "options": [
+                "SAHB (American)",
+                "SOB (British)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "\"Sob\": This vowel rounds toward 'o' in British English, while American English opens it toward 'ah'. Listen for \"SAHB\" versus \"SOB\"."
+        },
+        {
+            "id": "dialectDrill_l8_q2",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Glacier",
+            "options": [
+                "GLASS-ee-er (British)",
+                "GLAY-sher (American)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Glacier\" slowly. This particular word just has to be learned individually — there's no general rule, only convention. One option sounds like \"GLAY-sher\", the other like \"GLASS-ee-er\"."
+        },
+        {
+            "id": "dialectDrill_l8_q3",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Buoy",
+            "options": [
+                "BOO-ee (American)",
+                "BOY (British)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "\"Buoy\": This particular word just has to be learned individually — there's no general rule, only convention. Listen for \"BOO-ee\" versus \"BOY\"."
+        },
+        {
+            "id": "dialectDrill_l9_q1",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Pot",
+            "options": [
+                "PAHT (American)",
+                "POT (British)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Pot\" slowly. This vowel rounds toward 'o' in British English, while American English opens it toward 'ah'. One option sounds like \"PAHT\", the other like \"POT\"."
+        },
+        {
+            "id": "dialectDrill_l9_q2",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Tomato",
+            "options": [
+                "tuh-MAH-toh (British)",
+                "tuh-MAY-toh (American)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "\"Tomato\": This particular word just has to be learned individually — there's no general rule, only convention. Listen for \"tuh-MAY-toh\" versus \"tuh-MAH-toh\"."
+        },
+        {
+            "id": "dialectDrill_l9_q3",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Lot",
+            "options": [
+                "LAHT (American)",
+                "LOT (British)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Say \"Lot\" slowly. This vowel rounds toward 'o' in British English, while American English opens it toward 'ah'. One option sounds like \"LAHT\", the other like \"LOT\"."
+        },
+        {
+            "id": "dialectDrill_l10_q1",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Mob",
+            "options": [
+                "MOB (British)",
+                "MAHB (American)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Say \"Mob\" slowly. This vowel rounds toward 'o' in British English, while American English opens it toward 'ah'. One option sounds like \"MAHB\", the other like \"MOB\"."
+        },
+        {
+            "id": "dialectDrill_l10_q2",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Mop",
+            "options": [
+                "MOP (British)",
+                "MAHP (American)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Mop\" slowly. This vowel rounds toward 'o' in British English, while American English opens it toward 'ah'. One option sounds like \"MAHP\", the other like \"MOP\"."
+        },
+        {
+            "id": "dialectDrill_l10_q3",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Direct",
+            "options": [
+                "duh-REKT (American)",
+                "dy-REKT (British)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Direct\" slowly. This particular word just has to be learned individually — there's no general rule, only convention. One option sounds like \"duh-REKT\", the other like \"dy-REKT\"."
         }
     ]
 }
