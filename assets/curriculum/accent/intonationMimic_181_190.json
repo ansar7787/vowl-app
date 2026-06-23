@@ -9,11 +9,11 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "You're moving to Paris.",
+            "textToSpeak": "You're moving to Paris.",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
             "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
@@ -23,8 +23,8 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 181-1)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "Listen to the pitch at the end of 'Paris.' Is the speaker calmly sharing a fact, or reacting with surprise?",
+            "explanation": "Spoken as a calm statement, the pitch falls on 'Paris.' The exact same words can carry a completely different meaning depending on whether the pitch falls or rises, since no other grammar changes here."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L181_Q2",
@@ -32,22 +32,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "You're moving to Paris?",
+            "textToSpeak": "You're moving to Paris?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 181-2)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "This is the exact same wording as before, but listen again to the pitch on 'Paris.'",
+            "explanation": "Even though the words are identical to a calm statement, a rising pitch on 'Paris' turns this into a declarative question, expressing surprise or disbelief rather than calmly sharing a fact."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L181_Q3",
@@ -55,22 +55,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "He finished the marathon.",
+            "textToSpeak": "He finished the marathon.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Statement)",
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 181-3)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "Listen to the pitch on 'marathon.' Is this calm, factual news?",
+            "explanation": "This is a calm statement, so the pitch falls on 'marathon,' showing the speaker is simply sharing information."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L182_Q1",
@@ -78,22 +78,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "She quit her job?",
+            "textToSpeak": "She quit her job?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 182-1)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "Listen to the pitch on 'job.' Does the speaker sound calm, or shocked?",
+            "explanation": "The rising pitch on 'job' turns this into a surprised, disbelieving reaction rather than a calm statement of fact."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L182_Q2",
@@ -101,11 +101,11 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "She quit her job.",
+            "textToSpeak": "She quit her job.",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
             "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
@@ -115,8 +115,8 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 182-2)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "This is the same wording as before, but listen again to the pitch on 'job.'",
+            "explanation": "Spoken calmly, the pitch falls on 'job,' showing the speaker is simply stating a fact, with no surprise."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L182_Q3",
@@ -124,22 +124,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "You forgot the meeting?",
+            "textToSpeak": "You forgot the meeting?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 182-3)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "Listen to the pitch on 'meeting.' Does the speaker sound calm, or surprised and a little annoyed?",
+            "explanation": "The rising pitch on 'meeting' shows disbelief. The speaker is reacting with surprise, not calmly requesting information."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L183_Q1",
@@ -147,22 +147,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "They're getting married next year.",
+            "textToSpeak": "They're getting married next year.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Statement)",
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 183-1)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "Listen to the pitch on 'year.' Is this calm news?",
+            "explanation": "This is a calm statement, so the pitch falls on 'year,' simply sharing the news."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L183_Q2",
@@ -170,22 +170,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "They're getting married next year?",
+            "textToSpeak": "They're getting married next year?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 183-2)",
-            "explanation": "Yes/No questions typically rise at the end."
+            "hint": "Same words as before — but listen again to the pitch on 'year.'",
+            "explanation": "The rising pitch on 'year' turns identical wording into a surprised reaction, rather than a calm statement."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L183_Q3",
@@ -193,11 +193,11 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "My brother bought a house.",
+            "textToSpeak": "My brother bought a house.",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
             "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
@@ -207,8 +207,8 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 183-3)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "Listen to the pitch on 'house.' Does this sound like calm news?",
+            "explanation": "This is a calm statement, so the pitch falls on 'house,' showing the speaker is simply sharing a fact."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L184_Q1",
@@ -216,22 +216,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "He sold his car?",
+            "textToSpeak": "He sold his car?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 184-1)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "Listen to the pitch on 'car.' Does the speaker sound calm, or surprised?",
+            "explanation": "The rising pitch on 'car' shows disbelief, turning this into a surprised reaction rather than a calm statement."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L184_Q2",
@@ -239,11 +239,11 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "He sold his car.",
+            "textToSpeak": "He sold his car.",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
             "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
@@ -253,8 +253,8 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 184-2)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "Same wording as before — listen again to the pitch on 'car.'",
+            "explanation": "Spoken calmly, the pitch falls on 'car,' showing the speaker is simply stating a fact."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L184_Q3",
@@ -262,22 +262,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "You met the president?",
+            "textToSpeak": "You met the president?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 184-3)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "Listen to the pitch on 'president.' Does this sound calm, or amazed?",
+            "explanation": "The rising pitch on 'president' shows astonishment, turning this into a surprised reaction rather than a calm question for information."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L185_Q1",
@@ -285,22 +285,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "We're moving back home.",
+            "textToSpeak": "We're moving back home.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Statement)",
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 185-1)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "Listen to the pitch on 'home.' Is this calm news?",
+            "explanation": "This is a calm statement, so the pitch falls on 'home,' simply sharing the news."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L185_Q2",
@@ -308,22 +308,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "We're moving back home?",
+            "textToSpeak": "We're moving back home?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 185-2)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "Same words as before — listen again to the pitch on 'home.'",
+            "explanation": "The rising pitch on 'home' turns identical wording into a surprised, questioning reaction."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L185_Q3",
@@ -331,11 +331,11 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "She adopted three cats.",
+            "textToSpeak": "She adopted three cats.",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
             "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
@@ -345,8 +345,8 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 185-3)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "Listen to the pitch on 'cats.' Does this sound calm?",
+            "explanation": "This is a calm statement, so the pitch falls on 'cats,' simply sharing the fact."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L186_Q1",
@@ -354,22 +354,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "You're quitting the team?",
+            "textToSpeak": "You're quitting the team?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 186-1)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "Listen to the pitch on 'team.' Does the speaker sound calm, or shocked?",
+            "explanation": "The rising pitch on 'team' shows disbelief, turning this into a surprised reaction."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L186_Q2",
@@ -377,22 +377,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "You're quitting the team.",
+            "textToSpeak": "You're quitting the team.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Statement)",
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 186-2)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "Same wording as before — listen again to the pitch on 'team.'",
+            "explanation": "Spoken calmly, the pitch falls on 'team,' showing the speaker is simply stating a fact."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L186_Q3",
@@ -400,22 +400,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "He won the lottery?",
+            "textToSpeak": "He won the lottery?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 186-3)",
-            "explanation": "Yes/No questions typically rise at the end."
+            "hint": "Listen to the pitch on 'lottery.' Does this sound calm, or amazed?",
+            "explanation": "The rising pitch on 'lottery' shows astonishment, turning this into a surprised reaction."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L187_Q1",
@@ -423,11 +423,11 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "Our flight got canceled.",
+            "textToSpeak": "Our flight got canceled.",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
             "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
@@ -437,8 +437,8 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 187-1)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "Listen to the pitch on 'canceled.' Is this calm news?",
+            "explanation": "This is a calm statement, so the pitch falls on 'canceled,' simply sharing the fact."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L187_Q2",
@@ -446,22 +446,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "Our flight got canceled?",
+            "textToSpeak": "Our flight got canceled?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 187-2)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "Same words as before — listen again to the pitch on 'canceled.'",
+            "explanation": "The rising pitch on 'canceled' turns identical wording into a frustrated, surprised reaction."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L187_Q3",
@@ -469,11 +469,11 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "The neighbors are selling their house.",
+            "textToSpeak": "The neighbors are selling their house.",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
             "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
@@ -483,8 +483,8 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 187-3)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "Listen to the pitch on 'house.' Does this sound calm?",
+            "explanation": "This is a calm statement, so the pitch falls on 'house,' simply sharing the news."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L188_Q1",
@@ -492,22 +492,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "You're leaving the company?",
+            "textToSpeak": "You're leaving the company?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 188-1)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "Listen to the pitch on 'company.' Does the speaker sound calm, or shocked?",
+            "explanation": "The rising pitch on 'company' shows disbelief, turning this into a surprised reaction."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L188_Q2",
@@ -515,22 +515,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "You're leaving the company.",
+            "textToSpeak": "You're leaving the company.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Statement)",
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 188-2)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "Same wording as before — listen again to the pitch on 'company.'",
+            "explanation": "Spoken calmly, the pitch falls on 'company,' showing the speaker is simply stating a fact."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L188_Q3",
@@ -538,22 +538,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "She's coming back early?",
+            "textToSpeak": "She's coming back early?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 188-3)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "Listen to the pitch on 'early.' Does this sound calm, or surprised?",
+            "explanation": "The rising pitch on 'early' shows surprise, turning this into a questioning reaction rather than a calm statement."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L189_Q1",
@@ -561,11 +561,11 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "He changed his entire schedule.",
+            "textToSpeak": "He changed his entire schedule.",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
             "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
@@ -575,8 +575,8 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 189-1)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "Listen to the pitch on 'schedule.' Is this calm news?",
+            "explanation": "This is a calm statement, so the pitch falls on 'schedule,' simply sharing the fact."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L189_Q2",
@@ -584,22 +584,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "He changed his entire schedule?",
+            "textToSpeak": "He changed his entire schedule?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 189-2)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "Same words as before — listen again to the pitch on 'schedule.'",
+            "explanation": "The rising pitch on 'schedule' turns identical wording into a surprised reaction."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L189_Q3",
@@ -607,57 +607,11 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
-            "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                3,
-                2,
-                1,
-                0
-            ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 189-3)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L190_Q1",
-            "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
-            "difficulty": 5,
-            "subtype": "intonationMimic",
-            "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "They canceled the contract.",
+            "textToSpeak": "They canceled the contract.",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 190-1)",
-            "explanation": "Yes/No questions typically rise at the end."
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L190_Q2",
-            "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
-            "difficulty": 5,
-            "subtype": "intonationMimic",
-            "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
             "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
@@ -667,8 +621,54 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 190-2)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "Listen to the pitch on 'contract.' Does this sound calm?",
+            "explanation": "This is a calm statement, so the pitch falls on 'contract,' simply sharing the news."
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L190_Q1",
+            "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
+            "difficulty": 5,
+            "subtype": "intonationMimic",
+            "interactionType": "mimic",
+            "word": "You already finished the report?",
+            "textToSpeak": "You already finished the report?",
+            "options": [
+                "Falling Intonation (Statement)",
+                "Rising Intonation (Surprise/Disbelief Question)"
+            ],
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                1,
+                2,
+                2,
+                4
+            ],
+            "hint": "Listen to the pitch on 'report.' Does the speaker sound calm, or impressed and surprised?",
+            "explanation": "The rising pitch on 'report' shows surprise, turning this into a questioning reaction rather than a calm statement."
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L190_Q2",
+            "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
+            "difficulty": 5,
+            "subtype": "intonationMimic",
+            "interactionType": "mimic",
+            "word": "You already finished the report.",
+            "textToSpeak": "You already finished the report.",
+            "options": [
+                "Falling Intonation (Statement)",
+                "Rising Intonation (Surprise/Disbelief Question)"
+            ],
+            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                2,
+                2,
+                1,
+                0
+            ],
+            "hint": "Same wording as before — listen again to the pitch on 'report.'",
+            "explanation": "Spoken calmly, the pitch falls on 'report,' showing the speaker is simply stating a fact, completing this tier's focus on intonation-driven minimal pairs."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L190_Q3",
@@ -676,22 +676,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "She's moving in with them?",
+            "textToSpeak": "She's moving in with them?",
             "options": [
                 "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Rising Intonation (Surprise/Disbelief Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Surprise/Disbelief Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
                 1,
-                1,
                 2,
-                3
+                2,
+                4
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 190-3)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "Listen to the pitch on 'them.' Does this sound calm, or surprised?",
+            "explanation": "The rising pitch on 'them' shows surprise, turning this into a questioning reaction rather than a calm statement."
         }
     ]
 }

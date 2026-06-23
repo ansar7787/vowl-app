@@ -9,8 +9,8 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "Please send me the report by noon.",
+            "textToSpeak": "Please send me the report by noon.",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -23,8 +23,8 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 41-1)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "This sentence gives an instruction rather than asking a question. Listen to the pitch on 'noon.'",
+            "explanation": "Instructions and requests like this one usually fall in pitch at the end, just like statements. The voice drops on 'noon.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L41_Q2",
@@ -32,8 +32,8 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "Did you finish the report yet?",
+            "textToSpeak": "Did you finish the report yet?",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -46,8 +46,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 41-2)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'yet.'",
+            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'yet' as the speaker checks progress."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L41_Q3",
@@ -55,22 +55,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "Our meeting starts in ten minutes.",
+            "textToSpeak": "Our meeting starts in ten minutes.",
             "options": [
-                "Falling Intonation (Wh-Question)",
+                "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 41-3)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "This sentence announces a schedule fact. Listen to the pitch on 'minutes.'",
+            "explanation": "Statements end with falling intonation. The pitch drops on 'minutes,' showing the announcement is complete."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L42_Q1",
@@ -78,22 +78,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "Where is today's meeting being held?",
+            "textToSpeak": "Where is today's meeting being held?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Falling Intonation (Wh-Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
+                3,
                 2,
-                3
+                1,
+                0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 42-1)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "This question begins with 'Where' and asks for a location. Listen to the pitch on 'held.'",
+            "explanation": "Wh-questions fall at the end. The pitch drops on 'held,' since specific information is requested."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L42_Q2",
@@ -101,22 +101,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "Is the meeting room booked already?",
+            "textToSpeak": "Is the meeting room booked already?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Falling Intonation (Wh-Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                1,
+                2,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 42-2)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "This question can be answered with 'yes' or 'no.' Notice the pitch on 'already.'",
+            "explanation": "Yes/No questions rise in pitch at the end, so the voice climbs on 'already.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L42_Q3",
@@ -124,22 +124,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "Who is leading the project this month?",
+            "textToSpeak": "Who is leading the project this month?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Falling Intonation (Wh-Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
+                3,
                 2,
-                3
+                1,
+                0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 42-3)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "This question starts with 'Who' and asks for a name. Listen to the pitch on 'month.'",
+            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'month,' marking a request for details."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L43_Q1",
@@ -147,22 +147,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "Turn off your computer before leaving.",
+            "textToSpeak": "Turn off your computer before leaving.",
             "options": [
-                "Falling Intonation (Wh-Question)",
+                "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 43-1)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "This sentence is an instruction, not a question. Listen to the pitch on 'leaving.'",
+            "explanation": "Like statements, commands usually end with falling intonation. The pitch drops on 'leaving' to close the instruction."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L43_Q2",
@@ -170,8 +170,8 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "Have you emailed the client today?",
+            "textToSpeak": "Have you emailed the client today?",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -184,8 +184,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 43-2)",
-            "explanation": "Yes/No questions typically rise at the end."
+            "hint": "This question checks on a work task and expects 'yes' or 'no.' Listen to the pitch on 'today.'",
+            "explanation": "The rising pitch on 'today' shows this is a Yes/No question seeking confirmation."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L43_Q3",
@@ -193,8 +193,8 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "I finished the budget this afternoon.",
+            "textToSpeak": "I finished the budget this afternoon.",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -207,8 +207,8 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 43-3)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "This sentence reports completed work. Notice the pitch on 'afternoon.'",
+            "explanation": "Statements end with falling intonation. The pitch falls on 'afternoon,' showing the task is complete."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L44_Q1",
@@ -216,22 +216,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "What time does the conference call begin?",
+            "textToSpeak": "What time does the conference call begin?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Falling Intonation (Wh-Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
+                3,
                 2,
-                3
+                1,
+                0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 44-1)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "This question starts with 'What time' and asks for a specific hour. Listen to the pitch on 'begin.'",
+            "explanation": "Wh-questions fall at the end. The pitch drops on 'begin,' since real information is being requested."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L44_Q2",
@@ -239,22 +239,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "Did the manager approve your request?",
+            "textToSpeak": "Did the manager approve your request?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Falling Intonation (Wh-Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                1,
+                2,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 44-2)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "This question can be answered with 'yes' or 'no.' Listen to the pitch on 'request.'",
+            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'request' as the speaker checks an outcome."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L44_Q3",
@@ -262,22 +262,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "Why was the deadline moved up?",
+            "textToSpeak": "Why was the deadline moved up?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Falling Intonation (Wh-Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
+                3,
                 2,
-                3
+                1,
+                0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 44-3)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "This question begins with 'Why' and asks for a reason. Listen to the pitch on 'up.'",
+            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'up,' marking a request for an explanation."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L45_Q1",
@@ -285,22 +285,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "Please review this contract carefully.",
+            "textToSpeak": "Please review this contract carefully.",
             "options": [
-                "Falling Intonation (Wh-Question)",
+                "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Statement)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
+                2,
                 2,
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 45-1)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "This sentence gives an instruction. Listen to the pitch on 'carefully.'",
+            "explanation": "Instructions end with falling intonation, just like statements. The pitch drops on 'carefully.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L45_Q2",
@@ -308,8 +308,8 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "Is the printer working again?",
+            "textToSpeak": "Is the printer working again?",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -322,8 +322,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 45-2)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "This question expects 'yes' or 'no.' Notice the pitch on 'again.'",
+            "explanation": "Yes/No questions rise in pitch at the end, so the voice climbs on 'again.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L45_Q3",
@@ -331,8 +331,8 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "My colleague is training the new intern.",
+            "textToSpeak": "My colleague is training the new intern.",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -345,8 +345,8 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 45-3)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "This sentence describes what is happening at work. Listen to the pitch on 'intern.'",
+            "explanation": "Statements end with falling intonation. The pitch drops on 'intern,' completing the description."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L46_Q1",
@@ -354,22 +354,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "How long will this project take?",
+            "textToSpeak": "How long will this project take?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Falling Intonation (Wh-Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
+                3,
                 2,
-                3
+                1,
+                0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 46-1)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "This question starts with 'How long' and asks for a duration. Listen to the pitch on 'take.'",
+            "explanation": "Wh-questions fall at the end. The pitch drops on 'take,' since the speaker wants a specific answer."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L46_Q2",
@@ -377,22 +377,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "Did everyone receive the new schedule?",
+            "textToSpeak": "Did everyone receive the new schedule?",
             "options": [
                 "Falling Intonation (Wh-Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
-                2,
                 1,
-                0
+                1,
+                2,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 46-2)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'schedule.'",
+            "explanation": "The rising pitch on 'schedule' shows this is a Yes/No question seeking confirmation."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L46_Q3",
@@ -400,22 +400,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "Which department handles customer complaints?",
+            "textToSpeak": "Which department handles customer complaints?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Falling Intonation (Wh-Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
+                3,
                 2,
-                3
+                1,
+                0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 46-3)",
-            "explanation": "Yes/No questions typically rise at the end."
+            "hint": "This question begins with 'Which' and asks for a specific answer. Listen to the pitch on 'complaints.'",
+            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'complaints,' marking a request for information."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L47_Q1",
@@ -423,8 +423,8 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "Save your work before the system updates.",
+            "textToSpeak": "Save your work before the system updates.",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -437,8 +437,8 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 47-1)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "This sentence is an instruction about safety at work. Listen to the pitch on 'updates.'",
+            "explanation": "Commands fall in pitch just like statements. The pitch drops on 'updates' to close the instruction."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L47_Q2",
@@ -446,8 +446,8 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "Is the team meeting still happening today?",
+            "textToSpeak": "Is the team meeting still happening today?",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -460,8 +460,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 47-2)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "This question checks whether a plan is still on. Notice the pitch on 'today.'",
+            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'today' as the speaker checks a plan."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L47_Q3",
@@ -469,8 +469,8 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "We hired three new employees this week.",
+            "textToSpeak": "We hired three new employees this week.",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -483,8 +483,8 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 47-3)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "This sentence shares company news. Listen to the pitch on 'week.'",
+            "explanation": "Statements end with falling intonation. The pitch falls on 'week,' showing the news is complete."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L48_Q1",
@@ -492,22 +492,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "What did the client say about the proposal?",
+            "textToSpeak": "What did the client say about the proposal?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Falling Intonation (Wh-Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
-                1,
-                1,
+                3,
                 2,
-                3
+                1,
+                0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 48-1)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "This question starts with 'What' and asks for detailed feedback. Listen to the pitch on 'proposal.'",
+            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'proposal,' marking a request for information."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L48_Q2",
@@ -515,22 +515,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "Has the invoice been sent yet?",
+            "textToSpeak": "Has the invoice been sent yet?",
             "options": [
                 "Falling Intonation (Wh-Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
-                2,
                 1,
-                0
+                1,
+                2,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 48-2)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "This question checks on a billing task and expects 'yes' or 'no.' Listen to the pitch on 'yet.'",
+            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'yet,' since the speaker is checking whether the invoice has gone out."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L48_Q3",
@@ -538,77 +538,8 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 48-3)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L49_Q1",
-            "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
-            "difficulty": 2,
-            "subtype": "intonationMimic",
-            "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
-            "intonationMap": [
-                2,
-                2,
-                1,
-                0
-            ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 49-1)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L49_Q2",
-            "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
-            "difficulty": 2,
-            "subtype": "intonationMimic",
-            "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 49-2)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L49_Q3",
-            "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
-            "difficulty": 2,
-            "subtype": "intonationMimic",
-            "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "Who approved this expense report?",
+            "textToSpeak": "Who approved this expense report?",
             "options": [
                 "Falling Intonation (Wh-Question)",
                 "Rising Intonation (Yes/No Question)"
@@ -621,40 +552,17 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 49-3)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "This question begins with 'Who' and asks for a name. Listen to the pitch on 'report.'",
+            "explanation": "Wh-questions fall at the end. The pitch drops on 'report,' since a specific answer is requested."
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L50_Q1",
+            "id": "ACC_INTONATIONMIMIC_L49_Q1",
             "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
-            "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
-            ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
-            "intonationMap": [
-                1,
-                1,
-                2,
-                3
-            ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 50-1)",
-            "explanation": "Yes/No questions typically rise at the end."
-        },
-        {
-            "id": "ACC_INTONATIONMIMIC_L50_Q2",
-            "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
-            "difficulty": 2,
-            "subtype": "intonationMimic",
-            "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "Please arrive fifteen minutes early tomorrow.",
+            "textToSpeak": "Please arrive fifteen minutes early tomorrow.",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -667,17 +575,17 @@
                 1,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 50-2)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "This sentence is an instruction about timing. Listen to the pitch on 'tomorrow.'",
+            "explanation": "Instructions fall in pitch like statements. The pitch drops on 'tomorrow' to close the request."
         },
         {
-            "id": "ACC_INTONATIONMIMIC_L50_Q3",
+            "id": "ACC_INTONATIONMIMIC_L49_Q2",
             "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "Is your presentation ready for the board?",
+            "textToSpeak": "Is your presentation ready for the board?",
             "options": [
                 "Falling Intonation (Statement)",
                 "Rising Intonation (Yes/No Question)"
@@ -690,8 +598,100 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 50-3)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "This question expects 'yes' or 'no.' Notice the pitch on 'board.'",
+            "explanation": "Yes/No questions rise in pitch at the end, so the voice climbs on 'board.'"
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L49_Q3",
+            "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
+            "difficulty": 2,
+            "subtype": "intonationMimic",
+            "interactionType": "mimic",
+            "word": "The company is opening a new branch.",
+            "textToSpeak": "The company is opening a new branch.",
+            "options": [
+                "Falling Intonation (Statement)",
+                "Rising Intonation (Yes/No Question)"
+            ],
+            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                2,
+                2,
+                1,
+                0
+            ],
+            "hint": "This sentence shares company news. Listen to the pitch on 'branch.'",
+            "explanation": "Statements end with falling intonation. The pitch drops on 'branch,' completing the announcement."
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L50_Q1",
+            "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
+            "difficulty": 2,
+            "subtype": "intonationMimic",
+            "interactionType": "mimic",
+            "word": "When does the new policy take effect?",
+            "textToSpeak": "When does the new policy take effect?",
+            "options": [
+                "Falling Intonation (Wh-Question)",
+                "Rising Intonation (Yes/No Question)"
+            ],
+            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                3,
+                2,
+                1,
+                0
+            ],
+            "hint": "This question starts with 'When' and asks for a specific date. Listen to the pitch on 'effect.'",
+            "explanation": "Wh-questions fall at the end. The pitch drops on 'effect,' marking a request for details."
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L50_Q2",
+            "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
+            "difficulty": 2,
+            "subtype": "intonationMimic",
+            "interactionType": "mimic",
+            "word": "Did you update the spreadsheet correctly?",
+            "textToSpeak": "Did you update the spreadsheet correctly?",
+            "options": [
+                "Falling Intonation (Wh-Question)",
+                "Rising Intonation (Yes/No Question)"
+            ],
+            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswerIndex": 1,
+            "intonationMap": [
+                1,
+                1,
+                2,
+                3
+            ],
+            "hint": "This question can be answered with 'yes' or 'no.' Listen to the pitch on 'correctly.'",
+            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'correctly' as the speaker checks accuracy."
+        },
+        {
+            "id": "ACC_INTONATIONMIMIC_L50_Q3",
+            "instruction": "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN THE PHRASE",
+            "difficulty": 2,
+            "subtype": "intonationMimic",
+            "interactionType": "mimic",
+            "word": "How many people applied for this position?",
+            "textToSpeak": "How many people applied for this position?",
+            "options": [
+                "Falling Intonation (Wh-Question)",
+                "Rising Intonation (Yes/No Question)"
+            ],
+            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswerIndex": 0,
+            "intonationMap": [
+                3,
+                2,
+                1,
+                0
+            ],
+            "hint": "This question begins with 'How many' and asks for a number. Listen to the pitch on 'position.'",
+            "explanation": "Wh-questions end with falling intonation. The pitch drops on 'position,' since a specific number is requested."
         }
     ]
 }

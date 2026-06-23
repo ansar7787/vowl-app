@@ -9,22 +9,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "Would you like a window or an aisle seat?",
+            "textToSpeak": "Would you like a window or an aisle seat?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 61-1)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "This question offers two options using 'or.' Listen for how the pitch moves across 'window' and 'aisle seat.'",
+            "explanation": "Choice questions like this one rise on the first option and fall on the second. The pitch rises on 'window' then falls on 'aisle seat,' showing the question is complete."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L61_Q2",
@@ -32,10 +32,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "Is this flight direct to London?",
+            "textToSpeak": "Is this flight direct to London?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -46,8 +46,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 61-2)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "This question expects a simple 'yes' or 'no.' Listen to the pitch on 'London.'",
+            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'London' to invite a short answer."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L61_Q3",
@@ -55,22 +55,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "Should we take a taxi or the train?",
+            "textToSpeak": "Should we take a taxi or the train?",
             "options": [
-                "Falling Intonation (Wh-Question)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 61-3)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "This question offers a choice between two options. Notice the pitch pattern across 'taxi' and 'train.'",
+            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'taxi' and falls on 'train,' completing the question."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L62_Q1",
@@ -78,10 +78,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "Do you have your passport ready?",
+            "textToSpeak": "Do you have your passport ready?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -92,8 +92,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 62-1)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "This question can be answered with 'yes' or 'no.' Listen to the pitch on 'ready.'",
+            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'ready' as the speaker checks a fact."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L62_Q2",
@@ -101,22 +101,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "Do you want to fly in the morning or the evening?",
+            "textToSpeak": "Do you want to fly in the morning or the evening?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 62-2)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "This question gives two time options joined by 'or.' Listen to the pitch across 'morning' and 'evening.'",
+            "explanation": "Choice questions rise on the first option and fall on the second. The pitch rises on 'morning' and falls on 'evening.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L62_Q3",
@@ -124,10 +124,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "Is your luggage under the weight limit?",
+            "textToSpeak": "Is your luggage under the weight limit?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -138,8 +138,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 62-3)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "This question expects 'yes' or 'no.' Notice the pitch on 'limit.'",
+            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'limit' to seek confirmation."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L63_Q1",
@@ -147,22 +147,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "Are you traveling for business or for pleasure?",
+            "textToSpeak": "Are you traveling for business or for pleasure?",
             "options": [
-                "Falling Intonation (Wh-Question)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 63-1)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "This question offers two reasons joined by 'or.' Listen to the pitch across 'business' and 'pleasure.'",
+            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'business' and falls on 'pleasure.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L63_Q2",
@@ -170,10 +170,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "Did you check in online already?",
+            "textToSpeak": "Did you check in online already?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -184,8 +184,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 63-2)",
-            "explanation": "Yes/No questions typically rise at the end."
+            "hint": "This question can be answered with 'yes' or 'no.' Listen to the pitch on 'already.'",
+            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'already' as the speaker checks an action."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L63_Q3",
@@ -193,22 +193,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "Would you prefer a hotel or a hostel?",
+            "textToSpeak": "Would you prefer a hotel or a hostel?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 63-3)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "This question offers two lodging options. Notice the pitch pattern across 'hotel' and 'hostel.'",
+            "explanation": "Choice questions rise on the first option and fall on the second. The pitch rises on 'hotel' and falls on 'hostel.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L64_Q1",
@@ -216,10 +216,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "Is the airport far from the city center?",
+            "textToSpeak": "Is the airport far from the city center?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -230,8 +230,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 64-1)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'center.'",
+            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'center' to invite a short answer."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L64_Q2",
@@ -239,22 +239,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "Should we visit the museum or the beach first?",
+            "textToSpeak": "Should we visit the museum or the beach first?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 64-2)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "This question gives two destination options. Listen to the pitch across 'museum' and 'beach.'",
+            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'museum' and falls on 'beach.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L64_Q3",
@@ -262,10 +262,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "Do you need a visa for this country?",
+            "textToSpeak": "Do you need a visa for this country?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -276,8 +276,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 64-3)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "This question can be answered with 'yes' or 'no.' Notice the pitch on 'country.'",
+            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'country' as the speaker checks a requirement."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L65_Q1",
@@ -285,22 +285,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "Would you rather drive or take the bus?",
+            "textToSpeak": "Would you rather drive or take the bus?",
             "options": [
-                "Falling Intonation (Wh-Question)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 65-1)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "This question offers two ways to travel. Listen to the pitch across 'drive' and 'bus.'",
+            "explanation": "Choice questions rise on the first option and fall on the second. The pitch rises on 'drive' and falls on 'bus.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L65_Q2",
@@ -308,10 +308,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "Is your connecting flight delayed?",
+            "textToSpeak": "Is your connecting flight delayed?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -322,8 +322,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 65-2)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'delayed.'",
+            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'delayed' to seek confirmation."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L65_Q3",
@@ -331,22 +331,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "Do you want a one-way or a round-trip ticket?",
+            "textToSpeak": "Do you want a one-way or a round-trip ticket?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 65-3)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "This question offers two ticket options. Notice the pitch pattern across 'one-way' and 'round-trip.'",
+            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'one-way' and falls on 'round-trip.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L66_Q1",
@@ -354,10 +354,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "Did you pack your travel adapter?",
+            "textToSpeak": "Did you pack your travel adapter?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -368,8 +368,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 66-1)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "This question can be answered with 'yes' or 'no.' Listen to the pitch on 'adapter.'",
+            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'adapter' as the speaker checks a fact."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L66_Q2",
@@ -377,22 +377,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "Are we staying for three nights or four?",
+            "textToSpeak": "Are we staying for three nights or four?",
             "options": [
-                "Falling Intonation (Wh-Question)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 66-2)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "This question offers two lengths of stay. Listen to the pitch across 'three nights' and 'four.'",
+            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'nights' and falls on 'four.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L66_Q3",
@@ -400,10 +400,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "Is this the right gate for boarding?",
+            "textToSpeak": "Is this the right gate for boarding?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -414,8 +414,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 66-3)",
-            "explanation": "Yes/No questions typically rise at the end."
+            "hint": "This question expects 'yes' or 'no.' Notice the pitch on 'boarding.'",
+            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'boarding' to seek confirmation."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L67_Q1",
@@ -423,22 +423,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "Should I exchange money here or at the airport?",
+            "textToSpeak": "Should I exchange money here or at the airport?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 67-1)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "This question offers two locations joined by 'or.' Listen to the pitch across 'here' and 'airport.'",
+            "explanation": "Choice questions rise on the first option and fall on the second. The pitch rises on 'here' and falls on 'airport.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L67_Q2",
@@ -446,10 +446,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "Have you booked the hotel yet?",
+            "textToSpeak": "Have you booked the hotel yet?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -460,8 +460,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 67-2)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "This question checks on a travel arrangement and expects 'yes' or 'no.' Listen to the pitch on 'yet.'",
+            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'yet,' since the speaker is checking whether the booking has been made."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L67_Q3",
@@ -469,22 +469,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "Do you want to sit by the window or the door?",
+            "textToSpeak": "Do you want to sit by the window or the door?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 67-3)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "This question offers two seating options. Notice the pitch pattern across 'window' and 'door.'",
+            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'window' and falls on 'door.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L68_Q1",
@@ -492,10 +492,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "Is breakfast included in this hotel?",
+            "textToSpeak": "Is breakfast included in this hotel?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -506,8 +506,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 68-1)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'hotel.'",
+            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'hotel' to invite a short answer."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L68_Q2",
@@ -515,22 +515,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "Would you like a city tour or a free day?",
+            "textToSpeak": "Would you like a city tour or a free day?",
             "options": [
-                "Falling Intonation (Wh-Question)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 68-2)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "This question gives two ways to spend the day. Listen to the pitch across 'tour' and 'free day.'",
+            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'tour' and falls on 'day.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L68_Q3",
@@ -538,10 +538,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "Did the airline lose your suitcase?",
+            "textToSpeak": "Did the airline lose your suitcase?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -552,8 +552,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 68-3)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "This question can be answered with 'yes' or 'no.' Notice the pitch on 'suitcase.'",
+            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'suitcase' as the speaker checks a problem."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L69_Q1",
@@ -561,22 +561,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "Are we renting a car or using public transport?",
+            "textToSpeak": "Are we renting a car or using public transport?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 69-1)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "This question offers two travel options. Listen to the pitch across 'car' and 'transport.'",
+            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'car' and falls on 'transport.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L69_Q2",
@@ -584,10 +584,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "Is this neighborhood safe to walk at night?",
+            "textToSpeak": "Is this neighborhood safe to walk at night?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -598,8 +598,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 69-2)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "This question expects 'yes' or 'no.' Listen to the pitch on 'night.'",
+            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'night' to seek confirmation."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L69_Q3",
@@ -607,22 +607,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "Should we book now or wait for a sale?",
+            "textToSpeak": "Should we book now or wait for a sale?",
             "options": [
-                "Falling Intonation (Wh-Question)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 69-3)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "This question offers two timing options. Notice the pitch pattern across 'now' and 'sale.'",
+            "explanation": "Choice questions rise on the first option and fall on the second. The pitch rises on 'now' and falls on 'sale.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L70_Q1",
@@ -630,10 +630,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "Did your flight arrive on time?",
+            "textToSpeak": "Did your flight arrive on time?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -644,8 +644,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 70-1)",
-            "explanation": "Yes/No questions typically rise at the end."
+            "hint": "This question can be answered with 'yes' or 'no.' Listen to the pitch on 'time.'",
+            "explanation": "Yes/No questions rise at the end. The pitch climbs on 'time' as the speaker checks a fact."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L70_Q2",
@@ -653,22 +653,22 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "Do you want to travel by train or by plane?",
+            "textToSpeak": "Do you want to travel by train or by plane?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Rising-Falling Intonation (Choice Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                2,
-                2,
                 1,
+                2,
+                3,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 70-2)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "This question offers two modes of travel. Listen to the pitch across 'train' and 'plane.'",
+            "explanation": "Choice questions rise on the first option and fall on the last. The pitch rises on 'train' and falls on 'plane.'"
         },
         {
             "id": "ACC_INTONATIONMIMIC_L70_Q3",
@@ -676,10 +676,10 @@
             "difficulty": 2,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "Is there a direct bus to the old town?",
+            "textToSpeak": "Is there a direct bus to the old town?",
             "options": [
-                "Falling Intonation (Statement)",
+                "Rising-Falling Intonation (Choice Question)",
                 "Rising Intonation (Yes/No Question)"
             ],
             "correctAnswer": "Rising Intonation (Yes/No Question)",
@@ -690,8 +690,8 @@
                 2,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 70-3)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "This question expects 'yes' or 'no.' Notice the pitch on 'town.'",
+            "explanation": "Yes/No questions rise continuously to the end. The pitch climbs on 'town' to invite a short answer."
         }
     ]
 }

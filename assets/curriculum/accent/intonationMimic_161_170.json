@@ -9,22 +9,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "Wow, that concert was absolutely amazing!",
+            "textToSpeak": "Wow, that concert was absolutely amazing!",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 161-1)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "This reaction uses enthusiastic words like 'wow' and 'amazing.' Listen for big swings in pitch across the whole sentence, not just at the end.",
+            "explanation": "Genuine excitement about a concert is shown through a wide pitch range, with the voice moving energetically up and down throughout the sentence, not just rising or falling once at the end."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L161_Q2",
@@ -32,22 +32,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "Yeah, the concert was fine, I guess.",
+            "textToSpeak": "Yeah, the concert was fine, I guess.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 161-2)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "This reaction uses flat, hedging words like 'fine' and 'I guess.' Listen for a lack of pitch movement across the sentence.",
+            "explanation": "A narrow, flat pitch range signals low interest in the concert, even though the words themselves aren't negative. The voice stays nearly level, showing the speaker isn't really enthusiastic."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L161_Q3",
@@ -55,22 +55,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "I can't believe how incredible that movie was!",
+            "textToSpeak": "I can't believe how incredible that movie was!",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 161-3)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "This reaction uses strong words like 'incredible.' Listen for energetic, wide swings in pitch.",
+            "explanation": "Wide pitch range across the whole sentence signals real excitement about the movie. The voice moves dramatically up and down, not staying flat."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L162_Q1",
@@ -78,22 +78,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "The show was okay. Nothing special.",
+            "textToSpeak": "The show was okay. Nothing special.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 162-1)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "This reaction uses unenthusiastic words like 'okay' and 'nothing special.' Listen for a flat, narrow pitch range.",
+            "explanation": "A narrow pitch range with little movement signals boredom about the show. The voice stays fairly level throughout, despite the words not being clearly negative."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L162_Q2",
@@ -101,22 +101,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "That was the best performance I've ever seen!",
+            "textToSpeak": "That was the best performance I've ever seen!",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 162-2)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "This reaction uses superlatives like 'best ever.' Listen for big, energetic swings in pitch.",
+            "explanation": "Wide pitch range signals genuine enthusiasm about the performance. The voice swings dramatically, reflecting real excitement."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L162_Q3",
@@ -124,22 +124,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "It was a movie. I watched it, I guess.",
+            "textToSpeak": "It was a movie. I watched it, I guess.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 162-3)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "This reaction uses flat, dismissive words like 'I guess.' Listen for very little pitch movement.",
+            "explanation": "A narrow, flat pitch range signals a lack of interest in the movie. The voice barely moves, showing the speaker felt indifferent toward it."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L163_Q1",
@@ -147,22 +147,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "This new album is absolutely fantastic!",
+            "textToSpeak": "This new album is absolutely fantastic!",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 163-1)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "This reaction uses an enthusiastic word like 'fantastic.' Listen for wide, energetic pitch movement.",
+            "explanation": "Wide pitch range across the sentence signals real enthusiasm for the album. The voice swings energetically rather than staying flat."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L163_Q2",
@@ -170,22 +170,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "The album was alright. I've heard better.",
+            "textToSpeak": "The album was alright. I've heard better.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 163-2)",
-            "explanation": "Yes/No questions typically rise at the end."
+            "hint": "This reaction uses lukewarm words like 'alright.' Listen for a narrow, flat pitch range.",
+            "explanation": "A narrow pitch range signals mild disappointment with the album. The voice stays fairly level throughout, matching the unenthusiastic comparison."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L163_Q3",
@@ -193,22 +193,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "What an incredible plot twist that was!",
+            "textToSpeak": "What an incredible plot twist that was!",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 163-3)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "This reaction uses a strong word like 'incredible.' Listen for big swings in pitch across the sentence.",
+            "explanation": "Wide pitch range signals genuine excitement about an unexpected plot twist. The voice moves dramatically, reflecting strong emotion."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L164_Q1",
@@ -216,22 +216,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "The game was fine. I didn't really care.",
+            "textToSpeak": "The game was fine. I didn't really care.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 164-1)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "This reaction openly admits low interest in the game. Listen for a flat, narrow pitch range.",
+            "explanation": "A narrow pitch range with little movement signals indifference toward the game. The voice stays nearly level, matching the admitted lack of interest."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L164_Q2",
@@ -239,22 +239,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "I am so excited for the next episode!",
+            "textToSpeak": "I am so excited for the next episode!",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 164-2)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "This reaction directly states excitement about an upcoming episode. Listen for wide, energetic swings in pitch.",
+            "explanation": "Wide pitch range signals genuine anticipation. The voice swings energetically across the sentence, reflecting eagerness for what's next."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L164_Q3",
@@ -262,22 +262,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "Sure, the actors were fine, I suppose.",
+            "textToSpeak": "Sure, the actors were fine, I suppose.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 164-3)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "This reaction uses hedging words like 'I suppose' about the cast's performance. Listen for a flat, narrow pitch range.",
+            "explanation": "A narrow pitch range signals lukewarm feelings about the actors, even when the words sound mildly positive."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L165_Q1",
@@ -285,22 +285,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "That comedian was absolutely hilarious tonight!",
+            "textToSpeak": "That comedian was absolutely hilarious tonight!",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 165-1)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "This reaction uses an enthusiastic word like 'hilarious.' Listen for wide, energetic pitch movement.",
+            "explanation": "Wide pitch range across the sentence signals genuine amusement at the comedian's set."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L165_Q2",
@@ -308,22 +308,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "The comedian was kind of funny, I guess.",
+            "textToSpeak": "The comedian was kind of funny, I guess.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 165-2)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "This reaction uses hedging words like 'kind of' and 'I guess' about the comedian. Listen for a flat, narrow pitch range.",
+            "explanation": "A narrow pitch range signals mild, unenthusiastic interest, even though the words mention humor."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L165_Q3",
@@ -331,22 +331,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "This is the greatest show I've ever watched!",
+            "textToSpeak": "This is the greatest show I've ever watched!",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 165-3)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "This reaction uses a superlative, 'greatest.' Listen for big swings in pitch across the sentence.",
+            "explanation": "Wide pitch range signals real enthusiasm for the show. The voice moves dramatically, reflecting strong positive emotion."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L166_Q1",
@@ -354,22 +354,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "The festival was okay. Pretty much like every year.",
+            "textToSpeak": "The festival was okay. Pretty much like every year.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 166-1)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "This reaction uses flat words like 'okay' and compares the festival to routine. Listen for a narrow pitch range.",
+            "explanation": "A narrow, flat pitch range signals routine, unexcited feelings about the festival. The voice stays fairly level."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L166_Q2",
@@ -377,22 +377,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "I had the most amazing time at the festival!",
+            "textToSpeak": "I had the most amazing time at the festival!",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 166-2)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "This reaction uses a strong word, 'amazing,' about the festival. Listen for wide, energetic pitch swings.",
+            "explanation": "Wide pitch range signals genuine excitement about the festival experience. The voice swings energetically across the sentence."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L166_Q3",
@@ -400,22 +400,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "The band played some songs. It was fine.",
+            "textToSpeak": "The band played some songs. It was fine.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 166-3)",
-            "explanation": "Yes/No questions typically rise at the end."
+            "hint": "This reaction is very plain about the band's set. Listen for a flat, narrow pitch range.",
+            "explanation": "A narrow pitch range with little movement signals indifference toward the performance. The voice stays nearly level."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L167_Q1",
@@ -423,22 +423,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "That ending completely blew my mind!",
+            "textToSpeak": "That ending completely blew my mind!",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 167-1)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "This reaction uses a vivid expression, 'blew my mind,' about the ending. Listen for big swings in pitch.",
+            "explanation": "Wide pitch range signals strong, genuine excitement about a surprising ending. The voice moves dramatically across the sentence."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L167_Q2",
@@ -446,22 +446,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "The ending was fine. Kind of predictable, really.",
+            "textToSpeak": "The ending was fine. Kind of predictable, really.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 167-2)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "This reaction uses flat words and calls the ending predictable. Listen for a narrow pitch range.",
+            "explanation": "A narrow pitch range signals mild disappointment with a predictable ending. The voice stays fairly level."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L167_Q3",
@@ -469,22 +469,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "I have never laughed so hard in my life!",
+            "textToSpeak": "I have never laughed so hard in my life!",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 167-3)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "This reaction uses a strong claim about laughing. Listen for wide, energetic pitch movement.",
+            "explanation": "Wide pitch range signals genuine amusement. The voice swings energetically, reflecting real, strong laughter."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L168_Q1",
@@ -492,22 +492,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "The musical was fine. Not really my thing.",
+            "textToSpeak": "The musical was fine. Not really my thing.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 168-1)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "This reaction openly admits the musical wasn't enjoyable for this person. Listen for a flat, narrow pitch range.",
+            "explanation": "A narrow pitch range signals indifference toward the musical. The voice stays nearly level, matching the lukewarm words."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L168_Q2",
@@ -515,22 +515,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "This series just keeps getting better and better!",
+            "textToSpeak": "This series just keeps getting better and better!",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 168-2)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "This reaction shows growing enthusiasm for a series. Listen for wide, energetic pitch swings.",
+            "explanation": "Wide pitch range signals genuine, building excitement about the series. The voice moves energetically across the sentence."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L168_Q3",
@@ -538,22 +538,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "I guess the special effects were okay.",
+            "textToSpeak": "I guess the special effects were okay.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 168-3)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "This reaction uses hedging words about the visual effects. Listen for a flat, narrow pitch range.",
+            "explanation": "A narrow pitch range signals low enthusiasm about the effects, even when the words are mildly positive."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L169_Q1",
@@ -561,22 +561,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "That was the most thrilling match I've ever seen!",
+            "textToSpeak": "That was the most thrilling match I've ever seen!",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 169-1)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "This reaction uses a superlative, 'most thrilling,' about a sports match. Listen for big swings in pitch.",
+            "explanation": "Wide pitch range signals genuine excitement about the match. The voice moves dramatically, reflecting strong emotion."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L169_Q2",
@@ -584,22 +584,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "The match was fine. I wasn't really paying attention.",
+            "textToSpeak": "The match was fine. I wasn't really paying attention.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 169-2)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "This reaction admits a lack of attention during the match. Listen for a flat, narrow pitch range.",
+            "explanation": "A narrow pitch range signals indifference toward the match. The voice stays nearly level, matching the disengaged words."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L169_Q3",
@@ -607,22 +607,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "I'm absolutely obsessed with this new show!",
+            "textToSpeak": "I'm absolutely obsessed with this new show!",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                3,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 169-3)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "This reaction uses a strong word, 'obsessed,' about a show. Listen for wide, energetic pitch movement.",
+            "explanation": "Wide pitch range signals genuine enthusiasm for the show. The voice swings energetically across the sentence."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L170_Q1",
@@ -630,22 +630,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "The exhibit was fine, I suppose. Nothing memorable.",
+            "textToSpeak": "The exhibit was fine, I suppose. Nothing memorable.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 170-1)",
-            "explanation": "Yes/No questions typically rise at the end."
+            "hint": "This reaction uses hedging and dismissive words about an exhibit. Listen for a flat, narrow pitch range.",
+            "explanation": "A narrow pitch range signals indifference toward the exhibit. The voice stays fairly level, matching the unenthusiastic words."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L170_Q2",
@@ -653,22 +653,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "That performance gave me chills the whole time!",
+            "textToSpeak": "That performance gave me chills the whole time!",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Wide Pitch Range (Enthusiasm)",
+            "correctAnswerIndex": 1,
             "intonationMap": [
-                2,
-                2,
                 1,
-                0
+                3,
+                1,
+                3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 170-2)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "This reaction describes a strong physical reaction, 'chills,' to a performance. Listen for wide, energetic pitch swings.",
+            "explanation": "Wide pitch range signals genuine emotional excitement about the performance. The voice moves dramatically across the sentence."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L170_Q3",
@@ -676,22 +676,22 @@
             "difficulty": 5,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "It was a decent show. Nothing to get excited about.",
+            "textToSpeak": "It was a decent show. Nothing to get excited about.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Narrow Pitch Range (Boredom/Sarcasm)",
+                "Wide Pitch Range (Enthusiasm)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Pitch Range (Boredom/Sarcasm)",
+            "correctAnswerIndex": 0,
             "intonationMap": [
                 1,
                 1,
-                2,
-                3
+                1,
+                1
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 170-3)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "This reaction directly says there's nothing exciting about the show. Listen for a flat, narrow pitch range.",
+            "explanation": "A narrow pitch range signals indifference toward the show, completing this tier's focus on pitch range and emotional tone."
         }
     ]
 }

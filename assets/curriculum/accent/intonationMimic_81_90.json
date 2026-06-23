@@ -9,22 +9,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "You took your medicine this morning, didn't you.",
+            "textToSpeak": "You took your medicine this morning, didn't you.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 81-1)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "This sentence ends with the tag 'didn't you.' The speaker seems to already expect a yes about the medicine. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker is fairly sure. The voice drops on 'didn't you,' since the speaker mainly wants to confirm the medicine was taken, not learn something new."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L81_Q2",
@@ -32,22 +32,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "You haven't seen a doctor yet, have you?",
+            "textToSpeak": "You haven't seen a doctor yet, have you?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 81-2)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "This sentence ends with the tag 'have you?' The speaker sounds genuinely worried about whether a doctor's visit happened. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when the speaker truly doesn't know the answer. The voice climbs on 'have you,' showing real concern about whether the visit took place."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L81_Q3",
@@ -55,22 +55,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "The appointment is at three o'clock, isn't it.",
+            "textToSpeak": "The appointment is at three o'clock, isn't it.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
                 2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 81-3)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "This sentence ends with the tag 'isn't it.' The speaker sounds sure about the scheduled time. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker already believes the fact. The voice drops on 'isn't it,' since the time was likely written down or agreed on earlier."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L82_Q1",
@@ -78,22 +78,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "You're feeling better today, aren't you?",
+            "textToSpeak": "You're feeling better today, aren't you?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 82-1)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "This sentence ends with the tag 'aren't you?' The speaker genuinely wants an honest update on how the person feels. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when the speaker truly wants new information. The voice climbs on 'aren't you,' since health can change day to day and the speaker isn't simply assuming."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L82_Q2",
@@ -101,22 +101,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "She finished the whole prescription, didn't she.",
+            "textToSpeak": "She finished the whole prescription, didn't she.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 82-2)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "This sentence ends with the tag 'didn't she.' The speaker sounds confident the prescription was completed as instructed. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker expects agreement. The voice drops on 'didn't she,' since finishing a prescription is something the speaker likely already followed up on."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L82_Q3",
@@ -124,22 +124,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "This medicine doesn't cause drowsiness, does it?",
+            "textToSpeak": "This medicine doesn't cause drowsiness, does it?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 82-3)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "This sentence ends with the tag 'does it?' The speaker sounds a little unsure and wants real reassurance before taking it. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when the speaker genuinely wants to know. The voice climbs on 'does it,' since side effects matter and the speaker isn't simply assuming the answer."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L83_Q1",
@@ -147,22 +147,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "You exercise every morning, don't you.",
+            "textToSpeak": "You exercise every morning, don't you.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
                 2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 83-1)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "This sentence ends with the tag 'don't you.' The speaker sounds confident about this daily habit. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker already believes something is true. The voice drops on 'don't you,' since a regular habit like morning exercise is easy to assume."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L83_Q2",
@@ -170,22 +170,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "The pain hasn't gone away, has it?",
+            "textToSpeak": "The pain hasn't gone away, has it?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 83-2)",
-            "explanation": "Yes/No questions typically rise at the end."
+            "hint": "This sentence ends with the tag 'has it?' The speaker sounds concerned the pain might still be there. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when the speaker is genuinely uncertain. The voice climbs on 'has it,' since ongoing pain is something the speaker truly wants an honest update about."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L83_Q3",
@@ -193,22 +193,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "He scheduled his check-up for Friday, didn't he.",
+            "textToSpeak": "He scheduled his check-up for Friday, didn't he.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 83-3)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "This sentence ends with the tag 'didn't he.' The speaker sounds sure the appointment was already booked. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker expects agreement. The voice drops on 'didn't he,' since booking a known appointment is easy to assume happened."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L84_Q1",
@@ -216,22 +216,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "You're not allergic to this medication, are you?",
+            "textToSpeak": "You're not allergic to this medication, are you?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 84-1)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "This sentence ends with the tag 'are you?' The speaker genuinely needs to check before giving the medication, for safety. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when real, safety-related information is needed. The voice climbs on 'are you,' since an allergy check can't simply be assumed."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L84_Q2",
@@ -239,22 +239,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "The nurse already took your temperature, didn't she.",
+            "textToSpeak": "The nurse already took your temperature, didn't she.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 84-2)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "This sentence ends with the tag 'didn't she.' The speaker sounds confident this routine step already happened. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker expects simple agreement. The voice drops on 'didn't she,' since a routine task like checking temperature is easy to assume was done."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L84_Q3",
@@ -262,22 +262,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "This isn't your first visit here, is it?",
+            "textToSpeak": "This isn't your first visit here, is it?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 84-3)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "This sentence ends with the tag 'is it?' The speaker genuinely isn't certain whether this patient has been here before. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when the speaker truly wants to confirm an unknown fact. The voice climbs on 'is it,' since the speaker may not have access to the patient's full history."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L85_Q1",
@@ -285,22 +285,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "You drink plenty of water every day, don't you.",
+            "textToSpeak": "You drink plenty of water every day, don't you.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
                 2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 85-1)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "This sentence ends with the tag 'don't you.' The speaker sounds confident about this healthy habit. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker already assumes the answer. The voice drops on 'don't you,' since drinking water is a habit that's easy to take for granted."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L85_Q2",
@@ -308,22 +308,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "The clinic hasn't called you back yet, has it?",
+            "textToSpeak": "The clinic hasn't called you back yet, has it?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 85-2)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "This sentence ends with the tag 'has it?' The speaker sounds genuinely unsure whether the clinic followed up. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when the speaker truly doesn't know the answer. The voice climbs on 'has it,' since a callback either happened or it didn't, and the speaker needs to find out."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L85_Q3",
@@ -331,22 +331,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "Your test results came back normal, didn't they.",
+            "textToSpeak": "Your test results came back normal, didn't they.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 85-3)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "This sentence ends with the tag 'didn't they.' The speaker sounds confident about good news already received. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker already believes the statement. The voice drops on 'didn't they,' since the speaker seems to have already seen or heard the results."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L86_Q1",
@@ -354,22 +354,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "You haven't been sleeping well lately, have you?",
+            "textToSpeak": "You haven't been sleeping well lately, have you?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 86-1)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "This sentence ends with the tag 'have you?' The speaker sounds genuinely concerned about recent sleep trouble. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when the speaker truly wants an honest answer. The voice climbs on 'have you,' since sleep patterns can change and the speaker isn't simply assuming."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L86_Q2",
@@ -377,22 +377,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "The doctor prescribed antibiotics, didn't she.",
+            "textToSpeak": "The doctor prescribed antibiotics, didn't she.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
                 2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 86-2)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "This sentence ends with the tag 'didn't she.' The speaker sounds confident about what was prescribed. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker expects simple agreement. The voice drops on 'didn't she,' since the prescription is something the speaker likely already knows about."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L86_Q3",
@@ -400,22 +400,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "This treatment won't take very long, will it?",
+            "textToSpeak": "This treatment won't take very long, will it?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 86-3)",
-            "explanation": "Yes/No questions typically rise at the end."
+            "hint": "This sentence ends with the tag 'will it?' The speaker sounds a little nervous and wants real reassurance about the timing. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when the speaker genuinely wants comfort about something uncertain. The voice climbs on 'will it,' since the length of treatment isn't fully known yet."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L87_Q1",
@@ -423,22 +423,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "You followed the diet plan this week, didn't you.",
+            "textToSpeak": "You followed the diet plan this week, didn't you.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 87-1)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "This sentence ends with the tag 'didn't you.' The speaker sounds fairly confident about the person's effort. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker mostly expects agreement. The voice drops on 'didn't you,' since the speaker is largely assuming the plan was followed."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L87_Q2",
@@ -446,22 +446,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "You don't have any allergies, do you?",
+            "textToSpeak": "You don't have any allergies, do you?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 87-2)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "This sentence ends with the tag 'do you?' The speaker genuinely needs this safety information before proceeding. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when real, important information is required. The voice climbs on 'do you,' since allergy information can't simply be guessed."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L87_Q3",
@@ -469,22 +469,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "I am a student.",
-            "textToSpeak": "I am a student.",
+            "word": "The surgery went well, didn't it.",
+            "textToSpeak": "The surgery went well, didn't it.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 87-3)",
-            "explanation": "Statements in English typically end with falling intonation (the pitch drops on the final word 'student')."
+            "hint": "This sentence ends with the tag 'didn't it.' The speaker sounds confident about a positive outcome. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker already believes the good news. The voice drops on 'didn't it,' since the speaker seems to already know the outcome."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L88_Q1",
@@ -492,22 +492,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are you ready?",
-            "textToSpeak": "Are you ready?",
+            "word": "You're still taking those vitamins, aren't you?",
+            "textToSpeak": "You're still taking those vitamins, aren't you?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 88-1)",
-            "explanation": "Yes/No questions typically end with rising intonation (the pitch rises on 'ready')."
+            "hint": "This sentence ends with the tag 'aren't you?' The speaker genuinely wants an honest update on a habit that may have changed. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when the speaker truly wants current information. The voice climbs on 'aren't you,' since habits like taking vitamins can easily stop without anyone noticing."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L88_Q2",
@@ -515,22 +515,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "What is your name?",
-            "textToSpeak": "What is your name?",
+            "word": "He recovered quickly after the surgery, didn't he.",
+            "textToSpeak": "He recovered quickly after the surgery, didn't he.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
                 2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 88-2)",
-            "explanation": "Information questions (Wh-questions) typically end with falling intonation."
+            "hint": "This sentence ends with the tag 'didn't he.' The speaker sounds confident about a quick recovery. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker already believes the outcome. The voice drops on 'didn't he,' since the speaker appears to already know how the recovery went."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L88_Q3",
@@ -538,22 +538,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Do you like coffee?",
-            "textToSpeak": "Do you like coffee?",
+            "word": "This rash isn't getting worse, is it?",
+            "textToSpeak": "This rash isn't getting worse, is it?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 88-3)",
-            "explanation": "Yes/No questions typically end with rising intonation to seek confirmation."
+            "hint": "This sentence ends with the tag 'is it?' The speaker sounds genuinely worried about a changing symptom. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when the speaker is truly uncertain and concerned. The voice climbs on 'is it,' since a symptom's progress isn't something to assume."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L89_Q1",
@@ -561,22 +561,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "She lives in London.",
-            "textToSpeak": "She lives in London.",
+            "word": "You quit smoking last year, didn't you.",
+            "textToSpeak": "You quit smoking last year, didn't you.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 89-1)",
-            "explanation": "Declarative sentences (statements) end with a downward contour (falling intonation)."
+            "hint": "This sentence ends with the tag 'didn't you.' The speaker sounds confident about this known life change. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker already believes the fact. The voice drops on 'didn't you,' since quitting smoking is a milestone the speaker likely already knows about."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L89_Q2",
@@ -584,22 +584,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Is it raining outside?",
-            "textToSpeak": "Is it raining outside?",
+            "word": "The headache hasn't come back, has it?",
+            "textToSpeak": "The headache hasn't come back, has it?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 89-2)",
-            "explanation": "Yes/No questions typically rise at the end to signify inquiry."
+            "hint": "This sentence ends with the tag 'has it?' The speaker sounds genuinely hopeful but unsure. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when the speaker truly wants to know the current state. The voice climbs on 'has it,' since a headache returning or not isn't something to assume."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L89_Q3",
@@ -607,22 +607,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Where is the station?",
-            "textToSpeak": "Where is the station?",
+            "word": "The physical therapist helped your back, didn't she.",
+            "textToSpeak": "The physical therapist helped your back, didn't she.",
             "options": [
-                "Falling Intonation (Wh-Question)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Wh-Question)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
-                3,
                 2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 89-3)",
-            "explanation": "Wh-questions begin high and drop at the end (falling intonation)."
+            "hint": "This sentence ends with the tag 'didn't she.' The speaker sounds confident the therapy worked. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker already expects a positive answer. The voice drops on 'didn't she,' since the speaker seems to have already seen the improvement."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L90_Q1",
@@ -630,22 +630,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Can you help me?",
-            "textToSpeak": "Can you help me?",
+            "word": "You're not skipping meals again, are you?",
+            "textToSpeak": "You're not skipping meals again, are you?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 90-1)",
-            "explanation": "Yes/No questions typically rise at the end."
+            "hint": "This sentence ends with the tag 'are you?' The speaker sounds genuinely worried about a habit returning. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when the speaker is truly concerned and wants an honest answer. The voice climbs on 'are you,' since old habits can quietly come back."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L90_Q2",
@@ -653,22 +653,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "We went to the beach.",
-            "textToSpeak": "We went to the beach.",
+            "word": "Your blood pressure was normal today, wasn't it.",
+            "textToSpeak": "Your blood pressure was normal today, wasn't it.",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Falling Intonation (Statement)",
+            "correctAnswer": "Falling Intonation (Confirming Tag Question)",
             "correctAnswerIndex": 0,
             "intonationMap": [
                 2,
-                2,
                 1,
+                0,
                 0
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 90-2)",
-            "explanation": "Simple statements conclude with falling pitch (falling intonation)."
+            "hint": "This sentence ends with the tag 'wasn't it.' The speaker sounds confident about today's result. Listen to the pitch on the tag.",
+            "explanation": "Confirming tags fall in pitch when the speaker already expects good news. The voice drops on 'wasn't it,' since the reading was likely just taken and seen."
         },
         {
             "id": "ACC_INTONATIONMIMIC_L90_Q3",
@@ -676,22 +676,22 @@
             "difficulty": 3,
             "subtype": "intonationMimic",
             "interactionType": "mimic",
-            "word": "Are they coming tonight?",
-            "textToSpeak": "Are they coming tonight?",
+            "word": "This injection won't hurt much, will it?",
+            "textToSpeak": "This injection won't hurt much, will it?",
             "options": [
-                "Falling Intonation (Statement)",
-                "Rising Intonation (Yes/No Question)"
+                "Falling Intonation (Confirming Tag Question)",
+                "Rising Intonation (Checking Tag Question)"
             ],
-            "correctAnswer": "Rising Intonation (Yes/No Question)",
+            "correctAnswer": "Rising Intonation (Checking Tag Question)",
             "correctAnswerIndex": 1,
             "intonationMap": [
-                1,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Listen to the ending of the sentence. Does the pitch drop or rise? (Calibration 90-3)",
-            "explanation": "Yes/No questions end with rising intonation."
+            "hint": "This sentence ends with the tag 'will it?' The speaker sounds a little nervous and wants honest reassurance. Listen to the pitch on the tag.",
+            "explanation": "Checking tags rise in pitch when the speaker genuinely wants comfort about something they can't predict. The voice climbs on 'will it,' since pain levels vary and can't be assumed."
         }
     ]
 }
