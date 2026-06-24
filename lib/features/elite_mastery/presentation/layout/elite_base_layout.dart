@@ -33,7 +33,7 @@ class EliteBaseLayout extends StatefulWidget {
   final VoidCallback onHint;
   final bool showConfetti;
   final String title;
-  final String subtitle;
+  final String? subtitle;
   final bool isFinalFailure;
   final VisualConfig? visualConfig;
   final EliteMasteryState state;
@@ -51,7 +51,7 @@ class EliteBaseLayout extends StatefulWidget {
     required this.onHint,
     this.showConfetti = false,
     required this.title,
-    required this.subtitle,
+    this.subtitle,
     this.visualConfig,
   });
 
@@ -337,24 +337,26 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                                           ),
                                         ),
                                       ).animate().fadeIn(),
-                                      SizedBox(height: 8.h),
-                                      Semantics(
-                                        liveRegion: true,
-                                        child: Text(
-                                          widget.subtitle,
-                                          textAlign: TextAlign.center,
-                                          maxLines: 2,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 22.sp,
-                                            fontWeight: FontWeight.w900,
-                                            color: isDark
-                                                ? Colors.white
-                                                : const Color(0xFF0F172A),
+                                      if (widget.subtitle != null && widget.subtitle!.isNotEmpty) ...[
+                                        SizedBox(height: 8.h),
+                                        Semantics(
+                                          liveRegion: true,
+                                          child: Text(
+                                            widget.subtitle!,
+                                            textAlign: TextAlign.center,
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 22.sp,
+                                              fontWeight: FontWeight.w900,
+                                              color: isDark
+                                                  ? Colors.white
+                                                  : const Color(0xFF0F172A),
+                                            ),
                                           ),
-                                        ),
-                                      ).animate().fadeIn().slideY(begin: 0.1),
+                                        ).animate().fadeIn().slideY(begin: 0.1),
+                                      ],
                                       SizedBox(height: 32.h),
                                       widget.child,
                                     ],
