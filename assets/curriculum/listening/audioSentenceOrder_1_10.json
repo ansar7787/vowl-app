@@ -6,333 +6,388 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L1_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The artist encrypts the archive silently.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'She'. Time phrases come at the end.",
+            "explanation": "Subject (She) + drinks (verb) + milk (object) + every morning (time). Time expressions like 'every morning' usually appear at the end of a sentence.",
+            "textToSpeak": "She drinks milk every morning.",
             "shuffledSentences": [
-                "the",
-                "encrypts",
-                "artist",
-                "The",
-                "archive",
-                "silently"
+                "milk",
+                "every",
+                "morning",
+                "drinks",
+                "She"
             ],
             "correctOrder": [
-                3,
-                2,
-                1,
-                0,
                 4,
-                5
+                3,
+                0,
+                1,
+                2
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L1_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The expert builds the archive silently.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'He'. The manner adverb comes last.",
+            "explanation": "Subject (He) + reads (verb) + a book (object) + quietly (manner). Adverbs of manner like 'quietly' follow the verb and its object.",
+            "textToSpeak": "He reads a book quietly.",
             "shuffledSentences": [
-                "The",
-                "expert",
-                "silently",
-                "builds",
-                "the",
-                "archive"
+                "reads",
+                "a",
+                "He",
+                "book",
+                "quietly"
             ],
             "correctOrder": [
+                2,
                 0,
                 1,
                 3,
-                4,
-                5,
-                2
+                4
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L1_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The pilot validates the portal silently.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'The cat'. 'All day' is a time expression.",
+            "explanation": "Subject (The cat) + sleeps (verb) + all day (time). 'All day' means for the entire day, and naturally ends the sentence.",
+            "textToSpeak": "The cat sleeps all day.",
             "shuffledSentences": [
+                "day",
+                "cat",
                 "The",
-                "the",
-                "pilot",
-                "portal",
-                "validates",
-                "silently"
+                "sleeps",
+                "all"
             ],
             "correctOrder": [
-                0,
                 2,
-                4,
                 1,
                 3,
-                5
+                4,
+                0
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L2_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The traveler encrypts the device properly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'My'. The object is a type of food.",
+            "explanation": "Subject (My sister) + loves (verb) + chocolate cake (object). 'Chocolate' acts as an adjective here, describing the type of cake.",
+            "textToSpeak": "My sister loves chocolate cake.",
             "shuffledSentences": [
-                "properly",
-                "device",
-                "the",
-                "encrypts",
-                "traveler",
-                "The"
+                "sister",
+                "cake",
+                "loves",
+                "My",
+                "chocolate"
             ],
             "correctOrder": [
-                5,
-                4,
                 3,
+                0,
                 2,
-                1,
-                0
+                4,
+                1
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L2_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The mentor transfers the chip quietly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'The dog'. 'Very' comes before the adverb.",
+            "explanation": "Subject (The dog) + barks (verb) + very loudly (manner). 'Very' is an intensifier placed before 'loudly' to strengthen its meaning.",
+            "textToSpeak": "The dog barks very loudly.",
             "shuffledSentences": [
-                "mentor",
-                "the",
-                "quietly",
-                "chip",
+                "loudly",
                 "The",
-                "transfers"
+                "dog",
+                "barks",
+                "very"
             ],
             "correctOrder": [
-                4,
-                0,
-                5,
                 1,
+                2,
                 3,
-                2
+                4,
+                0
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L2_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The detective scans the network directly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'We'. 'Games' is the object; 'on weekends' tells us when.",
+            "explanation": "Subject (We) + play (verb) + games (object) + on weekends (time). 'On weekends' uses 'on' for recurring days or time periods.",
+            "textToSpeak": "We play games on weekends.",
             "shuffledSentences": [
-                "The",
-                "scans",
-                "network",
-                "directly",
-                "detective",
-                "the"
+                "weekends",
+                "play",
+                "on",
+                "We",
+                "games"
             ],
             "correctOrder": [
-                0,
-                4,
+                3,
                 1,
-                5,
+                4,
                 2,
-                3
+                0
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L3_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The scientist encrypts the software immediately.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'He'. 'To school' tells us where he goes.",
+            "explanation": "Subject (He) + goes (verb) + to school (place) + early (time). 'Early' here means he arrives before the usual time.",
+            "textToSpeak": "He goes to school early.",
             "shuffledSentences": [
-                "immediately",
-                "The",
-                "scientist",
-                "the",
-                "encrypts",
-                "software"
+                "to",
+                "early",
+                "school",
+                "goes",
+                "He"
             ],
             "correctOrder": [
-                1,
-                2,
                 4,
                 3,
-                5,
-                0
+                0,
+                2,
+                1
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L3_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The traveler secures the device quietly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'She'. The base verb 'cook' comes last.",
+            "explanation": "Subject (She) + helps (verb) + her mother (object) + cook (base verb). 'Help someone + base verb' is a natural English pattern.",
+            "textToSpeak": "She helps her mother cook.",
             "shuffledSentences": [
-                "The",
-                "the",
-                "quietly",
-                "traveler",
-                "secures",
-                "device"
+                "her",
+                "She",
+                "helps",
+                "mother",
+                "cook"
             ],
             "correctOrder": [
+                1,
+                2,
                 0,
                 3,
-                4,
-                1,
-                5,
-                2
+                4
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L3_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The commander updates the network immediately.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'The children'. Two verbs are joined by 'and'.",
+            "explanation": "Subject (The children) + sing (verb 1) + and + dance (verb 2). Two verbs joined by 'and' describe two simultaneous or related actions.",
+            "textToSpeak": "The children sing and dance.",
             "shuffledSentences": [
-                "commander",
+                "sing",
+                "and",
+                "dance",
                 "The",
-                "network",
-                "the",
-                "updates",
-                "immediately"
+                "children"
             ],
             "correctOrder": [
-                1,
-                0,
-                4,
                 3,
-                2,
-                5
+                4,
+                0,
+                1,
+                2
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L4_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The artist validates the device instantly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'I'. 'At noon' is a time expression.",
+            "explanation": "Subject (I) + eat (verb) + lunch (object) + at noon (time). 'At' is used with specific times: at noon, at midnight, at six o'clock.",
+            "textToSpeak": "I eat lunch at noon.",
             "shuffledSentences": [
-                "The",
-                "instantly",
-                "artist",
-                "device",
-                "the",
-                "validates"
+                "at",
+                "I",
+                "lunch",
+                "eat",
+                "noon"
             ],
             "correctOrder": [
-                0,
-                2,
-                5,
-                4,
+                1,
                 3,
-                1
+                2,
+                0,
+                4
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L4_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The scout restores the data directly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'The rain'. 'Heavily' describes the manner; 'today' ends it.",
+            "explanation": "Subject (The rain) + falls (verb) + heavily (manner) + today (time). When both manner and time appear, manner usually comes before time.",
+            "textToSpeak": "The rain falls heavily today.",
             "shuffledSentences": [
-                "the",
-                "scout",
-                "data",
+                "heavily",
+                "rain",
                 "The",
-                "restores",
-                "directly"
+                "today",
+                "falls"
             ],
             "correctOrder": [
-                3,
+                2,
                 1,
                 4,
                 0,
-                2,
-                5
+                3
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L4_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The scientist observes the module effectively.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'She'. 'Birthday' describes the type of gift.",
+            "explanation": "Subject (She) + opens (verb) + her birthday gift (object). 'Birthday' acts as an adjective modifying 'gift', describing its occasion.",
+            "textToSpeak": "She opens her birthday gift.",
             "shuffledSentences": [
-                "the",
-                "module",
-                "observes",
-                "scientist",
-                "effectively",
-                "The"
+                "gift",
+                "birthday",
+                "She",
+                "opens",
+                "her"
             ],
             "correctOrder": [
-                5,
-                3,
                 2,
-                0,
+                3,
+                4,
                 1,
-                4
+                0
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L5_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The researcher deploys the terminal successfully.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'He'. 'Daily' is a frequency adverb at the end.",
+            "explanation": "Subject (He) + cleans (verb) + his room (object) + daily (frequency). 'Daily' means every day and acts as a frequency adverb.",
+            "textToSpeak": "He cleans his room daily.",
             "shuffledSentences": [
-                "The",
-                "researcher",
-                "deploys",
-                "the",
-                "terminal",
-                "successfully"
+                "cleans",
+                "He",
+                "daily",
+                "his",
+                "room"
             ],
             "correctOrder": [
-                0,
                 1,
-                2,
+                0,
                 3,
                 4,
-                5
+                2
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L5_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The expert deploys the protocol automatically.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "'Always' comes before the main verb 'eat'.",
+            "explanation": "Subject (We) + always (adverb) + eat (verb) + dinner (object) + together (manner). Frequency adverbs like 'always' sit between the subject and the main verb.",
+            "textToSpeak": "We always eat dinner together.",
             "shuffledSentences": [
-                "expert",
-                "the",
+                "eat",
+                "always",
+                "dinner",
+                "We",
+                "together"
+            ],
+            "correctOrder": [
+                3,
+                1,
+                0,
+                2,
+                4
+            ],
+            "subtype": "audioSentenceOrder"
+        },
+        {
+            "id": "LIS_AUDIOSENTENCEORDER_L5_Q3",
+            "interactionType": "Waveform Snap",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'The teacher'. 'A story' is the object.",
+            "explanation": "Subject (The teacher) + reads (verb) + a story (object). 'A' is the indefinite article used before a singular, countable noun like 'story'.",
+            "textToSpeak": "The teacher reads a story.",
+            "shuffledSentences": [
+                "story",
+                "a",
+                "teacher",
+                "reads",
+                "The"
+            ],
+            "correctOrder": [
+                4,
+                2,
+                3,
+                1,
+                0
+            ],
+            "subtype": "audioSentenceOrder"
+        },
+        {
+            "id": "LIS_AUDIOSENTENCEORDER_L6_Q1",
+            "interactionType": "Waveform Snap",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'She'. 'In her diary' tells us where.",
+            "explanation": "Subject (She) + writes (verb) + in her diary (place). 'In' is used for enclosed or contained spaces: in a diary, in a notebook.",
+            "textToSpeak": "She writes in her diary.",
+            "shuffledSentences": [
+                "her",
+                "She",
+                "diary",
+                "writes",
+                "in"
+            ],
+            "correctOrder": [
+                1,
+                3,
+                4,
+                0,
+                2
+            ],
+            "subtype": "audioSentenceOrder"
+        },
+        {
+            "id": "LIS_AUDIOSENTENCEORDER_L6_Q2",
+            "interactionType": "Waveform Snap",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'The bus'. 'At seven' is the time.",
+            "explanation": "Subject (The bus) + arrives (verb) + at seven (time). 'At' is the correct preposition with specific clock times.",
+            "textToSpeak": "The bus arrives at seven.",
+            "shuffledSentences": [
+                "bus",
+                "arrives",
                 "The",
-                "automatically",
-                "protocol",
-                "deploys"
+                "seven",
+                "at"
             ],
             "correctOrder": [
                 2,
                 0,
-                5,
                 1,
                 4,
                 3
@@ -340,121 +395,47 @@
             "subtype": "audioSentenceOrder"
         },
         {
-            "id": "LIS_AUDIOSENTENCEORDER_L5_Q3",
-            "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The detective evaluates the system smoothly.",
-            "shuffledSentences": [
-                "the",
-                "smoothly",
-                "evaluates",
-                "detective",
-                "The",
-                "system"
-            ],
-            "correctOrder": [
-                4,
-                3,
-                2,
-                0,
-                5,
-                1
-            ],
-            "subtype": "audioSentenceOrder"
-        },
-        {
-            "id": "LIS_AUDIOSENTENCEORDER_L6_Q1",
-            "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The technician repairs the terminal immediately.",
-            "shuffledSentences": [
-                "immediately",
-                "the",
-                "The",
-                "technician",
-                "repairs",
-                "terminal"
-            ],
-            "correctOrder": [
-                2,
-                3,
-                4,
-                1,
-                5,
-                0
-            ],
-            "subtype": "audioSentenceOrder"
-        },
-        {
-            "id": "LIS_AUDIOSENTENCEORDER_L6_Q2",
-            "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The engineer evaluates the terminal successfully.",
-            "shuffledSentences": [
-                "The",
-                "successfully",
-                "engineer",
-                "evaluates",
-                "the",
-                "terminal"
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3,
-                4,
-                5,
-                1
-            ],
-            "subtype": "audioSentenceOrder"
-        },
-        {
             "id": "LIS_AUDIOSENTENCEORDER_L6_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The engineer observes the code quietly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'He'. 'Twice' means two times and ends the sentence.",
+            "explanation": "Subject (He) + brushes (verb) + his teeth (object) + twice (frequency). 'Twice' means two times and usually appears at the end of the sentence.",
+            "textToSpeak": "He brushes his teeth twice.",
             "shuffledSentences": [
-                "engineer",
-                "The",
-                "code",
-                "the",
-                "quietly",
-                "observes"
+                "brushes",
+                "He",
+                "his",
+                "twice",
+                "teeth"
             ],
             "correctOrder": [
                 1,
                 0,
-                5,
-                3,
                 2,
-                4
+                4,
+                3
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L7_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The explorer scans the terminal steadily.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'The flowers'. 'In spring' uses 'in' with seasons.",
+            "explanation": "Subject (The flowers) + bloom (verb) + in spring (time). 'In' is always used with the four seasons: in spring, in summer, in autumn, in winter.",
+            "textToSpeak": "The flowers bloom in spring.",
             "shuffledSentences": [
-                "The",
-                "explorer",
-                "steadily",
-                "scans",
-                "the",
-                "terminal"
+                "flowers",
+                "in",
+                "spring",
+                "bloom",
+                "The"
             ],
             "correctOrder": [
-                0,
-                1,
-                3,
                 4,
-                5,
+                0,
+                3,
+                1,
                 2
             ],
             "subtype": "audioSentenceOrder"
@@ -462,71 +443,68 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L7_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The technician scans the node securely.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'She'. 'Daily' is a frequency adverb at the end.",
+            "explanation": "Subject (She) + waters (verb) + her plants (object) + daily (frequency). 'Water' as a verb means to give water to plants - a common action.",
+            "textToSpeak": "She waters her plants daily.",
             "shuffledSentences": [
-                "The",
-                "securely",
-                "scans",
-                "the",
-                "node",
-                "technician"
+                "plants",
+                "her",
+                "waters",
+                "daily",
+                "She"
             ],
             "correctOrder": [
-                0,
-                5,
-                2,
-                3,
                 4,
-                1
+                2,
+                1,
+                0,
+                3
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L7_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The researcher secures the device successfully.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'He'. 'Well' is the adverb form of 'good'.",
+            "explanation": "Subject (He) + plays (verb) + the guitar (object) + well (manner). 'Well' is the adverb form of 'good' - never say 'plays good'.",
+            "textToSpeak": "He plays the guitar well.",
             "shuffledSentences": [
-                "secures",
-                "successfully",
+                "guitar",
+                "He",
                 "the",
-                "The",
-                "researcher",
-                "device"
+                "plays",
+                "well"
             ],
             "correctOrder": [
+                1,
                 3,
-                4,
-                0,
                 2,
-                5,
-                1
+                0,
+                4
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L8_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The commander restores the archive quietly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'They'. 'At the beach' is the location.",
+            "explanation": "Subject (They) + swim (verb) + at the beach (place). 'At' is used with specific locations like 'the beach', 'the park', 'the office'.",
+            "textToSpeak": "They swim at the beach.",
             "shuffledSentences": [
-                "The",
-                "quietly",
-                "restores",
+                "They",
+                "beach",
                 "the",
-                "archive",
-                "commander"
+                "swim",
+                "at"
             ],
             "correctOrder": [
                 0,
-                5,
-                2,
                 3,
                 4,
+                2,
                 1
             ],
             "subtype": "audioSentenceOrder"
@@ -534,47 +512,47 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L8_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The scientist sends the satellite swiftly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'The baby'. 'In the afternoon' uses 'in' with time of day.",
+            "explanation": "Subject (The baby) + sleeps (verb) + in the afternoon (time). Time of day phrases - morning, afternoon, evening - all use 'in'.",
+            "textToSpeak": "The baby sleeps in the afternoon.",
             "shuffledSentences": [
+                "sleeps",
+                "baby",
+                "The",
                 "the",
-                "sends",
-                "swiftly",
-                "scientist",
-                "satellite",
-                "The"
+                "afternoon",
+                "in"
             ],
             "correctOrder": [
-                5,
-                3,
+                2,
                 1,
                 0,
-                4,
-                2
+                5,
+                3,
+                4
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L8_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The hacker creates the protocol automatically.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'She'. 'Beautiful' comes before 'pictures'. 'Often' ends the sentence.",
+            "explanation": "Subject (She) + paints (verb) + beautiful pictures (object) + often (frequency). Adjectives like 'beautiful' always directly precede the noun they describe.",
+            "textToSpeak": "She paints beautiful pictures often.",
             "shuffledSentences": [
-                "automatically",
-                "hacker",
-                "The",
-                "creates",
-                "protocol",
-                "the"
+                "often",
+                "beautiful",
+                "paints",
+                "pictures",
+                "She"
             ],
             "correctOrder": [
+                4,
                 2,
                 1,
                 3,
-                5,
-                4,
                 0
             ],
             "subtype": "audioSentenceOrder"
@@ -582,94 +560,96 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L9_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The teacher sends the archive consistently.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'He'. 'At the bakery' tells us where.",
+            "explanation": "Subject (He) + buys (verb) + bread (object) + at the bakery (place). 'At' is used with shops and public establishments.",
+            "textToSpeak": "He buys bread at the bakery.",
             "shuffledSentences": [
-                "The",
-                "teacher",
+                "bread",
+                "bakery",
+                "at",
                 "the",
-                "consistently",
-                "sends",
-                "archive"
+                "He",
+                "buys"
             ],
             "correctOrder": [
-                0,
-                1,
                 4,
-                2,
                 5,
-                3
+                0,
+                2,
+                3,
+                1
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L9_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The teacher launches the signal consistently.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'The sun'. 'In the east' uses 'in' with directions.",
+            "explanation": "Subject (The sun) + rises (verb) + in the east (place). 'In' is used with compass directions: in the north, in the south, in the east, in the west.",
+            "textToSpeak": "The sun rises in the east.",
             "shuffledSentences": [
+                "east",
                 "the",
-                "The",
-                "launches",
-                "teacher",
-                "signal",
-                "consistently"
+                "sun",
+                "rises",
+                "in",
+                "The"
             ],
             "correctOrder": [
-                1,
-                3,
+                5,
                 2,
-                0,
+                3,
                 4,
-                5
+                1,
+                0
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L9_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The expert validates the module immediately.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'She'. 'Every day' is a time expression at the end.",
+            "explanation": "Subject (She) + calls (verb) + her friend (object) + every day (frequency). 'Every day' (two words) means each day. Compare 'everyday' (one word) = ordinary.",
+            "textToSpeak": "She calls her friend every day.",
             "shuffledSentences": [
-                "validates",
-                "the",
-                "immediately",
-                "expert",
-                "The",
-                "module"
+                "friend",
+                "calls",
+                "her",
+                "every",
+                "day",
+                "She"
             ],
             "correctOrder": [
-                4,
-                3,
-                0,
-                1,
                 5,
-                2
+                1,
+                2,
+                0,
+                3,
+                4
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L10_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The droid deploys the database efficiently.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'We'. 'Movies' is the object; 'on weekends' tells us when.",
+            "explanation": "Subject (We) + watch (verb) + movies (object) + on weekends (time). 'On' is used with days and parts of days: on Monday, on weekends, on Friday evenings.",
+            "textToSpeak": "We watch movies on weekends.",
             "shuffledSentences": [
-                "The",
-                "droid",
-                "database",
-                "efficiently",
-                "deploys",
-                "the"
+                "We",
+                "movies",
+                "on",
+                "weekends",
+                "watch"
             ],
             "correctOrder": [
                 0,
-                1,
                 4,
-                5,
+                1,
                 2,
                 3
             ],
@@ -678,23 +658,22 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L10_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The researcher observes the database expertly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'He'. 'Broken' is an adjective before 'chair'.",
+            "explanation": "Subject (He) + fixes (verb) + the broken chair (object). 'Broken' is a past participle used as an adjective to describe the state of the chair.",
+            "textToSpeak": "He fixes the broken chair.",
             "shuffledSentences": [
-                "database",
+                "fixes",
+                "He",
+                "broken",
                 "the",
-                "observes",
-                "researcher",
-                "expertly",
-                "The"
+                "chair"
             ],
             "correctOrder": [
-                5,
-                3,
-                2,
                 1,
                 0,
+                3,
+                2,
                 4
             ],
             "subtype": "audioSentenceOrder"
@@ -702,24 +681,25 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L10_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The analyst validates the engine steadily.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'The dog'. 'Happily' is a manner adverb at the end.",
+            "explanation": "Subject (The dog) + fetches (verb) + the ball (object) + happily (manner). 'Happily' is the adverb form of 'happy', showing how the dog performs the action.",
+            "textToSpeak": "The dog fetches the ball happily.",
             "shuffledSentences": [
-                "engine",
-                "validates",
+                "ball",
+                "happily",
+                "fetches",
+                "dog",
                 "the",
-                "The",
-                "steadily",
-                "analyst"
+                "The"
             ],
             "correctOrder": [
-                3,
                 5,
-                1,
+                3,
                 2,
+                4,
                 0,
-                4
+                1
             ],
             "subtype": "audioSentenceOrder"
         }

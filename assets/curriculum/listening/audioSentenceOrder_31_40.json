@@ -6,119 +6,138 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L31_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The scout validates the satellite precisely.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Two time expressions: 'before eight' and 'every day'.",
+            "explanation": "Subject (She) + arrives at work (verb + place) + before eight (time 1) + every day (frequency). Multiple time expressions can stack; more specific ones usually precede general ones.",
+            "textToSpeak": "She arrives at work before eight every day.",
             "shuffledSentences": [
-                "the",
-                "validates",
-                "precisely",
-                "scout",
-                "satellite",
-                "The"
+                "She",
+                "at",
+                "before",
+                "day",
+                "work",
+                "arrives",
+                "eight",
+                "every"
             ],
             "correctOrder": [
-                5,
-                3,
-                1,
                 0,
+                5,
+                1,
                 4,
-                2
+                2,
+                6,
+                7,
+                3
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L31_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The commander deploys the system directly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'He'. 'Every Tuesday morning' is a recurring time expression.",
+            "explanation": "Subject (He) + calls (verb) + his clients (object) + every Tuesday morning (frequency). 'Every + day + time of day' creates a very specific recurring schedule.",
+            "textToSpeak": "He calls his clients every Tuesday morning.",
             "shuffledSentences": [
-                "The",
-                "directly",
-                "commander",
-                "deploys",
-                "the",
-                "system"
+                "calls",
+                "his",
+                "He",
+                "every",
+                "clients",
+                "morning",
+                "Tuesday"
             ],
             "correctOrder": [
-                0,
                 2,
-                3,
+                0,
+                1,
                 4,
-                5,
-                1
+                3,
+                6,
+                5
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L31_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The expert validates the archive successfully.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'The manager'. 'After lunch' tells us when.",
+            "explanation": "Subject (The manager) + reviews (verb) + the reports (object) + after lunch (time). 'After lunch' uses 'after' without an article - 'lunch' refers to the meal in general.",
+            "textToSpeak": "The manager reviews the reports after lunch.",
             "shuffledSentences": [
-                "validates",
                 "the",
-                "archive",
+                "reviews",
                 "The",
-                "expert",
-                "successfully"
+                "reports",
+                "lunch",
+                "manager",
+                "after"
             ],
             "correctOrder": [
-                3,
-                4,
-                0,
-                1,
                 2,
-                5
+                5,
+                1,
+                0,
+                3,
+                6,
+                4
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L32_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The hero locates the engine successfully.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'Three months early' tells us how far in advance.",
+            "explanation": "Subject (She) + booked (past tense) + her flight tickets (object) + three months early (time). 'Three months early' means she booked three months before the scheduled departure.",
+            "textToSpeak": "She booked her flight tickets three months early.",
             "shuffledSentences": [
-                "locates",
-                "engine",
-                "hero",
-                "The",
-                "the",
-                "successfully"
+                "months",
+                "tickets",
+                "booked",
+                "She",
+                "flight",
+                "her",
+                "three",
+                "early"
             ],
             "correctOrder": [
                 3,
                 2,
-                0,
+                5,
                 4,
                 1,
-                5
+                6,
+                0,
+                7
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L32_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The scout deploys the database quietly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'The night before' means the evening preceding the event.",
+            "explanation": "Subject (He) + packed (past tense) + his suitcase (object) + the night before (time). 'The night before' refers to the evening just before a significant event.",
+            "textToSpeak": "He packed his suitcase the night before.",
             "shuffledSentences": [
-                "The",
+                "his",
                 "the",
-                "scout",
-                "database",
-                "deploys",
-                "quietly"
+                "suitcase",
+                "He",
+                "packed",
+                "before",
+                "night"
             ],
             "correctOrder": [
+                3,
+                4,
                 0,
                 2,
-                4,
                 1,
-                3,
+                6,
                 5
             ],
             "subtype": "audioSentenceOrder"
@@ -126,356 +145,384 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L32_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The analyst evaluates the engine precisely.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'Checked in to' is a phrasal verb. 'At noon' is when.",
+            "explanation": "Subject (They) + checked in to (phrasal verb) + the hotel (place) + at noon (time). 'Check in to a hotel' means to register on arrival; 'at noon' uses 'at' with specific times.",
+            "textToSpeak": "They checked in to the hotel at noon.",
             "shuffledSentences": [
-                "The",
-                "precisely",
-                "analyst",
-                "evaluates",
+                "noon",
+                "They",
                 "the",
-                "engine"
+                "checked",
+                "in",
+                "hotel",
+                "at",
+                "to"
             ],
             "correctOrder": [
-                0,
-                2,
+                1,
                 3,
                 4,
+                7,
+                2,
                 5,
-                1
+                6,
+                0
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L33_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The expert transfers the code silently.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'She'. 'Four times a week' is a frequency expression.",
+            "explanation": "Subject (She) + visits (verb) + the gym (object) + four times a week (frequency). 'X times a week' is a natural way to express how often something happens.",
+            "textToSpeak": "She visits the gym four times a week.",
             "shuffledSentences": [
-                "code",
-                "the",
-                "transfers",
-                "expert",
-                "silently",
-                "The"
+                "a",
+                "four",
+                "She",
+                "gym",
+                "times",
+                "visits",
+                "week",
+                "the"
             ],
             "correctOrder": [
-                5,
-                3,
                 2,
+                5,
+                7,
+                3,
                 1,
+                4,
                 0,
-                4
+                6
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L33_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The pilot monitors the circuit automatically.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'He'. 'Every single day' emphasizes strong daily frequency.",
+            "explanation": "Subject (He) + walks (verb) + ten thousand steps (object) + every single day (frequency). 'Every single day' emphasizes consistency; 'single' adds emphasis to 'every day'.",
+            "textToSpeak": "He walks ten thousand steps every single day.",
             "shuffledSentences": [
-                "The",
-                "pilot",
-                "monitors",
-                "automatically",
-                "the",
-                "circuit"
+                "steps",
+                "day",
+                "thousand",
+                "He",
+                "single",
+                "ten",
+                "every",
+                "walks"
             ],
             "correctOrder": [
-                0,
-                1,
-                2,
-                4,
+                3,
+                7,
                 5,
-                3
+                2,
+                0,
+                6,
+                4,
+                1
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L33_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The explorer validates the drone smoothly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'They'. Two phrases end the sentence: frequency and location.",
+            "explanation": "Subject (They) + eat (verb) + vegetables (object) + with every meal (frequency) + at home (place). 'With every meal' means each time they eat; 'at home' tells us the context.",
+            "textToSpeak": "They eat vegetables with every meal at home.",
             "shuffledSentences": [
-                "The",
-                "explorer",
-                "validates",
-                "the",
-                "drone",
-                "smoothly"
+                "with",
+                "eat",
+                "every",
+                "meal",
+                "vegetables",
+                "at",
+                "They",
+                "home"
             ],
             "correctOrder": [
-                0,
+                6,
                 1,
+                4,
+                0,
                 2,
                 3,
-                4,
-                5
+                5,
+                7
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L34_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The commander locates the system properly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'She'. 'Every Saturday morning' is a recurring time.",
+            "explanation": "Subject (She) + does the laundry (verb phrase) + every Saturday morning (frequency). 'Do the laundry' is a fixed expression; 'every Saturday morning' is a specific recurring time.",
+            "textToSpeak": "She does the laundry every Saturday morning.",
             "shuffledSentences": [
-                "The",
-                "commander",
+                "morning",
+                "She",
+                "laundry",
+                "every",
                 "the",
-                "system",
-                "locates",
-                "properly"
+                "does",
+                "Saturday"
             ],
             "correctOrder": [
-                0,
                 1,
+                5,
                 4,
                 2,
                 3,
-                5
+                6,
+                0
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L34_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The scout updates the signal efficiently.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'He'. 'Once a week' is the frequency.",
+            "explanation": "Subject (He) + vacuums (verb) + the house (object) + once a week (frequency). 'Once a week' means one time every seven days; 'twice a week' means two times.",
+            "textToSpeak": "He vacuums the house once a week.",
             "shuffledSentences": [
-                "updates",
-                "scout",
-                "efficiently",
                 "the",
-                "The",
-                "signal"
+                "week",
+                "a",
+                "once",
+                "vacuums",
+                "house",
+                "He"
             ],
             "correctOrder": [
+                6,
                 4,
-                1,
                 0,
-                3,
                 5,
-                2
+                3,
+                2,
+                1
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L34_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The researcher launches the circuit automatically.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'They'. 'Equally' is a manner adverb at the end.",
+            "explanation": "Subject (They) + share (verb) + the household chores (object) + equally (manner). 'Equally' means each person does the same amount - a fair division.",
+            "textToSpeak": "They share the household chores equally.",
             "shuffledSentences": [
-                "circuit",
+                "equally",
+                "household",
+                "They",
                 "the",
-                "automatically",
-                "researcher",
-                "launches",
-                "The"
+                "chores",
+                "share"
             ],
             "correctOrder": [
+                2,
                 5,
                 3,
-                4,
                 1,
-                0,
-                2
+                4,
+                0
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L35_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The droid secures the protocol quietly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'For this Sunday' tells us when the picnic is scheduled.",
+            "explanation": "Subject (She) + planned (past tense) + a picnic (object) + for this Sunday (time). 'For + day' shows when the planned event will take place.",
+            "textToSpeak": "She planned a picnic for this Sunday.",
             "shuffledSentences": [
-                "protocol",
-                "the",
-                "quietly",
-                "secures",
-                "droid",
-                "The"
+                "for",
+                "picnic",
+                "planned",
+                "a",
+                "She",
+                "this",
+                "Sunday"
             ],
             "correctOrder": [
-                5,
                 4,
+                2,
                 3,
                 1,
                 0,
-                2
+                5,
+                6
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L35_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The hacker validates the drone automatically.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'To see the show' explains the purpose.",
+            "explanation": "Subject (He) + booked (past tense) + tickets (object) + to see the show (purpose). 'To + verb' expresses purpose: he booked tickets in order to see the show.",
+            "textToSpeak": "He booked tickets to see the show.",
             "shuffledSentences": [
-                "automatically",
-                "drone",
-                "The",
-                "hacker",
-                "validates",
-                "the"
+                "the",
+                "He",
+                "tickets",
+                "booked",
+                "to",
+                "see",
+                "show"
             ],
             "correctOrder": [
-                2,
+                1,
                 3,
+                2,
                 4,
                 5,
-                1,
-                0
+                0,
+                6
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L35_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The teacher evaluates the network quietly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'They'. Present continuous describes a current plan.",
+            "explanation": "Subject (They) + are organizing (present continuous) + a surprise birthday party (object). Present continuous describes an action in progress or a definite future plan.",
+            "textToSpeak": "They are organizing a surprise birthday party.",
             "shuffledSentences": [
-                "teacher",
-                "The",
-                "network",
-                "the",
-                "evaluates",
-                "quietly"
+                "party",
+                "are",
+                "birthday",
+                "They",
+                "organizing",
+                "a",
+                "surprise"
             ],
             "correctOrder": [
-                1,
-                0,
-                4,
                 3,
+                1,
+                4,
+                5,
+                6,
                 2,
-                5
+                0
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L36_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The commander evaluates the system automatically.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'And' connects two objects. 'For lunch' is the purpose.",
+            "explanation": "Subject (She) + ordered (past tense) + a salad and soup (two objects) + for lunch (purpose). 'Order something for a meal' is a common restaurant expression.",
+            "textToSpeak": "She ordered a salad and soup for lunch.",
             "shuffledSentences": [
-                "evaluates",
-                "The",
-                "system",
-                "commander",
-                "automatically",
-                "the"
+                "She",
+                "lunch",
+                "for",
+                "soup",
+                "and",
+                "ordered",
+                "a",
+                "salad"
             ],
             "correctOrder": [
-                1,
-                3,
                 0,
                 5,
+                6,
+                7,
+                4,
+                3,
                 2,
-                4
+                1
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L36_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The explorer creates the engine successfully.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'For the menu' is what he requested. 'First' ends the sentence.",
+            "explanation": "Subject (He) + asked (past tense) + the waiter (person) + for the menu (request) + first (time). 'Ask someone for something' is the standard request pattern.",
+            "textToSpeak": "He asked the waiter for the menu first.",
             "shuffledSentences": [
-                "The",
-                "engine",
-                "explorer",
+                "first",
+                "for",
+                "He",
+                "asked",
+                "waiter",
                 "the",
-                "creates",
-                "successfully"
+                "menu",
+                "the"
             ],
             "correctOrder": [
-                0,
                 2,
-                4,
                 3,
+                5,
+                4,
                 1,
-                5
+                7,
+                6,
+                0
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L36_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The scout activates the database effectively.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'After dinner' is the time. 'Generous' describes the tip.",
+            "explanation": "Subject (They) + left (past tense) + a generous tip (object) + after dinner (time). 'Leave a tip' means to give extra money as appreciation for good service.",
+            "textToSpeak": "They left a generous tip after dinner.",
             "shuffledSentences": [
-                "the",
-                "scout",
-                "database",
-                "The",
-                "effectively",
-                "activates"
+                "after",
+                "left",
+                "a",
+                "dinner",
+                "tip",
+                "They",
+                "generous"
             ],
             "correctOrder": [
-                3,
-                1,
                 5,
-                0,
+                1,
                 2,
-                4
+                6,
+                4,
+                0,
+                3
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L37_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The student activates the drone efficiently.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'For a holiday dinner' explains why they gathered.",
+            "explanation": "Subject (The family) + gathered (past tense) + for a holiday dinner (purpose). 'Gather for' means to come together for a specific purpose or occasion.",
+            "textToSpeak": "The family gathered for a holiday dinner.",
             "shuffledSentences": [
+                "family",
+                "a",
                 "The",
-                "the",
-                "efficiently",
-                "drone",
-                "student",
-                "activates"
+                "dinner",
+                "for",
+                "holiday",
+                "gathered"
             ],
             "correctOrder": [
-                0,
-                4,
-                5,
-                1,
-                3,
-                2
-            ],
-            "subtype": "audioSentenceOrder"
-        },
-        {
-            "id": "LIS_AUDIOSENTENCEORDER_L37_Q2",
-            "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The explorer activates the software automatically.",
-            "shuffledSentences": [
-                "The",
-                "the",
-                "explorer",
-                "automatically",
-                "activates",
-                "software"
-            ],
-            "correctOrder": [
-                0,
                 2,
+                0,
+                6,
                 4,
                 1,
                 5,
@@ -484,145 +531,202 @@
             "subtype": "audioSentenceOrder"
         },
         {
-            "id": "LIS_AUDIOSENTENCEORDER_L37_Q3",
+            "id": "LIS_AUDIOSENTENCEORDER_L37_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The pilot updates the portal carefully.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'At her cousin's wedding' is the social event.",
+            "explanation": "Subject (She) + took (past tense) + many photos (object) + at her cousin's wedding (event). 'At' is used with social events: at a wedding, at a party, at a conference.",
+            "textToSpeak": "She took many photos at her cousin's wedding.",
             "shuffledSentences": [
-                "updates",
-                "the",
-                "pilot",
-                "The",
-                "carefully",
-                "portal"
+                "She",
+                "cousin's",
+                "at",
+                "many",
+                "wedding",
+                "took",
+                "her",
+                "photos"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1,
                 5,
+                3,
+                7,
+                2,
+                6,
+                1,
                 4
+            ],
+            "subtype": "audioSentenceOrder"
+        },
+        {
+            "id": "LIS_AUDIOSENTENCEORDER_L37_Q3",
+            "interactionType": "Waveform Snap",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'His grandmother' receives the gift. Indirect object comes first.",
+            "explanation": "Subject (He) + gave (past tense) + his grandmother (indirect object) + a bouquet of flowers (direct object). 'Give someone something' follows indirect + direct object order.",
+            "textToSpeak": "He gave his grandmother a bouquet of flowers.",
+            "shuffledSentences": [
+                "gave",
+                "a",
+                "grandmother",
+                "flowers",
+                "of",
+                "his",
+                "bouquet",
+                "He"
+            ],
+            "correctOrder": [
+                7,
+                0,
+                5,
+                2,
+                1,
+                6,
+                4,
+                3
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L38_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The traveler launches the engine successfully.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'To make an appointment' gives the reason for calling.",
+            "explanation": "Subject (She) + called (past tense) + the doctor (object) + to make an appointment (purpose). 'Make an appointment' is the standard phrase for scheduling a meeting with a professional.",
+            "textToSpeak": "She called the doctor to make an appointment.",
             "shuffledSentences": [
+                "an",
+                "to",
+                "appointment",
+                "called",
+                "doctor",
                 "the",
-                "The",
-                "engine",
-                "traveler",
-                "launches",
-                "successfully"
+                "She",
+                "make"
             ],
             "correctOrder": [
-                1,
+                6,
                 3,
+                5,
                 4,
+                1,
+                7,
                 0,
-                2,
-                5
+                2
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L38_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The expert evaluates the protocol swiftly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'Online' tells us how the meeting was held.",
+            "explanation": "Subject (He) + scheduled (past tense) + a meeting (object) + with his team (participants) + online (manner). 'Schedule a meeting' is standard professional vocabulary.",
+            "textToSpeak": "He scheduled a meeting with his team online.",
             "shuffledSentences": [
-                "swiftly",
-                "protocol",
-                "the",
-                "evaluates",
-                "expert",
-                "The"
+                "team",
+                "a",
+                "scheduled",
+                "with",
+                "his",
+                "He",
+                "meeting",
+                "online"
             ],
             "correctOrder": [
                 5,
-                4,
-                3,
                 2,
                 1,
-                0
+                6,
+                3,
+                4,
+                0,
+                7
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L38_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The detective monitors the network properly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'For six people' specifies the size of the group.",
+            "explanation": "Subject (They) + confirmed (past tense) + the reservation (object) + for six people (detail). 'Confirm a reservation' means to verify that a booking is in place.",
+            "textToSpeak": "They confirmed the reservation for six people.",
             "shuffledSentences": [
-                "The",
-                "network",
-                "detective",
-                "monitors",
-                "the",
-                "properly"
+                "people",
+                "for",
+                "confirmed",
+                "reservation",
+                "They",
+                "six",
+                "the"
             ],
             "correctOrder": [
-                0,
-                2,
-                3,
                 4,
+                2,
+                6,
+                3,
                 1,
-                5
+                5,
+                0
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L39_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The student locates the device precisely.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'The coffee shop'. 'Near' shows close proximity.",
+            "explanation": "Subject (The coffee shop) + is (linking verb) + near the train station (location). 'Near' is a preposition showing close distance; it can be used without 'to'.",
+            "textToSpeak": "The coffee shop is near the train station.",
             "shuffledSentences": [
-                "device",
-                "locates",
+                "train",
+                "coffee",
                 "The",
                 "the",
-                "student",
-                "precisely"
+                "is",
+                "near",
+                "station",
+                "shop"
             ],
             "correctOrder": [
                 2,
-                4,
                 1,
+                7,
+                4,
+                5,
                 3,
                 0,
-                5
+                6
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L39_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The explorer scans the node properly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Start with 'She'. 'Two blocks from' gives distance and a reference point.",
+            "explanation": "Subject (She) + lives (verb) + two blocks from the main square (location). 'X blocks from somewhere' is a natural way to express distance in urban navigation.",
+            "textToSpeak": "She lives two blocks from the main square.",
             "shuffledSentences": [
-                "explorer",
-                "properly",
-                "scans",
-                "node",
-                "The",
-                "the"
+                "main",
+                "square",
+                "from",
+                "lives",
+                "two",
+                "blocks",
+                "the",
+                "She"
             ],
             "correctOrder": [
-                4,
-                0,
-                2,
-                5,
+                7,
                 3,
+                4,
+                5,
+                2,
+                6,
+                0,
                 1
             ],
             "subtype": "audioSentenceOrder"
@@ -630,96 +734,116 @@
         {
             "id": "LIS_AUDIOSENTENCEORDER_L39_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The technician creates the network quietly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'Next to' shows the relative position.",
+            "explanation": "Subject (He) + found (past tense) + the pharmacy (object) + next to the supermarket (position). 'Next to' means directly beside something - even closer than 'near'.",
+            "textToSpeak": "He found the pharmacy next to the supermarket.",
             "shuffledSentences": [
-                "network",
+                "to",
                 "the",
-                "technician",
-                "The",
-                "creates",
-                "quietly"
+                "supermarket",
+                "pharmacy",
+                "the",
+                "found",
+                "next",
+                "He"
             ],
             "correctOrder": [
-                3,
-                2,
-                4,
+                7,
+                5,
                 1,
+                3,
+                6,
                 0,
-                5
+                4,
+                2
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L40_Q1",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The expert encrypts the device precisely.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'On the second ring' shows how quickly she responded.",
+            "explanation": "Subject (She) + answered (past tense) + the phone (object) + on the second ring (time). 'On the second ring' means after the phone rang only twice - very quickly.",
+            "textToSpeak": "She answered the phone on the second ring.",
             "shuffledSentences": [
-                "device",
+                "ring",
+                "answered",
                 "the",
-                "precisely",
-                "The",
-                "expert",
-                "encrypts"
+                "She",
+                "the",
+                "second",
+                "phone",
+                "on"
             ],
             "correctOrder": [
                 3,
+                1,
+                2,
+                6,
+                7,
                 4,
                 5,
-                1,
-                0,
-                2
+                0
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L40_Q2",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The hacker sends the device smoothly.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'Because' introduces the reason clause.",
+            "explanation": "Subject (He) + left (past tense) + a voicemail (object) + because she was busy (reason clause). 'Because' introduces a reason clause explaining why the action was taken.",
+            "textToSpeak": "He left a voicemail because she was busy.",
             "shuffledSentences": [
-                "smoothly",
-                "The",
-                "hacker",
-                "device",
-                "sends",
-                "the"
+                "He",
+                "busy",
+                "voicemail",
+                "left",
+                "a",
+                "she",
+                "because",
+                "was"
             ],
             "correctOrder": [
-                1,
-                2,
-                4,
-                5,
+                0,
                 3,
-                0
+                4,
+                2,
+                6,
+                5,
+                7,
+                1
             ],
             "subtype": "audioSentenceOrder"
         },
         {
             "id": "LIS_AUDIOSENTENCEORDER_L40_Q3",
             "interactionType": "Waveform Snap",
-            "hint": "Reorder the words as heard.",
-            "explanation": "Structure follows audio.",
-            "textToSpeak": "The detective analyzes the satellite reliably.",
+            "instruction": "Listen to the audio and arrange the words in the correct order.",
+            "hint": "Past tense. 'Before making' shows texting came first.",
+            "explanation": "Subject (They) + texted (past tense) + each other (object) + before making the call (time). 'Before + verb-ing' clearly shows the order of actions.",
+            "textToSpeak": "They texted each other before making the call.",
             "shuffledSentences": [
-                "The",
-                "detective",
-                "reliably",
+                "texted",
+                "other",
+                "each",
+                "They",
+                "before",
+                "making",
                 "the",
-                "satellite",
-                "analyzes"
+                "call"
             ],
             "correctOrder": [
-                0,
-                1,
-                5,
                 3,
+                0,
+                2,
+                1,
                 4,
-                2
+                5,
+                6,
+                7
             ],
             "subtype": "audioSentenceOrder"
         }

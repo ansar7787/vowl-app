@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AudioSentenceOrderInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const AudioSentenceOrderInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -23,7 +25,7 @@ class AudioSentenceOrderInstruction extends StatelessWidget {
           Icon(Icons.waves_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            "SNAP SEGMENTS TO TIMELINE",
+            instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
