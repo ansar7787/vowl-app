@@ -360,6 +360,9 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               isAnswered: _isAnswered,
               isCorrect: _isCorrect,
               attempts: _attempts,
+              onListenTap: () => _speechService.speak(
+                quest.text ?? quest.textToSpeak ?? "",
+              ),
             ),
             if (state.isHintVisible) ...[
               SizedBox(height: isCompact ? 12.h : 20.h),

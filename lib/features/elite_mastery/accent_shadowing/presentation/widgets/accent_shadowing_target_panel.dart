@@ -11,6 +11,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
   final bool isAnswered;
   final bool? isCorrect;
   final int attempts;
+  final VoidCallback? onListenTap;
 
   const AccentShadowingTargetPanel({
     super.key,
@@ -21,6 +22,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
     required this.isAnswered,
     this.isCorrect,
     required this.attempts,
+    this.onListenTap,
   });
 
   @override
@@ -38,10 +40,20 @@ class AccentShadowingTargetPanel extends StatelessWidget {
           : null,
       child: Column(
         children: [
-          Icon(
-            Icons.record_voice_over_rounded,
-            color: isDark ? primaryColor : const Color(0xFF0F172A),
-            size: 32.r,
+          GestureDetector(
+            onTap: onListenTap,
+            child: Container(
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: primaryColor.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                Icons.volume_up_rounded,
+                color: isDark ? primaryColor : const Color(0xFF0F172A),
+                size: 32.r,
+              ),
+            ),
           ),
           SizedBox(height: 20.h),
           _buildTargetWords(),
