@@ -213,13 +213,13 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                           fit: BoxFit.scaleDown,
                                           child: AudioSentenceOrderInstruction(
                                             color: theme.primaryColor,
-                                            instruction: quest.instruction ?? 'LISTEN AND ARRANGE THE WORDS',
+                                            instruction: quest.instruction,
                                           ),
                                         ),
                                       )
                                     : AudioSentenceOrderInstruction(
                                         color: theme.primaryColor,
-                                        instruction: quest.instruction ?? 'LISTEN AND ARRANGE THE WORDS',
+                                        instruction: quest.instruction,
                                       ),
                                 SizedBox(height: gapInstruction),
                                 isCompact
