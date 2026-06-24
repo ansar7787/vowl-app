@@ -183,11 +183,13 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                           fit: BoxFit.scaleDown,
                                           child: AmbientIdInstruction(
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
                                         ),
                                       )
                                     : AmbientIdInstruction(
                                         color: theme.primaryColor,
+                                        instruction: quest.instruction,
                                       ),
                                 SizedBox(height: gapInstruction),
                                 isCompact

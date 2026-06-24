@@ -5,43 +5,46 @@
     "quests": [
         {
             "id": "LIS_AMBIENTID_L141_Q1",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the sound of city maglev cargo.",
-            "explanation": "Ground vibrations from maglev cargo identify an industrial cyber sector.",
-            "textToSpeak": "The ground vibrates slightly as heavy cargo maglevs pass through the tunnels below.",
+            "hint": "Listen for a seamless vibration with no surface clue, distinguishable from engines by its smoothness.",
+            "explanation": "The unique smoothness of maglev cargo vibration under a street distinguishes a cyber city.",
+            "textToSpeak": "Ground-level maglev cargo moves so smoothly beneath the streets that only vibration betrays it.",
             "options": [
-                "Train Station",
-                "Cyber City",
                 "Construction Site",
-                "Busy Airport"
+                "Busy Airport",
+                "Train Station",
+                "Cyber City"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L141_Q2",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for forest mountain wind passes.",
-            "explanation": "Wind howling through evergreen passes identifies a high mountain forest.",
-            "textToSpeak": "High in the mountains, the wind howls through the narrow passes between the evergreens.",
+            "hint": "Listen for harmonically layered wind tones created by passing through different tree densities.",
+            "explanation": "Harmonically layered wind tones in a tree-dense environment identify a mountain forest.",
+            "textToSpeak": "Wind moves through a mountain forest with a harmonic layering created by tree density.",
             "options": [
+                "Mountain Peak",
                 "Sandy Beach",
-                "Dense Forest",
                 "Lush Farm",
-                "Mountain Peak"
+                "Dense Forest"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L141_Q3",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for cosmic planetary marble views.",
-            "explanation": "Planets looking like marbles in cosmic dust identify a ship in space.",
-            "textToSpeak": "Planets hang like glowing marbles in the distance, surrounded by belts of dust.",
+            "hint": "Listen for life-support hum that seems lighter and less grounded than on a surface.",
+            "explanation": "Lighter-seeming life-support hum in free fall identifies a spacecraft in outer space.",
+            "textToSpeak": "The spacecraft drifts in free fall; even the life-support hum seems to carry less weight.",
             "options": [
-                "Underground Vault",
                 "Orbital Station",
+                "Underground Vault",
                 "Outer Space",
                 "Deep Ocean"
             ],
@@ -50,28 +53,30 @@
         },
         {
             "id": "LIS_AMBIENTID_L142_Q1",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for lab molecular model 3D printing.",
-            "explanation": "3D printers creating molecular models indicate an advanced chemical lab.",
-            "textToSpeak": "The soft whir of a 3D printer creating a complex molecular model is heard.",
+            "hint": "Listen for the most precise and quietest possible machine hum of a molecular-scale device.",
+            "explanation": "Molecular-scale printing identifies the most advanced tier of a scientific laboratory.",
+            "textToSpeak": "A 3D molecular printer whirs continuously as it assembles a structure atom by atom.",
             "options": [
-                "Laboratory",
-                "Cyber City",
                 "Military Base",
-                "Modern Hospital"
+                "Cyber City",
+                "Modern Hospital",
+                "Laboratory"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L142_Q2",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for military yard officer orders.",
-            "explanation": "Officer orders and stomping boots are signature to military bases.",
-            "textToSpeak": "The rhythmic stomping of boots and the barked orders of officers echo in the yard.",
+            "hint": "Listen for the faint distant sound of military formation commands heard from outside a facility.",
+            "explanation": "Faint pre-dawn military commands heard from outside a perimeter identify a military base.",
+            "textToSpeak": "Pre-dawn formation calls are barely audible from outside the base perimeter.",
             "options": [
-                "Busy Airport",
                 "Train Station",
+                "Busy Airport",
                 "Military Base",
                 "Construction Site"
             ],
@@ -80,10 +85,11 @@
         },
         {
             "id": "LIS_AMBIENTID_L142_Q3",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for deep ocean volcanic vents.",
-            "explanation": "Tube worms near volcanic vents identify the deep ocean floor.",
-            "textToSpeak": "A colony of tube worms sways in the heat of a volcanic vent on the floor.",
+            "hint": "Listen for the hiss of extreme heat from a seafloor vent in a completely dark, pressurized environment.",
+            "explanation": "Extreme volcanic vent heat in complete deep-water darkness identifies the deep ocean floor.",
+            "textToSpeak": "Volcanic vent tube worms sway in heat that would be fatal to most life forms.",
             "options": [
                 "Outer Space",
                 "Dense Forest",
@@ -95,250 +101,267 @@
         },
         {
             "id": "LIS_AMBIENTID_L143_Q1",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for vault subway rumblings.",
-            "explanation": "Subway rumbles near stone corridors suggest an underground vault.",
-            "textToSpeak": "Distant rumbling suggests a subway train is passing through a tunnel nearby.",
+            "hint": "Listen for an intermittent brief shudder in an underground space, caused by above-ground transit.",
+            "explanation": "Brief shuddering from above-ground transit identifies an underground vault beneath a transit line.",
+            "textToSpeak": "Subway trains run directly above, the vault shuddering briefly every few minutes.",
             "options": [
-                "Underground Vault",
-                "Public Library",
                 "Construction Site",
-                "Military Base"
+                "Public Library",
+                "Military Base",
+                "Underground Vault"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L143_Q2",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for station observation deck views.",
-            "explanation": "Earth spinning viewed from an observation deck identifies an orbital station.",
-            "textToSpeak": "The view from the observation deck shows the Earth spinning far below.",
+            "hint": "Listen for the station's hum as the day-night line creeps across the visible globe in silence.",
+            "explanation": "Earth's visible day-night line in station silence identifies an orbital station observation deck.",
+            "textToSpeak": "The observation deck reveals Earth's day-night line slowly crossing the globe below.",
             "options": [
-                "Cyber City",
                 "Outer Space",
+                "Orbital Station",
                 "Busy Airport",
-                "Orbital Station"
+                "Cyber City"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L143_Q3",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for temple ancient wisdom aroma.",
-            "explanation": "Heavy tradition and ancient wisdom characterize a sacred temple site.",
-            "textToSpeak": "The air feels heavy with the weight of tradition and ancient wisdom.",
+            "hint": "Listen for a silence that has texture and depth from centuries of accumulated resonance.",
+            "explanation": "Textured, deep sacred silence identifies an ancient temple site.",
+            "textToSpeak": "The temple stones have absorbed so much prayer that silence here is not empty.",
             "options": [
-                "Ancient Temple",
                 "Lush Farm",
-                "Mountain Peak",
-                "Public Library"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId"
-        },
-        {
-            "id": "LIS_AMBIENTID_L144_Q1",
-            "interactionType": "Echo Locator",
-            "hint": "Listen for airport duty-free luxury.",
-            "explanation": "Duty-free perfume and luxury goods identify an airport terminal.",
-            "textToSpeak": "Duty-free shops display an array of neon-colored perfumes and luxury goods.",
-            "options": [
-                "Cyber City",
-                "Shopping Mall",
-                "Train Station",
-                "Busy Airport"
+                "Public Library",
+                "Dense Forest",
+                "Ancient Temple"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId"
         },
         {
-            "id": "LIS_AMBIENTID_L144_Q2",
+            "id": "LIS_AMBIENTID_L144_Q1",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for train station concourse jazz.",
-            "explanation": "Jazz bands in a concourse identify a busy urban rail station.",
-            "textToSpeak": "A group of musicians in a jazz band plays a smooth melody in the concourse.",
+            "hint": "Listen for refrigeration hum beneath PA audio as layers of sound in a transit departure area.",
+            "explanation": "Layered refrigeration hum beneath PA audio identifies an airport duty-free departure area.",
+            "textToSpeak": "Refrigerated duty-free cabinets hum below the PA broadcasts in the departure area.",
+            "options": [
+                "Train Station",
+                "Cyber City",
+                "Busy Airport",
+                "Shopping Mall"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
+        },
+        {
+            "id": "LIS_AMBIENTID_L144_Q2",
+            "instruction": "Listen to the description and identify the location.",
+            "interactionType": "Echo Locator",
+            "hint": "Listen for the unique echo quality of a vaulted stone space that carries the acoustic ghost of steam.",
+            "explanation": "A steam-ghost echo quality in a vaulted stone transit hall identifies a historical train station.",
+            "textToSpeak": "The station's historical acoustic memory carries the ghost of steam in every echo.",
             "options": [
                 "Military Base",
                 "Train Station",
-                "Modern Hospital",
-                "Construction Site"
+                "Construction Site",
+                "Modern Hospital"
             ],
             "correctAnswerIndex": 1,
             "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L144_Q3",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for library historical volume margins.",
-            "explanation": "Worn margins and library history point to a public library.",
-            "textToSpeak": "The library's history is written in the margins of its many worn volumes.",
+            "hint": "Listen for the quality of silence that has been shaped by decades of careful scholarly use.",
+            "explanation": "Scholarly-quality silence shaped by generations of careful use identifies a library archive.",
+            "textToSpeak": "The archive room holds the sound of accumulated scholarly attention over generations.",
             "options": [
-                "Modern Hospital",
-                "Ancient Temple",
+                "Orbital Station",
                 "Underground Vault",
-                "Public Library"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId"
-        },
-        {
-            "id": "LIS_AMBIENTID_L145_Q1",
-            "interactionType": "Echo Locator",
-            "hint": "Listen for mall atrium prize applause.",
-            "explanation": "Prize wheel applause and mall bustle identify a shopping atrium.",
-            "textToSpeak": "A sudden burst of applause signals a lucky winner at the prize wheel.",
-            "options": [
-                "Luxury Restaurant",
-                "Busy Airport",
-                "Cyber City",
-                "Shopping Mall"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId"
-        },
-        {
-            "id": "LIS_AMBIENTID_L145_Q2",
-            "interactionType": "Echo Locator",
-            "hint": "Listen for restaurant celebration memories.",
-            "explanation": "Celebration and memory making are key to a luxury restaurant experience.",
-            "textToSpeak": "The restaurant is a place of celebration, where memories are made.",
-            "options": [
-                "Ancient Temple",
-                "Luxury Restaurant",
-                "Modern Hospital",
-                "Shopping Mall"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId"
-        },
-        {
-            "id": "LIS_AMBIENTID_L145_Q3",
-            "interactionType": "Echo Locator",
-            "hint": "Listen for park memorial bench history.",
-            "explanation": "Memorial benches and urban greens define an urban park.",
-            "textToSpeak": "The park's history is written in the names on its many memorial benches.",
-            "options": [
-                "Sandy Beach",
-                "City Park",
-                "Dense Forest",
-                "Lush Farm"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId"
-        },
-        {
-            "id": "LIS_AMBIENTID_L146_Q1",
-            "interactionType": "Echo Locator",
-            "hint": "Listen for hospital surgery silence.",
-            "explanation": "Surgery hush and miracle hope identify a modern hospital wing.",
-            "textToSpeak": "A sudden hush falls over the room as a difficult surgery is completed.",
-            "options": [
                 "Public Library",
-                "Military Base",
-                "Laboratory",
-                "Modern Hospital"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId"
-        },
-        {
-            "id": "LIS_AMBIENTID_L146_Q2",
-            "interactionType": "Echo Locator",
-            "hint": "Listen for site project milestone applause.",
-            "explanation": "Milestone applause and machinery point to a construction site.",
-            "textToSpeak": "A sudden burst of applause signals a major milestone in the project.",
-            "options": [
-                "Cyber City",
-                "Train Station",
-                "Construction Site",
-                "Military Base"
+                "Ancient Temple"
             ],
             "correctAnswerIndex": 2,
             "subtype": "ambientId"
         },
         {
-            "id": "LIS_AMBIENTID_L146_Q3",
+            "id": "LIS_AMBIENTID_L145_Q1",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for farm field animal sightings.",
-            "explanation": "Rare animal sightings in fields identify a rural farm estate.",
-            "textToSpeak": "A sudden hush falls over the farm as a rare animal is spotted in the fields.",
-            "options": [
-                "Lush Farm",
-                "City Park",
-                "Dense Forest",
-                "Mountain Peak"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId"
-        },
-        {
-            "id": "LIS_AMBIENTID_L147_Q1",
-            "interactionType": "Echo Locator",
-            "hint": "Listen for beach shell discovery silence.",
-            "explanation": "Finding rare shells and sand silence identify a sandy beach.",
-            "textToSpeak": "A sudden hush falls over the beach as a rare shell is found in the sand.",
-            "options": [
-                "City Park",
-                "Sandy Beach",
-                "Lush Farm",
-                "Deep Ocean"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId"
-        },
-        {
-            "id": "LIS_AMBIENTID_L147_Q2",
-            "interactionType": "Echo Locator",
-            "hint": "Listen for mountain goat sighting hush.",
-            "explanation": "Mountain goats and rocky ridges characterize a high peak.",
-            "textToSpeak": "A sudden hush falls over the peak as a rare mountain goat is spotted.",
-            "options": [
-                "Mountain Peak",
-                "Outer Space",
-                "Dense Forest",
-                "Sandy Beach"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId"
-        },
-        {
-            "id": "LIS_AMBIENTID_L147_Q3",
-            "interactionType": "Echo Locator",
-            "hint": "Listen for forest autumnal leaf swirls.",
-            "explanation": "Autumn leaves and ancient roots point to a wooded forest floor.",
-            "textToSpeak": "Dried leaves swirl in the autumn breeze, dancing across the roots of old maple trees.",
-            "options": [
-                "Dense Forest",
-                "City Park",
-                "Lush Farm",
-                "Ancient Temple"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId"
-        },
-        {
-            "id": "LIS_AMBIENTID_L148_Q1",
-            "interactionType": "Echo Locator",
-            "hint": "Listen for city neon chaotic mirrored lights.",
-            "explanation": "Reflective glass and chaotic mirrored lights define Cyber City at night.",
-            "textToSpeak": "Reflective glass walls mirror the chaotic dance of lights in the eternal night.",
+            "hint": "Listen for crowd movement converging on a central space following an announcement.",
+            "explanation": "Crowd convergence on a central space for a performance identifies a shopping mall event.",
+            "textToSpeak": "A fashion show announcement draws the crowd toward the central atrium stage.",
             "options": [
                 "Shopping Mall",
                 "Busy Airport",
-                "Construction Site",
-                "Cyber City"
+                "Cyber City",
+                "Luxury Restaurant"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
+        },
+        {
+            "id": "LIS_AMBIENTID_L145_Q2",
+            "instruction": "Listen to the description and identify the location.",
+            "interactionType": "Echo Locator",
+            "hint": "Listen for the rhythmic precision of service at a restaurant where nothing is left to chance.",
+            "explanation": "Precision-timed service rhythm identifies a luxury restaurant at its finest.",
+            "textToSpeak": "Each course arrives with a precision of timing that orchestrates the entire evening.",
+            "options": [
+                "Shopping Mall",
+                "Modern Hospital",
+                "Ancient Temple",
+                "Luxury Restaurant"
             ],
             "correctAnswerIndex": 3,
             "subtype": "ambientId"
         },
         {
-            "id": "LIS_AMBIENTID_L148_Q2",
+            "id": "LIS_AMBIENTID_L145_Q3",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for space black hole warping.",
-            "explanation": "Light warping and dark abysses identify a deep space anomaly.",
-            "textToSpeak": "A black hole warps the light of surrounding stars into a swirling, dark abyss.",
+            "hint": "Listen for the distinct and shifting sound layers of a park across a full day.",
+            "explanation": "Shifting daily sound layers in a park identify an urban green space across a full day.",
+            "textToSpeak": "The park's daily sounds shift through the day, marking time more truthfully than a clock.",
+            "options": [
+                "City Park",
+                "Sandy Beach",
+                "Lush Farm",
+                "Dense Forest"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
+        },
+        {
+            "id": "LIS_AMBIENTID_L146_Q1",
+            "instruction": "Listen to the description and identify the location.",
+            "interactionType": "Echo Locator",
+            "hint": "Listen for deep rhythmic thumping from a large medical imaging machine in a clinical corridor.",
+            "explanation": "MRI scan thumping identifies a modern hospital's diagnostic imaging department.",
+            "textToSpeak": "An MRI scan fills the corridor with its distinctive rhythmic thumping.",
+            "options": [
+                "Construction Site",
+                "Modern Hospital",
+                "Military Base",
+                "Laboratory"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
+        },
+        {
+            "id": "LIS_AMBIENTID_L146_Q2",
+            "instruction": "Listen to the description and identify the location.",
+            "interactionType": "Echo Locator",
+            "hint": "Listen for felt-through-feet rhythmic impacts that sync with visible structural hammer blows.",
+            "explanation": "Felt pile-driver impacts synchronized with visible hammering identify a construction site.",
+            "textToSpeak": "Pile driver impacts travel through the earth to the feet of workers across the site.",
+            "options": [
+                "Construction Site",
+                "Military Base",
+                "Train Station",
+                "Cyber City"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
+        },
+        {
+            "id": "LIS_AMBIENTID_L146_Q3",
+            "instruction": "Listen to the description and identify the location.",
+            "interactionType": "Echo Locator",
+            "hint": "Listen for the dense, warm hum of bees mixed with human activity among fruit trees.",
+            "explanation": "Dense bee hum with human harvest activity in fruit trees identifies a farm orchard.",
+            "textToSpeak": "An orchard in late harvest hums with bees as the pickers move between the trees.",
+            "options": [
+                "Dense Forest",
+                "Mountain Peak",
+                "Lush Farm",
+                "City Park"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
+        },
+        {
+            "id": "LIS_AMBIENTID_L147_Q1",
+            "instruction": "Listen to the description and identify the location.",
+            "interactionType": "Echo Locator",
+            "hint": "Listen for urgent paddling sounds and calling voices as a large wave forms.",
+            "explanation": "Urgent paddling and calling voices as a large wave approaches identify a sandy beach surf break.",
+            "textToSpeak": "Surfers paddle hard, calling to each other as the biggest wave of the day approaches.",
+            "options": [
+                "Sandy Beach",
+                "Lush Farm",
+                "City Park",
+                "Deep Ocean"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
+        },
+        {
+            "id": "LIS_AMBIENTID_L147_Q2",
+            "instruction": "Listen to the description and identify the location.",
+            "interactionType": "Echo Locator",
+            "hint": "Listen for a single sharp sound that generates multiple distinct echoes across a high valley.",
+            "explanation": "Multiple glacier-crack echoes across a high valley identify a glaciated mountain peak.",
+            "textToSpeak": "A rifle-shot crack from the glacier echoes and re-echoes across the high valley.",
+            "options": [
+                "Outer Space",
+                "Dense Forest",
+                "Mountain Peak",
+                "Sandy Beach"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
+        },
+        {
+            "id": "LIS_AMBIENTID_L147_Q3",
+            "instruction": "Listen to the description and identify the location.",
+            "interactionType": "Echo Locator",
+            "hint": "Listen for the deliberate, careful movement of a large animal at very close range in mist.",
+            "explanation": "Careful large-animal movement at the mist edge of a clearing identifies a forest clearing.",
+            "textToSpeak": "An unseen animal moves deliberately through the mist at the clearing's edge.",
+            "options": [
+                "Ancient Temple",
+                "Lush Farm",
+                "City Park",
+                "Dense Forest"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
+        },
+        {
+            "id": "LIS_AMBIENTID_L148_Q1",
+            "instruction": "Listen to the description and identify the location.",
+            "interactionType": "Echo Locator",
+            "hint": "Listen for a simultaneous, city-wide electronic flicker and brief audio drop followed by recovery.",
+            "explanation": "A synchronized city-wide flicker and audio drop identify a cyber city power grid event.",
+            "textToSpeak": "The city's power grid surges and all neon signs flicker in synchronized momentary darkness.",
+            "options": [
+                "Construction Site",
+                "Cyber City",
+                "Busy Airport",
+                "Shopping Mall"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
+        },
+        {
+            "id": "LIS_AMBIENTID_L148_Q2",
+            "instruction": "Listen to the description and identify the location.",
+            "interactionType": "Echo Locator",
+            "hint": "Listen for a new, previously unheard instrument alarm tone as a gravitational anomaly is detected.",
+            "explanation": "A new anomaly alarm on instruments identifies a spacecraft encountering a black hole.",
+            "textToSpeak": "Gravitational distortion instruments alert the crew to a black hole's proximity.",
             "options": [
                 "Outer Space",
                 "Orbital Station",
@@ -350,107 +373,114 @@
         },
         {
             "id": "LIS_AMBIENTID_L148_Q3",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for lab particle accelerator scent.",
-            "explanation": "Particle accelerators and ozone scents identify a physics laboratory.",
-            "textToSpeak": "The scent of ozone lingers near the high-voltage particle accelerator.",
+            "hint": "Listen for peak-voltage buzzing affecting all electronic devices simultaneously in a lab.",
+            "explanation": "Peak voltage affecting all lab electronics simultaneously identifies a particle physics lab.",
+            "textToSpeak": "The particle accelerator reaches peak voltage and every electronic device in the room buzzes.",
             "options": [
-                "Public Library",
-                "Modern Hospital",
+                "Construction Site",
+                "Military Base",
                 "Laboratory",
-                "Military Base"
+                "Modern Hospital"
             ],
             "correctAnswerIndex": 2,
             "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L149_Q1",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for military administrative starch smell.",
-            "explanation": "Administrative starch and floor wax identify a military headquarters.",
-            "textToSpeak": "The scent of floor wax and starch is prominent in the administrative offices.",
+            "hint": "Listen for an exactly timed radio check that repeats with perfect precision through the night.",
+            "explanation": "Precisely timed night radio checks identify a military base security protocol.",
+            "textToSpeak": "The night patrol's radio check comes precisely on the hour, every hour without exception.",
             "options": [
-                "Military Base",
-                "Construction Site",
-                "Modern Hospital",
-                "Train Station"
+                "Underground Vault",
+                "Cyber City",
+                "Train Station",
+                "Military Base"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
+        },
+        {
+            "id": "LIS_AMBIENTID_L149_Q2",
+            "instruction": "Listen to the description and identify the location.",
+            "interactionType": "Echo Locator",
+            "hint": "Listen for a single anomalous sonar return that appears briefly and then vanishes.",
+            "explanation": "A brief anomalous large sonar contact in the deep identifies the deep ocean.",
+            "textToSpeak": "A sonar contact of extraordinary size registers on the instruments and disappears.",
+            "options": [
+                "Outer Space",
+                "Deep Ocean",
+                "Dense Forest",
+                "Sandy Beach"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
+        },
+        {
+            "id": "LIS_AMBIENTID_L149_Q3",
+            "instruction": "Listen to the description and identify the location.",
+            "interactionType": "Echo Locator",
+            "hint": "Listen for a quality of silence in which even the faintest breath sounds extraordinarily loud.",
+            "explanation": "Preserved interior silence in which breath sounds magnify identifies an underground vault.",
+            "textToSpeak": "The vault's sealed atmosphere has preserved not just documents but silence itself.",
+            "options": [
+                "Underground Vault",
+                "Ancient Temple",
+                "Laboratory",
+                "Public Library"
             ],
             "correctAnswerIndex": 0,
             "subtype": "ambientId"
         },
         {
-            "id": "LIS_AMBIENTID_L149_Q2",
+            "id": "LIS_AMBIENTID_L150_Q1",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for deep ocean marine snow visual.",
-            "explanation": "Marine snow and light beams identify the deep sea abyss.",
-            "textToSpeak": "Marine snow falls constantly, looking like white flakes in the beam of the light.",
+            "hint": "Listen for the continuous low-level electronic hum of distributed health monitoring systems.",
+            "explanation": "Distributed health monitoring hum identifies an orbital station's medical systems.",
+            "textToSpeak": "Biosensor monitors track crew health across the station in a continuous data hum.",
             "options": [
-                "Dense Forest",
-                "Sandy Beach",
                 "Outer Space",
-                "Deep Ocean"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId"
-        },
-        {
-            "id": "LIS_AMBIENTID_L149_Q3",
-            "interactionType": "Echo Locator",
-            "hint": "Listen for vault dusty lock layers.",
-            "explanation": "Dusty locks and history point to a secured underground vault.",
-            "textToSpeak": "The vault's history is written in the layers of dust on its many locked doors.",
-            "options": [
-                "Ancient Temple",
-                "Underground Vault",
-                "Construction Site",
-                "Laboratory"
+                "Orbital Station",
+                "Cyber City",
+                "Busy Airport"
             ],
             "correctAnswerIndex": 1,
-            "subtype": "ambientId"
-        },
-        {
-            "id": "LIS_AMBIENTID_L150_Q1",
-            "interactionType": "Echo Locator",
-            "hint": "Listen for station orbital awe and peace.",
-            "explanation": "Cosmic awe and quiet peace characterize life on an orbital station.",
-            "textToSpeak": "Looking out at the galaxy, you feel a deep sense of awe and quiet peace.",
-            "options": [
-                "Busy Airport",
-                "Cyber City",
-                "Outer Space",
-                "Orbital Station"
-            ],
-            "correctAnswerIndex": 3,
             "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L150_Q2",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for temple flickering light peace.",
-            "explanation": "Flickering light and sacred peace identify an ancient temple courtyard.",
-            "textToSpeak": "The temple at night is a place of shadows and flickering light and peace.",
+            "hint": "Listen for a fire whose crackle seems to carry a deliberate, almost musical rhythm.",
+            "explanation": "A rhythmically crackling offering fire identifies an ancient temple inner sanctum.",
+            "textToSpeak": "The offering fire in the inner sanctum crackles with a rhythm that feels intentional.",
             "options": [
-                "Dense Forest",
-                "Ancient Temple",
                 "City Park",
-                "Mountain Peak"
+                "Mountain Peak",
+                "Dense Forest",
+                "Ancient Temple"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L150_Q3",
+            "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for airport gateway mystery.",
-            "explanation": "Global gateways and mystery identify a busy airport terminal.",
-            "textToSpeak": "The airport is a gateway to the world, a place of mystery and adventure.",
+            "hint": "Listen for the burst of noise and emotion as passengers exit into the arrivals area.",
+            "explanation": "A burst of arrival noise and emotion identifies a busy airport arrivals gate.",
+            "textToSpeak": "An airport arrival gate releases its human freight in a wave of noise and emotion.",
             "options": [
-                "Train Station",
+                "Busy Airport",
                 "Shopping Mall",
                 "Cyber City",
-                "Busy Airport"
+                "Train Station"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "ambientId"
         }
     ]
