@@ -247,7 +247,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                 GameDialogHelper.showHintAdDialog(
                   context,
                   onHintEarned: () {
-                    if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
                     bloc.add(ShowEliteHint());
                   },
                 );
