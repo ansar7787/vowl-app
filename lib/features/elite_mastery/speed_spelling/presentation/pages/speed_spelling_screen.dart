@@ -201,8 +201,8 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: "LEXICAL BLITZ",
-          subtitle: quest?.instruction ?? "Master the Spelling",
+          title: (quest?.instruction ?? "Spell the word.").toUpperCase(),
+          subtitle: "",
           onContinue: () {
             setState(() {
               _isAnswered = false;
