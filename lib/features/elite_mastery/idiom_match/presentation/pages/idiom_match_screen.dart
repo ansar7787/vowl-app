@@ -325,34 +325,23 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
 
         return Column(
           children: [
-            GlassTile(
-              borderRadius: BorderRadius.circular(isCompact ? 24.r : 32.r),
-              padding: EdgeInsets.all(isCompact ? 20.r : 30.r),
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.25)
-                  : Colors.white.withValues(alpha: 0.9),
-              child: Column(
-                children: [
-                  Icon(
-                    Icons.auto_awesome_rounded,
-                    color: isDark ? Colors.white : theme.primaryColor,
-                    size: isCompact ? 26.r : 32.r,
+            if (quest.question != null && quest.question!.isNotEmpty) ...[
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Text(
+                  quest.question!,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: isCompact ? 16.sp : 18.sp,
+                    fontWeight: FontWeight.w600,
+                    color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF0F172A),
+                    height: 1.4,
                   ),
-                  SizedBox(height: isCompact ? 10.h : 16.h),
-                  Text(
-                    quest.idiom ?? "??",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: isCompact ? 18.sp : 22.sp,
-                      fontWeight: FontWeight.w700,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      height: 1.2,
-                    ),
-                  ),
-                ],
+                ),
               ),
-            ),
+              SizedBox(height: isCompact ? 16.h : 24.h),
+            ],
             if (state.isHintVisible) ...[
               SizedBox(height: isCompact ? 12.h : 20.h),
               EliteHintCard(
