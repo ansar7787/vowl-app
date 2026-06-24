@@ -225,6 +225,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                 GameDialogHelper.showHintAdDialog(
                   context,
                   onHintEarned: () {
+                    if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
                     bloc.add(ShowEliteHint());
                   },
                 );
