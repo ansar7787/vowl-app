@@ -183,11 +183,13 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                           fit: BoxFit.scaleDown,
                                           child: AudioMultipleChoiceInstruction(
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
                                         ),
                                       )
                                     : AudioMultipleChoiceInstruction(
                                         color: theme.primaryColor,
+                                        instruction: quest.instruction,
                                       ),
                                 SizedBox(height: gapInstruction),
                                 isCompact

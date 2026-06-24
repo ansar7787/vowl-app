@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class AudioMultipleChoiceInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const AudioMultipleChoiceInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -26,7 +29,7 @@ class AudioMultipleChoiceInstruction extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(
-                "SPIN SATELLITES TO LOCK IN CORRECT DATA",
+                instruction.toUpperCase(),
                 style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
