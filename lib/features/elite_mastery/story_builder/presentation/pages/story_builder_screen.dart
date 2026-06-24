@@ -202,8 +202,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: "STORY ARCHITECT",
-          subtitle: quest?.instruction ?? "Restore the story's narrative flow",
+          title: quest?.instruction ?? "Story Architect: Read the sentences and arrange them in the correct order.",
           visualConfig: _visualConfig,
           onContinue: () {
             setState(() {
