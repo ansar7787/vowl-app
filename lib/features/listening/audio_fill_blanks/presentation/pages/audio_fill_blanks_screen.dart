@@ -305,11 +305,15 @@ class _AudioFillBlanksContent extends StatelessWidget {
                             child: FittedBox(
                               fit: BoxFit.scaleDown,
                               child: AudioFillBlanksInstruction(
+                                instruction: quest.instruction ?? 'LISTEN TO THE AUDIO AND TYPE THE MISSING WORD',
                                 color: theme.primaryColor,
                               ),
                             ),
                           )
-                        : AudioFillBlanksInstruction(color: theme.primaryColor),
+                        : AudioFillBlanksInstruction(
+                            instruction: quest.instruction ?? 'LISTEN TO THE AUDIO AND TYPE THE MISSING WORD',
+                            color: theme.primaryColor,
+                          ),
 
                     SizedBox(height: gapInstruction),
 
