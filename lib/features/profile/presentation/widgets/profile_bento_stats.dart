@@ -7,30 +7,25 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 class ProfileBentoStats extends StatelessWidget {
   final UserEntity user;
 
-  const ProfileBentoStats({
-    super.key,
-    required this.user,
-  });
+  const ProfileBentoStats({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        _buildAdventureLevelCard(context),
-
+        _AdventureLevelCard(user: user),
         SizedBox(height: 16.h),
-
         Row(
           children: [
             Expanded(
-              child: _buildStatPod(
-                context: context,
-                title: 'Vowl Treasury',
+              child: _StatPod(
+                title: context.tr('profile.vowl_treasury'),
                 value: '${user.coins}',
                 icon: Icons.paid_rounded,
                 color: const Color(0xFF10B981),
@@ -39,10 +34,12 @@ class ProfileBentoStats extends StatelessWidget {
             ),
             SizedBox(width: 16.w),
             Expanded(
-              child: _buildStatPod(
-                context: context,
-                title: 'Daily Streak',
-                value: '${user.currentStreak} Days',
+              child: _StatPod(
+                title: context.tr('profile.daily_streak'),
+                value: context.tr(
+                  'profile.streak_days',
+                  args: ['${user.currentStreak}'],
+                ),
                 icon: Icons.local_fire_department_rounded,
                 color: const Color(0xFFEF4444),
                 onTap: () => context.push(AppRouter.streakRoute),
@@ -50,15 +47,24 @@ class ProfileBentoStats extends StatelessWidget {
             ),
           ],
         ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.1),
-
         SizedBox(height: 16.h),
-
-        _buildAdventureXPCard(context).animate().fadeIn(delay: 400.ms).slideY(begin: 0.1),
+        _AdventureXPCard(
+          user: user,
+        ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.1),
       ],
     );
   }
+}
 
-  Widget _buildAdventureLevelCard(BuildContext context) {
+class _AdventureLevelCard extends StatelessWidget {
+  final UserEntity user;
+
+  const _AdventureLevelCard({required this.user});
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return ScaleButton(
       onTap: () => context.push(AppRouter.levelRoute),
       child: GlassTile(
@@ -88,8 +94,9 @@ class ProfileBentoStats extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'CURRENT LEVEL',
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    context.tr('profile.current_level_label'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w800,
                       color: const Color(0xFF8B5CF6),
@@ -98,23 +105,25 @@ class ProfileBentoStats extends StatelessWidget {
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    'Level ${user.level}',
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    context.tr('profile.level_value', args: ['${user.level}']),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 26.sp,
                       fontWeight: FontWeight.w900,
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white
-                          : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
                     ),
                   ),
                   Text(
-                    'Tap to view rank details',
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    context.tr('profile.tap_view_rank_details'),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white38
-                          : Colors.black38,
+                      color: isDark ? Colors.white38 : Colors.black38,
                     ),
                   ),
                 ],
@@ -122,9 +131,7 @@ class ProfileBentoStats extends StatelessWidget {
             ),
             Icon(
               Icons.chevron_right_rounded,
-              color: Theme.of(context).brightness == Brightness.dark
-                  ? Colors.white24
-                  : Colors.black12,
+              color: isDark ? Colors.white24 : Colors.black12,
               size: 28.r,
             ),
           ],
@@ -132,8 +139,15 @@ class ProfileBentoStats extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buildAdventureXPCard(BuildContext context) {
+class _AdventureXPCard extends StatelessWidget {
+  final UserEntity user;
+
+  const _AdventureXPCard({required this.user});
+
+  @override
+  Widget build(BuildContext context) {
     final xpProgress = (user.totalExp % 100) / 100;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -164,8 +178,9 @@ class ProfileBentoStats extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'ADVENTURE XP',
-                        style: TextStyle(fontFamily: 'Outfit', 
+                        context.tr('profile.adventure_xp_label'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w800,
                           color: const Color(0xFF3B82F6),
@@ -173,8 +188,14 @@ class ProfileBentoStats extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '${user.totalExp} Total Experience',
-                        style: TextStyle(fontFamily: 'Outfit', 
+                        context.tr(
+                          'profile.total_experience',
+                          args: ['${user.totalExp}'],
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w900,
                           color: isDark
@@ -199,20 +220,27 @@ class ProfileBentoStats extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'PROGRESS TO LEVEL ${user.level + 1}',
-                      style: TextStyle(fontFamily: 'Outfit', 
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w800,
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? Colors.white38
-                            : Colors.black38,
-                        letterSpacing: 0.5,
+                    Flexible(
+                      child: Text(
+                        context.tr(
+                          'profile.progress_to_level',
+                          args: ['${user.level + 1}'],
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w800,
+                          color: isDark ? Colors.white38 : Colors.black38,
+                          letterSpacing: 0.5,
+                        ),
                       ),
                     ),
                     Text(
                       '${(xpProgress * 100).toInt()}%',
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w900,
                         color: const Color(0xFF3B82F6),
@@ -221,32 +249,53 @@ class ProfileBentoStats extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 10.h),
-                Stack(
-                  children: [
-                    Container(
-                      height: 10.h,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        borderRadius: BorderRadius.circular(10.r),
-                      ),
-                    ),
-                    AnimatedContainer(
-                      duration: 800.ms,
-                      height: 10.h,
-                      width:
-                          (MediaQuery.of(context).size.width - 96.w) *
-                          xpProgress,
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [Color(0xFF3B82F6), Color(0xFF60A5FA)],
+                // MAINTAINABILITY / CORRECTNESS FIX: the original computed
+                // this bar's width as `(MediaQuery.of(context).size.width -
+                // 96.w) * xpProgress`. The `96.w` magic number only "worked"
+                // because it happened to match 2x the screen's outer
+                // horizontal padding (in profile_screen.dart) plus 2x this
+                // card's own padding - two values defined in two other
+                // files. Any future change to either padding silently
+                // breaks this bar's width with no compile error. It also
+                // used the broad `MediaQuery.of(context).size`, which
+                // rebuilds this whole widget on *any* MediaQuery change
+                // (keyboard insets, orientation, text scale), not just
+                // width changes.
+                //
+                // Fixed with `LayoutBuilder`, which reports the *actual*
+                // width this widget was given by its real parent - no
+                // magic numbers, no dependency on padding values defined
+                // in other files, and no MediaQuery subscription at all.
+                // The animation itself (duration/curve) is unchanged.
+                LayoutBuilder(
+                  builder: (context, trackConstraints) {
+                    final trackWidth = trackConstraints.maxWidth;
+                    return Stack(
+                      children: [
+                        Container(
+                          height: 10.h,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: isDark
+                                ? Colors.white10
+                                : Colors.black.withValues(alpha: 0.05),
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
                         ),
-                        borderRadius: BorderRadius.circular(10.r),
-                      ),
-                    ),
-                  ],
+                        AnimatedContainer(
+                          duration: 800.ms,
+                          height: 10.h,
+                          width: trackWidth * xpProgress.clamp(0.0, 1.0),
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: [Color(0xFF3B82F6), Color(0xFF60A5FA)],
+                            ),
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ],
             ),
@@ -255,15 +304,27 @@ class ProfileBentoStats extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buildStatPod({
-    required BuildContext context,
-    required String title,
-    required String value,
-    required IconData icon,
-    required Color color,
-    required VoidCallback onTap,
-  }) {
+class _StatPod extends StatelessWidget {
+  final String title;
+  final String value;
+  final IconData icon;
+  final Color color;
+  final VoidCallback onTap;
+
+  const _StatPod({
+    required this.title,
+    required this.value,
+    required this.icon,
+    required this.color,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return ScaleButton(
       onTap: () {
         di.sl<HapticService>().light();
@@ -288,23 +349,24 @@ class ProfileBentoStats extends StatelessWidget {
               fit: BoxFit.scaleDown,
               child: Text(
                 value,
-                style: TextStyle(fontFamily: 'Outfit', 
+                maxLines: 1,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w900,
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white
-                      : const Color(0xFF0F172A),
+                  color: isDark ? Colors.white : const Color(0xFF0F172A),
                 ),
               ),
             ),
             Text(
               title,
-              style: TextStyle(fontFamily: 'Outfit', 
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 11.sp,
                 fontWeight: FontWeight.w700,
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white38
-                    : Colors.black38,
+                color: isDark ? Colors.white38 : Colors.black38,
               ),
             ),
           ],

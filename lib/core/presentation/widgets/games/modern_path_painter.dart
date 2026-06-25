@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:vowl/core/presentation/widgets/games/dashed_path_utils.dart';
 
 /// A performant CustomPainter to draw curvilinear curvy snake level pathways.
 class ModernPathPainter extends CustomPainter {
@@ -15,7 +16,10 @@ class ModernPathPainter extends CustomPainter {
     this.thickness = 6.0,
     this.dashWidth = 10.0,
     this.dashSpace = 8.0,
-  }) : assert(dashWidth > 0, 'dashWidth must be strictly positive to prevent infinite loops'),
+  }) : assert(
+         dashWidth > 0,
+         'dashWidth must be strictly positive to prevent infinite loops',
+       ),
        assert(dashSpace >= 0, 'dashSpace must be non-negative');
 
   @override
@@ -37,38 +41,24 @@ class ModernPathPainter extends CustomPainter {
 
       final midY = (p0.dy + p1.dy) / 2;
 
-      path.quadraticBezierTo(
-        p0.dx,
-        midY,
-        p1.dx,
-        p1.dy,
-      );
+      path.quadraticBezierTo(p0.dx, midY, p1.dx, p1.dy);
     }
 
-    _drawDashedPath(canvas, path, paint);
-  }
-
-  void _drawDashedPath(Canvas canvas, Path path, Paint paint) {
-    double distance = 0.0;
-
-    for (final pathMetric in path.computeMetrics()) {
-      while (distance < pathMetric.length) {
-        canvas.drawPath(
-          pathMetric.extractPath(distance, distance + dashWidth),
-          paint,
-        );
-        distance += dashWidth + dashSpace;
-      }
-      distance = 0.0;
-    }
+    drawDashedPath(
+      canvas,
+      path,
+      paint,
+      dashWidth: dashWidth,
+      dashSpace: dashSpace,
+    );
   }
 
   @override
   bool shouldRepaint(covariant ModernPathPainter oldDelegate) {
-    return oldDelegate.color != color || 
-           oldDelegate.thickness != thickness || 
-           oldDelegate.dashWidth != dashWidth || 
-           oldDelegate.dashSpace != dashSpace || 
-           !listEquals(oldDelegate.points, points);
+    return oldDelegate.color != color ||
+        oldDelegate.thickness != thickness ||
+        oldDelegate.dashWidth != dashWidth ||
+        oldDelegate.dashSpace != dashSpace ||
+        !listEquals(oldDelegate.points, points);
   }
 }

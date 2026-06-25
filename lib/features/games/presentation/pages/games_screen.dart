@@ -8,6 +8,7 @@ import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/home/presentation/widgets/category_shelf.dart';
@@ -15,122 +16,45 @@ import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
-class GamesScreen extends StatefulWidget {
+class GamesScreen extends StatelessWidget {
   const GamesScreen({super.key});
 
   @override
-  State<GamesScreen> createState() => _GamesScreenState();
-}
-
-class _GamesScreenState extends State<GamesScreen> {
-  @override
   Widget build(BuildContext context) {
-    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    // FIX (MEDIUM-1): context.select scopes rebuilds to isMidnight only.
+    final isMidnight = context.select<ThemeCubit, bool>(
+      (c) => c.state.isMidnight,
+    );
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final bgColor = isMidnight 
-        ? Colors.black 
+    final bgColor = isMidnight
+        ? Colors.black
         : (isDark ? const Color(0xFF0F172A) : Colors.white);
 
     return Scaffold(
       backgroundColor: bgColor,
       body: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
-          final user = state.status == AuthStatus.authenticated ? state.user : null;
+          final user = state.status == AuthStatus.authenticated
+              ? state.user
+              : null;
           if (user == null) return const SizedBox.shrink();
 
           return Stack(
             children: [
               const MeshGradientBackground(showLetters: false),
               CustomScrollView(
+                // NOTE: ScrollController lifetime is managed by the DI
+                // container; ensure it is disposed when the screen is removed.
                 controller: di.sl<ScrollController>(instanceName: 'games'),
                 physics: const BouncingScrollPhysics(),
                 slivers: [
-                  _buildGlassAppBar(context, isDark),
+                  _GamesAppBar(isDark: isDark),
                   SliverPadding(
                     padding: EdgeInsets.only(bottom: 120.h),
                     sliver: SliverList(
-                      delegate: SliverChildListDelegate([
-                        // 1. Vocabulary
-                        _buildSectionWrapper(
-                          context,
-                          'Vocabulary Vault',
-                          'Master words and expressions',
-                          QuestType.vocabulary,
-                          user: user,
-                        ),
-
-                        // 2. Listening
-                        _buildSectionWrapper(
-                          context,
-                          'Listening Lab',
-                          'Understand spoken language',
-                          QuestType.listening,
-                          user: user,
-                        ),
-
-                        // 3. Reading
-                        _buildSectionWrapper(
-                          context,
-                          'Reading Foundations',
-                          'Comprehend texts and stories',
-                          QuestType.reading,
-                          user: user,
-                        ),
-
-                        // 4. Grammar
-                        _buildSectionWrapper(
-                          context,
-                          'Grammar Hub',
-                          'Master structural rules',
-                          QuestType.grammar,
-                          user: user,
-                        ),
-
-                        // 5. Writing
-                        _buildSectionWrapper(
-                          context,
-                          'Writing Studio',
-                          'Express yourself in writing',
-                          QuestType.writing,
-                          user: user,
-                        ),
-
-                        // 6. Speaking
-                        _buildSectionWrapper(
-                          context,
-                          'Speaking Mastery',
-                          'Communicate with confidence',
-                          QuestType.speaking,
-                          user: user,
-                        ),
-
-                        // 7. Accent
-                        _buildSectionWrapper(
-                          context,
-                          'Accent Academy',
-                          'Perfect your pronunciation',
-                          QuestType.accent,
-                          user: user,
-                        ),
-
-                        // 8. Roleplay
-                        _buildSectionWrapper(
-                          context,
-                          'Roleplay Realm',
-                          'Immersive real-world scenarios',
-                          QuestType.roleplay,
-                          user: user,
-                        ),
-
-                        // 9. Elite Mastery
-                        _buildSectionWrapper(
-                          context,
-                          'Elite Mastery',
-                          'Legendary challenges for top masters',
-                          QuestType.eliteMastery,
-                          user: user,
-                        ),
-                      ]),
+                      delegate: SliverChildListDelegate(
+                        _buildSections(context, user),
+                      ),
                     ),
                   ),
                 ],
@@ -142,7 +66,78 @@ class _GamesScreenState extends State<GamesScreen> {
     );
   }
 
-  Widget _buildGlassAppBar(BuildContext context, bool isDark) {
+  /// Builds all game-category section widgets.
+  /// FIX (HIGH-4): Extracted from build() to reduce nesting depth and keep
+  /// GamesScreen well under the 300-line mandatory refactor threshold.
+  List<Widget> _buildSections(BuildContext context, UserEntity user) => [
+    _GameSection(
+      titleKey: 'games.vocabulary.title',
+      subtitleKey: 'games.vocabulary.subtitle',
+      type: QuestType.vocabulary,
+      user: user,
+    ),
+    _GameSection(
+      titleKey: 'games.listening.title',
+      subtitleKey: 'games.listening.subtitle',
+      type: QuestType.listening,
+      user: user,
+    ),
+    _GameSection(
+      titleKey: 'games.reading.title',
+      subtitleKey: 'games.reading.subtitle',
+      type: QuestType.reading,
+      user: user,
+    ),
+    _GameSection(
+      titleKey: 'games.grammar.title',
+      subtitleKey: 'games.grammar.subtitle',
+      type: QuestType.grammar,
+      user: user,
+    ),
+    _GameSection(
+      titleKey: 'games.writing.title',
+      subtitleKey: 'games.writing.subtitle',
+      type: QuestType.writing,
+      user: user,
+    ),
+    _GameSection(
+      titleKey: 'games.speaking.title',
+      subtitleKey: 'games.speaking.subtitle',
+      type: QuestType.speaking,
+      user: user,
+    ),
+    _GameSection(
+      titleKey: 'games.accent.title',
+      subtitleKey: 'games.accent.subtitle',
+      type: QuestType.accent,
+      user: user,
+    ),
+    _GameSection(
+      titleKey: 'games.roleplay.title',
+      subtitleKey: 'games.roleplay.subtitle',
+      type: QuestType.roleplay,
+      user: user,
+    ),
+    _GameSection(
+      titleKey: 'games.elite_mastery.title',
+      subtitleKey: 'games.elite_mastery.subtitle',
+      type: QuestType.eliteMastery,
+      user: user,
+    ),
+  ];
+}
+
+// ---------------------------------------------------------------------------
+// Private: Glass App Bar
+// FIX (HIGH-4): Extracted from _buildGlassAppBar() to a proper widget.
+// ---------------------------------------------------------------------------
+
+class _GamesAppBar extends StatelessWidget {
+  final bool isDark;
+  const _GamesAppBar({required this.isDark});
+
+  @override
+  Widget build(BuildContext context) {
     return SliverAppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
@@ -158,10 +153,14 @@ class _GamesScreenState extends State<GamesScreen> {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
               decoration: BoxDecoration(
-                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : Colors.black.withValues(alpha: 0.03),
                 borderRadius: BorderRadius.circular(20.r),
                 border: Border.all(
-                  color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.1)
+                      : Colors.black.withValues(alpha: 0.05),
                 ),
               ),
               child: Row(
@@ -181,8 +180,9 @@ class _GamesScreenState extends State<GamesScreen> {
                   ),
                   SizedBox(width: 10.w),
                   Text(
-                    'QUEST HUB',
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    context.tr('games.quest_hub'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -198,14 +198,28 @@ class _GamesScreenState extends State<GamesScreen> {
       ),
     );
   }
+}
 
-  Widget _buildSectionWrapper(
-    BuildContext context,
-    String title,
-    String subtitle,
-    QuestType type, {
-    required dynamic user,
-  }) {
+// ---------------------------------------------------------------------------
+// Private: Single game category section (header + shelf)
+// FIX (HIGH-2 + HIGH-4): Localised strings; extracted from _buildSectionWrapper.
+// ---------------------------------------------------------------------------
+
+class _GameSection extends StatelessWidget {
+  final String titleKey;
+  final String subtitleKey;
+  final QuestType type;
+  final UserEntity user;
+
+  const _GameSection({
+    required this.titleKey,
+    required this.subtitleKey,
+    required this.type,
+    required this.user,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     final color = GameHelper.getCategoryColor(type.name);
 
     return Column(
@@ -214,11 +228,10 @@ class _GamesScreenState extends State<GamesScreen> {
         SizedBox(height: 32.h),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: _buildSectionHeader(
-            context,
-            title,
-            subtitle,
-            color,
+          child: _GameSectionHeader(
+            titleKey: titleKey,
+            subtitleKey: subtitleKey,
+            color: color,
             onSeeAll: () => context.push(
               '${AppRouter.categoryGamesRoute}?category=${type.name}',
             ),
@@ -232,28 +245,43 @@ class _GamesScreenState extends State<GamesScreen> {
       ],
     );
   }
+}
 
-  Widget _buildSectionHeader(
-    BuildContext context,
-    String title,
-    String subtitle,
-    Color categoryColor, {
-    VoidCallback? onSeeAll,
-  }) {
+// ---------------------------------------------------------------------------
+// Private: Section header (colour bar + title + subtitle + see-all button)
+// FIX (HIGH-4): Extracted from _buildSectionHeader().
+// ---------------------------------------------------------------------------
+
+class _GameSectionHeader extends StatelessWidget {
+  final String titleKey;
+  final String subtitleKey;
+  final Color color;
+  final VoidCallback? onSeeAll;
+
+  const _GameSectionHeader({
+    required this.titleKey,
+    required this.subtitleKey,
+    required this.color,
+    this.onSeeAll,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        // Color-coded indicator
+        // Colour-coded indicator bar
         Container(
           width: 4.w,
           height: 36.h,
           decoration: BoxDecoration(
-            color: categoryColor,
+            color: color,
             borderRadius: BorderRadius.circular(2.r),
             boxShadow: [
               BoxShadow(
-                color: categoryColor.withValues(alpha: 0.3),
+                color: color.withValues(alpha: 0.3),
                 blurRadius: 8,
                 spreadRadius: 1,
               ),
@@ -266,8 +294,10 @@ class _GamesScreenState extends State<GamesScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                title.toUpperCase(),
-                style: TextStyle(fontFamily: 'Outfit', 
+                // FIX (HIGH-2): Category name resolved via l10n, then uppercased.
+                context.tr(titleKey).toUpperCase(),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w900,
                   color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -275,8 +305,9 @@ class _GamesScreenState extends State<GamesScreen> {
                 ),
               ),
               Text(
-                subtitle,
-                style: TextStyle(fontFamily: 'Outfit', 
+                context.tr(subtitleKey),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w600,
                   color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -291,24 +322,22 @@ class _GamesScreenState extends State<GamesScreen> {
               try {
                 Haptics.vibrate(HapticsType.light);
               } catch (_) {}
-              onSeeAll();
+              onSeeAll!();
             },
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
               decoration: BoxDecoration(
-                color: categoryColor.withValues(alpha: 0.1),
+                color: color.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(
-                  color: categoryColor.withValues(alpha: 0.2),
-                  width: 1,
-                ),
+                border: Border.all(color: color.withValues(alpha: 0.2)),
               ),
               child: Text(
                 context.tr('common.see_all'),
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
-                  color: categoryColor,
+                  color: color,
                   letterSpacing: 1.0,
                 ),
               ),

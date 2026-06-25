@@ -29,6 +29,12 @@ class HomeSectionHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final contrastColor = MeshGradientBackground.getContrastColor(context);
     final secondaryColor = contrastColor.withValues(alpha: 0.6);
+    final resolvedTitle = localizedTitleKey != null
+        ? context.tr(localizedTitleKey!)
+        : title;
+    final resolvedSubtitle = localizedSubtitleKey != null
+        ? context.tr(localizedSubtitleKey!)
+        : subtitle;
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -58,11 +64,9 @@ class HomeSectionHeader extends StatelessWidget {
                 children: [
                   Flexible(
                     child: Text(
-                      (localizedTitleKey != null
-                              ? context.tr(localizedTitleKey!)
-                              : title)
-                          .toUpperCase(),
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      resolvedTitle.toUpperCase(),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w900,
                         color: contrastColor,
@@ -76,10 +80,9 @@ class HomeSectionHeader extends StatelessWidget {
                 ],
               ),
               Text(
-                localizedSubtitleKey != null
-                    ? context.tr(localizedSubtitleKey!)
-                    : subtitle,
-                style: TextStyle(fontFamily: 'Outfit', 
+                resolvedSubtitle,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 11.sp,
                   fontWeight: FontWeight.w600,
                   color: secondaryColor,
@@ -91,22 +94,43 @@ class HomeSectionHeader extends StatelessWidget {
           ),
         ),
         if (onSeeAll != null)
-          ScaleButton(
-            onTap: onSeeAll,
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-              decoration: BoxDecoration(
-                color: categoryColor.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(color: categoryColor.withValues(alpha: 0.2)),
-              ),
-              child: Text(
-                context.tr('common.see_all'),
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w900,
-                  color: categoryColor,
-                  letterSpacing: 1.0,
+          Semantics(
+            button: true,
+            label: '${context.tr('common.see_all')} $resolvedTitle',
+            child: ScaleButton(
+              onTap: onSeeAll,
+              child: Container(
+                // Outer box only ENLARGES the tappable area to the 48dp
+                // accessibility minimum; it paints nothing itself, so the
+                // visible pill below keeps its original compact size.
+                constraints: BoxConstraints(minWidth: 48.r, minHeight: 48.r),
+                alignment: Alignment.center,
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12.w,
+                    vertical: 6.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: categoryColor.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(12.r),
+                    border: Border.all(
+                      color: categoryColor.withValues(alpha: 0.2),
+                    ),
+                  ),
+                  child: ExcludeSemantics(
+                    child: Text(
+                      context.tr('common.see_all'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w900,
+                        color: categoryColor,
+                        letterSpacing: 1.0,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
                 ),
               ),
             ),

@@ -1,16 +1,23 @@
-import 'package:dartz/dartz.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:flutter/foundation.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
+import 'package:vowl/features/auth/data/repositories/firebase_failure_handler_mixin.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/repositories/shop_repository.dart';
 
-/// Concrete implementation of [ShopRepository] managing virtual currency balances and transactions.
+/// Concrete implementation of [ShopRepository] managing virtual currency
+/// balances, daily reward claims, hint packs, Kids Zone purchases, and
+/// accessory management.
 ///
-/// Refactored to utilize atomic transactions across all marketplace and gift operations,
-/// eliminating the risk of double-claim and double-spend concurrency exploits.
-class ShopRepositoryImpl implements ShopRepository {
+/// All write operations that involve balance checks or duplicate-claim guards
+/// run inside Firestore transactions, eliminating double-spend and double-claim
+/// race conditions.
+class ShopRepositoryImpl
+    with FirebaseFailureHandlerMixin
+    implements ShopRepository {
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
 
@@ -20,20 +27,9 @@ class ShopRepositoryImpl implements ShopRepository {
   }) : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
        _firestore = firestore ?? FirebaseFirestore.instance;
 
-  /// Defensive helper to translate raw database exceptions into structured [Failure] domains.
-  Failure _handleException(dynamic e) {
-    if (e is FirebaseException) {
-      if (e.code == 'unavailable' || e.code == 'network-request-failed') {
-        return NetworkFailure('Network connection failed. Operating in offline mode.');
-      }
-      return ServerFailure('Database operation failed: ${e.message}');
-    }
-    final errStr = e.toString();
-    if (errStr.contains('SocketException') || errStr.contains('NetworkError')) {
-      return NetworkFailure('Network unreachable. Please check connection states.');
-    }
-    return ServerFailure(errStr);
-  }
+  // ---------------------------------------------------------------------------
+  // updateUserCoins
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> updateUserCoins(
@@ -47,43 +43,54 @@ class ShopRepositoryImpl implements ShopRepository {
 
       final docRef = _firestore.collection('users').doc(user.uid);
 
-      if (title != null) {
-        await _firestore.runTransaction((transaction) async {
-          final doc = await transaction.get(docRef);
-          if (!doc.exists || doc.data() == null) {
-            throw Exception('User data not found');
-          }
+      // Always use a transaction to keep the coin history log consistent with
+      // the balance change — even when no title is provided.
+      await _firestore.runTransaction((transaction) async {
+        final doc = await transaction.get(docRef);
+        if (!doc.exists || doc.data() == null) {
+          throw Exception('User data not found');
+        }
 
-          final data = doc.data()!;
-          List<Map<String, dynamic>> history = [];
+        final data = doc.data()!;
+        final updates = <String, dynamic>{
+          'coins': FieldValue.increment(amountChange),
+        };
+
+        if (title != null) {
+          var history = <Map<String, dynamic>>[];
           if (data['coinHistory'] != null) {
-            history = List<Map<String, dynamic>>.from(data['coinHistory']);
+            history = List<Map<String, dynamic>>.from(
+              (data['coinHistory'] as List<dynamic>)
+                  .whereType<Map<Object?, Object?>>()
+                  .map((m) => m.map((k, v) => MapEntry(k.toString(), v))),
+            );
           }
-
-          final entry = {
+          history.insert(0, {
             'title': title,
             'amount': amountChange,
             'isEarned': isEarned ?? (amountChange > 0),
             'date': DateTime.now().toIso8601String(),
-          };
-
-          history.insert(0, entry);
-          if (history.length > 10) history.removeLast();
-
-          transaction.update(docRef, {
-            'coins': FieldValue.increment(amountChange),
-            'coinHistory': history,
           });
-        });
-        return const Right(null);
-      }
+          if (history.length > UserGameConstants.kActivityHistoryLimit) {
+            history = history.sublist(
+              0,
+              UserGameConstants.kActivityHistoryLimit,
+            );
+          }
+          updates['coinHistory'] = history;
+        }
 
-      await docRef.update({'coins': FieldValue.increment(amountChange)});
+        transaction.update(docRef, updates);
+      });
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // awardKidsCoins
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> awardKidsCoins(int amount) async {
@@ -91,14 +98,19 @@ class ShopRepositoryImpl implements ShopRepository {
       final user = _firebaseAuth.currentUser;
       if (user == null) return Left(AuthFailure('User not logged in'));
 
+      // FieldValue.increment is atomically safe for server-side increments.
       await _firestore.collection('users').doc(user.uid).update({
         'kidsCoins': FieldValue.increment(amount),
       });
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // claimDailyGift
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> claimDailyGift() async {
@@ -117,7 +129,9 @@ class ShopRepositoryImpl implements ShopRepository {
         final userData = UserModel.fromMap(doc.data()!);
         final now = DateTime.now();
         final lastGift = userData.lastDailyRewardDate;
-        final bool available = lastGift == null ||
+
+        final bool available =
+            lastGift == null ||
             lastGift.year != now.year ||
             lastGift.month != now.month ||
             lastGift.day != now.day;
@@ -126,18 +140,32 @@ class ShopRepositoryImpl implements ShopRepository {
           return Left(AuthFailure('Daily gift already claimed today'));
         }
 
-        final reward = 50 + (now.day % 5) * 10;
+        // Reward scales with the day of month to provide variety.
+        final reward =
+            UserGameConstants.kDailyGiftBaseReward +
+            (now.day % 5) * UserGameConstants.kDailyGiftCycleIncrement;
+
         transaction.update(docRef, {
           'coins': FieldValue.increment(reward),
           'lastDailyRewardDate': Timestamp.now(),
         });
-        return const Right(null);
+        return const Right<Failure, void>(null);
       });
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // claimDailyChest
+  // ---------------------------------------------------------------------------
+
+  /// Claims the daily chest reward of [amount] coins.
+  ///
+  /// Duplicate-claim guard: reads [lastDailyRewardDate] inside the transaction
+  /// and rejects if the chest was already claimed today. Shares the same date
+  /// field as [claimDailyGift] — the two rewards are mutually exclusive within
+  /// the same calendar day by design.
   @override
   Future<Either<Failure, void>> claimDailyChest(int amount) async {
     try {
@@ -145,23 +173,50 @@ class ShopRepositoryImpl implements ShopRepository {
       if (user == null) return Left(AuthFailure('User not logged in'));
 
       final docRef = _firestore.collection('users').doc(user.uid);
-      debugPrint(
-        'ShopRepository: Atomic Daily Chest (Transaction) triggered for ${user.uid} (Amount: $amount)',
+      _log(
+        'ShopRepository: Daily Chest claim initiated for ${user.uid} (amount: $amount)',
       );
 
       return await _firestore.runTransaction((transaction) async {
+        final doc = await transaction.get(docRef);
+        if (!doc.exists || doc.data() == null) {
+          return Left(AuthFailure('User data not found'));
+        }
+
+        // Guard: reject if chest was already claimed today.
+        final lastRaw = doc.data()!['lastDailyRewardDate'];
+        if (lastRaw != null) {
+          final lastClaim = (lastRaw as Timestamp).toDate();
+          final now = DateTime.now();
+          final alreadyClaimed =
+              lastClaim.year == now.year &&
+              lastClaim.month == now.month &&
+              lastClaim.day == now.day;
+          if (alreadyClaimed) {
+            return Left(AuthFailure('Daily chest already claimed today'));
+          }
+        }
+
         transaction.update(docRef, {
           'coins': FieldValue.increment(amount),
           'lastDailyRewardDate': Timestamp.now(),
         });
-        return const Right(null);
+        return const Right<Failure, void>(null);
       });
     } catch (e) {
-      debugPrint('ShopRepository: Daily Chest ERROR: $e');
-      return Left(_handleException(e));
+      _log('ShopRepository: Daily Chest ERROR: $e');
+      return Left(handleFirebaseException(e));
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // claimKidsDailyReward
+  // ---------------------------------------------------------------------------
+
+  /// Claims the Kids Zone daily reward of [amount] kids-coins.
+  ///
+  /// Duplicate-claim guard: reads [lastKidsDailyRewardDate] inside the
+  /// transaction and rejects if already claimed today.
   @override
   Future<Either<Failure, void>> claimKidsDailyReward(int amount) async {
     try {
@@ -169,22 +224,43 @@ class ShopRepositoryImpl implements ShopRepository {
       if (user == null) return Left(AuthFailure('User not logged in'));
 
       final docRef = _firestore.collection('users').doc(user.uid);
-      debugPrint(
-        'ShopRepository: Atomic Kids Reward (Transaction) triggered for ${user.uid}',
-      );
+      _log('ShopRepository: Kids Daily Reward claim initiated for ${user.uid}');
 
       return await _firestore.runTransaction((transaction) async {
+        final doc = await transaction.get(docRef);
+        if (!doc.exists || doc.data() == null) {
+          return Left(AuthFailure('User data not found'));
+        }
+
+        // Guard: reject if kids reward was already claimed today.
+        final lastRaw = doc.data()!['lastKidsDailyRewardDate'];
+        if (lastRaw != null) {
+          final lastClaim = (lastRaw as Timestamp).toDate();
+          final now = DateTime.now();
+          final alreadyClaimed =
+              lastClaim.year == now.year &&
+              lastClaim.month == now.month &&
+              lastClaim.day == now.day;
+          if (alreadyClaimed) {
+            return Left(AuthFailure('Kids daily reward already claimed today'));
+          }
+        }
+
         transaction.update(docRef, {
           'kidsCoins': FieldValue.increment(amount),
           'lastKidsDailyRewardDate': Timestamp.now(),
         });
-        return const Right(null);
+        return const Right<Failure, void>(null);
       });
     } catch (e) {
-      debugPrint('ShopRepository: Kids Reward ERROR: $e');
-      return Left(_handleException(e));
+      _log('ShopRepository: Kids Daily Reward ERROR: $e');
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // useHint
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> useHint() async {
@@ -200,25 +276,24 @@ class ShopRepositoryImpl implements ShopRepository {
           return Left(ServerFailure('User data not found'));
         }
 
-        final hintCount = snapshot.data()?['hintCount'] ?? 0;
+        final hintCount = (snapshot.data()?['hintCount'] as num?)?.toInt() ?? 0;
         if (hintCount > 0) {
-          debugPrint(
-            'ShopRepository: Atomic Hint Decrement (Transaction) triggered.',
-          );
           transaction.update(docRef, {'hintCount': FieldValue.increment(-1)});
-          return const Right(null);
+          return const Right<Failure, void>(null);
         } else {
-          debugPrint(
-            'ShopRepository: Hint decrement FAILED: No hints available.',
-          );
+          _log('ShopRepository: useHint failed — no hints available.');
           return Left(ServerFailure('No hints available'));
         }
       });
     } catch (e) {
-      debugPrint('ShopRepository: useHint ERROR: $e');
-      return Left(_handleException(e));
+      _log('ShopRepository: useHint ERROR: $e');
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // purchaseHint
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> purchaseHint(int cost, int hintAmount) async {
@@ -240,32 +315,39 @@ class ShopRepositoryImpl implements ShopRepository {
           return Left(ServerFailure('Not enough coins'));
         }
 
-        List<Map<String, dynamic>> history = [];
+        var history = <Map<String, dynamic>>[];
         if (data['coinHistory'] != null) {
-          history = List<Map<String, dynamic>>.from(data['coinHistory']);
+          history = List<Map<String, dynamic>>.from(
+            (data['coinHistory'] as List<dynamic>)
+                .whereType<Map<Object?, Object?>>()
+                .map((m) => m.map((k, v) => MapEntry(k.toString(), v))),
+          );
         }
-
-        final entry = {
+        history.insert(0, {
           'title': 'Purchased Hint Pack',
           'amount': -cost,
           'isEarned': false,
           'date': DateTime.now().toIso8601String(),
-        };
-
-        history.insert(0, entry);
-        if (history.length > 10) history.removeLast();
+        });
+        if (history.length > UserGameConstants.kActivityHistoryLimit) {
+          history = history.sublist(0, UserGameConstants.kActivityHistoryLimit);
+        }
 
         transaction.update(docRef, {
           'coins': FieldValue.increment(-cost),
           'hintCount': FieldValue.increment(hintAmount),
           'coinHistory': history,
         });
-        return const Right(null);
+        return const Right<Failure, void>(null);
       });
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // awardKidsSticker
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> awardKidsSticker(String stickerId) async {
@@ -278,9 +360,13 @@ class ShopRepositoryImpl implements ShopRepository {
       });
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // updateKidsMascot
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> updateKidsMascot(String mascotId) async {
@@ -293,9 +379,13 @@ class ShopRepositoryImpl implements ShopRepository {
       });
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // buyKidsAccessory
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> buyKidsAccessory(
@@ -309,19 +399,18 @@ class ShopRepositoryImpl implements ShopRepository {
       final docRef = _firestore.collection('users').doc(user.uid);
       await _firestore.runTransaction((transaction) async {
         final snapshot = await transaction.get(docRef);
-        if (!snapshot.exists) throw Exception("User not found");
+        if (!snapshot.exists) throw Exception('User not found');
 
         final data = snapshot.data()!;
         final currentCoins = (data['kidsCoins'] as num?)?.toInt() ?? 0;
-        final owned = List<String>.from(data['kidsOwnedAccessories'] ?? []);
+        final owned = List<String>.from(
+          data['kidsOwnedAccessories'] as List? ?? [],
+        );
 
-        if (owned.contains(accessoryId)) {
-          return;
-        }
+        // Idempotent: silently succeed if already owned.
+        if (owned.contains(accessoryId)) return;
 
-        if (currentCoins < cost) {
-          throw Exception("Not enough Kids Coins");
-        }
+        if (currentCoins < cost) throw Exception('Not enough Kids Coins');
 
         transaction.update(docRef, {
           'kidsCoins': currentCoins - cost,
@@ -330,9 +419,13 @@ class ShopRepositoryImpl implements ShopRepository {
       });
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // equipKidsAccessory
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> equipKidsAccessory(String? accessoryId) async {
@@ -345,7 +438,15 @@ class ShopRepositoryImpl implements ShopRepository {
       });
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Private helpers
+  // ---------------------------------------------------------------------------
+
+  void _log(String message) {
+    if (kDebugMode) debugPrint(message);
   }
 }

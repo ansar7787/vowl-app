@@ -1,17 +1,30 @@
 import 'dart:io';
-import 'package:dartz/dartz.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
+import 'package:vowl/features/auth/data/repositories/firebase_failure_handler_mixin.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/repositories/user_repository.dart';
 
-/// Concrete implementation of [UserRepository] managing user profiles and storage updates.
+/// Concrete implementation of [UserRepository] managing user profile updates,
+/// profile picture storage, and VIP daily reward claims.
 ///
-/// Implements transactional constraints for claiming daily VIP rewards, preventing coin exploits.
-class UserRepositoryImpl implements UserRepository {
+/// ### updateUser note
+/// [updateUser] serialises the full [UserEntity] via [UserModel.toMap] and
+/// performs a [SetOptions(merge: true)] write. This means null fields explicitly
+/// overwrite the corresponding server values — intended behaviour when the
+/// caller provides a complete entity snapshot. For partial field updates prefer
+/// the targeted methods ([updateDisplayName], [updateProfilePicture]) which only
+/// write the affected fields.
+class UserRepositoryImpl
+    with FirebaseFailureHandlerMixin
+    implements UserRepository {
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
   final FirebaseStorage _storage;
@@ -24,20 +37,9 @@ class UserRepositoryImpl implements UserRepository {
        _firestore = firestore ?? FirebaseFirestore.instance,
        _storage = storage ?? FirebaseStorage.instance;
 
-  /// Defensive helper to translate raw database/storage exceptions into structured [Failure] domains.
-  Failure _handleException(dynamic e) {
-    if (e is FirebaseException) {
-      if (e.code == 'unavailable' || e.code == 'network-request-failed') {
-        return NetworkFailure('Network connection failed. Operating in offline mode.');
-      }
-      return ServerFailure('Database operation failed: ${e.message}');
-    }
-    final errStr = e.toString();
-    if (errStr.contains('SocketException') || errStr.contains('NetworkError')) {
-      return NetworkFailure('Network unreachable. Please check connection states.');
-    }
-    return ServerFailure(errStr);
-  }
+  // ---------------------------------------------------------------------------
+  // updateUser
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> updateUser(UserEntity user) async {
@@ -59,6 +61,7 @@ class UserRepositoryImpl implements UserRepository {
         premiumExpiryDate: user.premiumExpiryDate,
         categoryStats: user.categoryStats,
         unlockedLevels: user.unlockedLevels,
+        completedLevels: user.completedLevels,
         badges: user.badges,
         streakFreezes: user.streakFreezes,
         hintCount: user.hintCount,
@@ -67,7 +70,6 @@ class UserRepositoryImpl implements UserRepository {
         doubleXPExpiry: user.doubleXPExpiry,
         dailyXpHistory: user.dailyXpHistory,
         recentActivities: user.recentActivities,
-        completedLevels: user.completedLevels,
         lastVipGiftDate: user.lastVipGiftDate,
         lastDailyRewardDate: user.lastDailyRewardDate,
         lastKidsDailyRewardDate: user.lastKidsDailyRewardDate,
@@ -95,9 +97,13 @@ class UserRepositoryImpl implements UserRepository {
       await docRef.set(userModel.toMap(), SetOptions(merge: true));
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // updateDisplayName
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> updateDisplayName(String displayName) async {
@@ -105,17 +111,22 @@ class UserRepositoryImpl implements UserRepository {
       final user = _firebaseAuth.currentUser;
       if (user == null) return Left(ServerFailure('User not authenticated'));
 
-      await user.updateDisplayName(displayName);
-
-      await _firestore.collection('users').doc(user.uid).update({
-        'displayName': displayName,
-      });
+      await Future.wait([
+        user.updateDisplayName(displayName),
+        _firestore.collection('users').doc(user.uid).update({
+          'displayName': displayName,
+        }),
+      ]);
 
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // updateProfilePicture
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, String>> updateProfilePicture(String filePath) async {
@@ -129,17 +140,22 @@ class UserRepositoryImpl implements UserRepository {
       await ref.putFile(file);
       final downloadUrl = await ref.getDownloadURL();
 
-      await user.updatePhotoURL(downloadUrl);
-
-      await _firestore.collection('users').doc(user.uid).update({
-        'photoUrl': downloadUrl,
-      });
+      await Future.wait([
+        user.updatePhotoURL(downloadUrl),
+        _firestore.collection('users').doc(user.uid).update({
+          'photoUrl': downloadUrl,
+        }),
+      ]);
 
       return Right(downloadUrl);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // claimVipGift
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> claimVipGift() async {
@@ -163,7 +179,8 @@ class UserRepositoryImpl implements UserRepository {
 
         final now = DateTime.now();
         final lastGift = userData.lastVipGiftDate;
-        final bool available = lastGift == null ||
+        final bool available =
+            lastGift == null ||
             lastGift.year != now.year ||
             lastGift.month != now.month ||
             lastGift.day != now.day;
@@ -173,13 +190,24 @@ class UserRepositoryImpl implements UserRepository {
         }
 
         transaction.update(docRef, {
-          'coins': FieldValue.increment(100),
+          'coins': FieldValue.increment(UserGameConstants.kVipDailyGiftReward),
           'lastVipGiftDate': Timestamp.now(),
         });
-        return const Right(null);
+        return const Right<Failure, void>(null);
       });
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Private helpers
+  // ---------------------------------------------------------------------------
+
+  // Retained for future use; production logging should be routed through an
+  // injected Logger rather than debugPrint.
+  // ignore: unused_element
+  void _log(String message) {
+    if (kDebugMode) debugPrint(message);
   }
 }

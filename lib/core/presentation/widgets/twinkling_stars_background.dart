@@ -1,8 +1,11 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
-/// A premium, high-performance starry night backdrop with smooth drifting and twinkling stars,
-/// optimized to eliminate all path allocation churn on frame ticks.
+/// High-performance starry night backdrop with smooth drifting and twinkling.
+///
+/// Star positions are pre-computed with a seeded [math.Random] in [initState].
+/// The static [_StarPainter._starShapePath] is allocated once at class
+/// construction — zero per-frame path allocation.
 class TwinklingStarsBackground extends StatefulWidget {
   final Color starColor;
   final int starCount;
@@ -16,7 +19,8 @@ class TwinklingStarsBackground extends StatefulWidget {
   });
 
   @override
-  State<TwinklingStarsBackground> createState() => _TwinklingStarsBackgroundState();
+  State<TwinklingStarsBackground> createState() =>
+      _TwinklingStarsBackgroundState();
 }
 
 class _TwinklingStarsBackgroundState extends State<TwinklingStarsBackground>
@@ -35,19 +39,21 @@ class _TwinklingStarsBackgroundState extends State<TwinklingStarsBackground>
   }
 
   void _generateStars() {
-    final random = math.Random(2000);
-    _stars = List.generate(widget.starCount, (index) {
-      return _Star(
-        x: random.nextDouble(),
-        y: random.nextDouble(),
-        size: 2.0 + random.nextDouble() * 6.0,
-        speed: 0.05 + random.nextDouble() * 0.1,
-        drift: (random.nextDouble() - 0.5) * 0.1,
-        twinkleSpeed: 1.0 + random.nextDouble() * 3.0,
-        twinkleOffset: random.nextDouble() * math.pi * 2,
-        type: random.nextBool() ? _StarType.circle : _StarType.star,
-      );
-    });
+    final rng = math.Random(2000);
+    _stars = List.generate(
+      widget.starCount,
+      (i) => _Star(
+        x: rng.nextDouble(),
+        y: rng.nextDouble(),
+        size: 2.0 + rng.nextDouble() * 6.0,
+        speed: 0.05 + rng.nextDouble() * 0.1,
+        drift: (rng.nextDouble() - 0.5) * 0.1,
+        twinkleSpeed: 1.0 + rng.nextDouble() * 3.0,
+        twinkleOffset: rng.nextDouble() * math.pi * 2,
+        type: rng.nextBool() ? _StarType.circle : _StarType.star,
+      ),
+      growable: false,
+    );
   }
 
   @override
@@ -62,24 +68,27 @@ class _TwinklingStarsBackgroundState extends State<TwinklingStarsBackground>
       child: RepaintBoundary(
         child: AnimatedBuilder(
           animation: _controller,
-          builder: (context, child) {
-            return CustomPaint(
-              painter: _StarPainter(
-                stars: _stars,
-                progress: _controller.value,
-                color: widget.starColor.withValues(alpha: widget.baseOpacity),
-              ),
-              size: Size.infinite,
-            );
-          },
+          builder: (_, __) => CustomPaint(
+            painter: _StarPainter(
+              stars: _stars,
+              progress: _controller.value,
+              color: widget.starColor.withValues(alpha: widget.baseOpacity),
+            ),
+            size: Size.infinite,
+          ),
         ),
       ),
     );
   }
 }
 
+// ---------------------------------------------------------------------------
+// Data classes
+// ---------------------------------------------------------------------------
+
 enum _StarType { circle, star }
 
+@immutable
 class _Star {
   final double x;
   final double y;
@@ -90,7 +99,7 @@ class _Star {
   final double twinkleOffset;
   final _StarType type;
 
-  _Star({
+  const _Star({
     required this.x,
     required this.y,
     required this.size,
@@ -102,32 +111,31 @@ class _Star {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Painter — pure rendering, no mutation, static cached path
+// ---------------------------------------------------------------------------
+
 class _StarPainter extends CustomPainter {
   final List<_Star> stars;
   final double progress;
   final Color color;
 
-  // Single static shared path template representing the star shape pre-allocated at compilation
+  /// Single static shared path pre-allocated at class load — zero per-frame
+  /// path object creation for the 5-point star shape.
   static final Path _starShapePath = () {
-    final path = Path();
     const int points = 5;
     const double angle = (math.pi * 2) / (points * 2);
-
+    final path = Path();
     for (int i = 0; i < points * 2; i++) {
-      final double r = (i % 2 == 0) ? 1.0 : 0.5;
-      final double x = math.cos(i * angle) * r;
-      final double y = math.sin(i * angle) * r;
-      if (i == 0) {
-        path.moveTo(x, y);
-      } else {
-        path.lineTo(x, y);
-      }
+      final r = (i % 2 == 0) ? 1.0 : 0.5;
+      final x = math.cos(i * angle) * r;
+      final y = math.sin(i * angle) * r;
+      i == 0 ? path.moveTo(x, y) : path.lineTo(x, y);
     }
-    path.close();
-    return path;
+    return path..close();
   }();
 
-  _StarPainter({
+  const _StarPainter({
     required this.stars,
     required this.progress,
     required this.color,
@@ -135,24 +143,23 @@ class _StarPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color;
+    final paint = Paint();
 
     for (final star in stars) {
-      // Calculate current position with wrap-around
-      double currentY = (star.y + progress * star.speed) % 1.0;
-      double currentX = (star.x + progress * star.drift) % 1.0;
+      final x = ((star.x + progress * star.drift) % 1.0) * size.width;
+      final y = ((star.y + progress * star.speed) % 1.0) * size.height;
 
-      final x = currentX * size.width;
-      final y = currentY * size.height;
-
-      // Calculate twinkle effect
-      final opacity = (math.sin(progress * 2 * math.pi * star.twinkleSpeed + star.twinkleOffset) + 1.0) / 2.0;
+      final opacity =
+          (math.sin(
+                progress * 2 * math.pi * star.twinkleSpeed + star.twinkleOffset,
+              ) +
+              1.0) /
+          2.0;
       paint.color = color.withValues(alpha: color.a * (0.3 + 0.7 * opacity));
 
       if (star.type == _StarType.circle) {
         canvas.drawCircle(Offset(x, y), star.size / 2, paint);
       } else {
-        // High-performance matrix translation utilizing the static cached shape path
         canvas.save();
         canvas.translate(x, y);
         canvas.scale(star.size / 2);
@@ -163,7 +170,6 @@ class _StarPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _StarPainter oldDelegate) {
-    return oldDelegate.progress != progress || oldDelegate.color != color;
-  }
+  bool shouldRepaint(covariant _StarPainter old) =>
+      old.progress != progress || old.color != color;
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ModernFeatureBar extends StatelessWidget {
   const ModernFeatureBar({super.key});
@@ -17,27 +18,43 @@ class ModernFeatureBar extends StatelessWidget {
         ),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        // RESPONSIVENESS FIX: the original Row let each FeatureItem take
+        // its intrinsic (unconstrained) width. On a small phone combined
+        // with longer translated labels (German compounds, Indian
+        // regional scripts), four tightly-packed unconstrained items can
+        // exceed the row's available width and overflow horizontally.
+        // Giving each item equal `Expanded` width, with the label allowed
+        // to wrap to two lines instead, makes this overflow-proof at any
+        // text length while preserving the original "4 equal columns"
+        // layout exactly when text is short (English).
         children: [
-          FeatureItem(
-            icon: Icons.block_rounded,
-            label: 'ZERO ADS',
-            isDark: isDark,
+          Expanded(
+            child: FeatureItem(
+              icon: Icons.block_rounded,
+              label: context.tr('premium.feature_zero_ads'),
+              isDark: isDark,
+            ),
           ),
-          FeatureItem(
-            icon: Icons.auto_graph_rounded,
-            label: '2X SPEED',
-            isDark: isDark,
+          Expanded(
+            child: FeatureItem(
+              icon: Icons.auto_graph_rounded,
+              label: context.tr('premium.feature_2x_speed'),
+              isDark: isDark,
+            ),
           ),
-          FeatureItem(
-            icon: Icons.emoji_events_rounded,
-            label: 'VIP BADGES',
-            isDark: isDark,
+          Expanded(
+            child: FeatureItem(
+              icon: Icons.emoji_events_rounded,
+              label: context.tr('premium.feature_vip_badges'),
+              isDark: isDark,
+            ),
           ),
-          FeatureItem(
-            icon: Icons.workspace_premium_rounded,
-            label: 'PRO STATUS',
-            isDark: isDark,
+          Expanded(
+            child: FeatureItem(
+              icon: Icons.workspace_premium_rounded,
+              label: context.tr('premium.feature_pro_status'),
+              isDark: isDark,
+            ),
           ),
         ],
       ),
@@ -60,6 +77,7 @@ class FeatureItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         Container(
           padding: EdgeInsets.all(8.r),
@@ -72,6 +90,9 @@ class FeatureItem extends StatelessWidget {
         SizedBox(height: 6.h),
         Text(
           label,
+          textAlign: TextAlign.center,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
           style: TextStyle(
             fontFamily: 'Outfit',
             color: isDark ? const Color(0x61FFFFFF) : const Color(0x61000000),

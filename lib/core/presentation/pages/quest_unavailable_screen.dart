@@ -6,36 +6,36 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
-/// A premium, responsive screen displayed when a requested quest is not available.
-/// 
-/// Adapts dynamically to show either single-action return flows or multi-action
-/// retry/exit loops depending on the availability of a retry callback.
+/// Displayed when a requested quest cannot be loaded.
+///
+/// Adapts its button layout based on whether a [onRetry] callback is provided:
+///  - With retry: shows primary "Try Again" + secondary "Exit Game".
+///  - Without retry: shows a single "Back to Levels" primary button.
 class QuestUnavailableScreen extends StatelessWidget {
   final VoidCallback? onRetry;
-  final String message;
+  final String? message;
   final String? technicalError;
 
   const QuestUnavailableScreen({
     super.key,
     this.onRetry,
-    this.message = "We couldn't find any quests for this level yet.",
+    this.message,
     this.technicalError,
   });
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final resolvedMessage =
+        message ?? context.tr('quest_unavailable.default_message');
 
     return Scaffold(
       body: Stack(
         children: [
           MeshGradientBackground(
             colors: isDark
-                ? [const Color(0xFF0F172A), const Color(0xFF1E293B)]
-                : [
-                    const Color(0xFFF1F5F9),
-                    const Color(0xFFE2E8F0),
-                  ],
+                ? const [Color(0xFF0F172A), Color(0xFF1E293B)]
+                : const [Color(0xFFF1F5F9), Color(0xFFE2E8F0)],
           ),
           SafeArea(
             child: Padding(
@@ -43,6 +43,7 @@ class QuestUnavailableScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  // ── Icon ───────────────────────────────────────────
                   Container(
                     padding: EdgeInsets.all(32.r),
                     decoration: BoxDecoration(
@@ -59,21 +60,30 @@ class QuestUnavailableScreen extends StatelessWidget {
                           : const Color(0xFF475569),
                     ),
                   ),
+
                   SizedBox(height: 32.h),
+
+                  // ── Title ──────────────────────────────────────────
                   Text(
-                    "QUEST UNAVAILABLE",
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    context.tr('quest_unavailable.title'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 24.sp,
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.white : const Color(0xFF1E293B),
                       letterSpacing: 2,
                     ),
-                  ),
-                  SizedBox(height: 16.h),
-                  Text(
-                    message,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontFamily: 'Outfit', 
+                  ),
+
+                  SizedBox(height: 16.h),
+
+                  // ── Message ────────────────────────────────────────
+                  Text(
+                    resolvedMessage,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       color: isDark
                           ? Colors.white.withValues(alpha: 0.7)
@@ -81,9 +91,11 @@ class QuestUnavailableScreen extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  if (technicalError != null && kDebugMode)
+
+                  // ── Debug error panel (debug builds only) ──────────
+                  if (technicalError != null && kDebugMode) ...[
+                    SizedBox(height: 16.h),
                     Container(
-                      margin: EdgeInsets.only(top: 16.h),
                       padding: EdgeInsets.all(12.r),
                       decoration: BoxDecoration(
                         color: Colors.red.withValues(alpha: 0.1),
@@ -93,107 +105,35 @@ class QuestUnavailableScreen extends StatelessWidget {
                         ),
                       ),
                       child: SelectableText(
-                        "TECHNICAL INFO:\n$technicalError",
+                        'TECHNICAL INFO:\n$technicalError',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: 'RobotoMono', 
+                        style: TextStyle(
+                          fontFamily: 'RobotoMono',
                           fontSize: 10.sp,
                           color: Colors.redAccent.withValues(alpha: 0.7),
                         ),
                       ),
                     ),
+                  ],
+
                   SizedBox(height: 40.h),
-                  
-                  // Adaptive Button Layout Layout Mechanics
+
+                  // ── Actions ────────────────────────────────────────
                   if (onRetry != null) ...[
-                    ScaleButton(
+                    _ActionButton.primary(
+                      label: context.tr('games.try_again').toUpperCase(),
                       onTap: onRetry!,
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 18.h),
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF2563EB), Color(0xFF4F46E5)],
-                          ),
-                          borderRadius: BorderRadius.circular(20.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0xFF2563EB).withValues(alpha: 0.3),
-                              blurRadius: 20,
-                              offset: const Offset(0, 10),
-                            ),
-                          ],
-                        ),
-                        child: Center(
-                          child: Text(
-                            context.tr('games.try_again').toUpperCase(),
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              color: Colors.white,
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1,
-                            ),
-                          ),
-                        ),
-                      ),
                     ),
                     SizedBox(height: 16.h),
-                    ScaleButton(
+                    _ActionButton.secondary(
+                      label: context.tr('quest_unavailable.exit_button'),
+                      isDark: isDark,
                       onTap: () => context.pop(),
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 18.h),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.1)
-                              : Colors.black.withValues(alpha: 0.05),
-                          borderRadius: BorderRadius.circular(20.r),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "EXIT GAME",
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.8)
-                                  : const Color(0xFF475569),
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1,
-                            ),
-                          ),
-                        ),
-                      ),
                     ),
                   ] else ...[
-                    ScaleButton(
+                    _ActionButton.primary(
+                      label: context.tr('quest_unavailable.back_button'),
                       onTap: () => context.pop(),
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 18.h),
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF2563EB), Color(0xFF4F46E5)],
-                          ),
-                          borderRadius: BorderRadius.circular(20.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0xFF2563EB).withValues(alpha: 0.3),
-                              blurRadius: 20,
-                              offset: const Offset(0, 10),
-                            ),
-                          ],
-                        ),
-                        child: Center(
-                          child: Text(
-                            "BACK TO LEVELS",
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              color: Colors.white,
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1,
-                            ),
-                          ),
-                        ),
-                      ),
                     ),
                   ],
                 ],
@@ -201,6 +141,81 @@ class QuestUnavailableScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Shared action button — eliminates duplicated decoration code.
+// ---------------------------------------------------------------------------
+
+class _ActionButton extends StatelessWidget {
+  final String label;
+  final VoidCallback onTap;
+  final bool _isPrimary;
+  final bool isDark;
+
+  const _ActionButton.primary({required this.label, required this.onTap})
+    : _isPrimary = true,
+      isDark = false;
+
+  const _ActionButton.secondary({
+    required this.label,
+    required this.onTap,
+    required this.isDark,
+  }) : _isPrimary = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: label,
+      child: ScaleButton(
+        onTap: onTap,
+        child: Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(vertical: 18.h),
+          constraints: BoxConstraints(minHeight: 48.h),
+          decoration: BoxDecoration(
+            gradient: _isPrimary
+                ? const LinearGradient(
+                    colors: [Color(0xFF2563EB), Color(0xFF4F46E5)],
+                  )
+                : null,
+            color: _isPrimary
+                ? null
+                : (isDark
+                      ? Colors.white.withValues(alpha: 0.1)
+                      : Colors.black.withValues(alpha: 0.05)),
+            borderRadius: BorderRadius.circular(20.r),
+            boxShadow: _isPrimary
+                ? [
+                    BoxShadow(
+                      color: const Color(0xFF2563EB).withValues(alpha: 0.3),
+                      blurRadius: 20,
+                      offset: const Offset(0, 10),
+                    ),
+                  ]
+                : null,
+          ),
+          child: Center(
+            child: Text(
+              label,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                color: _isPrimary
+                    ? Colors.white
+                    : (isDark
+                          ? Colors.white.withValues(alpha: 0.8)
+                          : const Color(0xFF475569)),
+                fontSize: 16.sp,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

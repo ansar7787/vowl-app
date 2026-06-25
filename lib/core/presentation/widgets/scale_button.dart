@@ -1,7 +1,11 @@
 import 'package:clock/clock.dart';
 import 'package:flutter/material.dart';
 
-/// A button that scales down slightly when pressed, providing organic tactile feedback.
+/// A button that scales down slightly when pressed, providing organic tactile
+/// feedback. Includes a 500 ms debounce guard against accidental double-taps.
+///
+/// Wraps content in [Semantics] with `button: true` so TalkBack / VoiceOver
+/// correctly announces interactive elements to screen-reader users.
 class ScaleButton extends StatefulWidget {
   final Widget child;
   final VoidCallback? onTap;
@@ -58,9 +62,8 @@ class _ScaleButtonState extends State<ScaleButton>
 
   void _handleTap() {
     if (widget.onTap == null) return;
-    
     final now = clock.now();
-    if (_lastTapTime == null || 
+    if (_lastTapTime == null ||
         now.difference(_lastTapTime!) > const Duration(milliseconds: 500)) {
       _lastTapTime = now;
       widget.onTap!();
@@ -69,21 +72,22 @@ class _ScaleButtonState extends State<ScaleButton>
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTapDown: (_) {
-        if (widget.onTap != null) _controller.forward();
-      },
-      onTapUp: (_) {
-        if (widget.onTap != null) _controller.reverse();
-      },
-      onTapCancel: () {
-        if (widget.onTap != null) _controller.reverse();
-      },
-      onTap: _handleTap,
-      behavior: HitTestBehavior.opaque,
-      child: ScaleTransition(
-        scale: _scaleAnimation,
-        child: widget.child,
+    return Semantics(
+      button: widget.onTap != null,
+      enabled: widget.onTap != null,
+      child: GestureDetector(
+        onTapDown: (_) {
+          if (widget.onTap != null) _controller.forward();
+        },
+        onTapUp: (_) {
+          if (widget.onTap != null) _controller.reverse();
+        },
+        onTapCancel: () {
+          if (widget.onTap != null) _controller.reverse();
+        },
+        onTap: _handleTap,
+        behavior: HitTestBehavior.opaque,
+        child: ScaleTransition(scale: _scaleAnimation, child: widget.child),
       ),
     );
   }

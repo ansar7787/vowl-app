@@ -1,4 +1,3 @@
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/network/network_info.dart';
@@ -24,7 +23,6 @@ class ForgotPasswordState extends Equatable {
     this.successMessage,
   });
 
-  /// Nullable-function pattern — consistent with LoginState and SignUpState.
   ForgotPasswordState copyWith({
     String? email,
     bool? isSubmitting,
@@ -36,39 +34,48 @@ class ForgotPasswordState extends Equatable {
       email: email ?? this.email,
       isSubmitting: isSubmitting ?? this.isSubmitting,
       isSuccess: isSuccess ?? this.isSuccess,
-      errorMessage:
-          errorMessage != null ? errorMessage() : this.errorMessage,
-      successMessage:
-          successMessage != null ? successMessage() : this.successMessage,
+      errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
+      successMessage: successMessage != null
+          ? successMessage()
+          : this.successMessage,
     );
   }
 
   @override
-  List<Object?> get props =>
-      [email, isSubmitting, isSuccess, errorMessage, successMessage];
+  List<Object?> get props => [
+    email,
+    isSubmitting,
+    isSuccess,
+    errorMessage,
+    successMessage,
+  ];
 }
 
 // ============================================================================
 // CUBIT
 // ============================================================================
 
+/// Manages the password-reset flow on the [ForgotPasswordPage].
+///
+/// Separated from [LoginCubit] to respect single-responsibility:
+/// this cubit owns only the forgot-password submission lifecycle.
 class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   final ForgotPassword _forgotPassword;
   final NetworkInfo? _networkInfo;
 
-  /// Compiled once per class — avoids per-keystroke RegExp allocation.
-  /// TLD `{2,}` accepts .academy, .studio, .international, etc.
-  static final _emailRegex =
-      RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$');
+  /// Compiled once — avoids per-keystroke [RegExp] allocation.
+  /// `{2,}` accepts modern long-form TLDs (.academy, .international, etc.).
+  static final _emailRegex = RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$');
 
   ForgotPasswordCubit({
     required ForgotPassword forgotPassword,
     NetworkInfo? networkInfo,
-  })  : _forgotPassword = forgotPassword,
-        _networkInfo = networkInfo,
-        super(const ForgotPasswordState());
+  }) : _forgotPassword = forgotPassword,
+       _networkInfo = networkInfo,
+       super(const ForgotPasswordState());
 
-  void emailChanged(String value) => emit(state.copyWith(email: value));
+  void emailChanged(String value) =>
+      emit(state.copyWith(email: value, errorMessage: () => null));
 
   Future<void> sendPasswordResetEmail() async {
     if (state.isSubmitting) return;
@@ -76,48 +83,58 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
     final trimmedEmail = state.email.trim();
 
     if (trimmedEmail.isEmpty) {
-      emit(state.copyWith(
-        errorMessage: () =>
-            'Please enter your email address to receive reset links.',
-      ));
+      emit(
+        state.copyWith(
+          errorMessage: () =>
+              'Please enter your email address to receive reset links.',
+        ),
+      );
       return;
     }
     if (!_emailRegex.hasMatch(trimmedEmail)) {
-      emit(state.copyWith(
-        errorMessage: () => 'Please enter a valid email address.',
-      ));
+      emit(
+        state.copyWith(
+          errorMessage: () => 'Please enter a valid email address.',
+        ),
+      );
       return;
     }
 
     if (_networkInfo != null && !(await _networkInfo.isConnected)) {
-      emit(state.copyWith(
-        errorMessage: () =>
-            'No internet connection. Please check your network.',
-      ));
+      emit(
+        state.copyWith(
+          errorMessage: () =>
+              'No internet connection. Please check your network.',
+        ),
+      );
       return;
     }
 
-    emit(state.copyWith(
-      isSubmitting: true,
-      errorMessage: () => null,
-      successMessage: () => null,
-    ));
+    emit(
+      state.copyWith(
+        isSubmitting: true,
+        errorMessage: () => null,
+        successMessage: () => null,
+      ),
+    );
 
     final result = await _forgotPassword(trimmedEmail);
-
     if (isClosed) return;
 
     result.fold(
-      (failure) => emit(state.copyWith(
-        isSubmitting: false,
-        errorMessage: () => AuthErrorHandler.getMessage(failure.message),
-      )),
-      (_) => emit(state.copyWith(
-        isSubmitting: false,
-        isSuccess: true,
-        successMessage: () =>
-            'Password reset link sent! Check your email.',
-      )),
+      (failure) => emit(
+        state.copyWith(
+          isSubmitting: false,
+          errorMessage: () => AuthErrorHandler.getMessage(failure.message),
+        ),
+      ),
+      (_) => emit(
+        state.copyWith(
+          isSubmitting: false,
+          isSuccess: true,
+          successMessage: () => 'Password reset link sent! Check your email.',
+        ),
+      ),
     );
   }
 }

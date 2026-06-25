@@ -33,8 +33,6 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void _startTimer() {
-    // Correct lifecycle control: scheduling with a cancellable Timer
-    // avoids keeping closure references alive in the event loop if disposed.
     _timer = Timer(const Duration(milliseconds: 2000), () {
       if (mounted) {
         setState(() => _timerFinished = true);
@@ -45,17 +43,15 @@ class _SplashPageState extends State<SplashPage> {
 
   void _checkNavigation() {
     if (!_timerFinished || _hasNavigated) return;
-    
+
     final authState = context.read<AuthBloc>().state;
     if (authState.status == AuthStatus.unknown) {
-      // If auth is still resolving, we wait. The BlocListener will catch the change.
-      debugPrint('SplashPage: Auth still unknown, waiting...');
+      // Auth is still resolving; BlocListener will catch the transition.
       return;
     }
 
     _hasNavigated = true;
-    debugPrint('SplashPage: Navigating with status: ${authState.status}');
-    // Router redirect logic will handle where to go (Home or Login)
+    // GoRouter redirect logic determines whether to land on Home or Login.
     context.go(AppRouter.homeRoute);
   }
 
@@ -78,13 +74,15 @@ class _SplashPageState extends State<SplashPage> {
           statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
           statusBarBrightness: isDark ? Brightness.dark : Brightness.light,
           systemNavigationBarColor: backgroundColor,
-          systemNavigationBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
+          systemNavigationBarIconBrightness: isDark
+              ? Brightness.light
+              : Brightness.dark,
         ),
         child: Scaffold(
           backgroundColor: backgroundColor,
           body: Stack(
             children: [
-              // 1. Localized Branding Aura (Not full screen gradient)
+              // Localised branding aura
               Center(
                 child: Container(
                   width: 300.r,
@@ -101,19 +99,22 @@ class _SplashPageState extends State<SplashPage> {
                 ),
               ).animate().fadeIn(duration: 1.seconds),
 
-              // 2. Center Logo
+              // Centre logo
               Center(
                 child: RepaintBoundary(
                   child: _SplashLogo(primaryColor: primaryColor),
                 ),
               ),
 
-              // 3. Footer Branding (Stacked for maximum pop)
+              // Footer branding
               Positioned(
                 bottom: 64.h,
                 left: 0,
                 right: 0,
-                child: _SplashFooter(primaryColor: primaryColor, isDark: isDark),
+                child: _SplashFooter(
+                  primaryColor: primaryColor,
+                  isDark: isDark,
+                ),
               ),
             ],
           ),
@@ -122,6 +123,10 @@ class _SplashPageState extends State<SplashPage> {
     );
   }
 }
+
+// ---------------------------------------------------------------------------
+// Private widgets — kept in file because they are splash-exclusive
+// ---------------------------------------------------------------------------
 
 class _SplashLogo extends StatelessWidget {
   final Color primaryColor;
@@ -133,7 +138,6 @@ class _SplashLogo extends StatelessWidget {
       width: 180.r,
       height: 180.r,
       decoration: BoxDecoration(
-        color: Colors.transparent,
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
@@ -167,14 +171,14 @@ class _SplashFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: 'Vowl App Branding',
+      label: 'Vowl App — Your Complete English Quest',
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // The Branding Pop
           Text(
             'vowl',
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 26.sp,
               fontWeight: FontWeight.w900,
               color: const Color(0xFFA8E063),
@@ -189,10 +193,10 @@ class _SplashFooter extends StatelessWidget {
             ),
           ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.1),
           SizedBox(height: 6.h),
-          // The Tagline
           Text(
             'Your Complete English Quest',
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w800,
               color: isDark ? Colors.white30 : Colors.black26,

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:math';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,9 +29,11 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
 
   Future<void> _loadDailyHoot() async {
     try {
-      final String jsonString = await rootBundle.loadString('assets/curriculum/calendar/vowl_calendar.json');
+      final String jsonString = await rootBundle.loadString(
+        'assets/curriculum/calendar/vowl_calendar.json',
+      );
       final Map<String, dynamic> data = json.decode(jsonString);
-      
+
       final now = DateTime.now();
       final String dateKey = DateFormat('MM-dd').format(now);
       final String specificKey = DateFormat('yyyy-MM-dd').format(now);
@@ -42,12 +45,12 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
       if (data['specific'] != null && data['specific'][specificKey] != null) {
         title = data['specific'][specificKey]['title'];
         text = data['specific'][specificKey]['text'];
-      } 
+      }
       // 2. Check Annual Date (e.g. 12-25)
       else if (data['annual'] != null && data['annual'][dateKey] != null) {
         title = data['annual'][dateKey]['title'];
         text = data['annual'][dateKey]['text'];
-      } 
+      }
       // 3. Fallback to Random Wisdom
       else {
         title = null;
@@ -67,7 +70,13 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
           _isLoading = false;
         });
       }
-    } catch (e) {
+    } catch (e, stackTrace) {
+      // Curriculum calendar asset is optional content — never block the
+      // home feed on it, but keep a debug-only trace so a missing/malformed
+      // asset doesn't fail silently during development.
+      if (kDebugMode) {
+        debugPrint('HootOfWisdom: failed to load daily hoot: $e\n$stackTrace');
+      }
       if (mounted) {
         setState(() {
           // This will be replaced in build with localized text
@@ -81,91 +90,134 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final locale = Localizations.localeOf(context).toString();
     final now = DateTime.now();
-    final dayStr = DateFormat('dd').format(now);
-    final monthStr = DateFormat('MMM').format(now).toUpperCase();
+    final dayStr = DateFormat('dd', locale).format(now);
+    final monthStr = DateFormat('MMM', locale).format(now).toUpperCase();
+    final resolvedText = _hootText.isEmpty
+        ? context.tr('home.hoot_fallback_msg_2')
+        : _hootText;
 
     return GlassTile(
       borderRadius: BorderRadius.circular(32.r),
       padding: EdgeInsets.all(24.r),
-      child: _isLoading 
-        ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
-        : Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: _isLoading
+          ? SizedBox(
+              height: 96.h,
+              child: Center(
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  semanticsLabel: context.tr('home.hoot_daily_motivation'),
+                ),
+              ),
+            )
+          : Semantics(
+              label:
+                  '${_hootTitle ?? context.tr('home.hoot_daily_motivation')}. $resolvedText',
+              child: Column(
                 children: [
-                  // 1. Date Badge (Standard App Style)
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF2563EB).withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(color: const Color(0xFF2563EB).withValues(alpha: 0.2)),
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
+                  ExcludeSemantics(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          monthStr,
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 9.sp,
-                            fontWeight: FontWeight.w900,
-                            color: const Color(0xFF2563EB),
+                        // 1. Date Badge (Standard App Style)
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10.w,
+                            vertical: 4.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color(
+                              0xFF2563EB,
+                            ).withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(12.r),
+                            border: Border.all(
+                              color: const Color(
+                                0xFF2563EB,
+                              ).withValues(alpha: 0.2),
+                            ),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                monthStr,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 9.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: const Color(0xFF2563EB),
+                                ),
+                                maxLines: 1,
+                              ),
+                              Text(
+                                dayStr,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: isDark
+                                      ? Colors.white
+                                      : const Color(0xFF0F172A),
+                                ),
+                                maxLines: 1,
+                              ),
+                            ],
                           ),
                         ),
-                        Text(
-                          dayStr,
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            color: isDark ? Colors.white : const Color(0xFF0F172A),
+
+                        // 2. Owly Identifier
+                        Flexible(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  _hootTitle ??
+                                      context.tr('home.hoot_daily_motivation'),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: const Color(0xFF2563EB),
+                                    letterSpacing: 2,
+                                  ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              SizedBox(width: 8.w),
+                              VowlMascot(
+                                size: 26.r,
+                                useFloatingAnimation: false,
+                                state: VowlMascotState.neutral,
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
                   ),
+                  SizedBox(height: 20.h),
 
-                  // 2. Owly Identifier
-                  Row(
-                    children: [
-                      Text(
-                        _hootTitle ?? context.tr('home.hoot_daily_motivation'),
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w900,
-                          color: const Color(0xFF2563EB),
-                          letterSpacing: 2,
-                        ),
-                      ),
-                      SizedBox(width: 8.w),
-                      VowlMascot(
-                        size: 26.r,
-                        useFloatingAnimation: false,
-                        state: VowlMascotState.neutral,
-                      ),
-                    ],
+                  // 3. The Wisdom Text
+                  Text(
+                    resolvedText,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w700,
+                      fontStyle: FontStyle.italic,
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.9)
+                          : const Color(0xFF1E293B),
+                      height: 1.5,
+                    ),
                   ),
                 ],
               ),
-              SizedBox(height: 20.h),
-              
-              // 3. The Wisdom Text
-              Text(
-                _hootText.isEmpty ? context.tr('home.hoot_fallback_msg_2') : _hootText,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w700,
-                  fontStyle: FontStyle.italic,
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.9)
-                      : const Color(0xFF1E293B),
-                  height: 1.5,
-                ),
-              ),
-            ],
-          ),
+            ),
     );
   }
 }

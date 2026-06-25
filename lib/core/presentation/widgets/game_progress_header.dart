@@ -4,7 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
-/// Compact progress + lives header shared across all 9 game categories.
+/// Compact level/progress/lives header shared across all 9 game categories.
+///
+/// Layout (LTR):  [Back]  [LEVEL N | N% 🔥streak | ████░░ bar]  [♥ N]
+/// In RTL locales the Row reverses automatically via [Directionality].
 class GameProgressHeader extends StatelessWidget {
   final int level;
   final double progress;
@@ -31,20 +34,20 @@ class GameProgressHeader extends StatelessWidget {
     final subColor = isDark
         ? Colors.white.withValues(alpha: 0.8)
         : const Color(0xFF0F172A).withValues(alpha: 0.7);
-    final progressPercent = (progress * 100).toInt();
+    final progressPercent = (progress.clamp(0.0, 1.0) * 100).toInt();
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // ── Back button ────────────────────────────────────────────────
-          SizedBox(
-            width: 44.w,
-            height: 44.h,
-            child: Semantics(
-              button: true,
-              label: context.tr('common.back'),
+          // ── Back button ─────────────────────────────────────────────
+          Semantics(
+            button: true,
+            label: context.tr('common.back'),
+            child: SizedBox(
+              width: 44.w,
+              height: 44.h,
               child: IconButton(
                 onPressed: onBack,
                 padding: EdgeInsets.zero,
@@ -59,14 +62,14 @@ class GameProgressHeader extends StatelessWidget {
           ),
           SizedBox(width: 10.w),
 
-          // ── Level label + progress ─────────────────────────────────────
+          // ── Level label + progress ──────────────────────────────────
           Expanded(
             child: Column(
-               mainAxisSize: MainAxisSize.min,
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'LEVEL $level',
+                  context.tr('game_progress.level_label', args: ['$level']),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -78,10 +81,7 @@ class GameProgressHeader extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 4.h),
-                Wrap(
-                  spacing: 8.w,
-                  runSpacing: 6.h,
-                  crossAxisAlignment: WrapCrossAlignment.center,
+                Row(
                   children: [
                     Text(
                       '$progressPercent%',
@@ -92,79 +92,25 @@ class GameProgressHeader extends StatelessWidget {
                         color: subColor,
                       ),
                     ),
-                    if (streak > 0)
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 6.w,
-                          vertical: 2.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.orange.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(6.r),
-                        ),
-                        child: Text(
-                          '🔥 $streak',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.orange,
-                          ),
-                        ),
-                      ).animate().scale().shake(),
+                    if (streak > 0) ...[
+                      SizedBox(width: 8.w),
+                      _StreakBadge(streak: streak),
+                    ],
                   ],
                 ),
                 SizedBox(height: 8.h),
-                // Progress bar
-                Semantics(
-                  label: 'Progress: $progressPercent percent',
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(3.r),
-                    child: SizedBox(
-                      width: double.infinity,
-                      height: 6.h,
-                      child: Stack(
-                        children: [
-                          Container(
-                            width: double.infinity,
-                            height: 6.h,
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.2)
-                                : Colors.black.withValues(alpha: 0.08),
-                          ),
-                          FractionallySizedBox(
-                            widthFactor: progress.clamp(0.0, 1.0),
-                            child: Container(
-                              height: 6.h,
-                              decoration: BoxDecoration(
-                                color: isDark
-                                    ? Colors.white
-                                    : theme.primaryColor,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color:
-                                        (isDark
-                                                ? Colors.white
-                                                : theme.primaryColor)
-                                            .withValues(alpha: 0.3),
-                                    blurRadius: 4,
-                                    offset: const Offset(0, 2),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                _ProgressBar(
+                  progress: progress,
+                  isDark: isDark,
+                  progressPercent: progressPercent,
+                  themeColor: theme.primaryColor,
                 ),
               ],
             ),
           ),
           SizedBox(width: 10.w),
 
-          // ── Lives badge ────────────────────────────────────────────────
+          // ── Lives badge ─────────────────────────────────────────────
           _LivesBadge(lives: lives),
         ],
       ),
@@ -172,19 +118,108 @@ class GameProgressHeader extends StatelessWidget {
   }
 }
 
-// ─── Lives badge ──────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
+// Private sub-widgets
+// ---------------------------------------------------------------------------
+
+class _StreakBadge extends StatelessWidget {
+  final int streak;
+  const _StreakBadge({required this.streak});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+      decoration: BoxDecoration(
+        color: Colors.orange.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(6.r),
+      ),
+      child: Text(
+        '🔥 $streak',
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 10.sp,
+          fontWeight: FontWeight.w900,
+          color: Colors.orange,
+        ),
+      ),
+    ).animate().scale().shake();
+  }
+}
+
+class _ProgressBar extends StatelessWidget {
+  final double progress;
+  final bool isDark;
+  final int progressPercent;
+  final Color themeColor;
+
+  const _ProgressBar({
+    required this.progress,
+    required this.isDark,
+    required this.progressPercent,
+    required this.themeColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final clamped = progress.clamp(0.0, 1.0);
+    final barColor = isDark ? Colors.white : themeColor;
+
+    return Semantics(
+      label: context.tr(
+        'game_progress.progress_label',
+        args: ['$progressPercent'],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(3.r),
+        child: SizedBox(
+          width: double.infinity,
+          height: 6.h,
+          child: Stack(
+            children: [
+              // Background track
+              Container(
+                width: double.infinity,
+                height: 6.h,
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.2)
+                    : Colors.black.withValues(alpha: 0.08),
+              ),
+              // Filled portion
+              FractionallySizedBox(
+                widthFactor: clamped,
+                child: Container(
+                  height: 6.h,
+                  decoration: BoxDecoration(
+                    color: barColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: barColor.withValues(alpha: 0.3),
+                        blurRadius: 4,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class _LivesBadge extends StatelessWidget {
   final int lives;
-
   const _LivesBadge({required this.lives});
 
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: '$lives lives remaining',
+      label: context.tr('game_progress.lives_label', args: ['$lives']),
       child: Container(
-        constraints: BoxConstraints(minHeight: 32.h),
+        constraints: BoxConstraints(minHeight: 32.h, minWidth: 48.w),
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
         decoration: BoxDecoration(
           color: Colors.red.withValues(alpha: 0.1),

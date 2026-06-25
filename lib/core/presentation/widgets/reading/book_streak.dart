@@ -12,10 +12,10 @@ class BookStreak extends StatelessWidget {
     return RepaintBoundary(
       child: Stack(
         children: List.generate(5, (index) {
-          final left = (index * 0.2) * 1.sw;
+          final start = (index * 0.2) * 1.sw;
           final speed = 2000 + (index * 500);
-          return Positioned(
-            left: left,
+          return PositionedDirectional(
+            start: start,
             top: 0,
             bottom: 0,
             child:

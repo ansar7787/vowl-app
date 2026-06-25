@@ -1,23 +1,29 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:meta/meta.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/features/auth/domain/repositories/gamification_repository.dart';
 
-class UpdateCategoryStats implements UseCase<void, UpdateCategoryStatsParams> {
-  final GamificationRepository _repository;
+/// Adjusts [categoryId]'s mastery score by ±[kCategoryStatStep] based on
+/// whether the user answered [UpdateCategoryStatsParams.isCorrect].
+///
+/// The score is clamped to [[kCategoryStatMin], [kCategoryStatMax]] (0–100)
+/// and stored in [UserEntity.categoryStats]. Runs atomically inside a
+/// Firestore transaction.
+class UpdateCategoryStats extends UseCase<void, UpdateCategoryStatsParams> {
+  final GamificationRepository repository;
 
-  UpdateCategoryStats(this._repository);
+  const UpdateCategoryStats(this.repository);
 
   @override
-  Future<Either<Failure, void>> call(UpdateCategoryStatsParams params) async {
-    return await _repository.updateCategoryStats(
-      params.categoryId,
-      params.isCorrect,
-    );
-  }
+  Future<Either<Failure, void>> call(UpdateCategoryStatsParams params) =>
+      repository.updateCategoryStats(params.categoryId, params.isCorrect);
 }
 
+/// Immutable value object carrying the stat-update fields for
+/// [UpdateCategoryStats].
+@immutable
 class UpdateCategoryStatsParams extends Equatable {
   final String categoryId;
   final bool isCorrect;

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/quest_upload_service.dart';
@@ -26,13 +27,13 @@ class _AdminDashboardState extends State<AdminDashboard>
   String _status = 'System Standing By...';
   final _uploadService = QuestUploadService();
 
-  // Seeding State
+  // Seeding state
   final TextEditingController _manualJsonController = TextEditingController();
   int _manualLevel = 1;
   QuestType _selectedSkill = QuestType.speaking;
   late GameSubtype _selectedGameType;
 
-  // Verification State
+  // Verification state
   int _startLevel = 1;
   int _endLevel = 200;
   final List<String> _verificationLogs = [];
@@ -51,7 +52,9 @@ class _AdminDashboardState extends State<AdminDashboard>
     super.dispose();
   }
 
-  // --- LOGIC METHODS ---
+  // ---------------------------------------------------------------------------
+  // Logic methods
+  // ---------------------------------------------------------------------------
 
   Future<void> _saveManualQuest() async {
     if (_manualJsonController.text.isEmpty) {
@@ -72,8 +75,8 @@ class _AdminDashboardState extends State<AdminDashboard>
 
     if (!mounted) return;
     setState(() {
-      _status = result['message'];
-      if (result['success']) {
+      _status = result['message'] as String;
+      if (result['success'] as bool) {
         _manualJsonController.clear();
         _manualLevel = (result['maxLevel'] as int) + 1;
       }
@@ -98,7 +101,8 @@ class _AdminDashboardState extends State<AdminDashboard>
       signatures.add('"question"');
     }
     final String name = subtype.name.toLowerCase();
-    final bool hasOptions = name.contains('choice') ||
+    final bool hasOptions =
+        name.contains('choice') ||
         name.contains('match') ||
         name.contains('search') ||
         name.contains('select') ||
@@ -122,33 +126,34 @@ class _AdminDashboardState extends State<AdminDashboard>
       _selectedSkill,
       _selectedGameType,
     );
-    String template = '[\n';
+    final buffer = StringBuffer('[\n');
     for (int i = 1; i <= 3; i++) {
-      template += '  {\n';
-      template +=
-          '    "id": "${_selectedGameType.name}_L${_manualLevel}_$i",\n';
-      template += '    "instruction": "Level Item $i",\n';
+      buffer.write('  {\n');
+      buffer.write(
+        '    "id": "${_selectedGameType.name}_L${_manualLevel}_$i",\n',
+      );
+      buffer.write('    "instruction": "Level Item $i",\n');
       if (strategy.contains('"textToSpeak"')) {
-        template += '    "textToSpeak": "Listen and repeat item $i",\n';
+        buffer.write('    "textToSpeak": "Listen and repeat item $i",\n');
       }
       if (strategy.contains('"passage"')) {
-        template += '    "passage": "Sample passage for level item $i",\n';
+        buffer.write('    "passage": "Sample passage for level item $i",\n');
       }
       if (strategy.contains('"question"')) {
-        template += '    "question": "Level Question $i?",\n';
+        buffer.write('    "question": "Level Question $i?",\n');
       }
       if (strategy.contains('"options"')) {
-        template += '    "options": ["A", "B", "C", "D"],\n';
-        template += '    "correctAnswerIndex": 0,\n';
+        buffer.write('    "options": ["A", "B", "C", "D"],\n');
+        buffer.write('    "correctAnswerIndex": 0,\n');
       }
-      template += '    "difficulty": $_manualLevel,\n';
-      template += '    "xpReward": 25,\n';
-      template += '    "coinReward": 10,\n';
-      template += '    "livesAllowed": 3\n';
-      template += i == 3 ? '  }\n' : '  },\n';
+      buffer.write('    "difficulty": $_manualLevel,\n');
+      buffer.write('    "xpReward": 25,\n');
+      buffer.write('    "coinReward": 10,\n');
+      buffer.write('    "livesAllowed": 3\n');
+      buffer.write(i == 3 ? '  }\n' : '  },\n');
     }
-    template += ']';
-    _manualJsonController.text = template;
+    buffer.write(']');
+    _manualJsonController.text = buffer.toString();
     setState(
       () => _status = 'Template loaded for ${_selectedGameType.name} 📝',
     );
@@ -162,6 +167,8 @@ class _AdminDashboardState extends State<AdminDashboard>
       ).convert(obj);
       setState(() => _status = 'JSON Formatted! ✨');
     } catch (e) {
+      // Raw exception detail is intentional here — this is an admin-only
+      // tool and the error message directly helps the admin fix their JSON.
       setState(() => _status = 'Error: Invalid JSON format: $e ❌');
     }
   }
@@ -172,7 +179,9 @@ class _AdminDashboardState extends State<AdminDashboard>
       builder: (ctx) => AlertDialog(
         title: const Text('Bulk Seed 30 Levels?'),
         content: Text(
-          'This will generate and upload 90 questions (30 levels) for ${_selectedGameType.name}. Existing levels with same numbers will be merged.',
+          'This will generate and upload 90 questions (30 levels) for '
+          '${_selectedGameType.name}. Existing levels with same numbers '
+          'will be merged.',
         ),
         actions: [
           TextButton(
@@ -199,9 +208,7 @@ class _AdminDashboardState extends State<AdminDashboard>
         subtype: _selectedGameType,
         category: _selectedSkill,
       );
-
       final jsonInput = jsonEncode(quests);
-
       final result = await _uploadService.uploadBatch(
         jsonInput: jsonInput,
         skill: _selectedSkill,
@@ -210,13 +217,13 @@ class _AdminDashboardState extends State<AdminDashboard>
 
       if (!mounted) return;
       setState(() {
-        _status = result['message'];
+        _status = result['message'] as String;
         _isLoading = false;
       });
     } catch (e) {
       if (!mounted) return;
       setState(() {
-        _status = 'Bulk seed failed: $e ❌';
+        _status = 'Bulk seed failed ❌';
         _isLoading = false;
       });
     }
@@ -233,8 +240,8 @@ class _AdminDashboardState extends State<AdminDashboard>
       final firestore = FirebaseFirestore.instance;
       int ok = 0, fail = 0;
 
-      // Optimize: Instead of querying Firestore inside a loop M times (which takes M sequential network requests),
-      // we query the entire collection exactly once! This reduces network calls from M to 1.
+      // O(1) network call: fetch entire collection once instead of one
+      // Firestore read per level (which would be O(n) sequential requests).
       final querySnapshot = await firestore
           .collection('quests')
           .doc(_selectedGameType.name)
@@ -242,7 +249,7 @@ class _AdminDashboardState extends State<AdminDashboard>
           .get();
 
       final existingLevelMap = {
-        for (var doc in querySnapshot.docs) doc.id: doc.data()
+        for (final doc in querySnapshot.docs) doc.id: doc.data(),
       };
 
       for (int i = _startLevel; i <= _endLevel; i++) {
@@ -264,9 +271,7 @@ class _AdminDashboardState extends State<AdminDashboard>
       if (!mounted) return;
       setState(() => _status = 'Verify Error: $e');
     } finally {
-      if (mounted) {
-        setState(() => _isLoading = false);
-      }
+      if (mounted) setState(() => _isLoading = false);
     }
   }
 
@@ -291,6 +296,7 @@ class _AdminDashboardState extends State<AdminDashboard>
       ),
     );
     if (confirm != true) return;
+
     setState(() => _isLoading = true);
     try {
       await _uploadService.wipeSubtype(_selectedGameType);
@@ -302,13 +308,129 @@ class _AdminDashboardState extends State<AdminDashboard>
       if (!mounted) return;
       setState(() => _status = 'Wipe Error: $e');
     } finally {
-      if (mounted) {
-        setState(() => _isLoading = false);
-      }
+      if (mounted) setState(() => _isLoading = false);
     }
   }
 
-  // --- UI BUILDERS ---
+  Future<void> _exportAll() async {
+    setState(() {
+      _isLoading = true;
+      _status = 'Exporting data for ${_selectedGameType.name}...';
+      _verificationLogs.clear();
+    });
+
+    try {
+      final snapshot = await FirebaseFirestore.instance
+          .collection('quests')
+          .doc(_selectedGameType.name)
+          .collection('levels')
+          .get();
+
+      final Map<String, dynamic> exportData = {
+        for (final doc in snapshot.docs) doc.id: doc.data(),
+      };
+
+      final jsonString = const JsonEncoder.withIndent('  ').convert(exportData);
+
+      // FIX (HIGH-1): Guard the full-data debugPrint behind kDebugMode.
+      // In release/profile builds, the JSON encoding still runs but the
+      // print is suppressed. Wrapping in kDebugMode makes the intent clear
+      // and avoids accidental data exposure in QA log pipelines.
+      if (kDebugMode) {
+        debugPrint(
+          '--- JSON EXPORT [${_selectedGameType.name}] ---\n$jsonString',
+        );
+      }
+
+      _verificationLogs.add(
+        'Exported ${snapshot.docs.length} levels to Debug Console. ✅',
+      );
+      if (!mounted) return;
+      setState(() => _status = 'Export Complete! Check debug logs. 📂');
+    } catch (e) {
+      if (!mounted) return;
+      setState(() => _status = 'Export Error ❌');
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
+
+  Future<void> _clearLegacyData() async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Cleanup Legacy?'),
+        content: const Text(
+          'This will delete all documents in "speaking_quests", '
+          '"reading_quests", etc. This is permanent.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text(context.tr('common.cancel').toUpperCase()),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text(
+              'PROCEED',
+              style: TextStyle(color: Colors.orange),
+            ),
+          ),
+        ],
+      ),
+    );
+    if (confirm != true) return;
+
+    setState(() {
+      _isLoading = true;
+      _status = 'Deleting legacy collections...';
+    });
+
+    const legacy = [
+      'speaking_quests',
+      'reading_quests',
+      'writing_quests',
+      'grammar_quests',
+      'listening_quests',
+      'accent_quests',
+      'roleplay_quests',
+    ];
+
+    try {
+      final firestore = FirebaseFirestore.instance;
+      for (final coll in legacy) {
+        final docs = await firestore.collection(coll).get();
+        if (docs.docs.isEmpty) continue;
+
+        // Firestore WriteBatch limit: 500 operations per commit.
+        WriteBatch batch = firestore.batch();
+        int count = 0;
+
+        for (final doc in docs.docs) {
+          batch.delete(doc.reference);
+          count++;
+          if (count == 500) {
+            await batch.commit();
+            batch = firestore.batch();
+            count = 0;
+          }
+        }
+        if (count > 0) await batch.commit();
+        _verificationLogs.add('Deleted legacy: $coll ✅');
+      }
+      if (!mounted) return;
+      setState(() => _status = 'Legacy Cleanup Successful! 🧹');
+    } catch (e) {
+      if (!mounted) return;
+      setState(() => _status = 'Cleanup Error ❌');
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Build
+  // ---------------------------------------------------------------------------
 
   @override
   Widget build(BuildContext context) {
@@ -317,9 +439,12 @@ class _AdminDashboardState extends State<AdminDashboard>
         ? const Color(0xFF38BDF8)
         : const Color(0xFF0284C7);
 
-    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
-    final bgColor = isMidnight 
-        ? Colors.black 
+    // FIX (MEDIUM-1): Use context.select to scope rebuilds to isMidnight only.
+    final isMidnight = context.select<ThemeCubit, bool>(
+      (c) => c.state.isMidnight,
+    );
+    final bgColor = isMidnight
+        ? Colors.black
         : (isDark ? const Color(0xFF0F172A) : Colors.grey[50]!);
 
     return Scaffold(
@@ -330,7 +455,8 @@ class _AdminDashboardState extends State<AdminDashboard>
           children: [
             Text(
               'Vowl COMMAND',
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontWeight: FontWeight.w900,
                 letterSpacing: 4,
                 fontSize: 18.sp,
@@ -339,7 +465,8 @@ class _AdminDashboardState extends State<AdminDashboard>
             ),
             Text(
               '2026 CORE EDITION • MANUAL SEEDING',
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontWeight: FontWeight.bold,
                 letterSpacing: 1,
                 fontSize: 10.sp,
@@ -361,7 +488,8 @@ class _AdminDashboardState extends State<AdminDashboard>
           indicatorWeight: 4,
           labelColor: primaryColor,
           unselectedLabelColor: isDark ? Colors.white30 : Colors.black26,
-          labelStyle: TextStyle(fontFamily: 'Outfit', 
+          labelStyle: TextStyle(
+            fontFamily: 'Outfit',
             fontWeight: FontWeight.bold,
             fontSize: 13.sp,
           ),
@@ -448,7 +576,9 @@ class _AdminDashboardState extends State<AdminDashboard>
                         value: _selectedGameType,
                         items: _selectedSkill.subtypes,
                         onChanged: (v) {
-                          if (v != null) setState(() => _selectedGameType = v);
+                          if (v != null) {
+                            setState(() => _selectedGameType = v);
+                          }
                         },
                       ),
                     ),
@@ -466,7 +596,8 @@ class _AdminDashboardState extends State<AdminDashboard>
                     TextField(
                       controller: _manualJsonController,
                       maxLines: 12,
-                      style: TextStyle(fontFamily: 'RobotoMono', 
+                      style: TextStyle(
+                        fontFamily: 'RobotoMono',
                         fontSize: 12.sp,
                         color: isDark ? Colors.greenAccent : Colors.black87,
                       ),
@@ -514,7 +645,10 @@ class _AdminDashboardState extends State<AdminDashboard>
                   icon: const Icon(Icons.save_rounded),
                   label: Text(
                     'SAVE BATCH TO FIRESTORE',
-                    style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF10B981),
@@ -531,7 +665,8 @@ class _AdminDashboardState extends State<AdminDashboard>
                   icon: const Icon(Icons.bolt_rounded, color: Colors.amber),
                   label: Text(
                     '⚡ BULK SEED 30 LEVELS',
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.amber : Colors.orange[800],
                     ),
@@ -610,7 +745,8 @@ class _AdminDashboardState extends State<AdminDashboard>
                 itemCount: _verificationLogs.length,
                 itemBuilder: (c, i) => Text(
                   _verificationLogs[i],
-                  style: TextStyle(fontFamily: 'RobotoMono', 
+                  style: TextStyle(
+                    fontFamily: 'RobotoMono',
                     color: _verificationLogs[i].contains('✅')
                         ? Colors.greenAccent
                         : Colors.redAccent,
@@ -681,9 +817,15 @@ class _AdminDashboardState extends State<AdminDashboard>
       ),
       title: Text(
         title,
-        style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.bold),
+        style: const TextStyle(
+          fontFamily: 'Outfit',
+          fontWeight: FontWeight.bold,
+        ),
       ),
-      subtitle: Text(subtitle, style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp)),
+      subtitle: Text(
+        subtitle,
+        style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp),
+      ),
       tileColor: Theme.of(context).brightness == Brightness.dark
           ? Colors.white10
           : Colors.white,
@@ -719,7 +861,8 @@ class _AdminDashboardState extends State<AdminDashboard>
           Expanded(
             child: Text(
               _status,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 11.sp,
                 fontWeight: FontWeight.bold,
               ),
@@ -760,7 +903,8 @@ class _AdminDashboardState extends State<AdminDashboard>
       children: [
         Text(
           label,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 12.sp,
             fontWeight: FontWeight.bold,
             color: Colors.grey,
@@ -787,125 +931,6 @@ class _AdminDashboardState extends State<AdminDashboard>
     );
   }
 
-  Future<void> _exportAll() async {
-    setState(() {
-      _isLoading = true;
-      _status = 'Exporting data for ${_selectedGameType.name}...';
-      _verificationLogs.clear();
-    });
-
-    try {
-      final snapshot = await FirebaseFirestore.instance
-          .collection('quests')
-          .doc(_selectedGameType.name)
-          .collection('levels')
-          .get();
-
-      final Map<String, dynamic> exportData = {};
-      for (var doc in snapshot.docs) {
-        exportData[doc.id] = doc.data();
-      }
-
-      final jsonString = const JsonEncoder.withIndent('  ').convert(exportData);
-      debugPrint(
-        '--- JSON EXPORT [${_selectedGameType.name}] ---\n$jsonString',
-      );
-
-      _verificationLogs.add(
-        'Exported ${snapshot.docs.length} levels to Debug Console. ✅',
-      );
-      if (!mounted) return;
-      setState(() => _status = 'Export Complete! Check debug logs. 📂');
-    } catch (e) {
-      if (!mounted) return;
-      setState(() => _status = 'Export Error: $e ❌');
-    } finally {
-      if (mounted) {
-        setState(() => _isLoading = false);
-      }
-    }
-  }
-
-  Future<void> _clearLegacyData() async {
-    final confirm = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('Cleanup Legacy?'),
-        content: const Text(
-          'This will delete all documents in "speaking_quests", "reading_quests", etc. This is permanent.',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, false),
-            child: Text(context.tr('common.cancel').toUpperCase()),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, true),
-            child: const Text(
-              'PROCEED',
-              style: TextStyle(color: Colors.orange),
-            ),
-          ),
-        ],
-      ),
-    );
-    if (confirm != true) return;
-
-    setState(() {
-      _isLoading = true;
-      _status = 'Deleting legacy collections...';
-    });
-
-    final legacy = [
-      'speaking_quests',
-      'reading_quests',
-      'writing_quests',
-      'grammar_quests',
-      'listening_quests',
-      'accent_quests',
-      'roleplay_quests',
-    ];
-
-    try {
-      final firestore = FirebaseFirestore.instance;
-      for (var coll in legacy) {
-        final docs = await firestore.collection(coll).get();
-        if (docs.docs.isEmpty) {
-          continue;
-        }
-
-        // Optimize: Firestore WriteBatch only allows 500 actions at a time.
-        // We partition the operations and commit chunked batches of 500.
-        WriteBatch batch = firestore.batch();
-        int count = 0;
-
-        for (var doc in docs.docs) {
-          batch.delete(doc.reference);
-          count++;
-          if (count == 500) {
-            await batch.commit();
-            batch = firestore.batch();
-            count = 0;
-          }
-        }
-        if (count > 0) {
-          await batch.commit();
-        }
-
-        _verificationLogs.add('Deleted legacy: $coll ✅');
-      }
-      if (!mounted) return;
-      setState(() => _status = 'Legacy Cleanup Successful! 🧹');
-    } catch (e) {
-      if (!mounted) return;
-      setState(() => _status = 'Cleanup Error: $e ❌');
-    } finally {
-      if (mounted) {
-        setState(() => _isLoading = false);
-      }
-    }
-  }
-
   Widget _buildJsonStatBadge() {
     if (_manualJsonController.text.isEmpty) {
       return const SizedBox.shrink();
@@ -921,7 +946,8 @@ class _AdminDashboardState extends State<AdminDashboard>
         ),
         child: Text(
           '$levels Levels Detected (${list.length} Items)',
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             color: Colors.white,
             fontSize: 10.sp,
             fontWeight: FontWeight.bold,
@@ -937,7 +963,8 @@ class _AdminDashboardState extends State<AdminDashboard>
         ),
         child: Text(
           'INVALID JSON',
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             color: Colors.white,
             fontSize: 10.sp,
             fontWeight: FontWeight.bold,
@@ -948,8 +975,11 @@ class _AdminDashboardState extends State<AdminDashboard>
   }
 }
 
-/// Custom stateful number input field that maintains its own [TextEditingController]
-/// to prevent focus loss, memory leaks, and cursor jumping on widget rebuilds.
+// ---------------------------------------------------------------------------
+// Custom stateful number input — manages its own controller to prevent
+// focus loss and cursor-jump issues on parent setState() calls.
+// ---------------------------------------------------------------------------
+
 class _NumberInputField extends StatefulWidget {
   final String label;
   final int value;
@@ -996,7 +1026,8 @@ class _NumberInputFieldState extends State<_NumberInputField> {
       children: [
         Text(
           widget.label,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 12.sp,
             fontWeight: FontWeight.bold,
             color: Colors.grey,
@@ -1019,8 +1050,6 @@ class _NumberInputFieldState extends State<_NumberInputField> {
 
   void _submit(String v) {
     final parsed = int.tryParse(v);
-    if (parsed != null) {
-      widget.onChanged(parsed);
-    }
+    if (parsed != null) widget.onChanged(parsed);
   }
 }

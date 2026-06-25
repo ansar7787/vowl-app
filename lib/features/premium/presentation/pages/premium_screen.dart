@@ -7,9 +7,12 @@ import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'dart:async';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/payment_service.dart';
+import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
 
 class PremiumScreen extends StatefulWidget {
@@ -29,31 +32,49 @@ class _PremiumScreenState extends State<PremiumScreen> {
   String? _transactionId;
   Timer? _paymentTimeout;
 
-  final List<Map<String, dynamic>> _plans = const [
-    {
-      'name': 'Weekly',
-      'price': 39.0,
-      'oldPrice': 49.0,
-      'days': 7,
-      'tag': 'FESTIVE OFFER',
-      'color': Color(0xFFF43F5E),
-    },
-    {
-      'name': 'Monthly',
-      'price': 99.0,
-      'oldPrice': 149.0,
-      'days': 30,
-      'tag': 'MOST POPULAR',
-      'color': Color(0xFF6366F1),
-    },
-    {
-      'name': 'Yearly',
-      'price': 799.0,
-      'oldPrice': 1499.0,
-      'days': 365,
-      'tag': 'BEST VALUE',
-      'color': Color(0xFF10B981),
-    },
+  // NOTE: previously this screen carried its own ad-hoc
+  // `List<Map<String, dynamic>>` of plans, completely separate from the
+  // `SubscriptionPlan` domain entity (and the `PremiumPlanCardV2` widget
+  // built for it). That duplication meant the typed entity existed but was
+  // never actually used on the one screen that needed it, and the legacy
+  // `PremiumPlanCard` had a display bug (see widgets.dart). Plans are now
+  // sourced as typed `SubscriptionPlan`s so the whole premium feature uses
+  // one single source of truth for plan shape and validation.
+  //
+  // TODO(remote-config): once these are served from Firebase Remote
+  // Config / Firestore, replace this constant with a repository call and
+  // surface loading/error states the same way the rest of the app does.
+  static final List<SubscriptionPlan> _plans = [
+    SubscriptionPlan(
+      id: 'weekly',
+      name: 'Weekly',
+      price: 39.0,
+      oldPrice: 49.0,
+      days: 7,
+      tag: 'FESTIVE OFFER',
+      color: '#F43F5E',
+      displayOrder: 0,
+    ),
+    SubscriptionPlan(
+      id: 'monthly',
+      name: 'Monthly',
+      price: 99.0,
+      oldPrice: 149.0,
+      days: 30,
+      tag: 'MOST POPULAR',
+      color: '#6366F1',
+      displayOrder: 1,
+    ),
+    SubscriptionPlan(
+      id: 'yearly',
+      name: 'Yearly',
+      price: 799.0,
+      oldPrice: 1499.0,
+      days: 365,
+      tag: 'BEST VALUE',
+      color: '#10B981',
+      displayOrder: 2,
+    ),
   ];
 
   @override
@@ -87,7 +108,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
         _isProcessing = false;
         _paymentCompleted = true;
         _paymentSuccess = false;
-        _errorMessage = 'Payment request timed out. Please try again.';
+        _errorMessage = context.tr('premium.error_timeout');
       });
     }
   }
@@ -100,10 +121,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
       final user = context.read<AuthBloc>().state.user;
       if (user != null) {
         final selectedPlan = _plans[_selectedPlanIndex];
-        await _paymentService.upgradeToPremium(
-          user.id,
-          selectedPlan['days'] as int,
-        );
+        await _paymentService.upgradeToPremium(user.id, selectedPlan.days);
 
         if (mounted) {
           // Refresh user state to reflect premium status
@@ -119,14 +137,25 @@ class _PremiumScreenState extends State<PremiumScreen> {
           });
         }
       }
-    } catch (e) {
+    } catch (e, stackTrace) {
+      // SECURITY / UX FIX: the original code surfaced `e.toString()`
+      // directly to the user (e.g. "Failed to upgrade account:
+      // _TypeError: ..."), which can leak internal implementation detail
+      // and is confusing/unactionable for a paying customer. The raw
+      // error is still logged for diagnostics; the user only ever sees a
+      // safe, localized, generic message.
+      AppLogger.error(
+        'Premium upgrade failed after successful payment',
+        error: e,
+        stackTrace: stackTrace,
+      );
       if (mounted) {
         di.sl<HapticService>().error();
         setState(() {
           _isProcessing = false;
           _paymentCompleted = true;
           _paymentSuccess = false;
-          _errorMessage = 'Failed to upgrade account: ${e.toString()}';
+          _errorMessage = context.tr('premium.error_upgrade_failed');
         });
       }
     }
@@ -140,7 +169,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
         _isProcessing = false;
         _paymentCompleted = true;
         _paymentSuccess = false;
-        _errorMessage = response.message ?? 'Payment failed. Please try again.';
+        // Razorpay's `response.message` is already a user-safe,
+        // gateway-provided description (not a raw exception), so it is
+        // fine to surface directly, with a localized fallback.
+        _errorMessage = response.message ?? context.tr('premium.error_generic');
       });
     }
   }
@@ -196,98 +228,143 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 child: Column(
                   children: [
                     const PremiumHeader(),
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.w),
-                        child: Column(
-                          children: [
-                            const Spacer(),
-                            const PremiumHero(),
-                            const Spacer(),
-                            _buildPlanList(),
-                            const Spacer(),
-                            const ModernFeatureBar(),
-                            const Spacer(flex: 2),
-                            _buildCTAButton(),
-                            SizedBox(height: 20.h),
-                            _buildSecureTag(isDark),
-                            SizedBox(height: 12.h),
-                          ],
-                        ),
-                      ),
-                    ),
+                    Expanded(child: _buildScrollableBody()),
                   ],
                 ),
               ),
-              if (_isProcessing)
-                Positioned.fill(
-                  child: Container(
-                    color: Colors.black.withValues(alpha: 0.85),
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: 60.r,
-                            height: 60.r,
-                            child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                const Color(0xFFF59E0B),
-                              ),
-                              strokeWidth: 3,
-                            ),
-                          ),
-                          SizedBox(height: 20.h),
-                          Text(
-                            'Processing Payment...',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              color: Colors.white,
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          SizedBox(height: 8.h),
-                          Text(
-                            'Please wait while we process your request',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              color: Colors.white70,
-                              fontSize: 12.sp,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              if (_paymentCompleted)
-                Positioned.fill(
-                  child: Container(
-                    color: Colors.black.withValues(alpha: 0.85),
-                    child: Center(
-                      child: _paymentSuccess == true
-                          ? PremiumSuccessOverlay(
-                              transactionId: _transactionId,
-                              onBeginAdventure: () => context.pop(),
-                            )
-                          : PremiumFailureOverlay(
-                              errorMessage: _errorMessage,
-                              onRetry: () {
-                                setState(() {
-                                  _paymentCompleted = false;
-                                  _paymentSuccess = null;
-                                  _errorMessage = null;
-                                  _transactionId = null;
-                                });
-                              },
-                              onClose: () => context.pop(),
-                            ),
-                    ),
-                  ),
-                ),
+              if (_isProcessing) _buildProcessingOverlay(),
+              if (_paymentCompleted) _buildCompletedOverlay(),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  /// RESPONSIVENESS / OVERFLOW FIX
+  ///
+  /// The original layout was a non-scrolling `Column` that relied on
+  /// `Spacer()` widgets to distribute the gap between the hero, plan list,
+  /// feature bar and CTA button. That works only as long as the sum of the
+  /// *fixed-size* children (hero text, 3 plan cards, feature bar, CTA
+  /// button, secure-transaction label) is shorter than the available
+  /// screen height. On a small phone (e.g. 320×568), at larger
+  /// accessibility text-scale factors (1.3x–3x), or once strings are
+  /// translated into a longer language (German, Indian regional scripts
+  /// routinely run 30-50% longer than English), that sum can exceed the
+  /// screen height — and a `Column` containing `Expanded`/`Spacer`
+  /// children cannot be made scrollable without changes, because flexible
+  /// children require *bounded* height, which a scroll view's main axis
+  /// does not provide. The previous structure would either throw a
+  /// "RenderFlex overflowed" error banner or assert on unbounded height,
+  /// depending on exactly how it was wrapped.
+  ///
+  /// Fix: the layout now scrolls when content doesn't fit, and is
+  /// perfectly centered (matching the original "stretch to fill" look)
+  /// when it does — the standard `LayoutBuilder` +
+  /// `ConstrainedBox(minHeight: ...)` + `Column(mainAxisSize: min,
+  /// mainAxisAlignment: center)` idiom. The `Spacer()`s are replaced with
+  /// fixed, screen-aware gaps (kept at roughly the same 1:1:1:2 ratio the
+  /// original four `Spacer`/`Spacer(flex: 2)` had), since flexible gaps
+  /// cannot be used inside a scrollable's unbounded main axis.
+  Widget _buildScrollableBody() {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(minHeight: constraints.maxHeight),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: 16.h),
+                const PremiumHero(),
+                SizedBox(height: 24.h),
+                _buildPlanList(),
+                SizedBox(height: 24.h),
+                const ModernFeatureBar(),
+                SizedBox(height: 32.h),
+                _buildCTAButton(),
+                SizedBox(height: 20.h),
+                _buildSecureTag(),
+                SizedBox(height: 12.h),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildProcessingOverlay() {
+    return Positioned.fill(
+      child: Container(
+        color: Colors.black.withValues(alpha: 0.85),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 60.r,
+                height: 60.r,
+                child: const CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFF59E0B)),
+                  strokeWidth: 3,
+                ),
+              ),
+              SizedBox(height: 20.h),
+              Semantics(
+                liveRegion: true,
+                child: Text(
+                  context.tr('premium.processing_title'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: Colors.white,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              SizedBox(height: 8.h),
+              Text(
+                context.tr('premium.processing_subtitle'),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: Colors.white70,
+                  fontSize: 12.sp,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCompletedOverlay() {
+    return Positioned.fill(
+      child: Container(
+        color: Colors.black.withValues(alpha: 0.85),
+        child: Center(
+          child: _paymentSuccess == true
+              ? PremiumSuccessOverlay(
+                  transactionId: _transactionId,
+                  onBeginAdventure: () => context.pop(),
+                )
+              : PremiumFailureOverlay(
+                  errorMessage: _errorMessage,
+                  onRetry: () {
+                    setState(() {
+                      _paymentCompleted = false;
+                      _paymentSuccess = null;
+                      _errorMessage = null;
+                      _transactionId = null;
+                    });
+                  },
+                  onClose: () => context.pop(),
+                ),
         ),
       ),
     );
@@ -296,7 +373,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   Widget _buildPlanList() {
     return Column(
       children: List.generate(_plans.length, (index) {
-        return PremiumPlanCard(
+        return PremiumPlanCardV2(
           plan: _plans[index],
           isSelected: _selectedPlanIndex == index,
           onTap: () {
@@ -309,77 +386,92 @@ class _PremiumScreenState extends State<PremiumScreen> {
   }
 
   Widget _buildCTAButton() {
-    return ScaleButton(
-      onTap: _isProcessing
-          ? null
-          : () {
-              di.sl<HapticService>().heavy();
-              final user = context.read<AuthBloc>().state.user;
-              if (user != null) {
-                setState(() => _isProcessing = true);
-                _startPaymentTimeout();
+    final ctaLabel = _isProcessing
+        ? context.tr('premium.cta_processing')
+        : context.tr('premium.cta_activate');
 
-                final plan = _plans[_selectedPlanIndex];
-                _paymentService.purchaseSubscription(
-                  contact:
-                      '', // Empty is safe - Razorpay will use email if needed
-                  email: user.email,
-                  amount: plan['price'] as double,
-                  days: plan['days'] as int,
-                  planName: plan['name'] as String,
-                );
-              }
-            },
-      child: Container(
-        width: double.infinity,
-        height: 60.h,
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            colors: [Color(0xFFF59E0B), Color(0xFFEA580C)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(20.r),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0x4DF59E0B),
-              blurRadius: 20,
-              offset: const Offset(0, 8),
+    return Semantics(
+      button: true,
+      enabled: !_isProcessing,
+      label: ctaLabel,
+      child: ScaleButton(
+        onTap: _isProcessing ? null : _onActivatePressed,
+        child: Container(
+          width: double.infinity,
+          height: 60.h,
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [Color(0xFFF59E0B), Color(0xFFEA580C)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
-          ],
-        ),
-        child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                _isProcessing ? 'PROCESSING...' : 'ACTIVATE PRO ACCESS',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: Colors.white,
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 1,
-                ),
+            borderRadius: BorderRadius.circular(20.r),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0x4DF59E0B),
+                blurRadius: 20,
+                offset: const Offset(0, 8),
               ),
-              if (!_isProcessing) ...[
-                SizedBox(width: 10.w),
-                const Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  color: Colors.white,
-                  size: 16,
-                ),
-              ],
             ],
+          ),
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: Text(
+                    ctaLabel,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: Colors.white,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ),
+                if (!_isProcessing) ...[
+                  SizedBox(width: 10.w),
+                  const Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    color: Colors.white,
+                    size: 16,
+                  ),
+                ],
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
-  Widget _buildSecureTag(bool isDark) {
+  void _onActivatePressed() {
+    di.sl<HapticService>().heavy();
+    final user = context.read<AuthBloc>().state.user;
+    if (user == null) return;
+
+    setState(() => _isProcessing = true);
+    _startPaymentTimeout();
+
+    final plan = _plans[_selectedPlanIndex];
+    _paymentService.purchaseSubscription(
+      contact: '', // Empty is safe - Razorpay will use email if needed
+      email: user.email,
+      amount: plan.price,
+      days: plan.days,
+      planName: plan.name,
+    );
+  }
+
+  Widget _buildSecureTag() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Text(
-      'SECURE TRANSACTION • CANCEL ANYTIME',
+      context.tr('premium.secure_transaction_tag'),
+      textAlign: TextAlign.center,
       style: TextStyle(
         fontFamily: 'Outfit',
         color: isDark ? const Color(0x3DFFFFFF) : const Color(0x42000000),

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -36,53 +37,61 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
   }
 
   Future<void> _checkPermissionStatus() async {
-    final prefs = await SharedPreferences.getInstance();
-    final bool isGranted = await Permission.notification.isGranted;
-    final bool isDeniedForever =
-        await Permission.notification.isPermanentlyDenied;
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final bool isGranted = await Permission.notification.isGranted;
+      final bool isDeniedForever =
+          await Permission.notification.isPermanentlyDenied;
 
-    // If user explicitly disabled notifications from Settings Screen, we respect that too.
-    final bool appSettingsEnabled =
-        prefs.getBool('notifications_enabled') ?? true;
+      if (!mounted) return;
 
-    if (isGranted || isDeniedForever || !appSettingsEnabled) {
-      if (mounted) setState(() => _isVisible = false);
-      return;
-    }
+      // If user explicitly disabled notifications from Settings Screen, we respect that too.
+      final bool appSettingsEnabled =
+          prefs.getBool('notifications_enabled') ?? true;
 
-    // Cooldown logic: don't show every single time if they dismissed it.
-    final int? lastDismissedMs = prefs.getInt(
-      'notification_card_dismissed_time',
-    );
-    if (lastDismissedMs != null) {
-      final lastDismissedDate = DateTime.fromMillisecondsSinceEpoch(
-        lastDismissedMs,
-      );
-      final daysDifference = DateTime.now()
-          .difference(lastDismissedDate)
-          .inDays;
-      if (daysDifference < 7) {
-        if (mounted) setState(() => _isVisible = false);
+      if (isGranted || isDeniedForever || !appSettingsEnabled) {
+        setState(() => _isVisible = false);
         return;
       }
-    }
 
-    if (mounted) {
+      // Cooldown logic: don't show every single time if they dismissed it.
+      final int? lastDismissedMs = prefs.getInt(
+        'notification_card_dismissed_time',
+      );
+      if (lastDismissedMs != null) {
+        final lastDismissedDate = DateTime.fromMillisecondsSinceEpoch(
+          lastDismissedMs,
+        );
+        final daysDifference = DateTime.now()
+            .difference(lastDismissedDate)
+            .inDays;
+        if (daysDifference < 7) {
+          setState(() => _isVisible = false);
+          return;
+        }
+      }
+
       setState(() => _isVisible = true);
       _animationController.forward();
+    } catch (e) {
+      // Permission/preferences lookup failures should never crash the home
+      // feed — simply keep the card hidden and trace it in debug builds.
+      if (kDebugMode) {
+        debugPrint('InlineNotificationCard: permission check failed: $e');
+      }
+      if (mounted) setState(() => _isVisible = false);
     }
   }
 
   Future<void> _requestPermission() async {
     di.sl<HapticService>().selection();
     final status = await Permission.notification.request();
+    if (!mounted) return;
 
     if (status.isGranted) {
       di.sl<HapticService>().success();
-      if (mounted) {
-        await _animationController.reverse();
-        setState(() => _isVisible = false);
-      }
+      await _animationController.reverse();
+      if (mounted) setState(() => _isVisible = false);
     } else {
       _dismissCard();
     }
@@ -90,15 +99,21 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
 
   Future<void> _dismissCard() async {
     di.sl<HapticService>().light();
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setInt(
-      'notification_card_dismissed_time',
-      DateTime.now().millisecondsSinceEpoch,
-    );
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setInt(
+        'notification_card_dismissed_time',
+        DateTime.now().millisecondsSinceEpoch,
+      );
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('InlineNotificationCard: failed to persist dismissal: $e');
+      }
+    }
 
     if (mounted) {
       await _animationController.reverse();
-      setState(() => _isVisible = false);
+      if (mounted) setState(() => _isVisible = false);
     }
   }
 
@@ -114,10 +129,16 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
 
     if (streak >= 3) {
       final streakTitles = [
-        context.tr('notification_card.streak_protect').replaceAll('{}', streak.toString()),
-        context.tr('notification_card.streak_strong').replaceAll('{}', streak.toString()),
+        context
+            .tr('notification_card.streak_protect')
+            .replaceAll('{}', streak.toString()),
+        context
+            .tr('notification_card.streak_strong')
+            .replaceAll('{}', streak.toString()),
         context.tr('notification_card.streak_unstoppable'),
-        context.tr('notification_card.streak_dont_lose').replaceAll('{}', streak.toString())
+        context
+            .tr('notification_card.streak_dont_lose')
+            .replaceAll('{}', streak.toString()),
       ];
       return streakTitles[hour % streakTitles.length];
     } else if (streak == 1 || streak == 2) {
@@ -153,6 +174,8 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
     if (!_isVisible) return const SizedBox.shrink();
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final title = _getDynamicTitle();
+    final subtitle = _getDynamicSubtitle();
 
     return SizeTransition(
       sizeFactor: _animationController,
@@ -176,34 +199,36 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        width: 48.r,
-                        height: 48.r,
-                        decoration: BoxDecoration(
-                          color: Colors.orange.withValues(alpha: 0.15),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Icon(
-                              Icons.notifications_active_rounded,
-                              color: Colors.orange,
-                              size: 24.r,
-                            ),
-                            Positioned(
-                              top: 10.r,
-                              right: 12.r,
-                              child: Container(
-                                width: 8.r,
-                                height: 8.r,
-                                decoration: const BoxDecoration(
-                                  color: Colors.redAccent,
-                                  shape: BoxShape.circle,
+                      ExcludeSemantics(
+                        child: Container(
+                          width: 48.r,
+                          height: 48.r,
+                          decoration: BoxDecoration(
+                            color: Colors.orange.withValues(alpha: 0.15),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Icon(
+                                Icons.notifications_active_rounded,
+                                color: Colors.orange,
+                                size: 24.r,
+                              ),
+                              PositionedDirectional(
+                                top: 10.r,
+                                end: 12.r,
+                                child: Container(
+                                  width: 8.r,
+                                  height: 8.r,
+                                  decoration: const BoxDecoration(
+                                    color: Colors.redAccent,
+                                    shape: BoxShape.circle,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(width: 16.w),
@@ -212,24 +237,27 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(right: 24.w),
-                              child: Text(
-                                _getDynamicTitle(),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: isDark
-                                      ? Colors.white
-                                      : const Color(0xFF0F172A),
+                              padding: EdgeInsetsDirectional.only(end: 24.w),
+                              child: Semantics(
+                                header: true,
+                                child: Text(
+                                  title,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: isDark
+                                        ? Colors.white
+                                        : const Color(0xFF0F172A),
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                             SizedBox(height: 4.h),
                             Text(
-                              _getDynamicSubtitle(),
+                              subtitle,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,
@@ -259,13 +287,17 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                         ),
                                       ),
                                       child: Text(
-                                        context.tr('notification_card.remind_me'),
+                                        context.tr(
+                                          'notification_card.remind_me',
+                                        ),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 13.sp,
                                           fontWeight: FontWeight.w900,
                                           letterSpacing: 0.5,
                                         ),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
                                     ),
                                   ),
@@ -302,6 +334,8 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                           fontWeight: FontWeight.w800,
                                           letterSpacing: 0.5,
                                         ),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
                                     ),
                                   ),
@@ -314,23 +348,38 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                     ],
                   ),
                 ),
-                Positioned(
-                  top: 12.r,
-                  right: 12.r,
-                  child: GestureDetector(
-                    onTap: _dismissCard,
-                    child: Container(
-                      padding: EdgeInsets.all(4.r),
-                      decoration: BoxDecoration(
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.1)
-                            : Colors.black.withValues(alpha: 0.05),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 16.r,
-                        color: isDark ? Colors.white54 : Colors.black54,
+                PositionedDirectional(
+                  top: 0,
+                  end: 0,
+                  child: Semantics(
+                    button: true,
+                    label: context.tr('common.close'),
+                    child: GestureDetector(
+                      onTap: _dismissCard,
+                      behavior: HitTestBehavior.opaque,
+                      child: Container(
+                        // Fixed 48x48 invisible hit area anchored at the
+                        // card's corner; centering the original 24x24 glyph
+                        // inside it reproduces the exact same visual offset
+                        // (12,12) the design had, while satisfying the 48dp
+                        // minimum accessible touch target.
+                        width: 48.r,
+                        height: 48.r,
+                        alignment: Alignment.center,
+                        child: Container(
+                          padding: EdgeInsets.all(4.r),
+                          decoration: BoxDecoration(
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.1)
+                                : Colors.black.withValues(alpha: 0.05),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.close_rounded,
+                            size: 16.r,
+                            color: isDark ? Colors.white54 : Colors.black54,
+                          ),
+                        ),
                       ),
                     ),
                   ),

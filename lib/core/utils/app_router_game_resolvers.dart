@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
-// --- BLOCS ---
+// ── BLoCs ─────────────────────────────────────────────────────────────────────
+
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
@@ -12,9 +13,11 @@ import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart' as vocab;
+import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart'
+    as vocab;
 
-// --- SPEAKING SCREENS ---
+// ── Speaking screens ──────────────────────────────────────────────────────────
+
 import 'package:vowl/features/speaking/repeat_sentence/presentation/pages/repeat_sentence_screen.dart'
     as rs_game;
 import 'package:vowl/features/speaking/speak_missing_word/presentation/pages/speak_missing_word_screen.dart'
@@ -36,7 +39,8 @@ import 'package:vowl/features/speaking/speak_opposite/presentation/pages/speak_o
 import 'package:vowl/features/speaking/daily_expression/presentation/pages/daily_expression_screen.dart'
     as de_game;
 
-// --- READING SCREENS ---
+// ── Reading screens ───────────────────────────────────────────────────────────
+
 import 'package:vowl/features/reading/read_and_answer/presentation/pages/read_and_answer_screen.dart'
     as ra_game;
 import 'package:vowl/features/reading/find_word_meaning/presentation/pages/find_word_meaning_screen.dart'
@@ -62,7 +66,8 @@ import 'package:vowl/features/reading/cloze_test/presentation/pages/cloze_test_s
 import 'package:vowl/features/reading/skimming_scanning/presentation/pages/skimming_scanning_screen.dart'
     as ss_game_read;
 
-// --- WRITING SCREENS ---
+// ── Writing screens ───────────────────────────────────────────────────────────
+
 import 'package:vowl/features/writing/sentence_builder/presentation/pages/sentence_builder_screen.dart'
     as sb_game;
 import 'package:vowl/features/writing/complete_sentence/presentation/pages/complete_sentence_screen.dart'
@@ -86,7 +91,8 @@ import 'package:vowl/features/writing/correction_writing/presentation/pages/corr
 import 'package:vowl/features/writing/essay_drafting/presentation/pages/essay_drafting_screen.dart'
     as ed_game;
 
-// --- ELITE MASTERY ---
+// ── Elite Mastery screens ─────────────────────────────────────────────────────
+
 import 'package:vowl/features/elite_mastery/story_builder/presentation/pages/story_builder_screen.dart'
     as sb_elite;
 import 'package:vowl/features/elite_mastery/idiom_match/presentation/pages/idiom_match_screen.dart'
@@ -96,7 +102,8 @@ import 'package:vowl/features/elite_mastery/speed_spelling/presentation/pages/sp
 import 'package:vowl/features/elite_mastery/accent_shadowing/presentation/pages/accent_shadowing_screen.dart'
     as as_elite;
 
-// --- GRAMMAR SCREENS ---
+// ── Grammar screens ───────────────────────────────────────────────────────────
+
 import 'package:vowl/features/grammar/grammar_quest/presentation/pages/grammar_quest_screen.dart'
     as gq_game;
 import 'package:vowl/features/grammar/tense_mastery/presentation/pages/tense_mastery_screen.dart'
@@ -136,7 +143,8 @@ import 'package:vowl/features/grammar/modifier_placement/presentation/pages/modi
 import 'package:vowl/features/grammar/punctuation_mastery/presentation/pages/punctuation_mastery_screen.dart'
     as punc_game;
 
-// --- LISTENING SCREENS ---
+// ── Listening screens ─────────────────────────────────────────────────────────
+
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/pages/audio_fill_blanks_screen.dart'
     as l_afb_game;
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/pages/audio_multiple_choice_screen.dart'
@@ -158,7 +166,8 @@ import 'package:vowl/features/listening/listening_inference/presentation/pages/l
 import 'package:vowl/features/listening/ambient_id/presentation/pages/ambient_id_screen.dart'
     as l_ai_game;
 
-// --- ACCENT SCREENS ---
+// ── Accent screens ────────────────────────────────────────────────────────────
+
 import 'package:vowl/features/accent/minimal_pairs/presentation/pages/minimal_pairs_screen.dart'
     as a_mp_game;
 import 'package:vowl/features/accent/intonation_mimic/presentation/pages/intonation_mimic_screen.dart'
@@ -184,7 +193,8 @@ import 'package:vowl/features/accent/connected_speech/presentation/pages/connect
 import 'package:vowl/features/accent/pitch_modulation/presentation/pages/pitch_modulation_screen.dart'
     as a_pm_game;
 
-// --- ROLEPLAY SCREENS ---
+// ── Roleplay screens ──────────────────────────────────────────────────────────
+
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/pages/branching_dialogue_screen.dart'
     as r_bd_game;
 import 'package:vowl/features/roleplay/situational_response/presentation/pages/situational_response_screen.dart'
@@ -206,7 +216,8 @@ import 'package:vowl/features/roleplay/social_spark/presentation/pages/social_sp
 import 'package:vowl/features/roleplay/emergency_hub/presentation/pages/emergency_hub_screen.dart'
     as r_eh_game;
 
-// --- VOCABULARY SCREENS ---
+// ── Vocabulary screens ────────────────────────────────────────────────────────
+
 import 'package:vowl/features/vocabulary/flashcards/presentation/pages/flashcards_screen.dart'
     as v_fc_game;
 import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_screen.dart'
@@ -232,10 +243,24 @@ import 'package:vowl/features/vocabulary/contextual_usage/presentation/pages/con
 import 'package:vowl/features/vocabulary/collocations/presentation/pages/collocations_screen.dart'
     as v_co_game;
 
+/// Maps [GameSubtype] values to game screens wrapped in their required BlocProvider.
+///
+/// ### Pattern
+/// Each `getXxxScreen(GameSubtype, int)` method:
+/// 1. Provides the appropriate BLoC via `BlocProvider`.
+/// 2. Delegates screen selection to the private `_getXxxScreenContent` helper.
+///
+/// This two-method pattern keeps BLoC injection and screen selection separated
+/// and makes each half independently testable. All resolvers are static so
+/// they can be referenced as function pointers in the routing map.
 class AppRouterGameResolvers {
+  AppRouterGameResolvers._(); // Non-instantiable.
+
+  // ── Speaking ────────────────────────────────────────────────────────────────
+
   static Widget getSpeakingScreen(GameSubtype gameType, int level) {
     return BlocProvider<SpeakingBloc>(
-      create: (context) => di.sl<SpeakingBloc>(),
+      create: (_) => di.sl<SpeakingBloc>(),
       child: _getSpeakingScreenContent(gameType, level),
     );
   }
@@ -279,9 +304,11 @@ class AppRouterGameResolvers {
     }
   }
 
+  // ── Reading ─────────────────────────────────────────────────────────────────
+
   static Widget getReadingScreen(GameSubtype gameType, int level) {
     return BlocProvider<ReadingBloc>(
-      create: (context) => di.sl<ReadingBloc>(),
+      create: (_) => di.sl<ReadingBloc>(),
       child: _getReadingScreenContent(gameType, level),
     );
   }
@@ -332,9 +359,11 @@ class AppRouterGameResolvers {
     }
   }
 
+  // ── Writing ─────────────────────────────────────────────────────────────────
+
   static Widget getWritingScreen(GameSubtype gameType, int level) {
     return BlocProvider<WritingBloc>(
-      create: (context) => di.sl<WritingBloc>(),
+      create: (_) => di.sl<WritingBloc>(),
       child: _getWritingScreenContent(gameType, level),
     );
   }
@@ -377,9 +406,11 @@ class AppRouterGameResolvers {
     }
   }
 
+  // ── Grammar ─────────────────────────────────────────────────────────────────
+
   static Widget getGrammarScreen(GameSubtype gameType, int level) {
     return BlocProvider<GrammarBloc>(
-      create: (context) => di.sl<GrammarBloc>(),
+      create: (_) => di.sl<GrammarBloc>(),
       child: _getGrammarScreenContent(gameType, level),
     );
   }
@@ -465,9 +496,11 @@ class AppRouterGameResolvers {
     }
   }
 
+  // ── Listening ────────────────────────────────────────────────────────────────
+
   static Widget getListeningScreen(GameSubtype gameType, int level) {
     return BlocProvider<ListeningBloc>(
-      create: (context) => di.sl<ListeningBloc>(),
+      create: (_) => di.sl<ListeningBloc>(),
       child: _getListeningScreenContent(gameType, level),
     );
   }
@@ -529,9 +562,11 @@ class AppRouterGameResolvers {
     }
   }
 
+  // ── Accent ───────────────────────────────────────────────────────────────────
+
   static Widget getAccentScreen(GameSubtype gameType, int level) {
     return BlocProvider<AccentBloc>(
-      create: (context) => di.sl<AccentBloc>(),
+      create: (_) => di.sl<AccentBloc>(),
       child: _getAccentScreenContent(gameType, level),
     );
   }
@@ -588,9 +623,11 @@ class AppRouterGameResolvers {
     }
   }
 
+  // ── Roleplay ─────────────────────────────────────────────────────────────────
+
   static Widget getRoleplayScreen(GameSubtype gameType, int level) {
     return BlocProvider<RoleplayBloc>(
-      create: (context) => di.sl<RoleplayBloc>(),
+      create: (_) => di.sl<RoleplayBloc>(),
       child: _getRoleplayScreenContent(gameType, level),
     );
   }
@@ -634,9 +671,11 @@ class AppRouterGameResolvers {
     }
   }
 
+  // ── Vocabulary ────────────────────────────────────────────────────────────────
+
   static Widget getVocabularyScreen(GameSubtype gameType, int level) {
     return BlocProvider<vocab.VocabularyBloc>(
-      create: (context) => di.sl<vocab.VocabularyBloc>(),
+      create: (_) => di.sl<vocab.VocabularyBloc>(),
       child: _getVocabularyScreenContent(gameType, level),
     );
   }
@@ -675,40 +714,33 @@ class AppRouterGameResolvers {
     }
   }
 
+  // ── Elite Mastery ─────────────────────────────────────────────────────────────
+
   static Widget getEliteMasteryScreen(GameSubtype gameType, int level) {
     return BlocProvider<EliteMasteryBloc>(
-      create: (context) => di.sl<EliteMasteryBloc>(),
-      child: Builder(
-        builder: (context) {
-          switch (gameType) {
-            case GameSubtype.storyBuilder:
-              return sb_elite.StoryBuilderScreen(
-                level: level,
-                gameType: gameType,
-              );
-            case GameSubtype.idiomMatch:
-              return im_elite.IdiomMatchScreen(
-                level: level,
-                gameType: gameType,
-              );
-            case GameSubtype.speedSpelling:
-              return ss_elite.SpeedSpellingScreen(
-                level: level,
-                gameType: gameType,
-              );
-            case GameSubtype.accentShadowing:
-              return as_elite.AccentShadowingScreen(
-                level: level,
-                gameType: gameType,
-              );
-            default:
-              return sb_elite.StoryBuilderScreen(
-                level: level,
-                gameType: gameType,
-              );
-          }
-        },
-      ),
+      create: (_) => di.sl<EliteMasteryBloc>(),
+      // FIX (MEDIUM-5): Removed the unnecessary `Builder` wrapper that
+      // previously wrapped the switch statement. The `Builder` created a new
+      // BuildContext but that context was never used inside the callback —
+      // `gameType` and `level` are captured from the enclosing scope, not
+      // from context. Removing it makes this resolver consistent with all
+      // other `getXxxScreen` methods in this class.
+      child: _getEliteMasteryScreenContent(gameType, level),
     );
+  }
+
+  static Widget _getEliteMasteryScreenContent(GameSubtype gameType, int level) {
+    switch (gameType) {
+      case GameSubtype.storyBuilder:
+        return sb_elite.StoryBuilderScreen(level: level, gameType: gameType);
+      case GameSubtype.idiomMatch:
+        return im_elite.IdiomMatchScreen(level: level, gameType: gameType);
+      case GameSubtype.speedSpelling:
+        return ss_elite.SpeedSpellingScreen(level: level, gameType: gameType);
+      case GameSubtype.accentShadowing:
+        return as_elite.AccentShadowingScreen(level: level, gameType: gameType);
+      default:
+        return sb_elite.StoryBuilderScreen(level: level, gameType: gameType);
+    }
   }
 }

@@ -2,10 +2,13 @@ import 'dart:math';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 
-/// Premium, multi-emitter confetti for level completion.
-/// Features different shapes and realistic physics for a high-end feel.
+/// Multi-emitter confetti burst for level-completion celebrations.
+///
+/// Three emitters (left, right, top-centre) fire simultaneously for a
+/// premium, physical feel. All emitters share a single controller.
 class GameConfetti extends StatefulWidget {
   final bool shouldPop;
+
   const GameConfetti({super.key, this.shouldPop = false});
 
   @override
@@ -14,12 +17,28 @@ class GameConfetti extends StatefulWidget {
 
 class _GameConfettiState extends State<GameConfetti> {
   late ConfettiController _controller;
-  final Random _random = Random(42); // Seeded to maintain clean visual look and avoid object churn
+
+  // Seeded random keeps shape generation deterministic (avoids visual churn).
+  final Random _random = Random(42);
+
+  static const List<Color> _confettiColors = [
+    Color(0xFFFFD700), // Gold
+    Color(0xFF6366F1), // Indigo
+    Color(0xFF10B981), // Emerald
+    Color(0xFFF43F5E), // Rose
+    Color(0xFF8B5CF6), // Violet
+    Color(0xFF3B82F6), // Blue
+    Color(0xFFF59E0B), // Amber
+    Color(0xFFEC4899), // Pink
+  ];
 
   @override
   void initState() {
     super.initState();
     _controller = ConfettiController(duration: const Duration(seconds: 4));
+
+    // Auto-play on first mount if shouldPop is already true (e.g., on
+    // immediate completion screen).
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) _controller.play();
     });
@@ -28,7 +47,9 @@ class _GameConfettiState extends State<GameConfetti> {
   @override
   void didUpdateWidget(covariant GameConfetti oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.shouldPop && !oldWidget.shouldPop) {
+    // Guard: only replay when the flag transitions false → true, and only
+    // if the controller is still alive.
+    if (widget.shouldPop && !oldWidget.shouldPop && mounted) {
       _controller.play();
     }
   }
@@ -39,24 +60,21 @@ class _GameConfettiState extends State<GameConfetti> {
     super.dispose();
   }
 
-  /// Creates varied shapes for a more dynamic look without allocating new Random states on every call.
+  /// Generates varied particle shapes (rectangle, circle, triangle) without
+  /// allocating a new [Random] on every call.
   Path _createVariedPath(Size size) {
     final path = Path();
-    final shapeType = _random.nextInt(3);
-
-    switch (shapeType) {
-      case 0: // Rectangle/Paper
+    switch (_random.nextInt(3)) {
+      case 0: // Rectangle / paper strip
         path.addRect(Rect.fromLTWH(0, 0, size.width, size.height * 0.6));
-        break;
       case 1: // Circle
         path.addOval(Rect.fromLTWH(0, 0, size.width * 0.8, size.width * 0.8));
-        break;
-      case 2: // Triangle/Diamond
-        path.moveTo(size.width / 2, 0);
-        path.lineTo(size.width, size.height);
-        path.lineTo(0, size.height);
-        path.close();
-        break;
+      default: // Triangle
+        path
+          ..moveTo(size.width / 2, 0)
+          ..lineTo(size.width, size.height)
+          ..lineTo(0, size.height)
+          ..close();
     }
     return path;
   }
@@ -66,12 +84,12 @@ class _GameConfettiState extends State<GameConfetti> {
     return RepaintBoundary(
       child: Stack(
         children: [
-          // Left Emitter
+          // Left emitter — inward and down.
           Align(
             alignment: Alignment.topLeft,
             child: ConfettiWidget(
               confettiController: _controller,
-              blastDirection: pi / 4, // Inward and down
+              blastDirection: pi / 4,
               emissionFrequency: 0.1,
               numberOfParticles: 15,
               maxBlastForce: 35,
@@ -81,12 +99,12 @@ class _GameConfettiState extends State<GameConfetti> {
               colors: _confettiColors,
             ),
           ),
-          // Right Emitter
+          // Right emitter — inward and down.
           Align(
             alignment: Alignment.topRight,
             child: ConfettiWidget(
               confettiController: _controller,
-              blastDirection: 3 * pi / 4, // Inward and down
+              blastDirection: 3 * pi / 4,
               emissionFrequency: 0.1,
               numberOfParticles: 15,
               maxBlastForce: 35,
@@ -96,12 +114,12 @@ class _GameConfettiState extends State<GameConfetti> {
               colors: _confettiColors,
             ),
           ),
-          // Center Burst
+          // Centre burst — explosive radial spread.
           Align(
             alignment: Alignment.topCenter,
             child: ConfettiWidget(
               confettiController: _controller,
-              blastDirection: pi / 2, // Straight down
+              blastDirection: pi / 2,
               blastDirectionality: BlastDirectionality.explosive,
               emissionFrequency: 0.05,
               numberOfParticles: 25,
@@ -116,15 +134,4 @@ class _GameConfettiState extends State<GameConfetti> {
       ),
     );
   }
-
-  static const List<Color> _confettiColors = [
-    Color(0xFFFFD700), // Gold
-    Color(0xFF6366F1), // Indigo
-    Color(0xFF10B981), // Emerald
-    Color(0xFFF43F5E), // Rose
-    Color(0xFF8B5CF6), // Violet
-    Color(0xFF3B82F6), // Blue
-    Color(0xFFF59E0B), // Amber
-    Color(0xFFEC4899), // Pink
-  ];
 }

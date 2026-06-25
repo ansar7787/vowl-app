@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
+import 'package:vowl/core/error/exceptions.dart';
 
 /// Registry mapping game types to curriculum skill categories and asset paths.
-/// 
+///
 /// This class is abstract to prevent instantiation and subclassing.
 @immutable
 abstract class QuestRegistry {
@@ -9,7 +10,7 @@ abstract class QuestRegistry {
   const QuestRegistry._();
 
   /// Maps each gameType to its corresponding category (skill) folder in `assets/curriculum`.
-  /// 
+  ///
   /// Lookups operate in constant O(1) time complexity.
   static const Map<String, String> gameToCategory = {
     // Accent
@@ -123,7 +124,7 @@ abstract class QuestRegistry {
     'shortAnswerWriting': 'writing',
     'summarizeStoryWriting': 'writing',
     'writingEmail': 'writing',
-    
+
     // Elite Mastery
     'storyBuilder': 'elite_mastery',
     'idiomMatch': 'elite_mastery',
@@ -132,12 +133,17 @@ abstract class QuestRegistry {
   };
 
   /// Gets the full local bundle asset path for a specific game and level batch.
-  /// 
+  ///
   /// Batch size is 10 levels (30 questions) per file.
   /// Uses a constant O(1) mathematical index mapping to locate boundaries instantly.
   static String getAssetPath(String gameType, int level) {
     final category = gameToCategory[gameType];
-    if (category == null) throw Exception('Unknown gameType: $gameType');
+    if (category == null) {
+      throw ValidationException(
+        'Unknown gameType: $gameType',
+        'UNKNOWN_GAME_TYPE',
+      );
+    }
 
     // O(1) mathematical mapping instead of N-iteration scanning
     final batchIndex = ((level - 1) ~/ 10) + 1;

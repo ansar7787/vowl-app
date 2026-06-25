@@ -33,13 +33,15 @@ class ProfilePreferencesList extends StatelessWidget {
             Divider(
               height: 1,
               thickness: 1,
-              color: isDark ? Colors.white.withValues(alpha: 0.1) : const Color(0xFFE2E8F0),
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.1)
+                  : const Color(0xFFE2E8F0),
               indent: 20.w,
               endIndent: 20.w,
             ),
             _buildPreferenceTile(
               context,
-              'Admin Dashboard',
+              context.tr('profile.admin_dashboard'),
               Icons.admin_panel_settings_rounded,
               Colors.orange,
               () {
@@ -51,7 +53,9 @@ class ProfilePreferencesList extends StatelessWidget {
           Divider(
             height: 1,
             thickness: 1,
-            color: isDark ? Colors.white.withValues(alpha: 0.1) : const Color(0xFFE2E8F0),
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.1)
+                : const Color(0xFFE2E8F0),
             indent: 20.w,
             endIndent: 20.w,
           ),
@@ -79,37 +83,50 @@ class ProfilePreferencesList extends StatelessWidget {
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.all(10.r),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(12.r),
-              ),
-              child: Icon(icon, color: color, size: 22.r),
-            ),
-            SizedBox(width: 16.w),
-            Expanded(
-              child: Text(
-                title,
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+    return Semantics(
+      button: true,
+      label: title,
+      child: InkWell(
+        onTap: onTap,
+        child: ConstrainedBox(
+          // ACCESSIBILITY: guarantees the 48dp minimum touch target even
+          // if a future short title/compact font scale would otherwise
+          // shrink this row below it.
+          constraints: BoxConstraints(minHeight: 48.h),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            child: Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(10.r),
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                  child: Icon(icon, color: color, size: 22.r),
                 ),
-              ),
+                SizedBox(width: 16.w),
+                Expanded(
+                  child: Text(
+                    title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark ? Colors.white : const Color(0xFF1E293B),
+                    ),
+                  ),
+                ),
+                Icon(
+                  Icons.chevron_right_rounded,
+                  color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+                  size: 20.r,
+                ),
+              ],
             ),
-            Icon(
-              Icons.chevron_right_rounded,
-              color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
-              size: 20.r,
-            ),
-          ],
+          ),
         ),
       ),
     );

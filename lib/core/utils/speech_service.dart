@@ -1,7 +1,8 @@
-import 'package:flutter/foundation.dart' show debugPrint, VoidCallback;
+import 'package:flutter/foundation.dart' show VoidCallback;
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:vowl/core/utils/app_logger.dart';
 
 /// Abstract contract defining Text-To-Speech (TTS) and Speech-To-Text (STT) services.
 ///
@@ -24,11 +25,7 @@ abstract class SpeechService {
   Future<void> setSpeechRate(double rate);
 
   /// Speaks a phrase aloud.
-  Future<void> speak(
-    String text, {
-    double rate = 0.5,
-    String locale = "en-US",
-  });
+  Future<void> speak(String text, {double rate = 0.5, String locale = "en-US"});
 
   /// Stops all active audio outputs and listening sessions.
   Future<void> stop();
@@ -37,7 +34,17 @@ abstract class SpeechService {
   Future<bool> initializeStt();
 
   /// Listens continuously for user speaking outputs.
-  void listen({
+  ///
+  /// FIX: previously declared `void` while having an `async` body (the
+  /// `avoid_void_async` anti-pattern) - callers could only fire-and-forget
+  /// this; they had no way to `await` its completion or catch any error it
+  /// threw (any uncaught exception would become an unhandled Zone error
+  /// instead of something the caller could react to). Returning
+  /// `Future<void>` is non-breaking for every existing call site: calling
+  /// an async function and not awaiting its result is always valid Dart,
+  /// so this only adds capability, in line with the explicit "void async"
+  /// production-readiness audit category.
+  Future<void> listen({
     required Function(String) onResult,
     required VoidCallback onDone,
   });
@@ -47,7 +54,7 @@ abstract class SpeechService {
 class SpeechServiceImpl implements SpeechService {
   final FlutterTts _tts = FlutterTts();
   final SpeechToText _stt = SpeechToText();
-  
+
   bool _isSttInitialized = false;
   bool _isPlaying = false;
   VoidCallback? _onDoneCallback;
@@ -83,7 +90,10 @@ class SpeechServiceImpl implements SpeechService {
         _onWordCallback?.call(word);
       });
     } catch (e) {
-      debugPrint('SpeechService: TTS configuration initialization error: $e');
+      AppLogger.warning(
+        'SpeechService: TTS configuration initialization error',
+        error: e,
+      );
     }
   }
 
@@ -114,7 +124,7 @@ class SpeechServiceImpl implements SpeechService {
       await _tts.setSpeechRate(rate);
       await _tts.speak(text);
     } catch (e) {
-      debugPrint('SpeechService: TTS speech execution error: $e');
+      AppLogger.warning('SpeechService: TTS speech execution error', error: e);
     }
   }
 
@@ -124,7 +134,7 @@ class SpeechServiceImpl implements SpeechService {
       await _tts.stop();
       await _stt.stop();
     } catch (e) {
-      debugPrint('SpeechService: Speech stop execution error: $e');
+      AppLogger.warning('SpeechService: Speech stop execution error', error: e);
     }
   }
 
@@ -146,9 +156,10 @@ class SpeechServiceImpl implements SpeechService {
       if (!status.isGranted) return false;
 
       _isSttInitialized = await _stt.initialize(
-        onError: (val) => debugPrint('SpeechService: STT Error: $val'),
+        onError: (val) =>
+            AppLogger.warning('SpeechService: STT Error', error: val),
         onStatus: (status) {
-          debugPrint('SpeechService: STT Status: $status');
+          AppLogger.debug('SpeechService: STT Status: $status');
           if (status == 'done' || status == 'notListening') {
             _onDoneCallback?.call();
             _onDoneCallback = null;
@@ -157,13 +168,16 @@ class SpeechServiceImpl implements SpeechService {
       );
       return _isSttInitialized;
     } catch (e) {
-      debugPrint('SpeechService: STT initialization exception: $e');
+      AppLogger.warning(
+        'SpeechService: STT initialization exception',
+        error: e,
+      );
       return false;
     }
   }
 
   @override
-  void listen({
+  Future<void> listen({
     required Function(String) onResult,
     required VoidCallback onDone,
   }) async {
@@ -186,7 +200,7 @@ class SpeechServiceImpl implements SpeechService {
         listenMode: ListenMode.dictation, // Continuous speech shadowing support
       );
     } catch (e) {
-      debugPrint('SpeechService: STT listening exception: $e');
+      AppLogger.warning('SpeechService: STT listening exception', error: e);
     }
   }
 }

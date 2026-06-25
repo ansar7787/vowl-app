@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:vowl/core/presentation/widgets/games/dashed_path_utils.dart';
 
 /// A performant CustomPainter to draw straight or dashed quest connection tracks.
 class GameMapLinePainter extends CustomPainter {
@@ -17,7 +18,10 @@ class GameMapLinePainter extends CustomPainter {
     this.isDashed = false,
     this.dashWidth = 10.0,
     this.dashSpace = 8.0,
-  }) : assert(dashWidth > 0, 'dashWidth must be strictly positive to prevent infinite loops'),
+  }) : assert(
+         dashWidth > 0,
+         'dashWidth must be strictly positive to prevent infinite loops',
+       ),
        assert(dashSpace >= 0, 'dashSpace must be non-negative');
 
   @override
@@ -38,24 +42,15 @@ class GameMapLinePainter extends CustomPainter {
     }
 
     if (isDashed) {
-      _drawDashedPath(canvas, path, paint);
+      drawDashedPath(
+        canvas,
+        path,
+        paint,
+        dashWidth: dashWidth,
+        dashSpace: dashSpace,
+      );
     } else {
       canvas.drawPath(path, paint);
-    }
-  }
-
-  void _drawDashedPath(Canvas canvas, Path path, Paint paint) {
-    double distance = 0.0;
-
-    for (final pathMetric in path.computeMetrics()) {
-      while (distance < pathMetric.length) {
-        canvas.drawPath(
-          pathMetric.extractPath(distance, distance + dashWidth),
-          paint,
-        );
-        distance += dashWidth + dashSpace;
-      }
-      distance = 0.0;
     }
   }
 

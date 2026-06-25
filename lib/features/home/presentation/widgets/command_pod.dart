@@ -45,6 +45,7 @@ class CommandPod extends StatelessWidget {
   }
 
   Widget _buildDiscoveryHero(BuildContext context) {
+    // XP-to-next-level progress; guarded against a zero/undefined modulus.
     final progress = (user.totalExp % 100) / 100.0;
 
     return Container(
@@ -92,8 +93,8 @@ class CommandPod extends StatelessWidget {
 
                     MasteryAvatar(user: user, progress: progress),
 
-                    Positioned(
-                      right: 0,
+                    PositionedDirectional(
+                      end: 0,
                       bottom: 0,
                       child: Container(
                         padding: EdgeInsets.all(5.r),
@@ -136,7 +137,8 @@ class CommandPod extends StatelessWidget {
                         ),
                         child: Text(
                           context.tr('home.rank_operative'),
-                          style: TextStyle(fontFamily: 'Outfit', 
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
                             fontSize: 9.sp,
                             fontWeight: FontWeight.w800,
                             color: const Color(0xFF2563EB),
@@ -178,10 +180,13 @@ class CommandPod extends StatelessWidget {
                   Flexible(
                     child: Text(
                       context.tr('home.level', args: [user.level.toString()]),
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 11.sp,
                         fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white70 : const Color(0xFF0F172A),
+                        color: isDark
+                            ? Colors.white70
+                            : const Color(0xFF0F172A),
                         letterSpacing: 1,
                       ),
                       maxLines: 1,
@@ -192,12 +197,17 @@ class CommandPod extends StatelessWidget {
               ),
             ),
             Text(
-              context.tr('home.completed_percent', args: [(progress * 100).toInt().toString()]),
-              style: TextStyle(fontFamily: 'Outfit', 
+              context.tr(
+                'home.completed_percent',
+                args: [(progress * 100).toInt().toString()],
+              ),
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w800,
                 color: const Color(0xFF2563EB),
               ),
+              maxLines: 1,
             ),
           ],
         ),
@@ -246,257 +256,287 @@ class CommandPod extends StatelessWidget {
   }
 
   Widget _buildKidsLearningCard(BuildContext context) {
-    return ScaleButton(
-      onTap: () => context.push(AppRouter.kidsZoneRoute),
-      child: Container(
-        constraints: BoxConstraints(minHeight: 160.h),
-        width: double.infinity,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(32.r),
-          gradient: const LinearGradient(
-            colors: [Color(0xFF6366F1), Color(0xFFA855F7), Color(0xFFEC4899)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xFFA855F7).withValues(alpha: 0.3),
-              blurRadius: 30,
-              offset: const Offset(0, 15),
-            ),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(32.r),
-          child: Stack(
-            children: [
-              // Decorative background circles
-              Positioned(
-                right: -30.w,
-                bottom: -30.h,
-                child: Container(
-                  width: 180.r,
-                  height: 180.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white.withValues(alpha: 0.1),
-                  ),
+    return Semantics(
+      button: true,
+      label:
+          '${context.tr('home.junior_adventure')}. ${context.tr('home.junior_adventure_subtitle')}',
+      child: ScaleButton(
+        onTap: () => context.push(AppRouter.kidsZoneRoute),
+        child: ExcludeSemantics(
+          child: Container(
+            constraints: BoxConstraints(minHeight: 160.h),
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(32.r),
+              gradient: const LinearGradient(
+                colors: [
+                  Color(0xFF6366F1),
+                  Color(0xFFA855F7),
+                  Color(0xFFEC4899),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xFFA855F7).withValues(alpha: 0.3),
+                  blurRadius: 30,
+                  offset: const Offset(0, 15),
                 ),
-              ),
-
-              // Playful background icons
-              Positioned(
-                left: 20.w,
-                top: 20.h,
-                child:
-                    Icon(
-                          Icons.auto_awesome_rounded,
-                          size: 24.r,
-                          color: Colors.white.withValues(alpha: 0.2),
-                        )
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.3, 1.3),
-                          duration: 3.seconds,
-                        ),
-              ),
-
-              // Content Layer
-              Stack(
+              ],
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(32.r),
+              child: Stack(
                 children: [
-                  // Text Content (Moved to left side)
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(24.w, 16.h, 150.w, 16.h),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
-                            vertical: 4.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.2),
-                            borderRadius: BorderRadius.circular(12.r),
-                            border: Border.all(
-                              color: Colors.white.withValues(alpha: 0.3),
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                Icons.rocket_launch_rounded,
-                                size: 10.r,
-                                color: Colors.white,
-                              ),
-                              SizedBox(width: 4.w),
-                              Flexible(
-                                child: Text(
-                                  context.tr('home.early_learners'),
-                                  style: TextStyle(fontFamily: 'Outfit', 
-                                    color: Colors.white,
-                                    fontSize: 8.sp,
-                                    fontWeight: FontWeight.w900,
-                                    letterSpacing: 1.5,
-                                  ),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 8.h),
-                        Text(
-                          context.tr('home.junior_adventure'),
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            color: Colors.white,
-                            fontSize: 24.sp, // Slightly larger
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: -0.5,
-                            height: 1.0,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        SizedBox(height: 4.h),
-                        Text(
-                          context.tr('home.junior_adventure_subtitle'),
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            color: Colors.white.withValues(alpha: 0.9),
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w600,
-                            height: 1.2,
-                          ),
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  // Mascot Area (Concentric & Engaging Design)
-                  Positioned(
-                    right: -10.w,
-                    bottom: 0,
-                    top: 0,
-                    child: SizedBox(
-                      width: 140.w,
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          // 1. Outer Soft Glow
-                          Container(
-                                width: 140.r,
-                                height: 140.r,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  gradient: RadialGradient(
-                                    colors: [
-                                      Colors.white.withValues(alpha: 0.1),
-                                      Colors.transparent,
-                                    ],
-                                  ),
-                                ),
-                              )
-                              .animate(onPlay: (c) => c.repeat(reverse: true))
-                              .scale(
-                                begin: const Offset(0.8, 0.8),
-                                end: const Offset(1.2, 1.2),
-                                duration: 4.seconds,
-                              ),
-
-                          // 2. Secondary Interactive Ring
-                          Container(
-                                width: 100.r,
-                                height: 100.r,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: Colors.white.withValues(alpha: 0.15),
-                                    width: 1.5,
-                                  ),
-                                ),
-                              )
-                              .animate(onPlay: (c) => c.repeat())
-                              .rotate(duration: 10.seconds),
-
-                          // 3. Floating Sparkles/Particles
-                          ...List.generate(5, (index) {
-                            final random = math.Random(index + 50);
-                            return Positioned(
-                              left: 20.w + random.nextDouble() * 100.w,
-                              top: 20.h + random.nextDouble() * 80.h,
-                              child:
-                                  Icon(
-                                        Icons.star_rounded,
-                                        color: Colors.white.withValues(
-                                          alpha: 0.3,
-                                        ),
-                                        size: (8 + random.nextInt(8)).r,
-                                      )
-                                      .animate(
-                                        onPlay: (c) => c.repeat(reverse: true),
-                                      )
-                                      .fadeIn(
-                                        duration:
-                                            (1 + random.nextDouble()).seconds,
-                                      )
-                                      .moveY(
-                                        begin: 0,
-                                        end: -20,
-                                        duration: 2.seconds,
-                                      ),
-                            );
-                          }),
-
-                          // 4. The Buddy Icon (Grounded in Center)
-                          Container(
-                                padding: EdgeInsets.all(18.r),
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withValues(alpha: 0.15),
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: Colors.white.withValues(alpha: 0.25),
-                                    width: 2.r,
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withValues(
-                                        alpha: 0.1,
-                                      ),
-                                      blurRadius: 25,
-                                      offset: const Offset(0, 12),
-                                    ),
-                                  ],
-                                ),
-                                child: Text(
-                                  "🧸",
-                                  style: TextStyle(fontSize: 48.sp),
-                                ),
-                              )
-                              .animate(onPlay: (c) => c.repeat(reverse: true))
-                              .moveY(
-                                begin: -6,
-                                end: 6,
-                                duration: 2.seconds,
-                                curve: Curves.easeInOut,
-                              )
-                              .scale(
-                                begin: const Offset(1, 1),
-                                end: const Offset(1.05, 1.05),
-                                duration: 2.seconds,
-                              ),
-                        ],
+                  // Decorative background circles
+                  PositionedDirectional(
+                    end: -30.w,
+                    bottom: -30.h,
+                    child: Container(
+                      width: 180.r,
+                      height: 180.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white.withValues(alpha: 0.1),
                       ),
                     ),
                   ),
+
+                  // Playful background icons
+                  PositionedDirectional(
+                    start: 20.w,
+                    top: 20.h,
+                    child:
+                        Icon(
+                              Icons.auto_awesome_rounded,
+                              size: 24.r,
+                              color: Colors.white.withValues(alpha: 0.2),
+                            )
+                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .scale(
+                              begin: const Offset(1, 1),
+                              end: const Offset(1.3, 1.3),
+                              duration: 3.seconds,
+                            ),
+                  ),
+
+                  // Content Layer
+                  Stack(
+                    children: [
+                      // Text Content (Moved to left side)
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                          24.w,
+                          16.h,
+                          150.w,
+                          16.h,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 10.w,
+                                vertical: 4.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.2),
+                                borderRadius: BorderRadius.circular(12.r),
+                                border: Border.all(
+                                  color: Colors.white.withValues(alpha: 0.3),
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.rocket_launch_rounded,
+                                    size: 10.r,
+                                    color: Colors.white,
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Flexible(
+                                    child: Text(
+                                      context.tr('home.early_learners'),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        color: Colors.white,
+                                        fontSize: 8.sp,
+                                        fontWeight: FontWeight.w900,
+                                        letterSpacing: 1.5,
+                                      ),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 8.h),
+                            Text(
+                              context.tr('home.junior_adventure'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                color: Colors.white,
+                                fontSize: 24.sp, // Slightly larger
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: -0.5,
+                                height: 1.0,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            SizedBox(height: 4.h),
+                            Text(
+                              context.tr('home.junior_adventure_subtitle'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                color: Colors.white.withValues(alpha: 0.9),
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w600,
+                                height: 1.2,
+                              ),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // Mascot Area (Concentric & Engaging Design)
+                      PositionedDirectional(
+                        end: -10.w,
+                        bottom: 0,
+                        top: 0,
+                        child: SizedBox(
+                          width: 140.w,
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              // 1. Outer Soft Glow
+                              Container(
+                                    width: 140.r,
+                                    height: 140.r,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      gradient: RadialGradient(
+                                        colors: [
+                                          Colors.white.withValues(alpha: 0.1),
+                                          Colors.transparent,
+                                        ],
+                                      ),
+                                    ),
+                                  )
+                                  .animate(
+                                    onPlay: (c) => c.repeat(reverse: true),
+                                  )
+                                  .scale(
+                                    begin: const Offset(0.8, 0.8),
+                                    end: const Offset(1.2, 1.2),
+                                    duration: 4.seconds,
+                                  ),
+
+                              // 2. Secondary Interactive Ring
+                              Container(
+                                    width: 100.r,
+                                    height: 100.r,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: Colors.white.withValues(
+                                          alpha: 0.15,
+                                        ),
+                                        width: 1.5,
+                                      ),
+                                    ),
+                                  )
+                                  .animate(onPlay: (c) => c.repeat())
+                                  .rotate(duration: 10.seconds),
+
+                              // 3. Floating Sparkles/Particles
+                              ...List.generate(5, (index) {
+                                final random = math.Random(index + 50);
+                                return Positioned(
+                                  left: 20.w + random.nextDouble() * 100.w,
+                                  top: 20.h + random.nextDouble() * 80.h,
+                                  child:
+                                      Icon(
+                                            Icons.star_rounded,
+                                            color: Colors.white.withValues(
+                                              alpha: 0.3,
+                                            ),
+                                            size: (8 + random.nextInt(8)).r,
+                                          )
+                                          .animate(
+                                            onPlay: (c) =>
+                                                c.repeat(reverse: true),
+                                          )
+                                          .fadeIn(
+                                            duration: (1 + random.nextDouble())
+                                                .seconds,
+                                          )
+                                          .moveY(
+                                            begin: 0,
+                                            end: -20,
+                                            duration: 2.seconds,
+                                          ),
+                                );
+                              }),
+
+                              // 4. The Buddy Icon (Grounded in Center)
+                              Container(
+                                    padding: EdgeInsets.all(18.r),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withValues(
+                                        alpha: 0.15,
+                                      ),
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: Colors.white.withValues(
+                                          alpha: 0.25,
+                                        ),
+                                        width: 2.r,
+                                      ),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withValues(
+                                            alpha: 0.1,
+                                          ),
+                                          blurRadius: 25,
+                                          offset: const Offset(0, 12),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Text(
+                                      "🧸",
+                                      style: TextStyle(fontSize: 48.sp),
+                                    ),
+                                  )
+                                  .animate(
+                                    onPlay: (c) => c.repeat(reverse: true),
+                                  )
+                                  .moveY(
+                                    begin: -6,
+                                    end: 6,
+                                    duration: 2.seconds,
+                                    curve: Curves.easeInOut,
+                                  )
+                                  .scale(
+                                    begin: const Offset(1, 1),
+                                    end: const Offset(1.05, 1.05),
+                                    duration: 2.seconds,
+                                  ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
-            ],
+            ),
           ),
         ),
       ),
@@ -566,58 +606,71 @@ class CommandPod extends StatelessWidget {
     String route,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return ScaleButton(
-      onTap: () => context.push(route),
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(20.r),
-        padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 6.w),
-        child: SizedBox(
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-            Container(
-              padding: EdgeInsets.all(8.r),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.1),
-                shape: BoxShape.circle,
+    return Semantics(
+      button: true,
+      label: '$label: $value',
+      child: ScaleButton(
+        onTap: () => context.push(route),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(minHeight: 48.r),
+          child: GlassTile(
+            borderRadius: BorderRadius.circular(20.r),
+            padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 6.w),
+            child: ExcludeSemantics(
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(8.r),
+                      decoration: BoxDecoration(
+                        color: color.withValues(alpha: 0.1),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(icon, color: color, size: 20.r),
+                    ),
+                    SizedBox(height: 8.h),
+                    Text(
+                      value,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        height: 1.1,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    SizedBox(height: 2.h),
+                    Text(
+                      label,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 8.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white38 : Colors.black45,
+                        letterSpacing: 1.0,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
               ),
-              child: Icon(icon, color: color, size: 20.r),
             ),
-            SizedBox(height: 8.h),
-            Text(
-              value,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : const Color(0xFF0F172A),
-                height: 1.1,
-              ),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-            SizedBox(height: 2.h),
-            Text(
-              label,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 8.sp,
-                fontWeight: FontWeight.w800,
-                color: isDark ? Colors.white38 : Colors.black45,
-                letterSpacing: 1.0,
-              ),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ],
-        ),
+          ),
         ),
       ),
     );
   }
 
   Widget _buildDynamicGreeting(BuildContext context) {
-    final name = user.displayName?.split(' ').first ?? 'Seeker';
+    final name =
+        user.displayName?.split(' ').first ??
+        context.tr('home.default_seeker_name');
     final hour = DateTime.now().hour;
     String greeting = context.tr('home.greeting_default');
     if (hour >= 5 && hour < 12) {
@@ -636,10 +689,13 @@ class CommandPod extends StatelessWidget {
       children: [
         Text(
           '$greeting,',
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 14.sp,
             fontWeight: FontWeight.w700,
-            color: const Color(0xFF2563EB).withValues(alpha: isDark ? 0.7 : 0.9),
+            color: const Color(
+              0xFF2563EB,
+            ).withValues(alpha: isDark ? 0.7 : 0.9),
             letterSpacing: 0.5,
           ),
           maxLines: 1,
@@ -647,7 +703,8 @@ class CommandPod extends StatelessWidget {
         ),
         Text(
           name,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 26.sp,
             fontWeight: FontWeight.w900,
             color: MeshGradientBackground.getContrastColor(context),

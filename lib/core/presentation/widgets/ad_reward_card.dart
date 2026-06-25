@@ -9,25 +9,88 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 
-class AdRewardCard extends StatelessWidget {
+/// Card widget that awards 20 Vowl Coins in exchange for watching a
+/// rewarded video ad.
+///
+/// Uses a [ValueNotifier] for local ad-loading state so the parent widget
+/// tree is not rebuilt unnecessarily.
+class AdRewardCard extends StatefulWidget {
   final EdgeInsetsGeometry? margin;
+
   const AdRewardCard({super.key, this.margin});
+
+  @override
+  State<AdRewardCard> createState() => _AdRewardCardState();
+}
+
+class _AdRewardCardState extends State<AdRewardCard> {
+  /// Prevents duplicate taps while an ad is already loading or showing.
+  final ValueNotifier<bool> _isLoading = ValueNotifier(false);
+
+  static const int _coinReward = 20;
+
+  @override
+  void dispose() {
+    _isLoading.dispose();
+    super.dispose();
+  }
+
+  Future<void> _showRewardAd() async {
+    if (_isLoading.value) return;
+    _isLoading.value = true;
+
+    bool rewardEarned = false;
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+
+    try {
+      await di.sl<AdService>().showRewardedAd(
+        isPremium: isPremium,
+        onUserEarnedReward: (reward) {
+          rewardEarned = true;
+          if (!context.mounted) return;
+          context.read<EconomyBloc>().add(
+            EconomyAddCoinsRequested(
+              _coinReward,
+              title: 'Watched Rewarded Ad',
+              isEarned: true,
+            ),
+          );
+        },
+        onDismissed: () {
+          if (rewardEarned && context.mounted) {
+            CustomSnackBar.show(
+              context: context,
+              message: 'Reward Earned! +$_coinReward Vowl Coins',
+              type: CustomSnackBarType.success,
+            );
+          }
+        },
+      );
+    } finally {
+      // Always release the loading gate, even if the ad errors out.
+      if (mounted) _isLoading.value = false;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
-      margin: margin ?? EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+      margin:
+          widget.margin ??
+          EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
       child: GlassTile(
         borderRadius: BorderRadius.circular(24.r),
         padding: EdgeInsets.all(20.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               'WATCH AND EARN COINS',
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: const Color(0xFF2563EB),
@@ -38,108 +101,124 @@ class AdRewardCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(6.r),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF10B981).withValues(alpha: 0.1),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.monetization_on_rounded,
-                        color: const Color(0xFF10B981),
-                        size: 16.r,
-                      ),
-                    ),
-                    SizedBox(width: 8.w),
-                    Text(
-                      '20 VOWL COINS',
-                      style: TextStyle(fontFamily: 'Outfit', 
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      ),
-                    ),
-                  ],
-                ),
-                ScaleButton(
-                  onTap: () => _showRewardAd(context),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 8.h,
-                    ),
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF2563EB), Color(0xFF6366F1)],
-                      ),
-                      borderRadius: BorderRadius.circular(20.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0xFF2563EB).withValues(alpha: 0.3),
-                          blurRadius: 10,
-                          offset: const Offset(0, 4),
+                // ── Coin label ────────────────────────────────────
+                Flexible(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(6.r),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                          shape: BoxShape.circle,
                         ),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.play_arrow_rounded,
-                          color: Colors.white,
-                          size: 20.r,
+                        child: Icon(
+                          Icons.monetization_on_rounded,
+                          color: const Color(0xFF10B981),
+                          size: 16.r,
                         ),
-                        SizedBox(width: 4.w),
-                        Text(
-                          'WATCH',
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 12.sp,
+                      ),
+                      SizedBox(width: 8.w),
+                      Flexible(
+                        child: Text(
+                          '$_coinReward VOWL COINS',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w900,
-                            color: Colors.white,
+                            color: isDark
+                                ? Colors.white
+                                : const Color(0xFF0F172A),
                           ),
+                          overflow: TextOverflow.ellipsis,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
+                ),
+
+                SizedBox(width: 8.w),
+
+                // ── Watch button ──────────────────────────────────
+                ValueListenableBuilder<bool>(
+                  valueListenable: _isLoading,
+                  builder: (_, loading, __) {
+                    return Semantics(
+                      button: true,
+                      enabled: !loading,
+                      label: 'Watch ad to earn $_coinReward coins',
+                      child: ScaleButton(
+                        onTap: loading ? null : _showRewardAd,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 8.h,
+                          ),
+                          constraints: BoxConstraints(minHeight: 48.h),
+                          decoration: BoxDecoration(
+                            gradient: loading
+                                ? null
+                                : const LinearGradient(
+                                    colors: [
+                                      Color(0xFF2563EB),
+                                      Color(0xFF6366F1),
+                                    ],
+                                  ),
+                            color: loading
+                                ? const Color(0xFF2563EB).withValues(alpha: 0.4)
+                                : null,
+                            borderRadius: BorderRadius.circular(20.r),
+                            boxShadow: loading
+                                ? null
+                                : [
+                                    BoxShadow(
+                                      color: const Color(
+                                        0xFF2563EB,
+                                      ).withValues(alpha: 0.3),
+                                      blurRadius: 10,
+                                      offset: const Offset(0, 4),
+                                    ),
+                                  ],
+                          ),
+                          child: loading
+                              ? SizedBox(
+                                  width: 18.r,
+                                  height: 18.r,
+                                  child: const CircularProgressIndicator(
+                                    color: Colors.white,
+                                    strokeWidth: 2,
+                                  ),
+                                )
+                              : Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      Icons.play_arrow_rounded,
+                                      color: Colors.white,
+                                      size: 20.r,
+                                    ),
+                                    SizedBox(width: 4.w),
+                                    Text(
+                                      'WATCH',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
           ],
         ),
       ),
-    );
-  }
-
-  void _showRewardAd(BuildContext context) {
-    bool rewardEarned = false;
-    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-
-    di.sl<AdService>().showRewardedAd(
-      isPremium: isPremium,
-      onUserEarnedReward: (reward) {
-        rewardEarned = true;
-        if (!context.mounted) return;
-        // Use EconomyAddCoinsRequested to ensure history is logged
-        context.read<EconomyBloc>().add(
-          const EconomyAddCoinsRequested(
-            20,
-            title: 'Watched Rewarded Ad',
-            isEarned: true,
-          ),
-        );
-      },
-      onDismissed: () {
-        if (rewardEarned && context.mounted) {
-          CustomSnackBar.show(
-      context: context,
-      message: 'Reward Earned! +20 Vowl Coins',
-      type: CustomSnackBarType.success,
-    );
-        }
-      },
     );
   }
 }

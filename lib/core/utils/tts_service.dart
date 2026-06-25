@@ -1,6 +1,6 @@
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/utils/app_logger.dart';
 
 /// Abstract contract defining the Text-To-Speech (TTS) synthesis engine.
 ///
@@ -21,8 +21,16 @@ class TtsServiceImpl implements TtsService {
   final FlutterTts _flutterTts = FlutterTts();
   SharedPreferences? _prefs;
 
+  /// RACE-CONDITION FIX: `_initTts()` caches `SharedPreferences` asynchronously
+  /// from the constructor with nothing awaiting it. The previous `speak()`
+  /// read `_prefs?.getBool(...)` directly - if called before this finished,
+  /// `_prefs` was still null and the null-aware fallback (`?? true`) meant
+  /// speech could play even for an already-muted user, for a brief window
+  /// right after app startup. `speak()` now awaits this stored Future first.
+  late final Future<void> _initFuture;
+
   TtsServiceImpl() {
-    _initTts();
+    _initFuture = _initTts();
   }
 
   Future<void> _initTts() async {
@@ -32,24 +40,35 @@ class TtsServiceImpl implements TtsService {
       await _flutterTts.setVolume(1.0);
       await _flutterTts.setPitch(1.0);
       await _flutterTts.awaitSpeakCompletion(true);
-      
+
       // Cache SharedPreferences in memory to evaluate app mute state instantly without circular references
       _prefs = await SharedPreferences.getInstance();
     } catch (e) {
-      debugPrint("TtsService: Configuration initialization error: $e");
+      AppLogger.warning(
+        'TtsService: Configuration initialization error',
+        error: e,
+      );
     }
   }
 
   @override
   Future<void> speak(String text, {double? rate, String? locale}) async {
     if (text.isEmpty) return;
-    
+
+    await _initFuture;
+
     // Evaluate if the application is muted dynamically from local cache (zero circular dependency on SoundService)
     final bool isMuted = !(_prefs?.getBool('sound_enabled') ?? true);
     if (isMuted) return;
 
     // Clean emojis and symbols from text for pristine phonetic engine results
-    final cleanText = text.replaceAll(RegExp(r'[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]', unicode: true), '');
+    final cleanText = text.replaceAll(
+      RegExp(
+        r'[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]',
+        unicode: true,
+      ),
+      '',
+    );
 
     try {
       if (locale != null) {
@@ -64,7 +83,7 @@ class TtsServiceImpl implements TtsService {
       }
       await _flutterTts.speak(cleanText);
     } catch (e) {
-      debugPrint("TtsService: Speech execution error: $e");
+      AppLogger.warning('TtsService: Speech execution error', error: e);
     }
   }
 
@@ -73,7 +92,7 @@ class TtsServiceImpl implements TtsService {
     try {
       await _flutterTts.stop();
     } catch (e) {
-      debugPrint("TtsService: Stop execution error: $e");
+      AppLogger.warning('TtsService: Stop execution error', error: e);
     }
   }
 }

@@ -1,12 +1,29 @@
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
-/// Performance-optimized dummy curriculum generator for Vowl admin dashboards,
-/// reconciling database key structures to match system model schemas perfectly.
+/// Performance-optimised dummy curriculum generator for the Vowl admin
+/// dashboard.
+///
+/// Produces Firestore-ready quest maps that conform to the schema used by
+/// game screen data sources. All content is intentionally in English because:
+/// 1. This tool is admin-only (never shown to end users).
+/// 2. The generated content serves as placeholder data for new game subtypes
+///    before real curriculum is authored.
+///
+/// Placeholder URLs (e.g., `https://example.com/audio/...`) must be replaced
+/// with production CDN URLs before the generated content goes live.
 class GameContentGenerator {
-  // Private constructor to enforce static utility boundaries
-  const GameContentGenerator._();
+  const GameContentGenerator._(); // Non-instantiable utility class.
 
-  /// Generates a standardized list of level quests in map serialization format.
+  /// Generates a standardised list of quest maps for [startLevel]..[endLevel],
+  /// with [itemsPerLevel] quests per level.
+  ///
+  /// ### Complexity
+  /// O((endLevel − startLevel + 1) × itemsPerLevel) — linear in the number
+  /// of quests generated. Memory footprint is bounded by the same factor.
+  ///
+  /// ### Assertions
+  /// Structural requirements are enforced with `assert` so misconfigurations
+  /// surface immediately in debug builds without cluttering production paths.
   static List<Map<String, dynamic>> generateLevels({
     required GameSubtype subtype,
     required QuestType category,
@@ -14,37 +31,37 @@ class GameContentGenerator {
     int endLevel = 30,
     int itemsPerLevel = 3,
   }) {
-    // Assert structural requirements for safety
-    assert(startLevel >= 1, 'startLevel must be greater than or equal to 1');
-    assert(endLevel >= startLevel, 'endLevel must be greater than or equal to startLevel');
-    assert(itemsPerLevel >= 1, 'itemsPerLevel must be greater than or equal to 1');
+    assert(startLevel >= 1, 'startLevel must be ≥ 1');
+    assert(
+      endLevel >= startLevel,
+      'endLevel ($endLevel) must be ≥ startLevel ($startLevel)',
+    );
+    assert(itemsPerLevel >= 1, 'itemsPerLevel must be ≥ 1');
 
-    final List<Map<String, dynamic>> allQuests = [];
+    final quests = <Map<String, dynamic>>[];
 
     for (int level = startLevel; level <= endLevel; level++) {
       for (int item = 1; item <= itemsPerLevel; item++) {
-        final Map<String, dynamic> quest = {
+        quests.add({
           'id': '${subtype.name}_L${level}_$item',
-          'instruction': _getInstruction(subtype, item),
+          'instruction': _instruction(subtype),
           'type': category.name,
           'subtype': subtype.name,
           'difficulty': level,
           'xpReward': 10 + (level ~/ 5) * 5,
           'coinReward': 5 + (level ~/ 10) * 2,
           'livesAllowed': 3,
-        };
-
-        // Add subtype-specific fields
-        quest.addAll(_getSubtypeSpecificFields(subtype, level, item));
-
-        allQuests.add(quest);
+          ..._subtypeFields(subtype, level, item),
+        });
       }
     }
 
-    return allQuests;
+    return quests;
   }
 
-  static String _getInstruction(GameSubtype subtype, int item) {
+  // ── Instruction text ──────────────────────────────────────────────────────
+
+  static String _instruction(GameSubtype subtype) {
     switch (subtype) {
       case GameSubtype.repeatSentence:
         return 'Listen carefully and repeat the sentence exactly as you hear it.';
@@ -53,7 +70,7 @@ class GameContentGenerator {
       case GameSubtype.sentenceBuilder:
         return 'Arrange the words in the correct order to form a meaningful sentence.';
       case GameSubtype.grammarQuest:
-        return 'Identify the grammatical error or choose the correct form to complete the sentence.';
+        return 'Identify the error or choose the correct form to complete the sentence.';
       case GameSubtype.minimalPairs:
         return 'Listen to the two words and identify which one you hear.';
       case GameSubtype.flashcards:
@@ -63,24 +80,23 @@ class GameContentGenerator {
       case GameSubtype.audioFillBlanks:
         return 'Listen to the audio and fill in the missing words in the transcript.';
       case GameSubtype.essayDrafting:
-        return 'Write a structured essay based on the provided topic, following the outline.';
+        return 'Write a structured essay based on the provided topic and outline.';
       default:
         return 'Complete the challenge to improve your English skills.';
     }
   }
 
-  static Map<String, dynamic> _getSubtypeSpecificFields(
+  // ── Subtype-specific Firestore fields ─────────────────────────────────────
+
+  static Map<String, dynamic> _subtypeFields(
     GameSubtype subtype,
     int level,
     int item,
   ) {
     switch (subtype) {
-      // 1. Speaking
+      // ── Speaking ────────────────────────────────────────────────────────
       case GameSubtype.repeatSentence:
-        return {
-          'textToSpeak':
-              'This is a sample sentence for level $level, item $item.',
-        };
+        return {'textToSpeak': 'Sample sentence for level $level, item $item.'};
       case GameSubtype.speakMissingWord:
         return {
           'textWithBlank': 'The ___ is very bright today.',
@@ -126,11 +142,11 @@ class GameContentGenerator {
           'context': 'Good luck with your performance tonight!',
         };
 
-      // 2. Listening
+      // ── Listening ───────────────────────────────────────────────────────
       case GameSubtype.audioFillBlanks:
         return {
           'audioUrl': 'https://example.com/audio/L${level}_$item.mp3',
-          'textWithBlanks': 'I went to the ___ to buy some ___',
+          'textWithBlanks': 'I went to the ___ to buy some ___.',
           'answers': ['store', 'milk'],
         };
       case GameSubtype.audioMultipleChoice:
@@ -141,11 +157,12 @@ class GameContentGenerator {
           'correctAnswerIndex': 1,
         };
 
-      // 3. Reading
+      // ── Reading ─────────────────────────────────────────────────────────
       case GameSubtype.readAndAnswer:
         return {
           'passage':
-              'Sample passage for level $level. English is a fascinating language with a rich history.',
+              'Sample passage for level $level. English is a fascinating '
+              'language with a rich history.',
           'question': 'What is the topic of the passage?',
           'options': ['Math', 'History', 'English'],
           'correctAnswerIndex': 2,
@@ -153,12 +170,12 @@ class GameContentGenerator {
       case GameSubtype.findWordMeaning:
         return {
           'word': 'Fascinating',
-          'passage': 'English is a fascinating language...',
+          'passage': 'English is a fascinating language…',
           'options': ['Boring', 'Very interesting'],
           'correctAnswerIndex': 1,
         };
 
-      // 4. Writing
+      // ── Writing ─────────────────────────────────────────────────────────
       case GameSubtype.sentenceBuilder:
         return {
           'words': ['I', 'love', 'learning', 'English'],
@@ -182,7 +199,7 @@ class GameContentGenerator {
           'minWords': 200,
         };
 
-      // 5. Grammar
+      // ── Grammar ─────────────────────────────────────────────────────────
       case GameSubtype.grammarQuest:
         return {
           'sentence': 'He ___ to the gym every day.',
@@ -200,14 +217,14 @@ class GameContentGenerator {
           'correct': [2, 1, 3, 0],
         };
 
-      // 6. Vocabulary
+      // ── Vocabulary ──────────────────────────────────────────────────────
       case GameSubtype.flashcards:
         return {
           'word': 'Diligent',
           'definition':
-              "Having or showing care and conscientiousness in one's work or duties.",
+              'Showing care and conscientiousness in one\'s work or duties.',
           'example':
-              'She is a diligent student who always finishes her homework on time.',
+              'She is a diligent student who always finishes her homework.',
         };
       case GameSubtype.synonymSearch:
         return {
@@ -216,7 +233,7 @@ class GameContentGenerator {
           'correctAnswerIndex': 1,
         };
 
-      // 7. Accent
+      // ── Accent ──────────────────────────────────────────────────────────
       case GameSubtype.minimalPairs:
         return {
           'words': ['Bit', 'Beat'],
@@ -229,7 +246,7 @@ class GameContentGenerator {
           'intonationMap': [0.1, 0.5, 0.9, 0.4],
         };
 
-      // 8. Roleplay
+      // ── Roleplay ────────────────────────────────────────────────────────
       case GameSubtype.branchingDialogue:
         return {
           'nodes': {

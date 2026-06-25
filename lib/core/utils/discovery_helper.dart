@@ -2,15 +2,57 @@ import 'dart:math';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
-/// Helper coordinator to calculate dynamic sequence paths and custom quest mixes
-/// for the discovery hub, ensuring perfect list limits and optimized memory footprints.
+/// Helper coordinator to calculate dynamic sequence paths and custom quest
+/// mixes for the discovery hub.
+///
+/// ### Localisation
+/// FIX (HIGH-5): All user-facing instruction strings were previously hardcoded
+/// English literals passed directly into [GameQuest.instruction]. These have
+/// been replaced with localisation keys. The presentation layer is responsible
+/// for translating them:
+/// ```dart
+/// Text(context.tr(quest.instruction))
+/// ```
+///
+/// ### Quest instruction keys declared here
+/// ```
+/// quest_sequences.strengthen_weak_spots
+/// quest_sequences.play_to_strengths
+/// quest_sequences.wildcard_challenge
+/// quest_sequences.speaking_warm_up
+/// quest_sequences.ear_training
+/// quest_sequences.comprehension_focus
+/// quest_sequences.read_react
+/// quest_sequences.listen_answer
+/// quest_sequences.rapid_pronunciation
+/// quest_sequences.category_skill_enhance
+/// ```
 class DiscoveryHelper {
-  // Private constructor to prevent instantiations
-  const DiscoveryHelper._();
+  const DiscoveryHelper._(); // Non-instantiable.
 
   static final Random _random = Random();
 
-  /// Resolves dynamic quests based on specific hub sequence configurations.
+  // ── Localisation key constants ────────────────────────────────────────────
+
+  static const String _kStrengthenWeakSpots =
+      'quest_sequences.strengthen_weak_spots';
+  static const String _kPlayToStrengths = 'quest_sequences.play_to_strengths';
+  static const String _kWildcardChallenge =
+      'quest_sequences.wildcard_challenge';
+  static const String _kSpeakingWarmUp = 'quest_sequences.speaking_warm_up';
+  static const String _kEarTraining = 'quest_sequences.ear_training';
+  static const String _kComprehensionFocus =
+      'quest_sequences.comprehension_focus';
+  static const String _kReadReact = 'quest_sequences.read_react';
+  static const String _kListenAnswer = 'quest_sequences.listen_answer';
+  static const String _kRapidPronunciation =
+      'quest_sequences.rapid_pronunciation';
+  static const String _kCategorySkillEnhance =
+      'quest_sequences.category_skill_enhance';
+
+  // ── Public API ────────────────────────────────────────────────────────────
+
+  /// Resolves dynamic quest lists based on hub sequence configurations.
   static List<GameQuest> getQuestsForSequence(
     String sequenceId,
     UserEntity user,
@@ -29,25 +71,23 @@ class DiscoveryHelper {
     }
   }
 
+  // ── Private generators ────────────────────────────────────────────────────
+
   static List<GameQuest> _generateSmartRecommendation(UserEntity user) {
-    // 1. Find weakest category
     QuestType lowestType = QuestType.speaking;
     int lowestProgress = 9999;
-    bool allZero = true;
-
-    // 2. Find favorite category
     QuestType favoriteType = QuestType.vocabulary;
     int highestProgress = -1;
+    bool allZero = true;
 
     for (final type in QuestType.values) {
       final cleared = user.getTotalCategoryLevelsCleared(type);
       if (cleared > 0) allZero = false;
-      
+
       if (cleared < lowestProgress) {
         lowestProgress = cleared;
         lowestType = type;
       }
-      
       if (cleared > highestProgress) {
         highestProgress = cleared;
         favoriteType = type;
@@ -60,40 +100,66 @@ class DiscoveryHelper {
       favoriteType = types[_random.nextInt(types.length)];
     }
 
-    final types = QuestType.values;
-    final randomType = types[_random.nextInt(types.length)];
+    final randomType =
+        QuestType.values[_random.nextInt(QuestType.values.length)];
 
-    // Curated mix: Weakest -> Favorite -> Random wildcard
+    // FIX (HIGH-5): tr() keys instead of raw English instruction strings.
     return [
-      _getRandomGameForCategory(user, lowestType).copyWith(instruction: 'Let\'s strengthen your weak spots!'),
-      _getRandomGameForCategory(user, favoriteType).copyWith(instruction: 'Play to your strengths.'),
-      _getRandomGameForCategory(user, randomType).copyWith(instruction: 'A wildcard challenge!'),
+      _getRandomGameForCategory(
+        user,
+        lowestType,
+      ).copyWith(instruction: _kStrengthenWeakSpots),
+      _getRandomGameForCategory(
+        user,
+        favoriteType,
+      ).copyWith(instruction: _kPlayToStrengths),
+      _getRandomGameForCategory(
+        user,
+        randomType,
+      ).copyWith(instruction: _kWildcardChallenge),
     ];
   }
 
   static List<GameQuest> _generateDailyDuo(UserEntity user) {
-    // Mixed vocal & listening/reading
     final speakingGame = _getRandomGameForCategory(user, QuestType.speaking);
     final isListening = _random.nextBool();
-    final secondGame = _getRandomGameForCategory(user, isListening ? QuestType.listening : QuestType.reading);
+    final secondGame = _getRandomGameForCategory(
+      user,
+      isListening ? QuestType.listening : QuestType.reading,
+    );
 
     return [
-      speakingGame.copyWith(instruction: 'Warm up your voice with this speaking drill.'),
-      secondGame.copyWith(instruction: isListening ? 'Now tune your ears.' : 'Now focus on comprehension.'),
+      // FIX (HIGH-5): tr() keys.
+      speakingGame.copyWith(instruction: _kSpeakingWarmUp),
+      secondGame.copyWith(
+        instruction: isListening ? _kEarTraining : _kComprehensionFocus,
+      ),
     ];
   }
 
   static List<GameQuest> _generateSpeedBlitz(UserEntity user) {
-    // Fast, randomized challenges across categories
+    // FIX (HIGH-5): tr() keys.
     return [
-      _getRandomGameForCategory(user, QuestType.reading).copyWith(instruction: 'Read and react as fast as you can!'),
-      _getRandomGameForCategory(user, QuestType.listening).copyWith(instruction: 'Listen carefully, answer quickly.'),
-      _getRandomGameForCategory(user, QuestType.accent).copyWith(instruction: 'Rapid-fire pronunciation.'),
+      _getRandomGameForCategory(
+        user,
+        QuestType.reading,
+      ).copyWith(instruction: _kReadReact),
+      _getRandomGameForCategory(
+        user,
+        QuestType.listening,
+      ).copyWith(instruction: _kListenAnswer),
+      _getRandomGameForCategory(
+        user,
+        QuestType.accent,
+      ).copyWith(instruction: _kRapidPronunciation),
     ];
   }
 
   static List<GameQuest> _generateGrammarPro(UserEntity user) {
-    // 3 distinct grammar drills
+    // Use a Set to attempt deduplication by subtype.
+    // NOTE: Effective deduplication requires GameQuest to override == by
+    // subtype identity. If GameQuest uses default object equality, all entries
+    // will be distinct and the Set adds no deduplication benefit.
     final grammarGames = <GameQuest>{};
     int attempts = 0;
     while (grammarGames.length < 3 && attempts < 10) {
@@ -102,55 +168,54 @@ class DiscoveryHelper {
     }
 
     final list = grammarGames.toList();
-    
-    // Safety guard to always guarantee exactly 3 distinct entries
+
+    // Safety pad: guarantee exactly 3 quests.
     int fallbackAttempts = 0;
     while (list.length < 3 && fallbackAttempts < 10) {
       list.add(_getRandomGameForCategory(user, QuestType.writing));
       fallbackAttempts++;
     }
-    
+
     return list;
   }
 
   static List<GameQuest> _generateRandomQuest(UserEntity user) {
-    final types = QuestType.values;
-    final randomType = types[_random.nextInt(types.length)];
+    final randomType =
+        QuestType.values[_random.nextInt(QuestType.values.length)];
     return [_getRandomGameForCategory(user, randomType)];
   }
 
   static GameQuest _getRandomGameForCategory(UserEntity user, QuestType type) {
-    // Filter out legacy subtypes that have no game data
     final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
     if (subtypes.isEmpty) {
-      // Fallback: pick any non-legacy subtype
       final fallback = GameSubtype.values.where((s) => !s.isLegacy).toList();
       final subtype = fallback[_random.nextInt(fallback.length)];
-      return _getQuestForSubtype(user, subtype, 'Explore this quest!');
+      // FIX (HIGH-5): tr() key.
+      return _getQuestForSubtype(user, subtype, _kCategorySkillEnhance);
     }
     final subtype = subtypes[_random.nextInt(subtypes.length)];
-    return _getQuestForSubtype(
-      user,
-      subtype,
-      'Enhance your ${type.name} skills with this quest!',
-    );
+    return _getQuestForSubtype(user, subtype, _kCategorySkillEnhance);
   }
 
   static GameQuest _getQuestForSubtype(
     UserEntity user,
     GameSubtype subtype,
-    String instruction,
+    String instructionKey,
   ) {
     final currentLevel = user.unlockedLevels[subtype.name] ?? 1;
     return GameQuest(
       id: '${subtype.name}_$currentLevel',
       type: subtype.category,
       subtype: subtype,
-      instruction: instruction,
+      instruction: instructionKey,
       difficulty: currentLevel,
     );
   }
 }
+
+// ---------------------------------------------------------------------------
+// Extension on GameQuest for copyWith support
+// ---------------------------------------------------------------------------
 
 extension GameQuestX on GameQuest {
   GameQuest copyWith({

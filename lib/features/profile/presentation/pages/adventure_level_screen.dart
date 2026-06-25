@@ -16,7 +16,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/hint_ad_card.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/presentation/widgets/hint_purchase_dialog.dart';
 
 class AdventureLevelScreen extends StatelessWidget {
   const AdventureLevelScreen({super.key});
@@ -371,24 +371,24 @@ class AdventureLevelScreen extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final perks = [
       {
-        'title': 'Streak Protection',
-        'desc': 'No reset on missed days',
+        'title': context.tr('adventure.perk_streak_protection_title'),
+        'desc': context.tr('adventure.perk_streak_protection_desc'),
         'level': 50,
         'icon': Icons.security_rounded,
         'color': const Color(0xFF10B981),
         'active': user.level >= 50,
       },
       {
-        'title': '2x Coin Multiplier',
-        'desc': 'Double rewards per quest',
+        'title': context.tr('adventure.perk_coin_multiplier_title'),
+        'desc': context.tr('adventure.perk_coin_multiplier_desc'),
         'level': 100,
         'icon': Icons.stars_rounded,
         'color': const Color(0xFFF59E0B),
         'active': user.level >= 100,
       },
       {
-        'title': 'Avatar Aura',
-        'desc': 'Holographic status glow',
+        'title': context.tr('adventure.perk_avatar_aura_title'),
+        'desc': context.tr('adventure.perk_avatar_aura_desc'),
         'level': 200,
         'icon': Icons.auto_awesome_rounded,
         'color': const Color(0xFF8B5CF6),
@@ -402,7 +402,7 @@ class AdventureLevelScreen extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Text(
-            'LEVEL MASTERY PERKS',
+            context.tr('adventure.level_mastery_perks_header'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 12.sp,
@@ -460,7 +460,9 @@ class AdventureLevelScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8.r),
                           ),
                           child: Text(
-                            isActive ? 'ACTIVE' : 'LOCKED',
+                            isActive
+                                ? context.tr('adventure.perk_status_active')
+                                : context.tr('adventure.perk_status_locked'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
@@ -474,8 +476,20 @@ class AdventureLevelScreen extends StatelessWidget {
                       ],
                     ),
                     const Spacer(),
+                    // RESPONSIVENESS FIX: this card has a fixed height
+                    // (140.h). Without maxLines/overflow, a longer
+                    // translated title/description (or a large
+                    // accessibility text-scale factor) could push the
+                    // rendered content taller than the fixed card,
+                    // producing a real "RenderFlex overflowed" error.
+                    // Clamping to 1/2 lines with ellipsis guarantees this
+                    // card can never overflow, while looking identical to
+                    // the original for the existing English copy, which
+                    // already fits comfortably within these limits.
                     Text(
                       perk['title'] as String,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
@@ -486,7 +500,12 @@ class AdventureLevelScreen extends StatelessWidget {
                     Text(
                       isActive
                           ? perk['desc'] as String
-                          : 'Unlocks at XP Level ${perk['level']}',
+                          : context.tr(
+                              'adventure.perk_unlocks_at_level',
+                              args: ['${perk['level']}'],
+                            ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
@@ -512,7 +531,7 @@ class AdventureLevelScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'UPCOMING MILESTONES',
+          context.tr('adventure.upcoming_milestones_header'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 12.sp,
@@ -539,7 +558,7 @@ class AdventureLevelScreen extends StatelessWidget {
             return _buildMilestoneItem(
               context,
               badge.name,
-              'Reach Level $milestoneLevel',
+              context.tr('adventure.reach_level', args: ['$milestoneLevel']),
               badge.icon,
               badge.color,
               isReached,
@@ -710,7 +729,7 @@ class AdventureLevelScreen extends StatelessWidget {
         ),
         SizedBox(height: 16.h),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24),
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: HintAdCard(
             title: 'Quick Hint',
             subtitle: 'Watch ad for +1 Hint',
@@ -781,7 +800,9 @@ class AdventureLevelScreen extends StatelessWidget {
                                     fontFamily: 'Outfit',
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w500,
-                                    color: isDark ? Colors.white54 : Colors.black54,
+                                    color: isDark
+                                        ? Colors.white54
+                                        : Colors.black54,
                                   ),
                                 ),
                                 Text(
@@ -815,106 +836,25 @@ class AdventureLevelScreen extends StatelessWidget {
     int cost,
     int amount,
   ) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    if (user.coins < cost) {
-      di.sl<HapticService>().light();
-      CustomSnackBar.show(
+    HintPurchaseDialog.show(
       context: context,
-      message: 'Insufficient Vowl Coins! Needed: $cost',
-      type: CustomSnackBarType.info,
-    );
-      return;
-    }
-
-    showDialog(
-      context: context,
-      builder: (ctx) => Center(
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 24.w),
-          child: GlassTile(
-            borderRadius: BorderRadius.circular(32.r),
-            padding: EdgeInsets.all(24.r),
-            borderColor: const Color(0xFFF59E0B).withValues(alpha: 0.3),
-            color: isDark ? const Color(0xFF1E293B) : Colors.white,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  padding: EdgeInsets.all(20.r),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.lightbulb_rounded,
-                    color: const Color(0xFFF59E0B),
-                    size: 40.r,
-                  ),
-                ),
-                SizedBox(height: 16.h),
-                Text(
-                  amount > 5 ? 'GRAND MASTER PACK' : 'STRATEGIC HINT PACK',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
-                  ),
-                ),
-                SizedBox(height: 12.h),
-                Text(
-                  'Exchange $cost Vowl Coins for ${amount == 1 ? "1 hint" : "$amount hints"}.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: isDark ? Colors.white70 : const Color(0xFF64748B),
-                  ),
-                ),
-                SizedBox(height: 32.h),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextButton(
-                        onPressed: () => Navigator.of(ctx).pop(),
-                        child: Text(context.tr('common.cancel').toUpperCase()),
-                      ),
-                    ),
-                    SizedBox(width: 16.w),
-                    Expanded(
-                      child: FilledButton(
-                        style: FilledButton.styleFrom(
-                          backgroundColor: const Color(0xFFF59E0B),
-                        ),
-                        onPressed: () {
-                          Navigator.of(ctx).pop();
-                          context.read<EconomyBloc>().add(
-                            EconomyPurchaseHintRequested(
-                              cost,
-                              hintAmount: amount,
-                            ),
-                          );
-                          di.sl<HapticService>().heavy();
-                          _showSuccessSnackbar(context, amount);
-                        },
-                        child: Text(context.tr('common.confirm').toUpperCase()),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
+      user: user,
+      cost: cost,
+      amount: amount,
+      titleBuilder: (amount) => amount > 5
+          ? context.tr('adventure.hint_pack_grand_master')
+          : context.tr('adventure.hint_pack_strategic'),
+      bodyBuilder: (cost, amount) => context.tr(
+        'adventure.hint_pack_exchange_body',
+        args: ['$cost', '$amount'],
       ),
-    );
-  }
-
-  void _showSuccessSnackbar(BuildContext context, int amount) {
-    CustomSnackBar.show(
-      context: context,
-      message: 'INVENTORY UPDATED: +$amount HINTS',
-      type: CustomSnackBarType.success,
+      onConfirm: () {
+        context.read<EconomyBloc>().add(
+          EconomyPurchaseHintRequested(cost, hintAmount: amount),
+        );
+        di.sl<HapticService>().heavy();
+        HintPurchaseDialog.showSuccessSnackbar(context, amount);
+      },
     );
   }
 }

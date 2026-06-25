@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -46,7 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       if (context.read<AuthBloc>().state.status == AuthStatus.authenticated) {
-        context.read<EconomyBloc>().add(const EconomyCheckDailyRewardRequested());
+        context.read<EconomyBloc>().add(
+          const EconomyCheckDailyRewardRequested(),
+        );
       }
     });
   }
@@ -55,13 +58,22 @@ class _HomeScreenState extends State<HomeScreen> {
     try {
       final repo = di.sl<LeaderboardRepository>();
       final result = await repo.getTopUsers(limit: 100);
+
+      // CRITICAL: this is an async gap — the widget may have been disposed
+      // (e.g. the user logged out / navigated away) while the request was
+      // in flight. Reading `context` or calling `setState` past this point
+      // without checking `mounted` first risks
+      // "Looking up a deactivated widget's ancestor is unsafe".
+      if (!mounted) return;
+
       result.fold((_) {}, (data) {
         final sorted = List<UserEntity>.from(data.users)
           ..sort((a, b) {
             final aL = a.totalLevelsCompleted;
             final bL = b.totalLevelsCompleted;
             if (bL != aL) return bL.compareTo(aL);
-            if (b.totalExp != a.totalExp) return b.totalExp.compareTo(a.totalExp);
+            if (b.totalExp != a.totalExp)
+              return b.totalExp.compareTo(a.totalExp);
             return b.currentStreak.compareTo(a.currentStreak);
           });
         final currentUser = context.read<AuthBloc>().state.user;
@@ -70,26 +82,41 @@ class _HomeScreenState extends State<HomeScreen> {
           setState(() => _globalRank = idx >= 0 ? idx + 1 : null);
         }
       });
-    } catch (_) {}
+    } catch (e) {
+      // Leaderboard rank is a "nice to have" enhancement on this screen —
+      // never let it crash or block the home feed. Keep a debug-only trace
+      // so a real regression doesn't go unnoticed during development.
+      if (kDebugMode) {
+        debugPrint('HomeScreen: failed to fetch global rank: $e');
+      }
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final bgColor = isMidnight ? Colors.black : (isDark ? const Color(0xFF0F172A) : Colors.white);
+    final bgColor = isMidnight
+        ? Colors.black
+        : (isDark ? const Color(0xFF0F172A) : Colors.white);
 
     return Scaffold(
       backgroundColor: bgColor,
       body: MultiBlocListener(
         listeners: [
           BlocListener<AuthBloc, AuthState>(
+            listenWhen: (previous, current) =>
+                previous.status != current.status,
             listener: (context, state) {
               if (state.status == AuthStatus.authenticated) {
-                context.read<EconomyBloc>().add(const EconomyCheckDailyRewardRequested());
+                context.read<EconomyBloc>().add(
+                  const EconomyCheckDailyRewardRequested(),
+                );
               } else if (state.status == AuthStatus.unauthenticated) {
                 context.read<EconomyBloc>().add(const EconomyResetRequested());
-                context.read<ProgressionBloc>().add(const ProgressionResetRequested());
+                context.read<ProgressionBloc>().add(
+                  const ProgressionResetRequested(),
+                );
                 setState(() {
                   _hasCheckedDailyChestThisSession = false;
                   _globalRank = null;
@@ -99,7 +126,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BlocListener<EconomyBloc, EconomyState>(
             listenWhen: (previous, current) =>
-                previous.isDailyRewardAvailable != current.isDailyRewardAvailable &&
+                previous.isDailyRewardAvailable !=
+                    current.isDailyRewardAvailable &&
                 current.isDailyRewardAvailable,
             listener: (context, state) {
               if (!_hasCheckedDailyChestThisSession) {
@@ -113,11 +141,16 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
         ],
-        child: BlocBuilder<AuthBloc, AuthState>(
-          builder: (context, state) {
-            final user = state.user;
+        // BlocSelector instead of BlocBuilder: this screen's tree is heavy
+        // (custom-painted journey path, PageView carousel, multiple glass
+        // panels). Selecting only `state.user` means unrelated AuthState
+        // changes (e.g. transient loading flags) no longer force a full
+        // rebuild of every widget below.
+        child: BlocSelector<AuthBloc, AuthState, UserEntity?>(
+          selector: (state) => state.user,
+          builder: (context, user) {
             if (user == null) return const HomeShimmerLoading();
-  
+
             return Stack(
               children: [
                 const MeshGradientBackground(showLetters: false),
@@ -125,7 +158,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   onRefresh: () async {
                     context.read<AuthBloc>().add(AuthReloadUser());
                     _hasCheckedDailyChestThisSession = false;
-                    context.read<EconomyBloc>().add(const EconomyCheckDailyRewardRequested());
+                    context.read<EconomyBloc>().add(
+                      const EconomyCheckDailyRewardRequested(),
+                    );
                     await Future.delayed(const Duration(milliseconds: 600));
                   },
                   color: const Color(0xFF2563EB),
@@ -140,7 +175,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 2. COMMAND HEADER (Identity & XP)
+                      // 1. COMMAND HEADER (Identity & XP)
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
@@ -151,14 +186,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 3. GLOBAL PROGRESS + QUICK STATS
+                      // 2. GLOBAL PROGRESS + QUICK STATS
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
                               SizedBox(height: 24.h),
-                              InlineNotificationCard(streak: user.currentStreak),
+                              InlineNotificationCard(
+                                streak: user.currentStreak,
+                              ),
                               GlobalProgressCard(
                                 user: user,
                                 globalRank: _globalRank,
@@ -170,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 4. JUNIOR ADVENTURE (Kids Zone)
+                      // 3. JUNIOR ADVENTURE (Kids Zone)
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
@@ -182,7 +219,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 subtitle: context.tr('home.kids_zone_subtitle'),
                                 localizedTitleKey: 'home.kids_zone_title',
                                 localizedSubtitleKey: 'home.kids_zone_subtitle',
-                                categoryColor: Color(0xFFF43F5E),
+                                categoryColor: const Color(0xFFF43F5E),
                               ),
                               SizedBox(height: 18.h),
                               CommandPod(
@@ -194,7 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 5. QUEST ARENA (9-Step Journey)
+                      // 4. QUEST ARENA (9-Step Journey)
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
@@ -203,18 +240,29 @@ class _HomeScreenState extends State<HomeScreen> {
                               SizedBox(height: 30.h),
                               HomeSectionHeader(
                                 title: context.tr('home.quest_arena_title'),
-                                subtitle: context.tr('home.quest_arena_subtitle'),
+                                subtitle: context.tr(
+                                  'home.quest_arena_subtitle',
+                                ),
                                 localizedTitleKey: 'home.quest_arena_title',
-                                localizedSubtitleKey: 'home.quest_arena_subtitle',
+                                localizedSubtitleKey:
+                                    'home.quest_arena_subtitle',
                                 categoryColor: const Color(0xFF6366F1),
-                                onSeeAll: () => context.push(AppRouter.libraryRoute),
+                                onSeeAll: () =>
+                                    context.push(AppRouter.libraryRoute),
                                 badge: Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 8.w,
+                                    vertical: 2.h,
+                                  ),
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
+                                    color: const Color(
+                                      0xFFF59E0B,
+                                    ).withValues(alpha: 0.1),
                                     borderRadius: BorderRadius.circular(20.r),
                                     border: Border.all(
-                                      color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                                      color: const Color(
+                                        0xFFF59E0B,
+                                      ).withValues(alpha: 0.3),
                                       width: 1,
                                     ),
                                   ),
@@ -229,11 +277,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                       SizedBox(width: 4.w),
                                       Text(
                                         context.tr('home.quest_arena_steps'),
-                                        style: TextStyle(fontFamily: 'Outfit', 
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
                                           fontSize: 8.sp,
                                           fontWeight: FontWeight.w900,
                                           color: const Color(0xFFF59E0B),
                                         ),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
                                     ],
                                   ),
@@ -246,19 +297,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 6. VOWL PRIME & BADGES
+                      // 5. VOWL PRIME & BADGES
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
-                              SizedBox(height: 0),
                               HomeSectionHeader(
                                 title: context.tr('home.elite_companion_title'),
-                                subtitle: context.tr('home.elite_companion_subtitle'),
+                                subtitle: context.tr(
+                                  'home.elite_companion_subtitle',
+                                ),
                                 localizedTitleKey: 'home.elite_companion_title',
-                                localizedSubtitleKey: 'home.elite_companion_subtitle',
-                                categoryColor: Color(0xFF10B981),
+                                localizedSubtitleKey:
+                                    'home.elite_companion_subtitle',
+                                categoryColor: const Color(0xFF10B981),
                               ),
                               SizedBox(height: 12.h),
                               CommandPod(
@@ -274,12 +327,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       HomeSliverSectionHeader(
                         title: context.tr('home.discovery_hub_title'),
                         subtitle: context.tr('home.discovery_hub_subtitle'),
-                        categoryColor: Color(0xFF3B82F6),
+                        categoryColor: const Color(0xFF3B82F6),
                       ),
                       SliverToBoxAdapter(
                         child: DiscoveryDeck(
                           user: user,
-                          onLaunchQuest: (id) => _launchThemedQuest(context, id),
+                          onLaunchQuest: (id) =>
+                              _launchThemedQuest(context, id),
                         ),
                       ),
 
@@ -312,7 +366,11 @@ class _HomeScreenState extends State<HomeScreen> {
   void _launchThemedQuest(BuildContext context, String questId) {
     try {
       Haptics.vibrate(HapticsType.medium);
-    } catch (_) {}
-    context.push('${AppRouter.questSequenceRoute}?id=$questId');
+    } catch (e) {
+      if (kDebugMode) debugPrint('HomeScreen: haptics unavailable: $e');
+    }
+    context.push(
+      '${AppRouter.questSequenceRoute}?id=${Uri.encodeQueryComponent(questId)}',
+    );
   }
 }

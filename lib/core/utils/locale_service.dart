@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart' as intl;
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Production-grade locale service for Vowl.
@@ -20,24 +21,114 @@ class LocaleService extends ChangeNotifier {
 
   /// All supported locales with metadata for the language picker.
   static const List<LocaleInfo> supportedLocales = [
-    LocaleInfo(locale: Locale('en'), name: 'English', nativeName: 'English', flag: '🇺🇸'),
-    LocaleInfo(locale: Locale('hi'), name: 'Hindi', nativeName: 'हिन्दी', flag: '🇮🇳'),
-    LocaleInfo(locale: Locale('es'), name: 'Spanish', nativeName: 'Español', flag: '🇪🇸'),
-    LocaleInfo(locale: Locale('pt'), name: 'Portuguese', nativeName: 'Português', flag: '🇧🇷'),
-    LocaleInfo(locale: Locale('ar'), name: 'Arabic', nativeName: 'العربية', flag: '🇸🇦'),
-    LocaleInfo(locale: Locale('fr'), name: 'French', nativeName: 'Français', flag: '🇫🇷'),
-    LocaleInfo(locale: Locale('ru'), name: 'Russian', nativeName: 'Русский', flag: '🇷🇺'),
-    LocaleInfo(locale: Locale('zh'), name: 'Chinese', nativeName: '中文', flag: '🇨🇳'),
-    LocaleInfo(locale: Locale('ko'), name: 'Korean', nativeName: '한국어', flag: '🇰🇷'),
-    LocaleInfo(locale: Locale('ja'), name: 'Japanese', nativeName: '日本語', flag: '🇯🇵'),
-    LocaleInfo(locale: Locale('de'), name: 'German', nativeName: 'Deutsch', flag: '🇩🇪'),
-    LocaleInfo(locale: Locale('ml'), name: 'Malayalam', nativeName: 'മലയാളം', flag: '🇮🇳'),
-    LocaleInfo(locale: Locale('kn'), name: 'Kannada', nativeName: 'ಕನ್ನಡ', flag: '🇮🇳'),
-    LocaleInfo(locale: Locale('ta'), name: 'Tamil', nativeName: 'தமிழ்', flag: '🇮🇳'),
-    LocaleInfo(locale: Locale('te'), name: 'Telugu', nativeName: 'తెలుగు', flag: '🇮🇳'),
-    LocaleInfo(locale: Locale('mr'), name: 'Marathi', nativeName: 'मराठी', flag: '🇮🇳'),
-    LocaleInfo(locale: Locale('bn'), name: 'Bengali', nativeName: 'বাংলা', flag: '🇮🇳'),
-    LocaleInfo(locale: Locale('gu'), name: 'Gujarati', nativeName: 'ગુજરાતી', flag: '🇮🇳'),
+    LocaleInfo(
+      locale: Locale('en'),
+      name: 'English',
+      nativeName: 'English',
+      flag: '🇺🇸',
+    ),
+    LocaleInfo(
+      locale: Locale('hi'),
+      name: 'Hindi',
+      nativeName: 'हिन्दी',
+      flag: '🇮🇳',
+    ),
+    LocaleInfo(
+      locale: Locale('es'),
+      name: 'Spanish',
+      nativeName: 'Español',
+      flag: '🇪🇸',
+    ),
+    LocaleInfo(
+      locale: Locale('pt'),
+      name: 'Portuguese',
+      nativeName: 'Português',
+      flag: '🇧🇷',
+    ),
+    LocaleInfo(
+      locale: Locale('ar'),
+      name: 'Arabic',
+      nativeName: 'العربية',
+      flag: '🇸🇦',
+    ),
+    LocaleInfo(
+      locale: Locale('fr'),
+      name: 'French',
+      nativeName: 'Français',
+      flag: '🇫🇷',
+    ),
+    LocaleInfo(
+      locale: Locale('ru'),
+      name: 'Russian',
+      nativeName: 'Русский',
+      flag: '🇷🇺',
+    ),
+    LocaleInfo(
+      locale: Locale('zh'),
+      name: 'Chinese',
+      nativeName: '中文',
+      flag: '🇨🇳',
+    ),
+    LocaleInfo(
+      locale: Locale('ko'),
+      name: 'Korean',
+      nativeName: '한국어',
+      flag: '🇰🇷',
+    ),
+    LocaleInfo(
+      locale: Locale('ja'),
+      name: 'Japanese',
+      nativeName: '日本語',
+      flag: '🇯🇵',
+    ),
+    LocaleInfo(
+      locale: Locale('de'),
+      name: 'German',
+      nativeName: 'Deutsch',
+      flag: '🇩🇪',
+    ),
+    LocaleInfo(
+      locale: Locale('ml'),
+      name: 'Malayalam',
+      nativeName: 'മലയാളം',
+      flag: '🇮🇳',
+    ),
+    LocaleInfo(
+      locale: Locale('kn'),
+      name: 'Kannada',
+      nativeName: 'ಕನ್ನಡ',
+      flag: '🇮🇳',
+    ),
+    LocaleInfo(
+      locale: Locale('ta'),
+      name: 'Tamil',
+      nativeName: 'தமிழ்',
+      flag: '🇮🇳',
+    ),
+    LocaleInfo(
+      locale: Locale('te'),
+      name: 'Telugu',
+      nativeName: 'తెలుగు',
+      flag: '🇮🇳',
+    ),
+    LocaleInfo(
+      locale: Locale('mr'),
+      name: 'Marathi',
+      nativeName: 'मराठी',
+      flag: '🇮🇳',
+    ),
+    LocaleInfo(
+      locale: Locale('bn'),
+      name: 'Bengali',
+      nativeName: 'বাংলা',
+      flag: '🇮🇳',
+    ),
+    LocaleInfo(
+      locale: Locale('gu'),
+      name: 'Gujarati',
+      nativeName: 'ગુજરાતી',
+      flag: '🇮🇳',
+    ),
   ];
 
   /// Initialize the service: load persisted locale preference and translations.
@@ -55,6 +146,11 @@ class LocaleService extends ChangeNotifier {
       _translations = _currentLocale.languageCode == 'en'
           ? _fallbackTranslations
           : await _loadTranslations(_currentLocale.languageCode);
+
+      // Keep `intl`'s DateFormat/NumberFormat in sync even in contexts where
+      // a BuildContext/Localizations ancestor isn't reliably available
+      // (services, background callbacks, isolates).
+      intl.Intl.defaultLocale = _currentLocale.toString();
 
       _isInitialized = true;
       notifyListeners();
@@ -79,6 +175,8 @@ class LocaleService extends ChangeNotifier {
           ? _fallbackTranslations
           : await _loadTranslations(locale.languageCode);
 
+      intl.Intl.defaultLocale = locale.toString();
+
       notifyListeners();
     } catch (e) {
       debugPrint('LocaleService: setLocale error: $e');
@@ -87,13 +185,26 @@ class LocaleService extends ChangeNotifier {
 
   /// Translate a dot-notated key (e.g., "settings.title").
   /// Falls back to English if key is missing in the active locale.
-  /// Supports `{}` placeholder substitution via [args].
+  ///
+  /// Supports two placeholder styles, both resolved against [args] in order:
+  /// - Indexed `{0}`, `{1}`, ... (preferred for new keys — lets translators
+  ///   reorder arguments to match the target language's natural grammar,
+  ///   since word order for e.g. "X of Y" varies a lot across languages).
+  /// - Legacy anonymous `{}` (replaced strictly left-to-right) — kept for
+  ///   100% backward compatibility with every existing translation file.
   String tr(String key, {List<String> args = const [], String? fallback}) {
-    String value = _resolve(key, _translations) ??
+    String value =
+        _resolve(key, _translations) ??
         _resolve(key, _fallbackTranslations) ??
-        fallback ?? key;
+        fallback ??
+        key;
 
-    // Replace {} placeholders with args
+    // 1. Indexed placeholders first, so a template can use either style
+    // (or, exceptionally, even both) without the two passes colliding.
+    for (int i = 0; i < args.length; i++) {
+      value = value.replaceAll('{$i}', args[i]);
+    }
+    // 2. Legacy anonymous placeholders, consumed in appearance order.
     for (final arg in args) {
       value = value.replaceFirst('{}', arg);
     }
@@ -128,7 +239,9 @@ class LocaleService extends ChangeNotifier {
       );
       return json.decode(jsonString) as Map<String, dynamic>;
     } catch (e) {
-      debugPrint('LocaleService: Failed to load $languageCode translations: $e');
+      debugPrint(
+        'LocaleService: Failed to load $languageCode translations: $e',
+      );
       return {};
     }
   }

@@ -19,18 +19,26 @@ class CategoryShelf extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 215.h,
-      child: RepaintBoundary(
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          physics: const BouncingScrollPhysics(),
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          itemCount: subtypes.length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: EdgeInsets.only(right: 16.w),
-              child: _GameEntryCard(subtype: subtypes[index], user: user),
-            );
-          },
+      // This shelf uses a fixed card height by design (horizontal carousel).
+      // Clamp only the *local* text scale so very large OS accessibility
+      // settings (2.0x-3.0x) can't blow out these fixed-height cards, while
+      // the rest of the app still scales freely with the system setting.
+      child: MediaQuery.withClampedTextScaling(
+        minScaleFactor: 1.0,
+        maxScaleFactor: 1.3,
+        child: RepaintBoundary(
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            itemCount: subtypes.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: EdgeInsets.only(right: 16.w),
+                child: _GameEntryCard(subtype: subtypes[index], user: user),
+              );
+            },
+          ),
         ),
       ),
     );
@@ -47,85 +55,102 @@ class _GameEntryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final metadata = GameHelper.getGameMetadata(subtype, isDark: isDark);
-    final displayColor = isDark ? metadata.color : HSLColor.fromColor(metadata.color).withLightness(0.4).toColor();
+    final displayColor = isDark
+        ? metadata.color
+        : HSLColor.fromColor(metadata.color).withLightness(0.4).toColor();
+    final category = GameHelper.getCategoryForSubtype(subtype);
 
-    return ScaleButton(
-      onTap: () {
-        final category = GameHelper.getCategoryForSubtype(subtype);
-        context.push(
-          '${AppRouter.levelsRoute}?category=$category&gameType=${subtype.name}',
-        );
-      },
-      child: GlassTile(
-        width: 150.w,
-        borderRadius: BorderRadius.circular(30.r),
-        padding: EdgeInsets.all(18.r),
-        usePremiumStyle: true,
-        showShadow: false, // Remove unwanted glow/shadow between cards
-        glassOpacity: 0.15, // Slightly higher opacity to hide background 'splashes'
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
+    return Semantics(
+      button: true,
+      label: '${metadata.title}, ${metadata.categoryName}',
+      child: ScaleButton(
+        onTap: () {
+          context.push(
+            '${AppRouter.levelsRoute}?category=${Uri.encodeQueryComponent(category)}&gameType=${Uri.encodeQueryComponent(subtype.name)}',
+          );
+        },
+        child: ExcludeSemantics(
+          child: GlassTile(
+            width: 150.w,
+            borderRadius: BorderRadius.circular(30.r),
+            padding: EdgeInsets.all(18.r),
+            usePremiumStyle: true,
+            showShadow: false, // Remove unwanted glow/shadow between cards
+            glassOpacity:
+                0.15, // Slightly higher opacity to hide background 'splashes'
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  padding: EdgeInsets.all(10.r),
-                  decoration: BoxDecoration(
-                    color: displayColor.withValues(alpha: 0.1),
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10.r),
+                      decoration: BoxDecoration(
                         color: displayColor.withValues(alpha: 0.1),
-                        blurRadius: 5,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: displayColor.withValues(alpha: 0.1),
+                            blurRadius: 5,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  child: Icon(metadata.icon, color: displayColor, size: 22.r),
+                      child: Icon(
+                        metadata.icon,
+                        color: displayColor,
+                        size: 22.r,
+                      ),
+                    ),
+                    // Progress Indicator or New Badge
+                    _buildCardIndicator(context, displayColor),
+                  ],
                 ),
-                // Progress Indicator or New Badge
-                _buildCardIndicator(context, displayColor),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      metadata.title,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        height: 1.1,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    SizedBox(height: 6.h),
+                    Text(
+                      metadata.categoryName.toUpperCase(),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 8.sp,
+                        fontWeight: FontWeight.w900,
+                        color: displayColor.withValues(alpha: 0.7),
+                        letterSpacing: 1.0,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+                // Integrated Bottom Accent
+                Container(
+                  height: 2.h,
+                  width: 40.w,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [displayColor, displayColor.withValues(alpha: 0)],
+                    ),
+                    borderRadius: BorderRadius.circular(1.r),
+                  ),
+                ),
               ],
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  metadata.title,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
-                    height: 1.1,
-                  ),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(height: 6.h),
-                Text(
-                  metadata.categoryName.toUpperCase(),
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 8.sp,
-                    fontWeight: FontWeight.w900,
-                    color: displayColor.withValues(alpha: 0.7),
-                    letterSpacing: 1.0,
-                  ),
-                ),
-              ],
-            ),
-            // Integrated Bottom Accent
-            Container(
-              height: 2.h,
-              width: 40.w,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [displayColor, displayColor.withValues(alpha: 0)],
-                ),
-                borderRadius: BorderRadius.circular(1.r),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
@@ -133,7 +158,8 @@ class _GameEntryCard extends StatelessWidget {
 
   Widget _buildCardIndicator(BuildContext context, Color color) {
     final currentLevel = user.unlockedLevels[subtype.name] ?? 1;
-    final isNew = currentLevel == 1 && !user.categoryStats.containsKey(subtype.name);
+    final isNew =
+        currentLevel == 1 && !user.categoryStats.containsKey(subtype.name);
 
     if (isNew) {
       return Container(
@@ -145,12 +171,15 @@ class _GameEntryCard extends StatelessWidget {
         ),
         child: Text(
           context.tr('quest_archive.new_badge'),
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 8.sp,
             fontWeight: FontWeight.w900,
             color: color,
             letterSpacing: 0.5,
           ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
       );
     }
@@ -174,11 +203,13 @@ class _GameEntryCard extends StatelessWidget {
         ),
         Text(
           '$currentLevel',
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 10.sp,
             fontWeight: FontWeight.w900,
             color: color,
           ),
+          maxLines: 1,
         ),
       ],
     );

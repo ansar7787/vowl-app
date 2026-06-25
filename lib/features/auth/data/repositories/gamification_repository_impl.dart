@@ -1,14 +1,21 @@
-import 'package:dartz/dartz.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
+import 'package:flutter/foundation.dart';
 import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/features/auth/data/repositories/firebase_failure_handler_mixin.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/repositories/gamification_repository.dart';
 
-/// Concrete implementation of [GamificationRepository] handling atomic writes and progress tracking.
+/// Concrete implementation of [GamificationRepository] handling atomic writes
+/// and progress tracking.
 ///
-/// Fully optimized to execute all read-then-write progress modifications inside Firestore transactions,
-/// ensuring zero concurrency race conditions.
-class GamificationRepositoryImpl implements GamificationRepository {
+/// Every read-then-write operation executes inside a [FirebaseFirestore]
+/// transaction to eliminate concurrency race conditions, even on multiple
+/// concurrent devices for the same user.
+class GamificationRepositoryImpl
+    with FirebaseFailureHandlerMixin
+    implements GamificationRepository {
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
 
@@ -18,20 +25,9 @@ class GamificationRepositoryImpl implements GamificationRepository {
   }) : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
        _firestore = firestore ?? FirebaseFirestore.instance;
 
-  /// Defensive helper to translate raw database exceptions into structured [Failure] domains.
-  Failure _handleException(dynamic e) {
-    if (e is FirebaseException) {
-      if (e.code == 'unavailable' || e.code == 'network-request-failed') {
-        return NetworkFailure('Network connection failed. Operating in offline mode.');
-      }
-      return ServerFailure('Database operation failed: ${e.message}');
-    }
-    final errStr = e.toString();
-    if (errStr.contains('SocketException') || errStr.contains('NetworkError')) {
-      return NetworkFailure('Network unreachable. Please check connection states.');
-    }
-    return ServerFailure(errStr);
-  }
+  // ---------------------------------------------------------------------------
+  // updateUserRewards
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> updateUserRewards({
@@ -54,109 +50,157 @@ class GamificationRepositoryImpl implements GamificationRepository {
         }
 
         final data = doc.data()!;
-        Map<String, int> dailyHistory = {};
-        List<Map<String, dynamic>> activities = [];
-        Map<String, List<int>> completedLevels = {};
-        Map<String, int> unlockedLevels = {};
 
+        // ---- Parse existing fields ----
+        var dailyHistory = <String, int>{};
         if (data['dailyXpHistory'] != null) {
-          dailyHistory = Map<String, int>.from(data['dailyXpHistory']);
-        }
-        if (data['recentActivities'] != null) {
-          activities = List<Map<String, dynamic>>.from(
-            data['recentActivities'],
+          dailyHistory = Map<String, int>.from(
+            data['dailyXpHistory'] as Map<Object?, Object?>,
           );
         }
-        if (data['completedLevels'] != null) {
-          completedLevels = (data['completedLevels'] as Map<String, dynamic>)
-              .map((key, value) => MapEntry(key, List<int>.from(value)));
-        }
-        if (data['unlockedLevels'] != null) {
-          unlockedLevels = Map<String, int>.from(data['unlockedLevels']);
+
+        var activities = <Map<String, dynamic>>[];
+        if (data['recentActivities'] != null) {
+          activities = List<Map<String, dynamic>>.from(
+            (data['recentActivities'] as List<dynamic>)
+                .whereType<Map<Object?, Object?>>()
+                .map((m) => m.map((k, v) => MapEntry(k.toString(), v))),
+          );
         }
 
+        var completedLevels = <String, List<int>>{};
+        if (data['completedLevels'] != null) {
+          completedLevels = (data['completedLevels'] as Map<Object?, Object?>)
+              .map(
+                (key, value) => MapEntry(
+                  key.toString(),
+                  (value as List<dynamic>)
+                      .map((v) => (v as num?)?.toInt() ?? 0)
+                      .toList(),
+                ),
+              );
+        }
+
+        var unlockedLevels = <String, int>{};
+        if (data['unlockedLevels'] != null) {
+          unlockedLevels = Map<String, int>.from(
+            (data['unlockedLevels'] as Map<Object?, Object?>).map(
+              (k, v) => MapEntry(k.toString(), (v as num?)?.toInt() ?? 0),
+            ),
+          );
+        }
+
+        var coinHistoryList = <Map<String, dynamic>>[];
+        if (data['coinHistory'] != null) {
+          coinHistoryList = List<Map<String, dynamic>>.from(
+            (data['coinHistory'] as List<dynamic>)
+                .whereType<Map<Object?, Object?>>()
+                .map((m) => m.map((k, v) => MapEntry(k.toString(), v))),
+          );
+        }
+
+        // ---- Replay detection ----
         final categoryCompleted = completedLevels[gameType] ?? [];
         final bool isReplay = categoryCompleted.contains(level);
 
-        double xpMultiplier = 1.0;
-        if (data['hasPermanentXPBoost'] == true) xpMultiplier *= 1.1;
-
+        // ---- XP multiplier calculation ----
+        var xpMultiplier = 1.0;
+        if (data['hasPermanentXPBoost'] == true) {
+          xpMultiplier *= UserGameConstants.kPermanentXpBoostMultiplier;
+        }
         final doubleXPExpiry = data['doubleXPExpiry'] != null
             ? (data['doubleXPExpiry'] as Timestamp).toDate()
             : null;
-        if (doubleXPExpiry != null &&
-            doubleXPExpiry.isAfter(DateTime.now())) {
-          xpMultiplier *= 2.0;
+        if (doubleXPExpiry != null && doubleXPExpiry.isAfter(DateTime.now())) {
+          xpMultiplier *= UserGameConstants.kDoubleXpMultiplier;
         }
 
-        final baseXp = isReplay ? (xpIncrease * 0.5) : xpIncrease;
+        final baseXp = isReplay
+            ? (xpIncrease * UserGameConstants.kReplayXpFraction)
+            : xpIncrease.toDouble();
         final finalXpIncrease = (baseXp * xpMultiplier).round();
 
+        // ---- Completed & unlocked levels ----
         if (!isReplay) {
           categoryCompleted.add(level);
           completedLevels[gameType] = categoryCompleted;
         }
-
-        final now = DateTime.now();
-        final todayKey =
-            "${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}";
-        final currentDaily = dailyHistory[todayKey] ?? 0;
-        dailyHistory[todayKey] = currentDaily + finalXpIncrease;
-
-        final newActivity = {
-          'title': 'Quest Completed',
-          'subtitle': '+$finalXpIncrease XP · +$coinIncrease Coins',
-          'timestamp': Timestamp.now(),
-          'type': 'quest',
-        };
-        activities.insert(0, newActivity);
-        if (activities.length > 10) {
-          activities = activities.sublist(0, 10);
-        }
-
-        int finalCoinIncrease = (isReplay && !isDoubleReward) ? 0 : coinIncrease;
-        final userExp = data['totalExp'] as int? ?? 0;
-        final userLevel = (userExp / 100).floor() + 1;
-
-        if (!isReplay && (data['isPremium'] == true || userLevel >= 100)) {
-          finalCoinIncrease = coinIncrease * 2;
-        }
-
-        final kidsGames = {
-          'alphabet', 'numbers', 'colors', 'shapes', 'animals',
-          'fruits', 'family', 'school', 'verbs', 'routine',
-          'emotions', 'prepositions', 'phonics', 'day_night',
-          'nature', 'home_kids', 'food_kids', 'transport',
-          'time', 'opposites', 'body_parts', 'clothing',
-        };
-        final isKidsGame = kidsGames.contains(gameType);
 
         final currentUnlocked = unlockedLevels[gameType] ?? 1;
         if (level >= currentUnlocked) {
           unlockedLevels[gameType] = level + 1;
         }
 
-        List<Map<String, dynamic>> history = [];
-        if (data['coinHistory'] != null) {
-          history = List<Map<String, dynamic>>.from(data['coinHistory']);
+        // ---- Daily XP history ----
+        final now = DateTime.now();
+        final todayKey =
+            '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+        final currentDaily = dailyHistory[todayKey] ?? 0;
+        dailyHistory[todayKey] = currentDaily + finalXpIncrease;
+
+        // ---- Trim daily history to the configured limit ----
+        if (dailyHistory.length > UserGameConstants.kDailyXpHistoryLimit) {
+          final sortedKeys = dailyHistory.keys.toList()..sort();
+          final toRemove =
+              sortedKeys.length - UserGameConstants.kDailyXpHistoryLimit;
+          for (var i = 0; i < toRemove; i++) {
+            dailyHistory.remove(sortedKeys[i]);
+          }
         }
 
-        final entry = {
+        // ---- Recent activities ----
+        final newActivity = <String, dynamic>{
+          'title': 'Quest Completed',
+          'subtitle': '+$finalXpIncrease XP · +$coinIncrease Coins',
+          'timestamp': Timestamp.now(),
+          'type': 'quest',
+        };
+        activities.insert(0, newActivity);
+        if (activities.length > UserGameConstants.kActivityHistoryLimit) {
+          activities = activities.sublist(
+            0,
+            UserGameConstants.kActivityHistoryLimit,
+          );
+        }
+
+        // ---- Coin reward calculation ----
+        final userExp = (data['totalExp'] as num?)?.toInt() ?? 0;
+        final userLevel = (userExp / UserGameConstants.kXpPerLevel).floor() + 1;
+
+        // Kids Zone games route to kidsCoins; other games route to coins.
+        // Use UserGameConstants.kKidsGameTypes (static const Set) instead of
+        // instantiating a new Set on every transaction invocation.
+        final isKidsGame = UserGameConstants.kKidsGameTypes.contains(gameType);
+
+        var finalCoinIncrease = (isReplay && !isDoubleReward)
+            ? 0
+            : coinIncrease;
+        if (!isReplay && (data['isPremium'] == true || userLevel >= 100)) {
+          finalCoinIncrease = coinIncrease * 2;
+        }
+
+        // ---- Coin history ----
+        final coinEntry = <String, dynamic>{
           'title': 'Quest Reward - ${gameType.toUpperCase()}',
           'amount': finalCoinIncrease,
           'isEarned': true,
-          'date': DateTime.now().toIso8601String(),
+          'date': now.toIso8601String(),
         };
+        coinHistoryList.insert(0, coinEntry);
+        if (coinHistoryList.length > UserGameConstants.kActivityHistoryLimit) {
+          coinHistoryList = coinHistoryList.sublist(
+            0,
+            UserGameConstants.kActivityHistoryLimit,
+          );
+        }
 
-        history.insert(0, entry);
-        if (history.length > 10) history.removeLast();
-
+        // ---- Atomic update ----
         transaction.update(docRef, {
-          'totalExp': (userExp + finalXpIncrease),
+          'totalExp': userExp + finalXpIncrease,
           isKidsGame ? 'kidsCoins' : 'coins': FieldValue.increment(
             finalCoinIncrease,
           ),
-          'coinHistory': history,
+          'coinHistory': coinHistoryList,
           'dailyXpHistory': dailyHistory,
           'recentActivities': activities,
           'completedLevels': completedLevels,
@@ -166,9 +210,13 @@ class GamificationRepositoryImpl implements GamificationRepository {
 
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // updateUnlockedLevel
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> updateUnlockedLevel(
@@ -182,11 +230,15 @@ class GamificationRepositoryImpl implements GamificationRepository {
       final docRef = _firestore.collection('users').doc(user.uid);
       await _firestore.runTransaction((transaction) async {
         final doc = await transaction.get(docRef);
-        Map<String, int> unlockedLevels = {};
+        var unlockedLevels = <String, int>{};
         if (doc.exists && doc.data() != null) {
-          final data = doc.data()!;
-          if (data['unlockedLevels'] != null) {
-            unlockedLevels = Map<String, int>.from(data['unlockedLevels']);
+          final raw = doc.data()!['unlockedLevels'];
+          if (raw != null) {
+            unlockedLevels = Map<String, int>.from(
+              (raw as Map<Object?, Object?>).map(
+                (k, v) => MapEntry(k.toString(), (v as num?)?.toInt() ?? 0),
+              ),
+            );
           }
         }
 
@@ -198,9 +250,13 @@ class GamificationRepositoryImpl implements GamificationRepository {
       });
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // updateCategoryStats
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> updateCategoryStats(
@@ -214,27 +270,40 @@ class GamificationRepositoryImpl implements GamificationRepository {
       final docRef = _firestore.collection('users').doc(user.uid);
       await _firestore.runTransaction((transaction) async {
         final doc = await transaction.get(docRef);
-        Map<String, int> currentStats = {};
+        var currentStats = <String, int>{};
         if (doc.exists && doc.data() != null) {
-          final data = doc.data()!;
-          if (data['categoryStats'] != null) {
-            currentStats = Map<String, int>.from(data['categoryStats']);
+          final raw = doc.data()!['categoryStats'];
+          if (raw != null) {
+            currentStats = Map<String, int>.from(
+              (raw as Map<Object?, Object?>).map(
+                (k, v) => MapEntry(k.toString(), (v as num?)?.toInt() ?? 0),
+              ),
+            );
           }
         }
 
-        int currentScore = currentStats[categoryId] ?? 50;
-        int newScore = isCorrect ? currentScore + 10 : currentScore - 10;
-        if (newScore > 100) newScore = 100;
-        if (newScore < 0) newScore = 0;
+        final currentScore =
+            currentStats[categoryId] ?? UserGameConstants.kCategoryStatDefault;
+        var newScore = isCorrect
+            ? currentScore + UserGameConstants.kCategoryStatStep
+            : currentScore - UserGameConstants.kCategoryStatStep;
+        newScore = newScore.clamp(
+          UserGameConstants.kCategoryStatMin,
+          UserGameConstants.kCategoryStatMax,
+        );
 
         currentStats[categoryId] = newScore;
         transaction.update(docRef, {'categoryStats': currentStats});
       });
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // awardBadge
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> awardBadge(String badgeId) async {
@@ -247,9 +316,13 @@ class GamificationRepositoryImpl implements GamificationRepository {
       });
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // repairStreak
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> repairStreak(int cost) async {
@@ -260,24 +333,33 @@ class GamificationRepositoryImpl implements GamificationRepository {
       final docRef = _firestore.collection('users').doc(user.uid);
       await _firestore.runTransaction((transaction) async {
         final snapshot = await transaction.get(docRef);
-        if (!snapshot.exists) throw Exception("User not found");
-        final currentCoins =
-            (snapshot.data()?['coins'] as num?)?.toInt() ?? 0;
-        if (currentCoins < cost) throw Exception("Not enough coins");
+        if (!snapshot.exists) throw Exception('User not found');
 
-        final history = List<Map<String, dynamic>>.from(
-          snapshot.data()?['coinHistory'] ?? [],
-        );
-        final entry = {
+        final data = snapshot.data()!;
+        final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
+        if (currentCoins < cost) throw Exception('Not enough coins');
+
+        var history = <Map<String, dynamic>>[];
+        if (data['coinHistory'] != null) {
+          history = List<Map<String, dynamic>>.from(
+            (data['coinHistory'] as List<dynamic>)
+                .whereType<Map<Object?, Object?>>()
+                .map((m) => m.map((k, v) => MapEntry(k.toString(), v))),
+          );
+        }
+        history.insert(0, {
           'title': 'Repaired Streak',
           'amount': -cost,
           'isEarned': false,
           'date': DateTime.now().toIso8601String(),
-        };
-        history.insert(0, entry);
-        if (history.length > 10) history.removeLast();
+        });
+        if (history.length > UserGameConstants.kActivityHistoryLimit) {
+          history = history.sublist(0, UserGameConstants.kActivityHistoryLimit);
+        }
 
-        final currentStreak = (snapshot.data()?['currentStreak'] as num?)?.toInt() ?? 0;
+        final currentStreak = (data['currentStreak'] as num?)?.toInt() ?? 0;
+        // Repairing a broken streak always sets it to at least 2 so the
+        // UI shows a meaningful restored value, even when the streak was 0 or 1.
         final newStreak = currentStreak <= 1 ? 2 : currentStreak + 1;
 
         transaction.update(docRef, {
@@ -288,9 +370,13 @@ class GamificationRepositoryImpl implements GamificationRepository {
       });
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // purchaseStreakFreeze
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> purchaseStreakFreeze(int cost) async {
@@ -309,20 +395,23 @@ class GamificationRepositoryImpl implements GamificationRepository {
         final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
         if (currentCoins < cost) throw Exception('Not enough coins');
 
-        List<Map<String, dynamic>> history = [];
+        var history = <Map<String, dynamic>>[];
         if (data['coinHistory'] != null) {
-          history = List<Map<String, dynamic>>.from(data['coinHistory']);
+          history = List<Map<String, dynamic>>.from(
+            (data['coinHistory'] as List<dynamic>)
+                .whereType<Map<Object?, Object?>>()
+                .map((m) => m.map((k, v) => MapEntry(k.toString(), v))),
+          );
         }
-
-        final entry = {
+        history.insert(0, {
           'title': 'Purchased Streak Freeze',
           'amount': -cost,
           'isEarned': false,
           'date': DateTime.now().toIso8601String(),
-        };
-
-        history.insert(0, entry);
-        if (history.length > 10) history.removeLast();
+        });
+        if (history.length > UserGameConstants.kActivityHistoryLimit) {
+          history = history.sublist(0, UserGameConstants.kActivityHistoryLimit);
+        }
 
         transaction.update(docRef, {
           'coins': currentCoins - cost,
@@ -332,9 +421,13 @@ class GamificationRepositoryImpl implements GamificationRepository {
       });
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // activateDoubleXP
+  // ---------------------------------------------------------------------------
 
   @override
   Future<Either<Failure, void>> activateDoubleXP(int cost) async {
@@ -353,20 +446,23 @@ class GamificationRepositoryImpl implements GamificationRepository {
         final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
         if (currentCoins < cost) throw Exception('Not enough coins');
 
-        List<Map<String, dynamic>> history = [];
+        var history = <Map<String, dynamic>>[];
         if (data['coinHistory'] != null) {
-          history = List<Map<String, dynamic>>.from(data['coinHistory']);
+          history = List<Map<String, dynamic>>.from(
+            (data['coinHistory'] as List<dynamic>)
+                .whereType<Map<Object?, Object?>>()
+                .map((m) => m.map((k, v) => MapEntry(k.toString(), v))),
+          );
         }
-
-        final entry = {
+        history.insert(0, {
           'title': 'Purchased Double XP',
           'amount': -cost,
           'isEarned': false,
           'date': DateTime.now().toIso8601String(),
-        };
-
-        history.insert(0, entry);
-        if (history.length > 10) history.removeLast();
+        });
+        if (history.length > UserGameConstants.kActivityHistoryLimit) {
+          history = history.sublist(0, UserGameConstants.kActivityHistoryLimit);
+        }
 
         final expiry = DateTime.now().add(const Duration(hours: 24));
         transaction.update(docRef, {
@@ -378,7 +474,15 @@ class GamificationRepositoryImpl implements GamificationRepository {
       });
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Private helpers
+  // ---------------------------------------------------------------------------
+
+  void _log(String message) {
+    if (kDebugMode) debugPrint(message);
   }
 }

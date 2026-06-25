@@ -1,5 +1,7 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
+import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
 
 /// Service to fetch subscription plans from Firebase
@@ -11,26 +13,55 @@ class SubscriptionPlansService {
   List<SubscriptionPlan>? _cachedPlans;
   DateTime? _cacheTime;
   static const Duration _cacheExpiry = Duration(hours: 1);
+  static const Duration _fetchTimeout = Duration(seconds: 10);
+
+  /// REQUEST COALESCING: if `fetchPlans()` is already in flight (e.g. the
+  /// premium screen and some other screen both call it around the same
+  /// moment while the cache is still cold), a second call reuses the same
+  /// pending Future instead of firing a second simultaneous Firestore
+  /// query. Mirrors the pattern already used in `asset_quest_service.dart`
+  /// for the same reason: at scale, duplicate reads are a direct,
+  /// avoidable Firestore cost, not just a performance nicety.
+  Future<List<SubscriptionPlan>>? _pendingFetch;
 
   SubscriptionPlansService({required FirebaseFirestore firestore})
     : _firestore = firestore;
 
   /// Fetch subscription plans from Firebase (with caching)
   Future<List<SubscriptionPlan>> fetchPlans() async {
-    try {
-      // Return cached plans if still valid
-      if (_cachedPlans != null && _cacheTime != null) {
-        if (DateTime.now().difference(_cacheTime!) < _cacheExpiry) {
-          debugPrint('SubscriptionPlansService: Using cached plans');
-          return _cachedPlans!;
-        }
+    // Return cached plans if still valid
+    if (_cachedPlans != null && _cacheTime != null) {
+      if (DateTime.now().difference(_cacheTime!) < _cacheExpiry) {
+        AppLogger.debug('SubscriptionPlansService: Using cached plans');
+        return _cachedPlans!;
       }
+    }
 
-      debugPrint('SubscriptionPlansService: Fetching plans from Firebase');
+    final pending = _pendingFetch;
+    if (pending != null) {
+      AppLogger.debug(
+        'SubscriptionPlansService: Coalescing concurrent fetchPlans() call',
+      );
+      return pending;
+    }
+
+    final future = _fetchPlansFromFirestore();
+    _pendingFetch = future;
+    try {
+      return await future;
+    } finally {
+      _pendingFetch = null;
+    }
+  }
+
+  Future<List<SubscriptionPlan>> _fetchPlansFromFirestore() async {
+    try {
+      AppLogger.debug('SubscriptionPlansService: Fetching plans from Firebase');
       final snapshot = await _firestore
           .collection(_plansCollection)
           .orderBy('displayOrder')
-          .get();
+          .get()
+          .timeout(_fetchTimeout);
 
       final plans = snapshot.docs
           .map((doc) => SubscriptionPlan.fromMap(doc.data()))
@@ -40,10 +71,16 @@ class SubscriptionPlansService {
       _cachedPlans = plans;
       _cacheTime = DateTime.now();
 
-      debugPrint('SubscriptionPlansService: Fetched ${plans.length} plans');
+      AppLogger.debug(
+        'SubscriptionPlansService: Fetched ${plans.length} plans',
+      );
       return plans;
-    } catch (e) {
-      debugPrint('SubscriptionPlansService Error: Failed to fetch plans - $e');
+    } catch (e, stackTrace) {
+      AppLogger.error(
+        'SubscriptionPlansService: Failed to fetch plans',
+        error: e,
+        stackTrace: stackTrace,
+      );
       rethrow;
     }
   }
@@ -54,16 +91,21 @@ class SubscriptionPlansService {
       final doc = await _firestore
           .collection(_plansCollection)
           .doc(planId)
-          .get();
+          .get()
+          .timeout(_fetchTimeout);
 
       if (!doc.exists) {
-        debugPrint('SubscriptionPlansService: Plan not found - $planId');
+        AppLogger.warning('SubscriptionPlansService: Plan not found - $planId');
         return null;
       }
 
       return SubscriptionPlan.fromMap(doc.data()!);
-    } catch (e) {
-      debugPrint('SubscriptionPlansService Error: Failed to fetch plan - $e');
+    } catch (e, stackTrace) {
+      AppLogger.error(
+        'SubscriptionPlansService: Failed to fetch plan $planId',
+        error: e,
+        stackTrace: stackTrace,
+      );
       rethrow;
     }
   }
@@ -72,6 +114,6 @@ class SubscriptionPlansService {
   void clearCache() {
     _cachedPlans = null;
     _cacheTime = null;
-    debugPrint('SubscriptionPlansService: Cache cleared');
+    AppLogger.debug('SubscriptionPlansService: Cache cleared');
   }
 }

@@ -16,6 +16,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/app_logger.dart';
 
 class AdventureXPScreen extends StatelessWidget {
   const AdventureXPScreen({super.key});
@@ -26,156 +27,175 @@ class AdventureXPScreen extends StatelessWidget {
     return BlocListener<ProgressionBloc, ProgressionState>(
       listener: (context, state) {
         if (state.message != null) {
-          final lowerMsg = state.message!.toLowerCase();
+          final rawMessage = state.message!;
+          final lowerMsg = rawMessage.toLowerCase();
+          final isError =
+              lowerMsg.contains('not enough') || lowerMsg.contains('failed');
 
-          String displayMessage = state.message!;
+          String displayMessage;
           if (lowerMsg.contains('not enough')) {
             displayMessage = context.tr('adventure.insufficient_coins');
-          } else if (displayMessage.startsWith('Exception: ')) {
-            displayMessage = displayMessage.replaceFirst('Exception: ', '');
-          } else if (displayMessage.startsWith('ServerFailure: ')) {
-            displayMessage = displayMessage.replaceFirst('ServerFailure: ', '');
+          } else if (rawMessage.startsWith('Exception: ') ||
+              rawMessage.startsWith('ServerFailure: ')) {
+            // Do not surface raw exception/server-failure text to the
+            // user - it can contain implementation detail (class names,
+            // host names, stack fragments) that is meaningless to a
+            // player and a minor information-disclosure risk. Log the
+            // original for diagnostics; show a safe generic message.
+            AppLogger.warning(
+              'Unhandled ProgressionBloc message shown as generic error',
+              error: rawMessage,
+            );
+            displayMessage = context.tr('adventure.generic_error');
+          } else {
+            displayMessage = rawMessage;
           }
 
           di.sl<HapticService>().light();
 
-          final isError =
-              lowerMsg.contains('not enough') ||
-              lowerMsg.contains('failed');
-
           CustomSnackBar.show(
             context: context,
             message: displayMessage,
-            type: isError ? CustomSnackBarType.error : CustomSnackBarType.success,
+            type: isError
+                ? CustomSnackBarType.error
+                : CustomSnackBarType.success,
           );
         }
       },
       child: Builder(
         builder: (context) {
           final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
-          final bgColor = isMidnight 
-              ? Colors.black 
+          final bgColor = isMidnight
+              ? Colors.black
               : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
           return Scaffold(
             backgroundColor: bgColor,
-        body: BlocBuilder<AuthBloc, AuthState>(
-          builder: (context, state) {
-            final user = state.user;
-            if (user == null) return const SizedBox.shrink();
+            body: BlocBuilder<AuthBloc, AuthState>(
+              builder: (context, state) {
+                final user = state.user;
+                if (user == null) return const SizedBox.shrink();
 
-            return Stack(
-              children: [
-                const MeshGradientBackground(),
-                SafeArea(
-                  child: CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
-                    slivers: [
-                      // ── SliverAppBar ──
-                      SliverAppBar(
-                        pinned: true,
-                        floating: true,
-                        snap: true,
-                        automaticallyImplyLeading: false,
-                        backgroundColor: Colors.transparent,
-                        surfaceTintColor: Colors.transparent,
-                        elevation: 0,
-                        expandedHeight: 80.h,
-                        collapsedHeight: 64.h,
-                        flexibleSpace: FlexibleSpaceBar(
-                          titlePadding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 8.h,
-                          ),
-                          title: GlassTile(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 8.w,
-                              vertical: 6.h,
-                            ),
-                            borderRadius: BorderRadius.circular(20.r),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(
-                                  width: 32.r,
-                                  height: 32.r,
-                                  child: IconButton(
-                                    padding: EdgeInsets.zero,
-                                    iconSize: 18.r,
-                                    onPressed: () => context.pop(),
-                                    icon: const Icon(
-                                      Icons.arrow_back_ios_new_rounded,
+                return Stack(
+                  children: [
+                    const MeshGradientBackground(),
+                    SafeArea(
+                      child: CustomScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          // ── SliverAppBar ──
+                          SliverAppBar(
+                            pinned: true,
+                            floating: true,
+                            snap: true,
+                            automaticallyImplyLeading: false,
+                            backgroundColor: Colors.transparent,
+                            surfaceTintColor: Colors.transparent,
+                            elevation: 0,
+                            expandedHeight: 80.h,
+                            collapsedHeight: 64.h,
+                            flexibleSpace: FlexibleSpaceBar(
+                              titlePadding: EdgeInsets.symmetric(
+                                horizontal: 16.w,
+                                vertical: 8.h,
+                              ),
+                              title: GlassTile(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 8.w,
+                                  vertical: 6.h,
+                                ),
+                                borderRadius: BorderRadius.circular(20.r),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(
+                                      width: 32.r,
+                                      height: 32.r,
+                                      child: IconButton(
+                                        padding: EdgeInsets.zero,
+                                        iconSize: 18.r,
+                                        onPressed: () => context.pop(),
+                                        icon: const Icon(
+                                          Icons.arrow_back_ios_new_rounded,
+                                        ),
+                                      ),
                                     ),
-                                  ),
+                                    SizedBox(width: 6.w),
+                                    Text(
+                                      'Adventure XP',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: isDark
+                                            ? Colors.white
+                                            : const Color(0xFF0F172A),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                SizedBox(width: 6.w),
-                                Text(
-                                  'Adventure XP',
-                                  style: TextStyle(fontFamily: 'Outfit', 
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w800,
-                                    color: isDark
-                                        ? Colors.white
-                                        : const Color(0xFF0F172A),
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
                           ),
-                        ),
-                      ),
 
-                      // ── Body Content ──
-                      SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.fromLTRB(24.r, 24.r, 24.r, 0),
-                          child: _buildTotalXPCard(context, user),
-                        ),
-                      ),
-                      SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(vertical: 24.h),
-                          child: _buildDailyXPChart(
-                            context,
-                            user.dailyXpHistory,
+                          // ── Body Content ──
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(24.r, 24.r, 24.r, 0),
+                              child: _buildTotalXPCard(context, user),
+                            ),
                           ),
-                        ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(vertical: 24.h),
+                              child: _buildDailyXPChart(
+                                context,
+                                user.dailyXpHistory,
+                              ),
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.r),
+                              child: _buildMasteryGrid(context, user),
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(vertical: 32.h),
+                              child: _buildAdventureStore(context, user),
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.r),
+                              child: _buildRecentActivities(context, user),
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(
+                                24.r,
+                                24.h,
+                                24.r,
+                                48.h,
+                              ),
+                              child: const AdRewardCard(
+                                margin: EdgeInsets.zero,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.r),
-                          child: _buildMasteryGrid(context, user),
-                        ),
-                      ),
-                      SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(vertical: 32.h),
-                          child: _buildAdventureStore(context, user),
-                        ),
-                      ),
-                      SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.r),
-                          child: _buildRecentActivities(context, user),
-                        ),
-                      ),
-                      SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.fromLTRB(24.r, 24.h, 24.r, 48.h),
-                          child: const AdRewardCard(margin: EdgeInsets.zero),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            );
-          },
-        ),
-      );
-    },
-  ),
-);
-}
+                    ),
+                  ],
+                );
+              },
+            ),
+          );
+        },
+      ),
+    );
+  }
 
   Widget _buildTotalXPCard(BuildContext context, UserEntity user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -216,7 +236,8 @@ class AdventureXPScreen extends StatelessWidget {
                   children: [
                     Text(
                       "TOTAL EXPERIENCE",
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
                         color: color,
@@ -226,7 +247,8 @@ class AdventureXPScreen extends StatelessWidget {
                     SizedBox(height: 2.h),
                     Text(
                       "$totalXP XP",
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 26.sp,
                         fontWeight: FontWeight.w900,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -238,7 +260,8 @@ class AdventureXPScreen extends StatelessWidget {
                       children: [
                         Text(
                           "KEEP EXPLORING!",
-                          style: TextStyle(fontFamily: 'Outfit', 
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w700,
                             color: isDark ? Colors.white38 : Colors.black38,
@@ -286,7 +309,8 @@ class AdventureXPScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Text(
             'DAILY XP HISTORY',
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
               color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -308,7 +332,10 @@ class AdventureXPScreen extends StatelessWidget {
               children: List.generate(7, (index) {
                 final xp = last7DaysXP[index];
                 final heightFactor = (xp / maxXP).clamp(0.05, 1.0);
-                final days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+                final barDate = startOfWeek.add(Duration(days: index));
+                final dayLabel = DateFormat.E(
+                  Localizations.localeOf(context).toString(),
+                ).format(barDate);
                 return Column(
                   children: [
                     Container(
@@ -351,8 +378,11 @@ class AdventureXPScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 8.h),
                     Text(
-                      days[index],
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      dayLabel,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w800,
                         color: isDark
@@ -439,7 +469,8 @@ class AdventureXPScreen extends StatelessWidget {
       children: [
         Text(
           'LANGUAGE MASTERY',
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 12.sp,
             fontWeight: FontWeight.w900,
             color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -490,7 +521,8 @@ class AdventureXPScreen extends StatelessWidget {
                       const Spacer(),
                       Text(
                         '$prog%',
-                        style: TextStyle(fontFamily: 'Outfit', 
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w900,
                           color: cat['color'] as Color,
@@ -501,7 +533,8 @@ class AdventureXPScreen extends StatelessWidget {
                   const Spacer(),
                   Text(
                     cat['name'] as String,
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 13.sp,
                       fontWeight: FontWeight.w800,
                       color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -511,7 +544,8 @@ class AdventureXPScreen extends StatelessWidget {
                     children: [
                       Text(
                         '${cat['levels']} levels · ',
-                        style: TextStyle(fontFamily: 'Outfit', 
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 9.sp,
                           fontWeight: FontWeight.w600,
                           color: isDark ? Colors.white38 : Colors.black38,
@@ -519,7 +553,8 @@ class AdventureXPScreen extends StatelessWidget {
                       ),
                       Text(
                         levelLabel,
-                        style: TextStyle(fontFamily: 'Outfit', 
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 9.sp,
                           fontWeight: FontWeight.w800,
                           color: (cat['color'] as Color).withValues(alpha: 0.7),
@@ -596,7 +631,8 @@ class AdventureXPScreen extends StatelessWidget {
                 children: [
                   Text(
                     context.tr('adventure.title').toUpperCase(),
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -606,7 +642,8 @@ class AdventureXPScreen extends StatelessWidget {
                   SizedBox(height: 4.h),
                   Text(
                     'Boost your progress with legendary items',
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w500,
                       color: isDark ? Colors.white24 : Colors.black26,
@@ -637,15 +674,21 @@ class AdventureXPScreen extends StatelessWidget {
                           : () {
                               if (item['type'] == 'shield') {
                                 context.read<ProgressionBloc>().add(
-                                  ProgressionPurchaseStreakFreezeRequested(item['cost'] as int),
+                                  ProgressionPurchaseStreakFreezeRequested(
+                                    item['cost'] as int,
+                                  ),
                                 );
                               } else if (item['type'] == 'warp') {
                                 context.read<ProgressionBloc>().add(
-                                  ProgressionActivateDoubleXPRequested(item['cost'] as int),
+                                  ProgressionActivateDoubleXPRequested(
+                                    item['cost'] as int,
+                                  ),
                                 );
                               } else if (item['type'] == 'scroll') {
                                 context.read<ProgressionBloc>().add(
-                                  ProgressionPurchasePermanentXPBoostRequested(item['cost'] as int),
+                                  ProgressionPurchasePermanentXPBoostRequested(
+                                    item['cost'] as int,
+                                  ),
                                 );
                               }
                             },
@@ -677,7 +720,8 @@ class AdventureXPScreen extends StatelessWidget {
                                 children: [
                                   Text(
                                     item['title'] as String,
-                                    style: TextStyle(fontFamily: 'Outfit', 
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
                                       fontSize: 13.sp,
                                       fontWeight: FontWeight.w900,
                                       color: isDark
@@ -691,7 +735,8 @@ class AdventureXPScreen extends StatelessWidget {
                                       state.lastPurchaseSuccess!
                                           ? 'BOUGHT!'
                                           : 'LACKING COINS',
-                                      style: TextStyle(fontFamily: 'Outfit', 
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
                                         fontSize: 9.sp,
                                         fontWeight: FontWeight.w900,
                                         color: state.lastPurchaseSuccess!
@@ -706,7 +751,8 @@ class AdventureXPScreen extends StatelessWidget {
                                           : isCurrentlyActive
                                           ? 'ITEM ACTIVE'
                                           : '${item['cost']} Coins',
-                                      style: TextStyle(fontFamily: 'Outfit', 
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
                                         fontSize: 10.sp,
                                         fontWeight: FontWeight.w700,
                                         color: isLocked
@@ -721,7 +767,8 @@ class AdventureXPScreen extends StatelessWidget {
                                     item['desc'] as String,
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(fontFamily: 'Outfit', 
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
                                       fontSize: 8.sp,
                                       fontWeight: FontWeight.w500,
                                       color: isDark
@@ -755,7 +802,8 @@ class AdventureXPScreen extends StatelessWidget {
       children: [
         Text(
           'RECENT ACTIVITY',
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 12.sp,
             fontWeight: FontWeight.w900,
             color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -769,7 +817,8 @@ class AdventureXPScreen extends StatelessWidget {
               padding: EdgeInsets.all(24.r),
               child: Text(
                 'No recent adventures yet.',
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   color: isDark ? Colors.white24 : Colors.black26,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
@@ -813,8 +862,12 @@ class AdventureXPScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            activity['title'] ?? 'Adventure',
-                            style: TextStyle(fontFamily: 'Outfit', 
+                            (activity['title'] as String?) ??
+                                context.tr('adventure.activity_default_title'),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w700,
                               color: isDark
@@ -823,8 +876,14 @@ class AdventureXPScreen extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            activity['subtitle'] ?? 'Just completed',
-                            style: TextStyle(fontFamily: 'Outfit', 
+                            (activity['subtitle'] as String?) ??
+                                context.tr(
+                                  'adventure.activity_default_subtitle',
+                                ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
                               fontSize: 11.sp,
                               color: isDark ? Colors.white38 : Colors.black38,
                             ),
@@ -833,8 +892,9 @@ class AdventureXPScreen extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      _formatRelativeTime(activity['timestamp']),
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      _formatRelativeTime(context, activity['timestamp']),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 10.sp,
                         color: isDark ? Colors.white24 : Colors.black26,
                         fontWeight: FontWeight.w600,
@@ -849,24 +909,44 @@ class AdventureXPScreen extends StatelessWidget {
     );
   }
 
-  String _formatRelativeTime(dynamic timestamp) {
-    if (timestamp == null) return 'Now';
-    DateTime dt;
-    if (timestamp is Timestamp) {
-      dt = timestamp.toDate();
-    } else if (timestamp is String) {
-      dt = DateTime.parse(timestamp);
-    } else if (timestamp is DateTime) {
-      dt = timestamp;
-    } else {
-      return 'Now';
+  /// CRASH-SAFETY FIX: the original called `DateTime.parse(timestamp)`
+  /// with no try/catch. A single malformed timestamp string anywhere in
+  /// the user's activity history (e.g. from an older app version writing
+  /// a slightly different format, or any data corruption) would throw a
+  /// [FormatException] inside a `build()` call and crash this entire
+  /// screen ("Crash Safety" in the production audit). Now falls back to a
+  /// safe localized default instead.
+  String _formatRelativeTime(BuildContext context, dynamic timestamp) {
+    if (timestamp == null) return context.tr('adventure.time_now');
+
+    DateTime? dt;
+    try {
+      if (timestamp is Timestamp) {
+        dt = timestamp.toDate();
+      } else if (timestamp is String) {
+        dt = DateTime.parse(timestamp);
+      } else if (timestamp is DateTime) {
+        dt = timestamp;
+      }
+    } catch (_) {
+      dt = null;
     }
 
+    if (dt == null) return context.tr('adventure.time_now');
+
     final diff = DateTime.now().difference(dt);
-    if (diff.inDays > 0) return '${diff.inDays}d ago';
-    if (diff.inHours > 0) return '${diff.inHours}h ago';
-    if (diff.inMinutes > 0) return '${diff.inMinutes}m ago';
-    return 'Just now';
+    if (diff.inDays > 0) {
+      return context.tr('adventure.time_days_ago', args: ['${diff.inDays}']);
+    }
+    if (diff.inHours > 0) {
+      return context.tr('adventure.time_hours_ago', args: ['${diff.inHours}']);
+    }
+    if (diff.inMinutes > 0) {
+      return context.tr(
+        'adventure.time_minutes_ago',
+        args: ['${diff.inMinutes}'],
+      );
+    }
+    return context.tr('adventure.time_just_now');
   }
 }
-

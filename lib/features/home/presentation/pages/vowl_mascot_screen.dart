@@ -9,6 +9,8 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/core/presentation/widgets/banner_ad_widget.dart';
@@ -24,27 +26,17 @@ class VowlMascotScreen extends StatefulWidget {
   State<VowlMascotScreen> createState() => _VowlMascotScreenState();
 }
 
-class _VowlMascotScreenState extends State<VowlMascotScreen>
-    with SingleTickerProviderStateMixin {
-  late TabController _tabController;
+class _VowlMascotScreenState extends State<VowlMascotScreen> {
   int _activeTabIndex = 0;
-  final HapticService _hapticService = HapticService();
+  late final HapticService _hapticService;
   bool _isProcessing = false;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
-    _tabController.addListener(() {
-      if (_tabController.indexIsChanging) return;
-      setState(() => _activeTabIndex = _tabController.index);
-    });
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
+    // Use the app-wide injected singleton instead of constructing a new
+    // instance, consistent with how every other screen obtains it.
+    _hapticService = di.sl<HapticService>();
   }
 
   void _showModernSnackbar(
@@ -52,10 +44,15 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
     String message,
     bool isSuccess,
   ) {
+    // BUG FIX: this previously discarded the real, descriptive `message`
+    // (e.g. "Insufficient Elite credits for this augment") in favor of a
+    // generic fixed title, AND always rendered as an error-styled toast
+    // even on success. Both the displayed text and the visual treatment
+    // now correctly reflect what actually happened.
     CustomSnackBar.show(
       context: context,
-      message: isSuccess ? 'SYSTEM SYNC FEEDBACK' : 'SECURITY ALERT',
-      type: CustomSnackBarType.error,
+      message: message,
+      type: isSuccess ? CustomSnackBarType.success : CustomSnackBarType.error,
     );
   }
 
@@ -64,8 +61,8 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final primaryColor = Colors.greenAccent;
-    final surfaceColor = isMidnight 
-        ? const Color(0xFF020617) 
+    final surfaceColor = isMidnight
+        ? const Color(0xFF020617)
         : (isDark ? const Color(0xFF0F172A) : Colors.white);
     final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
 
@@ -79,24 +76,28 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
           _showModernSnackbar(
             context,
             state.lastPurchaseType == 'vowl_mascot'
-                ? 'Neural Link established successfully'
-                : 'Augmentation integrated to system',
+                ? context.tr('vowl_mascot.feedback_mascot_linked')
+                : context.tr('vowl_mascot.feedback_augment_integrated'),
             true,
           );
         } else if (state.lastPurchaseSuccess == false) {
           _hapticService.error();
           _showModernSnackbar(
             context,
-            state.message ?? 'System synchronization failed',
+            state.message ?? context.tr('vowl_mascot.feedback_sync_failed'),
             false,
           );
         }
         // Clear feedback to prevent repeat
         context.read<ProfileBloc>().add(const ProfileClearPurchaseFeedback());
       },
-      child: BlocBuilder<AuthBloc, AuthState>(
-        builder: (context, state) {
-          final user = state.user;
+      // BlocSelector instead of BlocBuilder: this screen renders two
+      // GridViews plus a sliver app bar, so unrelated AuthState changes
+      // (anything other than the user actually changing) no longer force a
+      // full rebuild of all of that.
+      child: BlocSelector<AuthBloc, AuthState, UserEntity?>(
+        selector: (state) => state.user,
+        builder: (context, user) {
           if (user == null) {
             return Scaffold(
               backgroundColor: surfaceColor,
@@ -169,7 +170,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                   ],
                 ),
 
-                _buildEliteStatusOverlay(primaryColor, isDark),
+                _buildEliteStatusOverlay(context, primaryColor, isDark),
               ],
             ),
           );
@@ -185,6 +186,8 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
     bool isDark,
     Color primaryColor,
   ) {
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
+
     return SliverAppBar(
       expandedHeight: 120.h,
       collapsedHeight: 80.h,
@@ -222,27 +225,42 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                     ),
                     child: Row(
                       children: [
-                        ScaleButton(
-                          onTap: () {
-                            if (context.canPop()) {
-                              context.pop();
-                            } else {
-                              context.go(AppRouter.homeRoute);
-                            }
-                          },
-                          child: Container(
-                            padding: EdgeInsets.all(8.r),
-                            decoration: BoxDecoration(
-                              color: textColor.withValues(alpha: 0.05),
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: textColor.withValues(alpha: 0.1),
+                        Semantics(
+                          button: true,
+                          label: context.tr('common.back'),
+                          child: ScaleButton(
+                            onTap: () {
+                              if (context.canPop()) {
+                                context.pop();
+                              } else {
+                                context.go(AppRouter.homeRoute);
+                              }
+                            },
+                            child: Container(
+                              constraints: BoxConstraints(
+                                minWidth: 48.r,
+                                minHeight: 48.r,
                               ),
-                            ),
-                            child: Icon(
-                              Icons.arrow_back_ios_new_rounded,
-                              color: textColor,
-                              size: 14.r,
+                              alignment: Alignment.center,
+                              child: ExcludeSemantics(
+                                child: Container(
+                                  padding: EdgeInsets.all(8.r),
+                                  decoration: BoxDecoration(
+                                    color: textColor.withValues(alpha: 0.05),
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: textColor.withValues(alpha: 0.1),
+                                    ),
+                                  ),
+                                  child: Icon(
+                                    isRtl
+                                        ? Icons.arrow_forward_ios_rounded
+                                        : Icons.arrow_back_ios_new_rounded,
+                                    color: textColor,
+                                    size: 14.r,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -254,38 +272,54 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'VOWL NEST',
-                                  style: TextStyle(fontFamily: 'Outfit', 
+                                  context.tr('vowl_mascot.nest_title'),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
                                     fontSize: 16.sp,
                                     fontWeight: FontWeight.w900,
                                     color: textColor,
                                     letterSpacing: 3,
                                   ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                 ).animate().fadeIn(),
                                 Text(
-                                  'COMPANION SANCTUARY',
-                                  style: TextStyle(fontFamily: 'Outfit', 
+                                  context.tr('vowl_mascot.nest_subtitle'),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
                                     fontSize: 8.sp,
                                     fontWeight: FontWeight.w700,
                                     color: primaryColor.withValues(alpha: 0.7),
                                     letterSpacing: 1.5,
                                   ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ],
                             ),
                           )
                         else
-                          Text(
-                            'VOWL NEST',
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
-                              color: textColor,
-                              letterSpacing: 2,
+                          Flexible(
+                            child: Text(
+                              context.tr('vowl_mascot.nest_title'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w900,
+                                color: textColor,
+                                letterSpacing: 2,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                         const Expanded(child: SizedBox()),
-                        _buildGreenDollarDisplay(user, isDark, primaryColor),
+                        _buildGreenDollarDisplay(
+                          context,
+                          user,
+                          isDark,
+                          primaryColor,
+                        ),
                       ],
                     ),
                   );
@@ -299,31 +333,42 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
   }
 
   Widget _buildGreenDollarDisplay(
+    BuildContext context,
     UserEntity user,
     bool isDark,
     Color primaryColor,
   ) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.25)),
+    return Semantics(
+      label: context.tr(
+        'home.coins_value_label',
+        args: [user.coins.toString()],
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.attach_money_rounded, color: primaryColor, size: 16.r),
-          SizedBox(width: 4.w),
-          Text(
-            '${user.coins}',
-            style: TextStyle(fontFamily: 'Outfit', 
-              color: isDark ? Colors.white : Colors.black,
-              fontWeight: FontWeight.w900,
-              fontSize: 13.sp,
-            ),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+        decoration: BoxDecoration(
+          color: primaryColor.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: primaryColor.withValues(alpha: 0.25)),
+        ),
+        child: ExcludeSemantics(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.attach_money_rounded, color: primaryColor, size: 16.r),
+              SizedBox(width: 4.w),
+              Text(
+                '${user.coins}',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: isDark ? Colors.white : Colors.black,
+                  fontWeight: FontWeight.w900,
+                  fontSize: 13.sp,
+                ),
+                maxLines: 1,
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     ).animate().shimmer(
       duration: 2.seconds,
@@ -339,8 +384,16 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
         padding: EdgeInsets.all(6.r),
         child: Row(
           children: [
-            _buildTabItem(0, 'COMPANION', primaryColor),
-            _buildTabItem(1, 'BOUTIQUE', primaryColor),
+            _buildTabItem(
+              0,
+              context.tr('vowl_mascot.tab_companion'),
+              primaryColor,
+            ),
+            _buildTabItem(
+              1,
+              context.tr('vowl_mascot.tab_boutique'),
+              primaryColor,
+            ),
           ],
         ),
       ),
@@ -350,44 +403,62 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
   Widget _buildTabItem(int index, String label, Color primaryColor) {
     final isSelected = _activeTabIndex == index;
     return Expanded(
-      child: GestureDetector(
-        onTap: () {
-          _hapticService.selection();
-          setState(() {
-            _activeTabIndex = index;
-            _tabController.animateTo(index);
-          });
-        },
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeOutCubic,
-          padding: EdgeInsets.symmetric(vertical: 14.h),
-          decoration: BoxDecoration(
-            color: isSelected
-                ? primaryColor.withValues(alpha: 0.2)
-                : Colors.transparent,
-            borderRadius: BorderRadius.circular(18.r),
-            border: Border.all(
-              color: isSelected
-                  ? primaryColor.withValues(alpha: 0.5)
-                  : Colors.transparent,
-            ),
-            boxShadow: isSelected ? [
-              BoxShadow(
-                color: primaryColor.withValues(alpha: 0.2),
-                blurRadius: 10,
-                offset: const Offset(0, 4),
-              )
-            ] : [],
-          ),
-          child: Text(
-            label,
-            textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w900,
-              color: isSelected ? primaryColor : Colors.grey.withValues(alpha: 0.8),
-              letterSpacing: 1.5,
+      child: Semantics(
+        button: true,
+        selected: isSelected,
+        label: label,
+        child: GestureDetector(
+          onTap: () {
+            _hapticService.selection();
+            // A TabController used to mirror this index but never drove any
+            // TabBarView/TabBar — it was dead weight. The local index alone
+            // is the single source of truth for which sliver renders below.
+            setState(() {
+              _activeTabIndex = index;
+            });
+          },
+          behavior: HitTestBehavior.opaque,
+          child: ExcludeSemantics(
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOutCubic,
+              constraints: BoxConstraints(minHeight: 48.h),
+              padding: EdgeInsets.symmetric(vertical: 14.h),
+              decoration: BoxDecoration(
+                color: isSelected
+                    ? primaryColor.withValues(alpha: 0.2)
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(18.r),
+                border: Border.all(
+                  color: isSelected
+                      ? primaryColor.withValues(alpha: 0.5)
+                      : Colors.transparent,
+                ),
+                boxShadow: isSelected
+                    ? [
+                        BoxShadow(
+                          color: primaryColor.withValues(alpha: 0.2),
+                          blurRadius: 10,
+                          offset: const Offset(0, 4),
+                        ),
+                      ]
+                    : [],
+              ),
+              child: Text(
+                label,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isSelected
+                      ? primaryColor
+                      : Colors.grey.withValues(alpha: 0.8),
+                  letterSpacing: 1.5,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ),
         ),
@@ -407,48 +478,63 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       sliver: SliverList(
         delegate: SliverChildListDelegate([
-          _buildSectionHeader('SYNCHRONIZED ELITES', textColor),
+          _buildSectionHeader(
+            context.tr('vowl_mascot.section_synchronized_elites'),
+            textColor,
+          ),
           SizedBox(height: 20.h),
-          RepaintBoundary(
-            child: GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 0.85,
-                crossAxisSpacing: 16.w,
-                mainAxisSpacing: 16.h,
-              ),
-              itemCount: mascots.length,
-              itemBuilder: (context, index) {
-                final id = mascots[index];
-                final emoji = VowlAssets.mascotMap[id]!;
-                final name = VowlAssets.mascotNames[id]!;
-                final isSelected =
-                    user.vowlMascot == id ||
-                    (user.vowlMascot == null && id == 'vowl_prime');
+          // Clamp local text scale: these are fixed-aspect-ratio grid cells
+          // by design. Without this, a large OS accessibility text-scale
+          // setting combined with a longer translated mascot name could
+          // overflow the cell. The rest of the app still scales freely.
+          MediaQuery.withClampedTextScaling(
+            minScaleFactor: 1.0,
+            maxScaleFactor: 1.3,
+            child: RepaintBoundary(
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.85,
+                  crossAxisSpacing: 16.w,
+                  mainAxisSpacing: 16.h,
+                ),
+                itemCount: mascots.length,
+                itemBuilder: (context, index) {
+                  final id = mascots[index];
+                  final emoji = VowlAssets.mascotMap[id]!;
+                  final name = VowlAssets.mascotNames[id]!;
+                  final isSelected =
+                      user.vowlMascot == id ||
+                      (user.vowlMascot == null && id == 'vowl_prime');
 
-                return _buildMascotTile(
-                  context,
-                  id,
-                  name,
-                  emoji,
-                  isSelected,
-                  isDark,
-                  primaryColor,
-                  textColor,
-                );
-              },
+                  return _buildMascotTile(
+                    context,
+                    id,
+                    name,
+                    emoji,
+                    isSelected,
+                    isDark,
+                    primaryColor,
+                    textColor,
+                  );
+                },
+              ),
             ),
           ),
           SizedBox(height: 32.h),
-          const RepaintBoundary(
-            child: BannerAdWidget(),
-          ),
+          const RepaintBoundary(child: BannerAdWidget()),
           SizedBox(height: 32.h),
           if (user.vowlMascot != null)
             RepaintBoundary(
-              child: _buildEquippedSection(user, isDark, primaryColor, textColor),
+              child: _buildEquippedSection(
+                context,
+                user,
+                isDark,
+                primaryColor,
+                textColor,
+              ),
             ),
         ]),
       ),
@@ -467,47 +553,52 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       sliver: SliverList(
         delegate: SliverChildListDelegate([
-          _buildSectionHeader('CYBERNETIC AUGMENTS', textColor),
+          _buildSectionHeader(
+            context.tr('vowl_mascot.section_cybernetic_augments'),
+            textColor,
+          ),
           SizedBox(height: 20.h),
-          RepaintBoundary(
-            child: GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 0.78,
-                crossAxisSpacing: 16.w,
-                mainAxisSpacing: 16.h,
-              ),
-              itemCount: accessories.length,
-              itemBuilder: (context, index) {
-                final id = accessories[index];
-                final emoji = VowlAssets.accessoryMap[id]!;
-                final name = VowlAssets.accessoryNames[id]!;
-                final price = VowlAssets.accessoryPrices[id]!;
-                final isOwned = user.vowlOwnedAccessories.contains(id);
-                final isEquipped = user.vowlEquippedAccessory == id;
+          MediaQuery.withClampedTextScaling(
+            minScaleFactor: 1.0,
+            maxScaleFactor: 1.3,
+            child: RepaintBoundary(
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.78,
+                  crossAxisSpacing: 16.w,
+                  mainAxisSpacing: 16.h,
+                ),
+                itemCount: accessories.length,
+                itemBuilder: (context, index) {
+                  final id = accessories[index];
+                  final emoji = VowlAssets.accessoryMap[id]!;
+                  final name = VowlAssets.accessoryNames[id]!;
+                  final price = VowlAssets.accessoryPrices[id]!;
+                  final isOwned = user.vowlOwnedAccessories.contains(id);
+                  final isEquipped = user.vowlEquippedAccessory == id;
 
-                return _buildAccessoryTile(
-                  context,
-                  id,
-                  name,
-                  emoji,
-                  price,
-                  isOwned,
-                  isEquipped,
-                  isDark,
-                  primaryColor,
-                  textColor,
-                  user,
-                );
-              },
+                  return _buildAccessoryTile(
+                    context,
+                    id,
+                    name,
+                    emoji,
+                    price,
+                    isOwned,
+                    isEquipped,
+                    isDark,
+                    primaryColor,
+                    textColor,
+                    user,
+                  );
+                },
+              ),
             ),
           ),
           SizedBox(height: 32.h),
-          const RepaintBoundary(
-            child: BannerAdWidget(),
-          ),
+          const RepaintBoundary(child: BannerAdWidget()),
           SizedBox(height: 100.h),
         ]),
       ),
@@ -524,95 +615,121 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
     Color primaryColor,
     Color textColor,
   ) {
-    return ScaleButton(
-      onTap: _isProcessing ? null : () async {
-        setState(() => _isProcessing = true);
-        _hapticService.light();
-        context.read<ProfileBloc>().add(ProfileUpdateVowlMascotRequested(id));
-        await Future.delayed(const Duration(milliseconds: 1000));
-        if (mounted) setState(() => _isProcessing = false);
-      },
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(24.r),
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(
+    final statusLabel = isSelected
+        ? context.tr('vowl_mascot.equipped_status')
+        : context.tr('vowl_mascot.sync_ready');
+
+    return Semantics(
+      button: true,
+      selected: isSelected,
+      label: '${name.toUpperCase()}, $statusLabel',
+      child: ScaleButton(
+        onTap: _isProcessing
+            ? null
+            : () async {
+                setState(() => _isProcessing = true);
+                _hapticService.light();
+                context.read<ProfileBloc>().add(
+                  ProfileUpdateVowlMascotRequested(id),
+                );
+                await Future.delayed(const Duration(milliseconds: 1000));
+                if (mounted) setState(() => _isProcessing = false);
+              },
+        child: ExcludeSemantics(
+          child: GlassTile(
             borderRadius: BorderRadius.circular(24.r),
-            border: Border.all(
-              color: isSelected
-                  ? primaryColor
-                  : textColor.withValues(alpha: 0.1),
-              width: isSelected ? 2 : 1,
-            ),
-            gradient: isSelected
-                ? LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      primaryColor.withValues(alpha: 0.15),
-                      Colors.transparent,
-                    ],
-                  )
-                : null,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                    width: 60.r,
-                    height: 60.r,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: isSelected
-                          ? primaryColor.withValues(alpha: 0.15)
-                          : textColor.withValues(alpha: 0.03),
-                    ),
-                    child: Center(
-                      child: Text(emoji, style: TextStyle(fontSize: 36.sp)),
-                    ),
-                  )
-                  .animate(onPlay: (c) => isSelected ? c.repeat() : c.stop())
-                  .scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.15, 1.15),
-                    duration: 2.seconds,
-                    curve: Curves.easeInOut,
-                  )
-                  .shimmer(
-                    duration: 3.seconds,
-                    color: primaryColor.withValues(alpha: 0.3),
-                  ),
-
-              SizedBox(height: 12.h),
-              Text(
-                name.toUpperCase(),
-                textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isSelected ? primaryColor : textColor,
-                  letterSpacing: 0.5,
+            child: Container(
+              width: double.infinity,
+              height: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24.r),
+                border: Border.all(
+                  color: isSelected
+                      ? primaryColor
+                      : textColor.withValues(alpha: 0.1),
+                  width: isSelected ? 2 : 1,
                 ),
+                gradient: isSelected
+                    ? LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          primaryColor.withValues(alpha: 0.15),
+                          Colors.transparent,
+                        ],
+                      )
+                    : null,
               ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                        width: 60.r,
+                        height: 60.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: isSelected
+                              ? primaryColor.withValues(alpha: 0.15)
+                              : textColor.withValues(alpha: 0.03),
+                        ),
+                        child: Center(
+                          child: Text(emoji, style: TextStyle(fontSize: 36.sp)),
+                        ),
+                      )
+                      .animate(
+                        onPlay: (c) => isSelected ? c.repeat() : c.stop(),
+                      )
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.15, 1.15),
+                        duration: 2.seconds,
+                        curve: Curves.easeInOut,
+                      )
+                      .shimmer(
+                        duration: 3.seconds,
+                        color: primaryColor.withValues(alpha: 0.3),
+                      ),
 
-              SizedBox(height: 8.h),
-              if (isSelected)
-                Icon(
-                  Icons.check_circle_rounded,
-                  color: primaryColor,
-                  size: 14,
-                ).animate().scale()
-              else
-                Text(
-                  'SYNC READY',
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 8.sp,
-                    color: textColor.withValues(alpha: 0.4),
-                    fontWeight: FontWeight.bold,
+                  SizedBox(height: 12.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 4.w),
+                    child: Text(
+                      name.toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isSelected ? primaryColor : textColor,
+                        letterSpacing: 0.5,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
-                ),
-            ],
+
+                  SizedBox(height: 8.h),
+                  if (isSelected)
+                    Icon(
+                      Icons.check_circle_rounded,
+                      color: primaryColor,
+                      size: 14,
+                    ).animate().scale()
+                  else
+                    Text(
+                      context.tr('vowl_mascot.sync_ready'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 8.sp,
+                        color: textColor.withValues(alpha: 0.4),
+                        fontWeight: FontWeight.bold,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                ],
+              ),
+            ),
           ),
         ),
       ),
@@ -620,101 +737,133 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
   }
 
   Widget _buildEquippedSection(
+    BuildContext context,
     UserEntity user,
     bool isDark,
     Color primaryColor,
     Color textColor,
   ) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _buildSectionHeader('ELITE NEURAL LINK', textColor),
-        SizedBox(height: 20.h),
-        GlassTile(
-          borderRadius: BorderRadius.circular(28.r),
-          child: Container(
-            padding: EdgeInsets.all(24.r),
-            decoration: BoxDecoration(
+    final mascotName = VowlAssets.getMascotName(
+      user.vowlMascot ?? 'vowl_prime',
+    ).toUpperCase();
+    final accessoryLabel = user.vowlEquippedAccessory != null
+        ? VowlAssets.getAccessoryName(user.vowlEquippedAccessory!)
+        : context.tr('vowl_mascot.no_augmentations');
+
+    return Semantics(
+      label:
+          '${context.tr('vowl_mascot.elite_interface_label')} $mascotName. $accessoryLabel',
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildSectionHeader(
+            context.tr('vowl_mascot.section_elite_neural_link'),
+            textColor,
+          ),
+          SizedBox(height: 20.h),
+          ExcludeSemantics(
+            child: GlassTile(
               borderRadius: BorderRadius.circular(28.r),
-              border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-            ),
-            child: Row(
-              children: [
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                          width: 84.r,
-                          height: 84.r,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: primaryColor.withValues(alpha: 0.3),
-                              width: 2,
-                            ),
-                          ),
-                        )
-                        .animate(onPlay: (c) => c.repeat())
-                        .rotate(duration: 5.seconds)
-                        .shimmer(color: primaryColor.withValues(alpha: 0.2)),
-                    Text(
-                      VowlAssets.getMascotEmoji(user.vowlMascot ?? 'vowl_prime'),
-                      style: TextStyle(fontSize: 42.sp),
-                    ),
-                  ],
+              child: Container(
+                padding: EdgeInsets.all(24.r),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(28.r),
+                  border: Border.all(
+                    color: primaryColor.withValues(alpha: 0.2),
+                  ),
                 ),
-                SizedBox(width: 24.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'ELITE INTERFACE:',
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 9.sp,
-                          fontWeight: FontWeight.w900,
-                          color: primaryColor,
-                          letterSpacing: 2,
-                        ),
-                      ),
-                      Text(
-                        VowlAssets.getMascotName(user.vowlMascot ?? 'vowl_prime').toUpperCase(),
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w900,
-                          color: textColor,
-                        ),
-                      ),
-                      SizedBox(height: 8.h),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.auto_fix_high_rounded,
-                            color: primaryColor,
-                            size: 14.r,
-                          ),
-                          SizedBox(width: 6.w),
-                          Text(
-                            user.vowlEquippedAccessory != null
-                                ? VowlAssets.getAccessoryName(user.vowlEquippedAccessory!)
-                                : 'NO AUGMENTATIONS',
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w700,
-                              color: textColor.withValues(alpha: 0.6),
+                child: Row(
+                  children: [
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                              width: 84.r,
+                              height: 84.r,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: primaryColor.withValues(alpha: 0.3),
+                                  width: 2,
+                                ),
+                              ),
+                            )
+                            .animate(onPlay: (c) => c.repeat())
+                            .rotate(duration: 5.seconds)
+                            .shimmer(
+                              color: primaryColor.withValues(alpha: 0.2),
                             ),
+                        Text(
+                          VowlAssets.getMascotEmoji(
+                            user.vowlMascot ?? 'vowl_prime',
+                          ),
+                          style: TextStyle(fontSize: 42.sp),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 24.w),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            context.tr('vowl_mascot.elite_interface_label'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.w900,
+                              color: primaryColor,
+                              letterSpacing: 2,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          Text(
+                            mascotName,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w900,
+                              color: textColor,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          SizedBox(height: 8.h),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.auto_fix_high_rounded,
+                                color: primaryColor,
+                                size: 14.r,
+                              ),
+                              SizedBox(width: 6.w),
+                              Flexible(
+                                child: Text(
+                                  accessoryLabel,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: textColor.withValues(alpha: 0.6),
+                                  ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
-        ).animate().fadeIn().slideY(begin: 0.2),
-      ],
-    );
+        ],
+      ),
+    ).animate().fadeIn().slideY(begin: 0.2);
   }
 
   Widget _buildAccessoryTile(
@@ -730,6 +879,14 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
     Color textColor,
     UserEntity user,
   ) {
+    final canAfford = user.coins >= price;
+    final statusLabel = isOwned
+        ? (isEquipped
+              ? context.tr('vowl_mascot.action_disconnect')
+              : context.tr('vowl_mascot.action_link'))
+        : context.tr('vowl_mascot.price_label', args: [price.toString()]);
+    final accessibleActionLabel = '${name.toUpperCase()}, $statusLabel';
+
     return GlassTile(
       borderRadius: BorderRadius.circular(24.r),
       child: Container(
@@ -747,8 +904,10 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
           children: [
             Expanded(
               child:
-                  Center(
-                        child: Text(emoji, style: TextStyle(fontSize: 48.sp)),
+                  ExcludeSemantics(
+                        child: Center(
+                          child: Text(emoji, style: TextStyle(fontSize: 48.sp)),
+                        ),
                       )
                       .animate(target: isEquipped ? 1 : 0)
                       .shimmer(color: primaryColor.withValues(alpha: 0.3)),
@@ -756,60 +915,90 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
             Text(
               name.toUpperCase(),
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: isDark ? textColor.withValues(alpha: 0.9) : textColor,
                 letterSpacing: 0.5,
               ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
             SizedBox(height: 12.h),
-            if (isOwned)
-              _buildActionButton(
-                label: isEquipped ? 'DISCONNECT' : 'LINK',
-                color: isEquipped
-                    ? Colors.redAccent.withValues(alpha: 0.2)
-                    : primaryColor.withValues(alpha: 0.15),
-                textColor: isEquipped ? Colors.redAccent : primaryColor,
-                onTap: _isProcessing ? null : () async {
-                  setState(() => _isProcessing = true);
-                  _hapticService.selection();
-                  context.read<ProfileBloc>().add(
-                    ProfileEquipVowlAccessoryRequested(isEquipped ? null : id),
-                  );
-                  await Future.delayed(const Duration(milliseconds: 1000));
-                  if (mounted) setState(() => _isProcessing = false);
-                },
-                primaryColor: primaryColor,
-              )
-            else
-              _buildActionButton(
-                label: '$price',
-                color: user.coins >= price
-                    ? primaryColor.withValues(alpha: 0.1)
-                    : Colors.grey.withValues(alpha: 0.1),
-                textColor: user.coins >= price ? primaryColor : Colors.grey,
-                onTap: _isProcessing ? null : () async {
-                  if (user.coins >= price) {
-                    setState(() => _isProcessing = true);
-                    _hapticService.selection();
-                    context.read<ProfileBloc>().add(
-                      ProfileBuyVowlAccessoryRequested(id, price),
-                    );
-                    await Future.delayed(const Duration(milliseconds: 1500));
-                    if (mounted) setState(() => _isProcessing = false);
-                  } else {
-                    _hapticService.error();
-                    _showModernSnackbar(
-                      context,
-                      'Insufficient Elite credits for this augment',
-                      false,
-                    );
-                  }
-                },
-                icon: Icons.attach_money_rounded,
-                primaryColor: primaryColor,
+            // The Semantics node here wraps the ONE real tappable widget
+            // (the action button below), so screen readers announce a
+            // button that actually does something when activated — unlike
+            // wrapping the whole card, which would announce a "button"
+            // with no attached action.
+            Semantics(
+              button: true,
+              enabled: isOwned || canAfford,
+              label: accessibleActionLabel,
+              child: ExcludeSemantics(
+                child: isOwned
+                    ? _buildActionButton(
+                        label: isEquipped
+                            ? context.tr('vowl_mascot.action_disconnect')
+                            : context.tr('vowl_mascot.action_link'),
+                        color: isEquipped
+                            ? Colors.redAccent.withValues(alpha: 0.2)
+                            : primaryColor.withValues(alpha: 0.15),
+                        textColor: isEquipped ? Colors.redAccent : primaryColor,
+                        onTap: _isProcessing
+                            ? null
+                            : () async {
+                                setState(() => _isProcessing = true);
+                                _hapticService.selection();
+                                context.read<ProfileBloc>().add(
+                                  ProfileEquipVowlAccessoryRequested(
+                                    isEquipped ? null : id,
+                                  ),
+                                );
+                                await Future.delayed(
+                                  const Duration(milliseconds: 1000),
+                                );
+                                if (mounted)
+                                  setState(() => _isProcessing = false);
+                              },
+                        primaryColor: primaryColor,
+                      )
+                    : _buildActionButton(
+                        label: '$price',
+                        color: canAfford
+                            ? primaryColor.withValues(alpha: 0.1)
+                            : Colors.grey.withValues(alpha: 0.1),
+                        textColor: canAfford ? primaryColor : Colors.grey,
+                        onTap: _isProcessing
+                            ? null
+                            : () async {
+                                if (canAfford) {
+                                  setState(() => _isProcessing = true);
+                                  _hapticService.selection();
+                                  context.read<ProfileBloc>().add(
+                                    ProfileBuyVowlAccessoryRequested(id, price),
+                                  );
+                                  await Future.delayed(
+                                    const Duration(milliseconds: 1500),
+                                  );
+                                  if (mounted)
+                                    setState(() => _isProcessing = false);
+                                } else {
+                                  _hapticService.error();
+                                  _showModernSnackbar(
+                                    context,
+                                    context.tr(
+                                      'vowl_mascot.feedback_insufficient_credits',
+                                    ),
+                                    false,
+                                  );
+                                }
+                              },
+                        icon: Icons.attach_money_rounded,
+                        primaryColor: primaryColor,
+                      ),
               ),
+            ),
           ],
         ),
       ),
@@ -828,6 +1017,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
       onTap: onTap,
       child: Container(
         width: double.infinity,
+        constraints: BoxConstraints(minHeight: 40.h),
         padding: EdgeInsets.symmetric(vertical: 10.h),
         decoration: BoxDecoration(
           color: color,
@@ -841,13 +1031,18 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
               Icon(icon, size: 14.r, color: textColor),
               SizedBox(width: 2.w),
             ],
-            Text(
-              label,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
-                color: textColor,
-                letterSpacing: 1,
+            Flexible(
+              child: Text(
+                label,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w900,
+                  color: textColor,
+                  letterSpacing: 1,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -857,24 +1052,40 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
   }
 
   Widget _buildSectionHeader(String label, Color textColor) {
-    return Row(
-      children: [
-        SizedBox(width: 4.w, height: 16.h, child: ColoredBox(color: Colors.greenAccent)),
-        SizedBox(width: 12.w),
-        Text(
-          label,
-          style: TextStyle(fontFamily: 'Outfit', 
-            fontSize: 10.sp,
-            fontWeight: FontWeight.w900,
-            color: textColor.withValues(alpha: 0.7),
-            letterSpacing: 2.5,
+    return Semantics(
+      header: true,
+      child: Row(
+        children: [
+          SizedBox(
+            width: 4.w,
+            height: 16.h,
+            child: const ColoredBox(color: Colors.greenAccent),
           ),
-        ),
-      ],
+          SizedBox(width: 12.w),
+          Expanded(
+            child: Text(
+              label,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: textColor.withValues(alpha: 0.7),
+                letterSpacing: 2.5,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
-  Widget _buildEliteStatusOverlay(Color primaryColor, bool isDark) {
+  Widget _buildEliteStatusOverlay(
+    BuildContext context,
+    Color primaryColor,
+    bool isDark,
+  ) {
     return Positioned(
       bottom: 0,
       left: 0,
@@ -899,22 +1110,32 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                 ),
               ),
               padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Row(
-                children: [
-                  Icon(Icons.security_rounded, color: primaryColor, size: 14.r),
-                  SizedBox(width: 12.w),
-                  Text(
-                    'NEURAL CONNECTION STABLE // ELITE STATUS ACTIVE',
-                    style: TextStyle(fontFamily: 'RobotoMono', 
-                      fontSize: 8.sp,
-                      fontWeight: FontWeight.w700,
-                      color: primaryColor.withValues(alpha: 0.8),
-                      letterSpacing: 1,
+              child: ExcludeSemantics(
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.security_rounded,
+                      color: primaryColor,
+                      size: 14.r,
                     ),
-                  ),
-                  const Spacer(),
-                  _buildSyncIndicator(primaryColor),
-                ],
+                    SizedBox(width: 12.w),
+                    Expanded(
+                      child: Text(
+                        context.tr('vowl_mascot.status_bar_text'),
+                        style: TextStyle(
+                          fontFamily: 'RobotoMono',
+                          fontSize: 8.sp,
+                          fontWeight: FontWeight.w700,
+                          color: primaryColor.withValues(alpha: 0.8),
+                          letterSpacing: 1,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    _buildSyncIndicator(primaryColor),
+                  ],
+                ),
               ),
             ),
           ),
@@ -925,6 +1146,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
 
   Widget _buildSyncIndicator(Color primaryColor) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: List.generate(4, (index) {
         return Container(
               width: 3.w,

@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -13,14 +14,35 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:io';
 import 'dart:async';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
-  debugPrint("Handling a background message: ${message.messageId}");
+  if (kDebugMode) {
+    debugPrint("Handling a background message: ${message.messageId}");
+  }
 }
 
 class NotificationService {
+  NotificationService({LocaleService? localeService})
+    : _localeService = localeService;
+
+  // Optional — when wired up via DI, notification copy is localized through
+  // LocaleService.tr(). When omitted (existing DI registrations keep
+  // compiling unchanged), text falls back to the original English strings.
+  final LocaleService? _localeService;
+
+  String _t(
+    String key, {
+    List<String> args = const [],
+    required String fallback,
+  }) {
+    final service = _localeService;
+    if (service == null) return fallback;
+    return service.tr(key, args: args, fallback: fallback);
+  }
+
   // Service configuration constraints
   static const String mainChannelId = 'vowl_main_channel';
   static const String streakChannelId = 'vowl_streak_channel';
@@ -32,13 +54,16 @@ class NotificationService {
   static const int maxLocalNotificationModulo = 100000;
 
   final FirebaseMessaging _fcm = FirebaseMessaging.instance;
-  final FlutterLocalNotificationsPlugin _localNotifications = FlutterLocalNotificationsPlugin();
+  final FlutterLocalNotificationsPlugin _localNotifications =
+      FlutterLocalNotificationsPlugin();
+  final Random _idRandom = Random();
   bool _timezoneInitialized = false;
 
   // StreamSubscriptions to prevent memory leaks & duplicate notifications
   StreamSubscription<RemoteMessage>? _onMessageSubscription;
   StreamSubscription<String>? _onTokenRefreshSubscription;
   StreamSubscription<RemoteMessage>? _onMessageOpenedAppSubscription;
+  StreamSubscription<User?>? _authStateSubscription;
 
   /// Check if notifications are enabled via user preferences
   Future<bool> get _areNotificationsEnabled async {
@@ -68,7 +93,7 @@ class NotificationService {
     try {
       final dynamic timeZoneResult = await FlutterTimezone.getLocalTimezone();
       timeZoneName = timeZoneResult.toString();
-      
+
       // Resilient parsing for various OS formats
       if (timeZoneName.contains('/')) {
         final RegExp regex = RegExp(r'([A-Za-z]+/[A-Za-z_]+)');
@@ -77,23 +102,26 @@ class NotificationService {
           timeZoneName = match.group(0)!;
         }
       }
-      
+
       tz.setLocalLocation(tz.getLocation(timeZoneName));
       _timezoneInitialized = true;
     } catch (e) {
-      debugPrint('Timezone initialization error: $e. Falling back to UTC.');
+      if (kDebugMode)
+        debugPrint('Timezone initialization error: $e. Falling back to UTC.');
       try {
         tz.setLocalLocation(tz.getLocation('UTC'));
         _timezoneInitialized = true;
       } catch (inner) {
-        debugPrint('Critical timezone failure: $inner');
+        if (kDebugMode) debugPrint('Critical timezone failure: $inner');
       }
     }
 
     // 3. Initialize Local Notifications
-    const AndroidInitializationSettings androidSettings = AndroidInitializationSettings('@mipmap/ic_launcher');
-    const DarwinInitializationSettings iosSettings = DarwinInitializationSettings();
-    
+    const AndroidInitializationSettings androidSettings =
+        AndroidInitializationSettings('@mipmap/ic_launcher');
+    const DarwinInitializationSettings iosSettings =
+        DarwinInitializationSettings();
+
     const InitializationSettings initSettings = InitializationSettings(
       android: androidSettings,
       iOS: iosSettings,
@@ -102,41 +130,76 @@ class NotificationService {
     await _localNotifications.initialize(
       initSettings,
       onDidReceiveNotificationResponse: (NotificationResponse response) {
-        debugPrint('Local Notification tapped! Payload: ${response.payload}');
+        if (kDebugMode) {
+          debugPrint('Local Notification tapped! Payload: ${response.payload}');
+        }
+        // BUG FIX: previously only the remote (FCM) tap handlers actually
+        // navigated anywhere; tapping a locally-scheduled reminder (streak,
+        // weekly motivation) was a dead end. Both now carry a `payload`
+        // (see scheduleStreakReminder/scheduleWeeklyMotivation) and route
+        // through the same validated navigation path.
+        _handleNotificationTap(response.payload);
       },
     );
 
     // 4. Create Notification Channels (Android 8.0+)
     if (Platform.isAndroid) {
-      final androidPlugin = _localNotifications.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
+      final androidPlugin = _localNotifications
+          .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin
+          >();
       if (androidPlugin != null) {
-        await androidPlugin.createNotificationChannel(const AndroidNotificationChannel(
-          mainChannelId, 'Main Notifications', 
-          description: 'Used for game updates', importance: Importance.max,
-        ));
-        await androidPlugin.createNotificationChannel(const AndroidNotificationChannel(
-          streakChannelId, 'Streak Reminders', 
-          description: 'Motivation alerts', importance: Importance.max,
-        ));
-        await androidPlugin.createNotificationChannel(const AndroidNotificationChannel(
-          weeklyChannelId, 'Weekly Goals', 
-          description: 'Weekly summaries', importance: Importance.high,
-        ));
-        await androidPlugin.createNotificationChannel(const AndroidNotificationChannel(
-          highImportanceChannelId, 'High Importance', 
-          description: 'Critical updates', importance: Importance.max,
-        ));
+        await androidPlugin.createNotificationChannel(
+          const AndroidNotificationChannel(
+            mainChannelId,
+            'Main Notifications',
+            description: 'Used for game updates',
+            importance: Importance.max,
+          ),
+        );
+        await androidPlugin.createNotificationChannel(
+          const AndroidNotificationChannel(
+            streakChannelId,
+            'Streak Reminders',
+            description: 'Motivation alerts',
+            importance: Importance.max,
+          ),
+        );
+        await androidPlugin.createNotificationChannel(
+          const AndroidNotificationChannel(
+            weeklyChannelId,
+            'Weekly Goals',
+            description: 'Weekly summaries',
+            importance: Importance.high,
+          ),
+        );
+        await androidPlugin.createNotificationChannel(
+          const AndroidNotificationChannel(
+            highImportanceChannelId,
+            'High Importance',
+            description: 'Critical updates',
+            importance: Importance.max,
+          ),
+        );
       }
     }
 
     // 5. Handle Foreground Messages with memory-safe subscriptions
-    _onMessageSubscription = FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
+    _onMessageSubscription = FirebaseMessaging.onMessage.listen((
+      RemoteMessage message,
+    ) async {
       if (message.notification != null) {
         final enabled = await _areNotificationsEnabled;
         if (!enabled) return;
         showNotification(
-          message.notification!.title ?? 'Vowl Update',
-          message.notification!.body ?? 'Check out what\'s new!',
+          message.notification!.title ??
+              _t('notifications.fcm_default_title', fallback: 'Vowl Update'),
+          message.notification!.body ??
+              _t(
+                'notifications.fcm_default_body',
+                fallback: "Check out what's new!",
+              ),
+          payload: message.data['path'] as String?,
         );
       }
     });
@@ -149,25 +212,66 @@ class NotificationService {
       _updateTokenInFirestore(newToken);
     });
 
-    // 8. Handle Notification Clicks (When app is in background/terminated)
-    _onMessageOpenedAppSubscription = FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      debugPrint('Notification clicked! Path: ${message.data['path']}');
-      _handleNotificationTap(message.data['path'] as String?);
+    // 7b. BUG FIX: a token refresh only fires when the *token itself*
+    // rotates (rare). It never fires on a fresh login with an unchanged
+    // token. Without this, init() running before auth completes (the
+    // normal app-startup order) means the FCM token is saved exactly once
+    // with no authenticated user, and never retried — that user's push
+    // notifications silently never reach Firestore for the rest of the
+    // session. Re-saving on every auth-state transition to a real user
+    // closes that gap.
+    _authStateSubscription = FirebaseAuth.instance.authStateChanges().listen((
+      user,
+    ) {
+      if (user != null) {
+        _saveFCMTokenToFirestore();
+      }
     });
 
+    // 8. Handle Notification Clicks (When app is in background/terminated)
+    _onMessageOpenedAppSubscription = FirebaseMessaging.onMessageOpenedApp
+        .listen((RemoteMessage message) {
+          if (kDebugMode) {
+            debugPrint('Notification clicked! Path: ${message.data['path']}');
+          }
+          _handleNotificationTap(message.data['path'] as String?);
+        });
+
     // 9. Check for initial message (if app was terminated and opened by notification)
-    RemoteMessage? initialMessage = await FirebaseMessaging.instance.getInitialMessage();
+    RemoteMessage? initialMessage = await FirebaseMessaging.instance
+        .getInitialMessage();
     if (initialMessage != null) {
-      debugPrint('App opened from terminated state by notification');
+      if (kDebugMode)
+        debugPrint('App opened from terminated state by notification');
       _handleNotificationTap(initialMessage.data['path'] as String?);
     }
   }
 
+  /// SECURITY: `path` ultimately originates from a push-notification payload
+  /// — i.e. untrusted, remotely-supplied input. We only ever forward it to
+  /// the in-app router if it looks like a safe, relative in-app route
+  /// (starts with `/`, no scheme/host, no parent-directory traversal, and
+  /// bounded length). This blocks a malicious or compromised sender from
+  /// using the notification payload to redirect the router to an external
+  /// URL or an unexpectedly-crafted path.
+  bool _isSafeInternalPath(String path) {
+    if (path.isEmpty || path.length > 200) return false;
+    if (!path.startsWith('/')) return false;
+    if (path.contains('..')) return false;
+    final lower = path.toLowerCase();
+    if (lower.contains('://') || lower.startsWith('//')) return false;
+    return true;
+  }
+
   void _handleNotificationTap(String? path) {
-    if (path != null && path.isNotEmpty) {
+    if (path != null && path.isNotEmpty && _isSafeInternalPath(path)) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         AppRouter.router.go(path);
       });
+    } else if (path != null && kDebugMode) {
+      debugPrint(
+        'NotificationService: ignored unsafe notification path: $path',
+      );
     }
   }
 
@@ -176,15 +280,17 @@ class NotificationService {
     try {
       final token = await _fcm.getToken();
       if (token == null) {
-        debugPrint('NotificationService: FCM token is null, skipping save.');
+        if (kDebugMode)
+          debugPrint('NotificationService: FCM token is null, skipping save.');
         return;
       }
       if (kDebugMode) {
-        debugPrint('FCM_TOKEN_INITIALIZED: $token');
+        debugPrint('FCM_TOKEN_INITIALIZED');
       }
       await _updateTokenInFirestore(token);
     } catch (e) {
-      debugPrint('NotificationService: Error saving FCM token: $e');
+      if (kDebugMode)
+        debugPrint('NotificationService: Error saving FCM token: $e');
     }
   }
 
@@ -193,25 +299,42 @@ class NotificationService {
     try {
       final user = FirebaseAuth.instance.currentUser;
       if (user == null) {
-        debugPrint('NotificationService: No authenticated user, FCM token not saved.');
+        if (kDebugMode)
+          debugPrint(
+            'NotificationService: No authenticated user, FCM token not saved.',
+          );
         return;
       }
 
-      await FirebaseFirestore.instance
-          .collection('users')
-          .doc(user.uid)
-          .update({'fcmToken': token});
+      await FirebaseFirestore.instance.collection('users').doc(user.uid).update(
+        {'fcmToken': token},
+      );
 
       if (kDebugMode) {
-        debugPrint('NotificationService: FCM token saved to Firestore for user ${user.uid}');
+        debugPrint('NotificationService: FCM token saved to Firestore.');
       }
     } catch (e) {
-      debugPrint('NotificationService: Error updating FCM token in Firestore: $e');
+      if (kDebugMode)
+        debugPrint(
+          'NotificationService: Error updating FCM token in Firestore: $e',
+        );
     }
   }
 
   /// CRASH-PROOF PERMISSIONS
+  ///
+  /// BUG FIX: this previously returned a `Future<void>` that completed
+  /// immediately — *before* the deferred `addPostFrameCallback` work even
+  /// started — because the callback wasn't connected to the returned
+  /// Future at all. Any caller doing `await requestPermissions();` would
+  /// proceed as if permissions had been resolved when nothing had actually
+  /// happened yet. A Completer now makes the returned Future genuinely
+  /// resolve only once the permission flow (deferred to after the current
+  /// frame, exactly as before, to avoid requesting permissions mid-build)
+  /// has finished.
   Future<void> requestPermissions() async {
+    final completer = Completer<void>();
+
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       try {
         NotificationSettings settings = await _fcm.requestPermission(
@@ -220,9 +343,10 @@ class NotificationService {
           sound: true,
           provisional: false,
         );
-        
+
         if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-          debugPrint('User granted Firebase notification permission');
+          if (kDebugMode)
+            debugPrint('User granted Firebase notification permission');
           await _saveFCMTokenToFirestore();
         }
 
@@ -232,42 +356,62 @@ class NotificationService {
           if (status.isDenied) {
             await Permission.notification.request();
           }
-          
+
           final alarmStatus = await Permission.scheduleExactAlarm.status;
           if (alarmStatus.isDenied) {
             await Permission.scheduleExactAlarm.request();
           }
         }
       } catch (e) {
-        debugPrint('Error requesting notification permissions: $e');
+        if (kDebugMode)
+          debugPrint('Error requesting notification permissions: $e');
+      } finally {
+        if (!completer.isCompleted) completer.complete();
       }
     });
+
+    return completer.future;
   }
 
-  Future<void> showNotification(String title, String body) async {
+  Future<void> showNotification(
+    String title,
+    String body, {
+    String? payload,
+  }) async {
     final enabled = await _areNotificationsEnabled;
     if (!enabled) return;
 
-    const AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
-      mainChannelId,
-      'Main Notifications',
-      channelDescription: 'Used for game updates and streak reminders',
-      importance: Importance.max,
-      priority: Priority.high,
-      showWhen: true,
-    );
+    const AndroidNotificationDetails androidDetails =
+        AndroidNotificationDetails(
+          mainChannelId,
+          'Main Notifications',
+          channelDescription: 'Used for game updates and streak reminders',
+          importance: Importance.max,
+          priority: Priority.high,
+          showWhen: true,
+        );
 
     const NotificationDetails platformDetails = NotificationDetails(
       android: androidDetails,
     );
 
     await _localNotifications.show(
-      DateTime.now().millisecondsSinceEpoch % maxLocalNotificationModulo,
+      _generateNotificationId(),
       title,
       body,
       platformDetails,
+      payload: payload,
     );
   }
+
+  /// BUG FIX: the previous ID, `millisecondsSinceEpoch % 100000`, repeats on
+  /// an exact 100-second cycle — any two notifications fired ~100s (or any
+  /// multiple of it) apart collide on the same ID and the second silently
+  /// replaces the first in the tray instead of appearing alongside it.
+  /// A random ID within the same bound removes that deterministic collision
+  /// pattern.
+  int _generateNotificationId() =>
+      _idRandom.nextInt(maxLocalNotificationModulo);
 
   /// SCHEDULES A STREAK REMINDER
   Future<void> scheduleStreakReminder(int currentStreak) async {
@@ -280,13 +424,14 @@ class NotificationService {
     // Cancel existing reminders to avoid double-messages
     await _localNotifications.cancel(streakReminderNotificationId);
 
-    const AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
-      streakChannelId,
-      'Streak Reminders',
-      channelDescription: 'Keeps you motivated to learn!',
-      importance: Importance.max,
-      priority: Priority.high,
-    );
+    const AndroidNotificationDetails androidDetails =
+        AndroidNotificationDetails(
+          streakChannelId,
+          'Streak Reminders',
+          channelDescription: 'Keeps you motivated to learn!',
+          importance: Importance.max,
+          priority: Priority.high,
+        );
 
     const NotificationDetails platformDetails = NotificationDetails(
       android: androidDetails,
@@ -299,7 +444,10 @@ class NotificationService {
 
     // Resilient timezone wait mechanism (non-blocking)
     if (!_timezoneInitialized) {
-      debugPrint('NotificationService: Waiting for timezone initialization...');
+      if (kDebugMode)
+        debugPrint(
+          'NotificationService: Waiting for timezone initialization...',
+        );
       int retry = 0;
       while (!_timezoneInitialized && retry < 10) {
         await Future.delayed(const Duration(milliseconds: 200));
@@ -318,25 +466,37 @@ class NotificationService {
       20, // 8 PM
       0,
     );
-    
+
     // If it's already past 8 PM today, we still want it tomorrow
     scheduledDate = scheduledDate.add(const Duration(days: 1));
 
     await _localNotifications.zonedSchedule(
       streakReminderNotificationId,
-      'Owly is Waiting! 🦉🔥',
-      'Your $currentStreak-day streak is in danger! Play now to keep it alive!',
+      _t(
+        'notifications.streak_reminder_title',
+        fallback: 'Owly is Waiting! 🦉🔥',
+      ),
+      _t(
+        'notifications.streak_reminder_body',
+        args: [currentStreak.toString()],
+        fallback:
+            'Your $currentStreak-day streak is in danger! Play now to keep it alive!',
+      ),
       scheduledDate,
       platformDetails,
-      androidScheduleMode: useExact 
-          ? AndroidScheduleMode.exactAllowWhileIdle 
+      androidScheduleMode: useExact
+          ? AndroidScheduleMode.exactAllowWhileIdle
           : AndroidScheduleMode.inexactAllowWhileIdle,
-      uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.time,
+      payload: AppRouter.streakRoute,
     );
-    
+
     if (kDebugMode) {
-      debugPrint('Scheduled streak reminder for $currentStreak days at 8:00 PM tomorrow local time');
+      debugPrint(
+        'Scheduled streak reminder for $currentStreak days at 8:00 PM tomorrow local time',
+      );
     }
   }
 
@@ -348,27 +508,39 @@ class NotificationService {
       return;
     }
 
-    const AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
-      weeklyChannelId,
-      'Weekly Goals',
-      channelDescription: 'Sunday morning motivation!',
-      importance: Importance.high,
-      priority: Priority.high,
-    );
+    const AndroidNotificationDetails androidDetails =
+        AndroidNotificationDetails(
+          weeklyChannelId,
+          'Weekly Goals',
+          channelDescription: 'Sunday morning motivation!',
+          importance: Importance.high,
+          priority: Priority.high,
+        );
 
-    const NotificationDetails platformDetails = NotificationDetails(android: androidDetails);
+    const NotificationDetails platformDetails = NotificationDetails(
+      android: androidDetails,
+    );
 
     final location = _currentLocation;
 
     await _localNotifications.zonedSchedule(
       weeklyMotivationNotificationId,
-      'Sunday Study Session! 📚',
-      'Ready to crush your goals this week? Let\'s review what you learned!',
+      _t(
+        'notifications.weekly_motivation_title',
+        fallback: 'Sunday Study Session! 📚',
+      ),
+      _t(
+        'notifications.weekly_motivation_body',
+        fallback:
+            "Ready to crush your goals this week? Let's review what you learned!",
+      ),
       _nextInstanceOfSundayTenAM(location),
       platformDetails,
       androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-      uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
+      payload: AppRouter.homeRoute,
     );
 
     if (kDebugMode) {
@@ -378,7 +550,13 @@ class NotificationService {
 
   tz.TZDateTime _nextInstanceOfSundayTenAM(tz.Location location) {
     final tz.TZDateTime now = tz.TZDateTime.now(location);
-    tz.TZDateTime scheduledDate = tz.TZDateTime(location, now.year, now.month, now.day, 10);
+    tz.TZDateTime scheduledDate = tz.TZDateTime(
+      location,
+      now.year,
+      now.month,
+      now.day,
+      10,
+    );
     while (scheduledDate.weekday != DateTime.sunday) {
       scheduledDate = scheduledDate.add(const Duration(days: 1));
     }
@@ -393,7 +571,7 @@ class NotificationService {
     try {
       return await _fcm.getToken();
     } catch (e) {
-      debugPrint('Error getting FCM token: $e');
+      if (kDebugMode) debugPrint('Error getting FCM token: $e');
       return null;
     }
   }
@@ -411,9 +589,11 @@ class NotificationService {
     await _onMessageSubscription?.cancel();
     await _onTokenRefreshSubscription?.cancel();
     await _onMessageOpenedAppSubscription?.cancel();
+    await _authStateSubscription?.cancel();
     _onMessageSubscription = null;
     _onTokenRefreshSubscription = null;
     _onMessageOpenedAppSubscription = null;
+    _authStateSubscription = null;
   }
 
   /// Dispose entry point for clean architectural lifecycle management
@@ -426,7 +606,9 @@ class NotificationService {
     if (!enabled) {
       await cancelAllReminders();
       if (kDebugMode) {
-        debugPrint('NotificationService: Notifications disabled by user. All reminders cancelled.');
+        debugPrint(
+          'NotificationService: Notifications disabled by user. All reminders cancelled.',
+        );
       }
     } else {
       await scheduleWeeklyMotivation();

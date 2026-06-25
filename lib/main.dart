@@ -1,44 +1,43 @@
-import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/connectivity_wrapper.dart';
-import 'package:vowl/core/presentation/widgets/global_error_boundary.dart';
 import 'package:vowl/core/presentation/widgets/global_audio_feedback_listener.dart';
+import 'package:vowl/core/presentation/widgets/global_error_boundary.dart';
 import 'package:vowl/core/presentation/widgets/insecure_device_screen.dart';
+import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
-import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/security_service.dart';
-import 'package:vowl/core/utils/remote_config_service.dart';
 import 'package:vowl/core/utils/notification_service.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:vowl/core/utils/remote_config_service.dart';
+import 'package:vowl/core/utils/security_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
-import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
-import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:flutter/foundation.dart';
-import 'package:firebase_app_check/firebase_app_check.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'firebase_options.dart';
+import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 
-import 'package:flutter/services.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-  // Set system UI to transparent for edge-to-edge look
-  // Initial style should be neutral or respect platform brightness to avoid white flicker
+  // Edge-to-edge system UI with platform-appropriate brightness
   final brightness = PlatformDispatcher.instance.platformBrightness;
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
@@ -52,46 +51,44 @@ void main() async {
           : Brightness.dark,
     ),
   );
-
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
 
-  // Safe helper to load environment variables without crashing startup
+  // --- Parallelized safe initialization helpers ---
+
   Future<void> safeLoadDotEnv() async {
     try {
-      await dotenv.load(fileName: ".env");
+      await dotenv.load(fileName: '.env');
     } catch (e) {
-      debugPrint("Warning: Dotenv failed to load: $e");
+      if (kDebugMode) debugPrint('Warning: dotenv failed to load: $e');
     }
   }
 
-  // Safe helper for device security check
   Future<bool> safeCheckSecurity() async {
     try {
       return await SecurityService.isDeviceSecure();
     } catch (e) {
-      debugPrint("Warning: Security check failed: $e");
-      return true; // Default to secure in case of exception to avoid locking out users
+      if (kDebugMode) debugPrint('Warning: security check failed: $e');
+      // Default to secure to avoid locking out users on check failure.
+      return true;
     }
   }
 
-  // Safe helper for Firebase initialization
   Future<FirebaseApp?> safeInitializeFirebase() async {
     try {
       return await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform,
       );
     } catch (e) {
-      debugPrint("Critical: Firebase failed to initialize: $e");
+      if (kDebugMode) debugPrint('Critical: Firebase failed to initialize: $e');
       return null;
     }
   }
 
-  // 1. Parallelize non-dependent core initializations safely to prevent main thread blocking/jank
+  // 1. Parallelize non-dependent core initializations
   final initResults = await Future.wait([
     safeLoadDotEnv(),
     safeInitializeFirebase(),
@@ -99,30 +96,30 @@ void main() async {
   ]);
 
   final firebaseApp = initResults[1] as FirebaseApp?;
-  final bool isSecure = initResults[2] as bool? ?? true;
+  final bool isSecure = (initResults[2] as bool?) ?? true;
 
   if (firebaseApp != null) {
     FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
 
-    // Configure Firestore Persistence (Non-blocking) safely
     try {
       FirebaseFirestore.instance.settings = const Settings(
         persistenceEnabled: true,
-        cacheSizeBytes:
-            50 *
-            1024 *
-            1024, // 50MB - prevents storage exhaustion on low-end devices
+        cacheSizeBytes: 50 * 1024 * 1024, // 50 MB
       );
     } catch (e) {
-      debugPrint("Warning: Firestore settings failed to apply: $e");
+      if (kDebugMode) {
+        debugPrint('Warning: Firestore settings failed to apply: $e');
+      }
     }
   }
 
-  // 2. Initialize Dependency Injection (depends on Firebase initialization)
+  // 2. Dependency Injection (depends on Firebase)
   try {
     await di.init();
   } catch (e) {
-    debugPrint("Critical: Dependency Injection initialization failed: $e");
+    if (kDebugMode) {
+      debugPrint('Critical: Dependency Injection failed: $e');
+    }
   }
 
   if (!isSecure) {
@@ -130,7 +127,7 @@ void main() async {
     return;
   }
 
-  // Initialize Crashlytics
+  // 3. Crashlytics — must run after DI so Firestore is ready
   if (firebaseApp != null) {
     try {
       FlutterError.onError =
@@ -140,95 +137,81 @@ void main() async {
         return true;
       };
     } catch (e) {
-      debugPrint("Warning: Crashlytics initialization failed: $e");
+      if (kDebugMode) {
+        debugPrint('Warning: Crashlytics initialization failed: $e');
+      }
     }
   }
-  
-  // Initialize LocaleService
+
+  // 4. LocaleService
   try {
     final localeService = di.sl<LocaleService>();
     initLocaleServiceReference(localeService);
     await localeService.init();
   } catch (e) {
-    debugPrint("Warning: LocaleService initialization failed: $e");
+    if (kDebugMode) {
+      debugPrint('Warning: LocaleService initialization failed: $e');
+    }
   }
 
   runApp(const MyApp());
 
-  // Delay splash removal slightly to ensure first frame is stable and theme is loaded
-  Future.delayed(const Duration(milliseconds: 200), () {
-    FlutterNativeSplash.remove();
-  });
+  // Delay splash removal to ensure first frame is fully rendered
+  Future.delayed(const Duration(milliseconds: 200), FlutterNativeSplash.remove);
 
-  // Defer heavy/non-critical services to ensure buttery smooth splash-to-home transition
+  // 5. Defer heavy SDKs until UI is stable
   WidgetsBinding.instance.addPostFrameCallback((_) {
     Future.delayed(const Duration(milliseconds: 1500), () async {
-      // Initialize heavy SDKs only once the UI is stable, wrapping each in a try-catch
-      try {
-        await di.sl<AdService>().init();
-      } catch (e, stack) {
-        debugPrint("Error initializing AdService: $e");
-        if (firebaseApp != null) {
-          FirebaseCrashlytics.instance.recordError(
-            e,
-            stack,
-            reason: 'AdService initialization failed',
-          );
-        }
-      }
-
-      try {
-        await di.sl<RemoteConfigService>().init();
-      } catch (e, stack) {
-        debugPrint("Error initializing RemoteConfigService: $e");
-        if (firebaseApp != null) {
-          FirebaseCrashlytics.instance.recordError(
-            e,
-            stack,
-            reason: 'RemoteConfigService initialization failed',
-          );
-        }
-      }
-
-      try {
-        // ignore: deprecated_member_use
-        await FirebaseAppCheck.instance.activate(
-          // ignore: deprecated_member_use
-          appleProvider: kDebugMode
-              ? AppleProvider.debug
-              : AppleProvider.deviceCheck,
-          // ignore: deprecated_member_use
-          androidProvider: kDebugMode
-              ? AndroidProvider.debug
-              : AndroidProvider.playIntegrity,
-        );
-      } catch (e, stack) {
-        debugPrint("Error activating Firebase App Check: $e");
-        if (firebaseApp != null) {
-          FirebaseCrashlytics.instance.recordError(
-            e,
-            stack,
-            reason: 'FirebaseAppCheck activation failed',
-          );
-        }
-      }
-
-      try {
-        await di.sl<NotificationService>().init();
-        await di.sl<NotificationService>().scheduleWeeklyMotivation();
-      } catch (e, stack) {
-        debugPrint("Error initializing NotificationService: $e");
-        if (firebaseApp != null) {
-          FirebaseCrashlytics.instance.recordError(
-            e,
-            stack,
-            reason: 'NotificationService initialization failed',
-          );
-        }
-      }
+      await _initDeferredServices(firebaseApp);
     });
   });
 }
+
+/// Initializes non-critical services after the first frame is stable.
+/// Each service is wrapped individually so a single failure doesn't block others.
+Future<void> _initDeferredServices(FirebaseApp? firebaseApp) async {
+  Future<void> runSafe(String serviceName, Future<void> Function() fn) async {
+    try {
+      await fn();
+    } catch (e, stack) {
+      if (kDebugMode) debugPrint('Error initializing $serviceName: $e');
+      if (firebaseApp != null) {
+        FirebaseCrashlytics.instance.recordError(
+          e,
+          stack,
+          reason: '$serviceName initialization failed',
+        );
+      }
+    }
+  }
+
+  await runSafe('AdService', () => di.sl<AdService>().init());
+  await runSafe(
+    'RemoteConfigService',
+    () => di.sl<RemoteConfigService>().init(),
+  );
+  await runSafe(
+    'FirebaseAppCheck',
+    () => FirebaseAppCheck.instance.activate(
+      // ignore: deprecated_member_use
+      appleProvider: kDebugMode
+          ? AppleProvider.debug
+          : AppleProvider.deviceCheck,
+      // ignore: deprecated_member_use
+      androidProvider: kDebugMode
+          ? AndroidProvider.debug
+          : AndroidProvider.playIntegrity,
+    ),
+  );
+  await runSafe('NotificationService', () async {
+    await di.sl<NotificationService>().init();
+    await di.sl<NotificationService>().scheduleWeeklyMotivation();
+  });
+}
+
+// ============================================================================
+// App widget
+// ============================================================================
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -241,27 +224,17 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-
-    // Global Asset Pre-caching for "Elite Performance"
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      // Pre-load mascot WEBP assets into RAM early
-      precacheImage(
-        const AssetImage('assets/images/mascot/voxbot_happy.webp'),
-        context,
-      );
-      precacheImage(
-        const AssetImage('assets/images/mascot/voxbot_neutral.webp'),
-        context,
-      );
-      precacheImage(
-        const AssetImage('assets/images/mascot/voxbot_thinking.webp'),
-        context,
-      );
-      precacheImage(
-        const AssetImage('assets/images/mascot/voxbot_worried.webp'),
-        context,
-      );
+      // Pre-cache frequently shown mascot assets to avoid jank on first display.
+      for (final path in const [
+        'assets/images/mascot/voxbot_happy.webp',
+        'assets/images/mascot/voxbot_neutral.webp',
+        'assets/images/mascot/voxbot_thinking.webp',
+        'assets/images/mascot/voxbot_worried.webp',
+      ]) {
+        precacheImage(AssetImage(path), context).catchError((_) {});
+      }
     });
   }
 
@@ -271,102 +244,111 @@ class _MyAppState extends State<MyApp> {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) {
-        return MultiBlocProvider(
-          providers: [
-            BlocProvider<AuthBloc>(create: (context) => di.sl<AuthBloc>()),
-            BlocProvider<EconomyBloc>(
-              create: (context) => di.sl<EconomyBloc>(),
-            ),
-            BlocProvider<ProgressionBloc>(
-              create: (context) => di.sl<ProgressionBloc>(),
-            ),
-            BlocProvider<ProfileBloc>(
-              create: (context) => di.sl<ProfileBloc>(),
-            ),
-            BlocProvider<ThemeCubit>(create: (context) => di.sl<ThemeCubit>()),
-          ],
-          child: BlocBuilder<ThemeCubit, ThemeState>(
-            builder: (context, state) {
-              final bool isActuallyDark = state.themeMode == ThemeMode.system
-                  ? MediaQuery.platformBrightnessOf(context) == Brightness.dark
-                  : state.isDark;
+      builder: (_, __) => MultiBlocProvider(
+        providers: [
+          BlocProvider<AuthBloc>(create: (_) => di.sl<AuthBloc>()),
+          BlocProvider<EconomyBloc>(create: (_) => di.sl<EconomyBloc>()),
+          BlocProvider<ProgressionBloc>(
+            create: (_) => di.sl<ProgressionBloc>(),
+          ),
+          BlocProvider<ProfileBloc>(create: (_) => di.sl<ProfileBloc>()),
+          BlocProvider<ThemeCubit>(create: (_) => di.sl<ThemeCubit>()),
+        ],
+        child: BlocBuilder<ThemeCubit, ThemeState>(
+          builder: (context, themeState) {
+            final bool isActuallyDark = themeState.themeMode == ThemeMode.system
+                ? MediaQuery.platformBrightnessOf(context) == Brightness.dark
+                : themeState.isDark;
 
-              return AnnotatedRegion<SystemUiOverlayStyle>(
-                value: SystemUiOverlayStyle(
-                  statusBarColor: Colors.transparent,
-                  statusBarIconBrightness: isActuallyDark
-                      ? Brightness.light
-                      : Brightness.dark,
-                  systemNavigationBarColor: Colors.transparent,
-                  systemNavigationBarIconBrightness: isActuallyDark
-                      ? Brightness.light
-                      : Brightness.dark,
-                ),
-                child: ListenableBuilder(
-                  listenable: di.sl<LocaleService>(),
-                  builder: (context, _) {
-                    final localeService = di.sl<LocaleService>();
-                    return MaterialApp.router(
-                      title: 'Vowl',
-                      debugShowCheckedModeBanner: false,
-                      theme: AppTheme.lightTheme,
-                      darkTheme: state.isMidnight
-                          ? AppTheme.midnightTheme
-                          : AppTheme.darkTheme,
-                      themeMode: state.themeMode,
-                      locale: localeService.currentLocale,
-                      supportedLocales: LocaleService.supportedLocales
-                          .map((l) => l.locale)
-                          .toList(),
-                      localizationsDelegates: const [
-                        GlobalMaterialLocalizations.delegate,
-                        GlobalWidgetsLocalizations.delegate,
-                        GlobalCupertinoLocalizations.delegate,
-                      ],
-                      routerConfig: AppRouter.router,
-                      builder: (context, child) {
-                    return GlobalErrorBoundary(
+            return AnnotatedRegion<SystemUiOverlayStyle>(
+              value: SystemUiOverlayStyle(
+                statusBarColor: Colors.transparent,
+                statusBarIconBrightness: isActuallyDark
+                    ? Brightness.light
+                    : Brightness.dark,
+                systemNavigationBarColor: Colors.transparent,
+                systemNavigationBarIconBrightness: isActuallyDark
+                    ? Brightness.light
+                    : Brightness.dark,
+              ),
+              child: ListenableBuilder(
+                listenable: di.sl<LocaleService>(),
+                builder: (context, _) {
+                  final localeService = di.sl<LocaleService>();
+                  return MaterialApp.router(
+                    title: 'Vowl',
+                    debugShowCheckedModeBanner: false,
+                    theme: AppTheme.lightTheme,
+                    darkTheme: themeState.isMidnight
+                        ? AppTheme.midnightTheme
+                        : AppTheme.darkTheme,
+                    themeMode: themeState.themeMode,
+                    locale: localeService.currentLocale,
+                    supportedLocales: LocaleService.supportedLocales
+                        .map((l) => l.locale)
+                        .toList(),
+                    localizationsDelegates: const [
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
+                    ],
+                    routerConfig: AppRouter.router,
+                    builder: (context, child) => GlobalErrorBoundary(
                       child: ConnectivityWrapper(
                         child: GlobalAudioFeedbackListener(
                           child: MultiBlocListener(
                             listeners: [
+                              // Trigger daily streak check on sign-in
                               BlocListener<AuthBloc, AuthState>(
                                 listenWhen: (prev, curr) =>
                                     prev.status != AuthStatus.authenticated &&
                                     curr.status == AuthStatus.authenticated,
-                                listener: (context, authState) {
-                                  context.read<ProgressionBloc>().add(
-                                    const ProgressionCheckDailyStreakRequested(),
-                                  );
-                                },
+                                listener: (context, _) =>
+                                    context.read<ProgressionBloc>().add(
+                                      const ProgressionCheckDailyStreakRequested(),
+                                    ),
                               ),
+                              // Global auth message handler (snackbars)
                               BlocListener<AuthBloc, AuthState>(
-                                listenWhen: (prev, curr) => prev.message != curr.message && curr.message != null,
+                                listenWhen: (prev, curr) =>
+                                    prev.message != curr.message &&
+                                    curr.message != null,
                                 listener: (context, authState) {
-                                  final isWarning = authState.message!.contains('security') || authState.message!.contains('cancelled');
+                                  final msg = authState.message!;
+                                  final isWarning =
+                                      msg.contains('security') ||
+                                      msg.contains('cancelled');
+                                  final isVerificationMsg =
+                                      msg == 'auth.email_verification_sent';
                                   CustomSnackBar.show(
                                     context: context,
-                                    message: context.tr(authState.message!),
-                                    type: authState.status == AuthStatus.unauthenticated && !isWarning
+                                    // Localize the message key
+                                    message: context.tr(msg),
+                                    type: isVerificationMsg
+                                        ? CustomSnackBarType.success
+                                        : (authState.status ==
+                                                  AuthStatus.unauthenticated &&
+                                              !isWarning)
                                         ? CustomSnackBarType.error
                                         : isWarning
-                                            ? CustomSnackBarType.warning
-                                            : CustomSnackBarType.info,
+                                        ? CustomSnackBarType.warning
+                                        : CustomSnackBarType.info,
                                   );
                                 },
                               ),
                             ],
                             child: BlocBuilder<AuthBloc, AuthState>(
+                              buildWhen: (prev, curr) =>
+                                  prev.status != curr.status,
                               builder: (context, authState) {
-                                final isLoggingOut =
-                                    authState.status == AuthStatus.loggingOut;
-
                                 return LoadingOverlay(
-                                  isLoading: isLoggingOut,
-                                  message: context.tr('loading_overlay.securing_data'),
+                                  isLoading:
+                                      authState.status == AuthStatus.loggingOut,
+                                  message: context.tr(
+                                    'loading_overlay.securing_data',
+                                  ),
                                   child: Container(
-                                    color: state.isMidnight
+                                    color: themeState.isMidnight
                                         ? Colors.black
                                         : (isActuallyDark
                                               ? const Color(0xFF0F172A)
@@ -379,16 +361,14 @@ class _MyAppState extends State<MyApp> {
                           ),
                         ),
                       ),
-                    );
-                  },
-                    );
-                  },
-                ),
-              );
-            },
-          ),
-        );
-      },
+                    ),
+                  );
+                },
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }

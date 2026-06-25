@@ -1,18 +1,38 @@
 import 'package:flutter/foundation.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
-/// Performance-optimized parsing utility that maps system strings to typed Enums safely.
+/// Performance-optimised utility that maps string values to typed enums safely.
+///
+/// ### O(1) lookup strategy
+/// Dart's `List.contains()` is O(n). This parser builds a `Map<String, T>`
+/// lookup table from the enum values list on first access and caches it so
+/// all subsequent lookups are O(1).
+///
+/// ### Cache key — why List works here
+/// `_cache` uses `List<dynamic>` as a map key. In Dart, `Map` uses `hashCode`
+/// and `==` for key comparison. For `List`, both delegate to **object identity**
+/// (not structural equality). This means two *different* `List` objects with
+/// identical contents would produce cache misses.
+///
+/// This is safe here because Dart enum `.values` getters always return the
+/// **same canonical `List` object** — `identical(QuestType.values, QuestType.values)`
+/// is `true`. Callers must always pass `SomeEnum.values` directly; they must
+/// never pass a derived or copied list.
 class EnumParser {
-  // Private constructor to enforce static utility boundaries
-  const EnumParser._();
+  const EnumParser._(); // Non-instantiable utility class.
 
-  // On-demand lazy-loaded constant list lookup mapping cache
+  /// Lookup table keyed by the *same* List object that was passed in.
+  /// See class-level doc for why List identity is a safe cache key here.
   static final Map<List<dynamic>, Map<String, dynamic>> _cache = {};
 
-  /// Safely parses a string into an enum of type [T].
-  /// 
-  /// Utilizes lazy static map caches to ensure constant O(1) lookups instead of O(N) list scans.
-  /// Returns [defaultValue] if the string is null or not found in the enum.
+  /// Safely parses [value] into an enum of type [T].
+  ///
+  /// On first call for a given [values] list, builds and caches an O(1)
+  /// lookup table. All subsequent calls for the same enum are O(1).
+  ///
+  /// Returns [defaultValue] when:
+  /// - [value] is `null` or blank.
+  /// - No match is found in [values].
   static T fromString<T extends Enum>(
     String? value,
     List<T> values, {
@@ -22,28 +42,31 @@ class EnumParser {
 
     final normalized = value.trim().toLowerCase();
 
-    // Dynamically build and cache lookup tables using the canonical constant list pointer
     final lookup = _cache.putIfAbsent(values, () {
-      return {
-        for (final val in values) val.name.toLowerCase(): val,
-      };
+      return {for (final v in values) v.name.toLowerCase(): v};
     });
 
     final resolved = lookup[normalized];
     if (resolved is T) return resolved;
 
     if (kDebugMode) {
-      debugPrint('EnumParser Warning: Cannot parse "$value" into target Enum values. Falling back to: $defaultValue');
+      debugPrint(
+        'EnumParser: Cannot parse "$value" into ${T.toString()}. '
+        'Falling back to: $defaultValue',
+      );
     }
     return defaultValue;
   }
 
-  /// Specialized parser for InteractionType to handle legacy/mismatched values.
+  /// Specialised parser for [InteractionType] that handles legacy and
+  /// abbreviated value names used in older Firestore documents.
+  ///
+  /// Falls back to [fromString] for any value not in the explicit mapping,
+  /// keeping the switch focused on known legacy aliases.
   static InteractionType parseInteractionType(String? value) {
     if (value == null) return InteractionType.choice;
 
-    final normalized = value.trim().toLowerCase();
-    switch (normalized) {
+    switch (value.trim().toLowerCase()) {
       case 'speech':
       case 'speaking':
         return InteractionType.speaking;

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/utils/vowl_assets.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+
 class VowlBotAuthCompanion extends StatefulWidget {
   final FocusNode? nameFocus;
   final String nameValue;
@@ -35,9 +37,10 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
     widget.nameFocus?.addListener(_onFocusChange);
     widget.emailFocus?.addListener(_onFocusChange);
     widget.passwordFocus?.addListener(_onFocusChange);
-    
+
     // Pre-cache all mascot emotions to prevent flickers on first use
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
       precacheImage(const AssetImage(VowlAssets.vowlbotHappy), context);
       precacheImage(const AssetImage(VowlAssets.vowlbotNeutral), context);
       precacheImage(const AssetImage(VowlAssets.vowlbotThinking), context);
@@ -72,6 +75,7 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
       setState(() {});
     }
   }
+
   void _onFocusChange() {
     setState(() {
       if (widget.passwordFocus?.hasFocus ?? false) {
@@ -86,25 +90,52 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
     });
   }
 
-  String _getGreeting() {
+  String _getGreeting(BuildContext context) {
     // 1. Password (Universal)
-    if (widget.passwordFocus?.hasFocus ?? false) return "I'm not looking! 🙈";
+    if (widget.passwordFocus?.hasFocus ?? false) {
+      return context.tr(
+        'auth_companion.password_focus',
+        fallback: "I'm not looking! 🙈",
+      );
+    }
 
     // 2. Email (Contextual)
     if (widget.emailFocus?.hasFocus ?? false) {
-      if (widget.isSignup) return "Choose your email! 📧";
-      if (widget.isForgotPassword) return "Where to send it? 📧";
-      return "Time to sign in! 📧";
+      if (widget.isSignup) {
+        return context.tr(
+          'auth_companion.email_focus_signup',
+          fallback: 'Choose your email! 📧',
+        );
+      }
+      if (widget.isForgotPassword) {
+        return context.tr(
+          'auth_companion.email_focus_forgot',
+          fallback: 'Where to send it? 📧',
+        );
+      }
+      return context.tr(
+        'auth_companion.email_focus_signin',
+        fallback: 'Time to sign in! 📧',
+      );
     }
 
     // 3. Name (Signup only)
     if (widget.nameFocus?.hasFocus ?? false) {
       return widget.nameValue.isEmpty
-          ? "Hello! What's your name? 👋"
-          : "What a great name! ✨";
+          ? context.tr(
+              'auth_companion.name_focus_empty',
+              fallback: "Hello! What's your name? 👋",
+            )
+          : context.tr(
+              'auth_companion.name_focus_filled',
+              fallback: 'What a great name! ✨',
+            );
     }
 
-    return "Ready for an adventure? ✨";
+    return context.tr(
+      'auth_companion.default_greeting',
+      fallback: 'Ready for an adventure? ✨',
+    );
   }
 
   @override
@@ -123,16 +154,32 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
     final borderColor = isDark
         ? Colors.white.withValues(alpha: 0.15)
         : Colors.black.withValues(alpha: 0.1);
+    final greeting = _getGreeting(context);
 
+    // BUG FIX: this avatar is meant to be perfectly circular/square, but
+    // sizing height with `.h` and width with `.w` independently scales each
+    // axis by a *different* factor whenever the device's aspect ratio
+    // differs from ScreenUtil's design reference (true on most tablets,
+    // foldables, and landscape orientation) — visibly squashing or
+    // stretching the mascot. `.r` scales both axes by the same (min of the
+    // two) factor, which is exactly ScreenUtil's intended unit for
+    // symmetric/circular elements.
     return SizedBox(
-      height: widget.size.h,
-      width: widget.size.w,
+      height: widget.size.r,
+      width: widget.size.r,
       child: Stack(
         clipBehavior: Clip.none, // Allow bubble to float outside
         alignment: Alignment.center,
         children: [
           // 1. The Mascot (Static for performance)
-          Image.asset(_currentAsset, height: widget.size.h),
+          Semantics(
+            label: context.tr(
+              'auth_companion.mascot_label',
+              fallback: 'Vowl companion',
+            ),
+            image: true,
+            child: Image.asset(_currentAsset, height: widget.size.r),
+          ),
 
           // 2. Adaptive Speech Bubble (Floating & Expanding)
           Positioned(
@@ -152,14 +199,17 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
                           ),
                           padding: EdgeInsets.fromLTRB(16.w, 8.h, 16.w, 18.h),
                           child: Text(
-                            _getGreeting(),
+                            greeting,
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontFamily: 'Outfit', 
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
                               color: textColor,
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w800,
                               letterSpacing: 0.1,
                             ),
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                       )

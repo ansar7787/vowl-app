@@ -1,10 +1,32 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
-/// Concrete data model extending [UserEntity] with robust JSON parsing and serialization pipelines.
+// Reuse the same sentinel definition from user_entity.dart's file scope.
+// Since each file is its own compilation unit in Dart, we redeclare a
+// functionally-identical sentinel here rather than importing a private symbol.
+const _absent = _Absent();
+
+@immutable
+final class _Absent {
+  const _Absent();
+}
+
+/// Concrete data model extending [UserEntity] with Firestore JSON parsing and
+/// serialization pipelines.
 ///
-/// Implements defensive parsing boundaries to handle both Firestore [Timestamp] types and standard
-/// ISO 8601 string fallbacks safely, preventing runtime class cast exceptions.
+/// ### Parsing
+/// [fromMap] implements defensive parsing for every field:
+/// - [Timestamp], ISO-8601 [String], and unix epoch [int] are all handled for
+///   date fields via [_parseDateTime].
+/// - All numeric fields are cast via `(x as num?)?.toInt()` to handle Firestore
+///   returning either [int] or [double] depending on the write source.
+/// - Nested collections (e.g., [completedLevels]) use explicit element casts
+///   to prevent silent `List<dynamic>` type mismatches at call sites.
+///
+/// ### copyWith
+/// Inherits the sentinel-based nullable override from [UserEntity.copyWith],
+/// extended here to preserve the concrete [UserModel] return type.
 class UserModel extends UserEntity {
   const UserModel({
     required super.id,
@@ -33,6 +55,7 @@ class UserModel extends UserEntity {
     super.recentActivities,
     super.lastVipGiftDate,
     super.lastDailyRewardDate,
+    super.lastKidsDailyRewardDate,
     super.kidsCoins,
     super.kidsStickers,
     super.kidsMascot,
@@ -41,8 +64,8 @@ class UserModel extends UserEntity {
     super.kidsEquippedAccessory,
     super.vowlMascot,
     super.vowlEquippedAccessory,
-    super.vowlOwnedAccessories = const [],
-    super.vowlOwnedMascots = const ['vowl_prime'],
+    super.vowlOwnedAccessories,
+    super.vowlOwnedMascots,
     super.claimedStreakMilestones,
     super.claimedLevelMilestones,
     super.coinHistory,
@@ -50,381 +73,93 @@ class UserModel extends UserEntity {
     super.lastFreeSpinDate,
     super.lastAdSpinDate,
     super.adSpinsUsedToday,
-    super.lastKidsDailyRewardDate,
-    super.kidsOwnedFurniture = const ['default_bed', 'default_window'],
-    super.kidsEquippedFurniture = const {
-      'bed': 'default_bed',
-      'window': 'default_window',
-    },
+    super.kidsOwnedFurniture,
+    super.kidsEquippedFurniture,
   });
 
-  /// Safely parses date-time configurations from dynamic JSON objects, preventing runtime crashes.
-  static DateTime? _parseDateTime(dynamic value) {
-    if (value == null) return null;
-    if (value is Timestamp) return value.toDate();
-    if (value is String) return DateTime.tryParse(value);
-    if (value is int) return DateTime.fromMillisecondsSinceEpoch(value);
-    try {
-      return (value as dynamic).toDate();
-    } catch (_) {
-      return null;
-    }
-  }
+  // ---------------------------------------------------------------------------
+  // Deserialization
+  // ---------------------------------------------------------------------------
 
-  factory UserModel.fromJson(Map<String, dynamic> map) {
+  /// Deserializes a Firestore document map into a [UserModel].
+  ///
+  /// Prefer this constructor for Firestore reads. [fromJson] is an alias kept
+  /// for backwards compatibility with any REST/cache layer.
+  factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
-      id: map['id'] ?? '',
-      email: map['email'] ?? '',
-      displayName: map['displayName'],
-      photoUrl: map['photoUrl'],
-      fcmToken: map['fcmToken'],
+      id: (map['id'] as String?) ?? '',
+      email: (map['email'] as String?) ?? '',
+      displayName: map['displayName'] as String?,
+      photoUrl: map['photoUrl'] as String?,
+      fcmToken: map['fcmToken'] as String?,
       coins: (map['coins'] as num?)?.toInt() ?? 0,
       totalExp: (map['totalExp'] as num?)?.toInt() ?? 0,
-      isAdmin: map['isAdmin'] ?? false,
+      isAdmin: (map['isAdmin'] as bool?) ?? false,
       currentStreak: (map['currentStreak'] as num?)?.toInt() ?? 0,
       lastLoginDate: _parseDateTime(map['lastLoginDate']),
-      isEmailVerified: map['isEmailVerified'] ?? false,
-      isPremium: map['isPremium'] ?? false,
+      isEmailVerified: (map['isEmailVerified'] as bool?) ?? false,
+      isPremium: (map['isPremium'] as bool?) ?? false,
       premiumExpiryDate: _parseDateTime(map['premiumExpiryDate']),
-      categoryStats: map['categoryStats'] != null
-          ? (map['categoryStats'] as Map).map(
-              (key, value) => MapEntry(key.toString(), (value as num).toInt()),
-            )
-          : {},
+      categoryStats: _parseIntMap(map['categoryStats']),
       unlockedLevels: map['unlockedLevels'] != null
-          ? (map['unlockedLevels'] as Map).map(
-              (key, value) => MapEntry(key.toString(), (value as num).toInt()),
-            )
-          : const {
-              // 1. Speaking (10 Games)
-              'repeatSentence': 1,
-              'speakMissingWord': 1,
-              'situationSpeaking': 1,
-              'sceneDescriptionSpeaking': 1,
-              'yesNoSpeaking': 1,
-              'speakSynonym': 1,
-              'dialogueRoleplay': 1,
-              'pronunciationFocus': 1,
-              'speakOpposite': 1,
-              'dailyExpression': 1,
-
-              // 2. Listening (10 Games)
-              'audioFillBlanks': 1,
-              'audioMultipleChoice': 1,
-              'audioSentenceOrder': 1,
-              'audioTrueFalse': 1,
-              'soundImageMatch': 1,
-              'fastSpeechDecoder': 1,
-              'emotionRecognition': 1,
-              'detailSpotlight': 1,
-              'listeningInference': 1,
-              'ambientId': 1,
-
-              // 3. Reading (12 Games)
-              'readAndAnswer': 1,
-              'findWordMeaning': 1,
-              'trueFalseReading': 1,
-              'sentenceOrderReading': 1,
-              'readingSpeedCheck': 1,
-              'guessTitle': 1,
-              'readAndMatch': 1,
-              'paragraphSummary': 1,
-              'readingInference': 1,
-              'readingConclusion': 1,
-              'clozeTest': 1,
-              'skimmingScanning': 1,
-
-              // 4. Writing (11 Games)
-              'sentenceBuilder': 1,
-              'completeSentence': 1,
-              'describeSituationWriting': 1,
-              'fixTheSentence': 1,
-              'shortAnswerWriting': 1,
-              'opinionWriting': 1,
-              'dailyJournal': 1,
-              'summarizeStoryWriting': 1,
-              'writingEmail': 1,
-              'correctionWriting': 1,
-              'essayDrafting': 1,
-
-              // 5. Grammar (19 Games)
-              'grammarQuest': 1,
-              'sentenceCorrection': 1,
-              'wordReorder': 1,
-              'tenseMastery': 1,
-              'partsOfSpeech': 1,
-              'subjectVerbAgreement': 1,
-              'clauseConnector': 1,
-              'voiceSwap': 1,
-              'questionFormatter': 1,
-              'articleInsertion': 1,
-              'modifierPlacement': 1,
-              'modalsSelection': 1,
-              'prepositionChoice': 1,
-              'pronounResolution': 1,
-              'punctuationMastery': 1,
-              'relativeClauses': 1,
-              'conditionals': 1,
-              'conjunctions': 1,
-              'directIndirectSpeech': 1,
-
-              // 6. Vocabulary (12 Games)
-              'flashcards': 1,
-              'synonymSearch': 1,
-              'antonymSearch': 1,
-              'contextClues': 1,
-              'phrasalVerbs': 1,
-              'idioms': 1,
-              'academicWord': 1,
-              'topicVocab': 1,
-              'wordFormation': 1,
-              'prefixSuffix': 1,
-              'collocations': 1,
-              'contextualUsage': 1,
-
-              // 7. Accent (12 Games)
-              'minimalPairs': 1,
-              'intonationMimic': 1,
-              'syllableStress': 1,
-              'wordLinking': 1,
-              'shadowingChallenge': 1,
-              'vowelDistinction': 1,
-              'consonantClarity': 1,
-              'pitchPatternMatch': 1,
-              'speedVariance': 1,
-              'dialectDrill': 1,
-              'connectedSpeech': 1,
-              'pitchModulation': 1,
-
-              // 8. Roleplay (10 Games)
-              'branchingDialogue': 1,
-              'situationalResponse': 1,
-              'jobInterview': 1,
-              'medicalConsult': 1,
-              'gourmetOrder': 1,
-              'travelDesk': 1,
-              'conflictResolver': 1,
-              'elevatorPitch': 1,
-              'socialSpark': 1,
-              'emergencyHub': 1,
-
-              // 9. Elite Mastery (4 Games)
-              'storyBuilder': 1,
-              'idiomMatch': 1,
-              'speedSpelling': 1,
-              'accentShadowing': 1,
-
-              // 10. Kids Zone (22 Games)
-              'alphabet': 1,
-              'numbers': 1,
-              'colors': 1,
-              'shapes': 1,
-              'animals': 1,
-              'fruits': 1,
-              'family': 1,
-              'school': 1,
-              'verbs': 1,
-              'routine': 1,
-              'emotions': 1,
-              'prepositions': 1,
-              'phonics': 1,
-              'day_night': 1,
-              'nature': 1,
-              'home_kids': 1,
-              'food_kids': 1,
-              'transport': 1,
-              'time': 1,
-              'opposites': 1,
-              'body_parts': 1,
-              'clothing': 1,
-
-              // Categories (9 Categories)
-              'reading': 1,
-              'writing': 1,
-              'speaking': 1,
-              'grammar': 1,
-              'roleplay': 1,
-              'accent': 1,
-              'listening': 1,
-              'vocabulary': 1,
-              'elitemastery': 1,
-            },
-      completedLevels: map['completedLevels'] != null
-          ? (map['completedLevels'] as Map).map(
-              (key, value) => MapEntry(
-                key.toString(),
-                (value as List).map((v) => (v as num).toInt()).toList(),
-              ),
-            )
-          : {},
-      badges: map['badges'] != null
-          ? List<String>.from(map['badges'])
-          : const [],
+          ? _parseIntMap(map['unlockedLevels'])
+          : UserGameConstants.kDefaultUnlockedLevels,
+      completedLevels: _parseCompletedLevels(map['completedLevels']),
+      badges: _parseStringList(map['badges']),
       streakFreezes: (map['streakFreezes'] as num?)?.toInt() ?? 0,
       hintCount: (map['hintCount'] as num?)?.toInt() ?? 0,
       hintPacks: (map['hintPacks'] as num?)?.toInt() ?? 0,
       doubleXP: (map['doubleXP'] as num?)?.toInt() ?? 0,
       doubleXPExpiry: _parseDateTime(map['doubleXPExpiry']),
-      dailyXpHistory: map['dailyXpHistory'] != null
-          ? (map['dailyXpHistory'] as Map).map(
-              (key, value) => MapEntry(key.toString(), (value as num).toInt()),
-            )
-          : {},
-      recentActivities: map['recentActivities'] != null
-          ? List<Map<String, dynamic>>.from(map['recentActivities'])
-          : [],
+      dailyXpHistory: _parseIntMap(map['dailyXpHistory']),
+      recentActivities: _parseDynamicMapList(map['recentActivities']),
       lastVipGiftDate: _parseDateTime(map['lastVipGiftDate']),
       lastDailyRewardDate: _parseDateTime(map['lastDailyRewardDate']),
       lastKidsDailyRewardDate: _parseDateTime(map['lastKidsDailyRewardDate']),
-      kidsStickers: map['kidsStickers'] != null
-          ? List<String>.from(map['kidsStickers'])
-          : const [],
       kidsCoins: (map['kidsCoins'] as num?)?.toInt() ?? 0,
-      kidsMascot: map['kidsMascot'],
-      kidsEquippedSticker: map['kidsEquippedSticker'],
-      kidsOwnedAccessories: map['kidsOwnedAccessories'] != null
-          ? List<String>.from(map['kidsOwnedAccessories'])
-          : const [],
-      kidsEquippedAccessory: map['kidsEquippedAccessory'],
-      claimedStreakMilestones: map['claimedStreakMilestones'] != null
-          ? (map['claimedStreakMilestones'] as List)
-                .map((e) => (e as num).toInt())
-                .toList()
-          : const [],
-      claimedLevelMilestones: map['claimedLevelMilestones'] != null
-          ? (map['claimedLevelMilestones'] as List)
-                .map((e) => (e as num).toInt())
-                .toList()
-          : const [],
-      coinHistory: map['coinHistory'] != null
-          ? List<Map<String, dynamic>>.from(map['coinHistory'])
-          : const [],
-      hasPermanentXPBoost: map['hasPermanentXPBoost'] ?? false,
+      kidsStickers: _parseStringList(map['kidsStickers']),
+      kidsMascot: map['kidsMascot'] as String?,
+      kidsEquippedSticker: map['kidsEquippedSticker'] as String?,
+      kidsOwnedAccessories: _parseStringList(map['kidsOwnedAccessories']),
+      kidsEquippedAccessory: map['kidsEquippedAccessory'] as String?,
+      vowlMascot: map['vowlMascot'] as String?,
+      vowlEquippedAccessory: map['vowlEquippedAccessory'] as String?,
+      vowlOwnedAccessories: _parseStringList(map['vowlOwnedAccessories']),
+      vowlOwnedMascots: map['vowlOwnedMascots'] != null
+          ? _parseStringList(map['vowlOwnedMascots'])
+          : UserGameConstants.kDefaultVowlOwnedMascots,
+      claimedStreakMilestones: _parseIntList(map['claimedStreakMilestones']),
+      claimedLevelMilestones: _parseIntList(map['claimedLevelMilestones']),
+      coinHistory: _parseDynamicMapList(map['coinHistory']),
+      hasPermanentXPBoost: (map['hasPermanentXPBoost'] as bool?) ?? false,
       lastFreeSpinDate: _parseDateTime(map['lastFreeSpinDate']),
       lastAdSpinDate: _parseDateTime(map['lastAdSpinDate']),
       adSpinsUsedToday: (map['adSpinsUsedToday'] as num?)?.toInt() ?? 0,
-      vowlMascot: map['vowlMascot'],
-      vowlEquippedAccessory: map['vowlEquippedAccessory'],
-      vowlOwnedAccessories: map['vowlOwnedAccessories'] != null
-          ? List<String>.from(map['vowlOwnedAccessories'])
-          : const [],
-      vowlOwnedMascots: map['vowlOwnedMascots'] != null
-          ? List<String>.from(map['vowlOwnedMascots'])
-          : const ['vowl_prime'],
       kidsOwnedFurniture: map['kidsOwnedFurniture'] != null
-          ? List<String>.from(map['kidsOwnedFurniture'])
-          : const ['default_bed', 'default_window'],
+          ? _parseStringList(map['kidsOwnedFurniture'])
+          : UserGameConstants.kDefaultKidsOwnedFurniture,
       kidsEquippedFurniture: map['kidsEquippedFurniture'] != null
-          ? Map<String, String>.from(map['kidsEquippedFurniture'])
-          : const {
-              'bed': 'default_bed',
-              'window': 'default_window',
-            },
+          ? Map<String, String>.from(
+              map['kidsEquippedFurniture'] as Map<Object?, Object?>,
+            )
+          : UserGameConstants.kDefaultKidsEquippedFurniture,
     );
   }
 
-  @override
-  UserModel copyWith({
-    List<String>? badges,
-    Map<String, int>? categoryStats,
-    List<int>? claimedLevelMilestones,
-    List<int>? claimedStreakMilestones,
-    List<Map<String, dynamic>>? coinHistory,
-    int? coins,
-    Map<String, List<int>>? completedLevels,
-    int? currentStreak,
-    Map<String, int>? dailyXpHistory,
-    String? displayName,
-    int? doubleXP,
-    DateTime? doubleXPExpiry,
-    int? hintCount,
-    int? hintPacks,
-    bool? isAdmin,
-    bool? isEmailVerified,
-    bool? isPremium,
-    int? kidsCoins,
-    String? kidsEquippedAccessory,
-    String? kidsEquippedSticker,
-    String? kidsMascot,
-    List<String>? kidsOwnedAccessories,
-    List<String>? kidsStickers,
-    DateTime? lastDailyRewardDate,
-    DateTime? lastLoginDate,
-    DateTime? lastVipGiftDate,
-    String? photoUrl,
-    String? fcmToken,
-    DateTime? premiumExpiryDate,
-    List<Map<String, dynamic>>? recentActivities,
-    int? streakFreezes,
-    int? totalExp,
-    Map<String, int>? unlockedLevels,
-    bool? hasPermanentXPBoost,
-    DateTime? lastFreeSpinDate,
-    DateTime? lastAdSpinDate,
-    int? adSpinsUsedToday,
-    DateTime? lastKidsDailyRewardDate,
-    String? vowlMascot,
-    String? vowlEquippedAccessory,
-    List<String>? vowlOwnedAccessories,
-    List<String>? vowlOwnedMascots,
-    List<String>? kidsOwnedFurniture,
-    Map<String, String>? kidsEquippedFurniture,
-  }) {
-    return UserModel(
-      id: id,
-      email: email,
-      badges: badges ?? this.badges,
-      categoryStats: categoryStats ?? this.categoryStats,
-      claimedLevelMilestones:
-          claimedLevelMilestones ?? this.claimedLevelMilestones,
-      claimedStreakMilestones:
-          claimedStreakMilestones ?? this.claimedStreakMilestones,
-      coinHistory: coinHistory ?? this.coinHistory,
-      coins: coins ?? this.coins,
-      completedLevels: completedLevels ?? this.completedLevels,
-      currentStreak: currentStreak ?? this.currentStreak,
-      dailyXpHistory: dailyXpHistory ?? this.dailyXpHistory,
-      displayName: displayName ?? this.displayName,
-      doubleXP: doubleXP ?? this.doubleXP,
-      doubleXPExpiry: doubleXPExpiry ?? this.doubleXPExpiry,
-      hintCount: hintCount ?? this.hintCount,
-      hintPacks: hintPacks ?? this.hintPacks,
-      isAdmin: isAdmin ?? this.isAdmin,
-      isEmailVerified: isEmailVerified ?? this.isEmailVerified,
-      isPremium: isPremium ?? this.isPremium,
-      kidsCoins: kidsCoins ?? this.kidsCoins,
-      kidsEquippedAccessory:
-          kidsEquippedAccessory ?? this.kidsEquippedAccessory,
-      kidsEquippedSticker: kidsEquippedSticker ?? this.kidsEquippedSticker,
-      kidsMascot: kidsMascot ?? this.kidsMascot,
-      kidsOwnedAccessories: kidsOwnedAccessories ?? this.kidsOwnedAccessories,
-      kidsStickers: kidsStickers ?? this.kidsStickers,
-      lastDailyRewardDate: lastDailyRewardDate ?? this.lastDailyRewardDate,
-      lastLoginDate: lastLoginDate ?? this.lastLoginDate,
-      lastVipGiftDate: lastVipGiftDate ?? this.lastVipGiftDate,
-      photoUrl: photoUrl ?? this.photoUrl,
-      fcmToken: fcmToken ?? this.fcmToken,
-      premiumExpiryDate: premiumExpiryDate ?? this.premiumExpiryDate,
-      recentActivities: recentActivities ?? this.recentActivities,
-      streakFreezes: streakFreezes ?? this.streakFreezes,
-      totalExp: totalExp ?? this.totalExp,
-      unlockedLevels: unlockedLevels ?? this.unlockedLevels,
-      hasPermanentXPBoost: hasPermanentXPBoost ?? this.hasPermanentXPBoost,
-      lastFreeSpinDate: lastFreeSpinDate ?? this.lastFreeSpinDate,
-      lastAdSpinDate: lastAdSpinDate ?? this.lastAdSpinDate,
-      adSpinsUsedToday: adSpinsUsedToday ?? this.adSpinsUsedToday,
-      lastKidsDailyRewardDate: lastKidsDailyRewardDate ?? this.lastKidsDailyRewardDate,
-      vowlMascot: vowlMascot ?? this.vowlMascot,
-      vowlEquippedAccessory:
-          vowlEquippedAccessory ?? this.vowlEquippedAccessory,
-      vowlOwnedAccessories:
-          vowlOwnedAccessories ?? this.vowlOwnedAccessories,
-      vowlOwnedMascots: vowlOwnedMascots ?? this.vowlOwnedMascots,
-      kidsOwnedFurniture: kidsOwnedFurniture ?? this.kidsOwnedFurniture,
-      kidsEquippedFurniture: kidsEquippedFurniture ?? this.kidsEquippedFurniture,
-    );
-  }
+  /// Alias for [fromMap] retained for backwards compatibility.
+  factory UserModel.fromJson(Map<String, dynamic> map) =>
+      UserModel.fromMap(map);
 
+  // ---------------------------------------------------------------------------
+  // Serialization
+  // ---------------------------------------------------------------------------
+
+  /// Serializes this model to a Firestore-compatible map.
+  ///
+  /// Date fields are always written as [Timestamp] so Firestore can index them.
+  /// `null` fields are explicitly written as `null` so that [merge: true] writes
+  /// correctly clear previously-set values when the caller passes an updated
+  /// entity with a cleared field.
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -472,6 +207,10 @@ class UserModel extends UserEntity {
       'kidsEquippedSticker': kidsEquippedSticker,
       'kidsOwnedAccessories': kidsOwnedAccessories,
       'kidsEquippedAccessory': kidsEquippedAccessory,
+      'vowlMascot': vowlMascot,
+      'vowlEquippedAccessory': vowlEquippedAccessory,
+      'vowlOwnedAccessories': vowlOwnedAccessories,
+      'vowlOwnedMascots': vowlOwnedMascots,
       'claimedStreakMilestones': claimedStreakMilestones,
       'claimedLevelMilestones': claimedLevelMilestones,
       'coinHistory': coinHistory,
@@ -483,15 +222,207 @@ class UserModel extends UserEntity {
           ? Timestamp.fromDate(lastAdSpinDate!)
           : null,
       'adSpinsUsedToday': adSpinsUsedToday,
-      'vowlMascot': vowlMascot,
-      'vowlEquippedAccessory': vowlEquippedAccessory,
-      'vowlOwnedAccessories': vowlOwnedAccessories,
-      'vowlOwnedMascots': vowlOwnedMascots,
       'kidsOwnedFurniture': kidsOwnedFurniture,
       'kidsEquippedFurniture': kidsEquippedFurniture,
     };
   }
 
-  factory UserModel.fromMap(Map<String, dynamic> map) =>
-      UserModel.fromJson(map);
+  // ---------------------------------------------------------------------------
+  // copyWith — returns concrete UserModel, supports nullable clearing
+  // ---------------------------------------------------------------------------
+
+  @override
+  UserModel copyWith({
+    List<String>? badges,
+    Map<String, int>? categoryStats,
+    List<int>? claimedLevelMilestones,
+    List<int>? claimedStreakMilestones,
+    List<Map<String, dynamic>>? coinHistory,
+    int? coins,
+    Map<String, List<int>>? completedLevels,
+    int? currentStreak,
+    Map<String, int>? dailyXpHistory,
+    int? doubleXP,
+    int? hintCount,
+    int? hintPacks,
+    bool? isAdmin,
+    bool? isEmailVerified,
+    bool? isPremium,
+    int? kidsCoins,
+    List<String>? kidsOwnedAccessories,
+    List<String>? kidsStickers,
+    int? streakFreezes,
+    int? totalExp,
+    Map<String, int>? unlockedLevels,
+    bool? hasPermanentXPBoost,
+    int? adSpinsUsedToday,
+    List<String>? vowlOwnedAccessories,
+    List<String>? vowlOwnedMascots,
+    List<String>? kidsOwnedFurniture,
+    Map<String, String>? kidsEquippedFurniture,
+    List<Map<String, dynamic>>? recentActivities,
+    // Nullable sentinel fields
+    Object? displayName = _absent,
+    Object? photoUrl = _absent,
+    Object? fcmToken = _absent,
+    Object? lastLoginDate = _absent,
+    Object? premiumExpiryDate = _absent,
+    Object? doubleXPExpiry = _absent,
+    Object? lastVipGiftDate = _absent,
+    Object? lastDailyRewardDate = _absent,
+    Object? lastKidsDailyRewardDate = _absent,
+    Object? kidsMascot = _absent,
+    Object? kidsEquippedSticker = _absent,
+    Object? kidsEquippedAccessory = _absent,
+    Object? vowlMascot = _absent,
+    Object? vowlEquippedAccessory = _absent,
+    Object? lastFreeSpinDate = _absent,
+    Object? lastAdSpinDate = _absent,
+  }) {
+    return UserModel(
+      id: id,
+      email: email,
+      badges: badges ?? this.badges,
+      categoryStats: categoryStats ?? this.categoryStats,
+      claimedLevelMilestones:
+          claimedLevelMilestones ?? this.claimedLevelMilestones,
+      claimedStreakMilestones:
+          claimedStreakMilestones ?? this.claimedStreakMilestones,
+      coinHistory: coinHistory ?? this.coinHistory,
+      coins: coins ?? this.coins,
+      completedLevels: completedLevels ?? this.completedLevels,
+      currentStreak: currentStreak ?? this.currentStreak,
+      dailyXpHistory: dailyXpHistory ?? this.dailyXpHistory,
+      doubleXP: doubleXP ?? this.doubleXP,
+      hintCount: hintCount ?? this.hintCount,
+      hintPacks: hintPacks ?? this.hintPacks,
+      isAdmin: isAdmin ?? this.isAdmin,
+      isEmailVerified: isEmailVerified ?? this.isEmailVerified,
+      isPremium: isPremium ?? this.isPremium,
+      kidsCoins: kidsCoins ?? this.kidsCoins,
+      kidsOwnedAccessories: kidsOwnedAccessories ?? this.kidsOwnedAccessories,
+      kidsStickers: kidsStickers ?? this.kidsStickers,
+      streakFreezes: streakFreezes ?? this.streakFreezes,
+      totalExp: totalExp ?? this.totalExp,
+      unlockedLevels: unlockedLevels ?? this.unlockedLevels,
+      hasPermanentXPBoost: hasPermanentXPBoost ?? this.hasPermanentXPBoost,
+      adSpinsUsedToday: adSpinsUsedToday ?? this.adSpinsUsedToday,
+      vowlOwnedAccessories: vowlOwnedAccessories ?? this.vowlOwnedAccessories,
+      vowlOwnedMascots: vowlOwnedMascots ?? this.vowlOwnedMascots,
+      kidsOwnedFurniture: kidsOwnedFurniture ?? this.kidsOwnedFurniture,
+      kidsEquippedFurniture:
+          kidsEquippedFurniture ?? this.kidsEquippedFurniture,
+      recentActivities: recentActivities ?? this.recentActivities,
+      // Sentinel nullable fields
+      displayName: identical(displayName, _absent)
+          ? this.displayName
+          : displayName as String?,
+      photoUrl: identical(photoUrl, _absent)
+          ? this.photoUrl
+          : photoUrl as String?,
+      fcmToken: identical(fcmToken, _absent)
+          ? this.fcmToken
+          : fcmToken as String?,
+      lastLoginDate: identical(lastLoginDate, _absent)
+          ? this.lastLoginDate
+          : lastLoginDate as DateTime?,
+      premiumExpiryDate: identical(premiumExpiryDate, _absent)
+          ? this.premiumExpiryDate
+          : premiumExpiryDate as DateTime?,
+      doubleXPExpiry: identical(doubleXPExpiry, _absent)
+          ? this.doubleXPExpiry
+          : doubleXPExpiry as DateTime?,
+      lastVipGiftDate: identical(lastVipGiftDate, _absent)
+          ? this.lastVipGiftDate
+          : lastVipGiftDate as DateTime?,
+      lastDailyRewardDate: identical(lastDailyRewardDate, _absent)
+          ? this.lastDailyRewardDate
+          : lastDailyRewardDate as DateTime?,
+      lastKidsDailyRewardDate: identical(lastKidsDailyRewardDate, _absent)
+          ? this.lastKidsDailyRewardDate
+          : lastKidsDailyRewardDate as DateTime?,
+      kidsMascot: identical(kidsMascot, _absent)
+          ? this.kidsMascot
+          : kidsMascot as String?,
+      kidsEquippedSticker: identical(kidsEquippedSticker, _absent)
+          ? this.kidsEquippedSticker
+          : kidsEquippedSticker as String?,
+      kidsEquippedAccessory: identical(kidsEquippedAccessory, _absent)
+          ? this.kidsEquippedAccessory
+          : kidsEquippedAccessory as String?,
+      vowlMascot: identical(vowlMascot, _absent)
+          ? this.vowlMascot
+          : vowlMascot as String?,
+      vowlEquippedAccessory: identical(vowlEquippedAccessory, _absent)
+          ? this.vowlEquippedAccessory
+          : vowlEquippedAccessory as String?,
+      lastFreeSpinDate: identical(lastFreeSpinDate, _absent)
+          ? this.lastFreeSpinDate
+          : lastFreeSpinDate as DateTime?,
+      lastAdSpinDate: identical(lastAdSpinDate, _absent)
+          ? this.lastAdSpinDate
+          : lastAdSpinDate as DateTime?,
+    );
+  }
+
+  // ---------------------------------------------------------------------------
+  // Private parsing helpers
+  // ---------------------------------------------------------------------------
+
+  /// Safely parses a date-time value from a Firestore field which may be a
+  /// [Timestamp], ISO-8601 [String], unix epoch [int], or null.
+  static DateTime? _parseDateTime(dynamic value) {
+    if (value == null) return null;
+    if (value is Timestamp) return value.toDate();
+    if (value is String) return DateTime.tryParse(value);
+    if (value is int) return DateTime.fromMillisecondsSinceEpoch(value);
+    // Last resort: attempt toDate() for legacy Firestore objects.
+    try {
+      return (value as dynamic).toDate() as DateTime;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// Parses a Firestore map of {String → num} to {String → int} defensively.
+  static Map<String, int> _parseIntMap(dynamic raw) {
+    if (raw == null) return const {};
+    final map = raw as Map<Object?, Object?>;
+    return map.map((k, v) => MapEntry(k.toString(), (v as num?)?.toInt() ?? 0));
+  }
+
+  /// Parses a Firestore list of strings defensively.
+  static List<String> _parseStringList(dynamic raw) {
+    if (raw == null) return const [];
+    return (raw as List<dynamic>).map((e) => e.toString()).toList();
+  }
+
+  /// Parses a Firestore list of integers defensively.
+  static List<int> _parseIntList(dynamic raw) {
+    if (raw == null) return const [];
+    return (raw as List<dynamic>)
+        .map((e) => (e as num?)?.toInt() ?? 0)
+        .toList();
+  }
+
+  /// Parses a Firestore list of dynamic maps defensively.
+  static List<Map<String, dynamic>> _parseDynamicMapList(dynamic raw) {
+    if (raw == null) return const [];
+    return (raw as List<dynamic>)
+        .whereType<Map<Object?, Object?>>()
+        .map((m) => m.map((k, v) => MapEntry(k.toString(), v)))
+        .toList();
+  }
+
+  /// Parses the nested [completedLevels] map: {String → List<int>}.
+  static Map<String, List<int>> _parseCompletedLevels(dynamic raw) {
+    if (raw == null) return const {};
+    final outer = raw as Map<Object?, Object?>;
+    return outer.map((key, value) {
+      final levels = (value as List<dynamic>)
+          .map((v) => (v as num?)?.toInt() ?? 0)
+          .toList();
+      return MapEntry(key.toString(), levels);
+    });
+  }
 }

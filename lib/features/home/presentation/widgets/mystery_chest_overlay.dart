@@ -40,24 +40,34 @@ class MysteryChestOverlay extends StatelessWidget {
               ),
             ),
           ),
-          // Close button in top right
+          // Close button — placed using directional (start/end) positioning
+          // so it mirrors correctly to the opposite corner in RTL locales.
           if (isOpened)
-            Positioned(
+            PositionedDirectional(
               top: MediaQuery.of(context).padding.top + 20.h,
-              right: 20.w,
-              child: GestureDetector(
-                onTap: onClose,
-                child: Container(
-                  padding: EdgeInsets.all(12.r),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.1),
-                    shape: BoxShape.circle,
-                    border: Border.all(color: Colors.white24),
-                  ),
-                  child: Icon(
-                    Icons.close_rounded,
-                    color: Colors.white,
-                    size: 24.r,
+              end: 20.w,
+              child: Semantics(
+                button: true,
+                label: context.tr('common.close'),
+                child: GestureDetector(
+                  onTap: onClose,
+                  behavior: HitTestBehavior.opaque,
+                  child: Container(
+                    constraints: BoxConstraints(
+                      minWidth: 48.r,
+                      minHeight: 48.r,
+                    ),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.1),
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.white24),
+                    ),
+                    child: Icon(
+                      Icons.close_rounded,
+                      color: Colors.white,
+                      size: 24.r,
+                    ),
                   ),
                 ),
               ).animate().fadeIn(delay: 1.seconds).scale(),
@@ -72,8 +82,11 @@ class MysteryChestOverlay extends StatelessWidget {
                   Text(
                     isOpened
                         ? context.tr('home.chest_claimed')
-                        : (isPremium ? context.tr('home.chest_vip_gift') : context.tr('home.chest_daily_mystery')),
-                    style: TextStyle(fontFamily: 'Outfit', 
+                        : (isPremium
+                              ? context.tr('home.chest_vip_gift')
+                              : context.tr('home.chest_daily_mystery')),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: isPremium && !isOpened ? 26.sp : 28.sp,
                       fontWeight: FontWeight.w900,
                       color: isPremium && !isOpened
@@ -92,6 +105,8 @@ class MysteryChestOverlay extends StatelessWidget {
                         ),
                       ],
                     ),
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
                   ).animate().fadeIn().scale(
                     duration: 600.ms,
                     curve: Curves.easeOutBack,
@@ -105,7 +120,8 @@ class MysteryChestOverlay extends StatelessWidget {
                         : (isPremium
                               ? context.tr('home.chest_pro_reward')
                               : context.tr('home.chest_ready_to_open')),
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
                       color: isPremium && !isOpened
@@ -114,97 +130,131 @@ class MysteryChestOverlay extends StatelessWidget {
                       letterSpacing: 2,
                       decoration: TextDecoration.none,
                     ),
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
                   ).animate().fadeIn(delay: 300.ms),
 
                   SizedBox(height: 50.h),
 
-                  GestureDetector(
-                    onTap: isOpened ? null : onOpen,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        // Dynamic background glow
-                        Container(
-                              width: 300.r,
-                              height: 300.r,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                gradient: RadialGradient(
-                                  colors: [
-                                    (isPremium
-                                            ? const Color(0xFFF59E0B)
-                                            : Colors.amber)
-                                        .withValues(
-                                          alpha: isOpened
-                                              ? 0.3
-                                              : (isPremium ? 0.4 : 0.1),
+                  Semantics(
+                    button: true,
+                    enabled: !isOpened,
+                    label: isOpened
+                        ? context.tr('home.chest_claimed')
+                        : (isPremium
+                              ? context.tr('home.chest_vip_gift')
+                              : context.tr('home.chest_daily_mystery')),
+                    child: GestureDetector(
+                      onTap: isOpened ? null : onOpen,
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          // Dynamic background glow
+                          ExcludeSemantics(
+                            child:
+                                Container(
+                                      width: 300.r,
+                                      height: 300.r,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        gradient: RadialGradient(
+                                          colors: [
+                                            (isPremium
+                                                    ? const Color(0xFFF59E0B)
+                                                    : Colors.amber)
+                                                .withValues(
+                                                  alpha: isOpened
+                                                      ? 0.3
+                                                      : (isPremium ? 0.4 : 0.1),
+                                                ),
+                                            Colors.transparent,
+                                          ],
                                         ),
-                                    Colors.transparent,
-                                  ],
-                                ),
-                              ),
-                            )
-                            .animate(onPlay: (c) => c.repeat(reverse: true))
-                            .scale(
-                              begin: const Offset(0.8, 0.8),
-                              end: const Offset(1.2, 1.2),
-                              duration: 2.seconds,
-                            ),
-
-                        // The Chest Image
-                        Image.asset(
-                              'assets/images/daily_chest.png', // Assuming user added this
-                              width: isOpened ? 280.r : 240.r,
-                              height: isOpened ? 280.r : 240.r,
-                              errorBuilder: (context, error, stackTrace) {
-                                return Image.asset(
-                                  'assets/images/chest_3d.webp',
-                                  width: isOpened ? 260.r : 220.r,
-                                  height: isOpened ? 260.r : 220.r,
-                                  errorBuilder: (context, error, stackTrace) =>
-                                      Icon(
-                                        Icons.card_giftcard_rounded,
-                                        size: 150.r,
-                                        color: Colors.amber,
                                       ),
-                                );
-                              },
-                            )
-                            .animate(
-                              onPlay: (c) =>
-                                  isOpened ? null : c.repeat(reverse: true),
-                            )
-                            .scale(
-                              begin: const Offset(1, 1),
-                              end: isOpened
-                                  ? const Offset(1, 1)
-                                  : const Offset(1.05, 1.05),
-                              duration: 1.seconds,
-                              curve: Curves.easeInOut,
-                            )
-                            .shake(
-                              hz: 2,
-                              offset: const Offset(2, 0),
-                              duration: 2.seconds,
-                            )
-                            .animate(target: isOpened ? 0 : 1),
-                        // Confetti explosion from the box
-                        ConfettiWidget(
-                          confettiController: confettiController,
-                          blastDirectionality: BlastDirectionality.explosive,
-                          shouldLoop: false,
-                          colors: const [
-                            Colors.amber,
-                            Colors.orange,
-                            Colors.yellow,
-                            Colors.white,
-                            Colors.blueAccent,
-                          ],
-                          numberOfParticles: 50,
-                          gravity: 0.3,
-                          emissionFrequency: 0.1,
-                        ),
-                      ],
+                                    )
+                                    .animate(
+                                      onPlay: (c) => c.repeat(reverse: true),
+                                    )
+                                    .scale(
+                                      begin: const Offset(0.8, 0.8),
+                                      end: const Offset(1.2, 1.2),
+                                      duration: 2.seconds,
+                                    ),
+                          ),
+
+                          // The Chest Image
+                          ExcludeSemantics(
+                            child:
+                                Image.asset(
+                                      'assets/images/daily_chest.png', // Assuming user added this
+                                      width: isOpened ? 280.r : 240.r,
+                                      height: isOpened ? 280.r : 240.r,
+                                      semanticLabel: context.tr(
+                                        'home.chest_daily_mystery',
+                                      ),
+                                      errorBuilder:
+                                          (context, error, stackTrace) {
+                                            return Image.asset(
+                                              'assets/images/chest_3d.webp',
+                                              width: isOpened ? 260.r : 220.r,
+                                              height: isOpened ? 260.r : 220.r,
+                                              semanticLabel: context.tr(
+                                                'home.chest_daily_mystery',
+                                              ),
+                                              errorBuilder:
+                                                  (
+                                                    context,
+                                                    error,
+                                                    stackTrace,
+                                                  ) => Icon(
+                                                    Icons.card_giftcard_rounded,
+                                                    size: 150.r,
+                                                    color: Colors.amber,
+                                                  ),
+                                            );
+                                          },
+                                    )
+                                    .animate(
+                                      onPlay: (c) => isOpened
+                                          ? null
+                                          : c.repeat(reverse: true),
+                                    )
+                                    .scale(
+                                      begin: const Offset(1, 1),
+                                      end: isOpened
+                                          ? const Offset(1, 1)
+                                          : const Offset(1.05, 1.05),
+                                      duration: 1.seconds,
+                                      curve: Curves.easeInOut,
+                                    )
+                                    .shake(
+                                      hz: 2,
+                                      offset: const Offset(2, 0),
+                                      duration: 2.seconds,
+                                    )
+                                    .animate(target: isOpened ? 0 : 1),
+                          ),
+                          // Confetti explosion from the box
+                          ExcludeSemantics(
+                            child: ConfettiWidget(
+                              confettiController: confettiController,
+                              blastDirectionality:
+                                  BlastDirectionality.explosive,
+                              shouldLoop: false,
+                              colors: const [
+                                Colors.amber,
+                                Colors.orange,
+                                Colors.yellow,
+                                Colors.white,
+                                Colors.blueAccent,
+                              ],
+                              numberOfParticles: 50,
+                              gravity: 0.3,
+                              emissionFrequency: 0.1,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
 
@@ -212,80 +262,106 @@ class MysteryChestOverlay extends StatelessWidget {
                     SizedBox(height: 40.h),
 
                     // Reward Card
-                    Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 32.w,
-                            vertical: 20.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(30.r),
-                            border: Border.all(color: Colors.white24),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.amber.withValues(alpha: 0.2),
-                                blurRadius: 30,
-                                spreadRadius: -10,
-                              ),
-                            ],
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                Icons.monetization_on_rounded,
-                                color: Colors.amber,
-                                size: 40.r,
-                              ),
-                              SizedBox(width: 16.w),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    '+$rewardAmount',
-                                    style: TextStyle(fontFamily: 'Outfit', 
-                                      fontSize: 32.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: Colors.amber,
-                                      decoration: TextDecoration.none,
+                    Semantics(
+                      label: context.tr(
+                        'home.chest_coins_collected_value',
+                        args: ['$rewardAmount'],
+                      ),
+                      child:
+                          Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 32.w,
+                                  vertical: 20.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(30.r),
+                                  border: Border.all(color: Colors.white24),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.amber.withValues(
+                                        alpha: 0.2,
+                                      ),
+                                      blurRadius: 30,
+                                      spreadRadius: -10,
                                     ),
+                                  ],
+                                ),
+                                child: ExcludeSemantics(
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(
+                                        Icons.monetization_on_rounded,
+                                        color: Colors.amber,
+                                        size: 40.r,
+                                      ),
+                                      SizedBox(width: 16.w),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            '+$rewardAmount',
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 32.sp,
+                                              fontWeight: FontWeight.w900,
+                                              color: Colors.amber,
+                                              decoration: TextDecoration.none,
+                                            ),
+                                          ),
+                                          Text(
+                                            context.tr(
+                                              'home.chest_coins_collected',
+                                            ),
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 10.sp,
+                                              fontWeight: FontWeight.w800,
+                                              color: Colors.white70,
+                                              letterSpacing: 1,
+                                              decoration: TextDecoration.none,
+                                            ),
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
                                   ),
-                                  Text(
-                                    context.tr('home.chest_coins_collected'),
-                                    style: TextStyle(fontFamily: 'Outfit', 
-                                      fontSize: 10.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: Colors.white70,
-                                      letterSpacing: 1,
-                                      decoration: TextDecoration.none,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        )
-                        .animate()
-                        .fadeIn(delay: 500.ms)
-                        .slideY(begin: 0.5, curve: Curves.easeOutBack),
+                                ),
+                              )
+                              .animate()
+                              .fadeIn(delay: 500.ms)
+                              .slideY(begin: 0.5, curve: Curves.easeOutBack),
+                    ),
                   ],
 
                   if (!isOpened) ...[
                     SizedBox(height: 60.h),
-                    Text(
-                          isPremium ? context.tr('home.chest_tap_vip_loot') : context.tr('home.chest_tap_unveil'),
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w800,
-                            color: isPremium
-                                ? const Color(0xFFF59E0B)
-                                : Colors.amber,
-                            letterSpacing: 3,
-                            decoration: TextDecoration.none,
-                          ),
-                        )
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .fadeIn(duration: 1.seconds),
+                    ExcludeSemantics(
+                      child:
+                          Text(
+                                isPremium
+                                    ? context.tr('home.chest_tap_vip_loot')
+                                    : context.tr('home.chest_tap_unveil'),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: isPremium
+                                      ? const Color(0xFFF59E0B)
+                                      : Colors.amber,
+                                  letterSpacing: 3,
+                                  decoration: TextDecoration.none,
+                                ),
+                                textAlign: TextAlign.center,
+                                maxLines: 2,
+                              )
+                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                              .fadeIn(duration: 1.seconds),
+                    ),
                   ],
                 ],
               ),

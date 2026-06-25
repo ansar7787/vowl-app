@@ -5,18 +5,25 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Error state widget displayed when a quest fails to load.
+///
+/// Provides two recovery actions: [onRetry] and [onBack]. Accepts an
+/// optional [primaryColor] to match the active game category's theme.
 class GameErrorWidget extends StatelessWidget {
-  final String title;
-  final String message;
+  /// Optional override for the card headline. Defaults to localised key.
+  final String? title;
+
+  /// Optional override for the body message. Defaults to localised key.
+  final String? message;
+
   final VoidCallback onRetry;
   final VoidCallback onBack;
   final Color primaryColor;
 
   const GameErrorWidget({
     super.key,
-    this.title = 'Quest Unavailable',
-    this.message =
-        'We couldn\'t load this quest right now. Please check your connection or try another level.',
+    this.title,
+    this.message,
     required this.onRetry,
     required this.onBack,
     this.primaryColor = const Color(0xFF6366F1),
@@ -25,6 +32,8 @@ class GameErrorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final resolvedTitle = title ?? context.tr('game_error.title');
+    final resolvedMessage = message ?? context.tr('game_error.message');
 
     return RepaintBoundary(
       child: Center(
@@ -36,7 +45,7 @@ class GameErrorWidget extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                // Error Icon with Glow
+                // ── Error icon ──────────────────────────────────────
                 Container(
                   padding: EdgeInsets.all(20.r),
                   decoration: BoxDecoration(
@@ -59,10 +68,12 @@ class GameErrorWidget extends StatelessWidget {
 
                 SizedBox(height: 24.h),
 
+                // ── Title ───────────────────────────────────────────
                 Text(
-                  title,
+                  resolvedTitle,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 22.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -71,10 +82,12 @@ class GameErrorWidget extends StatelessWidget {
 
                 SizedBox(height: 12.h),
 
+                // ── Message ─────────────────────────────────────────
                 Text(
-                  message,
+                  resolvedMessage,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w500,
                     color: isDark ? Colors.white70 : Colors.black54,
@@ -84,36 +97,42 @@ class GameErrorWidget extends StatelessWidget {
 
                 SizedBox(height: 32.h),
 
-                // Action Buttons
-                ScaleButton(
-                  onTap: onRetry,
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 16.h),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          primaryColor,
-                          primaryColor.withValues(alpha: 0.8),
+                // ── Retry ────────────────────────────────────────────
+                Semantics(
+                  button: true,
+                  label: context.tr('games.try_again'),
+                  child: ScaleButton(
+                    onTap: onRetry,
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(vertical: 16.h),
+                      constraints: BoxConstraints(minHeight: 48.h),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            primaryColor,
+                            primaryColor.withValues(alpha: 0.8),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(16.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: primaryColor.withValues(alpha: 0.3),
+                            blurRadius: 12,
+                            offset: const Offset(0, 4),
+                          ),
                         ],
                       ),
-                      borderRadius: BorderRadius.circular(16.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: primaryColor.withValues(alpha: 0.3),
-                          blurRadius: 12,
-                          offset: const Offset(0, 4),
+                      child: Text(
+                        context.tr('games.try_again').toUpperCase(),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white,
+                          letterSpacing: 1.5,
                         ),
-                      ],
-                    ),
-                    child: Text(
-                      context.tr('games.try_again').toUpperCase(),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontFamily: 'Outfit', 
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.white,
-                        letterSpacing: 1.5,
                       ),
                     ),
                   ),
@@ -121,25 +140,32 @@ class GameErrorWidget extends StatelessWidget {
 
                 SizedBox(height: 12.h),
 
-                ScaleButton(
-                  onTap: onBack,
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 16.h),
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? Colors.white10
-                          : Colors.black.withValues(alpha: 0.05),
-                      borderRadius: BorderRadius.circular(16.r),
-                    ),
-                    child: Text(
-                      'GO BACK',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontFamily: 'Outfit', 
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w700,
-                        color: isDark ? Colors.white60 : Colors.black54,
-                        letterSpacing: 1,
+                // ── Go back ──────────────────────────────────────────
+                Semantics(
+                  button: true,
+                  label: context.tr('common.go_back'),
+                  child: ScaleButton(
+                    onTap: onBack,
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(vertical: 16.h),
+                      constraints: BoxConstraints(minHeight: 48.h),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? Colors.white10
+                            : Colors.black.withValues(alpha: 0.05),
+                        borderRadius: BorderRadius.circular(16.r),
+                      ),
+                      child: Text(
+                        context.tr('common.go_back').toUpperCase(),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w700,
+                          color: isDark ? Colors.white60 : Colors.black54,
+                          letterSpacing: 1,
+                        ),
                       ),
                     ),
                   ),

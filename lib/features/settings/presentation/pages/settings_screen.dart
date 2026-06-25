@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart' show imageCache;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -23,6 +24,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
 
@@ -46,12 +48,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Future<void> _loadPackageInfo() async {
     final info = await PackageInfo.fromPlatform();
     final prefs = await SharedPreferences.getInstance();
-    
-    // Check actual system permission to keep UI in sync
     final isGranted = await Permission.notification.isGranted;
     final savedPref = prefs.getBool('notifications_enabled') ?? true;
     final soundPref = prefs.getBool('sound_enabled') ?? true;
-    
+
+    if (!mounted) return;
     setState(() {
       _appVersion = info.version;
       _buildNumber = info.buildNumber;
@@ -63,62 +64,145 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Future<void> _toggleNotifications(bool value) async {
     if (value) {
-      // Trying to enable
       final isGranted = await Permission.notification.isGranted;
       final isDenied = await Permission.notification.isPermanentlyDenied;
       if (!isGranted) {
         if (isDenied) {
-          // If denied, we must send them to OS settings
           await openAppSettings();
-          return; // They'll return later, and we'll check status then
-        } else {
-          // Request permission natively
-          final status = await Permission.notification.request();
-          if (!status.isGranted) return; // User denied
+          return;
         }
+        final status = await Permission.notification.request();
+        if (!status.isGranted) return;
       }
     } else {
-      // Trying to disable
-      final confirm = await SettingsDialogs.showDisableNotificationConfirmation(context);
-      if (confirm != true) return; // User cancelled
+      if (!mounted) return;
+      final confirm = await SettingsDialogs.showDisableNotificationConfirmation(
+        context,
+      );
+      if (confirm != true) return;
     }
 
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('notifications_enabled', value);
+    if (!mounted) return;
     setState(() => _notificationsEnabled = value);
-    // Actually enable/disable notifications in the service
     di.sl<NotificationService>().onNotificationPreferenceChanged(value);
   }
 
   Future<void> _toggleSound(bool value) async {
     if (!value) {
-      final confirmed = await SettingsDialogs.showDisableSoundConfirmation(context);
+      if (!mounted) return;
+      final confirmed = await SettingsDialogs.showDisableSoundConfirmation(
+        context,
+      );
       if (confirmed != true) return;
     }
 
-    setState(() {
-      _soundEnabled = value;
-    });
+    setState(() => _soundEnabled = value);
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('sound_enabled', value);
-
     di.sl<SoundService>().setMuted(!value);
 
-    final kidsAudio = di.sl<KidsAudioService>();
-    final kidsTTS = di.sl<KidsTTSService>();
-
     if (!value) {
-      await kidsAudio.stopBgm();
-      await kidsTTS.stop();
+      await di.sl<KidsAudioService>().stopBgm();
+      await di.sl<KidsTTSService>().stop();
+    }
+  }
+
+  Future<void> _handleSupportLink(BuildContext context) async {
+    final Uri emailUri = Uri(
+      scheme: 'mailto',
+      path: 'support.vowl.app@gmail.com',
+      query: _encodeQueryParameters({
+        'subject': 'Support Request: Vowl',
+        'body':
+            'Describe your issue here...\n\nApp Version: $_appVersion\nBuild: $_buildNumber',
+      }),
+    );
+    if (await canLaunchUrl(emailUri)) {
+      await launchUrl(emailUri);
+    } else {
+      if (context.mounted) {
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr('settings.email_error'),
+          type: CustomSnackBarType.error,
+        );
+      }
+    }
+  }
+
+  String? _encodeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map(
+          (e) =>
+              '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}',
+        )
+        .join('&');
+  }
+
+  void _handleLegalLink(BuildContext context, String title) {
+    final content = title == context.tr('settings.terms_of_service')
+        ? LegalConstants.termsOfService
+        : LegalConstants.privacyPolicy;
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => LegalContentScreen(title: title, content: content),
+      ),
+    );
+  }
+
+  Future<void> _handleClearCache(BuildContext context) async {
+    di.sl<HapticService>().light();
+    try {
+      // FIX (CRITICAL-2): Never call SharedPreferences.clear() from a
+      // "clear cache" action. User preferences (notifications, sound, locale)
+      // are NOT cache — destroying them silently is a critical UX regression.
+      //
+      // True cache = in-memory image cache + temporary files on disk.
+      imageCache.clear();
+      imageCache.clearLiveImages();
+
+      final tempDir = await getTemporaryDirectory();
+      if (tempDir.existsSync()) {
+        for (final entity in tempDir.listSync()) {
+          try {
+            entity.deleteSync(recursive: true);
+          } catch (_) {
+            // Skip files that are locked or in use.
+          }
+        }
+      }
+
+      if (context.mounted) {
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr('settings.cache_cleared'),
+          type: CustomSnackBarType.success,
+        );
+      }
+    } catch (e) {
+      if (context.mounted) {
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr('settings.cache_clear_error'),
+          type: CustomSnackBarType.error,
+        );
+      }
     }
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
-    final bgColor = isMidnight 
-        ? Colors.black 
+    // FIX (MEDIUM-1): context.select to scope rebuilds to isMidnight only.
+    final isMidnight = context.select<ThemeCubit, bool>(
+      (c) => c.state.isMidnight,
+    );
+    final bgColor = isMidnight
+        ? Colors.black
         : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
 
     return Scaffold(
@@ -137,114 +221,33 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SettingsProfileSection(
-                        user: context.watch<AuthBloc>().state.user, 
+                        user: context.watch<AuthBloc>().state.user,
                         isDark: isDark,
                       ),
                       SizedBox(height: 32.h),
-                      SettingsSectionTitle(title: context.tr('settings.account'), isDark: isDark),
-                      SettingsGroup(children: [
-                        SettingsTile(
-                          title: context.tr('settings.security_password'),
-                          icon: Icons.lock_person_rounded,
-                          color: Colors.blue,
-                          onTap: () => SettingsDialogs.showPasswordReset(
-                            context, 
-                            context.read<AuthBloc>().state.user?.email ?? '',
-                          ),
-                        ),
-                      ]),
-
+                      // FIX (HIGH-4): Sections extracted to private widgets.
+                      _SettingsAccountGroup(isDark: isDark),
                       SizedBox(height: 32.h),
-                      SettingsSectionTitle(title: context.tr('settings.app_preferences'), isDark: isDark),
-                      SettingsGroup(children: [
-                        SettingsSwitchTile(
-                          title: 'Sound Effects',
-                          subtitle: 'Play game sounds & feedback',
-                          icon: Icons.volume_up_rounded,
-                          color: Colors.pink,
-                          value: _soundEnabled,
-                          isLoading: _isLoading,
-                          onChanged: _toggleSound,
-                        ),
-                        SettingsSwitchTile(
-                          title: context.tr('settings.push_notifications'),
-                          subtitle: context.tr('settings.push_notifications_subtitle'),
-                          icon: Icons.notifications_active_rounded,
-                          color: Colors.orange,
-                          value: _notificationsEnabled,
-                          isLoading: _isLoading,
-                          onChanged: _toggleNotifications,
-                        ),
-                        SettingsTile(
-                          title: context.tr('settings.language_selection'),
-                          icon: Icons.language_rounded,
-                          color: Colors.teal,
-                          onTap: () => LanguagePickerSheet.show(context),
-                          trailing: Text(
-                            '${di.sl<LocaleService>().currentLocaleFlag} ${di.sl<LocaleService>().currentLocaleName}',
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              fontSize: 12.sp,
-                              color: Colors.teal,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ),
-                      ]),
-
+                      _SettingsPreferencesGroup(
+                        isDark: isDark,
+                        soundEnabled: _soundEnabled,
+                        notificationsEnabled: _notificationsEnabled,
+                        isLoading: _isLoading,
+                        onToggleSound: _toggleSound,
+                        onToggleNotifications: _toggleNotifications,
+                      ),
                       SizedBox(height: 32.h),
-                      SettingsSectionTitle(title: context.tr('settings.support_legal'), isDark: isDark),
-                      SettingsGroup(children: [
-                        SettingsTile(
-                          title: context.tr('settings.help_center'),
-                          icon: Icons.help_center_rounded,
-                          color: Colors.green,
-                          onTap: () => _handleSupportLink(context),
-                        ),
-                        SettingsTile(
-                          title: context.tr('settings.terms_of_service'),
-                          icon: Icons.description_rounded,
-                          color: Colors.blueGrey,
-                          onTap: () => _handleLegalLink(context, context.tr('settings.terms_of_service')),
-                        ),
-                        SettingsTile(
-                          title: context.tr('settings.privacy_policy'),
-                          icon: Icons.policy_rounded,
-                          color: Colors.blueGrey,
-                          onTap: () => _handleLegalLink(context, context.tr('settings.privacy_policy')),
-                        ),
-                        SettingsTile(
-                          title: context.tr('settings.app_version'),
-                          icon: Icons.info_outline_rounded,
-                          color: Colors.grey,
-                          trailing: Text(
-                            '$_appVersion ($_buildNumber)',
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              fontSize: 12.sp,
-                              color: isDark ? Colors.white38 : Colors.grey,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ]),
-
+                      _SettingsSupportGroup(
+                        isDark: isDark,
+                        appVersion: _appVersion,
+                        buildNumber: _buildNumber,
+                        onSupportTap: () => _handleSupportLink(context),
+                        onLegalTap: (title) => _handleLegalLink(context, title),
+                      ),
                       SizedBox(height: 32.h),
-                      SettingsSectionTitle(title: context.tr('settings.danger_zone'), isDark: isDark),
-                      SettingsGroup(children: [
-                        SettingsTile(
-                          title: context.tr('settings.clear_cache'),
-                          icon: Icons.cleaning_services_rounded,
-                          color: Colors.amber,
-                          onTap: () => _handleClearCache(context),
-                        ),
-                        SettingsTile(
-                          title: context.tr('settings.delete_account'),
-                          icon: Icons.delete_forever_rounded,
-                          color: Colors.red,
-                          onTap: () => SettingsDialogs.showDeleteAccount(context),
-                          isDestructive: true,
-                        ),
-                      ]),
-
+                      _SettingsDangerGroup(
+                        onClearCache: () => _handleClearCache(context),
+                      ),
                       SizedBox(height: 40.h),
                       const SettingsLogoutButton(),
                     ],
@@ -283,6 +286,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             color: isDark ? Colors.white : Colors.black,
           ),
         ),
+        tooltip: MaterialLocalizations.of(context).backButtonTooltip,
         onPressed: () {
           if (context.canPop()) {
             context.pop();
@@ -293,7 +297,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
       ),
       title: Text(
         context.tr('settings.title'),
-        style: TextStyle(fontFamily: 'Outfit', 
+        style: TextStyle(
+          fontFamily: 'Outfit',
           fontSize: 22.sp,
           fontWeight: FontWeight.w800,
           color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -301,73 +306,211 @@ class _SettingsScreenState extends State<SettingsScreen> {
       ),
     );
   }
+}
 
-  Future<void> _handleSupportLink(BuildContext context) async {
-    final Uri emailLaunchUri = Uri(
-      scheme: 'mailto',
-      path: 'support.vowl.app@gmail.com',
-      query: _encodeQueryParameters({
-        'subject': 'Support Request: Vowl',
-        'body': 'Describe your issue here...\n\nApp Version: $_appVersion\nBuild: $_buildNumber',
-      }),
-    );
+// ---------------------------------------------------------------------------
+// Private section widgets
+// FIX (HIGH-4): Extracted to bring SettingsScreen under the 300-line limit.
+// ---------------------------------------------------------------------------
 
-    if (await canLaunchUrl(emailLaunchUri)) {
-      await launchUrl(emailLaunchUri);
-    } else {
-      if (context.mounted) {
-        CustomSnackBar.show(
-          context: context,
-          message: context.tr('settings.email_error'),
-          type: CustomSnackBarType.error,
-        );
-      }
-    }
-  }
+class _SettingsAccountGroup extends StatelessWidget {
+  final bool isDark;
+  const _SettingsAccountGroup({required this.isDark});
 
-  String? _encodeQueryParameters(Map<String, String> params) {
-    return params.entries
-        .map((e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-        .join('&');
-  }
-
-  void _handleLegalLink(BuildContext context, String title) {
-    final content = title == context.tr('settings.terms_of_service') 
-        ? LegalConstants.termsOfService 
-        : LegalConstants.privacyPolicy;
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => LegalContentScreen(title: title, content: content),
-      ),
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SettingsSectionTitle(
+          title: context.tr('settings.account'),
+          isDark: isDark,
+        ),
+        SettingsGroup(
+          children: [
+            SettingsTile(
+              title: context.tr('settings.security_password'),
+              icon: Icons.lock_person_rounded,
+              color: Colors.blue,
+              onTap: () => SettingsDialogs.showPasswordReset(
+                context,
+                context.read<AuthBloc>().state.user?.email ?? '',
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
+}
 
-  Future<void> _handleClearCache(BuildContext context) async {
-    di.sl<HapticService>().light();
-    try {
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.clear();
-      final tempDir = await getTemporaryDirectory();
-      if (tempDir.existsSync()) {
-        tempDir.deleteSync(recursive: true);
-      }
-      if (context.mounted) {
-        CustomSnackBar.show(
-          context: context,
-          message: context.tr('settings.cache_cleared'),
-          type: CustomSnackBarType.success,
-        );
-      }
-    } catch (e) {
-      if (context.mounted) {
-        CustomSnackBar.show(
-      context: context,
-      message: 'Error clearing cache: $e',
-      type: CustomSnackBarType.error,
+class _SettingsPreferencesGroup extends StatelessWidget {
+  final bool isDark;
+  final bool soundEnabled;
+  final bool notificationsEnabled;
+  final bool isLoading;
+  final ValueChanged<bool> onToggleSound;
+  final ValueChanged<bool> onToggleNotifications;
+
+  const _SettingsPreferencesGroup({
+    required this.isDark,
+    required this.soundEnabled,
+    required this.notificationsEnabled,
+    required this.isLoading,
+    required this.onToggleSound,
+    required this.onToggleNotifications,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SettingsSectionTitle(
+          title: context.tr('settings.app_preferences'),
+          isDark: isDark,
+        ),
+        SettingsGroup(
+          children: [
+            SettingsSwitchTile(
+              title: context.tr('settings.sound_effects'),
+              subtitle: context.tr('settings.sound_effects_subtitle'),
+              icon: Icons.volume_up_rounded,
+              color: Colors.pink,
+              value: soundEnabled,
+              isLoading: isLoading,
+              onChanged: onToggleSound,
+            ),
+            SettingsSwitchTile(
+              title: context.tr('settings.push_notifications'),
+              subtitle: context.tr('settings.push_notifications_subtitle'),
+              icon: Icons.notifications_active_rounded,
+              color: Colors.orange,
+              value: notificationsEnabled,
+              isLoading: isLoading,
+              onChanged: onToggleNotifications,
+            ),
+            SettingsTile(
+              title: context.tr('settings.language_selection'),
+              icon: Icons.language_rounded,
+              color: Colors.teal,
+              onTap: () => LanguagePickerSheet.show(context),
+              trailing: Text(
+                '${di.sl<LocaleService>().currentLocaleFlag} '
+                '${di.sl<LocaleService>().currentLocaleName}',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  color: Colors.teal,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
-      }
-    }
+  }
+}
+
+class _SettingsSupportGroup extends StatelessWidget {
+  final bool isDark;
+  final String appVersion;
+  final String buildNumber;
+  final VoidCallback onSupportTap;
+  final ValueChanged<String> onLegalTap;
+
+  const _SettingsSupportGroup({
+    required this.isDark,
+    required this.appVersion,
+    required this.buildNumber,
+    required this.onSupportTap,
+    required this.onLegalTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SettingsSectionTitle(
+          title: context.tr('settings.support_legal'),
+          isDark: isDark,
+        ),
+        SettingsGroup(
+          children: [
+            SettingsTile(
+              title: context.tr('settings.help_center'),
+              icon: Icons.help_center_rounded,
+              color: Colors.green,
+              onTap: onSupportTap,
+            ),
+            SettingsTile(
+              title: context.tr('settings.terms_of_service'),
+              icon: Icons.description_rounded,
+              color: Colors.blueGrey,
+              onTap: () => onLegalTap(context.tr('settings.terms_of_service')),
+            ),
+            SettingsTile(
+              title: context.tr('settings.privacy_policy'),
+              icon: Icons.policy_rounded,
+              color: Colors.blueGrey,
+              onTap: () => onLegalTap(context.tr('settings.privacy_policy')),
+            ),
+            SettingsTile(
+              title: context.tr('settings.app_version'),
+              icon: Icons.info_outline_rounded,
+              color: Colors.grey,
+              trailing: Text(
+                '$appVersion ($buildNumber)',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  color: isDark ? Colors.white38 : Colors.grey,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _SettingsDangerGroup extends StatelessWidget {
+  final VoidCallback onClearCache;
+
+  const _SettingsDangerGroup({required this.onClearCache});
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SettingsSectionTitle(
+          title: context.tr('settings.danger_zone'),
+          isDark: isDark,
+        ),
+        SettingsGroup(
+          children: [
+            SettingsTile(
+              title: context.tr('settings.clear_cache'),
+              icon: Icons.cleaning_services_rounded,
+              color: Colors.amber,
+              onTap: onClearCache,
+            ),
+            SettingsTile(
+              title: context.tr('settings.delete_account'),
+              icon: Icons.delete_forever_rounded,
+              color: Colors.red,
+              onTap: () => SettingsDialogs.showDeleteAccount(context),
+              isDestructive: true,
+            ),
+          ],
+        ),
+      ],
+    );
   }
 }

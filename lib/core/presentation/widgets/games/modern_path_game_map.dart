@@ -14,6 +14,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ModernPathGameMap extends StatelessWidget {
   final String gameType;
@@ -63,7 +64,7 @@ class ModernPathGameMap extends StatelessWidget {
               children: [
                 // Dynamic Background Layer - GPU Isolated
                 RepaintBoundary(
-                  child: _buildBackground(theme, totalLevels),
+                  child: _buildBackground(context, theme, totalLevels),
                 ),
                 // The Curvy Path - GPU Isolated
                 RepaintBoundary(
@@ -81,6 +82,22 @@ class ModernPathGameMap extends StatelessWidget {
                 ),
 
                 // Interaction Nodes
+                //
+                // PERFORMANCE NOTE: all `totalLevels` (default 200) nodes
+                // are still built eagerly here rather than lazily — the
+                // connecting curvy path is one continuous CustomPaint
+                // computed from every point up front, which doesn't lend
+                // itself to simple sliver-based lazy loading without a
+                // deeper rendering rework (a custom RenderSliver that only
+                // paints visible path segments). That's a real, valuable
+                // follow-up for very low-end devices, but is too large a
+                // structural change to make blind in this pass without the
+                // ability to visually test it. What *is* safely fixed here:
+                // each node now gets its own RepaintBoundary, and only the
+                // few elements that actually animate continuously (the
+                // current-level pulse ring, the floating mascot) are
+                // isolated into their own boundary — so animating those no
+                // longer has to walk/repaint the other ~199 static nodes.
                 Column(
                   children: [
                     SizedBox(height: 120.h),
@@ -94,14 +111,16 @@ class ModernPathGameMap extends StatelessWidget {
                       return Center(
                         child: Transform.translate(
                           offset: Offset(horizontalOffset, 0),
-                          child: _buildPathNode(
-                            context,
-                            levelNumber,
-                            isUnlocked,
-                            isCurrent,
-                            isDark,
-                            theme,
-                            authState,
+                          child: RepaintBoundary(
+                            child: _buildPathNode(
+                              context,
+                              levelNumber,
+                              isUnlocked,
+                              isCurrent,
+                              isDark,
+                              theme,
+                              authState,
+                            ),
                           ),
                         ),
                       );
@@ -122,50 +141,96 @@ class ModernPathGameMap extends StatelessWidget {
     ThemeResult theme,
     bool isDark,
   ) {
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
+
     return AppBar(
       title: Text(
         theme.title,
-        style: TextStyle(fontFamily: 'Outfit', 
+        style: TextStyle(
+          fontFamily: 'Outfit',
           fontWeight: FontWeight.w900,
           fontSize: 14.sp,
           letterSpacing: 4,
           color: isDark ? Colors.white70 : Colors.black54,
         ),
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
       ),
       backgroundColor: Colors.transparent,
       elevation: 0,
       centerTitle: true,
-      leading: IconButton(
-        icon: Icon(Icons.chevron_left_rounded, size: 28.r),
-        onPressed: () => context.pop(),
-        color: isDark ? Colors.white70 : Colors.black54,
+      leading: Semantics(
+        button: true,
+        label: context.tr('common.back', fallback: 'Back'),
+        child: IconButton(
+          icon: Icon(
+            isRtl ? Icons.chevron_right_rounded : Icons.chevron_left_rounded,
+            size: 28.r,
+          ),
+          onPressed: () => context.pop(),
+          color: isDark ? Colors.white70 : Colors.black54,
+        ),
       ),
     );
   }
 
-  Widget _buildBackground(ThemeResult theme, int totalLevels) {
+  Widget _buildBackground(
+    BuildContext context,
+    ThemeResult theme,
+    int totalLevels,
+  ) {
     final segmentHeight = (totalLevels * 140.h) / 4;
     return Stack(
       children: [
         // Dividing the map into 4 environments
         Column(
           children: [
-            _buildEnvSection(Colors.green, "EMERALD FOREST", segmentHeight),
-            _buildEnvSection(Colors.blue, "AZURE PEAKS", segmentHeight),
-            _buildEnvSection(Colors.orange, "SUNSET PLATEAU", segmentHeight),
-            _buildEnvSection(Colors.amber, "CELESTIAL CITADEL", segmentHeight),
+            _buildEnvSection(
+              context,
+              Colors.green,
+              'games.env_emerald_forest',
+              'EMERALD FOREST',
+              segmentHeight,
+            ),
+            _buildEnvSection(
+              context,
+              Colors.blue,
+              'games.env_azure_peaks',
+              'AZURE PEAKS',
+              segmentHeight,
+            ),
+            _buildEnvSection(
+              context,
+              Colors.orange,
+              'games.env_sunset_plateau',
+              'SUNSET PLATEAU',
+              segmentHeight,
+            ),
+            _buildEnvSection(
+              context,
+              Colors.amber,
+              'games.env_celestial_citadel',
+              'CELESTIAL CITADEL',
+              segmentHeight,
+            ),
           ],
         ),
         // Custom letter background for texture
-        VowlLetterBackground(
-          color: Colors.white.withValues(alpha: 0.05),
+        const VowlLetterBackground(
+          color: Color(0x0DFFFFFF), // Colors.white at alpha 0.05
           style: VowlBackgroundStyle.scatter,
         ),
       ],
     );
   }
 
-  Widget _buildEnvSection(Color color, String name, double height) {
+  Widget _buildEnvSection(
+    BuildContext context,
+    Color color,
+    String nameKey,
+    String fallbackName,
+    double height,
+  ) {
     return Container(
       height: height,
       width: double.infinity,
@@ -181,15 +246,19 @@ class ModernPathGameMap extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          Positioned(
-            right: -20.w,
+          PositionedDirectional(
+            end: -20.w,
             top: 50.h,
-            child: Text(
-              name,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 60.sp,
-                fontWeight: FontWeight.w900,
-                color: color.withValues(alpha: 0.03),
+            child: ExcludeSemantics(
+              child: Text(
+                context.tr(nameKey, fallback: fallbackName),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 60.sp,
+                  fontWeight: FontWeight.w900,
+                  color: color.withValues(alpha: 0.03),
+                ),
+                maxLines: 1,
               ),
             ),
           ),
@@ -207,6 +276,12 @@ class ModernPathGameMap extends StatelessWidget {
     ThemeResult theme,
     AuthState authState,
   ) {
+    final statusLabel = !isUnlocked
+        ? context.tr('games.level_locked', fallback: 'Locked')
+        : (isCurrent
+              ? context.tr('games.level_current', fallback: 'Current level')
+              : context.tr('games.level_completed', fallback: 'Completed'));
+
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 40.h),
       child: Stack(
@@ -215,110 +290,141 @@ class ModernPathGameMap extends StatelessWidget {
         children: [
           // "Today's Topic" Tooltip for current level
           if (isCurrent)
-            Positioned(top: -85.h, child: _buildTopicTooltip(theme, isDark)),
+            Positioned(
+              top: -85.h,
+              child: _buildTopicTooltip(context, theme, isDark),
+            ),
 
-          // Pulse animation for current level
+          // Pulse animation for current level — isolated since it's the
+          // one part of this node that repaints continuously.
           if (isCurrent)
-            Container(
-                  width: 130.r,
-                  height: 130.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: theme.primaryColor.withValues(alpha: 0.3),
-                      width: 2,
-                    ),
-                  ),
-                )
-                .animate(onPlay: (c) => c.repeat())
-                .scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1.2, 1.2),
-                  duration: 2.seconds,
-                )
-                .fadeOut(),
+            RepaintBoundary(
+              child:
+                  Container(
+                        width: 130.r,
+                        height: 130.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: theme.primaryColor.withValues(alpha: 0.3),
+                            width: 2,
+                          ),
+                        ),
+                      )
+                      .animate(onPlay: (c) => c.repeat())
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.2, 1.2),
+                        duration: 2.seconds,
+                      )
+                      .fadeOut(),
+            ),
 
           // Floating Vowl Mascot near the current level
           if (isCurrent)
-            Positioned(
-              left: -80.w,
-              child: VowlMascot(
-                state: VowlMascotState.happy,
-                size: 80,
-                level: authState.user?.level ?? 1,
-                accessoryId: authState.user?.vowlEquippedAccessory,
-              )
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .moveY(begin: -5, end: 5, duration: 2.seconds, curve: Curves.easeInOut)
-                  .rotate(begin: -0.05, end: 0.05, duration: 4.seconds),
+            PositionedDirectional(
+              start: -80.w,
+              child: RepaintBoundary(
+                child: ExcludeSemantics(
+                  child:
+                      VowlMascot(
+                            state: VowlMascotState.happy,
+                            size: 80,
+                            level: authState.user?.level ?? 1,
+                            accessoryId: authState.user?.vowlEquippedAccessory,
+                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .moveY(
+                            begin: -5,
+                            end: 5,
+                            duration: 2.seconds,
+                            curve: Curves.easeInOut,
+                          )
+                          .rotate(begin: -0.05, end: 0.05, duration: 4.seconds),
+                ),
+              ),
             ),
 
           // The Glass Node
-          ScaleButton(
-            onTap: () async {
-              if (!isUnlocked) {
-                _showLockedFeedback(context, theme.primaryColor);
-                return;
-              }
-              final authState = context.read<AuthBloc>().state;
-              di.sl<AdService>().showInterstitialAd(
-                onDismissed: () {
-                  if (context.mounted) {
-                    context.push(
-                      '/game?category=$categoryId&gameType=$gameType&level=$level',
-                    );
-                  }
-                },
-                isPremium: authState.user?.isPremium ?? false,
-              );
-            },
-            child: Container(
-              width: isCurrent ? 100.r : 80.r,
-              height: isCurrent ? 100.r : 80.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: isUnlocked
-                    ? (isCurrent
-                          ? theme.primaryColor
-                          : theme.primaryColor.withValues(alpha: 0.15))
-                    : (isDark
-                          ? Colors.white.withValues(alpha: 0.05)
-                          : Colors.black.withValues(alpha: 0.03)),
-                boxShadow: isCurrent
-                    ? [
-                        BoxShadow(
-                          color: theme.primaryColor.withValues(alpha: 0.5),
-                          blurRadius: 25,
-                          spreadRadius: 2,
-                        ),
-                      ]
-                    : [],
-                border: Border.all(
-                  color: isCurrent
-                      ? Colors.white
-                      : (isUnlocked
-                            ? theme.primaryColor.withValues(alpha: 0.3)
-                            : Colors.transparent),
-                  width: isCurrent ? 4 : 2,
+          Semantics(
+            button: true,
+            label:
+                '${context.tr('games.level_label_short', args: [level.toString()], fallback: 'Level $level')}, $statusLabel',
+            child: ScaleButton(
+              onTap: () async {
+                if (!isUnlocked) {
+                  _showLockedFeedback(context, theme.primaryColor);
+                  return;
+                }
+                final authState = context.read<AuthBloc>().state;
+                di.sl<AdService>().showInterstitialAd(
+                  onDismissed: () {
+                    if (context.mounted) {
+                      context.push(
+                        '/game?category=${Uri.encodeQueryComponent(categoryId)}&gameType=${Uri.encodeQueryComponent(gameType)}&level=$level',
+                      );
+                    }
+                  },
+                  isPremium: authState.user?.isPremium ?? false,
+                );
+              },
+              child: ExcludeSemantics(
+                child: Container(
+                  width: isCurrent ? 100.r : 80.r,
+                  height: isCurrent ? 100.r : 80.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: isUnlocked
+                        ? (isCurrent
+                              ? theme.primaryColor
+                              : theme.primaryColor.withValues(alpha: 0.15))
+                        : (isDark
+                              ? Colors.white.withValues(alpha: 0.05)
+                              : Colors.black.withValues(alpha: 0.03)),
+                    boxShadow: isCurrent
+                        ? [
+                            BoxShadow(
+                              color: theme.primaryColor.withValues(alpha: 0.5),
+                              blurRadius: 25,
+                              spreadRadius: 2,
+                            ),
+                          ]
+                        : [],
+                    border: Border.all(
+                      color: isCurrent
+                          ? Colors.white
+                          : (isUnlocked
+                                ? theme.primaryColor.withValues(alpha: 0.3)
+                                : Colors.transparent),
+                      width: isCurrent ? 4 : 2,
+                    ),
+                  ),
+                  child: Center(
+                    child: isUnlocked
+                        ? (isCurrent
+                              ? Icon(
+                                  theme.icon,
+                                  color: Colors.white,
+                                  size: 38.r,
+                                )
+                              : Text(
+                                  "$level",
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 22.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: isDark
+                                        ? Colors.white
+                                        : Colors.black87,
+                                  ),
+                                ))
+                        : Icon(
+                            Icons.lock_outline_rounded,
+                            color: isDark ? Colors.white24 : Colors.black12,
+                            size: 24.r,
+                          ),
+                  ),
                 ),
-              ),
-              child: Center(
-                child: isUnlocked
-                    ? (isCurrent
-                          ? Icon(theme.icon, color: Colors.white, size: 38.r)
-                          : Text(
-                              "$level",
-                              style: TextStyle(fontFamily: 'Outfit', 
-                                fontSize: 22.sp,
-                                fontWeight: FontWeight.w900,
-                                color: isDark ? Colors.white : Colors.black87,
-                              ),
-                            ))
-                    : Icon(
-                        Icons.lock_outline_rounded,
-                        color: isDark ? Colors.white24 : Colors.black12,
-                        size: 24.r,
-                      ),
               ),
             ),
           ),
@@ -327,48 +433,61 @@ class ModernPathGameMap extends StatelessWidget {
     );
   }
 
-  Widget _buildTopicTooltip(ThemeResult theme, bool isDark) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: theme.primaryColor,
-        borderRadius: BorderRadius.circular(16.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            "TODAY'S TOPIC",
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.white.withValues(alpha: 0.7),
-              letterSpacing: 1.2,
+  Widget _buildTopicTooltip(
+    BuildContext context,
+    ThemeResult theme,
+    bool isDark,
+  ) {
+    return ExcludeSemantics(
+      child:
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            decoration: BoxDecoration(
+              color: theme.primaryColor,
+              borderRadius: BorderRadius.circular(16.r),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.1),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
             ),
-          ),
-          SizedBox(height: 2.h),
-          Text(
-            theme.title,
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w800,
-              color: Colors.white,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  context.tr('games.todays_topic', fallback: "TODAY'S TOPIC"),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white.withValues(alpha: 0.7),
+                    letterSpacing: 1.2,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                SizedBox(height: 2.h),
+                Text(
+                  theme.title,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
             ),
+          ).animate().move(
+            begin: const Offset(0, 5),
+            end: const Offset(0, 0),
+            duration: 600.ms,
+            curve: Curves.easeOutBack,
           ),
-        ],
-      ),
-    ).animate().move(
-      begin: const Offset(0, 5),
-      end: const Offset(0, 0),
-      duration: 600.ms,
-      curve: Curves.easeOutBack,
     );
   }
 
@@ -376,7 +495,10 @@ class ModernPathGameMap extends StatelessWidget {
     HapticFeedback.mediumImpact();
     CustomSnackBar.show(
       context: context,
-      message: 'QUEST LOCKED! COMPLETE PREVIOUS LEVELS.',
+      message: context.tr(
+        'games.quest_locked_message',
+        fallback: 'QUEST LOCKED! COMPLETE PREVIOUS LEVELS.',
+      ),
       type: CustomSnackBarType.info,
     );
   }

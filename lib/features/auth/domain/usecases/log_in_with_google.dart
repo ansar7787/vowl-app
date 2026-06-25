@@ -3,13 +3,21 @@ import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
 
-class LogInWithGoogle implements UseCase<void, NoParams> {
+/// Initiates a Google Sign-In OAuth flow.
+///
+/// On success the Firebase Auth session is established. The authenticated
+/// [UserEntity] (including the provisioned Firestore document for first-time
+/// Google users) is delivered via [GetUserStream] rather than this call's
+/// return value, which only confirms the flow completed without error.
+///
+/// Returns [AuthFailure('aborted-by-user')] when the user dismisses the
+/// Google account picker without selecting an account.
+class LogInWithGoogle extends UseCase<void, NoParams> {
   final AuthRepository repository;
 
-  LogInWithGoogle(this.repository);
+  const LogInWithGoogle(this.repository);
 
   @override
-  Future<Either<Failure, void>> call(NoParams params) async {
-    return await repository.logInWithGoogle();
-  }
+  Future<Either<Failure, void>> call(NoParams params) =>
+      repository.logInWithGoogle();
 }

@@ -1,30 +1,26 @@
 import 'dart:async';
-
 import 'package:flutter/widgets.dart';
 
-import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
-
-/// Shared mixin that encapsulates the repetitive answer-submission logic
-/// previously duplicated across all 9 game-screen State classes.
+/// Shared mixin that encapsulates the answer-submission lifecycle previously
+/// duplicated across all game-screen State classes.
+///
+/// ### Responsibilities
+/// 1. Guards against double-submission via [_isSubmitting].
+/// 2. Calls [onUpdate] synchronously so local visual state updates in one
+///    render pass.
+/// 3. Dispatches the game event through the [onSubmitEvent] callback (BLoC
+///    agnostic — works with any BLoC/Cubit).
+/// 4. Schedules a cancellable [Timer] for wrong-answer auto-reset.
+/// 5. Provides [cancelResetTimer] so navigation (NextQuestion, GameOver) can
+///    abort a pending reset before state is corrupted.
 ///
 /// ### Why sound and haptic calls are NOT here
-///
-/// [AccentBloc._onSubmit] already calls [SoundService.playCorrect],
-/// [SoundService.playWrong], [HapticService.success], and [HapticService.error]
-/// internally. All three of those are registered as singletons in GetIt.
-///
-/// If a screen ALSO called those methods, the same singleton would receive
-/// two calls per answer event — causing double sound playback and double
-/// vibration. Screens must only update their local visual state; the BLoC
-/// owns all A/V feedback for answer events.
-///
-/// ### What this mixin does
-///
-/// 1. Guards against double-submission via [_isSubmitting].
-/// 2. Calls [onUpdate] synchronously so local visual state updates in one pass.
-/// 3. Dispatches [SubmitAnswer] to [AccentBloc].
-/// 4. Schedules a cancellable [Timer] for wrong-answer auto-reset.
-/// 5. Provides [cancelResetTimer] so navigation / NextQuestion can abort it.
+/// Game BLoCs (e.g., SpeakingBloc, GrammarBloc) call [SoundService] and
+/// [HapticService] internally via their singleton GetIt registrations inside
+/// `_onSubmitAnswer`. If a screen also called those singletons, the same
+/// instance would receive two calls per answer — causing double sound playback
+/// and double vibration. Screens own only **visual** state; the BLoC owns all
+/// A/V feedback.
 ///
 /// ### Usage
 /// ```dart
@@ -45,14 +41,15 @@ import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 ///
 ///   void _handleTap(int index, int correctIndex) {
 ///     submitAnswer(
-///       context: context,
 ///       isCorrect: index == correctIndex,
 ///       onUpdate: () => setState(() {
 ///         _selectedIndex = index;
-///         _isAnswered = true;          // local visual flag
+///         _isAnswered = true;
 ///         _isCorrect = index == correctIndex;
 ///       }),
-///       onReset: () => setState(() {  // called after resetDelay on wrong answer
+///       onSubmitEvent: () => context.read<MyGameBloc>()
+///           .add(SubmitAnswer(isCorrect: index == correctIndex)),
+///       onReset: () => setState(() {
 ///         _selectedIndex = null;
 ///         _isAnswered = false;
 ///         _isCorrect = false;
@@ -64,12 +61,17 @@ import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 mixin GameAnswerHandler<T extends StatefulWidget> on State<T> {
   Timer? _resetTimer;
 
-  // Guard to prevent the edge case where a user rapidly taps before the
-  // BLoC event is fully processed and lastAnswerCorrect is set in state.
+  /// Guards against rapid taps before the BLoC has processed the previous
+  /// event and updated `lastAnswerCorrect` in state.
   bool _isSubmitting = false;
 
+  /// Whether an answer has been committed for the current question.
   bool isAnswered = false;
+
+  /// `true` = correct, `false` = wrong, `null` = no answer yet.
   bool? isCorrect;
+
+  // ── Lifecycle ─────────────────────────────────────────────────────────────
 
   /// Must be called from [State.initState].
   void initAnswerHandler() {
@@ -78,13 +80,18 @@ mixin GameAnswerHandler<T extends StatefulWidget> on State<T> {
     isCorrect = null;
   }
 
-  /// Must be called from [State.dispose] before `super.dispose()`.
+  /// Must be called from [State.dispose] **before** `super.dispose()`.
   void disposeAnswerHandler() {
     _resetTimer?.cancel();
     _resetTimer = null;
   }
 
-  /// Resets the local answer state back to the initial state.
+  // ── Public API ────────────────────────────────────────────────────────────
+
+  /// Resets local answer state to the "no answer yet" position.
+  ///
+  /// Call this when advancing to the next question via [cancelResetTimer] +
+  /// [resetAnswerState] in sequence.
   void resetAnswerState() {
     isAnswered = false;
     isCorrect = null;
@@ -93,15 +100,15 @@ mixin GameAnswerHandler<T extends StatefulWidget> on State<T> {
   /// Submits an answer and coordinates local visual state with the BLoC.
   ///
   /// ### Parameters
-  ///
-  /// - [context]: current [BuildContext] — used to access [AccentBloc].
-  /// - [isCorrect]: `true` if the user's selection matches the correct answer.
-  /// - [onUpdate]: called synchronously before the Bloc event is dispatched.
-  ///   Wrap all local state mutations in a single `setState(...)` callback here.
-  ///   **Do NOT call SoundService or HapticService here** — the BLoC handles them.
+  /// - [isCorrect]: whether the user's selection matches the correct answer.
+  /// - [onUpdate]: called **synchronously** before the BLoC event is
+  ///   dispatched. Wrap all local setState mutations here. Do NOT call
+  ///   SoundService or HapticService — the BLoC handles A/V feedback.
+  /// - [onSubmitEvent]: dispatches the corresponding BLoC event. This is
+  ///   intentionally a callback so the mixin stays BLoC-agnostic.
   /// - [onReset]: called after [resetDelay] on a wrong answer. Wrap reset
-  ///   state mutations in `setState(...)` here.
-  /// - [resetDelay]: how long to wait before resetting on a wrong answer.
+  ///   state mutations in setState here.
+  /// - [resetDelay]: how long to wait before auto-resetting on a wrong answer.
   ///   Defaults to 2 seconds.
   void submitAnswer({
     required bool isCorrect,
@@ -113,37 +120,47 @@ mixin GameAnswerHandler<T extends StatefulWidget> on State<T> {
     if (_isSubmitting) return;
     _isSubmitting = true;
 
-    isAnswered = true;
+    this.isAnswered = true;
     this.isCorrect = isCorrect;
 
-    // Apply local visual state in a single synchronous pass.
+    // Apply local visual state in a single synchronous pass before the BLoC
+    // event so the UI reflects the selection immediately (0-frame latency).
     onUpdate();
 
-    // Dispatch to the BLoC.
-    // The BLoC handles: sound, haptics, lives, wrongCount, isFinalFailure.
-    // Screens only handle: selectedIndex, isAnswered, isCorrect (visual state).
+    // Dispatch to the BLoC. The BLoC is responsible for: sound, haptics,
+    // lives decrement, wrongCount, and isFinalFailure logic.
+    // This screen is responsible for: selectedIndex, isAnswered, isCorrect.
     onSubmitEvent();
 
     if (!isCorrect && onReset != null) {
+      // Cancel any previously scheduled reset before scheduling a new one.
       _resetTimer?.cancel();
       _resetTimer = Timer(resetDelay, () {
         if (mounted) {
-          isAnswered = false;
+          this.isAnswered = false;
           this.isCorrect = null;
           onReset();
           _isSubmitting = false;
         }
       });
     } else {
-      // For correct answers, unlock immediately so the user can tap Next.
+      // Correct answers unlock immediately so the user can tap Next without
+      // waiting for a timer to expire.
       _isSubmitting = false;
     }
   }
 
   /// Cancels any pending auto-reset timer and unlocks submission.
   ///
-  /// Call this when [NextQuestion] is dispatched so the timer does not
-  /// fire and corrupt state after the question has already advanced.
+  /// Call this when [NextQuestion] is dispatched so the timer does not fire
+  /// and corrupt state after the question has already advanced.
+  ///
+  /// Typical call sequence for advancing to the next question:
+  /// ```dart
+  /// cancelResetTimer();
+  /// resetAnswerState();
+  /// context.read<MyBloc>().add(const NextQuestion());
+  /// ```
   void cancelResetTimer() {
     _resetTimer?.cancel();
     _resetTimer = null;

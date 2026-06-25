@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 
 /// Immutable model representing a narrative milestones/narrative trigger.
 class StoryBeat {
@@ -36,122 +37,222 @@ class StoryServiceImpl implements StoryService {
   // Granular Scripts for Modern Games (100+ Specific Types)
   static const Map<String, String> modernGameScripts = {
     // Accent
-    'consonantClarity': "Precision is power. Let's refine your consonants for crystal-clear communication.",
-    'dialectDrill': "Travel with your voice. Mastering this dialect is your passport to authentic speech.",
-    'intonationMimic': "Music in motion. Capture the natural melody of the language with perfect intonation.",
-    'minimalPairs': "The subtle shift. Distinguish the tiny sounds that make a world of difference.",
-    'pitchPatternMatch': "Highs and lows. Match the emotional pitch of native speakers with total accuracy.",
-    'shadowingChallenge': "The Perfect Echo. Follow the rhythm of a native speaker in real-time.",
-    'speedVariance': "Control the tempo. Learn to speak with natural speed without losing your clarity.",
-    'syllableStress': "Put the weight where it counts. Master the rhythm of words through perfect stress.",
-    'vowelDistinction': "Pure sounds. Learn to distinguish between the most subtle vowel variations.",
-    'wordLinking': "The Flow of Fluency. Connect your words like a native speaker for a smooth transition.",
-    'pitchModulation': "Dynamic range. Control your pitch to convey deep meaning and emotion.",
-    'connectedSpeech': "The Secret Bridge. Master the art of linking sounds in fast, natural speech.",
+    'consonantClarity':
+        "Precision is power. Let's refine your consonants for crystal-clear communication.",
+    'dialectDrill':
+        "Travel with your voice. Mastering this dialect is your passport to authentic speech.",
+    'intonationMimic':
+        "Music in motion. Capture the natural melody of the language with perfect intonation.",
+    'minimalPairs':
+        "The subtle shift. Distinguish the tiny sounds that make a world of difference.",
+    'pitchPatternMatch':
+        "Highs and lows. Match the emotional pitch of native speakers with total accuracy.",
+    'shadowingChallenge':
+        "The Perfect Echo. Follow the rhythm of a native speaker in real-time.",
+    'speedVariance':
+        "Control the tempo. Learn to speak with natural speed without losing your clarity.",
+    'syllableStress':
+        "Put the weight where it counts. Master the rhythm of words through perfect stress.",
+    'vowelDistinction':
+        "Pure sounds. Learn to distinguish between the most subtle vowel variations.",
+    'wordLinking':
+        "The Flow of Fluency. Connect your words like a native speaker for a smooth transition.",
+    'pitchModulation':
+        "Dynamic range. Control your pitch to convey deep meaning and emotion.",
+    'connectedSpeech':
+        "The Secret Bridge. Master the art of linking sounds in fast, natural speech.",
 
     // Grammar
-    'articleInsertion': "A, An, The. The small words that build big structures. Let's place them perfectly.",
-    'clauseConnector': "The Bridge Builder. Link your thoughts into powerful, complex sentences.",
-    'grammarQuest': "The Nexus Trial. Prove your mastery of the laws that govern the language.",
-    'modifierPlacement': "Precision description. Place your modifiers for maximum clarity and impact.",
-    'partsOfSpeech': "The Building Blocks. Identify the core components of every great sentence.",
-    'questionFormatter': "The Seeker of Truth. Learn to craft the perfect questions for any situation.",
-    'sentenceCorrection': "The Architect's Eye. Find and fix the structural flaws in these sentences.",
-    'subjectVerbAgreement': "Perfect Harmony. Ensure your subjects and verbs work together in total unity.",
-    'tenseMastery': "The Time Traveler. Command the past, present, and future with absolute confidence.",
-    'voiceSwap': "Active to Passive. Change the perspective of your sentences with strategic skill.",
-    'wordReorder': "The Puzzle Master. Rearrange these words to reveal the hidden meaning within.",
-    'modalsSelection': "Degrees of Certainty. Use modals to express possibility, ability, and necessity.",
-    'prepositionChoice': "Spatial Intelligence. Place your objects in the perfect context with prepositions.",
-    'pronounResolution': "Identity Logic. Master the art of clear reference through perfect pronouns.",
-    'punctuationMastery': "The Rhythm of Reading. Use punctuation to guide the breath and the mind.",
-    'relativeClauses': "Depth of Detail. Add layers of meaning to your subjects with relative clauses.",
-    'conditionals': "The Logic of 'If'. Explore the world of possibility and consequence.",
-    'conjunctions': "Logic Links. Use conjunctions to create smooth, logical transitions.",
-    'directIndirectSpeech': "The Messenger's Art. Master the subtle shift between quoted and reported speech.",
+    'articleInsertion':
+        "A, An, The. The small words that build big structures. Let's place them perfectly.",
+    'clauseConnector':
+        "The Bridge Builder. Link your thoughts into powerful, complex sentences.",
+    'grammarQuest':
+        "The Nexus Trial. Prove your mastery of the laws that govern the language.",
+    'modifierPlacement':
+        "Precision description. Place your modifiers for maximum clarity and impact.",
+    'partsOfSpeech':
+        "The Building Blocks. Identify the core components of every great sentence.",
+    'questionFormatter':
+        "The Seeker of Truth. Learn to craft the perfect questions for any situation.",
+    'sentenceCorrection':
+        "The Architect's Eye. Find and fix the structural flaws in these sentences.",
+    'subjectVerbAgreement':
+        "Perfect Harmony. Ensure your subjects and verbs work together in total unity.",
+    'tenseMastery':
+        "The Time Traveler. Command the past, present, and future with absolute confidence.",
+    'voiceSwap':
+        "Active to Passive. Change the perspective of your sentences with strategic skill.",
+    'wordReorder':
+        "The Puzzle Master. Rearrange these words to reveal the hidden meaning within.",
+    'modalsSelection':
+        "Degrees of Certainty. Use modals to express possibility, ability, and necessity.",
+    'prepositionChoice':
+        "Spatial Intelligence. Place your objects in the perfect context with prepositions.",
+    'pronounResolution':
+        "Identity Logic. Master the art of clear reference through perfect pronouns.",
+    'punctuationMastery':
+        "The Rhythm of Reading. Use punctuation to guide the breath and the mind.",
+    'relativeClauses':
+        "Depth of Detail. Add layers of meaning to your subjects with relative clauses.",
+    'conditionals':
+        "The Logic of 'If'. Explore the world of possibility and consequence.",
+    'conjunctions':
+        "Logic Links. Use conjunctions to create smooth, logical transitions.",
+    'directIndirectSpeech':
+        "The Messenger's Art. Master the subtle shift between quoted and reported speech.",
 
     // Listening
-    'ambientId': "Soundscape Discovery. Identify the subtle sounds hidden in your environment.",
-    'audioFillBlanks': "The Missing Link. Hear the gaps and complete the message with total accuracy.",
-    'audioMultipleChoice': "Selective Hearing. Identify the true message amidst a sea of options.",
-    'audioSentenceOrder': "The Rhythm of Story. Reconstruct the sequence of sounds into a narrative.",
-    'audioTrueFalse': "Fact or Fiction. Train your ears to detect the truth in spoken messages.",
-    'detailSpotlight': "Laser Focus. Tune in to the specific details that others usually miss.",
-    'emotionRecognition': "The Heart's Resonance. Hear the feelings hidden behind every spoken word.",
-    'fastSpeechDecoder': "Speed Listening. Unlock the meaning of fast-paced, natural conversation.",
-    'listeningInference': "Between the Whispers. Hear what isn't said and understand the subtext.",
-    'soundImageMatch': "Visual Harmony. Connect the sounds of the world with their visual forms.",
+    'ambientId':
+        "Soundscape Discovery. Identify the subtle sounds hidden in your environment.",
+    'audioFillBlanks':
+        "The Missing Link. Hear the gaps and complete the message with total accuracy.",
+    'audioMultipleChoice':
+        "Selective Hearing. Identify the true message amidst a sea of options.",
+    'audioSentenceOrder':
+        "The Rhythm of Story. Reconstruct the sequence of sounds into a narrative.",
+    'audioTrueFalse':
+        "Fact or Fiction. Train your ears to detect the truth in spoken messages.",
+    'detailSpotlight':
+        "Laser Focus. Tune in to the specific details that others usually miss.",
+    'emotionRecognition':
+        "The Heart's Resonance. Hear the feelings hidden behind every spoken word.",
+    'fastSpeechDecoder':
+        "Speed Listening. Unlock the meaning of fast-paced, natural conversation.",
+    'listeningInference':
+        "Between the Whispers. Hear what isn't said and understand the subtext.",
+    'soundImageMatch':
+        "Visual Harmony. Connect the sounds of the world with their visual forms.",
 
     // Reading
-    'findWordMeaning': "Contextual Detective. Unlock the meaning of new words through the power of context.",
-    'guessTitle': "The Big Picture. Identify the core theme and give this story its true name.",
-    'paragraphSummary': "The Essence of Thought. Condense complex ideas into their purest form.",
-    'readAndAnswer': "Knowledge Retrieval. Prove your comprehension by finding the key facts.",
-    'readAndMatch': "Pattern Recognition. Connect related ideas across a vast landscape of text.",
-    'readingConclusion': "The Logical Leap. Draw the final conclusion from the evidence provided.",
-    'readingInference': "Silent Discovery. Read between the lines to find the hidden truth.",
-    'readingSpeedCheck': "Rapid Comprehension. Read with speed without sacrificing your understanding.",
-    'sentenceOrderReading': "Narrative Logic. Rebuild the story by placing every sentence in its home.",
-    'trueFalseReading': "Critical Analysis. Verify the facts and separate truth from assumption.",
-    'skimmingScanning': "Visual Efficiency. Find exactly what you need in a sea of information.",
-    'clozeTest': "The Completionist. Use logic and context to fill the gaps in the narrative.",
+    'findWordMeaning':
+        "Contextual Detective. Unlock the meaning of new words through the power of context.",
+    'guessTitle':
+        "The Big Picture. Identify the core theme and give this story its true name.",
+    'paragraphSummary':
+        "The Essence of Thought. Condense complex ideas into their purest form.",
+    'readAndAnswer':
+        "Knowledge Retrieval. Prove your comprehension by finding the key facts.",
+    'readAndMatch':
+        "Pattern Recognition. Connect related ideas across a vast landscape of text.",
+    'readingConclusion':
+        "The Logical Leap. Draw the final conclusion from the evidence provided.",
+    'readingInference':
+        "Silent Discovery. Read between the lines to find the hidden truth.",
+    'readingSpeedCheck':
+        "Rapid Comprehension. Read with speed without sacrificing your understanding.",
+    'sentenceOrderReading':
+        "Narrative Logic. Rebuild the story by placing every sentence in its home.",
+    'trueFalseReading':
+        "Critical Analysis. Verify the facts and separate truth from assumption.",
+    'skimmingScanning':
+        "Visual Efficiency. Find exactly what you need in a sea of information.",
+    'clozeTest':
+        "The Completionist. Use logic and context to fill the gaps in the narrative.",
 
     // Roleplay
-    'branchingDialogue': "Infinite Paths. Every choice you make creates a new reality. Choose wisely.",
-    'conflictResolver': "The Peacekeeper. Use the power of words to turn tension into harmony.",
-    'elevatorPitch': "Impact in Seconds. Deliver your message with maximum power and brevity.",
-    'emergencyHub': "Calm in Chaos. Use precise language to handle high-pressure situations.",
-    'gourmetOrder': "The Social Connoisseur. Handle sophisticated dining scenarios with grace.",
-    'jobInterview': "Professional Zenith. Present your best self and win the future you want.",
-    'medicalConsult': "Clarity of Care. Use precise language to communicate health and wellness.",
-    'situationalResponse': "Adaptive Intelligence. React to any social scenario with perfect timing.",
-    'socialSpark': "The Charismatic Leader. Ignite connections and lead any conversation.",
-    'travelDesk': "Global Citizen. Navigate the world with confidence and linguistic skill.",
+    'branchingDialogue':
+        "Infinite Paths. Every choice you make creates a new reality. Choose wisely.",
+    'conflictResolver':
+        "The Peacekeeper. Use the power of words to turn tension into harmony.",
+    'elevatorPitch':
+        "Impact in Seconds. Deliver your message with maximum power and brevity.",
+    'emergencyHub':
+        "Calm in Chaos. Use precise language to handle high-pressure situations.",
+    'gourmetOrder':
+        "The Social Connoisseur. Handle sophisticated dining scenarios with grace.",
+    'jobInterview':
+        "Professional Zenith. Present your best self and win the future you want.",
+    'medicalConsult':
+        "Clarity of Care. Use precise language to communicate health and wellness.",
+    'situationalResponse':
+        "Adaptive Intelligence. React to any social scenario with perfect timing.",
+    'socialSpark':
+        "The Charismatic Leader. Ignite connections and lead any conversation.",
+    'travelDesk':
+        "Global Citizen. Navigate the world with confidence and linguistic skill.",
 
     // Speaking
-    'dailyExpression': "The Natural Voice. Master the common phrases used in everyday life.",
-    'dialogueRoleplay': "The Conversationist. Practice the art of back-and-forth social interaction.",
-    'pronunciationFocus': "Phonetic Perfection. Refine the specific sounds that define your speech.",
-    'repeatSentence': "The Vocal Mirror. Mirror the rhythm and tone of a native speaker.",
-    'sceneDescriptionSpeaking': "Vivid Imagery. Use your voice to paint a picture for your listeners.",
-    'situationSpeaking': "Contextual Speech. Adapt your voice to meet the needs of any situation.",
-    'speakMissingWord': "Cognitive Speech. Think and speak simultaneously to complete the thought.",
-    'speakOpposite': "Dynamic Reversal. Train your brain to find the antonym in real-time.",
-    'speakSynonym': "Linguistic Variety. Expand your range by finding new ways to say the same thing.",
-    'yesNoSpeaking': "Rapid Response. Train your reflexes for fast, accurate communication.",
+    'dailyExpression':
+        "The Natural Voice. Master the common phrases used in everyday life.",
+    'dialogueRoleplay':
+        "The Conversationist. Practice the art of back-and-forth social interaction.",
+    'pronunciationFocus':
+        "Phonetic Perfection. Refine the specific sounds that define your speech.",
+    'repeatSentence':
+        "The Vocal Mirror. Mirror the rhythm and tone of a native speaker.",
+    'sceneDescriptionSpeaking':
+        "Vivid Imagery. Use your voice to paint a picture for your listeners.",
+    'situationSpeaking':
+        "Contextual Speech. Adapt your voice to meet the needs of any situation.",
+    'speakMissingWord':
+        "Cognitive Speech. Think and speak simultaneously to complete the thought.",
+    'speakOpposite':
+        "Dynamic Reversal. Train your brain to find the antonym in real-time.",
+    'speakSynonym':
+        "Linguistic Variety. Expand your range by finding new ways to say the same thing.",
+    'yesNoSpeaking':
+        "Rapid Response. Train your reflexes for fast, accurate communication.",
 
     // Vocabulary
-    'academicWord': "Scholarly Power. Master the advanced vocabulary of higher learning.",
-    'antonymSearch': "The Shadow Side. Find the perfect opposite for every word in your arsenal.",
-    'contextClues': "The Detective's Mind. Use the surrounding world to unlock unknown meanings.",
-    'flashcards': "The Memory Bank. Build your foundation through rapid, focused repetition.",
-    'idioms': "Cultural Secrets. Unlock the colorful phrases that define native speech.",
-    'phrasalVerbs': "The Action Multiplier. Master the complex combinations of verbs and prepositions.",
-    'prefixSuffix': "Word Alchemy. Use prefixes and suffixes to transform and create new words.",
-    'synonymSearch': "The Lexical Explorer. Find the many shades of meaning in every word.",
-    'topicVocab': "Domain Mastery. Learn the specific words that define any subject area.",
-    'wordFormation': "The Morphologist. Learn how words are built from their core roots.",
-    'contextualUsage': "Strategic Application. Use the right word in exactly the right way.",
-    'collocations': "Natural Pairs. Learn which words naturally belong together in fluent speech.",
+    'academicWord':
+        "Scholarly Power. Master the advanced vocabulary of higher learning.",
+    'antonymSearch':
+        "The Shadow Side. Find the perfect opposite for every word in your arsenal.",
+    'contextClues':
+        "The Detective's Mind. Use the surrounding world to unlock unknown meanings.",
+    'flashcards':
+        "The Memory Bank. Build your foundation through rapid, focused repetition.",
+    'idioms':
+        "Cultural Secrets. Unlock the colorful phrases that define native speech.",
+    'phrasalVerbs':
+        "The Action Multiplier. Master the complex combinations of verbs and prepositions.",
+    'prefixSuffix':
+        "Word Alchemy. Use prefixes and suffixes to transform and create new words.",
+    'synonymSearch':
+        "The Lexical Explorer. Find the many shades of meaning in every word.",
+    'topicVocab':
+        "Domain Mastery. Learn the specific words that define any subject area.",
+    'wordFormation':
+        "The Morphologist. Learn how words are built from their core roots.",
+    'contextualUsage':
+        "Strategic Application. Use the right word in exactly the right way.",
+    'collocations':
+        "Natural Pairs. Learn which words naturally belong together in fluent speech.",
 
     // Writing
-    'completeSentence': "The Architect of Thought. Build a complete, powerful message from a fragment.",
-    'correctionWriting': "The Editor's Edge. Refine and polish your writing to professional standards.",
-    'dailyJournal': "Personal Reflection. Use writing to explore your own thoughts and experiences.",
-    'describeSituationWriting': "Atmospheric Prose. Paint a scene using only the power of your words.",
-    'essayDrafting': "Logical Structure. Build a compelling argument through structured writing.",
-    'fixTheSentence': "The Structural Fixer. Identify and repair errors in complex written logic.",
-    'opinionWriting': "The Persuader. Use your written voice to influence and convince others.",
-    'sentenceBuilder': "Construction Logic. Assemble the pieces of a sentence into a perfect whole.",
-    'shortAnswerWriting': "Brevity and Power. Convey your message with maximum efficiency.",
-    'summarizeStoryWriting': "The Narrative Distiller. Capture the core of a story in just a few words.",
-    'writingEmail': "Digital Correspondence. Master the art of professional and personal emails.",
+    'completeSentence':
+        "The Architect of Thought. Build a complete, powerful message from a fragment.",
+    'correctionWriting':
+        "The Editor's Edge. Refine and polish your writing to professional standards.",
+    'dailyJournal':
+        "Personal Reflection. Use writing to explore your own thoughts and experiences.",
+    'describeSituationWriting':
+        "Atmospheric Prose. Paint a scene using only the power of your words.",
+    'essayDrafting':
+        "Logical Structure. Build a compelling argument through structured writing.",
+    'fixTheSentence':
+        "The Structural Fixer. Identify and repair errors in complex written logic.",
+    'opinionWriting':
+        "The Persuader. Use your written voice to influence and convince others.",
+    'sentenceBuilder':
+        "Construction Logic. Assemble the pieces of a sentence into a perfect whole.",
+    'shortAnswerWriting':
+        "Brevity and Power. Convey your message with maximum efficiency.",
+    'summarizeStoryWriting':
+        "The Narrative Distiller. Capture the core of a story in just a few words.",
+    'writingEmail':
+        "Digital Correspondence. Master the art of professional and personal emails.",
 
     // Elite Mastery
-    'storyBuilder': "The Legend Creator. Build an epic narrative that will be remembered forever.",
-    'idiomMatch': "Cultural Expert. Prove your deep understanding of the language's soul.",
-    'speedSpelling': "Rapid Precision. Master the orthography of the most difficult words.",
-    'accentShadowing': "The Ultimate Chameleon. Reach the pinnacle of native-level resonance.",
+    'storyBuilder':
+        "The Legend Creator. Build an epic narrative that will be remembered forever.",
+    'idiomMatch':
+        "Cultural Expert. Prove your deep understanding of the language's soul.",
+    'speedSpelling':
+        "Rapid Precision. Master the orthography of the most difficult words.",
+    'accentShadowing':
+        "The Ultimate Chameleon. Reach the pinnacle of native-level resonance.",
   };
 
   static const Map<String, List<String>> kidsScripts = {
@@ -423,7 +524,10 @@ class StoryServiceImpl implements StoryService {
       if (modernGameScripts.containsKey(categoryId)) {
         return StoryBeat(
           title: context.tr('story.new_quest'),
-          text: context.tr('story_scripts.$categoryId', fallback: modernGameScripts[categoryId]!),
+          text: context.tr(
+            'story_scripts.$categoryId',
+            fallback: modernGameScripts[categoryId]!,
+          ),
           mascotEmoji: _getMascotEmoji(categoryId),
           themeColor: _getCategoryColor(categoryId),
         );
@@ -433,24 +537,51 @@ class StoryServiceImpl implements StoryService {
       if (kidsScripts.containsKey(cleanId)) {
         return StoryBeat(
           title: context.tr('story.new_quest'),
-          text: context.tr('story_scripts.$cleanId', fallback: kidsScripts[cleanId]![0]),
+          text: context.tr(
+            'story_scripts.$cleanId',
+            fallback: kidsScripts[cleanId]![0],
+          ),
           mascotEmoji: _getMascotEmoji(cleanId),
           themeColor: _getCategoryColor(cleanId),
         );
       }
 
       // Universal Fallback with Category Intelligence
-      final bool isKids = categoryId.contains('kids') || 
-                     ['alphabet', 'numbers', 'colors', 'shapes', 'animals', 'fruits', 'family', 'school', 'verbs', 'routine', 'emotions', 'prepositions', 'phonics', 'time', 'opposites', 'daynight', 'nature', 'home', 'food', 'transport', 'bodyparts', 'clothing'].contains(cleanId);
-      
+      final bool isKids =
+          categoryId.contains('kids') ||
+          [
+            'alphabet',
+            'numbers',
+            'colors',
+            'shapes',
+            'animals',
+            'fruits',
+            'family',
+            'school',
+            'verbs',
+            'routine',
+            'emotions',
+            'prepositions',
+            'phonics',
+            'time',
+            'opposites',
+            'daynight',
+            'nature',
+            'home',
+            'food',
+            'transport',
+            'bodyparts',
+            'clothing',
+          ].contains(cleanId);
+
       final String broadCategory = _getBroadCategory(categoryId);
-      final String categoryName = broadCategory.isNotEmpty 
-          ? broadCategory[0].toUpperCase() + broadCategory.substring(1) 
+      final String categoryName = broadCategory.isNotEmpty
+          ? broadCategory[0].toUpperCase() + broadCategory.substring(1)
           : "Vowl";
 
       return StoryBeat(
         title: context.tr('story.new_quest'),
-        text: isKids 
+        text: isKids
             ? context.tr('story.fallback_kids', args: [categoryName])
             : context.tr('story.fallback_modern', args: [categoryName]),
         mascotEmoji: isKids ? "✨" : "🚀",
@@ -464,7 +595,10 @@ class StoryServiceImpl implements StoryService {
       if (beatIndex < script.length) {
         return StoryBeat(
           title: context.tr('story.adventure_log'),
-          text: context.tr('story_scripts.${cleanId}_beat_$beatIndex', fallback: script[beatIndex]),
+          text: context.tr(
+            'story_scripts.${cleanId}_beat_$beatIndex',
+            fallback: script[beatIndex],
+          ),
           mascotEmoji: _getMascotEmoji(cleanId),
           themeColor: _getCategoryColor(cleanId),
         );
@@ -478,7 +612,10 @@ class StoryServiceImpl implements StoryService {
       if (beatIndex < script.length && script[beatIndex].isNotEmpty) {
         return StoryBeat(
           title: context.tr('story.system_update'),
-          text: context.tr('story_scripts.${broadId}_beat_$beatIndex', fallback: script[beatIndex]),
+          text: context.tr(
+            'story_scripts.${broadId}_beat_$beatIndex',
+            fallback: script[beatIndex],
+          ),
           mascotEmoji: _getMascotEmoji(categoryId),
           themeColor: _getCategoryColor(categoryId),
         );
@@ -490,16 +627,18 @@ class StoryServiceImpl implements StoryService {
 
   String _getBroadCategory(String gameType) {
     final String id = gameType.toLowerCase();
-    if (id.contains('grammar')) return 'grammar';
-    if (id.contains('write')) return 'writing';
-    if (id.contains('speak')) return 'speaking';
-    if (id.contains('listen')) return 'listening';
-    if (id.contains('accent')) return 'accent';
-    if (id.contains('vocab')) return 'vocabulary';
-    if (id.contains('roleplay')) return 'roleplay';
-    if (id.contains('read')) return 'reading';
-    if (id.contains('elite')) return 'elitemastery';
-    return '';
+    final bool isKnownSubtype = GameSubtype.values.any(
+      (s) => s.name.toLowerCase() == id,
+    );
+    if (!isKnownSubtype) {
+      // Not a recognized adult/modern GameSubtype id (most likely a
+      // kids-zone topic id like 'animal' or 'food', which is handled
+      // earlier in getStoryBeat() via kidsScripts - this path is only
+      // reached as a fallback). No broad adult category applies.
+      return '';
+    }
+    final subtype = GameSubtype.fromString(gameType);
+    return subtype.category.serializedName;
   }
 
   String _getMascotEmoji(String categoryId) {
@@ -539,13 +678,20 @@ class StoryServiceImpl implements StoryService {
 
   Color _getCategoryColor(String categoryId) {
     final String id = categoryId.toLowerCase();
-    if (id.contains('alphabet') || id.contains('speak')) return const Color(0xFFF43F5E);
-    if (id.contains('number') || id.contains('grammar')) return const Color(0xFF0EA5E9);
-    if (id.contains('color') || id.contains('write')) return const Color(0xFFF59E0B);
-    if (id.contains('animal') || id.contains('listen')) return const Color(0xFF6366F1);
-    if (id.contains('fruit') || id.contains('accent')) return const Color(0xFFEF4444);
-    if (id.contains('emotion') || id.contains('roleplay')) return const Color(0xFF06B6D4);
-    if (id.contains('transport') || id.contains('read')) return const Color(0xFF2563EB);
+    if (id.contains('alphabet') || id.contains('speak'))
+      return const Color(0xFFF43F5E);
+    if (id.contains('number') || id.contains('grammar'))
+      return const Color(0xFF0EA5E9);
+    if (id.contains('color') || id.contains('write'))
+      return const Color(0xFFF59E0B);
+    if (id.contains('animal') || id.contains('listen'))
+      return const Color(0xFF6366F1);
+    if (id.contains('fruit') || id.contains('accent'))
+      return const Color(0xFFEF4444);
+    if (id.contains('emotion') || id.contains('roleplay'))
+      return const Color(0xFF06B6D4);
+    if (id.contains('transport') || id.contains('read'))
+      return const Color(0xFF2563EB);
     if (id.contains('elite')) return const Color(0xFFFFD700);
     return const Color(0xFF6366F1);
   }

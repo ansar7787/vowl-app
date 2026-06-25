@@ -1,44 +1,45 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:meta/meta.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/features/auth/domain/repositories/gamification_repository.dart';
-import 'package:vowl/core/utils/review_service.dart';
 
-/// Use case updating player progress levels, daily milestones, and coins.
+/// Records a game-level completion and updates XP, coins, completed levels,
+/// unlocked levels, daily XP history, and the recent-activity feed atomically
+/// inside a single Firestore transaction.
 ///
-/// Refactored to cleanly accept injected [ReviewService] dependencies at construction time,
-/// decoupling the Domain layer from concrete presentation service locators.
+/// ### Side effects
+/// This use case is a pure data operation. Presentation-layer side effects
+/// (e.g., in-app review prompts via [ReviewService]) must be invoked by the
+/// caller on a [Right] result — the domain layer must not depend on
+/// presentation services.
+///
+/// ```dart
+/// final result = await updateUserRewards(params);
+/// result.fold(
+///   (failure) => handleFailure(failure),
+///   (_) => reviewService.notifyQuestCompleted(),  // ← caller's responsibility
+/// );
+/// ```
 class UpdateUserRewards extends UseCase<void, UpdateUserRewardsParams> {
   final GamificationRepository repository;
-  final ReviewService _reviewService;
 
-  UpdateUserRewards(this.repository, this._reviewService);
+  const UpdateUserRewards(this.repository);
 
   @override
-  Future<Either<Failure, void>> call(UpdateUserRewardsParams params) async {
-    final result = await repository.updateUserRewards(
-      gameType: params.gameType,
-      level: params.level,
-      xpIncrease: params.xpIncrease,
-      coinIncrease: params.coinIncrease,
-      isDoubleReward: params.isDoubleReward,
-    );
-
-    // Organically notify ReviewService upon successful level completions
-    result.fold(
-      (failure) => null,
-      (_) {
-        try {
-          _reviewService.notifyQuestCompleted();
-        } catch (_) {}
-      },
-    );
-
-    return result;
-  }
+  Future<Either<Failure, void>> call(UpdateUserRewardsParams params) =>
+      repository.updateUserRewards(
+        gameType: params.gameType,
+        level: params.level,
+        xpIncrease: params.xpIncrease,
+        coinIncrease: params.coinIncrease,
+        isDoubleReward: params.isDoubleReward,
+      );
 }
 
+/// Immutable value object carrying the reward parameters for [UpdateUserRewards].
+@immutable
 class UpdateUserRewardsParams extends Equatable {
   final String gameType;
   final int level;
@@ -55,5 +56,11 @@ class UpdateUserRewardsParams extends Equatable {
   });
 
   @override
-  List<Object?> get props => [gameType, level, xpIncrease, coinIncrease, isDoubleReward];
+  List<Object?> get props => [
+    gameType,
+    level,
+    xpIncrease,
+    coinIncrease,
+    isDoubleReward,
+  ];
 }

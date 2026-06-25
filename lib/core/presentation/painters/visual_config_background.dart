@@ -4,7 +4,7 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 
 /// Factory that maps `visual_config.painter_type` strings to actual
 /// animated background widgets for quest screens.
-/// 
+///
 /// Incorporates a global [RepaintBoundary] layer to isolate all animated custom
 /// painters and block redundant layout recalculation sweeps.
 class VisualConfigBackground extends StatelessWidget {
@@ -14,7 +14,10 @@ class VisualConfigBackground extends StatelessWidget {
 
   Color get _primaryColor {
     try {
-      String hexColor = config.primaryColor.replaceAll('#', '').replaceAll('0x', '').trim();
+      String hexColor = config.primaryColor
+          .replaceAll('#', '')
+          .replaceAll('0x', '')
+          .trim();
       if (hexColor.length == 6) {
         hexColor = 'FF$hexColor'; // Full opacity standard
       }
@@ -26,43 +29,81 @@ class VisualConfigBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IgnorePointer(
-      child: RepaintBoundary(
-        child: _buildPainter(),
-      ),
-    );
+    return IgnorePointer(child: RepaintBoundary(child: _buildPainter()));
   }
 
   Widget _buildPainter() {
     switch (config.painterType) {
       case 'FrequencyLockSync':
-        return _FrequencyLockWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _FrequencyLockWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
       case 'DataLogSync':
-        return _DataLogWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _DataLogWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
       case 'NeuralNegotiationSync':
-        return _NeuralNetworkWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _NeuralNetworkWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
       case 'ArchiveDecryptSync':
-        return _ArchiveDecryptWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _ArchiveDecryptWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
       case 'CouncilHallSync':
-        return _CouncilHallWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _CouncilHallWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
       case 'PurgeGridSync':
-        return _PurgeGridWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _PurgeGridWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
       case 'VocabNexusSync':
-        return _VocabNexusWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _VocabNexusWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
       case 'BlueprintGridSync':
-        return _BlueprintGridWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _BlueprintGridWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
       case 'SonarScanSync':
-        return _SonarScanWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _SonarScanWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
       case 'MechanicalLinkSync':
-        return _MechanicalLinkWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _MechanicalLinkWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
       case 'MagneticFieldSync':
-        return _MagneticFieldWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _MagneticFieldWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
       case 'SemanticAuraSync':
-        return _SemanticAuraWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _SemanticAuraWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
       case 'ValidatorMatrixSync':
-        return _ValidatorMatrixWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _ValidatorMatrixWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
       default:
-        return _DataLogWidget(color: _primaryColor, intensity: config.pulseIntensity);
+        return _DataLogWidget(
+          color: _primaryColor,
+          intensity: config.pulseIntensity,
+        );
     }
   }
 }
@@ -121,7 +162,11 @@ class _FrequencyLockPainter extends CustomPainter {
   final double phase;
   final double intensity;
 
-  _FrequencyLockPainter({required this.color, required this.phase, required this.intensity});
+  _FrequencyLockPainter({
+    required this.color,
+    required this.phase,
+    required this.intensity,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -135,7 +180,9 @@ class _FrequencyLockPainter extends CustomPainter {
       final yCenter = size.height * (0.3 + w * 0.2);
       path.moveTo(0, yCenter);
       for (double x = 0; x <= size.width; x += 2) {
-        final y = yCenter + sin((x / size.width * 4 * pi) + phase + w) * 20 * intensity;
+        final y =
+            yCenter +
+            sin((x / size.width * 4 * pi) + phase + w) * 20 * intensity;
         path.lineTo(x, y);
       }
       canvas.drawPath(path, paint);
@@ -200,7 +247,11 @@ class _DataLogPainter extends CustomPainter {
   final double offset;
   final double intensity;
 
-  _DataLogPainter({required this.color, required this.offset, required this.intensity});
+  _DataLogPainter({
+    required this.color,
+    required this.offset,
+    required this.intensity,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -255,12 +306,14 @@ class _NeuralNetworkWidgetState extends State<_NeuralNetworkWidget>
 
     final rng = Random(42);
     for (int i = 0; i < 12; i++) {
-      _nodes.add(_Node(
-        x: rng.nextDouble(),
-        y: rng.nextDouble(),
-        dx: (rng.nextDouble() - 0.5) * 0.02,
-        dy: (rng.nextDouble() - 0.5) * 0.02,
-      ));
+      _nodes.add(
+        _Node(
+          x: rng.nextDouble(),
+          y: rng.nextDouble(),
+          dx: (rng.nextDouble() - 0.5) * 0.02,
+          dy: (rng.nextDouble() - 0.5) * 0.02,
+        ),
+      );
     }
   }
 
@@ -394,7 +447,11 @@ class _ArchiveDecryptPainter extends CustomPainter {
   final double t;
   final double intensity;
 
-  _ArchiveDecryptPainter({required this.color, required this.t, required this.intensity});
+  _ArchiveDecryptPainter({
+    required this.color,
+    required this.t,
+    required this.intensity,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -408,7 +465,12 @@ class _ArchiveDecryptPainter extends CustomPainter {
         final phase = sin(t * 2 * pi + r * 0.3 + c * 0.5);
         if (phase > 0.3) {
           canvas.drawRect(
-            Rect.fromLTWH(c * cellSize + 1, r * cellSize + 1, cellSize - 2, cellSize - 2),
+            Rect.fromLTWH(
+              c * cellSize + 1,
+              r * cellSize + 1,
+              cellSize - 2,
+              cellSize - 2,
+            ),
             paint,
           );
         }
@@ -474,7 +536,11 @@ class _CouncilHallPainter extends CustomPainter {
   final double t;
   final double intensity;
 
-  _CouncilHallPainter({required this.color, required this.t, required this.intensity});
+  _CouncilHallPainter({
+    required this.color,
+    required this.t,
+    required this.intensity,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -551,7 +617,11 @@ class _PurgeGridPainter extends CustomPainter {
   final double t;
   final double intensity;
 
-  _PurgeGridPainter({required this.color, required this.t, required this.intensity});
+  _PurgeGridPainter({
+    required this.color,
+    required this.t,
+    required this.intensity,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -577,11 +647,16 @@ class _PurgeGridPainter extends CustomPainter {
       ],
     );
 
-    final rect = Rect.fromLTWH(0, sweepY - sweepHeight / 2, size.width, sweepHeight);
+    final rect = Rect.fromLTWH(
+      0,
+      sweepY - sweepHeight / 2,
+      size.width,
+      sweepHeight,
+    );
     final paint = Paint()..shader = gradient.createShader(rect);
     canvas.drawRect(rect, paint);
   }
- 
+
   @override
   bool shouldRepaint(covariant _PurgeGridPainter old) => old.t != t;
 }
@@ -640,7 +715,18 @@ class _VocabNexusPainter extends CustomPainter {
   final double t;
   final double intensity;
 
-  _VocabNexusPainter({required this.color, required this.t, required this.intensity});
+  _VocabNexusPainter({
+    required this.color,
+    required this.t,
+    required this.intensity,
+  });
+
+  // PERF FIX: Random(42) was allocated inside paint() on every frame (60/s).
+  // Since the seed is constant, the output sequence never changes.
+  // Pre-compute x-positions once at class level — zero per-frame allocation.
+  static final List<double> _circuitXFactors = List<double>.unmodifiable(
+    List.generate(5, (i) => Random(42 + i).nextDouble()),
+  );
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -650,31 +736,36 @@ class _VocabNexusPainter extends CustomPainter {
       ..strokeWidth = 1.0;
 
     final center = Offset(size.width / 2, size.height / 2);
-    final rng = Random(42);
 
     // Draw hex-grid connections
     for (int i = 0; i < 8; i++) {
       final angle = (i * pi / 4) + (t * 2 * pi * 0.1);
       final p1 = center + Offset(cos(angle) * 100, sin(angle) * 100);
-      final p2 = center + Offset(cos(angle + pi / 4) * 150, sin(angle + pi / 4) * 150);
-      
+      final p2 =
+          center + Offset(cos(angle + pi / 4) * 150, sin(angle + pi / 4) * 150);
+
       canvas.drawLine(p1, p2, paint);
-      
+
       // Pulsing nodes
       final pulse = (sin(t * 2 * pi + i) + 1) / 2;
-      final nodePaint = Paint()..color = color.withValues(alpha: 0.1 * pulse * intensity);
+      final nodePaint = Paint()
+        ..color = color.withValues(alpha: 0.1 * pulse * intensity);
       canvas.drawCircle(p1, 4 * pulse, nodePaint);
     }
 
-    // Circuit paths
+    // Circuit paths — use pre-computed x-factors (no per-frame allocation)
     final circuitPaint = Paint()
       ..color = color.withValues(alpha: 0.03 * intensity)
       ..strokeWidth = 0.5;
-      
+
     for (int j = 0; j < 5; j++) {
-      final startX = rng.nextDouble() * size.width;
+      final startX = _circuitXFactors[j] * size.width;
       final startY = (t * size.height + j * 100) % size.height;
-      canvas.drawLine(Offset(startX, startY), Offset(startX + 50, startY + 50), circuitPaint);
+      canvas.drawLine(
+        Offset(startX, startY),
+        Offset(startX + 50, startY + 50),
+        circuitPaint,
+      );
     }
   }
 
@@ -693,21 +784,34 @@ class _BlueprintGridWidget extends StatefulWidget {
   State<_BlueprintGridWidget> createState() => _BlueprintGridWidgetState();
 }
 
-class _BlueprintGridWidgetState extends State<_BlueprintGridWidget> with SingleTickerProviderStateMixin {
+class _BlueprintGridWidgetState extends State<_BlueprintGridWidget>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: const Duration(seconds: 8))..repeat();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 8),
+    )..repeat();
   }
+
   @override
-  void dispose() { _controller.dispose(); super.dispose(); }
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) => CustomPaint(
-        painter: _BlueprintGridPainter(color: widget.color, t: _controller.value, intensity: widget.intensity),
+        painter: _BlueprintGridPainter(
+          color: widget.color,
+          t: _controller.value,
+          intensity: widget.intensity,
+        ),
         size: Size.infinite,
       ),
     );
@@ -718,20 +822,29 @@ class _BlueprintGridPainter extends CustomPainter {
   final Color color;
   final double t;
   final double intensity;
-  _BlueprintGridPainter({required this.color, required this.t, required this.intensity});
+  _BlueprintGridPainter({
+    required this.color,
+    required this.t,
+    required this.intensity,
+  });
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color.withValues(alpha: 0.04 * intensity)..strokeWidth = 1.0;
+    final paint = Paint()
+      ..color = color.withValues(alpha: 0.04 * intensity)
+      ..strokeWidth = 1.0;
     for (double x = 0; x < size.width; x += 40) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
     }
     for (double y = 0; y < size.height; y += 40) {
       canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
     }
-    final diagPaint = Paint()..color = color.withValues(alpha: 0.02 * intensity)..strokeWidth = 0.5;
+    final diagPaint = Paint()
+      ..color = color.withValues(alpha: 0.02 * intensity)
+      ..strokeWidth = 0.5;
     canvas.drawLine(Offset(0, 0), Offset(size.width, size.height), diagPaint);
     canvas.drawLine(Offset(size.width, 0), Offset(0, size.height), diagPaint);
   }
+
   @override
   bool shouldRepaint(covariant _BlueprintGridPainter old) => old.t != t;
 }
@@ -747,21 +860,34 @@ class _SonarScanWidget extends StatefulWidget {
   State<_SonarScanWidget> createState() => _SonarScanWidgetState();
 }
 
-class _SonarScanWidgetState extends State<_SonarScanWidget> with SingleTickerProviderStateMixin {
+class _SonarScanWidgetState extends State<_SonarScanWidget>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: const Duration(seconds: 4))..repeat();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 4),
+    )..repeat();
   }
+
   @override
-  void dispose() { _controller.dispose(); super.dispose(); }
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) => CustomPaint(
-        painter: _SonarScanPainter(color: widget.color, t: _controller.value, intensity: widget.intensity),
+        painter: _SonarScanPainter(
+          color: widget.color,
+          t: _controller.value,
+          intensity: widget.intensity,
+        ),
         size: Size.infinite,
       ),
     );
@@ -772,7 +898,11 @@ class _SonarScanPainter extends CustomPainter {
   final Color color;
   final double t;
   final double intensity;
-  _SonarScanPainter({required this.color, required this.t, required this.intensity});
+  _SonarScanPainter({
+    required this.color,
+    required this.t,
+    required this.intensity,
+  });
   @override
   void paint(Canvas canvas, Size size) {
     final center = Offset(size.width / 2, size.height / 2);
@@ -786,6 +916,7 @@ class _SonarScanPainter extends CustomPainter {
       canvas.drawCircle(center, phase * maxRadius, paint);
     }
   }
+
   @override
   bool shouldRepaint(covariant _SonarScanPainter old) => old.t != t;
 }
@@ -801,21 +932,34 @@ class _MechanicalLinkWidget extends StatefulWidget {
   State<_MechanicalLinkWidget> createState() => _MechanicalLinkWidgetState();
 }
 
-class _MechanicalLinkWidgetState extends State<_MechanicalLinkWidget> with SingleTickerProviderStateMixin {
+class _MechanicalLinkWidgetState extends State<_MechanicalLinkWidget>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: const Duration(seconds: 12))..repeat();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 12),
+    )..repeat();
   }
+
   @override
-  void dispose() { _controller.dispose(); super.dispose(); }
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) => CustomPaint(
-        painter: _MechanicalLinkPainter(color: widget.color, t: _controller.value, intensity: widget.intensity),
+        painter: _MechanicalLinkPainter(
+          color: widget.color,
+          t: _controller.value,
+          intensity: widget.intensity,
+        ),
         size: Size.infinite,
       ),
     );
@@ -826,18 +970,30 @@ class _MechanicalLinkPainter extends CustomPainter {
   final Color color;
   final double t;
   final double intensity;
-  _MechanicalLinkPainter({required this.color, required this.t, required this.intensity});
+  _MechanicalLinkPainter({
+    required this.color,
+    required this.t,
+    required this.intensity,
+  });
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color.withValues(alpha: 0.05 * intensity)..style = PaintingStyle.stroke..strokeWidth = 2.0;
+    final paint = Paint()
+      ..color = color.withValues(alpha: 0.05 * intensity)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2.0;
     final center = Offset(size.width * 0.9, size.height * 0.1);
     final radius = 80.0;
     canvas.drawCircle(center, radius, paint);
     for (int i = 0; i < 8; i++) {
       final angle = (i * pi / 4) + (t * 2 * pi);
-      canvas.drawLine(center + Offset(cos(angle) * radius, sin(angle) * radius), center + Offset(cos(angle) * (radius + 20), sin(angle) * (radius + 20)), paint);
+      canvas.drawLine(
+        center + Offset(cos(angle) * radius, sin(angle) * radius),
+        center + Offset(cos(angle) * (radius + 20), sin(angle) * (radius + 20)),
+        paint,
+      );
     }
   }
+
   @override
   bool shouldRepaint(covariant _MechanicalLinkPainter old) => old.t != t;
 }
@@ -853,21 +1009,34 @@ class _MagneticFieldWidget extends StatefulWidget {
   State<_MagneticFieldWidget> createState() => _MagneticFieldWidgetState();
 }
 
-class _MagneticFieldWidgetState extends State<_MagneticFieldWidget> with SingleTickerProviderStateMixin {
+class _MagneticFieldWidgetState extends State<_MagneticFieldWidget>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: const Duration(seconds: 6))..repeat();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 6),
+    )..repeat();
   }
+
   @override
-  void dispose() { _controller.dispose(); super.dispose(); }
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) => CustomPaint(
-        painter: _MagneticFieldPainter(color: widget.color, t: _controller.value, intensity: widget.intensity),
+        painter: _MagneticFieldPainter(
+          color: widget.color,
+          t: _controller.value,
+          intensity: widget.intensity,
+        ),
         size: Size.infinite,
       ),
     );
@@ -878,18 +1047,31 @@ class _MagneticFieldPainter extends CustomPainter {
   final Color color;
   final double t;
   final double intensity;
-  _MagneticFieldPainter({required this.color, required this.t, required this.intensity});
+  _MagneticFieldPainter({
+    required this.color,
+    required this.t,
+    required this.intensity,
+  });
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color.withValues(alpha: 0.06 * intensity)..style = PaintingStyle.stroke..strokeWidth = 1.0;
+    final paint = Paint()
+      ..color = color.withValues(alpha: 0.06 * intensity)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.0;
     for (int i = 0; i < 5; i++) {
       final path = Path();
       final yStart = size.height * (0.2 + i * 0.15);
       path.moveTo(0, yStart);
-      path.quadraticBezierTo(size.width / 2, yStart + sin(t * 2 * pi + i) * 50, size.width, yStart);
+      path.quadraticBezierTo(
+        size.width / 2,
+        yStart + sin(t * 2 * pi + i) * 50,
+        size.width,
+        yStart,
+      );
       canvas.drawPath(path, paint);
     }
   }
+
   @override
   bool shouldRepaint(covariant _MagneticFieldPainter old) => old.t != t;
 }
@@ -905,21 +1087,34 @@ class _SemanticAuraWidget extends StatefulWidget {
   State<_SemanticAuraWidget> createState() => _SemanticAuraWidgetState();
 }
 
-class _SemanticAuraWidgetState extends State<_SemanticAuraWidget> with SingleTickerProviderStateMixin {
+class _SemanticAuraWidgetState extends State<_SemanticAuraWidget>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: const Duration(seconds: 5))..repeat(reverse: true);
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 5),
+    )..repeat(reverse: true);
   }
+
   @override
-  void dispose() { _controller.dispose(); super.dispose(); }
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) => CustomPaint(
-        painter: _SemanticAuraPainter(color: widget.color, t: _controller.value, intensity: widget.intensity),
+        painter: _SemanticAuraPainter(
+          color: widget.color,
+          t: _controller.value,
+          intensity: widget.intensity,
+        ),
         size: Size.infinite,
       ),
     );
@@ -930,18 +1125,26 @@ class _SemanticAuraPainter extends CustomPainter {
   final Color color;
   final double t;
   final double intensity;
-  _SemanticAuraPainter({required this.color, required this.t, required this.intensity});
+  _SemanticAuraPainter({
+    required this.color,
+    required this.t,
+    required this.intensity,
+  });
   @override
   void paint(Canvas canvas, Size size) {
     final rect = Rect.fromLTWH(0, 0, size.width, size.height);
     final gradient = RadialGradient(
       center: Alignment.center,
       radius: 0.5 + t * 0.2,
-      colors: [color.withValues(alpha: 0.1 * intensity), Colors.transparent],
+      colors: [
+        color.withValues(alpha: 0.1 * intensity),
+        Colors.transparent,
+      ],
     );
     final paint = Paint()..shader = gradient.createShader(rect);
     canvas.drawRect(rect, paint);
   }
+
   @override
   bool shouldRepaint(covariant _SemanticAuraPainter old) => old.t != t;
 }
@@ -957,21 +1160,34 @@ class _ValidatorMatrixWidget extends StatefulWidget {
   State<_ValidatorMatrixWidget> createState() => _ValidatorMatrixWidgetState();
 }
 
-class _ValidatorMatrixWidgetState extends State<_ValidatorMatrixWidget> with SingleTickerProviderStateMixin {
+class _ValidatorMatrixWidgetState extends State<_ValidatorMatrixWidget>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: const Duration(seconds: 15))..repeat();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 15),
+    )..repeat();
   }
+
   @override
-  void dispose() { _controller.dispose(); super.dispose(); }
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) => CustomPaint(
-        painter: _ValidatorMatrixPainter(color: widget.color, t: _controller.value, intensity: widget.intensity),
+        painter: _ValidatorMatrixPainter(
+          color: widget.color,
+          t: _controller.value,
+          intensity: widget.intensity,
+        ),
         size: Size.infinite,
       ),
     );
@@ -982,14 +1198,25 @@ class _ValidatorMatrixPainter extends CustomPainter {
   final Color color;
   final double t;
   final double intensity;
-  _ValidatorMatrixPainter({required this.color, required this.t, required this.intensity});
+  _ValidatorMatrixPainter({
+    required this.color,
+    required this.t,
+    required this.intensity,
+  });
   @override
   void paint(Canvas canvas, Size size) {
     for (double y = 0; y < size.height; y += 30) {
       final alpha = (sin(t * 2 * pi + y) + 1) / 2 * 0.05 * intensity;
-      canvas.drawLine(Offset(0, y), Offset(size.width, y), Paint()..color = color.withValues(alpha: alpha)..strokeWidth = 0.5);
+      canvas.drawLine(
+        Offset(0, y),
+        Offset(size.width, y),
+        Paint()
+          ..color = color.withValues(alpha: alpha)
+          ..strokeWidth = 0.5,
+      );
     }
   }
+
   @override
   bool shouldRepaint(covariant _ValidatorMatrixPainter old) => old.t != t;
 }

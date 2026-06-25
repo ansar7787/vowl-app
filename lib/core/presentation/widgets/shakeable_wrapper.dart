@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
-/// A wrapper widget that plays a premium, physically-damped horizontal shake animation
-/// when [shakeCount] increments, while perfectly preserving child widget state,
-/// text input focus, and keyboard states.
+/// Plays a physically-damped horizontal shake when [shakeCount] increments,
+/// while perfectly preserving child widget state, text-input focus, and
+/// keyboard visibility.
+///
+/// The child is wrapped in a [RepaintBoundary] so its repaints do not
+/// propagate into the transform layer, and vice-versa.
 class ShakeableWrapper extends StatefulWidget {
   final int shakeCount;
   final Widget child;
@@ -29,23 +32,62 @@ class _ShakeableWrapperState extends State<ShakeableWrapper>
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: widget.duration,
-    );
+    _controller = AnimationController(vsync: this, duration: widget.duration);
     _initAnimation();
   }
 
   void _initAnimation() {
-    // Premium decaying oscillation sequence simulating a physical horizontal spring damping effect
+    // Decaying oscillation sequence simulating a horizontal spring damping.
     _offsetAnimation = TweenSequence<double>([
-      TweenSequenceItem(tween: Tween(begin: 0.0, end: 1.0).chain(CurveTween(curve: Curves.easeOut)), weight: 10),
-      TweenSequenceItem(tween: Tween(begin: 1.0, end: -0.8).chain(CurveTween(curve: Curves.easeInOut)), weight: 15),
-      TweenSequenceItem(tween: Tween(begin: -0.8, end: 0.6).chain(CurveTween(curve: Curves.easeInOut)), weight: 15),
-      TweenSequenceItem(tween: Tween(begin: 0.6, end: -0.4).chain(CurveTween(curve: Curves.easeInOut)), weight: 15),
-      TweenSequenceItem(tween: Tween(begin: -0.4, end: 0.2).chain(CurveTween(curve: Curves.easeInOut)), weight: 15),
-      TweenSequenceItem(tween: Tween(begin: 0.2, end: -0.1).chain(CurveTween(curve: Curves.easeInOut)), weight: 15),
-      TweenSequenceItem(tween: Tween(begin: -0.1, end: 0.0).chain(CurveTween(curve: Curves.easeIn)), weight: 15),
+      TweenSequenceItem(
+        tween: Tween(
+          begin: 0.0,
+          end: 1.0,
+        ).chain(CurveTween(curve: Curves.easeOut)),
+        weight: 10,
+      ),
+      TweenSequenceItem(
+        tween: Tween(
+          begin: 1.0,
+          end: -0.8,
+        ).chain(CurveTween(curve: Curves.easeInOut)),
+        weight: 15,
+      ),
+      TweenSequenceItem(
+        tween: Tween(
+          begin: -0.8,
+          end: 0.6,
+        ).chain(CurveTween(curve: Curves.easeInOut)),
+        weight: 15,
+      ),
+      TweenSequenceItem(
+        tween: Tween(
+          begin: 0.6,
+          end: -0.4,
+        ).chain(CurveTween(curve: Curves.easeInOut)),
+        weight: 15,
+      ),
+      TweenSequenceItem(
+        tween: Tween(
+          begin: -0.4,
+          end: 0.2,
+        ).chain(CurveTween(curve: Curves.easeInOut)),
+        weight: 15,
+      ),
+      TweenSequenceItem(
+        tween: Tween(
+          begin: 0.2,
+          end: -0.1,
+        ).chain(CurveTween(curve: Curves.easeInOut)),
+        weight: 15,
+      ),
+      TweenSequenceItem(
+        tween: Tween(
+          begin: -0.1,
+          end: 0.0,
+        ).chain(CurveTween(curve: Curves.easeIn)),
+        weight: 15,
+      ),
     ]).animate(_controller);
   }
 
@@ -55,7 +97,6 @@ class _ShakeableWrapperState extends State<ShakeableWrapper>
     if (widget.duration != oldWidget.duration) {
       _controller.duration = widget.duration;
     }
-    // Trigger shake only if the shakeCount increases
     if (widget.shakeCount != oldWidget.shakeCount && widget.shakeCount > 0) {
       _controller.forward(from: 0.0);
     }
@@ -71,14 +112,16 @@ class _ShakeableWrapperState extends State<ShakeableWrapper>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _offsetAnimation,
+      // Wrapping child in RepaintBoundary isolates its repaints from the
+      // transform layer, preventing child rebuilds from invalidating the
+      // shake animation compositing layer.
+      child: RepaintBoundary(child: widget.child),
       builder: (context, child) {
-        final dx = _offsetAnimation.value * widget.offset;
         return Transform.translate(
-          offset: Offset(dx, 0.0),
+          offset: Offset(_offsetAnimation.value * widget.offset, 0.0),
           child: child,
         );
       },
-      child: widget.child,
     );
   }
 }

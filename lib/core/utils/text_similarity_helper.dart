@@ -9,23 +9,35 @@ abstract class TextSimilarityHelper {
   factory TextSimilarityHelper() = TextSimilarityHelperImpl;
 
   /// Backward-compatible static delegation method to normalize text strings.
-  static String normalize(String text) => TextSimilarityHelperImpl().normalizeText(text);
+  static String normalize(String text) =>
+      TextSimilarityHelperImpl().normalizeText(text);
 
   /// Backward-compatible static delegation method to calculate Levenshtein distances.
-  static int levenshteinDistance(String s, String t) => TextSimilarityHelperImpl().calculateLevenshteinDistance(s, t);
+  static int levenshteinDistance(String s, String t) =>
+      TextSimilarityHelperImpl().calculateLevenshteinDistance(s, t);
 
   /// Backward-compatible static delegation method to calculate Levenshtein similarities.
-  static double levenshteinSimilarity(String s1, String s2) => TextSimilarityHelperImpl().calculateLevenshteinSimilarity(s1, s2);
+  static double levenshteinSimilarity(String s1, String s2) =>
+      TextSimilarityHelperImpl().calculateLevenshteinSimilarity(s1, s2);
 
   /// Backward-compatible static delegation method to calculate word match scores.
-  static double wordMatchScore(String spoken, String target) => TextSimilarityHelperImpl().calculateWordMatchScore(spoken, target);
+  static double wordMatchScore(String spoken, String target) =>
+      TextSimilarityHelperImpl().calculateWordMatchScore(spoken, target);
 
   /// Backward-compatible static delegation method to retrieve matched index arrays.
-  static Set<int> getMatchedIndices(String spoken, String target) => TextSimilarityHelperImpl().findMatchedIndices(spoken, target);
+  static Set<int> getMatchedIndices(String spoken, String target) =>
+      TextSimilarityHelperImpl().findMatchedIndices(spoken, target);
 
   /// Backward-compatible static delegation method to evaluate sufficiency thresholds.
-  static bool isMatch(String spoken, String target, {double threshold = 0.80}) =>
-      TextSimilarityHelperImpl().checkIsMatch(spoken, target, threshold: threshold);
+  static bool isMatch(
+    String spoken,
+    String target, {
+    double threshold = 0.80,
+  }) => TextSimilarityHelperImpl().checkIsMatch(
+    spoken,
+    target,
+    threshold: threshold,
+  );
 
   /// Normalizes text for comparison by lowercasing and removing punctuation.
   String normalizeText(String text);
@@ -72,7 +84,11 @@ class TextSimilarityHelperImpl implements TextSimilarityHelper {
       v1[0] = i + 1;
       for (int j = 0; j < t.length; j++) {
         final int cost = (s[i] == t[j]) ? 0 : 1;
-        v1[j + 1] = [v1[j] + 1, v0[j + 1] + 1, v0[j] + cost].reduce((a, b) => a < b ? a : b);
+        v1[j + 1] = [
+          v1[j] + 1,
+          v0[j + 1] + 1,
+          v0[j] + cost,
+        ].reduce((a, b) => a < b ? a : b);
       }
       for (int j = 0; j <= t.length; j++) {
         v0[j] = v1[j];
@@ -90,9 +106,18 @@ class TextSimilarityHelperImpl implements TextSimilarityHelper {
 
   @override
   double calculateWordMatchScore(String spoken, String target) {
-    final spokenWords = spoken.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).toSet();
-    final targetWords = target.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).toList();
-    
+    final String s = normalizeText(spoken);
+    final String t = normalizeText(target);
+
+    final spokenWords = s
+        .split(RegExp(r'\s+'))
+        .where((w) => w.isNotEmpty)
+        .toSet();
+    final targetWords = t
+        .split(RegExp(r'\s+'))
+        .where((w) => w.isNotEmpty)
+        .toList();
+
     if (targetWords.isEmpty) return spokenWords.isEmpty ? 1.0 : 0.0;
 
     int matches = 0;
@@ -101,7 +126,7 @@ class TextSimilarityHelperImpl implements TextSimilarityHelper {
         matches++;
       }
     }
-    
+
     return matches / targetWords.length;
   }
 
@@ -109,10 +134,16 @@ class TextSimilarityHelperImpl implements TextSimilarityHelper {
   Set<int> findMatchedIndices(String spoken, String target) {
     final String s = normalizeText(spoken);
     final String t = normalizeText(target);
-    
-    final spokenWords = s.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).toSet();
-    final targetWords = t.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).toList();
-    
+
+    final spokenWords = s
+        .split(RegExp(r'\s+'))
+        .where((w) => w.isNotEmpty)
+        .toSet();
+    final targetWords = t
+        .split(RegExp(r'\s+'))
+        .where((w) => w.isNotEmpty)
+        .toList();
+
     final Set<int> matchedIndices = {};
     for (int i = 0; i < targetWords.length; i++) {
       if (spokenWords.contains(targetWords[i])) {
@@ -132,7 +163,8 @@ class TextSimilarityHelperImpl implements TextSimilarityHelper {
 
     // Direct containment is a strong signal
     if (s.contains(t) || t.contains(s)) {
-      final double lengthRatio = min(s.length, t.length) / max(s.length, t.length);
+      final double lengthRatio =
+          min(s.length, t.length) / max(s.length, t.length);
       if (lengthRatio > 0.6) return true;
     }
 
@@ -140,7 +172,8 @@ class TextSimilarityHelperImpl implements TextSimilarityHelper {
     final double wordScore = calculateWordMatchScore(s, t);
 
     // Guard: If spoken text is significantly shorter than target, reject
-    final double lengthRatio = min(s.length, t.length) / max(s.length, t.length);
+    final double lengthRatio =
+        min(s.length, t.length) / max(s.length, t.length);
     if (lengthRatio < 0.3) return false;
 
     // Weighted score bias: Word match is more critical for speech comprehension

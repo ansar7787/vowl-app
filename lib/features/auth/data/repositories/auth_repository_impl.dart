@@ -1,26 +1,56 @@
 import 'dart:async';
-import 'package:flutter/foundation.dart';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
+import 'package:vowl/features/auth/data/repositories/firebase_failure_handler_mixin.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-/// Concrete implementation of [AuthRepository] orchestrating user sessions via Firebase Auth and Firestore.
+/// Concrete implementation of [AuthRepository] orchestrating user sessions via
+/// Firebase Auth and Firestore.
 ///
-class AuthRepositoryImpl implements AuthRepository {
+/// ### User stream lifecycle
+/// [_userStreamController] is a single broadcast [StreamController] backed by
+/// two nested listeners:
+///   1. [_firebaseAuth.userChanges()] — outer auth state.
+///   2. Firestore `.snapshots()` — inner real-time profile, re-subscribed on
+///      every auth state change and cancelled immediately before each re-sub.
+///
+/// All subscriptions are cancelled and the controller is closed when [dispose]
+/// is called, making this safe for test environments that create/destroy
+/// repository instances repeatedly.
+///
+/// ### deleteAccount ordering
+/// Firebase Auth deletion happens **first** so that, if it fails with
+/// [requires-recent-login], no user data is lost. After a successful auth
+/// deletion the SDK retains a briefly-valid cached token that allows the
+/// subsequent Firestore and Storage cleanup calls to proceed. All cleanup
+/// failures are caught and logged as non-blocking — orphaned server data is a
+/// recoverable operational concern, whereas leaving the auth account active
+/// after a user requested deletion is not.
+class AuthRepositoryImpl
+    with FirebaseFailureHandlerMixin
+    implements AuthRepository {
   final AuthRemoteDataSource _remoteDataSource;
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
   final FirebaseStorage _storage;
 
-  /// High-performance shared broadcast stream to prevent duplicate cloud listeners.
-  late final Stream<UserEntity?> _userStream;
+  // ---------------------------------------------------------------------------
+  // Stream controller & subscriptions
+  // ---------------------------------------------------------------------------
+
+  late StreamController<UserEntity?> _userStreamController;
+  StreamSubscription<firebase_auth.User?>? _authSubscription;
+  StreamSubscription<DocumentSnapshot<Map<String, dynamic>>>?
+  _firestoreSubscription;
 
   AuthRepositoryImpl({
     required AuthRemoteDataSource remoteDataSource,
@@ -34,153 +64,159 @@ class AuthRepositoryImpl implements AuthRepository {
     _initUserStream();
   }
 
-  /// Initializes the unified broadcast stream controller, preventing heap memory leaks.
+  // ---------------------------------------------------------------------------
+  // Stream initialisation
+  // ---------------------------------------------------------------------------
+
   void _initUserStream() {
-    late StreamController<UserEntity?> controller;
-    StreamSubscription<firebase_auth.User?>? authSubscription;
-    StreamSubscription<DocumentSnapshot<Map<String, dynamic>>>? firestoreSubscription;
+    _userStreamController = StreamController<UserEntity?>.broadcast(
+      onListen: _startFirebaseListeners,
+      onCancel: _stopAllSubscriptions,
+    );
+  }
 
-    void cancelFirestore() {
-      firestoreSubscription?.cancel();
-      firestoreSubscription = null;
-    }
-
-    controller = StreamController<UserEntity?>.broadcast(
-      onListen: () {
-        authSubscription = _firebaseAuth.userChanges().listen(
-          (firebaseUser) {
-            cancelFirestore();
-
-            if (firebaseUser == null) {
-              controller.add(null);
-              return;
-            }
-
-            firestoreSubscription = _firestore
-                .collection('users')
-                .doc(firebaseUser.uid)
-                .snapshots()
-                .listen(
-              (doc) {
-                try {
-                  if (doc.exists && doc.data() != null) {
-                    final userModel = UserModel.fromMap(doc.data()!);
-                    controller.add(
-                      userModel.copyWith(
-                        isEmailVerified: firebaseUser.emailVerified,
-                      ),
-                    );
-                  } else {
-                    controller.add(
-                      UserModel(
-                        id: firebaseUser.uid,
-                        email: firebaseUser.email ?? '',
-                        displayName: firebaseUser.displayName,
-                        photoUrl: firebaseUser.photoURL,
-                        isEmailVerified: firebaseUser.emailVerified,
-                        dailyXpHistory: const {},
-                        recentActivities: const [],
-                      ),
-                    );
-                  }
-                } catch (e, stack) {
-                  debugPrint('Error in AuthRepository.user stream mapping: $e');
-                  debugPrint(stack.toString());
-                  controller.add(null);
-                }
-              },
-              onError: (error) {
-                final errorStr = error.toString();
-                if (errorStr.contains('PERMISSION_DENIED') ||
-                    errorStr.contains('permission-denied')) {
-                  debugPrint(
-                    'AuthRepository: Firestore permission denied (expected during logout).',
-                  );
-                  controller.add(null);
-                  return;
-                }
-                controller.addError(error);
-              },
-            );
-          },
-          onError: (error) {
-            controller.addError(error);
-          },
-        );
-      },
-      onCancel: () {
-        cancelFirestore();
-        authSubscription?.cancel();
+  void _startFirebaseListeners() {
+    _authSubscription = _firebaseAuth.userChanges().listen(
+      _onAuthStateChanged,
+      onError: (Object error, StackTrace stack) {
+        _log('AuthRepository: auth stream error: $error');
+        _userStreamController.addError(error, stack);
       },
     );
-
-    _userStream = controller.stream;
   }
+
+  void _stopAllSubscriptions() {
+    _firestoreSubscription?.cancel();
+    _firestoreSubscription = null;
+    _authSubscription?.cancel();
+    _authSubscription = null;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Auth state handler
+  // ---------------------------------------------------------------------------
+
+  void _onAuthStateChanged(firebase_auth.User? firebaseUser) {
+    // Cancel the previous Firestore subscription before starting a new one to
+    // prevent stale emissions from the previous user's document.
+    _firestoreSubscription?.cancel();
+    _firestoreSubscription = null;
+
+    if (firebaseUser == null) {
+      _userStreamController.add(null);
+      return;
+    }
+
+    _firestoreSubscription = _firestore
+        .collection('users')
+        .doc(firebaseUser.uid)
+        .snapshots()
+        .listen(
+          (doc) => _onFirestoreSnapshot(doc, firebaseUser),
+          onError: (Object error) => _onFirestoreError(error),
+        );
+  }
+
+  // ---------------------------------------------------------------------------
+  // Firestore snapshot handler
+  // ---------------------------------------------------------------------------
+
+  void _onFirestoreSnapshot(
+    DocumentSnapshot<Map<String, dynamic>> doc,
+    firebase_auth.User firebaseUser,
+  ) {
+    try {
+      if (doc.exists && doc.data() != null) {
+        final userModel = UserModel.fromMap(doc.data()!);
+        _userStreamController.add(
+          userModel.copyWith(isEmailVerified: firebaseUser.emailVerified),
+        );
+      } else {
+        // Document doesn't exist yet (e.g., Firestore write is in-flight).
+        // Emit a minimal entity derived from Firebase Auth credentials.
+        _userStreamController.add(
+          UserModel(
+            id: firebaseUser.uid,
+            email: firebaseUser.email ?? '',
+            displayName: firebaseUser.displayName,
+            photoUrl: firebaseUser.photoURL,
+            isEmailVerified: firebaseUser.emailVerified,
+            dailyXpHistory: const {},
+            recentActivities: const [],
+          ),
+        );
+      }
+    } catch (e, stack) {
+      _log('AuthRepository: Firestore snapshot mapping error: $e\n$stack');
+      _userStreamController.add(null);
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Firestore error handler
+  // ---------------------------------------------------------------------------
+
+  void _onFirestoreError(Object error) {
+    final errStr = error.toString();
+    // PERMISSION_DENIED is expected immediately after logout — Firestore
+    // security rules revoke access before the Firebase Auth subscription fires
+    // the null event. Treat it as a normal sign-out signal.
+    if (errStr.contains('PERMISSION_DENIED') ||
+        errStr.contains('permission-denied')) {
+      _log(
+        'AuthRepository: Firestore permission denied (expected during logout).',
+      );
+      _userStreamController.add(null);
+      return;
+    }
+    _userStreamController.addError(error);
+  }
+
+  // ---------------------------------------------------------------------------
+  // AuthRepository interface
+  // ---------------------------------------------------------------------------
 
   @override
-  Stream<UserEntity?> get user => _userStream;
-
-  /// Defensive helper to translate raw authentication exceptions into structured [Failure] domains.
-  Failure _handleException(dynamic e) {
-    if (e is firebase_auth.FirebaseAuthException) {
-      if (e.code == 'network-request-failed' || e.code == 'unavailable') {
-        return NetworkFailure('No internet connection. Please verify your network.');
-      }
-      return AuthFailure(e.code);
-    }
-    final errStr = e.toString();
-    if (errStr.contains('SocketException') || errStr.contains('NetworkError')) {
-      return NetworkFailure('Network unreachable. Please check connection states.');
-    }
-    return ServerFailure(errStr);
-  }
+  Stream<UserEntity?> get user => _userStreamController.stream;
 
   @override
   Future<Either<Failure, UserEntity?>> getCurrentUser() async {
     try {
       final firebaseUser = _firebaseAuth.currentUser;
-      final user = await _mapFirebaseUserToUserEntity(firebaseUser);
-      return Right(user);
-    } catch (e) {
-      return Left(_handleException(e));
-    }
-  }
+      if (firebaseUser == null) return const Right(null);
 
-  Future<UserEntity?> _mapFirebaseUserToUserEntity(
-    firebase_auth.User? firebaseUser,
-  ) async {
-    if (firebaseUser == null) return null;
-
-    try {
+      // Use default Source (server-and-cache) so this works both online and
+      // offline. Source.server was previously used here, which caused
+      // getCurrentUser() to return null for every offline app start even when
+      // the user was logged in and data was cached.
       final doc = await _firestore
           .collection('users')
           .doc(firebaseUser.uid)
-          .get(const GetOptions(source: Source.server));
-      if (doc.exists) {
-        final user = UserModel.fromMap(doc.data()!);
-        return user.copyWith(isEmailVerified: firebaseUser.emailVerified);
-      } else {
-        final newUser = UserModel(
-          id: firebaseUser.uid,
-          email: firebaseUser.email ?? '',
-          displayName: firebaseUser.displayName,
-          photoUrl: firebaseUser.photoURL,
-          lastLoginDate: DateTime.now(),
-          currentStreak: 1,
-          isEmailVerified: firebaseUser.emailVerified,
-          dailyXpHistory: const {},
-          recentActivities: const [],
-        );
-        await _firestore
-            .collection('users')
-            .doc(newUser.id)
-            .set(newUser.toMap());
-        return newUser;
+          .get();
+
+      if (doc.exists && doc.data() != null) {
+        final user = UserModel.fromMap(
+          doc.data()!,
+        ).copyWith(isEmailVerified: firebaseUser.emailVerified);
+        return Right(user);
       }
-    } catch (e, stack) {
-      debugPrint('Error in _mapFirebaseUserToUserEntity: $e');
-      debugPrint(stack.toString());
-      return null;
+
+      // Firestore document missing — provision it and return the new entity.
+      final newUser = UserModel(
+        id: firebaseUser.uid,
+        email: firebaseUser.email ?? '',
+        displayName: firebaseUser.displayName,
+        photoUrl: firebaseUser.photoURL,
+        lastLoginDate: DateTime.now(),
+        currentStreak: 1,
+        isEmailVerified: firebaseUser.emailVerified,
+        dailyXpHistory: const {},
+        recentActivities: const [],
+      );
+      await _firestore.collection('users').doc(newUser.id).set(newUser.toMap());
+      return Right(newUser);
+    } catch (e) {
+      return Left(handleFirebaseException(e));
     }
   }
 
@@ -191,38 +227,16 @@ class AuthRepositoryImpl implements AuthRepository {
     required String password,
   }) async {
     try {
-      final userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
+      // Delegate entirely to the data source, which handles:
+      // createUserWithEmailAndPassword → updateDisplayName → Firestore write.
+      final userModel = await _remoteDataSource.signUp(
+        name: name,
         email: email,
         password: password,
       );
-
-      final firebaseUser = userCredential.user;
-
-      if (firebaseUser != null) {
-        await firebaseUser.updateDisplayName(name);
-
-        final newUser = UserModel(
-          id: firebaseUser.uid,
-          email: email,
-          displayName: name,
-          photoUrl: firebaseUser.photoURL,
-          lastLoginDate: DateTime.now(),
-          currentStreak: 1,
-          dailyXpHistory: const {},
-          recentActivities: const [],
-        );
-
-        await _firestore
-            .collection('users')
-            .doc(newUser.id)
-            .set(newUser.toMap());
-
-        return Right(newUser);
-      } else {
-        return Left(ServerFailure('User creation failed'));
-      }
+      return Right(userModel);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
 
@@ -238,7 +252,7 @@ class AuthRepositoryImpl implements AuthRepository {
       );
       return Right(userModel);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
 
@@ -248,7 +262,7 @@ class AuthRepositoryImpl implements AuthRepository {
       await _remoteDataSource.logInWithGoogle();
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
 
@@ -258,7 +272,7 @@ class AuthRepositoryImpl implements AuthRepository {
       await _remoteDataSource.logOut();
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
 
@@ -268,7 +282,7 @@ class AuthRepositoryImpl implements AuthRepository {
       await _firebaseAuth.sendPasswordResetEmail(email: email);
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
 
@@ -278,7 +292,7 @@ class AuthRepositoryImpl implements AuthRepository {
       await _firebaseAuth.currentUser?.sendEmailVerification();
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
 
@@ -288,7 +302,7 @@ class AuthRepositoryImpl implements AuthRepository {
       await _firebaseAuth.currentUser?.reload();
       return const Right(null);
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
   }
 
@@ -302,34 +316,37 @@ class AuthRepositoryImpl implements AuthRepository {
 
       final uid = user.uid;
 
-      // Delete Firebase Auth user FIRST to validate auth state.
-      // If this fails with requires-recent-login, no user data is lost.
+      // Step 1 — Delete the Firebase Auth account FIRST.
+      //
+      // If this fails with `requires-recent-login`, no user data is lost and
+      // the caller can prompt re-authentication before retrying. All subsequent
+      // cleanup steps rely on the brief SDK-cached token that remains valid
+      // after a successful `user.delete()` call.
       await user.delete();
 
-      // Auth deletion succeeded — now clean up all user data.
-      // The cached auth token remains valid briefly, allowing Firestore/Storage access.
+      // Step 2 — Best-effort Firestore cleanup (non-blocking on failure).
       try {
         await _firestore.collection('users').doc(uid).delete();
       } catch (e) {
-        debugPrint('DeleteAccount: Firestore cleanup failed: $e');
+        _log('DeleteAccount: Firestore cleanup failed (non-critical): $e');
       }
 
+      // Step 3 — Best-effort Storage cleanup (non-blocking on failure).
       try {
         await _storage.ref().child('profile_pics').child('$uid.jpg').delete();
       } catch (e) {
-        debugPrint('DeleteAccount: Storage cleanup failed: $e');
+        _log('DeleteAccount: Storage cleanup failed (non-critical): $e');
       }
 
-      // Fix P0 & P1: Clear Zombie Preferences and Orphaned Notifications
+      // Step 4 — Clear all locally-persisted preferences so they don't bleed
+      // into a subsequent user session on the same device.
       try {
         final prefs = await SharedPreferences.getInstance();
         await prefs.clear();
-        
-        // Ensure to cancel any scheduled local notifications so they don't fire for the next user
-        // We'd ideally call NotificationService.cancelAllReminders(), but since it's not injected here, 
-        // we can rely on the UI layer or just clear prefs so the next user is clean.
       } catch (e) {
-        debugPrint('DeleteAccount: Cache cleanup failed: $e');
+        _log(
+          'DeleteAccount: SharedPreferences clear failed (non-critical): $e',
+        );
       }
 
       return const Right(null);
@@ -337,9 +354,30 @@ class AuthRepositoryImpl implements AuthRepository {
       if (e.code == 'requires-recent-login') {
         return Left(AuthFailure('requires-recent-login'));
       }
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     } catch (e) {
-      return Left(_handleException(e));
+      return Left(handleFirebaseException(e));
     }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Lifecycle
+  // ---------------------------------------------------------------------------
+
+  @override
+  void dispose() {
+    _stopAllSubscriptions();
+    if (!_userStreamController.isClosed) {
+      _userStreamController.close();
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Private helpers
+  // ---------------------------------------------------------------------------
+
+  /// Debug-only log helper. Produces no output in release builds.
+  void _log(String message) {
+    if (kDebugMode) debugPrint(message);
   }
 }

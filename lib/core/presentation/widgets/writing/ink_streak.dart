@@ -12,10 +12,10 @@ class InkStreak extends StatelessWidget {
     return RepaintBoundary(
       child: Stack(
         children: List.generate(4, (index) {
-          final left = (0.15 + (index * 0.25)) * 1.sw;
+          final start = (0.15 + (index * 0.25)) * 1.sw;
           final speed = 3000 + (index * 800);
-          return Positioned(
-            left: left,
+          return PositionedDirectional(
+            start: start,
             top: 0,
             bottom: 0,
             child: Opacity(

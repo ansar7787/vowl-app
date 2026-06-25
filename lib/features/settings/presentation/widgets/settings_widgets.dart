@@ -10,6 +10,10 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
+// ---------------------------------------------------------------------------
+// SettingsSectionTitle
+// ---------------------------------------------------------------------------
+
 class SettingsSectionTitle extends StatelessWidget {
   final String title;
   final bool isDark;
@@ -26,7 +30,8 @@ class SettingsSectionTitle extends StatelessWidget {
       padding: EdgeInsets.only(left: 8.w, bottom: 12.h),
       child: Text(
         title.toUpperCase(),
-        style: TextStyle(fontFamily: 'Outfit', 
+        style: TextStyle(
+          fontFamily: 'Outfit',
           fontSize: 13.sp,
           fontWeight: FontWeight.w900,
           color: isDark
@@ -38,6 +43,10 @@ class SettingsSectionTitle extends StatelessWidget {
     );
   }
 }
+
+// ---------------------------------------------------------------------------
+// SettingsGroup
+// ---------------------------------------------------------------------------
 
 class SettingsGroup extends StatelessWidget {
   final List<Widget> children;
@@ -52,6 +61,10 @@ class SettingsGroup extends StatelessWidget {
     );
   }
 }
+
+// ---------------------------------------------------------------------------
+// SettingsTile
+// ---------------------------------------------------------------------------
 
 class SettingsTile extends StatelessWidget {
   final String title;
@@ -74,53 +87,68 @@ class SettingsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(24.r),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-          child: Row(
-            children: [
-              Container(
-                padding: EdgeInsets.all(10.r),
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(12.r),
-                ),
-                child: Icon(icon, color: color, size: 20.r),
-              ),
-              SizedBox(width: 16.w),
-              Expanded(
-                child: Text(
-                  title,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDestructive
-                        ? Colors.red
-                        : (isDark ? Colors.white : const Color(0xFF0F172A)),
+
+    return Semantics(
+      // FIX (HIGH-5): Each settings tile now has a proper accessibility label
+      // and is marked as a button so TalkBack/VoiceOver users can identify
+      // and activate it correctly.
+      label: title,
+      button: onTap != null,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(24.r),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+            child: Row(
+              children: [
+                ExcludeSemantics(
+                  child: Container(
+                    padding: EdgeInsets.all(10.r),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: Icon(icon, color: color, size: 20.r),
                   ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
                 ),
-              ),
-              if (trailing != null)
-                trailing!
-              else if (onTap != null)
-                Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  size: 14.r,
-                  color: isDark ? Colors.white24 : Colors.grey[400],
+                SizedBox(width: 16.w),
+                Expanded(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDestructive
+                          ? Colors.red
+                          : (isDark ? Colors.white : const Color(0xFF0F172A)),
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
-            ],
+                if (trailing != null)
+                  trailing!
+                else if (onTap != null)
+                  Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    size: 14.r,
+                    color: isDark ? Colors.white24 : Colors.grey[400],
+                  ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+
+// ---------------------------------------------------------------------------
+// SettingsSwitchTile
+// ---------------------------------------------------------------------------
 
 class SettingsSwitchTile extends StatelessWidget {
   final String title;
@@ -145,142 +173,168 @@ class SettingsSwitchTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-      child: Row(
-        children: [
-          Container(
-            padding: EdgeInsets.all(10.r),
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(12.r),
-            ),
-            child: Icon(icon, color: color, size: 20.r),
-          ),
-          SizedBox(width: 16.w),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
-                  ),
-                ),
-                Text(
-                  subtitle,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 11.sp,
-                    color: isDark ? Colors.white38 : Colors.grey[600],
-                    fontWeight: FontWeight.w500,
-                  ),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            ),
-          ),
-          if (isLoading)
-            SizedBox(
-              width: 50.w,
-              height: 30.h,
+
+    return Semantics(
+      // FIX (HIGH-5): Switch tiles now announce their on/off state.
+      label: '$title. $subtitle',
+      toggled: value,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        child: Row(
+          children: [
+            ExcludeSemantics(
               child: Container(
+                padding: EdgeInsets.all(10.r),
                 decoration: BoxDecoration(
                   color: color.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(15.r),
+                  borderRadius: BorderRadius.circular(12.r),
                 ),
-              ).animate(onPlay: (c) => c.repeat()).shimmer(
-                color: color.withValues(alpha: 0.3),
+                child: Icon(icon, color: color, size: 20.r),
               ),
-            )
-          else
-            Switch.adaptive(
-              value: value,
-              onChanged: (val) {
-                di.sl<HapticService>().light();
-                onChanged(val);
-              },
-              activeThumbColor: const Color(0xFF2563EB),
             ),
-        ],
+            SizedBox(width: 16.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    ),
+                  ),
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      color: isDark ? Colors.white38 : Colors.grey[600],
+                      fontWeight: FontWeight.w500,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            ),
+            if (isLoading)
+              SizedBox(
+                width: 50.w,
+                height: 30.h,
+                child:
+                    Container(
+                          decoration: BoxDecoration(
+                            color: color.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(15.r),
+                          ),
+                        )
+                        .animate(onPlay: (c) => c.repeat())
+                        .shimmer(color: color.withValues(alpha: 0.3)),
+              )
+            else
+              ExcludeSemantics(
+                // The parent Semantics already announces toggled state.
+                child: Switch.adaptive(
+                  value: value,
+                  onChanged: (val) {
+                    di.sl<HapticService>().light();
+                    onChanged(val);
+                  },
+                  activeThumbColor: const Color(0xFF2563EB),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }
 }
+
+// ---------------------------------------------------------------------------
+// SettingsLogoutButton
+// ---------------------------------------------------------------------------
 
 class SettingsLogoutButton extends StatelessWidget {
   const SettingsLogoutButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.red.withValues(alpha: 0.15),
-            blurRadius: 25,
-            offset: const Offset(0, 10),
-          ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(24.r),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Colors.red.withValues(alpha: 0.1),
-                  Colors.red.withValues(alpha: 0.05),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.circular(24.r),
-              border: Border.all(
-                color: Colors.red.withValues(alpha: 0.2),
-                width: 1.5,
-              ),
+    return Semantics(
+      label: context.tr('settings.sign_out'),
+      button: true,
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.red.withValues(alpha: 0.15),
+              blurRadius: 25,
+              offset: const Offset(0, 10),
             ),
-            child: Material(
-              color: Colors.transparent,
-              child: InkWell(
-                onTap: () => SettingsDialogs.showLogout(context),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20.h),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(8.r),
-                        decoration: BoxDecoration(
-                          color: Colors.red.withValues(alpha: 0.1),
-                          shape: BoxShape.circle,
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(24.r),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.red.withValues(alpha: 0.1),
+                    Colors.red.withValues(alpha: 0.05),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(24.r),
+                border: Border.all(
+                  color: Colors.red.withValues(alpha: 0.2),
+                  width: 1.5,
+                ),
+              ),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () => SettingsDialogs.showLogout(context),
+                  borderRadius: BorderRadius.circular(24.r),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(8.r),
+                          decoration: BoxDecoration(
+                            color: Colors.red.withValues(alpha: 0.1),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.logout_rounded,
+                            size: 18.r,
+                            color: Colors.red,
+                          ),
                         ),
-                        child: Icon(
-                          Icons.logout_rounded,
-                          size: 18.r,
-                          color: Colors.red,
+                        SizedBox(width: 16.w),
+                        Flexible(
+                          child: Text(
+                            context.tr('settings.sign_out'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.red,
+                              letterSpacing: 1.5,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 16.w),
-                       Text(
-                        context.tr('settings.sign_out'),
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.red,
-                          letterSpacing: 1.5,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -291,6 +345,10 @@ class SettingsLogoutButton extends StatelessWidget {
     ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2);
   }
 }
+
+// ---------------------------------------------------------------------------
+// SettingsProfileSection
+// ---------------------------------------------------------------------------
 
 class SettingsProfileSection extends StatelessWidget {
   final UserEntity? user;
@@ -307,158 +365,172 @@ class SettingsProfileSection extends StatelessWidget {
     final currentUser = user;
     if (currentUser == null) return const SizedBox.shrink();
 
-    return GlassTile(
-      padding: EdgeInsets.all(24.r),
-      borderRadius: BorderRadius.circular(32.r),
-      child: Row(
-        children: [
-          GestureDetector(
-            onTap: () => SettingsDialogs.showEditProfile(context, currentUser),
-            child: Stack(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(3.r),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.blue.withValues(alpha: 0.3),
-                        blurRadius: 12,
-                        spreadRadius: 2,
-                      ),
-                    ],
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.blue,
-                        Colors.blue.withValues(alpha: 0.2),
-                      ],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                  ),
-                  child: CircleAvatar(
-                    radius: 36.r,
-                    backgroundColor: const Color(0xFF1E293B),
-                    backgroundImage: currentUser.photoUrl != null &&
-                            currentUser.photoUrl!.isNotEmpty
-                        ? (currentUser.photoUrl!.startsWith('http')
-                            ? NetworkImage(currentUser.photoUrl!)
-                            : FileImage(File(currentUser.photoUrl!)) as ImageProvider)
-                        : null,
-                    child: currentUser.photoUrl == null || currentUser.photoUrl!.isEmpty
-                        ? Icon(
-                            Icons.person_rounded,
-                            size: 36.r,
-                            color: Colors.white24,
-                          )
-                        : null,
-                  ),
-                ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Container(
-                    padding: EdgeInsets.all(7.r),
+    return Semantics(
+      label:
+          '${currentUser.displayName ?? context.tr("settings.explorer")}. '
+          '${currentUser.email}. '
+          '${currentUser.isPremium ? context.tr("settings.premium_quester") : context.tr("settings.free_account")}. '
+          '${context.tr("settings.tap_to_edit_profile")}',
+      button: true,
+      child: GlassTile(
+        padding: EdgeInsets.all(24.r),
+        borderRadius: BorderRadius.circular(32.r),
+        child: Row(
+          children: [
+            // Avatar with edit overlay
+            GestureDetector(
+              onTap: () =>
+                  SettingsDialogs.showEditProfile(context, currentUser),
+              child: Stack(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(3.r),
                     decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.blue.withValues(alpha: 0.3),
+                          blurRadius: 12,
+                          spreadRadius: 2,
+                        ),
+                      ],
                       gradient: LinearGradient(
-                        colors: [Colors.blue, Colors.blue.shade700],
+                        colors: [
+                          Colors.blue,
+                          Colors.blue.withValues(alpha: 0.2),
+                        ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.white, width: 1.5),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.2),
-                          blurRadius: 4,
-                          offset: const Offset(0, 2),
+                    ),
+                    child: CircleAvatar(
+                      radius: 36.r,
+                      backgroundColor: const Color(0xFF1E293B),
+                      backgroundImage: currentUser.photoUrl?.isNotEmpty == true
+                          ? (currentUser.photoUrl!.startsWith('http')
+                                ? NetworkImage(currentUser.photoUrl!)
+                                : FileImage(File(currentUser.photoUrl!))
+                                      as ImageProvider)
+                          : null,
+                      child: currentUser.photoUrl?.isNotEmpty != true
+                          ? Icon(
+                              Icons.person_rounded,
+                              size: 36.r,
+                              color: Colors.white24,
+                            )
+                          : null,
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: Container(
+                      padding: EdgeInsets.all(7.r),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Colors.blue, Colors.blue.shade700],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white, width: 1.5),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.2),
+                            blurRadius: 4,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        Icons.camera_alt_rounded,
+                        color: Colors.white,
+                        size: 10.r,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(width: 20.w),
+            // Name + email + plan badge
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    // FIX (HIGH-2): Hardcoded 'Explorer' fallback now localised.
+                    currentUser.displayName ?? context.tr('settings.explorer'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      letterSpacing: -0.5,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  Text(
+                    currentUser.email,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      color: isDark
+                          ? Colors.white54
+                          : const Color(0xFF0F172A).withValues(alpha: 0.6),
+                      fontWeight: FontWeight.w500,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(height: 12.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 4.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.blue.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(
+                        color: Colors.blue.withValues(alpha: 0.2),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.verified_rounded,
+                          color: Colors.blue,
+                          size: 12.r,
+                        ),
+                        SizedBox(width: 6.w),
+                        Flexible(
+                          child: Text(
+                            currentUser.isPremium
+                                ? context.tr('settings.premium_quester')
+                                : context.tr('settings.free_account'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.blue,
+                              letterSpacing: 1,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
                       ],
                     ),
-                    child: Icon(
-                      Icons.camera_alt_rounded,
-                      color: Colors.white,
-                      size: 10.r,
-                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          SizedBox(width: 20.w),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  currentUser.displayName ?? 'Explorer',
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 22.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
-                    letterSpacing: -0.5,
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  currentUser.email,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 14.sp,
-                    color: isDark
-                        ? Colors.white54
-                        : const Color(0xFF0F172A).withValues(alpha: 0.6),
-                    fontWeight: FontWeight.w500,
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(height: 12.h),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 10.w,
-                    vertical: 4.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.blue.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(12.r),
-                    border: Border.all(
-                      color: Colors.blue.withValues(alpha: 0.2),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.verified_rounded,
-                        color: Colors.blue,
-                        size: 12.r,
-                      ),
-                      SizedBox(width: 6.w),
-                      Flexible(
-                        child: Text(
-                          currentUser.isPremium ? context.tr('settings.premium_quester') : context.tr('settings.free_account'),
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.blue,
-                            letterSpacing: 1,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
-    )
-        .animate()
-        .fadeIn(duration: 400.ms)
-        .slideY(begin: 0.1, curve: Curves.easeOut);
+    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, curve: Curves.easeOut);
   }
 }

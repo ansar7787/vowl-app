@@ -34,13 +34,24 @@ class ThemeResult {
 class LevelThemeHelper {
   /// Known category names mapped for fast set operations
   static const _categoryNames = {
-    'vocabulary', 'grammar', 'listening', 'reading',
-    'writing', 'speaking', 'accent', 'roleplay', 'elitemastery',
+    'vocabulary',
+    'grammar',
+    'listening',
+    'reading',
+    'writing',
+    'speaking',
+    'accent',
+    'roleplay',
+    'elitemastery',
   };
 
   /// Core Category Base Colors (Mathematically Balanced for Distinction)
   static Color _getCategoryBaseColor(String category) {
-    switch (category.trim().toLowerCase().replaceAll(' ', '').replaceAll('_', '')) {
+    switch (category
+        .trim()
+        .toLowerCase()
+        .replaceAll(' ', '')
+        .replaceAll('_', '')) {
       case 'speaking':
         return const Color(0xFFF44336); // Pure Red
       case 'writing':
@@ -66,7 +77,11 @@ class LevelThemeHelper {
 
   /// Map categories to readable, capitalized Titles
   static String _getCategoryTitle(String category) {
-    switch (category.trim().toLowerCase().replaceAll(' ', '').replaceAll('_', '')) {
+    switch (category
+        .trim()
+        .toLowerCase()
+        .replaceAll(' ', '')
+        .replaceAll('_', '')) {
       case 'speaking':
         return 'Speaking';
       case 'listening':
@@ -92,7 +107,11 @@ class LevelThemeHelper {
 
   /// Category icons
   static IconData _getCategoryIcon(String category) {
-    switch (category.trim().toLowerCase().replaceAll(' ', '').replaceAll('_', '')) {
+    switch (category
+        .trim()
+        .toLowerCase()
+        .replaceAll(' ', '')
+        .replaceAll('_', '')) {
       case 'speaking':
         return Icons.mic_rounded;
       case 'reading':
@@ -122,7 +141,11 @@ class LevelThemeHelper {
     bool isDark = true,
     bool isMidnight = false,
   }) {
-    final String normalized = category.trim().toLowerCase().replaceAll(' ', '').replaceAll('_', '');
+    final String normalized = category
+        .trim()
+        .toLowerCase()
+        .replaceAll(' ', '')
+        .replaceAll('_', '');
     final Color base = _getCategoryBaseColor(normalized);
     final HSLColor hsl = HSLColor.fromColor(base);
 
@@ -163,30 +186,40 @@ class LevelThemeHelper {
     bool isDark = true,
     bool isMidnight = false,
   }) {
-    final String normalizedType = gameType.trim().toLowerCase().replaceAll(' ', '').replaceAll('_', '');
+    final String normalizedType = gameType
+        .trim()
+        .toLowerCase()
+        .replaceAll(' ', '')
+        .replaceAll('_', '');
 
     // 1. Detect Category
     if (_categoryNames.contains(normalizedType)) {
-      return getCategoryTheme(normalizedType, isDark: isDark, isMidnight: isMidnight);
+      return getCategoryTheme(
+        normalizedType,
+        isDark: isDark,
+        isMidnight: isMidnight,
+      );
     }
 
     final subtype = GameSubtype.values.firstWhere(
       (s) => s.name.toLowerCase() == normalizedType,
       orElse: () => GameSubtype.grammarQuest,
     );
-    
+
     final categoryName = subtype.category.name;
     final Color baseColor = _getCategoryBaseColor(categoryName);
-    
+
     // 2. LEVEL SHADING LOGIC (The "Journey" feel)
     // We adjust Lightness based on level (1-100+)
     // Level 1 is lighter, Level 100 is deeper/richer
     final HSLColor baseHsl = HSLColor.fromColor(baseColor);
-    
+
     // Normalize level to a factor between -0.15 and +0.15
     final double levelFactor = ((level.clamp(1, 100) - 50) / 50.0) * -0.15;
-    
-    final primaryHsl = baseHsl.withLightness((baseHsl.lightness + levelFactor).clamp(0.1, 0.9));
+
+    final primaryHsl = baseHsl.withLightness(
+      (baseHsl.lightness + levelFactor).clamp(0.1, 0.9),
+    );
     final Color primary = primaryHsl.toColor();
 
     // 3. Background Gradient Creation
@@ -211,7 +244,7 @@ class LevelThemeHelper {
 
     // 4. Title Mapping
     String title = "Quest";
-    
+
     final Map<String, String> gameTitles = {
       // Speaking
       'repeatsentence': "Repeat Sentence",
@@ -324,7 +357,7 @@ class LevelThemeHelper {
       'prefixsuffix': "Prefix & Suffix",
       'collocations': "Collocations",
       'contextualusage': "Contextual Usage",
-      
+
       // Elite Mastery
       'storybuilder': "Story Builder",
       'idiommatch': "Idiom Match",
@@ -353,126 +386,120 @@ class LevelThemeHelper {
   }
 
   static IconData _getSubtypeIcon(String type) {
-    final t = type.toLowerCase();
-    
-    // Speaking
-    if (t == 'repeatsentence') return Icons.repeat_rounded;
-    if (t == 'speakmissingword') return Icons.spellcheck_rounded;
-    if (t == 'situationspeaking') return Icons.forum_rounded;
-    if (t == 'scenedescriptionspeaking') return Icons.image_search_rounded;
-    if (t == 'yesnospeaking') return Icons.thumbs_up_down_rounded;
-    if (t == 'speaksynonym') return Icons.record_voice_over_rounded;
-    if (t == 'dialogueroleplay') return Icons.groups_rounded;
-    if (t == 'pronunciationfocus') return Icons.mic_external_on_rounded;
-    if (t == 'speakopposite') return Icons.swap_horiz_rounded;
-    if (t == 'dailyexpression') return Icons.chat_bubble_outline_rounded;
-
-    // Listening
-    if (t == 'audiofillblanks') return Icons.music_note_rounded;
-    if (t == 'audiomultiplechoice') return Icons.queue_music_rounded;
-    if (t == 'audiosentenceorder') return Icons.playlist_add_check_rounded;
-    if (t == 'audiotruefalse') return Icons.rule_rounded;
-    if (t == 'soundimagematch') return Icons.image_rounded;
-    if (t == 'fastspeechdecoder') return Icons.speed_rounded;
-    if (t == 'emotionrecognition') return Icons.sentiment_satisfied_rounded;
-    if (t == 'detailspotlight') return Icons.center_focus_strong_rounded;
-    if (t == 'listeninginference') return Icons.psychology_rounded;
-    if (t == 'ambientid') return Icons.surround_sound_rounded;
-
-    // Reading
-    if (t == 'readandanswer') return Icons.menu_book_rounded;
-    if (t == 'findwordmeaning') return Icons.search_rounded;
-    if (t == 'truefalsereading') return Icons.verified_rounded;
-    if (t == 'sentenceorderreading') return Icons.view_headline_rounded;
-    if (t == 'readandmatch') return Icons.extension_rounded;
-    if (t == 'skimmingscanning') return Icons.visibility_rounded;
-    if (t == 'paragraphsummary') return Icons.short_text_rounded;
-    if (t == 'readingspeedcheck') return Icons.shutter_speed_rounded;
-    if (t == 'readinginference') return Icons.lightbulb_rounded;
-    if (t == 'readingconclusion') return Icons.fact_check_rounded;
-    if (t == 'clozetest') return Icons.border_color_rounded;
-    if (t == 'guesstitle') return Icons.title_rounded;
-
-    // Writing
-    if (t == 'sentencebuilder') return Icons.build_rounded;
-    if (t == 'completesentence') return Icons.edit_note_rounded;
-    if (t == 'fixthesentence') return Icons.auto_fix_high_rounded;
-    if (t == 'describesituationwriting') return Icons.description_rounded;
-    if (t == 'summarizestorywriting') return Icons.history_edu_rounded;
-    if (t == 'shortanswerwriting') return Icons.subject_rounded;
-    if (t == 'opinionwriting') return Icons.rate_review_rounded;
-    if (t == 'dailyjournal') return Icons.menu_book_rounded;
-    if (t == 'writingemail') return Icons.email_rounded;
-    if (t == 'correctionwriting') return Icons.spellcheck_rounded;
-    if (t == 'essaydrafting') return Icons.article_rounded;
-
-    // Grammar
-    if (t == 'grammarquest') return Icons.account_tree_rounded;
-    if (t == 'sentencecorrection') return Icons.check_circle_rounded;
-    if (t == 'wordreorder') return Icons.low_priority_rounded;
-    if (t == 'tensemastery') return Icons.update_rounded;
-    if (t == 'partsofspeech') return Icons.category_rounded;
-    if (t == 'subjectverbagreement') return Icons.handshake_rounded;
-    if (t == 'clauseconnector') return Icons.link_rounded;
-    if (t == 'voiceswap') return Icons.record_voice_over_rounded;
-    if (t == 'questionformatter') return Icons.help_outline_rounded;
-    if (t == 'articleinsertion') return Icons.text_fields_rounded;
-    if (t == 'modifierplacement') return Icons.place_rounded;
-    if (t == 'modalsselection') return Icons.star_border_rounded;
-    if (t == 'prepositionchoice') return Icons.navigation_rounded;
-    if (t == 'pronounresolution') return Icons.person_search_rounded;
-    if (t == 'punctuationmastery') return Icons.format_quote_rounded;
-    if (t == 'relativeclauses') return Icons.family_restroom_rounded;
-    if (t == 'conditionals') return Icons.call_split_rounded;
-    if (t == 'conjunctions') return Icons.join_inner_rounded;
-    if (t == 'directindirectspeech') return Icons.record_voice_over_rounded;
-
-    // Vocabulary
-    if (t == 'flashcards') return Icons.style_rounded;
-    if (t == 'synonymsearch') return Icons.compare_arrows_rounded;
-    if (t == 'antonymsearch') return Icons.swap_horiz_rounded;
-    if (t == 'contextclues') return Icons.find_in_page_rounded;
-    if (t == 'phrasalverbs') return Icons.alt_route_rounded;
-    if (t == 'idioms') return Icons.auto_awesome_rounded;
-    if (t == 'academicword') return Icons.school_rounded;
-    if (t == 'topicvocab') return Icons.topic_rounded;
-    if (t == 'wordformation') return Icons.reorder_rounded;
-    if (t == 'prefixsuffix') return Icons.unfold_more_rounded;
-    if (t == 'collocations') return Icons.link_rounded;
-    if (t == 'contextualusage') return Icons.text_snippet_rounded;
-
-    // Accent
-    if (t == 'minimalpairs') return Icons.exposure_rounded;
-    if (t == 'intonationmimic') return Icons.waves_rounded;
-    if (t == 'syllablestress') return Icons.format_bold_rounded;
-    if (t == 'wordlinking') return Icons.link_rounded;
-    if (t == 'shadowingchallenge') return Icons.person_pin_circle_rounded;
-    if (t == 'voweldistinction') return Icons.music_note_rounded;
-    if (t == 'consonantclarity') return Icons.mic_external_on_rounded;
-    if (t == 'pitchpatternmatch') return Icons.graphic_eq_rounded;
-    if (t == 'speedvariance') return Icons.slow_motion_video_rounded;
-    if (t == 'dialectdrill') return Icons.location_on_rounded;
-    if (t == 'connectedspeech') return Icons.merge_type_rounded;
-    if (t == 'pitchmodulation') return Icons.vibration_rounded;
-
-    // Roleplay
-    if (t == 'branchingdialogue') return Icons.alt_route_rounded;
-    if (t == 'situationalresponse') return Icons.volunteer_activism_rounded;
-    if (t == 'jobinterview') return Icons.work_rounded;
-    if (t == 'medicalconsult') return Icons.medical_services_rounded;
-    if (t == 'gourmetorder') return Icons.restaurant_rounded;
-    if (t == 'traveldesk') return Icons.flight_rounded;
-    if (t == 'conflictresolver') return Icons.balance_rounded;
-    if (t == 'elevatorpitch') return Icons.trending_up_rounded;
-    if (t == 'socialspark') return Icons.celebration_rounded;
-    if (t == 'emergencyhub') return Icons.emergency_rounded;
-
-    // Elite Mastery
-    if (t == 'storybuilder') return Icons.auto_stories_rounded;
-    if (t == 'idiommatch') return Icons.extension_rounded;
-    if (t == 'speedspelling') return Icons.bolt_rounded;
-    if (t == 'accentshadowing') return Icons.mic_rounded;
-
-    return _getCategoryIcon(t);
+    return _subtypeIconMap[type.toLowerCase()] ?? _getCategoryIcon(type);
   }
+
+  /// O(1) Map lookup replacing the original 60+ sequential if-statements.
+  /// All keys are pre-lowercased; [_getSubtypeIcon] lowercases before lookup.
+  static const Map<String, IconData> _subtypeIconMap = {
+    // ── Speaking ──────────────────────────────────────────────────────────
+    'repeatsentence': Icons.repeat_rounded,
+    'speakmissingword': Icons.spellcheck_rounded,
+    'situationspeaking': Icons.forum_rounded,
+    'scenedescriptionspeaking': Icons.image_search_rounded,
+    'yesnospeaking': Icons.thumbs_up_down_rounded,
+    'speaksynonym': Icons.record_voice_over_rounded,
+    'dialogueroleplay': Icons.groups_rounded,
+    'pronunciationfocus': Icons.mic_external_on_rounded,
+    'speakopposite': Icons.swap_horiz_rounded,
+    'dailyexpression': Icons.chat_bubble_outline_rounded,
+    // ── Listening ─────────────────────────────────────────────────────────
+    'audiofillblanks': Icons.music_note_rounded,
+    'audiomultiplechoice': Icons.queue_music_rounded,
+    'audiosentenceorder': Icons.playlist_add_check_rounded,
+    'audiotruefalse': Icons.rule_rounded,
+    'soundimagematch': Icons.image_rounded,
+    'fastspeechdecoder': Icons.speed_rounded,
+    'emotionrecognition': Icons.sentiment_satisfied_rounded,
+    'detailspotlight': Icons.center_focus_strong_rounded,
+    'listeninginference': Icons.psychology_rounded,
+    'ambientid': Icons.surround_sound_rounded,
+    // ── Reading ───────────────────────────────────────────────────────────
+    'readandanswer': Icons.menu_book_rounded,
+    'findwordmeaning': Icons.search_rounded,
+    'truefalsereading': Icons.verified_rounded,
+    'sentenceorderreading': Icons.view_headline_rounded,
+    'readandmatch': Icons.extension_rounded,
+    'skimmingscanning': Icons.visibility_rounded,
+    'paragraphsummary': Icons.short_text_rounded,
+    'readingspeedcheck': Icons.shutter_speed_rounded,
+    'readinginference': Icons.lightbulb_rounded,
+    'readingconclusion': Icons.fact_check_rounded,
+    'clozetest': Icons.border_color_rounded,
+    'guesstitle': Icons.title_rounded,
+    // ── Writing ───────────────────────────────────────────────────────────
+    'sentencebuilder': Icons.build_rounded,
+    'completesentence': Icons.edit_note_rounded,
+    'fixthesentence': Icons.auto_fix_high_rounded,
+    'describesituationwriting': Icons.description_rounded,
+    'summarizestorywriting': Icons.history_edu_rounded,
+    'shortanswerwriting': Icons.subject_rounded,
+    'opinionwriting': Icons.rate_review_rounded,
+    'dailyjournal': Icons.menu_book_rounded,
+    'writingemail': Icons.email_rounded,
+    'correctionwriting': Icons.spellcheck_rounded,
+    'essaydrafting': Icons.article_rounded,
+    // ── Grammar ───────────────────────────────────────────────────────────
+    'grammarquest': Icons.account_tree_rounded,
+    'sentencecorrection': Icons.check_circle_rounded,
+    'wordreorder': Icons.low_priority_rounded,
+    'tensemastery': Icons.update_rounded,
+    'partsofspeech': Icons.category_rounded,
+    'subjectverbagreement': Icons.handshake_rounded,
+    'clauseconnector': Icons.link_rounded,
+    'voiceswap': Icons.record_voice_over_rounded,
+    'questionformatter': Icons.help_outline_rounded,
+    'articleinsertion': Icons.text_fields_rounded,
+    'modifierplacement': Icons.place_rounded,
+    'modalsselection': Icons.star_border_rounded,
+    'prepositionchoice': Icons.navigation_rounded,
+    'pronounresolution': Icons.person_search_rounded,
+    'punctuationmastery': Icons.format_quote_rounded,
+    'relativeclauses': Icons.family_restroom_rounded,
+    'conditionals': Icons.call_split_rounded,
+    'conjunctions': Icons.join_inner_rounded,
+    'directindirectspeech': Icons.record_voice_over_rounded,
+    // ── Vocabulary ────────────────────────────────────────────────────────
+    'flashcards': Icons.style_rounded,
+    'synonymsearch': Icons.compare_arrows_rounded,
+    'antonymsearch': Icons.swap_horiz_rounded,
+    'contextclues': Icons.find_in_page_rounded,
+    'phrasalverbs': Icons.alt_route_rounded,
+    'idioms': Icons.auto_awesome_rounded,
+    'academicword': Icons.school_rounded,
+    'topicvocab': Icons.topic_rounded,
+    'wordformation': Icons.reorder_rounded,
+    'prefixsuffix': Icons.unfold_more_rounded,
+    'collocations': Icons.link_rounded,
+    'contextualusage': Icons.text_snippet_rounded,
+    // ── Accent ────────────────────────────────────────────────────────────
+    'minimalpairs': Icons.exposure_rounded,
+    'intonationmimic': Icons.waves_rounded,
+    'syllablestress': Icons.format_bold_rounded,
+    'wordlinking': Icons.link_rounded,
+    'shadowingchallenge': Icons.person_pin_circle_rounded,
+    'voweldistinction': Icons.music_note_rounded,
+    'consonantclarity': Icons.mic_external_on_rounded,
+    'pitchpatternmatch': Icons.graphic_eq_rounded,
+    'speedvariance': Icons.slow_motion_video_rounded,
+    'dialectdrill': Icons.location_on_rounded,
+    'connectedspeech': Icons.merge_type_rounded,
+    'pitchmodulation': Icons.vibration_rounded,
+    // ── Roleplay ──────────────────────────────────────────────────────────
+    'branchingdialogue': Icons.alt_route_rounded,
+    'situationalresponse': Icons.volunteer_activism_rounded,
+    'jobinterview': Icons.work_rounded,
+    'medicalconsult': Icons.medical_services_rounded,
+    'gourmetorder': Icons.restaurant_rounded,
+    'traveldesk': Icons.flight_rounded,
+    'conflictresolver': Icons.balance_rounded,
+    'elevatorpitch': Icons.trending_up_rounded,
+    'socialspark': Icons.celebration_rounded,
+    'emergencyhub': Icons.emergency_rounded,
+    // ── Elite Mastery ─────────────────────────────────────────────────────
+    'storybuilder': Icons.auto_stories_rounded,
+    'idiommatch': Icons.extension_rounded,
+    'speedspelling': Icons.bolt_rounded,
+    'accentshadowing': Icons.mic_rounded,
+  };
 }

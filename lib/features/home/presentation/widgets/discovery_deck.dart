@@ -38,6 +38,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
 
   @override
   Widget build(BuildContext context) {
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
     final discoveryItems = [
       (
         title: context.tr('home.discovery_foryou_title'),
@@ -77,79 +78,95 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
       ),
     ];
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        SizedBox(
-          height: 220.h,
-          child: PageView.builder(
-            controller: _pageController,
-            physics: const BouncingScrollPhysics(),
-            onPageChanged: (int page) {
-              setState(() {
-                _currentPage = page;
-              });
-            },
-            itemCount: discoveryItems.length,
-            itemBuilder: (context, index) {
-              final item = discoveryItems[index];
+    return MediaQuery.withClampedTextScaling(
+      // These are fixed-height carousel cards by design; clamp local text
+      // scale so very large OS accessibility settings can't overflow them,
+      // while the rest of the app remains freely scalable.
+      minScaleFactor: 1.0,
+      maxScaleFactor: 1.3,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(
+            height: 220.h,
+            child: PageView.builder(
+              controller: _pageController,
+              physics: const BouncingScrollPhysics(),
+              onPageChanged: (int page) {
+                setState(() {
+                  _currentPage = page;
+                });
+              },
+              itemCount: discoveryItems.length,
+              itemBuilder: (context, index) {
+                final item = discoveryItems[index];
 
-              return AnimatedBuilder(
-                animation: _pageController,
-                builder: (context, child) {
-                  double page = 0;
-                  try {
-                    page = _pageController.page ?? _currentPage.toDouble();
-                  } catch (_) {
-                    page = _currentPage.toDouble();
-                  }
-                  
-                  // Calculate how centered the card is (1.0 = center, 0.0 = far away)
-                  final double diff = (page - index).abs();
-                  final double activeFactor = (1 - diff).clamp(0.0, 1.0);
-                  
-                  // Scale from 0.9 to 1.0 based on center proximity
-                  final double scale = 0.9 + (activeFactor * 0.1);
+                return AnimatedBuilder(
+                  animation: _pageController,
+                  builder: (context, child) {
+                    double page;
+                    try {
+                      page = _pageController.page ?? _currentPage.toDouble();
+                    } catch (_) {
+                      page = _currentPage.toDouble();
+                    }
 
-                  return Transform.scale(
-                    scale: scale,
-                    child: _DiscoveryCollectionCard(
-                      title: item.title,
-                      subtitle: item.subtitle,
-                      icon: item.icon,
-                      color: item.color,
-                      quests: item.quests,
-                      difficulty: item.difficulty,
-                      isSelected: activeFactor > 0.8,
-                      activeFactor: activeFactor,
-                      onTap: item.onTap,
-                    ),
-                  );
-                },
-              );
-            },
+                    // Calculate how centered the card is (1.0 = center, 0.0 = far away)
+                    final double diff = (page - index).abs();
+                    final double activeFactor = (1 - diff).clamp(0.0, 1.0);
+
+                    // Scale from 0.9 to 1.0 based on center proximity
+                    final double scale = 0.9 + (activeFactor * 0.1);
+
+                    return Transform.scale(
+                      scale: scale,
+                      child: _DiscoveryCollectionCard(
+                        title: item.title,
+                        subtitle: item.subtitle,
+                        icon: item.icon,
+                        color: item.color,
+                        quests: item.quests,
+                        difficulty: item.difficulty,
+                        isSelected: activeFactor > 0.8,
+                        isRtl: isRtl,
+                        onTap: item.onTap,
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
           ),
-        ),
-        SizedBox(height: 16.h),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(
-            discoveryItems.length,
-            (index) => AnimatedContainer(
-              duration: const Duration(milliseconds: 400),
-              margin: EdgeInsets.symmetric(horizontal: 4.w),
-              height: 6.r,
-              width: _currentPage == index ? 28.w : 8.r,
-              decoration: BoxDecoration(
-                color: _currentPage == index
-                    ? discoveryItems[index].color
-                    : discoveryItems[index].color.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(10.r),
+          SizedBox(height: 16.h),
+          Semantics(
+            label: context.tr(
+              'home.discovery_page_indicator',
+              args: [
+                (_currentPage + 1).toString(),
+                discoveryItems.length.toString(),
+              ],
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                discoveryItems.length,
+                (index) => AnimatedContainer(
+                  duration: const Duration(milliseconds: 400),
+                  margin: EdgeInsets.symmetric(horizontal: 4.w),
+                  height: 6.r,
+                  width: _currentPage == index ? 28.w : 8.r,
+                  decoration: BoxDecoration(
+                    color: _currentPage == index
+                        ? discoveryItems[index].color
+                        : discoveryItems[index].color.withValues(alpha: 0.2),
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -163,7 +180,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
     required this.quests,
     required this.difficulty,
     required this.isSelected,
-    required this.activeFactor,
+    required this.isRtl,
     required this.onTap,
   });
 
@@ -174,140 +191,161 @@ class _DiscoveryCollectionCard extends StatelessWidget {
   final int quests;
   final String difficulty;
   final bool isSelected;
-  final double activeFactor;
+  final bool isRtl;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return ScaleButton(
-      onTap: onTap,
-      child: Container(
-        height: 200.h,
-        margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
-        child: GlassTile(
-          borderRadius: BorderRadius.circular(32.r),
-          padding: EdgeInsets.zero,
-          showShadow: false,
-          borderColor: isSelected 
-            ? color.withValues(alpha: 0.5) 
-            : Colors.white.withValues(alpha: 0.1),
-          child: Stack(
-            children: [
-              // Decorative Background Icon
-              Positioned(
-                right: -20,
-                top: -20,
-                child: Icon(
-                  icon,
-                  size: 140.r,
-                  color: color.withValues(alpha: isSelected ? 0.08 : 0.03),
-                ),
-              ),
 
-              // Content Layer
-              Padding(
-                padding: EdgeInsets.all(24.r),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Category Tag & Difficulty Row
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Semantics(
+      button: true,
+      label:
+          '$title, $subtitle, ${context.tr('home.quests_count', args: [quests.toString()])}, $difficulty',
+      child: ScaleButton(
+        onTap: onTap,
+        child: Container(
+          height: 200.h,
+          margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
+          child: ExcludeSemantics(
+            child: GlassTile(
+              borderRadius: BorderRadius.circular(32.r),
+              padding: EdgeInsets.zero,
+              showShadow: false,
+              borderColor: isSelected
+                  ? color.withValues(alpha: 0.5)
+                  : Colors.white.withValues(alpha: 0.1),
+              child: Stack(
+                children: [
+                  // Decorative Background Icon
+                  PositionedDirectional(
+                    end: -20,
+                    top: -20,
+                    child: Icon(
+                      icon,
+                      size: 140.r,
+                      color: color.withValues(alpha: isSelected ? 0.08 : 0.03),
+                    ),
+                  ),
+
+                  // Content Layer
+                  Padding(
+                    padding: EdgeInsets.all(24.r),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 10.w,
-                              vertical: 4.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: color.withValues(alpha: 0.15),
-                              borderRadius: BorderRadius.circular(12.r),
-                              border: Border.all(
-                                color: color.withValues(alpha: 0.2),
-                                width: 1,
-                              ),
-                            ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Container(
-                                    width: 6,
-                                    height: 6,
-                                    decoration: BoxDecoration(
-                                      color: color.withValues(alpha: 0.4),
-                                      shape: BoxShape.circle,
-                                    ),
+                        // Category Tag & Difficulty Row
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10.w,
+                                  vertical: 4.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: color.withValues(alpha: 0.15),
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  border: Border.all(
+                                    color: color.withValues(alpha: 0.2),
+                                    width: 1,
                                   ),
-                                  Container(
-                                    width: 12,
-                                    height: 12,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(color: color.withValues(alpha: 0.5), width: 1),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Stack(
+                                      alignment: Alignment.center,
+                                      children: [
+                                        Container(
+                                          width: 6,
+                                          height: 6,
+                                          decoration: BoxDecoration(
+                                            color: color.withValues(alpha: 0.4),
+                                            shape: BoxShape.circle,
+                                          ),
+                                        ),
+                                        Container(
+                                              width: 12,
+                                              height: 12,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                border: Border.all(
+                                                  color: color.withValues(
+                                                    alpha: 0.5,
+                                                  ),
+                                                  width: 1,
+                                                ),
+                                              ),
+                                            )
+                                            .animate(onPlay: (c) => c.repeat())
+                                            .scale(
+                                              begin: const Offset(0.5, 0.5),
+                                              end: const Offset(2, 2),
+                                              duration: 2.seconds,
+                                              curve: Curves.easeOutExpo,
+                                            )
+                                            .fadeOut(duration: 2.seconds),
+                                      ],
                                     ),
-                                  ).animate(onPlay: (c) => c.repeat())
-                                   .scale(begin: const Offset(0.5, 0.5), end: const Offset(2, 2), duration: 2.seconds, curve: Curves.easeOutExpo)
-                                   .fadeOut(duration: 2.seconds),
-                                ],
-                              ),
-                              SizedBox(width: 8.w),
-                              Flexible(
-                                child: Text(
-                                  title.toUpperCase(),
-                                  style: TextStyle(fontFamily: 'Outfit', 
-                                    fontSize: 9.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: color,
-                                    letterSpacing: 2.2,
-                                  ),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
+                                    SizedBox(width: 8.w),
+                                    Flexible(
+                                      child: Text(
+                                        title.toUpperCase(),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 9.sp,
+                                          fontWeight: FontWeight.w900,
+                                          color: color,
+                                          letterSpacing: 2.2,
+                                        ),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ],
+                            ),
+                            SizedBox(width: 8.w),
+                            _buildDifficultyBadge(difficulty, color),
+                          ],
+                        ),
+                        SizedBox(height: 16.h),
+
+                        // Main Subtitle
+                        Expanded(
+                          child: Text(
+                            subtitle,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w900,
+                              color: isDark
+                                  ? Colors.white
+                                  : const Color(0xFF0F172A),
+                              height: 1.1,
+                            ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
+
+                        // Action Footer
+                        Row(
+                          children: [
+                            _buildQuestCount(context, quests, color),
+                            const Spacer(),
+                            _buildStartButton(color, isRtl),
+                          ],
                         ),
-                        SizedBox(width: 8.w),
-                        _buildDifficultyBadge(difficulty, color),
                       ],
                     ),
-                    SizedBox(height: 16.h),
-
-                    // Main Subtitle
-                    Expanded(
-                      child: Text(
-                        subtitle,
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
-                          height: 1.1,
-                        ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-
-                    // Action Footer
-                    Row(
-                      children: [
-                        _buildQuestCount(context, quests, color),
-                        const Spacer(),
-                        _buildStartButton(color),
-                      ],
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
@@ -324,12 +362,17 @@ class _DiscoveryCollectionCard extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.psychology_rounded, size: 10.r, color: color.withValues(alpha: 0.7)),
+          Icon(
+            Icons.psychology_rounded,
+            size: 10.r,
+            color: color.withValues(alpha: 0.7),
+          ),
           SizedBox(width: 4.w),
           Flexible(
             child: Text(
               text.toUpperCase(),
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 8.sp,
                 fontWeight: FontWeight.w800,
                 color: color.withValues(alpha: 0.7),
@@ -358,38 +401,44 @@ class _DiscoveryCollectionCard extends StatelessWidget {
         SizedBox(width: 8.w),
         Text(
           context.tr('home.quests_count', args: [count.toString()]),
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 10.sp,
             fontWeight: FontWeight.w900,
             color: color,
             letterSpacing: 1.2,
           ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
       ],
     );
   }
 
-  Widget _buildStartButton(Color color) {
+  Widget _buildStartButton(Color color, bool isRtl) {
     return Container(
-      padding: EdgeInsets.all(12.r),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.12),
-        shape: BoxShape.circle,
-        border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: 0.1),
-            blurRadius: 12,
-            spreadRadius: 2,
+          padding: EdgeInsets.all(12.r),
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.12),
+            shape: BoxShape.circle,
+            border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: 0.1),
+                blurRadius: 12,
+                spreadRadius: 2,
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Icon(
-        Icons.arrow_forward_ios_rounded,
-        size: 14.r,
-        color: color,
-      ),
-    ).animate(onPlay: (c) => c.repeat())
-     .shimmer(delay: 1.seconds, duration: 2.seconds);
+          child: Icon(
+            isRtl
+                ? Icons.arrow_back_ios_rounded
+                : Icons.arrow_forward_ios_rounded,
+            size: 14.r,
+            color: color,
+          ),
+        )
+        .animate(onPlay: (c) => c.repeat())
+        .shimmer(delay: 1.seconds, duration: 2.seconds);
   }
 }

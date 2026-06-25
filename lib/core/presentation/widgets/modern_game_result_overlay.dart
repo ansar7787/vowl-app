@@ -5,8 +5,8 @@ import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
-/// A premium, theme-adaptive game result panel sliding from the bottom,
-/// featuring isolated confetti particle systems and cached glassmorphic drawing layers.
+/// Bottom-sheet result panel displayed after each game answer, with isolated
+/// confetti particle systems and cached glassmorphic drawing layers.
 class ModernGameResultOverlay extends StatelessWidget {
   final bool isCorrect;
   final String title;
@@ -40,187 +40,231 @@ class ModernGameResultOverlay extends StatelessWidget {
 
     return Stack(
       children: [
-        // Isolate dynamic, high-density particle emission layers
-        if (isCorrect) 
+        // Confetti — isolated in its own repaint boundary
+        if (isCorrect)
           const Positioned.fill(
-            child: IgnorePointer(
-              child: RepaintBoundary(
-                child: GameConfetti(),
-              ),
-            ),
+            child: IgnorePointer(child: RepaintBoundary(child: GameConfetti())),
           ),
-        Container(
+
+        ColoredBox(
           color: Colors.black.withValues(alpha: 0.4),
-          alignment: Alignment.bottomCenter,
-          child: RepaintBoundary(
-            child: GlassTile(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-              padding: EdgeInsets.zero,
-              glassOpacity: isDark ? 0.1 : 0.4,
-              blur: 30,
-              child: Container(
-                padding: EdgeInsets.all(32.r),
-                child: SafeArea(
-                  top: false,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(12.r),
-                            decoration: BoxDecoration(
-                              color: feedbackColor.withValues(alpha: 0.1),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              isCorrect
-                                  ? Icons.auto_awesome_rounded
-                                  : Icons.info_outline_rounded,
-                              color: feedbackColor,
-                              size: 32.r,
-                            ),
-                          ),
-                          SizedBox(width: 16.w),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: RepaintBoundary(
+              child:
+                  GlassTile(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(32.r),
+                    ),
+                    padding: EdgeInsets.zero,
+                    glassOpacity: isDark ? 0.1 : 0.4,
+                    blur: 30,
+                    child: Container(
+                      padding: EdgeInsets.all(32.r),
+                      child: SafeArea(
+                        top: false,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            // ── Result header ─────────────────────────────────
+                            Row(
                               children: [
-                                Text(
-                                  title,
-                                  style: TextStyle(fontFamily: 'Outfit', 
-                                    fontSize: 24.sp,
-                                    fontWeight: FontWeight.w900,
+                                Container(
+                                  padding: EdgeInsets.all(12.r),
+                                  decoration: BoxDecoration(
+                                    color: feedbackColor.withValues(alpha: 0.1),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    isCorrect
+                                        ? Icons.auto_awesome_rounded
+                                        : Icons.info_outline_rounded,
                                     color: feedbackColor,
+                                    size: 32.r,
                                   ),
                                 ),
-                                if (subtitle != null)
-                                  Text(
-                                    subtitle!,
-                                    style: TextStyle(fontFamily: 'Outfit', 
-                                      fontSize: 14.sp,
-                                      color: isDark ? Colors.white70 : Colors.black54,
+                                SizedBox(width: 16.w),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        title,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 24.sp,
+                                          fontWeight: FontWeight.w900,
+                                          color: feedbackColor,
+                                        ),
+                                      ),
+                                      if (subtitle != null)
+                                        Text(
+                                          subtitle!,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 14.sp,
+                                            color: isDark
+                                                ? Colors.white70
+                                                : Colors.black54,
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+
+                            SizedBox(height: 32.h),
+
+                            // ── Speech comparison card ────────────────────────
+                            if (recognizedText != null) ...[
+                              GlassTile(
+                                borderRadius: BorderRadius.circular(16.r),
+                                padding: EdgeInsets.all(16.r),
+                                glassOpacity: 0.1,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      context.tr('game_result.you_said'),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: isDark
+                                            ? Colors.white38
+                                            : Colors.black38,
+                                      ),
+                                    ),
+                                    SizedBox(height: 4.h),
+                                    Text(
+                                      recognizedText!,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: isCorrect
+                                            ? const Color(0xFF10B981)
+                                            : const Color(0xFFF43F5E),
+                                      ),
+                                    ),
+                                    if (targetText != null && !isCorrect) ...[
+                                      SizedBox(height: 12.h),
+                                      Text(
+                                        context.tr('game_result.expected'),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.w800,
+                                          color: isDark
+                                              ? Colors.white38
+                                              : Colors.black38,
+                                        ),
+                                      ),
+                                      SizedBox(height: 4.h),
+                                      Text(
+                                        targetText!,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w600,
+                                          color: primaryColor,
+                                        ),
+                                      ),
+                                    ],
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 24.h),
+                            ],
+
+                            // ── Grammar explanation card ───────────────────────
+                            if (explanation != null) ...[
+                              GlassTile(
+                                borderRadius: BorderRadius.circular(16.r),
+                                padding: EdgeInsets.all(16.r),
+                                glassOpacity: 0.1,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      context.tr('game_result.grammar_rule'),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: isDark
+                                            ? Colors.white38
+                                            : Colors.black38,
+                                      ),
+                                    ),
+                                    SizedBox(height: 4.h),
+                                    Text(
+                                      explanation!,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: isDark
+                                            ? Colors.white.withValues(
+                                                alpha: 0.9,
+                                              )
+                                            : Colors.black87,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 24.h),
+                            ],
+
+                            // ── Continue button ────────────────────────────────
+                            Semantics(
+                              button: true,
+                              label: context.tr('common.continue_text'),
+                              child: SizedBox(
+                                width: double.infinity,
+                                height: 60.h,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: feedbackColor,
+                                    foregroundColor: Colors.white,
+                                    elevation: 0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.r),
                                     ),
                                   ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 32.h),
-                      if (recognizedText != null) ...[
-                        GlassTile(
-                          borderRadius: BorderRadius.circular(16.r),
-                          padding: EdgeInsets.all(16.r),
-                          glassOpacity: 0.1,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "YOU SAID:",
-                                style: TextStyle(fontFamily: 'Outfit', 
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: isDark ? Colors.white38 : Colors.black38,
-                                ),
-                              ),
-                              SizedBox(height: 4.h),
-                              Text(
-                                recognizedText!,
-                                style: TextStyle(fontFamily: 'Outfit', 
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: isCorrect
-                                      ? const Color(0xFF10B981)
-                                      : const Color(0xFFF43F5E),
-                                ),
-                              ),
-                              if (targetText != null && !isCorrect) ...[
-                                SizedBox(height: 12.h),
-                                Text(
-                                  "EXPECTED:",
-                                  style: TextStyle(fontFamily: 'Outfit', 
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w800,
-                                    color: isDark ? Colors.white38 : Colors.black38,
+                                  onPressed: onContinue,
+                                  child: Text(
+                                    context
+                                        .tr('common.continue_text')
+                                        .toUpperCase(),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 18.sp,
+                                      fontWeight: FontWeight.w900,
+                                      letterSpacing: 1.2,
+                                    ),
                                   ),
                                 ),
-                                SizedBox(height: 4.h),
-                                Text(
-                                  targetText!,
-                                  style: TextStyle(fontFamily: 'Outfit', 
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: primaryColor,
-                                  ),
-                                ),
-                              ],
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 24.h),
-                      ],
-                      if (explanation != null) ...[
-                        GlassTile(
-                          borderRadius: BorderRadius.circular(16.r),
-                          padding: EdgeInsets.all(16.r),
-                          glassOpacity: 0.1,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "GRAMMAR RULE:",
-                                style: TextStyle(fontFamily: 'Outfit', 
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: isDark ? Colors.white38 : Colors.black38,
-                                ),
                               ),
-                              SizedBox(height: 4.h),
-                              Text(
-                                explanation!,
-                                style: TextStyle(fontFamily: 'Outfit', 
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: isDark
-                                      ? Colors.white.withValues(alpha: 0.9)
-                                      : Colors.black87,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 24.h),
-                      ],
-                      SizedBox(
-                        width: double.infinity,
-                        height: 60.h,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: feedbackColor,
-                            foregroundColor: Colors.white,
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20.r),
                             ),
-                          ),
-                          onPressed: onContinue,
-                          child: Text(
-                            context.tr('common.continue_text').toUpperCase(),
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w900,
-                              letterSpacing: 1.2,
-                            ),
-                          ),
+                          ],
                         ),
                       ),
-                    ],
+                    ),
+                  ).animate().slideY(
+                    begin: 1,
+                    end: 0,
+                    duration: 400.ms,
+                    curve: Curves.easeOutBack,
                   ),
-                ),
-              ),
             ),
-          ).animate().slideY(begin: 1, end: 0, duration: 400.ms, curve: Curves.easeOutBack),
+          ),
         ),
       ],
     );

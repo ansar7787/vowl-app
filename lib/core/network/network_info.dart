@@ -2,13 +2,10 @@ import 'dart:async';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 
 /// Represents standard application-level network connection statuses.
-/// 
+///
 /// Decouples the presentation and domain logic from third-party library classes,
 /// ensuring high compliance with the Dependency Inversion Principle.
-enum AppNetworkStatus {
-  online,
-  offline;
-}
+enum AppNetworkStatus { online, offline }
 
 /// Abstract contract for verifying internet connectivity status.
 abstract class NetworkInfo {
@@ -41,13 +38,15 @@ class NetworkInfoImpl implements NetworkInfo {
   @override
   Stream<AppNetworkStatus> get onStatusChange {
     // Dynamic mapping: converts third-party InternetStatus into application-specific AppNetworkStatus.
-    return _connectionChecker.onStatusChange.map((status) {
-      switch (status) {
-        case InternetStatus.connected:
-          return AppNetworkStatus.online;
-        case InternetStatus.disconnected:
-          return AppNetworkStatus.offline;
-      }
-    }).distinct(); // DSA Optimization: distinct() ignores redundant duplicate status changes to save widget rebuilds.
+    return _connectionChecker.onStatusChange.map(
+      (status) {
+        switch (status) {
+          case InternetStatus.connected:
+            return AppNetworkStatus.online;
+          case InternetStatus.disconnected:
+            return AppNetworkStatus.offline;
+        }
+      },
+    ).distinct(); // DSA Optimization: distinct() ignores redundant duplicate status changes to save widget rebuilds.
   }
 }

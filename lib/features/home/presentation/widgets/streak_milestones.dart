@@ -3,8 +3,75 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
+
+/// A single streak milestone: the day count it unlocks at, and its reward.
+class StreakMilestone {
+  final int days;
+  final int reward;
+  const StreakMilestone({required this.days, required this.reward});
+}
+
+/// Pure, side-effect-free milestone calculation — extracted out of
+/// StreakMilestones.build() so it's unit-testable on its own and isn't
+/// silently re-derived as a side effect of an unrelated widget rebuild.
+class StreakMilestoneCalculator {
+  StreakMilestoneCalculator._();
+
+  static List<StreakMilestone> compute(UserEntity user) {
+    final Map<int, int> rewardsByDay = {};
+
+    void addMilestone(int d) {
+      if (rewardsByDay.containsKey(d)) return;
+      int reward;
+      if (d == 10) {
+        reward = 500;
+      } else if (d == 50) {
+        reward = 2500;
+      } else if (d == 100) {
+        reward = 6000;
+      } else if (d == 200) {
+        reward = 15000;
+      } else if (d == 300) {
+        reward = 25000;
+      } else if (d % 365 == 0) {
+        reward = 50000 * (d ~/ 365);
+      } else {
+        reward = d * 50;
+      }
+      rewardsByDay[d] = reward;
+    }
+
+    const starterSet = [10, 50, 100, 200, 300, 365];
+    for (final d in starterSet) {
+      addMilestone(d);
+    }
+    for (final d in user.claimedStreakMilestones) {
+      addMilestone(d);
+    }
+
+    final int current = user.currentStreak;
+    final int lastCentury = (current ~/ 100) * 100;
+    if (lastCentury > 0) addMilestone(lastCentury);
+
+    final int nextCentury = ((current ~/ 100) + 1) * 100;
+    addMilestone(nextCentury);
+    addMilestone(nextCentury + 100);
+
+    final int nextYear = ((current ~/ 365) + 1) * 365;
+    addMilestone(nextYear);
+
+    final milestones =
+        rewardsByDay.entries
+            .map((e) => StreakMilestone(days: e.key, reward: e.value))
+            .toList()
+          ..sort((a, b) => a.days.compareTo(b.days));
+
+    return milestones;
+  }
+}
 
 class StreakMilestones extends StatelessWidget {
   final UserEntity user;
@@ -13,61 +80,21 @@ class StreakMilestones extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Dynamic Milestone Logic: Starter set + Periodic Centuries + Yearly Bonuses
-    final List<Map<String, int>> milestones = [];
-    final Set<int> addedDays = {};
-
-    void addMilestone(int d) {
-      if (!addedDays.contains(d)) {
-        int reward;
-        if (d == 10) {
-          reward = 500;
-        } else if (d == 50) {
-          reward = 2500;
-        } else if (d == 100) {
-          reward = 6000;
-        } else if (d == 200) {
-          reward = 15000;
-        } else if (d == 300) {
-          reward = 25000;
-        } else if (d % 365 == 0) {
-          reward = 50000 * (d ~/ 365);
-        } else {
-          reward = d * 50;
-        }
-
-        milestones.add({'days': d, 'reward': reward});
-        addedDays.add(d);
-      }
-    }
-
-    [10, 50, 100, 200, 300, 365].forEach(addMilestone);
-    user.claimedStreakMilestones.forEach(addMilestone);
-
-    int current = user.currentStreak;
-    int lastCentury = (current ~/ 100) * 100;
-    if (lastCentury > 0) addMilestone(lastCentury);
-
-    int nextCentury = ((current ~/ 100) + 1) * 100;
-    addMilestone(nextCentury);
-    addMilestone(nextCentury + 100);
-
-    int nextYear = ((current ~/ 365) + 1) * 365;
-    addMilestone(nextYear);
-
-    milestones.sort((a, b) => a['days']!.compareTo(b['days']!));
+    final milestones = StreakMilestoneCalculator.compute(user);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'STREAK MILESTONES',
+          context.tr('streak.milestones_title', fallback: 'STREAK MILESTONES'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 20.sp,
             fontWeight: FontWeight.w900,
             letterSpacing: -0.5,
           ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
         SizedBox(height: 16.h),
         SingleChildScrollView(
@@ -77,185 +104,270 @@ class StreakMilestones extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 8.h),
           child: Row(
             children: milestones.map((m) {
-              final days = m['days'] as int;
-              final reward = m['reward'] as int;
+              final days = m.days;
+              final reward = m.reward;
               final isReached = user.currentStreak >= days;
               final isClaimed = user.claimedStreakMilestones.contains(days);
               final isNext =
                   !isReached &&
-                  (milestones.firstWhere(
-                        (element) =>
-                            (element['days'] as int) > user.currentStreak,
-                        orElse: () => milestones.last,
-                      )['days'] ==
+                  (milestones
+                          .firstWhere(
+                            (element) => element.days > user.currentStreak,
+                            orElse: () => milestones.last,
+                          )
+                          .days ==
                       days);
+
+              final daysLabel = (days % 365 == 0)
+                  ? ((days ~/ 365) == 1
+                        ? context.tr(
+                            'streak.milestone_year_singular',
+                            fallback: '1 YEAR',
+                          )
+                        : context.tr(
+                            'streak.milestone_years_plural',
+                            args: [(days ~/ 365).toString()],
+                            fallback: '${days ~/ 365} YEARS',
+                          ))
+                  : context.tr(
+                      'streak.milestone_days',
+                      args: [days.toString()],
+                      fallback: '$days DAYS',
+                    );
+
+              final statusLabel = isClaimed
+                  ? context.tr('streak.milestone_claimed', fallback: 'CLAIMED')
+                  : (isReached
+                        ? context.tr(
+                            'streak.milestone_claim_cta',
+                            fallback: 'CLAIM',
+                          )
+                        : context.tr(
+                            'streak.milestone_progress_label',
+                            args: [
+                              user.currentStreak.toString(),
+                              days.toString(),
+                            ],
+                            fallback: '${user.currentStreak}/$days days',
+                          ));
 
               return Container(
                 width: 120.w,
                 margin: EdgeInsets.only(right: 12.w),
-                child: Stack(
-                  children: [
-                    Container(
-                      width: 120.w,
-                      padding: EdgeInsets.all(16.r),
-                      decoration: BoxDecoration(
-                        color: isReached
-                            ? Colors.amber.withValues(alpha: 0.1)
-                            : (isNext
-                                  ? Colors.blue.withValues(alpha: 0.08)
-                                  : Colors.white.withValues(alpha: 0.03)),
-                        borderRadius: BorderRadius.circular(24.r),
-                        border: Border.all(
-                          color: isClaimed
-                              ? Colors.amber.withValues(alpha: 0.3)
-                              : (isReached
-                                    ? Colors.amber
-                                    : (isNext
-                                          ? Colors.blue.withValues(alpha: 0.4)
-                                          : Colors.white.withValues(
-                                              alpha: 0.1,
-                                            ))),
-                          width: isNext ? 2 : 1,
-                        ),
-                        boxShadow: isNext
-                            ? [
-                                BoxShadow(
-                                  color: Colors.blue.withValues(alpha: 0.1),
-                                  blurRadius: 15,
-                                  spreadRadius: 2,
-                                ),
-                              ]
-                            : null,
-                      ),
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(10.r),
-                            decoration: BoxDecoration(
-                              color: (isReached ? Colors.amber : Colors.grey)
-                                  .withValues(alpha: 0.1),
-                              shape: BoxShape.circle,
+                child: Semantics(
+                  label:
+                      '$daysLabel, +$reward ${context.tr('common.coins_label', fallback: 'coins')}, $statusLabel',
+                  button: isReached && !isClaimed,
+                  child: Stack(
+                    children: [
+                      ExcludeSemantics(
+                        excluding: !(isReached && !isClaimed),
+                        child: Container(
+                          width: 120.w,
+                          padding: EdgeInsets.all(16.r),
+                          decoration: BoxDecoration(
+                            color: isReached
+                                ? Colors.amber.withValues(alpha: 0.1)
+                                : (isNext
+                                      ? Colors.blue.withValues(alpha: 0.08)
+                                      : Colors.white.withValues(alpha: 0.03)),
+                            borderRadius: BorderRadius.circular(24.r),
+                            border: Border.all(
+                              color: isClaimed
+                                  ? Colors.amber.withValues(alpha: 0.3)
+                                  : (isReached
+                                        ? Colors.amber
+                                        : (isNext
+                                              ? Colors.blue.withValues(
+                                                  alpha: 0.4,
+                                                )
+                                              : Colors.white.withValues(
+                                                  alpha: 0.1,
+                                                ))),
+                              width: isNext ? 2 : 1,
                             ),
-                            child: Icon(
-                              isClaimed
-                                  ? LucideIcons.checkCircle
-                                  : LucideIcons.gift,
-                              color: isReached ? Colors.amber : Colors.grey,
-                              size: 20.r,
-                            ),
+                            boxShadow: isNext
+                                ? [
+                                    BoxShadow(
+                                      color: Colors.blue.withValues(alpha: 0.1),
+                                      blurRadius: 15,
+                                      spreadRadius: 2,
+                                    ),
+                                  ]
+                                : null,
                           ),
-                          SizedBox(height: 12.h),
-                          Text(
-                            days % 365 == 0
-                                ? '${(days / 365).toInt()} YEAR${days / 365 == 1 ? '' : 'S'}'
-                                : '$days DAYS',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
-                              color: isReached ? Colors.amber : Colors.grey,
-                            ),
-                          ),
-                          SizedBox(height: 4.h),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          child: Column(
                             children: [
-                              Icon(
-                                LucideIcons.circleDollarSign,
-                                size: 12.sp,
-                                color: isReached
-                                    ? Colors.amber.withValues(alpha: 0.7)
-                                    : Colors.grey.withValues(alpha: 0.5),
-                              ),
-                              SizedBox(width: 4.w),
-                              Text(
-                                '+$reward',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: isReached
-                                      ? Colors.amber.withValues(alpha: 0.7)
-                                      : Colors.grey.withValues(alpha: 0.5),
+                              Container(
+                                padding: EdgeInsets.all(10.r),
+                                decoration: BoxDecoration(
+                                  color:
+                                      (isReached ? Colors.amber : Colors.grey)
+                                          .withValues(alpha: 0.1),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  isClaimed
+                                      ? LucideIcons.checkCircle
+                                      : LucideIcons.gift,
+                                  color: isReached ? Colors.amber : Colors.grey,
+                                  size: 20.r,
                                 ),
                               ),
-                            ],
-                          ),
-                          SizedBox(height: 12.h),
-                          if (isReached && !isClaimed)
-                            ElevatedButton(
-                                  onPressed: () =>
-                                      context.read<ProgressionBloc>().add(
-                                        ProgressionClaimStreakMilestoneRequested(
-                                          days,
-                                          reward,
-                                        ),
-                                      ),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.amber,
-                                    foregroundColor: Colors.black,
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 12.w,
-                                      vertical: 8.h,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12.r),
-                                    ),
-                                    elevation: 0,
+                              SizedBox(height: 12.h),
+                              FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  daysLabel,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: isReached
+                                        ? Colors.amber
+                                        : Colors.grey,
                                   ),
-                                  child: Text(
-                                    'CLAIM',
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 10.sp,
-                                      fontWeight: FontWeight.w900,
+                                  maxLines: 1,
+                                ),
+                              ),
+                              SizedBox(height: 4.h),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    LucideIcons.circleDollarSign,
+                                    size: 12.sp,
+                                    color: isReached
+                                        ? Colors.amber.withValues(alpha: 0.7)
+                                        : Colors.grey.withValues(alpha: 0.5),
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Flexible(
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Text(
+                                        '+$reward',
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.w800,
+                                          color: isReached
+                                              ? Colors.amber.withValues(
+                                                  alpha: 0.7,
+                                                )
+                                              : Colors.grey.withValues(
+                                                  alpha: 0.5,
+                                                ),
+                                        ),
+                                        maxLines: 1,
+                                      ),
                                     ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 12.h),
+                              if (isReached && !isClaimed)
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: ConstrainedBox(
+                                    // Guarantees the 48dp accessible touch
+                                    // target for this real-money-adjacent
+                                    // reward-claim action, even though the
+                                    // visual button is intentionally compact.
+                                    constraints: BoxConstraints(
+                                      minHeight: 48.r,
+                                    ),
+                                    child:
+                                        ElevatedButton(
+                                              onPressed: () => context
+                                                  .read<ProgressionBloc>()
+                                                  .add(
+                                                    ProgressionClaimStreakMilestoneRequested(
+                                                      days,
+                                                      reward,
+                                                    ),
+                                                  ),
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.amber,
+                                                foregroundColor: Colors.black,
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 12.w,
+                                                  vertical: 8.h,
+                                                ),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        12.r,
+                                                      ),
+                                                ),
+                                                elevation: 0,
+                                              ),
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: Text(
+                                                  statusLabel,
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 10.sp,
+                                                    fontWeight: FontWeight.w900,
+                                                  ),
+                                                  maxLines: 1,
+                                                ),
+                                              ),
+                                            )
+                                            .animate(onPlay: (c) => c.repeat())
+                                            .shimmer(duration: 2.seconds),
                                   ),
                                 )
-                                .animate(onPlay: (c) => c.repeat())
-                                .shimmer(duration: 2.seconds)
-                          else if (isClaimed)
-                            Text(
-                              'CLAIMED',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.amber.withValues(alpha: 0.5),
-                              ),
-                            )
-                          else
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(4.r),
-                              child: LinearProgressIndicator(
-                                value: user.currentStreak / days,
-                                backgroundColor: Colors.white10,
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  isNext ? Colors.blue : Colors.grey,
-                                ),
-                                minHeight: 4.h,
-                              ),
-                            ),
-                        ],
-                      ),
-                    ),
-                    if (isNext)
-                      Positioned.fill(
-                        child: IgnorePointer(
-                          child:
-                              Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(24.r),
-                                    ),
-                                  )
-                                  .animate(onPlay: (c) => c.repeat())
-                                  .shimmer(
-                                    duration: 3.seconds,
-                                    color: Colors.blue.withValues(alpha: 0.1),
+                              else if (isClaimed)
+                                Text(
+                                  statusLabel,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.amber.withValues(alpha: 0.5),
                                   ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                )
+                              else
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(4.r),
+                                  child: LinearProgressIndicator(
+                                    value: user.currentStreak / days,
+                                    backgroundColor: Colors.white10,
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      isNext ? Colors.blue : Colors.grey,
+                                    ),
+                                    minHeight: 4.h,
+                                    semanticsLabel: statusLabel,
+                                  ),
+                                ),
+                            ],
+                          ),
                         ),
                       ),
-                  ],
+                      if (isNext)
+                        Positioned.fill(
+                          child: IgnorePointer(
+                            child:
+                                Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(
+                                          24.r,
+                                        ),
+                                      ),
+                                    )
+                                    .animate(onPlay: (c) => c.repeat())
+                                    .shimmer(
+                                      duration: 3.seconds,
+                                      color: Colors.blue.withValues(alpha: 0.1),
+                                    ),
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
               );
             }).toList(),

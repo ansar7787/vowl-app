@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class PremiumHero extends StatelessWidget {
   const PremiumHero({super.key});
@@ -33,8 +34,14 @@ class PremiumHero extends StatelessWidget {
           ),
         ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 3.seconds),
         SizedBox(height: 16.h),
+        // RESPONSIVENESS: no maxLines/overflow constraint needed here -
+        // this heading is allowed to wrap to a second line for longer
+        // translations rather than being clipped, since it sits in a
+        // scrollable column (see premium_screen.dart) and has no fixed
+        // height neighbor depending on it.
         Text(
-          'Unlimited Growth.',
+          context.tr('premium.hero_title'),
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',
             color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -45,7 +52,8 @@ class PremiumHero extends StatelessWidget {
         ),
         SizedBox(height: 8.h),
         Text(
-          'Master English with Premium features',
+          context.tr('premium.hero_subtitle'),
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',
             color: isDark ? const Color(0x7DFFFFFF) : const Color(0x42000000),

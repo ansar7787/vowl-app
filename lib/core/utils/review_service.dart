@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter/foundation.dart';
+import 'package:vowl/core/utils/app_logger.dart';
 
 /// Abstract contract defining the In-App review rating system.
 ///
@@ -17,6 +17,16 @@ abstract class ReviewService {
   Future<void> notifyQuestCompleted();
 
   /// Triggers the actual system-native rating prompt.
+  ///
+  /// NOTE: [force] is currently a no-op. There is no internal cooldown
+  /// gate inside this method itself to bypass - the only cooldown logic
+  /// lives in [notifyQuestCompleted]'s decision of *whether* to call this
+  /// method at all. If you have a "Rate Us" button elsewhere that calls
+  /// `triggerReviewPrompt(force: true)` expecting it to behave differently
+  /// from `triggerReviewPrompt()`, it currently does not - both paths
+  /// always attempt the native prompt immediately if available. Flagging
+  /// rather than guessing at the intended behavior, since changing this
+  /// is a product decision, not a code-correctness fix.
   Future<void> triggerReviewPrompt({bool force = false});
 }
 
@@ -60,9 +70,9 @@ class InAppReviewService implements ReviewService {
       currentCount++;
       await prefs.setInt(keyQuestsCompleted, currentCount);
 
-      if (kDebugMode) {
-        debugPrint("ReviewService: Quest completed count incremented to $currentCount");
-      }
+      AppLogger.debug(
+        "ReviewService: Quest completed count incremented to $currentCount",
+      );
 
       // Check if organic trigger conditions are met:
       // 1. At least 3 quests successfully completed
@@ -77,7 +87,10 @@ class InAppReviewService implements ReviewService {
         }
       }
     } catch (e) {
-      debugPrint("ReviewService: Error tracking completed quest: $e");
+      AppLogger.warning(
+        "ReviewService: Error tracking completed quest",
+        error: e,
+      );
     }
   }
 
@@ -86,22 +99,28 @@ class InAppReviewService implements ReviewService {
     try {
       final isAvailable = await _inAppReview.isAvailable();
       if (!isAvailable) {
-        debugPrint("ReviewService: In-app review is not available on this device.");
+        AppLogger.debug(
+          "ReviewService: In-app review is not available on this device.",
+        );
         return;
       }
 
       // Reset count and record prompt timestamp to enforce the organic cooldown
       final prefs = await SharedPreferences.getInstance();
       await prefs.setInt(keyQuestsCompleted, 0);
-      await prefs.setInt(keyLastPromptTime, DateTime.now().millisecondsSinceEpoch);
+      await prefs.setInt(
+        keyLastPromptTime,
+        DateTime.now().millisecondsSinceEpoch,
+      );
 
-      if (kDebugMode) {
-        debugPrint("ReviewService: Requesting native in-app review popup.");
-      }
+      AppLogger.debug("ReviewService: Requesting native in-app review popup.");
 
       await _inAppReview.requestReview();
     } catch (e) {
-      debugPrint("ReviewService: Error displaying native review prompt: $e");
+      AppLogger.warning(
+        "ReviewService: Error displaying native review prompt",
+        error: e,
+      );
     }
   }
 }

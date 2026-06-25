@@ -1,11 +1,14 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-/// Centralized asset registry and item configurations for Vowl.
-/// 
-/// Provides unified null-safe accessors for mascots, accessories, prices,
-/// and theme colors to prevent layout runtime exceptions.
+/// Centralised, immutable asset registry for Vowl mascots and accessories.
+///
+/// All public map constants are `const` — zero runtime allocation.
+/// All lookup helpers are null-safe and return defined fallback values;
+/// they must never throw or return null to prevent UI layout crashes.
+@immutable
 class VowlAssets {
-  // Mascots for Vowl Users
+  // ── Mascot emoji map ────────────────────────────────────────────────────
   static const Map<String, String> mascotMap = {
     'vowl_prime': '🦉',
     'silver_wing': '🦅',
@@ -19,12 +22,16 @@ class VowlAssets {
     'cosmic_unicorn': '🦄',
   };
 
-  // Vowlbot Assets (Dynamic Branding)
+  // ── Vowlbot image assets ─────────────────────────────────────────────────
   static const String vowlbotHappy = 'assets/images/mascot/voxbot_happy.webp';
-  static const String vowlbotNeutral = 'assets/images/mascot/voxbot_neutral.webp';
-  static const String vowlbotThinking = 'assets/images/mascot/voxbot_thinking.webp';
-  static const String vowlbotWorried = 'assets/images/mascot/voxbot_worried.webp';
+  static const String vowlbotNeutral =
+      'assets/images/mascot/voxbot_neutral.webp';
+  static const String vowlbotThinking =
+      'assets/images/mascot/voxbot_thinking.webp';
+  static const String vowlbotWorried =
+      'assets/images/mascot/voxbot_worried.webp';
 
+  // ── Mascot display names ─────────────────────────────────────────────────
   static const Map<String, String> mascotNames = {
     'vowl_prime': 'Vowl Prime',
     'silver_wing': 'Silver Wing',
@@ -38,6 +45,7 @@ class VowlAssets {
     'cosmic_unicorn': 'Cosmic Unicorn',
   };
 
+  // ── Mascot lore traits ───────────────────────────────────────────────────
   static const Map<String, String> mascotTraits = {
     'vowl_prime': 'Ancient Sage of Vowels',
     'silver_wing': 'Master of the Swift Skies',
@@ -51,7 +59,7 @@ class VowlAssets {
     'cosmic_unicorn': 'Traveler of the Infinite Stars',
   };
 
-  // Accessories for Vowl (Purchasable with Vowl Coins)
+  // ── Accessory emoji map ──────────────────────────────────────────────────
   static const Map<String, String> accessoryMap = {
     'scholar_cap': '🎓',
     'red_scarf': '🧣',
@@ -67,8 +75,9 @@ class VowlAssets {
     'mystic_amulet': '🧿',
   };
 
+  // ── Accessory display names ──────────────────────────────────────────────
   static const Map<String, String> accessoryNames = {
-    'scholar_cap': 'Scholar\'s Cap',
+    'scholar_cap': "Scholar's Cap",
     'red_scarf': 'Crimson Scarf',
     'cyber_visor': 'Cyber Visor',
     'magic_wand': 'Arcane Wand',
@@ -82,6 +91,7 @@ class VowlAssets {
     'mystic_amulet': 'Mystic Amulet',
   };
 
+  // ── Accessory prices (Vowl Coins) ────────────────────────────────────────
   static const Map<String, int> accessoryPrices = {
     'scholar_cap': 1500,
     'red_scarf': 2500,
@@ -97,69 +107,67 @@ class VowlAssets {
     'mystic_amulet': 100000,
   };
 
+  // ── Item theme colours ───────────────────────────────────────────────────
   static const Map<String, Color> itemColors = {
     // Mascots
-    'vowl_prime': Color(0xFF3B82F6), // Premium Blue
-    'silver_wing': Color(0xFF64748B), // Slate Grey
-    'crystal_swan': Color(0xFFE0F2FE), // Ice Blue
-    'neon_parrot': Color(0xFFEC4899), // Neon Pink
-    'night_bat': Color(0xFF6366F1), // Indigo
-    'emerald_peacock': Color(0xFF10B981), // Emerald
-    'golden_dragon': Color(0xFFF59E0B), // Gold
-    'shadow_wolf': Color(0xFF334155), // Dark Slate
-    'frost_penguin': Color(0xFF06B6D4), // Frost Cyan
-    'cosmic_unicorn': Color(0xFF8B5CF6), // Deep Purple
+    'vowl_prime': Color(0xFF3B82F6),
+    'silver_wing': Color(0xFF64748B),
+    'crystal_swan': Color(0xFFE0F2FE),
+    'neon_parrot': Color(0xFFEC4899),
+    'night_bat': Color(0xFF6366F1),
+    'emerald_peacock': Color(0xFF10B981),
+    'golden_dragon': Color(0xFFF59E0B),
+    'shadow_wolf': Color(0xFF334155),
+    'frost_penguin': Color(0xFF06B6D4),
+    'cosmic_unicorn': Color(0xFF8B5CF6),
     // Accessories
-    'scholar_cap': Color(0xFF4F46E5), // Scholar Indigo
-    'red_scarf': Color(0xFFEF4444), // Crimson Red
-    'cyber_visor': Color(0xFF14B8A6), // Cyber Teal
-    'magic_wand': Color(0xFFD946EF), // Magic Fuchsia
-    'golden_bell': Color(0xFFFBBF24), // Bell Gold
-    'frost_aura': Color(0xFF06B6D4), // Frost Cyan
-    'wind_whistler': Color(0xFF64748B), // Storm Grey
-    'phoenix_wings': Color(0xFFF97316), // Phoenix Orange
-    'dragon_gem': Color(0xFFEC4899), // Dragon Pink
-    'golden_crown': Color(0xFFF59E0B), // Royal Amber
-    'starlight_aura': Color(0xFFFEF08A), // Starlight Yellow
-    'mystic_amulet': Color(0xFF8B5CF6), // Mystic Purple
+    'scholar_cap': Color(0xFF4F46E5),
+    'red_scarf': Color(0xFFEF4444),
+    'cyber_visor': Color(0xFF14B8A6),
+    'magic_wand': Color(0xFFD946EF),
+    'golden_bell': Color(0xFFFBBF24),
+    'frost_aura': Color(0xFF06B6D4),
+    'wind_whistler': Color(0xFF64748B),
+    'phoenix_wings': Color(0xFFF97316),
+    'dragon_gem': Color(0xFFEC4899),
+    'golden_crown': Color(0xFFF59E0B),
+    'starlight_aura': Color(0xFFFEF08A),
+    'mystic_amulet': Color(0xFF8B5CF6),
   };
 
-  // ============================================================
-  // Null-Safe Lookup Helpers (Prevents UI runtime crash sweeps)
-  // ============================================================
+  // =========================================================================
+  // Null-safe lookup helpers — never return null, never throw.
+  // =========================================================================
 
-  /// Safely resolves a color mapping for a mascot or accessory.
-  static Color getItemColor(String key, {Color fallback = const Color(0xFF2563EB)}) {
-    return itemColors[key] ?? fallback;
-  }
+  /// Resolves the theme colour for a mascot or accessory [key].
+  static Color getItemColor(
+    String key, {
+    Color fallback = const Color(0xFF2563EB),
+  }) => itemColors[key] ?? fallback;
 
-  /// Safely resolves the emoji visual representation for a mascot.
-  static String getMascotEmoji(String key, {String fallback = '🦉'}) {
-    return mascotMap[key] ?? fallback;
-  }
+  /// Resolves the emoji for a mascot [key].
+  static String getMascotEmoji(String key, {String fallback = '🦉'}) =>
+      mascotMap[key] ?? fallback;
 
-  /// Safely resolves the display name for a mascot.
-  static String getMascotName(String key, {String fallback = 'Companion'}) {
-    return mascotNames[key] ?? fallback;
-  }
+  /// Resolves the display name for a mascot [key].
+  static String getMascotName(String key, {String fallback = 'Companion'}) =>
+      mascotNames[key] ?? fallback;
 
-  /// Safely resolves the lore trait description for a mascot.
-  static String getMascotTrait(String key, {String fallback = 'Ancient Spirit of Vowl'}) {
-    return mascotTraits[key] ?? fallback;
-  }
+  /// Resolves the lore trait for a mascot [key].
+  static String getMascotTrait(
+    String key, {
+    String fallback = 'Ancient Spirit of Vowl',
+  }) => mascotTraits[key] ?? fallback;
 
-  /// Safely resolves the emoji visual representation for an accessory.
-  static String getAccessoryEmoji(String key, {String fallback = '✨'}) {
-    return accessoryMap[key] ?? fallback;
-  }
+  /// Resolves the emoji for an accessory [key].
+  static String getAccessoryEmoji(String key, {String fallback = '✨'}) =>
+      accessoryMap[key] ?? fallback;
 
-  /// Safely resolves the display name for an accessory.
-  static String getAccessoryName(String key, {String fallback = 'Item'}) {
-    return accessoryNames[key] ?? fallback;
-  }
+  /// Resolves the display name for an accessory [key].
+  static String getAccessoryName(String key, {String fallback = 'Item'}) =>
+      accessoryNames[key] ?? fallback;
 
-  /// Safely resolves the price tag in Vowl coins for an accessory.
-  static int getAccessoryPrice(String key, {int fallback = 0}) {
-    return accessoryPrices[key] ?? fallback;
-  }
+  /// Resolves the Vowl Coin price for an accessory [key].
+  static int getAccessoryPrice(String key, {int fallback = 0}) =>
+      accessoryPrices[key] ?? fallback;
 }

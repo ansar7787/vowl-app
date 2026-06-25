@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 /// A premium glassmorphic header widget displaying the active game category, level tier, and current coins.
@@ -21,10 +22,8 @@ class GlassMapHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final gameTheme = LevelThemeHelper.getTheme(
-      gameType,
-      isDark: isDark,
-    );
+    final gameTheme = LevelThemeHelper.getTheme(gameType, isDark: isDark);
+    final coins = user?.coins ?? 0;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
@@ -47,22 +46,24 @@ class GlassMapHeader extends StatelessWidget {
         child: Row(
           children: [
             // Floating Game Icon
-            Container(
-              width: 64.r,
-              height: 64.r,
-              decoration: BoxDecoration(
-                color: theme.primaryColor,
-                borderRadius: BorderRadius.circular(20.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: theme.primaryColor.withValues(alpha: 0.3),
-                    blurRadius: 10,
-                    offset: const Offset(0, 5),
-                  ),
-                ],
-              ),
-              child: Icon(gameTheme.icon, color: Colors.white, size: 32.r),
-            ).animate().scale(delay: 200.ms, curve: Curves.elasticOut),
+            ExcludeSemantics(
+              child: Container(
+                width: 64.r,
+                height: 64.r,
+                decoration: BoxDecoration(
+                  color: theme.primaryColor,
+                  borderRadius: BorderRadius.circular(20.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: theme.primaryColor.withValues(alpha: 0.3),
+                      blurRadius: 10,
+                      offset: const Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: Icon(gameTheme.icon, color: Colors.white, size: 32.r),
+              ).animate().scale(delay: 200.ms, curve: Curves.elasticOut),
+            ),
             SizedBox(width: 20.w),
             Expanded(
               child: Column(
@@ -70,51 +71,73 @@ class GlassMapHeader extends StatelessWidget {
                 children: [
                   Text(
                     theme.title.toUpperCase(),
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w800,
                       color: theme.primaryColor,
                       letterSpacing: 2,
                     ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(height: 4.h),
                   Text(
                     gameTheme.title,
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.white : const Color(0xFF0F172A),
                     ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(height: 8.h),
                   // Coins Mini-Pill
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10.w,
-                      vertical: 4.h,
+                  Semantics(
+                    label: context.tr(
+                      'home.coins_value_label',
+                      args: [coins.toString()],
+                      fallback: '$coins coins',
                     ),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF10B981).withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.paid_rounded,
-                          color: const Color(0xFF10B981),
-                          size: 10.r,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.w,
+                        vertical: 4.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      child: ExcludeSemantics(
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.paid_rounded,
+                              color: const Color(0xFF10B981),
+                              size: 10.r,
+                            ),
+                            SizedBox(width: 4.w),
+                            Text(
+                              context.tr(
+                                'games.coins_count',
+                                args: [coins.toString()],
+                                fallback: '$coins COINS',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 9.sp,
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFF10B981),
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
                         ),
-                        SizedBox(width: 4.w),
-                        Text(
-                          "${user?.coins ?? 0} COINS",
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 9.sp,
-                            fontWeight: FontWeight.w900,
-                            color: const Color(0xFF10B981),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 ],

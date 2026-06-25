@@ -8,10 +8,11 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
-/// A premium page presenting themed multi-part curriculum sequences.
-/// 
-/// Guides the user sequentially through selected challenges, utilizing
-/// dynamic mesh gradients and haptic tactile feedback.
+/// Presents a themed multi-part quest sequence, stepping through each part
+/// in order and showing aggregate progress.
+///
+/// Navigation: each sub-game is pushed via [GoRouter]. A `true` result
+/// indicates success; anything else is treated as cancellation.
 class QuestSequencePage extends StatefulWidget {
   final String sequenceId;
   final List<GameQuest> quests;
@@ -30,6 +31,8 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   int _currentIndex = 0;
   bool _isLaunching = false;
 
+  // ── Computed properties ───────────────────────────────────────────────────
+
   String get _sequenceTitle {
     switch (widget.sequenceId) {
       case 'daily_duo':
@@ -39,67 +42,87 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       case 'grammar_pro':
         return context.tr('home.discovery_grammarpro_title');
       default:
-        return 'Themed Quest';
+        return context.tr('home.discovery_default_title');
     }
   }
 
+  bool get _isFinished => _currentIndex >= widget.quests.length;
+
+  double get _progress => widget.quests.isEmpty
+      ? 1.0
+      : (_currentIndex / widget.quests.length).clamp(0.0, 1.0);
+
+  // ── Navigation ────────────────────────────────────────────────────────────
+
   Future<void> _startNextGame() async {
-    if (_currentIndex >= widget.quests.length) {
+    if (_isFinished) {
       _finishSequence();
       return;
     }
 
+    if (!mounted) return;
     setState(() => _isLaunching = true);
+
     final quest = widget.quests[_currentIndex];
-
     final subtype = quest.subtype?.name ?? '';
-    final category = quest.subtype != null 
-        ? quest.subtype!.category.name 
+    final category = quest.subtype != null
+        ? quest.subtype!.category.name
         : (quest.type?.name ?? 'speaking');
-
     final level = quest.difficulty;
     final route = '/game?category=$category&subtype=$subtype&level=$level';
 
-    final result = await context.push(route);
+    Object? result;
+    try {
+      result = await context.push(route);
+    } catch (_) {
+      // Navigation failure treated as cancellation.
+    }
 
-    if (mounted) {
-      setState(() => _isLaunching = false);
-      if (result == true) {
-        setState(() => _currentIndex++);
-        if (_currentIndex < widget.quests.length) {
-          _startNextGame();
-        } else {
-          _finishSequence();
-        }
+    if (!mounted) return;
+    setState(() => _isLaunching = false);
+
+    if (result == true) {
+      setState(() => _currentIndex++);
+      if (_currentIndex < widget.quests.length) {
+        // CRITICAL FIX: Schedule the next navigation after the current frame
+        // completes to avoid calling setState + push inside the same frame,
+        // which can corrupt the Navigator stack.
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) _startNextGame();
+        });
       } else {
-        GameDialogHelper.showPremiumSnackBar(
-          context,
-          'Quest part cancelled. You can try again or exit.',
-          icon: Icons.info_outline_rounded,
-          color: Colors.orange,
-        );
+        _finishSequence();
       }
+    } else {
+      GameDialogHelper.showPremiumSnackBar(
+        context,
+        context.tr('quest_sequence.part_cancelled'),
+        icon: Icons.info_outline_rounded,
+        color: Colors.orange,
+      );
     }
   }
 
   void _finishSequence() {
     GameDialogHelper.showCompletion(
       context,
-      xp: 0, 
+      xp: 0,
       coins: 0,
-      title: 'QUEST COMPLETED!',
-      description: 'You finished the $_sequenceTitle! Great work on your training.',
-      buttonText: 'FINISH',
+      title: context.tr('quest_sequence.completed_title'),
+      description: context.tr(
+        'quest_sequence.completed_description',
+        args: [_sequenceTitle],
+      ),
+      buttonText: context.tr('quest_sequence.finish_button'),
       popResult: true,
     );
   }
 
+  // ── Build ─────────────────────────────────────────────────────────────────
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final progress = widget.quests.isEmpty
-        ? 1.0
-        : _currentIndex / widget.quests.length;
 
     return Scaffold(
       backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
@@ -112,144 +135,23 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
               padding: EdgeInsets.fromLTRB(24.w, 10.h, 24.w, 24.w),
               child: Column(
                 children: [
-                  Row(
-                    children: [
-                      ScaleButton(
-                        onTap: () => context.pop(),
-                        child: Container(
-                          padding: EdgeInsets.all(10.r),
-                          decoration: BoxDecoration(
-                            color: isDark
-                                ? Colors.white10
-                                : Colors.black.withValues(alpha: 0.05),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            Icons.close_rounded,
-                            size: 24.r,
-                            color: isDark ? Colors.white70 : Colors.black54,
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 16.w),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              _sequenceTitle.toUpperCase(),
-                              style: TextStyle(fontFamily: 'Outfit', 
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 2,
-                                color: const Color(0xFF2563EB),
-                              ),
-                            ),
-                            Text(
-                              _currentIndex < widget.quests.length
-                                  ? 'Part ${_currentIndex + 1} of ${widget.quests.length}'
-                                  : 'Completed',
-                              style: TextStyle(fontFamily: 'Outfit', 
-                                fontSize: 24.sp,
-                                fontWeight: FontWeight.w900,
-                                color: isDark ? Colors.white : const Color(0xFF0F172A),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                  _Header(
+                    isDark: isDark,
+                    sequenceTitle: _sequenceTitle,
+                    currentIndex: _currentIndex,
+                    totalQuests: widget.quests.length,
+                    progress: _progress,
                   ),
                   SizedBox(height: 32.h),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(20.r),
-                    child: LinearProgressIndicator(
-                      value: progress,
-                      minHeight: 12.h,
-                      backgroundColor: isDark
-                          ? Colors.white10
-                          : Colors.black.withValues(alpha: 0.05),
-                      valueColor: const AlwaysStoppedAnimation<Color>(
-                        Color(0xFF2563EB),
-                      ),
-                    ),
-                  ),
+                  _ProgressBar(isDark: isDark, progress: _progress),
                   const Spacer(),
-                  GlassTile(
-                    padding: EdgeInsets.all(32.r),
-                    borderRadius: BorderRadius.circular(32.r),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          _currentIndex < widget.quests.length
-                              ? widget.quests[_currentIndex].iconData
-                              : Icons.check_circle_rounded,
-                          size: 64.r,
-                          color: const Color(0xFF2563EB),
-                        ),
-                        SizedBox(height: 24.h),
-                        Text(
-                          _currentIndex < widget.quests.length
-                              ? 'UP NEXT'
-                              : 'SUMMARY',
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: 2,
-                            color: const Color(0xFF2563EB),
-                          ),
-                        ),
-                        SizedBox(height: 8.h),
-                        Text(
-                          _currentIndex < widget.quests.length
-                              ? widget.quests[_currentIndex].instruction
-                              : 'All parts completed!',
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w800,
-                            color: isDark ? Colors.white : const Color(0xFF0F172A),
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                        SizedBox(height: 32.h),
-                        SizedBox(
-                          width: double.infinity,
-                          child: ScaleButton(
-                            onTap: _isLaunching ? null : _startNextGame,
-                            child: Container(
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.symmetric(vertical: 20.h),
-                              decoration: BoxDecoration(
-                                color: _isLaunching 
-                                    ? const Color(0xFF2563EB).withValues(alpha: 0.5)
-                                    : const Color(0xFF2563EB),
-                                borderRadius: BorderRadius.circular(20.r),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: const Color(0xFF2563EB).withValues(alpha: 0.3),
-                                    blurRadius: 15,
-                                    offset: const Offset(0, 5),
-                                  )
-                                ],
-                              ),
-                              child: Text(
-                                _isLaunching
-                                    ? context.tr('common.loading').toUpperCase()
-                                    : _currentIndex < widget.quests.length
-                                        ? 'START PART ${_currentIndex + 1}'
-                                        : 'FINISH QUEST',
-                                style: TextStyle(fontFamily: 'Outfit', 
-                                  fontSize: 18.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                  _QuestCard(
+                    isDark: isDark,
+                    isFinished: _isFinished,
+                    isLaunching: _isLaunching,
+                    currentIndex: _currentIndex,
+                    quests: widget.quests,
+                    onAction: _isLaunching ? null : _startNextGame,
                   ),
                   const Spacer(flex: 2),
                 ],
@@ -262,11 +164,228 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   }
 }
 
-extension on GameQuest {
-  IconData get iconData {
+// ---------------------------------------------------------------------------
+// Sub-widgets
+// ---------------------------------------------------------------------------
+
+class _Header extends StatelessWidget {
+  final bool isDark;
+  final String sequenceTitle;
+  final int currentIndex;
+  final int totalQuests;
+  final double progress;
+
+  const _Header({
+    required this.isDark,
+    required this.sequenceTitle,
+    required this.currentIndex,
+    required this.totalQuests,
+    required this.progress,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isCompleted = currentIndex >= totalQuests;
+    return Row(
+      children: [
+        ScaleButton(
+          onTap: () => context.pop(),
+          child: Container(
+            padding: EdgeInsets.all(10.r),
+            decoration: BoxDecoration(
+              color: isDark
+                  ? Colors.white10
+                  : Colors.black.withValues(alpha: 0.05),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(
+              Icons.close_rounded,
+              size: 24.r,
+              color: isDark ? Colors.white70 : Colors.black54,
+            ),
+          ),
+        ),
+        SizedBox(width: 16.w),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                sequenceTitle.toUpperCase(),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 2,
+                  color: const Color(0xFF2563EB),
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+              Text(
+                isCompleted
+                    ? context.tr('quest_sequence.status_completed')
+                    : context.tr(
+                        'quest_sequence.status_part',
+                        args: ['${currentIndex + 1}', '$totalQuests'],
+                      ),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _ProgressBar extends StatelessWidget {
+  final bool isDark;
+  final double progress;
+
+  const _ProgressBar({required this.isDark, required this.progress});
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      label: context.tr(
+        'quest_sequence.progress_label',
+        args: ['${(progress * 100).round()}'],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.r),
+        child: LinearProgressIndicator(
+          value: progress,
+          minHeight: 12.h,
+          backgroundColor: isDark
+              ? Colors.white10
+              : Colors.black.withValues(alpha: 0.05),
+          valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF2563EB)),
+        ),
+      ),
+    );
+  }
+}
+
+class _QuestCard extends StatelessWidget {
+  final bool isDark;
+  final bool isFinished;
+  final bool isLaunching;
+  final int currentIndex;
+  final List<GameQuest> quests;
+  final VoidCallback? onAction;
+
+  const _QuestCard({
+    required this.isDark,
+    required this.isFinished,
+    required this.isLaunching,
+    required this.currentIndex,
+    required this.quests,
+    required this.onAction,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final quest = !isFinished ? quests[currentIndex] : null;
+
+    return GlassTile(
+      padding: EdgeInsets.all(32.r),
+      borderRadius: BorderRadius.circular(32.r),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            isFinished ? Icons.check_circle_rounded : quest!.questIconData,
+            size: 64.r,
+            color: const Color(0xFF2563EB),
+          ),
+          SizedBox(height: 24.h),
+          Text(
+            isFinished
+                ? context.tr('quest_sequence.card_summary')
+                : context.tr('quest_sequence.card_up_next'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 2,
+              color: const Color(0xFF2563EB),
+            ),
+          ),
+          SizedBox(height: 8.h),
+          Text(
+            isFinished
+                ? context.tr('quest_sequence.all_parts_done')
+                : quest!.instruction,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 20.sp,
+              fontWeight: FontWeight.w800,
+              color: isDark ? Colors.white : const Color(0xFF0F172A),
+            ),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 32.h),
+          SizedBox(
+            width: double.infinity,
+            child: ScaleButton(
+              onTap: onAction,
+              child: Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.symmetric(vertical: 20.h),
+                decoration: BoxDecoration(
+                  color: onAction == null
+                      ? const Color(0xFF2563EB).withValues(alpha: 0.5)
+                      : const Color(0xFF2563EB),
+                  borderRadius: BorderRadius.circular(20.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF2563EB).withValues(alpha: 0.3),
+                      blurRadius: 15,
+                      offset: const Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: Text(
+                  isLaunching
+                      ? context.tr('common.loading').toUpperCase()
+                      : isFinished
+                      ? context.tr('quest_sequence.finish_button').toUpperCase()
+                      : context.tr(
+                          'quest_sequence.start_part_button',
+                          args: ['${currentIndex + 1}'],
+                        ),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// GameQuest icon extension
+// Kept in this file since QuestSequencePage is the only consumer.
+// ---------------------------------------------------------------------------
+
+extension _QuestIconExtension on GameQuest {
+  IconData get questIconData {
     if (subtype == null) return Icons.auto_awesome_rounded;
-    final type = subtype!.category;
-    switch (type) {
+    switch (subtype!.category) {
       case QuestType.speaking:
         return Icons.mic_rounded;
       case QuestType.listening:

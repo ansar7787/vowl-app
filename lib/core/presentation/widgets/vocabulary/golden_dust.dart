@@ -10,7 +10,9 @@ class GoldenDust extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final random = math.Random(42); // Seeded to prevent particle snapping on rebuilds
+    final random = math.Random(
+      42,
+    ); // Seeded to prevent particle snapping on rebuilds
     return RepaintBoundary(
       child: Stack(
         children: List.generate(15, (index) {

@@ -1,5 +1,6 @@
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart' show kDebugMode;
+import 'package:vowl/core/utils/app_logger.dart';
 
 /// Abstract contract defining the Remote Configuration service interface.
 ///
@@ -7,10 +8,19 @@ import 'package:flutter/foundation.dart';
 /// satisfying the SOLID Dependency Inversion Principle (DIP).
 abstract class RemoteConfigService {
   /// Factory mapping constructor supporting seamless backwards compatibility for callers.
-  factory RemoteConfigService(FirebaseRemoteConfig remoteConfig) = FirebaseRemoteConfigService;
+  factory RemoteConfigService(FirebaseRemoteConfig remoteConfig) =
+      FirebaseRemoteConfigService;
 
   /// Initializes default values and triggers remote fetch/activation sequences.
   Future<void> init();
+
+  /// True once `init()` has successfully fetched and activated values from
+  /// the server at least once in this app session. False means every
+  /// getter below is currently serving local fallback defaults only (e.g.
+  /// because the device was offline during `init()`) - useful if a caller
+  /// needs to know whether it's safe to rely on a remote-controlled gate
+  /// (such as a forced-update check) versus the safe local default.
+  bool get isRemoteDataFresh;
 
   /// Gets the ad presentation frequency multiplier.
   double get adFrequencyMultiplier;
@@ -45,6 +55,11 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
 
   FirebaseRemoteConfigService(this._remoteConfig);
 
+  bool _isRemoteDataFresh = false;
+
+  @override
+  bool get isRemoteDataFresh => _isRemoteDataFresh;
+
   @override
   Future<void> init() async {
     try {
@@ -59,23 +74,33 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
       });
 
       // 2. Configure fetch settings (instantly flush caches in local dev mode)
-      await _remoteConfig.setConfigSettings(RemoteConfigSettings(
-        fetchTimeout: const Duration(seconds: 30),
-        minimumFetchInterval: kDebugMode ? Duration.zero : const Duration(hours: 1),
-      ));
+      await _remoteConfig.setConfigSettings(
+        RemoteConfigSettings(
+          fetchTimeout: const Duration(seconds: 30),
+          minimumFetchInterval: kDebugMode
+              ? Duration.zero
+              : const Duration(hours: 1),
+        ),
+      );
 
       // 3. Fetch and activate values from Google Remote servers
       await _remoteConfig.fetchAndActivate();
+      _isRemoteDataFresh = true;
     } catch (e) {
-      debugPrint('RemoteConfigService: Local config initialization completed. Remote fetch bypassed: $e');
+      AppLogger.warning(
+        'RemoteConfigService: Local config initialization completed; remote fetch bypassed',
+        error: e,
+      );
     }
   }
 
   @override
-  double get adFrequencyMultiplier => _remoteConfig.getDouble(keyAdFrequencyMultiplier);
+  double get adFrequencyMultiplier =>
+      _remoteConfig.getDouble(keyAdFrequencyMultiplier);
 
   @override
-  bool get tripleRewardsEnabled => _remoteConfig.getBool(keyTripleRewardsEnabled);
+  bool get tripleRewardsEnabled =>
+      _remoteConfig.getBool(keyTripleRewardsEnabled);
 
   @override
   String get minAppVersion => _remoteConfig.getString(keyMinAppVersion);
@@ -87,5 +112,6 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
   int get kidsCoinsPerVictory => _remoteConfig.getInt(keyKidsCoinsPerVictory);
 
   @override
-  double get levelDifficultyModifier => _remoteConfig.getDouble(keyLevelDifficultyModifier);
+  double get levelDifficultyModifier =>
+      _remoteConfig.getDouble(keyLevelDifficultyModifier);
 }

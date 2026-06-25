@@ -2,29 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 
-/// Centralized utility coordinator that maps enums, categories,
-/// and gameplay levels to localized Visual Themes, icons, and metadata structures.
+/// Centralised utility that maps enums, categories, and gameplay levels to
+/// visual themes, icons, and structured metadata.
 class GameHelper {
-  // Private constructor to enforce static utility boundaries
-  const GameHelper._();
+  const GameHelper._(); // Non-instantiable utility class.
 
-  /// Resolves the raw category string mapped to a specific game subtype.
+  /// Returns the parent category name string for a given [subtype].
   static String getCategoryForSubtype(GameSubtype subtype) {
     return subtype.category.name;
   }
 
-  /// Resolves the corresponding visual icon representing a primary quest category.
+  /// Returns the icon associated with a primary quest [type].
   static IconData getIconForCategory(QuestType type) {
     return LevelThemeHelper.getCategoryTheme(type.name).icon;
   }
 
-  /// Resolves gameplay assets and structural metadata matching player progression.
-  /// 
-  /// Leverages the optional [level] parameter to support dynamic level-shading progression.
+  /// Returns structured visual metadata for [subtype] at [level].
+  ///
+  /// FIX (MEDIUM-2): [isDark] was previously optional with `isDark = true`
+  /// as a default. This caused light-mode callers who omitted the parameter
+  /// to silently receive dark-mode colours in their UI.
+  ///
+  /// [isDark] is now **required** so every call site must be explicit about
+  /// the current brightness. Pass `Theme.of(context).brightness == Brightness.dark`.
   static GameMetadata getGameMetadata(
     GameSubtype subtype, {
     int level = 1,
-    bool isDark = true,
+    required bool isDark,
   }) {
     final theme = LevelThemeHelper.getTheme(
       subtype.name,
@@ -39,23 +43,27 @@ class GameHelper {
     );
   }
 
-  /// Resolves the specific visual icon mapped to a gameplay subtype.
+  /// Returns the icon associated with a gameplay [subtype].
   static IconData getIconForSubtype(GameSubtype subtype) {
     return LevelThemeHelper.getTheme(subtype.name).icon;
   }
 
-  /// Resolves the base primary theme color mapped to a category string.
+  /// Returns the primary theme colour for a category string.
   static Color getCategoryColor(String category) {
     return LevelThemeHelper.getCategoryTheme(category).primaryColor;
   }
 
-  /// Type-safe category color mapping wrapper resolving QuestType properties.
+  /// Type-safe colour resolver for a [QuestType].
   static Color getQuestTypeColor(QuestType type) {
     return getCategoryColor(type.name);
   }
 }
 
-/// Dynamic immutable entity representing resolved visual parameters for active screens.
+// ---------------------------------------------------------------------------
+// Value object — resolved visual parameters for a game screen
+// ---------------------------------------------------------------------------
+
+/// Immutable descriptor of the visual identity for a specific game screen.
 @immutable
 class GameMetadata {
   final String title;
@@ -69,4 +77,15 @@ class GameMetadata {
     required this.color,
     required this.categoryName,
   });
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is GameMetadata &&
+          title == other.title &&
+          color == other.color &&
+          categoryName == other.categoryName;
+
+  @override
+  int get hashCode => Object.hash(title, color, categoryName);
 }

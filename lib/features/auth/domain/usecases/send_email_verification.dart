@@ -3,13 +3,18 @@ import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
 
-class SendEmailVerification implements UseCase<void, NoParams> {
-  final AuthRepository _repository;
+/// Sends an email-verification link to the currently authenticated user's
+/// email address.
+///
+/// Firebase rate-limits this call to prevent abuse; repeated invocations may
+/// return [AuthFailure('too-many-requests')]. After the user clicks the link,
+/// call [ReloadUser] to refresh [UserEntity.isEmailVerified] immediately.
+class SendEmailVerification extends UseCase<void, NoParams> {
+  final AuthRepository repository;
 
-  SendEmailVerification(this._repository);
+  const SendEmailVerification(this.repository);
 
   @override
-  Future<Either<Failure, void>> call(NoParams params) async {
-    return await _repository.sendEmailVerification();
-  }
+  Future<Either<Failure, void>> call(NoParams params) =>
+      repository.sendEmailVerification();
 }

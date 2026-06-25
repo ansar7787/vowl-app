@@ -3,12 +3,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-/// A premium, theme-adaptive aurora mesh gradient backdrop with organic glowing clouds,
-/// a techno dot-grid pattern, and a corner framing overlay, optimized for theme toggling.
+/// Theme-adaptive aurora mesh gradient backdrop with organic glowing clouds,
+/// a dot-grid pattern, and corner-framing overlay.
+///
+/// Uses [context.select] instead of [context.watch] to rebuild only when the
+/// `isMidnight` flag or theme brightness changes — not on every ThemeCubit
+/// state update.
 class MeshGradientBackground extends StatelessWidget {
   final List<Color>? colors;
+
+  /// Reserved for future letter-particle layer. Currently no-op.
   final bool showLetters;
-  final Color? auraColor; // For interactive feedback
+
+  /// Optional radial aura colour for interactive focus feedback.
+  final Color? auraColor;
 
   const MeshGradientBackground({
     super.key,
@@ -17,7 +25,7 @@ class MeshGradientBackground extends StatelessWidget {
     this.auraColor,
   });
 
-  /// Static helper to get the best text color based on the theme
+  /// Returns the best-contrast text colour for the current theme.
   static Color getContrastColor(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return isDark ? Colors.white : const Color(0xFF0F172A);
@@ -25,42 +33,40 @@ class MeshGradientBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeState = context.watch<ThemeCubit>().state;
-    final bool isDark = Theme.of(context).brightness == Brightness.dark;
-    final bool isMidnight = themeState.isMidnight && isDark;
+    // HIGH FIX: context.select rebuilds only when these two fields change.
+    // Previously context.watch<ThemeCubit>() triggered a full rebuild on
+    // every ThemeCubit state change (e.g., language, font-size changes).
+    final isMidnight = context.select<ThemeCubit, bool>(
+      (cubit) => cubit.state.isMidnight,
+    );
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    // Vibrant Color Palettes (White, Green, Blue, Yellow)
-    final List<Color> backgroundColors;
-
-    if (isMidnight || isDark) {
-      // Dark/Midnight Mode: Deep Navy Base with Education Glows
-      backgroundColors = [
-        const Color(0xFF0F172A), // Deep Navy Base
-        const Color(0xFF312E81), // Soft Indigo Glow
-        const Color(0xFF064E3B), // Deep Emerald Glow
-        const Color(0xFF78350F), // Deep Amber Glow
-      ];
-    } else {
-      // Light Mode: Modern "Aurora Glass" (Vibrant but clean)
-      backgroundColors = [
-        const Color(0xFFFFFFFF), // Pure White Base
-        const Color(0xFFE0F2FE), // Soft Sky Blue
-        const Color(0xFFFCE7F3), // Soft Rose Pink
-        const Color(0xFFDCFCE7), // Soft Mint Green
-      ];
-    }
+    final List<Color> backgroundColors = (isMidnight || isDark)
+        ? const [
+            Color(0xFF0F172A),
+            Color(0xFF312E81),
+            Color(0xFF064E3B),
+            Color(0xFF78350F),
+          ]
+        : const [
+            Color(0xFFFFFFFF),
+            Color(0xFFE0F2FE),
+            Color(0xFFFCE7F3),
+            Color(0xFFDCFCE7),
+          ];
 
     return RepaintBoundary(
       child: Stack(
         children: [
-          // 1. Base Gradient Layer
-          Container(
-            decoration: BoxDecoration(
-              color: isMidnight ? Colors.black : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC)),
-            ),
+          // 1. Base colour
+          ColoredBox(
+            color: isMidnight
+                ? Colors.black
+                : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC)),
+            child: const SizedBox.expand(),
           ),
-  
-          // 2. Interactive Aura Layer (Focus feedback)
+
+          // 2. Interactive aura layer
           if (auraColor != null)
             Center(
               child: Container(
@@ -69,7 +75,7 @@ class MeshGradientBackground extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: RadialGradient(
                     colors: [
-                      auraColor!.withValues(alpha: isDark ? 0.12 : 0.2),
+                      auraColor!.withValues(alpha: isDark ? 0.12 : 0.20),
                       Colors.transparent,
                     ],
                   ),
@@ -77,38 +83,37 @@ class MeshGradientBackground extends StatelessWidget {
               ),
             ),
 
-          // 3. Aurora Clouds (Large, soft, modern overlapping gradients)
-          if (!isMidnight)
-            ...[
+          // 3. Aurora cloud blobs (skip in midnight for performance)
+          if (!isMidnight) ...[
+            _StaticBlob(
+              alignment: const Alignment(-1.5, -0.8),
+              color: backgroundColors[1].withValues(alpha: isDark ? 0.3 : 0.5),
+              size: 700.w,
+            ),
+            _StaticBlob(
+              alignment: const Alignment(1.5, -0.4),
+              color: backgroundColors[2].withValues(alpha: isDark ? 0.2 : 0.4),
+              size: 800.w,
+            ),
+            _StaticBlob(
+              alignment: const Alignment(-0.8, 1.5),
+              color: backgroundColors[3].withValues(alpha: isDark ? 0.15 : 0.3),
+              size: 600.w,
+            ),
+            _StaticBlob(
+              alignment: Alignment.center,
+              color: backgroundColors[0].withValues(alpha: isDark ? 0.05 : 0.1),
+              size: 1.sw,
+            ),
+            if (!isDark)
               _StaticBlob(
-                alignment: const Alignment(-1.5, -0.8),
-                color: backgroundColors[1].withValues(alpha: isDark ? 0.3 : 0.5),
-                size: 700.w,
+                alignment: const Alignment(0.8, 0.9),
+                color: const Color(0xFFFAF5FF).withValues(alpha: 0.3),
+                size: 400.w,
               ),
-              _StaticBlob(
-                alignment: const Alignment(1.5, -0.4),
-                color: backgroundColors[2].withValues(alpha: isDark ? 0.2 : 0.4),
-                size: 800.w,
-              ),
-              _StaticBlob(
-                alignment: const Alignment(-0.8, 1.5),
-                color: backgroundColors[3].withValues(alpha: isDark ? 0.15 : 0.3),
-                size: 600.w,
-              ),
-              _StaticBlob(
-                alignment: const Alignment(0, 0),
-                color: backgroundColors[0].withValues(alpha: isDark ? 0.05 : 0.1),
-                size: 1.sw,
-              ),
-              if (!isDark) // Extra depth for light mode
-                _StaticBlob(
-                  alignment: const Alignment(0.8, 0.9),
-                  color: const Color(0xFFFAF5FF).withValues(alpha: 0.3),
-                  size: 400.w,
-                ),
-            ],
-   
-          // 4. Modern Dot Grid Pattern
+          ],
+
+          // 4. Dot-grid pattern
           Positioned.fill(
             child: IgnorePointer(
               child: CustomPaint(
@@ -116,19 +121,25 @@ class MeshGradientBackground extends StatelessWidget {
               ),
             ),
           ),
-   
-          // 5. Final Contrast & Depth Overlay
+
+          // 5. Final contrast overlay
           Positioned.fill(
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    isDark ? Colors.black.withValues(alpha: 0.1) : Colors.white.withValues(alpha: 0.05),
-                    Colors.transparent,
-                    isDark ? Colors.black.withValues(alpha: 0.05) : Colors.white.withValues(alpha: 0.1),
-                  ],
+            child: IgnorePointer(
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      isDark
+                          ? Colors.black.withValues(alpha: 0.1)
+                          : Colors.white.withValues(alpha: 0.05),
+                      Colors.transparent,
+                      isDark
+                          ? Colors.black.withValues(alpha: 0.05)
+                          : Colors.white.withValues(alpha: 0.1),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -159,9 +170,7 @@ class _StaticBlob extends StatelessWidget {
         height: size,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          gradient: RadialGradient(
-            colors: [color, color.withValues(alpha: 0)],
-          ),
+          gradient: RadialGradient(colors: [color, color.withValues(alpha: 0)]),
         ),
       ),
     );
@@ -170,36 +179,44 @@ class _StaticBlob extends StatelessWidget {
 
 class _ModernPatternPainter extends CustomPainter {
   final bool isDark;
+
   const _ModernPatternPainter({required this.isDark});
+
+  // Logical-pixel constants — not scaled by ScreenUtil so the grid stays
+  // consistent across all device densities and sizes.
+  static const double _dotSpacing = 32.0;
+  static const double _dotRadius = 0.6;
+  static const double _cornerLength = 60.0;
+  static const double _cornerMargin = 40.0;
 
   @override
   void paint(Canvas canvas, Size size) {
     final dotPaint = Paint()
       ..color = (isDark ? Colors.white : Colors.black).withValues(alpha: 0.04)
       ..strokeWidth = 1.0;
-    
-    // 1. Draw Geometric Dot Grid
-    const double spacing = 32.0;
-    for (double i = spacing / 2; i < size.width; i += spacing) {
-      for (double j = spacing / 2; j < size.height; j += spacing) {
-        canvas.drawCircle(Offset(i, j), 0.6, dotPaint);
+
+    // Dot grid
+    for (double x = _dotSpacing / 2; x < size.width; x += _dotSpacing) {
+      for (double y = _dotSpacing / 2; y < size.height; y += _dotSpacing) {
+        canvas.drawCircle(Offset(x, y), _dotRadius, dotPaint);
       }
     }
 
-    // 2. Add subtle "Tech" lines at the corners
+    // Corner tech lines
     final linePaint = Paint()
       ..color = (isDark ? Colors.white : Colors.black).withValues(alpha: 0.02)
       ..strokeWidth = 1.0;
-    
-    canvas.drawLine(const Offset(40, 40), const Offset(100, 40), linePaint);
-    canvas.drawLine(const Offset(40, 40), const Offset(40, 100), linePaint);
-    
-    canvas.drawLine(Offset(size.width - 40, size.height - 40), Offset(size.width - 100, size.height - 40), linePaint);
-    canvas.drawLine(Offset(size.width - 40, size.height - 40), Offset(size.width - 40, size.height - 100), linePaint);
+
+    final tl = _cornerMargin;
+    final br = Offset(size.width - _cornerMargin, size.height - _cornerMargin);
+
+    canvas.drawLine(Offset(tl, tl), Offset(tl + _cornerLength, tl), linePaint);
+    canvas.drawLine(Offset(tl, tl), Offset(tl, tl + _cornerLength), linePaint);
+    canvas.drawLine(br, Offset(br.dx - _cornerLength, br.dy), linePaint);
+    canvas.drawLine(br, Offset(br.dx, br.dy - _cornerLength), linePaint);
   }
 
   @override
-  bool shouldRepaint(covariant _ModernPatternPainter oldDelegate) {
-    return oldDelegate.isDark != isDark;
-  }
+  bool shouldRepaint(covariant _ModernPatternPainter oldDelegate) =>
+      oldDelegate.isDark != isDark;
 }

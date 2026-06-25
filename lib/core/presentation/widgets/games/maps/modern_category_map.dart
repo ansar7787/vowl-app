@@ -9,6 +9,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -28,7 +29,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 /// A premium, highly-performant quest category selection map.
-/// 
+///
 /// Incorporates organic paths, mesh gradient backgrounds, interactive mascot triggers,
 /// and automated local data preloading.
 class ModernCategoryMap extends StatefulWidget {
@@ -55,6 +56,16 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   int _totalLevels = 10;
   bool _isLoading = true;
   bool _showFullBackground = false;
+
+  // PERF: point geometry only actually depends on `_totalLevels` and the
+  // (constant for this widget's lifetime) category — not on every build
+  // trigger. `context.watch<AuthBloc>()` used to force a full recompute of
+  // up to 200 sine-wave points on *any* AuthState change, even ones with
+  // nothing to do with this screen (coins, XP, etc. changing elsewhere).
+  // Caching here means it's only recomputed when `_totalLevels` itself
+  // changes (i.e. once, when curriculum data finishes loading).
+  List<Offset>? _cachedPoints;
+  int? _cachedPointsForLevelCount;
 
   @override
   void initState() {
@@ -108,6 +119,23 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     }
   }
 
+  /// Shared formatting for a snake_case mascot id ("vowl_prime") into a
+  /// display name ("Vowl Prime"). Extracted — this exact logic used to be
+  /// duplicated verbatim in both `_checkAndShowStoryBeat` and
+  /// `_buildMascotMarker`.
+  String _formatMascotName(String? mascotId) {
+    if (mascotId == null || mascotId.isEmpty) {
+      return context.tr(
+        'category_map.default_companion_name',
+        fallback: 'Companion',
+      );
+    }
+    return mascotId
+        .split('_')
+        .map((e) => e.isNotEmpty ? e[0].toUpperCase() + e.substring(1) : '')
+        .join(' ');
+  }
+
   void _checkAndShowStoryBeat() {
     final user = context.read<AuthBloc>().state.user;
     if (user != null) {
@@ -128,12 +156,15 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
       } else if (unlockedLevel == 1) {
         Future.delayed(const Duration(seconds: 2), () {
           if (mounted && _buddyMessage == null) {
-            final mascotId = user.vowlMascot ?? 'vowl_prime';
-            final mascotName = mascotId.isNotEmpty
-                ? mascotId.split('_').map((e) => e.isNotEmpty ? e[0].toUpperCase() + e.substring(1) : '').join(' ')
-                : 'Companion';
+            final mascotName = _formatMascotName(
+              user.vowlMascot ?? 'vowl_prime',
+            );
             setState(() {
-              _buddyMessage = "Hey! $mascotName here. Let's start Level 1! 🚀";
+              _buddyMessage = context.tr(
+                'category_map.first_level_greeting',
+                args: [mascotName],
+                fallback: "Hey! $mascotName here. Let's start Level 1! 🚀",
+              );
             });
             _buddyMessageTimer = Timer(const Duration(seconds: 5), () {
               if (mounted) setState(() => _buddyMessage = null);
@@ -148,7 +179,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     if (!_scrollController.hasClients) return;
 
     final authState = context.read<AuthBloc>().state;
-    final int unlockedLevels = authState.user?.unlockedLevels[widget.gameType] ?? 1;
+    final int unlockedLevels =
+        authState.user?.unlockedLevels[widget.gameType] ?? 1;
 
     final theme = LevelThemeHelper.getCategoryTheme(
       widget.categoryId,
@@ -192,13 +224,19 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
       widget.categoryId,
       isDark: isDark,
     );
-    final authState = context.watch<AuthBloc>().state;
-    final user = authState.user;
-    final int unlockedLevels = authState.user?.unlockedLevels[widget.gameType] ?? 1;
+    // PERF: context.select instead of context.watch — this widget only
+    // ever reads `state.user`, so only rebuild when that reference
+    // actually changes, not on every AuthState emission.
+    final user = context.select<AuthBloc, UserEntity?>(
+      (bloc) => bloc.state.user,
+    );
+    final int unlockedLevels = user?.unlockedLevels[widget.gameType] ?? 1;
+    final bool isPremium = user?.isPremium ?? false;
 
-    final List<Offset> points = _generatePoints(theme.category);
+    final List<Offset> points = _generatePointsCached(theme.category);
     final double rowSpacing = _getVerticalSpacing(theme.category);
-    final double totalContentHeight = 40.h + (_totalLevels * rowSpacing) + 100.h;
+    final double totalContentHeight =
+        40.h + (_totalLevels * rowSpacing) + 100.h;
 
     return BlocListener<AuthBloc, AuthState>(
       listenWhen: (prev, curr) =>
@@ -261,33 +299,60 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                     elevation: 0,
                     toolbarHeight: 50.h,
                     title: Align(
-                      alignment: Alignment.centerLeft,
-                      child: ScaleButton(
-                        onTap: () {
-                          if (context.canPop()) {
-                            context.pop();
-                          } else {
-                            context.go('/home');
-                          }
-                        },
-                        child: Container(
-                          width: 36.r,
-                          height: 36.r,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withValues(alpha: 0.1),
-                                blurRadius: 10,
-                                offset: const Offset(0, 4),
+                      alignment: AlignmentDirectional.centerStart,
+                      child: Semantics(
+                        button: true,
+                        label: context.tr('common.back', fallback: 'Back'),
+                        child: ScaleButton(
+                          onTap: () {
+                            if (context.canPop()) {
+                              context.pop();
+                            } else {
+                              context.go('/home');
+                            }
+                          },
+                          child: Container(
+                            // Invisible floor guaranteeing the 48dp
+                            // accessible touch target; the visible pill
+                            // below keeps its original 36r size.
+                            constraints: BoxConstraints(
+                              minWidth: 48.r,
+                              minHeight: 48.r,
+                            ),
+                            alignment: Alignment.center,
+                            child: ExcludeSemantics(
+                              child: Builder(
+                                builder: (context) {
+                                  final isRtl =
+                                      Directionality.of(context) ==
+                                      TextDirection.rtl;
+                                  return Container(
+                                    width: 36.r,
+                                    height: 36.r,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      shape: BoxShape.circle,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withValues(
+                                            alpha: 0.1,
+                                          ),
+                                          blurRadius: 10,
+                                          offset: const Offset(0, 4),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Icon(
+                                      isRtl
+                                          ? Icons.arrow_forward_ios_rounded
+                                          : Icons.arrow_back_ios_new_rounded,
+                                      color: const Color(0xFF0F172A),
+                                      size: 16.r,
+                                    ),
+                                  );
+                                },
                               ),
-                            ],
-                          ),
-                          child: Icon(
-                            Icons.arrow_back_ios_new_rounded,
-                            color: const Color(0xFF0F172A),
-                            size: 16.r,
+                            ),
                           ),
                         ),
                       ),
@@ -332,12 +397,34 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                               ),
 
                               // Interactive Stage Nodes
+                              //
+                              // PERFORMANCE NOTE: every node here floats
+                              // with a perpetual `.animate(...).moveY(...)`
+                              // — not just the current level — and all
+                              // `_totalLevels` (up to 200) nodes are built
+                              // eagerly in this Column rather than lazily,
+                              // for the same reason as ModernPathGameMap:
+                              // the connecting CategoryPathPainter curve is
+                              // computed from every point up front, which
+                              // doesn't lend itself to simple sliver-based
+                              // lazy loading without a deeper rendering
+                              // rework. A true fix needs a custom
+                              // RenderSliver that only paints visible path
+                              // segments — too large a structural change to
+                              // make blind without the ability to visually
+                              // test it. RepaintBoundary per node is the
+                              // safe, valuable mitigation that *is* applied
+                              // here: each node's perpetual float animation
+                              // no longer forces Flutter to walk/repaint
+                              // every sibling node alongside it.
                               Column(
                                 children: [
                                   ...List.generate(_totalLevels, (index) {
                                     final levelNumber = index + 1;
-                                    final isUnlocked = levelNumber <= unlockedLevels;
-                                    final isCurrent = levelNumber == unlockedLevels;
+                                    final isUnlocked =
+                                        levelNumber <= unlockedLevels;
+                                    final isCurrent =
+                                        levelNumber == unlockedLevels;
                                     final point = points[index];
 
                                     return Container(
@@ -345,16 +432,20 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                       alignment: Alignment.center,
                                       child: Transform.translate(
                                         offset: Offset(
-                                          point.dx - ScreenUtil().screenWidth / 2,
+                                          point.dx -
+                                              ScreenUtil().screenWidth / 2,
                                           0,
                                         ),
-                                        child: _buildPathNode(
-                                          context,
-                                          levelNumber,
-                                          isUnlocked,
-                                          isCurrent,
-                                          isDark,
-                                          theme,
+                                        child: RepaintBoundary(
+                                          child: _buildPathNode(
+                                            context,
+                                            levelNumber,
+                                            isUnlocked,
+                                            isCurrent,
+                                            isDark,
+                                            theme,
+                                            isPremium,
+                                          ),
                                         ),
                                       ),
                                     );
@@ -412,6 +503,18 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     }
   }
 
+  /// Cached wrapper around [_generatePoints]: recomputes only when
+  /// `_totalLevels` actually changes instead of on every rebuild.
+  List<Offset> _generatePointsCached(GameCategory category) {
+    if (_cachedPoints != null && _cachedPointsForLevelCount == _totalLevels) {
+      return _cachedPoints!;
+    }
+    final points = _generatePoints(category);
+    _cachedPoints = points;
+    _cachedPointsForLevelCount = _totalLevels;
+    return points;
+  }
+
   List<Offset> _generatePoints(GameCategory category) {
     final List<Offset> points = [];
     final centerX = ScreenUtil().screenWidth / 2;
@@ -458,25 +561,39 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
               IconData icon;
               switch (theme.category) {
                 case GameCategory.reading:
-                  icon = random.nextBool() ? Icons.menu_book_rounded : Icons.auto_stories_rounded;
+                  icon = random.nextBool()
+                      ? Icons.menu_book_rounded
+                      : Icons.auto_stories_rounded;
                   break;
                 case GameCategory.writing:
-                  icon = random.nextBool() ? Icons.edit_note_rounded : Icons.history_edu_rounded;
+                  icon = random.nextBool()
+                      ? Icons.edit_note_rounded
+                      : Icons.history_edu_rounded;
                   break;
                 case GameCategory.speaking:
-                  icon = random.nextBool() ? Icons.mic_external_on_rounded : Icons.record_voice_over_rounded;
+                  icon = random.nextBool()
+                      ? Icons.mic_external_on_rounded
+                      : Icons.record_voice_over_rounded;
                   break;
                 case GameCategory.listening:
-                  icon = random.nextBool() ? Icons.headset_rounded : Icons.graphic_eq_rounded;
+                  icon = random.nextBool()
+                      ? Icons.headset_rounded
+                      : Icons.graphic_eq_rounded;
                   break;
                 case GameCategory.grammar:
-                  icon = random.nextBool() ? Icons.architecture_rounded : Icons.account_tree_rounded;
+                  icon = random.nextBool()
+                      ? Icons.architecture_rounded
+                      : Icons.account_tree_rounded;
                   break;
                 case GameCategory.vocabulary:
-                  icon = random.nextBool() ? Icons.bubble_chart_rounded : Icons.category_rounded;
+                  icon = random.nextBool()
+                      ? Icons.bubble_chart_rounded
+                      : Icons.category_rounded;
                   break;
                 case GameCategory.eliteMastery:
-                  icon = random.nextBool() ? Icons.workspace_premium_rounded : Icons.military_tech_rounded;
+                  icon = random.nextBool()
+                      ? Icons.workspace_premium_rounded
+                      : Icons.military_tech_rounded;
                   break;
                 default:
                   icon = Icons.star_rounded;
@@ -485,20 +602,21 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
               return Positioned(
                 left: random.nextDouble() * 1.sw,
                 top: random.nextDouble() * 2.sh,
-                child: Icon(
-                  icon,
-                  size: (12 + random.nextInt(18)).r,
-                  color: theme.primaryColor.withValues(
-                    alpha: isDark ? 0.20 : 0.12,
-                  ),
-                )
-                .animate(onPlay: (c) => c.repeat())
-                .moveY(
-                  begin: 1.1.sh,
-                  end: -100.h,
-                  duration: duration,
-                  curve: Curves.linear,
-                ),
+                child:
+                    Icon(
+                          icon,
+                          size: (12 + random.nextInt(18)).r,
+                          color: theme.primaryColor.withValues(
+                            alpha: isDark ? 0.20 : 0.12,
+                          ),
+                        )
+                        .animate(onPlay: (c) => c.repeat())
+                        .moveY(
+                          begin: 1.1.sh,
+                          end: -100.h,
+                          duration: duration,
+                          curve: Curves.linear,
+                        ),
               );
             }),
 
@@ -508,19 +626,20 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
               return Positioned(
                 left: random.nextDouble() * 1.sw,
                 top: random.nextDouble() * 2.sh,
-                child: Container(
-                  width: 3.r,
-                  height: 3.r,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                  ),
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .fadeOut(
-                  duration: (1 + random.nextDouble() * 2).seconds,
-                  curve: Curves.easeInOut,
-                ),
+                child:
+                    Container(
+                          width: 3.r,
+                          height: 3.r,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                          ),
+                        )
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .fadeOut(
+                          duration: (1 + random.nextDouble() * 2).seconds,
+                          curve: Curves.easeInOut,
+                        ),
               );
             }),
           ],
@@ -536,6 +655,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     bool isCurrent,
     bool isDark,
     ThemeResult theme,
+    bool isPremium,
   ) {
     Color tierColor = theme.primaryColor;
     if (level >= 50 && level < 100) {
@@ -548,7 +668,11 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
       tierColor = const Color(0xFFFFD700);
     }
 
-    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+    final statusLabel = !isUnlocked
+        ? context.tr('games.level_locked', fallback: 'Locked')
+        : (isCurrent
+              ? context.tr('games.level_current', fallback: 'Current level')
+              : context.tr('games.level_completed', fallback: 'Completed'));
 
     return SizedBox(
       width: 160.r,
@@ -557,147 +681,185 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         clipBehavior: Clip.none,
         alignment: Alignment.center,
         children: [
-          ScaleButton(
-            onTap: () {
-              if (!isUnlocked) {
-                _showLockedFeedback(context, theme.primaryColor);
-                return;
-              }
+          Semantics(
+            button: true,
+            label:
+                '${context.tr('games.level_label_short', args: [level.toString()], fallback: 'Level $level')}, $statusLabel',
+            child: ScaleButton(
+              onTap: () {
+                if (!isUnlocked) {
+                  _showLockedFeedback(context, theme.primaryColor);
+                  return;
+                }
 
-              di.sl<AdService>().showInterstitialAd(
-                isPremium: isPremium,
-                isLevelCompletion: false,
-                onDismissed: () async {
-                  if (context.mounted) {
-                    await context.push(
-                      '/game?category=${theme.category.name}&gameType=${widget.gameType}&level=$level',
-                    );
-                    if (mounted) {
-                      Future.delayed(const Duration(milliseconds: 300), () {
-                        if (mounted) {
-                          _scrollToCurrentLevel(animate: true);
-                        }
-                      });
+                di.sl<AdService>().showInterstitialAd(
+                  isPremium: isPremium,
+                  isLevelCompletion: false,
+                  onDismissed: () async {
+                    if (context.mounted) {
+                      await context.push(
+                        '/game?category=${Uri.encodeQueryComponent(theme.category.name)}&gameType=${Uri.encodeQueryComponent(widget.gameType)}&level=$level',
+                      );
+                      if (mounted) {
+                        Future.delayed(const Duration(milliseconds: 300), () {
+                          if (mounted) {
+                            _scrollToCurrentLevel(animate: true);
+                          }
+                        });
+                      }
                     }
-                  }
-                },
-              );
-            },
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  width: isCurrent ? 100.r : 85.r,
-                  height: isCurrent ? 100.r : 85.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: LinearGradient(
-                      colors: isUnlocked
-                          ? [Colors.white, const Color(0xFFF1F5F9)]
-                          : [Colors.grey.shade400, Colors.grey.shade600],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: (isUnlocked ? tierColor : Colors.black).withValues(alpha: isDark ? 0.4 : 0.2),
-                        offset: Offset(0, 8.h),
-                        blurRadius: 15.r,
-                      ),
-                    ],
-                    border: Border.all(
-                      color: isUnlocked ? tierColor : Colors.white24,
-                      width: isCurrent ? 4.r : 3.r,
-                    ),
-                  ),
-                  child: Container(
-                    margin: EdgeInsets.all(4.r),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Colors.white.withValues(alpha: 0.4),
-                          Colors.transparent,
-                          Colors.black.withValues(alpha: 0.1),
-                        ],
-                      ),
-                    ),
-                    child: Center(
-                      child: isUnlocked
-                          ? Padding(
-                              padding: EdgeInsets.all(4.r),
-                              child: FittedBox(
-                                fit: BoxFit.contain,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      context.tr('home.level_label'),
-                                      style: TextStyle(fontFamily: 'Outfit', 
-                                        fontSize: 8.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: tierColor,
-                                        letterSpacing: 2,
-                                      ),
-                                    ),
-                                    Text(
-                                      "$level",
-                                      style: TextStyle(fontFamily: 'Outfit', 
-                                        fontSize: (isCurrent ? 32 : 26).sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: tierColor,
-                                        height: 0.9,
-                                        shadows: [
-                                          Shadow(
-                                            color: Colors.black38,
-                                            offset: Offset(0, 2.h),
-                                            blurRadius: 4.r,
-                                          ),
-                                        ],
-                                      ),
+                  },
+                );
+              },
+              child: ExcludeSemantics(
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    RepaintBoundary(
+                      child:
+                          Container(
+                                width: isCurrent ? 100.r : 85.r,
+                                height: isCurrent ? 100.r : 85.r,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  gradient: LinearGradient(
+                                    colors: isUnlocked
+                                        ? [
+                                            Colors.white,
+                                            const Color(0xFFF1F5F9),
+                                          ]
+                                        : [
+                                            Colors.grey.shade400,
+                                            Colors.grey.shade600,
+                                          ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color:
+                                          (isUnlocked
+                                                  ? tierColor
+                                                  : Colors.black)
+                                              .withValues(
+                                                alpha: isDark ? 0.4 : 0.2,
+                                              ),
+                                      offset: Offset(0, 8.h),
+                                      blurRadius: 15.r,
                                     ),
                                   ],
+                                  border: Border.all(
+                                    color: isUnlocked
+                                        ? tierColor
+                                        : Colors.white24,
+                                    width: isCurrent ? 4.r : 3.r,
+                                  ),
                                 ),
+                                child: Container(
+                                  margin: EdgeInsets.all(4.r),
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    gradient: LinearGradient(
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                      colors: [
+                                        Colors.white.withValues(alpha: 0.4),
+                                        Colors.transparent,
+                                        Colors.black.withValues(alpha: 0.1),
+                                      ],
+                                    ),
+                                  ),
+                                  child: Center(
+                                    child: isUnlocked
+                                        ? Padding(
+                                            padding: EdgeInsets.all(4.r),
+                                            child: FittedBox(
+                                              fit: BoxFit.contain,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    context.tr(
+                                                      'home.level_label',
+                                                    ),
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 8.sp,
+                                                      fontWeight:
+                                                          FontWeight.w900,
+                                                      color: tierColor,
+                                                      letterSpacing: 2,
+                                                    ),
+                                                    maxLines: 1,
+                                                  ),
+                                                  Text(
+                                                    "$level",
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize:
+                                                          (isCurrent ? 32 : 26)
+                                                              .sp,
+                                                      fontWeight:
+                                                          FontWeight.w900,
+                                                      color: tierColor,
+                                                      height: 0.9,
+                                                      shadows: [
+                                                        Shadow(
+                                                          color: Colors.black38,
+                                                          offset: Offset(
+                                                            0,
+                                                            2.h,
+                                                          ),
+                                                          blurRadius: 4.r,
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    maxLines: 1,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          )
+                                        : Icon(
+                                            Icons.lock_rounded,
+                                            size: 32.r,
+                                            color: Colors.white54,
+                                          ),
+                                  ),
+                                ),
+                              )
+                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                              .moveY(
+                                begin: isCurrent ? -6.r : -3.r,
+                                end: isCurrent ? 6.r : 3.r,
+                                duration: (isCurrent ? 1.2 : 2.0).seconds,
+                                curve: Curves.easeInOut,
                               ),
-                            )
-                          : Icon(
-                              Icons.lock_rounded,
-                              size: 32.r,
-                              color: Colors.white54,
-                            ),
                     ),
-                  ),
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .moveY(
-                  begin: isCurrent ? -6.r : -3.r,
-                  end: isCurrent ? 6.r : 3.r,
-                  duration: (isCurrent ? 1.2 : 2.0).seconds,
-                  curve: Curves.easeInOut,
-                ),
 
-                Positioned(
-                  top: isCurrent ? 12.r : 10.r,
-                  left: isCurrent ? 12.r : 10.r,
-                  child: Container(
-                    width: isCurrent ? 40.r : 35.r,
-                    height: isCurrent ? 18.r : 15.r,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Colors.white.withValues(alpha: 0.5),
-                          Colors.white.withValues(alpha: 0.05),
-                        ],
+                    PositionedDirectional(
+                      top: isCurrent ? 12.r : 10.r,
+                      start: isCurrent ? 12.r : 10.r,
+                      child: Container(
+                        width: isCurrent ? 40.r : 35.r,
+                        height: isCurrent ? 18.r : 15.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Colors.white.withValues(alpha: 0.5),
+                              Colors.white.withValues(alpha: 0.05),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
 
@@ -718,7 +880,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     HapticFeedback.mediumImpact();
     CustomSnackBar.show(
       context: context,
-      message: 'MASTER PREVIOUS LEVELS TO UNLOCK',
+      message: context.tr(
+        'category_map.master_previous_levels',
+        fallback: 'MASTER PREVIOUS LEVELS TO UNLOCK',
+      ),
       type: CustomSnackBarType.info,
     );
   }
@@ -727,99 +892,135 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme(widget.gameType, isDark: isDark);
 
-    final unlockedLevels = context.read<AuthBloc>().state.user?.unlockedLevels[widget.gameType] ?? 1;
+    final user = context.read<AuthBloc>().state.user;
+    final unlockedLevels = user?.unlockedLevels[widget.gameType] ?? 1;
+    final mascotId = user?.vowlMascot ?? 'vowl_prime';
 
-    return GestureDetector(
-      onTap: () {
-        _buddyMessageTimer?.cancel();
-        final user = context.read<AuthBloc>().state.user;
-        final mascotId = user?.vowlMascot ?? 'vowl_prime';
-        final mascotName = mascotId.isNotEmpty
-            ? mascotId.split('_').map((e) => e.isNotEmpty ? e[0].toUpperCase() + e.substring(1) : '').join(' ')
-            : 'Companion';
-        
-        final messages = [
-          "Level $unlockedLevels! You're unstoppable, Superstar! ⭐",
-          "Level $unlockedLevels! $mascotName is impressed! 🚀",
-          "Level $unlockedLevels! Pure linguistic magic! ✨",
-          "Level $unlockedLevels! Absolute genius energy! 🧠",
-          "Level $unlockedLevels! You rock this stage! 🎸",
-          "Level $unlockedLevels! We're winning big! 🏆",
-          "Level $unlockedLevels! Boom! Perfect progress! 💥",
-          "Level $unlockedLevels! $mascotName says: You're so smart! 🦉",
-          "Level $unlockedLevels! Keep that momentum! 🏃‍♂️",
-          "Level $unlockedLevels! Wow! Simply breathtaking! 🎈",
-        ];
-        final message = messages[math.Random().nextInt(messages.length)];
-        setState(() {
-          _buddyMessage = message;
-          _touchAuraColor = theme.primaryColor;
-        });
+    return Semantics(
+      button: true,
+      label: context.tr(
+        'category_map.mascot_marker_action',
+        fallback: 'Get a cheer from your mascot',
+      ),
+      child:
+          GestureDetector(
+                onTap: () {
+                  _buddyMessageTimer?.cancel();
+                  final mascotName = _formatMascotName(mascotId);
 
-        final cleanMessage = message
-            .replaceAll(
-              RegExp(
-                r'[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{2B50}]',
-                unicode: true,
-              ),
-              '',
-            )
-            .trim();
-        di.sl<TtsService>().speak(cleanMessage);
+                  final messageKeys = [
+                    'category_map.cheer_unstoppable',
+                    'category_map.cheer_impressed',
+                    'category_map.cheer_magic',
+                    'category_map.cheer_genius',
+                    'category_map.cheer_rock',
+                    'category_map.cheer_winning',
+                    'category_map.cheer_boom',
+                    'category_map.cheer_smart',
+                    'category_map.cheer_momentum',
+                    'category_map.cheer_breathtaking',
+                  ];
+                  const fallbacks = [
+                    "Level {0}! You're unstoppable, Superstar! ⭐",
+                    "Level {0}! {1} is impressed! 🚀",
+                    "Level {0}! Pure linguistic magic! ✨",
+                    "Level {0}! Absolute genius energy! 🧠",
+                    "Level {0}! You rock this stage! 🎸",
+                    "Level {0}! We're winning big! 🏆",
+                    "Level {0}! Boom! Perfect progress! 💥",
+                    "Level {0}! {1} says: You're so smart! 🦉",
+                    "Level {0}! Keep that momentum! 🏃‍♂️",
+                    "Level {0}! Wow! Simply breathtaking! 🎈",
+                  ];
+                  final pick = math.Random().nextInt(messageKeys.length);
+                  final message = context.tr(
+                    messageKeys[pick],
+                    args: [unlockedLevels.toString(), mascotName],
+                    fallback: fallbacks[pick]
+                        .replaceAll('{0}', unlockedLevels.toString())
+                        .replaceAll('{1}', mascotName),
+                  );
 
-        HapticFeedback.lightImpact();
-        _buddyMessageTimer = Timer(const Duration(seconds: 4), () {
-          if (mounted) setState(() => _buddyMessage = null);
-        });
-      },
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (_buddyMessage != null)
-            Padding(
-              padding: EdgeInsets.only(bottom: 8.h),
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 14.w,
-                  vertical: 8.h,
-                ),
-                decoration: BoxDecoration(
-                  color: theme.primaryColor,
-                  borderRadius: BorderRadius.circular(15.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      blurRadius: 10.r,
-                      offset: Offset(0, 5.h),
-                    ),
-                  ],
-                ),
-                child: Text(
-                  _buddyMessage!,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    color: Colors.white,
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w800,
+                  setState(() {
+                    _buddyMessage = message;
+                    _touchAuraColor = theme.primaryColor;
+                  });
+
+                  final cleanMessage = message
+                      .replaceAll(
+                        RegExp(
+                          r'[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{2B50}]',
+                          unicode: true,
+                        ),
+                        '',
+                      )
+                      .trim();
+                  di.sl<TtsService>().speak(cleanMessage);
+
+                  HapticFeedback.lightImpact();
+                  _buddyMessageTimer = Timer(const Duration(seconds: 4), () {
+                    if (mounted) setState(() => _buddyMessage = null);
+                  });
+                },
+                child: ExcludeSemantics(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (_buddyMessage != null)
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 8.h),
+                          child:
+                              Container(
+                                constraints: BoxConstraints(maxWidth: 220.w),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 14.w,
+                                  vertical: 8.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor,
+                                  borderRadius: BorderRadius.circular(15.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black26,
+                                      blurRadius: 10.r,
+                                      offset: Offset(0, 5.h),
+                                    ),
+                                  ],
+                                ),
+                                child: Text(
+                                  _buddyMessage!,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    color: Colors.white,
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                  maxLines: 3,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ).animate().scale(
+                                curve: Curves.elasticOut,
+                                duration: 500.ms,
+                              ),
+                        ),
+                      VowlMascot(
+                        size: 55.r,
+                        useFloatingAnimation: true,
+                        mascotId: mascotId,
+                      ).animate().scale(
+                        curve: Curves.elasticOut,
+                        duration: 500.ms,
+                      ),
+                      CustomPaint(
+                        size: Size(12.w, 8.h),
+                        painter: TrianglePainter(color: theme.primaryColor),
+                      ),
+                    ],
                   ),
                 ),
-              ).animate().scale(
-                curve: Curves.elasticOut,
-                duration: 500.ms,
-              ),
-            ),
-          VowlMascot(
-            size: 55.r,
-            useFloatingAnimation: true,
-            mascotId: context.read<AuthBloc>().state.user?.vowlMascot ?? 'vowl_prime',
-          ).animate().scale(curve: Curves.elasticOut, duration: 500.ms),
-          CustomPaint(
-            size: Size(12.w, 8.h),
-            painter: TrianglePainter(color: theme.primaryColor),
-          ),
-        ],
-      )
-      .animate(onPlay: (c) => c.repeat(reverse: true))
-      .moveY(begin: -2, end: 2, duration: 2.seconds),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .moveY(begin: -2, end: 2, duration: 2.seconds),
     );
   }
 }

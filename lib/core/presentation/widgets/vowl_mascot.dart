@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,17 +7,41 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/core/presentation/utils/vowl_assets.dart';
 
-enum VowlMascotState {
-  neutral,
-  happy,
-  worried,
-  thinking,
-  studying,
-  sleeping,
+enum VowlMascotState { neutral, happy, worried, thinking, studying, sleeping }
+
+// ---------------------------------------------------------------------------
+// Selector data class — targeted BlocSelector payload, rebuilt only when
+// mascot-relevant user fields change (level, mascot, accessory).
+// ---------------------------------------------------------------------------
+
+@immutable
+class _MascotUserData extends Equatable {
+  final int level;
+  final String? vowlMascot;
+  final String? kidsMascot;
+  final String? vowlAccessory;
+  final String? kidsAccessory;
+
+  const _MascotUserData({
+    required this.level,
+    this.vowlMascot,
+    this.kidsMascot,
+    this.vowlAccessory,
+    this.kidsAccessory,
+  });
+
+  @override
+  List<Object?> get props => [
+    level,
+    vowlMascot,
+    kidsMascot,
+    vowlAccessory,
+    kidsAccessory,
+  ];
 }
 
-/// A premium, highly-interactive companion companion asset showing Owly the mascot
-/// with progressive aura states, equipped visual accessories, and state expressions.
+/// Interactive companion avatar showing Owly / emoji mascot with progressive
+/// aura states, equipped visual accessories, and state expressions.
 class VowlMascot extends StatelessWidget {
   final VowlMascotState state;
   final double? size;
@@ -37,126 +62,148 @@ class VowlMascot extends StatelessWidget {
     this.isKidsMode = false,
   });
 
-  bool get _isVoxBot => mascotId == null || mascotId == 'vox_bot';
-
+  /// Returns the VoxBot image asset path for the current [state].
+  /// Returns an empty string if [mascotId] is not explicitly 'vox_bot'.
   String _getAssetPath() {
-    if (!_isVoxBot) return ""; // We use Emoji for other mascots
-    switch (state) {
-      case VowlMascotState.happy:
-        return 'assets/images/mascot/voxbot_happy.webp';
-      case VowlMascotState.worried:
-        return 'assets/images/mascot/voxbot_worried.webp';
-      case VowlMascotState.thinking:
-        return 'assets/images/mascot/voxbot_thinking.webp';
-      case VowlMascotState.studying:
-        return 'assets/images/mascot/voxbot_thinking.webp';
-      case VowlMascotState.sleeping:
-        return 'assets/images/mascot/voxbot_neutral.webp';
-      case VowlMascotState.neutral:
-        return 'assets/images/mascot/voxbot_neutral.webp';
-    }
+    if (mascotId != 'vox_bot') return '';
+    return switch (state) {
+      VowlMascotState.happy => 'assets/images/mascot/voxbot_happy.webp',
+      VowlMascotState.worried => 'assets/images/mascot/voxbot_worried.webp',
+      VowlMascotState.thinking ||
+      VowlMascotState.studying => 'assets/images/mascot/voxbot_thinking.webp',
+      _ => 'assets/images/mascot/voxbot_neutral.webp',
+    };
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthBloc, AuthState>(
-      builder: (context, authState) {
-        final user = authState.user;
-        final String effectiveMascotId = mascotId ?? 
-            (isKidsMode ? (user?.kidsMascot ?? 'owly') : (user?.vowlMascot ?? 'vowl_prime'));
-        
+    // HIGH FIX: BlocSelector rebuilds ONLY when mascot-relevant user data
+    // changes. Previously BlocBuilder rebuilt on every AuthState change.
+    return BlocSelector<AuthBloc, AuthState, _MascotUserData>(
+      selector: (s) => _MascotUserData(
+        level: s.user?.level ?? 1,
+        vowlMascot: s.user?.vowlMascot,
+        kidsMascot: s.user?.kidsMascot,
+        vowlAccessory: s.user?.vowlEquippedAccessory,
+        kidsAccessory: s.user?.kidsEquippedAccessory,
+      ),
+      builder: (context, userData) {
+        final effectiveMascotId =
+            mascotId ??
+            (isKidsMode
+                ? (userData.kidsMascot ?? 'owly')
+                : (userData.vowlMascot ?? 'vowl_prime'));
+
         final isVoxBot = effectiveMascotId == 'vox_bot';
         final botSize = size ?? 120.r;
-        
-        // DYNAMIC MAP SELECTION
-        final mascotMap = isKidsMode ? KidsAssets.mascotMap : VowlAssets.mascotMap;
-        final accessoryMap = isKidsMode ? KidsAssets.accessoryMap : VowlAssets.accessoryMap;
-        final colorMap = VowlAssets.itemColors; // We use VowlAssets for global item colors
 
-        final buddyEmoji = mascotMap[effectiveMascotId] ?? (isKidsMode ? "🦉" : "🦉");
-        
-        // TAILORED AURA COLORS
-        Color auraColor = colorMap[effectiveMascotId] ?? Colors.blueAccent;
+        final mascotMap = isKidsMode
+            ? KidsAssets.mascotMap
+            : VowlAssets.mascotMap;
+        final accessoryMap = isKidsMode
+            ? KidsAssets.accessoryMap
+            : VowlAssets.accessoryMap;
+
+        final buddyEmoji = mascotMap[effectiveMascotId] ?? '🦉';
+
+        // ── Aura colour ───────────────────────────────────────────────────
+        Color auraColor =
+            VowlAssets.itemColors[effectiveMascotId] ?? Colors.blueAccent;
         if (isKidsMode) {
-          if (effectiveMascotId == 'owly') auraColor = Colors.brown[300]!;
-          if (effectiveMascotId == 'foxie') auraColor = Colors.orangeAccent;
-          if (effectiveMascotId == 'dino') auraColor = Colors.greenAccent;
-          if (effectiveMascotId == 'mascot_unicorn') auraColor = const Color(0xFFF472B6);
-          if (effectiveMascotId == 'mascot_robot') auraColor = const Color(0xFF60A5FA);
-          if (effectiveMascotId == 'mascot_lion') auraColor = const Color(0xFFFBBF24);
+          auraColor = switch (effectiveMascotId) {
+            'owly' => Colors.brown[300]!,
+            'foxie' => Colors.orangeAccent,
+            'dino' => Colors.greenAccent,
+            'mascot_unicorn' => const Color(0xFFF472B6),
+            'mascot_robot' => const Color(0xFF60A5FA),
+            'mascot_lion' => const Color(0xFFFBBF24),
+            _ => auraColor,
+          };
         }
 
-        Widget bot;
-        if (isVoxBot && effectiveMascotId != 'vowl_prime') {
-          bot = Image.asset(
-            _getAssetPath(),
-            width: botSize,
-            height: botSize,
-            fit: BoxFit.contain,
-            color: state == VowlMascotState.sleeping
-                ? Colors.black.withValues(alpha: 0.3)
-                : null,
-            colorBlendMode:
-                state == VowlMascotState.sleeping ? BlendMode.dstIn : null,
-          );
-        } else {
-          bot = Container(
-            width: botSize,
-            height: botSize,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: RadialGradient(
-                colors: [
-                  auraColor.withValues(alpha: 0.2),
-                  Colors.transparent,
-                ],
-              ),
-            ),
-            child: Center(
-              child: Text(
-                buddyEmoji,
-                style: TextStyle(
-                  fontSize: botSize * 0.6,
-                  shadows: [
-                    Shadow(
-                      color: auraColor.withValues(alpha: 0.3),
-                      blurRadius: 10,
-                    ),
-                  ],
+        // ── Base bot widget ───────────────────────────────────────────────
+        Widget bot = isVoxBot
+            ? Image.asset(
+                _getAssetPath(),
+                width: botSize,
+                height: botSize,
+                fit: BoxFit.contain,
+                color: state == VowlMascotState.sleeping
+                    ? Colors.black.withValues(alpha: 0.3)
+                    : null,
+                colorBlendMode: state == VowlMascotState.sleeping
+                    ? BlendMode.dstIn
+                    : null,
+              )
+            : Container(
+                width: botSize,
+                height: botSize,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: RadialGradient(
+                    colors: [
+                      auraColor.withValues(alpha: 0.2),
+                      Colors.transparent,
+                    ],
+                  ),
                 ),
-              ),
-            ),
-          );
-        }
+                child: Center(
+                  child: Text(
+                    buddyEmoji,
+                    style: TextStyle(
+                      fontSize: botSize * 0.6,
+                      shadows: [
+                        Shadow(
+                          color: auraColor.withValues(alpha: 0.3),
+                          blurRadius: 10,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              );
 
-        // Apply Level-based Auras (Growth)
+        // ── Level-based aura (≥50) ────────────────────────────────────────
         if (level >= 50) {
           bot = Stack(
             alignment: Alignment.center,
             children: [
               Container(
-                width: botSize * 0.9,
-                height: botSize * 0.9,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: (level >= 100 ? Colors.amberAccent : Colors.blueAccent).withValues(alpha: 0.3),
-                      blurRadius: 15,
-                      spreadRadius: 2,
+                    width: botSize * 0.9,
+                    height: botSize * 0.9,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color:
+                              (level >= 100
+                                      ? Colors.amberAccent
+                                      : Colors.blueAccent)
+                                  .withValues(alpha: 0.3),
+                          blurRadius: 15,
+                          spreadRadius: 2,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ).animate(onPlay: (c) => c.repeat(reverse: true))
-               .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1), duration: 2.seconds),
+                  )
+                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                  .scale(
+                    begin: const Offset(1, 1),
+                    end: const Offset(1.1, 1.1),
+                    duration: 2.seconds,
+                  ),
               bot,
             ],
           );
         }
 
-        // Overlay Accessory if present
-        final effectiveAccessory = accessoryId ?? (isKidsMode ? authState.user?.kidsEquippedAccessory : authState.user?.vowlEquippedAccessory);
-        if (effectiveAccessory != null && accessoryMap.containsKey(effectiveAccessory)) {
+        // ── Accessory overlay ─────────────────────────────────────────────
+        final effectiveAccessory =
+            accessoryId ??
+            (isKidsMode ? userData.kidsAccessory : userData.vowlAccessory);
+
+        if (effectiveAccessory != null &&
+            accessoryMap.containsKey(effectiveAccessory)) {
           final emoji = accessoryMap[effectiveAccessory]!;
           bot = Stack(
             alignment: Alignment.center,
@@ -165,18 +212,12 @@ class VowlMascot extends StatelessWidget {
               Positioned(
                 top: botSize * 0.1,
                 right: botSize * 0.1,
-                child: Text(
-                  emoji,
-                  style: TextStyle(fontSize: botSize * 0.35),
-                ),
+                child: Text(emoji, style: TextStyle(fontSize: botSize * 0.35)),
               ),
               if (level >= 100)
                 Positioned(
                   top: -botSize * 0.1,
-                  child: Text(
-                    '👑',
-                    style: TextStyle(fontSize: botSize * 0.3),
-                  ),
+                  child: Text('👑', style: TextStyle(fontSize: botSize * 0.3)),
                 ),
             ],
           );
@@ -187,21 +228,20 @@ class VowlMascot extends StatelessWidget {
               bot,
               Positioned(
                 top: -botSize * 0.1,
-                child: Text(
-                  '👑',
-                  style: TextStyle(fontSize: botSize * 0.3),
-                ),
+                child: Text('👑', style: TextStyle(fontSize: botSize * 0.3)),
               ),
             ],
           );
         }
 
+        // ── Static (no floating) ──────────────────────────────────────────
         if (!useFloatingAnimation) {
           return RepaintBoundary(child: bot);
         }
 
+        // ── Floating + state animations ───────────────────────────────────
         var animatedBot = bot
-            .animate(onPlay: (controller) => controller.repeat(reverse: true))
+            .animate(onPlay: (c) => c.repeat(reverse: true))
             .moveY(
               begin: state == VowlMascotState.sleeping ? -2 : -5,
               end: state == VowlMascotState.sleeping ? 2 : 5,
@@ -212,9 +252,17 @@ class VowlMascot extends StatelessWidget {
         if (state == VowlMascotState.happy) {
           animatedBot = animatedBot
               .shake(hz: 4, curve: Curves.easeInOutCubic)
-              .scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2), duration: 400.ms)
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.2, 1.2),
+                duration: 400.ms,
+              )
               .then()
-              .scale(begin: const Offset(1.2, 1.2), end: const Offset(1, 1), duration: 400.ms);
+              .scale(
+                begin: const Offset(1.2, 1.2),
+                end: const Offset(1, 1),
+                duration: 400.ms,
+              );
         }
 
         if (state == VowlMascotState.worried) {
@@ -224,18 +272,28 @@ class VowlMascot extends StatelessWidget {
         }
 
         if (state == VowlMascotState.sleeping) {
-          animatedBot = animatedBot.blur(begin: const Offset(0, 0), end: const Offset(1, 1));
+          animatedBot = animatedBot.blur(
+            begin: const Offset(0, 0),
+            end: const Offset(1, 1),
+          );
         }
 
         if (state == VowlMascotState.thinking) {
-          animatedBot = animatedBot.rotate(begin: -0.1, end: 0.1, duration: 2.seconds, curve: Curves.easeInOut);
+          animatedBot = animatedBot.rotate(
+            begin: -0.1,
+            end: 0.1,
+            duration: 2.seconds,
+            curve: Curves.easeInOut,
+          );
         }
 
-        // Add state-specific emoji overlays for more expression
-        String? stateEmoji;
-        if (state == VowlMascotState.thinking) stateEmoji = '💡';
-        if (state == VowlMascotState.studying) stateEmoji = '📚';
-        if (state == VowlMascotState.worried) stateEmoji = '😰';
+        // ── State emoji overlays ──────────────────────────────────────────
+        final stateEmoji = switch (state) {
+          VowlMascotState.thinking => '💡',
+          VowlMascotState.studying => '📚',
+          VowlMascotState.worried => '😰',
+          _ => null,
+        };
 
         if (stateEmoji != null) {
           return RepaintBoundary(
@@ -244,10 +302,15 @@ class VowlMascot extends StatelessWidget {
               children: [
                 animatedBot,
                 Positioned(
-                  bottom: botSize * 0.1,
-                  right: 0,
-                  child: Text(stateEmoji, style: TextStyle(fontSize: botSize * 0.2)),
-                ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: 0, end: -10),
+                      bottom: botSize * 0.1,
+                      right: 0,
+                      child: Text(
+                        stateEmoji,
+                        style: TextStyle(fontSize: botSize * 0.2),
+                      ),
+                    )
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .moveY(begin: 0, end: -10),
               ],
             ),
           );

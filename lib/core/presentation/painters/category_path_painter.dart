@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 
-/// A custom painter to draw organic paths connecting quest selection map nodes.
+/// A custom painter that draws organic Bézier paths connecting quest-map nodes.
+///
+/// Renders two layers:
+///  1. A dim "locked" path spanning all nodes.
+///  2. A brighter "active" path that only reaches the [unlockedLevels]th node,
+///     accompanied by a glow effect.
 class CategoryPathPainter extends CustomPainter {
   final List<Offset> points;
   final Color color;
@@ -10,7 +15,7 @@ class CategoryPathPainter extends CustomPainter {
   final bool isDark;
   final int unlockedLevels;
 
-  CategoryPathPainter({
+  const CategoryPathPainter({
     required this.points,
     required this.color,
     required this.category,
@@ -22,126 +27,108 @@ class CategoryPathPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     if (points.isEmpty) return;
 
-    final paint = Paint()
+    final lockedPaint = Paint()
       ..color = color.withValues(alpha: isDark ? 0.3 : 0.15)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 10.r
+      // Use logical pixels (not .r) for stroke widths so they stay consistent
+      // across display densities without ScreenUtil's radius scaling.
+      ..strokeWidth = 10.0
       ..strokeCap = StrokeCap.round;
 
     final activePaint = Paint()
       ..color = color
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 10.r
+      ..strokeWidth = 10.0
       ..strokeCap = StrokeCap.round;
 
-    final path = Path();
-    // Start from center top to connect with the card
-    path.moveTo(size.width / 2, 0);
+    final topCenter = Offset(size.width / 2, 0);
 
-    // Draw "Signal Pulse" at the top (Connection Point)
-    // 1. Solid Category Core
-    canvas.drawCircle(
-      Offset(size.width / 2, 0),
-      10.r,
-      Paint()..color = color,
-    );
+    // ── Top connection point with glow ──────────────────────────────────
+    canvas.drawCircle(topCenter, 10.0, Paint()..color = color);
 
-    // 2. Category Signal Glow
     final glowPaint = Paint()
       ..shader = RadialGradient(
         colors: [color.withValues(alpha: 0.5), Colors.transparent],
-      ).createShader(
-        Rect.fromCircle(center: Offset(size.width / 2, 0), radius: 30.r),
-      );
-    canvas.drawCircle(Offset(size.width / 2, 0), 25.r, glowPaint);
+      ).createShader(Rect.fromCircle(center: topCenter, radius: 25.0));
+    canvas.drawCircle(topCenter, 25.0, glowPaint);
 
-    // Continue to first point and beyond
-    path.lineTo(points[0].dx, points[0].dy);
+    // ── Full locked path ─────────────────────────────────────────────────
+    final lockedPath = _buildPath(topCenter, points, 0, points.length);
+    canvas.drawPath(lockedPath, lockedPaint);
 
-    for (int i = 0; i < points.length - 1; i++) {
-      final p1 = points[i];
-      final p2 = points[i + 1];
-
-      // Organic curved path
-      final controlPoint1 = Offset(p1.dx, p1.dy + (p2.dy - p1.dy) / 2);
-      final controlPoint2 = Offset(p2.dx, p2.dy - (p2.dy - p1.dy) / 2);
-
-      path.cubicTo(
-        controlPoint1.dx,
-        controlPoint1.dy,
-        controlPoint2.dx,
-        controlPoint2.dy,
-        p2.dx,
-        p2.dy,
-      );
-    }
-
-    // Draw the background path (locked)
-    canvas.drawPath(path, paint);
-
-    // Draw the active path (up to unlocked levels)
-    final activePath = Path();
-    activePath.moveTo(size.width / 2, 0);
-
+    // ── Active (unlocked) path ───────────────────────────────────────────
     if (points.isNotEmpty && unlockedLevels > 0) {
-      // Connect to first node
-      activePath.lineTo(points[0].dx, points[0].dy);
+      final activeNodeCount = (unlockedLevels - 1).clamp(0, points.length);
+      final activePath = _buildPath(topCenter, points, 0, activeNodeCount);
 
-      // Connect subsequent unlocked nodes
-      for (int i = 0; i < unlockedLevels - 1; i++) {
-        if (i >= points.length - 1) break;
-        final p1 = points[i];
-        final p2 = points[i + 1];
-
-        final controlPoint1 = Offset(p1.dx, p1.dy + (p2.dy - p1.dy) / 2);
-        final controlPoint2 = Offset(p2.dx, p2.dy - (p2.dy - p1.dy) / 2);
-
-        activePath.cubicTo(
-          controlPoint1.dx,
-          controlPoint1.dy,
-          controlPoint2.dx,
-          controlPoint2.dy,
-          p2.dx,
-          p2.dy,
-        );
-      }
-
-      // Glow for active path
+      // Soft glow layer beneath the active path.
       canvas.drawPath(
         activePath,
         Paint()
           ..color = color.withValues(alpha: 0.4)
-          ..strokeWidth = 16.r
+          ..strokeWidth = 16.0
           ..style = PaintingStyle.stroke
-          ..maskFilter = MaskFilter.blur(BlurStyle.normal, 10.r),
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10.0),
       );
 
       canvas.drawPath(activePath, activePaint);
     }
   }
 
+  /// Builds a Bézier path from [start] through [points[from]..points[to-1]].
+  Path _buildPath(Offset start, List<Offset> pts, int from, int to) {
+    final path = Path()..moveTo(start.dx, start.dy);
+    if (pts.isEmpty || from >= pts.length) return path;
+    path.lineTo(pts[from].dx, pts[from].dy);
+
+    for (int i = from; i < to - 1 && i < pts.length - 1; i++) {
+      final p1 = pts[i];
+      final p2 = pts[i + 1];
+      final mid = (p2.dy - p1.dy) / 2;
+      path.cubicTo(p1.dx, p1.dy + mid, p2.dx, p2.dy - mid, p2.dx, p2.dy);
+    }
+    return path;
+  }
+
+  /// CRITICAL FIX: Always returned `false`, meaning the painter never updated
+  /// when [unlockedLevels], [color], or [isDark] changed after first render.
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant CategoryPathPainter oldDelegate) {
+    return oldDelegate.unlockedLevels != unlockedLevels ||
+        oldDelegate.color != color ||
+        oldDelegate.isDark != isDark ||
+        oldDelegate.points.length != points.length ||
+        oldDelegate.category != category;
+  }
 }
 
-/// A custom painter to draw the triangle speech indicator for dynamic mascot dialogue boxes.
+// ---------------------------------------------------------------------------
+// Triangle speech-bubble tail painter
+// ---------------------------------------------------------------------------
+
+/// Paints a downward-pointing equilateral triangle for mascot dialogue tails.
 class TrianglePainter extends CustomPainter {
   final Color color;
-  TrianglePainter({required this.color});
+
+  const TrianglePainter({required this.color});
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..style = PaintingStyle.fill;
-    final path = Path();
-    path.moveTo(0, 0);
-    path.lineTo(size.width, 0);
-    path.lineTo(size.width / 2, size.height);
-    path.close();
-    canvas.drawPath(path, paint);
+    final path = Path()
+      ..moveTo(0, 0)
+      ..lineTo(size.width, 0)
+      ..lineTo(size.width / 2, size.height)
+      ..close();
+    canvas.drawPath(
+      path,
+      Paint()
+        ..color = color
+        ..style = PaintingStyle.fill,
+    );
   }
 
+  /// CRITICAL FIX: Was always `false`, so color changes were invisible.
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant TrianglePainter oldDelegate) =>
+      oldDelegate.color != color;
 }

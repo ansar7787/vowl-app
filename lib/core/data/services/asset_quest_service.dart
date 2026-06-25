@@ -5,12 +5,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:vowl/core/error/exceptions.dart';
 import 'package:vowl/core/data/constants/quest_registry.dart';
+import 'package:vowl/core/utils/app_logger.dart';
 
 /// Contract definition for quest-loading service layers.
 abstract class QuestService {
   /// Loads quests for a specific game and level from the active source.
   Future<List<Map<String, dynamic>>> getQuests(String gameType, int level);
-  
+
   /// Pre-loads a batch for the next set of levels in the background.
   Future<void> preloadBatch(String gameType, int currentLevel);
 
@@ -28,16 +29,18 @@ List<Map<String, dynamic>> _parseQuestsInIsolate(String jsonString) {
           .map((e) => Map<String, dynamic>.from(e as Map))
           .toList();
     }
-  } catch (e) {
-    if (kDebugMode) {
-      debugPrint('AssetQuestService Isolate Error: Failed to parse JSON: $e');
-    }
+  } catch (e, stackTrace) {
+    AppLogger.error(
+      'AssetQuestService Isolate Error: Failed to parse JSON',
+      error: e,
+      stackTrace: stackTrace,
+    );
   }
   return [];
 }
 
 /// High-performance local asset quest loader service.
-/// 
+///
 /// Employs:
 /// 1. **DSA: Least Recently Used (LRU) Cache** via [LinkedHashMap] in $O(1)$ evictions.
 /// 2. **DSA: Request Coalescing** via active [Completer] futures to prevent redundant disk reads.
@@ -66,7 +69,7 @@ class AssetQuestService implements QuestService {
   }
 
   /// Loads quests for a specific game and level from local assets.
-  /// 
+  ///
   /// Returns a list of quest maps or throws a [ServerException] if failed.
   @override
   Future<List<Map<String, dynamic>>> getQuests(
@@ -74,18 +77,20 @@ class AssetQuestService implements QuestService {
     int level,
   ) async {
     final path = QuestRegistry.getAssetPath(gameType, level);
-    
+
     // 1. Return from cache if already loaded (move to end for LRU)
     if (_batchCache.containsKey(path)) {
       final cached = _batchCache.remove(path)!;
-      _batchCache[path] = cached; 
+      _batchCache[path] = cached;
       return _filterQuests(gameType, level, cached);
     }
 
     // 2. Return the pending future if already loading (Request Coalescing)
     if (_loadingPaths.containsKey(path)) {
       if (kDebugMode) {
-        debugPrint('AssetQuestService: Coalescing request for loading path: $path');
+        debugPrint(
+          'AssetQuestService: Coalescing request for loading path: $path',
+        );
       }
       final quests = await _loadingPaths[path]!.future;
       return _filterQuests(gameType, level, quests);
@@ -96,7 +101,7 @@ class AssetQuestService implements QuestService {
     if (kDebugMode) {
       debugPrint('AssetQuestService: Loading quests from $path');
     }
-    
+
     try {
       final String jsonString = await rootBundle.loadString(path);
       if (jsonString.isEmpty) {
@@ -104,7 +109,10 @@ class AssetQuestService implements QuestService {
       }
 
       // Concurrency: Parse JSON in a separate isolate to bypass main-thread GC & parsing stutters
-      final List<Map<String, dynamic>> quests = await compute(_parseQuestsInIsolate, jsonString);
+      final List<Map<String, dynamic>> quests = await compute(
+        _parseQuestsInIsolate,
+        jsonString,
+      );
 
       _batchCache[path] = quests;
       _trimCache();
@@ -122,11 +130,15 @@ class AssetQuestService implements QuestService {
   /// Pre-loads a batch for the next set of levels.
   @override
   Future<void> preloadBatch(String gameType, int currentLevel) async {
-    // Fast O(1) integer arithmetic without floating-point conversions
-    final nextBatchLevel = (((currentLevel + 1) - 1) ~/ 10) * 10 + 11;
-    final path = QuestRegistry.getAssetPath(gameType, nextBatchLevel);
-    
-    if (_batchCache.containsKey(path) || _loadingPaths.containsKey(path)) return;
+    // Fast O(1) integer arithmetic without floating-point conversions.
+    // currentBatch = which batch currentLevel falls in (1-indexed);
+    // nextBatchFirstLevel = the first level of the *following* batch.
+    final currentBatch = ((currentLevel - 1) ~/ 10) + 1;
+    final nextBatchFirstLevel = currentBatch * 10 + 1;
+    final path = QuestRegistry.getAssetPath(gameType, nextBatchFirstLevel);
+
+    if (_batchCache.containsKey(path) || _loadingPaths.containsKey(path))
+      return;
 
     try {
       final completer = Completer<List<Map<String, dynamic>>>();
@@ -134,7 +146,7 @@ class AssetQuestService implements QuestService {
       if (kDebugMode) {
         debugPrint('AssetQuestService: Pre-loading next batch from $path');
       }
-      
+
       final String jsonString = await rootBundle.loadString(path);
       final quests = await compute(_parseQuestsInIsolate, jsonString);
 
@@ -161,7 +173,7 @@ class AssetQuestService implements QuestService {
     bool filterQuests(dynamic q, int level) {
       try {
         final levelStr = level.toString();
-        
+
         // 1. Explicit level field check (Priority)
         final qLevel = q['level'];
         if (qLevel != null && qLevel.toString() == levelStr) {
@@ -183,13 +195,11 @@ class AssetQuestService implements QuestService {
         }
 
         // 3. Fallback: Check if the ID ends with or contains the level number with boundary
-        final fallbackRegex = RegExp(
-          '(?:^|[^0-9])0*$levelStr(?![0-9])',
-        );
-        
+        final fallbackRegex = RegExp('(?:^|[^0-9])0*$levelStr(?![0-9])');
+
         return fallbackRegex.hasMatch(id);
       } catch (e) {
-        debugPrint('[AssetQuestService] Filter error: $e');
+        AppLogger.warning('AssetQuestService: Filter error', error: e);
         return false;
       }
     }
@@ -197,11 +207,13 @@ class AssetQuestService implements QuestService {
     final filtered = quests.where((q) => filterQuests(q, level)).toList();
 
     if (filtered.isEmpty && quests.isNotEmpty) {
-      final sampleIds = quests.take(5).map((e) => (e['id'] ?? e['questId'] ?? 'no-id').toString()).join(', ');
-      final message = 'No quests matched level $level in batch $gameType. Found ${quests.length} quests in file. Sample IDs: $sampleIds.';
-      if (kDebugMode) {
-        debugPrint('AssetQuestService Error: $message');
-      }
+      final sampleIds = quests
+          .take(5)
+          .map((e) => (e['id'] ?? e['questId'] ?? 'no-id').toString())
+          .join(', ');
+      final message =
+          'No quests matched level $level in batch $gameType. Found ${quests.length} quests in file. Sample IDs: $sampleIds.';
+      AppLogger.error(message);
       throw ServerException(message);
     }
 

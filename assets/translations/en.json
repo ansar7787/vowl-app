@@ -1,6 +1,6 @@
 {
   "common": {
-    "cancel": "Cancel",
+    "cancel": "CANCEL",
     "save": "Save",
     "done": "Done",
     "ok": "OK",
@@ -20,13 +20,31 @@
     "confirm": "Confirm",
     "continue_text": "Continue",
     "see_results": "See Results",
-    "mission_briefing": "MISSION BRIEFING"
+    "mission_briefing": "MISSION BRIEFING",
+    "go_back": "GO BACK",
+    "clear": "Clear",
+    "xp_suffix": "XP",
+    "coins_label": "coins"
   },
   "auth": {
     "signup": "Create Account",
     "login": "Login",
     "send_reset_link": "Send Reset Link",
-    "sign_in_with_google": "Sign in with Google"
+    "sign_in_with_google": "Sign in with Google",
+    "error": {
+      "invalid_credential": "Invalid credential",
+      "email_already_in_use": "Email already in use",
+      "invalid_email": "Invalid email",
+      "weak_password": "Weak password",
+      "network_failed": "Network connection failed",
+      "too_many_requests": "Too many requests",
+      "permission_denied": "Permission denied",
+      "user_disabled": "User account disabled",
+      "requires_recent_login": "Requires recent login",
+      "credential_in_use": "Credential already in use",
+      "sign_in_cancelled": "Sign in cancelled",
+      "generic": "Authentication error"
+    }
   },
   "home": {
     "kids_zone_title": "Kids Learning Zone",
@@ -90,7 +108,16 @@
     "chest_ready_to_open": "READY TO OPEN?",
     "chest_coins_collected": "COINS COLLECTED",
     "chest_tap_vip_loot": "TAP TO CLAIM VIP LOOT",
-    "chest_tap_unveil": "TAP TO UNVEIL"
+    "chest_tap_unveil": "TAP TO UNVEIL",
+    "discovery_default_title": "Themed Quest",
+    "avatar_progress_label": "Mastery avatar, {0}% progress to next level",
+    "mascot_greeting_hoot": "HOOT HOOT!",
+    "mascot_greeting_message": "Welcome back to your Sanctuary. {0} has been waiting for you!",
+    "mascot_greeting_cta": "TAP TO ENTER",
+    "chest_coins_collected_value": "{0} coins collected",
+    "coins_value_label": "{0} coins",
+    "discovery_page_indicator": "Page {0} of {1}",
+    "default_seeker_name": "Seeker"
   },
   "notification_card": {
     "streak_protect": "Protect your {}-Day Streak!",
@@ -130,17 +157,19 @@
     "free_account": "FREE ACCOUNT",
     "cache_cleared": "Cache cleared successfully!",
     "cache_error": "Error clearing cache",
-    "email_error": "Could not open email app"
+    "email_error": "Could not open email app",
+    "explorer": "Explorer",
+    "tap_to_edit_profile": "Tap to edit profile"
   },
   "settings_dialogs": {
     "profile_settings": "Profile Settings",
     "display_name": "Display Name",
     "sign_out_title": "Sign Out?",
-    "sign_out_body": "Are you sure you want to leave?\nYour quest progress is safely synced to the cloud.",
+    "sign_out_body": "Are you sure you want to sign out?",
     "sign_out_confirm": "Yes, Sign Me Out",
     "sign_out_cancel": "Stay in Quest",
     "disable_notifications_title": "Disable Notifications?",
-    "disable_notifications_body": "Owly won't be able to remind you to practice. You might lose your learning streak!",
+    "disable_notifications_body": "Are you sure you want to disable notifications?",
     "keep_reminders": "Keep Reminders On",
     "yes_disable": "Yes, Disable",
     "reset_password_title": "Reset Password",
@@ -156,12 +185,18 @@
     "delete_forever": "Yes, Delete Forever",
     "nevermind": "Nevermind",
     "coming_soon_title": "Feature Coming Soon",
-    "coming_soon_body": "We're working hard to bring this feature to your quest experience!"
+    "coming_soon_body": "We're working hard to bring this feature to your quest experience!",
+    "disable_sound_body": "Are you sure you want to disable sound?",
+    "disable_sound_title": "Disable Sound?",
+    "got_it": "Got it",
+    "keep_sound_on": "Keep sound on",
+    "mute_anyway": "Mute anyway"
   },
   "language_picker": {
     "title": "Choose Language",
     "subtitle": "Select the language for the app interface. Game content will remain in English.",
-    "search_hint": "Search languages..."
+    "search_hint": "Search languages...",
+    "no_results": "No results found"
   },
   "premium": {
     "title": "Vowl Premium",
@@ -172,7 +207,33 @@
     "per_month": "/month",
     "per_year": "/year",
     "free_trial": "Start Free Trial",
-    "already_premium": "You're already a Premium Quester!"
+    "already_premium": "You're already a Premium Quester!",
+    "hero_title": "Unlimited Growth.",
+    "hero_subtitle": "Master English with Premium features",
+    "verified_pro_badge": "VERIFIED PRO",
+    "feature_zero_ads": "ZERO ADS",
+    "feature_2x_speed": "2X SPEED",
+    "feature_vip_badges": "VIP BADGES",
+    "feature_pro_status": "PRO STATUS",
+    "days_access": "days of elite access",
+    "days_of_elite_access": "{} days of elite access",
+    "save": "Save",
+    "cta_activate": "ACTIVATE PRO ACCESS",
+    "cta_processing": "PROCESSING...",
+    "processing_title": "Processing Payment...",
+    "processing_subtitle": "Please wait while we process your request",
+    "secure_transaction_tag": "SECURE TRANSACTION • CANCEL ANYTIME",
+    "success_title": "UPGRADE SUCCESSFUL",
+    "success_subtitle": "Welcome to Vowl Pro. Your elite learning journey starts now!",
+    "transaction_id_label": "Transaction ID",
+    "begin_adventure_button": "BEGIN ADVENTURE",
+    "failure_title": "TRANSACTION FAILED",
+    "failure_body_default": "The payment could not be completed. Please try again or use another payment method.",
+    "failure_body_retry_hint": "Please try again or use another payment method.",
+    "retry_button": "RETRY",
+    "error_timeout": "Payment request timed out. Please try again.",
+    "error_generic": "Payment failed. Please try again.",
+    "error_upgrade_failed": "We couldn't activate your Pro access. Please contact support with your transaction ID."
   },
   "profile": {
     "trophy_room": "MY TROPHY ROOM",
@@ -181,7 +242,47 @@
     "collectibles_vault": "COLLECTIBLES VAULT",
     "no_trophies": "No trophies yet. Keep completing lessons and challenges to earn your first shiny badge!",
     "empty_vault": "The vault is empty. Play games to unlock legendary furniture for your mascot!",
-    "level": "LEVEL {}"
+    "level": "LEVEL {}",
+    "adventure_stats": "Adventure Stats",
+    "hall_of_fame": "Hall of Fame",
+    "kids_stickers": "Kids Stickers",
+    "hall_of_fame_vacant": "HALL OF FAME VACANT",
+    "hall_of_fame_vacant_subtitle": "Claim milestones to display your legendary trophies here.",
+    "badge_semantic_label": "{} badge, level {} achieved",
+    "level_achieved": "LEVEL {} ACHIEVED",
+    "vowl_treasury": "Vowl Treasury",
+    "daily_streak": "Daily Streak",
+    "streak_days": "{} Days",
+    "current_level_label": "CURRENT LEVEL",
+    "level_value": "Level {}",
+    "tap_view_rank_details": "Tap to view rank details",
+    "adventure_xp_label": "ADVENTURE XP",
+    "total_experience": "{} Total Experience",
+    "progress_to_level": "PROGRESS TO LEVEL {}",
+    "default_name": "Hero In Training",
+    "id_badge": "ID",
+    "premium_member_badge": "PREMIUM MEMBER",
+    "edit_photo": "Edit profile photo",
+    "edit_photo_premium": "Edit premium profile photo",
+    "admin_dashboard": "Admin Dashboard",
+    "upgrade_to_premium": "UPGRADE TO PREMIUM",
+    "upgrade_to_premium_subtitle": "Get 2x Coins, No Ads & VIP Gifts",
+    "avatar_projection_title": "Avatar Projection",
+    "avatar_projection_subtitle": "Choose a source to capture your manifestation.",
+    "source_reality_label": "Reality",
+    "source_reality_subtitle": "Camera",
+    "source_memory_label": "Memory",
+    "source_memory_subtitle": "Gallery",
+    "update_identity_title": "Update Identity",
+    "update_identity_subtitle": "Your name is visible to other explorers in the realm.",
+    "enter_new_name_hint": "Enter new name",
+    "save_changes_button": "Save Changes",
+    "collection_progress": "COLLECTION PROGRESS",
+    "stickers_count": "{} / {} Stickers",
+    "view_all_stickers": "View all stickers",
+    "view_all": "VIEW ALL",
+    "sticker_earned": "Earned sticker",
+    "start_collection_hint": "Start your collection in Kids Zone!"
   },
   "adventure": {
     "title": "Adventure Store",
@@ -189,7 +290,33 @@
     "purchase_success": "Purchase successful!",
     "streak_shield": "Streak Shield",
     "double_xp": "Double XP",
-    "streak_repaired": "STREAK REPAIRED! 🔥"
+    "streak_repaired": "STREAK REPAIRED! 🔥",
+    "activity_default_title": "Adventure",
+    "activity_default_subtitle": "Just completed",
+    "generic_error": "Something went wrong. Please try again.",
+    "hint_pack_elite": "ELITE HINT PACK",
+    "hint_pack_grand_master": "GRAND MASTER PACK",
+    "hint_pack_strategic": "STRATEGIC HINT PACK",
+    "hint_pack_strategic_singular": "STRATEGIC HINT",
+    "hint_pack_exchange_body": "Exchange {} Vowl Coins for {} hint(s).",
+    "hint_pack_exchange_body_with_hint": "Exchange {} Vowl Coins for {} hint(s).\\nReady to enhance your mission?",
+    "level_mastery_perks_header": "LEVEL MASTERY PERKS",
+    "perk_status_active": "ACTIVE",
+    "perk_status_locked": "LOCKED",
+    "perk_streak_protection_title": "Streak Protection",
+    "perk_streak_protection_desc": "No reset on missed days",
+    "perk_coin_multiplier_title": "2x Coin Multiplier",
+    "perk_coin_multiplier_desc": "Double rewards per quest",
+    "perk_avatar_aura_title": "Avatar Aura",
+    "perk_avatar_aura_desc": "Holographic status glow",
+    "perk_unlocks_at_level": "Unlocks at XP Level {}",
+    "upcoming_milestones_header": "UPCOMING MILESTONES",
+    "reach_level": "Reach Level {}",
+    "time_now": "Now",
+    "time_just_now": "Just now",
+    "time_minutes_ago": "{}m ago",
+    "time_hours_ago": "{}h ago",
+    "time_days_ago": "{}d ago"
   },
   "quest_archive": {
     "title": "QUEST ARCHIVE",
@@ -235,7 +362,7 @@
     "correct": "Correct!",
     "incorrect": "Incorrect!",
     "time_up": "Time's Up!",
-    "lives_remaining": "{} lives remaining",
+    "lives_remaining": "{0} lives remaining",
     "no_lives": "No lives left!",
     "hint": "Hint",
     "explanation": "Explanation",
@@ -291,14 +418,42 @@
     "kids_drop_here": "DROP HERE!",
     "kids_tap_wake": "TAP TO WAKE UP ☀️",
     "kids_zzz": "Zzz...",
-    "kids_under_construction": "Oops! Level {} is still under construction! 🚧"
+    "kids_under_construction": "Oops! Level {} is still under construction! 🚧",
+    "ad_not_ready": "Ad not ready yet. Please try again in a few seconds!",
+    "coins_tripled": "COINS TRIPLED! 💎💎💎",
+    "quest_hub": "Quest Hub",
+    "coins_count": "{0} COINS",
+    "progress_label": "{0}% complete",
+    "use_hint": "Use hint ({0} left)",
+    "watch_ad_for_hint": "Watch an ad for a hint",
+    "stop_recording": "Stop recording",
+    "start_recording": "Start recording",
+    "pause_audio": "Pause audio",
+    "play_audio": "Play audio",
+    "victory_default_description": "You are mastering your accent with precision!",
+    "rewards_summary_label": "+{0} XP, +{1} coins",
+    "triple_up_action": "Watch an ad to triple your rewards",
+    "rewards_tripled": "REWARDS TRIPLED! 💎💎💎",
+    "triple_up_label": "TRIPLE UP (3x)",
+    "env_emerald_forest": "EMERALD FOREST",
+    "env_azure_peaks": "AZURE PEAKS",
+    "env_sunset_plateau": "SUNSET PLATEAU",
+    "env_celestial_citadel": "CELESTIAL CITADEL",
+    "todays_topic": "TODAY'S TOPIC",
+    "quest_locked_message": "QUEST LOCKED! COMPLETE PREVIOUS LEVELS.",
+    "level_locked": "Locked",
+    "level_current": "Current level",
+    "level_completed": "Completed",
+    "level_label_short": "Level {0}",
+    "start_recording_hold": "Press and hold to record"
   },
   "story": {
     "new_quest": "NEW QUEST",
     "adventure_log": "ADVENTURE LOG",
     "system_update": "SYSTEM UPDATE",
     "fallback_kids": "A new adventure is waiting for you in the {} world! Let's explore and learn together! ✨",
-    "fallback_modern": "A new challenge awaits in the {} Nexus. Your path to mastery begins with this first step. Good luck!"
+    "fallback_modern": "A new challenge awaits in the {} Nexus. Your path to mastery begins with this first step. Good luck!",
+    "start_journey": "START JOURNEY"
   },
   "leaderboard": {
     "title": "LEADERBOARD",
@@ -1511,5 +1666,253 @@
       "rule_1": "Speak confirmation clearly",
       "rule_2": "Be quick and clear"
     }
+  },
+  "economy": {
+    "insufficient_coins": "Insufficient Vowl Coins! Needed: {}",
+    "inventory_updated_hints": "INVENTORY UPDATED: +{} HINTS",
+    "reward_earned_coins": "Reward Earned! +{} Vowl Coins",
+    "ad_not_available": "No ad is available right now - please try again shortly.",
+    "ad_failed": "We couldn't play that ad. Please try again.",
+    "get_free_coins_title": "GET FREE COINS",
+    "get_free_coins_subtitle": "Watch a short ad to earn {} coins",
+    "watch_ad_button": "Watch ad to earn {} coins"
+  },
+  "badges": {
+    "bronze_wings": "Bronze Wings",
+    "silver_vanguard": "Silver Vanguard",
+    "gold_legend": "Gold Legend",
+    "platinum_master": "Platinum Master",
+    "emerald_elite": "Emerald Elite",
+    "sapphire_sovereign": "Sapphire Sovereign",
+    "ruby_royalty": "Ruby Royalty",
+    "galactic_grandmaster": "Galactic Grandmaster"
+  },
+  "error": {
+    "system_anomaly": "SYSTEM ANOMALY",
+    "system_anomaly_description": "Vowl encountered an unexpected cosmic event. Don't worry, your progress is safe!",
+    "return_to_base": "RETURN TO BASE"
+  },
+  "loading": {
+    "synchronizing_title": "SYNCHRONIZING",
+    "status_encrypting": "Encrypting session",
+    "status_syncing": "Syncing progress",
+    "status_finalizing": "Finalizing quest data",
+    "status_securing": "Securing environment",
+    "status_optimizing": "Optimizing assets"
+  },
+  "game_result": {
+    "you_said": "YOU SAID:",
+    "expected": "EXPECTED:",
+    "grammar_rule": "GRAMMAR RULE:"
+  },
+  "hint": {
+    "pro_tip_generic": "PRO TIP: Look for context clues! Eliminating unlikely options often reveals the truth.",
+    "pro_tip_tts": "Pro tip: Look for context clues."
+  },
+  "connectivity": {
+    "title": "CONNECTION LOST",
+    "subtitle": "The signal has been interrupted. Please re-establish the connection to continue.",
+    "retry_button": "RETRY CONNECTION",
+    "retry_label": "Retry internet connection"
+  },
+  "quest_unavailable": {
+    "title": "QUEST UNAVAILABLE",
+    "default_message": "We couldn't find any quests for this level yet.",
+    "exit_button": "EXIT GAME",
+    "back_button": "BACK TO LEVELS"
+  },
+  "quest_sequence": {
+    "completed_title": "QUEST COMPLETED!",
+    "completed_description": "You finished {0}! Great work on your training.",
+    "finish_button": "FINISH",
+    "part_cancelled": "Quest part cancelled. You can try again or exit.",
+    "start_part_button": "START PART {0}",
+    "status_part": "Part {0} of {1}",
+    "status_completed": "Completed",
+    "card_up_next": "UP NEXT",
+    "card_summary": "SUMMARY",
+    "all_parts_done": "All parts completed!",
+    "progress_label": "Progress: {0} percent"
+  },
+  "game_error": {
+    "title": "Quest Unavailable",
+    "message": "We couldn't load this quest right now. Please check your connection or try another level."
+  },
+  "game_progress": {
+    "level_label": "LEVEL {0}",
+    "progress_label": "Progress: {0} percent",
+    "lives_label": "{0} lives remaining"
+  },
+  "snackbar": {
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Info"
+  },
+  "quest_sequences": {
+    "strengthen_weak_spots": "Strengthen Weak Spots",
+    "play_to_strengths": "Play to Strengths",
+    "wildcard_challenge": "Wildcard Challenge",
+    "speaking_warm_up": "Speaking Warm-up",
+    "ear_training": "Ear Training",
+    "comprehension_focus": "Comprehension Focus",
+    "read_react": "Read & React",
+    "listen_answer": "Listen & Answer",
+    "rapid_pronunciation": "Rapid Pronunciation",
+    "category_skill_enhance": "Category Skill Enhance"
+  },
+  "router": {
+    "error": {
+      "no_route_defined": "No route defined",
+      "go_home": "Go Home"
+    }
+  },
+  "hatching": {
+    "egg_semantics": "An egg is hatching",
+    "enter_world": "Enter World",
+    "hatched": "Hatched!",
+    "mascot_semantics": "Mascot hatched",
+    "something_happening": "Something is happening...",
+    "tap_to_begin": "Tap to begin"
+  },
+  "nav": {
+    "home": "Home",
+    "games": "Games",
+    "ranks": "Ranks",
+    "profile": "Profile"
+  },
+  "mastery": {
+    "total_experience": "TOTAL EXPERIENCE",
+    "view_xp_history": "VIEW XP HISTORY",
+    "global_rank": "GLOBAL RANK",
+    "view_leaderboard": "VIEW LEADERBOARD",
+    "vowl_coins": "VOWL COINS",
+    "visit_coin_rewards": "VISIT COIN REWARDS"
+  },
+  "streak": {
+    "daily_streak_title": "DAILY STREAK",
+    "status_on_fire": "YOU'RE ON FIRE!",
+    "status_keep_going": "KEEP GOING!",
+    "status_start": "START YOUR STREAK!",
+    "day_streak_label": "DAY STREAK",
+    "hero_summary_label": "{0} day streak",
+    "activity_heatmap": "ACTIVITY HEATMAP",
+    "protection_tooltip": "XP Level 50 Mastery: Permanent Streak Protection Active",
+    "protected_badge": "PROTECTED",
+    "heatmap_description": "Complete a quest and earn XP to light your daily flame.",
+    "day_upcoming": "Upcoming",
+    "day_frozen": "Streak freeze used",
+    "day_completed": "Completed",
+    "day_today_pending": "Today, not played yet",
+    "day_missed": "Missed",
+    "milestones_title": "STREAK MILESTONES",
+    "milestone_year_singular": "1 YEAR",
+    "milestone_years_plural": "{0} YEARS",
+    "milestone_days": "{0} DAYS",
+    "milestone_claimed": "CLAIMED",
+    "milestone_claim_cta": "CLAIM",
+    "milestone_progress_label": "{0}/{1} days",
+    "boosters_title": "STREAK BOOSTERS",
+    "repair_title": "STREAK REPAIR",
+    "repair_subtitle": "Melt the ice and restore your flame from yesterday.",
+    "shield_subtitle": "A mystical barrier that prevents streak loss.",
+    "double_xp_subtitle": "Double the wisdom, double the progress for 24h.",
+    "insufficient_coins": "Insufficient Vowl Coins! Needed: {0}",
+    "item_activated": "{0} Activated!",
+    "status_not_needed": "NOT NEEDED",
+    "status_active": "ACTIVE",
+    "cost_label": "{0} coins",
+    "cant_afford_label": "Need {0} coins",
+    "expires_label": "Expires {0}",
+    "watch_ad_free": "Watch an ad to get this for free",
+    "free_label": "FREE"
+  },
+  "category_games": {
+    "mastery_summary_label": "{0}% mastery, {1} of {2} levels cleared",
+    "overall_mastery": "OVERALL MASTERY",
+    "percent_completed": "{0}% COMPLETED",
+    "levels_count_short": "{0}/{1} LVLS",
+    "power": "POWER",
+    "games": "GAMES",
+    "rank_beginner": "BEGINNER",
+    "rank_novice": "NOVICE",
+    "rank_scholar": "SCHOLAR",
+    "rank_virtuoso": "VIRTUOSO",
+    "mission_progress": "MISSION PROGRESS: {0}%"
+  },
+  "vowl_mascot": {
+    "feedback_mascot_linked": "Neural Link established successfully",
+    "feedback_augment_integrated": "Augmentation integrated to system",
+    "feedback_sync_failed": "System synchronization failed",
+    "feedback_insufficient_credits": "Insufficient Elite credits for this augment",
+    "nest_title": "VOWL NEST",
+    "nest_subtitle": "COMPANION SANCTUARY",
+    "tab_companion": "COMPANION",
+    "tab_boutique": "BOUTIQUE",
+    "section_synchronized_elites": "SYNCHRONIZED ELITES",
+    "section_cybernetic_augments": "CYBERNETIC AUGMENTS",
+    "section_elite_neural_link": "ELITE NEURAL LINK",
+    "sync_ready": "SYNC READY",
+    "equipped_status": "LINKED",
+    "elite_interface_label": "ELITE INTERFACE:",
+    "no_augmentations": "NO AUGMENTATIONS",
+    "action_disconnect": "DISCONNECT",
+    "action_link": "LINK",
+    "price_label": "{0} coins",
+    "status_bar_text": "NEURAL CONNECTION STABLE // ELITE STATUS ACTIVE",
+    "elite_fallback_name": "Vowl Elite"
+  },
+  "routes": {
+    "default_traveler_name": "Traveler"
+  },
+  "hints": {
+    "dim_title": "Light is Dim...",
+    "out_of_hints_description": "You are out of hints! Visit the Treasury to get a Hint Pack.",
+    "get_hints_cta": "GET HINTS"
+  },
+  "notifications": {
+    "fcm_default_title": "Vowl Update",
+    "fcm_default_body": "Check out what's new!",
+    "streak_reminder_title": "Owly is Waiting! 🦉🔥",
+    "streak_reminder_body": "Your {0}-day streak is in danger! Play now to keep it alive!",
+    "weekly_motivation_title": "Sunday Study Session! 📚",
+    "weekly_motivation_body": "Ready to crush your goals this week? Let's review what you learned!"
+  },
+  "vowl_mascot_card": {
+    "sanctuary_linked": "SANCTUARY LINKED",
+    "majestic_guidance_active": "MAJESTIC GUIDANCE ACTIVE",
+    "pet_action": "Pet your mascot"
+  },
+  "auth_companion": {
+    "password_focus": "I'm not looking! 🙈",
+    "email_focus_signup": "Choose your email! 📧",
+    "email_focus_forgot": "Where to send it? 📧",
+    "email_focus_signin": "Time to sign in! 📧",
+    "name_focus_empty": "Hello! What's your name? 👋",
+    "name_focus_filled": "What a great name! ✨",
+    "default_greeting": "Ready for an adventure? ✨",
+    "mascot_label": "Vowl companion"
+  },
+  "category_map": {
+    "master_previous_levels": "MASTER PREVIOUS LEVELS TO UNLOCK",
+    "first_level_greeting": "Hey! {0} here. Let's start Level 1! 🚀",
+    "default_companion_name": "Companion",
+    "mascot_marker_action": "Get a cheer from your mascot",
+    "cheer_unstoppable": "Level {0}! You're unstoppable, Superstar! ⭐",
+    "cheer_impressed": "Level {0}! {1} is impressed! 🚀",
+    "cheer_magic": "Level {0}! Pure linguistic magic! ✨",
+    "cheer_genius": "Level {0}! Absolute genius energy! 🧠",
+    "cheer_rock": "Level {0}! You rock this stage! 🎸",
+    "cheer_winning": "Level {0}! We're winning big! 🏆",
+    "cheer_boom": "Level {0}! Boom! Perfect progress! 💥",
+    "cheer_smart": "Level {0}! {1} says: You're so smart! 🦉",
+    "cheer_momentum": "Level {0}! Keep that momentum! 🏃‍♂️",
+    "cheer_breathtaking": "Level {0}! Wow! Simply breathtaking! 🎈"
+  },
+  "roleplay": {
+    "speaker_with_emotion": "{0}, feeling {1}",
+    "typing_indicator": "Typing…",
+    "hint_used": "Hint already used",
+    "hearts_remaining": "{0} of {1} lives remaining"
   }
 }

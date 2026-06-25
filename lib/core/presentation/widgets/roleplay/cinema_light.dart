@@ -33,8 +33,8 @@ class CinemaLight extends StatelessWidget {
           ),
           // Floating particles
           ...List.generate(15, (index) {
-            return Positioned(
-              left: (index * 0.07).sw,
+            return PositionedDirectional(
+              start: (index * 0.07).sw,
               top: (index * 0.05).sh,
               child:
                   Container(

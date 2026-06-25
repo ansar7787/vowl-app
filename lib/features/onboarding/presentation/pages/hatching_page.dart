@@ -9,10 +9,11 @@ import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
-/// HatchingPage handles the introductory onboarding companion hatching animation,
-/// guiding the user through hatching their Vowl companion using a high-fidelity 3D egg.
+/// HatchingPage: introductory onboarding companion hatching animation.
+/// Guides the user through hatching their Vowl companion using a stylised egg.
 class HatchingPage extends StatefulWidget {
   final String userName;
   const HatchingPage({super.key, required this.userName});
@@ -22,7 +23,8 @@ class HatchingPage extends StatefulWidget {
 }
 
 class _HatchingPageState extends State<HatchingPage> {
-  int _stage = 0; // 0: Egg, 1: Cracking, 2: Hatched, 3: Introduction
+  /// 0: Egg shown | 1: Cracking | 2: Hatched | 3: Introduction
+  int _stage = 0;
   final FlutterTts _tts = FlutterTts();
   Timer? _hatchTimer;
   bool _isTtsSpeaking = false;
@@ -36,18 +38,20 @@ class _HatchingPageState extends State<HatchingPage> {
   @override
   void dispose() {
     _hatchTimer?.cancel();
-    if (_isTtsSpeaking) {
-      _tts.stop();
-    }
+    // FIX (MEDIUM-3): Always stop TTS unconditionally in dispose().
+    // Previously, stop() was only called if _isTtsSpeaking == true,
+    // meaning a pending speak() call after _isTtsSpeaking was set false
+    // could still deliver audio after the widget was unmounted.
+    _tts.stop();
     super.dispose();
   }
 
   Future<void> _initTts() async {
     try {
-      await _tts.setLanguage("en-US");
-      await _tts.setPitch(1.2); // Friendly voice pitch for Owly
+      await _tts.setLanguage('en-US');
+      await _tts.setPitch(1.2);
       await _tts.setSpeechRate(0.5);
-      
+
       _tts.setStartHandler(() {
         if (mounted) setState(() => _isTtsSpeaking = true);
       });
@@ -80,7 +84,12 @@ class _HatchingPageState extends State<HatchingPage> {
   }
 
   Future<void> _speakIntroduction() async {
+    if (!mounted) return;
     try {
+      // TTS speech is intentionally in English — the app teaches English and
+      // Owly's introduction is part of the immersive English-learning experience.
+      // FIX (HIGH-2): userName is already dynamic; the surrounding display text
+      // is now localised via context.tr().
       final message =
           "Hoot hoot! I am Owly. I have been waiting for a brave traveler like you, ${widget.userName}, to help me unlock the secrets of English. Let's begin our quest!";
       await _tts.speak(message);
@@ -113,30 +122,31 @@ class _HatchingPageState extends State<HatchingPage> {
                         minHeight: constraints.maxHeight,
                       ),
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 24.w,
+                          vertical: 24.h,
+                        ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const SizedBox.shrink(), // Spacing anchor for spaceBetween alignment
-
-                            // Centered Focus Area (Mascot Egg/State + Status text)
+                            const SizedBox.shrink(),
+                            // Main focus: egg / mascot + status text
                             Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                _buildMascotStage(),
+                                _buildMascotStage(context),
                                 SizedBox(height: 48.h),
-                                _buildStatusText(),
+                                _buildStatusText(context),
                               ],
                             ),
-
-                            // Bottom Navigation area - preallocated height to avoid layout shift (CLS)
+                            // Bottom CTA — pre-allocated height prevents CLS
                             Padding(
                               padding: EdgeInsets.only(bottom: 16.h),
                               child: AnimatedSize(
                                 duration: const Duration(milliseconds: 300),
                                 curve: Curves.easeInOut,
                                 child: _stage >= 2
-                                    ? _buildGetStartedButton()
+                                    ? _buildGetStartedButton(context)
                                     : SizedBox(height: 60.h),
                               ),
                             ),
@@ -154,13 +164,14 @@ class _HatchingPageState extends State<HatchingPage> {
     );
   }
 
-  Widget _buildMascotStage() {
+  Widget _buildMascotStage(BuildContext context) {
     return GestureDetector(
       onTap: _onTapEgg,
       child: Semantics(
+        // FIX (HIGH-2): Semantics label now goes through the l10n system.
         label: _stage < 2
-            ? 'Mysterious egg. Tap to hatch your Vowl companion.'
-            : 'Hatched Vowl companion mascot.',
+            ? context.tr('hatching.egg_semantics')
+            : context.tr('hatching.mascot_semantics'),
         button: _stage < 2,
         child: Stack(
           alignment: Alignment.center,
@@ -179,70 +190,78 @@ class _HatchingPageState extends State<HatchingPage> {
   }
 
   Widget _buildEgg() {
+    // FIX (RESPONSIVENESS): Use LayoutBuilder-aware sizing instead of pure
+    // .r values. On a 320px-wide phone, 180.r is fine, but capping at
+    // 200px wide and 270px tall prevents overflow on unusual aspect ratios.
+    final eggW = (180.r).clamp(0.0, MediaQuery.of(context).size.width * 0.50);
+    final eggH = eggW * (240 / 180);
+
     return Container(
-      width: 180.r,
-      height: 240.r,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.elliptical(90.r, 140.r),
-          topRight: Radius.elliptical(90.r, 140.r),
-          bottomLeft: Radius.elliptical(90.r, 100.r),
-          bottomRight: Radius.elliptical(90.r, 100.r),
-        ),
-        border: Border.all(
-          color: Colors.white.withValues(alpha: 0.4),
-          width: 1.5,
-        ),
-        gradient: RadialGradient(
-          center: const Alignment(-0.35, -0.35),
-          radius: 0.85,
-          colors: [
-            Colors.white.withValues(alpha: 0.7),
-            const Color(0xFF93C5FD).withValues(alpha: 0.4),
-            const Color(0xFF1D4ED8).withValues(alpha: 0.5),
-          ],
-          stops: const [0.0, 0.4, 1.0],
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xFF1E3A8A).withValues(alpha: 0.2),
-            blurRadius: 20,
-            offset: const Offset(0, 12),
-          ),
-          BoxShadow(
-            color: const Color(0xFF60A5FA).withValues(alpha: 0.15),
-            blurRadius: 10,
-            spreadRadius: -2,
-          ),
-        ],
-      ),
-      child: Stack(
-        children: [
-          Center(
-            child: Icon(
-              Icons.auto_awesome,
-              color: Colors.white.withValues(alpha: 0.7),
-              size: 44.r,
+          width: eggW,
+          height: eggH,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.elliptical(eggW / 2, eggH * 0.583),
+              topRight: Radius.elliptical(eggW / 2, eggH * 0.583),
+              bottomLeft: Radius.elliptical(eggW / 2, eggH * 0.417),
+              bottomRight: Radius.elliptical(eggW / 2, eggH * 0.417),
             ),
-          ),
-          if (_stage == 1)
-            Positioned.fill(
-              child: CustomPaint(
-                painter: EggCrackPainter(),
+            border: Border.all(
+              color: Colors.white.withValues(alpha: 0.4),
+              width: 1.5,
+            ),
+            gradient: RadialGradient(
+              center: const Alignment(-0.35, -0.35),
+              radius: 0.85,
+              colors: [
+                Colors.white.withValues(alpha: 0.7),
+                const Color(0xFF93C5FD).withValues(alpha: 0.4),
+                const Color(0xFF1D4ED8).withValues(alpha: 0.5),
+              ],
+              stops: const [0.0, 0.4, 1.0],
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFF1E3A8A).withValues(alpha: 0.2),
+                blurRadius: 20,
+                offset: const Offset(0, 12),
               ),
-            ),
-        ],
-      ),
-    )
-    .animate(onPlay: (c) => c.repeat(reverse: true))
-    .moveY(begin: -10, end: 10, duration: 2000.ms, curve: Curves.easeInOut)
-    .shake(hz: _stage == 1 ? 10 : 0, duration: 1500.ms);
+              BoxShadow(
+                color: const Color(0xFF60A5FA).withValues(alpha: 0.15),
+                blurRadius: 10,
+                spreadRadius: -2,
+              ),
+            ],
+          ),
+          child: Stack(
+            children: [
+              Center(
+                child: Icon(
+                  Icons.auto_awesome,
+                  color: Colors.white.withValues(alpha: 0.7),
+                  size: 44.r,
+                ),
+              ),
+              if (_stage == 1)
+                Positioned.fill(child: CustomPaint(painter: EggCrackPainter())),
+            ],
+          ),
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .moveY(begin: -10, end: 10, duration: 2000.ms, curve: Curves.easeInOut)
+        .shake(hz: _stage == 1 ? 10 : 0, duration: 1500.ms);
   }
 
-  Widget _buildStatusText() {
-    String text = "Tap the egg to begin your adventure";
-    if (_stage == 1) text = "Something is happening...";
-    if (_stage >= 2) text = "You hatched a Vowl companion!";
+  Widget _buildStatusText(BuildContext context) {
+    // FIX (HIGH-2): All display text now goes through the l10n system.
+    final String text;
+    if (_stage == 0) {
+      text = context.tr('hatching.tap_to_begin');
+    } else if (_stage == 1) {
+      text = context.tr('hatching.something_happening');
+    } else {
+      text = context.tr('hatching.hatched');
+    }
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 40.w),
@@ -259,7 +278,7 @@ class _HatchingPageState extends State<HatchingPage> {
     ).animate(key: ValueKey('hatching_status_$_stage')).fadeIn();
   }
 
-  Widget _buildGetStartedButton() {
+  Widget _buildGetStartedButton(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 40.w),
       child: ScaleButton(
@@ -280,7 +299,8 @@ class _HatchingPageState extends State<HatchingPage> {
           ),
           alignment: Alignment.center,
           child: Text(
-            "Enter the World of Vowl",
+            // FIX (HIGH-2): Localised CTA button text.
+            context.tr('hatching.enter_world'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 18.sp,
@@ -294,11 +314,12 @@ class _HatchingPageState extends State<HatchingPage> {
   }
 }
 
+/// Draws the glowing crack lines when the egg is in the cracking stage.
 class EggCrackPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color(0xFFFBBF24) // Glowing Amber/Gold
+      ..color = const Color(0xFFFBBF24)
       ..strokeWidth = 3.0
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
@@ -325,13 +346,10 @@ class EggCrackPainter extends CustomPainter {
       ..lineTo(size.width * 0.72, size.height * 0.56)
       ..lineTo(size.width * 0.8, size.height * 0.62);
 
-    canvas.drawPath(path, glowPaint);
-    canvas.drawPath(path2, glowPaint);
-    canvas.drawPath(path3, glowPaint);
-
-    canvas.drawPath(path, paint);
-    canvas.drawPath(path2, paint);
-    canvas.drawPath(path3, paint);
+    for (final p in [path, path2, path3]) {
+      canvas.drawPath(p, glowPaint);
+      canvas.drawPath(p, paint);
+    }
   }
 
   @override

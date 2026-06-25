@@ -92,7 +92,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
               ),
             ),
 
-            // Title
+            // Title + subtitle
             Padding(
               padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 4.h),
               child: Column(
@@ -106,15 +106,19 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                         size: 24.r,
                       ),
                       SizedBox(width: 12.w),
-                      Text(
-                        localeService.tr('language_picker.title'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 22.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
+                      Expanded(
+                        child: Text(
+                          localeService.tr('language_picker.title'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 22.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark
+                                ? Colors.white
+                                : const Color(0xFF0F172A),
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ],
@@ -207,7 +211,8 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                           ),
                           SizedBox(height: 16.h),
                           Text(
-                            "No languages found",
+                            // FIX (HIGH-2): Localised via l10n system.
+                            localeService.tr('language_picker.no_results'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 16.sp,
@@ -237,8 +242,8 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                               if (context.mounted) {
                                 Navigator.pop(context);
                               }
-                              // Wait for the bottom sheet close animation to finish
-                              // before hitting the UI thread with a massive app-wide locale rebuild
+                              // Allow bottom sheet close animation to finish
+                              // before triggering app-wide locale rebuild.
                               await Future.delayed(
                                 const Duration(milliseconds: 300),
                               );
@@ -271,86 +276,93 @@ class _LanguageTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.r),
-        color: isActive
-            ? const Color(0xFF3B82F6).withValues(alpha: 0.05)
-            : (isDark
-                  ? Colors.white.withValues(alpha: 0.02)
-                  : const Color(0xFFF8FAFC)),
-        border: Border.all(
+    return Semantics(
+      label:
+          '${localeInfo.name} — ${localeInfo.nativeName}${isActive ? " — currently selected" : ""}',
+      button: true,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.r),
           color: isActive
-              ? const Color(0xFF3B82F6)
+              ? const Color(0xFF3B82F6).withValues(alpha: 0.05)
               : (isDark
-                    ? Colors.white.withValues(alpha: 0.08)
-                    : Colors.black.withValues(alpha: 0.05)),
-          width: 1.5,
+                    ? Colors.white.withValues(alpha: 0.02)
+                    : const Color(0xFFF8FAFC)),
+          border: Border.all(
+            color: isActive
+                ? const Color(0xFF3B82F6)
+                : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : Colors.black.withValues(alpha: 0.05)),
+            width: 1.5,
+          ),
         ),
-      ),
-      child: Material(
-        color: isActive
-            ? const Color(0xFF3B82F6).withValues(alpha: 0.1)
-            : Colors.transparent,
-        borderRadius: BorderRadius.circular(18.r),
-        child: InkWell(
-          onTap: onTap,
+        child: Material(
+          color: isActive
+              ? const Color(0xFF3B82F6).withValues(alpha: 0.1)
+              : Colors.transparent,
           borderRadius: BorderRadius.circular(18.r),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-            child: Row(
-              children: [
-                // Flag
-                Text(localeInfo.flag, style: TextStyle(fontSize: 28.sp)),
-                SizedBox(width: 16.w),
-                // Name + Native Name
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        localeInfo.name,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: isActive
-                              ? FontWeight.w900
-                              : FontWeight.w700,
-                          color: isActive
-                              ? const Color(0xFF3B82F6)
-                              : (isDark
-                                    ? Colors.white
-                                    : const Color(0xFF0F172A)),
-                        ),
-                      ),
-                      if (localeInfo.name != localeInfo.nativeName)
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(18.r),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+              child: Row(
+                children: [
+                  ExcludeSemantics(
+                    child: Text(
+                      localeInfo.flag,
+                      style: TextStyle(fontSize: 28.sp),
+                    ),
+                  ),
+                  SizedBox(width: 16.w),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
                         Text(
-                          localeInfo.nativeName,
+                          localeInfo.name,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w500,
-                            color: isDark ? Colors.white38 : Colors.black38,
+                            fontSize: 16.sp,
+                            fontWeight: isActive
+                                ? FontWeight.w900
+                                : FontWeight.w700,
+                            color: isActive
+                                ? const Color(0xFF3B82F6)
+                                : (isDark
+                                      ? Colors.white
+                                      : const Color(0xFF0F172A)),
                           ),
                         ),
-                    ],
-                  ),
-                ),
-                // Active indicator
-                if (isActive)
-                  Container(
-                    padding: EdgeInsets.all(6.r),
-                    decoration: const BoxDecoration(
-                      color: Color(0xFF3B82F6),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      Icons.check_rounded,
-                      color: Colors.white,
-                      size: 14.r,
+                        if (localeInfo.name != localeInfo.nativeName)
+                          Text(
+                            localeInfo.nativeName,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                              color: isDark ? Colors.white38 : Colors.black38,
+                            ),
+                          ),
+                      ],
                     ),
                   ),
-              ],
+                  if (isActive)
+                    Container(
+                      padding: EdgeInsets.all(6.r),
+                      decoration: const BoxDecoration(
+                        color: Color(0xFF3B82F6),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(
+                        Icons.check_rounded,
+                        color: Colors.white,
+                        size: 14.r,
+                      ),
+                    ),
+                ],
+              ),
             ),
           ),
         ),

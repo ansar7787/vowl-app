@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-/// A premium grid backdrop overlay, highly optimized to completely avoid expensive
-/// offscreen blending (Opacity saveLayers) by applying alpha directly to paint strokes,
-/// and cached at a GPU level via a RepaintBoundary.
+/// Decorative grid backdrop optimised to avoid expensive offscreen blending.
+///
+/// Alpha is applied directly to the paint stroke colour rather than via an
+/// [Opacity] widget (which would trigger a saveLayer call).
+///
+/// Stroke widths and grid spacing use **logical pixels** (not ScreenUtil `.r`
+/// suffixes) so the grid remains visually consistent across all device
+/// densities including tablets and foldables.
 class TechPatternOverlay extends StatelessWidget {
   final double opacity;
   final Color color;
@@ -19,9 +23,7 @@ class TechPatternOverlay extends StatelessWidget {
     return IgnorePointer(
       child: RepaintBoundary(
         child: CustomPaint(
-          painter: _TechPatternPainter(
-            color: color.withValues(alpha: opacity),
-          ),
+          painter: _TechPatternPainter(color: color.withValues(alpha: opacity)),
           size: Size.infinite,
         ),
       ),
@@ -32,27 +34,30 @@ class TechPatternOverlay extends StatelessWidget {
 class _TechPatternPainter extends CustomPainter {
   final Color color;
 
-  _TechPatternPainter({required this.color});
+  // Logical-pixel constants — consistent across all densities.
+  static const double _lineSpacing = 4.0;
+  static const double _strokeWidth = 1.0;
+
+  const _TechPatternPainter({required this.color});
 
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
       ..color = color
-      ..strokeWidth = 1.r;
+      ..strokeWidth = _strokeWidth;
 
-    // Draw vertical lines
-    for (double i = 0; i < size.width; i += 4.r) {
-      canvas.drawLine(Offset(i, 0), Offset(i, size.height), paint);
+    // Vertical lines
+    for (double x = 0; x < size.width; x += _lineSpacing) {
+      canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
     }
 
-    // Draw horizontal lines
-    for (double i = 0; i < size.height; i += 4.r) {
-      canvas.drawLine(Offset(0, i), Offset(size.width, i), paint);
+    // Horizontal lines
+    for (double y = 0; y < size.height; y += _lineSpacing) {
+      canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
     }
   }
 
   @override
-  bool shouldRepaint(covariant _TechPatternPainter oldDelegate) {
-    return oldDelegate.color != color;
-  }
+  bool shouldRepaint(covariant _TechPatternPainter oldDelegate) =>
+      oldDelegate.color != color;
 }

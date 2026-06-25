@@ -1,4 +1,12 @@
+/// Static legal text constants.
+///
+/// NOTE: For a production app serving millions of users, consider serving
+/// legal content from a remote configuration or CMS so it can be updated
+/// without an app store release. For the current scale, compile-time
+/// constants are acceptable.
 class LegalConstants {
+  LegalConstants._(); // Non-instantiable.
+
   static const String termsOfService = """
 TERMS OF SERVICE
 Last Updated: May 2026

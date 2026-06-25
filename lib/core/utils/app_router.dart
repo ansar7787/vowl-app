@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'dart:async';
 
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 // Modular Feature Routes
@@ -14,7 +16,10 @@ import 'package:vowl/features/games/game_routes.dart';
 import 'package:vowl/features/home/home_routes.dart';
 
 class AppRouter {
-  // Global Route String Constants for backwards compatibility
+  AppRouter._(); // Non-instantiable.
+
+  // ── Route path constants ──────────────────────────────────────────────────
+
   static const String initialRoute = '/splash';
   static const String splashRoute = '/splash';
   static const String homeRoute = '/home';
@@ -37,6 +42,9 @@ class AppRouter {
   static const String adventureXPRoute = '/xp-details';
   static const String questCoinsRoute = '/coins-details';
   static const String questSequenceRoute = '/quest-sequence';
+
+  // ── Kids Zone routes ──────────────────────────────────────────────────────
+
   static const String kidsZoneRoute = '/kids-zone';
   static const String kidsLevelMapRoute = '/kids/map/:gameType';
   static const String kidsAlphabetRoute = '/kids-alphabet';
@@ -69,90 +77,172 @@ class AppRouter {
   static const String hatchingRoute = '/hatching';
   static const String vowlMascotRoute = '/vowl-mascot';
 
-  // Backwards compatibility methods
-  static String getKidsGameTitle(String gameType) => KidsRoutes.getKidsGameTitle(gameType);
-  static Color getKidsGameColor(String gameType) => KidsRoutes.getKidsGameColor(gameType);
+  // ── Backwards compatibility ───────────────────────────────────────────────
+
+  static String getKidsGameTitle(String gameType) =>
+      KidsRoutes.getKidsGameTitle(gameType);
+
+  static Color getKidsGameColor(String gameType) =>
+      KidsRoutes.getKidsGameColor(gameType);
+
+  // ── Router instance ───────────────────────────────────────────────────────
 
   static final GoRouter router = GoRouter(
     initialLocation: initialRoute,
     observers: [
-      // Safe guard preventing unhandled FirebaseExceptions during unit tests or mock runs
+      // Guard: FirebaseAnalyticsObserver is only attached when Firebase is
+      // initialised, preventing crashes in unit tests that don't boot Firebase.
       if (Firebase.apps.isNotEmpty)
         FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance),
     ],
+    // Refreshes the router whenever the AuthBloc stream emits a new state,
+    // triggering the redirect logic below.
     refreshListenable: _StreamListenable(di.sl<AuthBloc>().stream),
-    redirect: (context, state) {
-      final authState = di.sl<AuthBloc>().state;
-      final isAuthenticated = authState.status == AuthStatus.authenticated;
-      final isVerified = authState.user?.isEmailVerified ?? false;
-
-      final isLoginRoute = state.uri.path == loginRoute;
-      final isSignupRoute = state.uri.path == signupRoute;
-      final isForgotPasswordRoute = state.uri.path == forgotPasswordRoute;
-      final isSplashRoute = state.uri.path == splashRoute;
-
-      if (isSplashRoute) return null;
-
-      final isAuthRoute =
-          isLoginRoute || isSignupRoute || isForgotPasswordRoute;
-
-      // 1. Wait for Auth State (Prevent early redirect during initialization)
-      if (authState.status == AuthStatus.unknown) {
-        return isSplashRoute ? null : splashRoute;
-      }
-
-      // 2. Prevent premature redirect during logging out transition
-      if (authState.status == AuthStatus.loggingOut) {
-        return null;
-      }
-
-      // 3. Handle Unauthenticated Users
-      if (!isAuthenticated) {
-        if (!isAuthRoute && !isSplashRoute) {
-          return loginRoute;
-        }
-        return null;
-      } else {
-        // Handle Authenticated Users
-        if (!isVerified) {
-          // If they are not verified, they must stay on the verification screen
-          if (state.uri.path != verifyEmailRoute && !isAuthRoute) {
-            return verifyEmailRoute;
-          }
-          return null;
-        } else {
-          // If they are verified and try to access auth, verification, or root screen (/), send them home
-          if (isAuthRoute || state.uri.path == verifyEmailRoute || state.uri.path == '/') {
-            return homeRoute;
-          }
-        }
-      }
-      return null;
-    },
+    redirect: _redirect,
     routes: [
-      // Merge all modular decentralized feature routes
       ...AuthRoutes.routes,
       ...KidsRoutes.routes,
       ...GameRoutes.routes,
       ...HomeRoutes.routes,
     ],
-    errorBuilder: (context, state) => Scaffold(
-      body: Center(child: Text('No route defined for ${state.uri.path}')),
-    ),
+    // FIX (HIGH-6): Replace bare Text with an actionable error page that
+    // gives the user a path back to safety instead of a dead-end screen.
+    errorBuilder: (context, state) => _RouterErrorPage(path: state.uri.path),
   );
+
+  // ── Redirect logic ────────────────────────────────────────────────────────
+
+  static String? _redirect(BuildContext context, GoRouterState state) {
+    final authState = di.sl<AuthBloc>().state;
+    final isAuthenticated = authState.status == AuthStatus.authenticated;
+    final isVerified = authState.user?.isEmailVerified ?? false;
+
+    final path = state.uri.path;
+    final isLoginRoute = path == loginRoute;
+    final isSignupRoute = path == signupRoute;
+    final isForgotPasswordRoute = path == forgotPasswordRoute;
+    final isSplashRoute = path == splashRoute;
+    final isAuthRoute = isLoginRoute || isSignupRoute || isForgotPasswordRoute;
+
+    // Splash: always allowed while auth resolves.
+    if (isSplashRoute) return null;
+
+    // 1. Auth state still unknown — send back to splash.
+    if (authState.status == AuthStatus.unknown) return splashRoute;
+
+    // 2. Logout in progress — do not redirect mid-transition.
+    if (authState.status == AuthStatus.loggingOut) return null;
+
+    // 3. Unauthenticated — must be on an auth or splash route.
+    if (!isAuthenticated) {
+      return (!isAuthRoute && !isSplashRoute) ? loginRoute : null;
+    }
+
+    // 4. Authenticated but email not verified.
+    if (!isVerified) {
+      if (path != verifyEmailRoute && !isAuthRoute) return verifyEmailRoute;
+      return null;
+    }
+
+    // 5. Authenticated + verified — redirect away from auth/verify/root.
+    if (isAuthRoute || path == verifyEmailRoute || path == '/') {
+      return homeRoute;
+    }
+
+    return null;
+  }
 }
+
+// ---------------------------------------------------------------------------
+// Private: stream-based ChangeNotifier for GoRouter.refreshListenable
+// ---------------------------------------------------------------------------
 
 class _StreamListenable extends ChangeNotifier {
   final Stream stream;
-  late final StreamSubscription subscription;
+  late final StreamSubscription _subscription;
 
   _StreamListenable(this.stream) {
-    subscription = stream.listen((_) => notifyListeners());
+    _subscription = stream.listen((_) => notifyListeners());
   }
 
   @override
   void dispose() {
-    subscription.cancel();
+    _subscription.cancel();
     super.dispose();
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Private: Proper error page
+// FIX (HIGH-6): Previously the errorBuilder returned Scaffold(body: Center(
+// child: Text(...))) with no recovery action. Users who landed on an unknown
+// route were completely stuck. This page provides the path, an explanation,
+// and a "Go Home" button.
+// ---------------------------------------------------------------------------
+
+class _RouterErrorPage extends StatelessWidget {
+  final String path;
+  const _RouterErrorPage({required this.path});
+
+  @override
+  Widget build(BuildContext context) {
+    final localeService = di.sl<LocaleService>();
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 32.w),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.explore_off_rounded,
+                size: 64.r,
+                color: Theme.of(context).colorScheme.error,
+              ),
+              SizedBox(height: 24.h),
+              Text(
+                localeService.tr('router.error.no_route_defined'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w900,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 8.h),
+              Text(
+                path,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 13.sp,
+                  color: Theme.of(
+                    context,
+                  ).colorScheme.onSurface.withValues(alpha: 0.5),
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 40.h),
+              ElevatedButton.icon(
+                onPressed: () => context.go(AppRouter.homeRoute),
+                icon: const Icon(Icons.home_rounded),
+                label: Text(
+                  localeService.tr('router.error.go_home'),
+                  style: const TextStyle(
+                    fontFamily: 'Outfit',
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(double.infinity, 52.h),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

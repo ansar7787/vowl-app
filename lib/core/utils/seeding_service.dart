@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:vowl/core/utils/app_logger.dart';
 
 class SeedingService {
   final FirebaseFirestore firestore;
@@ -299,6 +300,18 @@ class SeedingService {
       accentLvl1,
     );
 
-    await batch.commit();
+    try {
+      await batch.commit();
+      AppLogger.info(
+        'SeedingService: Curriculum sample data seeded successfully',
+      );
+    } catch (e, stackTrace) {
+      AppLogger.error(
+        'SeedingService: Failed to seed curriculum data',
+        error: e,
+        stackTrace: stackTrace,
+      );
+      rethrow;
+    }
   }
 }

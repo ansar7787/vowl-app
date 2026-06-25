@@ -1,19 +1,22 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
-import 'package:vowl/features/auth/domain/usecases/purchase_hint.dart';
-import 'package:vowl/features/auth/domain/usecases/award_kids_coins.dart';
-import 'package:vowl/features/auth/domain/usecases/claim_vip_gift.dart';
-import 'package:vowl/features/auth/domain/usecases/claim_daily_gift.dart';
-import 'package:vowl/features/auth/domain/usecases/claim_daily_chest.dart';
-import 'package:vowl/features/auth/domain/usecases/claim_kids_daily_reward.dart';
-import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
-import 'package:vowl/features/auth/domain/usecases/update_user.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/usecases/usecase.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/core/usecases/usecase.dart';
+import 'package:vowl/features/auth/domain/usecases/award_kids_coins.dart';
+import 'package:vowl/features/auth/domain/usecases/claim_daily_chest.dart';
+import 'package:vowl/features/auth/domain/usecases/claim_daily_gift.dart';
+import 'package:vowl/features/auth/domain/usecases/claim_kids_daily_reward.dart';
+import 'package:vowl/features/auth/domain/usecases/claim_vip_gift.dart';
+import 'package:vowl/features/auth/domain/usecases/purchase_hint.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
+import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
-// --- EVENTS ---
+// ============================================================================
+// EVENTS
+// ============================================================================
+
 abstract class EconomyEvent extends Equatable {
   const EconomyEvent();
   @override
@@ -24,7 +27,11 @@ class EconomyAddCoinsRequested extends EconomyEvent {
   final int amount;
   final String title;
   final bool isEarned;
-  const EconomyAddCoinsRequested(this.amount, {this.title = 'Earned Coins', this.isEarned = true});
+  const EconomyAddCoinsRequested(
+    this.amount, {
+    this.title = 'Earned Coins',
+    this.isEarned = true,
+  });
   @override
   List<Object?> get props => [amount, title, isEarned];
 }
@@ -81,7 +88,10 @@ class EconomyClaimKidsDailyRewardRequested extends EconomyEvent {
 class EconomyAddBonusRewardsRequested extends EconomyEvent {
   final int bonusXp;
   final int bonusCoins;
-  const EconomyAddBonusRewardsRequested({required this.bonusXp, required this.bonusCoins});
+  const EconomyAddBonusRewardsRequested({
+    required this.bonusXp,
+    required this.bonusCoins,
+  });
   @override
   List<Object?> get props => [bonusXp, bonusCoins];
 }
@@ -94,27 +104,27 @@ class EconomyResetRequested extends EconomyEvent {
   const EconomyResetRequested();
 }
 
-// --- STATE ---
+// ============================================================================
+// STATE
+// ============================================================================
+
 class EconomyState extends Equatable {
   final String? message;
   final bool isLoading;
   final String? lastPurchaseType;
   final bool? lastPurchaseSuccess;
   final bool isDailyRewardAvailable;
-  
+
   const EconomyState({
-    this.message, 
+    this.message,
     this.isLoading = false,
     this.lastPurchaseType,
     this.lastPurchaseSuccess,
     this.isDailyRewardAvailable = false,
   });
 
-  @override
-  List<Object?> get props => [message, isLoading, lastPurchaseType, lastPurchaseSuccess, isDailyRewardAvailable];
-
   EconomyState copyWith({
-    String? Function()? message, 
+    String? Function()? message,
     bool? isLoading,
     String? Function()? lastPurchaseType,
     bool? Function()? lastPurchaseSuccess,
@@ -123,14 +133,31 @@ class EconomyState extends Equatable {
     return EconomyState(
       message: message != null ? message() : this.message,
       isLoading: isLoading ?? this.isLoading,
-      lastPurchaseType: lastPurchaseType != null ? lastPurchaseType() : this.lastPurchaseType,
-      lastPurchaseSuccess: lastPurchaseSuccess != null ? lastPurchaseSuccess() : this.lastPurchaseSuccess,
-      isDailyRewardAvailable: isDailyRewardAvailable ?? this.isDailyRewardAvailable,
+      lastPurchaseType: lastPurchaseType != null
+          ? lastPurchaseType()
+          : this.lastPurchaseType,
+      lastPurchaseSuccess: lastPurchaseSuccess != null
+          ? lastPurchaseSuccess()
+          : this.lastPurchaseSuccess,
+      isDailyRewardAvailable:
+          isDailyRewardAvailable ?? this.isDailyRewardAvailable,
     );
   }
+
+  @override
+  List<Object?> get props => [
+    message,
+    isLoading,
+    lastPurchaseType,
+    lastPurchaseSuccess,
+    isDailyRewardAvailable,
+  ];
 }
 
-// --- BLOC ---
+// ============================================================================
+// BLOC
+// ============================================================================
+
 class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   final UpdateUserCoins updateUserCoins;
   final PurchaseHint purchaseHint;
@@ -141,8 +168,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   final ClaimKidsDailyReward claimKidsDailyReward;
   final AwardKidsCoins awardKidsCoins;
   final UseHint useHint;
+
+  /// [AuthBloc] is injected to read the current user and trigger profile
+  /// refreshes after mutations. Note: this creates a BLoC-to-BLoC dependency.
+  /// Prefer stream-based composition when the architecture is revisited.
   final AuthBloc authBloc;
-  
+
   EconomyBloc({
     required this.updateUserCoins,
     required this.purchaseHint,
@@ -169,99 +200,131 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     on<EconomyResetRequested>(_onReset);
   }
 
-  Future<void> _onAddCoins(EconomyAddCoinsRequested event, Emitter<EconomyState> emit) async {
-    if (authBloc.state.status != AuthStatus.authenticated) return;
-    debugPrint('EconomyBloc: Adding Coins Atomic (${event.amount})...');
-    final result = await updateUserCoins(UpdateUserCoinsParams(
-      amountChange: event.amount,
-      title: event.title,
-      isEarned: event.isEarned,
-    ));
+  // ---------------------------------------------------------------------------
+  // Guards
+  // ---------------------------------------------------------------------------
+
+  bool get _isAuthenticated =>
+      authBloc.state.status == AuthStatus.authenticated;
+
+  // ---------------------------------------------------------------------------
+  // Handlers
+  // ---------------------------------------------------------------------------
+
+  Future<void> _onAddCoins(
+    EconomyAddCoinsRequested event,
+    Emitter<EconomyState> emit,
+  ) async {
+    if (!_isAuthenticated) return;
+    _log('EconomyBloc: Adding ${event.amount} coins…');
+
+    final result = await updateUserCoins(
+      UpdateUserCoinsParams(
+        amountChange: event.amount,
+        title: event.title,
+        isEarned: event.isEarned,
+      ),
+    );
     result.fold(
       (failure) {
-        debugPrint('EconomyBloc: Adding Coins FAILED: ${failure.message}');
+        _log('EconomyBloc: AddCoins FAILED: ${failure.message}');
         emit(state.copyWith(message: () => failure.message));
       },
       (_) {
-        debugPrint('EconomyBloc: Adding Coins SUCCESS. Refreshing User...');
+        _log('EconomyBloc: AddCoins SUCCESS');
         authBloc.add(const AuthRefreshUser());
       },
     );
   }
 
-  Future<void> _onAddKidsCoins(EconomyAddKidsCoinsRequested event, Emitter<EconomyState> emit) async {
-    if (authBloc.state.status != AuthStatus.authenticated) return;
+  Future<void> _onAddKidsCoins(
+    EconomyAddKidsCoinsRequested event,
+    Emitter<EconomyState> emit,
+  ) async {
+    if (!_isAuthenticated) return;
     final result = await awardKidsCoins(event.amount);
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) {
-        authBloc.add(const AuthRefreshUser());
-      },
+      (_) => authBloc.add(const AuthRefreshUser()),
     );
   }
 
-  Future<void> _onPurchaseHint(EconomyPurchaseHintRequested event, Emitter<EconomyState> emit) async {
-    if (authBloc.state.status != AuthStatus.authenticated) return;
-    final result = await purchaseHint(PurchaseHintParams(
-      cost: event.cost,
-      hintAmount: event.hintAmount,
-    ));
+  Future<void> _onPurchaseHint(
+    EconomyPurchaseHintRequested event,
+    Emitter<EconomyState> emit,
+  ) async {
+    if (!_isAuthenticated) return;
+    final result = await purchaseHint(
+      PurchaseHintParams(cost: event.cost, hintAmount: event.hintAmount),
+    );
     result.fold(
-      (failure) => emit(state.copyWith(
-        message: () => failure.message,
-        lastPurchaseType: () => 'hint',
-        lastPurchaseSuccess: () => false,
-      )),
+      (failure) => emit(
+        state.copyWith(
+          message: () => failure.message,
+          lastPurchaseType: () => 'hint',
+          lastPurchaseSuccess: () => false,
+        ),
+      ),
       (_) {
         authBloc.add(const AuthRefreshUser());
-        emit(state.copyWith(
-          lastPurchaseType: () => 'hint',
-          lastPurchaseSuccess: () => true,
-        ));
+        emit(
+          state.copyWith(
+            lastPurchaseType: () => 'hint',
+            lastPurchaseSuccess: () => true,
+          ),
+        );
       },
     );
   }
 
-  Future<void> _onConsumeHint(EconomyConsumeHintRequested event, Emitter<EconomyState> emit) async {
-    if (authBloc.state.status != AuthStatus.authenticated) return;
-    debugPrint('EconomyBloc: Consuming Hint Atomic...');
-    final result = await useHint(NoParams());
+  Future<void> _onConsumeHint(
+    EconomyConsumeHintRequested event,
+    Emitter<EconomyState> emit,
+  ) async {
+    if (!_isAuthenticated) return;
+    _log('EconomyBloc: Consuming hint…');
+    final result = await useHint(const NoParams());
     result.fold(
       (failure) {
-        debugPrint('EconomyBloc: Hint Consumption FAILED: ${failure.message}');
+        _log('EconomyBloc: Hint consumption FAILED: ${failure.message}');
         emit(state.copyWith(message: () => failure.message));
       },
       (_) {
-        debugPrint('EconomyBloc: Hint Consumption SUCCESS. Refreshing User...');
+        _log('EconomyBloc: Hint consumption SUCCESS');
         authBloc.add(const AuthRefreshUser());
       },
     );
   }
 
-  Future<void> _onClaimVipGift(EconomyClaimVipGiftRequested event, Emitter<EconomyState> emit) async {
-    if (authBloc.state.status != AuthStatus.authenticated) return;
-    final result = await claimVipGift(NoParams());
+  Future<void> _onClaimVipGift(
+    EconomyClaimVipGiftRequested event,
+    Emitter<EconomyState> emit,
+  ) async {
+    if (!_isAuthenticated) return;
+    final result = await claimVipGift(const NoParams());
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) {
-        authBloc.add(const AuthRefreshUser());
-      },
+      (_) => authBloc.add(const AuthRefreshUser()),
     );
   }
 
-  Future<void> _onClaimDailyGift(EconomyClaimDailyGiftRequested event, Emitter<EconomyState> emit) async {
-    if (authBloc.state.status != AuthStatus.authenticated) return;
-    final result = await claimDailyGift(NoParams());
+  Future<void> _onClaimDailyGift(
+    EconomyClaimDailyGiftRequested event,
+    Emitter<EconomyState> emit,
+  ) async {
+    if (!_isAuthenticated) return;
+    final result = await claimDailyGift(const NoParams());
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) {
-        authBloc.add(const AuthRefreshUser());
-      },
+      (_) => authBloc.add(const AuthRefreshUser()),
     );
   }
 
-  Future<void> _onTripleUp(EconomyTripleUpRewardsRequested event, Emitter<EconomyState> emit) async {
-    if (authBloc.state.status != AuthStatus.authenticated) return;
+  Future<void> _onTripleUp(
+    EconomyTripleUpRewardsRequested event,
+    Emitter<EconomyState> emit,
+  ) async {
+    if (!_isAuthenticated) return;
     final user = authBloc.state.user;
     if (user == null) return;
 
@@ -269,17 +332,17 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       totalExp: user.totalExp + event.bonusXp,
       coins: user.coins + event.bonusCoins,
     );
-
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) {
-        authBloc.add(const AuthRefreshUser());
-      },
+      (_) => authBloc.add(const AuthRefreshUser()),
     );
   }
 
-  Future<void> _onAddBonusRewards(EconomyAddBonusRewardsRequested event, Emitter<EconomyState> emit) async {
+  Future<void> _onAddBonusRewards(
+    EconomyAddBonusRewardsRequested event,
+    Emitter<EconomyState> emit,
+  ) async {
     final user = authBloc.state.user;
     if (user == null) return;
 
@@ -287,49 +350,55 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       totalExp: user.totalExp + event.bonusXp,
       coins: user.coins + event.bonusCoins,
     );
-
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) {
-        authBloc.add(const AuthRefreshUser());
-      },
+      (_) => authBloc.add(const AuthRefreshUser()),
     );
   }
 
-  Future<void> _onClaimDailyChest(EconomyClaimDailyChestRequested event, Emitter<EconomyState> emit) async {
-    if (authBloc.state.status != AuthStatus.authenticated) return;
-    debugPrint('EconomyBloc: Claiming Daily Chest Atomic (${event.amount})...');
+  Future<void> _onClaimDailyChest(
+    EconomyClaimDailyChestRequested event,
+    Emitter<EconomyState> emit,
+  ) async {
+    if (!_isAuthenticated) return;
+    _log('EconomyBloc: Claiming daily chest (${event.amount} coins)…');
     final result = await claimDailyChest(event.amount);
     result.fold(
       (failure) {
-        debugPrint('EconomyBloc: Daily Chest FAILED: ${failure.message}');
+        _log('EconomyBloc: Daily chest FAILED: ${failure.message}');
         emit(state.copyWith(message: () => failure.message));
       },
       (_) {
-        debugPrint('EconomyBloc: Daily Chest SUCCESS. Refreshing User...');
+        _log('EconomyBloc: Daily chest SUCCESS');
         authBloc.add(const AuthRefreshUser());
       },
     );
   }
 
-  Future<void> _onClaimKidsDailyReward(EconomyClaimKidsDailyRewardRequested event, Emitter<EconomyState> emit) async {
-    if (authBloc.state.status != AuthStatus.authenticated) return;
-    debugPrint('EconomyBloc: Claiming Kids Daily Reward Atomic (${event.amount})...');
+  Future<void> _onClaimKidsDailyReward(
+    EconomyClaimKidsDailyRewardRequested event,
+    Emitter<EconomyState> emit,
+  ) async {
+    if (!_isAuthenticated) return;
+    _log('EconomyBloc: Claiming kids daily reward (${event.amount} coins)…');
     final result = await claimKidsDailyReward(event.amount);
     result.fold(
       (failure) {
-        debugPrint('EconomyBloc: Kids Daily Reward FAILED: ${failure.message}');
+        _log('EconomyBloc: Kids daily reward FAILED: ${failure.message}');
         emit(state.copyWith(message: () => failure.message));
       },
       (_) {
-        debugPrint('EconomyBloc: Kids Daily Reward SUCCESS. Refreshing User...');
+        _log('EconomyBloc: Kids daily reward SUCCESS');
         authBloc.add(const AuthRefreshUser());
       },
     );
   }
 
-  Future<void> _onCheckDailyReward(EconomyCheckDailyRewardRequested event, Emitter<EconomyState> emit) async {
+  Future<void> _onCheckDailyReward(
+    EconomyCheckDailyRewardRequested event,
+    Emitter<EconomyState> emit,
+  ) async {
     final user = authBloc.state.user;
     if (user == null) {
       emit(state.copyWith(isDailyRewardAvailable: false));
@@ -343,14 +412,22 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     }
 
     final now = DateTime.now();
-    final isSameDay = now.year == lastReward.year &&
+    final isSameDay =
+        now.year == lastReward.year &&
         now.month == lastReward.month &&
         now.day == lastReward.day;
 
     emit(state.copyWith(isDailyRewardAvailable: !isSameDay));
   }
 
-  void _onReset(EconomyResetRequested event, Emitter<EconomyState> emit) {
-    emit(const EconomyState());
+  void _onReset(EconomyResetRequested event, Emitter<EconomyState> emit) =>
+      emit(const EconomyState());
+
+  // ---------------------------------------------------------------------------
+  // Private helpers
+  // ---------------------------------------------------------------------------
+
+  void _log(String message) {
+    if (kDebugMode) debugPrint(message);
   }
 }

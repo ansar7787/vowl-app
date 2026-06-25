@@ -15,16 +15,29 @@ import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 
+/// Listens to all game BLoCs globally and triggers [PraiseService] audio feedback
+/// when a correct answer is submitted or a level is completed.
+///
+/// Placed near the root of the widget tree so praise plays regardless of which
+/// game screen is currently active.
 class GlobalAudioFeedbackListener extends StatelessWidget {
   final Widget child;
 
   const GlobalAudioFeedbackListener({super.key, required this.child});
 
+  // ─── Shared listener callbacks ────────────────────────────────────────────
+
+  static void _praiseListener(BuildContext ctx, dynamic _) =>
+      di.sl<PraiseService>().givePraise();
+
+  static void _kidsListener(BuildContext ctx, dynamic _) =>
+      di.sl<PraiseService>().givePraise(isKids: true);
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocListener(
       listeners: [
-        // Kids Zone
+        // ── Kids Zone ────────────────────────────────────────────────────────
         BlocListener<KidsBloc, KidsState>(
           bloc: di.sl<KidsBloc>(),
           listenWhen: (prev, curr) =>
@@ -33,11 +46,12 @@ class GlobalAudioFeedbackListener extends StatelessWidget {
                   curr.lastAnswerCorrect == true &&
                   prev.lastAnswerCorrect != true) ||
               (curr is KidsGameComplete && prev is! KidsGameComplete),
-          listener: (context, state) {
-            di.sl<PraiseService>().givePraise(isKids: true);
-          },
+          listener: _kidsListener,
         ),
-        // Grammar
+
+        // ── Grammar ──────────────────────────────────────────────────────────
+        // NOTE: GrammarLoaded uses `answerStatus.isCorrect` (not `lastAnswerCorrect`)
+        // because of its distinct answer-status model.
         BlocListener<GrammarBloc, GrammarState>(
           bloc: di.sl<GrammarBloc>(),
           listenWhen: (prev, curr) =>
@@ -46,11 +60,10 @@ class GlobalAudioFeedbackListener extends StatelessWidget {
                   curr.answerStatus.isCorrect &&
                   !prev.answerStatus.isCorrect) ||
               (curr is GrammarGameComplete && prev is! GrammarGameComplete),
-          listener: (context, state) {
-            di.sl<PraiseService>().givePraise();
-          },
+          listener: _praiseListener,
         ),
-        // Speaking
+
+        // ── Speaking ─────────────────────────────────────────────────────────
         BlocListener<SpeakingBloc, SpeakingState>(
           bloc: di.sl<SpeakingBloc>(),
           listenWhen: (prev, curr) =>
@@ -59,11 +72,10 @@ class GlobalAudioFeedbackListener extends StatelessWidget {
                   curr.lastAnswerCorrect == true &&
                   prev.lastAnswerCorrect != true) ||
               (curr is SpeakingGameComplete && prev is! SpeakingGameComplete),
-          listener: (context, state) {
-            di.sl<PraiseService>().givePraise();
-          },
+          listener: _praiseListener,
         ),
-        // Reading
+
+        // ── Reading ──────────────────────────────────────────────────────────
         BlocListener<ReadingBloc, ReadingState>(
           bloc: di.sl<ReadingBloc>(),
           listenWhen: (prev, curr) =>
@@ -72,11 +84,10 @@ class GlobalAudioFeedbackListener extends StatelessWidget {
                   curr.lastAnswerCorrect == true &&
                   prev.lastAnswerCorrect != true) ||
               (curr is ReadingGameComplete && prev is! ReadingGameComplete),
-          listener: (context, state) {
-            di.sl<PraiseService>().givePraise();
-          },
+          listener: _praiseListener,
         ),
-        // Writing
+
+        // ── Writing ──────────────────────────────────────────────────────────
         BlocListener<WritingBloc, WritingState>(
           bloc: di.sl<WritingBloc>(),
           listenWhen: (prev, curr) =>
@@ -85,11 +96,10 @@ class GlobalAudioFeedbackListener extends StatelessWidget {
                   curr.lastAnswerCorrect == true &&
                   prev.lastAnswerCorrect != true) ||
               (curr is WritingGameComplete && prev is! WritingGameComplete),
-          listener: (context, state) {
-            di.sl<PraiseService>().givePraise();
-          },
+          listener: _praiseListener,
         ),
-        // Listening
+
+        // ── Listening ────────────────────────────────────────────────────────
         BlocListener<ListeningBloc, ListeningState>(
           bloc: di.sl<ListeningBloc>(),
           listenWhen: (prev, curr) =>
@@ -98,11 +108,10 @@ class GlobalAudioFeedbackListener extends StatelessWidget {
                   curr.lastAnswerCorrect == true &&
                   prev.lastAnswerCorrect != true) ||
               (curr is ListeningGameComplete && prev is! ListeningGameComplete),
-          listener: (context, state) {
-            di.sl<PraiseService>().givePraise();
-          },
+          listener: _praiseListener,
         ),
-        // Accent
+
+        // ── Accent ───────────────────────────────────────────────────────────
         BlocListener<AccentBloc, AccentState>(
           bloc: di.sl<AccentBloc>(),
           listenWhen: (prev, curr) =>
@@ -111,11 +120,10 @@ class GlobalAudioFeedbackListener extends StatelessWidget {
                   curr.lastAnswerCorrect == true &&
                   prev.lastAnswerCorrect != true) ||
               (curr is AccentGameComplete && prev is! AccentGameComplete),
-          listener: (context, state) {
-            di.sl<PraiseService>().givePraise();
-          },
+          listener: _praiseListener,
         ),
-        // Roleplay
+
+        // ── Roleplay ─────────────────────────────────────────────────────────
         BlocListener<RoleplayBloc, RoleplayState>(
           bloc: di.sl<RoleplayBloc>(),
           listenWhen: (prev, curr) =>
@@ -124,11 +132,10 @@ class GlobalAudioFeedbackListener extends StatelessWidget {
                   curr.lastAnswerCorrect == true &&
                   prev.lastAnswerCorrect != true) ||
               (curr is RoleplayGameComplete && prev is! RoleplayGameComplete),
-          listener: (context, state) {
-            di.sl<PraiseService>().givePraise();
-          },
+          listener: _praiseListener,
         ),
-        // Vocabulary
+
+        // ── Vocabulary ───────────────────────────────────────────────────────
         BlocListener<VocabularyBloc, VocabularyState>(
           bloc: di.sl<VocabularyBloc>(),
           listenWhen: (prev, curr) =>
@@ -138,9 +145,7 @@ class GlobalAudioFeedbackListener extends StatelessWidget {
                   prev.lastAnswerCorrect != true) ||
               (curr is VocabularyGameComplete &&
                   prev is! VocabularyGameComplete),
-          listener: (context, state) {
-            di.sl<PraiseService>().givePraise();
-          },
+          listener: _praiseListener,
         ),
       ],
       child: child,

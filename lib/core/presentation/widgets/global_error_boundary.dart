@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
-
-/// A global error boundary widget that catches widget-tree crashes,
-/// provides system anomaly feedback, and restores Flutter's global builder on dispose.
+/// Global widget-tree error boundary.
+///
+/// Intercepts [ErrorWidget.builder] at the framework level to catch widget
+/// rendering errors. On error:
+///  1. Immediately shows a minimal dark placeholder (context-free, no ScreenUtil).
+///  2. Schedules a post-frame state update to display the full premium error UI.
+///  3. On "Return to Base", clears the error flag and lets [child] rebuild.
+///
+/// IMPORTANT: Mount only **once** at the root. Multiple instances will override
+/// each other's [ErrorWidget.builder] registration.
 class GlobalErrorBoundary extends StatefulWidget {
   final Widget child;
 
@@ -16,18 +24,17 @@ class GlobalErrorBoundary extends StatefulWidget {
 
 class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
   bool _hasError = false;
-  String _errorMessage = "";
+  String _errorMessage = '';
   late ErrorWidgetBuilder _originalErrorBuilder;
 
   @override
   void initState() {
     super.initState();
-    // Cache the original global error builder to restore on disposal (prevents memory leaks)
     _originalErrorBuilder = ErrorWidget.builder;
-    
-    // Catch Flutter Framework errors within the widget tree
+
     ErrorWidget.builder = (FlutterErrorDetails details) {
-      // Schedule a post-frame callback to update state safely
+      // Schedule a state update for the next frame — safe to call from any
+      // Flutter framework callback since addPostFrameCallback is thread-safe.
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted && !_hasError) {
           setState(() {
@@ -36,100 +43,151 @@ class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
           });
         }
       });
-      return _buildErrorUI(details.exceptionAsString());
+      // Return a minimal, context-free placeholder that does NOT rely on
+      // ScreenUtil or Localizations (which may not be available at the
+      // point where the framework calls this callback).
+      return const _MinimalErrorFallback();
     };
   }
 
   @override
   void dispose() {
-    // Restore original global error builder callback to clean up the framework footprint
+    // Restore the original global builder to prevent leaking our override.
     ErrorWidget.builder = _originalErrorBuilder;
     super.dispose();
-  }
-
-  Widget _buildErrorUI(String error) {
-    return Scaffold(
-      backgroundColor: const Color(0xFF0F172A),
-      body: RepaintBoundary(
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.all(32.r),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "🛸",
-                  style: TextStyle(fontSize: 80.sp),
-                ),
-                SizedBox(height: 24.h),
-                Text(
-                  "SYSTEM ANOMALY",
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    letterSpacing: 2,
-                  ),
-                ),
-                SizedBox(height: 16.h),
-                Text(
-                  error.length > 100 ? "${error.substring(0, 100)}..." : error,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 14.sp,
-                    color: Colors.redAccent.withValues(alpha: 0.8),
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                SizedBox(height: 16.h),
-                Text(
-                  "Vowl encountered an unexpected cosmic event. Don't worry, your progress is safe!",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 16.sp,
-                    color: Colors.white70,
-                  ),
-                ),
-                SizedBox(height: 40.h),
-                ScaleButton(
-                  onTap: () {
-                    // Attempt to go home safely by clearing the error state and letting the app rebuild.
-                    // (Cannot use context.go() here since this boundary sits above the Router)
-                    if (mounted) {
-                      setState(() {
-                        _hasError = false;
-                        _errorMessage = "";
-                      });
-                    }
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF6366F1),
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
-                    child: Text(
-                      "RETURN TO BASE",
-                      style: TextStyle(fontFamily: 'Outfit', 
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
   }
 
   @override
   Widget build(BuildContext context) {
     if (_hasError) {
-      return _buildErrorUI(_errorMessage);
+      return _FullErrorScreen(
+        errorMessage: _errorMessage,
+        onRetry: () {
+          if (mounted) {
+            setState(() {
+              _hasError = false;
+              _errorMessage = '';
+            });
+          }
+        },
+      );
     }
     return widget.child;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Minimal placeholder — shown for one frame while the state update schedules.
+// Must NOT use ScreenUtil, Localizations, or any BuildContext-dependent APIs.
+// ---------------------------------------------------------------------------
+
+class _MinimalErrorFallback extends StatelessWidget {
+  const _MinimalErrorFallback();
+
+  @override
+  Widget build(BuildContext context) {
+    return const ColoredBox(color: Color(0xFF0F172A), child: SizedBox.expand());
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Full premium error screen — shown once _hasError is true in build().
+// Has full access to BuildContext, ScreenUtil, and Localizations.
+// ---------------------------------------------------------------------------
+
+class _FullErrorScreen extends StatelessWidget {
+  final String errorMessage;
+  final VoidCallback onRetry;
+
+  const _FullErrorScreen({required this.errorMessage, required this.onRetry});
+
+  @override
+  Widget build(BuildContext context) {
+    final truncated = errorMessage.length > 100
+        ? '${errorMessage.substring(0, 100)}…'
+        : errorMessage;
+
+    return Semantics(
+      label: context.tr('error.system_anomaly'),
+      child: Scaffold(
+        backgroundColor: const Color(0xFF0F172A),
+        body: RepaintBoundary(
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 24.h),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ExcludeSemantics(
+                    child: Text('🛸', style: TextStyle(fontSize: 80.sp)),
+                  ),
+                  SizedBox(height: 24.h),
+                  Text(
+                    context.tr('error.system_anomaly'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 2,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 16.h),
+                  Text(
+                    truncated,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      color: Colors.redAccent.withValues(alpha: 0.8),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(height: 16.h),
+                  Text(
+                    context.tr('error.system_anomaly_description'),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      color: Colors.white70,
+                    ),
+                  ),
+                  SizedBox(height: 40.h),
+                  Semantics(
+                    button: true,
+                    label: context.tr('error.return_to_base'),
+                    child: ScaleButton(
+                      onTap: onRetry,
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 32.w,
+                          vertical: 16.h,
+                        ),
+                        constraints: BoxConstraints(minHeight: 48.h),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF6366F1),
+                          borderRadius: BorderRadius.circular(20.r),
+                        ),
+                        child: Text(
+                          context.tr('error.return_to_base'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900,
+                            fontSize: 16.sp,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -62,11 +62,11 @@ import 'package:vowl/features/auth/presentation/bloc/signup_cubit.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/leaderboard/presentation/bloc/leaderboard_bloc.dart';
 
-/// Initializes authentication, profile, economy, and progression modules.
+/// Initialises authentication, profile, economy, and progression modules.
 void initAuthFeature(GetIt sl) {
-  // ==========================================
-  // DATA SOURCE
-  // ==========================================
+  // ============================================================
+  // DATA SOURCES
+  // ============================================================
   sl.registerLazySingleton<AuthRemoteDataSource>(
     () => AuthRemoteDataSourceImpl(
       firebaseAuth: sl<FirebaseAuth>(),
@@ -74,9 +74,9 @@ void initAuthFeature(GetIt sl) {
     ),
   );
 
-  // ==========================================
+  // ============================================================
   // REPOSITORIES
-  // ==========================================
+  // ============================================================
   sl.registerLazySingleton<AuthRepository>(
     () => AuthRepositoryImpl(
       remoteDataSource: sl<AuthRemoteDataSource>(),
@@ -108,9 +108,9 @@ void initAuthFeature(GetIt sl) {
     () => LeaderboardRepositoryImpl(sl<FirebaseFirestore>()),
   );
 
-  // ==========================================
+  // ============================================================
   // DOMAIN USE CASES
-  // ==========================================
+  // ============================================================
   sl.registerLazySingleton<SignUp>(() => SignUp(sl<AuthRepository>()));
   sl.registerLazySingleton<LogInWithEmail>(
     () => LogInWithEmail(sl<AuthRepository>()),
@@ -131,7 +131,9 @@ void initAuthFeature(GetIt sl) {
   sl.registerLazySingleton<UpdateCategoryStats>(
     () => UpdateCategoryStats(sl<GamificationRepository>()),
   );
-  sl.registerLazySingleton<AwardBadge>(() => AwardBadge(sl<GamificationRepository>()));
+  sl.registerLazySingleton<AwardBadge>(
+    () => AwardBadge(sl<GamificationRepository>()),
+  );
   sl.registerLazySingleton<AwardKidsSticker>(
     () => AwardKidsSticker(sl<ShopRepository>()),
   );
@@ -199,9 +201,10 @@ void initAuthFeature(GetIt sl) {
     () => AwardKidsCoins(sl<ShopRepository>()),
   );
 
-  // ==========================================
-  // PRESENTATION BLOCS
-  // ==========================================
+  // ============================================================
+  // PRESENTATION — SINGLETON BLOCS
+  // These hold long-lived state shared across the widget tree.
+  // ============================================================
   sl.registerLazySingleton<AuthBloc>(
     () => AuthBloc(
       getUserStream: sl<GetUserStream>(),
@@ -248,6 +251,10 @@ void initAuthFeature(GetIt sl) {
     ),
   );
 
+  // ============================================================
+  // PRESENTATION — FACTORY BLOCS / CUBITS
+  // Per-screen instances; created fresh for each navigation.
+  // ============================================================
   sl.registerFactory<LoginCubit>(
     () => LoginCubit(
       logInWithEmail: sl<LogInWithEmail>(),
@@ -263,7 +270,21 @@ void initAuthFeature(GetIt sl) {
       networkInfo: sl<NetworkInfo>(),
     ),
   );
-  sl.registerFactory<ThemeCubit>(() => ThemeCubit());
+
+  // FIX (CRITICAL-1): ThemeCubit MUST be a lazy singleton.
+  //
+  // Previously registered as `registerFactory`, which created a NEW ThemeCubit
+  // instance on every `sl<ThemeCubit>()` call. Each instance independently
+  // loads SharedPreferences. The MaterialApp's ThemeCubit and any screen-level
+  // resolution would be completely different objects — the user's chosen theme
+  // appeared to reset on every navigation event.
+  //
+  // As a LazyRegistration, a single instance is created on first access and
+  // reused for the entire app lifetime, correctly sharing theme state.
+  sl.registerLazySingleton<ThemeCubit>(() => ThemeCubit());
+
+  // LeaderboardBloc is correctly a Factory — it is created per-screen and
+  // disposed when the Leaderboard screen is popped.
   sl.registerFactory<LeaderboardBloc>(
     () => LeaderboardBloc(repository: sl<LeaderboardRepository>()),
   );

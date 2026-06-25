@@ -1,11 +1,19 @@
 import 'package:dartz/dartz.dart';
 import 'package:vowl/core/error/failures.dart';
 
-/// Abstract domain contract defining the Gamification progress and achievements repository.
+/// Domain contract defining gamification progress, XP, and achievement operations.
 ///
-/// Ensures strict Clean Architecture principles using Functional Programming Either failures.
+/// All write operations execute as Firestore transactions to guarantee atomicity
+/// and eliminate concurrency race conditions (e.g., simultaneous level
+/// completions on multiple devices).
 abstract class GamificationRepository {
-  /// Upgrades daily levels progress, user exp, and coin multipliers after a game completion.
+  /// Records a game-level completion, updating XP, coins, completed levels,
+  /// unlocked levels, daily XP history, and the recent-activity feed atomically.
+  ///
+  /// - Applies a 50 % XP reduction for replayed levels.
+  /// - Respects permanent XP boost and active Double-XP power-up multipliers.
+  /// - Routes coin rewards to [kidsCoins] for Kids Zone game types.
+  /// - Doubles coin rewards for premium users or users at level ≥ 100.
   Future<Either<Failure, void>> updateUserRewards({
     required String gameType,
     required int level,
@@ -14,27 +22,31 @@ abstract class GamificationRepository {
     bool isDoubleReward = false,
   });
 
-  /// Increments category levels unlock progressions for user entities.
+  /// Advances the unlocked level for [categoryId] to [newLevel] if [newLevel]
+  /// exceeds the currently stored value (monotonically increasing only).
   Future<Either<Failure, void>> updateUnlockedLevel(
     String categoryId,
     int newLevel,
   );
 
-  /// Computes category correctness levels metrics inside player profiles.
+  /// Adjusts [categoryStats] for [categoryId] by ±[kCategoryStatStep] based on
+  /// [isCorrect], clamped to [[kCategoryStatMin], [kCategoryStatMax]].
   Future<Either<Failure, void>> updateCategoryStats(
     String categoryId,
     bool isCorrect,
   );
 
-  /// Grants a newly earned milestone achievement badge to the player safely.
+  /// Appends [badgeId] to the user's earned badges list (idempotent via
+  /// Firestore [FieldValue.arrayUnion]).
   Future<Either<Failure, void>> awardBadge(String badgeId);
 
-  /// Repairs broken streaks using game currency (coins).
+  /// Deducts [cost] from the user's coin balance and increments [currentStreak]
+  /// to repair a broken streak.
   Future<Either<Failure, void>> repairStreak(int cost);
 
-  /// Purchases a streak freeze buffer.
+  /// Deducts [cost] coins and grants one streak-freeze buffer item.
   Future<Either<Failure, void>> purchaseStreakFreeze(int cost);
 
-  /// Activates 2x XP boost multipliers.
+  /// Deducts [cost] coins and activates the 2× XP power-up for 24 hours.
   Future<Either<Failure, void>> activateDoubleXP(int cost);
 }

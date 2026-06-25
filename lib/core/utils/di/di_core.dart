@@ -30,12 +30,14 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/usecases/get_current_user.dart';
+// FIX (HIGH-3): AppLogger imported so it can be registered in the DI graph.
+import 'package:vowl/core/utils/app_logger.dart';
 
-/// Initializes core systems, platform boundaries, and base infrastructure.
+/// Initialises core systems, platform boundaries, and base infrastructure.
 Future<void> initExternalAndCore(GetIt sl) async {
-  // ==========================================
+  // ============================================================
   // EXTERNAL PLATFORM BOUNDARIES
-  // ==========================================
+  // ============================================================
   sl.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
   sl.registerLazySingleton<FirebaseFirestore>(() => FirebaseFirestore.instance);
   sl.registerLazySingleton<FirebaseStorage>(() => FirebaseStorage.instance);
@@ -45,9 +47,22 @@ Future<void> initExternalAndCore(GetIt sl) async {
     () => FirebaseRemoteConfig.instance,
   );
 
-  // ==========================================
+  // ============================================================
+  // LOGGING
+  // FIX (HIGH-3): AppLogger was previously never registered, making the
+  // abstraction unusable by any injected service. Now registered as a
+  // lazy singleton so any service can declare `final AppLogger _log`
+  // and receive the correct implementation at runtime.
+  //
+  // SWAP TO PRODUCTION: Replace DebugAppLogger with a Crashlytics-backed
+  // implementation before shipping:
+  //   sl.registerLazySingleton<AppLogger>(() => FirebaseAppLogger());
+  // ============================================================
+  sl.registerLazySingleton<AppLogger>(() => const DebugAppLogger());
+
+  // ============================================================
   // CORE SYSTEMS & INFRASTRUCTURE
-  // ==========================================
+  // ============================================================
   sl.registerLazySingleton<SecurityService>(() => SecurityService());
   sl.registerLazySingleton<RemoteConfigService>(
     () => RemoteConfigService(sl<FirebaseRemoteConfig>()),
@@ -59,6 +74,10 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<SeedingService>(
     () => SeedingService(sl<FirebaseFirestore>()),
   );
+  // NOTE: TtsService must be registered before SoundService since
+  // SoundService depends on it. Both are lazy singletons so the order
+  // here only matters for readability; the actual resolution is deferred.
+  sl.registerLazySingleton<TtsService>(() => TtsService());
   sl.registerLazySingleton<SoundService>(() => SoundService(sl<TtsService>()));
   sl.registerLazySingleton<HapticService>(() => HapticService());
   sl.registerLazySingleton<SmartTutor>(() => const LocalSmartTutor());
@@ -74,7 +93,6 @@ Future<void> initExternalAndCore(GetIt sl) async {
   );
   sl.registerLazySingleton<SpeechService>(() => SpeechService());
   sl.registerLazySingleton<QuestUploadService>(() => QuestUploadService());
-  sl.registerLazySingleton<TtsService>(() => TtsService());
   sl.registerLazySingleton<KidsTTSService>(() => KidsTTSService());
   sl.registerLazySingleton<KidsAudioService>(() => KidsAudioService());
   sl.registerLazySingleton<AssetQuestService>(() => AssetQuestService());
@@ -86,9 +104,19 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<ReviewService>(() => ReviewService());
   sl.registerLazySingleton<LocaleService>(() => LocaleService());
 
-  // ==========================================
-  // NAVIGATION CONTROLLERS
-  // ==========================================
+  // ============================================================
+  // NAVIGATION SCROLL CONTROLLERS
+  //
+  // Registered as lazy singletons so that tab screens can retrieve
+  // the same controller across tab switches (enabling scroll-to-top
+  // on tab re-tap without recreating the controller).
+  //
+  // LIFECYCLE NOTE: These controllers live for the duration of the
+  // app session. If a screen that owns one is recreated (e.g., after
+  // a memory trim), the controller retains its position. This is the
+  // desired behaviour for tab-level persistence. Do NOT dispose these
+  // controllers in individual screen State.dispose() calls.
+  // ============================================================
   sl.registerLazySingleton<ScrollController>(
     () => ScrollController(),
     instanceName: 'home',

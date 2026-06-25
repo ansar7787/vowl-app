@@ -17,7 +17,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/hint_ad_card.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/presentation/widgets/hint_purchase_dialog.dart';
 
 class VowlCoinsScreen extends StatelessWidget {
   const VowlCoinsScreen({super.key});
@@ -33,8 +33,8 @@ class VowlCoinsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
-    final bgColor = isMidnight 
-        ? Colors.black 
+    final bgColor = isMidnight
+        ? Colors.black
         : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
 
     return Scaffold(
@@ -86,17 +86,22 @@ class VowlCoinsScreen extends StatelessWidget {
                                   onPressed: () => context.pop(),
                                   icon: Icon(
                                     Icons.arrow_back_ios_new_rounded,
-                                    color: isDark ? Colors.white : Colors.black87,
+                                    color: isDark
+                                        ? Colors.white
+                                        : Colors.black87,
                                   ),
                                 ),
                               ),
                               SizedBox(width: 10.w),
                               Text(
                                 'Vowl Treasury',
-                                style: TextStyle(fontFamily: 'Outfit', 
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w800,
-                                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                                  color: isDark
+                                      ? Colors.white
+                                      : const Color(0xFF0F172A),
                                 ),
                               ),
                               const Spacer(),
@@ -106,7 +111,9 @@ class VowlCoinsScreen extends StatelessWidget {
                                   vertical: 4.h,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF10B981).withValues(alpha: 0.15),
+                                  color: const Color(
+                                    0xFF10B981,
+                                  ).withValues(alpha: 0.15),
                                   borderRadius: BorderRadius.circular(12.r),
                                 ),
                                 child: Row(
@@ -120,7 +127,8 @@ class VowlCoinsScreen extends StatelessWidget {
                                     SizedBox(width: 4.w),
                                     Text(
                                       '${user.coins}',
-                                      style: TextStyle(fontFamily: 'Outfit', 
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.w800,
                                         color: const Color(0xFF10B981),
@@ -195,8 +203,9 @@ class VowlCoinsScreen extends StatelessWidget {
                                         'Buy Masteries, Scroll of Wisdom & more',
                                     icon: Icons.storefront_rounded,
                                     color: const Color(0xFF6366F1),
-                                    onTap: () =>
-                                        context.push(AppRouter.adventureXPRoute),
+                                    onTap: () => context.push(
+                                      AppRouter.adventureXPRoute,
+                                    ),
                                   ),
                                 ),
                                 _buildActionItem(
@@ -273,128 +282,25 @@ class VowlCoinsScreen extends StatelessWidget {
     int cost,
     int amount,
   ) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    if (user.coins < cost) {
-      di.sl<HapticService>().light();
-      CustomSnackBar.show(
+    HintPurchaseDialog.show(
       context: context,
-      message: 'Insufficient Vowl Coins! Needed: $cost',
-      type: CustomSnackBarType.error,
-    );
-      return;
-    }
-
-    // Confirmation dialog
-    showDialog(
-      context: context,
-      builder: (ctx) => Center(
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 24.w),
-          child: GlassTile(
-            borderRadius: BorderRadius.circular(32.r),
-            padding: EdgeInsets.all(24.r),
-            borderColor: const Color(0xFFF59E0B).withValues(alpha: 0.3),
-            color: isDark ? const Color(0xFF1E293B) : Colors.white,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Premium Icon Header
-                Container(
-                  padding: EdgeInsets.all(20.r),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.lightbulb_rounded,
-                    color: const Color(0xFFF59E0B),
-                    size: 40.r,
-                  ),
-                ).animate().scale(delay: 100.ms).fadeIn(),
-                SizedBox(height: 16.h),
-                Text(
-                  amount > 1 ? 'ELITE HINT PACK' : 'STRATEGIC HINT',
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
-                    letterSpacing: 1,
-                  ),
-                ),
-                SizedBox(height: 12.h),
-                Text(
-                  'Exchange $cost Vowl Coins for ${amount == 1 ? "1 hint" : "$amount hints"}.\nReady to enhance your mission?',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 14.sp,
-                    color: isDark ? Colors.white70 : const Color(0xFF64748B),
-                    height: 1.5,
-                  ),
-                ),
-                SizedBox(height: 32.h),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextButton(
-                        onPressed: () => Navigator.of(ctx).pop(),
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 16.h),
-                        ),
-                        child: Text(
-                          context.tr('common.cancel').toUpperCase(),
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontWeight: FontWeight.w800,
-                            color: isDark
-                                ? Colors.white38
-                                : const Color(0xFF94A3B8),
-                            letterSpacing: 1,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 16.w),
-                    Expanded(
-                      child: FilledButton(
-                        style: FilledButton.styleFrom(
-                          backgroundColor: const Color(0xFFF59E0B),
-                          padding: EdgeInsets.symmetric(vertical: 16.h),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.r),
-                          ),
-                        ),
-                        onPressed: () {
-                          Navigator.of(ctx).pop();
-                          context.read<EconomyBloc>().add(
-                            EconomyPurchaseHintRequested(cost, hintAmount: amount),
-                          );
-                          di.sl<HapticService>().heavy(); // Premium haptic
-                          _showSuccessSnackbar(context, amount);
-                        },
-                        child: Text(
-                          context.tr('common.confirm').toUpperCase(),
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                            letterSpacing: 1,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack).fadeIn(),
-    );
-  }
-
-  void _showSuccessSnackbar(BuildContext context, int amount) {
-    CustomSnackBar.show(
-      context: context,
-      message: 'INVENTORY UPDATED: +$amount HINTS',
-      type: CustomSnackBarType.success,
+      user: user,
+      cost: cost,
+      amount: amount,
+      titleBuilder: (amount) => amount > 1
+          ? context.tr('adventure.hint_pack_elite')
+          : context.tr('adventure.hint_pack_strategic_singular'),
+      bodyBuilder: (cost, amount) => context.tr(
+        'adventure.hint_pack_exchange_body_with_hint',
+        args: ['$cost', '$amount'],
+      ),
+      onConfirm: () {
+        context.read<EconomyBloc>().add(
+          EconomyPurchaseHintRequested(cost, hintAmount: amount),
+        );
+        di.sl<HapticService>().heavy(); // Premium haptic
+        HintPurchaseDialog.showSuccessSnackbar(context, amount);
+      },
     );
   }
 
@@ -468,7 +374,8 @@ class VowlCoinsScreen extends StatelessWidget {
             SizedBox(height: 24.h),
             Text(
               "TOTAL BALANCE",
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w900,
                 color: color,
@@ -478,7 +385,8 @@ class VowlCoinsScreen extends StatelessWidget {
             SizedBox(height: 4.h),
             Text(
               "$coins",
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 48.sp,
                 fontWeight: FontWeight.w900,
                 color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -489,7 +397,8 @@ class VowlCoinsScreen extends StatelessWidget {
             ).animate().scale(begin: const Offset(0.9, 0.9)),
             Text(
               "VOWL COINS",
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w900,
                 color: isDark ? Colors.white24 : Colors.black26,
@@ -533,7 +442,8 @@ class VowlCoinsScreen extends StatelessWidget {
         SizedBox(width: 8.w),
         Text(
           value,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 14.sp,
             fontWeight: FontWeight.w800,
             color: Colors.white,
@@ -555,7 +465,8 @@ class VowlCoinsScreen extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 12.sp,
             fontWeight: FontWeight.w900,
             color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -600,7 +511,8 @@ class VowlCoinsScreen extends StatelessWidget {
                 children: [
                   Text(
                     item.title,
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
                       color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -608,7 +520,8 @@ class VowlCoinsScreen extends StatelessWidget {
                   ),
                   Text(
                     item.subtitle,
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
                       color: isDark ? Colors.white54 : const Color(0xFF64748B),
@@ -639,7 +552,8 @@ class VowlCoinsScreen extends StatelessWidget {
           children: [
             Text(
               'COIN LEDGER',
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w900,
                 color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -657,7 +571,8 @@ class VowlCoinsScreen extends StatelessWidget {
               ),
               child: Text(
                 'RECENT 10',
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 8.sp,
                   fontWeight: FontWeight.w900,
                   color: isDark ? Colors.white24 : Colors.black26,
@@ -685,7 +600,8 @@ class VowlCoinsScreen extends StatelessWidget {
                   SizedBox(height: 16.h),
                   Text(
                     'No Data Streams',
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w800,
                       color: isDark ? Colors.white24 : const Color(0xFF94A3B8),
@@ -693,7 +609,8 @@ class VowlCoinsScreen extends StatelessWidget {
                   ),
                   Text(
                     'Your transactions will appear here.',
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 12.sp,
                       color: isDark ? Colors.white10 : const Color(0xFFCBD5E1),
                     ),
@@ -767,7 +684,8 @@ class VowlCoinsScreen extends StatelessWidget {
                         children: [
                           Text(
                             title,
-                            style: TextStyle(fontFamily: 'Outfit', 
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
                               fontSize: 15.sp,
                               fontWeight: FontWeight.w800,
                               color: isDark
@@ -779,7 +697,8 @@ class VowlCoinsScreen extends StatelessWidget {
                           if (formattedDate.isNotEmpty)
                             Text(
                               formattedDate,
-                              style: TextStyle(fontFamily: 'Outfit', 
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
                                 fontSize: 9.sp,
                                 fontWeight: FontWeight.w700,
                                 color: isDark
@@ -811,7 +730,8 @@ class VowlCoinsScreen extends StatelessWidget {
                           SizedBox(width: 6.w),
                           Text(
                             '${amount.abs()}',
-                            style: TextStyle(fontFamily: 'Outfit', 
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w900,
                               color: color,
@@ -847,4 +767,3 @@ class _ActionItem {
     this.isAdPlaceholder = false,
   });
 }
-

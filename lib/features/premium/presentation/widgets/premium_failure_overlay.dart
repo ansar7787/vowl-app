@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class PremiumFailureOverlay extends StatelessWidget {
   final VoidCallback onRetry;
@@ -39,22 +40,27 @@ class PremiumFailureOverlay extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              width: 80.r,
-              height: 80.r,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Color(0xFFF43F5E),
-              ),
-              child: const Icon(
-                Icons.close_rounded,
-                color: Colors.white,
-                size: 40,
-              ),
-            ).animate().scale(duration: 500.ms, curve: Curves.elasticOut),
+            Semantics(
+              liveRegion: true,
+              label: context.tr('premium.failure_title'),
+              child: Container(
+                width: 80.r,
+                height: 80.r,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xFFF43F5E),
+                ),
+                child: const Icon(
+                  Icons.close_rounded,
+                  color: Colors.white,
+                  size: 40,
+                ),
+              ).animate().scale(duration: 500.ms, curve: Curves.elasticOut),
+            ),
             SizedBox(height: 24.h),
             Text(
-              "TRANSACTION FAILED",
+              context.tr('premium.failure_title'),
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'RobotoMono',
                 fontSize: 22.sp,
@@ -90,8 +96,8 @@ class PremiumFailureOverlay extends StatelessWidget {
               ),
             Text(
               errorMessage == null
-                  ? "The payment could not be completed. Please try again or use another payment method."
-                  : "Please try again or use another payment method.",
+                  ? context.tr('premium.failure_body_default')
+                  : context.tr('premium.failure_body_retry_hint'),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -104,47 +110,55 @@ class PremiumFailureOverlay extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ScaleButton(
-                  onTap: onRetry,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 24.w,
-                      vertical: 12.h,
-                    ),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.white54),
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
-                    child: Text(
-                      "RETRY",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900,
-                        fontSize: 13.sp,
+                Semantics(
+                  button: true,
+                  label: context.tr('premium.retry_button'),
+                  child: ScaleButton(
+                    onTap: onRetry,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 24.w,
+                        vertical: 12.h,
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white54),
+                        borderRadius: BorderRadius.circular(20.r),
+                      ),
+                      child: Text(
+                        context.tr('premium.retry_button'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          color: Colors.white,
+                          fontWeight: FontWeight.w900,
+                          fontSize: 13.sp,
+                        ),
                       ),
                     ),
                   ),
                 ),
                 SizedBox(width: 12.w),
-                ScaleButton(
-                  onTap: onClose,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 24.w,
-                      vertical: 12.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
-                    child: Text(
-                      "CLOSE",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: Colors.black,
-                        fontWeight: FontWeight.w900,
-                        fontSize: 13.sp,
+                Semantics(
+                  button: true,
+                  label: context.tr('common.close'),
+                  child: ScaleButton(
+                    onTap: onClose,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 24.w,
+                        vertical: 12.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20.r),
+                      ),
+                      child: Text(
+                        context.tr('common.close'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          color: Colors.black,
+                          fontWeight: FontWeight.w900,
+                          fontSize: 13.sp,
+                        ),
                       ),
                     ),
                   ),

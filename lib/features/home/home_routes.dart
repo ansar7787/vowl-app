@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/navigation_helpers.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/splash/presentation/pages/splash_page.dart';
 import 'package:vowl/features/onboarding/presentation/pages/hatching_page.dart';
 import 'package:vowl/features/home/presentation/pages/main_wrapper.dart';
@@ -32,15 +33,33 @@ class HomeRoutes {
   static const String vowlMascotRoute = '/vowl-mascot';
   static const String trophyRoomRoute = '/trophy-room';
 
+  // Deep links (e.g. /hatching?name=...) carry untrusted, remotely/user
+  // suppliable input. Capped length + trim prevents a pathological query
+  // param from forcing oversized text layout on the hatching screen.
+  static const int _maxDeepLinkNameLength = 30;
+
+  static String _sanitizeDeepLinkName(String? raw, String fallback) {
+    if (raw == null) return fallback;
+    final trimmed = raw.trim();
+    if (trimmed.isEmpty) return fallback;
+    return trimmed.length > _maxDeepLinkNameLength
+        ? trimmed.substring(0, _maxDeepLinkNameLength)
+        : trimmed;
+  }
+
   static final List<RouteBase> routes = [
-    GoRoute(
-      path: splashRoute,
-      builder: (context, state) => const SplashPage(),
-    ),
+    GoRoute(path: splashRoute, builder: (context, state) => const SplashPage()),
     GoRoute(
       path: hatchingRoute,
       builder: (context, state) {
-        final name = state.uri.queryParameters['name'] ?? 'Traveler';
+        final fallback = context.tr(
+          'routes.default_traveler_name',
+          fallback: 'Traveler',
+        );
+        final name = _sanitizeDeepLinkName(
+          state.uri.queryParameters['name'],
+          fallback,
+        );
         return HatchingPage(userName: name);
       },
     ),
@@ -108,6 +127,16 @@ class HomeRoutes {
       pageBuilder: (context, state) =>
           fadeTransitionPage(child: const StreakScreen(), state: state),
     ),
+    // SECURITY — VERIFY BEFORE RELEASE: this route has no route-level guard
+    // here. If `AdminDashboard` does not independently verify the current
+    // user's admin role on its own (and is not otherwise protected, e.g.
+    // by being unreachable from any in-app navigation for non-admins), any
+    // user who learns or guesses this path could navigate straight to it.
+    // Route-level enforcement (e.g. a `redirect:` callback checking
+    // something like `AuthBloc.state.user?.isAdmin`) is the correct fix,
+    // but the field/contract to check isn't visible in this file slice —
+    // confirm the actual role field on UserEntity before wiring a redirect
+    // here, since guessing the wrong field name would fail to compile.
     GoRoute(
       path: adminRoute,
       pageBuilder: (context, state) =>

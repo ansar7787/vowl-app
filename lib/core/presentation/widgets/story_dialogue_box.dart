@@ -7,9 +7,12 @@ import 'package:vowl/core/utils/story_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
-/// A premium, glassmorphic dialog box presenting story beats and mission briefings,
-/// optimized to protect expensive BackdropFilter blur operations from redundant animation redraws.
+/// Glassmorphic story-beat dialog presenting narrative moments before levels.
+///
+/// Uses [context.select] (not [context.read]) so the mascot and level data
+/// stays in sync if auth state changes while the dialog is visible.
 class StoryDialogueBox extends StatelessWidget {
   final StoryBeat beat;
   final VoidCallback onDismiss;
@@ -29,10 +32,10 @@ class StoryDialogueBox extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: Center(
-        child:
-            Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: ClipRRect(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child:
+              ClipRRect(
                     borderRadius: BorderRadius.circular(32.r),
                     child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
@@ -61,16 +64,16 @@ class StoryDialogueBox extends StatelessWidget {
                           children: [
                             _buildHeader(),
                             _buildBody(context, isDark),
-                            _buildFooter(),
+                            _buildFooter(context),
                           ],
                         ),
                       ),
                     ),
-                  ),
-                )
-                .animate()
-                .scale(duration: 600.ms, curve: Curves.easeOutBack)
-                .fadeIn(duration: 400.ms),
+                  )
+                  .animate()
+                  .scale(duration: 600.ms, curve: Curves.easeOutBack)
+                  .fadeIn(duration: 400.ms),
+        ),
       ),
     );
   }
@@ -99,7 +102,6 @@ class StoryDialogueBox extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Isolate high-frequency pulsing indicator dot inside a RepaintBoundary
             RepaintBoundary(
               child:
                   Container(
@@ -120,14 +122,17 @@ class StoryDialogueBox extends StatelessWidget {
                       .scale(begin: const Offset(0.8, 0.8), duration: 800.ms),
             ),
             SizedBox(width: 12.w),
-            Text(
-              beat.title,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 13.sp,
-                fontWeight: FontWeight.w900,
-                color: beat.themeColor,
-                letterSpacing: 3,
+            Flexible(
+              child: Text(
+                beat.title,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w900,
+                  color: beat.themeColor,
+                  letterSpacing: 3,
+                ),
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -137,21 +142,28 @@ class StoryDialogueBox extends StatelessWidget {
   }
 
   Widget _buildBody(BuildContext context, bool isDark) {
-    final user = context.read<AuthBloc>().state.user;
-    final mascotId = isKidsMode 
-        ? (user?.kidsMascot ?? 'owly')
-        : (user?.vowlMascot ?? 'vowl_prime');
+    // HIGH FIX: Use context.select instead of context.read in build().
+    // context.read misses updates; context.select rebuilds only when the
+    // selected values change.
+    final mascotId = context.select<AuthBloc, String>(
+      (b) => isKidsMode
+          ? (b.state.user?.kidsMascot ?? 'owly')
+          : (b.state.user?.vowlMascot ?? 'vowl_prime'),
+    );
+    final level = context.select<AuthBloc, int>(
+      (b) => b.state.user?.level ?? 1,
+    );
 
     return Padding(
       padding: EdgeInsets.all(32.r),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          // Dynamic Mascot avatar with full accessory support
           VowlMascot(
             state: VowlMascotState.happy,
             size: 96.r,
             useFloatingAnimation: true,
-            level: user?.level ?? 1,
+            level: level,
             mascotId: mascotId,
             isKidsMode: isKidsMode,
           ),
@@ -177,38 +189,46 @@ class StoryDialogueBox extends StatelessWidget {
     );
   }
 
-  Widget _buildFooter() {
+  Widget _buildFooter(BuildContext context) {
     return Padding(
       padding: EdgeInsets.fromLTRB(32.w, 0, 32.w, 32.h),
-      child: ScaleButton(
-        onTap: onDismiss,
-        child: Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(vertical: 20.h),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [beat.themeColor, beat.themeColor.withValues(alpha: 0.8)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-            borderRadius: BorderRadius.circular(24.r),
-            boxShadow: [
-              BoxShadow(
-                color: beat.themeColor.withValues(alpha: 0.4),
-                blurRadius: 20,
-                offset: const Offset(0, 10),
+      child: Semantics(
+        button: true,
+        label: context.tr('story.start_journey'),
+        child: ScaleButton(
+          onTap: onDismiss,
+          child: Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(vertical: 20.h),
+            constraints: BoxConstraints(minHeight: 48.h),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  beat.themeColor,
+                  beat.themeColor.withValues(alpha: 0.8),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
               ),
-            ],
-          ),
-          child: Center(
-            child: Text(
-              "START JOURNEY",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                color: Colors.white,
-                fontWeight: FontWeight.w900,
-                letterSpacing: 2,
+              borderRadius: BorderRadius.circular(24.r),
+              boxShadow: [
+                BoxShadow(
+                  color: beat.themeColor.withValues(alpha: 0.4),
+                  blurRadius: 20,
+                  offset: const Offset(0, 10),
+                ),
+              ],
+            ),
+            child: Center(
+              child: Text(
+                context.tr('story.start_journey').toUpperCase(),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 2,
+                ),
               ),
             ),
           ),

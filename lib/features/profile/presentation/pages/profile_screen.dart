@@ -116,17 +116,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             const AdRewardCard(margin: EdgeInsets.zero),
 
                             SizedBox(height: 20.h),
-                            _buildSectionHeader(context, 'Adventure Stats'),
+                            _buildSectionHeader(
+                              context,
+                              context.tr('profile.adventure_stats'),
+                            ),
                             SizedBox(height: 12.h),
                             ProfileBentoStats(user: user),
 
                             SizedBox(height: 40.h),
-                            _buildSectionHeader(context, 'Hall of Fame'),
+                            _buildSectionHeader(
+                              context,
+                              context.tr('profile.hall_of_fame'),
+                            ),
                             SizedBox(height: 20.h),
                             ProfileBadgesList(user: user),
 
                             SizedBox(height: 40.h),
-                            _buildSectionHeader(context, 'Kids Stickers'),
+                            _buildSectionHeader(
+                              context,
+                              context.tr('profile.kids_stickers'),
+                            ),
                             SizedBox(height: 20.h),
                             ProfileStickersProgress(user: user),
 
@@ -172,6 +181,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildPremiumBanner(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return ScaleButton(
       onTap: () {
         di.sl<HapticService>().selection();
@@ -200,12 +210,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'UPGRADE TO PREMIUM',
+                    context.tr('profile.upgrade_to_premium'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white
-                          : const Color(0xFF0F172A),
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w900,
                       letterSpacing: 0.5,
@@ -213,12 +221,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    'Get 2x Coins, No Ads & VIP Gifts',
+                    context.tr('profile.upgrade_to_premium_subtitle'),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white38
-                          : Colors.black38,
+                      color: isDark ? Colors.white38 : Colors.black38,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
                     ),
@@ -228,9 +236,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             Icon(
               Icons.arrow_forward_ios_rounded,
-              color: Theme.of(context).brightness == Brightness.dark
-                  ? Colors.white24
-                  : Colors.black12,
+              color: isDark ? Colors.white24 : Colors.black12,
               size: 16.r,
             ),
           ],
@@ -245,6 +251,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
+    // MEMORY LEAK FIX: this controller was never disposed in the original
+    // code - every time the rename sheet was opened, a new
+    // TextEditingController leaked for the remaining lifetime of the app.
+    // `showModalBottomSheet` returns a Future that completes once the
+    // sheet is closed by *any* means (save, swipe-down, tap-outside, back
+    // button), so disposing in `.then()` covers every dismissal path
+    // without needing to restructure the sheet into its own StatefulWidget.
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -254,7 +267,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
           padding: EdgeInsets.only(
-            bottom: MediaQuery.of(context).viewInsets.bottom,
+            bottom: MediaQuery.viewInsetsOf(context).bottom,
           ),
           decoration: BoxDecoration(
             color: isDark
@@ -285,7 +298,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Update Identity',
+                      context.tr('profile.update_identity_title'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 24.sp,
@@ -296,7 +309,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     SizedBox(height: 8.h),
                     Text(
-                      'Your name is visible to other explorers in the realm.',
+                      context.tr('profile.update_identity_subtitle'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 14.sp,
@@ -319,6 +332,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: TextField(
                         controller: nameController,
                         autofocus: true,
+                        maxLength: 40,
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 18.sp,
@@ -328,12 +342,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               : const Color(0xFF0F172A),
                         ),
                         decoration: InputDecoration(
-                          hintText: 'Enter new name',
+                          hintText: context.tr('profile.enter_new_name_hint'),
                           hintStyle: TextStyle(
                             fontFamily: 'Outfit',
                             color: Colors.grey,
                           ),
                           border: InputBorder.none,
+                          counterText: '',
                           contentPadding: EdgeInsets.symmetric(
                             horizontal: 24.w,
                             vertical: 20.h,
@@ -372,7 +387,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         child: Center(
                           child: Text(
-                            'Save Changes',
+                            context.tr('profile.save_changes_button'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 18.sp,
@@ -391,7 +406,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ),
       ),
-    );
+    ).then((_) => nameController.dispose());
   }
 
   Future<void> _pickImage(ImageSource source) async {
@@ -448,7 +463,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               SizedBox(height: 32.h),
               Text(
-                'Avatar Projection',
+                context.tr('profile.avatar_projection_title'),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -460,7 +475,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               SizedBox(height: 12.h),
               Text(
-                'Choose a source to capture your manifestation.',
+                context.tr('profile.avatar_projection_subtitle'),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -475,8 +490,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: _buildSourceOption(
                       context: context,
                       icon: Icons.camera_rounded,
-                      label: 'Reality',
-                      subtitle: 'Camera',
+                      label: context.tr('profile.source_reality_label'),
+                      subtitle: context.tr('profile.source_reality_subtitle'),
                       onTap: () {
                         Navigator.pop(context);
                         _pickImage(ImageSource.camera);
@@ -488,8 +503,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: _buildSourceOption(
                       context: context,
                       icon: Icons.image_search_rounded,
-                      label: 'Memory',
-                      subtitle: 'Gallery',
+                      label: context.tr('profile.source_memory_label'),
+                      subtitle: context.tr('profile.source_memory_subtitle'),
                       onTap: () {
                         Navigator.pop(context);
                         _pickImage(ImageSource.gallery);
@@ -513,6 +528,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     required String subtitle,
     required VoidCallback onTap,
   }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return ScaleButton(
       onTap: onTap,
       child: GlassTile(
@@ -536,26 +552,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Text(
                 label,
                 textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w800,
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white
-                      : const Color(0xFF1E293B),
+                  color: isDark ? Colors.white : const Color(0xFF1E293B),
                 ),
               ),
               SizedBox(height: 4.h),
               Text(
                 subtitle,
                 textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w500,
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white38
-                      : Colors.black38,
+                  color: isDark ? Colors.white38 : Colors.black38,
                 ),
               ),
             ],

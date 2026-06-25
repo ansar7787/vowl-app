@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
@@ -35,15 +36,21 @@ class HintHelper {
     }
 
     _isProcessing = true;
+    try {
+      final activeEconomy = economyBloc ?? context.read<EconomyBloc>();
+      activeEconomy.add(const EconomyConsumeHintRequested());
 
-    final activeEconomy = economyBloc ?? context.read<EconomyBloc>();
-    activeEconomy.add(const EconomyConsumeHintRequested());
-
-    onHintAction();
-
-    Future.delayed(const Duration(milliseconds: 500), () {
-      _isProcessing = false;
-    });
+      onHintAction();
+    } finally {
+      // BUG FIX: this reset must always be scheduled, even if
+      // `onHintAction()` throws. The previous version scheduled the reset
+      // *after* the call, so any exception there left `_isProcessing` (a
+      // static, app-wide flag) stuck at `true` forever — silently
+      // disabling hints everywhere in the app until restart.
+      Future.delayed(const Duration(milliseconds: 500), () {
+        _isProcessing = false;
+      });
+    }
   }
 
   /// Displays the low hints dialogue, guiding users to the Treasury shop.
@@ -51,10 +58,13 @@ class HintHelper {
     showDialog(
       context: context,
       builder: (c) => ModernGameDialog(
-        title: 'Light is Dim...',
-        description:
-            'You are out of hints! Visit the Treasury to get a Hint Pack.',
-        buttonText: 'GET HINTS',
+        title: context.tr('hints.dim_title', fallback: 'Light is Dim...'),
+        description: context.tr(
+          'hints.out_of_hints_description',
+          fallback:
+              'You are out of hints! Visit the Treasury to get a Hint Pack.',
+        ),
+        buttonText: context.tr('hints.get_hints_cta', fallback: 'GET HINTS'),
         isSuccess: false,
         onButtonPressed: () {
           Navigator.pop(c);
@@ -62,7 +72,7 @@ class HintHelper {
             context.push(AppRouter.questCoinsRoute);
           }
         },
-        secondaryButtonText: 'CANCEL',
+        secondaryButtonText: context.tr('common.cancel', fallback: 'CANCEL'),
         onSecondaryPressed: () => Navigator.pop(c),
       ),
     );

@@ -13,20 +13,23 @@ class BentoArena extends StatelessWidget {
 
   final UserEntity user;
 
+  static const List<QuestType> _journeySteps = [
+    QuestType.vocabulary, // Step 1: Words
+    QuestType.listening, // Step 2: Input
+    QuestType.reading, // Step 3: Literacy
+    QuestType.grammar, // Step 4: Structure
+    QuestType.writing, // Step 5: Output
+    QuestType.speaking, // Step 6: Fluency
+    QuestType.accent, // Step 7: Polish
+    QuestType.roleplay, // Step 8: Mastery
+    QuestType.eliteMastery, // Step 9: Legendary
+  ];
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final types = [
-      QuestType.vocabulary, // Step 1: Words
-      QuestType.listening, // Step 2: Input
-      QuestType.reading, // Step 3: Literacy
-      QuestType.grammar, // Step 4: Structure
-      QuestType.writing, // Step 5: Output
-      QuestType.speaking, // Step 6: Fluency
-      QuestType.accent, // Step 7: Polish
-      QuestType.roleplay, // Step 8: Mastery
-      QuestType.eliteMastery, // Step 9: Legendary
-    ];
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
+    final types = _journeySteps;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,6 +42,7 @@ class BentoArena extends StatelessWidget {
                 child: CustomPaint(
                   painter: JourneyPathPainter(
                     isDark: isDark,
+                    isRtl: isRtl,
                     stepsCount: types.length,
                     types: types,
                   ),
@@ -51,10 +55,13 @@ class BentoArena extends StatelessWidget {
               child: Column(
                 children: List.generate(types.length, (index) {
                   final isLeft = index % 2 == 0;
+                  // Mirror the zig-zag so the journey still visually winds
+                  // from the reading-start side in RTL locales.
+                  final visualLeft = isRtl ? !isLeft : isLeft;
                   return Padding(
                     padding: EdgeInsets.only(bottom: 40.h),
                     child: Align(
-                      alignment: isLeft
+                      alignment: visualLeft
                           ? Alignment.centerLeft
                           : Alignment.centerRight,
                       child: FractionallySizedBox(
@@ -63,7 +70,7 @@ class BentoArena extends StatelessWidget {
                           type: types[index],
                           user: user,
                           step: index + 1,
-                          isLeft: isLeft,
+                          isLeft: visualLeft,
                         ),
                       ),
                     ),
@@ -101,139 +108,159 @@ class _BentoCategoryTile extends StatelessWidget {
 
     // Progress matches the text exactly (total / max)
     final progress = maxLevels > 0 ? (totalCleared / maxLevels) : 0.0;
+    final stepLabel = context.tr('home.step', args: [step.toString()]);
+    final levelsLabel = context.tr(
+      'home.levels_cleared_max',
+      args: [totalCleared.toString(), maxLevels.toString()],
+    );
 
-    return ScaleButton(
-      onTap: () =>
-          context.push('${AppRouter.categoryGamesRoute}?category=${type.name}'),
-      child: Container(
-        decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
-          borderRadius: BorderRadius.circular(30.r),
-          boxShadow: [
-            BoxShadow(
-              color: color.withValues(alpha: 0.1),
-              blurRadius: 30,
-              offset: const Offset(0, 15),
-            ),
-          ],
+    return Semantics(
+      button: true,
+      label: '$stepLabel ${type.name}. $levelsLabel',
+      child: ScaleButton(
+        onTap: () => context.push(
+          '${AppRouter.categoryGamesRoute}?category=${Uri.encodeQueryComponent(type.name)}',
         ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(30.r),
+        child: ExcludeSemantics(
           child: Container(
-            padding: EdgeInsets.all(20.r),
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: isDark
-                    ? [
-                        Colors.white.withValues(alpha: 0.12),
-                        Colors.white.withValues(alpha: 0.05),
-                      ]
-                    : [
-                        Colors.white,
-                        Colors.white.withValues(alpha: 0.8),
-                      ],
-              ),
+              color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
               borderRadius: BorderRadius.circular(30.r),
-              border: Border.all(
-                  color: color.withValues(alpha: isDark ? 0.3 : 0.2),
-                  width: 1.5),
               boxShadow: [
                 BoxShadow(
-                  color: isDark
-                      ? Colors.black.withValues(alpha: 0.05)
-                      : color.withValues(alpha: 0.08),
-                  blurRadius: 20,
-                  offset: const Offset(0, 10),
+                  color: color.withValues(alpha: 0.1),
+                  blurRadius: 30,
+                  offset: const Offset(0, 15),
                 ),
               ],
             ),
-            child: Row(
-              children: [
-                if (!isLeft) const Spacer(),
-                // Icon Container with Pulse
-                Container(
-                  padding: EdgeInsets.all(14.r),
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withValues(alpha: 0.2),
-                        blurRadius: 10,
-                        spreadRadius: 2,
-                      ),
-                    ],
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(30.r),
+              child: Container(
+                padding: EdgeInsets.all(20.r),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: isDark
+                        ? [
+                            Colors.white.withValues(alpha: 0.12),
+                            Colors.white.withValues(alpha: 0.05),
+                          ]
+                        : [Colors.white, Colors.white.withValues(alpha: 0.8)],
                   ),
-                  child: Icon(icon, color: color, size: 26.r),
+                  borderRadius: BorderRadius.circular(30.r),
+                  border: Border.all(
+                    color: color.withValues(alpha: isDark ? 0.3 : 0.2),
+                    width: 1.5,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: isDark
+                          ? Colors.black.withValues(alpha: 0.05)
+                          : color.withValues(alpha: 0.08),
+                      blurRadius: 20,
+                      offset: const Offset(0, 10),
+                    ),
+                  ],
                 ),
-                SizedBox(width: 20.w),
-                // Content Section
-                Expanded(
-                  flex: 5,
-                  child: Column(
-                    crossAxisAlignment: isLeft
-                        ? CrossAxisAlignment.start
-                        : CrossAxisAlignment.end,
-                    children: [
-                      // Step Badge
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
-                          vertical: 4.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: color.withValues(alpha: 0.15),
-                          borderRadius: BorderRadius.circular(20.r),
-                          border:
-                              Border.all(color: color.withValues(alpha: 0.3)),
-                        ),
-                        child: Text(
-                          context.tr('home.step', args: [step.toString()]),
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w900,
-                            color: color,
-                            letterSpacing: 1.5,
+                child: Row(
+                  children: [
+                    if (!isLeft) const Spacer(),
+                    // Icon Container with Pulse
+                    Container(
+                      padding: EdgeInsets.all(14.r),
+                      decoration: BoxDecoration(
+                        color: color.withValues(alpha: 0.1),
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: color.withValues(alpha: 0.2),
+                            blurRadius: 10,
+                            spreadRadius: 2,
                           ),
-                        ),
+                        ],
                       ),
-                      SizedBox(height: 12.h),
-                      // Title
-                      FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          type.name.toUpperCase(),
-                          maxLines: 1,
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w900,
-                            color: isDark ? Colors.white : const Color(0xFF0F172A),
-                            letterSpacing: 1.2,
-                            height: 1,
+                      child: Icon(icon, color: color, size: 26.r),
+                    ),
+                    SizedBox(width: 20.w),
+                    // Content Section
+                    Expanded(
+                      flex: 5,
+                      child: Column(
+                        crossAxisAlignment: isLeft
+                            ? CrossAxisAlignment.start
+                            : CrossAxisAlignment.end,
+                        children: [
+                          // Step Badge
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 4.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: color.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(20.r),
+                              border: Border.all(
+                                color: color.withValues(alpha: 0.3),
+                              ),
+                            ),
+                            child: Text(
+                              stepLabel,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w900,
+                                color: color,
+                                letterSpacing: 1.5,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
-                        ),
-                      ),
+                          SizedBox(height: 12.h),
+                          // Title
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              type.name.toUpperCase(),
+                              maxLines: 1,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.w900,
+                                color: isDark
+                                    ? Colors.white
+                                    : const Color(0xFF0F172A),
+                                letterSpacing: 1.2,
+                                height: 1,
+                              ),
+                            ),
+                          ),
 
-                      SizedBox(height: 12.h),
-                      // Progress
-                      _bentoProgressLine(context, progress, color),
-                      SizedBox(height: 6.h),
-                      Text(
-                        context.tr('home.levels_cleared_max', args: [totalCleared.toString(), maxLevels.toString()]),
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w800,
-                          color: color,
-                          letterSpacing: 0.5,
-                        ),
+                          SizedBox(height: 12.h),
+                          // Progress
+                          _bentoProgressLine(context, progress, color),
+                          SizedBox(height: 6.h),
+                          Text(
+                            levelsLabel,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w800,
+                              color: color,
+                              letterSpacing: 0.5,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                    if (isLeft) const Spacer(),
+                  ],
                 ),
-                if (isLeft) const Spacer(),
-              ],
+              ),
             ),
           ),
         ),
@@ -274,11 +301,13 @@ class _BentoCategoryTile extends StatelessWidget {
 
 class JourneyPathPainter extends CustomPainter {
   final bool isDark;
+  final bool isRtl;
   final int stepsCount;
   final List<QuestType> types;
 
   JourneyPathPainter({
     required this.isDark,
+    required this.isRtl,
     required this.stepsCount,
     required this.types,
   });
@@ -291,7 +320,8 @@ class JourneyPathPainter extends CustomPainter {
     // 1. Calculate Points
     for (int i = 0; i < stepsCount; i++) {
       final isLeft = i % 2 == 0;
-      final x = isLeft ? size.width * 0.15 : size.width * 0.85;
+      final visualLeft = isRtl ? !isLeft : isLeft;
+      final x = visualLeft ? size.width * 0.15 : size.width * 0.85;
       final y = (i * stepHeight) + (stepHeight / 2);
       points.add(Offset(x, y));
     }
@@ -374,5 +404,5 @@ class JourneyPathPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant JourneyPathPainter oldDelegate) =>
-      oldDelegate.isDark != isDark;
+      oldDelegate.isDark != isDark || oldDelegate.isRtl != isRtl;
 }

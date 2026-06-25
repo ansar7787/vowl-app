@@ -7,9 +7,8 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 /// Satisfies clean architecture design principles by separating core interfaces.
 abstract class QuestUploadService {
   /// Factory constructor to support seamless backwards compatibility for callers.
-  factory QuestUploadService({
-    FirebaseFirestore? firestore,
-  }) = QuestUploadServiceImpl;
+  factory QuestUploadService({FirebaseFirestore? firestore}) =
+      QuestUploadServiceImpl;
 
   /// Validates and parses a JSON batch of quests, uploading them to Firestore in level-grouped documents.
   ///
@@ -21,7 +20,10 @@ abstract class QuestUploadService {
   });
 
   /// Wipes all seeded level documents under a specific game subtype.
-  Future<void> wipeSubtype(GameSubtype subtype);
+  ///
+  /// Returns the number of documents deleted, for admin-facing confirmation
+  /// and audit logging of this irreversible operation.
+  Future<int> wipeSubtype(GameSubtype subtype);
 }
 
 /// Concrete implementation of [QuestUploadService] utilizing Cloud Firestore batch transactions.
@@ -31,9 +33,12 @@ class QuestUploadServiceImpl implements QuestUploadService {
   // Maximum batch operation boundary to ensure total compliance with Firestore guidelines
   static const int maxBatchOperationsLimit = 400;
 
-  QuestUploadServiceImpl({
-    FirebaseFirestore? firestore,
-  }) : _firestore = firestore ?? FirebaseFirestore.instance;
+  // Defensive network timeout so a stalled connection fails the admin
+  // operation cleanly instead of hanging indefinitely.
+  static const Duration _commitTimeout = Duration(seconds: 30);
+
+  QuestUploadServiceImpl({FirebaseFirestore? firestore})
+    : _firestore = firestore ?? FirebaseFirestore.instance;
 
   @override
   Future<Map<String, dynamic>> uploadBatch({
@@ -50,7 +55,8 @@ class QuestUploadServiceImpl implements QuestUploadService {
       if (decoded is! List) {
         return {
           'success': false,
-          'message': 'Invalid JSON structure: Root element must be an array of maps.',
+          'message':
+              'Invalid JSON structure: Root element must be an array of maps.',
         };
       }
 
@@ -59,7 +65,8 @@ class QuestUploadServiceImpl implements QuestUploadService {
         if (item is! Map) {
           return {
             'success': false,
-            'message': 'Invalid element detected: Array items must be structured map entities.',
+            'message':
+                'Invalid element detected: Array items must be structured map entities.',
           };
         }
         allQuests.add(Map<String, dynamic>.from(item));
@@ -69,14 +76,31 @@ class QuestUploadServiceImpl implements QuestUploadService {
         return {'success': false, 'message': 'No quest records found.'};
       }
 
-      // Group quests into their respective difficulty difficulty steps
+      // Group quests into their respective difficulty steps. A safe,
+      // non-throwing per-item parse means a single malformed entry produces
+      // a clear, actionable error message (which item, what's wrong)
+      // instead of a generic cast-exception string from the outer catch.
       final Map<int, List<Map<String, dynamic>>> groupedByLevel = {};
-      for (final quest in allQuests) {
-        final level = (quest['difficulty'] as num?)?.toInt() ?? 1;
-        if (!groupedByLevel.containsKey(level)) {
-          groupedByLevel[level] = [];
+      for (int i = 0; i < allQuests.length; i++) {
+        final quest = allQuests[i];
+        final rawDifficulty = quest['difficulty'];
+        int level;
+        if (rawDifficulty == null) {
+          level = 1;
+        } else if (rawDifficulty is num) {
+          level = rawDifficulty.toInt();
+        } else if (rawDifficulty is String &&
+            int.tryParse(rawDifficulty) != null) {
+          level = int.parse(rawDifficulty);
+        } else {
+          return {
+            'success': false,
+            'message':
+                'Invalid "difficulty" value at quest index $i: expected a number, got "$rawDifficulty".',
+          };
         }
-        groupedByLevel[level]!.add(quest);
+
+        groupedByLevel.putIfAbsent(level, () => []).add(quest);
       }
 
       var batch = _firestore.batch();
@@ -107,21 +131,22 @@ class QuestUploadServiceImpl implements QuestUploadService {
 
         // Chunk commit transactions to completely avoid 500-write cap bounds
         if (batchOperationsCount >= maxBatchOperationsLimit) {
-          await batch.commit();
+          await batch.commit().timeout(_commitTimeout);
           batch = _firestore.batch();
           batchOperationsCount = 0;
         }
       }
 
       if (batchOperationsCount > 0) {
-        await batch.commit();
+        await batch.commit().timeout(_commitTimeout);
       }
 
       final maxLevel = groupedByLevel.keys.reduce((a, b) => a > b ? a : b);
 
       return {
         'success': true,
-        'message': 'Successfully uploaded $levelsCount levels (${allQuests.length} quests)!',
+        'message':
+            'Successfully uploaded $levelsCount levels (${allQuests.length} quests)!',
         'maxLevel': maxLevel,
       };
     } catch (e) {
@@ -130,30 +155,35 @@ class QuestUploadServiceImpl implements QuestUploadService {
   }
 
   @override
-  Future<void> wipeSubtype(GameSubtype subtype) async {
+  Future<int> wipeSubtype(GameSubtype subtype) async {
     final levels = await _firestore
         .collection('quests')
         .doc(subtype.name)
         .collection('levels')
-        .get();
+        .get()
+        .timeout(_commitTimeout);
 
     var batch = _firestore.batch();
     int batchOperationsCount = 0;
+    int deletedCount = 0;
 
     for (final doc in levels.docs) {
       batch.delete(doc.reference);
       batchOperationsCount++;
+      deletedCount++;
 
       // Segment transaction chunks to avoid Google Cloud transaction caps
       if (batchOperationsCount >= maxBatchOperationsLimit) {
-        await batch.commit();
+        await batch.commit().timeout(_commitTimeout);
         batch = _firestore.batch();
         batchOperationsCount = 0;
       }
     }
 
     if (batchOperationsCount > 0) {
-      await batch.commit();
+      await batch.commit().timeout(_commitTimeout);
     }
+
+    return deletedCount;
   }
 }

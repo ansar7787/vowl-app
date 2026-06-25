@@ -1,13 +1,51 @@
 import 'package:collection/collection.dart';
-import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 
-/// Central domain entity representing a User session in the Vowl ecosystem.
+// ---------------------------------------------------------------------------
+// Sentinel for nullable copyWith fields
+// ---------------------------------------------------------------------------
+
+/// Private sentinel used to distinguish "caller did not pass this argument"
+/// from an explicit [null] in [UserEntity.copyWith].
 ///
-/// Implements high-performance custom Deep Collection Equality overrides for [operator ==] and [hashCode]
-/// to prevent false state changes in BLoCs and eliminate redundant UI re-renders on collections.
+/// This enables callers to clear nullable fields:
+/// ```dart
+/// entity.copyWith(doubleXPExpiry: null); // clears the expiry
+/// entity.copyWith();                     // preserves existing expiry
+/// ```
+const _absent = _Absent();
+
+@immutable
+final class _Absent {
+  const _Absent();
+}
+
+// ---------------------------------------------------------------------------
+// UserEntity
+// ---------------------------------------------------------------------------
+
+/// Central domain entity representing a user session in the Vowl ecosystem.
+///
+/// ### Equality
+/// Implements deep collection equality via static [_mapEq], [_listEq], and
+/// [_deepEq] constants — allocated once, not per comparison call — preventing
+/// redundant UI re-renders in BLoCs when collection content is unchanged.
+///
+/// ### copyWith & nullable fields
+/// All nullable fields accept an explicit `null` to clear their value:
+/// ```dart
+/// user.copyWith(premiumExpiryDate: null); // removes expiry
+/// user.copyWith(coins: 500);              // updates coins, keeps everything else
+/// ```
 @immutable
 class UserEntity {
+  // Static equality helpers — const, allocated once per class, not per call.
+  static const _mapEq = MapEquality<dynamic, dynamic>();
+  static const _listEq = ListEquality<dynamic>();
+  static const _deepEq = DeepCollectionEquality();
+
   final String id;
   final String email;
   final String? displayName;
@@ -34,6 +72,7 @@ class UserEntity {
   final List<Map<String, dynamic>> recentActivities;
   final DateTime? lastVipGiftDate;
   final DateTime? lastDailyRewardDate;
+  final DateTime? lastKidsDailyRewardDate;
   final int kidsCoins;
   final List<String> kidsStickers;
   final String? kidsMascot;
@@ -51,7 +90,6 @@ class UserEntity {
   final DateTime? lastFreeSpinDate;
   final DateTime? lastAdSpinDate;
   final int adSpinsUsedToday;
-  final DateTime? lastKidsDailyRewardDate;
   final List<String> kidsOwnedFurniture;
   final Map<String, String> kidsEquippedFurniture;
 
@@ -70,160 +108,8 @@ class UserEntity {
     this.isPremium = false,
     this.premiumExpiryDate,
     this.categoryStats = const {},
-    this.unlockedLevels = const {
-      // 1. Speaking (10 Games)
-      'repeatSentence': 1,
-      'speakMissingWord': 1,
-      'situationSpeaking': 1,
-      'sceneDescriptionSpeaking': 1,
-      'yesNoSpeaking': 1,
-      'speakSynonym': 1,
-      'dialogueRoleplay': 1,
-      'pronunciationFocus': 1,
-      'speakOpposite': 1,
-      'dailyExpression': 1,
-
-      // 2. Listening (10 Games)
-      'audioFillBlanks': 1,
-      'audioMultipleChoice': 1,
-      'audioSentenceOrder': 1,
-      'audioTrueFalse': 1,
-      'soundImageMatch': 1,
-      'fastSpeechDecoder': 1,
-      'emotionRecognition': 1,
-      'detailSpotlight': 1,
-      'listeningInference': 1,
-      'ambientId': 1,
-
-      // 3. Reading (12 Games)
-      'readAndAnswer': 1,
-      'findWordMeaning': 1,
-      'trueFalseReading': 1,
-      'sentenceOrderReading': 1,
-      'readingSpeedCheck': 1,
-      'guessTitle': 1,
-      'readAndMatch': 1,
-      'paragraphSummary': 1,
-      'readingInference': 1,
-      'readingConclusion': 1,
-      'clozeTest': 1,
-      'skimmingScanning': 1,
-
-      // 4. Writing (11 Games)
-      'sentenceBuilder': 1,
-      'completeSentence': 1,
-      'describeSituationWriting': 1,
-      'fixTheSentence': 1,
-      'shortAnswerWriting': 1,
-      'opinionWriting': 1,
-      'dailyJournal': 1,
-      'summarizeStoryWriting': 1,
-      'writingEmail': 1,
-      'correctionWriting': 1,
-      'essayDrafting': 1,
-
-      // 5. Grammar (19 Games)
-      'grammarQuest': 1,
-      'sentenceCorrection': 1,
-      'wordReorder': 1,
-      'tenseMastery': 1,
-      'partsOfSpeech': 1,
-      'subjectVerbAgreement': 1,
-      'clauseConnector': 1,
-      'voiceSwap': 1,
-      'questionFormatter': 1,
-      'articleInsertion': 1,
-      'modifierPlacement': 1,
-      'modalsSelection': 1,
-      'prepositionChoice': 1,
-      'pronounResolution': 1,
-      'punctuationMastery': 1,
-      'relativeClauses': 1,
-      'conditionals': 1,
-      'conjunctions': 1,
-      'directIndirectSpeech': 1,
-
-      // 6. Vocabulary (12 Games)
-      'flashcards': 1,
-      'synonymSearch': 1,
-      'antonymSearch': 1,
-      'contextClues': 1,
-      'phrasalVerbs': 1,
-      'idioms': 1,
-      'academicWord': 1,
-      'topicVocab': 1,
-      'wordFormation': 1,
-      'prefixSuffix': 1,
-      'collocations': 1,
-      'contextualUsage': 1,
-
-      // 7. Accent (12 Games)
-      'minimalPairs': 1,
-      'intonationMimic': 1,
-      'syllableStress': 1,
-      'wordLinking': 1,
-      'shadowingChallenge': 1,
-      'vowelDistinction': 1,
-      'consonantClarity': 1,
-      'pitchPatternMatch': 1,
-      'speedVariance': 1,
-      'dialectDrill': 1,
-      'connectedSpeech': 1,
-      'pitchModulation': 1,
-
-      // 8. Roleplay (10 Games)
-      'branchingDialogue': 1,
-      'situationalResponse': 1,
-      'jobInterview': 1,
-      'medicalConsult': 1,
-      'gourmetOrder': 1,
-      'travelDesk': 1,
-      'conflictResolver': 1,
-      'elevatorPitch': 1,
-      'socialSpark': 1,
-      'emergencyHub': 1,
-
-      // 9. Elite Mastery (4 Games)
-      'storyBuilder': 1,
-      'idiomMatch': 1,
-      'speedSpelling': 1,
-      'accentShadowing': 1,
-
-      // 10. Kids Zone (22 Games)
-      'alphabet': 1,
-      'numbers': 1,
-      'colors': 1,
-      'shapes': 1,
-      'animals': 1,
-      'fruits': 1,
-      'family': 1,
-      'school': 1,
-      'verbs': 1,
-      'routine': 1,
-      'emotions': 1,
-      'prepositions': 1,
-      'phonics': 1,
-      'day_night': 1,
-      'nature': 1,
-      'home_kids': 1,
-      'food_kids': 1,
-      'transport': 1,
-      'time': 1,
-      'opposites': 1,
-      'body_parts': 1, // Retained matching name representation
-      'clothing': 1,
-
-      // Categories (9 Categories)
-      'reading': 1,
-      'writing': 1,
-      'speaking': 1,
-      'grammar': 1,
-      'roleplay': 1,
-      'accent': 1,
-      'listening': 1,
-      'vocabulary': 1,
-      'elitemastery': 1,
-    },
+    // Single source of truth via UserGameConstants — no more inline duplication.
+    this.unlockedLevels = UserGameConstants.kDefaultUnlockedLevels,
     this.completedLevels = const {},
     this.badges = const [],
     this.streakFreezes = 0,
@@ -236,11 +122,9 @@ class UserEntity {
     this.lastVipGiftDate,
     this.lastDailyRewardDate,
     this.lastKidsDailyRewardDate,
-    this.kidsOwnedFurniture = const ['default_bed', 'default_window'],
-    this.kidsEquippedFurniture = const {
-      'bed': 'default_bed',
-      'window': 'default_window',
-    },
+    this.kidsOwnedFurniture = UserGameConstants.kDefaultKidsOwnedFurniture,
+    this.kidsEquippedFurniture =
+        UserGameConstants.kDefaultKidsEquippedFurniture,
     this.kidsCoins = 0,
     this.kidsStickers = const [],
     this.kidsMascot,
@@ -250,7 +134,7 @@ class UserEntity {
     this.vowlMascot,
     this.vowlEquippedAccessory,
     this.vowlOwnedAccessories = const [],
-    this.vowlOwnedMascots = const ['vowl_prime'],
+    this.vowlOwnedMascots = UserGameConstants.kDefaultVowlOwnedMascots,
     this.claimedStreakMilestones = const [],
     this.claimedLevelMilestones = const [],
     this.coinHistory = const [],
@@ -260,15 +144,45 @@ class UserEntity {
     this.adSpinsUsedToday = 0,
   });
 
-  int get level => (totalExp / 100).floor() + 1;
+  // ---------------------------------------------------------------------------
+  // Derived getters
+  // ---------------------------------------------------------------------------
 
+  /// Current user level derived from total XP.
+  int get level => (totalExp / UserGameConstants.kXpPerLevel).floor() + 1;
+
+  /// Total number of individual game levels completed across all categories.
   int get totalLevelsCompleted {
-    int count = 0;
-    completedLevels.forEach((_, levels) => count += levels.length);
+    var count = 0;
+    for (final levels in completedLevels.values) {
+      count += levels.length;
+    }
     return count;
   }
 
-  // Mastery Getters
+  /// Whether the Double XP power-up is currently active.
+  bool get isDoubleXPActive {
+    if (doubleXPExpiry == null) return false;
+    return doubleXPExpiry!.isAfter(DateTime.now());
+  }
+
+  /// Whether the user is eligible to claim today's VIP gift.
+  bool get isVipGiftAvailable {
+    if (!isPremium) return false;
+    if (lastVipGiftDate == null) return true;
+    final now = DateTime.now();
+    final last = lastVipGiftDate!;
+    return last.year != now.year ||
+        last.month != now.month ||
+        last.day != now.day;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Mastery getters (delegates to QuestType subtypes)
+  // ---------------------------------------------------------------------------
+
+  List<String> get earnedBadges => badges;
+
   int get speakingMastery => getCategoryProgress(QuestType.speaking);
   int get readingMastery => getCategoryProgress(QuestType.reading);
   int get writingMastery => getCategoryProgress(QuestType.writing);
@@ -278,72 +192,196 @@ class UserEntity {
   int get accentMastery => getCategoryProgress(QuestType.accent);
   int get roleplayMastery => getCategoryProgress(QuestType.roleplay);
 
+  /// Returns the highest [categoryStats] score across all non-legacy subtypes
+  /// of [type]. Returns 0 if the type has no tracked subtypes.
   int getCategoryProgress(QuestType type) {
     final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
     if (subtypes.isEmpty) return 0;
-
-    int maxProgress = 0;
+    var maxProgress = 0;
     for (final subtype in subtypes) {
       final progress = categoryStats[subtype.name] ?? 0;
-      if (progress > maxProgress) {
-        maxProgress = progress;
-      }
+      if (progress > maxProgress) maxProgress = progress;
     }
     return maxProgress;
   }
 
+  /// Returns the total number of levels cleared across all non-legacy subtypes
+  /// of [type] (i.e., sum of (unlockedLevel - 1) for each subtype).
   int getTotalCategoryLevelsCleared(QuestType type) {
     final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
-    if (subtypes.isEmpty) return 0;
-
-    int totalCleared = 0;
+    var totalCleared = 0;
     for (final subtype in subtypes) {
-      if (unlockedLevels.containsKey(subtype.name)) {
-        final level = unlockedLevels[subtype.name]!;
-        if (level > 1) {
-          totalCleared += (level - 1);
-        }
-      }
+      final unlockedLevel = unlockedLevels[subtype.name] ?? 1;
+      if (unlockedLevel > 1) totalCleared += unlockedLevel - 1;
     }
     return totalCleared;
   }
 
+  /// Returns the theoretical maximum levels available for [type]
+  /// (200 levels × number of non-legacy subtypes).
   int getMaxCategoryLevels(QuestType type) {
-    final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
-    return subtypes.length * 200;
+    return type.subtypes.where((s) => !s.isLegacy).length * 200;
   }
 
+  /// Maps a raw level index to its effective (display) level, wrapping levels
+  /// above 200 into a 150–199 repeating range.
   int getEffectiveLevel(String categoryOrGame, int level) {
     if (level <= 200) return level;
     return 150 + ((level - 201) % 50);
   }
 
-  List<String> get earnedBadges => badges;
+  // ---------------------------------------------------------------------------
+  // copyWith — supports explicit null to clear optional fields
+  // ---------------------------------------------------------------------------
 
-  bool get isDoubleXPActive {
-    if (doubleXPExpiry == null) return false;
-    return doubleXPExpiry!.isAfter(DateTime.now());
+  // ignore: long-parameter-list
+  UserEntity copyWith({
+    // Non-nullable fields use standard nullable param (null = keep existing).
+    List<String>? badges,
+    Map<String, int>? categoryStats,
+    List<int>? claimedLevelMilestones,
+    List<int>? claimedStreakMilestones,
+    List<Map<String, dynamic>>? coinHistory,
+    int? coins,
+    Map<String, List<int>>? completedLevels,
+    int? currentStreak,
+    Map<String, int>? dailyXpHistory,
+    int? doubleXP,
+    int? hintCount,
+    int? hintPacks,
+    bool? isAdmin,
+    bool? isEmailVerified,
+    bool? isPremium,
+    int? kidsCoins,
+    List<String>? kidsOwnedAccessories,
+    List<String>? kidsStickers,
+    int? streakFreezes,
+    int? totalExp,
+    Map<String, int>? unlockedLevels,
+    bool? hasPermanentXPBoost,
+    int? adSpinsUsedToday,
+    List<String>? vowlOwnedAccessories,
+    List<String>? vowlOwnedMascots,
+    List<String>? kidsOwnedFurniture,
+    Map<String, String>? kidsEquippedFurniture,
+    List<Map<String, dynamic>>? recentActivities,
+
+    // Nullable fields use Object? + _absent sentinel so callers can pass null
+    // explicitly to clear the value, or omit entirely to preserve existing.
+    Object? displayName = _absent,
+    Object? photoUrl = _absent,
+    Object? fcmToken = _absent,
+    Object? lastLoginDate = _absent,
+    Object? premiumExpiryDate = _absent,
+    Object? doubleXPExpiry = _absent,
+    Object? lastVipGiftDate = _absent,
+    Object? lastDailyRewardDate = _absent,
+    Object? lastKidsDailyRewardDate = _absent,
+    Object? kidsMascot = _absent,
+    Object? kidsEquippedSticker = _absent,
+    Object? kidsEquippedAccessory = _absent,
+    Object? vowlMascot = _absent,
+    Object? vowlEquippedAccessory = _absent,
+    Object? lastFreeSpinDate = _absent,
+    Object? lastAdSpinDate = _absent,
+  }) {
+    return UserEntity(
+      id: id,
+      email: email,
+      // Non-nullable: standard ?? pattern.
+      badges: badges ?? this.badges,
+      categoryStats: categoryStats ?? this.categoryStats,
+      claimedLevelMilestones:
+          claimedLevelMilestones ?? this.claimedLevelMilestones,
+      claimedStreakMilestones:
+          claimedStreakMilestones ?? this.claimedStreakMilestones,
+      coinHistory: coinHistory ?? this.coinHistory,
+      coins: coins ?? this.coins,
+      completedLevels: completedLevels ?? this.completedLevels,
+      currentStreak: currentStreak ?? this.currentStreak,
+      dailyXpHistory: dailyXpHistory ?? this.dailyXpHistory,
+      doubleXP: doubleXP ?? this.doubleXP,
+      hintCount: hintCount ?? this.hintCount,
+      hintPacks: hintPacks ?? this.hintPacks,
+      isAdmin: isAdmin ?? this.isAdmin,
+      isEmailVerified: isEmailVerified ?? this.isEmailVerified,
+      isPremium: isPremium ?? this.isPremium,
+      kidsCoins: kidsCoins ?? this.kidsCoins,
+      kidsOwnedAccessories: kidsOwnedAccessories ?? this.kidsOwnedAccessories,
+      kidsStickers: kidsStickers ?? this.kidsStickers,
+      streakFreezes: streakFreezes ?? this.streakFreezes,
+      totalExp: totalExp ?? this.totalExp,
+      unlockedLevels: unlockedLevels ?? this.unlockedLevels,
+      hasPermanentXPBoost: hasPermanentXPBoost ?? this.hasPermanentXPBoost,
+      adSpinsUsedToday: adSpinsUsedToday ?? this.adSpinsUsedToday,
+      vowlOwnedAccessories: vowlOwnedAccessories ?? this.vowlOwnedAccessories,
+      vowlOwnedMascots: vowlOwnedMascots ?? this.vowlOwnedMascots,
+      kidsOwnedFurniture: kidsOwnedFurniture ?? this.kidsOwnedFurniture,
+      kidsEquippedFurniture:
+          kidsEquippedFurniture ?? this.kidsEquippedFurniture,
+      recentActivities: recentActivities ?? this.recentActivities,
+      // Nullable: sentinel pattern — explicit null clears; absent preserves.
+      displayName: identical(displayName, _absent)
+          ? this.displayName
+          : displayName as String?,
+      photoUrl: identical(photoUrl, _absent)
+          ? this.photoUrl
+          : photoUrl as String?,
+      fcmToken: identical(fcmToken, _absent)
+          ? this.fcmToken
+          : fcmToken as String?,
+      lastLoginDate: identical(lastLoginDate, _absent)
+          ? this.lastLoginDate
+          : lastLoginDate as DateTime?,
+      premiumExpiryDate: identical(premiumExpiryDate, _absent)
+          ? this.premiumExpiryDate
+          : premiumExpiryDate as DateTime?,
+      doubleXPExpiry: identical(doubleXPExpiry, _absent)
+          ? this.doubleXPExpiry
+          : doubleXPExpiry as DateTime?,
+      lastVipGiftDate: identical(lastVipGiftDate, _absent)
+          ? this.lastVipGiftDate
+          : lastVipGiftDate as DateTime?,
+      lastDailyRewardDate: identical(lastDailyRewardDate, _absent)
+          ? this.lastDailyRewardDate
+          : lastDailyRewardDate as DateTime?,
+      lastKidsDailyRewardDate: identical(lastKidsDailyRewardDate, _absent)
+          ? this.lastKidsDailyRewardDate
+          : lastKidsDailyRewardDate as DateTime?,
+      kidsMascot: identical(kidsMascot, _absent)
+          ? this.kidsMascot
+          : kidsMascot as String?,
+      kidsEquippedSticker: identical(kidsEquippedSticker, _absent)
+          ? this.kidsEquippedSticker
+          : kidsEquippedSticker as String?,
+      kidsEquippedAccessory: identical(kidsEquippedAccessory, _absent)
+          ? this.kidsEquippedAccessory
+          : kidsEquippedAccessory as String?,
+      vowlMascot: identical(vowlMascot, _absent)
+          ? this.vowlMascot
+          : vowlMascot as String?,
+      vowlEquippedAccessory: identical(vowlEquippedAccessory, _absent)
+          ? this.vowlEquippedAccessory
+          : vowlEquippedAccessory as String?,
+      lastFreeSpinDate: identical(lastFreeSpinDate, _absent)
+          ? this.lastFreeSpinDate
+          : lastFreeSpinDate as DateTime?,
+      lastAdSpinDate: identical(lastAdSpinDate, _absent)
+          ? this.lastAdSpinDate
+          : lastAdSpinDate as DateTime?,
+    );
   }
 
-  bool get isVipGiftAvailable {
-    if (!isPremium) return false;
-    if (lastVipGiftDate == null) return true;
-    final now = DateTime.now();
-    final lastGift = lastVipGiftDate!;
-    return lastGift.year != now.year ||
-        lastGift.month != now.month ||
-        lastGift.day != now.day;
-  }
+  // ---------------------------------------------------------------------------
+  // Equality & hashCode
+  // ---------------------------------------------------------------------------
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-    final MapEquality mapEquals = const MapEquality();
-    final ListEquality listEquals = const ListEquality();
-    final DeepCollectionEquality deepEquals = const DeepCollectionEquality();
+    if (other is! UserEntity) return false;
 
-    return other is UserEntity &&
-        other.id == id &&
+    return other.id == id &&
         other.email == email &&
         other.displayName == displayName &&
         other.photoUrl == photoUrl &&
@@ -356,44 +394,48 @@ class UserEntity {
         other.isPremium == isPremium &&
         other.isEmailVerified == isEmailVerified &&
         other.premiumExpiryDate == premiumExpiryDate &&
-        mapEquals.equals(other.categoryStats, categoryStats) &&
-        mapEquals.equals(other.unlockedLevels, unlockedLevels) &&
-        deepEquals.equals(other.completedLevels, completedLevels) &&
-        listEquals.equals(other.badges, badges) &&
+        _mapEq.equals(other.categoryStats, categoryStats) &&
+        _mapEq.equals(other.unlockedLevels, unlockedLevels) &&
+        _deepEq.equals(other.completedLevels, completedLevels) &&
+        _listEq.equals(other.badges, badges) &&
         other.streakFreezes == streakFreezes &&
         other.hintCount == hintCount &&
         other.hintPacks == hintPacks &&
         other.doubleXP == doubleXP &&
         other.doubleXPExpiry == doubleXPExpiry &&
-        mapEquals.equals(other.dailyXpHistory, dailyXpHistory) &&
-        deepEquals.equals(other.recentActivities, recentActivities) &&
+        _mapEq.equals(other.dailyXpHistory, dailyXpHistory) &&
+        _deepEq.equals(other.recentActivities, recentActivities) &&
         other.lastVipGiftDate == lastVipGiftDate &&
         other.lastDailyRewardDate == lastDailyRewardDate &&
+        other.lastKidsDailyRewardDate == lastKidsDailyRewardDate &&
         other.kidsCoins == kidsCoins &&
-        listEquals.equals(other.kidsStickers, kidsStickers) &&
+        _listEq.equals(other.kidsStickers, kidsStickers) &&
         other.kidsMascot == kidsMascot &&
         other.kidsEquippedSticker == kidsEquippedSticker &&
-        listEquals.equals(other.kidsOwnedAccessories, kidsOwnedAccessories) &&
+        _listEq.equals(other.kidsOwnedAccessories, kidsOwnedAccessories) &&
         other.kidsEquippedAccessory == kidsEquippedAccessory &&
         other.vowlMascot == vowlMascot &&
         other.vowlEquippedAccessory == vowlEquippedAccessory &&
-        listEquals.equals(other.vowlOwnedAccessories, vowlOwnedAccessories) &&
-        listEquals.equals(other.vowlOwnedMascots, vowlOwnedMascots) &&
-        listEquals.equals(other.claimedStreakMilestones, claimedStreakMilestones) &&
-        listEquals.equals(other.claimedLevelMilestones, claimedLevelMilestones) &&
-        deepEquals.equals(other.coinHistory, coinHistory) &&
+        _listEq.equals(other.vowlOwnedAccessories, vowlOwnedAccessories) &&
+        _listEq.equals(other.vowlOwnedMascots, vowlOwnedMascots) &&
+        _listEq.equals(
+          other.claimedStreakMilestones,
+          claimedStreakMilestones,
+        ) &&
+        _listEq.equals(other.claimedLevelMilestones, claimedLevelMilestones) &&
+        _deepEq.equals(other.coinHistory, coinHistory) &&
         other.hasPermanentXPBoost == hasPermanentXPBoost &&
         other.lastFreeSpinDate == lastFreeSpinDate &&
         other.lastAdSpinDate == lastAdSpinDate &&
         other.adSpinsUsedToday == adSpinsUsedToday &&
-        other.lastKidsDailyRewardDate == lastKidsDailyRewardDate &&
-        listEquals.equals(other.kidsOwnedFurniture, kidsOwnedFurniture) &&
-        mapEquals.equals(other.kidsEquippedFurniture, kidsEquippedFurniture);
+        _listEq.equals(other.kidsOwnedFurniture, kidsOwnedFurniture) &&
+        _mapEq.equals(other.kidsEquippedFurniture, kidsEquippedFurniture);
   }
 
   @override
   int get hashCode {
-    final Object hasher = Object.hashAll([
+    // Split into groups because Object.hash has a 20-argument ceiling.
+    final h1 = Object.hashAll([
       id,
       email,
       displayName,
@@ -407,146 +449,44 @@ class UserEntity {
       isPremium,
       isEmailVerified,
       premiumExpiryDate,
-      const MapEquality().hash(categoryStats),
-      const MapEquality().hash(unlockedLevels),
-      const DeepCollectionEquality().hash(completedLevels),
-      const ListEquality().hash(badges),
+      _mapEq.hash(categoryStats),
+      _mapEq.hash(unlockedLevels),
+      _deepEq.hash(completedLevels),
+      _listEq.hash(badges),
       streakFreezes,
       hintCount,
       hintPacks,
     ]);
-    final Object hasher2 = Object.hashAll([
+    final h2 = Object.hashAll([
       doubleXP,
       doubleXPExpiry,
-      const MapEquality().hash(dailyXpHistory),
-      const DeepCollectionEquality().hash(recentActivities),
+      _mapEq.hash(dailyXpHistory),
+      _deepEq.hash(recentActivities),
       lastVipGiftDate,
       lastDailyRewardDate,
+      lastKidsDailyRewardDate,
       kidsCoins,
-      const ListEquality().hash(kidsStickers),
+      _listEq.hash(kidsStickers),
       kidsMascot,
       kidsEquippedSticker,
-      const ListEquality().hash(kidsOwnedAccessories),
+      _listEq.hash(kidsOwnedAccessories),
       kidsEquippedAccessory,
       vowlMascot,
       vowlEquippedAccessory,
-      const ListEquality().hash(vowlOwnedAccessories),
-      const ListEquality().hash(vowlOwnedMascots),
-      const ListEquality().hash(claimedStreakMilestones),
-      const ListEquality().hash(claimedLevelMilestones),
-      const DeepCollectionEquality().hash(coinHistory),
-      hasPermanentXPBoost,
+      _listEq.hash(vowlOwnedAccessories),
+      _listEq.hash(vowlOwnedMascots),
+      _listEq.hash(claimedStreakMilestones),
+      _listEq.hash(claimedLevelMilestones),
+      _deepEq.hash(coinHistory),
     ]);
-    final Object hasher3 = Object.hashAll([
+    final h3 = Object.hashAll([
+      hasPermanentXPBoost,
       lastFreeSpinDate,
       lastAdSpinDate,
       adSpinsUsedToday,
-      lastKidsDailyRewardDate,
-      const ListEquality().hash(kidsOwnedFurniture),
-      const MapEquality().hash(kidsEquippedFurniture),
+      _listEq.hash(kidsOwnedFurniture),
+      _mapEq.hash(kidsEquippedFurniture),
     ]);
-    return Object.hash(hasher, hasher2, hasher3);
-  }
-
-  UserEntity copyWith({
-    List<String>? badges,
-    Map<String, int>? categoryStats,
-    List<int>? claimedLevelMilestones,
-    List<int>? claimedStreakMilestones,
-    List<Map<String, dynamic>>? coinHistory,
-    int? coins,
-    Map<String, List<int>>? completedLevels,
-    int? currentStreak,
-    Map<String, int>? dailyXpHistory,
-    String? displayName,
-    int? doubleXP,
-    DateTime? doubleXPExpiry,
-    int? hintCount,
-    int? hintPacks,
-    bool? isAdmin,
-    bool? isEmailVerified,
-    bool? isPremium,
-    int? kidsCoins,
-    String? kidsEquippedAccessory,
-    String? kidsEquippedSticker,
-    String? kidsMascot,
-    List<String>? kidsOwnedAccessories,
-    List<String>? kidsStickers,
-    DateTime? lastDailyRewardDate,
-    DateTime? lastKidsDailyRewardDate,
-    DateTime? lastLoginDate,
-    DateTime? lastVipGiftDate,
-    String? photoUrl,
-    String? fcmToken,
-    DateTime? premiumExpiryDate,
-    List<Map<String, dynamic>>? recentActivities,
-    int? streakFreezes,
-    int? totalExp,
-    Map<String, int>? unlockedLevels,
-    bool? hasPermanentXPBoost,
-    DateTime? lastFreeSpinDate,
-    DateTime? lastAdSpinDate,
-    int? adSpinsUsedToday,
-    String? vowlMascot,
-    String? vowlEquippedAccessory,
-    List<String>? vowlOwnedAccessories,
-    List<String>? vowlOwnedMascots,
-    List<String>? kidsOwnedFurniture,
-    Map<String, String>? kidsEquippedFurniture,
-  }) {
-    return UserEntity(
-      id: id,
-      email: email,
-      badges: badges ?? this.badges,
-      categoryStats: categoryStats ?? this.categoryStats,
-      claimedLevelMilestones:
-          claimedLevelMilestones ?? this.claimedLevelMilestones,
-      claimedStreakMilestones:
-          claimedStreakMilestones ?? this.claimedStreakMilestones,
-      coinHistory: coinHistory ?? this.coinHistory,
-      coins: coins ?? this.coins,
-      completedLevels: completedLevels ?? this.completedLevels,
-      currentStreak: currentStreak ?? this.currentStreak,
-      dailyXpHistory: dailyXpHistory ?? this.dailyXpHistory,
-      displayName: displayName ?? this.displayName,
-      doubleXP: doubleXP ?? this.doubleXP,
-      doubleXPExpiry: doubleXPExpiry ?? this.doubleXPExpiry,
-      hintCount: hintCount ?? this.hintCount,
-      hintPacks: hintPacks ?? this.hintPacks,
-      isAdmin: isAdmin ?? this.isAdmin,
-      isEmailVerified: isEmailVerified ?? this.isEmailVerified,
-      isPremium: isPremium ?? this.isPremium,
-      kidsCoins: kidsCoins ?? this.kidsCoins,
-      kidsEquippedAccessory:
-          kidsEquippedAccessory ?? this.kidsEquippedAccessory,
-      kidsEquippedSticker: kidsEquippedSticker ?? this.kidsEquippedSticker,
-      kidsMascot: kidsMascot ?? this.kidsMascot,
-      kidsOwnedAccessories: kidsOwnedAccessories ?? this.kidsOwnedAccessories,
-      kidsStickers: kidsStickers ?? this.kidsStickers,
-      lastDailyRewardDate: lastDailyRewardDate ?? this.lastDailyRewardDate,
-      lastKidsDailyRewardDate: lastKidsDailyRewardDate ?? this.lastKidsDailyRewardDate,
-      lastLoginDate: lastLoginDate ?? this.lastLoginDate,
-      lastVipGiftDate: lastVipGiftDate ?? this.lastVipGiftDate,
-      photoUrl: photoUrl ?? this.photoUrl,
-      fcmToken: fcmToken ?? this.fcmToken,
-      premiumExpiryDate: premiumExpiryDate ?? this.premiumExpiryDate,
-      recentActivities: recentActivities ?? this.recentActivities,
-      streakFreezes: streakFreezes ?? this.streakFreezes,
-      totalExp: totalExp ?? this.totalExp,
-      unlockedLevels: unlockedLevels ?? this.unlockedLevels,
-      hasPermanentXPBoost: hasPermanentXPBoost ?? this.hasPermanentXPBoost,
-      lastFreeSpinDate: lastFreeSpinDate ?? this.lastFreeSpinDate,
-      lastAdSpinDate: lastAdSpinDate ?? this.lastAdSpinDate,
-      adSpinsUsedToday: adSpinsUsedToday ?? this.adSpinsUsedToday,
-      vowlMascot: vowlMascot ?? this.vowlMascot,
-      vowlEquippedAccessory:
-          vowlEquippedAccessory ?? this.vowlEquippedAccessory,
-      vowlOwnedAccessories:
-          vowlOwnedAccessories ?? this.vowlOwnedAccessories,
-      vowlOwnedMascots: vowlOwnedMascots ?? this.vowlOwnedMascots,
-      kidsOwnedFurniture: kidsOwnedFurniture ?? this.kidsOwnedFurniture,
-      kidsEquippedFurniture:
-          kidsEquippedFurniture ?? this.kidsEquippedFurniture,
-    );
+    return Object.hash(h1, h2, h3);
   }
 }

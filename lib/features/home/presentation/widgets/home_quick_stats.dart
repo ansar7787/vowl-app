@@ -10,10 +10,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 class HomeQuickStats extends StatelessWidget {
   final UserEntity user;
 
-  const HomeQuickStats({
-    super.key,
-    required this.user,
-  });
+  const HomeQuickStats({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -64,49 +61,62 @@ class HomeQuickStats extends StatelessWidget {
     String route,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return ScaleButton(
-      onTap: () => context.push(route),
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(20.r),
-        padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 8.w),
-        child: SizedBox(
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-            Container(
-              padding: EdgeInsets.all(8.r),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.1),
-                shape: BoxShape.circle,
+    return Semantics(
+      button: true,
+      label: '$label: $value',
+      child: ScaleButton(
+        onTap: () => context.push(route),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(minHeight: 48.r),
+          child: GlassTile(
+            borderRadius: BorderRadius.circular(20.r),
+            padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 8.w),
+            child: ExcludeSemantics(
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(8.r),
+                      decoration: BoxDecoration(
+                        color: color.withValues(alpha: 0.1),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(icon, color: color, size: 20.r),
+                    ),
+                    SizedBox(height: 8.h),
+                    Text(
+                      value,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        height: 1.1,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    SizedBox(height: 2.h),
+                    Text(
+                      label,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 8.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white38 : Colors.black45,
+                        letterSpacing: 1.0,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
               ),
-              child: Icon(icon, color: color, size: 20.r),
             ),
-            SizedBox(height: 8.h),
-            Text(
-              value,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : const Color(0xFF0F172A),
-                height: 1.1,
-              ),
-            ),
-            SizedBox(height: 2.h),
-            Text(
-              label,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 8.sp,
-                fontWeight: FontWeight.w800,
-                color: isDark ? Colors.white38 : Colors.black45,
-                letterSpacing: 1.0,
-              ),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ],
-        ),
+          ),
         ),
       ),
     );

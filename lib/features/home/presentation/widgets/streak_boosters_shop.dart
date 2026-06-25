@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:flutter/foundation.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
@@ -16,10 +17,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 class StreakBoostersShop extends StatefulWidget {
   final UserEntity user;
 
-  const StreakBoostersShop({
-    super.key,
-    required this.user,
-  });
+  const StreakBoostersShop({super.key, required this.user});
 
   @override
   State<StreakBoostersShop> createState() => _StreakBoostersShopState();
@@ -38,44 +36,66 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'STREAK BOOSTERS',
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 20.sp,
-                fontWeight: FontWeight.w900,
-                letterSpacing: -0.5,
+            Flexible(
+              child: Text(
+                context.tr(
+                  'streak.boosters_title',
+                  fallback: 'STREAK BOOSTERS',
+                ),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: -0.5,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-              decoration: BoxDecoration(
-                color: Colors.green.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(color: Colors.green.withValues(alpha: 0.3)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.green.withValues(alpha: 0.05),
-                    blurRadius: 10,
-                  ),
-                ],
+            Semantics(
+              label: context.tr(
+                'home.coins_value_label',
+                args: [user.coins.toString()],
+                fallback: '${user.coins} coins',
               ),
-              child: Row(
-                children: [
-                  Icon(
-                    LucideIcons.circleDollarSign,
-                    color: Colors.green,
-                    size: 16.r,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+                decoration: BoxDecoration(
+                  color: Colors.green.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: Colors.green.withValues(alpha: 0.3),
                   ),
-                  SizedBox(width: 8.w),
-                  Text(
-                    '${user.coins}',
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.green,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.green.withValues(alpha: 0.05),
+                      blurRadius: 10,
                     ),
+                  ],
+                ),
+                child: ExcludeSemantics(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        LucideIcons.circleDollarSign,
+                        color: Colors.green,
+                        size: 16.r,
+                      ),
+                      SizedBox(width: 8.w),
+                      Text(
+                        '${user.coins}',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.green,
+                        ),
+                        maxLines: 1,
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ).animate().shimmer(duration: 3.seconds, color: Colors.white24),
           ],
@@ -83,8 +103,11 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
         SizedBox(height: 24.h),
         _buildShopItem(
           context,
-          title: 'STREAK REPAIR',
-          subtitle: 'Melt the ice and restore your flame from yesterday.',
+          title: context.tr('streak.repair_title', fallback: 'STREAK REPAIR'),
+          subtitle: context.tr(
+            'streak.repair_subtitle',
+            fallback: 'Melt the ice and restore your flame from yesterday.',
+          ),
           icon: LucideIcons.flame,
           color: const Color(0xFFFF5F6D),
           cost: 200,
@@ -93,14 +116,17 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           onTap: user.currentStreak > 0
               ? null
               : () => _handlePurchase(
-                    context,
-                    name: 'Streak Repair',
-                    cost: 200,
-                    currentCoins: user.coins,
-                    action: () => context.read<ProgressionBloc>().add(
-                          const ProgressionRepairStreakRequested(200),
-                        ),
+                  context,
+                  name: context.tr(
+                    'adventure.streak_repair',
+                    fallback: 'Streak Repair',
                   ),
+                  cost: 200,
+                  currentCoins: user.coins,
+                  action: () => context.read<ProgressionBloc>().add(
+                    const ProgressionRepairStreakRequested(200),
+                  ),
+                ),
           onAdTap: user.currentStreak > 0
               ? null
               : () {
@@ -109,12 +135,24 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                     isPremium: user.isPremium,
                     onDismissed: () {},
                     onUserEarnedReward: (reward) {
+                      // BUG FIX: this callback can fire many seconds after
+                      // the user started watching the rewarded ad — long
+                      // enough that they may have already navigated away
+                      // from this screen. Using `context` past that point
+                      // without checking it's still mounted risks calling
+                      // `context.read` on a deactivated element and crashing.
+                      if (!context.mounted) return;
                       context.read<ProgressionBloc>().add(
-                            const ProgressionRepairStreakWithAdRequested(),
-                          );
+                        const ProgressionRepairStreakWithAdRequested(),
+                      );
                       try {
                         Haptics.vibrate(HapticsType.success);
-                      } catch (_) {}
+                      } catch (e) {
+                        if (kDebugMode)
+                          debugPrint(
+                            'StreakBoostersShop: haptics unavailable: $e',
+                          );
+                      }
                       CustomSnackBar.show(
                         context: context,
                         message: context.tr('adventure.streak_repaired'),
@@ -128,7 +166,10 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
         _buildShopItem(
           context,
           title: context.tr('adventure.streak_shield').toUpperCase(),
-          subtitle: 'A mystical barrier that prevents streak loss.',
+          subtitle: context.tr(
+            'streak.shield_subtitle',
+            fallback: 'A mystical barrier that prevents streak loss.',
+          ),
           icon: LucideIcons.shieldCheck,
           color: const Color(0xFF38BDF8),
           cost: 150,
@@ -140,15 +181,20 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
             cost: 150,
             currentCoins: user.coins,
             action: () => context.read<ProgressionBloc>().add(
-                  const ProgressionPurchaseStreakFreezeRequested(150),
-                ),
+              const ProgressionPurchaseStreakFreezeRequested(150),
+            ),
           ),
         ),
         SizedBox(height: 16.h),
         _buildShopItem(
           context,
-          title: 'DOUBLE XP BOOST',
-          subtitle: 'Double the wisdom, double the progress for 24h.',
+          title: context
+              .tr('adventure.double_xp', fallback: 'DOUBLE XP BOOST')
+              .toUpperCase(),
+          subtitle: context.tr(
+            'streak.double_xp_subtitle',
+            fallback: 'Double the wisdom, double the progress for 24h.',
+          ),
           icon: LucideIcons.zap,
           color: const Color(0xFFFCD34D),
           cost: 300,
@@ -157,12 +203,15 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           currentCoins: user.coins,
           onTap: () => _handlePurchase(
             context,
-            name: context.tr('adventure.double_xp'),
+            name: context.tr(
+              'adventure.double_xp',
+              fallback: 'Double XP Boost',
+            ),
             cost: 300,
             currentCoins: user.coins,
             action: () => context.read<ProgressionBloc>().add(
-                  const ProgressionActivateDoubleXPRequested(300),
-                ),
+              const ProgressionActivateDoubleXPRequested(300),
+            ),
           ),
         ),
       ],
@@ -181,26 +230,41 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
     if (currentCoins < cost) {
       try {
         Haptics.vibrate(HapticsType.error);
-      } catch (_) {}
+      } catch (e) {
+        if (kDebugMode)
+          debugPrint('StreakBoostersShop: haptics unavailable: $e');
+      }
       CustomSnackBar.show(
-      context: context,
-      message: "Insufficient Vowl Coins! Needed: $cost",
-      type: CustomSnackBarType.error,
-    );
+        context: context,
+        message: context.tr(
+          'streak.insufficient_coins',
+          args: [cost.toString()],
+          fallback: 'Insufficient Vowl Coins! Needed: $cost',
+        ),
+        type: CustomSnackBarType.error,
+      );
       return;
     }
 
     setState(() => _isProcessing = true);
     try {
       Haptics.vibrate(HapticsType.heavy);
-    } catch (_) {}
+    } catch (e) {
+      if (kDebugMode) debugPrint('StreakBoostersShop: haptics unavailable: $e');
+    }
     action();
 
-    CustomSnackBar.show(
-      context: context,
-      message: "$name Activated!",
-      type: CustomSnackBarType.success,
-    );
+    if (context.mounted) {
+      CustomSnackBar.show(
+        context: context,
+        message: context.tr(
+          'streak.item_activated',
+          args: [name],
+          fallback: '$name Activated!',
+        ),
+        type: CustomSnackBarType.success,
+      );
+    }
 
     await Future.delayed(const Duration(milliseconds: 1500));
     if (mounted) setState(() => _isProcessing = false);
@@ -223,207 +287,328 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
   }) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final canAfford = currentCoins >= cost;
+    final locale = Localizations.localeOf(context).toString();
 
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(24.r),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-        child: InkWell(
-          onTap: isDisabled ? null : onTap,
-          borderRadius: BorderRadius.circular(24.r),
-          child: Container(
-            padding: EdgeInsets.all(20.r),
-            decoration: BoxDecoration(
-              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white.withValues(alpha: 0.7),
-              borderRadius: BorderRadius.circular(24.r),
-              border: Border.all(
-                color: isDisabled
-                    ? Colors.white.withValues(alpha: 0.05)
-                    : (canAfford ? color.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.2)),
-                width: 1.5,
-              ),
-              boxShadow: [
-                if (canAfford)
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.05),
-                    blurRadius: 15,
-                    offset: const Offset(0, 8),
+    final statusLabel = isDisabled
+        ? context.tr('streak.status_not_needed', fallback: 'NOT NEEDED')
+        : (isActive
+              ? context.tr('streak.status_active', fallback: 'ACTIVE')
+              : (canAfford
+                    ? context.tr(
+                        'streak.cost_label',
+                        args: [cost.toString()],
+                        fallback: '$cost coins',
+                      )
+                    : context.tr(
+                        'streak.cant_afford_label',
+                        args: [cost.toString()],
+                        fallback: 'Need $cost coins',
+                      )));
+
+    return Semantics(
+      button: !isDisabled && !isActive,
+      enabled: !isDisabled,
+      label: '$title, $subtitle, $statusLabel',
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(24.r),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: InkWell(
+            onTap: isDisabled ? null : onTap,
+            borderRadius: BorderRadius.circular(24.r),
+            child: ExcludeSemantics(
+              child: Container(
+                padding: EdgeInsets.all(20.r),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.05)
+                      : Colors.white.withValues(alpha: 0.7),
+                  borderRadius: BorderRadius.circular(24.r),
+                  border: Border.all(
+                    color: isDisabled
+                        ? Colors.white.withValues(alpha: 0.05)
+                        : (canAfford
+                              ? color.withValues(alpha: 0.2)
+                              : Colors.grey.withValues(alpha: 0.2)),
+                    width: 1.5,
                   ),
-              ],
-            ),
-            child: Row(
-              children: [
-                !isDisabled
-                    ? Container(
-                        padding: EdgeInsets.all(12.r),
-                        decoration: BoxDecoration(
-                          color: color.withValues(alpha: 0.1),
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: color.withValues(alpha: 0.2),
-                              blurRadius: 10,
-                            ),
-                          ],
-                        ),
-                        child: Icon(icon, color: color, size: 24.r),
-                      ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.1, 1.1),
-                          duration: 2.seconds,
-                        )
-                    : Container(
-                        padding: EdgeInsets.all(12.r),
-                        decoration: BoxDecoration(
-                          color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.05),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(icon, color: Colors.grey, size: 24.r),
+                  boxShadow: [
+                    if (canAfford)
+                      BoxShadow(
+                        color: color.withValues(alpha: 0.05),
+                        blurRadius: 15,
+                        offset: const Offset(0, 8),
                       ),
-                SizedBox(width: 16.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    !isDisabled
+                        ? Container(
+                                padding: EdgeInsets.all(12.r),
+                                decoration: BoxDecoration(
+                                  color: color.withValues(alpha: 0.1),
+                                  shape: BoxShape.circle,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: color.withValues(alpha: 0.2),
+                                      blurRadius: 10,
+                                    ),
+                                  ],
+                                ),
+                                child: Icon(icon, color: color, size: 24.r),
+                              )
+                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                              .scale(
+                                begin: const Offset(1, 1),
+                                end: const Offset(1.1, 1.1),
+                                duration: 2.seconds,
+                              )
+                        : Container(
+                            padding: EdgeInsets.all(12.r),
+                            decoration: BoxDecoration(
+                              color: (isDark ? Colors.white : Colors.black)
+                                  .withValues(alpha: 0.05),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(icon, color: Colors.grey, size: 24.r),
+                          ),
+                    SizedBox(width: 16.w),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Flexible(
-                            child: Text(
-                              title,
-                              style: TextStyle(fontFamily: 'Outfit', 
-                                fontSize: 15.sp,
-                                fontWeight: FontWeight.w900,
-                                color: isDark ? Colors.white : Colors.black87,
+                          Row(
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  title,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: isDark
+                                        ? Colors.white
+                                        : Colors.black87,
+                                  ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
+                              if (count != null && count > 0) ...[
+                                SizedBox(width: 8.w),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 6.w,
+                                    vertical: 2.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: color.withValues(alpha: 0.1),
+                                    borderRadius: BorderRadius.circular(8.r),
+                                  ),
+                                  child: Text(
+                                    'x$count',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w800,
+                                      color: isDisabled ? Colors.grey : color,
+                                    ),
+                                    maxLines: 1,
+                                  ),
+                                ),
+                              ],
+                              if (isActive || isDisabled) ...[
+                                SizedBox(width: 8.w),
+                                Flexible(
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 6.w,
+                                      vertical: 2.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color:
+                                          (isActive
+                                                  ? const Color(0xFF10B981)
+                                                  : Colors.grey)
+                                              .withValues(alpha: 0.1),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                    ),
+                                    child: Text(
+                                      isActive
+                                          ? context.tr(
+                                              'streak.status_active',
+                                              fallback: 'ACTIVE',
+                                            )
+                                          : context.tr(
+                                              'streak.status_not_needed',
+                                              fallback: 'NOT NEEDED',
+                                            ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: isActive
+                                            ? const Color(0xFF10B981)
+                                            : Colors.grey,
+                                      ),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ],
+                          ),
+                          SizedBox(height: 4.h),
+                          Text(
+                            subtitle,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              color: isDisabled
+                                  ? Colors.grey.withValues(alpha: 0.5)
+                                  : (isDark ? Colors.white54 : Colors.black54),
+                              fontWeight: FontWeight.w500,
+                            ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          if (isActive && activeUntil != null) ...[
+                            SizedBox(height: 4.h),
+                            Text(
+                              context.tr(
+                                'streak.expires_label',
+                                args: [
+                                  DateFormat(
+                                    'MMM d, h:mm a',
+                                    locale,
+                                  ).format(activeUntil),
+                                ],
+                                fallback:
+                                    'Expires ${DateFormat('MMM d, h:mm a', locale).format(activeUntil)}',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                color: const Color(
+                                  0xFF10B981,
+                                ).withValues(alpha: 0.7),
+                                fontWeight: FontWeight.w600,
+                              ),
+                              maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
-                          ),
-                          if (count != null && count > 0) ...[
-                            SizedBox(width: 8.w),
-                            Container(
-                              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
-                              decoration: BoxDecoration(
-                                color: color.withValues(alpha: 0.1),
-                                borderRadius: BorderRadius.circular(8.r),
-                              ),
-                              child: Text(
-                                'x$count',
-                                style: TextStyle(fontFamily: 'Outfit', 
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: isDisabled ? Colors.grey : color,
-                                ),
-                              ),
-                            ),
-                          ],
-                          if (isActive || isDisabled) ...[
-                            SizedBox(width: 8.w),
-                            Container(
-                              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
-                              decoration: BoxDecoration(
-                                color: (isActive ? const Color(0xFF10B981) : Colors.grey).withValues(alpha: 0.1),
-                                borderRadius: BorderRadius.circular(8.r),
-                              ),
-                              child: Text(
-                                isActive ? 'ACTIVE' : 'NOT NEEDED',
-                                style: TextStyle(fontFamily: 'Outfit', 
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: isActive ? const Color(0xFF10B981) : Colors.grey,
-                                ),
-                              ),
-                            ),
                           ],
                         ],
                       ),
-                      SizedBox(height: 4.h),
-                      Text(
-                        subtitle,
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 12.sp,
-                          color: isDisabled ? Colors.grey.withValues(alpha: 0.5) : (isDark ? Colors.white54 : Colors.black54),
-                          fontWeight: FontWeight.w500,
+                    ),
+                    if (!isDisabled && !isActive) ...[
+                      SizedBox(width: 8.w),
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 6.h,
                         ),
-                      ),
-                      if (isActive && activeUntil != null) ...[
-                        SizedBox(height: 4.h),
-                        Text(
-                          "Expires ${DateFormat('MMM d, h:mm a').format(activeUntil)}",
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 10.sp,
-                            color: const Color(0xFF10B981).withValues(alpha: 0.7),
-                            fontWeight: FontWeight.w600,
+                        decoration: BoxDecoration(
+                          color: canAfford
+                              ? color.withValues(alpha: 0.1)
+                              : Colors.red.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(12.r),
+                          border: Border.all(
+                            color: canAfford
+                                ? color.withValues(alpha: 0.3)
+                                : Colors.red.withValues(alpha: 0.3),
                           ),
                         ),
-                      ],
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              LucideIcons.circleDollarSign,
+                              color: canAfford ? color : Colors.red,
+                              size: 14.r,
+                            ),
+                            SizedBox(width: 4.w),
+                            Text(
+                              '$cost',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w900,
+                                color: canAfford ? color : Colors.red,
+                              ),
+                              maxLines: 1,
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
-                  ),
-                ),
-                if (!isDisabled && !isActive) ...[
-                  SizedBox(width: 8.w),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-                    decoration: BoxDecoration(
-                      color: canAfford ? color.withValues(alpha: 0.1) : Colors.red.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(
-                        color: canAfford ? color.withValues(alpha: 0.3) : Colors.red.withValues(alpha: 0.3),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          LucideIcons.circleDollarSign,
-                          color: canAfford ? color : Colors.red,
-                          size: 14.r,
+                    if (onAdTap != null && !isDisabled) ...[
+                      SizedBox(width: 8.w),
+                      Semantics(
+                        button: true,
+                        label: context.tr(
+                          'streak.watch_ad_free',
+                          fallback: 'Watch an ad to get this for free',
                         ),
-                        SizedBox(width: 4.w),
-                        Text(
-                          '$cost',
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w900,
-                            color: canAfford ? color : Colors.red,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-                if (onAdTap != null && !isDisabled) ...[
-                  SizedBox(width: 8.w),
-                  InkWell(
-                    onTap: onAdTap,
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-                      decoration: BoxDecoration(
-                        color: Colors.amber.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(12.r),
-                        border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            LucideIcons.playCircle,
-                            color: Colors.amber,
-                            size: 12.r,
-                          ),
-                          SizedBox(width: 4.w),
-                          Text(
-                            'FREE',
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.amber,
+                        child: InkWell(
+                          onTap: onAdTap,
+                          child: ExcludeSemantics(
+                            child: ConstrainedBox(
+                              // Visual pill is intentionally compact; this
+                              // guarantees the 48dp minimum tap target for a
+                              // real monetization action without resizing it.
+                              constraints: BoxConstraints(
+                                minWidth: 48.r,
+                                minHeight: 48.r,
+                              ),
+                              child: Container(
+                                alignment: Alignment.center,
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10.w,
+                                  vertical: 6.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Colors.amber.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  border: Border.all(
+                                    color: Colors.amber.withValues(alpha: 0.3),
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      LucideIcons.playCircle,
+                                      color: Colors.amber,
+                                      size: 12.r,
+                                    ),
+                                    SizedBox(width: 4.w),
+                                    Text(
+                                      context.tr(
+                                        'streak.free_label',
+                                        fallback: 'FREE',
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.amber,
+                                      ),
+                                      maxLines: 1,
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
-                ],
-              ],
+                    ],
+                  ],
+                ),
+              ),
             ),
           ),
         ),

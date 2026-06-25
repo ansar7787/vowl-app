@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 
 /// Abstract interface representing the haptic feedback coordinator for Vowl.
@@ -64,7 +65,9 @@ class HapticServiceImpl implements HapticService {
     _vibrationSupportFuture ??= _checkPlatformSupport();
     try {
       return await _vibrationSupportFuture!;
-    } catch (_) {
+    } catch (e) {
+      if (kDebugMode)
+        debugPrint('HapticService: vibration support check failed: $e');
       return false;
     }
   }
@@ -73,7 +76,8 @@ class HapticServiceImpl implements HapticService {
   Future<bool> _checkPlatformSupport() async {
     try {
       return await Haptics.canVibrate();
-    } catch (_) {
+    } catch (e) {
+      if (kDebugMode) debugPrint('HapticService: canVibrate() failed: $e');
       return false;
     }
   }
@@ -84,8 +88,11 @@ class HapticServiceImpl implements HapticService {
       if (await _checkVibrate()) {
         await Haptics.vibrate(type);
       }
-    } catch (_) {
-      // Safe fallback: absorb exceptions to prevent crashes on simulators or unsupported hardware
+    } catch (e) {
+      // Safe fallback: absorb exceptions to prevent crashes on simulators
+      // or unsupported hardware. Haptics are a non-critical enhancement,
+      // never worth crashing or blocking a user action over.
+      if (kDebugMode) debugPrint('HapticService: vibrate($type) failed: $e');
     }
   }
 
@@ -115,8 +122,8 @@ class HapticServiceImpl implements HapticService {
         await Future.delayed(const Duration(milliseconds: 100));
         await Haptics.vibrate(HapticsType.selection);
       }
-    } catch (_) {
-      // Safe fallback: absorb exceptions
+    } catch (e) {
+      if (kDebugMode) debugPrint('HapticService: rhythmicTick() failed: $e');
     }
   }
 }
