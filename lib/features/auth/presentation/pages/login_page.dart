@@ -68,7 +68,7 @@ class _LoginViewState extends State<LoginView> {
               context.go(AppRouter.homeRoute);
             }
             if (state.errorMessage != null) {
-              final isWarning = state.errorMessage!.contains('canceled');
+              final isWarning = state.errorMessage!.contains('cancel');
               _showSnackBar(
                 context,
                 state.errorMessage!,
