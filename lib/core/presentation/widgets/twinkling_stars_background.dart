@@ -68,7 +68,7 @@ class _TwinklingStarsBackgroundState extends State<TwinklingStarsBackground>
       child: RepaintBoundary(
         child: AnimatedBuilder(
           animation: _controller,
-          builder: (_, __) => CustomPaint(
+          builder: (context, child) => CustomPaint(
             painter: _StarPainter(
               stars: _stars,
               progress: _controller.value,

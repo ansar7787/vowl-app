@@ -142,7 +142,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                 // ── Watch button ──────────────────────────────────
                 ValueListenableBuilder<bool>(
                   valueListenable: _isLoading,
-                  builder: (_, loading, __) {
+                  builder: (context, loading, child) {
                     return Semantics(
                       button: true,
                       enabled: !loading,

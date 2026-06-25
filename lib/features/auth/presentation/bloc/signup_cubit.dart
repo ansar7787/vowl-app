@@ -166,7 +166,7 @@ class SignUpCubit extends Cubit<SignUpState> {
         emit(
           state.copyWith(
             isSubmitting: false,
-            errorMessage: () => AuthErrorHandler.getMessage(failure.message),
+            errorMessage: () => AuthErrorHandler.getKey(failure.message),
           ),
         );
       },

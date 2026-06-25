@@ -16,9 +16,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 /// CustomSnackBar.show(context: context, message: message, type: CustomSnackBarType.error);
 /// ```
 ///
-/// ### Backward compatibility
-/// [getMessage] is preserved for call sites not yet migrated to context-aware
-/// translation. It returns English strings directly and should be phased out.
+/// translation.
 class AuthErrorHandler {
   AuthErrorHandler._(); // Non-instantiable.
 
@@ -138,50 +136,5 @@ class AuthErrorHandler {
     return _kGeneric;
   }
 
-  // ── Backward compatibility ────────────────────────────────────────────────
 
-  /// Returns a hardcoded English error string.
-  ///
-  /// @deprecated Use [getKey] + `context.tr(key)` instead. This method does
-  /// not support localisation and will always return English regardless of
-  /// the user's language setting.
-  @Deprecated('Use getKey() + context.tr() for localised error messages')
-  static String getMessage(dynamic error) {
-    final key = getKey(error);
-    // Returns English fallbacks for backward compatibility during migration.
-    switch (key) {
-      case _kInvalidCredential:
-        return 'Incorrect email or password. If you signed up using Google, '
-            'please try the Google Sign-In button!';
-      case _kEmailInUse:
-        return 'This email is already registered. Try logging in or resetting '
-            'your password!';
-      case _kInvalidEmail:
-        return 'Please enter a valid email address (e.g., traveler@vowl.com).';
-      case _kWeakPassword:
-        return 'Please choose a stronger password (at least 6 characters).';
-      case _kNetworkFailed:
-        return 'We couldn\'t connect to our servers. Please check your '
-            'internet connection!';
-      case _kTooManyRequests:
-        return 'Too many login attempts. Please wait a moment and try again!';
-      case _kPermissionDenied:
-        return 'We encountered a database sync issue. Please try signing up '
-            'again!';
-      case _kUserDisabled:
-        return 'This account has been disabled. Please reach out to Vowl '
-            'Support.';
-      case _kRequiresRecentLogin:
-        return 'For your security, please sign out and sign in again before '
-            'continuing.';
-      case _kCredentialInUse:
-        return 'This Google account is already linked with another email '
-            'address.';
-      case _kSignInCancelled:
-        return 'Sign in was cancelled.';
-      default:
-        return 'Authentication issue. Please try again or contact Vowl '
-            'Support!';
-    }
-  }
 }

@@ -9,6 +9,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/widgets/verify_email_widgets.dart';
 
@@ -153,7 +154,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
         if (state.message != null &&
             state.message != 'auth.email_verification_sent') {
           _showSnackBar(
-            AuthErrorHandler.getMessage(state.message!),
+            context.tr(AuthErrorHandler.getKey(state.message!)),
             CustomSnackBarType.error,
           );
         }

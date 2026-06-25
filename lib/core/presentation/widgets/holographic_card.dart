@@ -72,7 +72,7 @@ class _HolographicCardState extends State<HolographicCard>
               child: RepaintBoundary(
                 child: AnimatedBuilder(
                   animation: _controller,
-                  builder: (_, __) {
+                  builder: (context, child) {
                     final p = _controller.value;
                     return DecoratedBox(
                       decoration: BoxDecoration(

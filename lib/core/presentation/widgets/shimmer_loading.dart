@@ -236,7 +236,7 @@ class LeaderboardShimmerLoading extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: 6,
-              itemBuilder: (_, __) => Padding(
+              itemBuilder: (context, index) => Padding(
                 padding: EdgeInsets.only(bottom: 12.h),
                 child: ShimmerLoading.rounded(height: 80, borderRadius: 24),
               ),
@@ -297,7 +297,7 @@ class HomeShimmerLoading extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: 3,
               padding: EdgeInsets.only(left: 24.w),
-              itemBuilder: (_, __) => Container(
+              itemBuilder: (context, index) => Container(
                 width: 300.w,
                 margin: EdgeInsets.only(right: 16.w),
                 child: ShimmerLoading.rounded(height: 180, borderRadius: 24),
@@ -319,7 +319,7 @@ class HomeShimmerLoading extends StatelessWidget {
               childAspectRatio: 0.85,
             ),
             itemCount: 4,
-            itemBuilder: (_, __) =>
+            itemBuilder: (context, index) =>
                 ShimmerLoading.rounded(height: 200, borderRadius: 24),
           ),
         ],
@@ -374,7 +374,7 @@ class ProfileShimmerLoading extends StatelessWidget {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 4,
-                itemBuilder: (_, i) => Container(
+                itemBuilder: (context, i) => Container(
                   width: 100.w,
                   margin: EdgeInsets.only(right: 16.w),
                   child: ShimmerLoading.rounded(height: 100, borderRadius: 20),

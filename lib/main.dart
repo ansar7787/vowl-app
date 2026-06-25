@@ -244,7 +244,7 @@ class _MyAppState extends State<MyApp> {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (_, __) => MultiBlocProvider(
+      builder: (context, child) => MultiBlocProvider(
         providers: [
           BlocProvider<AuthBloc>(create: (_) => di.sl<AuthBloc>()),
           BlocProvider<EconomyBloc>(create: (_) => di.sl<EconomyBloc>()),

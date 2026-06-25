@@ -415,7 +415,7 @@ class UserModel extends UserEntity {
         .toList();
   }
 
-  /// Parses the nested [completedLevels] map: {String → List<int>}.
+  /// Parses the nested [completedLevels] map: `{String → List<int>}`.
   static Map<String, List<int>> _parseCompletedLevels(dynamic raw) {
     if (raw == null) return const {};
     final outer = raw as Map<Object?, Object?>;

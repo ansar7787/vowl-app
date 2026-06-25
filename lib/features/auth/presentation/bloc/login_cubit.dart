@@ -173,7 +173,7 @@ class LoginCubit extends Cubit<LoginState> {
       (failure) => emit(
         state.copyWith(
           isSubmitting: false,
-          errorMessage: () => AuthErrorHandler.getMessage(failure.message),
+          errorMessage: () => AuthErrorHandler.getKey(failure.message),
         ),
       ),
       (_) => emit(state.copyWith(isSubmitting: false, isSuccess: true)),
@@ -201,7 +201,7 @@ class LoginCubit extends Cubit<LoginState> {
       (failure) => emit(
         state.copyWith(
           isSubmitting: false,
-          errorMessage: () => AuthErrorHandler.getMessage(failure.message),
+          errorMessage: () => AuthErrorHandler.getKey(failure.message),
         ),
       ),
       (_) => emit(state.copyWith(isSubmitting: false, isSuccess: true)),

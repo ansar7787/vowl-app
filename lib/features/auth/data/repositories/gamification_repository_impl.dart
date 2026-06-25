@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
-import 'package:flutter/foundation.dart';
+
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/features/auth/data/repositories/firebase_failure_handler_mixin.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
@@ -478,11 +478,5 @@ class GamificationRepositoryImpl
     }
   }
 
-  // ---------------------------------------------------------------------------
-  // Private helpers
-  // ---------------------------------------------------------------------------
 
-  void _log(String message) {
-    if (kDebugMode) debugPrint(message);
-  }
 }

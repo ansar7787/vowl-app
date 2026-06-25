@@ -139,7 +139,7 @@ class _HintAdCardState extends State<HintAdCard> {
                   // ── Watch button ────────────────────────────────────────
                   ValueListenableBuilder<bool>(
                     valueListenable: _isLoading,
-                    builder: (_, loading, __) {
+                    builder: (context, loading, child) {
                       return Semantics(
                         button: true,
                         enabled: !loading,

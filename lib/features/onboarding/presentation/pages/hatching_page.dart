@@ -27,7 +27,7 @@ class _HatchingPageState extends State<HatchingPage> {
   int _stage = 0;
   final FlutterTts _tts = FlutterTts();
   Timer? _hatchTimer;
-  bool _isTtsSpeaking = false;
+
 
   @override
   void initState() {
@@ -52,15 +52,9 @@ class _HatchingPageState extends State<HatchingPage> {
       await _tts.setPitch(1.2);
       await _tts.setSpeechRate(0.5);
 
-      _tts.setStartHandler(() {
-        if (mounted) setState(() => _isTtsSpeaking = true);
-      });
-      _tts.setCompletionHandler(() {
-        if (mounted) setState(() => _isTtsSpeaking = false);
-      });
-      _tts.setErrorHandler((_) {
-        if (mounted) setState(() => _isTtsSpeaking = false);
-      });
+      _tts.setStartHandler(() {});
+      _tts.setCompletionHandler(() {});
+      _tts.setErrorHandler((_) {});
     } catch (e) {
       debugPrint('HatchingPage: TTS initialization failed: $e');
     }

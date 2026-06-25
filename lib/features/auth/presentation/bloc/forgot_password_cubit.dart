@@ -125,7 +125,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
       (failure) => emit(
         state.copyWith(
           isSubmitting: false,
-          errorMessage: () => AuthErrorHandler.getMessage(failure.message),
+          errorMessage: () => AuthErrorHandler.getKey(failure.message),
         ),
       ),
       (_) => emit(

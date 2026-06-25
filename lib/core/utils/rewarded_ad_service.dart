@@ -63,7 +63,7 @@ abstract class RewardedAdService {
 /// disabling the button while pending) is already correct and will not
 /// need to change.
 class RewardedAdServiceImpl implements RewardedAdService {
-  bool _isAdReady = false;
+
 
   @override
   Future<void> preload() async {
@@ -71,10 +71,10 @@ class RewardedAdServiceImpl implements RewardedAdService {
       // Wire up your real ad network's preload call here, e.g.
       // RewardedAd.load(adUnitId: ..., request: AdRequest(), ...), and
       // set `_isAdReady = true` from its onAdLoaded callback.
-      _isAdReady = false;
+
     } catch (e) {
       sl<AppLogger>().error('RewardedAdService: Preload failed', error: e);
-      _isAdReady = false;
+
     }
   }
 
@@ -108,7 +108,7 @@ class RewardedAdServiceImpl implements RewardedAdService {
       'RewardedAdService: No ad network integrated yet - returning '
       'notAvailable so no reward is granted. See class doc comment.',
     );
-    _isAdReady = false;
+
     return RewardedAdResult.notAvailable;
   }
 }

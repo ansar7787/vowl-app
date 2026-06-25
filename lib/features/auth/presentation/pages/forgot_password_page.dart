@@ -9,6 +9,7 @@ import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/forgot_password_cubit.dart';
 import 'package:vowl/features/auth/presentation/widgets/forgot_password_widgets.dart';
 
@@ -222,6 +223,6 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
     String message,
     CustomSnackBarType type,
   ) {
-    CustomSnackBar.show(context: context, message: message, type: type);
+    CustomSnackBar.show(context: context, message: context.tr(message), type: type);
   }
 }
