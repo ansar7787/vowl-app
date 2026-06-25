@@ -694,7 +694,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
 
                 di.sl<AdService>().showInterstitialAd(
                   isPremium: isPremium,
-                  isLevelCompletion: false,
                   onDismissed: () async {
                     if (context.mounted) {
                       await context.push(

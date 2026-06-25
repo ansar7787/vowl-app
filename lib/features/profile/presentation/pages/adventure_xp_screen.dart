@@ -42,7 +42,7 @@ class AdventureXPScreen extends StatelessWidget {
             // host names, stack fragments) that is meaningless to a
             // player and a minor information-disclosure risk. Log the
             // original for diagnostics; show a safe generic message.
-            AppLogger.warning(
+            di.sl<AppLogger>().error(
               'Unhandled ProgressionBloc message shown as generic error',
               error: rawMessage,
             );

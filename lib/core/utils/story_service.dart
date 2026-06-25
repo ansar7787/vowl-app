@@ -678,20 +678,27 @@ class StoryServiceImpl implements StoryService {
 
   Color _getCategoryColor(String categoryId) {
     final String id = categoryId.toLowerCase();
-    if (id.contains('alphabet') || id.contains('speak'))
+    if (id.contains('alphabet') || id.contains('speak')) {
       return const Color(0xFFF43F5E);
-    if (id.contains('number') || id.contains('grammar'))
+    }
+    if (id.contains('number') || id.contains('grammar')) {
       return const Color(0xFF0EA5E9);
-    if (id.contains('color') || id.contains('write'))
+    }
+    if (id.contains('color') || id.contains('write')) {
       return const Color(0xFFF59E0B);
-    if (id.contains('animal') || id.contains('listen'))
+    }
+    if (id.contains('animal') || id.contains('listen')) {
       return const Color(0xFF6366F1);
-    if (id.contains('fruit') || id.contains('accent'))
+    }
+    if (id.contains('fruit') || id.contains('accent')) {
       return const Color(0xFFEF4444);
-    if (id.contains('emotion') || id.contains('roleplay'))
+    }
+    if (id.contains('emotion') || id.contains('roleplay')) {
       return const Color(0xFF06B6D4);
-    if (id.contains('transport') || id.contains('read'))
+    }
+    if (id.contains('transport') || id.contains('read')) {
       return const Color(0xFF2563EB);
+    }
     if (id.contains('elite')) return const Color(0xFFFFD700);
     return const Color(0xFF6366F1);
   }

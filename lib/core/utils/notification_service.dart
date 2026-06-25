@@ -106,8 +106,9 @@ class NotificationService {
       tz.setLocalLocation(tz.getLocation(timeZoneName));
       _timezoneInitialized = true;
     } catch (e) {
-      if (kDebugMode)
+      if (kDebugMode) {
         debugPrint('Timezone initialization error: $e. Falling back to UTC.');
+      }
       try {
         tz.setLocalLocation(tz.getLocation('UTC'));
         _timezoneInitialized = true;
@@ -241,8 +242,9 @@ class NotificationService {
     RemoteMessage? initialMessage = await FirebaseMessaging.instance
         .getInitialMessage();
     if (initialMessage != null) {
-      if (kDebugMode)
+      if (kDebugMode) {
         debugPrint('App opened from terminated state by notification');
+      }
       _handleNotificationTap(initialMessage.data['path'] as String?);
     }
   }
@@ -280,8 +282,9 @@ class NotificationService {
     try {
       final token = await _fcm.getToken();
       if (token == null) {
-        if (kDebugMode)
+        if (kDebugMode) {
           debugPrint('NotificationService: FCM token is null, skipping save.');
+        }
         return;
       }
       if (kDebugMode) {
@@ -289,8 +292,9 @@ class NotificationService {
       }
       await _updateTokenInFirestore(token);
     } catch (e) {
-      if (kDebugMode)
+      if (kDebugMode) {
         debugPrint('NotificationService: Error saving FCM token: $e');
+      }
     }
   }
 
@@ -299,10 +303,11 @@ class NotificationService {
     try {
       final user = FirebaseAuth.instance.currentUser;
       if (user == null) {
-        if (kDebugMode)
+        if (kDebugMode) {
           debugPrint(
             'NotificationService: No authenticated user, FCM token not saved.',
           );
+        }
         return;
       }
 
@@ -314,10 +319,11 @@ class NotificationService {
         debugPrint('NotificationService: FCM token saved to Firestore.');
       }
     } catch (e) {
-      if (kDebugMode)
+      if (kDebugMode) {
         debugPrint(
           'NotificationService: Error updating FCM token in Firestore: $e',
         );
+      }
     }
   }
 
@@ -345,8 +351,9 @@ class NotificationService {
         );
 
         if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-          if (kDebugMode)
+          if (kDebugMode) {
             debugPrint('User granted Firebase notification permission');
+          }
           await _saveFCMTokenToFirestore();
         }
 
@@ -363,8 +370,9 @@ class NotificationService {
           }
         }
       } catch (e) {
-        if (kDebugMode)
+        if (kDebugMode) {
           debugPrint('Error requesting notification permissions: $e');
+        }
       } finally {
         if (!completer.isCompleted) completer.complete();
       }
@@ -444,10 +452,11 @@ class NotificationService {
 
     // Resilient timezone wait mechanism (non-blocking)
     if (!_timezoneInitialized) {
-      if (kDebugMode)
+      if (kDebugMode) {
         debugPrint(
           'NotificationService: Waiting for timezone initialization...',
         );
+      }
       int retry = 0;
       while (!_timezoneInitialized && retry < 10) {
         await Future.delayed(const Duration(milliseconds: 200));

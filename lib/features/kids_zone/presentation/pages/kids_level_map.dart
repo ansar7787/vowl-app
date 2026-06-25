@@ -893,7 +893,6 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     if (route != null) {
       adService.showInterstitialAd(
         isPremium: isPremium,
-        isLevelCompletion: false,
         onDismissed: () {
           if (context.mounted) {
             context.push(route, extra: level);

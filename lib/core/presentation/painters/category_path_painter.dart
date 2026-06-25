@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 
 /// A custom painter that draws organic Bézier paths connecting quest-map nodes.

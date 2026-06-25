@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:vowl/core/error/exceptions.dart';
 import 'package:vowl/core/data/constants/quest_registry.dart';
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/injection_container.dart';
 
 /// Contract definition for quest-loading service layers.
 abstract class QuestService {
@@ -29,12 +30,8 @@ List<Map<String, dynamic>> _parseQuestsInIsolate(String jsonString) {
           .map((e) => Map<String, dynamic>.from(e as Map))
           .toList();
     }
-  } catch (e, stackTrace) {
-    AppLogger.error(
-      'AssetQuestService Isolate Error: Failed to parse JSON',
-      error: e,
-      stackTrace: stackTrace,
-    );
+  } catch (e) {
+    debugPrint('AssetQuestService Isolate Error: Failed to parse JSON. Error: $e');
   }
   return [];
 }
@@ -137,8 +134,9 @@ class AssetQuestService implements QuestService {
     final nextBatchFirstLevel = currentBatch * 10 + 1;
     final path = QuestRegistry.getAssetPath(gameType, nextBatchFirstLevel);
 
-    if (_batchCache.containsKey(path) || _loadingPaths.containsKey(path))
+    if (_batchCache.containsKey(path) || _loadingPaths.containsKey(path)) {
       return;
+    }
 
     try {
       final completer = Completer<List<Map<String, dynamic>>>();
@@ -199,7 +197,7 @@ class AssetQuestService implements QuestService {
 
         return fallbackRegex.hasMatch(id);
       } catch (e) {
-        AppLogger.warning('AssetQuestService: Filter error', error: e);
+        sl<AppLogger>().error('AssetQuestService: Filter error', error: e);
         return false;
       }
     }
@@ -213,7 +211,7 @@ class AssetQuestService implements QuestService {
           .join(', ');
       final message =
           'No quests matched level $level in batch $gameType. Found ${quests.length} quests in file. Sample IDs: $sampleIds.';
-      AppLogger.error(message);
+      sl<AppLogger>().error(message);
       throw ServerException(message);
     }
 

@@ -459,8 +459,9 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     if (progress <= 0.0) return context.tr('category_games.rank_beginner');
     if (progress < 0.15) return context.tr('category_games.rank_novice');
     if (progress < 0.35) return context.tr('category_games.rank_scholar');
-    if (progress < 0.55)
+    if (progress < 0.55) {
       return context.tr('home.discovery_diff_expert').toUpperCase();
+    }
     if (progress < 0.80) return context.tr('category_games.rank_virtuoso');
     if (progress < 0.99) return context.tr('quest_archive.status_grandmaster');
     return context.tr('quest_archive.status_legendary');

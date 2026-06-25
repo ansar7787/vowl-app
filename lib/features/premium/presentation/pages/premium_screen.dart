@@ -144,7 +144,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
       // and is confusing/unactionable for a paying customer. The raw
       // error is still logged for diagnostics; the user only ever sees a
       // safe, localized, generic message.
-      AppLogger.error(
+      di.sl<AppLogger>().error(
         'Premium upgrade failed after successful payment',
         error: e,
         stackTrace: stackTrace,

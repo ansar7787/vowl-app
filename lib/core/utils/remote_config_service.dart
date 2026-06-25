@@ -1,6 +1,7 @@
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/injection_container.dart';
 
 /// Abstract contract defining the Remote Configuration service interface.
 ///
@@ -87,7 +88,7 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
       await _remoteConfig.fetchAndActivate();
       _isRemoteDataFresh = true;
     } catch (e) {
-      AppLogger.warning(
+      sl<AppLogger>().error(
         'RemoteConfigService: Local config initialization completed; remote fetch bypassed',
         error: e,
       );

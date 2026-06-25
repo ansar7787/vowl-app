@@ -6,7 +6,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/notification_service.dart';
-import 'package:vowl/core/utils/review_service.dart';
 import 'package:vowl/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:vowl/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
@@ -168,7 +167,7 @@ void initAuthFeature(GetIt sl) {
     () => UseWritingHint(sl<ShopRepository>()),
   );
   sl.registerLazySingleton<UpdateUserRewards>(
-    () => UpdateUserRewards(sl<GamificationRepository>(), sl<ReviewService>()),
+    () => UpdateUserRewards(sl<GamificationRepository>()),
   );
   sl.registerLazySingleton<UpdateProfilePicture>(
     () => UpdateProfilePicture(sl<UserRepository>()),
@@ -213,6 +212,7 @@ void initAuthFeature(GetIt sl) {
       deleteAccount: sl<DeleteAccount>(),
       forgotPassword: sl<ForgotPassword>(),
       getCurrentUser: sl<GetCurrentUser>(),
+      sendEmailVerification: sl<SendEmailVerification>(),
     ),
   );
   sl.registerLazySingleton<EconomyBloc>(
@@ -259,7 +259,6 @@ void initAuthFeature(GetIt sl) {
     () => LoginCubit(
       logInWithEmail: sl<LogInWithEmail>(),
       logInWithGoogle: sl<LogInWithGoogle>(),
-      forgotPassword: sl<ForgotPassword>(),
       networkInfo: sl<NetworkInfo>(),
     ),
   );

@@ -557,7 +557,7 @@ class AdventureLevelScreen extends StatelessWidget {
 
             return _buildMilestoneItem(
               context,
-              badge.name,
+              context.tr(badge.nameKey),
               context.tr('adventure.reach_level', args: ['$milestoneLevel']),
               badge.icon,
               badge.color,

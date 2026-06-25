@@ -72,8 +72,9 @@ class _HomeScreenState extends State<HomeScreen> {
             final aL = a.totalLevelsCompleted;
             final bL = b.totalLevelsCompleted;
             if (bL != aL) return bL.compareTo(aL);
-            if (b.totalExp != a.totalExp)
+            if (b.totalExp != a.totalExp) {
               return b.totalExp.compareTo(a.totalExp);
+            }
             return b.currentStreak.compareTo(a.currentStreak);
           });
         final currentUser = context.read<AuthBloc>().state.user;

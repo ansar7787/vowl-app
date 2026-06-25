@@ -148,10 +148,11 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                       try {
                         Haptics.vibrate(HapticsType.success);
                       } catch (e) {
-                        if (kDebugMode)
+                        if (kDebugMode) {
                           debugPrint(
                             'StreakBoostersShop: haptics unavailable: $e',
                           );
+                        }
                       }
                       CustomSnackBar.show(
                         context: context,
@@ -231,8 +232,9 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
       try {
         Haptics.vibrate(HapticsType.error);
       } catch (e) {
-        if (kDebugMode)
+        if (kDebugMode) {
           debugPrint('StreakBoostersShop: haptics unavailable: $e');
+        }
       }
       CustomSnackBar.show(
         context: context,

@@ -3,6 +3,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/injection_container.dart';
 
 /// Abstract contract defining Text-To-Speech (TTS) and Speech-To-Text (STT) services.
 ///
@@ -90,7 +91,7 @@ class SpeechServiceImpl implements SpeechService {
         _onWordCallback?.call(word);
       });
     } catch (e) {
-      AppLogger.warning(
+      sl<AppLogger>().error(
         'SpeechService: TTS configuration initialization error',
         error: e,
       );
@@ -124,7 +125,7 @@ class SpeechServiceImpl implements SpeechService {
       await _tts.setSpeechRate(rate);
       await _tts.speak(text);
     } catch (e) {
-      AppLogger.warning('SpeechService: TTS speech execution error', error: e);
+      sl<AppLogger>().error('SpeechService: TTS speech execution error', error: e);
     }
   }
 
@@ -134,7 +135,7 @@ class SpeechServiceImpl implements SpeechService {
       await _tts.stop();
       await _stt.stop();
     } catch (e) {
-      AppLogger.warning('SpeechService: Speech stop execution error', error: e);
+      sl<AppLogger>().error('SpeechService: Speech stop execution error', error: e);
     }
   }
 
@@ -157,9 +158,9 @@ class SpeechServiceImpl implements SpeechService {
 
       _isSttInitialized = await _stt.initialize(
         onError: (val) =>
-            AppLogger.warning('SpeechService: STT Error', error: val),
+            sl<AppLogger>().error('SpeechService: STT Error', error: val),
         onStatus: (status) {
-          AppLogger.debug('SpeechService: STT Status: $status');
+          sl<AppLogger>().debug('SpeechService: STT Status: $status');
           if (status == 'done' || status == 'notListening') {
             _onDoneCallback?.call();
             _onDoneCallback = null;
@@ -168,7 +169,7 @@ class SpeechServiceImpl implements SpeechService {
       );
       return _isSttInitialized;
     } catch (e) {
-      AppLogger.warning(
+      sl<AppLogger>().error(
         'SpeechService: STT initialization exception',
         error: e,
       );
@@ -200,7 +201,7 @@ class SpeechServiceImpl implements SpeechService {
         listenMode: ListenMode.dictation, // Continuous speech shadowing support
       );
     } catch (e) {
-      AppLogger.warning('SpeechService: STT listening exception', error: e);
+      sl<AppLogger>().error('SpeechService: STT listening exception', error: e);
     }
   }
 }

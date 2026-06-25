@@ -1,4 +1,5 @@
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/injection_container.dart';
 
 /// Result of attempting to show a rewarded ad.
 enum RewardedAdResult {
@@ -72,7 +73,7 @@ class RewardedAdServiceImpl implements RewardedAdService {
       // set `_isAdReady = true` from its onAdLoaded callback.
       _isAdReady = false;
     } catch (e) {
-      AppLogger.warning('RewardedAdService: Preload failed', error: e);
+      sl<AppLogger>().error('RewardedAdService: Preload failed', error: e);
       _isAdReady = false;
     }
   }
@@ -82,7 +83,7 @@ class RewardedAdServiceImpl implements RewardedAdService {
     try {
       return await _loadAndShow();
     } catch (e, stackTrace) {
-      AppLogger.error(
+      sl<AppLogger>().error(
         'RewardedAdService: showRewardedAd failed',
         error: e,
         stackTrace: stackTrace,
@@ -103,7 +104,7 @@ class RewardedAdServiceImpl implements RewardedAdService {
     //     own onUserEarnedReward callback
     //   - return `RewardedAdResult.failed` on any SDK-level error
     // ================================================================
-    AppLogger.warning(
+    sl<AppLogger>().warning(
       'RewardedAdService: No ad network integrated yet - returning '
       'notAvailable so no reward is granted. See class doc comment.',
     );

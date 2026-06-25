@@ -66,8 +66,9 @@ class HapticServiceImpl implements HapticService {
     try {
       return await _vibrationSupportFuture!;
     } catch (e) {
-      if (kDebugMode)
+      if (kDebugMode) {
         debugPrint('HapticService: vibration support check failed: $e');
+      }
       return false;
     }
   }

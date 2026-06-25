@@ -182,7 +182,6 @@ void _initWriting(GetIt sl) {
       soundService: sl<SoundService>(),
       hapticService: sl<HapticService>(),
       useHint: sl<UseHint>(),
-      networkInfo: sl<NetworkInfo>(),
     ),
   );
 }

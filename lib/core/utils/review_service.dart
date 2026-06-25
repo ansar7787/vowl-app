@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/injection_container.dart';
 
 /// Abstract contract defining the In-App review rating system.
 ///
@@ -70,7 +71,7 @@ class InAppReviewService implements ReviewService {
       currentCount++;
       await prefs.setInt(keyQuestsCompleted, currentCount);
 
-      AppLogger.debug(
+      sl<AppLogger>().debug(
         "ReviewService: Quest completed count incremented to $currentCount",
       );
 
@@ -87,7 +88,7 @@ class InAppReviewService implements ReviewService {
         }
       }
     } catch (e) {
-      AppLogger.warning(
+      sl<AppLogger>().error(
         "ReviewService: Error tracking completed quest",
         error: e,
       );
@@ -99,7 +100,7 @@ class InAppReviewService implements ReviewService {
     try {
       final isAvailable = await _inAppReview.isAvailable();
       if (!isAvailable) {
-        AppLogger.debug(
+        sl<AppLogger>().debug(
           "ReviewService: In-app review is not available on this device.",
         );
         return;
@@ -113,11 +114,11 @@ class InAppReviewService implements ReviewService {
         DateTime.now().millisecondsSinceEpoch,
       );
 
-      AppLogger.debug("ReviewService: Requesting native in-app review popup.");
+      sl<AppLogger>().debug("ReviewService: Requesting native in-app review popup.");
 
       await _inAppReview.requestReview();
     } catch (e) {
-      AppLogger.warning(
+      sl<AppLogger>().error(
         "ReviewService: Error displaying native review prompt",
         error: e,
       );

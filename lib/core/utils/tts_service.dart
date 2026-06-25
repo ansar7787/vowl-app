@@ -1,6 +1,7 @@
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/injection_container.dart';
 
 /// Abstract contract defining the Text-To-Speech (TTS) synthesis engine.
 ///
@@ -44,7 +45,7 @@ class TtsServiceImpl implements TtsService {
       // Cache SharedPreferences in memory to evaluate app mute state instantly without circular references
       _prefs = await SharedPreferences.getInstance();
     } catch (e) {
-      AppLogger.warning(
+      sl<AppLogger>().error(
         'TtsService: Configuration initialization error',
         error: e,
       );
@@ -83,7 +84,7 @@ class TtsServiceImpl implements TtsService {
       }
       await _flutterTts.speak(cleanText);
     } catch (e) {
-      AppLogger.warning('TtsService: Speech execution error', error: e);
+      sl<AppLogger>().error('TtsService: Speech execution error', error: e);
     }
   }
 
@@ -92,7 +93,7 @@ class TtsServiceImpl implements TtsService {
     try {
       await _flutterTts.stop();
     } catch (e) {
-      AppLogger.warning('TtsService: Stop execution error', error: e);
+      sl<AppLogger>().error('TtsService: Stop execution error', error: e);
     }
   }
 }

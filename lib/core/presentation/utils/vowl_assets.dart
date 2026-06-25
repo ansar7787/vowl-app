@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /// Centralised, immutable asset registry for Vowl mascots and accessories.

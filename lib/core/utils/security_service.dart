@@ -1,6 +1,7 @@
 import 'package:safe_device/safe_device.dart';
 import 'dart:io';
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/injection_container.dart';
 
 /// Abstract contract defining the device integrity and security protection layer.
 ///
@@ -64,7 +65,7 @@ class SecurityServiceImpl implements SecurityService {
       return true;
     } catch (e) {
       // Fall back to permissive access if plugin execution fails on target hardware
-      AppLogger.warning(
+      sl<AppLogger>().error(
         'SecurityService: Device security verification exception',
         error: e,
       );
@@ -77,7 +78,7 @@ class SecurityServiceImpl implements SecurityService {
     try {
       return await SafeDevice.isDevelopmentModeEnable;
     } catch (e) {
-      AppLogger.warning(
+      sl<AppLogger>().error(
         'SecurityService: Developer mode verification exception',
         error: e,
       );

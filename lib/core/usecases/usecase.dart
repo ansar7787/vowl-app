@@ -16,6 +16,7 @@ import 'package:vowl/core/error/failures.dart';
 /// }
 /// ```
 abstract class UseCase<T, Params> {
+  const UseCase();
   Future<Either<Failure, T>> call(Params params);
 }
 

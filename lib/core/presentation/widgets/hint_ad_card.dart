@@ -42,7 +42,7 @@ class _HintAdCardState extends State<HintAdCard> {
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
     try {
-      await di.sl<AdService>().showHintRewardedAd(
+      di.sl<AdService>().showHintRewardedAd(
         isPremium: isPremium,
         onHintEarned: () {
           rewardEarned = true;

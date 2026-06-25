@@ -216,7 +216,7 @@ class GameInstructionService {
   // Large centralized static register matching GameSubtypes to their Briefing parameters.
   static const Map<GameSubtype, GameBriefing> _briefings = {
     // 1. ELITE MASTERY
-    GameSubtype.storyBuilder: const GameBriefing(
+    GameSubtype.storyBuilder: GameBriefing(
       title: "Story Builder",
       icon: Icons.reorder_rounded,
       objective:
@@ -230,7 +230,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Look for transition words like 'However', 'Consequently', or 'Subsequently' to link sequences!",
     ),
-    GameSubtype.idiomMatch: const GameBriefing(
+    GameSubtype.idiomMatch: GameBriefing(
       title: "Idiom Match",
       icon: Icons.psychology_rounded,
       objective: "Pair the idioms with their true definitions and meanings.",
@@ -243,7 +243,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Don't take idioms literally! They usually describe a feeling or social situation.",
     ),
-    GameSubtype.speedSpelling: const GameBriefing(
+    GameSubtype.speedSpelling: GameBriefing(
       title: "Speed Spelling",
       icon: Icons.spellcheck_rounded,
       objective: "Spell the target word correctly before the timer runs out.",
@@ -256,7 +256,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Trust your muscle memory! Trying to think about every letter can slow you down.",
     ),
-    GameSubtype.accentShadowing: const GameBriefing(
+    GameSubtype.accentShadowing: GameBriefing(
       title: "Accent Shadowing",
       icon: Icons.mic_external_on_rounded,
       objective:
@@ -272,7 +272,7 @@ class GameInstructionService {
     ),
 
     // 2. GRAMMAR
-    GameSubtype.voiceSwap: const GameBriefing(
+    GameSubtype.voiceSwap: GameBriefing(
       title: "Voice Swap",
       icon: Icons.swap_horiz_rounded,
       objective:
@@ -286,7 +286,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: In Passive voice, the object becomes the star! Use 'by [someone]' only if needed.",
     ),
-    GameSubtype.directIndirectSpeech: const GameBriefing(
+    GameSubtype.directIndirectSpeech: GameBriefing(
       title: "Speech Shift",
       icon: Icons.forum_rounded,
       objective:
@@ -300,7 +300,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: 'Present' becomes 'Past'! If someone said 'I am here', report 'they were there'.",
     ),
-    GameSubtype.tenseMastery: const GameBriefing(
+    GameSubtype.tenseMastery: GameBriefing(
       title: "Tense Mastery",
       icon: Icons.history_toggle_off_rounded,
       objective: "Select or place verbs in their correct chronological tenses.",
@@ -313,7 +313,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Look for 'Signal Words'! 'Since' often needs Perfect, while 'Usually' needs Present.",
     ),
-    GameSubtype.grammarQuest: const GameBriefing(
+    GameSubtype.grammarQuest: GameBriefing(
       title: "Grammar Core",
       icon: Icons.gavel_rounded,
       objective:
@@ -323,7 +323,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Read the sentence out loud in your head! Often, you can 'hear' if a rule is broken.",
     ),
-    GameSubtype.sentenceCorrection: const GameBriefing(
+    GameSubtype.sentenceCorrection: GameBriefing(
       title: "Error Auditor",
       icon: Icons.spellcheck_rounded,
       objective:
@@ -333,7 +333,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Focus on subject-verb agreement first—it's the most common source of errors!",
     ),
-    GameSubtype.wordReorder: const GameBriefing(
+    GameSubtype.wordReorder: GameBriefing(
       title: "Syntax Reorder",
       icon: Icons.reorder_rounded,
       objective: "Arrange scrambled words into a grammatically sound sentence.",
@@ -346,7 +346,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Adjectives usually come before nouns, and adverbs often follow verbs.",
     ),
-    GameSubtype.partsOfSpeech: const GameBriefing(
+    GameSubtype.partsOfSpeech: GameBriefing(
       title: "Lexical Anatomy",
       icon: Icons.category_rounded,
       objective:
@@ -360,7 +360,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: If it's an action, it's a verb. If it's a person/place/thing, it's a noun.",
     ),
-    GameSubtype.subjectVerbAgreement: const GameBriefing(
+    GameSubtype.subjectVerbAgreement: GameBriefing(
       title: "Agreement Sync",
       icon: Icons.sync_rounded,
       objective: "Choose the correct verb form to match the subject.",
@@ -373,7 +373,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Watch out for 'distractors'—prepositional phrases that sit between subject and verb!",
     ),
-    GameSubtype.clauseConnector: const GameBriefing(
+    GameSubtype.clauseConnector: GameBriefing(
       title: "Clause Linker",
       icon: Icons.link_rounded,
       objective: "Choose the appropriate conjunction to connect the clauses.",
@@ -386,7 +386,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Use 'Because' for reasons, 'Although' for contrast, and 'While' for simultaneous actions.",
     ),
-    GameSubtype.questionFormatter: const GameBriefing(
+    GameSubtype.questionFormatter: GameBriefing(
       title: "Inquiry Logic",
       icon: Icons.help_outline_rounded,
       objective:
@@ -396,7 +396,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Remember the 'Qu-A-S-V' rule: Question word, Auxiliary, Subject, Verb!",
     ),
-    GameSubtype.articleInsertion: const GameBriefing(
+    GameSubtype.articleInsertion: GameBriefing(
       title: "Article Anchor",
       icon: Icons.anchor_rounded,
       objective:
@@ -410,7 +410,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Use 'The' for specific things we both know about, and 'A/An' for general things.",
     ),
-    GameSubtype.modifierPlacement: const GameBriefing(
+    GameSubtype.modifierPlacement: GameBriefing(
       title: "Modifier Map",
       icon: Icons.location_on_rounded,
       objective:
@@ -424,7 +424,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Place the modifier as close as possible to the word it's describing!",
     ),
-    GameSubtype.modalsSelection: const GameBriefing(
+    GameSubtype.modalsSelection: GameBriefing(
       title: "Modal Matrix",
       icon: Icons.grid_view_rounded,
       objective: "Select the modal verb that best fits the sentence's context.",
@@ -437,7 +437,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: 'Must' is for strong obligation, while 'Should' is for friendly advice.",
     ),
-    GameSubtype.prepositionChoice: const GameBriefing(
+    GameSubtype.prepositionChoice: GameBriefing(
       title: "Position Pro",
       icon: Icons.directions_rounded,
       objective: "Choose the correct preposition to complete the sentence.",
@@ -450,7 +450,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Use 'In' for large spaces, 'On' for surfaces, and 'At' for specific points.",
     ),
-    GameSubtype.pronounResolution: const GameBriefing(
+    GameSubtype.pronounResolution: GameBriefing(
       title: "Pronoun Pivot",
       icon: Icons.people_rounded,
       objective:
@@ -464,7 +464,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: If there are two people, 'he' can be confusing. Use their names or clear markers!",
     ),
-    GameSubtype.punctuationMastery: const GameBriefing(
+    GameSubtype.punctuationMastery: GameBriefing(
       title: "Symbol Scribe",
       icon: Icons.short_text_rounded,
       objective:
@@ -478,7 +478,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Use a comma before 'and' only in long lists or between independent clauses!",
     ),
-    GameSubtype.relativeClauses: const GameBriefing(
+    GameSubtype.relativeClauses: GameBriefing(
       title: "Relative Rail",
       icon: Icons.linear_scale_rounded,
       objective:
@@ -488,7 +488,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Use 'Who' for people and 'Which' or 'That' for things and animals.",
     ),
-    GameSubtype.conditionals: const GameBriefing(
+    GameSubtype.conditionals: GameBriefing(
       title: "If-Logic",
       icon: Icons.alt_route_rounded,
       objective:
@@ -502,7 +502,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: In 'Second Conditional' (imaginary), use 'If I WERE' even for singular subjects!",
     ),
-    GameSubtype.conjunctions: const GameBriefing(
+    GameSubtype.conjunctions: GameBriefing(
       title: "Logic Junction",
       icon: Icons.join_inner_rounded,
       objective: "Select the correct conjunction to bridge the thoughts.",
@@ -516,7 +516,7 @@ class GameInstructionService {
     ),
 
     // 3. READING
-    GameSubtype.skimmingScanning: const GameBriefing(
+    GameSubtype.skimmingScanning: GameBriefing(
       title: "Skim & Scan",
       icon: Icons.search_rounded,
       objective: "Scan the text fast to locate specific facts or main ideas.",
@@ -529,7 +529,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Use your eyes like a radar! Hunt for capital letters or numbers first.",
     ),
-    GameSubtype.clozeTest: const GameBriefing(
+    GameSubtype.clozeTest: GameBriefing(
       title: "Context Mastery",
       icon: Icons.format_color_text_rounded,
       objective: "Fill the blanks by choosing contextually correct words.",
@@ -542,7 +542,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Read the whole sentence first! Surrounding words reveal the needed part of speech.",
     ),
-    GameSubtype.findWordMeaning: const GameBriefing(
+    GameSubtype.findWordMeaning: GameBriefing(
       title: "Lexical Linker",
       icon: Icons.menu_book_rounded,
       objective:
@@ -552,7 +552,7 @@ class GameInstructionService {
       tip:
           "Context is your best friend! The surrounding words often reveal hidden meanings.",
     ),
-    GameSubtype.guessTitle: const GameBriefing(
+    GameSubtype.guessTitle: GameBriefing(
       title: "Title Tactician",
       icon: Icons.title_rounded,
       objective: "Read the passage and choose the most appropriate title.",
@@ -561,7 +561,7 @@ class GameInstructionService {
       tip:
           "A great title captures the 'big picture'. Look for the most repeated themes!",
     ),
-    GameSubtype.paragraphSummary: const GameBriefing(
+    GameSubtype.paragraphSummary: GameBriefing(
       title: "Summary Sieve",
       icon: Icons.short_text_rounded,
       objective:
@@ -571,7 +571,7 @@ class GameInstructionService {
       tip:
           "Avoid sentences that only mention one small detail; look for the overarching idea!",
     ),
-    GameSubtype.readAndAnswer: const GameBriefing(
+    GameSubtype.readAndAnswer: GameBriefing(
       title: "Insight Analyst",
       icon: Icons.fact_check_rounded,
       objective:
@@ -581,7 +581,7 @@ class GameInstructionService {
       tip:
           "Don't guess! The answer is ALWAYS in the text—you just have to find it.",
     ),
-    GameSubtype.readAndMatch: const GameBriefing(
+    GameSubtype.readAndMatch: GameBriefing(
       title: "Semantic Bridge",
       icon: Icons.bolt_rounded,
       objective: "Connect related facts and concepts from the reading passage.",
@@ -590,7 +590,7 @@ class GameInstructionService {
       tip:
           "Think about how concepts relate—is it cause and effect, or part and whole?",
     ),
-    GameSubtype.readingConclusion: const GameBriefing(
+    GameSubtype.readingConclusion: GameBriefing(
       title: "Logical Finisher",
       icon: Icons.last_page_rounded,
       objective:
@@ -600,7 +600,7 @@ class GameInstructionService {
       tip:
           "Follow the clues the author left! Where does the logic naturally lead?",
     ),
-    GameSubtype.readingInference: const GameBriefing(
+    GameSubtype.readingInference: GameBriefing(
       title: "Subtext Sleuth",
       icon: Icons.biotech_rounded,
       objective:
@@ -609,7 +609,7 @@ class GameInstructionService {
       actionText: "Deduce Subtext",
       tip: "The author's tone and choice of words often hide a deeper meaning.",
     ),
-    GameSubtype.readingSpeedCheck: const GameBriefing(
+    GameSubtype.readingSpeedCheck: GameBriefing(
       title: "Velocity Reader",
       icon: Icons.speed_rounded,
       objective: "Test your reading speed and comprehension under a timer.",
@@ -618,7 +618,7 @@ class GameInstructionService {
       tip:
           "Don't subvocalize (read out loud in your head)! Let your eyes glide over the text.",
     ),
-    GameSubtype.sentenceOrderReading: const GameBriefing(
+    GameSubtype.sentenceOrderReading: GameBriefing(
       title: "Structure Architect",
       icon: Icons.architecture_rounded,
       objective:
@@ -628,7 +628,7 @@ class GameInstructionService {
       tip:
           "Look for transition words like 'however', 'moreover', and 'finally'.",
     ),
-    GameSubtype.trueFalseReading: const GameBriefing(
+    GameSubtype.trueFalseReading: GameBriefing(
       title: "Truth Verifier",
       icon: Icons.verified_user_rounded,
       objective: "Determine if statements are true or false based on the text.",
@@ -638,7 +638,7 @@ class GameInstructionService {
     ),
 
     // 4. VOCABULARY
-    GameSubtype.flashcards: const GameBriefing(
+    GameSubtype.flashcards: GameBriefing(
       title: "Flashcards",
       icon: Icons.style_rounded,
       objective: "Tap to flip flashcards and swipe through to master terms.",
@@ -647,7 +647,7 @@ class GameInstructionService {
       tip:
           "Speed isn't the goal—mastery is! Take your time to review definitions.",
     ),
-    GameSubtype.topicVocab: const GameBriefing(
+    GameSubtype.topicVocab: GameBriefing(
       title: "Topic Nexus",
       icon: Icons.category_rounded,
       objective: "Sort words into their correct thematic category bins.",
@@ -655,7 +655,7 @@ class GameInstructionService {
       actionText: "Start Sorting",
       tip: "Sorting by topic builds semantic memory 2x faster!",
     ),
-    GameSubtype.prefixSuffix: const GameBriefing(
+    GameSubtype.prefixSuffix: GameBriefing(
       title: "Word Roots",
       icon: Icons.spa_rounded,
       objective:
@@ -665,7 +665,7 @@ class GameInstructionService {
       tip:
           "Roots are the DNA of English! Master them to expand vocabulary rapidly.",
     ),
-    GameSubtype.wordFormation: const GameBriefing(
+    GameSubtype.wordFormation: GameBriefing(
       title: "Morpheme Mixer",
       icon: Icons.science_rounded,
       objective: "Combine prefixes, suffixes, and roots to form correct words.",
@@ -673,7 +673,7 @@ class GameInstructionService {
       actionText: "Ready to Mix?",
       tip: "Suffixes change words from verbs to nouns or adjectives!",
     ),
-    GameSubtype.synonymSearch: const GameBriefing(
+    GameSubtype.synonymSearch: GameBriefing(
       title: "Word Warp",
       icon: Icons.cyclone,
       objective: "Identify and match the correct synonym for the target word.",
@@ -681,7 +681,7 @@ class GameInstructionService {
       actionText: "Start Warp",
       tip: "Focus on the core meaning, and filter out visual distractions!",
     ),
-    GameSubtype.antonymSearch: const GameBriefing(
+    GameSubtype.antonymSearch: GameBriefing(
       title: "Polarity Pull",
       icon: Icons.electrical_services_rounded,
       objective: "Identify and select the correct antonym for the target word.",
@@ -689,7 +689,7 @@ class GameInstructionService {
       actionText: "Start Pull",
       tip: "Opposite meaning = Opposite pole! Match them quickly.",
     ),
-    GameSubtype.academicWord: const GameBriefing(
+    GameSubtype.academicWord: GameBriefing(
       title: "Thesis Thrust",
       icon: Icons.auto_stories_rounded,
       objective: "Identify advanced academic vocabulary matching the context.",
@@ -697,7 +697,7 @@ class GameInstructionService {
       actionText: "Initiate Thrust",
       tip: "Academic words are highly precise—pay attention to logical hints!",
     ),
-    GameSubtype.contextClues: const GameBriefing(
+    GameSubtype.contextClues: GameBriefing(
       title: "Detective Lens",
       icon: Icons.search_rounded,
       objective: "Use context clues to identify the meaning of unknown words.",
@@ -705,7 +705,7 @@ class GameInstructionService {
       actionText: "Start Scan",
       tip: "Clues often hide right next to the redacted or highlighted word!",
     ),
-    GameSubtype.collocations: const GameBriefing(
+    GameSubtype.collocations: GameBriefing(
       title: "Pair Pop",
       icon: Icons.bubble_chart_rounded,
       objective:
@@ -715,7 +715,7 @@ class GameInstructionService {
       tip:
           "Collocations are words that naturally go together like peanut butter and jelly!",
     ),
-    GameSubtype.phrasalVerbs: const GameBriefing(
+    GameSubtype.phrasalVerbs: GameBriefing(
       title: "Verb Vault",
       icon: Icons.vpn_key_rounded,
       objective:
@@ -725,7 +725,7 @@ class GameInstructionService {
       tip:
           "Particles change everything! 'Turn up' has a completely different meaning than 'turn down'.",
     ),
-    GameSubtype.idioms: const GameBriefing(
+    GameSubtype.idioms: GameBriefing(
       title: "Emojify",
       icon: Icons.forum_rounded,
       objective: "Decode emojis and phrases into correct English idioms.",
@@ -733,7 +733,7 @@ class GameInstructionService {
       actionText: "Send Message",
       tip: "Idioms are colorful cultural keys! Don't take them literally.",
     ),
-    GameSubtype.contextualUsage: const GameBriefing(
+    GameSubtype.contextualUsage: GameBriefing(
       title: "Usage Unfold",
       icon: Icons.auto_stories_rounded,
       objective:
@@ -745,7 +745,7 @@ class GameInstructionService {
     ),
 
     // 5. WRITING
-    GameSubtype.sentenceBuilder: const GameBriefing(
+    GameSubtype.sentenceBuilder: GameBriefing(
       title: "Sentence Architect",
       icon: Icons.architecture_rounded,
       objective:
@@ -758,7 +758,7 @@ class GameInstructionService {
       actionText: "Build Sentence",
       tip: "PRO TIP: Start with the 'Who' or 'What', then find the 'Action'!",
     ),
-    GameSubtype.completeSentence: const GameBriefing(
+    GameSubtype.completeSentence: GameBriefing(
       title: "Fragment Fixer",
       icon: Icons.healing_rounded,
       objective:
@@ -772,7 +772,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: A complete sentence needs both a Subject and a Verb at minimum!",
     ),
-    GameSubtype.describeSituationWriting: const GameBriefing(
+    GameSubtype.describeSituationWriting: GameBriefing(
       title: "Context Scribe",
       icon: Icons.description_rounded,
       objective:
@@ -785,7 +785,7 @@ class GameInstructionService {
       actionText: "Scribe Scene",
       tip: "PRO TIP: Use sensory words! Describe what is seen, heard, or felt.",
     ),
-    GameSubtype.fixTheSentence: const GameBriefing(
+    GameSubtype.fixTheSentence: GameBriefing(
       title: "Clarity Editor",
       icon: Icons.edit_rounded,
       objective:
@@ -795,7 +795,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Read it out loud in your head! If it sounds clumsy, revise it.",
     ),
-    GameSubtype.shortAnswerWriting: const GameBriefing(
+    GameSubtype.shortAnswerWriting: GameBriefing(
       title: "Briefing Pro",
       icon: Icons.short_text_rounded,
       objective: "Write a brief, concise, and direct response to the prompt.",
@@ -803,7 +803,7 @@ class GameInstructionService {
       actionText: "Submit Answer",
       tip: "PRO TIP: Get straight to the point! Keep it short and accurate.",
     ),
-    GameSubtype.opinionWriting: const GameBriefing(
+    GameSubtype.opinionWriting: GameBriefing(
       title: "Vocal Pen",
       icon: Icons.rate_review_rounded,
       objective:
@@ -817,7 +817,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Use transitions like 'In my view', 'For instance', or 'Consequently'.",
     ),
-    GameSubtype.dailyJournal: const GameBriefing(
+    GameSubtype.dailyJournal: GameBriefing(
       title: "Daily Chronicler",
       icon: Icons.auto_stories_rounded,
       objective:
@@ -831,7 +831,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Use sequential markers like 'First', 'Later', and 'Eventually'.",
     ),
-    GameSubtype.summarizeStoryWriting: const GameBriefing(
+    GameSubtype.summarizeStoryWriting: GameBriefing(
       title: "Essence Extractor",
       icon: Icons.compress_rounded,
       objective: "Read the story and draft a concise, objective summary.",
@@ -840,7 +840,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Identify the 'Who', 'What', 'Where', and 'Why' of the plot.",
     ),
-    GameSubtype.writingEmail: const GameBriefing(
+    GameSubtype.writingEmail: GameBriefing(
       title: "Email Expert",
       icon: Icons.alternate_email_rounded,
       objective: "Compose a professional and contextually appropriate email.",
@@ -853,7 +853,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Clear subject lines and direct greetings set the professional tone.",
     ),
-    GameSubtype.correctionWriting: const GameBriefing(
+    GameSubtype.correctionWriting: GameBriefing(
       title: "Deep Editor",
       icon: Icons.fact_check_rounded,
       objective:
@@ -867,7 +867,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Look for repetitive words and swap them for rich synonyms!",
     ),
-    GameSubtype.essayDrafting: const GameBriefing(
+    GameSubtype.essayDrafting: GameBriefing(
       title: "Essay Architect",
       icon: Icons.article_rounded,
       objective:
@@ -882,7 +882,7 @@ class GameInstructionService {
     ),
 
     // 6. LISTENING
-    GameSubtype.ambientId: const GameBriefing(
+    GameSubtype.ambientId: GameBriefing(
       title: "Spatial Anchor",
       icon: Icons.radar_rounded,
       objective:
@@ -891,7 +891,7 @@ class GameInstructionService {
       actionText: "Anchor Location",
       tip: "Focus on ambient sounds like footsteps, echoes, wind, or hums!",
     ),
-    GameSubtype.audioFillBlanks: const GameBriefing(
+    GameSubtype.audioFillBlanks: GameBriefing(
       title: "Ink Decoder",
       icon: Icons.water_drop_rounded,
       objective:
@@ -905,7 +905,7 @@ class GameInstructionService {
       tip:
           "Listen carefully to short helper words like 'a', 'the', 'in', or 'at'!",
     ),
-    GameSubtype.audioMultipleChoice: const GameBriefing(
+    GameSubtype.audioMultipleChoice: GameBriefing(
       title: "Sonic Satellites",
       icon: Icons.track_changes_rounded,
       objective: "Listen to the audio passage and select the correct answer.",
@@ -917,7 +917,7 @@ class GameInstructionService {
       actionText: "Lock Signal",
       tip: "Filter out noise and focus entirely on the speaker's main message.",
     ),
-    GameSubtype.audioSentenceOrder: const GameBriefing(
+    GameSubtype.audioSentenceOrder: GameBriefing(
       title: "Timeline Scrubber",
       icon: Icons.waves_rounded,
       objective:
@@ -931,7 +931,7 @@ class GameInstructionService {
       tip:
           "Logical connectors like 'first', 'then', and 'after that' are your clues.",
     ),
-    GameSubtype.audioTrueFalse: const GameBriefing(
+    GameSubtype.audioTrueFalse: GameBriefing(
       title: "Signal Validator",
       icon: Icons.verified_user_rounded,
       objective:
@@ -945,7 +945,7 @@ class GameInstructionService {
       tip:
           "Be careful of exact details—names, numbers, and dates must match perfectly.",
     ),
-    GameSubtype.detailSpotlight: const GameBriefing(
+    GameSubtype.detailSpotlight: GameBriefing(
       title: "Spotlight Search",
       icon: Icons.flashlight_on_rounded,
       objective:
@@ -955,7 +955,7 @@ class GameInstructionService {
       tip:
           "Note details as you listen—rushing to answer from memory can be tricky!",
     ),
-    GameSubtype.emotionRecognition: const GameBriefing(
+    GameSubtype.emotionRecognition: GameBriefing(
       title: "Sentiment Prober",
       icon: Icons.psychology_rounded,
       objective:
@@ -969,7 +969,7 @@ class GameInstructionService {
       tip:
           "Rhythm, volume spikes, and sighing express more than literal words.",
     ),
-    GameSubtype.fastSpeechDecoder: const GameBriefing(
+    GameSubtype.fastSpeechDecoder: GameBriefing(
       title: "Nuance Calibrator",
       icon: Icons.settings_input_composite_rounded,
       objective: "Decode rapid native speech by picking out word boundaries.",
@@ -982,7 +982,7 @@ class GameInstructionService {
       tip:
           "Focus on stressed syllables—they carry the core meaning in fast speech.",
     ),
-    GameSubtype.listeningInference: const GameBriefing(
+    GameSubtype.listeningInference: GameBriefing(
       title: "Inference Lens",
       icon: Icons.biotech_rounded,
       objective:
@@ -996,7 +996,7 @@ class GameInstructionService {
       tip:
           "Listen for hesitation or sarcasm—voice inflections hold crucial keys.",
     ),
-    GameSubtype.soundImageMatch: const GameBriefing(
+    GameSubtype.soundImageMatch: GameBriefing(
       title: "Thematic Linker",
       icon: Icons.category_rounded,
       objective:
@@ -1008,7 +1008,7 @@ class GameInstructionService {
     ),
 
     // 7. ACCENT
-    GameSubtype.minimalPairs: const GameBriefing(
+    GameSubtype.minimalPairs: GameBriefing(
       title: "Minimal Distinctions",
       icon: Icons.compare_arrows_rounded,
       objective:
@@ -1017,7 +1017,7 @@ class GameInstructionService {
       actionText: "Match Sound",
       tip: "PRO TIP: Pay attention to mouth shape and vowel duration!",
     ),
-    GameSubtype.intonationMimic: const GameBriefing(
+    GameSubtype.intonationMimic: GameBriefing(
       title: "Pitch Mimic",
       icon: Icons.waves_rounded,
       objective:
@@ -1026,7 +1026,7 @@ class GameInstructionService {
       actionText: "Mimic Now",
       tip: "PRO TIP: Exaggerate the rising pitch at the end of questions!",
     ),
-    GameSubtype.syllableStress: const GameBriefing(
+    GameSubtype.syllableStress: GameBriefing(
       title: "Stress Spotter",
       icon: Icons.priority_high_rounded,
       objective:
@@ -1036,7 +1036,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Stressed syllables are louder, higher in pitch, and have longer vowels.",
     ),
-    GameSubtype.wordLinking: const GameBriefing(
+    GameSubtype.wordLinking: GameBriefing(
       title: "Fluid Flow",
       icon: Icons.link_rounded,
       objective:
@@ -1050,7 +1050,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Push end consonants directly into starting vowels of the next word.",
     ),
-    GameSubtype.shadowingChallenge: const GameBriefing(
+    GameSubtype.shadowingChallenge: GameBriefing(
       title: "Speed Shadow",
       icon: Icons.bolt_rounded,
       objective:
@@ -1060,7 +1060,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Don't wait—begin speaking as soon as you hear the first sound!",
     ),
-    GameSubtype.vowelDistinction: const GameBriefing(
+    GameSubtype.vowelDistinction: GameBriefing(
       title: "Vowel Vortex",
       icon: Icons.cyclone_rounded,
       objective:
@@ -1074,7 +1074,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Drop your jaw slightly lower for vowels like /æ/ than for /ɛ/.",
     ),
-    GameSubtype.consonantClarity: const GameBriefing(
+    GameSubtype.consonantClarity: GameBriefing(
       title: "Clear Consonants",
       icon: Icons.graphic_eq_rounded,
       objective:
@@ -1084,7 +1084,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Keep your tongue tip gently between your teeth for the /θ/ ('th') sound.",
     ),
-    GameSubtype.pitchPatternMatch: const GameBriefing(
+    GameSubtype.pitchPatternMatch: GameBriefing(
       title: "Musical Melody",
       icon: Icons.music_note_rounded,
       objective:
@@ -1098,7 +1098,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Match the speed transitions—unstressed words are fast, stressed are slow.",
     ),
-    GameSubtype.speedVariance: const GameBriefing(
+    GameSubtype.speedVariance: GameBriefing(
       title: "Tempo Trainer",
       icon: Icons.speed_rounded,
       objective:
@@ -1111,7 +1111,7 @@ class GameInstructionService {
       actionText: "Train Tempo",
       tip: "PRO TIP: Keep clear boundaries between words even at high speed.",
     ),
-    GameSubtype.dialectDrill: const GameBriefing(
+    GameSubtype.dialectDrill: GameBriefing(
       title: "Dialect Diver",
       icon: Icons.public_rounded,
       objective:
@@ -1120,7 +1120,7 @@ class GameInstructionService {
       actionText: "Start Drill",
       tip: "PRO TIP: Pay attention to 'r' dropping and distinct vowel shifts.",
     ),
-    GameSubtype.connectedSpeech: const GameBriefing(
+    GameSubtype.connectedSpeech: GameBriefing(
       title: "Fusion Focus",
       icon: Icons.settings_input_composite_rounded,
       objective:
@@ -1130,7 +1130,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Reduction turns function words like 'to' or 'for' into quick sounds.",
     ),
-    GameSubtype.pitchModulation: const GameBriefing(
+    GameSubtype.pitchModulation: GameBriefing(
       title: "Dynamic Range",
       icon: Icons.legend_toggle_rounded,
       objective:
@@ -1142,7 +1142,7 @@ class GameInstructionService {
     ),
 
     // 8. ROLEPLAY
-    GameSubtype.branchingDialogue: const GameBriefing(
+    GameSubtype.branchingDialogue: GameBriefing(
       title: "Choice Navigator",
       icon: Icons.alt_route_rounded,
       objective:
@@ -1152,7 +1152,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Gauge the speaker's reaction and select the most empathetic reply.",
     ),
-    GameSubtype.situationalResponse: const GameBriefing(
+    GameSubtype.situationalResponse: GameBriefing(
       title: "Reflex Responder",
       icon: Icons.flash_on_rounded,
       objective:
@@ -1162,7 +1162,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Use expressions like 'I would appreciate it' or 'Would you mind'!",
     ),
-    GameSubtype.jobInterview: const GameBriefing(
+    GameSubtype.jobInterview: GameBriefing(
       title: "Career Closer",
       icon: Icons.business_center_rounded,
       objective:
@@ -1172,7 +1172,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Frame replies to show how your experience solves their business needs.",
     ),
-    GameSubtype.medicalConsult: const GameBriefing(
+    GameSubtype.medicalConsult: GameBriefing(
       title: "Health Liaison",
       icon: Icons.medical_services_rounded,
       objective:
@@ -1182,7 +1182,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Use specific descriptors like 'throbbing', 'sharp', or 'dull ache'.",
     ),
-    GameSubtype.gourmetOrder: const GameBriefing(
+    GameSubtype.gourmetOrder: GameBriefing(
       title: "Order Master",
       icon: Icons.restaurant_rounded,
       objective:
@@ -1196,7 +1196,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Using 'Could I get...' is the preferred way to place polite orders.",
     ),
-    GameSubtype.travelDesk: const GameBriefing(
+    GameSubtype.travelDesk: GameBriefing(
       title: "Global Traveler",
       icon: Icons.flight_takeoff_rounded,
       objective:
@@ -1206,7 +1206,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Confirm directions by repeating them back to check understanding.",
     ),
-    GameSubtype.conflictResolver: const GameBriefing(
+    GameSubtype.conflictResolver: GameBriefing(
       title: "Peace Maker",
       icon: Icons.handshake_rounded,
       objective:
@@ -1220,7 +1220,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: De-escalate early by validating their perspective before replying.",
     ),
-    GameSubtype.elevatorPitch: const GameBriefing(
+    GameSubtype.elevatorPitch: GameBriefing(
       title: "Pitch Perfect",
       icon: Icons.rocket_launch_rounded,
       objective:
@@ -1230,7 +1230,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Lead with a massive hook that frames a relatable daily problem.",
     ),
-    GameSubtype.socialSpark: const GameBriefing(
+    GameSubtype.socialSpark: GameBriefing(
       title: "Charisma Core",
       icon: Icons.celebration_rounded,
       objective:
@@ -1244,7 +1244,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Ask 'what' or 'how' to keep the conversational partner sharing.",
     ),
-    GameSubtype.emergencyHub: const GameBriefing(
+    GameSubtype.emergencyHub: GameBriefing(
       title: "Emergency Voice",
       icon: Icons.emergency_share_rounded,
       objective:
@@ -1256,7 +1256,7 @@ class GameInstructionService {
     ),
 
     // 9. SPEAKING
-    GameSubtype.repeatSentence: const GameBriefing(
+    GameSubtype.repeatSentence: GameBriefing(
       title: "Echo Master",
       icon: Icons.graphic_eq_rounded,
       objective:
@@ -1266,7 +1266,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Match the stress rhythm—English flows in stressed clusters!",
     ),
-    GameSubtype.pronunciationFocus: const GameBriefing(
+    GameSubtype.pronunciationFocus: GameBriefing(
       title: "Phonetic Precision",
       icon: Icons.record_voice_over_rounded,
       objective:
@@ -1280,7 +1280,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Pay attention to where your tongue touches the roof of your mouth.",
     ),
-    GameSubtype.dailyExpression: const GameBriefing(
+    GameSubtype.dailyExpression: GameBriefing(
       title: "Social Fluent",
       icon: Icons.chat_bubble_rounded,
       objective: "Speak daily expressions with natural, native-like emphasis.",
@@ -1293,7 +1293,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Emphasize the keywords that carry the main emotional meaning.",
     ),
-    GameSubtype.dialogueRoleplay: const GameBriefing(
+    GameSubtype.dialogueRoleplay: GameBriefing(
       title: "Scene Architect",
       icon: Icons.theater_comedy_rounded,
       objective:
@@ -1303,7 +1303,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Match your voice acting to the simulated character's mood!",
     ),
-    GameSubtype.sceneDescriptionSpeaking: const GameBriefing(
+    GameSubtype.sceneDescriptionSpeaking: GameBriefing(
       title: "Visual Narrator",
       icon: Icons.image_search_rounded,
       objective:
@@ -1317,7 +1317,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Start with foreground actions, then move to background details.",
     ),
-    GameSubtype.situationSpeaking: const GameBriefing(
+    GameSubtype.situationSpeaking: GameBriefing(
       title: "Crisis Communicator",
       icon: Icons.emergency_rounded,
       objective:
@@ -1331,7 +1331,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Focus on direct, simple language to convey your message quickly.",
     ),
-    GameSubtype.speakMissingWord: const GameBriefing(
+    GameSubtype.speakMissingWord: GameBriefing(
       title: "Vocal Decoder",
       icon: Icons.find_in_page_rounded,
       objective:
@@ -1345,7 +1345,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Look at surrounding nouns and verbs to match singular vs plural context.",
     ),
-    GameSubtype.speakOpposite: const GameBriefing(
+    GameSubtype.speakOpposite: GameBriefing(
       title: "Antonym Orator",
       icon: Icons.compare_arrows_rounded,
       objective: "Orally state the direct opposite/antonym of the prompt word.",
@@ -1354,7 +1354,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Think of contrasting poles (e.g. fast/slow, build/destroy).",
     ),
-    GameSubtype.speakSynonym: const GameBriefing(
+    GameSubtype.speakSynonym: GameBriefing(
       title: "Lexical Speaker",
       icon: Icons.library_books_rounded,
       objective: "Orally state a correct synonym for the target word.",
@@ -1367,7 +1367,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Expand your vocabulary by grouping similar words together.",
     ),
-    GameSubtype.yesNoSpeaking: const GameBriefing(
+    GameSubtype.yesNoSpeaking: GameBriefing(
       title: "Voice Validator",
       icon: Icons.fact_check_rounded,
       objective:

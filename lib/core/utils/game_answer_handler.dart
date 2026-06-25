@@ -120,7 +120,7 @@ mixin GameAnswerHandler<T extends StatefulWidget> on State<T> {
     if (_isSubmitting) return;
     _isSubmitting = true;
 
-    this.isAnswered = true;
+    isAnswered = true;
     this.isCorrect = isCorrect;
 
     // Apply local visual state in a single synchronous pass before the BLoC
@@ -137,7 +137,7 @@ mixin GameAnswerHandler<T extends StatefulWidget> on State<T> {
       _resetTimer?.cancel();
       _resetTimer = Timer(resetDelay, () {
         if (mounted) {
-          this.isAnswered = false;
+          isAnswered = false;
           this.isCorrect = null;
           onReset();
           _isSubmitting = false;

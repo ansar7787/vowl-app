@@ -4,6 +4,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 /// Abstract contract defining standard audio effects and Text-to-Speech triggers.
 ///
@@ -89,7 +90,7 @@ class SoundServiceImpl implements SoundService {
       final prefs = await SharedPreferences.getInstance();
       _isMuted = !(prefs.getBool(_prefsKeySoundEnabled) ?? true);
     } catch (e) {
-      AppLogger.warning(
+      di.sl<AppLogger>().error(
         'SoundService: SharedPreferences loading error',
         error: e,
       );
@@ -117,7 +118,7 @@ class SoundServiceImpl implements SoundService {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setBool(_prefsKeySoundEnabled, !muted);
     } catch (e) {
-      AppLogger.warning(
+      di.sl<AppLogger>().error(
         'SoundService: Failed to persist mute preference',
         error: e,
       );
@@ -130,7 +131,7 @@ class SoundServiceImpl implements SoundService {
       await _player.dispose();
       await _overlayPlayer.dispose();
     } catch (e) {
-      AppLogger.warning('SoundService: Error disposing AudioPlayers', error: e);
+      di.sl<AppLogger>().error('SoundService: Error disposing AudioPlayers', error: e);
     }
   }
 
@@ -143,7 +144,7 @@ class SoundServiceImpl implements SoundService {
       await _player.setSource(AssetSource(assetCorrect));
       await _player.resume();
     } catch (e) {
-      AppLogger.warning(
+      di.sl<AppLogger>().error(
         'SoundService: Error playing sound (correct)',
         error: e,
       );
@@ -159,7 +160,7 @@ class SoundServiceImpl implements SoundService {
       await _player.setSource(AssetSource(assetWrong));
       await _player.resume();
     } catch (e) {
-      AppLogger.warning('SoundService: Error playing sound (wrong)', error: e);
+      di.sl<AppLogger>().error('SoundService: Error playing sound (wrong)', error: e);
     }
   }
 
@@ -185,7 +186,7 @@ class SoundServiceImpl implements SoundService {
       await _player.setSource(AssetSource(assetClick));
       await _player.resume();
     } catch (e) {
-      AppLogger.warning('SoundService: Error playing sound (click)', error: e);
+      di.sl<AppLogger>().error('SoundService: Error playing sound (click)', error: e);
     }
   }
 
@@ -198,7 +199,7 @@ class SoundServiceImpl implements SoundService {
       await _player.setSource(AssetSource(assetHint));
       await _player.resume();
     } catch (e) {
-      AppLogger.warning('SoundService: Error playing sound (hint)', error: e);
+      di.sl<AppLogger>().error('SoundService: Error playing sound (hint)', error: e);
     }
   }
 
@@ -212,12 +213,13 @@ class SoundServiceImpl implements SoundService {
     await _initFuture;
     if (_isMuted) return;
     try {
-      if (_overlayPlayer.state == PlayerState.playing)
+      if (_overlayPlayer.state == PlayerState.playing) {
         await _overlayPlayer.stop();
+      }
       await _overlayPlayer.setSource(AssetSource(assetLevelCompleted));
       await _overlayPlayer.resume();
     } catch (e) {
-      AppLogger.warning(
+      di.sl<AppLogger>().error(
         'SoundService: Error playing sound (level_completed); using fallback',
         error: e,
       );
@@ -234,7 +236,7 @@ class SoundServiceImpl implements SoundService {
       await _player.setSource(UrlSource(url));
       await _player.resume();
     } catch (e) {
-      AppLogger.warning('SoundService: Error playing sound (url)', error: e);
+      di.sl<AppLogger>().error('SoundService: Error playing sound (url)', error: e);
     }
   }
 
@@ -249,7 +251,7 @@ class SoundServiceImpl implements SoundService {
     try {
       await _ttsService.speak(text, rate: speed, locale: locale);
     } catch (e) {
-      AppLogger.warning('SoundService: Error playing TTS', error: e);
+      di.sl<AppLogger>().error('SoundService: Error playing TTS', error: e);
     }
   }
 
@@ -258,7 +260,7 @@ class SoundServiceImpl implements SoundService {
     try {
       await _ttsService.stop();
     } catch (e) {
-      AppLogger.warning('SoundService: Error stopping TTS', error: e);
+      di.sl<AppLogger>().error('SoundService: Error stopping TTS', error: e);
     }
   }
 }

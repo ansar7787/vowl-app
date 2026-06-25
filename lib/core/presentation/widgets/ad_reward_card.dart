@@ -43,7 +43,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
     try {
-      await di.sl<AdService>().showRewardedAd(
+      di.sl<AdService>().showRewardedAd(
         isPremium: isPremium,
         onUserEarnedReward: (reward) {
           rewardEarned = true;

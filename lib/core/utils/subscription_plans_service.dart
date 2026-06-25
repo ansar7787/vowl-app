@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
+import 'package:vowl/core/utils/injection_container.dart';
 
 /// Service to fetch subscription plans from Firebase
 class SubscriptionPlansService {
@@ -32,14 +33,14 @@ class SubscriptionPlansService {
     // Return cached plans if still valid
     if (_cachedPlans != null && _cacheTime != null) {
       if (DateTime.now().difference(_cacheTime!) < _cacheExpiry) {
-        AppLogger.debug('SubscriptionPlansService: Using cached plans');
+        sl<AppLogger>().debug('SubscriptionPlansService: Using cached plans');
         return _cachedPlans!;
       }
     }
 
     final pending = _pendingFetch;
     if (pending != null) {
-      AppLogger.debug(
+      sl<AppLogger>().debug(
         'SubscriptionPlansService: Coalescing concurrent fetchPlans() call',
       );
       return pending;
@@ -56,7 +57,7 @@ class SubscriptionPlansService {
 
   Future<List<SubscriptionPlan>> _fetchPlansFromFirestore() async {
     try {
-      AppLogger.debug('SubscriptionPlansService: Fetching plans from Firebase');
+      sl<AppLogger>().debug('SubscriptionPlansService: Fetching plans from Firebase');
       final snapshot = await _firestore
           .collection(_plansCollection)
           .orderBy('displayOrder')
@@ -71,12 +72,12 @@ class SubscriptionPlansService {
       _cachedPlans = plans;
       _cacheTime = DateTime.now();
 
-      AppLogger.debug(
+      sl<AppLogger>().debug(
         'SubscriptionPlansService: Fetched ${plans.length} plans',
       );
       return plans;
     } catch (e, stackTrace) {
-      AppLogger.error(
+      sl<AppLogger>().error(
         'SubscriptionPlansService: Failed to fetch plans',
         error: e,
         stackTrace: stackTrace,
@@ -95,13 +96,13 @@ class SubscriptionPlansService {
           .timeout(_fetchTimeout);
 
       if (!doc.exists) {
-        AppLogger.warning('SubscriptionPlansService: Plan not found - $planId');
+        sl<AppLogger>().warning('SubscriptionPlansService: Plan not found - $planId');
         return null;
       }
 
       return SubscriptionPlan.fromMap(doc.data()!);
     } catch (e, stackTrace) {
-      AppLogger.error(
+      sl<AppLogger>().error(
         'SubscriptionPlansService: Failed to fetch plan $planId',
         error: e,
         stackTrace: stackTrace,
@@ -114,6 +115,6 @@ class SubscriptionPlansService {
   void clearCache() {
     _cachedPlans = null;
     _cacheTime = null;
-    AppLogger.debug('SubscriptionPlansService: Cache cleared');
+    sl<AppLogger>().debug('SubscriptionPlansService: Cache cleared');
   }
 }

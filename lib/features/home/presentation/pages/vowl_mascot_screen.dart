@@ -958,8 +958,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                 await Future.delayed(
                                   const Duration(milliseconds: 1000),
                                 );
-                                if (mounted)
+                                if (mounted) {
                                   setState(() => _isProcessing = false);
+                                }
                               },
                         primaryColor: primaryColor,
                       )
@@ -981,8 +982,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                   await Future.delayed(
                                     const Duration(milliseconds: 1500),
                                   );
-                                  if (mounted)
+                                  if (mounted) {
                                     setState(() => _isProcessing = false);
+                                  }
                                 } else {
                                   _hapticService.error();
                                   _showModernSnackbar(
