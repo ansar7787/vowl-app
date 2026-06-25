@@ -15,15 +15,25 @@ class LogicCircuit extends StatelessWidget {
           final isVertical = index % 2 == 0;
           final startPos = (index * 0.15) * (isVertical ? 1.sw : 1.sh);
 
-          return Positioned(
-            left: isVertical ? startPos : 0,
+          return PositionedDirectional(
+            start: isVertical ? startPos : 0,
             top: isVertical ? 0 : startPos,
-            right: isVertical ? null : 0,
+            end: isVertical ? null : 0,
             bottom: isVertical ? 0 : null,
             child: Opacity(
               opacity: 0.1,
               child: Container(
-                width: isVertical ? 2.w : 1.sh,
+                // BUG FIX: the horizontal-line branch used `1.sh` (screen
+                // *height*) as the line's *width* — should be `1.sw`.
+                // This was masked because the PositionedDirectional above
+                // already sets both `start:0` and `end:0` for horizontal
+                // lines, which forces a tight full-width constraint that
+                // overrides whatever width the Container itself requests —
+                // so visually nothing was wrong today, but the moment
+                // those constraints ever change (e.g. someone adds inset
+                // padding here), this would have silently rendered a line
+                // sized to the screen's height instead of its width.
+                width: isVertical ? 2.w : 1.sw,
                 height: isVertical ? 1.sh : 2.w,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
