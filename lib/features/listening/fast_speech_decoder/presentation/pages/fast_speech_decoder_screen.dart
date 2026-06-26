@@ -200,13 +200,13 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                           fit: BoxFit.scaleDown,
                                           child: FastSpeechDecoderInstruction(
                                             color: theme.primaryColor,
-                                            instruction: quest.instruction ?? "CALIBRATE SPEED TO DECODE",
+                                            instruction: quest.instruction,
                                           ),
                                         ),
                                       )
                                     : FastSpeechDecoderInstruction(
                                         color: theme.primaryColor,
-                                        instruction: quest.instruction ?? "CALIBRATE SPEED TO DECODE",
+                                        instruction: quest.instruction,
                                       ),
                                 SizedBox(height: gapInstruction),
                                 ValueListenableBuilder<double>(
