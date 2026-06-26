@@ -185,6 +185,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
 
                         final double estimatedContentHeight =
                             (isCompact ? 30.h : 40.h) +
+                            (isCompact ? 30.h : 40.h) + // Instruction height
                             (isCompact ? 70.h : 90.h) +
                             (isCompact ? 110.h : 160.h) +
                             (isCompact ? 90.h : 130.h) +
@@ -227,6 +228,10 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                         theme.primaryColor,
                                         isDark,
                                       ),
+                                if (quest.instruction.isNotEmpty) ...[
+                                  SizedBox(height: gapTop / 2),
+                                  _buildInstruction(quest.instruction, theme.primaryColor),
+                                ],
                                 SizedBox(height: gapMiddle),
 
                                 // LCD Display
@@ -360,6 +365,23 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
         )
         .animate(onPlay: (c) => c.repeat(reverse: true))
         .shimmer(duration: 3.seconds);
+  }
+
+  Widget _buildInstruction(String text, Color color) {
+    if (text.isEmpty) return const SizedBox.shrink();
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w600,
+          color: color.withValues(alpha: 0.9),
+          height: 1.4,
+        ),
+      ),
+    );
   }
 
   Widget _buildOptionsWrap(
