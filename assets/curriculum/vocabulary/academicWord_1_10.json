@@ -2,454 +2,484 @@
     "levels": "1-10",
     "quests": [
         {
-            "word": "CREDIT",
+            "word": "DATA",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L1_Q1",
-            "hint": "DEFINITION: The ability of a customer to obtain goods or services.",
+            "hint": "DEFINITION: Facts, figures, or information used as a basis for analysis or discussion.",
             "options": [
-                "Honor",
-                "CREDIT",
-                "RECOGNITION",
-                "Blame"
+                "DATA",
+                "RUMORS",
+                "APOLOGIES",
+                "INVITATIONS"
             ],
-            "explanation": "Academic context: The author was given CREDIT for the discovery of the lost manuscript.",
-            "passage": "The author was given [TARGET] for the discovery of the lost manuscript.",
-            "correctAnswer": "CREDIT"
-        },
-        {
-            "word": "CONCEPT",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L1_Q2",
-            "hint": "DEFINITION: An abstract idea; a general notion.",
-            "options": [
-                "Notion",
-                "IDEA",
-                "CONCEPT",
-                "Physicality"
-            ],
-            "explanation": "Academic context: The fundamental CONCEPT of quantum entanglement remains difficult to grasp.",
-            "passage": "The fundamental [TARGET] of quantum entanglement remains difficult to grasp.",
-            "correctAnswer": "CONCEPT"
-        },
-        {
-            "word": "JUSTICE",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L1_Q3",
-            "hint": "DEFINITION: Just behavior or treatment.",
-            "options": [
-                "Iniquity",
-                "JUSTICE",
-                "Equity",
-                "FAIRNESS"
-            ],
-            "explanation": "Academic context: The legal system aims to provide JUSTICE for all citizens regardless of status.",
-            "passage": "The legal system aims to provide [TARGET] for all citizens regardless of status.",
-            "correctAnswer": "JUSTICE"
-        },
-        {
-            "word": "RESEARCH",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L2_Q1",
-            "hint": "DEFINITION: The systematic investigation into and study of materials.",
-            "options": [
-                "Guesswork",
-                "Inquiry",
-                "STUDY",
-                "RESEARCH"
-            ],
-            "explanation": "Academic context: Extensive RESEARCH is required before publishing a new scientific paper.",
-            "passage": "Extensive [TARGET] is required before publishing a new scientific paper.",
-            "correctAnswer": "RESEARCH"
+            "explanation": "Academic context: Before drawing any conclusions about rainfall patterns, the science class needed reliable DATA from the weather station. Here, \"DATA\" means factual information gathered for study, not gossip or social messages.",
+            "passage": "Before drawing any conclusions about rainfall patterns, the science class needed reliable [TARGET] from the weather station",
+            "correctAnswer": "DATA",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
             "word": "DESIGN",
             "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L2_Q2",
-            "hint": "DEFINITION: A plan or drawing produced to show the look and function.",
+            "id": "VOC_ACADEMICWORD_L1_Q2",
+            "hint": "DEFINITION: A plan or drawing that shows how something will look or work.",
             "options": [
-                "PLAN",
-                "Draft",
+                "ARGUMENT",
                 "DESIGN",
-                "Randomize"
+                "APOLOGY",
+                "COMPLAINT"
             ],
-            "explanation": "Academic context: The architect will DESIGN the new library to be energy-efficient.",
-            "passage": "The architect will [TARGET] the new library to be energy-efficient.",
-            "correctAnswer": "DESIGN"
-        },
-        {
-            "word": "ANALYZE",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L2_Q3",
-            "hint": "DEFINITION: Examine something methodically and in detail.",
-            "options": [
-                "BREAK DOWN",
-                "Examine",
-                "Synthesize",
-                "ANALYZE"
-            ],
-            "explanation": "Academic context: The researchers had to ANALYZE the complex results of the clinical trial.",
-            "passage": "The researchers had to [TARGET] the complex results of the clinical trial.",
-            "correctAnswer": "ANALYZE"
-        },
-        {
-            "word": "SOURCE",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L3_Q1",
-            "hint": "DEFINITION: A place, person, or thing from which something comes or can be obtained.",
-            "options": [
-                "End",
-                "Reference",
-                "ORIGIN",
-                "SOURCE"
-            ],
-            "explanation": "Academic context: The historian meticulously verified every primary SOURCE for the biography.",
-            "passage": "The historian meticulously verified every primary [TARGET] for the biography.",
-            "correctAnswer": "SOURCE"
-        },
-        {
-            "word": "INTERPRET",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L3_Q2",
-            "hint": "DEFINITION: Explain the meaning of information, words, or actions.",
-            "options": [
-                "EXPLAIN",
-                "Decode",
-                "INTERPRET",
-                "Confuse"
-            ],
-            "explanation": "Academic context: Scholars often INTERPRET ancient texts in vastly different ways.",
-            "passage": "Scholars often [TARGET] ancient texts in vastly different ways.",
-            "correctAnswer": "INTERPRET"
-        },
-        {
-            "word": "APPROPRIATE",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L3_Q3",
-            "hint": "DEFINITION: Suitable or proper in the circumstances.",
-            "options": [
-                "SUITABLE",
-                "APPROPRIATE",
-                "Improper",
-                "Fitting"
-            ],
-            "explanation": "Academic context: Wearing a suit is APPROPRIATE for a formal business meeting.",
-            "passage": "Wearing a suit is [TARGET] for a formal business meeting.",
-            "correctAnswer": "APPROPRIATE"
-        },
-        {
-            "word": "OBJECTIVE",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L4_Q1",
-            "hint": "DEFINITION: A thing aimed at or sought; a goal.",
-            "options": [
-                "GOAL",
-                "OBJECTIVE",
-                "Subjective",
-                "Aim"
-            ],
-            "explanation": "Academic context: The primary OBJECTIVE of the mission was to collect lunar soil samples.",
-            "passage": "The primary [TARGET] of the mission was to collect lunar soil samples.",
-            "correctAnswer": "OBJECTIVE"
-        },
-        {
-            "word": "NETWORK",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L4_Q2",
-            "hint": "DEFINITION: A group or system of interconnected people or things.",
-            "options": [
-                "Isolation",
-                "SYSTEM",
-                "NETWORK",
-                "Web"
-            ],
-            "explanation": "Academic context: The social NETWORK allowed ideas to spread across the continent rapidly.",
-            "passage": "The social [TARGET] allowed ideas to spread across the continent rapidly.",
-            "correctAnswer": "NETWORK"
-        },
-        {
-            "word": "HYPOTHESIS",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L4_Q3",
-            "hint": "DEFINITION: A proposed explanation made on the basis of limited evidence.",
-            "options": [
-                "Fact",
-                "HYPOTHESIS",
-                "Supposition",
-                "THEORY"
-            ],
-            "explanation": "Academic context: The scientist proposed a new HYPOTHESIS to explain the observed phenomena.",
-            "passage": "The scientist proposed a new [TARGET] to explain the observed phenomena.",
-            "correctAnswer": "HYPOTHESIS"
-        },
-        {
-            "word": "CONSUME",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L5_Q1",
-            "hint": "DEFINITION: Eat, drink, or ingest.",
-            "options": [
-                "USE",
-                "Save",
-                "Expend",
-                "CONSUME"
-            ],
-            "explanation": "Academic context: Modern lifestyles CONSUME vast amounts of energy and resources.",
-            "passage": "Modern lifestyles [TARGET] vast amounts of energy and resources.",
-            "correctAnswer": "CONSUME"
-        },
-        {
-            "word": "FACTOR",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L5_Q2",
-            "hint": "DEFINITION: A circumstance, fact, or influence that contributes to a result.",
-            "options": [
-                "ELEMENT",
-                "Result",
-                "FACTOR",
-                "Component"
-            ],
-            "explanation": "Academic context: Economic stability is a major FACTOR in the growth of developing nations.",
-            "passage": "Economic stability is a major [TARGET] in the growth of developing nations.",
-            "correctAnswer": "FACTOR"
-        },
-        {
-            "word": "CONCLUSION",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L5_Q3",
-            "hint": "DEFINITION: The end or finish of an event or process.",
-            "options": [
-                "Finish",
-                "CONCLUSION",
-                "END",
-                "Beginning"
-            ],
-            "explanation": "Academic context: The CONCLUSION of the study suggested that more research was needed.",
-            "passage": "The [TARGET] of the study suggested that more research was needed.",
-            "correctAnswer": "CONCLUSION"
-        },
-        {
-            "word": "GLOBAL",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L6_Q1",
-            "hint": "DEFINITION: Relating to the whole world; worldwide.",
-            "options": [
-                "Universal",
-                "WORLDWIDE",
-                "GLOBAL",
-                "Local"
-            ],
-            "explanation": "Academic context: Plastic pollution has become a GLOBAL crisis affecting all oceans.",
-            "passage": "Plastic pollution has become a [TARGET] crisis affecting all oceans.",
-            "correctAnswer": "GLOBAL"
-        },
-        {
-            "word": "CULTURE",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L6_Q2",
-            "hint": "DEFINITION: The arts and other manifestations of human intellectual achievement.",
-            "options": [
-                "CIVILIZATION",
-                "Society",
-                "Nature",
-                "CULTURE"
-            ],
-            "explanation": "Academic context: Ancient Roman CULTURE heavily influenced modern Western civilization.",
-            "passage": "Ancient Roman [TARGET] heavily influenced modern Western civilization.",
-            "correctAnswer": "CULTURE"
-        },
-        {
-            "word": "ASPECT",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L6_Q3",
-            "hint": "DEFINITION: A particular part or feature of something.",
-            "options": [
-                "ASPECT",
-                "FEATURE",
-                "Whole",
-                "Part"
-            ],
-            "explanation": "Academic context: One ASPECT of the problem is the lack of funding for local schools.",
-            "passage": "One [TARGET] of the problem is the lack of funding for local schools.",
-            "correctAnswer": "ASPECT"
-        },
-        {
-            "word": "COMPUTE",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L7_Q1",
-            "hint": "DEFINITION: Calculate a figure or amount.",
-            "options": [
-                "COMPUTE",
-                "CALCULATE",
-                "Solve",
-                "Estimate"
-            ],
-            "explanation": "Academic context: Mathematicians use algorithms to COMPUTE the values of large numbers.",
-            "passage": "Mathematicians use algorithms to [TARGET] the values of large numbers.",
-            "correctAnswer": "COMPUTE"
-        },
-        {
-            "word": "CONSEQUENT",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L7_Q2",
-            "hint": "DEFINITION: Following as a result or effect.",
-            "options": [
-                "Prior",
-                "CONSEQUENT",
-                "RESULTING",
-                "Following"
-            ],
-            "explanation": "Academic context: The heavy rain and CONSEQUENT flooding caused significant damage.",
-            "passage": "The heavy rain and [TARGET] flooding caused significant damage.",
-            "correctAnswer": "CONSEQUENT"
-        },
-        {
-            "word": "COMPLEX",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L7_Q3",
-            "hint": "DEFINITION: Consisting of many different and connected parts.",
-            "options": [
-                "INTRICATE",
-                "Complicated",
-                "Simple",
-                "COMPLEX"
-            ],
-            "explanation": "Academic context: The COMPLEX nature of the problem requires a multifaceted solution.",
-            "passage": "The [TARGET] nature of the problem requires a multifaceted solution.",
-            "correctAnswer": "COMPLEX"
-        },
-        {
-            "word": "UNIQUE",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L8_Q1",
-            "hint": "DEFINITION: Being the only one of its kind; unlike anything else.",
-            "options": [
-                "DISTINCT",
-                "Common",
-                "Rare",
-                "UNIQUE"
-            ],
-            "explanation": "Academic context: Each individual has a UNIQUE genetic code that distinguishes them.",
-            "passage": "Each individual has a [TARGET] genetic code that distinguishes them.",
-            "correctAnswer": "UNIQUE"
-        },
-        {
-            "word": "CATEGORY",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L8_Q2",
-            "hint": "DEFINITION: A class or division of people or things.",
-            "options": [
-                "Group",
-                "CLASS",
-                "Individual",
-                "CATEGORY"
-            ],
-            "explanation": "Academic context: The library organizes books by CATEGORY to make them easier to find.",
-            "passage": "The library organizes books by [TARGET] to make them easier to find.",
-            "correctAnswer": "CATEGORY"
-        },
-        {
-            "word": "ASSESS",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L8_Q3",
-            "hint": "DEFINITION: Evaluate or estimate the nature, ability, or quality of.",
-            "options": [
-                "Ignore",
-                "EVALUATE",
-                "ASSESS",
-                "Judge"
-            ],
-            "explanation": "Academic context: The committee will ASSESS the candidate's performance during the interview.",
-            "passage": "The committee will [TARGET] the candidate's performance during the interview.",
-            "correctAnswer": "ASSESS"
-        },
-        {
-            "word": "ADMINISTER",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L9_Q1",
-            "hint": "DEFINITION: Manage and be responsible for the running of.",
-            "options": [
-                "Neglect",
-                "ADMINISTER",
-                "Execute",
-                "MANAGE"
-            ],
-            "explanation": "Academic context: The healthcare workers will ADMINISTER the vaccine to the local population.",
-            "passage": "The healthcare workers will [TARGET] the vaccine to the local population.",
-            "correctAnswer": "ADMINISTER"
-        },
-        {
-            "word": "DATA",
-            "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L9_Q2",
-            "hint": "DEFINITION: Facts and statistics collected together for reference.",
-            "options": [
-                "Theory",
-                "DATA",
-                "Facts",
-                "INFORMATION"
-            ],
-            "explanation": "Academic context: Empirical DATA collected from the satellite confirms the global warming trend.",
-            "passage": "Empirical [TARGET] collected from the satellite confirms the global warming trend.",
-            "correctAnswer": "DATA"
+            "explanation": "Academic context: Before building the treehouse, Maya sketched a simple DESIGN so her brother would know where each board should go. Here, \"DESIGN\" means a plan showing how something is made, not a disagreement.",
+            "passage": "Before building the treehouse, Maya sketched a simple [TARGET] so her brother would know where each board should go",
+            "correctAnswer": "DESIGN",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
             "word": "COMMUNITY",
             "interactionType": "Thesis Thrust",
-            "id": "VOC_ACADEMICWORD_L9_Q3",
-            "hint": "DEFINITION: A group of people living in the same place.",
+            "id": "VOC_ACADEMICWORD_L1_Q3",
+            "hint": "DEFINITION: A group of people living in the same area or sharing common interests.",
             "options": [
-                "Group",
-                "SOCIETY",
+                "MACHINE",
+                "DOCUMENT",
                 "COMMUNITY",
-                "Individual"
+                "FURNITURE"
             ],
-            "explanation": "Academic context: The local COMMUNITY came together to rebuild the park after the storm.",
-            "passage": "The local [TARGET] came together to rebuild the park after the storm.",
-            "correctAnswer": "COMMUNITY"
+            "explanation": "Academic context: After the flood, the whole COMMUNITY worked together to clean up the streets. Here, \"COMMUNITY\" refers to people connected by place or interest, not an object.",
+            "passage": "After the flood, the whole [TARGET] worked together to clean up the streets",
+            "correctAnswer": "COMMUNITY",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ACQUIRE",
+            "word": "KNOWLEDGE",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L2_Q1",
+            "hint": "DEFINITION: Information, understanding, or skill gained through study or experience.",
+            "options": [
+                "LUGGAGE",
+                "PAYMENT",
+                "SCHEDULE",
+                "KNOWLEDGE"
+            ],
+            "explanation": "Academic context: Years of traveling gave her deep KNOWLEDGE of different cultures and languages. Here, \"KNOWLEDGE\" means what a person understands or knows, not a physical item.",
+            "passage": "Years of traveling gave her deep [TARGET] of different cultures and languages",
+            "correctAnswer": "KNOWLEDGE",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "QUALITY",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L2_Q2",
+            "hint": "DEFINITION: The standard of something measured against similar things; how good or bad it is.",
+            "options": [
+                "QUALITY",
+                "LOCATION",
+                "PARKING",
+                "NOISE"
+            ],
+            "explanation": "Academic context: The restaurant lost customers after the QUALITY of its food dropped sharply. Here, \"QUALITY\" describes how good or bad something is, not where it is.",
+            "passage": "The restaurant lost customers after the [TARGET] of its food dropped sharply",
+            "correctAnswer": "QUALITY",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "CHAPTER",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L2_Q3",
+            "hint": "DEFINITION: A main division of a book, usually numbered or titled.",
+            "options": [
+                "RECEIPT",
+                "CHAPTER",
+                "TICKET",
+                "POSTER"
+            ],
+            "explanation": "Academic context: She stayed up late to finish the final CHAPTER of her mystery novel. Here, \"CHAPTER\" is a section of a book, not a piece of paper from a shop or wall.",
+            "passage": "She stayed up late to finish the final [TARGET] of her mystery novel",
+            "correctAnswer": "CHAPTER",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "AREA",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L3_Q1",
+            "hint": "DEFINITION: A particular part of a place, or a field of activity or interest.",
+            "options": [
+                "SALARY",
+                "DEADLINE",
+                "AREA",
+                "COSTUME"
+            ],
+            "explanation": "Academic context: Marketing is the AREA of business that Daniel finds most exciting. Here, \"AREA\" means a field of activity, not a payment or clothing.",
+            "passage": "Marketing is the [TARGET] of business that Daniel finds most exciting",
+            "correctAnswer": "AREA",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "GROUP",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L3_Q2",
+            "hint": "DEFINITION: A number of people or things gathered or classed together.",
+            "options": [
+                "SUITCASE",
+                "POSTCARD",
+                "UMBRELLA",
+                "GROUP"
+            ],
+            "explanation": "Academic context: A small GROUP of tourists waited outside the museum for the doors to open. Here, \"GROUP\" refers to people together, not travel items.",
+            "passage": "A small [TARGET] of tourists waited outside the museum for the doors to open",
+            "correctAnswer": "GROUP",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "ROLE",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L3_Q3",
+            "hint": "DEFINITION: The function or part someone plays in a particular situation.",
+            "options": [
+                "ROLE",
+                "UNIFORM",
+                "STADIUM",
+                "WHISTLE"
+            ],
+            "explanation": "Academic context: As team captain, her ROLE was to keep everyone motivated before the match. Here, \"ROLE\" describes a person's job in a situation, not sports equipment.",
+            "passage": "As team captain, her [TARGET] was to keep everyone motivated before the match",
+            "correctAnswer": "ROLE",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "ISSUE",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L4_Q1",
+            "hint": "DEFINITION: An important topic or problem being discussed or dealt with.",
+            "options": [
+                "FESTIVAL",
+                "ISSUE",
+                "BAKERY",
+                "PARADE"
+            ],
+            "explanation": "Academic context: Traffic congestion has become a serious ISSUE in the city center. Here, \"ISSUE\" means a problem or important topic, not a celebration.",
+            "passage": "Traffic congestion has become a serious [TARGET] in the city center",
+            "correctAnswer": "ISSUE",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "ITEM",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L4_Q2",
+            "hint": "DEFINITION: An individual article or unit, especially one on a list.",
+            "options": [
+                "COMPLIMENT",
+                "RUMOR",
+                "ITEM",
+                "APOLOGY"
+            ],
+            "explanation": "Academic context: She crossed each ITEM off her shopping list as she found it in the supermarket. Here, \"ITEM\" is a single thing on a list, not a spoken remark.",
+            "passage": "She crossed each [TARGET] off her shopping list as she found it in the supermarket",
+            "correctAnswer": "ITEM",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "PLAN",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L4_Q3",
+            "hint": "DEFINITION: A detailed proposal for doing or achieving something.",
+            "options": [
+                "ALLERGY",
+                "COSTUME",
+                "SOUVENIR",
+                "PLAN"
+            ],
+            "explanation": "Academic context: The family made a careful PLAN for their road trip across three countries. Here, \"PLAN\" means an organized set of steps, not a condition or object.",
+            "passage": "The family made a careful [TARGET] for their road trip across three countries",
+            "correctAnswer": "PLAN",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "ORDER",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L5_Q1",
+            "hint": "DEFINITION: A request for food or goods at a restaurant or shop.",
+            "options": [
+                "ORDER",
+                "MENU",
+                "RECEIPT",
+                "APRON"
+            ],
+            "explanation": "Academic context: The waiter brought our ORDER to the table just minutes after we sat down. Here, \"ORDER\" means the food requested, since a menu is given before ordering, not after.",
+            "passage": "The waiter brought our [TARGET] to the table just minutes after we sat down",
+            "correctAnswer": "ORDER",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "FORM",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L5_Q2",
+            "hint": "DEFINITION: A document with blank spaces for writing information.",
+            "options": [
+                "BANDAGE",
+                "FORM",
+                "THERMOMETER",
+                "PRESCRIPTION"
+            ],
+            "explanation": "Academic context: New patients must fill out a medical FORM before seeing the doctor. Here, \"FORM\" means a printed document to complete, not equipment or medicine.",
+            "passage": "New patients must fill out a medical [TARGET] before seeing the doctor",
+            "correctAnswer": "FORM",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "MAJOR",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L5_Q3",
+            "hint": "DEFINITION: Very important, large, or serious.",
+            "options": [
+                "BORROWED",
+                "IMAGINARY",
+                "MAJOR",
+                "TEMPORARY"
+            ],
+            "explanation": "Academic context: Losing her passport right before the flight was a MAJOR problem for Elena. Here, \"MAJOR\" means serious or large, which fits the urgency here better than the alternatives.",
+            "passage": "Losing her passport right before the flight was a [TARGET] problem for Elena",
+            "correctAnswer": "MAJOR",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "FINAL",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L6_Q1",
+            "hint": "DEFINITION: Last in a series; happening at the end.",
+            "options": [
+                "FRAGILE",
+                "ANCIENT",
+                "BORROWED",
+                "FINAL"
+            ],
+            "explanation": "Academic context: Fans cheered loudly during the FINAL minutes of the championship game. Here, \"FINAL\" describes the last part of an event, not its age or condition.",
+            "passage": "Fans cheered loudly during the [TARGET] minutes of the championship game",
+            "correctAnswer": "FINAL",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "BASIC",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L6_Q2",
+            "hint": "DEFINITION: Forming an essential foundation; simple and fundamental.",
+            "options": [
+                "BASIC",
+                "EXPENSIVE",
+                "ANCIENT",
+                "FRAGILE"
+            ],
+            "explanation": "Academic context: The cooking class taught students the BASIC skills needed to make a simple dinner. Here, \"BASIC\" means simple and fundamental, not costly or old.",
+            "passage": "The cooking class taught students the [TARGET] skills needed to make a simple dinner",
+            "correctAnswer": "BASIC",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "REGION",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L6_Q3",
+            "hint": "DEFINITION: An area, especially part of a country, with its own characteristics.",
+            "options": [
+                "HARVEST",
+                "REGION",
+                "RECIPE",
+                "FESTIVAL"
+            ],
+            "explanation": "Academic context: The southern REGION of the country is famous for its spicy street food. Here, \"REGION\" refers to a geographic area, not a meal or event.",
+            "passage": "The southern [TARGET] of the country is famous for its spicy street food",
+            "correctAnswer": "REGION",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "PERIOD",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L7_Q1",
+            "hint": "DEFINITION: A length or portion of time.",
+            "options": [
+                "RECEIPT",
+                "PARADE",
+                "PERIOD",
+                "DISPLAY"
+            ],
+            "explanation": "Academic context: The store saw its strongest sales during the holiday shopping PERIOD. Here, \"PERIOD\" describes a stretch of time, not a purchase document or decoration.",
+            "passage": "The store saw its strongest sales during the holiday shopping [TARGET]",
+            "correctAnswer": "PERIOD",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "GOAL",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L7_Q2",
+            "hint": "DEFINITION: An aim or desired result that a person works toward.",
+            "options": [
+                "ITINERARY",
+                "SOUVENIR",
+                "VISA",
+                "GOAL"
+            ],
+            "explanation": "Academic context: Her main GOAL this year is to save enough money for a trip to Japan. Here, \"GOAL\" means something a person works to achieve, not a travel document.",
+            "passage": "Her main [TARGET] this year is to save enough money for a trip to Japan",
+            "correctAnswer": "GOAL",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "TASK",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L7_Q3",
+            "hint": "DEFINITION: A piece of work to be done, especially a tiresome one.",
+            "options": [
+                "TASK",
+                "HOLIDAY",
+                "INVITATION",
+                "COMPLIMENT"
+            ],
+            "explanation": "Academic context: Cleaning the garage was the last TASK on Dad's weekend to-do list. Here, \"TASK\" is a job that needs doing, not a celebration or remark.",
+            "passage": "Cleaning the garage was the last [TARGET] on Dad's weekend to-do list",
+            "correctAnswer": "TASK",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "TEAM",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L8_Q1",
+            "hint": "DEFINITION: A group of people who work together, especially in sports or business.",
+            "options": [
+                "STRETCHER",
+                "TEAM",
+                "CLIPBOARD",
+                "SCRUB"
+            ],
+            "explanation": "Academic context: The hospital's surgical TEAM worked through the night to save the patient. Here, \"TEAM\" refers to a group of people working together, not a single piece of hospital equipment or clothing.",
+            "passage": "The hospital's surgical [TARGET] worked through the night to save the patient",
+            "correctAnswer": "TEAM",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "RESOURCE",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L8_Q2",
+            "hint": "DEFINITION: A stock or supply of something, such as money, materials, or staff, that can be drawn on when needed.",
+            "options": [
+                "CUSTOMER",
+                "APPOINTMENT",
+                "RESOURCE",
+                "PRESCRIPTION"
+            ],
+            "explanation": "Academic context: The small rural clinic lacked the RESOURCEs needed to treat every patient during flu season. Here, \"RESOURCE\" means available supplies or staff a clinic can draw on, not the people or paperwork it produces.",
+            "passage": "The small rural clinic lacked the [TARGET]s needed to treat every patient during flu season",
+            "correctAnswer": "RESOURCE",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "RULE",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L8_Q3",
+            "hint": "DEFINITION: A statement that controls or guides behavior or action.",
+            "options": [
+                "POSTER",
+                "DISPLAY",
+                "CATALOG",
+                "RULE"
+            ],
+            "explanation": "Academic context: One important RULE at the library is that visitors must stay quiet. Here, \"RULE\" means a guideline for behavior, not a printed item found there.",
+            "passage": "One important [TARGET] at the library is that visitors must stay quiet",
+            "correctAnswer": "RULE",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "LEVEL",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L9_Q1",
+            "hint": "DEFINITION: A stage, position, or degree on a scale of rank or amount.",
+            "options": [
+                "LEVEL",
+                "TROPHY",
+                "CONTROLLER",
+                "SCOREBOARD"
+            ],
+            "explanation": "Academic context: After months of practice, she reached an advanced LEVEL in the video game. Here, \"LEVEL\" describes a stage or rank a player reaches, not game equipment.",
+            "passage": "After months of practice, she reached an advanced [TARGET] in the video game",
+            "correctAnswer": "LEVEL",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "STYLE",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L9_Q2",
+            "hint": "DEFINITION: A particular way of doing something; a manner or fashion.",
+            "options": [
+                "INVOICE",
+                "STYLE",
+                "RECEIPT",
+                "MENU"
+            ],
+            "explanation": "Academic context: The new cafe is known for its modern STYLE of furniture and lighting. Here, \"STYLE\" refers to a way of designing something, not a billing or food document.",
+            "passage": "The new cafe is known for its modern [TARGET] of furniture and lighting",
+            "correctAnswer": "STYLE",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "FOCUS",
+            "interactionType": "Thesis Thrust",
+            "id": "VOC_ACADEMICWORD_L9_Q3",
+            "hint": "DEFINITION: Close attention or concentration on a particular thing.",
+            "options": [
+                "APPETITE",
+                "TEMPER",
+                "FOCUS",
+                "BALANCE"
+            ],
+            "explanation": "Academic context: During exam week, Maria lost her FOCUS because of the noise in the dorm. Here, \"FOCUS\" means concentrated attention, which fits losing it to noise better than the alternatives.",
+            "passage": "During exam week, Maria lost her [TARGET] because of the noise in the dorm",
+            "correctAnswer": "FOCUS",
+            "instruction": "Drag the correct word to complete the sentence."
+        },
+        {
+            "word": "SECTION",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L10_Q1",
-            "hint": "DEFINITION: Buy or obtain for oneself.",
+            "hint": "DEFINITION: A part or division of something larger.",
             "options": [
-                "OBTAIN",
-                "ACQUIRE",
-                "Gain",
-                "Lose"
+                "AISLE",
+                "COUNTER",
+                "CART",
+                "SECTION"
             ],
-            "explanation": "Academic context: Students must ACQUIRE specific skills before entering the workforce.",
-            "passage": "Students must [TARGET] specific skills before entering the workforce.",
-            "correctAnswer": "ACQUIRE"
+            "explanation": "Academic context: The grocery store recently rearranged the SECTION where the fresh fruit is kept. Here, \"SECTION\" section names the divided area being described, unlike the walkway or checkout.",
+            "passage": "The grocery store recently rearranged the [TARGET] where the fresh fruit is kept",
+            "correctAnswer": "SECTION",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONSTRUCT",
+            "word": "FEATURE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L10_Q2",
-            "hint": "DEFINITION: Build or erect something.",
+            "hint": "DEFINITION: A distinctive attribute or aspect of something.",
             "options": [
-                "Destroy",
-                "Create",
-                "BUILD",
-                "CONSTRUCT"
+                "FEATURE",
+                "WARRANTY",
+                "DISCOUNT",
+                "COMPLAINT"
             ],
-            "explanation": "Academic context: Engineers will CONSTRUCT a new bridge to replace the old one.",
-            "passage": "Engineers will [TARGET] a new bridge to replace the old one.",
-            "correctAnswer": "CONSTRUCT"
+            "explanation": "Academic context: The biggest FEATURE of the new phone is its long battery life. Here, \"FEATURE\" means a notable characteristic of a product, not a sales term.",
+            "passage": "The biggest [TARGET] of the new phone is its long battery life",
+            "correctAnswer": "FEATURE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "EVIDENCE",
+            "word": "OPTION",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L10_Q3",
-            "hint": "DEFINITION: The available body of facts or information indicating whether a belief is true.",
+            "hint": "DEFINITION: A thing that may be chosen; a choice.",
             "options": [
-                "EVIDENCE",
-                "PROOF",
-                "Speculation",
-                "Clue"
+                "REFUND",
+                "OPTION",
+                "APOLOGY",
+                "INVOICE"
             ],
-            "explanation": "Academic context: The forensic team discovered crucial EVIDENCE at the crime scene.",
-            "passage": "The forensic team discovered crucial [TARGET] at the crime scene.",
-            "correctAnswer": "EVIDENCE"
+            "explanation": "Academic context: The airline offered passengers the OPTION of a window or aisle seat. Here, \"OPTION\" is a choice someone can pick, not money returned or a document.",
+            "passage": "The airline offered passengers the [TARGET] of a window or aisle seat",
+            "correctAnswer": "OPTION",
+            "instruction": "Drag the correct word to complete the sentence."
         }
     ],
     "gameType": "academicWord",

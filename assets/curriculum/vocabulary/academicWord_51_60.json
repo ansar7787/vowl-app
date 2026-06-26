@@ -2,454 +2,484 @@
     "levels": "51-60",
     "quests": [
         {
-            "word": "KNOWLEDGE",
+            "word": "FLUCTUATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L51_Q1",
-            "hint": "DEFINITION: Facts, information, and skills acquired through experience.",
+            "hint": "DEFINITION: To rise and fall irregularly in number, amount, or quality.",
             "options": [
-                "Ignorance",
-                "WISDOM",
-                "Information",
-                "KNOWLEDGE"
+                "STABILIZE",
+                "VANISH",
+                "FLUCTUATE",
+                "FREEZE"
             ],
-            "explanation": "Academic context: Access to digital KNOWLEDGE has revolutionized modern education systems.",
-            "passage": "Access to digital [TARGET] has revolutionized modern education systems.",
-            "correctAnswer": "KNOWLEDGE"
+            "explanation": "Academic context: Gas prices tend to FLUCTUATE throughout the year depending on global oil supply. Here, \"FLUCTUATE\" means to change irregularly, the opposite of staying steady, disappearing, or becoming fixed.",
+            "passage": "Gas prices tend to [TARGET] throughout the year depending on global oil supply",
+            "correctAnswer": "FLUCTUATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ASSIST",
+            "word": "GENERATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L51_Q2",
-            "hint": "DEFINITION: Help someone by sharing the work.",
+            "hint": "DEFINITION: To produce or create something, especially energy, income, or ideas.",
             "options": [
-                "Aid",
-                "Hinder",
-                "HELP",
-                "ASSIST"
+                "CONSUME",
+                "WASTE",
+                "LEAK",
+                "GENERATE"
             ],
-            "explanation": "Academic context: Volunteers were asked to ASSIST in the distribution of food supplies.",
-            "passage": "Volunteers were asked to [TARGET] in the distribution of food supplies.",
-            "correctAnswer": "ASSIST"
+            "explanation": "Academic context: The new wind farm can GENERATE enough electricity to power ten thousand homes. Here, \"GENERATE\" means to produce something, the opposite of using it up, wasting it, or letting it escape.",
+            "passage": "The new wind farm can [TARGET] enough electricity to power ten thousand homes",
+            "correctAnswer": "GENERATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "LOGIC",
+            "word": "GRANT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L51_Q3",
-            "hint": "DEFINITION: Reasoning conducted according to strict principles of validity.",
+            "hint": "DEFINITION: To formally give or allow something, often as a favor or right; a sum of money given for a particular purpose.",
             "options": [
-                "Irrationality",
-                "LOGIC",
-                "Sense",
-                "REASONING"
+                "GRANT",
+                "INVOICE",
+                "RECEIPT",
+                "FINE"
             ],
-            "explanation": "Academic context: The philosopher used rigorous LOGIC to dismantle the opponent's argument.",
-            "passage": "The philosopher used rigorous [TARGET] to dismantle the opponent's argument.",
-            "correctAnswer": "LOGIC"
+            "explanation": "Academic context: The university offered her a research GRANT to fund her study of coral reefs. Here, \"GRANT\" means money awarded for a purpose, not a bill, proof of payment, or a penalty.",
+            "passage": "The university offered her a research [TARGET] to fund her study of coral reefs",
+            "correctAnswer": "GRANT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "THEORY",
+            "word": "IDENTICAL",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L52_Q1",
-            "hint": "DEFINITION: A system of ideas intended to explain something.",
+            "hint": "DEFINITION: Exactly the same in every detail.",
             "options": [
-                "Hypothesis",
-                "Practice",
-                "THEORY",
-                "PRINCIPLE"
+                "SIMILAR",
+                "IDENTICAL",
+                "FADED",
+                "BORROWED"
             ],
-            "explanation": "Academic context: In physics, the THEORY of relativity changed our understanding of time.",
-            "passage": "In physics, the [TARGET] of relativity changed our understanding of time.",
-            "correctAnswer": "THEORY"
+            "explanation": "Academic context: The twins wore IDENTICAL outfits to confuse their classmates on the first day of school. Here, \"IDENTICAL\" means exactly the same, a stronger claim than merely resembling, looking worn, or being lent.",
+            "passage": "The twins wore [TARGET] outfits to confuse their classmates on the first day of school",
+            "correctAnswer": "IDENTICAL",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "QUALITY",
+            "word": "ILLUSTRATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L52_Q2",
-            "hint": "DEFINITION: The standard of something as measured against other things.",
+            "hint": "DEFINITION: To explain or make something clear by using examples, pictures, or comparisons.",
             "options": [
-                "STANDARD",
-                "Inferiority",
-                "QUALITY",
-                "Caliber"
+                "CONFUSE",
+                "COMPLICATE",
+                "ILLUSTRATE",
+                "HIDE"
             ],
-            "explanation": "Academic context: Academic rigor ensures the high QUALITY of peer-reviewed journals.",
-            "passage": "Academic rigor ensures the high [TARGET] of peer-reviewed journals.",
-            "correctAnswer": "QUALITY"
+            "explanation": "Academic context: The teacher used a simple diagram to ILLUSTRATE how blood circulates through the heart. Here, \"ILLUSTRATE\" means to make something clear, the opposite of confusing, complicating, or concealing it.",
+            "passage": "The teacher used a simple diagram to [TARGET] how blood circulates through the heart",
+            "correctAnswer": "ILLUSTRATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "METHOD",
+            "word": "IMPLY",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L52_Q3",
-            "hint": "DEFINITION: A particular form of procedure for accomplishing or approaching something.",
+            "hint": "DEFINITION: To suggest something indirectly rather than stating it openly.",
             "options": [
-                "PROCEDURE",
-                "METHOD",
-                "Chaos",
-                "Technique"
+                "CONFIRM",
+                "PROVE",
+                "ANNOUNCE",
+                "IMPLY"
             ],
-            "explanation": "Academic context: The lab developed a specialized METHOD for isolating rare proteins.",
-            "passage": "The lab developed a specialized [TARGET] for isolating rare proteins.",
-            "correctAnswer": "METHOD"
+            "explanation": "Academic context: Her sarcastic tone seemed to IMPLY that she didn't believe a word he said. Here, \"IMPLY\" means to suggest indirectly, a weaker and less direct claim than confirming, proving, or openly announcing something.",
+            "passage": "Her sarcastic tone seemed to [TARGET] that she didn't believe a word he said",
+            "correctAnswer": "IMPLY",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CHAPTER",
+            "word": "IMPOSE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L53_Q1",
-            "hint": "DEFINITION: A main division of a book.",
+            "hint": "DEFINITION: To force something to be accepted or applied, often unwelcome.",
             "options": [
-                "Whole",
-                "SECTION",
-                "CHAPTER",
-                "Part"
+                "IMPOSE",
+                "LIFT",
+                "CANCEL",
+                "REMOVE"
             ],
-            "explanation": "Academic context: The final CHAPTER of the book summarizes all previous arguments.",
-            "passage": "The final [TARGET] of the book summarizes all previous arguments.",
-            "correctAnswer": "CHAPTER"
+            "explanation": "Academic context: The city council voted to IMPOSE a curfew on the downtown area after several late-night disturbances. Here, \"IMPOSE\" means to put a rule in place, the opposite of taking one away, calling it off, or eliminating it.",
+            "passage": "The city council voted to [TARGET] a curfew on the downtown area after several late-night disturbances",
+            "correctAnswer": "IMPOSE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "AFFECT",
+            "word": "INCORPORATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L53_Q2",
-            "hint": "DEFINITION: Have an effect on; make a difference to.",
+            "hint": "DEFINITION: To include something as part of a whole.",
             "options": [
-                "AFFECT",
-                "Impact",
-                "Ignore",
-                "INFLUENCE"
+                "REMOVE",
+                "INCORPORATE",
+                "REJECT",
+                "EXCLUDE"
             ],
-            "explanation": "Academic context: Changing weather patterns will AFFECT the migration of many species.",
-            "passage": "Changing weather patterns will [TARGET] the migration of many species.",
-            "correctAnswer": "AFFECT"
+            "explanation": "Academic context: The architect agreed to INCORPORATE solar panels into the building's original design. Here, \"INCORPORATE\" means to build something in as a part, the opposite of taking it out, refusing it, or leaving it out.",
+            "passage": "The architect agreed to [TARGET] solar panels into the building's original design",
+            "correctAnswer": "INCORPORATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "PERSPECTIVE",
+            "word": "INDEX",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L53_Q3",
-            "hint": "DEFINITION: A particular attitude toward or way of regarding something.",
+            "hint": "DEFINITION: An alphabetical list of names or topics at the back of a book, with page references; a number indicating a level relative to a standard.",
             "options": [
-                "VIEWPOINT",
-                "PERSPECTIVE",
-                "Narrowness",
-                "Stance"
+                "FOREWORD",
+                "GLOSSARY",
+                "INDEX",
+                "APPENDIX"
             ],
-            "explanation": "Academic context: History is often rewritten when viewed from a different PERSPECTIVE.",
-            "passage": "History is often rewritten when viewed from a different [TARGET].",
-            "correctAnswer": "PERSPECTIVE"
+            "explanation": "Academic context: She flipped to the INDEX at the back of the cookbook to find the recipe for lemon cake. Here, \"INDEX\" specifically lists topics with page numbers, unlike an introduction, a list of definitions, or supplementary material.",
+            "passage": "She flipped to the [TARGET] at the back of the cookbook to find the recipe for lemon cake",
+            "correctAnswer": "INDEX",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONDUCT",
+            "word": "INITIAL",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L54_Q1",
-            "hint": "DEFINITION: The manner in which a person behaves.",
+            "hint": "DEFINITION: Existing or occurring at the very beginning.",
             "options": [
-                "DIRECT",
-                "Manage",
-                "Follow",
-                "CONDUCT"
+                "EVENTUAL",
+                "FINAL",
+                "DELAYED",
+                "INITIAL"
             ],
-            "explanation": "Academic context: The university will CONDUCT a series of lectures on environmental science.",
-            "passage": "The university will [TARGET] a series of lectures on environmental science.",
-            "correctAnswer": "CONDUCT"
+            "explanation": "Academic context: Her INITIAL reaction to the surprise party was complete shock. Here, \"INITIAL\" means happening at the start, the opposite of happening eventually, at the end, or after a delay.",
+            "passage": "Her [TARGET] reaction to the surprise party was complete shock",
+            "correctAnswer": "INITIAL",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CREDIT",
+            "word": "INITIATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L54_Q2",
-            "hint": "DEFINITION: The ability of a customer to obtain goods or services.",
+            "hint": "DEFINITION: To begin or start something, especially a formal process.",
             "options": [
-                "Honor",
-                "CREDIT",
-                "RECOGNITION",
-                "Blame"
+                "INITIATE",
+                "CONCLUDE",
+                "SUSPEND",
+                "ABANDON"
             ],
-            "explanation": "Academic context: The author was given CREDIT for the discovery of the lost manuscript.",
-            "passage": "The author was given [TARGET] for the discovery of the lost manuscript.",
-            "correctAnswer": "CREDIT"
+            "explanation": "Academic context: The committee voted to INITIATE an investigation into the company's spending. Here, \"INITIATE\" means to start a process, the opposite of finishing, pausing, or giving it up.",
+            "passage": "The committee voted to [TARGET] an investigation into the company's spending",
+            "correctAnswer": "INITIATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONCEPT",
+            "word": "INSTITUTE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L54_Q3",
-            "hint": "DEFINITION: An abstract idea; a general notion.",
+            "hint": "DEFINITION: To set up or establish something, especially a policy or procedure; an organization devoted to a particular kind of work.",
             "options": [
-                "IDEA",
-                "CONCEPT",
-                "Notion",
-                "Physicality"
+                "ABOLISH",
+                "INSTITUTE",
+                "IGNORE",
+                "VIOLATE"
             ],
-            "explanation": "Academic context: The fundamental CONCEPT of quantum entanglement remains difficult to grasp.",
-            "passage": "The fundamental [TARGET] of quantum entanglement remains difficult to grasp.",
-            "correctAnswer": "CONCEPT"
+            "explanation": "Academic context: The hospital decided to INSTITUTE a new policy requiring all visitors to wear masks during flu season. Here, \"INSTITUTE\" means to put a new policy in place, the opposite of abolishing, ignoring, or breaking it.",
+            "passage": "The hospital decided to [TARGET] a new policy requiring all visitors to wear masks during flu season",
+            "correctAnswer": "INSTITUTE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "JUSTICE",
+            "word": "INTEGRATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L55_Q1",
-            "hint": "DEFINITION: Just behavior or treatment.",
+            "hint": "DEFINITION: To combine two or more things so that they work together as a whole.",
             "options": [
-                "Equity",
-                "JUSTICE",
-                "FAIRNESS",
-                "Iniquity"
+                "SEPARATE",
+                "ISOLATE",
+                "INTEGRATE",
+                "EXCLUDE"
             ],
-            "explanation": "Academic context: The legal system aims to provide JUSTICE for all citizens regardless of status.",
-            "passage": "The legal system aims to provide [TARGET] for all citizens regardless of status.",
-            "correctAnswer": "JUSTICE"
+            "explanation": "Academic context: The school worked hard to INTEGRATE new immigrant students into regular classrooms. Here, \"INTEGRATE\" means to bring together as one whole, the opposite of keeping apart, isolating, or leaving out.",
+            "passage": "The school worked hard to [TARGET] new immigrant students into regular classrooms",
+            "correctAnswer": "INTEGRATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "RESEARCH",
+            "word": "INTENSE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L55_Q2",
-            "hint": "DEFINITION: The systematic investigation into and study of materials.",
+            "hint": "DEFINITION: Existing in an extreme degree; very strong or concentrated.",
             "options": [
-                "RESEARCH",
-                "STUDY",
-                "Guesswork",
-                "Inquiry"
+                "MILD",
+                "FAINT",
+                "GENTLE",
+                "INTENSE"
             ],
-            "explanation": "Academic context: Extensive RESEARCH is required before publishing a new scientific paper.",
-            "passage": "Extensive [TARGET] is required before publishing a new scientific paper.",
-            "correctAnswer": "RESEARCH"
+            "explanation": "Academic context: The afternoon sun was so INTENSE that the hikers had to stop and rest in the shade. Here, \"INTENSE\" means extremely strong, the opposite of being weak, faint, or gentle.",
+            "passage": "The afternoon sun was so [TARGET] that the hikers had to stop and rest in the shade",
+            "correctAnswer": "INTENSE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "DESIGN",
+            "word": "INTERACT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L55_Q3",
-            "hint": "DEFINITION: A plan or drawing produced to show the look and function.",
+            "hint": "DEFINITION: To communicate with or react to one another.",
             "options": [
-                "PLAN",
-                "DESIGN",
-                "Randomize",
-                "Draft"
+                "INTERACT",
+                "AVOID",
+                "IGNORE",
+                "ISOLATE"
             ],
-            "explanation": "Academic context: The architect will DESIGN the new library to be energy-efficient.",
-            "passage": "The architect will [TARGET] the new library to be energy-efficient.",
-            "correctAnswer": "DESIGN"
+            "explanation": "Academic context: Scientists study how dolphins INTERACT with each other using clicks and whistles. Here, \"INTERACT\" means to communicate with one another, the opposite of avoiding, ignoring, or staying apart from others.",
+            "passage": "Scientists study how dolphins [TARGET] with each other using clicks and whistles",
+            "correctAnswer": "INTERACT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ANALYZE",
+            "word": "INTERMEDIATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L56_Q1",
-            "hint": "DEFINITION: Examine something methodically and in detail.",
+            "hint": "DEFINITION: At a level between beginner and advanced; in the middle of a process.",
             "options": [
-                "Examine",
-                "ANALYZE",
-                "Synthesize",
-                "BREAK DOWN"
+                "ADVANCED",
+                "INTERMEDIATE",
+                "BEGINNER",
+                "EXPERT"
             ],
-            "explanation": "Academic context: The researchers had to ANALYZE the complex results of the clinical trial.",
-            "passage": "The researchers had to [TARGET] the complex results of the clinical trial.",
-            "correctAnswer": "ANALYZE"
+            "explanation": "Academic context: After finishing the beginner course, she was finally ready to join the INTERMEDIATE swimming class. Here, \"INTERMEDIATE\" means a level placed between the other two, not at either extreme end of the skill range.",
+            "passage": "After finishing the beginner course, she was finally ready to join the [TARGET] swimming class",
+            "correctAnswer": "INTERMEDIATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "SOURCE",
+            "word": "INTERNAL",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L56_Q2",
-            "hint": "DEFINITION: A place, person, or thing from which something comes or can be obtained.",
+            "hint": "DEFINITION: Existing or happening inside something, especially an organization or the body.",
             "options": [
-                "End",
-                "SOURCE",
-                "Reference",
-                "ORIGIN"
+                "EXTERNAL",
+                "PUBLIC",
+                "INTERNAL",
+                "FOREIGN"
             ],
-            "explanation": "Academic context: The historian meticulously verified every primary SOURCE for the biography.",
-            "passage": "The historian meticulously verified every primary [TARGET] for the biography.",
-            "correctAnswer": "SOURCE"
+            "explanation": "Academic context: The company launched an INTERNAL investigation after employees reported missing funds. Here, \"INTERNAL\" means happening within the organization itself, the opposite of an outside, public, or foreign inquiry.",
+            "passage": "The company launched an [TARGET] investigation after employees reported missing funds",
+            "correctAnswer": "INTERNAL",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "INTERPRET",
+            "word": "INVEST",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L56_Q3",
-            "hint": "DEFINITION: Explain the meaning of information, words, or actions.",
+            "hint": "DEFINITION: To put money into something with the expectation of achieving a profit or benefit.",
             "options": [
-                "Confuse",
-                "Decode",
-                "EXPLAIN",
-                "INTERPRET"
+                "WITHDRAW",
+                "SPEND",
+                "DONATE",
+                "INVEST"
             ],
-            "explanation": "Academic context: Scholars often INTERPRET ancient texts in vastly different ways.",
-            "passage": "Scholars often [TARGET] ancient texts in vastly different ways.",
-            "correctAnswer": "INTERPRET"
+            "explanation": "Academic context: She decided to INVEST her savings in a small bakery rather than keep the cash in the bank. Here, \"INVEST\" means to commit money expecting a future return, a different action from taking money out, simply spending it, or giving it away for free.",
+            "passage": "She decided to [TARGET] her savings in a small bakery rather than keep the cash in the bank",
+            "correctAnswer": "INVEST",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "APPROPRIATE",
+            "word": "LECTURE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L57_Q1",
-            "hint": "DEFINITION: Suitable or proper in the circumstances.",
+            "hint": "DEFINITION: A formal talk given to instruct or inform an audience, especially in a university.",
             "options": [
-                "Fitting",
-                "APPROPRIATE",
-                "Improper",
-                "SUITABLE"
+                "LECTURE",
+                "REHEARSAL",
+                "AUDITION",
+                "CEREMONY"
             ],
-            "explanation": "Academic context: Wearing a suit is APPROPRIATE for a formal business meeting.",
-            "passage": "Wearing a suit is [TARGET] for a formal business meeting.",
-            "correctAnswer": "APPROPRIATE"
+            "explanation": "Academic context: Students filled every seat in the hall for the visiting professor's LECTURE on climate change. Here, \"LECTURE\" means a formal instructional talk, not a practice run, a tryout, or a formal celebratory event.",
+            "passage": "Students filled every seat in the hall for the visiting professor's [TARGET] on climate change",
+            "correctAnswer": "LECTURE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "OBJECTIVE",
+            "word": "MAINTAIN",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L57_Q2",
-            "hint": "DEFINITION: A thing aimed at or sought; a goal.",
+            "hint": "DEFINITION: To keep something in good condition or in an existing state.",
             "options": [
-                "Aim",
-                "OBJECTIVE",
-                "Subjective",
-                "GOAL"
+                "NEGLECT",
+                "MAINTAIN",
+                "DAMAGE",
+                "ABANDON"
             ],
-            "explanation": "Academic context: The primary OBJECTIVE of the mission was to collect lunar soil samples.",
-            "passage": "The primary [TARGET] of the mission was to collect lunar soil samples.",
-            "correctAnswer": "OBJECTIVE"
+            "explanation": "Academic context: The old lighthouse keeper worked every day to MAINTAIN the equipment so the light never failed. Here, \"MAINTAIN\" means to keep something working well, the opposite of neglecting, damaging, or abandoning it.",
+            "passage": "The old lighthouse keeper worked every day to [TARGET] the equipment so the light never failed",
+            "correctAnswer": "MAINTAIN",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "NETWORK",
+            "word": "MAJORITY",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L57_Q3",
-            "hint": "DEFINITION: A group or system of interconnected people or things.",
+            "hint": "DEFINITION: More than half of a group or total.",
             "options": [
-                "Isolation",
-                "Web",
-                "NETWORK",
-                "SYSTEM"
+                "MINORITY",
+                "FRACTION",
+                "MAJORITY",
+                "HANDFUL"
             ],
-            "explanation": "Academic context: The social NETWORK allowed ideas to spread across the continent rapidly.",
-            "passage": "The social [TARGET] allowed ideas to spread across the continent rapidly.",
-            "correctAnswer": "NETWORK"
+            "explanation": "Academic context: The MAJORITY of voters supported the new recycling program in last week's election. Here, \"MAJORITY\" means more than half, the opposite of a smaller portion, a fraction, or just a few people.",
+            "passage": "The [TARGET] of voters supported the new recycling program in last week's election",
+            "correctAnswer": "MAJORITY",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "HYPOTHESIS",
+            "word": "MAXIMUM",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L58_Q1",
-            "hint": "DEFINITION: A proposed explanation made on the basis of limited evidence.",
+            "hint": "DEFINITION: The greatest amount, size, or value possible or allowed.",
             "options": [
-                "Supposition",
-                "HYPOTHESIS",
-                "Fact",
-                "THEORY"
+                "MINIMUM",
+                "AVERAGE",
+                "ESTIMATED",
+                "MAXIMUM"
             ],
-            "explanation": "Academic context: The scientist proposed a new HYPOTHESIS to explain the observed phenomena.",
-            "passage": "The scientist proposed a new [TARGET] to explain the observed phenomena.",
-            "correctAnswer": "HYPOTHESIS"
+            "explanation": "Academic context: The elevator has a MAXIMUM capacity of twelve people. Here, \"MAXIMUM\" means the highest possible limit, not the lowest limit, a typical value, or a rough guess.",
+            "passage": "The elevator has a [TARGET] capacity of twelve people",
+            "correctAnswer": "MAXIMUM",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONSUME",
+            "word": "MECHANISM",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L58_Q2",
-            "hint": "DEFINITION: Eat, drink, or ingest.",
+            "hint": "DEFINITION: A system of parts working together in a machine; a process by which something happens.",
             "options": [
-                "Save",
-                "Expend",
-                "USE",
-                "CONSUME"
+                "MECHANISM",
+                "RUMOR",
+                "OPINION",
+                "ANECDOTE"
             ],
-            "explanation": "Academic context: Modern lifestyles CONSUME vast amounts of energy and resources.",
-            "passage": "Modern lifestyles [TARGET] vast amounts of energy and resources.",
-            "correctAnswer": "CONSUME"
+            "explanation": "Academic context: Scientists are still studying the exact MECHANISM by which the vaccine triggers immunity. Here, \"MECHANISM\" means a working process or system, not gossip, a personal view, or a short story.",
+            "passage": "Scientists are still studying the exact [TARGET] by which the vaccine triggers immunity",
+            "correctAnswer": "MECHANISM",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "FACTOR",
+            "word": "MEDIA",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L58_Q3",
-            "hint": "DEFINITION: A circumstance, fact, or influence that contributes to a result.",
+            "hint": "DEFINITION: The main means of mass communication, such as television, radio, and the internet, considered as a whole.",
             "options": [
-                "Component",
-                "Result",
-                "FACTOR",
-                "ELEMENT"
+                "CURRICULUM",
+                "MEDIA",
+                "INVENTORY",
+                "ITINERARY"
             ],
-            "explanation": "Academic context: Economic stability is a major FACTOR in the growth of developing nations.",
-            "passage": "Economic stability is a major [TARGET] in the growth of developing nations.",
-            "correctAnswer": "FACTOR"
+            "explanation": "Academic context: Social MEDIA has changed the way political campaigns reach young voters. Here, \"MEDIA\" means channels of mass communication, not a course of study, a stock list, or a travel plan.",
+            "passage": "Social [TARGET] has changed the way political campaigns reach young voters",
+            "correctAnswer": "MEDIA",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONCLUSION",
+            "word": "MENTAL",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L59_Q1",
-            "hint": "DEFINITION: The end or finish of an event or process.",
+            "hint": "DEFINITION: Relating to the mind, or to the process of thinking.",
             "options": [
-                "Finish",
-                "CONCLUSION",
-                "END",
-                "Beginning"
+                "FINANCIAL",
+                "DIETARY",
+                "MENTAL",
+                "SEASONAL"
             ],
-            "explanation": "Academic context: The CONCLUSION of the study suggested that more research was needed.",
-            "passage": "The [TARGET] of the study suggested that more research was needed.",
-            "correctAnswer": "CONCLUSION"
+            "explanation": "Academic context: Getting enough sleep is just as important for MENTAL health as it is for physical health. Here, \"MENTAL\" means relating to the mind, a different domain from money matters, food habits, or the time of year.",
+            "passage": "Getting enough sleep is just as important for [TARGET] health as it is for physical health",
+            "correctAnswer": "MENTAL",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "GLOBAL",
+            "word": "MIGRATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L59_Q2",
-            "hint": "DEFINITION: Relating to the whole world; worldwide.",
+            "hint": "DEFINITION: To move from one place to settle in another, especially in large numbers or as a regular pattern.",
             "options": [
-                "GLOBAL",
-                "WORLDWIDE",
-                "Universal",
-                "Local"
+                "HIBERNATE",
+                "MULTIPLY",
+                "DISSOLVE",
+                "MIGRATE"
             ],
-            "explanation": "Academic context: Plastic pollution has become a GLOBAL crisis affecting all oceans.",
-            "passage": "Plastic pollution has become a [TARGET] crisis affecting all oceans.",
-            "correctAnswer": "GLOBAL"
+            "explanation": "Academic context: Thousands of birds MIGRATE south every winter to escape the cold. Here, \"MIGRATE\" means to travel to a new location, a different process from sleeping through winter, reproducing, or breaking apart.",
+            "passage": "Thousands of birds [TARGET] south every winter to escape the cold",
+            "correctAnswer": "MIGRATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CULTURE",
+            "word": "MINIMUM",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L59_Q3",
-            "hint": "DEFINITION: The arts and other manifestations of human intellectual achievement.",
+            "hint": "DEFINITION: The least amount, size, or value possible or required.",
             "options": [
-                "Nature",
-                "CIVILIZATION",
-                "CULTURE",
-                "Society"
+                "MINIMUM",
+                "MAXIMUM",
+                "AVERAGE",
+                "IDEAL"
             ],
-            "explanation": "Academic context: Ancient Roman CULTURE heavily influenced modern Western civilization.",
-            "passage": "Ancient Roman [TARGET] heavily influenced modern Western civilization.",
-            "correctAnswer": "CULTURE"
+            "explanation": "Academic context: The job posting listed a MINIMUM of three years of work experience. Here, \"MINIMUM\" means the lowest amount required, not the highest amount, a typical figure, or a most-wanted figure.",
+            "passage": "The job posting listed a [TARGET] of three years of work experience",
+            "correctAnswer": "MINIMUM",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ASPECT",
+            "word": "MODE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L60_Q1",
-            "hint": "DEFINITION: A particular part or feature of something.",
+            "hint": "DEFINITION: A particular way or manner in which something occurs or is done.",
             "options": [
-                "Whole",
-                "FEATURE",
-                "Part",
-                "ASPECT"
+                "BUDGET",
+                "MODE",
+                "SCHEDULE",
+                "LICENSE"
             ],
-            "explanation": "Academic context: One ASPECT of the problem is the lack of funding for local schools.",
-            "passage": "One [TARGET] of the problem is the lack of funding for local schools.",
-            "correctAnswer": "ASPECT"
+            "explanation": "Academic context: Cycling has become the preferred MODE of transportation for many city commuters. Here, \"MODE\" means a method or way of doing something, not money, a timetable, or a permit.",
+            "passage": "Cycling has become the preferred [TARGET] of transportation for many city commuters",
+            "correctAnswer": "MODE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "COMPUTE",
+            "word": "MODIFY",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L60_Q2",
-            "hint": "DEFINITION: Calculate a figure or amount.",
+            "hint": "DEFINITION: To make small changes to something in order to improve it or adapt it.",
             "options": [
-                "CALCULATE",
-                "Solve",
-                "Estimate",
-                "COMPUTE"
+                "DELETE",
+                "DESTROY",
+                "MODIFY",
+                "IGNORE"
             ],
-            "explanation": "Academic context: Mathematicians use algorithms to COMPUTE the values of large numbers.",
-            "passage": "Mathematicians use algorithms to [TARGET] the values of large numbers.",
-            "correctAnswer": "COMPUTE"
+            "explanation": "Academic context: The chef had to MODIFY the recipe slightly to make it suitable for guests with nut allergies. Here, \"MODIFY\" means to make small adjustments, a different action from removing entirely, ruining, or disregarding it.",
+            "passage": "The chef had to [TARGET] the recipe slightly to make it suitable for guests with nut allergies",
+            "correctAnswer": "MODIFY",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONSEQUENT",
+            "word": "MONITOR",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L60_Q3",
-            "hint": "DEFINITION: Following as a result or effect.",
+            "hint": "DEFINITION: To watch and check something over a period of time.",
             "options": [
-                "Following",
-                "Prior",
-                "CONSEQUENT",
-                "RESULTING"
+                "FORGET",
+                "DELETE",
+                "ABANDON",
+                "MONITOR"
             ],
-            "explanation": "Academic context: The heavy rain and CONSEQUENT flooding caused significant damage.",
-            "passage": "The heavy rain and [TARGET] flooding caused significant damage.",
-            "correctAnswer": "CONSEQUENT"
+            "explanation": "Academic context: Nurses MONITOR the patient's heart rate closely throughout the night. Here, \"MONITOR\" means to observe carefully and continuously, the opposite of forgetting about, erasing, or leaving it unattended.",
+            "passage": "Nurses [TARGET] the patient's heart rate closely throughout the night",
+            "correctAnswer": "MONITOR",
+            "instruction": "Drag the correct word to complete the sentence."
         }
     ],
     "gameType": "academicWord",

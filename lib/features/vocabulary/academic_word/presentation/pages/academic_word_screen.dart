@@ -455,7 +455,10 @@ class _AcademicWordGameBody extends StatelessWidget {
           height: isAnyCompact ? (maxHeight * 0.07).clamp(28.0, 40.0) : null,
           child: FittedBox(
             fit: isAnyCompact ? BoxFit.scaleDown : BoxFit.none,
-            child: AcademicWordInstruction(color: themeColor),
+            child: AcademicWordInstruction(
+              color: themeColor,
+              label: quest.instruction ?? AcademicWordStrings.instruction,
+            ),
           ),
         ),
       ),

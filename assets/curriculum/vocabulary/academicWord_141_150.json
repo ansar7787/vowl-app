@@ -2,454 +2,484 @@
     "levels": "141-150",
     "quests": [
         {
-            "word": "COMPLEX",
+            "word": "FORMER",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L141_Q1",
-            "hint": "DEFINITION: Consisting of many different and connected parts.",
+            "hint": "DEFINITION: Having previously been a particular thing; relating to the past, especially the recent past.",
             "options": [
-                "Simple",
-                "COMPLEX",
-                "INTRICATE",
-                "Complicated"
+                "FORMER",
+                "CURRENT",
+                "UPCOMING",
+                "FUTURE"
             ],
-            "explanation": "Academic context: The COMPLEX nature of the problem requires a multifaceted solution.",
-            "passage": "The [TARGET] nature of the problem requires a multifaceted solution.",
-            "correctAnswer": "COMPLEX"
+            "explanation": "Academic context: The FORMER mayor still attends every town council meeting even though he left office years ago. Here, \"FORMER\" means someone who held the role in the past, the opposite of someone presently in office, about to take office, or yet to take office.",
+            "passage": "The [TARGET] mayor still attends every town council meeting even though he left office years ago",
+            "correctAnswer": "FORMER",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "UNIQUE",
+            "word": "FUND",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L141_Q2",
-            "hint": "DEFINITION: Being the only one of its kind; unlike anything else.",
+            "hint": "DEFINITION: A sum of money saved or made available for a particular purpose; to provide money for something.",
             "options": [
-                "Common",
-                "DISTINCT",
-                "UNIQUE",
-                "Rare"
+                "EXHAUST",
+                "FUND",
+                "WITHHOLD",
+                "CONFISCATE"
             ],
-            "explanation": "Academic context: Each individual has a UNIQUE genetic code that distinguishes them.",
-            "passage": "Each individual has a [TARGET] genetic code that distinguishes them.",
-            "correctAnswer": "UNIQUE"
+            "explanation": "Academic context: The university relies on private donations to FUND its scholarship program. Here, \"FUND\" means to provide money for a purpose, the opposite of using funds up, refusing to give money, or seizing it.",
+            "passage": "The university relies on private donations to [TARGET] its scholarship program",
+            "correctAnswer": "FUND",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CATEGORY",
+            "word": "FUNDAMENTAL",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L141_Q3",
-            "hint": "DEFINITION: A class or division of people or things.",
+            "hint": "DEFINITION: Forming a necessary base or core; of central importance.",
             "options": [
-                "CLASS",
-                "Group",
-                "Individual",
-                "CATEGORY"
+                "PERIPHERAL",
+                "OPTIONAL",
+                "FUNDAMENTAL",
+                "SECONDARY"
             ],
-            "explanation": "Academic context: The library organizes books by CATEGORY to make them easier to find.",
-            "passage": "The library organizes books by [TARGET] to make them easier to find.",
-            "correctAnswer": "CATEGORY"
+            "explanation": "Academic context: Trust is FUNDAMENTAL to any successful long-term business partnership. Here, \"FUNDAMENTAL\" means forming an essential core, the opposite of being marginal, not required, or of lesser importance.",
+            "passage": "Trust is [TARGET] to any successful long-term business partnership",
+            "correctAnswer": "FUNDAMENTAL",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ASSESS",
+            "word": "GENDER",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L142_Q1",
-            "hint": "DEFINITION: Evaluate or estimate the nature, ability, or quality of.",
+            "hint": "DEFINITION: The state of being male, female, or another identity, often considered in relation to social and cultural roles rather than biology alone.",
             "options": [
-                "Ignore",
-                "EVALUATE",
-                "Judge",
-                "ASSESS"
+                "NATIONALITY",
+                "ELEVATION",
+                "TEMPERATURE",
+                "GENDER"
             ],
-            "explanation": "Academic context: The committee will ASSESS the candidate's performance during the interview.",
-            "passage": "The committee will [TARGET] the candidate's performance during the interview.",
-            "correctAnswer": "ASSESS"
+            "explanation": "Academic context: The survey asked respondents to identify their age, GENDER, and occupation. Here, \"GENDER\" means a category of personal identity, a completely unrelated kind of information from someone's country of origin, height above sea level, or the weather.",
+            "passage": "The survey asked respondents to identify their age, [TARGET], and occupation",
+            "correctAnswer": "GENDER",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ADMINISTER",
+            "word": "HENCE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L142_Q2",
-            "hint": "DEFINITION: Manage and be responsible for the running of.",
+            "hint": "DEFINITION: For this reason; as a consequence of this.",
             "options": [
-                "Execute",
-                "Neglect",
-                "ADMINISTER",
-                "MANAGE"
+                "HENCE",
+                "HOWEVER",
+                "MEANWHILE",
+                "OTHERWISE"
             ],
-            "explanation": "Academic context: The healthcare workers will ADMINISTER the vaccine to the local population.",
-            "passage": "The healthcare workers will [TARGET] the vaccine to the local population.",
-            "correctAnswer": "ADMINISTER"
+            "explanation": "Academic context: The bridge is under repair; HENCE, all traffic must use the detour for the next two weeks. Here, \"HENCE\" introduces a logical result of what came before, a different connecting function from showing contrast, indicating simultaneous timing, or presenting an alternative scenario.",
+            "passage": "The bridge is under repair; [TARGET], all traffic must use the detour for the next two weeks",
+            "correctAnswer": "HENCE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "DATA",
+            "word": "HIERARCHY",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L142_Q3",
-            "hint": "DEFINITION: Facts and statistics collected together for reference.",
+            "hint": "DEFINITION: A system in which people or things are ranked one above another according to status or authority.",
             "options": [
-                "Theory",
-                "DATA",
-                "INFORMATION",
-                "Facts"
+                "PARTNERSHIP",
+                "HIERARCHY",
+                "COLLABORATION",
+                "COOPERATIVE"
             ],
-            "explanation": "Academic context: Empirical DATA collected from the satellite confirms the global warming trend.",
-            "passage": "Empirical [TARGET] collected from the satellite confirms the global warming trend.",
-            "correctAnswer": "DATA"
+            "explanation": "Academic context: New employees quickly learn the company's strict HIERARCHY of who reports to whom. Here, \"HIERARCHY\" means a ranked structure of authority, a fundamentally different and more equal kind of working relationship.",
+            "passage": "New employees quickly learn the company's strict [TARGET] of who reports to whom",
+            "correctAnswer": "HIERARCHY",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "COMMUNITY",
+            "word": "HYPOTHETICAL",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L143_Q1",
-            "hint": "DEFINITION: A group of people living in the same place.",
+            "hint": "DEFINITION: Based on a suggested idea or theory rather than known facts; imagined as a possibility.",
             "options": [
-                "Group",
-                "COMMUNITY",
-                "SOCIETY",
-                "Individual"
+                "DOCUMENTED",
+                "VERIFIED",
+                "HYPOTHETICAL",
+                "HISTORICAL"
             ],
-            "explanation": "Academic context: The local COMMUNITY came together to rebuild the park after the storm.",
-            "passage": "The local [TARGET] came together to rebuild the park after the storm.",
-            "correctAnswer": "COMMUNITY"
+            "explanation": "Academic context: The professor posed a HYPOTHETICAL situation to see how students would respond under pressure. Here, \"HYPOTHETICAL\" means an imagined possibility, the opposite of something recorded as fact, confirmed as true, or drawn from actual past events.",
+            "passage": "The professor posed a [TARGET] situation to see how students would respond under pressure",
+            "correctAnswer": "HYPOTHETICAL",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ACQUIRE",
+            "word": "IMMIGRATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L143_Q2",
-            "hint": "DEFINITION: Buy or obtain for oneself.",
+            "hint": "DEFINITION: To come to live permanently in a foreign country.",
             "options": [
-                "OBTAIN",
-                "Lose",
-                "Gain",
-                "ACQUIRE"
+                "VACATION",
+                "COMMUTE",
+                "TRAVEL",
+                "IMMIGRATE"
             ],
-            "explanation": "Academic context: Students must ACQUIRE specific skills before entering the workforce.",
-            "passage": "Students must [TARGET] specific skills before entering the workforce.",
-            "correctAnswer": "ACQUIRE"
+            "explanation": "Academic context: Her grandparents IMMIGRATEd from Italy in the 1950s in search of better job opportunities. Here, \"IMMIGRATE\" means to move permanently to a new country, a different and much more temporary kind of movement than a short trip, a daily journey to work, or general travel.",
+            "passage": "Her grandparents [TARGET]d from Italy in the 1950s in search of better job opportunities",
+            "correctAnswer": "IMMIGRATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONSTRUCT",
+            "word": "IMPLICATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L143_Q3",
-            "hint": "DEFINITION: Build or erect something.",
+            "hint": "DEFINITION: To show or suggest that someone is involved in a crime or wrongdoing.",
             "options": [
-                "Destroy",
-                "BUILD",
-                "CONSTRUCT",
-                "Create"
+                "IMPLICATE",
+                "EXONERATE",
+                "ACQUIT",
+                "CLEAR"
             ],
-            "explanation": "Academic context: Engineers will CONSTRUCT a new bridge to replace the old one.",
-            "passage": "Engineers will [TARGET] a new bridge to replace the old one.",
-            "correctAnswer": "CONSTRUCT"
+            "explanation": "Academic context: New evidence from the security footage began to IMPLICATE the store manager in the theft. Here, \"IMPLICATE\" means to suggest involvement in wrongdoing, the opposite of freeing someone from blame, declaring them not guilty, or proving their innocence.",
+            "passage": "New evidence from the security footage began to [TARGET] the store manager in the theft",
+            "correctAnswer": "IMPLICATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "EVIDENCE",
+            "word": "IMPLICIT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L144_Q1",
-            "hint": "DEFINITION: The available body of facts or information indicating whether a belief is true.",
+            "hint": "DEFINITION: Implied though not directly stated.",
             "options": [
-                "Speculation",
-                "Clue",
-                "EVIDENCE",
-                "PROOF"
+                "EXPLICIT",
+                "IMPLICIT",
+                "WRITTEN",
+                "FORMAL"
             ],
-            "explanation": "Academic context: The forensic team discovered crucial EVIDENCE at the crime scene.",
-            "passage": "The forensic team discovered crucial [TARGET] at the crime scene.",
-            "correctAnswer": "EVIDENCE"
+            "explanation": "Academic context: There was an IMPLICIT understanding between the neighbors that loud music after ten o'clock was unacceptable. Here, \"IMPLICIT\" means understood without being directly stated, the opposite of something stated outright, put in writing, or made official.",
+            "passage": "There was an [TARGET] understanding between the neighbors that loud music after ten o'clock was unacceptable",
+            "correctAnswer": "IMPLICIT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "KNOWLEDGE",
+            "word": "INCLINE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L144_Q2",
-            "hint": "DEFINITION: Facts, information, and skills acquired through experience.",
+            "hint": "DEFINITION: To lean toward a particular opinion or course of action; to slope.",
             "options": [
-                "WISDOM",
-                "Ignorance",
-                "Information",
-                "KNOWLEDGE"
+                "RESIST",
+                "OPPOSE",
+                "INCLINE",
+                "REJECT"
             ],
-            "explanation": "Academic context: Access to digital KNOWLEDGE has revolutionized modern education systems.",
-            "passage": "Access to digital [TARGET] has revolutionized modern education systems.",
-            "correctAnswer": "KNOWLEDGE"
+            "explanation": "Academic context: After hearing both arguments, the judge began to INCLINE toward the defense's position. Here, \"INCLINE\" means to lean toward favoring something, the opposite of pushing back against, standing against, or refusing it.",
+            "passage": "After hearing both arguments, the judge began to [TARGET] toward the defense's position",
+            "correctAnswer": "INCLINE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ASSIST",
+            "word": "INCOMPATIBLE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L144_Q3",
-            "hint": "DEFINITION: Help someone by sharing the work.",
+            "hint": "DEFINITION: Unable to coexist or work together due to fundamental differences.",
             "options": [
-                "HELP",
-                "Hinder",
-                "Aid",
-                "ASSIST"
+                "HARMONIOUS",
+                "AGREEABLE",
+                "SUITED",
+                "INCOMPATIBLE"
             ],
-            "explanation": "Academic context: Volunteers were asked to ASSIST in the distribution of food supplies.",
-            "passage": "Volunteers were asked to [TARGET] in the distribution of food supplies.",
-            "correctAnswer": "ASSIST"
+            "explanation": "Academic context: The two roommates turned out to be INCOMPATIBLE and decided to live separately after just one semester. Here, \"INCOMPATIBLE\" means unable to coexist well, the opposite of getting along smoothly, being easygoing together, or being a good match.",
+            "passage": "The two roommates turned out to be [TARGET] and decided to live separately after just one semester",
+            "correctAnswer": "INCOMPATIBLE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "LOGIC",
+            "word": "INCONSISTENT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L145_Q1",
-            "hint": "DEFINITION: Reasoning conducted according to strict principles of validity.",
+            "hint": "DEFINITION: Not staying the same throughout; containing contradictory elements.",
             "options": [
-                "LOGIC",
-                "Sense",
-                "Irrationality",
-                "REASONING"
+                "INCONSISTENT",
+                "UNIFORM",
+                "STEADY",
+                "RELIABLE"
             ],
-            "explanation": "Academic context: The philosopher used rigorous LOGIC to dismantle the opponent's argument.",
-            "passage": "The philosopher used rigorous [TARGET] to dismantle the opponent's argument.",
-            "correctAnswer": "LOGIC"
+            "explanation": "Academic context: The witness's INCONSISTENT statements made the jury doubt her credibility. Here, \"INCONSISTENT\" means containing contradictions, the opposite of being the same throughout, dependable, or trustworthy.",
+            "passage": "The witness's [TARGET] statements made the jury doubt her credibility",
+            "correctAnswer": "INCONSISTENT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "THEORY",
+            "word": "INFER",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L145_Q2",
-            "hint": "DEFINITION: A system of ideas intended to explain something.",
+            "hint": "DEFINITION: To deduce or conclude something from evidence and reasoning rather than from explicit statements.",
             "options": [
-                "Practice",
-                "PRINCIPLE",
-                "Hypothesis",
-                "THEORY"
+                "ANNOUNCE",
+                "INFER",
+                "DECLARE",
+                "PROCLAIM"
             ],
-            "explanation": "Academic context: In physics, the THEORY of relativity changed our understanding of time.",
-            "passage": "In physics, the [TARGET] of relativity changed our understanding of time.",
-            "correctAnswer": "THEORY"
+            "explanation": "Academic context: From her tense expression, he could INFER that the meeting had not gone well. Here, \"INFER\" means to draw a conclusion indirectly through reasoning, a different and much more direct action than stating something openly.",
+            "passage": "From her tense expression, he could [TARGET] that the meeting had not gone well",
+            "correctAnswer": "INFER",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "QUALITY",
+            "word": "INFRASTRUCTURE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L145_Q3",
-            "hint": "DEFINITION: The standard of something as measured against other things.",
+            "hint": "DEFINITION: The basic physical systems of a country or organization, such as roads, bridges, and utilities.",
             "options": [
-                "Caliber",
-                "STANDARD",
-                "Inferiority",
-                "QUALITY"
+                "CURRICULUM",
+                "FOLKLORE",
+                "INFRASTRUCTURE",
+                "ETIQUETTE"
             ],
-            "explanation": "Academic context: Academic rigor ensures the high QUALITY of peer-reviewed journals.",
-            "passage": "Academic rigor ensures the high [TARGET] of peer-reviewed journals.",
-            "correctAnswer": "QUALITY"
+            "explanation": "Academic context: The earthquake severely damaged the city's INFRASTRUCTURE, leaving many neighborhoods without electricity or running water. Here, \"INFRASTRUCTURE\" means physical systems like roads and utilities, a completely unrelated category from a course of study, traditional stories, or rules of polite behavior.",
+            "passage": "The earthquake severely damaged the city's [TARGET], leaving many neighborhoods without electricity or running water",
+            "correctAnswer": "INFRASTRUCTURE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "METHOD",
+            "word": "INHERENT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L146_Q1",
-            "hint": "DEFINITION: A particular form of procedure for accomplishing or approaching something.",
+            "hint": "DEFINITION: Existing as a natural and permanent part of something; intrinsic.",
             "options": [
-                "METHOD",
-                "Technique",
-                "Chaos",
-                "PROCEDURE"
+                "ACCIDENTAL",
+                "TEMPORARY",
+                "AVOIDABLE",
+                "INHERENT"
             ],
-            "explanation": "Academic context: The lab developed a specialized METHOD for isolating rare proteins.",
-            "passage": "The lab developed a specialized [TARGET] for isolating rare proteins.",
-            "correctAnswer": "METHOD"
+            "explanation": "Academic context: Risk is INHERENT in any kind of investing, no matter how careful you are. Here, \"INHERENT\" means a natural, built-in part of something, the opposite of being unintentional, short-lived, or something that can be sidestepped.",
+            "passage": "Risk is [TARGET] in any kind of investing, no matter how careful you are",
+            "correctAnswer": "INHERENT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CHAPTER",
+            "word": "INSPECT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L146_Q2",
-            "hint": "DEFINITION: A main division of a book.",
+            "hint": "DEFINITION: To examine something closely, especially to check its quality or condition.",
             "options": [
-                "SECTION",
-                "Part",
-                "CHAPTER",
-                "Whole"
+                "INSPECT",
+                "IGNORE",
+                "ASSEMBLE",
+                "ADVERTISE"
             ],
-            "explanation": "Academic context: The final CHAPTER of the book summarizes all previous arguments.",
-            "passage": "The final [TARGET] of the book summarizes all previous arguments.",
-            "correctAnswer": "CHAPTER"
+            "explanation": "Academic context: Before buying the used car, she hired a mechanic to INSPECT it thoroughly. Here, \"INSPECT\" means to examine closely, a different action from disregarding it, putting it together, or promoting it for sale.",
+            "passage": "Before buying the used car, she hired a mechanic to [TARGET] it thoroughly",
+            "correctAnswer": "INSPECT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "AFFECT",
+            "word": "INSTANCE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L146_Q3",
-            "hint": "DEFINITION: Have an effect on; make a difference to.",
+            "hint": "DEFINITION: An example or single occurrence of something.",
             "options": [
-                "AFFECT",
-                "INFLUENCE",
-                "Ignore",
-                "Impact"
+                "EXCEPTION",
+                "INSTANCE",
+                "RARITY",
+                "ANOMALY"
             ],
-            "explanation": "Academic context: Changing weather patterns will AFFECT the migration of many species.",
-            "passage": "Changing weather patterns will [TARGET] the migration of many species.",
-            "correctAnswer": "AFFECT"
+            "explanation": "Academic context: This is not the first INSTANCE of the software crashing during a live presentation. Here, \"INSTANCE\" means a specific occurrence of a recurring problem, a different idea from a case explicitly outside the pattern, something unusual, or an irregular deviation.",
+            "passage": "This is not the first [TARGET] of the software crashing during a live presentation",
+            "correctAnswer": "INSTANCE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "PERSPECTIVE",
+            "word": "INTEGRAL",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L147_Q1",
-            "hint": "DEFINITION: A particular attitude toward or way of regarding something.",
+            "hint": "DEFINITION: Necessary to make a whole complete; essential.",
             "options": [
-                "PERSPECTIVE",
-                "Stance",
-                "Narrowness",
-                "VIEWPOINT"
+                "OPTIONAL",
+                "SUPPLEMENTARY",
+                "INTEGRAL",
+                "DECORATIVE"
             ],
-            "explanation": "Academic context: History is often rewritten when viewed from a different PERSPECTIVE.",
-            "passage": "History is often rewritten when viewed from a different [TARGET].",
-            "correctAnswer": "PERSPECTIVE"
+            "explanation": "Academic context: Clear communication is INTEGRAL to running any successful team. Here, \"INTEGRAL\" means essential to completeness, the opposite of being optional, extra, or merely ornamental.",
+            "passage": "Clear communication is [TARGET] to running any successful team",
+            "correctAnswer": "INTEGRAL",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONDUCT",
+            "word": "INTERVAL",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L147_Q2",
-            "hint": "DEFINITION: The manner in which a person behaves.",
+            "hint": "DEFINITION: A pause or gap between two events or points in time.",
             "options": [
-                "Manage",
-                "DIRECT",
-                "Follow",
-                "CONDUCT"
+                "CONTINUATION",
+                "EXTENSION",
+                "OVERLAP",
+                "INTERVAL"
             ],
-            "explanation": "Academic context: The university will CONDUCT a series of lectures on environmental science.",
-            "passage": "The university will [TARGET] a series of lectures on environmental science.",
-            "correctAnswer": "CONDUCT"
+            "explanation": "Academic context: There was a fifteen-minute INTERVAL between the two halves of the play. Here, \"INTERVAL\" means a gap between events, a different relationship from something continuing without a break, being lengthened, or coinciding with another event.",
+            "passage": "There was a fifteen-minute [TARGET] between the two halves of the play",
+            "correctAnswer": "INTERVAL",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CREDIT",
+            "word": "INTERVENE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L147_Q3",
-            "hint": "DEFINITION: The ability of a customer to obtain goods or services.",
+            "hint": "DEFINITION: To become involved in a situation, especially to prevent or alter a result.",
             "options": [
-                "Blame",
-                "RECOGNITION",
-                "CREDIT",
-                "Honor"
+                "INTERVENE",
+                "WITHDRAW",
+                "RETREAT",
+                "DISENGAGE"
             ],
-            "explanation": "Academic context: The author was given CREDIT for the discovery of the lost manuscript.",
-            "passage": "The author was given [TARGET] for the discovery of the lost manuscript.",
-            "correctAnswer": "CREDIT"
+            "explanation": "Academic context: Teachers had to INTERVENE before the disagreement between the two students turned physical. Here, \"INTERVENE\" means to actively step into a situation, the opposite of pulling back, retreating, or staying uninvolved.",
+            "passage": "Teachers had to [TARGET] before the disagreement between the two students turned physical",
+            "correctAnswer": "INTERVENE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONCEPT",
+            "word": "INTRINSIC",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L148_Q1",
-            "hint": "DEFINITION: An abstract idea; a general notion.",
+            "hint": "DEFINITION: Belonging naturally to someone or something; essential to its basic nature.",
             "options": [
-                "CONCEPT",
-                "Notion",
-                "IDEA",
-                "Physicality"
+                "ACQUIRED",
+                "INTRINSIC",
+                "LEARNED",
+                "IMPOSED"
             ],
-            "explanation": "Academic context: The fundamental CONCEPT of quantum entanglement remains difficult to grasp.",
-            "passage": "The fundamental [TARGET] of quantum entanglement remains difficult to grasp.",
-            "correctAnswer": "CONCEPT"
+            "explanation": "Academic context: Curiosity seems to be an INTRINSIC trait in almost every young child. Here, \"INTRINSIC\" means a natural and inborn trait, the opposite of one that is picked up over time, taught, or forced upon someone.",
+            "passage": "Curiosity seems to be an [TARGET] trait in almost every young child",
+            "correctAnswer": "INTRINSIC",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "JUSTICE",
+            "word": "INVOKE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L148_Q2",
-            "hint": "DEFINITION: Just behavior or treatment.",
+            "hint": "DEFINITION: To cite or appeal to something, such as a law or principle, as a justification; to call upon a higher power for assistance.",
             "options": [
-                "FAIRNESS",
-                "JUSTICE",
-                "Iniquity",
-                "Equity"
+                "IGNORE",
+                "VIOLATE",
+                "INVOKE",
+                "ABANDON"
             ],
-            "explanation": "Academic context: The legal system aims to provide JUSTICE for all citizens regardless of status.",
-            "passage": "The legal system aims to provide [TARGET] for all citizens regardless of status.",
-            "correctAnswer": "JUSTICE"
+            "explanation": "Academic context: The senator chose to INVOKE an obscure procedural rule to delay the vote. Here, \"INVOKE\" means to formally appeal to a rule for support, a different action from disregarding it, breaking it, or giving it up.",
+            "passage": "The senator chose to [TARGET] an obscure procedural rule to delay the vote",
+            "correctAnswer": "INVOKE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "RESEARCH",
+            "word": "ISOLATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L148_Q3",
-            "hint": "DEFINITION: The systematic investigation into and study of materials.",
+            "hint": "DEFINITION: To set someone or something apart from others; to cause to be alone.",
             "options": [
-                "Guesswork",
-                "STUDY",
-                "RESEARCH",
-                "Inquiry"
+                "INTEGRATE",
+                "SOCIALIZE",
+                "COMBINE",
+                "ISOLATE"
             ],
-            "explanation": "Academic context: Extensive RESEARCH is required before publishing a new scientific paper.",
-            "passage": "Extensive [TARGET] is required before publishing a new scientific paper.",
-            "correctAnswer": "RESEARCH"
+            "explanation": "Academic context: Doctors decided to ISOLATE the patient to prevent the infection from spreading to others on the ward. Here, \"ISOLATE\" means to keep separate from others, the opposite of bringing someone into the group, encouraging interaction, or merging things together.",
+            "passage": "Doctors decided to [TARGET] the patient to prevent the infection from spreading to others on the ward",
+            "correctAnswer": "ISOLATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "DESIGN",
+            "word": "JOURNAL",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L149_Q1",
-            "hint": "DEFINITION: A plan or drawing produced to show the look and function.",
+            "hint": "DEFINITION: A daily record of events or thoughts; a scholarly publication containing articles on a particular subject.",
             "options": [
-                "Draft",
-                "PLAN",
-                "Randomize",
-                "DESIGN"
+                "JOURNAL",
+                "BROCHURE",
+                "FLYER",
+                "ADVERTISEMENT"
             ],
-            "explanation": "Academic context: The architect will DESIGN the new library to be energy-efficient.",
-            "passage": "The architect will [TARGET] the new library to be energy-efficient.",
-            "correctAnswer": "DESIGN"
+            "explanation": "Academic context: Her research was published in a respected scientific JOURNAL read by experts worldwide. Here, \"JOURNAL\" means a serious publication for recording research or events, a different and far less substantial kind of printed material than a short promotional pamphlet, a single-page handout, or a paid promotion.",
+            "passage": "Her research was published in a respected scientific [TARGET] read by experts worldwide",
+            "correctAnswer": "JOURNAL",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ANALYZE",
+            "word": "JUSTIFY",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L149_Q2",
-            "hint": "DEFINITION: Examine something methodically and in detail.",
+            "hint": "DEFINITION: To show or prove that something is right or reasonable.",
             "options": [
-                "Synthesize",
-                "BREAK DOWN",
-                "Examine",
-                "ANALYZE"
+                "CRITICIZE",
+                "JUSTIFY",
+                "UNDERMINE",
+                "QUESTION"
             ],
-            "explanation": "Academic context: The researchers had to ANALYZE the complex results of the clinical trial.",
-            "passage": "The researchers had to [TARGET] the complex results of the clinical trial.",
-            "correctAnswer": "ANALYZE"
+            "explanation": "Academic context: She struggled to JUSTIFY the high price of the renovation to her skeptical husband. Here, \"JUSTIFY\" means to provide reasons that something is right, a different stance from attacking it, weakening its credibility, or doubting it.",
+            "passage": "She struggled to [TARGET] the high price of the renovation to her skeptical husband",
+            "correctAnswer": "JUSTIFY",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "SOURCE",
+            "word": "LAYER",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L149_Q3",
-            "hint": "DEFINITION: A place, person, or thing from which something comes or can be obtained.",
+            "hint": "DEFINITION: A sheet, quantity, or thickness of material covering a surface; a level within a system.",
             "options": [
-                "SOURCE",
-                "Reference",
-                "End",
-                "ORIGIN"
+                "INGREDIENT",
+                "GARNISH",
+                "LAYER",
+                "UTENSIL"
             ],
-            "explanation": "Academic context: The historian meticulously verified every primary SOURCE for the biography.",
-            "passage": "The historian meticulously verified every primary [TARGET] for the biography.",
-            "correctAnswer": "SOURCE"
+            "explanation": "Academic context: The cake had three LAYERs of sponge separated by raspberry jam. Here, \"LAYER\" means a distinct horizontal section stacked within something, a different kind of baking-related concept from a component mixed in, a decoration on top, or a tool used to make it.",
+            "passage": "The cake had three [TARGET]s of sponge separated by raspberry jam",
+            "correctAnswer": "LAYER",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "INTERPRET",
+            "word": "LICENSE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L150_Q1",
-            "hint": "DEFINITION: Explain the meaning of information, words, or actions.",
+            "hint": "DEFINITION: An official document or permission granting the right to do, use, or own something.",
             "options": [
-                "Decode",
-                "EXPLAIN",
-                "Confuse",
-                "INTERPRET"
+                "CERTIFICATE",
+                "DIPLOMA",
+                "TRANSCRIPT",
+                "LICENSE"
             ],
-            "explanation": "Academic context: Scholars often INTERPRET ancient texts in vastly different ways.",
-            "passage": "Scholars often [TARGET] ancient texts in vastly different ways.",
-            "correctAnswer": "INTERPRET"
+            "explanation": "Academic context: You need a valid LICENSE before you're legally allowed to drive on public roads. Here, \"LICENSE\" specifically grants ongoing legal permission to act, unlike a document that merely confirms completion of a course, a degree, or an academic record.",
+            "passage": "You need a valid [TARGET] before you're legally allowed to drive on public roads",
+            "correctAnswer": "LICENSE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "APPROPRIATE",
+            "word": "LOCATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L150_Q2",
-            "hint": "DEFINITION: Suitable or proper in the circumstances.",
+            "hint": "DEFINITION: To discover the exact place or position of something; to situate or place something in a particular spot.",
             "options": [
-                "Improper",
-                "Fitting",
-                "APPROPRIATE",
-                "SUITABLE"
+                "LOCATE",
+                "EVACUATE",
+                "TREAT",
+                "TRANSPORT"
             ],
-            "explanation": "Academic context: Wearing a suit is APPROPRIATE for a formal business meeting.",
-            "passage": "Wearing a suit is [TARGET] for a formal business meeting.",
-            "correctAnswer": "APPROPRIATE"
+            "explanation": "Academic context: Rescue teams used heat-sensing drones to LOCATE survivors trapped beneath the rubble. Here, \"LOCATE\" means to find the precise position of something, a different and later step in a rescue from removing someone, giving medical care, or moving them.",
+            "passage": "Rescue teams used heat-sensing drones to [TARGET] survivors trapped beneath the rubble",
+            "correctAnswer": "LOCATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "OBJECTIVE",
+            "word": "MARGIN",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L150_Q3",
-            "hint": "DEFINITION: A thing aimed at or sought; a goal.",
+            "hint": "DEFINITION: The amount by which something exceeds or falls short of another amount; blank space at the edge of a page; the difference between cost and selling price.",
             "options": [
-                "Subjective",
-                "OBJECTIVE",
-                "Aim",
-                "GOAL"
+                "CATEGORY",
+                "MARGIN",
+                "DIVISION",
+                "BRACKET"
             ],
-            "explanation": "Academic context: The primary OBJECTIVE of the mission was to collect lunar soil samples.",
-            "passage": "The primary [TARGET] of the mission was to collect lunar soil samples.",
-            "correctAnswer": "OBJECTIVE"
+            "explanation": "Academic context: The team won the championship by a narrow MARGIN of just two points. Here, \"MARGIN\" means the numerical gap between two scores, a different kind of grouping concept from a class of competition, a section of a tournament, or a ranked group.",
+            "passage": "The team won the championship by a narrow [TARGET] of just two points",
+            "correctAnswer": "MARGIN",
+            "instruction": "Drag the correct word to complete the sentence."
         }
     ],
     "gameType": "academicWord",

@@ -2,454 +2,484 @@
     "levels": "111-120",
     "quests": [
         {
-            "word": "NETWORK",
+            "word": "ASSEMBLY",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L111_Q1",
-            "hint": "DEFINITION: A group or system of interconnected people or things.",
+            "hint": "DEFINITION: A group of people gathered for a common purpose; the action of putting parts together to make a product.",
             "options": [
-                "SYSTEM",
-                "Isolation",
-                "Web",
-                "NETWORK"
+                "RECESS",
+                "DETENTION",
+                "ASSEMBLY",
+                "REHEARSAL"
             ],
-            "explanation": "Academic context: The social NETWORK allowed ideas to spread across the continent rapidly.",
-            "passage": "The social [TARGET] allowed ideas to spread across the continent rapidly.",
-            "correctAnswer": "NETWORK"
+            "explanation": "Academic context: The entire school gathered in the gymnasium for the morning ASSEMBLY. Here, \"ASSEMBLY\" means a formal gathering of the whole school, a different kind of school event from a break period, a punishment, or practice for a performance.",
+            "passage": "The entire school gathered in the gymnasium for the morning [TARGET]",
+            "correctAnswer": "ASSEMBLY",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "HYPOTHESIS",
+            "word": "ASSERT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L111_Q2",
-            "hint": "DEFINITION: A proposed explanation made on the basis of limited evidence.",
+            "hint": "DEFINITION: To state a fact or belief confidently and forcefully.",
             "options": [
-                "Supposition",
-                "THEORY",
-                "Fact",
-                "HYPOTHESIS"
+                "DOUBT",
+                "RETRACT",
+                "WHISPER",
+                "ASSERT"
             ],
-            "explanation": "Academic context: The scientist proposed a new HYPOTHESIS to explain the observed phenomena.",
-            "passage": "The scientist proposed a new [TARGET] to explain the observed phenomena.",
-            "correctAnswer": "HYPOTHESIS"
+            "explanation": "Academic context: The witness continued to ASSERT her innocence despite the prosecutor's aggressive questioning. Here, \"ASSERT\" means to state something confidently, the opposite of expressing uncertainty about it, withdrawing the claim, or saying it quietly.",
+            "passage": "The witness continued to [TARGET] her innocence despite the prosecutor's aggressive questioning",
+            "correctAnswer": "ASSERT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONSUME",
+            "word": "ASSURE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L111_Q3",
-            "hint": "DEFINITION: Eat, drink, or ingest.",
+            "hint": "DEFINITION: To tell someone something positively in order to remove doubt; to make certain.",
             "options": [
-                "CONSUME",
-                "Save",
-                "Expend",
-                "USE"
+                "ASSURE",
+                "ALARM",
+                "CONFUSE",
+                "MISLEAD"
             ],
-            "explanation": "Academic context: Modern lifestyles CONSUME vast amounts of energy and resources.",
-            "passage": "Modern lifestyles [TARGET] vast amounts of energy and resources.",
-            "correctAnswer": "CONSUME"
+            "explanation": "Academic context: The pilot's calm voice ASSUREd the nervous passengers that the turbulence was nothing unusual. Here, \"ASSURE\" means to give confidence and remove doubt, the opposite of frightening, confusing, or deceiving someone.",
+            "passage": "The pilot's calm voice [TARGET]d the nervous passengers that the turbulence was nothing unusual",
+            "correctAnswer": "ASSURE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "FACTOR",
+            "word": "ATTAIN",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L112_Q1",
-            "hint": "DEFINITION: A circumstance, fact, or influence that contributes to a result.",
+            "hint": "DEFINITION: To succeed in achieving something, usually after effort.",
             "options": [
-                "ELEMENT",
-                "FACTOR",
-                "Component",
-                "Result"
+                "FORFEIT",
+                "ATTAIN",
+                "SURRENDER",
+                "RELINQUISH"
             ],
-            "explanation": "Academic context: Economic stability is a major FACTOR in the growth of developing nations.",
-            "passage": "Economic stability is a major [TARGET] in the growth of developing nations.",
-            "correctAnswer": "FACTOR"
+            "explanation": "Academic context: It took her fifteen years of practice to ATTAIN the rank of master carpenter. Here, \"ATTAIN\" means to successfully achieve a goal, the opposite of giving it up, surrendering it, or letting it go.",
+            "passage": "It took her fifteen years of practice to [TARGET] the rank of master carpenter",
+            "correctAnswer": "ATTAIN",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONCLUSION",
+            "word": "ATTRIBUTE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L112_Q2",
-            "hint": "DEFINITION: The end or finish of an event or process.",
+            "hint": "DEFINITION: To regard something as being caused by a particular person or thing; a quality or feature of someone or something.",
             "options": [
-                "CONCLUSION",
-                "Finish",
-                "END",
-                "Beginning"
+                "DENY",
+                "DISPROVE",
+                "ATTRIBUTE",
+                "DISMISS"
             ],
-            "explanation": "Academic context: The CONCLUSION of the study suggested that more research was needed.",
-            "passage": "The [TARGET] of the study suggested that more research was needed.",
-            "correctAnswer": "CONCLUSION"
+            "explanation": "Academic context: Doctors ATTRIBUTE the rise in cases mainly to the unusually warm and wet spring weather. Here, \"ATTRIBUTE\" means to identify a cause, a different action from rejecting an explanation, proving it false, or refusing to consider it.",
+            "passage": "Doctors [TARGET] the rise in cases mainly to the unusually warm and wet spring weather",
+            "correctAnswer": "ATTRIBUTE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "GLOBAL",
+            "word": "AUTOMATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L112_Q3",
-            "hint": "DEFINITION: Relating to the whole world; worldwide.",
+            "hint": "DEFINITION: To convert a process so that it operates with little or no direct human control.",
             "options": [
-                "GLOBAL",
-                "WORLDWIDE",
-                "Universal",
-                "Local"
+                "MANUALIZE",
+                "COMPLICATE",
+                "DUPLICATE",
+                "AUTOMATE"
             ],
-            "explanation": "Academic context: Plastic pollution has become a GLOBAL crisis affecting all oceans.",
-            "passage": "Plastic pollution has become a [TARGET] crisis affecting all oceans.",
-            "correctAnswer": "GLOBAL"
+            "explanation": "Academic context: The factory decided to AUTOMATE its packaging line to reduce repetitive strain injuries among workers. Here, \"AUTOMATE\" means to make a process run with machines instead of people, a different change from making it more hands-on, more complex, or simply copied.",
+            "passage": "The factory decided to [TARGET] its packaging line to reduce repetitive strain injuries among workers",
+            "correctAnswer": "AUTOMATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CULTURE",
+            "word": "AUTONOMY",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L113_Q1",
-            "hint": "DEFINITION: The arts and other manifestations of human intellectual achievement.",
+            "hint": "DEFINITION: The right or condition of self-government; independence in decision-making.",
             "options": [
-                "Nature",
-                "Society",
-                "CULTURE",
-                "CIVILIZATION"
+                "AUTONOMY",
+                "SUPERVISION",
+                "DEPENDENCE",
+                "OBEDIENCE"
             ],
-            "explanation": "Academic context: Ancient Roman CULTURE heavily influenced modern Western civilization.",
-            "passage": "Ancient Roman [TARGET] heavily influenced modern Western civilization.",
-            "correctAnswer": "CULTURE"
+            "explanation": "Academic context: Teenagers often crave greater AUTONOMY in deciding how to spend their free time. Here, \"AUTONOMY\" means independence in making one's own decisions, the opposite of being closely watched, relying on others, or following orders.",
+            "passage": "Teenagers often crave greater [TARGET] in deciding how to spend their free time",
+            "correctAnswer": "AUTONOMY",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ASPECT",
+            "word": "BIAS",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L113_Q2",
-            "hint": "DEFINITION: A particular part or feature of something.",
+            "hint": "DEFINITION: A strong inclination of mind or temperament, especially one that prevents fair judgment on a particular issue.",
             "options": [
-                "ASPECT",
-                "Whole",
-                "FEATURE",
-                "Part"
+                "NEUTRALITY",
+                "BIAS",
+                "OBJECTIVITY",
+                "FAIRNESS"
             ],
-            "explanation": "Academic context: One ASPECT of the problem is the lack of funding for local schools.",
-            "passage": "One [TARGET] of the problem is the lack of funding for local schools.",
-            "correctAnswer": "ASPECT"
+            "explanation": "Academic context: The judge stepped down from the case after revealing a personal BIAS toward one of the defendants. Here, \"BIAS\" means an unfair leaning toward one side, the opposite of remaining impartial, objective, or fair.",
+            "passage": "The judge stepped down from the case after revealing a personal [TARGET] toward one of the defendants",
+            "correctAnswer": "BIAS",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "COMPUTE",
+            "word": "BOND",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L113_Q3",
-            "hint": "DEFINITION: Calculate a figure or amount.",
+            "hint": "DEFINITION: A close connection or relationship; a certificate issued by a government or company promising to repay borrowed money with interest.",
             "options": [
-                "COMPUTE",
-                "Estimate",
-                "Solve",
-                "CALCULATE"
+                "RIVALRY",
+                "CONFLICT",
+                "BOND",
+                "COMPETITION"
             ],
-            "explanation": "Academic context: Mathematicians use algorithms to COMPUTE the values of large numbers.",
-            "passage": "Mathematicians use algorithms to [TARGET] the values of large numbers.",
-            "correctAnswer": "COMPUTE"
+            "explanation": "Academic context: The two stray dogs formed an unexpectedly strong BOND after being rescued from the same flooded street. Here, \"BOND\" means a close connection, the opposite of a relationship marked by opposition, fighting, or competing against each other.",
+            "passage": "The two stray dogs formed an unexpectedly strong [TARGET] after being rescued from the same flooded street",
+            "correctAnswer": "BOND",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONSEQUENT",
+            "word": "BRIEF",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L114_Q1",
-            "hint": "DEFINITION: Following as a result or effect.",
+            "hint": "DEFINITION: Of short duration; a short summary of facts given to someone before they take action; to give someone instructions or information in advance.",
             "options": [
-                "RESULTING",
-                "CONSEQUENT",
-                "Following",
-                "Prior"
+                "LECTURE",
+                "NOVEL",
+                "MEMOIR",
+                "BRIEF"
             ],
-            "explanation": "Academic context: The heavy rain and CONSEQUENT flooding caused significant damage.",
-            "passage": "The heavy rain and [TARGET] flooding caused significant damage.",
-            "correctAnswer": "CONSEQUENT"
+            "explanation": "Academic context: The pilots received a BRIEF on the storm conditions before takeoff. Here, \"BRIEF\" means a short summary of essential information given beforehand, a different and much longer kind of text than an extended talk, a full-length book, or a personal life story.",
+            "passage": "The pilots received a [TARGET] on the storm conditions before takeoff",
+            "correctAnswer": "BRIEF",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "COMPLEX",
+            "word": "CAPACITY",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L114_Q2",
-            "hint": "DEFINITION: Consisting of many different and connected parts.",
+            "hint": "DEFINITION: The maximum amount that something can contain or produce; a person's ability to do something.",
             "options": [
-                "COMPLEX",
-                "Complicated",
-                "INTRICATE",
-                "Simple"
+                "CAPACITY",
+                "HISTORY",
+                "REPUTATION",
+                "LOCATION"
             ],
-            "explanation": "Academic context: The COMPLEX nature of the problem requires a multifaceted solution.",
-            "passage": "The [TARGET] nature of the problem requires a multifaceted solution.",
-            "correctAnswer": "COMPLEX"
+            "explanation": "Academic context: The new stadium has a seating CAPACITY of nearly sixty thousand fans. Here, \"CAPACITY\" means the maximum amount a space can hold, a completely different attribute from its past, its reputation, or where it is situated.",
+            "passage": "The new stadium has a seating [TARGET] of nearly sixty thousand fans",
+            "correctAnswer": "CAPACITY",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "UNIQUE",
+            "word": "CATEGORIZE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L114_Q3",
-            "hint": "DEFINITION: Being the only one of its kind; unlike anything else.",
+            "hint": "DEFINITION: To place something into a particular class or group based on shared characteristics.",
             "options": [
-                "DISTINCT",
-                "UNIQUE",
-                "Rare",
-                "Common"
+                "DESTROY",
+                "CATEGORIZE",
+                "MISPLACE",
+                "IGNORE"
             ],
-            "explanation": "Academic context: Each individual has a UNIQUE genetic code that distinguishes them.",
-            "passage": "Each individual has a [TARGET] genetic code that distinguishes them.",
-            "correctAnswer": "UNIQUE"
+            "explanation": "Academic context: Librarians CATEGORIZE each new book by subject before placing it on the shelves. Here, \"CATEGORIZE\" means to sort something into a group, a different action from destroying it, putting it in the wrong place, or disregarding it.",
+            "passage": "Librarians [TARGET] each new book by subject before placing it on the shelves",
+            "correctAnswer": "CATEGORIZE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CATEGORY",
+            "word": "CEASE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L115_Q1",
-            "hint": "DEFINITION: A class or division of people or things.",
+            "hint": "DEFINITION: To stop happening or existing; to bring something to an end.",
             "options": [
-                "CATEGORY",
-                "Group",
-                "CLASS",
-                "Individual"
+                "EXPAND",
+                "ACCELERATE",
+                "CEASE",
+                "INTENSIFY"
             ],
-            "explanation": "Academic context: The library organizes books by CATEGORY to make them easier to find.",
-            "passage": "The library organizes books by [TARGET] to make them easier to find.",
-            "correctAnswer": "CATEGORY"
+            "explanation": "Academic context: The factory was ordered to CEASE operations immediately after the safety inspection failed. Here, \"CEASE\" means to stop completely, the opposite of growing, speeding up, or increasing in intensity.",
+            "passage": "The factory was ordered to [TARGET] operations immediately after the safety inspection failed",
+            "correctAnswer": "CEASE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ASSESS",
+            "word": "CHEMICAL",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L115_Q2",
-            "hint": "DEFINITION: Evaluate or estimate the nature, ability, or quality of.",
+            "hint": "DEFINITION: Relating to chemistry, or a substance produced by or used in a chemical process.",
             "options": [
-                "EVALUATE",
-                "ASSESS",
-                "Ignore",
-                "Judge"
+                "MECHANICAL",
+                "ELECTRICAL",
+                "STRUCTURAL",
+                "CHEMICAL"
             ],
-            "explanation": "Academic context: The committee will ASSESS the candidate's performance during the interview.",
-            "passage": "The committee will [TARGET] the candidate's performance during the interview.",
-            "correctAnswer": "ASSESS"
+            "explanation": "Academic context: Several CHEMICAL spills at the plant prompted the city to investigate its waste disposal practices. Here, \"CHEMICAL\" means relating to substances and chemical reactions, a different category from machinery, electricity, or building construction.",
+            "passage": "Several [TARGET] spills at the plant prompted the city to investigate its waste disposal practices",
+            "correctAnswer": "CHEMICAL",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ADMINISTER",
+            "word": "CIRCUMSTANCE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L115_Q3",
-            "hint": "DEFINITION: Manage and be responsible for the running of.",
+            "hint": "DEFINITION: A fact or condition connected with or relevant to an event or situation.",
             "options": [
-                "ADMINISTER",
-                "Neglect",
-                "MANAGE",
-                "Execute"
+                "CIRCUMSTANCE",
+                "ENCOURAGEMENT",
+                "PERMISSION",
+                "INVITATION"
             ],
-            "explanation": "Academic context: The healthcare workers will ADMINISTER the vaccine to the local population.",
-            "passage": "The healthcare workers will [TARGET] the vaccine to the local population.",
-            "correctAnswer": "ADMINISTER"
+            "explanation": "Academic context: Under no CIRCUMSTANCE should employees share their login passwords with coworkers. Here, \"CIRCUMSTANCE\" means a condition affecting a situation, a different concept from active encouragement, formal permission, or being asked to do something.",
+            "passage": "Under no [TARGET] should employees share their login passwords with coworkers",
+            "correctAnswer": "CIRCUMSTANCE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "DATA",
+            "word": "CITE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L116_Q1",
-            "hint": "DEFINITION: Facts and statistics collected together for reference.",
+            "hint": "DEFINITION: To quote a passage, book, or author as evidence for an argument; to officially mention something as an example.",
             "options": [
-                "Theory",
-                "DATA",
-                "INFORMATION",
-                "Facts"
+                "INVENT",
+                "CITE",
+                "EXAGGERATE",
+                "IMPROVISE"
             ],
-            "explanation": "Academic context: Empirical DATA collected from the satellite confirms the global warming trend.",
-            "passage": "Empirical [TARGET] collected from the satellite confirms the global warming trend.",
-            "correctAnswer": "DATA"
+            "explanation": "Academic context: Students must CITE every source they use in their research paper to avoid plagiarism. Here, \"CITE\" means to formally credit a source, a different academic practice from making something up, overstating it, or making it up spontaneously without a source.",
+            "passage": "Students must [TARGET] every source they use in their research paper to avoid plagiarism",
+            "correctAnswer": "CITE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "COMMUNITY",
+            "word": "CLAUSE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L116_Q2",
-            "hint": "DEFINITION: A group of people living in the same place.",
+            "hint": "DEFINITION: A distinct part of a written legal document, such as a contract or constitution; a grammatical unit containing a subject and a verb.",
             "options": [
-                "Individual",
-                "Group",
-                "SOCIETY",
-                "COMMUNITY"
+                "FOOTNOTE",
+                "APPENDIX",
+                "CLAUSE",
+                "GLOSSARY"
             ],
-            "explanation": "Academic context: The local COMMUNITY came together to rebuild the park after the storm.",
-            "passage": "The local [TARGET] came together to rebuild the park after the storm.",
-            "correctAnswer": "COMMUNITY"
+            "explanation": "Academic context: The landlord added a CLAUSE to the lease requiring thirty days' notice before moving out. Here, \"CLAUSE\" means a specific provision within the main body of a legal document, a different kind of textual element from a note at the bottom, supplementary material, or a list of definitions.",
+            "passage": "The landlord added a [TARGET] to the lease requiring thirty days' notice before moving out",
+            "correctAnswer": "CLAUSE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ACQUIRE",
+            "word": "CLIMATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L116_Q3",
-            "hint": "DEFINITION: Buy or obtain for oneself.",
+            "hint": "DEFINITION: The weather conditions typical of a region over a long period; the general mood or atmosphere of a situation.",
             "options": [
-                "Lose",
-                "OBTAIN",
-                "ACQUIRE",
-                "Gain"
+                "TERRAIN",
+                "ELEVATION",
+                "SOIL",
+                "CLIMATE"
             ],
-            "explanation": "Academic context: Students must ACQUIRE specific skills before entering the workforce.",
-            "passage": "Students must [TARGET] specific skills before entering the workforce.",
-            "correctAnswer": "ACQUIRE"
+            "explanation": "Academic context: The Mediterranean CLIMATE makes the region ideal for growing olives and grapes. Here, \"CLIMATE\" means long-term weather patterns, a different physical feature of a region from its landforms, height above sea level, or ground composition.",
+            "passage": "The Mediterranean [TARGET] makes the region ideal for growing olives and grapes",
+            "correctAnswer": "CLIMATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONSTRUCT",
+            "word": "CLINICAL",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L117_Q1",
-            "hint": "DEFINITION: Build or erect something.",
+            "hint": "DEFINITION: Relating to the direct observation and treatment of patients, rather than theoretical study; coldly objective and detached.",
             "options": [
-                "CONSTRUCT",
-                "Destroy",
-                "Create",
-                "BUILD"
+                "CLINICAL",
+                "THEORETICAL",
+                "HISTORICAL",
+                "FICTIONAL"
             ],
-            "explanation": "Academic context: Engineers will CONSTRUCT a new bridge to replace the old one.",
-            "passage": "Engineers will [TARGET] a new bridge to replace the old one.",
-            "correctAnswer": "CONSTRUCT"
+            "explanation": "Academic context: The new medication is still undergoing CLINICAL trials before it can be approved for public use. Here, \"CLINICAL\" means relating to real patient testing, a different kind of study from one based on theory alone, on historical records, or on invented scenarios.",
+            "passage": "The new medication is still undergoing [TARGET] trials before it can be approved for public use",
+            "correctAnswer": "CLINICAL",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "EVIDENCE",
+            "word": "COHERENT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L117_Q2",
-            "hint": "DEFINITION: The available body of facts or information indicating whether a belief is true.",
+            "hint": "DEFINITION: Logical and consistent; able to be understood as a unified whole.",
             "options": [
-                "Speculation",
-                "PROOF",
-                "EVIDENCE",
-                "Clue"
+                "DISJOINTED",
+                "COHERENT",
+                "CONTRADICTORY",
+                "FRAGMENTED"
             ],
-            "explanation": "Academic context: The forensic team discovered crucial EVIDENCE at the crime scene.",
-            "passage": "The forensic team discovered crucial [TARGET] at the crime scene.",
-            "correctAnswer": "EVIDENCE"
+            "explanation": "Academic context: After hours of work, she finally turned her scattered notes into a COHERENT essay. Here, \"COHERENT\" means logically connected and unified, the opposite of being disconnected, self-contradictory, or broken into unrelated pieces.",
+            "passage": "After hours of work, she finally turned her scattered notes into a [TARGET] essay",
+            "correctAnswer": "COHERENT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "KNOWLEDGE",
+            "word": "CONFINE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L117_Q3",
-            "hint": "DEFINITION: Facts, information, and skills acquired through experience.",
+            "hint": "DEFINITION: To keep someone or something within certain limits; to imprison or restrict.",
             "options": [
-                "WISDOM",
-                "KNOWLEDGE",
-                "Ignorance",
-                "Information"
+                "EXPAND",
+                "BROADEN",
+                "CONFINE",
+                "UNLEASH"
             ],
-            "explanation": "Academic context: Access to digital KNOWLEDGE has revolutionized modern education systems.",
-            "passage": "Access to digital [TARGET] has revolutionized modern education systems.",
-            "correctAnswer": "KNOWLEDGE"
+            "explanation": "Academic context: The flu outbreak forced the school to CONFINE activities to small groups instead of large assemblies. Here, \"CONFINE\" means to restrict within limits, the opposite of expanding, widening, or letting something loose.",
+            "passage": "The flu outbreak forced the school to [TARGET] activities to small groups instead of large assemblies",
+            "correctAnswer": "CONFINE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ASSIST",
+            "word": "COINCIDE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L118_Q1",
-            "hint": "DEFINITION: Help someone by sharing the work.",
+            "hint": "DEFINITION: To occur at the same time as something else, often by chance.",
             "options": [
-                "Aid",
-                "ASSIST",
-                "HELP",
-                "Hinder"
+                "PRECEDE",
+                "FOLLOW",
+                "INTERRUPT",
+                "COINCIDE"
             ],
-            "explanation": "Academic context: Volunteers were asked to ASSIST in the distribution of food supplies.",
-            "passage": "Volunteers were asked to [TARGET] in the distribution of food supplies.",
-            "correctAnswer": "ASSIST"
+            "explanation": "Academic context: Her birthday happens to COINCIDE with the town's annual summer festival every year. Here, \"COINCIDE\" means to happen at the same time, a different timing relationship from coming before, coming after, or breaking into an event.",
+            "passage": "Her birthday happens to [TARGET] with the town's annual summer festival every year",
+            "correctAnswer": "COINCIDE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "LOGIC",
+            "word": "COLLAPSE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L118_Q2",
-            "hint": "DEFINITION: Reasoning conducted according to strict principles of validity.",
+            "hint": "DEFINITION: To fall down or fail suddenly, often after losing strength or support.",
             "options": [
-                "REASONING",
-                "Irrationality",
-                "Sense",
-                "LOGIC"
+                "COLLAPSE",
+                "EXPAND",
+                "STRENGTHEN",
+                "STABILIZE"
             ],
-            "explanation": "Academic context: The philosopher used rigorous LOGIC to dismantle the opponent's argument.",
-            "passage": "The philosopher used rigorous [TARGET] to dismantle the opponent's argument.",
-            "correctAnswer": "LOGIC"
+            "explanation": "Academic context: The old wooden bridge finally COLLAPSEd under the weight of the heavy delivery truck. Here, \"COLLAPSE\" means to fail and fall suddenly, the opposite of growing, becoming stronger, or becoming more stable.",
+            "passage": "The old wooden bridge finally [TARGET]d under the weight of the heavy delivery truck",
+            "correctAnswer": "COLLAPSE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "THEORY",
+            "word": "COLLEAGUE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L118_Q3",
-            "hint": "DEFINITION: A system of ideas intended to explain something.",
+            "hint": "DEFINITION: A person with whom one works, especially in a profession.",
             "options": [
-                "PRINCIPLE",
-                "THEORY",
-                "Practice",
-                "Hypothesis"
+                "RIVAL",
+                "COLLEAGUE",
+                "STRANGER",
+                "CUSTOMER"
             ],
-            "explanation": "Academic context: In physics, the THEORY of relativity changed our understanding of time.",
-            "passage": "In physics, the [TARGET] of relativity changed our understanding of time.",
-            "correctAnswer": "THEORY"
+            "explanation": "Academic context: She invited several COLLEAGUEs from the accounting department to her retirement party. Here, \"COLLEAGUE\" means a fellow coworker, a different relationship from a competitor, someone unknown, or someone who buys from the business.",
+            "passage": "She invited several [TARGET]s from the accounting department to her retirement party",
+            "correctAnswer": "COLLEAGUE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "QUALITY",
+            "word": "COMMENCE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L119_Q1",
-            "hint": "DEFINITION: The standard of something as measured against other things.",
+            "hint": "DEFINITION: To begin or start something, often formally.",
             "options": [
-                "Inferiority",
-                "STANDARD",
-                "QUALITY",
-                "Caliber"
+                "CONCLUDE",
+                "POSTPONE",
+                "COMMENCE",
+                "CANCEL"
             ],
-            "explanation": "Academic context: Academic rigor ensures the high QUALITY of peer-reviewed journals.",
-            "passage": "Academic rigor ensures the high [TARGET] of peer-reviewed journals.",
-            "correctAnswer": "QUALITY"
+            "explanation": "Academic context: The graduation ceremony will COMMENCE promptly at ten o'clock in the morning. Here, \"COMMENCE\" means to begin formally, the opposite of ending, delaying, or calling it off.",
+            "passage": "The graduation ceremony will [TARGET] promptly at ten o'clock in the morning",
+            "correctAnswer": "COMMENCE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "METHOD",
+            "word": "COMPATIBLE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L119_Q2",
-            "hint": "DEFINITION: A particular form of procedure for accomplishing or approaching something.",
+            "hint": "DEFINITION: Able to exist, work, or be used together without conflict.",
             "options": [
-                "METHOD",
-                "Chaos",
-                "PROCEDURE",
-                "Technique"
+                "INFERIOR",
+                "OUTDATED",
+                "DEFECTIVE",
+                "COMPATIBLE"
             ],
-            "explanation": "Academic context: The lab developed a specialized METHOD for isolating rare proteins.",
-            "passage": "The lab developed a specialized [TARGET] for isolating rare proteins.",
-            "correctAnswer": "METHOD"
+            "explanation": "Academic context: The new printer wasn't COMPATIBLE with her old laptop's outdated operating system. Here, \"COMPATIBLE\" means able to work together without conflict, a different quality from a device simply being of lower quality, old-fashioned, or faulty.",
+            "passage": "The new printer wasn't [TARGET] with her old laptop's outdated operating system",
+            "correctAnswer": "COMPATIBLE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CHAPTER",
+            "word": "COMPILE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L119_Q3",
-            "hint": "DEFINITION: A main division of a book.",
+            "hint": "DEFINITION: To collect information from different sources and arrange it in a single document or list.",
             "options": [
-                "SECTION",
-                "Whole",
-                "Part",
-                "CHAPTER"
+                "COMPILE",
+                "SCATTER",
+                "DESTROY",
+                "MISPLACE"
             ],
-            "explanation": "Academic context: The final CHAPTER of the book summarizes all previous arguments.",
-            "passage": "The final [TARGET] of the book summarizes all previous arguments.",
-            "correctAnswer": "CHAPTER"
+            "explanation": "Academic context: The historian spent a decade trying to COMPILE a complete record of the town's founding families. Here, \"COMPILE\" means to gather and organize information, the opposite of spreading it apart, destroying it, or losing track of it.",
+            "passage": "The historian spent a decade trying to [TARGET] a complete record of the town's founding families",
+            "correctAnswer": "COMPILE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "AFFECT",
+            "word": "COMPLEMENT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L120_Q1",
-            "hint": "DEFINITION: Have an effect on; make a difference to.",
+            "hint": "DEFINITION: A thing that combines well with another to enhance or improve it; the number needed to make something complete.",
             "options": [
-                "Ignore",
-                "INFLUENCE",
-                "AFFECT",
-                "Impact"
+                "CLASH",
+                "COMPLEMENT",
+                "OVERWHELM",
+                "CONTRADICT"
             ],
-            "explanation": "Academic context: Changing weather patterns will AFFECT the migration of many species.",
-            "passage": "Changing weather patterns will [TARGET] the migration of many species.",
-            "correctAnswer": "AFFECT"
+            "explanation": "Academic context: A crisp white wine can COMPLEMENT a seafood dish perfectly. Here, \"COMPLEMENT\" means to enhance something through good pairing, the opposite of clashing with it, overpowering it, or working against it.",
+            "passage": "A crisp white wine can [TARGET] a seafood dish perfectly",
+            "correctAnswer": "COMPLEMENT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "PERSPECTIVE",
+            "word": "COMPREHENSIVE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L120_Q2",
-            "hint": "DEFINITION: A particular attitude toward or way of regarding something.",
+            "hint": "DEFINITION: Complete and including everything that is necessary; thorough.",
             "options": [
-                "PERSPECTIVE",
-                "Stance",
-                "Narrowness",
-                "VIEWPOINT"
+                "PARTIAL",
+                "LIMITED",
+                "COMPREHENSIVE",
+                "SELECTIVE"
             ],
-            "explanation": "Academic context: History is often rewritten when viewed from a different PERSPECTIVE.",
-            "passage": "History is often rewritten when viewed from a different [TARGET].",
-            "correctAnswer": "PERSPECTIVE"
+            "explanation": "Academic context: The new health insurance plan offers COMPREHENSIVE coverage, including dental and vision care. Here, \"COMPREHENSIVE\" means thorough and complete, the opposite of being incomplete, restricted, or covering only some things.",
+            "passage": "The new health insurance plan offers [TARGET] coverage, including dental and vision care",
+            "correctAnswer": "COMPREHENSIVE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONDUCT",
+            "word": "COMPRISE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L120_Q3",
-            "hint": "DEFINITION: The manner in which a person behaves.",
+            "hint": "DEFINITION: To consist of or be made up of particular parts.",
             "options": [
-                "DIRECT",
-                "Manage",
-                "CONDUCT",
-                "Follow"
+                "EXCLUDE",
+                "LACK",
+                "OMIT",
+                "COMPRISE"
             ],
-            "explanation": "Academic context: The university will CONDUCT a series of lectures on environmental science.",
-            "passage": "The university will [TARGET] a series of lectures on environmental science.",
-            "correctAnswer": "CONDUCT"
+            "explanation": "Academic context: The committee will COMPRISE one representative from each of the five departments. Here, \"COMPRISE\" means to be composed of certain parts, the opposite of leaving those parts out, being without them, or skipping them.",
+            "passage": "The committee will [TARGET] one representative from each of the five departments",
+            "correctAnswer": "COMPRISE",
+            "instruction": "Drag the correct word to complete the sentence."
         }
     ],
     "gameType": "academicWord",

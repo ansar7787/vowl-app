@@ -2,454 +2,484 @@
     "levels": "171-180",
     "quests": [
         {
-            "word": "KNOWLEDGE",
+            "word": "STIMULUS",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L171_Q1",
-            "hint": "DEFINITION: Facts, information, and skills acquired through experience.",
+            "hint": "DEFINITION: Something that causes growth, activity, or a reaction in a person, organism, or system.",
             "options": [
-                "KNOWLEDGE",
-                "WISDOM",
-                "Ignorance",
-                "Information"
+                "PENALTY",
+                "TAX",
+                "STIMULUS",
+                "RESTRICTION"
             ],
-            "explanation": "Academic context: Access to digital KNOWLEDGE has revolutionized modern education systems.",
-            "passage": "Access to digital [TARGET] has revolutionized modern education systems.",
-            "correctAnswer": "KNOWLEDGE"
+            "explanation": "Academic context: The government's tax rebate program was designed as an economic STIMULUS during the recession. Here, \"STIMULUS\" means something intended to encourage growth or activity, the opposite of a punishment, a charge, or a limitation.",
+            "passage": "The government's tax rebate program was designed as an economic [TARGET] during the recession",
+            "correctAnswer": "STIMULUS",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ASSIST",
+            "word": "STRINGENT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L171_Q2",
-            "hint": "DEFINITION: Help someone by sharing the work.",
+            "hint": "DEFINITION: Strict, precise, and rigorously enforced.",
             "options": [
-                "ASSIST",
-                "Hinder",
-                "Aid",
-                "HELP"
+                "LENIENT",
+                "RELAXED",
+                "CASUAL",
+                "STRINGENT"
             ],
-            "explanation": "Academic context: Volunteers were asked to ASSIST in the distribution of food supplies.",
-            "passage": "Volunteers were asked to [TARGET] in the distribution of food supplies.",
-            "correctAnswer": "ASSIST"
+            "explanation": "Academic context: Airport security has become far more STRINGENT since the new regulations took effect. Here, \"STRINGENT\" means strict and rigorously enforced, the opposite of being lenient, easygoing, or informal.",
+            "passage": "Airport security has become far more [TARGET] since the new regulations took effect",
+            "correctAnswer": "STRINGENT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "LOGIC",
+            "word": "SUBORDINATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L171_Q3",
-            "hint": "DEFINITION: Reasoning conducted according to strict principles of validity.",
+            "hint": "DEFINITION: Lower in rank or position; a person under the authority of another.",
             "options": [
-                "LOGIC",
-                "REASONING",
-                "Sense",
-                "Irrationality"
+                "SUBORDINATE",
+                "SUPERIOR",
+                "DOMINANT",
+                "EQUAL"
             ],
-            "explanation": "Academic context: The philosopher used rigorous LOGIC to dismantle the opponent's argument.",
-            "passage": "The philosopher used rigorous [TARGET] to dismantle the opponent's argument.",
-            "correctAnswer": "LOGIC"
+            "explanation": "Academic context: As the most junior member of the legal team, she was treated as SUBORDINATE to the senior partners on every major decision. Here, \"SUBORDINATE\" means lower in rank, the opposite of being higher in authority, in control, or on the same level.",
+            "passage": "As the most junior member of the legal team, she was treated as [TARGET] to the senior partners on every major decision",
+            "correctAnswer": "SUBORDINATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "THEORY",
+            "word": "SUBSTANTIAL",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L172_Q1",
-            "hint": "DEFINITION: A system of ideas intended to explain something.",
+            "hint": "DEFINITION: Of considerable importance, size, or worth.",
             "options": [
-                "PRINCIPLE",
-                "Hypothesis",
-                "THEORY",
-                "Practice"
+                "NEGLIGIBLE",
+                "SUBSTANTIAL",
+                "MARGINAL",
+                "INSIGNIFICANT"
             ],
-            "explanation": "Academic context: In physics, the THEORY of relativity changed our understanding of time.",
-            "passage": "In physics, the [TARGET] of relativity changed our understanding of time.",
-            "correctAnswer": "THEORY"
+            "explanation": "Academic context: The company reported a SUBSTANTIAL increase in profits after expanding into international markets. Here, \"SUBSTANTIAL\" means considerably large, the opposite of being too small to matter, barely noticeable, or unimportant.",
+            "passage": "The company reported a [TARGET] increase in profits after expanding into international markets",
+            "correctAnswer": "SUBSTANTIAL",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "QUALITY",
+            "word": "SUCCESSOR",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L172_Q2",
-            "hint": "DEFINITION: The standard of something as measured against other things.",
+            "hint": "DEFINITION: A person or thing that follows and takes the place of another, especially in a position or role.",
             "options": [
-                "Caliber",
-                "Inferiority",
-                "QUALITY",
-                "STANDARD"
+                "PREDECESSOR",
+                "FOUNDER",
+                "SUCCESSOR",
+                "RIVAL"
             ],
-            "explanation": "Academic context: Academic rigor ensures the high QUALITY of peer-reviewed journals.",
-            "passage": "Academic rigor ensures the high [TARGET] of peer-reviewed journals.",
-            "correctAnswer": "QUALITY"
+            "explanation": "Academic context: The retiring CEO personally selected her SUCCESSOR before announcing her departure to the board. Here, \"SUCCESSOR\" means the person who comes next in a role, the opposite of the person who held it before, who started the organization, or who competes against it.",
+            "passage": "The retiring CEO personally selected her [TARGET] before announcing her departure to the board",
+            "correctAnswer": "SUCCESSOR",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "METHOD",
+            "word": "SUPPRESS",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L172_Q3",
-            "hint": "DEFINITION: A particular form of procedure for accomplishing or approaching something.",
+            "hint": "DEFINITION: To forcibly put an end to something; to prevent something from being known or expressed.",
             "options": [
-                "METHOD",
-                "PROCEDURE",
-                "Chaos",
-                "Technique"
+                "PUBLICIZE",
+                "DISTRIBUTE",
+                "BROADCAST",
+                "SUPPRESS"
             ],
-            "explanation": "Academic context: The lab developed a specialized METHOD for isolating rare proteins.",
-            "passage": "The lab developed a specialized [TARGET] for isolating rare proteins.",
-            "correctAnswer": "METHOD"
+            "explanation": "Academic context: The government was accused of trying to SUPPRESS the journalist's report about corruption. Here, \"SUPPRESS\" means to forcibly hide or stop something from spreading, the opposite of making it widely known, spreading it, or airing it publicly.",
+            "passage": "The government was accused of trying to [TARGET] the journalist's report about corruption",
+            "correctAnswer": "SUPPRESS",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CHAPTER",
+            "word": "SURPASS",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L173_Q1",
-            "hint": "DEFINITION: A main division of a book.",
+            "hint": "DEFINITION: To do or be better than someone or something; to exceed.",
             "options": [
-                "SECTION",
-                "Whole",
-                "CHAPTER",
-                "Part"
+                "SURPASS",
+                "TRAIL",
+                "LAG",
+                "UNDERPERFORM"
             ],
-            "explanation": "Academic context: The final CHAPTER of the book summarizes all previous arguments.",
-            "passage": "The final [TARGET] of the book summarizes all previous arguments.",
-            "correctAnswer": "CHAPTER"
+            "explanation": "Academic context: The young gymnast's score easily SURPASSed that of the reigning champion. Here, \"SURPASS\" means to exceed in performance, the opposite of falling behind, lagging, or performing worse than someone else.",
+            "passage": "The young gymnast's score easily [TARGET]ed that of the reigning champion",
+            "correctAnswer": "SURPASS",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "AFFECT",
+            "word": "SYNTHESIS",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L173_Q2",
-            "hint": "DEFINITION: Have an effect on; make a difference to.",
+            "hint": "DEFINITION: The combination of separate ideas, elements, or substances to form a coherent whole.",
             "options": [
-                "INFLUENCE",
-                "AFFECT",
-                "Ignore",
-                "Impact"
+                "FRAGMENTATION",
+                "SYNTHESIS",
+                "SEPARATION",
+                "DIVISION"
             ],
-            "explanation": "Academic context: Changing weather patterns will AFFECT the migration of many species.",
-            "passage": "Changing weather patterns will [TARGET] the migration of many species.",
-            "correctAnswer": "AFFECT"
+            "explanation": "Academic context: Her dissertation offered a fresh SYNTHESIS of economic theory and environmental science. Here, \"SYNTHESIS\" means a unified combination of separate elements, the opposite of breaking something apart, keeping things separate, or dividing them.",
+            "passage": "Her dissertation offered a fresh [TARGET] of economic theory and environmental science",
+            "correctAnswer": "SYNTHESIS",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "PERSPECTIVE",
+            "word": "TANGIBLE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L173_Q3",
-            "hint": "DEFINITION: A particular attitude toward or way of regarding something.",
+            "hint": "DEFINITION: Capable of being touched or perceived as real; clear and definite.",
             "options": [
-                "VIEWPOINT",
-                "Stance",
-                "Narrowness",
-                "PERSPECTIVE"
+                "ABSTRACT",
+                "IMAGINARY",
+                "TANGIBLE",
+                "THEORETICAL"
             ],
-            "explanation": "Academic context: History is often rewritten when viewed from a different PERSPECTIVE.",
-            "passage": "History is often rewritten when viewed from a different [TARGET].",
-            "correctAnswer": "PERSPECTIVE"
+            "explanation": "Academic context: After months of negotiation, the two countries finally produced a TANGIBLE agreement rather than vague promises. Here, \"TANGIBLE\" means concrete and definite, the opposite of being conceptual, imagined, or existing only as an idea.",
+            "passage": "After months of negotiation, the two countries finally produced a [TARGET] agreement rather than vague promises",
+            "correctAnswer": "TANGIBLE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONDUCT",
+            "word": "TENTATIVE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L174_Q1",
-            "hint": "DEFINITION: The manner in which a person behaves.",
+            "hint": "DEFINITION: Not certain or fixed; provisional and subject to change.",
             "options": [
-                "Manage",
-                "DIRECT",
-                "Follow",
-                "CONDUCT"
+                "DEFINITE",
+                "FINAL",
+                "CONFIRMED",
+                "TENTATIVE"
             ],
-            "explanation": "Academic context: The university will CONDUCT a series of lectures on environmental science.",
-            "passage": "The university will [TARGET] a series of lectures on environmental science.",
-            "correctAnswer": "CONDUCT"
+            "explanation": "Academic context: They made TENTATIVE plans to meet for dinner, but nothing was confirmed yet. Here, \"TENTATIVE\" means uncertain and subject to change, the opposite of being settled, decided, or verified.",
+            "passage": "They made [TARGET] plans to meet for dinner, but nothing was confirmed yet",
+            "correctAnswer": "TENTATIVE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CREDIT",
+            "word": "THEORETICAL",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L174_Q2",
-            "hint": "DEFINITION: The ability of a customer to obtain goods or services.",
+            "hint": "DEFINITION: Concerned with or based on theory rather than practical application or experience.",
             "options": [
-                "Blame",
-                "Honor",
-                "RECOGNITION",
-                "CREDIT"
+                "THEORETICAL",
+                "EMPIRICAL",
+                "PRACTICAL",
+                "EXPERIMENTAL"
             ],
-            "explanation": "Academic context: The author was given CREDIT for the discovery of the lost manuscript.",
-            "passage": "The author was given [TARGET] for the discovery of the lost manuscript.",
-            "correctAnswer": "CREDIT"
+            "explanation": "Academic context: Her PhD research is entirely THEORETICAL, focused on mathematical models rather than laboratory experiments. Here, \"THEORETICAL\" means based on abstract theory, the opposite of being based on observed evidence, real-world application, or hands-on testing.",
+            "passage": "Her PhD research is entirely [TARGET], focused on mathematical models rather than laboratory experiments",
+            "correctAnswer": "THEORETICAL",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONCEPT",
+            "word": "THRESHOLD",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L174_Q3",
-            "hint": "DEFINITION: An abstract idea; a general notion.",
+            "hint": "DEFINITION: The point or level at which something begins or changes; the entrance to a building or room.",
             "options": [
-                "CONCEPT",
-                "Physicality",
-                "IDEA",
-                "Notion"
+                "CEILING",
+                "THRESHOLD",
+                "LIMIT",
+                "BOUNDARY"
             ],
-            "explanation": "Academic context: The fundamental CONCEPT of quantum entanglement remains difficult to grasp.",
-            "passage": "The fundamental [TARGET] of quantum entanglement remains difficult to grasp.",
-            "correctAnswer": "CONCEPT"
+            "explanation": "Academic context: Once sales crossed a certain THRESHOLD, the startup qualified for a lower tax rate. Here, \"THRESHOLD\" specifically marks the entry point where a new condition begins, unlike a term that caps the maximum, restricts the range, or marks an outer edge.",
+            "passage": "Once sales crossed a certain [TARGET], the startup qualified for a lower tax rate",
+            "correctAnswer": "THRESHOLD",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "JUSTICE",
+            "word": "TRAJECTORY",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L175_Q1",
-            "hint": "DEFINITION: Just behavior or treatment.",
+            "hint": "DEFINITION: The curved path of an object moving through space; the general direction or course of development of something over time.",
             "options": [
-                "JUSTICE",
-                "FAIRNESS",
-                "Equity",
-                "Iniquity"
+                "REPUTATION",
+                "SALARY",
+                "TRAJECTORY",
+                "SCHEDULE"
             ],
-            "explanation": "Academic context: The legal system aims to provide JUSTICE for all citizens regardless of status.",
-            "passage": "The legal system aims to provide [TARGET] for all citizens regardless of status.",
-            "correctAnswer": "JUSTICE"
+            "explanation": "Academic context: Her career TRAJECTORY took a dramatic turn after she switched from law to environmental advocacy. Here, \"TRAJECTORY\" means the overall path or direction something follows over time, a different kind of attribute from how others view someone, their pay, or their timetable.",
+            "passage": "Her career [TARGET] took a dramatic turn after she switched from law to environmental advocacy",
+            "correctAnswer": "TRAJECTORY",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "RESEARCH",
+            "word": "TRANSCEND",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L175_Q2",
-            "hint": "DEFINITION: The systematic investigation into and study of materials.",
+            "hint": "DEFINITION: To go beyond the limits of something, especially an ordinary or expected boundary.",
             "options": [
-                "Guesswork",
-                "RESEARCH",
-                "STUDY",
-                "Inquiry"
+                "RESPECT",
+                "OBSERVE",
+                "ACKNOWLEDGE",
+                "TRANSCEND"
             ],
-            "explanation": "Academic context: Extensive RESEARCH is required before publishing a new scientific paper.",
-            "passage": "Extensive [TARGET] is required before publishing a new scientific paper.",
-            "correctAnswer": "RESEARCH"
+            "explanation": "Academic context: The best children's books TRANSCEND age, appealing just as much to adults as to kids. Here, \"TRANSCEND\" means to go beyond a usual limit, a different relationship from simply honoring, following, or recognizing it.",
+            "passage": "The best children's books [TARGET] age, appealing just as much to adults as to kids",
+            "correctAnswer": "TRANSCEND",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "DESIGN",
+            "word": "TRANSITION",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L175_Q3",
-            "hint": "DEFINITION: A plan or drawing produced to show the look and function.",
+            "hint": "DEFINITION: The process of changing from one state or condition to another.",
             "options": [
-                "DESIGN",
-                "PLAN",
-                "Randomize",
-                "Draft"
+                "TRANSITION",
+                "STAGNATION",
+                "REGRESSION",
+                "REVERSAL"
             ],
-            "explanation": "Academic context: The architect will DESIGN the new library to be energy-efficient.",
-            "passage": "The architect will [TARGET] the new library to be energy-efficient.",
-            "correctAnswer": "DESIGN"
+            "explanation": "Academic context: The country's TRANSITION from a paper-based to a fully digital voting system took nearly a decade. Here, \"TRANSITION\" means a gradual process of changing forward, the opposite of staying stuck in place, moving backward, or completely undoing a change.",
+            "passage": "The country's [TARGET] from a paper-based to a fully digital voting system took nearly a decade",
+            "correctAnswer": "TRANSITION",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ANALYZE",
+            "word": "VIABLE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L176_Q1",
-            "hint": "DEFINITION: Examine something methodically and in detail.",
+            "hint": "DEFINITION: Capable of working successfully; feasible.",
             "options": [
-                "ANALYZE",
-                "Examine",
-                "Synthesize",
-                "BREAK DOWN"
+                "PROVEN",
+                "VIABLE",
+                "GUARANTEED",
+                "CONFIRMED"
             ],
-            "explanation": "Academic context: The researchers had to ANALYZE the complex results of the clinical trial.",
-            "passage": "The researchers had to [TARGET] the complex results of the clinical trial.",
-            "correctAnswer": "ANALYZE"
+            "explanation": "Academic context: After months of testing, the engineers concluded that the design was not VIABLE for mass production. Here, \"VIABLE\" means capable of actually working in practice, a different and more basic claim than being already proven, assured of success, or formally verified.",
+            "passage": "After months of testing, the engineers concluded that the design was not [TARGET] for mass production",
+            "correctAnswer": "VIABLE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "SOURCE",
+            "word": "ABERRANT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L176_Q2",
-            "hint": "DEFINITION: A place, person, or thing from which something comes or can be obtained.",
+            "hint": "DEFINITION: Departing from an accepted standard; abnormal or atypical.",
             "options": [
-                "SOURCE",
-                "Reference",
-                "End",
-                "ORIGIN"
+                "TYPICAL",
+                "STANDARD",
+                "ABERRANT",
+                "CONSISTENT"
             ],
-            "explanation": "Academic context: The historian meticulously verified every primary SOURCE for the biography.",
-            "passage": "The historian meticulously verified every primary [TARGET] for the biography.",
-            "correctAnswer": "SOURCE"
+            "explanation": "Academic context: The scientist flagged the ABERRANT data point as a possible measurement error rather than a real result. Here, \"ABERRANT\" means abnormal and departing from the expected pattern, the opposite of being usual, normal, or matching the rest of the data.",
+            "passage": "The scientist flagged the [TARGET] data point as a possible measurement error rather than a real result",
+            "correctAnswer": "ABERRANT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "INTERPRET",
+            "word": "ADHERE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L176_Q3",
-            "hint": "DEFINITION: Explain the meaning of information, words, or actions.",
+            "hint": "DEFINITION: To stick firmly to a surface or substance; to follow a rule, belief, or commitment closely.",
             "options": [
-                "INTERPRET",
-                "EXPLAIN",
-                "Confuse",
-                "Decode"
+                "VIOLATE",
+                "DISREGARD",
+                "ABANDON",
+                "ADHERE"
             ],
-            "explanation": "Academic context: Scholars often INTERPRET ancient texts in vastly different ways.",
-            "passage": "Scholars often [TARGET] ancient texts in vastly different ways.",
-            "correctAnswer": "INTERPRET"
+            "explanation": "Academic context: All contractors on the project must ADHERE to strict safety regulations at all times. Here, \"ADHERE\" means to follow closely and consistently, the opposite of breaking, ignoring, or giving up on a rule.",
+            "passage": "All contractors on the project must [TARGET] to strict safety regulations at all times",
+            "correctAnswer": "ADHERE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "APPROPRIATE",
+            "word": "AFFLUENT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L177_Q1",
-            "hint": "DEFINITION: Suitable or proper in the circumstances.",
+            "hint": "DEFINITION: Having a great deal of money or wealth.",
             "options": [
-                "SUITABLE",
-                "Improper",
-                "APPROPRIATE",
-                "Fitting"
+                "AFFLUENT",
+                "IMPOVERISHED",
+                "DESTITUTE",
+                "PENNILESS"
             ],
-            "explanation": "Academic context: Wearing a suit is APPROPRIATE for a formal business meeting.",
-            "passage": "Wearing a suit is [TARGET] for a formal business meeting.",
-            "correctAnswer": "APPROPRIATE"
+            "explanation": "Academic context: The new shopping district was built specifically to attract AFFLUENT tourists looking for luxury brands. Here, \"AFFLUENT\" means wealthy, the opposite of being poor, lacking basic resources, or without any money at all.",
+            "passage": "The new shopping district was built specifically to attract [TARGET] tourists looking for luxury brands",
+            "correctAnswer": "AFFLUENT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "OBJECTIVE",
+            "word": "ALIENATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L177_Q2",
-            "hint": "DEFINITION: A thing aimed at or sought; a goal.",
+            "hint": "DEFINITION: To cause someone to feel isolated or estranged from a person or group.",
             "options": [
-                "GOAL",
-                "OBJECTIVE",
-                "Aim",
-                "Subjective"
+                "UNITE",
+                "ALIENATE",
+                "ENGAGE",
+                "WELCOME"
             ],
-            "explanation": "Academic context: The primary OBJECTIVE of the mission was to collect lunar soil samples.",
-            "passage": "The primary [TARGET] of the mission was to collect lunar soil samples.",
-            "correctAnswer": "OBJECTIVE"
+            "explanation": "Academic context: The CEO's dismissive comments about employee concerns began to ALIENATE much of the workforce. Here, \"ALIENATE\" means to push someone away emotionally, the opposite of bringing people together, involving them, or making them feel included.",
+            "passage": "The CEO's dismissive comments about employee concerns began to [TARGET] much of the workforce",
+            "correctAnswer": "ALIENATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "NETWORK",
+            "word": "ARTICULATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L177_Q3",
-            "hint": "DEFINITION: A group or system of interconnected people or things.",
+            "hint": "DEFINITION: Able to express oneself clearly and effectively in speech; to express an idea clearly.",
             "options": [
-                "NETWORK",
-                "Web",
-                "Isolation",
-                "SYSTEM"
+                "INCOHERENT",
+                "TONGUE-TIED",
+                "ARTICULATE",
+                "MUMBLING"
             ],
-            "explanation": "Academic context: The social NETWORK allowed ideas to spread across the continent rapidly.",
-            "passage": "The social [TARGET] allowed ideas to spread across the continent rapidly.",
-            "correctAnswer": "NETWORK"
+            "explanation": "Academic context: Even as a young child, she was remarkably ARTICULATE, able to explain complex feelings in simple words. Here, \"ARTICULATE\" means able to express oneself clearly, the opposite of being unclear, unable to speak fluently, or speaking unclearly.",
+            "passage": "Even as a young child, she was remarkably [TARGET], able to explain complex feelings in simple words",
+            "correctAnswer": "ARTICULATE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "HYPOTHESIS",
+            "word": "ASYMMETRY",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L178_Q1",
-            "hint": "DEFINITION: A proposed explanation made on the basis of limited evidence.",
+            "hint": "DEFINITION: A lack of equality or balance between parts of something.",
             "options": [
-                "Supposition",
-                "Fact",
-                "THEORY",
-                "HYPOTHESIS"
+                "UNIFORMITY",
+                "SYMMETRY",
+                "BALANCE",
+                "ASYMMETRY"
             ],
-            "explanation": "Academic context: The scientist proposed a new HYPOTHESIS to explain the observed phenomena.",
-            "passage": "The scientist proposed a new [TARGET] to explain the observed phenomena.",
-            "correctAnswer": "HYPOTHESIS"
+            "explanation": "Academic context: Doctors noted a slight facial ASYMMETRY that hadn't been present before the accident. Here, \"ASYMMETRY\" means an imbalance between two sides, the opposite of matching evenness, mirror-image balance, or equal proportion.",
+            "passage": "Doctors noted a slight facial [TARGET] that hadn't been present before the accident",
+            "correctAnswer": "ASYMMETRY",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONSUME",
+            "word": "BENEVOLENT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L178_Q2",
-            "hint": "DEFINITION: Eat, drink, or ingest.",
+            "hint": "DEFINITION: Well-meaning and kindly; charitable.",
             "options": [
-                "CONSUME",
-                "Expend",
-                "USE",
-                "Save"
+                "BENEVOLENT",
+                "MALICIOUS",
+                "HOSTILE",
+                "SPITEFUL"
             ],
-            "explanation": "Academic context: Modern lifestyles CONSUME vast amounts of energy and resources.",
-            "passage": "Modern lifestyles [TARGET] vast amounts of energy and resources.",
-            "correctAnswer": "CONSUME"
+            "explanation": "Academic context: The retired teacher was known throughout the neighborhood as a BENEVOLENT figure who quietly paid for struggling students' school supplies. Here, \"BENEVOLENT\" means kind and well-meaning, the opposite of being cruel, unfriendly, or deliberately harmful.",
+            "passage": "The retired teacher was known throughout the neighborhood as a [TARGET] figure who quietly paid for struggling students' school supplies",
+            "correctAnswer": "BENEVOLENT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "FACTOR",
+            "word": "CANDID",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L178_Q3",
-            "hint": "DEFINITION: A circumstance, fact, or influence that contributes to a result.",
+            "hint": "DEFINITION: Truthful and straightforward, especially about something difficult to discuss.",
             "options": [
-                "Component",
-                "FACTOR",
-                "ELEMENT",
-                "Result"
+                "EVASIVE",
+                "CANDID",
+                "DECEPTIVE",
+                "MISLEADING"
             ],
-            "explanation": "Academic context: Economic stability is a major FACTOR in the growth of developing nations.",
-            "passage": "Economic stability is a major [TARGET] in the growth of developing nations.",
-            "correctAnswer": "FACTOR"
+            "explanation": "Academic context: The coach gave the team a CANDID assessment of why they had lost the championship game. Here, \"CANDID\" means honest and direct, the opposite of being avoidant, dishonest, or intentionally confusing.",
+            "passage": "The coach gave the team a [TARGET] assessment of why they had lost the championship game",
+            "correctAnswer": "CANDID",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONCLUSION",
+            "word": "CIRCUMVENT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L179_Q1",
-            "hint": "DEFINITION: The end or finish of an event or process.",
+            "hint": "DEFINITION: To find a way around an obstacle, rule, or restriction, often cleverly or illegally.",
             "options": [
-                "END",
-                "Beginning",
-                "Finish",
-                "CONCLUSION"
+                "ENFORCE",
+                "UPHOLD",
+                "CIRCUMVENT",
+                "OBSERVE"
             ],
-            "explanation": "Academic context: The CONCLUSION of the study suggested that more research was needed.",
-            "passage": "The [TARGET] of the study suggested that more research was needed.",
-            "correctAnswer": "CONCLUSION"
+            "explanation": "Academic context: The company tried to CIRCUMVENT the import tax by routing shipments through a third country. Here, \"CIRCUMVENT\" means to cleverly avoid a rule, the opposite of strictly applying, supporting, or following it.",
+            "passage": "The company tried to [TARGET] the import tax by routing shipments through a third country",
+            "correctAnswer": "CIRCUMVENT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "GLOBAL",
+            "word": "COGNIZANT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L179_Q2",
-            "hint": "DEFINITION: Relating to the whole world; worldwide.",
+            "hint": "DEFINITION: Having knowledge or awareness of something.",
             "options": [
-                "Universal",
-                "GLOBAL",
-                "WORLDWIDE",
-                "Local"
+                "OBLIVIOUS",
+                "UNAWARE",
+                "IGNORANT",
+                "COGNIZANT"
             ],
-            "explanation": "Academic context: Plastic pollution has become a GLOBAL crisis affecting all oceans.",
-            "passage": "Plastic pollution has become a [TARGET] crisis affecting all oceans.",
-            "correctAnswer": "GLOBAL"
+            "explanation": "Academic context: Managers should remain COGNIZANT of how layoffs affect the morale of remaining employees. Here, \"COGNIZANT\" means aware and informed, the opposite of being unaware, not knowing, or lacking knowledge.",
+            "passage": "Managers should remain [TARGET] of how layoffs affect the morale of remaining employees",
+            "correctAnswer": "COGNIZANT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CULTURE",
+            "word": "COMPLACENT",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L179_Q3",
-            "hint": "DEFINITION: The arts and other manifestations of human intellectual achievement.",
+            "hint": "DEFINITION: Showing excessive satisfaction with one's own achievements, often leading to a lack of awareness of potential dangers.",
             "options": [
-                "CIVILIZATION",
-                "Society",
-                "Nature",
-                "CULTURE"
+                "COMPLACENT",
+                "VIGILANT",
+                "CAUTIOUS",
+                "ALERT"
             ],
-            "explanation": "Academic context: Ancient Roman CULTURE heavily influenced modern Western civilization.",
-            "passage": "Ancient Roman [TARGET] heavily influenced modern Western civilization.",
-            "correctAnswer": "CULTURE"
+            "explanation": "Academic context: After years of strong sales, the company grew COMPLACENT and failed to notice new competitors entering the market. Here, \"COMPLACENT\" means overly self-satisfied and unaware of risk, the opposite of being watchful, careful, or attentive to danger.",
+            "passage": "After years of strong sales, the company grew [TARGET] and failed to notice new competitors entering the market",
+            "correctAnswer": "COMPLACENT",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "ASPECT",
+            "word": "CONDUCIVE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L180_Q1",
-            "hint": "DEFINITION: A particular part or feature of something.",
+            "hint": "DEFINITION: Making a certain outcome likely or possible; favorable to.",
             "options": [
-                "FEATURE",
-                "Whole",
-                "Part",
-                "ASPECT"
+                "DETRIMENTAL",
+                "CONDUCIVE",
+                "UNFAVORABLE",
+                "HOSTILE"
             ],
-            "explanation": "Academic context: One ASPECT of the problem is the lack of funding for local schools.",
-            "passage": "One [TARGET] of the problem is the lack of funding for local schools.",
-            "correctAnswer": "ASPECT"
+            "explanation": "Academic context: A quiet, well-lit room is far more CONDUCIVE to studying than a noisy, crowded cafe. Here, \"CONDUCIVE\" means favorable to a particular outcome, the opposite of being harmful, unhelpful, or actively working against it.",
+            "passage": "A quiet, well-lit room is far more [TARGET] to studying than a noisy, crowded cafe",
+            "correctAnswer": "CONDUCIVE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "COMPUTE",
+            "word": "CONTEXTUALIZE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L180_Q2",
-            "hint": "DEFINITION: Calculate a figure or amount.",
+            "hint": "DEFINITION: To place something in its appropriate setting or framework in order to understand it better.",
             "options": [
-                "Solve",
-                "Estimate",
-                "CALCULATE",
-                "COMPUTE"
+                "ISOLATE",
+                "FRAGMENT",
+                "CONTEXTUALIZE",
+                "DECONTEXTUALIZE"
             ],
-            "explanation": "Academic context: Mathematicians use algorithms to COMPUTE the values of large numbers.",
-            "passage": "Mathematicians use algorithms to [TARGET] the values of large numbers.",
-            "correctAnswer": "COMPUTE"
+            "explanation": "Academic context: The museum added historical timelines to help visitors CONTEXTUALIZE the artifacts on display. Here, \"CONTEXTUALIZE\" means to place something within a meaningful framework, the opposite of separating it, breaking it into disconnected pieces, or stripping away its context.",
+            "passage": "The museum added historical timelines to help visitors [TARGET] the artifacts on display",
+            "correctAnswer": "CONTEXTUALIZE",
+            "instruction": "Drag the correct word to complete the sentence."
         },
         {
-            "word": "CONSEQUENT",
+            "word": "DELIBERATE",
             "interactionType": "Thesis Thrust",
             "id": "VOC_ACADEMICWORD_L180_Q3",
-            "hint": "DEFINITION: Following as a result or effect.",
+            "hint": "DEFINITION: Done consciously and intentionally; slow and careful in speech or action.",
             "options": [
-                "RESULTING",
-                "Following",
-                "CONSEQUENT",
-                "Prior"
+                "UNINTENTIONAL",
+                "ACCIDENTAL",
+                "UNPLANNED",
+                "DELIBERATE"
             ],
-            "explanation": "Academic context: The heavy rain and CONSEQUENT flooding caused significant damage.",
-            "passage": "The heavy rain and [TARGET] flooding caused significant damage.",
-            "correctAnswer": "CONSEQUENT"
+            "explanation": "Academic context: Investigators concluded that the fire had been DELIBERATE rather than accidental. Here, \"DELIBERATE\" means done on purpose, the opposite of happening by accident, without intention, or without any plan.",
+            "passage": "Investigators concluded that the fire had been [TARGET] rather than accidental",
+            "correctAnswer": "DELIBERATE",
+            "instruction": "Drag the correct word to complete the sentence."
         }
     ],
     "gameType": "academicWord",
