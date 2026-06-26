@@ -256,13 +256,17 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                     color: color,
                   ),
             SizedBox(height: 4.h),
-            Text(
-              "DRAG LENS TO REVEAL CLUES",
-              style: TextStyle(
-                fontFamily: 'RobotoMono',
-                fontSize: 9.sp,
-                color: color.withValues(alpha: 0.4),
-                letterSpacing: 1,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: Text(
+                (quest.instruction ?? "DRAG LENS TO REVEAL CLUES").toUpperCase(),
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
+                  fontSize: 9.sp,
+                  color: color.withValues(alpha: 0.4),
+                  letterSpacing: 1,
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
             SizedBox(height: gapMiddle),

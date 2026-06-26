@@ -2,454 +2,484 @@
     "levels": "191-200",
     "quests": [
         {
-            "word": "CACOPHONY",
+            "word": "RACONTAGE",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L191_Q1",
-            "sentence": "The construction site was filled with a [TARGET] of hammers, drills, and loud shouting.",
-            "hint": "ETYMOLOGY: A harsh, discordant mixture of sounds.",
+            "sentence": "His [TARGET] over dinner kept the whole table laughing for nearly two hours straight.",
+            "hint": "From French raconter, 'to tell' - the art of telling vivid, engaging stories.",
             "options": [
-                "Normality",
-                "Harmony",
-                "Silence",
-                "DIN"
+                "Inattention",
+                "Awkwardness",
+                "Dullness",
+                "STORYTELLING"
             ],
-            "explanation": "The clues in the sentence point to DIN.",
-            "correctAnswer": "DIN"
+            "explanation": "Keeping a whole table laughing for nearly two hours describes the art of vivid, engaging storytelling, so [TARGET] means STORYTELLING.",
+            "correctAnswer": "STORYTELLING"
         },
         {
-            "word": "CAPRICIOUS",
+            "word": "SOBRIQUETED",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L191_Q2",
-            "sentence": "The stock market is notoriously [TARGET], often changing direction without any clear logic.",
-            "hint": "ETYMOLOGY: Given to sudden and unaccountable changes of mood or behavior.",
+            "sentence": "The slugger, [TARGET] 'The Wall' for his defense, became a fan favorite within his rookie season.",
+            "hint": "From sobriquet, 'a playful added name' - to be known by such a name.",
             "options": [
-                "Normality",
-                "Constant",
-                "Stable",
-                "FICKLE"
+                "NICKNAMED",
+                "Registered",
+                "Titled",
+                "Named"
             ],
-            "explanation": "The clues in the sentence point to FICKLE.",
-            "correctAnswer": "FICKLE"
+            "explanation": "Being known as 'The Wall' because of his defense describes being given a nickname, so [TARGET] means NICKNAMED.",
+            "correctAnswer": "NICKNAMED"
         },
         {
-            "word": "SAGACIOUS",
+            "word": "TORPID-LOOKING",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L191_Q3",
-            "sentence": "The elder's [TARGET] advice helped the young leader navigate the crisis.",
-            "hint": "ETYMOLOGY: Having or showing keen mental discernment and good judgment; wise.",
+            "sentence": "The [TARGET] cat barely lifted its head when the can opener buzzed in the kitchen.",
+            "hint": "From Latin torpere, 'to be numb' - appearing slow and inactive.",
             "options": [
-                "Foolish",
-                "WISE",
-                "Normality",
-                "Ignorant"
+                "Vigorous",
+                "Lively",
+                "Energetic",
+                "SLUGGISH"
             ],
-            "explanation": "The clues in the sentence point to WISE.",
-            "correctAnswer": "WISE"
+            "explanation": "Barely lifting its head at the sound of a can opener describes appearing slow and inactive, so [TARGET] means SLUGGISH.",
+            "correctAnswer": "SLUGGISH"
         },
         {
-            "word": "LACONIC",
+            "word": "USURIOUS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L192_Q1",
-            "sentence": "The CEO was known for his [TARGET] emails that never wasted a single word.",
-            "hint": "ETYMOLOGY: Using very few words in speech or writing.",
+            "sentence": "Consumer groups warned shoppers about [TARGET] payday loans with rates topping five hundred percent annually.",
+            "hint": "From Latin usura, 'use (of money)' - describing excessive interest charges.",
             "options": [
-                "Verbose",
-                "Normality",
-                "CONCISE",
-                "Wordy"
-            ],
-            "explanation": "The clues in the sentence point to CONCISE.",
-            "correctAnswer": "CONCISE"
-        },
-        {
-            "word": "GARRULOUS",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L192_Q2",
-            "sentence": "The [TARGET] child talked non-stop during the entire three-hour flight.",
-            "hint": "ETYMOLOGY: Excessively talkative, especially on trivial matters.",
-            "options": [
-                "Quiet",
-                "Normality",
-                "Silent",
-                "TALKATIVE"
-            ],
-            "explanation": "The clues in the sentence point to TALKATIVE.",
-            "correctAnswer": "TALKATIVE"
-        },
-        {
-            "word": "FASTIDIOUS",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L192_Q3",
-            "sentence": "The curator was [TARGET] about the placement of every single artifact in the exhibit.",
-            "hint": "ETYMOLOGY: Very attentive to and concerned about accuracy and detail.",
-            "options": [
-                "Normality",
-                "Careless",
-                "METICULOUS",
-                "Negligent"
-            ],
-            "explanation": "The clues in the sentence point to METICULOUS.",
-            "correctAnswer": "METICULOUS"
-        },
-        {
-            "word": "HISTRIONIC",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L193_Q1",
-            "sentence": "His [TARGET] reaction to the minor scratch on his car seemed like a scene from a drama.",
-            "hint": "ETYMOLOGY: Overly theatrical or melodramatic in character or style.",
-            "options": [
-                "OVERDRAMATIC",
-                "Understated",
-                "Normality",
-                "Subdued"
-            ],
-            "explanation": "The clues in the sentence point to OVERDRAMATIC.",
-            "correctAnswer": "OVERDRAMATIC"
-        },
-        {
-            "word": "LOQUACIOUS",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L193_Q2",
-            "sentence": "The [TARGET] lawyer could speak for hours without ever pausing for breath.",
-            "hint": "ETYMOLOGY: Tending to talk a great deal; talkative.",
-            "options": [
-                "Normality",
-                "Taciturn",
-                "Silent",
-                "TALKATIVE"
-            ],
-            "explanation": "The clues in the sentence point to TALKATIVE.",
-            "correctAnswer": "TALKATIVE"
-        },
-        {
-            "word": "ICONOCLAST",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L193_Q3",
-            "sentence": "As an [TARGET], she challenged the traditional methods of the art world.",
-            "hint": "ETYMOLOGY: A person who attacks cherished beliefs or institutions.",
-            "options": [
-                "Normality",
-                "REBEL",
-                "Conformist",
-                "Traditionalist"
-            ],
-            "explanation": "The clues in the sentence point to REBEL.",
-            "correctAnswer": "REBEL"
-        },
-        {
-            "word": "PALLIATE",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L194_Q1",
-            "sentence": "The doctor prescribed medication to [TARGET] the symptoms, though there was no cure.",
-            "hint": "ETYMOLOGY: Make a disease or its symptoms less severe or unpleasant.",
-            "options": [
-                "ALLEVIATE",
-                "Worsen",
-                "Exacerbate",
-                "Normality"
-            ],
-            "explanation": "The clues in the sentence point to ALLEVIATE.",
-            "correctAnswer": "ALLEVIATE"
-        },
-        {
-            "word": "TRUCULENT",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L194_Q2",
-            "sentence": "The athlete's [TARGET] attitude during the press conference led to a heavy fine.",
-            "hint": "ETYMOLOGY: Eager or quick to argue or fight; aggressively defiant.",
-            "options": [
-                "AGGRESSIVE",
-                "Gentle",
-                "Tame",
-                "Normality"
-            ],
-            "explanation": "The clues in the sentence point to AGGRESSIVE.",
-            "correctAnswer": "AGGRESSIVE"
-        },
-        {
-            "word": "KINDLE",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L194_Q3",
-            "sentence": "The inspiring speech helped to [TARGET] a sense of hope in the community.",
-            "hint": "ETYMOLOGY: Light or set on fire; inspire an emotion or feeling.",
-            "options": [
-                "Extinguish",
-                "Normality",
-                "Dampen",
-                "IGNITE"
-            ],
-            "explanation": "The clues in the sentence point to IGNITE.",
-            "correctAnswer": "IGNITE"
-        },
-        {
-            "word": "BELLIGERENT",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L195_Q1",
-            "sentence": "The nations remained [TARGET], refusing to sign the peace treaty even after years of conflict.",
-            "hint": "ETYMOLOGY: Hostile and aggressive; ready to fight.",
-            "options": [
-                "HOSTILE",
-                "Normality",
-                "Peaceful",
-                "Amicable"
-            ],
-            "explanation": "The clues in the sentence point to HOSTILE.",
-            "correctAnswer": "HOSTILE"
-        },
-        {
-            "word": "OBSEQUIOUS",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L195_Q2",
-            "sentence": "The [TARGET] assistant agreed with every single word his boss said, no matter how absurd.",
-            "hint": "ETYMOLOGY: Obedient or attentive to an excessive or servile degree.",
-            "options": [
-                "SERVILE",
-                "Normality",
-                "Assertive",
-                "Arrogant"
-            ],
-            "explanation": "The clues in the sentence point to SERVILE.",
-            "correctAnswer": "SERVILE"
-        },
-        {
-            "word": "OBDURATE",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L195_Q3",
-            "sentence": "The negotiator remained [TARGET], refusing to budge on even the smallest points.",
-            "hint": "ETYMOLOGY: Stubbornly refusing to change one's opinion or course of action.",
-            "options": [
-                "STUBBORN",
-                "Flexible",
-                "Normality",
-                "Yielding"
-            ],
-            "explanation": "The clues in the sentence point to STUBBORN.",
-            "correctAnswer": "STUBBORN"
-        },
-        {
-            "word": "ALACRITY",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L196_Q1",
-            "sentence": "The interns completed their tasks with [TARGET], eager to impress their supervisors.",
-            "hint": "ETYMOLOGY: Brisk and cheerful readiness.",
-            "options": [
-                "EAGERNESS",
-                "Normality",
-                "Apathy",
-                "Lethargy"
-            ],
-            "explanation": "The clues in the sentence point to EAGERNESS.",
-            "correctAnswer": "EAGERNESS"
-        },
-        {
-            "word": "IMPETUOUS",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L196_Q2",
-            "sentence": "The [TARGET] decision to quit his job without a backup plan surprised his cautious family.",
-            "hint": "ETYMOLOGY: Acting or done quickly and without thought or care.",
-            "options": [
-                "Cautious",
-                "Deliberate",
-                "Normality",
-                "IMPULSIVE"
-            ],
-            "explanation": "The clues in the sentence point to IMPULSIVE.",
-            "correctAnswer": "IMPULSIVE"
-        },
-        {
-            "word": "PARSIMONIOUS",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L196_Q3",
-            "sentence": "The [TARGET] billionaire refused to spend money on even basic home repairs.",
-            "hint": "ETYMOLOGY: Very unwilling to spend money or use resources; frugal.",
-            "options": [
-                "Normality",
-                "STINGY",
+                "Free",
                 "Generous",
-                "Liberal"
+                "Fair",
+                "EXORBITANT"
             ],
-            "explanation": "The clues in the sentence point to STINGY.",
-            "correctAnswer": "STINGY"
+            "explanation": "Rates topping five hundred percent annually describe charging unfairly high interest, so [TARGET] means EXORBITANT.",
+            "correctAnswer": "EXORBITANT"
         },
         {
-            "word": "BANAL",
+            "word": "VERDURE",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L192_Q2",
+            "sentence": "From the airplane window, the entire valley appeared as a single sweep of [TARGET].",
+            "hint": "From Latin virere, 'to be green' - green, growing plant life covering land.",
+            "options": [
+                "Barrenness",
+                "GREENERY",
+                "Sand",
+                "Drought"
+            ],
+            "explanation": "A valley appearing as a single sweep of green from above describes lush vegetation, so [TARGET] means GREENERY.",
+            "correctAnswer": "GREENERY"
+        },
+        {
+            "word": "WHEEDLER",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L192_Q3",
+            "sentence": "Everyone in the family knew the youngest was the household's resident [TARGET], always getting her way with a smile.",
+            "hint": "Possibly from German wedeln, 'to wag the tail' - someone skilled at soft persuasion.",
+            "options": [
+                "Commander",
+                "CHARMER",
+                "Enforcer",
+                "Dictator"
+            ],
+            "explanation": "Always getting her way with a smile describes someone skilled at soft persuasion, so [TARGET] means CHARMER.",
+            "correctAnswer": "CHARMER"
+        },
+        {
+            "word": "YAWPER",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L193_Q1",
+            "sentence": "The street performer billed himself as 'the city's loudest [TARGET]' on his hand-painted sign.",
+            "hint": "From yawp, an imitative word for a raw, untrained shout.",
+            "options": [
+                "SHOUTER",
+                "Murmurer",
+                "Mute",
+                "Whisperer"
+            ],
+            "explanation": "Billing himself as the city's loudest performer of this kind describes one who shouts harshly, so [TARGET] means SHOUTER.",
+            "correctAnswer": "SHOUTER"
+        },
+        {
+            "word": "ZEALOUSNESS",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L193_Q2",
+            "sentence": "The startup's early employees worked with a [TARGET] that no salary could fully explain.",
+            "hint": "From Greek zelos, 'zeal' - burning enthusiasm and devotion to a cause.",
+            "options": [
+                "Indifference",
+                "Apathy",
+                "FERVOR",
+                "Disinterest"
+            ],
+            "explanation": "Working with a drive that no salary could fully explain describes burning enthusiasm, so [TARGET] means FERVOR.",
+            "correctAnswer": "FERVOR"
+        },
+        {
+            "word": "ABSTRUSE",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L193_Q3",
+            "sentence": "The paper's [TARGET] mathematics required three readings before the committee fully understood the proof.",
+            "hint": "From Latin abstrudere, 'to conceal' - hidden in complexity, hard to grasp.",
+            "options": [
+                "BAFFLING",
+                "Understandable",
+                "Simple",
+                "Obvious"
+            ],
+            "explanation": "Needing three readings before full understanding shows being hard to grasp, so [TARGET] means BAFFLING.",
+            "correctAnswer": "BAFFLING"
+        },
+        {
+            "word": "BELEAGUER",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L194_Q1",
+            "sentence": "The startup was [TARGET]ed by lawsuits, staff turnover, and a shrinking budget all within one year.",
+            "hint": "From Dutch belegeren, 'to besiege' - surrounded by constant difficulties.",
+            "options": [
+                "Rescue",
+                "Relieve",
+                "BESIEGE",
+                "Liberate"
+            ],
+            "explanation": "Facing lawsuits, turnover, and a shrinking budget all in one year shows being surrounded by constant difficulties, so [TARGET] means BESIEGE.",
+            "correctAnswer": "BESIEGE"
+        },
+        {
+            "word": "CONTUMELY",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L194_Q2",
+            "sentence": "Despite years of loyal service, he was let go with a cold email and no real explanation - a final act of [TARGET].",
+            "hint": "From Latin contumelia, 'insult' - scornful, humiliating treatment.",
+            "options": [
+                "Courtesy",
+                "Graciousness",
+                "SCORN",
+                "Respect"
+            ],
+            "explanation": "Being let go with a cold email after years of loyal service describes scornful, humiliating treatment, so [TARGET] means SCORN.",
+            "correctAnswer": "SCORN"
+        },
+        {
+            "word": "DESULTORINESS",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L194_Q3",
+            "sentence": "The committee criticized the [TARGET] of the report, which jumped between topics with no clear order.",
+            "hint": "From Latin desultor, 'a leaper' - jumping aimlessly from one thing to another.",
+            "options": [
+                "Planning",
+                "Organization",
+                "AIMLESSNESS",
+                "Structure"
+            ],
+            "explanation": "Jumping between topics with no clear order describes a lack of method or plan, so [TARGET] means AIMLESSNESS.",
+            "correctAnswer": "AIMLESSNESS"
+        },
+        {
+            "word": "EXIGENCY",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L195_Q1",
+            "sentence": "The hospital declared an [TARGET] and called in every available surgeon after the bus crash.",
+            "hint": "From Latin exigere, 'to demand' - a pressing, demanding circumstance.",
+            "options": [
+                "Routine",
+                "Triviality",
+                "URGENCY",
+                "Formality"
+            ],
+            "explanation": "Calling in every available surgeon after a bus crash shows a pressing, demanding circumstance, so [TARGET] means URGENCY.",
+            "correctAnswer": "URGENCY"
+        },
+        {
+            "word": "FECKLESSNESS",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L195_Q2",
+            "sentence": "After the third missed deadline, the supervisor finally addressed his employee's pattern of [TARGET].",
+            "hint": "From feck, 'effect, vigor' - a lasting lack of competence or care.",
+            "options": [
+                "Dependability",
+                "Reliability",
+                "Diligence",
+                "IRRESPONSIBILITY"
+            ],
+            "explanation": "A third missed deadline addressed as a pattern shows a lasting lack of care, so [TARGET] means IRRESPONSIBILITY.",
+            "correctAnswer": "IRRESPONSIBILITY"
+        },
+        {
+            "word": "GARGANTUANNESS",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L195_Q3",
+            "sentence": "Engineers marveled at the sheer [TARGET] of the new data center, large enough to house forty football fields of servers.",
+            "hint": "Named after Gargantua, a giant in 16th-century literature.",
+            "options": [
+                "Insignificance",
+                "Minuteness",
+                "IMMENSITY",
+                "Smallness"
+            ],
+            "explanation": "A data center large enough for forty football fields of servers describes immense size, so [TARGET] means IMMENSITY.",
+            "correctAnswer": "IMMENSITY"
+        },
+        {
+            "word": "HORTATIVE",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L196_Q1",
+            "sentence": "The CEO's [TARGET] memo pushed every department to hit the new sustainability targets by year's end.",
+            "hint": "From Latin hortari, 'to urge' - written or spoken to inspire action.",
+            "options": [
+                "Discouraging",
+                "Dismissive",
+                "Undermining",
+                "ENCOURAGING"
+            ],
+            "explanation": "Pushing every department toward new targets describes writing meant to inspire action, so [TARGET] means ENCOURAGING.",
+            "correctAnswer": "ENCOURAGING"
+        },
+        {
+            "word": "IMPECUNIOSITY",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L196_Q2",
+            "sentence": "The playwright's early years of [TARGET] forced him to write by candlelight in a freezing attic room.",
+            "hint": "From Latin in- + pecunia, 'money' - the condition of being poor.",
+            "options": [
+                "Prosperity",
+                "Wealth",
+                "Abundance",
+                "POVERTY"
+            ],
+            "explanation": "Writing by candlelight in a freezing attic describes the condition of being poor, so [TARGET] means POVERTY.",
+            "correctAnswer": "POVERTY"
+        },
+        {
+            "word": "JOCOSITY",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L196_Q3",
+            "sentence": "His natural [TARGET] made even the dullest staff meetings feel a little lighter.",
+            "hint": "From Latin jocus, 'joke' - a habitual, easygoing sense of humor.",
+            "options": [
+                "Humorlessness",
+                "Solemnity",
+                "LEVITY",
+                "Seriousness"
+            ],
+            "explanation": "Making even dull meetings feel lighter describes a habitual, easygoing sense of humor, so [TARGET] means LEVITY.",
+            "correctAnswer": "LEVITY"
+        },
+        {
+            "word": "KNAVISH",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L197_Q1",
-            "sentence": "The movie's plot was so [TARGET] that the audience could predict the ending within minutes.",
-            "hint": "ETYMOLOGY: So lacking in originality as to be obvious and boring.",
+            "sentence": "The fairy tale's [TARGET] fox tricked the same farmer out of his chickens three nights in a row.",
+            "hint": "Behaving like a knave - an old word for a cunning, dishonest rascal.",
             "options": [
-                "CLICHÉD",
-                "Original",
-                "Creative",
-                "Normality"
+                "Honest",
+                "Upright",
+                "Fair",
+                "ROGUISH"
             ],
-            "explanation": "The clues in the sentence point to CLICHÉD.",
-            "correctAnswer": "CLICHÉD"
+            "explanation": "Tricking the same farmer three nights in a row describes being dishonestly sly, so [TARGET] means ROGUISH.",
+            "correctAnswer": "ROGUISH"
         },
         {
-            "word": "FACETIOUS",
+            "word": "LUMINESCENCE",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L197_Q2",
-            "sentence": "He made a [TARGET] remark about the boss's tie, not realizing the boss was behind him.",
-            "hint": "ETYMOLOGY: Treating serious issues with deliberately inappropriate humor.",
+            "sentence": "Scientists studied the deep-sea creature's [TARGET], which it uses to lure prey in total darkness.",
+            "hint": "From Latin lumen, 'light' - the production of light without heat.",
             "options": [
-                "Serious",
-                "JOCULAR",
-                "Normality",
-                "Grave"
+                "GLOW",
+                "Dimness",
+                "Blackout",
+                "Darkness"
             ],
-            "explanation": "The clues in the sentence point to JOCULAR.",
-            "correctAnswer": "JOCULAR"
+            "explanation": "Using a glow to lure prey in total darkness describes the emission of light, so [TARGET] means GLOW.",
+            "correctAnswer": "GLOW"
         },
         {
-            "word": "RECALCITRANT",
+            "word": "MAUDLINNESS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L197_Q3",
-            "sentence": "The [TARGET] teenager refused to follow any of the rules set by his parents.",
-            "hint": "ETYMOLOGY: Having an obstinately uncooperative attitude toward authority.",
+            "sentence": "By the end of the wedding speech, his [TARGET] had half the room reaching for tissues.",
+            "hint": "From Mary Magdalene, often shown weeping - overly tearful, sentimental emotion.",
             "options": [
-                "UNRULY",
-                "Docile",
-                "Obedient",
-                "Normality"
+                "Indifference",
+                "Detachment",
+                "SENTIMENTALITY",
+                "Restraint"
             ],
-            "explanation": "The clues in the sentence point to UNRULY.",
-            "correctAnswer": "UNRULY"
+            "explanation": "Having half the room reach for tissues by the end of a speech shows overly tearful sentiment, so [TARGET] means SENTIMENTALITY.",
+            "correctAnswer": "SENTIMENTALITY"
         },
         {
-            "word": "JUXTAPOSE",
+            "word": "NETTLESOME",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L198_Q1",
-            "sentence": "The artist decided to [TARGET] vibrant neon colors with a dark, moody background.",
-            "hint": "ETYMOLOGY: Place or deal with close together for contrasting effect.",
+            "sentence": "The [TARGET] car alarm across the street went off at least six times every single night.",
+            "hint": "Named after the stinging nettle plant - a recurring, sharp irritation.",
             "options": [
-                "Normality",
-                "Blend",
-                "CONTRAST",
-                "Combine"
+                "Calming",
+                "IRKSOME",
+                "Comforting",
+                "Soothing"
             ],
-            "explanation": "The clues in the sentence point to CONTRAST.",
-            "correctAnswer": "CONTRAST"
+            "explanation": "Going off six times every single night describes a recurring, sharp irritation, so [TARGET] means IRKSOME.",
+            "correctAnswer": "IRKSOME"
         },
         {
-            "word": "DELETERIOUS",
+            "word": "OBVIATION",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L198_Q2",
-            "sentence": "Excessive sugar consumption has a [TARGET] effect on long-term dental health.",
-            "hint": "ETYMOLOGY: Causing harm or damage.",
+            "sentence": "The new contract clause allowed for the [TARGET] of the usual three-week review period in emergencies.",
+            "hint": "From Latin ob- + via, 'way' - removing the need for a step entirely.",
             "options": [
-                "Beneficial",
-                "Helpful",
-                "Normality",
-                "HARMFUL"
+                "Imposition",
+                "PRECLUSION",
+                "Necessitation",
+                "Requirement"
             ],
-            "explanation": "The clues in the sentence point to HARMFUL.",
-            "correctAnswer": "HARMFUL"
+            "explanation": "Allowing the usual review period to be skipped in emergencies describes removing the need for a step, so [TARGET] means PRECLUSION.",
+            "correctAnswer": "PRECLUSION"
         },
         {
-            "word": "JOVIAL",
+            "word": "PROPENSE",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L198_Q3",
-            "sentence": "The [TARGET] host made sure every guest felt welcome and entertained.",
-            "hint": "ETYMOLOGY: Cheerful and friendly.",
+            "sentence": "Studies suggest some people are genetically [TARGET] toward higher cholesterol, regardless of diet.",
+            "hint": "From Latin propendere, 'to incline toward' - leaning naturally in a direction.",
             "options": [
-                "Gloomy",
-                "Normality",
-                "Miserable",
-                "CHEERFUL"
+                "Averse",
+                "Resistant",
+                "INCLINED",
+                "Opposed"
             ],
-            "explanation": "The clues in the sentence point to CHEERFUL.",
-            "correctAnswer": "CHEERFUL"
+            "explanation": "Having higher cholesterol regardless of diet because of genetics describes a natural inclination, so [TARGET] means INCLINED.",
+            "correctAnswer": "INCLINED"
         },
         {
-            "word": "SYCOPHANT",
+            "word": "QUERISTIC",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L199_Q1",
-            "sentence": "The manager was surrounded by [TARGET] who never challenged his poor decisions.",
-            "hint": "ETYMOLOGY: A person who acts obsequiously toward someone important to gain advantage.",
+            "sentence": "Her [TARGET] nature meant she challenged nearly every claim in the textbook with a follow-up question.",
+            "hint": "From query, 'a question' - a nature defined by relentless questioning.",
             "options": [
-                "FLATTERER",
-                "Rebel",
-                "Normality",
-                "Critic"
+                "Accepting",
+                "Unquestioning",
+                "INQUISITIVE",
+                "Passive"
             ],
-            "explanation": "The clues in the sentence point to FLATTERER.",
-            "correctAnswer": "FLATTERER"
+            "explanation": "Challenging nearly every claim with a follow-up question describes a nature defined by relentless questioning, so [TARGET] means INQUISITIVE.",
+            "correctAnswer": "INQUISITIVE"
         },
         {
-            "word": "NEBULOUS",
+            "word": "RAUCOUSNESS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L199_Q2",
-            "sentence": "The company's plans for expansion remained [TARGET] and poorly defined.",
-            "hint": "ETYMOLOGY: In the form of a cloud or haze; hazy; vague or ill-defined.",
+            "sentence": "By midnight, the [TARGET] of the reunion party had the neighbors calling to complain.",
+            "hint": "From Latin raucus, 'hoarse' - the quality of being loud and disorderly.",
             "options": [
-                "VAGUE",
-                "Normality",
-                "Lucid",
-                "Clear"
+                "Silence",
+                "ROWDINESS",
+                "Quiet",
+                "Calm"
             ],
-            "explanation": "The clues in the sentence point to VAGUE.",
-            "correctAnswer": "VAGUE"
+            "explanation": "Having neighbors call to complain by midnight describes loud rowdiness, so [TARGET] means ROWDINESS.",
+            "correctAnswer": "ROWDINESS"
         },
         {
-            "word": "NEFARIOUS",
+            "word": "SEDULOUSNESS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L199_Q3",
-            "sentence": "The hackers developed a [TARGET] scheme to drain bank accounts across the country.",
-            "hint": "ETYMOLOGY: Wicked or criminal in nature.",
+            "sentence": "Her [TARGET] in the lab, arriving an hour early every day for a year, finally produced a breakthrough result.",
+            "hint": "From Latin sedulus, 'busy, zealous' - steady, careful effort sustained over time.",
             "options": [
-                "Normality",
-                "WICKED",
-                "Good",
-                "Virtuous"
+                "DILIGENCE",
+                "Carelessness",
+                "Laziness",
+                "Neglect"
             ],
-            "explanation": "The clues in the sentence point to WICKED.",
-            "correctAnswer": "WICKED"
+            "explanation": "Arriving an hour early every day for a year describes steady, careful effort sustained over time, so [TARGET] means DILIGENCE.",
+            "correctAnswer": "DILIGENCE"
         },
         {
-            "word": "RETICENT",
+            "word": "TREPID",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L200_Q1",
-            "sentence": "The witness remained [TARGET] about the details of the crime, fearing for her safety.",
-            "hint": "ETYMOLOGY: Not revealing one's thoughts or feelings readily.",
+            "sentence": "She took a [TARGET] step toward the high diving board, glancing down at the water one more time.",
+            "hint": "From Latin trepidare, 'to tremble' - hesitant out of nervous fear.",
             "options": [
-                "Normality",
-                "RESERVED",
-                "Outgoing",
-                "Candid"
+                "Fearless",
+                "APPREHENSIVE",
+                "Assured",
+                "Confident"
             ],
-            "explanation": "The clues in the sentence point to RESERVED.",
-            "correctAnswer": "RESERVED"
+            "explanation": "Glancing down one more time before stepping toward a high diving board shows hesitating out of fear, so [TARGET] means APPREHENSIVE.",
+            "correctAnswer": "APPREHENSIVE"
         },
         {
-            "word": "UBIQUITOUS",
+            "word": "VOLUBILITY",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L200_Q2",
-            "sentence": "In the modern era, smartphones have become [TARGET] in every part of the world.",
-            "hint": "ETYMOLOGY: Present, appearing, or found everywhere.",
+            "sentence": "The radio host's [TARGET] let her fill an entire three-hour show without a single dead pause.",
+            "hint": "From Latin volvere, 'to roll' - words rolling out smoothly and continuously.",
             "options": [
-                "Scarce",
-                "Rare",
-                "EVERYWHERE",
-                "Normality"
+                "Reticence",
+                "TALKATIVENESS",
+                "Silence",
+                "Muteness"
             ],
-            "explanation": "The clues in the sentence point to EVERYWHERE.",
-            "correctAnswer": "EVERYWHERE"
+            "explanation": "Filling an entire three-hour show without a single dead pause describes words rolling out continuously, so [TARGET] means TALKATIVENESS.",
+            "correctAnswer": "TALKATIVENESS"
         },
         {
-            "word": "EBULLIENT",
+            "word": "WHEEDLESOME",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L200_Q3",
-            "sentence": "The team was [TARGET] after winning the championship against all odds.",
-            "hint": "ETYMOLOGY: Cheerful and full of energy.",
+            "sentence": "His [TARGET] approach with his grandmother always ended with an extra slice of pie.",
+            "hint": "Related to wheedle, possibly from German wedeln, 'to wag the tail' - softly persuasive by nature.",
             "options": [
-                "Depressed",
-                "EXUBERANT",
-                "Normality",
-                "Gloomy"
+                "Demanding",
+                "Domineering",
+                "FLATTERING",
+                "Commanding"
             ],
-            "explanation": "The clues in the sentence point to EXUBERANT.",
-            "correctAnswer": "EXUBERANT"
+            "explanation": "Always ending with an extra slice of pie describes being softly persuasive by nature, so [TARGET] means FLATTERING.",
+            "correctAnswer": "FLATTERING"
         }
     ],
     "gameType": "contextClues",

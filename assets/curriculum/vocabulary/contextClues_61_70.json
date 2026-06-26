@@ -2,454 +2,484 @@
     "levels": "61-70",
     "quests": [
         {
-            "word": "TRUCULENT",
+            "word": "CANDOR",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L61_Q1",
-            "sentence": "The athlete's [TARGET] attitude during the press conference led to a heavy fine.",
-            "hint": "ETYMOLOGY: Eager or quick to argue or fight; aggressively defiant.",
+            "sentence": "The CEO addressed the layoffs with surprising [TARGET], explaining every detail to the staff.",
+            "hint": "This word names the quality of speaking honestly and openly.",
             "options": [
-                "AGGRESSIVE",
-                "Gentle",
-                "Normality",
-                "Tame"
+                "Secrecy",
+                "OPENNESS",
+                "Deception",
+                "Evasiveness"
             ],
-            "explanation": "The clues in the sentence point to AGGRESSIVE.",
-            "correctAnswer": "AGGRESSIVE"
+            "explanation": "Explaining every detail openly to staff shows the quality of speaking honestly, so [TARGET] means OPENNESS.",
+            "correctAnswer": "OPENNESS"
         },
         {
-            "word": "KINDLE",
+            "word": "AVERSION",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L61_Q2",
-            "sentence": "The inspiring speech helped to [TARGET] a sense of hope in the community.",
-            "hint": "ETYMOLOGY: Light or set on fire; inspire an emotion or feeling.",
+            "sentence": "Ever since getting sick on a boat, he's had a strong [TARGET] to seafood.",
+            "hint": "This word names a strong feeling of wanting to avoid something.",
             "options": [
-                "Normality",
-                "IGNITE",
-                "Dampen",
-                "Extinguish"
+                "Affection",
+                "Fondness",
+                "Attraction",
+                "DISLIKE"
             ],
-            "explanation": "The clues in the sentence point to IGNITE.",
-            "correctAnswer": "IGNITE"
+            "explanation": "Wanting to avoid seafood after getting sick shows a strong feeling against it, so [TARGET] means DISLIKE.",
+            "correctAnswer": "DISLIKE"
         },
         {
-            "word": "BELLIGERENT",
+            "word": "DEFERENCE",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L61_Q3",
-            "sentence": "The nations remained [TARGET], refusing to sign the peace treaty even after years of conflict.",
-            "hint": "ETYMOLOGY: Hostile and aggressive; ready to fight.",
+            "sentence": "The young intern showed great [TARGET] toward the senior engineer's decades of experience.",
+            "hint": "This word names showing respect for someone's authority or experience.",
             "options": [
-                "HOSTILE",
-                "Normality",
-                "Peaceful",
-                "Amicable"
+                "Contempt",
+                "Defiance",
+                "Disrespect",
+                "RESPECT"
             ],
-            "explanation": "The clues in the sentence point to HOSTILE.",
-            "correctAnswer": "HOSTILE"
+            "explanation": "Showing high regard for decades of experience is showing respect, so [TARGET] means RESPECT.",
+            "correctAnswer": "RESPECT"
         },
         {
-            "word": "OBSEQUIOUS",
+            "word": "CYNICAL",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L62_Q1",
-            "sentence": "The [TARGET] assistant agreed with every single word his boss said, no matter how absurd.",
-            "hint": "ETYMOLOGY: Obedient or attentive to an excessive or servile degree.",
+            "sentence": "After being scammed twice, she became [TARGET] of any 'amazing deal' online.",
+            "hint": "This word describes assuming the worst about people's motives.",
             "options": [
-                "Normality",
-                "Arrogant",
-                "SERVILE",
-                "Assertive"
+                "Idealistic",
+                "Trusting",
+                "Optimistic",
+                "DISTRUSTFUL"
             ],
-            "explanation": "The clues in the sentence point to SERVILE.",
-            "correctAnswer": "SERVILE"
+            "explanation": "Distrusting any 'amazing deal' after being scammed shows assuming the worst, so [TARGET] means DISTRUSTFUL.",
+            "correctAnswer": "DISTRUSTFUL"
         },
         {
-            "word": "OBDURATE",
+            "word": "AMBIVALENT",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L62_Q2",
-            "sentence": "The negotiator remained [TARGET], refusing to budge on even the smallest points.",
-            "hint": "ETYMOLOGY: Stubbornly refusing to change one's opinion or course of action.",
+            "sentence": "She felt [TARGET] about the job offer, excited about the salary but worried about moving cities.",
+            "hint": "This word describes having two opposite feelings at the same time.",
             "options": [
-                "STUBBORN",
-                "Flexible",
-                "Yielding",
-                "Normality"
+                "Certain",
+                "Decisive",
+                "Resolved",
+                "UNDECIDED"
             ],
-            "explanation": "The clues in the sentence point to STUBBORN.",
-            "correctAnswer": "STUBBORN"
+            "explanation": "Feeling excited and worried at the same time about one decision shows having opposite feelings, so [TARGET] means UNDECIDED.",
+            "correctAnswer": "UNDECIDED"
         },
         {
-            "word": "ALACRITY",
+            "word": "EGREGIOUS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L62_Q3",
-            "sentence": "The interns completed their tasks with [TARGET], eager to impress their supervisors.",
-            "hint": "ETYMOLOGY: Brisk and cheerful readiness.",
+            "sentence": "The accountant made an [TARGET] error, billing the client one million dollars instead of one thousand.",
+            "hint": "This word describes a mistake so bad it shocks people.",
             "options": [
-                "EAGERNESS",
-                "Lethargy",
-                "Apathy",
-                "Normality"
+                "Negligible",
+                "Minor",
+                "OUTRAGEOUS",
+                "Trivial"
             ],
-            "explanation": "The clues in the sentence point to EAGERNESS.",
-            "correctAnswer": "EAGERNESS"
+            "explanation": "Billing one million instead of one thousand is a mistake shocking enough to stand out, so [TARGET] means OUTRAGEOUS.",
+            "correctAnswer": "OUTRAGEOUS"
         },
         {
-            "word": "IMPETUOUS",
+            "word": "FORTUITOUS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L63_Q1",
-            "sentence": "The [TARGET] decision to quit his job without a backup plan surprised his cautious family.",
-            "hint": "ETYMOLOGY: Acting or done quickly and without thought or care.",
+            "sentence": "It was [TARGET] that she found her lost ring just minutes before throwing out the trash.",
+            "hint": "This word describes a happy accident, not planned at all.",
             "options": [
-                "Cautious",
-                "IMPULSIVE",
-                "Deliberate",
-                "Normality"
+                "Disastrous",
+                "LUCKY",
+                "Unfortunate",
+                "Unlucky"
             ],
-            "explanation": "The clues in the sentence point to IMPULSIVE.",
-            "correctAnswer": "IMPULSIVE"
+            "explanation": "Finding a lost ring right before throwing out the trash is a happy, unplanned accident, so [TARGET] means LUCKY.",
+            "correctAnswer": "LUCKY"
         },
         {
-            "word": "PARSIMONIOUS",
+            "word": "IMPERVIOUS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L63_Q2",
-            "sentence": "The [TARGET] billionaire refused to spend money on even basic home repairs.",
-            "hint": "ETYMOLOGY: Very unwilling to spend money or use resources; frugal.",
+            "sentence": "After years in customer service, he seemed [TARGET] to even the rudest complaints.",
+            "hint": "This word describes not being bothered by something that would bother most people.",
             "options": [
-                "Generous",
-                "Normality",
-                "Liberal",
-                "STINGY"
+                "UNAFFECTED",
+                "Sensitive",
+                "Susceptible",
+                "Vulnerable"
             ],
-            "explanation": "The clues in the sentence point to STINGY.",
-            "correctAnswer": "STINGY"
+            "explanation": "Not being bothered by even the rudest complaints shows being unaffected, so [TARGET] means UNAFFECTED.",
+            "correctAnswer": "UNAFFECTED"
         },
         {
-            "word": "BANAL",
+            "word": "JUDICIOUS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L63_Q3",
-            "sentence": "The movie's plot was so [TARGET] that the audience could predict the ending within minutes.",
-            "hint": "ETYMOLOGY: So lacking in originality as to be obvious and boring.",
+            "sentence": "The board made a [TARGET] decision to wait one more quarter before expanding overseas.",
+            "hint": "This word describes a careful, well-reasoned choice.",
             "options": [
-                "Normality",
-                "CLICHÉD",
-                "Creative",
-                "Original"
+                "Foolish",
+                "Reckless",
+                "SENSIBLE",
+                "Rash"
             ],
-            "explanation": "The clues in the sentence point to CLICHÉD.",
-            "correctAnswer": "CLICHÉD"
+            "explanation": "Waiting one more quarter before a big move shows a careful, well-reasoned choice, so [TARGET] means SENSIBLE.",
+            "correctAnswer": "SENSIBLE"
         },
         {
-            "word": "FACETIOUS",
+            "word": "LUCID",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L64_Q1",
-            "sentence": "He made a [TARGET] remark about the boss's tie, not realizing the boss was behind him.",
-            "hint": "ETYMOLOGY: Treating serious issues with deliberately inappropriate humor.",
+            "sentence": "Despite the fever, the patient remained [TARGET] and answered every question correctly.",
+            "hint": "This word describes thinking clearly even under difficult conditions.",
             "options": [
-                "Normality",
-                "Serious",
-                "Grave",
-                "JOCULAR"
+                "CLEAR-MINDED",
+                "Disoriented",
+                "Delirious",
+                "Confused"
             ],
-            "explanation": "The clues in the sentence point to JOCULAR.",
-            "correctAnswer": "JOCULAR"
+            "explanation": "Answering every question correctly despite a fever shows thinking clearly, so [TARGET] means CLEAR-MINDED.",
+            "correctAnswer": "CLEAR-MINDED"
         },
         {
-            "word": "RECALCITRANT",
+            "word": "NONCHALANT",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L64_Q2",
-            "sentence": "The [TARGET] teenager refused to follow any of the rules set by his parents.",
-            "hint": "ETYMOLOGY: Having an obstinately uncooperative attitude toward authority.",
+            "sentence": "He stayed surprisingly [TARGET] about missing his flight, simply shrugging and booking another.",
+            "hint": "This word describes acting unbothered, almost too relaxed.",
             "options": [
-                "Normality",
-                "Docile",
-                "Obedient",
-                "UNRULY"
+                "CASUAL",
+                "Worried",
+                "Anxious",
+                "Frantic"
             ],
-            "explanation": "The clues in the sentence point to UNRULY.",
-            "correctAnswer": "UNRULY"
+            "explanation": "Simply shrugging and booking another flight shows acting unbothered, so [TARGET] means CASUAL.",
+            "correctAnswer": "CASUAL"
         },
         {
-            "word": "JUXTAPOSE",
+            "word": "PERNICIOUS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L64_Q3",
-            "sentence": "The artist decided to [TARGET] vibrant neon colors with a dark, moody background.",
-            "hint": "ETYMOLOGY: Place or deal with close together for contrasting effect.",
+            "sentence": "Doctors warned that the [TARGET] effects of the habit might not appear for years.",
+            "hint": "This word describes harm that spreads slowly and is hard to notice at first.",
             "options": [
-                "Normality",
-                "Combine",
-                "CONTRAST",
-                "Blend"
-            ],
-            "explanation": "The clues in the sentence point to CONTRAST.",
-            "correctAnswer": "CONTRAST"
-        },
-        {
-            "word": "DELETERIOUS",
-            "interactionType": "Detective Lens",
-            "id": "VOC_CONTEXTCLUES_L65_Q1",
-            "sentence": "Excessive sugar consumption has a [TARGET] effect on long-term dental health.",
-            "hint": "ETYMOLOGY: Causing harm or damage.",
-            "options": [
-                "Helpful",
                 "Beneficial",
-                "HARMFUL",
-                "Normality"
+                "DESTRUCTIVE",
+                "Helpful",
+                "Harmless"
             ],
-            "explanation": "The clues in the sentence point to HARMFUL.",
-            "correctAnswer": "HARMFUL"
+            "explanation": "Effects that don't appear for years but still cause harm describe slow, hidden damage, so [TARGET] means DESTRUCTIVE.",
+            "correctAnswer": "DESTRUCTIVE"
         },
         {
-            "word": "JOVIAL",
+            "word": "QUIXOTIC",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
+            "id": "VOC_CONTEXTCLUES_L65_Q1",
+            "sentence": "His [TARGET] plan to build a rocket in his garage impressed his friends but worried his bank manager.",
+            "hint": "This word describes an idealistic plan that ignores practical limits.",
+            "options": [
+                "Practical",
+                "UNREALISTIC",
+                "Realistic",
+                "Sensible"
+            ],
+            "explanation": "Impressing friends while worrying a bank manager shows an idealistic plan ignoring practical limits, so [TARGET] means UNREALISTIC.",
+            "correctAnswer": "UNREALISTIC"
+        },
+        {
+            "word": "RESOLUTE",
+            "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L65_Q2",
-            "sentence": "The [TARGET] host made sure every guest felt welcome and entertained.",
-            "hint": "ETYMOLOGY: Cheerful and friendly.",
+            "sentence": "Despite three rejections, she remained [TARGET] in her decision to start the business.",
+            "hint": "This word describes staying firmly committed to a decision.",
             "options": [
-                "CHEERFUL",
-                "Gloomy",
-                "Normality",
-                "Miserable"
+                "Uncertain",
+                "FIRM",
+                "Hesitant",
+                "Wavering"
             ],
-            "explanation": "The clues in the sentence point to CHEERFUL.",
-            "correctAnswer": "CHEERFUL"
+            "explanation": "Staying committed after three rejections shows being firmly committed, so [TARGET] means FIRM.",
+            "correctAnswer": "FIRM"
         },
         {
-            "word": "SYCOPHANT",
+            "word": "STOIC",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L65_Q3",
-            "sentence": "The manager was surrounded by [TARGET] who never challenged his poor decisions.",
-            "hint": "ETYMOLOGY: A person who acts obsequiously toward someone important to gain advantage.",
+            "sentence": "The soldier remained [TARGET] during the painful treatment, not showing a single wince.",
+            "hint": "This word describes hiding pain or emotion without complaint.",
             "options": [
-                "Rebel",
-                "FLATTERER",
-                "Normality",
-                "Critic"
+                "Dramatic",
+                "UNEMOTIONAL",
+                "Expressive",
+                "Emotional"
             ],
-            "explanation": "The clues in the sentence point to FLATTERER.",
-            "correctAnswer": "FLATTERER"
+            "explanation": "Not showing a single wince during painful treatment shows hiding emotion without complaint, so [TARGET] means UNEMOTIONAL.",
+            "correctAnswer": "UNEMOTIONAL"
         },
         {
-            "word": "NEBULOUS",
+            "word": "TENUOUS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L66_Q1",
-            "sentence": "The company's plans for expansion remained [TARGET] and poorly defined.",
-            "hint": "ETYMOLOGY: In the form of a cloud or haze; hazy; vague or ill-defined.",
+            "sentence": "The company's [TARGET] connection to the supplier broke down after just one late shipment.",
+            "hint": "This word describes a relationship or argument that is easily broken.",
             "options": [
-                "Normality",
-                "Clear",
-                "VAGUE",
-                "Lucid"
+                "Solid",
+                "WEAK",
+                "Firm",
+                "Strong"
             ],
-            "explanation": "The clues in the sentence point to VAGUE.",
-            "correctAnswer": "VAGUE"
+            "explanation": "Breaking down after just one late shipment shows a connection that was easily broken, so [TARGET] means WEAK.",
+            "correctAnswer": "WEAK"
         },
         {
-            "word": "NEFARIOUS",
+            "word": "UNPRECEDENTED",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L66_Q2",
-            "sentence": "The hackers developed a [TARGET] scheme to drain bank accounts across the country.",
-            "hint": "ETYMOLOGY: Wicked or criminal in nature.",
+            "sentence": "The company reported [TARGET] growth, doubling its users in a single month.",
+            "hint": "This word describes something that has never happened before.",
             "options": [
-                "Virtuous",
-                "Good",
-                "WICKED",
-                "Normality"
+                "Routine",
+                "Typical",
+                "UNHEARD-OF",
+                "Common"
             ],
-            "explanation": "The clues in the sentence point to WICKED.",
-            "correctAnswer": "WICKED"
+            "explanation": "Doubling users in a single month had never happened before, so [TARGET] means UNHEARD-OF.",
+            "correctAnswer": "UNHEARD-OF"
         },
         {
-            "word": "RETICENT",
+            "word": "VIVACIOUS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L66_Q3",
-            "sentence": "The witness remained [TARGET] about the details of the crime, fearing for her safety.",
-            "hint": "ETYMOLOGY: Not revealing one's thoughts or feelings readily.",
+            "sentence": "The [TARGET] host kept the audience laughing and energized throughout the entire show.",
+            "hint": "This word describes someone full of energy and spirit.",
             "options": [
-                "RESERVED",
-                "Normality",
-                "Candid",
-                "Outgoing"
+                "Lifeless",
+                "LIVELY",
+                "Subdued",
+                "Dull"
             ],
-            "explanation": "The clues in the sentence point to RESERVED.",
-            "correctAnswer": "RESERVED"
+            "explanation": "Keeping an audience laughing and energized throughout the show shows being full of energy, so [TARGET] means LIVELY.",
+            "correctAnswer": "LIVELY"
         },
         {
-            "word": "UBIQUITOUS",
+            "word": "WISTFUL",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L67_Q1",
-            "sentence": "In the modern era, smartphones have become [TARGET] in every part of the world.",
-            "hint": "ETYMOLOGY: Present, appearing, or found everywhere.",
+            "sentence": "Looking at old photos, Grandpa got a [TARGET] look on his face, remembering his childhood farm.",
+            "hint": "This word describes a gentle sadness when remembering the past.",
             "options": [
-                "EVERYWHERE",
-                "Scarce",
-                "Rare",
-                "Normality"
+                "Detached",
+                "NOSTALGIC",
+                "Indifferent",
+                "Unconcerned"
             ],
-            "explanation": "The clues in the sentence point to EVERYWHERE.",
-            "correctAnswer": "EVERYWHERE"
+            "explanation": "Remembering a childhood farm while looking at old photos shows gentle sadness about the past, so [TARGET] means NOSTALGIC.",
+            "correctAnswer": "NOSTALGIC"
         },
         {
-            "word": "EBULLIENT",
+            "word": "ZEALOUS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L67_Q2",
-            "sentence": "The team was [TARGET] after winning the championship against all odds.",
-            "hint": "ETYMOLOGY: Cheerful and full of energy.",
+            "sentence": "The [TARGET] volunteer spent every weekend organizing the charity's fundraising events.",
+            "hint": "This word describes intense enthusiasm for a cause.",
             "options": [
-                "Depressed",
-                "Normality",
-                "Gloomy",
-                "EXUBERANT"
+                "Apathetic",
+                "PASSIONATE",
+                "Lukewarm",
+                "Indifferent"
             ],
-            "explanation": "The clues in the sentence point to EXUBERANT.",
-            "correctAnswer": "EXUBERANT"
+            "explanation": "Spending every weekend organizing events shows intense enthusiasm for the cause, so [TARGET] means PASSIONATE.",
+            "correctAnswer": "PASSIONATE"
         },
         {
-            "word": "QUERULOUS",
+            "word": "INSOLENT",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L67_Q3",
-            "sentence": "The [TARGET] customer complained about everything from the temperature to the lighting.",
-            "hint": "ETYMOLOGY: Complaining in a petulant or whining manner.",
+            "sentence": "The teacher sent the student to the principal for [TARGET] remarks made during class.",
+            "hint": "This word describes rude behavior shown toward an authority figure.",
             "options": [
-                "COMPLAINING",
-                "Content",
-                "Satisfied",
-                "Normality"
+                "Courteous",
+                "Respectful",
+                "Polite",
+                "DISRESPECTFUL"
             ],
-            "explanation": "The clues in the sentence point to COMPLAINING.",
-            "correctAnswer": "COMPLAINING"
+            "explanation": "Being sent to the principal for remarks made in class shows rude behavior toward authority, so [TARGET] means DISRESPECTFUL.",
+            "correctAnswer": "DISRESPECTFUL"
         },
         {
-            "word": "MAGNANIMOUS",
+            "word": "PLACID",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L68_Q1",
-            "sentence": "Despite the bitter rivalry, the winner was [TARGET] in his victory speech.",
-            "hint": "ETYMOLOGY: Very generous or forgiving, especially toward a rival.",
+            "sentence": "The [TARGET] surface of the mountain lake reflected the sky like a mirror.",
+            "hint": "This word describes a calm, undisturbed scene.",
             "options": [
-                "Mean",
-                "GENEROUS",
-                "Normality",
-                "Vindictive"
+                "Agitated",
+                "CALM",
+                "Turbulent",
+                "Stormy"
             ],
-            "explanation": "The clues in the sentence point to GENEROUS.",
-            "correctAnswer": "GENEROUS"
+            "explanation": "Reflecting the sky like a mirror shows a calm, undisturbed scene, so [TARGET] means CALM.",
+            "correctAnswer": "CALM"
         },
         {
-            "word": "ABERRATION",
+            "word": "VEXING",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L68_Q2",
-            "sentence": "In a region known for its stability, the sudden earthquake was a geological [TARGET].",
-            "hint": "ETYMOLOGY: A departure from what is normal or expected.",
+            "sentence": "The printer's [TARGET] habit of jamming on the last page drove the whole office crazy.",
+            "hint": "This word describes something that causes ongoing irritation.",
             "options": [
-                "Normality",
-                "Standard",
-                "ANOMALY",
-                "Regularity"
+                "Delightful",
+                "Pleasing",
+                "ANNOYING",
+                "Satisfying"
             ],
-            "explanation": "The clues in the sentence point to ANOMALY.",
-            "correctAnswer": "ANOMALY"
+            "explanation": "Driving the whole office crazy with a jamming habit shows ongoing irritation, so [TARGET] means ANNOYING.",
+            "correctAnswer": "ANNOYING"
         },
         {
-            "word": "HAPLESS",
+            "word": "INCESSANT",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L68_Q3",
-            "sentence": "The [TARGET] traveler lost his passport, wallet, and luggage all in one day.",
-            "hint": "ETYMOLOGY: Unfortunate; unlucky.",
+            "sentence": "The [TARGET] barking from the neighbor's dog kept the whole street awake.",
+            "hint": "This word describes something that never stops, going on and on.",
             "options": [
-                "Fortunate",
-                "Lucky",
-                "Normality",
-                "UNLUCKY"
+                "CONSTANT",
+                "Intermittent",
+                "Sporadic",
+                "Occasional"
             ],
-            "explanation": "The clues in the sentence point to UNLUCKY.",
-            "correctAnswer": "UNLUCKY"
+            "explanation": "Keeping the whole street awake shows the barking never stopped, so [TARGET] means CONSTANT.",
+            "correctAnswer": "CONSTANT"
         },
         {
-            "word": "DEBILITATE",
+            "word": "PRECARIOUS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L69_Q1",
-            "sentence": "The severe flu can [TARGET] even the healthiest individuals for several weeks.",
-            "hint": "ETYMOLOGY: Make someone very weak and infirm.",
+            "sentence": "After the merger, many employees found themselves in a [TARGET] position, unsure if their jobs were safe.",
+            "hint": "This word describes a situation that could collapse at any moment.",
             "options": [
-                "Strengthen",
-                "Normality",
-                "WEAKEN",
-                "Heal"
+                "Secure",
+                "Stable",
+                "Steady",
+                "UNSTABLE"
             ],
-            "explanation": "The clues in the sentence point to WEAKEN.",
-            "correctAnswer": "WEAKEN"
+            "explanation": "Being unsure if their jobs were safe shows a situation that could collapse at any moment, so [TARGET] means UNSTABLE.",
+            "correctAnswer": "UNSTABLE"
         },
         {
-            "word": "METICULOUS",
+            "word": "INSATIABLE",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L69_Q2",
-            "sentence": "The restoration of the ancient mural required [TARGET] attention to detail.",
-            "hint": "ETYMOLOGY: Showing great attention to detail; very careful and precise.",
+            "sentence": "Teenagers often have an [TARGET] appetite, finishing huge meals and still wanting snacks.",
+            "hint": "This word describes a desire that can never fully be satisfied.",
             "options": [
-                "Sloppy",
-                "FASTIDIOUS",
-                "Careless",
-                "Normality"
+                "Content",
+                "UNSATISFIABLE",
+                "Fulfilled",
+                "Satisfied"
             ],
-            "explanation": "The clues in the sentence point to FASTIDIOUS.",
-            "correctAnswer": "FASTIDIOUS"
+            "explanation": "Finishing huge meals and still wanting snacks shows a desire that can never be satisfied, so [TARGET] means UNSATISFIABLE.",
+            "correctAnswer": "UNSATISFIABLE"
         },
         {
-            "word": "ENERVATE",
+            "word": "MERCURIAL",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L69_Q3",
-            "sentence": "The extreme humidity of the tropical jungle tended to [TARGET] the hikers quickly.",
-            "hint": "ETYMOLOGY: Cause someone to feel drained of energy or vitality.",
+            "sentence": "The chef's [TARGET] moods meant the kitchen staff never knew if he'd be calm or shouting.",
+            "hint": "This word describes moods that change suddenly and without warning.",
             "options": [
-                "Energize",
-                "WEAKEN",
-                "Normality",
-                "Strengthen"
+                "UNPREDICTABLE",
+                "Consistent",
+                "Predictable",
+                "Steady"
             ],
-            "explanation": "The clues in the sentence point to WEAKEN.",
-            "correctAnswer": "WEAKEN"
+            "explanation": "Never knowing if he'd be calm or shouting shows moods that change suddenly, so [TARGET] means UNPREDICTABLE.",
+            "correctAnswer": "UNPREDICTABLE"
         },
         {
-            "word": "QUINTESSENTIAL",
+            "word": "INDOMITABLE",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L70_Q1",
-            "sentence": "The local pub was the [TARGET] example of a cozy English village tavern.",
-            "hint": "ETYMOLOGY: Representing the most perfect or typical example of a quality or class.",
+            "sentence": "The athlete's [TARGET] spirit kept her training even after two knee surgeries.",
+            "hint": "This word describes a spirit that simply cannot be defeated.",
             "options": [
-                "Normality",
-                "Atypical",
-                "Unique",
-                "TYPICAL"
+                "Submissive",
+                "UNSTOPPABLE",
+                "Yielding",
+                "Defeated"
             ],
-            "explanation": "The clues in the sentence point to TYPICAL.",
-            "correctAnswer": "TYPICAL"
+            "explanation": "Continuing to train after two surgeries shows a spirit that cannot be defeated, so [TARGET] means UNSTOPPABLE.",
+            "correctAnswer": "UNSTOPPABLE"
         },
         {
-            "word": "ANACHRONISM",
+            "word": "CONDESCENDING",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L70_Q2",
-            "sentence": "A typewriter in a modern high-tech office would be considered a strange [TARGET].",
-            "hint": "ETYMOLOGY: A thing belonging or appropriate to a period other than that in which it exists.",
+            "sentence": "His [TARGET] tone, explaining basic math to the senior engineer, annoyed everyone in the room.",
+            "hint": "This word describes talking down to someone as if they're less capable.",
             "options": [
-                "Normality",
-                "Classic",
-                "MISPLACEMENT",
-                "Contemporary"
+                "Respectful",
+                "Humble",
+                "PATRONIZING",
+                "Gracious"
             ],
-            "explanation": "The clues in the sentence point to MISPLACEMENT.",
-            "correctAnswer": "MISPLACEMENT"
+            "explanation": "Explaining basic math to a senior engineer treats them as less capable, so [TARGET] means PATRONIZING.",
+            "correctAnswer": "PATRONIZING"
         },
         {
-            "word": "GARRULOUS",
+            "word": "INNOCUOUS",
             "interactionType": "Detective Lens",
+            "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L70_Q3",
-            "sentence": "The [TARGET] neighbor talked for hours about her garden, barely letting anyone else speak.",
-            "hint": "ETYMOLOGY: Excessively talkative, especially on trivial matters.",
+            "sentence": "The doctor reassured her that the small skin spot was completely [TARGET].",
+            "hint": "This word describes something that seems concerning but causes no real harm.",
             "options": [
-                "Taciturn",
-                "Normality",
-                "TALKATIVE",
-                "Silent"
+                "HARMLESS",
+                "Toxic",
+                "Dangerous",
+                "Harmful"
             ],
-            "explanation": "The clues in the sentence point to TALKATIVE.",
-            "correctAnswer": "TALKATIVE"
+            "explanation": "Reassuring her there was nothing to worry about shows it causes no real harm, so [TARGET] means HARMLESS.",
+            "correctAnswer": "HARMLESS"
         }
     ],
     "gameType": "contextClues",
