@@ -9,14 +9,6 @@ class EliteMasteryQuest extends GameQuest {
   final String? audioUrl;
   final String? text;
 
-  /// Short pedagogical note explaining *why* the hint/pattern applies (e.g.
-  /// the stress, linking, or intonation rule behind a sentence).
-  ///
-  /// Sourced directly from the curriculum JSON's `explanation` field, which
-  /// is present on every quest across all batches but was previously parsed
-  /// nowhere — it's now surfaced in the post-answer feedback card to
-  /// reinforce learning regardless of whether the attempt succeeded.
-  final String? explanation;
 
   const EliteMasteryQuest({
     required super.id,
@@ -40,6 +32,7 @@ class EliteMasteryQuest extends GameQuest {
     // contained for it. See EliteMasteryQuestModel.fromJson for the other
     // half of this fix.
     super.question,
+    super.explanation,
     this.sentences,
     this.correctOrder,
     this.idiom,
@@ -47,7 +40,6 @@ class EliteMasteryQuest extends GameQuest {
     this.speedMultiplier,
     this.audioUrl,
     this.text,
-    this.explanation,
   });
 
   EliteMasteryQuest copyWith({

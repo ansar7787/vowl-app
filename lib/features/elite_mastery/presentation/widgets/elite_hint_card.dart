@@ -69,10 +69,10 @@ class EliteHintCard extends StatelessWidget {
     // distinct: "lifeline activated" specifically implies the dynamic
     // 50/50/letter-reveal mechanism fired; the generic fallback is for any
     // other case with no real hint text to show.
-    final hasRealHint = hintText != null && hintText.trim().isNotEmpty;
+    final hasRealHint = hintText != null && hintText!.trim().isNotEmpty;
     final resolvedHint = HintUtility.isGenericHint(hintText)
         ? context.tr('games.lifeline_activated')
-        : (hasRealHint ? hintText : context.tr('games.hint_fallback_default'));
+        : (hasRealHint ? hintText! : context.tr('games.hint_fallback_default'));
 
     return Semantics(
       // `liveRegion`: announce automatically the moment the hint reveals,

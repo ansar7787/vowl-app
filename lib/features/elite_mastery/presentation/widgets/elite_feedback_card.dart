@@ -127,7 +127,7 @@ class EliteFeedbackCard extends StatelessWidget {
                   if (hasRuleTip) ...[
                     SizedBox(height: 16.h),
                     _RuleTipBox(
-                      text: ruleTip!,
+                      text: ruleTip,
                       accentColor: _shadowColor,
                       isDark: isDark,
                     ),
