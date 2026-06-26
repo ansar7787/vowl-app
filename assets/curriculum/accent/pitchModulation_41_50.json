@@ -5,513 +5,513 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L41_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "It's a nice day, isn't it?",
+            "textToSpeak": "It's a nice day, isn't it?",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Rising Tag (Genuine Question, Unsure)",
+                "Falling Tag (Confident Comment, Inviting Agreement)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 41-1)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "correctAnswer": "Falling Tag (Confident Comment, Inviting Agreement)",
+            "correctAnswerIndex": 1,
+            "hint": "The sun is clearly out - the speaker already knows the answer. Listen for the tag 'isn't it' to drop, not lift.",
+            "explanation": "With clear sunshine all around, 'isn't it?' falls like a comment rather than a real question, since the speaker is already sure."
         },
         {
             "id": "ACC_PITCHMODULATION_L41_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "You haven't seen my glasses, have you?",
+            "textToSpeak": "You haven't seen my glasses, have you?",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Falling Tag (Confident Comment, Inviting Agreement)",
+                "Rising Tag (Genuine Question, Unsure)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
+            "correctAnswer": "Rising Tag (Genuine Question, Unsure)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 41-2)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "hint": "The speaker has actually lost their glasses and doesn't know the answer. Listen for the tag 'have you' to lift at the end.",
+            "explanation": "Because the speaker truly doesn't know where the glasses are, 'have you?' rises as a real request for information."
         },
         {
             "id": "ACC_PITCHMODULATION_L41_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "This cake tastes great, doesn't it?",
+            "textToSpeak": "This cake tastes great, doesn't it?",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Rising Tag (Genuine Question, Unsure)",
+                "Falling Tag (Confident Comment, Inviting Agreement)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 41-3)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "correctAnswer": "Falling Tag (Confident Comment, Inviting Agreement)",
+            "correctAnswerIndex": 1,
+            "hint": "The speaker is already enjoying the cake and expects agreement. The tag should fall like a shared opinion.",
+            "explanation": "'Doesn't it?' falls here because the speaker is confidently sharing an opinion and expects the listener to agree."
         },
         {
             "id": "ACC_PITCHMODULATION_L42_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "You're coming to the party, aren't you?",
+            "textToSpeak": "You're coming to the party, aren't you?",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Falling Tag (Confident Assumption)",
+                "Rising Tag (Genuine Question, Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
+            "correctAnswer": "Falling Tag (Confident Assumption)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 42-1)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "hint": "The speaker assumes the answer is yes and is just double-checking casually. Expect the tag to fall.",
+            "explanation": "'Aren't you?' falls because the speaker already assumes the listener is coming and is simply confirming a known plan."
         },
         {
             "id": "ACC_PITCHMODULATION_L42_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "She didn't call you, did she?",
+            "textToSpeak": "She didn't call you, did she?",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Falling Tag (Confident Assumption)",
+                "Rising Tag (Genuine Question, Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
+            "correctAnswer": "Rising Tag (Genuine Question, Unsure)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 42-2)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "hint": "The speaker truly doesn't know whether the call happened. Listen for the tag 'did she' to lift at the end.",
+            "explanation": "'Did she?' rises here because the speaker has no idea what happened and is genuinely asking for new information."
         },
         {
             "id": "ACC_PITCHMODULATION_L42_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "That's the right address, isn't it?",
+            "textToSpeak": "That's the right address, isn't it?",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Rising Tag (Genuine Question, Unsure)",
+                "Falling Tag (Fairly Confident, Seeking Agreement)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 42-3)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "correctAnswer": "Falling Tag (Fairly Confident, Seeking Agreement)",
+            "correctAnswerIndex": 1,
+            "hint": "The speaker is fairly sure of the address and just wants a quick nod. Expect the tag to fall.",
+            "explanation": "'Isn't it?' falls because the speaker is fairly confident already and simply wants the listener to confirm it."
         },
         {
             "id": "ACC_PITCHMODULATION_L43_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "You can drive, can't you?",
+            "textToSpeak": "You can drive, can't you?",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Rising Tag (Genuine Question, Unsure)",
+                "Falling Tag (Confident Assumption)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 43-1)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "correctAnswer": "Falling Tag (Confident Assumption)",
+            "correctAnswerIndex": 1,
+            "hint": "The speaker assumes the answer is obviously yes. Listen for a falling tag, almost like a statement.",
+            "explanation": "'Can't you?' falls because the speaker takes the answer for granted and is barely asking at all."
         },
         {
             "id": "ACC_PITCHMODULATION_L43_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "We haven't met before, have we?",
+            "textToSpeak": "We haven't met before, have we?",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Falling Tag (Confident Assumption)",
+                "Rising Tag (Genuine Question, Unsure)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
+            "correctAnswer": "Rising Tag (Genuine Question, Unsure)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 43-2)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "hint": "The speaker truly can't remember whether they've met. Listen for the tag 'have we' to climb upward.",
+            "explanation": "'Have we?' rises because the speaker genuinely isn't sure and is asking to find out for certain."
         },
         {
             "id": "ACC_PITCHMODULATION_L43_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "It's getting late, isn't it?",
+            "textToSpeak": "It's getting late, isn't it?",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Falling Tag (Shared Observation)",
+                "Rising Tag (Genuine Question, Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 43-3)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "correctAnswer": "Falling Tag (Shared Observation)",
+            "correctAnswerIndex": 0,
+            "hint": "Both speakers can clearly see the time. The tag here just confirms what's already obvious.",
+            "explanation": "'Isn't it?' falls because this is an obvious shared observation, not a real request for new information."
         },
         {
             "id": "ACC_PITCHMODULATION_L44_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "You locked the door, didn't you?",
+            "textToSpeak": "You locked the door, didn't you?",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Rising Tag (Anxious, Unsure)",
+                "Falling Tag (Confident Assumption)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
+            "correctAnswer": "Rising Tag (Anxious, Unsure)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 44-1)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "hint": "The speaker suddenly isn't sure and feels a flicker of worry. Listen for the tag to lift nervously.",
+            "explanation": "'Didn't you?' rises here because a sudden doubt makes the speaker genuinely unsure, turning it into a real, anxious question."
         },
         {
             "id": "ACC_PITCHMODULATION_L44_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "You finished the report, didn't you?",
+            "textToSpeak": "You finished the report, didn't you?",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Falling Tag (Confident, Expecting Yes)",
+                "Rising Tag (Anxious, Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
+            "correctAnswer": "Falling Tag (Confident, Expecting Yes)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 44-2)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "hint": "The manager fully expects the work is done. Listen for the tag to fall like a quick confirmation.",
+            "explanation": "'Didn't you?' falls because the speaker is confident the report is finished and is only checking out of habit."
         },
         {
             "id": "ACC_PITCHMODULATION_L44_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "You're not allergic to nuts, are you?",
+            "textToSpeak": "You're not allergic to nuts, are you?",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Rising Tag (Genuine Concern, Checking Carefully)",
+                "Falling Tag (Confident Assumption)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 44-3)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "correctAnswer": "Rising Tag (Genuine Concern, Checking Carefully)",
+            "correctAnswerIndex": 0,
+            "hint": "This matters for safety, so the speaker genuinely needs to know. Listen for the tag to rise carefully.",
+            "explanation": "'Are you?' rises because allergy information is important and the speaker is genuinely checking before serving food."
         },
         {
             "id": "ACC_PITCHMODULATION_L45_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "This is the right platform, isn't it?",
+            "textToSpeak": "This is the right platform, isn't it?",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Rising Tag (Lost Traveler, Genuinely Unsure)",
+                "Falling Tag (Confident Assumption)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
+            "correctAnswer": "Rising Tag (Lost Traveler, Genuinely Unsure)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 45-1)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "hint": "A traveler who isn't sure of the way will let the tag rise, asking for real reassurance.",
+            "explanation": "'Isn't it?' rises because the traveler genuinely doesn't know if they're in the right place and needs a real answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L45_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "You take cards here, don't you?",
+            "textToSpeak": "You take cards here, don't you?",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Falling Tag (Fairly Confident Shopper)",
+                "Rising Tag (Genuinely Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
+            "correctAnswer": "Falling Tag (Fairly Confident Shopper)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 45-2)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "hint": "Most shops accept cards nowadays, so the shopper expects a 'yes'. Listen for the tag to fall.",
+            "explanation": "'Don't you?' falls because the shopper is fairly confident cards are accepted and is simply confirming the obvious."
         },
         {
             "id": "ACC_PITCHMODULATION_L45_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "You backed up the files, didn't you?",
+            "textToSpeak": "You backed up the files, didn't you?",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Rising Tag (Worried, Genuinely Unsure)",
+                "Falling Tag (Confident Assumption)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 45-3)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "correctAnswer": "Rising Tag (Worried, Genuinely Unsure)",
+            "correctAnswerIndex": 0,
+            "hint": "Losing files would be a disaster, so the speaker is nervously checking. Listen for the tag to lift with worry.",
+            "explanation": "'Didn't you?' rises because the speaker is genuinely worried and needs real reassurance, not just a casual nod."
         },
         {
             "id": "ACC_PITCHMODULATION_L46_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "The meeting's at three, isn't it?",
+            "textToSpeak": "The meeting's at three, isn't it?",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Rising Tag (Double-Checking, Unsure)",
+                "Falling Tag (Confident Assumption)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
+            "correctAnswer": "Rising Tag (Double-Checking, Unsure)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 46-1)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "hint": "The speaker isn't fully certain about the time and wants to confirm it for real. Listen for a rising tag.",
+            "explanation": "'Isn't it?' rises because the speaker genuinely isn't sure of the time and is asking to avoid showing up wrong."
         },
         {
             "id": "ACC_PITCHMODULATION_L46_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "You did your homework, didn't you?",
+            "textToSpeak": "You did your homework, didn't you?",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Falling Tag (Parent Expecting Yes)",
+                "Rising Tag (Genuinely Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
+            "correctAnswer": "Falling Tag (Parent Expecting Yes)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 46-2)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "hint": "A parent who expects the answer to be yes will let the tag fall, almost like a gentle reminder.",
+            "explanation": "'Didn't you?' falls because the parent expects a 'yes' and is using the tag mainly as a gentle prompt."
         },
         {
             "id": "ACC_PITCHMODULATION_L46_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "Grandma's visiting this weekend, isn't she?",
+            "textToSpeak": "Grandma's visiting this weekend, isn't she?",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Falling Tag (Casual Confirmation)",
+                "Rising Tag (Genuinely Unsure)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 46-3)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "correctAnswer": "Falling Tag (Casual Confirmation)",
+            "correctAnswerIndex": 0,
+            "hint": "This is a known family plan, so the speaker just wants a quick nod. Listen for the tag to fall.",
+            "explanation": "'Isn't she?' falls because this is an already-known plan, so the tag simply confirms shared information."
         },
         {
             "id": "ACC_PITCHMODULATION_L47_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "That movie was fantastic, wasn't it?",
+            "textToSpeak": "That movie was fantastic, wasn't it?",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Falling Tag (Confident, Shared Enthusiasm)",
+                "Rising Tag (Genuinely Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 47-1)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "correctAnswer": "Falling Tag (Confident, Shared Enthusiasm)",
+            "correctAnswerIndex": 0,
+            "hint": "The speaker clearly loved the movie and expects agreement. Listen for the tag to fall with confidence.",
+            "explanation": "'Wasn't it?' falls because the speaker is confidently sharing an enthusiastic opinion, expecting the listener to agree."
         },
         {
             "id": "ACC_PITCHMODULATION_L47_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "You're feeling better today, aren't you?",
+            "textToSpeak": "You're feeling better today, aren't you?",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Rising Tag (Genuinely Checking on Someone's Health)",
+                "Falling Tag (Confident Assumption)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
+            "correctAnswer": "Rising Tag (Genuinely Checking on Someone's Health)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 47-2)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "hint": "When someone has been unwell, this question is asked with real concern. Listen for the tag to lift gently.",
+            "explanation": "'Aren't you?' rises because the speaker genuinely wants to know how the person is doing, not just confirm an assumption."
         },
         {
             "id": "ACC_PITCHMODULATION_L47_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "You closed the windows, didn't you?",
+            "textToSpeak": "You closed the windows, didn't you?",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Rising Tag (Worried It Might Rain)",
+                "Falling Tag (Confident Assumption)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
+            "correctAnswer": "Rising Tag (Worried It Might Rain)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 47-3)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "hint": "Dark clouds are rolling in and the speaker suddenly isn't sure. Listen for a worried, rising tag.",
+            "explanation": "'Didn't you?' rises because sudden worry about the weather makes the speaker genuinely unsure and in need of reassurance."
         },
         {
             "id": "ACC_PITCHMODULATION_L48_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "We still have time to catch the train, don't we?",
+            "textToSpeak": "We still have time to catch the train, don't we?",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Rising Tag (Anxious Traveler, Unsure)",
+                "Falling Tag (Confident Assumption)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 48-1)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "correctAnswer": "Rising Tag (Anxious Traveler, Unsure)",
+            "correctAnswerIndex": 0,
+            "hint": "A traveler glancing nervously at the clock genuinely doesn't know the answer. Listen for the tag to rise.",
+            "explanation": "'Don't we?' rises because the anxious traveler genuinely isn't sure there's enough time and needs a real answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L48_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "This jacket suits me, doesn't it?",
+            "textToSpeak": "This jacket suits me, doesn't it?",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Falling Tag (Confident, Fishing for a Compliment)",
+                "Rising Tag (Genuinely Unsure)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
+            "correctAnswer": "Falling Tag (Confident, Fishing for a Compliment)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 48-2)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "hint": "The shopper already feels good about the jacket and just wants praise. Listen for the tag to fall confidently.",
+            "explanation": "'Doesn't it?' falls because the speaker already believes the jacket suits them and is simply inviting a compliment."
         },
         {
             "id": "ACC_PITCHMODULATION_L48_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "You sent the email already, didn't you?",
+            "textToSpeak": "You sent the email already, didn't you?",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Falling Tag (Confident Assumption)",
+                "Rising Tag (Genuinely Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
+            "correctAnswer": "Falling Tag (Confident Assumption)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 48-3)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "hint": "The speaker is fairly sure the task is done and is just checking it off. Listen for the tag to fall.",
+            "explanation": "'Didn't you?' falls because the speaker confidently assumes the email was already sent and is simply confirming it."
         },
         {
             "id": "ACC_PITCHMODULATION_L49_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "You charged your phone, didn't you?",
+            "textToSpeak": "You charged your phone, didn't you?",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Rising Tag (Worried, Genuinely Unsure)",
+                "Falling Tag (Confident Assumption)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 49-1)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "correctAnswer": "Rising Tag (Worried, Genuinely Unsure)",
+            "correctAnswerIndex": 0,
+            "hint": "A low battery before an important call makes the speaker genuinely uneasy. Listen for a rising, worried tag.",
+            "explanation": "'Didn't you?' rises because the speaker is genuinely worried the phone might be dead and needs a true answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L49_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "Dad's cooking tonight, isn't he?",
+            "textToSpeak": "Dad's cooking tonight, isn't he?",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Rising Tag (Genuinely Unsure)",
+                "Falling Tag (Casual Confirmation)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 49-2)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "correctAnswer": "Falling Tag (Casual Confirmation)",
+            "correctAnswerIndex": 1,
+            "hint": "This is part of the usual family routine, so the speaker just wants a quick nod. Listen for the tag to fall.",
+            "explanation": "'Isn't he?' falls because this follows a known routine, so the tag merely confirms what's already expected."
         },
         {
             "id": "ACC_PITCHMODULATION_L49_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "This isn't too spicy for you, is it?",
+            "textToSpeak": "This isn't too spicy for you, is it?",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Falling Tag (Confident Assumption)",
+                "Rising Tag (Genuinely Checking)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 49-3)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "correctAnswer": "Rising Tag (Genuinely Checking)",
+            "correctAnswerIndex": 1,
+            "hint": "A thoughtful host genuinely wants to know before someone takes a bite. Listen for the tag to lift with real concern.",
+            "explanation": "'Is it?' rises because the host genuinely doesn't know the guest's spice tolerance and is asking for real feedback."
         },
         {
             "id": "ACC_PITCHMODULATION_L50_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "The exam's next Monday, isn't it?",
+            "textToSpeak": "The exam's next Monday, isn't it?",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Rising Tag (Unsure, Double-Checking)",
+                "Falling Tag (Confident Assumption)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 50-1)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "correctAnswer": "Rising Tag (Unsure, Double-Checking)",
+            "correctAnswerIndex": 0,
+            "hint": "The student isn't completely sure of the date and is checking to avoid a mistake. Listen for the tag to rise.",
+            "explanation": "'Isn't it?' rises because the student genuinely isn't certain of the exam date and wants a real confirmation."
         },
         {
             "id": "ACC_PITCHMODULATION_L50_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "You'll be home for dinner, won't you?",
+            "textToSpeak": "You'll be home for dinner, won't you?",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Rising Tag (Genuinely Unsure)",
+                "Falling Tag (Confident Assumption)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
+            "correctAnswer": "Falling Tag (Confident Assumption)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 50-2)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "hint": "A parent expecting the usual routine will let the tag fall, almost like a gentle reminder.",
+            "explanation": "'Won't you?' falls because the speaker confidently expects the usual routine and is simply reminding, not really asking."
         },
         {
             "id": "ACC_PITCHMODULATION_L50_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 2,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "That was a great concert, wasn't it?",
+            "textToSpeak": "That was a great concert, wasn't it?",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Rising Tag (Genuinely Unsure)",
+                "Falling Tag (Confident, Shared Enjoyment)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 50-3)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "correctAnswer": "Falling Tag (Confident, Shared Enjoyment)",
+            "correctAnswerIndex": 1,
+            "hint": "The speaker clearly enjoyed the show and expects agreement. Listen for a confident, falling tag.",
+            "explanation": "'Wasn't it?' falls because the speaker is confidently sharing enjoyment and expects the listener to feel the same way."
         }
     ]
 }

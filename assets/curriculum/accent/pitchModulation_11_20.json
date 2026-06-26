@@ -5,513 +5,513 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L11_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "The shop is closed.",
+            "textToSpeak": "The shop is closed.",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Falling-Rising (Disappointed Observation)",
+                "Rising-Falling (Cheerful Update)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
+            "correctAnswer": "Falling-Rising (Disappointed Observation)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 11-1)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "hint": "Finding a shop closed is usually a small disappointment. Expect a dip with a slight lift, not a happy tone.",
+            "explanation": "'The shop is closed' said with disappointment falls and lifts a little - Falling-Rising - rather than sounding like good news."
         },
         {
             "id": "ACC_PITCHMODULATION_L11_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "I love traveling.",
+            "textToSpeak": "I love traveling.",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Falling-Rising (Reluctant Admission)",
+                "Rising-Falling (Genuine Enthusiasm)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
+            "correctAnswer": "Rising-Falling (Genuine Enthusiasm)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 11-2)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "hint": "Genuine passion for travel makes the pitch swing widely on 'love'. A reluctant admission would feel more restrained.",
+            "explanation": "Genuine enthusiasm in 'I love traveling' is shown through a wide Rising-Falling movement on 'love', not a hesitant dip."
         },
         {
             "id": "ACC_PITCHMODULATION_L11_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "Dinner's ready!",
+            "textToSpeak": "Dinner's ready!",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Falling-Rising (Tired Announcement)",
+                "Rising-Falling (Cheerful Announcement)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 11-3)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "correctAnswer": "Rising-Falling (Cheerful Announcement)",
+            "correctAnswerIndex": 1,
+            "hint": "A cheerful call to the table has bounce and energy in its pitch, unlike a flat, weary one.",
+            "explanation": "A cheerful 'Dinner's ready!' rises and falls with energy - Rising-Falling - while a tired version would sound flatter and lower."
         },
         {
             "id": "ACC_PITCHMODULATION_L12_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "I have a headache.",
+            "textToSpeak": "I have a headache.",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Falling-Rising (Soft Complaint)",
+                "Rising-Falling (Sudden Alarm)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
+            "correctAnswer": "Falling-Rising (Soft Complaint)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 12-1)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "hint": "A headache is mentioned softly, not as an emergency. Listen for a gentle dip-and-lift, not a sharp jump.",
+            "explanation": "'I have a headache' as a soft complaint falls and lifts mildly - Falling-Rising - since it's discomfort, not sudden alarm."
         },
         {
             "id": "ACC_PITCHMODULATION_L12_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "The movie starts soon.",
+            "textToSpeak": "The movie starts soon.",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Rising-Falling (Eager Anticipation)",
+                "Falling-Rising (Bored Indifference)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 12-2)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "correctAnswer": "Rising-Falling (Eager Anticipation)",
+            "correctAnswerIndex": 0,
+            "hint": "Eagerness lifts the pitch noticeably before it falls. Boredom would keep the pitch low and flat throughout.",
+            "explanation": "Eager anticipation in 'The movie starts soon' carries a clear Rising-Falling shape, unlike the flat tone of indifference."
         },
         {
             "id": "ACC_PITCHMODULATION_L12_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "I'll call you tomorrow.",
+            "textToSpeak": "I'll call you tomorrow.",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Rising-Falling (Confident Promise)",
+                "Falling-Rising (Vague, Uncertain Promise)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
+            "correctAnswer": "Rising-Falling (Confident Promise)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 12-3)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "hint": "A confident promise commits fully, falling cleanly at the end rather than lifting with hesitation.",
+            "explanation": "A confident promise like 'I'll call you tomorrow' falls decisively - Rising-Falling - while a vague promise would lift uncertainly instead."
         },
         {
             "id": "ACC_PITCHMODULATION_L13_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "We're going camping.",
+            "textToSpeak": "We're going camping.",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Falling-Rising (Hesitant Mention)",
+                "Rising-Falling (Excited Announcement)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 13-1)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "correctAnswer": "Rising-Falling (Excited Announcement)",
+            "correctAnswerIndex": 1,
+            "hint": "Exciting plans are announced with a confident pitch swing, not a hesitant, half-formed one.",
+            "explanation": "An excited announcement like 'We're going camping' rises and falls with energy - Rising-Falling - showing clear enthusiasm."
         },
         {
             "id": "ACC_PITCHMODULATION_L13_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "I lost my keys!",
+            "textToSpeak": "I lost my keys!",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Rising-Falling (Calm Statement)",
+                "Falling-Rising (Worried Admission)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
+            "correctAnswer": "Falling-Rising (Worried Admission)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 13-2)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "hint": "Losing your keys is stressful. Listen for a worried dip that lifts anxiously, not a calm, settled fall.",
+            "explanation": "'I lost my keys!' said with worry falls and lifts anxiously - Falling-Rising - reflecting stress rather than calm reporting."
         },
         {
             "id": "ACC_PITCHMODULATION_L13_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "Our team won!",
+            "textToSpeak": "Our team won!",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Rising-Falling (Jubilant Celebration)",
+                "Falling-Rising (Modest Report)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 13-3)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "correctAnswer": "Rising-Falling (Jubilant Celebration)",
+            "correctAnswerIndex": 0,
+            "hint": "A jubilant cheer has a big, joyful pitch swing - much bigger than a modest, understated report.",
+            "explanation": "Jubilant celebration in 'Our team won!' is carried by a strong Rising-Falling contour, far more energetic than a modest report."
         },
         {
             "id": "ACC_PITCHMODULATION_L14_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "I'd rather not.",
+            "textToSpeak": "I'd rather not.",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Rising-Falling (Blunt Refusal)",
+                "Falling-Rising (Polite Refusal)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 14-1)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "correctAnswer": "Falling-Rising (Polite Refusal)",
+            "correctAnswerIndex": 1,
+            "hint": "A polite refusal softens the 'no' with a small lift at the end, instead of a hard, final drop.",
+            "explanation": "'I'd rather not' as a polite refusal falls and lifts gently - Falling-Rising - softening the 'no' compared to a blunt refusal."
         },
         {
             "id": "ACC_PITCHMODULATION_L14_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "She's my best friend.",
+            "textToSpeak": "She's my best friend.",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Rising-Falling (Proud Statement)",
+                "Falling-Rising (Flat, Unenthusiastic Statement)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
+            "correctAnswer": "Rising-Falling (Proud Statement)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 14-2)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "hint": "Pride in a close friendship gives the pitch real movement, unlike a flat, going-through-the-motions tone.",
+            "explanation": "A proud statement like 'She's my best friend' carries a warm Rising-Falling contour, unlike a flat, unenthusiastic delivery."
         },
         {
             "id": "ACC_PITCHMODULATION_L14_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "The wifi isn't working.",
+            "textToSpeak": "The wifi isn't working.",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Falling-Rising (Frustrated Complaint)",
+                "Rising-Falling (Calm Observation)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 14-3)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "correctAnswer": "Falling-Rising (Frustrated Complaint)",
+            "correctAnswerIndex": 0,
+            "hint": "A frustrated complaint dips and lifts with irritation, rather than falling calmly and evenly.",
+            "explanation": "'The wifi isn't working' said with frustration falls and lifts - Falling-Rising - showing irritation rather than a calm, neutral remark."
         },
         {
             "id": "ACC_PITCHMODULATION_L15_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "I just got promoted!",
+            "textToSpeak": "I just got promoted!",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Falling-Rising (Modest Understatement)",
+                "Rising-Falling (Proud Excitement)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 15-1)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "correctAnswer": "Rising-Falling (Proud Excitement)",
+            "correctAnswerIndex": 1,
+            "hint": "Big career news is usually announced proudly, with a strong pitch swing rather than a modest, downplayed tone.",
+            "explanation": "Proud excitement in 'I just got promoted!' rises and falls boldly - Rising-Falling - rather than being downplayed."
         },
         {
             "id": "ACC_PITCHMODULATION_L15_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "I don't feel well.",
+            "textToSpeak": "I don't feel well.",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Rising-Falling (Dramatic Announcement)",
+                "Falling-Rising (Gentle Complaint)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 15-2)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "correctAnswer": "Falling-Rising (Gentle Complaint)",
+            "correctAnswerIndex": 1,
+            "hint": "A gentle complaint about feeling unwell is quiet and small, not loud or theatrical.",
+            "explanation": "'I don't feel well' as a gentle complaint falls and lifts softly - Falling-Rising - instead of sounding dramatic or alarming."
         },
         {
             "id": "ACC_PITCHMODULATION_L15_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "This cake is perfect.",
+            "textToSpeak": "This cake is perfect.",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Falling-Rising (Reserved Compliment)",
+                "Rising-Falling (Delighted Praise)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
+            "correctAnswer": "Rising-Falling (Delighted Praise)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 15-3)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "hint": "Delight makes the pitch swing fully on 'perfect'. A reserved compliment would stay more level.",
+            "explanation": "Delighted praise in 'This cake is perfect' uses a full Rising-Falling sweep on 'perfect', unlike a more reserved compliment."
         },
         {
             "id": "ACC_PITCHMODULATION_L16_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "I might be late.",
+            "textToSpeak": "I might be late.",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Falling-Rising (Apologetic Warning)",
+                "Rising-Falling (Confident Announcement)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
+            "correctAnswer": "Falling-Rising (Apologetic Warning)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 16-1)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "hint": "Warning someone you might be late is apologetic, with a soft lift at the end rather than a bold, confident fall.",
+            "explanation": "'I might be late' as an apologetic warning falls and lifts gently - Falling-Rising - softening the news for the listener."
         },
         {
             "id": "ACC_PITCHMODULATION_L16_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "We're flying to Spain!",
+            "textToSpeak": "We're flying to Spain!",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Rising-Falling (Thrilled Announcement)",
+                "Falling-Rising (Uncertain Plan)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
+            "correctAnswer": "Rising-Falling (Thrilled Announcement)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 16-2)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "hint": "A thrilling travel announcement has a big, joyful pitch swing, not the hesitant tone of an unconfirmed plan.",
+            "explanation": "A thrilled announcement like 'We're flying to Spain!' rises and falls with excitement - Rising-Falling - unlike an uncertain, tentative plan."
         },
         {
             "id": "ACC_PITCHMODULATION_L16_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "I aced the test!",
+            "textToSpeak": "I aced the test!",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Rising-Falling (Proud Triumph)",
+                "Falling-Rising (Quiet Relief)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 16-3)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "correctAnswer": "Rising-Falling (Proud Triumph)",
+            "correctAnswerIndex": 0,
+            "hint": "Acing a test is a proud achievement - listen for a bold pitch swing rather than a quiet sigh of relief.",
+            "explanation": "Proud triumph in 'I aced the test!' is shown through a confident Rising-Falling contour, bigger than the small lift of quiet relief."
         },
         {
             "id": "ACC_PITCHMODULATION_L17_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "The bus is late again.",
+            "textToSpeak": "The bus is late again.",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Falling-Rising (Resigned Complaint)",
+                "Rising-Falling (Surprised Alarm)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 17-1)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "correctAnswer": "Falling-Rising (Resigned Complaint)",
+            "correctAnswerIndex": 0,
+            "hint": "This is a tired, 'here we go again' complaint, not a shock. Listen for a weary dip-and-lift.",
+            "explanation": "A resigned complaint like 'The bus is late again' falls and lifts wearily - Falling-Rising - showing tired frustration, not surprise."
         },
         {
             "id": "ACC_PITCHMODULATION_L17_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "I baked some cookies.",
+            "textToSpeak": "I baked some cookies.",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Falling-Rising (Casual Mention)",
+                "Rising-Falling (Cheerful Offer)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 17-2)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "correctAnswer": "Rising-Falling (Cheerful Offer)",
+            "correctAnswerIndex": 1,
+            "hint": "An inviting, generous offer has a warm pitch swing, more than a quick, throwaway mention.",
+            "explanation": "A cheerful offer in 'I baked some cookies' uses a warm Rising-Falling contour, friendlier than a flat, casual mention."
         },
         {
             "id": "ACC_PITCHMODULATION_L17_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "He's not answering.",
+            "textToSpeak": "He's not answering.",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Falling-Rising (Worried Observation)",
+                "Rising-Falling (Annoyed Statement)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
+            "correctAnswer": "Falling-Rising (Worried Observation)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 17-3)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "hint": "Worry about someone not answering produces a gentle dip that lifts with concern, not a sharp, irritated fall.",
+            "explanation": "'He's not answering' said with worry falls and lifts softly - Falling-Rising - reflecting concern rather than annoyance."
         },
         {
             "id": "ACC_PITCHMODULATION_L18_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "I planted a garden.",
+            "textToSpeak": "I planted a garden.",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Rising-Falling (Proud Announcement)",
+                "Falling-Rising (Modest Mention)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 18-1)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "correctAnswer": "Rising-Falling (Proud Announcement)",
+            "correctAnswerIndex": 0,
+            "hint": "Pride in a finished project gives the pitch a confident swing, bigger than a modest, low-key mention.",
+            "explanation": "A proud announcement like 'I planted a garden' rises and falls confidently - Rising-Falling - showing satisfaction in the achievement."
         },
         {
             "id": "ACC_PITCHMODULATION_L18_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "My back hurts.",
+            "textToSpeak": "My back hurts.",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Falling-Rising (Mild Discomfort)",
+                "Rising-Falling (Sharp Complaint)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
+            "correctAnswer": "Falling-Rising (Mild Discomfort)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 18-2)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "hint": "Mild discomfort is described gently, with a small dip-and-lift rather than a sharp, dramatic swing.",
+            "explanation": "'My back hurts' as mild discomfort falls and lifts gently - Falling-Rising - rather than sounding like a sharp, urgent complaint."
         },
         {
             "id": "ACC_PITCHMODULATION_L18_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "The store has a sale!",
+            "textToSpeak": "The store has a sale!",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Rising-Falling (Excited Tip)",
+                "Falling-Rising (Casual Mention)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
+            "correctAnswer": "Rising-Falling (Excited Tip)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 18-3)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "hint": "Sharing exciting news about a sale has real pitch movement, more lively than a passing remark.",
+            "explanation": "An excited tip like 'The store has a sale!' rises and falls eagerly - Rising-Falling - livelier than a casual mention."
         },
         {
             "id": "ACC_PITCHMODULATION_L19_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "I finished the report.",
+            "textToSpeak": "I finished the report.",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Rising-Falling (Satisfied Announcement)",
+                "Falling-Rising (Tired Admission)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 19-1)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "correctAnswer": "Rising-Falling (Satisfied Announcement)",
+            "correctAnswerIndex": 0,
+            "hint": "Satisfaction at finishing work gives a clean, confident fall, not a weary, drawn-out dip.",
+            "explanation": "A satisfied announcement like 'I finished the report' falls firmly - Rising-Falling - showing a sense of accomplishment."
         },
         {
             "id": "ACC_PITCHMODULATION_L19_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "We adopted a puppy!",
+            "textToSpeak": "We adopted a puppy!",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Rising-Falling (Joyful News)",
+                "Falling-Rising (Calm Update)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
+            "correctAnswer": "Rising-Falling (Joyful News)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 19-2)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "hint": "Joyful family news is shared with a big, happy pitch swing, not a calm, low-key update.",
+            "explanation": "Joyful news like 'We adopted a puppy!' is carried by a bright Rising-Falling contour, livelier than a calm update."
         },
         {
             "id": "ACC_PITCHMODULATION_L19_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "This show is boring.",
+            "textToSpeak": "This show is boring.",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Rising-Falling (Cheerful Recommendation)",
+                "Falling-Rising (Polite, Understated Complaint)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 19-3)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "correctAnswer": "Falling-Rising (Polite, Understated Complaint)",
+            "correctAnswerIndex": 1,
+            "hint": "Calling something boring is a mild complaint, not a recommendation. Listen for a soft dip-and-lift, not a happy peak.",
+            "explanation": "'This show is boring' as an understated complaint falls and lifts mildly - Falling-Rising - not the bright tone of a recommendation."
         },
         {
             "id": "ACC_PITCHMODULATION_L20_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "I can't find my phone!",
+            "textToSpeak": "I can't find my phone!",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Rising-Falling (Calm Statement)",
+                "Falling-Rising (Anxious Search)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
+            "correctAnswer": "Falling-Rising (Anxious Search)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 20-1)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "hint": "Searching anxiously for a lost phone sounds flustered - a dip that lifts with worry, not a settled, calm tone.",
+            "explanation": "'I can't find my phone!' said anxiously falls and lifts with worry - Falling-Rising - unlike a calm, settled statement."
         },
         {
             "id": "ACC_PITCHMODULATION_L20_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "We just got engaged!",
+            "textToSpeak": "We just got engaged!",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Falling-Rising (Nervous Confession)",
+                "Rising-Falling (Overjoyed Announcement)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
+            "correctAnswer": "Rising-Falling (Overjoyed Announcement)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 20-2)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "hint": "Happy, exciting news is announced boldly with a wide pitch swing, not the hesitant tone of a nervous confession.",
+            "explanation": "An overjoyed announcement like 'We just got engaged!' rises and falls with delight - Rising-Falling - full of celebration."
         },
         {
             "id": "ACC_PITCHMODULATION_L20_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 1,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "I'll think about it.",
+            "textToSpeak": "I'll think about it.",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Falling-Rising (Noncommittal Response)",
+                "Rising-Falling (Firm Decision)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
+            "correctAnswer": "Falling-Rising (Noncommittal Response)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 20-3)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "hint": "A noncommittal answer leaves things open, with a small lift at the end rather than a firm, closing fall.",
+            "explanation": "'I'll think about it' as a noncommittal response falls and lifts gently - Falling-Rising - keeping the decision open rather than final."
         }
     ]
 }

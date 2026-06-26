@@ -5,513 +5,513 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L101_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "I think I did okay on the interview.",
+            "textToSpeak": "I think I did okay on the interview.",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Falling at the End (Confident Declarative)",
+                "Rising at the End (Uptalk - Sounds Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 101-1)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswerIndex": 1,
+            "hint": "The phrase 'I think' already hints at doubt. Listen for the pitch to lift at the very end instead of settling down.",
+            "explanation": "Ending on a rising note, this statement uses uptalk, making it sound tentative even though 'I did okay' is a plain statement."
         },
         {
             "id": "ACC_PITCHMODULATION_L101_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "I aced the interview.",
+            "textToSpeak": "I aced the interview.",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Falling at the End (Confident Declarative)",
+                "Rising at the End (Uptalk - Sounds Unsure)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 101-2)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswerIndex": 0,
+            "hint": "This is a bold, certain claim. Listen for the pitch to settle down firmly at the end, not lift uncertainly.",
+            "explanation": "'I aced the interview' falls confidently at the end, sounding sure of itself rather than tentative."
         },
         {
             "id": "ACC_PITCHMODULATION_L101_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "We're meeting at the cafe around noon, I guess.",
+            "textToSpeak": "We're meeting at the cafe around noon, I guess.",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Falling at the End (Confident Declarative)",
+                "Rising at the End (Uptalk - Sounds Unsure)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 101-3)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswerIndex": 1,
+            "hint": "Ending with 'I guess' already signals some doubt. Listen for the pitch to lift at the very end.",
+            "explanation": "The trailing 'I guess' paired with a rising pitch makes this plan sound tentative rather than firmly fixed."
         },
         {
             "id": "ACC_PITCHMODULATION_L102_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "This is the right house.",
+            "textToSpeak": "This is the right house.",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 102-1)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswerIndex": 1,
+            "hint": "The speaker sounds certain they've found the place. Listen for the pitch to fall firmly at the end.",
+            "explanation": "'This is the right house' falls confidently, showing the speaker is sure they've found the correct address."
         },
         {
             "id": "ACC_PITCHMODULATION_L102_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "I think this might be the right house?",
+            "textToSpeak": "I think this might be the right house?",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Falling at the End (Confident Declarative)",
+                "Rising at the End (Uptalk - Sounds Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 102-2)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "hint": "Words like 'I think' and 'might' already signal doubt. Listen for the pitch to climb at the very end.",
+            "explanation": "With 'I think' and 'might', plus a rising pitch at the end, this sounds genuinely unsure rather than confident."
         },
         {
             "id": "ACC_PITCHMODULATION_L102_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "I finished the entire project by myself.",
+            "textToSpeak": "I finished the entire project by myself.",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Falling at the End (Confident Declarative)",
+                "Rising at the End (Uptalk - Sounds Unsure)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
+            "correctAnswer": "Falling at the End (Confident Declarative)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 102-3)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "hint": "This sounds like a proud, certain claim. Listen for the pitch to settle down firmly at the end.",
+            "explanation": "'I finished the entire project by myself' falls firmly, sounding like a confident, proud claim."
         },
         {
             "id": "ACC_PITCHMODULATION_L103_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "I'm pretty sure the answer is B.",
+            "textToSpeak": "I'm pretty sure the answer is B.",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 103-1)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "hint": "'Pretty sure' leaves a little room for doubt. Listen for the pitch to lift slightly at the very end.",
+            "explanation": "'Pretty sure' paired with a rising pitch keeps a hint of doubt, sounding tentative rather than fully certain."
         },
         {
             "id": "ACC_PITCHMODULATION_L103_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "The answer is definitely B.",
+            "textToSpeak": "The answer is definitely B.",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
+            "correctAnswer": "Falling at the End (Confident Declarative)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 103-2)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "hint": "'Definitely' rules out any doubt about the answer. Listen for the pitch to fall firmly and decisively.",
+            "explanation": "'The answer is definitely B' falls firmly, matching the certainty expressed by the word 'definitely'."
         },
         {
             "id": "ACC_PITCHMODULATION_L103_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "I guess we could try the new restaurant.",
+            "textToSpeak": "I guess we could try the new restaurant.",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 103-3)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswerIndex": 0,
+            "hint": "'I guess' already softens this into a tentative suggestion. Listen for the pitch to lift at the very end.",
+            "explanation": "'I guess' combined with a rising pitch makes this sound like a tentative, unsure suggestion rather than a firm plan."
         },
         {
             "id": "ACC_PITCHMODULATION_L104_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "We should be there by six, probably.",
+            "textToSpeak": "We should be there by six, probably.",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Falling at the End (Confident Declarative)",
+                "Rising at the End (Uptalk - Sounds Unsure)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 104-1)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswerIndex": 1,
+            "hint": "The word 'probably' already hints this isn't certain. Listen for the pitch to lift at the very end.",
+            "explanation": "'Probably' paired with a rising pitch keeps the arrival time uncertain rather than firmly fixed."
         },
         {
             "id": "ACC_PITCHMODULATION_L104_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "We'll be there at six o'clock.",
+            "textToSpeak": "We'll be there at six o'clock.",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Falling at the End (Confident Declarative)",
+                "Rising at the End (Uptalk - Sounds Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
+            "correctAnswer": "Falling at the End (Confident Declarative)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 104-2)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "hint": "This sounds like a firm, certain commitment. Listen for the pitch to settle down at the end.",
+            "explanation": "'We'll be there at six o'clock' falls firmly, sounding like a confident, fixed commitment."
         },
         {
             "id": "ACC_PITCHMODULATION_L104_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "I'm fairly certain I locked the car.",
+            "textToSpeak": "I'm fairly certain I locked the car.",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 104-3)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswerIndex": 0,
+            "hint": "'Fairly certain' leaves a little room for doubt. Listen for the pitch to lift slightly at the end.",
+            "explanation": "'Fairly certain' paired with a rising pitch keeps a hint of doubt about whether the car was actually locked."
         },
         {
             "id": "ACC_PITCHMODULATION_L105_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "I locked the car.",
+            "textToSpeak": "I locked the car.",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 105-1)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswerIndex": 1,
+            "hint": "This is a short, plain claim with no hedging words. Listen for the pitch to fall firmly at the end.",
+            "explanation": "'I locked the car' falls firmly, sounding like a clear, confident statement of fact."
         },
         {
             "id": "ACC_PITCHMODULATION_L105_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "I think the medicine is helping, sort of.",
+            "textToSpeak": "I think the medicine is helping, sort of.",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 105-2)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "hint": "'Sort of' at the end already weakens the claim. Listen for the pitch to lift at the very end.",
+            "explanation": "'Sort of' paired with a rising pitch makes the improvement sound uncertain rather than clearly confirmed."
         },
         {
             "id": "ACC_PITCHMODULATION_L105_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "The medicine is definitely working.",
+            "textToSpeak": "The medicine is definitely working.",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Falling at the End (Confident Declarative)",
+                "Rising at the End (Uptalk - Sounds Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 105-3)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswerIndex": 0,
+            "hint": "'Definitely' shows there's no doubt left about the treatment. Listen for the pitch to fall firmly at the end.",
+            "explanation": "'The medicine is definitely working' falls firmly, matching the certainty expressed by 'definitely'."
         },
         {
             "id": "ACC_PITCHMODULATION_L106_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "I believe the meeting got moved, maybe.",
+            "textToSpeak": "I believe the meeting got moved, maybe.",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 106-1)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "hint": "'Maybe' at the end already weakens the claim. Listen for the pitch to lift at the very end.",
+            "explanation": "'Maybe' paired with a rising pitch keeps this news uncertain rather than firmly confirmed."
         },
         {
             "id": "ACC_PITCHMODULATION_L106_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "The meeting got moved to Thursday.",
+            "textToSpeak": "The meeting got moved to Thursday.",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Falling at the End (Confident Declarative)",
+                "Rising at the End (Uptalk - Sounds Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
+            "correctAnswer": "Falling at the End (Confident Declarative)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 106-2)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "hint": "This sounds like settled, confirmed information. Listen for the pitch to fall firmly at the end.",
+            "explanation": "'The meeting got moved to Thursday' falls firmly, sounding like confirmed, settled information."
         },
         {
             "id": "ACC_PITCHMODULATION_L106_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "I think I saw him at the mall earlier?",
+            "textToSpeak": "I think I saw him at the mall earlier?",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 106-3)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswerIndex": 0,
+            "hint": "'I think' already hints the speaker isn't fully sure. Listen for the pitch to lift at the very end.",
+            "explanation": "'I think' paired with a rising pitch makes this sighting sound uncertain rather than fully confirmed."
         },
         {
             "id": "ACC_PITCHMODULATION_L107_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "I saw him at the mall earlier.",
+            "textToSpeak": "I saw him at the mall earlier.",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Falling at the End (Confident Declarative)",
+                "Rising at the End (Uptalk - Sounds Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 107-1)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswerIndex": 0,
+            "hint": "This is a plain, certain claim. Listen for the pitch to settle down at the end.",
+            "explanation": "'I saw him at the mall earlier' falls firmly, sounding like a clear, confident statement of fact."
         },
         {
             "id": "ACC_PITCHMODULATION_L107_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "This recipe should work, I hope.",
+            "textToSpeak": "This recipe should work, I hope.",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 107-2)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "hint": "'Should' and 'I hope' both hint at doubt. Listen for the pitch to lift at the very end.",
+            "explanation": "'Should' and 'I hope', along with a rising pitch, make this sound hopeful but genuinely uncertain."
         },
         {
             "id": "ACC_PITCHMODULATION_L107_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "This recipe always works perfectly.",
+            "textToSpeak": "This recipe always works perfectly.",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 107-3)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswerIndex": 1,
+            "hint": "'Always' and 'perfectly' signal full confidence. Listen for the pitch to fall firmly at the end.",
+            "explanation": "'This recipe always works perfectly' falls firmly, matching the certainty of 'always' and 'perfectly'."
         },
         {
             "id": "ACC_PITCHMODULATION_L108_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "I'm not totally sure, but I think it's this way.",
+            "textToSpeak": "I'm not totally sure, but I think it's this way.",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Falling at the End (Confident Declarative)",
+                "Rising at the End (Uptalk - Sounds Unsure)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 108-1)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "hint": "'Not totally sure' openly admits doubt. Listen for the pitch to lift at the very end.",
+            "explanation": "Admitting 'not totally sure', this statement rises at the end, sounding genuinely tentative about the direction."
         },
         {
             "id": "ACC_PITCHMODULATION_L108_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "It's definitely this way.",
+            "textToSpeak": "It's definitely this way.",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 108-2)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswerIndex": 1,
+            "hint": "'Definitely' signals complete confidence. Listen for the pitch to fall firmly at the end.",
+            "explanation": "'It's definitely this way' falls firmly, matching the strong certainty of the word 'definitely'."
         },
         {
             "id": "ACC_PITCHMODULATION_L108_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "I think the test went pretty well, maybe.",
+            "textToSpeak": "I think the test went pretty well, maybe.",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 108-3)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "hint": "'I think' and 'maybe' both hint at doubt. Listen for the pitch to lift at the very end.",
+            "explanation": "'I think' and the trailing 'maybe', along with a rising pitch, make this sound uncertain rather than confident."
         },
         {
             "id": "ACC_PITCHMODULATION_L109_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "The test went really well.",
+            "textToSpeak": "The test went really well.",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Falling at the End (Confident Declarative)",
+                "Rising at the End (Uptalk - Sounds Unsure)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 109-1)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswerIndex": 0,
+            "hint": "This sounds like a clear, satisfied claim. Listen for the pitch to settle down at the end.",
+            "explanation": "'The test went really well' falls firmly, sounding like a confident, satisfied statement."
         },
         {
             "id": "ACC_PITCHMODULATION_L109_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "I guess the new phone is okay so far.",
+            "textToSpeak": "I guess the new phone is okay so far.",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Falling at the End (Confident Declarative)",
+                "Rising at the End (Uptalk - Sounds Unsure)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 109-2)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswerIndex": 1,
+            "hint": "'I guess' and 'so far' both leave room for doubt. Listen for the pitch to lift at the very end.",
+            "explanation": "'I guess' and 'so far', combined with a rising pitch, make this opinion sound tentative rather than settled."
         },
         {
             "id": "ACC_PITCHMODULATION_L109_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "The new phone works perfectly.",
+            "textToSpeak": "The new phone works perfectly.",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 109-3)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "correctAnswer": "Falling at the End (Confident Declarative)",
+            "correctAnswerIndex": 1,
+            "hint": "'Perfectly' signals full confidence. Listen for the pitch to fall firmly at the end.",
+            "explanation": "'The new phone works perfectly' falls firmly, matching the strong confidence of the word 'perfectly'."
         },
         {
             "id": "ACC_PITCHMODULATION_L110_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "I think the movie starts at eight, I'm not totally sure.",
+            "textToSpeak": "I think the movie starts at eight, I'm not totally sure.",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 110-1)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
+            "correctAnswerIndex": 0,
+            "hint": "Admitting 'I'm not totally sure' makes the doubt explicit. Listen for the pitch to lift at the very end.",
+            "explanation": "Ending with 'not totally sure' and a rising pitch, this statement sounds genuinely uncertain about the showtime."
         },
         {
             "id": "ACC_PITCHMODULATION_L110_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "The movie starts at eight o'clock.",
+            "textToSpeak": "The movie starts at eight o'clock.",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
+            "correctAnswer": "Falling at the End (Confident Declarative)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 110-2)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "hint": "This sounds like a clear, settled fact. Listen for the pitch to fall firmly at the end.",
+            "explanation": "'The movie starts at eight o'clock' falls firmly, sounding like confirmed, settled information."
         },
         {
             "id": "ACC_PITCHMODULATION_L110_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 3,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "I'm pretty sure that's my umbrella, I think.",
+            "textToSpeak": "I'm pretty sure that's my umbrella, I think.",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Rising at the End (Uptalk - Sounds Unsure)",
+                "Falling at the End (Confident Declarative)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
+            "correctAnswer": "Rising at the End (Uptalk - Sounds Unsure)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 110-3)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "hint": "'Pretty sure' and the trailing 'I think' both hint at doubt. Listen for the pitch to lift at the very end.",
+            "explanation": "'Pretty sure' paired with a trailing 'I think' and a rising pitch keeps a hint of real doubt about ownership."
         }
     ]
 }

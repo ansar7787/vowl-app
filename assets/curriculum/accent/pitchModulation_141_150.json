@@ -5,513 +5,513 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L141_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "Do I look like a mind reader?",
+            "textToSpeak": "Do I look like a mind reader?",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)",
+                "Rising Tone (Genuine Yes/No Question)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
+            "correctAnswer": "Falling Tone (Rhetorical - Making a Point, Not Really Asking)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 141-1)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "hint": "The speaker obviously can't read minds - this isn't a real request for an answer. Listen for the pitch to fall firmly.",
+            "explanation": "'Do I look like a mind reader?' falls firmly as a rhetorical question - the speaker is making a point, not genuinely asking."
         },
         {
             "id": "ACC_PITCHMODULATION_L141_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "Did you finish the report?",
+            "textToSpeak": "Did you finish the report?",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 141-2)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "hint": "The speaker genuinely doesn't know if the report is done. Listen for the pitch to lift at the end, inviting a real answer.",
+            "explanation": "'Did you finish the report?' rises at the end as a genuine Yes/No question, truly seeking information."
         },
         {
             "id": "ACC_PITCHMODULATION_L141_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "Is that supposed to be funny?",
+            "textToSpeak": "Is that supposed to be funny?",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 141-3)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "correctAnswer": "Falling Tone (Rhetorical - Making a Point, Not Really Asking)",
+            "correctAnswerIndex": 1,
+            "hint": "The speaker is making clear they don't find it funny, not really asking for an opinion. Listen for the pitch to fall firmly.",
+            "explanation": "'Is that supposed to be funny?' falls firmly as a rhetorical question, expressing displeasure rather than genuinely asking."
         },
         {
             "id": "ACC_PITCHMODULATION_L142_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "Have you finished your homework?",
+            "textToSpeak": "Have you finished your homework?",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)",
+                "Rising Tone (Genuine Yes/No Question)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 142-1)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswerIndex": 1,
+            "hint": "The speaker genuinely doesn't know the answer yet. Listen for the pitch to lift at the end.",
+            "explanation": "'Have you finished your homework?' rises at the end as a genuine question, truly seeking to know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L142_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "Do you think money grows on trees?",
+            "textToSpeak": "Do you think money grows on trees?",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Falling Tone (Rhetorical - Implying 'Be Careful With Spending')",
+                "Rising Tone (Genuine Yes/No Question)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 142-2)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "correctAnswer": "Falling Tone (Rhetorical - Implying 'Be Careful With Spending')",
+            "correctAnswerIndex": 0,
+            "hint": "Nobody is really asking about trees here - it's a pointed remark about spending. Listen for the pitch to fall firmly.",
+            "explanation": "'Do you think money grows on trees?' falls firmly as a rhetorical question, making a point about careless spending."
         },
         {
             "id": "ACC_PITCHMODULATION_L142_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "Is this some kind of joke?",
+            "textToSpeak": "Is this some kind of joke?",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Falling Tone (Rhetorical - Expressing Disbelief)",
+                "Rising Tone (Genuine Yes/No Question)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
+            "correctAnswer": "Falling Tone (Rhetorical - Expressing Disbelief)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 142-3)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "hint": "The speaker is reacting with disbelief, not genuinely asking if it's a joke. Listen for the pitch to fall firmly.",
+            "explanation": "'Is this some kind of joke?' falls firmly as a rhetorical question, expressing disbelief rather than genuine curiosity."
         },
         {
             "id": "ACC_PITCHMODULATION_L143_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "Did you remember the tickets?",
+            "textToSpeak": "Did you remember the tickets?",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)",
+                "Rising Tone (Genuine Yes/No Question)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 143-1)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswerIndex": 1,
+            "hint": "The speaker genuinely doesn't know if the tickets were brought. Listen for the pitch to lift at the end.",
+            "explanation": "'Did you remember the tickets?' rises at the end as a genuine question, truly seeking to know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L143_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "Who do you think you are?",
+            "textToSpeak": "Who do you think you are?",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Expressing Displeasure)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
+            "correctAnswer": "Falling Tone (Rhetorical - Expressing Displeasure)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 143-2)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "hint": "This isn't a real request for someone's identity - it expresses anger at their behavior. Listen for the pitch to fall firmly.",
+            "explanation": "'Who do you think you are?' falls firmly as a rhetorical question, expressing displeasure rather than asking for an identity."
         },
         {
             "id": "ACC_PITCHMODULATION_L143_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "Are we there yet?",
+            "textToSpeak": "Are we there yet?",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Expressing Displeasure)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 143-3)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "hint": "A restless traveler genuinely wants to know how much further there is to go. Listen for the pitch to lift at the end.",
+            "explanation": "'Are we there yet?' rises at the end as a genuine question, truly seeking to know how much of the trip remains."
         },
         {
             "id": "ACC_PITCHMODULATION_L144_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "Can you pass the menu?",
+            "textToSpeak": "Can you pass the menu?",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 144-1)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "hint": "This is a simple, real request at the table. Listen for the pitch to lift gently at the end.",
+            "explanation": "'Can you pass the menu?' rises at the end as a genuine, polite request, truly seeking the listener's help."
         },
         {
             "id": "ACC_PITCHMODULATION_L144_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "Do you think I was born yesterday?",
+            "textToSpeak": "Do you think I was born yesterday?",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Falling Tone (Rhetorical - Implying 'I'm Not Naive')",
+                "Rising Tone (Genuine Yes/No Question)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
+            "correctAnswer": "Falling Tone (Rhetorical - Implying 'I'm Not Naive')",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 144-2)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "hint": "Nobody is really asking about the speaker's birth date - it's a pointed remark about not being fooled. Listen for a falling tone.",
+            "explanation": "'Do you think I was born yesterday?' falls firmly as a rhetorical question, making the point that the speaker isn't easily fooled."
         },
         {
             "id": "ACC_PITCHMODULATION_L144_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "Is the wifi working for you?",
+            "textToSpeak": "Is the wifi working for you?",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Implying 'I'm Not Naive')"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 144-3)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "hint": "The speaker genuinely wants to know if the connection works. Listen for the pitch to lift at the end.",
+            "explanation": "'Is the wifi working for you?' rises at the end as a genuine question, truly checking on the connection."
         },
         {
             "id": "ACC_PITCHMODULATION_L145_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "Did the package arrive?",
+            "textToSpeak": "Did the package arrive?",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 145-1)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "hint": "The speaker genuinely doesn't know if the delivery has come. Listen for the pitch to lift at the end.",
+            "explanation": "'Did the package arrive?' rises at the end as a genuine question, truly seeking to know the delivery status."
         },
         {
             "id": "ACC_PITCHMODULATION_L145_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "What's the point of complaining?",
+            "textToSpeak": "What's the point of complaining?",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Implying Complaining Is Useless)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 145-2)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "correctAnswer": "Falling Tone (Rhetorical - Implying Complaining Is Useless)",
+            "correctAnswerIndex": 1,
+            "hint": "This isn't a real request for the purpose of complaining - it suggests it won't help. Listen for the pitch to fall firmly.",
+            "explanation": "'What's the point of complaining?' falls firmly as a rhetorical question, implying that complaining won't change anything."
         },
         {
             "id": "ACC_PITCHMODULATION_L145_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "Are you free this weekend?",
+            "textToSpeak": "Are you free this weekend?",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Implying Complaining Is Useless)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 145-3)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "hint": "The speaker genuinely wants to know about the listener's plans. Listen for the pitch to lift at the end.",
+            "explanation": "'Are you free this weekend?' rises at the end as a genuine question, truly checking on availability."
         },
         {
             "id": "ACC_PITCHMODULATION_L146_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "Will the doctor see me today?",
+            "textToSpeak": "Will the doctor see me today?",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 146-1)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "hint": "The speaker genuinely doesn't know if an appointment is possible. Listen for the pitch to lift at the end.",
+            "explanation": "'Will the doctor see me today?' rises at the end as a genuine question, truly seeking information about the appointment."
         },
         {
             "id": "ACC_PITCHMODULATION_L146_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "Why bother explaining it again?",
+            "textToSpeak": "Why bother explaining it again?",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Falling Tone (Rhetorical - Implying It's Pointless)",
+                "Rising Tone (Genuine Yes/No Question)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
+            "correctAnswer": "Falling Tone (Rhetorical - Implying It's Pointless)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 146-2)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "hint": "This isn't a real request for a reason - it suggests explaining again won't help. Listen for the pitch to fall firmly.",
+            "explanation": "'Why bother explaining it again?' falls firmly as a rhetorical question, implying that another explanation would be pointless."
         },
         {
             "id": "ACC_PITCHMODULATION_L146_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "Is the meeting still happening?",
+            "textToSpeak": "Is the meeting still happening?",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Implying It's Pointless)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 146-3)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "hint": "The speaker genuinely doesn't know if plans have changed. Listen for the pitch to lift at the end.",
+            "explanation": "'Is the meeting still happening?' rises at the end as a genuine question, truly checking on the schedule."
         },
         {
             "id": "ACC_PITCHMODULATION_L147_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "Did you check the weather forecast?",
+            "textToSpeak": "Did you check the weather forecast?",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 147-1)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "hint": "The speaker genuinely wants to know if the forecast was checked. Listen for the pitch to lift at the end.",
+            "explanation": "'Did you check the weather forecast?' rises at the end as a genuine question, truly seeking the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L147_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "Who's going to notice anyway?",
+            "textToSpeak": "Who's going to notice anyway?",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Implying Nobody Will Notice)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 147-2)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "correctAnswer": "Falling Tone (Rhetorical - Implying Nobody Will Notice)",
+            "correctAnswerIndex": 1,
+            "hint": "This isn't a real request for a name - it suggests nobody will care. Listen for the pitch to fall firmly.",
+            "explanation": "'Who's going to notice anyway?' falls firmly as a rhetorical question, implying that no one will actually notice."
         },
         {
             "id": "ACC_PITCHMODULATION_L147_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "Have you tried the new restaurant?",
+            "textToSpeak": "Have you tried the new restaurant?",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Falling Tone (Rhetorical - Implying Nobody Will Notice)",
+                "Rising Tone (Genuine Yes/No Question)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 147-3)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswerIndex": 1,
+            "hint": "The speaker genuinely wants to know about the listener's experience. Listen for the pitch to lift at the end.",
+            "explanation": "'Have you tried the new restaurant?' rises at the end as a genuine question, truly seeking an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L148_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "Could this day get any worse?",
+            "textToSpeak": "Could this day get any worse?",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Implying It's Already Bad)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
+            "correctAnswer": "Falling Tone (Rhetorical - Implying It's Already Bad)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 148-1)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "hint": "The speaker isn't really asking for a forecast of the day - they're venting frustration. Listen for the pitch to fall firmly.",
+            "explanation": "'Could this day get any worse?' falls firmly as a rhetorical question, expressing frustration rather than genuine curiosity."
         },
         {
             "id": "ACC_PITCHMODULATION_L148_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "Are you coming to the wedding?",
+            "textToSpeak": "Are you coming to the wedding?",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Implying It's Already Bad)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 148-2)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "hint": "The speaker genuinely wants to know about attendance. Listen for the pitch to lift at the end.",
+            "explanation": "'Are you coming to the wedding?' rises at the end as a genuine question, truly checking on attendance."
         },
         {
             "id": "ACC_PITCHMODULATION_L148_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "Do you really think that's a good idea?",
+            "textToSpeak": "Do you really think that's a good idea?",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Falling Tone (Rhetorical - Implying Skepticism)",
+                "Rising Tone (Genuine Yes/No Question)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
+            "correctAnswer": "Falling Tone (Rhetorical - Implying Skepticism)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 148-3)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "hint": "This isn't a neutral request for an opinion - it suggests the speaker disagrees. Listen for the pitch to fall firmly.",
+            "explanation": "'Do you really think that's a good idea?' falls firmly as a rhetorical question, implying skepticism rather than open curiosity."
         },
         {
             "id": "ACC_PITCHMODULATION_L149_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "Is your phone charged?",
+            "textToSpeak": "Is your phone charged?",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Making a Point, Not Really Asking)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 149-1)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "hint": "The speaker genuinely wants to know the battery status. Listen for the pitch to lift at the end.",
+            "explanation": "'Is your phone charged?' rises at the end as a genuine question, truly checking on the battery."
         },
         {
             "id": "ACC_PITCHMODULATION_L149_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "What's the use of worrying now?",
+            "textToSpeak": "What's the use of worrying now?",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Falling Tone (Rhetorical - Implying Worrying Won't Help)",
+                "Rising Tone (Genuine Yes/No Question)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
+            "correctAnswer": "Falling Tone (Rhetorical - Implying Worrying Won't Help)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 149-2)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "hint": "This isn't a real request for the purpose of worry - it suggests worrying is pointless now. Listen for the pitch to fall firmly.",
+            "explanation": "'What's the use of worrying now?' falls firmly as a rhetorical question, implying that worrying won't change the outcome."
         },
         {
             "id": "ACC_PITCHMODULATION_L149_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "Did you lock the front door?",
+            "textToSpeak": "Did you lock the front door?",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Falling Tone (Rhetorical - Implying Worrying Won't Help)",
+                "Rising Tone (Genuine Yes/No Question)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 149-3)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswerIndex": 1,
+            "hint": "The speaker genuinely doesn't know if the door was locked. Listen for the pitch to lift at the end.",
+            "explanation": "'Did you lock the front door?' rises at the end as a genuine question, truly seeking the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L150_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "Why does this always happen to me?",
+            "textToSpeak": "Why does this always happen to me?",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Falling Tone (Rhetorical - Frustrated, Not Seeking an Answer)",
+                "Rising Tone (Genuine Yes/No Question)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 150-1)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "correctAnswer": "Falling Tone (Rhetorical - Frustrated, Not Seeking an Answer)",
+            "correctAnswerIndex": 0,
+            "hint": "The speaker isn't really asking for a cause - they're venting frustration. Listen for the pitch to fall firmly.",
+            "explanation": "'Why does this always happen to me?' falls firmly as a rhetorical question, expressing frustration rather than genuinely asking why."
         },
         {
             "id": "ACC_PITCHMODULATION_L150_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "Are the kids ready for school?",
+            "textToSpeak": "Are the kids ready for school?",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Frustrated, Not Seeking an Answer)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 150-2)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "correctAnswer": "Rising Tone (Genuine Yes/No Question)",
+            "correctAnswerIndex": 0,
+            "hint": "The speaker genuinely wants to know if everyone is prepared. Listen for the pitch to lift at the end.",
+            "explanation": "'Are the kids ready for school?' rises at the end as a genuine question, truly checking on their readiness."
         },
         {
             "id": "ACC_PITCHMODULATION_L150_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 4,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "Do you actually expect me to believe that?",
+            "textToSpeak": "Do you actually expect me to believe that?",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Rising Tone (Genuine Yes/No Question)",
+                "Falling Tone (Rhetorical - Expressing Disbelief)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 150-3)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "correctAnswer": "Falling Tone (Rhetorical - Expressing Disbelief)",
+            "correctAnswerIndex": 1,
+            "hint": "This isn't a neutral request for confirmation - it expresses strong doubt. Listen for the pitch to fall firmly.",
+            "explanation": "'Do you actually expect me to believe that?' falls firmly as a rhetorical question, expressing disbelief rather than genuine curiosity."
         }
     ]
 }

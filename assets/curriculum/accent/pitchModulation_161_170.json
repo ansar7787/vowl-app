@@ -5,513 +5,513 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L161_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "First we checked in, then we found our seats.",
+            "textToSpeak": "First we checked in, then we found our seats.",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 161-1)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "hint": "This sounds like the beginning of a longer account of the trip. Listen for the pitch to lift at the end, keeping the story open.",
+            "explanation": "Ending on a rise, this clause signals the story continues - there's more of the journey still to be told."
         },
         {
             "id": "ACC_PITCHMODULATION_L161_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "Finally, we made it home safely.",
+            "textToSpeak": "Finally, we made it home safely.",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 161-2)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "correctAnswer": "Falling (Story Complete - This Is the End)",
+            "correctAnswerIndex": 0,
+            "hint": "'Finally' signals the end of a journey. Listen for the pitch to fall and settle, closing the story.",
+            "explanation": "'Finally' paired with a falling pitch closes the narrative, telling the listener the account has reached its conclusion."
         },
         {
             "id": "ACC_PITCHMODULATION_L161_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "After the show, we grabbed a quick bite.",
+            "textToSpeak": "After the show, we grabbed a quick bite.",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 161-3)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswerIndex": 1,
+            "hint": "This sounds like one event in a longer evening, not the final word. Listen for the pitch to lift at the end.",
+            "explanation": "Ending on a rise, this clause signals the evening's story isn't finished yet - there's more still to come."
         },
         {
             "id": "ACC_PITCHMODULATION_L162_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "We packed the car, and then we hit the road.",
+            "textToSpeak": "We packed the car, and then we hit the road.",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 162-1)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "hint": "This sounds like the start of a road trip story. Listen for the pitch to lift at the end, keeping the account open.",
+            "explanation": "Ending on a rise, this clause signals the trip story is just getting started - there's clearly more to tell."
         },
         {
             "id": "ACC_PITCHMODULATION_L162_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "In the end, everything worked out fine.",
+            "textToSpeak": "In the end, everything worked out fine.",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
+            "correctAnswer": "Falling (Story Complete - This Is the End)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 162-2)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "hint": "'In the end' signals a conclusion. Listen for the pitch to fall and settle, closing the account.",
+            "explanation": "'In the end' paired with a falling pitch closes the story, telling the listener the situation has been fully resolved."
         },
         {
             "id": "ACC_PITCHMODULATION_L162_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "Next, we toured the old castle.",
+            "textToSpeak": "Next, we toured the old castle.",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 162-3)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "hint": "'Next' signals another event is coming in the account. Listen for the pitch to lift at the end.",
+            "explanation": "'Next' paired with a rising pitch signals the travel story continues, with more sights still to describe."
         },
         {
             "id": "ACC_PITCHMODULATION_L163_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "She opened the gift, and then she smiled.",
+            "textToSpeak": "She opened the gift, and then she smiled.",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 163-1)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswerIndex": 1,
+            "hint": "This sounds like one moment within a longer scene. Listen for the pitch to lift at the end, keeping the account open.",
+            "explanation": "Ending on a rise, this clause signals the scene isn't finished - there's more of the moment still to describe."
         },
         {
             "id": "ACC_PITCHMODULATION_L163_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "And that's how we became friends.",
+            "textToSpeak": "And that's how we became friends.",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
+            "correctAnswer": "Falling (Story Complete - This Is the End)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 163-2)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "hint": "This phrase usually closes off a story about how something began. Listen for the pitch to fall and settle at the end.",
+            "explanation": "'And that's how we became friends' falls to close the story, signalling the account has reached its natural ending."
         },
         {
             "id": "ACC_PITCHMODULATION_L163_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "After dinner, we played some board games.",
+            "textToSpeak": "After dinner, we played some board games.",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 163-3)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "hint": "This sounds like one part of a longer evening. Listen for the pitch to lift at the end, keeping the account open.",
+            "explanation": "Ending on a rise, this clause signals the evening's story continues, with more events still to come."
         },
         {
             "id": "ACC_PITCHMODULATION_L164_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "We landed, grabbed our bags, and then called a taxi.",
+            "textToSpeak": "We landed, grabbed our bags, and then called a taxi.",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 164-1)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswerIndex": 1,
+            "hint": "This sounds like the start of an account of arriving somewhere. Listen for the pitch to lift at the end.",
+            "explanation": "Ending on a rise, this clause signals the arrival story continues, with more of the journey still to be told."
         },
         {
             "id": "ACC_PITCHMODULATION_L164_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "At last, the rain finally stopped.",
+            "textToSpeak": "At last, the rain finally stopped.",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
+            "correctAnswer": "Falling (Story Complete - This Is the End)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 164-2)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "hint": "'At last' signals relief and closure. Listen for the pitch to fall and settle, closing the account.",
+            "explanation": "'At last' paired with a falling pitch closes the account, signalling the long wait has finally come to an end."
         },
         {
             "id": "ACC_PITCHMODULATION_L164_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "Then we walked along the beach for hours.",
+            "textToSpeak": "Then we walked along the beach for hours.",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 164-3)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswerIndex": 0,
+            "hint": "'Then' signals another event is coming in the story. Listen for the pitch to lift at the end.",
+            "explanation": "'Then' paired with a rising pitch signals the day's story continues, with more of the outing still to describe."
         },
         {
             "id": "ACC_PITCHMODULATION_L165_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "I finished my coffee, and then I left for work.",
+            "textToSpeak": "I finished my coffee, and then I left for work.",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 165-1)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswerIndex": 1,
+            "hint": "This sounds like the start of an account of the morning. Listen for the pitch to lift at the end.",
+            "explanation": "Ending on a rise, this clause signals the morning's story continues, with more of the routine still to come."
         },
         {
             "id": "ACC_PITCHMODULATION_L165_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "And that was the end of a long day.",
+            "textToSpeak": "And that was the end of a long day.",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
+            "correctAnswer": "Falling (Story Complete - This Is the End)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 165-2)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "hint": "'The end of a long day' clearly signals closure. Listen for the pitch to fall and settle at the end.",
+            "explanation": "'And that was the end of a long day' falls to close the account, signalling the story has reached its conclusion."
         },
         {
             "id": "ACC_PITCHMODULATION_L165_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "After the meeting, we grabbed lunch together.",
+            "textToSpeak": "After the meeting, we grabbed lunch together.",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 165-3)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswerIndex": 0,
+            "hint": "This sounds like one part of a longer workday account. Listen for the pitch to lift at the end.",
+            "explanation": "Ending on a rise, this clause signals the workday story continues, with more of the day still to describe."
         },
         {
             "id": "ACC_PITCHMODULATION_L166_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "He studied all night, and then took the exam.",
+            "textToSpeak": "He studied all night, and then took the exam.",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 166-1)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "hint": "This sounds like the start of an account leading up to a result. Listen for the pitch to lift at the end.",
+            "explanation": "Ending on a rise, this clause signals the exam story continues, with the result still to be revealed."
         },
         {
             "id": "ACC_PITCHMODULATION_L166_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "In the end, he passed with flying colors.",
+            "textToSpeak": "In the end, he passed with flying colors.",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
+            "correctAnswer": "Falling (Story Complete - This Is the End)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 166-2)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "hint": "'In the end' introduces the final outcome of the exam story. Listen for the pitch to fall and settle, closing the account.",
+            "explanation": "'In the end, he passed with flying colors' falls to close the story, revealing the final, settled outcome."
         },
         {
             "id": "ACC_PITCHMODULATION_L166_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "Next, the teacher explained the homework.",
+            "textToSpeak": "Next, the teacher explained the homework.",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 166-3)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswerIndex": 0,
+            "hint": "'Next' signals another event is coming in the class account. Listen for the pitch to lift at the end.",
+            "explanation": "'Next' paired with a rising pitch signals the classroom story continues, with more of the lesson still to come."
         },
         {
             "id": "ACC_PITCHMODULATION_L167_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "We checked into the hotel, and then explored downtown.",
+            "textToSpeak": "We checked into the hotel, and then explored downtown.",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 167-1)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "hint": "This sounds like the start of a longer travel account. Listen for the pitch to lift at the end.",
+            "explanation": "Ending on a rise, this clause signals the travel story continues, with more of the trip still to come."
         },
         {
             "id": "ACC_PITCHMODULATION_L167_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "Eventually, we found the perfect souvenir.",
+            "textToSpeak": "Eventually, we found the perfect souvenir.",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 167-2)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "correctAnswer": "Falling (Story Complete - This Is the End)",
+            "correctAnswerIndex": 1,
+            "hint": "'Eventually' signals the search has reached its goal. Listen for the pitch to fall and settle, closing the account.",
+            "explanation": "'Eventually, we found the perfect souvenir' falls to close the story, showing the search has reached a satisfying conclusion."
         },
         {
             "id": "ACC_PITCHMODULATION_L167_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Oh, really?",
-            "textToSpeak": "Oh, really?",
+            "word": "After that, we tried the local street food.",
+            "textToSpeak": "After that, we tried the local street food.",
             "options": [
-                "Falling-Rising (Doubt/Surprise)",
-                "Rising-Falling (Excitement/Certainty)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Falling-Rising (Doubt/Surprise)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 167-3)",
-            "explanation": "An inquiring 'Oh, really?' utilizes a falling-rising intonation contour to express doubt or pleasant surprise."
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswerIndex": 1,
+            "hint": "This sounds like one stop in a longer day of exploring. Listen for the pitch to lift at the end.",
+            "explanation": "Ending on a rise, this clause signals the travel story continues, with more of the day's adventures still to come."
         },
         {
             "id": "ACC_PITCHMODULATION_L168_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "No way!",
-            "textToSpeak": "No way!",
+            "word": "The doctor examined her, and then ran some tests.",
+            "textToSpeak": "The doctor examined her, and then ran some tests.",
             "options": [
-                "Falling-Rising (Polite Doubt)",
-                "Rising-Falling (Excitement/Disbelief)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Rising-Falling (Excitement/Disbelief)",
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 168-1)",
-            "explanation": "An emphatic 'No way!' uses a sharp rising-falling tone to express high excitement or disbelief."
+            "hint": "This sounds like the start of an account leading up to results. Listen for the pitch to lift at the end.",
+            "explanation": "Ending on a rise, this clause signals the medical story continues, with the results still to come."
         },
         {
             "id": "ACC_PITCHMODULATION_L168_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Yes, please!",
-            "textToSpeak": "Yes, please!",
+            "word": "In the end, she made a full recovery.",
+            "textToSpeak": "In the end, she made a full recovery.",
             "options": [
-                "Rising-Falling (Enthusiastic Agreement)",
-                "Falling-Rising (Hesitant Request)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Rising-Falling (Enthusiastic Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 168-2)",
-            "explanation": "An enthusiastic 'Yes, please!' features rising-falling pitch signifying strong certainty and positive agreement."
+            "correctAnswer": "Falling (Story Complete - This Is the End)",
+            "correctAnswerIndex": 1,
+            "hint": "'In the end' introduces the final, reassuring outcome of her treatment. Listen for the pitch to fall and settle.",
+            "explanation": "'In the end, she made a full recovery' falls to close the story, revealing the final, reassuring outcome."
         },
         {
             "id": "ACC_PITCHMODULATION_L168_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Excuse me?",
-            "textToSpeak": "Excuse me?",
+            "word": "Then the nurse explained the results.",
+            "textToSpeak": "Then the nurse explained the results.",
             "options": [
-                "Falling-Rising (Polite Inquiry)",
-                "Rising-Falling (Sudden Indignation)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Falling-Rising (Polite Inquiry)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 168-3)",
-            "explanation": "A polite 'Excuse me?' uses a gentle falling-rising contour to ask for repetition or clarification."
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswerIndex": 1,
+            "hint": "'Then' signals another step is coming in the account. Listen for the pitch to lift at the end.",
+            "explanation": "'Then' paired with a rising pitch signals the medical story continues, with more details still to be shared."
         },
         {
             "id": "ACC_PITCHMODULATION_L169_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I suppose so.",
-            "textToSpeak": "I suppose so.",
+            "word": "We downloaded the app, and then created an account.",
+            "textToSpeak": "We downloaded the app, and then created an account.",
             "options": [
-                "Rising-Falling (Confident Statement)",
-                "Falling-Rising (Reluctance/Doubt)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Falling-Rising (Reluctance/Doubt)",
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 169-1)",
-            "explanation": "The hesitant 'I suppose so' uses a falling-rising tone to communicate reluctance or soft disagreement."
+            "hint": "This sounds like the start of a setup process. Listen for the pitch to lift at the end, keeping the account open.",
+            "explanation": "Ending on a rise, this clause signals the setup story continues, with more steps still to be described."
         },
         {
             "id": "ACC_PITCHMODULATION_L169_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Thank you!",
-            "textToSpeak": "Thank you!",
+            "word": "Finally, the update fixed the bug.",
+            "textToSpeak": "Finally, the update fixed the bug.",
             "options": [
-                "Rising-Falling (Warm Gratitude)",
-                "Falling-Rising (Obligatory Thanks)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Rising-Falling (Warm Gratitude)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 169-2)",
-            "explanation": "A warm and sincere 'Thank you!' carries a rising-falling modulation expressing heartfelt gratitude."
+            "correctAnswer": "Falling (Story Complete - This Is the End)",
+            "correctAnswerIndex": 1,
+            "hint": "'Finally' signals a problem has been resolved. Listen for the pitch to fall and settle, closing the account.",
+            "explanation": "'Finally, the update fixed the bug' falls to close the story, showing the technical problem has now been resolved."
         },
         {
             "id": "ACC_PITCHMODULATION_L169_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Are you sure?",
-            "textToSpeak": "Are you sure?",
+            "word": "Next, we tried logging in again.",
+            "textToSpeak": "Next, we tried logging in again.",
             "options": [
-                "Falling-Rising (Skeptical Question)",
-                "Rising-Falling (Direct Demand)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Falling-Rising (Skeptical Question)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 169-3)",
-            "explanation": "A skeptical 'Are you sure?' modulates from high to low and back up (falling-rising) to express mild disbelief."
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswerIndex": 1,
+            "hint": "'Next' signals another attempt is coming in the account. Listen for the pitch to lift at the end.",
+            "explanation": "'Next' paired with a rising pitch signals the troubleshooting story continues, with more steps still to come."
         },
         {
             "id": "ACC_PITCHMODULATION_L170_Q1",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Wow, amazing!",
-            "textToSpeak": "Wow, amazing!",
+            "word": "We rehearsed the song, and then performed it live.",
+            "textToSpeak": "We rehearsed the song, and then performed it live.",
             "options": [
-                "Falling-Rising (Reserved Praise)",
-                "Rising-Falling (Awe/Excitement)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Rising-Falling (Awe/Excitement)",
-            "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 170-1)",
-            "explanation": "An excited expression of awe like 'Wow, amazing!' starts high, peaks, and resolves down (rising-falling)."
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswerIndex": 0,
+            "hint": "This sounds like the start of a longer account leading to a performance. Listen for the pitch to lift at the end.",
+            "explanation": "Ending on a rise, this clause signals the performance story continues, with the result still to be revealed."
         },
         {
             "id": "ACC_PITCHMODULATION_L170_Q2",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I don't know.",
-            "textToSpeak": "I don't know.",
+            "word": "And that's how the band became famous.",
+            "textToSpeak": "And that's how the band became famous.",
             "options": [
-                "Rising-Falling (Definite Statement)",
-                "Falling-Rising (Uncertainty/Doubt)"
+                "Rising (Mid-Story - More to Come)",
+                "Falling (Story Complete - This Is the End)"
             ],
-            "correctAnswer": "Falling-Rising (Uncertainty/Doubt)",
+            "correctAnswer": "Falling (Story Complete - This Is the End)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 170-2)",
-            "explanation": "Expressing uncertainty with 'I don't know' employs a falling-rising pitch modulation."
+            "hint": "This sounds like the satisfying conclusion to the band's story. Listen for the pitch to fall and settle at the end.",
+            "explanation": "'And that's how the band became famous' falls to close the story, signalling the account has reached its conclusion."
         },
         {
             "id": "ACC_PITCHMODULATION_L170_Q3",
-            "instruction": "IDENTIFY THE PITCH MODULATION CONTOUR AND EMOTIONAL NUANCE ENUNCIATED",
+            "instruction": "Listen to the audio and identify the pitch and emotion.",
             "difficulty": 5,
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "Indeed!",
-            "textToSpeak": "Indeed!",
+            "word": "After the encore, the crowd cheered loudly.",
+            "textToSpeak": "After the encore, the crowd cheered loudly.",
             "options": [
-                "Rising-Falling (Absolute Agreement)",
-                "Falling-Rising (Polite Sarcasm)"
+                "Falling (Story Complete - This Is the End)",
+                "Rising (Mid-Story - More to Come)"
             ],
-            "correctAnswer": "Rising-Falling (Absolute Agreement)",
-            "correctAnswerIndex": 0,
-            "hint": "Listen closely to the emotional inflection of the phrase. Is it tentative/doubting or absolute/excited? (Calibration 170-3)",
-            "explanation": "An assertive 'Indeed!' uses a strong rising-falling contour to convey total agreement."
+            "correctAnswer": "Rising (Mid-Story - More to Come)",
+            "correctAnswerIndex": 1,
+            "hint": "This sounds like one moment within a longer account of the concert. Listen for the pitch to lift at the end.",
+            "explanation": "Ending on a rise, this clause signals the concert story continues, with more of the night still to describe."
         }
     ]
 }
