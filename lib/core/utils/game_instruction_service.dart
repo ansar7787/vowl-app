@@ -219,56 +219,54 @@ class GameInstructionService {
     GameSubtype.storyBuilder: GameBriefing(
       title: "Story Builder",
       icon: Icons.reorder_rounded,
-      objective:
-          "Drag sentences into chronological order to rebuild the story.",
+      objective: "Arrange the scrambled sentences into the correct logical order.",
       rules: [
-        "3 Hearts per mission",
-        "2 Strikes (Mistakes Re-queued)",
-        "Logic and context are key",
+        "Tap sentences in order",
+        "1 mistake loses 1 life",
+        "2 mistakes queues it to the end",
       ],
       actionText: "Build Story",
       tip:
-          "PRO TIP: Look for transition words like 'However', 'Consequently', or 'Subsequently' to link sequences!",
+          "PRO TIP: Look for transition words like 'However' or 'Therefore' to link sentences!",
     ),
     GameSubtype.idiomMatch: GameBriefing(
       title: "Idiom Match",
       icon: Icons.psychology_rounded,
-      objective: "Pair the idioms with their true definitions and meanings.",
+      objective: "Select the correct meaning for the highlighted English idiom.",
       rules: [
-        "Match correctly to win",
-        "Avoid literal traps",
-        "3 Hearts per mission",
+        "Read the context carefully",
+        "1 mistake loses 1 life",
+        "2 mistakes queues it to the end",
       ],
-      actionText: "Match Idioms",
+      actionText: "Match Idiom",
       tip:
-          "PRO TIP: Don't take idioms literally! They usually describe a feeling or social situation.",
+          "PRO TIP: Don't take idioms literally! They usually describe a feeling or situation.",
     ),
     GameSubtype.speedSpelling: GameBriefing(
       title: "Speed Spelling",
       icon: Icons.spellcheck_rounded,
-      objective: "Spell the target word correctly before the timer runs out.",
+      objective: "Listen to the audio and tap the letters to spell the word.",
       rules: [
         "Spelling must be exact",
-        "Watch the timer",
-        "3 Hearts per mission",
+        "1 mistake loses 1 life",
+        "2 mistakes queues it to the end",
       ],
       actionText: "Start Spelling",
       tip:
-          "PRO TIP: Trust your muscle memory! Trying to think about every letter can slow you down.",
+          "PRO TIP: Sound the word out slowly in your head before tapping the letters.",
     ),
     GameSubtype.accentShadowing: GameBriefing(
       title: "Accent Shadowing",
       icon: Icons.mic_external_on_rounded,
-      objective:
-          "Speak along with the audio. Match the speaker's pitch and rhythm.",
+      objective: "Listen to the native speaker and repeat the phrase exactly.",
       rules: [
-        "Listen first, then speak",
-        "Match the waveform",
-        "3 Hearts per mission",
+        "Listen closely to the audio",
+        "1 mistake loses 1 life",
+        "2 mistakes queues it to the end",
       ],
       actionText: "Shadow Voice",
       tip:
-          "PRO TIP: Focus on the musicality! Accent is about the 'song' of the language.",
+          "PRO TIP: Focus on the pronunciation! Try to mimic their exact tone and stress.",
     ),
 
     // 2. GRAMMAR

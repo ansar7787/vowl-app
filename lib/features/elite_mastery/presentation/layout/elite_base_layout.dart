@@ -321,11 +321,20 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                                         header: true,
                                         child: Text(
                                           widget.title,
+                                          textAlign: TextAlign.center,
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
-                                            fontSize: 10.sp,
+                                            fontSize:
+                                                (widget.subtitle == null ||
+                                                    widget.subtitle!.isEmpty)
+                                                ? 14.sp
+                                                : 10.sp,
                                             fontWeight: FontWeight.w900,
-                                            letterSpacing: 4,
+                                            letterSpacing:
+                                                (widget.subtitle == null ||
+                                                    widget.subtitle!.isEmpty)
+                                                ? 0
+                                                : 4,
                                             color: isDark
                                                 ? Colors.white70
                                                 : const Color(

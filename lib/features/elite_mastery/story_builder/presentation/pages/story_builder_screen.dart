@@ -37,7 +37,6 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   List<String> _currentOrder = [];
   bool _isAnswered = false;
   bool? _isCorrect;
-  int _attempts = 0;
   VisualConfig? _visualConfig;
   String? _lastQuestId;
   int? _lastLives;
@@ -113,17 +112,10 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      _attempts++;
 
-      final isFinalFailure = _attempts >= 2;
       setState(() {
         _isCorrect = false;
-        if (isFinalFailure) {
-          _isAnswered = true;
-        } else {
-          // Strike 1: Just show red borders, don't show feedback card yet
-          _isAnswered = false;
-        }
+        _isAnswered = true;
       });
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
     }
@@ -164,7 +156,6 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               _lastQuestId = quest.id;
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
               _visualConfig = quest.visualConfig;
             });
             _shuffleSentences(quest.sentences ?? [], quest.correctOrder);
@@ -208,18 +199,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          // FIX: this screen was the only one of the four passing its long,
-          // static instruction sentence as `title` (rendered at 10.sp with
-          // 4px letter-spacing and no maxLines cap — a style meant for
-          // short labels like "IDIOM MASTER") while leaving `subtitle`
-          // (the large 22sp headline slot every sibling screen actually
-          // uses) empty. The curriculum's per-quest `instruction` is a
-          // single static sentence repeated across all 200 levels — same
-          // shape as Idiom Match's and Accent Shadowing's — so it belongs
-          // in `subtitle`, exactly like those two.
-          title: context.tr('games.story_builder_title'),
-          subtitle:
-              quest?.instruction ?? context.tr('games.story_builder_subtitle'),
+          title: quest?.instruction ?? context.tr('games.story_builder_title'),
           visualConfig: _visualConfig,
           onContinue: () {
             setState(() {
@@ -235,7 +215,6 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               // on every single question transition across all 200 levels.
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
             });
             context.read<EliteMasteryBloc>().add(NextEliteQuestion());
           },

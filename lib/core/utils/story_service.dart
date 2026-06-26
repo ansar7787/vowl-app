@@ -246,13 +246,13 @@ class StoryServiceImpl implements StoryService {
 
     // Elite Mastery
     'storyBuilder':
-        "The Legend Creator. Build an epic narrative that will be remembered forever.",
+        "Read the scrambled sentences and arrange them in the correct logical order to build a complete story.",
     'idiomMatch':
-        "Cultural Expert. Prove your deep understanding of the language's soul.",
+        "Read the context and choose the correct English idiom that matches the meaning.",
     'speedSpelling':
-        "Rapid Precision. Master the orthography of the most difficult words.",
+        "Unscramble the letters to spell the hidden vocabulary word correctly.",
     'accentShadowing':
-        "The Ultimate Chameleon. Reach the pinnacle of native-level resonance.",
+        "Listen to the native speaker and repeat the exact phrase into your microphone to match their pronunciation.",
   };
 
   static const Map<String, List<String>> kidsScripts = {

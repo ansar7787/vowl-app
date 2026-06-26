@@ -37,7 +37,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
   int? _selectedIndex;
   bool _isAnswered = false;
   bool? _isCorrect;
-  int _attempts = 0;
   List<int> _wrongIndices = []; // Stores indices relative to the SHUFFLED list
   String? _lastQuestId;
   int? _lastLives;
@@ -80,7 +79,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
 
     final actualOriginalIndex = _originalIndices[shuffledIndex];
     final isCorrect = actualOriginalIndex == correctOriginalIndex;
-    _attempts++;
 
     if (isCorrect) {
       _hapticService.success();
@@ -95,24 +93,13 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
       _hapticService.error();
       _soundService.playWrong();
 
-      final isFinalFailure = _attempts >= 2;
       setState(() {
         if (!_wrongIndices.contains(shuffledIndex)) {
           _wrongIndices.add(shuffledIndex);
         }
-        if (isFinalFailure) {
-          _isAnswered = true;
-          _isCorrect = false;
-          _selectedIndex = shuffledIndex;
-        } else {
-          // Strike 1: Re-shuffle for next attempt
-          _selectedIndex = null;
-          // Re-shuffle options to close the loophole
-          final state = context.read<EliteMasteryBloc>().state;
-          if (state is EliteMasteryLoaded) {
-            _initializeOptions(state.currentQuest, shouldSetState: false);
-          }
-        }
+        _isAnswered = true;
+        _isCorrect = false;
+        _selectedIndex = shuffledIndex;
       });
 
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
@@ -156,7 +143,13 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               _lastQuestId = state.currentQuest.id;
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
+            });
+            _initializeOptions(state.currentQuest);
+          } else if (state.lastAnswerCorrect == null) {
+            setState(() {
+              _isAnswered = false;
+              _isCorrect = null;
+              _selectedIndex = null;
             });
             _initializeOptions(state.currentQuest);
           }
@@ -210,7 +203,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
             setState(() {
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
               _selectedIndex = null;
               _wrongIndices = [];
             });

@@ -41,6 +41,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
   int _attempts = 0;
   bool _isProcessing = false;
   Set<int> _matchedIndices = {};
+  String? _lastQuestId;
 
   @override
   void initState() {
@@ -154,16 +155,9 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
       });
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
     } else {
-      final isFinalFailure = _attempts >= 2;
       setState(() {
         _isCorrect = false;
-        if (isFinalFailure) {
-          _isAnswered = true;
-        } else {
-          // Strike 1: Allow retry without feedback card
-          _isAnswered = false;
-          _lastWords = "";
-        }
+        _isAnswered = true;
       });
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
     }
@@ -205,11 +199,20 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             enableDoubleUp: true,
           );
         } else if (state is EliteMasteryLoaded) {
-          if (state.lastAnswerCorrect == null) {
+          final quest = state.currentQuest;
+          if (_lastQuestId != quest.id) {
             setState(() {
+              _lastQuestId = quest.id;
               _isAnswered = false;
               _isCorrect = null;
               _attempts = 0;
+              _lastWords = "";
+              _matchedIndices = {};
+            });
+          } else if (state.lastAnswerCorrect == null) {
+            setState(() {
+              _isAnswered = false;
+              _isCorrect = null;
               _lastWords = "";
               _matchedIndices = {};
             });
@@ -269,7 +272,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             setState(() {
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
               _lastWords = "";
             });
             context.read<EliteMasteryBloc>().add(NextEliteQuestion());

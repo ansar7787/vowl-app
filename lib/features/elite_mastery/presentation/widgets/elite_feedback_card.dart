@@ -71,7 +71,12 @@ class EliteFeedbackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final showCorrectAnswer = !_success && state.isFinalFailure;
+    final ruleTip = state.currentQuest.explanation;
+    final hasRuleTip = (_success || state.isFinalFailure) &&
+        ruleTip != null &&
+        ruleTip.trim().isNotEmpty;
+
+    final showCorrectAnswer = !_success && state.isFinalFailure && !hasRuleTip;
     final correctAnswerText = showCorrectAnswer
         ? _resolveCorrectAnswer(state.currentQuest)
         : null;
@@ -80,8 +85,6 @@ class EliteFeedbackCard extends StatelessWidget {
     // the sentence). Shown on both success and failure — reinforcing the
     // underlying rule regardless of outcome is more valuable for retention
     // than only explaining mistakes.
-    final ruleTip = state.currentQuest.explanation;
-    final hasRuleTip = ruleTip != null && ruleTip.trim().isNotEmpty;
 
     return ClipRRect(
       borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
@@ -220,9 +223,7 @@ class EliteFeedbackCard extends StatelessWidget {
     }
     if (ruleTip != null) {
       buffer
-        ..write(' ')
-        ..write(context.tr('games.the_rule_caps'))
-        ..write(': ')
+        ..write(context.tr('games.pro_tip_caps'))
         ..write(ruleTip);
     }
     return buffer.toString();
@@ -379,7 +380,7 @@ class _RuleTipBox extends StatelessWidget {
                   Icon(Icons.menu_book_rounded, color: accentColor, size: 14.r),
                   SizedBox(width: 8.w),
                   Text(
-                    context.tr('games.the_rule_caps'),
+                    context.tr('games.pro_tip_caps'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,

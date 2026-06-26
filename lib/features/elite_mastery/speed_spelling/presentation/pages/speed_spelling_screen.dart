@@ -39,6 +39,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
   bool? _isCorrect;
   int _attempts = 0;
   List<int> _tapHistory = [];
+  String? _lastQuestId;
 
   @override
   void initState() {
@@ -99,33 +100,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
       _hapticService.error();
       _soundService.playWrong();
 
-      final isFinalFailure = _attempts >= 2;
       setState(() {
         _isCorrect = false;
-        if (isFinalFailure) {
-          _isAnswered = true;
-        } else {
-          // Strike 1: Allow retry without feedback card
-          _isAnswered = false;
-          _currentInput = "";
-          // FIX (crash): `_tapHistory` previously wasn't cleared here, only
-          // `_currentInput` was. After the re-shuffle below, its stale
-          // indices point at positions in the *old* layout. The very next
-          // Backspace tap pops one of those stale indices — harmless by
-          // itself — but once enough backspaces are tapped to exhaust the
-          // *new* attempt's own taps, `_tapHistory` could still contain
-          // leftover stale entries from before this reset, so `_onBackspace`'s
-          // `_tapHistory.isEmpty` guard doesn't stop it: it then evaluates
-          // `_currentInput[_currentInput.length - 1]` on an already-empty
-          // `_currentInput`, i.e. `""[-1]` — a RangeError that crashes the
-          // screen. Clearing `_tapHistory` alongside `_currentInput` (exactly
-          // what `_onClear` already does) removes the stale entries entirely.
-          _tapHistory = [];
-          final state = context.read<EliteMasteryBloc>().state;
-          if (state is EliteMasteryLoaded) {
-            _shuffledChars = state.currentQuest.word!.split('')..shuffle();
-          }
-        }
+        _isAnswered = true;
       });
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
     }
@@ -154,14 +131,24 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             enableDoubleUp: true,
           );
         } else if (state is EliteMasteryLoaded) {
-          if (state.lastAnswerCorrect == null) {
+          final quest = state.currentQuest;
+          if (_lastQuestId != quest.id) {
             setState(() {
+              _lastQuestId = quest.id;
               _isAnswered = false;
               _isCorrect = null;
               _attempts = 0;
               _currentInput = "";
               _tapHistory = [];
-              _shuffledChars = state.currentQuest.word!.split('')..shuffle();
+              _shuffledChars = quest.word!.split('')..shuffle();
+            });
+          } else if (state.lastAnswerCorrect == null) {
+            setState(() {
+              _isAnswered = false;
+              _isCorrect = null;
+              _currentInput = "";
+              _tapHistory = [];
+              _shuffledChars = quest.word!.split('')..shuffle();
             });
           }
           if (state.lastAnswerCorrect == false) {
@@ -224,7 +211,6 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             setState(() {
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
               _currentInput = "";
               _tapHistory = [];
               _shuffledChars = [];

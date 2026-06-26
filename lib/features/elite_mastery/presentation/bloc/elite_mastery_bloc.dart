@@ -109,7 +109,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     final currentState = state;
     if (currentState is! EliteMasteryLoaded ||
         currentState.livesRemaining <= 0 ||
-        currentState.lastAnswerCorrect != null) {
+        currentState.lastAnswerCorrect == true) {
       return;
     }
 
