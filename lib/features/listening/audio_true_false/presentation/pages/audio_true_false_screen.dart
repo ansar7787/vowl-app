@@ -180,11 +180,13 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                           fit: BoxFit.scaleDown,
                                           child: AudioTrueFalseInstruction(
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction ?? "Listen to the statement and determine if it is true or false.",
                                           ),
                                         ),
                                       )
                                     : AudioTrueFalseInstruction(
                                         color: theme.primaryColor,
+                                        instruction: quest.instruction ?? "Listen to the statement and determine if it is true or false.",
                                       ),
                                 SizedBox(height: gapInstruction),
                                 isCompact

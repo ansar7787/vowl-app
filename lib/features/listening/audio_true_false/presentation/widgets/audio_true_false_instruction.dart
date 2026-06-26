@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class AudioTrueFalseInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const AudioTrueFalseInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -24,7 +27,7 @@ class AudioTrueFalseInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              "TUNE THE SIGNAL TO CATEGORIZE VERDICT",
+              instruction.toUpperCase(),
               style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
