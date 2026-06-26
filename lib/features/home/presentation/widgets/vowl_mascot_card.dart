@@ -109,9 +109,9 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
               child: Stack(
                 children: [
                   // 1. Layered Emerald Glow
-                  ExcludeSemantics(
+                  Positioned.fill(
                     child:
-                        Positioned.fill(
+                        ExcludeSemantics(
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(28.r),

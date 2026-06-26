@@ -13,8 +13,8 @@ class SpeakingVoicePulseBg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ExcludeSemantics(
-      child: Positioned.fill(
+    return Positioned.fill(
+      child: ExcludeSemantics(
         child: Center(
           child:
               Container(

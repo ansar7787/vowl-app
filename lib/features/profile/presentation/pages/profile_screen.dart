@@ -81,20 +81,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         background: Center(
                           child: FittedBox(
                             fit: BoxFit.scaleDown,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                SizedBox(height: 20.h),
-                                ProfileHeader(
-                                  user: user,
-                                  onEditName: () => _showEditNameSheet(
-                                    context,
-                                    user.displayName ?? '',
+                            child: SizedBox(
+                              width: 1.sw,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(height: 20.h),
+                                  ProfileHeader(
+                                    user: user,
+                                    onEditName: () => _showEditNameSheet(
+                                      context,
+                                      user.displayName ?? '',
+                                    ),
+                                    onEditPhoto: () =>
+                                        _showImageSourceSheet(context),
                                   ),
-                                  onEditPhoto: () =>
-                                      _showImageSourceSheet(context),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
