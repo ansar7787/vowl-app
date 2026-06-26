@@ -259,7 +259,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Text(
-                (quest.instruction ?? "DRAG LENS TO REVEAL CLUES").toUpperCase(),
+                quest.instruction.toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'RobotoMono',
                   fontSize: 9.sp,
