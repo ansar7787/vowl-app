@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/speech_service.dart';
@@ -14,7 +13,6 @@ import 'package:vowl/core/utils/text_similarity_helper.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import '../widgets/accent_shadowing_target_panel.dart';
 import '../widgets/accent_shadowing_mic_trigger.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -43,7 +41,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
   int _attempts = 0;
   bool _isProcessing = false;
   Set<int> _matchedIndices = {};
-  int? _lastLives;
 
   @override
   void initState() {
@@ -51,6 +48,19 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     context.read<EliteMasteryBloc>().add(
       FetchEliteMasteryQuests(gameType: widget.gameType, level: widget.level),
     );
+  }
+
+  @override
+  void dispose() {
+    // FIX: if the player navigates away mid-recording, the speech engine
+    // previously kept listening with no owner — leaking an active
+    // microphone session (battery drain, a lingering OS mic indicator) and
+    // risking `setState()` being invoked after this State is disposed once
+    // a result/done callback eventually fired.
+    if (_isListening) {
+      _speechService.stop();
+    }
+    super.dispose();
   }
 
   Future<void> _toggleListening(String targetText) async {
@@ -107,6 +117,19 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           },
         );
         _hapticService.selection();
+      } else {
+        // FIX: previously, if the microphone permission was denied or
+        // speech recognition was unavailable on the device, tapping the mic
+        // button silently did nothing — a dead-end button with zero
+        // affordance for what went wrong. Surface it explicitly instead.
+        if (!mounted) return;
+        _hapticService.error();
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(context.tr('games.mic_unavailable')),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
       }
     }
   }
@@ -178,13 +201,11 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             this.context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'ACCENT LEGEND!',
+            title: context.tr('games.accent_legend_title'),
             enableDoubleUp: true,
           );
         } else if (state is EliteMasteryLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-
-          if (state.lastAnswerCorrect == null || livesChanged) {
+          if (state.lastAnswerCorrect == null) {
             setState(() {
               _isAnswered = false;
               _isCorrect = null;
@@ -201,7 +222,23 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               }
             });
           }
-          _lastLives = state.livesRemaining;
+          // FIX: `lastAnswerCorrect == true` intentionally needs no handling
+          // here. Both a genuine correct answer (`_checkResult`) and a Tutor
+          // Pass override (`_tutorPass`) already set `_isAnswered`/`_isCorrect`
+          // locally *before* dispatching their event. The previous version
+          // additionally reset those flags whenever `livesRemaining` ticked
+          // up versus the last-seen value — which is exactly what both
+          // `EliteTutorPass` and the ad-funded `AddLifeFromAd` do as a
+          // deliberate side effect. That meant using "I spoke correctly!"
+          // (mid-quest, or from the Game Over dialog) silently wiped the
+          // feedback card back to the mic-trigger UI a moment after it
+          // appeared, while the BLoC's `lastAnswerCorrect` stayed locked at
+          // `true` — so re-recording produced no further effect and there
+          // was no way to reach the Continue button. Deriving the reset
+          // purely from `lastAnswerCorrect == null` (covers `RetryEliteQuestion`,
+          // `RestoreEliteLife`, and `AddLifeFromAd` from Game Over, all of
+          // which already emit with `lastAnswerCorrect` unset) avoids that
+          // false trigger entirely.
         } else if (state is EliteMasteryGameOver) {
           GameDialogHelper.showGameOver(
             context,
@@ -224,8 +261,10 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: "ACCENT SHADOWING",
-          subtitle: quest?.instruction ?? "Speak clearly to match the accent",
+          title: context.tr('games.accent_shadowing_title'),
+          subtitle:
+              quest?.instruction ??
+              context.tr('games.accent_shadowing_subtitle'),
           onContinue: () {
             setState(() {
               _isAnswered = false;
@@ -265,55 +304,10 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     bool isDark,
     ThemeResult theme,
   ) {
-    if (state is EliteMasteryLoading) {
-      return const GameShimmerLoading();
-    }
-    if (state is EliteMasteryError) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.error_outline_rounded, color: Colors.white, size: 48.r),
-            SizedBox(height: 16.h),
-            Text(
-              state.message,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                color: Colors.white,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            SizedBox(height: 24.h),
-            ScaleButton(
-              onTap: () => context.read<EliteMasteryBloc>().add(
-                FetchEliteMasteryQuests(
-                  gameType: widget.gameType,
-                  level: widget.level,
-                ),
-              ),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16.r),
-                ),
-                child: Text(
-                  context.tr('common.retry').toUpperCase(),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    color: theme.primaryColor,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
-    }
+    // `EliteMasteryLoading` and `EliteMasteryError` are both handled
+    // centrally by `EliteBaseLayout`: it renders its own shimmer/error UI
+    // directly inside its Stack and never includes this `child` slot for
+    // either state, so no local UI is built (or ever shown) for them here.
     if (state is EliteMasteryLoaded) {
       return _buildGameUI(context, state, isDark, theme);
     }
@@ -345,6 +339,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     ThemeResult theme,
   ) {
     final quest = state.currentQuest;
+    final targetText = quest.text ?? quest.textToSpeak;
 
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -353,16 +348,14 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         return Column(
           children: [
             AccentShadowingTargetPanel(
-              text: quest.text ?? quest.textToSpeak ?? "??",
+              text: targetText ?? context.tr('games.target_text_fallback'),
               matchedIndices: _matchedIndices,
               isDark: isDark,
               primaryColor: theme.primaryColor,
               isAnswered: _isAnswered,
               isCorrect: _isCorrect,
               attempts: _attempts,
-              onListenTap: () => _speechService.speak(
-                quest.text ?? quest.textToSpeak ?? "",
-              ),
+              onListenTap: () => _speechService.speak(targetText ?? ""),
             ),
             if (state.isHintVisible) ...[
               SizedBox(height: isCompact ? 12.h : 20.h),
@@ -377,7 +370,9 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             if (_lastWords.isNotEmpty)
               Container(
                 padding: EdgeInsets.symmetric(
-                    horizontal: 20.w, vertical: isCompact ? 8.h : 12.h),
+                  horizontal: 20.w,
+                  vertical: isCompact ? 8.h : 12.h,
+                ),
                 decoration: BoxDecoration(
                   color: theme.primaryColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(15.r),
@@ -396,7 +391,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             SizedBox(height: isCompact ? 20.h : 40.h),
             AccentShadowingMicTrigger(
               isListening: _isListening,
-              onTap: () => _toggleListening(quest.text ?? quest.textToSpeak ?? ""),
+              onTap: () => _toggleListening(targetText ?? ""),
               onTutorPass: _tutorPass,
               primaryColor: theme.primaryColor,
               attempts: _attempts,

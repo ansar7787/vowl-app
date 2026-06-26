@@ -9,6 +9,15 @@ class EliteMasteryQuest extends GameQuest {
   final String? audioUrl;
   final String? text;
 
+  /// Short pedagogical note explaining *why* the hint/pattern applies (e.g.
+  /// the stress, linking, or intonation rule behind a sentence).
+  ///
+  /// Sourced directly from the curriculum JSON's `explanation` field, which
+  /// is present on every quest across all batches but was previously parsed
+  /// nowhere — it's now surfaced in the post-answer feedback card to
+  /// reinforce learning regardless of whether the attempt succeeded.
+  final String? explanation;
+
   const EliteMasteryQuest({
     required super.id,
     super.type,
@@ -25,6 +34,12 @@ class EliteMasteryQuest extends GameQuest {
     super.hint,
     super.textToSpeak,
     super.visualConfig,
+    // FIX: `question` is a GameQuest-level field (used directly by
+    // IdiomMatchScreen as `quest.question`) that was never forwarded here,
+    // so it was always null regardless of what the curriculum JSON
+    // contained for it. See EliteMasteryQuestModel.fromJson for the other
+    // half of this fix.
+    super.question,
     this.sentences,
     this.correctOrder,
     this.idiom,
@@ -32,6 +47,7 @@ class EliteMasteryQuest extends GameQuest {
     this.speedMultiplier,
     this.audioUrl,
     this.text,
+    this.explanation,
   });
 
   EliteMasteryQuest copyWith({
@@ -50,6 +66,7 @@ class EliteMasteryQuest extends GameQuest {
     String? hint,
     String? textToSpeak,
     VisualConfig? visualConfig,
+    String? question,
     List<String>? sentences,
     List<int>? correctOrder,
     String? idiom,
@@ -57,6 +74,7 @@ class EliteMasteryQuest extends GameQuest {
     double? speedMultiplier,
     String? audioUrl,
     String? text,
+    String? explanation,
   }) {
     return EliteMasteryQuest(
       id: id ?? this.id,
@@ -74,6 +92,7 @@ class EliteMasteryQuest extends GameQuest {
       hint: hint ?? this.hint,
       textToSpeak: textToSpeak ?? this.textToSpeak,
       visualConfig: visualConfig ?? this.visualConfig,
+      question: question ?? this.question,
       sentences: sentences ?? this.sentences,
       correctOrder: correctOrder ?? this.correctOrder,
       idiom: idiom ?? this.idiom,
@@ -81,18 +100,20 @@ class EliteMasteryQuest extends GameQuest {
       speedMultiplier: speedMultiplier ?? this.speedMultiplier,
       audioUrl: audioUrl ?? this.audioUrl,
       text: text ?? this.text,
+      explanation: explanation ?? this.explanation,
     );
   }
 
   @override
   List<Object?> get props => [
-        ...super.props,
-        sentences,
-        correctOrder,
-        idiom,
-        word,
-        speedMultiplier,
-        audioUrl,
-        text,
-      ];
+    ...super.props,
+    sentences,
+    correctOrder,
+    idiom,
+    word,
+    speedMultiplier,
+    audioUrl,
+    text,
+    explanation,
+  ];
 }

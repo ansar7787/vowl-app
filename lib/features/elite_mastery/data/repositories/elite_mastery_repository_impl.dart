@@ -1,3 +1,5 @@
+import 'dart:developer' as dev;
+
 import 'package:dartz/dartz.dart';
 import 'package:vowl/core/error/exceptions.dart';
 import 'package:vowl/core/error/failures.dart';
@@ -25,14 +27,26 @@ class EliteMasteryRepositoryImpl implements EliteMasteryRepository {
       );
       return Right(quests);
     } on ServerException catch (e) {
-      return Left(ServerFailure(
-        e.message,
-        code: e.code,
-        statusCode: e.statusCode,
-        details: e.details,
-      ));
-    } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(
+        ServerFailure(
+          e.message,
+          code: e.code,
+          statusCode: e.statusCode,
+          details: e.details,
+        ),
+      );
+    } catch (e, stackTrace) {
+      // `e.toString()` previously flowed straight into the failure message
+      // shown on screen — class names, raw exception text, sometimes a
+      // platform-channel error string. Log it for diagnostics instead and
+      // return a clean, generic, user-safe message.
+      dev.log(
+        'Unexpected error fetching Elite Mastery quests',
+        name: 'EliteMasteryRepositoryImpl',
+        error: e,
+        stackTrace: stackTrace,
+      );
+      return Left(ServerFailure('Something went wrong. Please try again.'));
     }
   }
 }

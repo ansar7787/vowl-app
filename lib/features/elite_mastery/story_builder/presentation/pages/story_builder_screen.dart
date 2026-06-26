@@ -13,7 +13,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
 import 'package:vowl/features/elite_mastery/presentation/layout/elite_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/features/elite_mastery/presentation/widgets/elite_hint_card.dart';
 import '../widgets/story_builder_narrative_tile.dart';
 
 class StoryBuilderScreen extends StatefulWidget {
@@ -148,19 +148,25 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'STORY MASTER!',
+            title: context.tr('games.story_master_title'),
             enableDoubleUp: true,
           );
         } else if (state is EliteMasteryLoaded) {
           final quest = state.currentQuest;
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
 
+          // FIX: these mutations used to happen directly on the fields,
+          // outside any setState, relying entirely on `_shuffleSentences`'s
+          // own internal setState (called right after) to flush the
+          // rebuild. Wrapping explicitly removes that implicit dependency.
           if (_lastQuestId != quest.id || livesChanged) {
-            _lastQuestId = quest.id;
-            _isAnswered = false;
-            _isCorrect = null;
-            _attempts = 0;
-            _visualConfig = quest.visualConfig;
+            setState(() {
+              _lastQuestId = quest.id;
+              _isAnswered = false;
+              _isCorrect = null;
+              _attempts = 0;
+              _visualConfig = quest.visualConfig;
+            });
             _shuffleSentences(quest.sentences ?? [], quest.correctOrder);
           }
           _lastLives = state.livesRemaining;
@@ -202,11 +208,32 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: quest?.instruction ?? "Read the sentences and arrange them in the correct order.",
+          // FIX: this screen was the only one of the four passing its long,
+          // static instruction sentence as `title` (rendered at 10.sp with
+          // 4px letter-spacing and no maxLines cap — a style meant for
+          // short labels like "IDIOM MASTER") while leaving `subtitle`
+          // (the large 22sp headline slot every sibling screen actually
+          // uses) empty. The curriculum's per-quest `instruction` is a
+          // single static sentence repeated across all 200 levels — same
+          // shape as Idiom Match's and Accent Shadowing's — so it belongs
+          // in `subtitle`, exactly like those two.
+          title: context.tr('games.story_builder_title'),
+          subtitle:
+              quest?.instruction ?? context.tr('games.story_builder_subtitle'),
           visualConfig: _visualConfig,
           onContinue: () {
             setState(() {
-              _isAnswered = true;
+              // FIX: this was `_isAnswered = true` — inverted relative to
+              // every other game's onContinue (and to this game's own
+              // listener logic). For the instant between tapping Continue
+              // and the bloc actually emitting the next quest, the builder
+              // still renders the *old* EliteMasteryLoaded with
+              // `_isAnswered` now forced true: EliteBaseLayout's
+              // AnimatedOpacity dims the list to 0.6 and the just-dismissed
+              // EliteFeedbackCard re-renders for a frame before the
+              // corrected state arrives and reverses it — a visible flicker
+              // on every single question transition across all 200 levels.
+              _isAnswered = false;
               _isCorrect = null;
               _attempts = 0;
             });
@@ -242,55 +269,10 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     bool isDark,
     ThemeResult theme,
   ) {
-    if (state is EliteMasteryLoading) {
-      return const GameShimmerLoading();
-    }
-    if (state is EliteMasteryError) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.error_outline_rounded, color: Colors.white, size: 48.r),
-            SizedBox(height: 16.h),
-            Text(
-              state.message,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                color: Colors.white,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            SizedBox(height: 24.h),
-            ScaleButton(
-              onTap: () => context.read<EliteMasteryBloc>().add(
-                FetchEliteMasteryQuests(
-                  gameType: widget.gameType,
-                  level: widget.level,
-                ),
-              ),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16.r),
-                ),
-                child: Text(
-                  context.tr('common.retry').toUpperCase(),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    color: theme.primaryColor,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
-    }
+    // `EliteMasteryLoading` and `EliteMasteryError` are both handled
+    // centrally by `EliteBaseLayout`: it renders its own shimmer/error UI
+    // directly inside its Stack and never includes this `child` slot for
+    // either state, so no local UI is built (or ever shown) for them here.
     if (state is EliteMasteryLoaded) {
       return _buildGameUI(context, state, isDark, theme);
     }
@@ -328,10 +310,37 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
 
         return Column(
           children: [
+            // FIX: every Story Builder quest carries a real, hand-written
+            // narrative hint (verified across all four sample batches), and
+            // tapping the hint button does spend it (MarkEliteHintUsed,
+            // ShowEliteHint) — but this screen never actually rendered an
+            // EliteHintCard anywhere, unlike all three sibling screens. The
+            // only visible effect of "using a hint" was the small position
+            // badge on each tile below; the actual clue text was completely
+            // inaccessible, so every hint spent here bought strictly less
+            // value than in any other game in the category.
+            if (state.isHintVisible) ...[
+              EliteHintCard(
+                hintText: quest.hint,
+                isVisible: true,
+                onShowHint: () {},
+                primaryColor: theme.primaryColor,
+              ),
+              SizedBox(height: isCompact ? 12.h : 20.h),
+            ],
             ReorderableListView(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               onReorder: _onReorder,
+              // FIX: `ReorderableListView` defaults `buildDefaultDragHandles`
+              // to true, which auto-attaches its own platform drag handle
+              // per item (visibly, on Android) in addition to this tile's
+              // own custom `Icons.drag_indicator_rounded` — risking two
+              // visible drag handles per row. Disabling the default and
+              // wrapping the existing icon in a `ReorderableDragStartListener`
+              // (inside StoryBuilderNarrativeTile) keeps exactly one handle,
+              // consistently, on every platform.
+              buildDefaultDragHandles: false,
               proxyDecorator: (child, index, animation) => Material(
                 color: Colors.transparent,
                 child: child.animate().scale(
@@ -360,40 +369,48 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
             ),
             SizedBox(height: isCompact ? 16.h : 30.h),
             if (!_isAnswered)
-              ScaleButton(
-                onTap: () =>
-                    _submitOrder(quest.correctOrder, quest.sentences ?? []),
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(
-                      vertical: isCompact ? 14.h : 20.h),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        theme.primaryColor,
-                        theme.primaryColor.withValues(alpha: 0.8),
-                      ],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
+              Semantics(
+                button: true,
+                label: context.tr('games.finalize_story_caps'),
+                excludeSemantics: true,
+                child: ScaleButton(
+                  onTap: () =>
+                      _submitOrder(quest.correctOrder, quest.sentences ?? []),
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(
+                      vertical: isCompact ? 14.h : 20.h,
                     ),
-                    borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: theme.primaryColor.withValues(alpha: 0.6),
-                        blurRadius: isCompact ? 10 : 20,
-                        offset: Offset(0, isCompact ? 5 : 10),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          theme.primaryColor,
+                          theme.primaryColor.withValues(alpha: 0.8),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
                       ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Text(
-                      "FINALIZE STORY",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: isCompact ? 16.sp : 18.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                        letterSpacing: isCompact ? 1.5 : 2.5,
+                      borderRadius: BorderRadius.circular(
+                        isCompact ? 16.r : 24.r,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: theme.primaryColor.withValues(alpha: 0.6),
+                          blurRadius: isCompact ? 10 : 20,
+                          offset: Offset(0, isCompact ? 5 : 10),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        context.tr('games.finalize_story_caps'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: isCompact ? 16.sp : 18.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          letterSpacing: isCompact ? 1.5 : 2.5,
+                        ),
                       ),
                     ),
                   ),

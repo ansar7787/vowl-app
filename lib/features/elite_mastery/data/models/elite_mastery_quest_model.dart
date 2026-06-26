@@ -18,6 +18,7 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
     super.hint,
     super.textToSpeak,
     super.visualConfig,
+    super.question,
     super.sentences,
     super.correctOrder,
     super.idiom,
@@ -25,6 +26,7 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
     super.speedMultiplier,
     super.audioUrl,
     super.text,
+    super.explanation,
   });
 
   factory EliteMasteryQuestModel.fromJson(Map<String, dynamic> json) {
@@ -66,11 +68,15 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
       correctAnswer: getString(json['correctAnswer']),
       hint: json['hint'] as String?,
       visualConfig: json['visual_config'] != null
-          ? VisualConfig.fromJson(Map<String, dynamic>.from(json['visual_config'] as Map))
+          ? VisualConfig.fromJson(
+              Map<String, dynamic>.from(json['visual_config'] as Map),
+            )
           : null,
       sentences: parseStringList(json['sentences']),
       correctOrder: json['correctOrder'] != null
-          ? (json['correctOrder'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
+          ? (json['correctOrder'] as List)
+                .map((e) => int.tryParse(e.toString()) ?? 0)
+                .toList()
           : null,
       idiom: getString(json['idiom']),
       word: getString(json['word']),
@@ -78,6 +84,16 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
       audioUrl: getString(json['audioUrl']),
       textToSpeak: getString(json['textToSpeak']),
       text: getString(json['text'] ?? json['textToSpeak']),
+      // FIX: every Idiom Match quest carries a `question` field (the
+      // scenario text the player reads before picking an idiom) which was
+      // never parsed. Without it, IdiomMatchScreen's
+      // `quest.question != null && quest.question!.isNotEmpty` check was
+      // always false, so the scenario prompt never rendered at all.
+      question: json['question'] as String?,
+      // Pedagogical "why" note. Present on every curriculum quest (verified
+      // across all Accent Shadowing batches) but previously never parsed —
+      // it was silently discarded by every prior version of this model.
+      explanation: getString(json['explanation']),
     );
   }
 
@@ -102,6 +118,8 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
       'audioUrl': audioUrl,
       'textToSpeak': textToSpeak,
       'text': text,
+      'question': question,
+      'explanation': explanation,
     };
   }
 }

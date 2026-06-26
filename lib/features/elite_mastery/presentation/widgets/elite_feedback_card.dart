@@ -21,9 +21,6 @@ import 'package:vowl/core/utils/locale_service.dart';
 ///    and the available action in a single focused pass.
 ///  - Isolate answer-resolution logic in `_resolveCorrectAnswer` —
 ///    adding a new [GameSubtype] only requires one new `if` branch there.
-///
-/// ## Theme parameter
-/// [theme] is typed `dynamic`. Replace with `LevelTheme` when available.
 class EliteFeedbackCard extends StatelessWidget {
   /// The current loaded game state — guaranteed non-null at the call site.
   final EliteMasteryLoaded state;
@@ -33,9 +30,6 @@ class EliteFeedbackCard extends StatelessWidget {
 
   final VoidCallback onContinue;
 
-  // : Replace `dynamic` with `LevelTheme`.
-  final dynamic theme;
-
   final bool isDark;
 
   const EliteFeedbackCard({
@@ -43,7 +37,6 @@ class EliteFeedbackCard extends StatelessWidget {
     required this.state,
     required this.isCorrect,
     required this.onContinue,
-    required this.theme,
     required this.isDark,
   });
 
@@ -58,7 +51,8 @@ class EliteFeedbackCard extends StatelessWidget {
   Color get _shadowColor =>
       _success ? const Color(0xFF10B981) : const Color(0xFFE11D48);
 
-  String _title(BuildContext context) => _success ? context.tr('games.excellent') : context.tr('games.not_quite');
+  String _title(BuildContext context) =>
+      _success ? context.tr('games.excellent') : context.tr('games.not_quite');
 
   IconData get _icon =>
       _success ? Icons.check_circle_rounded : Icons.error_rounded;
@@ -66,7 +60,9 @@ class EliteFeedbackCard extends StatelessWidget {
   String _buttonLabel(BuildContext context) {
     if (_success) return context.tr('common.continue_text').toUpperCase();
     if (state.isFinalFailure) {
-      return state.livesRemaining == 0 ? context.tr('games.see_results') : context.tr('common.continue_text').toUpperCase();
+      return state.livesRemaining == 0
+          ? context.tr('games.see_results')
+          : context.tr('common.continue_text').toUpperCase();
     }
     return context.tr('games.try_again').toUpperCase();
   }
@@ -79,6 +75,13 @@ class EliteFeedbackCard extends StatelessWidget {
     final correctAnswerText = showCorrectAnswer
         ? _resolveCorrectAnswer(state.currentQuest)
         : null;
+
+    // Curriculum "why" note (e.g. the stress/linking/intonation rule behind
+    // the sentence). Shown on both success and failure — reinforcing the
+    // underlying rule regardless of outcome is more valuable for retention
+    // than only explaining mistakes.
+    final ruleTip = state.currentQuest.explanation;
+    final hasRuleTip = ruleTip != null && ruleTip.trim().isNotEmpty;
 
     return ClipRRect(
       borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
@@ -111,12 +114,24 @@ class EliteFeedbackCard extends StatelessWidget {
             // doesn't have to navigate through individual child nodes.
             child: Semantics(
               container: true,
-              label: _buildSemanticLabel(context, correctAnswerText),
+              label: _buildSemanticLabel(
+                context,
+                correctAnswerText,
+                hasRuleTip ? ruleTip : null,
+              ),
               excludeSemantics: true, // children handled by the container label
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   _buildResultRow(context),
+                  if (hasRuleTip) ...[
+                    SizedBox(height: 16.h),
+                    _RuleTipBox(
+                      text: ruleTip!,
+                      accentColor: _shadowColor,
+                      isDark: isDark,
+                    ),
+                  ],
                   if (correctAnswerText != null) ...[
                     SizedBox(height: 16.h),
                     _ExplanationBox(
@@ -185,12 +200,32 @@ class EliteFeedbackCard extends StatelessWidget {
     );
   }
 
-  String _buildSemanticLabel(BuildContext context, String? correctAnswerText) {
-    if (_success) return context.tr('games.semantic_correct_continue');
-    if (correctAnswerText != null) {
-      return context.tr('games.semantic_incorrect_explanation', args: [correctAnswerText, _buttonLabel(context)]);
+  String _buildSemanticLabel(
+    BuildContext context,
+    String? correctAnswerText,
+    String? ruleTip,
+  ) {
+    final buffer = StringBuffer();
+    if (_success) {
+      buffer.write(context.tr('games.semantic_correct_continue'));
+    } else if (correctAnswerText != null) {
+      buffer.write(
+        context.tr(
+          'games.semantic_incorrect_explanation',
+          args: [correctAnswerText, _buttonLabel(context)],
+        ),
+      );
+    } else {
+      buffer.write(context.tr('games.semantic_incorrect_try_again'));
     }
-    return context.tr('games.semantic_incorrect_try_again');
+    if (ruleTip != null) {
+      buffer
+        ..write(' ')
+        ..write(context.tr('games.the_rule_caps'))
+        ..write(': ')
+        ..write(ruleTip);
+    }
+    return buffer.toString();
   }
 
   // ── Answer resolver ─────────────────────────────────────────────────────
@@ -303,6 +338,73 @@ class _ExplanationBox extends StatelessWidget {
         )
         .animate()
         .fadeIn(delay: 300.ms)
+        .scale(duration: 400.ms, curve: Curves.easeOutBack);
+  }
+}
+
+/// Displays the curriculum's pedagogical `explanation` (the "why" behind a
+/// hint/pattern) — a previously-unused field. Uses a distinct icon and
+/// caption from [_ExplanationBox] (which reveals the *correct answer*) so
+/// the two boxes are never visually or semantically conflated even though
+/// they share the same accent-color treatment for visual consistency.
+class _RuleTipBox extends StatelessWidget {
+  final String text;
+  final Color accentColor;
+  final bool isDark;
+
+  const _RuleTipBox({
+    required this.text,
+    required this.accentColor,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: accentColor.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: accentColor.withValues(alpha: 0.2),
+              width: 1.5,
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.menu_book_rounded, color: accentColor, size: 14.r),
+                  SizedBox(width: 8.w),
+                  Text(
+                    context.tr('games.the_rule_caps'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      color: accentColor,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white : Colors.black87,
+                ),
+              ),
+            ],
+          ),
+        )
+        .animate()
+        .fadeIn(delay: 200.ms)
         .scale(duration: 400.ms, curve: Curves.easeOutBack);
   }
 }

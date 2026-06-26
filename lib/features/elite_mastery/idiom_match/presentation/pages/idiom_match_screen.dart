@@ -6,14 +6,12 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import '../widgets/idiom_match_options_panel.dart';
 
 class IdiomMatchScreen extends StatefulWidget {
@@ -140,17 +138,26 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
             this.context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'IDIOM LEGEND!',
+            title: context.tr('games.idiom_legend_title'),
             enableDoubleUp: true,
           );
         } else if (state is EliteMasteryLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
 
+          // FIX: these four lines used to mutate fields directly, outside
+          // any setState, relying entirely on `_initializeOptions`'s own
+          // internal setState (called immediately after) to flush the
+          // rebuild. That happens to work today, but it's an implicit
+          // dependency a future edit could silently break — e.g. if
+          // `_initializeOptions` were ever called with `shouldSetState:
+          // false` here. Wrapping explicitly removes that hazard.
           if (_lastQuestId != state.currentQuest.id || livesChanged) {
-            _lastQuestId = state.currentQuest.id;
-            _isAnswered = false;
-            _isCorrect = null;
-            _attempts = 0;
+            setState(() {
+              _lastQuestId = state.currentQuest.id;
+              _isAnswered = false;
+              _isCorrect = null;
+              _attempts = 0;
+            });
             _initializeOptions(state.currentQuest);
           }
           if (state.lastAnswerCorrect == false) {
@@ -195,8 +202,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: "IDIOM MASTER",
-          subtitle: quest?.instruction ?? "Match the idiom to its real meaning",
+          title: context.tr('games.idiom_master_title'),
+          subtitle:
+              quest?.instruction ?? context.tr('games.idiom_match_subtitle'),
           visualConfig: quest?.visualConfig,
           onContinue: () {
             setState(() {
@@ -239,55 +247,10 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
     bool isDark,
     ThemeResult theme,
   ) {
-    if (state is EliteMasteryLoading) {
-      return const GameShimmerLoading();
-    }
-    if (state is EliteMasteryError) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.error_outline_rounded, color: Colors.white, size: 48.r),
-            SizedBox(height: 16.h),
-            Text(
-              state.message,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                color: Colors.white,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            SizedBox(height: 24.h),
-            ScaleButton(
-              onTap: () => context.read<EliteMasteryBloc>().add(
-                FetchEliteMasteryQuests(
-                  gameType: widget.gameType,
-                  level: widget.level,
-                ),
-              ),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16.r),
-                ),
-                child: Text(
-                  context.tr('common.retry').toUpperCase(),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    color: theme.primaryColor,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
-    }
+    // `EliteMasteryLoading` and `EliteMasteryError` are both handled
+    // centrally by `EliteBaseLayout`: it renders its own shimmer/error UI
+    // directly inside its Stack and never includes this `child` slot for
+    // either state, so no local UI is built (or ever shown) for them here.
     if (state is EliteMasteryLoaded) {
       return _buildGameUI(context, state, isDark, theme);
     }
@@ -335,7 +298,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                     fontFamily: 'Outfit',
                     fontSize: isCompact ? 16.sp : 18.sp,
                     fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF0F172A),
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.9)
+                        : const Color(0xFF0F172A),
                     height: 1.4,
                   ),
                 ),

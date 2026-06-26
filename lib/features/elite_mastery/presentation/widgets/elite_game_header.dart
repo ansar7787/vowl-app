@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -15,10 +16,6 @@ import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 ///    BLoC state transition that doesn't affect the header.
 ///  - Allow `RepaintBoundary` placement around the hint-glow animation without
 ///    affecting the rest of the layout tree.
-///
-/// ## Theme parameter
-/// [theme] is typed `dynamic` because `LevelTheme` is not yet exported from
-/// `level_theme_helper.dart`. Replace with `LevelTheme` once available.
 class EliteGameHeader extends StatelessWidget {
   /// Current level number — displayed in the header progress bar.
   final int level;
@@ -43,9 +40,7 @@ class EliteGameHeader extends StatelessWidget {
   /// When `null`, the hint button is not shown.
   final String? hintText;
 
-  // : Replace `dynamic` with `LevelTheme` once exported from
-  // `level_theme_helper.dart`.
-  final dynamic theme;
+  final ThemeResult theme;
 
   final bool isDark;
   final VoidCallback onBack;
@@ -123,7 +118,7 @@ class EliteGameHeader extends StatelessWidget {
 // ── Private sub-widgets ─────────────────────────────────────────────────────
 
 class _BriefingButton extends StatelessWidget {
-  final dynamic theme;
+  final ThemeResult theme;
   final VoidCallback onTap;
 
   const _BriefingButton({required this.theme, required this.onTap});

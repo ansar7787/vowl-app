@@ -71,12 +71,13 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
   late bool _showBriefing;
 
   // ── Theme cache ──────────────────────────────────────────────────────────
-  // FIX: typed `dynamic` (not `Object`) so properties like `.primaryColor`
-  // and `.backgroundColors` are accessible without a cast.
-  // `Object` prevents all member access at compile time; `dynamic` defers
-  // the check to runtime, which matches the intended usage until `LevelTheme`
-  // is exported from level_theme_helper.dart.
-  dynamic _cachedTheme;
+  // FIX: previously typed `dynamic` under the assumption that `ThemeResult`
+  // wasn't yet exported from `level_theme_helper.dart`. It is — sibling
+  // screens (e.g. AccentShadowingScreen) already import it and type their
+  // local theme variable as `ThemeResult` directly. Using the real type here
+  // restores compile-time checking on every `.primaryColor` /
+  // `.backgroundColors` access instead of deferring typos to runtime.
+  ThemeResult? _cachedTheme;
   String? _cachedGameTypeName;
   int? _cachedLevel;
   bool? _cachedIsDark;
@@ -85,8 +86,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
   // ── Constants ────────────────────────────────────────────────────────────
   static const int _kMaxLives = 3;
   static const Duration _kNudgeDelay = Duration(milliseconds: 1200);
-  String get _kNudgeMessage =>
-      context.tr('games.kids_nudge');
+  String get _kNudgeMessage => context.tr('games.kids_nudge');
 
   // ── Lifecycle ────────────────────────────────────────────────────────────
 
@@ -119,16 +119,13 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
   ///
   /// Without caching, [LevelThemeHelper.getTheme] was called on every BLoC
   /// state change — including answer submissions that don't change the theme.
-  // : replace the `dynamic` return type with `LevelTheme` once that class
-  // is exported from level_theme_helper.dart.
-  // ignore: avoid_annotating_with_dynamic
-  dynamic _getTheme(bool isDark, bool isMidnight) {
+  ThemeResult _getTheme(bool isDark, bool isMidnight) {
     if (_cachedTheme != null &&
         _cachedGameTypeName == widget.gameType.name &&
         _cachedLevel == widget.level &&
         _cachedIsDark == isDark &&
         _cachedIsMidnight == isMidnight) {
-      return _cachedTheme;
+      return _cachedTheme!;
     }
     _cachedGameTypeName = widget.gameType.name;
     _cachedLevel = widget.level;
@@ -140,7 +137,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
       isDark: isDark,
       isMidnight: isMidnight,
     );
-    return _cachedTheme;
+    return _cachedTheme!;
   }
 
   // ── Build ────────────────────────────────────────────────────────────────
@@ -219,7 +216,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
     // `context.read` (not `watch`) — subscription is handled in `build()`.
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.read<ThemeCubit>().state.isMidnight;
-    final theme = _getTheme(isDark, isMidnight); // dynamic — properties work
+    final theme = _getTheme(isDark, isMidnight);
 
     if (state is EliteMasteryError) {
       return Scaffold(
@@ -337,7 +334,8 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                                           ),
                                         ),
                                       ).animate().fadeIn(),
-                                      if (widget.subtitle != null && widget.subtitle!.isNotEmpty) ...[
+                                      if (widget.subtitle != null &&
+                                          widget.subtitle!.isNotEmpty) ...[
                                         SizedBox(height: 8.h),
                                         Semantics(
                                           liveRegion: true,
@@ -392,7 +390,6 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                 state: state,
                 isCorrect: widget.isCorrect,
                 onContinue: widget.onContinue,
-                theme: theme,
                 isDark: isDark,
               ),
             ),
@@ -407,10 +404,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
 
   // ── Briefing overlay ─────────────────────────────────────────────────────
 
-  // FIX: parameter typed `dynamic` (was `Object`) so `theme.primaryColor`
-  // is accessible without a compile error.
-  // ignore: avoid_annotating_with_dynamic
-  Widget _buildBriefing(dynamic theme) {
+  Widget _buildBriefing(ThemeResult theme) {
     final briefing = GameInstructionService.getBriefing(
       context,
       widget.gameType,

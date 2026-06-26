@@ -13,7 +13,6 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import '../widgets/speed_spelling_input_field.dart';
 import '../widgets/speed_spelling_character_deck.dart';
 
@@ -109,6 +108,19 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
           // Strike 1: Allow retry without feedback card
           _isAnswered = false;
           _currentInput = "";
+          // FIX (crash): `_tapHistory` previously wasn't cleared here, only
+          // `_currentInput` was. After the re-shuffle below, its stale
+          // indices point at positions in the *old* layout. The very next
+          // Backspace tap pops one of those stale indices — harmless by
+          // itself — but once enough backspaces are tapped to exhaust the
+          // *new* attempt's own taps, `_tapHistory` could still contain
+          // leftover stale entries from before this reset, so `_onBackspace`'s
+          // `_tapHistory.isEmpty` guard doesn't stop it: it then evaluates
+          // `_currentInput[_currentInput.length - 1]` on an already-empty
+          // `_currentInput`, i.e. `""[-1]` — a RangeError that crashes the
+          // screen. Clearing `_tapHistory` alongside `_currentInput` (exactly
+          // what `_onClear` already does) removes the stale entries entirely.
+          _tapHistory = [];
           final state = context.read<EliteMasteryBloc>().state;
           if (state is EliteMasteryLoaded) {
             _shuffledChars = state.currentQuest.word!.split('')..shuffle();
@@ -138,7 +150,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             this.context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'SPELLING LEGEND!',
+            title: context.tr('games.spelling_legend_title'),
             enableDoubleUp: true,
           );
         } else if (state is EliteMasteryLoaded) {
@@ -165,7 +177,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             _hapticService.selection();
           }
 
-          if (state.isLetterRevealed && _currentInput.isEmpty && state.currentQuest.word != null) {
+          if (state.isLetterRevealed &&
+              _currentInput.isEmpty &&
+              state.currentQuest.word != null) {
             final word = state.currentQuest.word!;
             final revealCount = word.length > 4 ? 2 : 1;
             WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -201,7 +215,10 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: (quest?.instruction ?? "Spell the word.").toUpperCase(),
+          title:
+              (quest?.instruction ??
+                      context.tr('games.speed_spelling_title_fallback'))
+                  .toUpperCase(),
           subtitle: "",
           onContinue: () {
             setState(() {
@@ -244,55 +261,10 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
     bool isDark,
     ThemeResult theme,
   ) {
-    if (state is EliteMasteryLoading) {
-      return const GameShimmerLoading();
-    }
-    if (state is EliteMasteryError) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.error_outline_rounded, color: Colors.white, size: 48.r),
-            SizedBox(height: 16.h),
-            Text(
-              state.message,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                color: Colors.white,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            SizedBox(height: 24.h),
-            ScaleButton(
-              onTap: () => context.read<EliteMasteryBloc>().add(
-                FetchEliteMasteryQuests(
-                  gameType: widget.gameType,
-                  level: widget.level,
-                ),
-              ),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16.r),
-                ),
-                child: Text(
-                  context.tr('common.retry').toUpperCase(),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    color: theme.primaryColor,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
-    }
+    // `EliteMasteryLoading` and `EliteMasteryError` are both handled
+    // centrally by `EliteBaseLayout`: it renders its own shimmer/error UI
+    // directly inside its Stack and never includes this `child` slot for
+    // either state, so no local UI is built (or ever shown) for them here.
     if (state is EliteMasteryLoaded) {
       return _buildGameUI(context, state, isDark, theme);
     }
@@ -369,32 +341,40 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             ),
             SizedBox(height: isCompact ? 16.h : 32.h),
             if (!_isAnswered)
-              ScaleButton(
-                onTap: () => _submit(quest.word!),
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(
-                      vertical: isCompact ? 14.h : 20.h),
-                  decoration: BoxDecoration(
-                    color: theme.primaryColor,
-                    borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: theme.primaryColor.withValues(alpha: 0.3),
-                        blurRadius: isCompact ? 10 : 20,
-                        offset: Offset(0, isCompact ? 5 : 10),
+              Semantics(
+                button: true,
+                label: context.tr('games.submit_caps'),
+                excludeSemantics: true,
+                child: ScaleButton(
+                  onTap: () => _submit(quest.word!),
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(
+                      vertical: isCompact ? 14.h : 20.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: theme.primaryColor,
+                      borderRadius: BorderRadius.circular(
+                        isCompact ? 16.r : 24.r,
                       ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Text(
-                      "SUBMIT",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: isCompact ? 16.sp : 18.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                        letterSpacing: isCompact ? 1.5 : 2,
+                      boxShadow: [
+                        BoxShadow(
+                          color: theme.primaryColor.withValues(alpha: 0.3),
+                          blurRadius: isCompact ? 10 : 20,
+                          offset: Offset(0, isCompact ? 5 : 10),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        context.tr('games.submit_caps'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: isCompact ? 16.sp : 18.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          letterSpacing: isCompact ? 1.5 : 2,
+                        ),
                       ),
                     ),
                   ),

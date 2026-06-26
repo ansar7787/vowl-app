@@ -63,7 +63,14 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
   ) {
     if (state is! EliteMasteryLoaded) return;
     final s = state as EliteMasteryLoaded;
-    emit(s.copyWith(resetLastAnswer: true, isHintUsed: false, removedIndices: const [], isLetterRevealed: false));
+    emit(
+      s.copyWith(
+        resetLastAnswer: true,
+        isHintUsed: false,
+        removedIndices: const [],
+        isLetterRevealed: false,
+      ),
+    );
   }
 
   Future<void> _onFetchEliteMasteryQuests(
@@ -181,7 +188,12 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
         );
       } else {
         emit(
-          currentState.copyWith(resetLastAnswer: true, isHintVisible: false, removedIndices: const [], isLetterRevealed: false),
+          currentState.copyWith(
+            resetLastAnswer: true,
+            isHintVisible: false,
+            removedIndices: const [],
+            isLetterRevealed: false,
+          ),
         );
       }
     } else if (currentState.lastAnswerCorrect == true) {
@@ -211,9 +223,20 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
         return;
       }
 
-      try {
-        await Future.wait([
-          updateUserRewards(
+      // Each reward-persistence call is wrapped so it can never throw past
+      // this point. Previously all three calls were passed straight into a
+      // single `Future.wait`, which is eager: the *first* rejected future
+      // is what the surrounding try/catch sees, while the other in-flight
+      // calls keep running in the background. If one of those later also
+      // failed, that became an unhandled async exception outside any
+      // catch block — invisible in release builds, but a real crash-report
+      // risk. Wrapping each call also means one failing step (e.g. the
+      // streak/category stats write) can never prevent the other two
+      // (XP/coins, level unlock) from being attempted.
+      await Future.wait([
+        _persistRewardSafely(
+          'updateUserRewards',
+          () => updateUserRewards(
             UpdateUserRewardsParams(
               gameType: gameTypeName,
               level: level,
@@ -221,30 +244,56 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
               coinIncrease: _coinReward,
             ),
           ),
-          updateCategoryStats(
+        ),
+        _persistRewardSafely(
+          'updateCategoryStats',
+          () => updateCategoryStats(
             UpdateCategoryStatsParams(
               categoryId: gameTypeName,
               isCorrect: true,
             ),
           ),
-          updateUnlockedLevel(
+        ),
+        _persistRewardSafely(
+          'updateUnlockedLevel',
+          () => updateUnlockedLevel(
             UpdateUnlockedLevelParams(
               categoryId: gameTypeName,
               newLevel: level + 1,
             ),
           ),
-        ]);
-      } catch (e, st) {
-        dev.log(
-          'Failed to persist level-completion rewards',
-          name: 'EliteMasteryBloc',
-          error: e,
-          stackTrace: st,
-        );
-      }
+        ),
+      ]);
     } else {
       // Wrong answer on the last quest — stay and retry.
       emit(currentState.copyWith(resetLastAnswer: true, isHintVisible: false));
+    }
+  }
+
+  /// Runs a single reward-persistence call, logging (rather than rethrowing)
+  /// any failure so it can never surface as an unhandled async exception and
+  /// can never block its sibling calls in [_onNextEliteQuestion]'s
+  /// `Future.wait`.
+  ///
+  /// NOTE: this only guards against *thrown* exceptions. If
+  /// [updateUserRewards] / [updateCategoryStats] / [updateUnlockedLevel]
+  /// return an `Either<Failure, ...>` rather than throwing on failure, a
+  /// `Left` result is still swallowed silently here — exactly as it was
+  /// before this fix. Folding those results explicitly would need their
+  /// concrete return type, which isn't visible from this file alone.
+  Future<void> _persistRewardSafely(
+    String label,
+    Future<dynamic> Function() action,
+  ) async {
+    try {
+      await action();
+    } catch (e, st) {
+      dev.log(
+        'Failed to persist reward step: $label',
+        name: 'EliteMasteryBloc',
+        error: e,
+        stackTrace: st,
+      );
     }
   }
 
@@ -265,7 +314,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       List<int> removedIndices = [];
       bool isLetterRevealed = false;
       final quest = currentState.currentQuest;
-      
+
       // If it's a generic hint, trigger dynamic 50/50 lifeline or letter reveal
       if (HintUtility.isGenericHint(quest.hint)) {
         if (quest.options != null && quest.options!.length > 2) {
@@ -282,7 +331,13 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
         }
       }
 
-      emit(currentState.copyWith(isHintUsed: true, removedIndices: removedIndices, isLetterRevealed: isLetterRevealed));
+      emit(
+        currentState.copyWith(
+          isHintUsed: true,
+          removedIndices: removedIndices,
+          isLetterRevealed: isLetterRevealed,
+        ),
+      );
     }
   }
 
@@ -291,7 +346,14 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       emit(_restoreFromGameOver(state as EliteMasteryGameOver));
     } else if (state is EliteMasteryLoaded) {
       final s = state as EliteMasteryLoaded;
-      emit(s.copyWith(livesRemaining: s.livesRemaining + 1));
+      // FIX: previously unclamped — repeated ad-grants (or a grant stacked
+      // on top of an already-full life bar) could push `livesRemaining`
+      // above `_maxLives`, desyncing the heart count from the header's
+      // `_kMaxLives`-based UI and from `EliteTutorPass`'s own clamped logic
+      // just below.
+      emit(
+        s.copyWith(livesRemaining: (s.livesRemaining + 1).clamp(0, _maxLives)),
+      );
     }
   }
 
@@ -312,8 +374,6 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
 
     if (currentState is EliteMasteryLoaded) {
       final newLives = (currentState.livesRemaining + 1).clamp(0, _maxLives);
-      final updatedQuests = List<EliteMasteryQuest>.from(currentState.quests);
-      if (updatedQuests.length > _questsPerLevel) updatedQuests.removeLast();
 
       soundService.playCorrect();
       hapticService.success();
@@ -322,7 +382,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
         currentState.copyWith(
           livesRemaining: newLives,
           lastAnswerCorrect: true,
-          quests: updatedQuests,
+          quests: _trimRequeuedFailure(currentState.quests),
         ),
       );
     } else if (currentState is EliteMasteryGameOver) {
@@ -333,7 +393,15 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
         EliteMasteryLoaded(
           gameType: currentState.gameType,
           level: currentState.level,
-          quests: currentState.quests,
+          // FIX: a final failure pushes a duplicate of the failed quest to
+          // the end of the list (see `_onSubmitEliteAnswer`) so it can be
+          // retried later. The Loaded-state branch above already trims that
+          // duplicate when Tutor Pass overrides a failure, but this
+          // Game-Over branch — reached via the "Restore"/"Tutor Pass" dialog
+          // after lives hit zero — previously did not, silently forcing the
+          // player to repeat the exact same sentence a second time later in
+          // the same session despite having been told it was marked correct.
+          quests: _trimRequeuedFailure(currentState.quests),
           currentIndex: currentState.currentIndex,
           livesRemaining: 1,
           lastAnswerCorrect: true,
@@ -355,5 +423,14 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       currentIndex: s.currentIndex,
       livesRemaining: 1,
     );
+  }
+
+  /// Removes the trailing requeued-failure duplicate that
+  /// [_onSubmitEliteAnswer] appends when a quest is failed for good, if
+  /// present. Shared by both branches of [_onEliteTutorPass] so an honesty-
+  /// nudge override never leaves the player to repeat the same quest twice.
+  List<EliteMasteryQuest> _trimRequeuedFailure(List<EliteMasteryQuest> quests) {
+    if (quests.length <= _questsPerLevel) return quests;
+    return List<EliteMasteryQuest>.from(quests)..removeLast();
   }
 }

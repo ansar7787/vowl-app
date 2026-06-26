@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class IdiomMatchOptionsPanel extends StatelessWidget {
   final List<String> shuffledOptions;
@@ -39,55 +40,89 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
             isAnswered && originalIndices[index] == correctAnswerIndex;
         Color textColor = isDark ? Colors.white : Colors.black87;
 
+        // FIX: this option previously had zero Semantics. A sighted player
+        // gets the outcome from border color (green/red) plus the cancel
+        // icon on wrong answers; a screen-reader user got none of that —
+        // just the bare option text repeated identically regardless of
+        // state. Build one combined label per option instead.
+        final semanticLabel = _buildOptionLabel(
+          context,
+          option,
+          isCorrect,
+          isWrong,
+        );
+
         return Padding(
           padding: EdgeInsets.only(bottom: 16.h),
-          child: ScaleButton(
-            onTap: isAnswered ? null : () => onOptionSelected(index),
-            child: GlassTile(
-              borderRadius: BorderRadius.circular(24.r),
-              padding: EdgeInsets.symmetric(
-                horizontal: 24.w,
-                vertical: 22.h,
-              ),
-              usePremiumStyle: true,
-              showShadow: true,
-              color: isDark ? Colors.black.withValues(alpha: 0.3) : null,
-              border: Border.all(
-                color: isCorrect
-                    ? Colors.green
-                    : (isWrong
-                        ? Colors.red
-                        : (isSelected
-                            ? Colors.green
-                            : (isDark
-                                ? Colors.white.withValues(alpha: 0.15)
-                                : Colors.black.withValues(alpha: 0.08)))),
-                width: 1.5,
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      option,
-                      style: TextStyle(fontFamily: 'Outfit', 
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: textColor,
+          child: Semantics(
+            button: true,
+            enabled: !isAnswered,
+            selected: isSelected,
+            label: semanticLabel,
+            excludeSemantics: true,
+            child: ScaleButton(
+              onTap: isAnswered ? null : () => onOptionSelected(index),
+              child: GlassTile(
+                borderRadius: BorderRadius.circular(24.r),
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 22.h),
+                usePremiumStyle: true,
+                showShadow: true,
+                color: isDark ? Colors.black.withValues(alpha: 0.3) : null,
+                border: Border.all(
+                  color: isCorrect
+                      ? Colors.green
+                      : (isWrong
+                            ? Colors.red
+                            : (isSelected
+                                  ? Colors.green
+                                  : (isDark
+                                        ? Colors.white.withValues(alpha: 0.15)
+                                        : Colors.black.withValues(
+                                            alpha: 0.08,
+                                          )))),
+                  width: 1.5,
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        option,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                          color: textColor,
+                        ),
                       ),
                     ),
-                  ),
-                  if (isWrong)
-                    Icon(
-                      Icons.cancel_rounded,
-                      color: Colors.redAccent,
-                      size: 24.r,
-                    ).animate().shake(duration: 400.ms),
-                ],
+                    if (isWrong)
+                      Icon(
+                        Icons.cancel_rounded,
+                        color: Colors.redAccent,
+                        size: 24.r,
+                      ).animate().shake(duration: 400.ms),
+                  ],
+                ),
               ),
             ),
           ),
         ).animate().fadeIn(delay: (index * 100).ms).slideX(begin: 0.1);
       }),
     );
+  }
+
+  String _buildOptionLabel(
+    BuildContext context,
+    String option,
+    bool isCorrect,
+    bool isWrong,
+  ) {
+    if (isCorrect) {
+      return '$option. ${context.tr('games.semantic_correct_suffix')}';
+    }
+    if (isWrong) {
+      return '$option. ${context.tr('games.semantic_incorrect_suffix')}';
+    }
+    return option;
   }
 }

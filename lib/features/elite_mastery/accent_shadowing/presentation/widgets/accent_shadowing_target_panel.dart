@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class AccentShadowingTargetPanel extends StatelessWidget {
   final String text;
@@ -28,6 +29,10 @@ class AccentShadowingTargetPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isErrorState = isCorrect == false && attempts > 0;
+    final words = text
+        .split(RegExp(r'\s+'))
+        .where((w) => w.isNotEmpty)
+        .toList();
 
     return GlassTile(
       borderRadius: BorderRadius.circular(32.r),
@@ -40,54 +45,72 @@ class AccentShadowingTargetPanel extends StatelessWidget {
           : null,
       child: Column(
         children: [
-          GestureDetector(
-            onTap: onListenTap,
-            child: Container(
-              padding: EdgeInsets.all(12.r),
-              decoration: BoxDecoration(
-                color: primaryColor.withValues(alpha: 0.1),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.volume_up_rounded,
-                color: isDark ? primaryColor : const Color(0xFF0F172A),
-                size: 32.r,
+          Semantics(
+            button: true,
+            label: context.tr('games.semantic_listen_example'),
+            excludeSemantics: true,
+            child: GestureDetector(
+              onTap: onListenTap,
+              child: Container(
+                padding: EdgeInsets.all(12.r),
+                decoration: BoxDecoration(
+                  color: primaryColor.withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.volume_up_rounded,
+                  color: isDark ? primaryColor : const Color(0xFF0F172A),
+                  size: 32.r,
+                ),
               ),
             ),
           ),
           SizedBox(height: 20.h),
-          _buildTargetWords(),
+          _buildTargetWords(context, words),
         ],
       ),
     );
   }
 
-  Widget _buildTargetWords() {
-    final words = text.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).toList();
-    return Wrap(
-      alignment: WrapAlignment.center,
-      spacing: 8.w,
-      runSpacing: 8.h,
-      children: List.generate(words.length, (index) {
-        final isMatched = matchedIndices.contains(index);
-        return Text(
-          words[index],
-          style: TextStyle(fontFamily: 'Outfit', 
-            fontSize: 24.sp,
-            fontWeight: FontWeight.w900,
-            color: isMatched
-                ? Colors.greenAccent
-                : (isDark ? Colors.white : const Color(0xFF1E293B)),
-            height: 1.4,
-          ),
-        )
-            .animate(target: isMatched ? 1 : 0)
-            .scale(
-              begin: const Offset(1, 1),
-              end: const Offset(1.1, 1.1),
-              duration: 200.ms,
-            );
-      }),
+  Widget _buildTargetWords(BuildContext context, List<String> words) {
+    // FIX: previously each word was its own bare `Text`, so a screen reader
+    // would traverse them one at a time with no indication of overall match
+    // progress. A single combined Semantics node (mirroring the pattern
+    // already used in EliteFeedbackCard) announces the full sentence plus
+    // progress in one pass instead.
+    return Semantics(
+      container: true,
+      excludeSemantics: true,
+      label: context.tr(
+        'games.semantic_target_sentence',
+        args: [text, matchedIndices.length.toString(), words.length.toString()],
+      ),
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        spacing: 8.w,
+        runSpacing: 8.h,
+        children: List.generate(words.length, (index) {
+          final isMatched = matchedIndices.contains(index);
+          return Text(
+                words[index],
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isMatched
+                      ? Colors.greenAccent
+                      : (isDark ? Colors.white : const Color(0xFF1E293B)),
+                  height: 1.4,
+                ),
+              )
+              .animate(target: isMatched ? 1 : 0)
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.1, 1.1),
+                duration: 200.ms,
+              );
+        }),
+      ),
     );
   }
 }
