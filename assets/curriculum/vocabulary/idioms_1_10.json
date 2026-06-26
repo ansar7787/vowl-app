@@ -2,40 +2,11 @@
     "levels": "1-10",
     "quests": [
         {
-            "word": "UNDER THE WEATHER",
-            "interactionType": "Emojify",
-            "topicEmoji": "☁🤒",
-            "id": "VOC_IDIOMS_L1_Q1",
-            "hint": "DEFINITION: Feeling sick or unwell.",
-            "options": [
-                "RAINY DAY",
-                "UNDER THE WEATHER",
-                "STORM CLOUD",
-                "COLD WIND"
-            ],
-            "explanation": "The idiom 'UNDER THE WEATHER' is represented by ☁🤒.",
-            "correctAnswer": "UNDER THE WEATHER"
-        },
-        {
-            "word": "BREAK A LEG",
-            "interactionType": "Emojify",
-            "topicEmoji": "🎭🤕",
-            "id": "VOC_IDIOMS_L1_Q2",
-            "hint": "DEFINITION: Good luck (usually for a performance).",
-            "options": [
-                "ACTOR LIFE",
-                "STAMP FEET",
-                "BREAK A LEG",
-                "CRACK BONE"
-            ],
-            "explanation": "The idiom 'BREAK A LEG' is represented by 🎭🤕.",
-            "correctAnswer": "BREAK A LEG"
-        },
-        {
             "word": "PIECE OF CAKE",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
             "topicEmoji": "🍰✨",
-            "id": "VOC_IDIOMS_L1_Q3",
+            "id": "VOC_IDIOMS_L1_Q1",
             "hint": "DEFINITION: Something very easy to do.",
             "options": [
                 "BAKING TIME",
@@ -43,413 +14,472 @@
                 "PIECE OF CAKE",
                 "SOFT BREAD"
             ],
-            "explanation": "The idiom 'PIECE OF CAKE' is represented by 🍰✨.",
+            "explanation": "'PIECE OF CAKE' means: Something very easy to do. For example: \"Don't worry about the test - it will be a piece of cake for you.\"",
             "correctAnswer": "PIECE OF CAKE"
         },
         {
-            "word": "HIT THE NAIL ON THE HEAD",
+            "word": "BREAK A LEG",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "🔨🎯",
+            "topicEmoji": "🎭🤕",
+            "id": "VOC_IDIOMS_L1_Q2",
+            "hint": "DEFINITION: Good luck (usually for a performance).",
+            "options": [
+                "ACTOR LIFE",
+                "STAMP FEET",
+                "CRACK BONE",
+                "BREAK A LEG"
+            ],
+            "explanation": "'BREAK A LEG' means: Good luck (usually for a performance). For example: \"Break a leg tonight - I know your play will go perfectly.\"",
+            "correctAnswer": "BREAK A LEG"
+        },
+        {
+            "word": "UNDER THE WEATHER",
+            "instruction": "Select the correct idiom for the given meaning.",
+            "interactionType": "Emojify",
+            "topicEmoji": "☁️🤒",
+            "id": "VOC_IDIOMS_L1_Q3",
+            "hint": "DEFINITION: Feeling sick or unwell.",
+            "options": [
+                "UNDER THE WEATHER",
+                "RAINY DAY",
+                "STORM CLOUD",
+                "COLD WIND"
+            ],
+            "explanation": "'UNDER THE WEATHER' means: Feeling sick or unwell. For example: \"I'm feeling a bit under the weather, so I'm staying home today.\"",
+            "correctAnswer": "UNDER THE WEATHER"
+        },
+        {
+            "word": "RAINING CATS AND DOGS",
+            "instruction": "Select the correct idiom for the given meaning.",
+            "interactionType": "Emojify",
+            "topicEmoji": "🌧️🐱🐶",
             "id": "VOC_IDIOMS_L2_Q1",
-            "hint": "DEFINITION: Describe exactly what is causing a situation.",
+            "hint": "DEFINITION: Raining very heavily.",
             "options": [
-                "BUILDING WORK",
-                "TOOL BOX",
-                "HIT THE NAIL ON THE HEAD",
-                "SHARP POINT"
+                "PET STORM",
+                "WET ANIMALS",
+                "HEAVY PAWS",
+                "RAINING CATS AND DOGS"
             ],
-            "explanation": "The idiom 'HIT THE NAIL ON THE HEAD' is represented by 🔨🎯.",
-            "correctAnswer": "HIT THE NAIL ON THE HEAD"
+            "explanation": "'RAINING CATS AND DOGS' means: Raining very heavily. For example: \"Bring an umbrella - it's raining cats and dogs outside.\"",
+            "correctAnswer": "RAINING CATS AND DOGS"
         },
         {
-            "word": "COSTS AN ARM AND A LEG",
+            "word": "SO FAR SO GOOD",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "💰💪🤕",
+            "topicEmoji": "👍🛣️",
             "id": "VOC_IDIOMS_L2_Q2",
-            "hint": "DEFINITION: Very expensive.",
+            "hint": "DEFINITION: Things are going well up to this point.",
             "options": [
-                "BODY PARTS",
-                "HIGH PRICE",
-                "RICH LIFE",
-                "COSTS AN ARM AND A LEG"
+                "SO FAR SO GOOD",
+                "LONG ROAD",
+                "GOOD DIRECTION",
+                "TRAVEL SIGN"
             ],
-            "explanation": "The idiom 'COSTS AN ARM AND A LEG' is represented by 💰💪🤕.",
-            "correctAnswer": "COSTS AN ARM AND A LEG"
+            "explanation": "'SO FAR SO GOOD' means: Things are going well up to this point. For example: \"We just started the project, but so far so good.\"",
+            "correctAnswer": "SO FAR SO GOOD"
         },
         {
-            "word": "BITE THE BULLET",
+            "word": "ALL EARS",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "😬🔫",
+            "topicEmoji": "👂👂",
             "id": "VOC_IDIOMS_L2_Q3",
-            "hint": "DEFINITION: Decide to do something difficult that you have been avoiding.",
+            "hint": "DEFINITION: Listening very closely and eagerly.",
             "options": [
-                "HARD FOOD",
-                "BITE THE BULLET",
-                "WAR ZONE",
-                "METAL TEETH"
+                "LISTENING TEST",
+                "ALL EARS",
+                "BIG SOUND",
+                "HEAD PARTS"
             ],
-            "explanation": "The idiom 'BITE THE BULLET' is represented by 😬🔫.",
-            "correctAnswer": "BITE THE BULLET"
+            "explanation": "'ALL EARS' means: Listening very closely and eagerly. For example: \"Tell me what happened - I'm all ears.\"",
+            "correctAnswer": "ALL EARS"
         },
         {
-            "word": "BLESSING IN DISGUISE",
+            "word": "SPEAK OF THE DEVIL",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "😇🎭",
+            "topicEmoji": "🗣️😈",
             "id": "VOC_IDIOMS_L3_Q1",
-            "hint": "DEFINITION: A good thing that seemed bad at first.",
+            "hint": "DEFINITION: Said when someone you were just talking about appears.",
             "options": [
-                "HIDDEN GIFT",
-                "HOLY ACT",
-                "BLESSING IN DISGUISE",
-                "GHOST MASK"
+                "SPEAK OF THE DEVIL",
+                "EVIL TALK",
+                "SCARY VOICE",
+                "RED HORNS"
             ],
-            "explanation": "The idiom 'BLESSING IN DISGUISE' is represented by 😇🎭.",
-            "correctAnswer": "BLESSING IN DISGUISE"
+            "explanation": "'SPEAK OF THE DEVIL' means: Said when someone you were just talking about appears. For example: \"Speak of the devil - here comes Tom right now!\"",
+            "correctAnswer": "SPEAK OF THE DEVIL"
         },
         {
-            "word": "LET THE CAT OUT OF THE BAG",
+            "word": "BETTER LATE THAN NEVER",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "🐈🎒",
+            "topicEmoji": "⏰✅",
             "id": "VOC_IDIOMS_L3_Q2",
-            "hint": "DEFINITION: Reveal a secret by mistake.",
+            "hint": "DEFINITION: It's good you did something, even if it's later than planned.",
             "options": [
-                "OPEN ZIP",
-                "LET THE CAT OUT OF THE BAG",
-                "PET SHOP",
-                "ANIMAL ESCAPE"
+                "SLOW CLOCK",
+                "BETTER LATE THAN NEVER",
+                "TIME CHECK",
+                "FINAL ANSWER"
             ],
-            "explanation": "The idiom 'LET THE CAT OUT OF THE BAG' is represented by 🐈🎒.",
-            "correctAnswer": "LET THE CAT OUT OF THE BAG"
+            "explanation": "'BETTER LATE THAN NEVER' means: It's good you did something, even if it's later than planned. For example: \"I know I'm three days late, but better late than never, right?\"",
+            "correctAnswer": "BETTER LATE THAN NEVER"
         },
         {
             "word": "ONCE IN A BLUE MOON",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
             "topicEmoji": "🌑🔵",
             "id": "VOC_IDIOMS_L3_Q3",
             "hint": "DEFINITION: Very rarely.",
             "options": [
                 "DARK SPACE",
-                "ONCE IN A BLUE MOON",
                 "BLUE COLOR",
+                "ONCE IN A BLUE MOON",
                 "NIGHT SKY"
             ],
-            "explanation": "The idiom 'ONCE IN A BLUE MOON' is represented by 🌑🔵.",
+            "explanation": "'ONCE IN A BLUE MOON' means: Very rarely. For example: \"We only go to the cinema once in a blue moon these days.\"",
             "correctAnswer": "ONCE IN A BLUE MOON"
         },
         {
-            "word": "PIECE OF THE PIE",
+            "word": "A BLESSING IN DISGUISE",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "🥧🔪",
+            "topicEmoji": "😇🎭",
             "id": "VOC_IDIOMS_L4_Q1",
-            "hint": "DEFINITION: A share of something (usually money).",
+            "hint": "DEFINITION: A good thing that seemed bad at first.",
             "options": [
-                "PIECE OF THE PIE",
-                "FOOD SLICE",
-                "MATH CHART",
-                "KITCHEN TOOL"
+                "HIDDEN GIFT",
+                "A BLESSING IN DISGUISE",
+                "HOLY ACT",
+                "GHOST MASK"
             ],
-            "explanation": "The idiom 'PIECE OF THE PIE' is represented by 🥧🔪.",
-            "correctAnswer": "PIECE OF THE PIE"
-        },
-        {
-            "word": "SPILL THE BEANS",
-            "interactionType": "Emojify",
-            "topicEmoji": "🪸🍲",
-            "id": "VOC_IDIOMS_L4_Q2",
-            "hint": "DEFINITION: Reveal a secret.",
-            "options": [
-                "FOOD WASTE",
-                "SPILL THE BEANS",
-                "OPEN SECRET",
-                "COOKING POT"
-            ],
-            "explanation": "The idiom 'SPILL THE BEANS' is represented by 🪸🍲.",
-            "correctAnswer": "SPILL THE BEANS"
-        },
-        {
-            "word": "THE BALL IS IN YOUR COURT",
-            "interactionType": "Emojify",
-            "topicEmoji": "🏓🏟",
-            "id": "VOC_IDIOMS_L4_Q3",
-            "hint": "DEFINITION: It is up to you to make the next move.",
-            "options": [
-                "PLAYER TURN",
-                "TENNIS MATCH",
-                "SPORT GAME",
-                "THE BALL IS IN YOUR COURT"
-            ],
-            "explanation": "The idiom 'THE BALL IS IN YOUR COURT' is represented by 🏓🏟.",
-            "correctAnswer": "THE BALL IS IN YOUR COURT"
-        },
-        {
-            "word": "THROUGH THICK AND THIN",
-            "interactionType": "Emojify",
-            "topicEmoji": "🌳🌵",
-            "id": "VOC_IDIOMS_L5_Q1",
-            "hint": "DEFINITION: In good times and bad times.",
-            "options": [
-                "HARD ROAD",
-                "PLANT LIFE",
-                "LONG JOURNEY",
-                "THROUGH THICK AND THIN"
-            ],
-            "explanation": "The idiom 'THROUGH THICK AND THIN' is represented by 🌳🌵.",
-            "correctAnswer": "THROUGH THICK AND THIN"
+            "explanation": "'A BLESSING IN DISGUISE' means: A good thing that seemed bad at first. For example: \"Losing that job was a blessing in disguise - I found a better one.\"",
+            "correctAnswer": "A BLESSING IN DISGUISE"
         },
         {
             "word": "TIME FLIES",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
             "topicEmoji": "⏰🪼",
-            "id": "VOC_IDIOMS_L5_Q2",
+            "id": "VOC_IDIOMS_L4_Q2",
             "hint": "DEFINITION: Time passes very quickly.",
             "options": [
                 "WINGS UP",
-                "TIME FLIES",
                 "BUG LIFE",
+                "TIME FLIES",
                 "FAST CLOCK"
             ],
-            "explanation": "The idiom 'TIME FLIES' is represented by ⏰🪼.",
+            "explanation": "'TIME FLIES' means: Time passes very quickly. For example: \"I can't believe the weekend is over already - time flies!\"",
             "correctAnswer": "TIME FLIES"
         },
         {
+            "word": "HIT THE BOOKS",
+            "instruction": "Select the correct idiom for the given meaning.",
+            "interactionType": "Emojify",
+            "topicEmoji": "📚👊",
+            "id": "VOC_IDIOMS_L4_Q3",
+            "hint": "DEFINITION: Study hard.",
+            "options": [
+                "PUNCH PAGE",
+                "LIBRARY VISIT",
+                "HEAVY BAG",
+                "HIT THE BOOKS"
+            ],
+            "explanation": "'HIT THE BOOKS' means: Study hard. For example: \"I have a big exam tomorrow, so I need to hit the books tonight.\"",
+            "correctAnswer": "HIT THE BOOKS"
+        },
+        {
+            "word": "ON CLOUD NINE",
+            "instruction": "Select the correct idiom for the given meaning.",
+            "interactionType": "Emojify",
+            "topicEmoji": "☁️9️⃣",
+            "id": "VOC_IDIOMS_L5_Q1",
+            "hint": "DEFINITION: Extremely happy.",
+            "options": [
+                "SKY NUMBER",
+                "FLOATING FEELING",
+                "ON CLOUD NINE",
+                "HIGH COUNT"
+            ],
+            "explanation": "'ON CLOUD NINE' means: Extremely happy. For example: \"She's been on cloud nine ever since she got the good news.\"",
+            "correctAnswer": "ON CLOUD NINE"
+        },
+        {
+            "word": "COLD FEET",
+            "instruction": "Select the correct idiom for the given meaning.",
+            "interactionType": "Emojify",
+            "topicEmoji": "🥶🦶",
+            "id": "VOC_IDIOMS_L5_Q2",
+            "hint": "DEFINITION: Sudden nervousness about doing something.",
+            "options": [
+                "WINTER SHOES",
+                "ICY GROUND",
+                "FROZEN TOES",
+                "COLD FEET"
+            ],
+            "explanation": "'COLD FEET' means: Sudden nervousness about doing something. For example: \"He got cold feet right before the wedding and almost didn't show up.\"",
+            "correctAnswer": "COLD FEET"
+        },
+        {
+            "word": "SOUND ASLEEP",
+            "instruction": "Select the correct idiom for the given meaning.",
+            "interactionType": "Emojify",
+            "topicEmoji": "🔊😴",
+            "id": "VOC_IDIOMS_L5_Q3",
+            "hint": "DEFINITION: Sleeping very deeply.",
+            "options": [
+                "SOUND ASLEEP",
+                "LOUD NOISE",
+                "DEEP REST",
+                "NIGHT MUSIC"
+            ],
+            "explanation": "'SOUND ASLEEP' means: Sleeping very deeply. For example: \"The baby was sound asleep, so we tried to stay quiet.\"",
+            "correctAnswer": "SOUND ASLEEP"
+        },
+        {
+            "word": "MAKE UP YOUR MIND",
+            "instruction": "Select the correct idiom for the given meaning.",
+            "interactionType": "Emojify",
+            "topicEmoji": "🧠✅",
+            "id": "VOC_IDIOMS_L6_Q1",
+            "hint": "DEFINITION: Decide something.",
+            "options": [
+                "BRAIN GAME",
+                "FINAL CHOICE",
+                "THINK TIME",
+                "MAKE UP YOUR MIND"
+            ],
+            "explanation": "'MAKE UP YOUR MIND' means: Decide something. For example: \"You need to make up your mind - do you want pizza or pasta?\"",
+            "correctAnswer": "MAKE UP YOUR MIND"
+        },
+        {
+            "word": "SAVED BY THE BELL",
+            "instruction": "Select the correct idiom for the given meaning.",
+            "interactionType": "Emojify",
+            "topicEmoji": "🛎️🙌",
+            "id": "VOC_IDIOMS_L6_Q2",
+            "hint": "DEFINITION: Rescued at the last possible moment.",
+            "options": [
+                "SAVED BY THE BELL",
+                "RING TONE",
+                "SCHOOL ALARM",
+                "LUCKY DAY"
+            ],
+            "explanation": "'SAVED BY THE BELL' means: Rescued at the last possible moment. For example: \"I was about to fail the quiz, but I was saved by the bell when class ended.\"",
+            "correctAnswer": "SAVED BY THE BELL"
+        },
+        {
+            "word": "EASY DOES IT",
+            "instruction": "Select the correct idiom for the given meaning.",
+            "interactionType": "Emojify",
+            "topicEmoji": "😌🐢",
+            "id": "VOC_IDIOMS_L6_Q3",
+            "hint": "DEFINITION: Be careful and take your time.",
+            "options": [
+                "SLOW ANIMAL",
+                "EASY DOES IT",
+                "CALM MOOD",
+                "GENTLE STEP"
+            ],
+            "explanation": "'EASY DOES IT' means: Be careful and take your time. For example: \"Easy does it - that vase is fragile, so carry it slowly.\"",
+            "correctAnswer": "EASY DOES IT"
+        },
+        {
+            "word": "NO PAIN NO GAIN",
+            "instruction": "Select the correct idiom for the given meaning.",
+            "interactionType": "Emojify",
+            "topicEmoji": "💪🔥",
+            "id": "VOC_IDIOMS_L7_Q1",
+            "hint": "DEFINITION: You must work hard or suffer to achieve something.",
+            "options": [
+                "NO PAIN NO GAIN",
+                "MUSCLE BURN",
+                "HARD WORKOUT",
+                "FIRE STRENGTH"
+            ],
+            "explanation": "'NO PAIN NO GAIN' means: You must work hard or suffer to achieve something. For example: \"Training for a marathon is tough, but no pain, no gain.\"",
+            "correctAnswer": "NO PAIN NO GAIN"
+        },
+        {
+            "word": "PRACTICE MAKES PERFECT",
+            "instruction": "Select the correct idiom for the given meaning.",
+            "interactionType": "Emojify",
+            "topicEmoji": "🎯🔁",
+            "id": "VOC_IDIOMS_L7_Q2",
+            "hint": "DEFINITION: Repeating something improves your skill.",
+            "options": [
+                "TARGET REPEAT",
+                "PRACTICE MAKES PERFECT",
+                "GOAL CYCLE",
+                "AIM AGAIN"
+            ],
+            "explanation": "'PRACTICE MAKES PERFECT' means: Repeating something improves your skill. For example: \"Keep practicing the piano - practice makes perfect.\"",
+            "correctAnswer": "PRACTICE MAKES PERFECT"
+        },
+        {
             "word": "UNDER THE RADAR",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
             "topicEmoji": "📡🫣",
-            "id": "VOC_IDIOMS_L5_Q3",
+            "id": "VOC_IDIOMS_L7_Q3",
             "hint": "DEFINITION: Without being noticed.",
             "options": [
                 "DARK ROOM",
                 "HIDDEN FACE",
-                "SIGNAL TECH",
-                "UNDER THE RADAR"
+                "UNDER THE RADAR",
+                "SIGNAL TECH"
             ],
-            "explanation": "The idiom 'UNDER THE RADAR' is represented by 📡🫣.",
+            "explanation": "'UNDER THE RADAR' means: Without being noticed. For example: \"The new restaurant stayed under the radar for months before becoming popular.\"",
             "correctAnswer": "UNDER THE RADAR"
         },
         {
             "word": "WHEN PIGS FLY",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
             "topicEmoji": "🐷🪽",
-            "id": "VOC_IDIOMS_L6_Q1",
+            "id": "VOC_IDIOMS_L8_Q1",
             "hint": "DEFINITION: Something that will never happen.",
             "options": [
                 "FARM ANIMAL",
-                "WING POWER",
                 "WHEN PIGS FLY",
+                "WING POWER",
                 "SKY HIGH"
             ],
-            "explanation": "The idiom 'WHEN PIGS FLY' is represented by 🐷🪽.",
+            "explanation": "'WHEN PIGS FLY' means: Something that will never happen. For example: \"He'll clean his room when pigs fly.\"",
             "correctAnswer": "WHEN PIGS FLY"
         },
         {
-            "word": "WRAP YOUR HEAD AROUND",
+            "word": "BETTER SAFE THAN SORRY",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "🎁🧠",
-            "id": "VOC_IDIOMS_L6_Q2",
-            "hint": "DEFINITION: Understand something complex.",
-            "options": [
-                "WRAP YOUR HEAD AROUND",
-                "GIFT BOX",
-                "BRAIN WORK",
-                "THINK HARD"
-            ],
-            "explanation": "The idiom 'WRAP YOUR HEAD AROUND' is represented by 🎁🧠.",
-            "correctAnswer": "WRAP YOUR HEAD AROUND"
-        },
-        {
-            "word": "YOU CAN'T JUDGE A BOOK BY ITS COVER",
-            "interactionType": "Emojify",
-            "topicEmoji": "📖🧥",
-            "id": "VOC_IDIOMS_L6_Q3",
-            "hint": "DEFINITION: Don't judge by appearance.",
-            "options": [
-                "OPEN MIND",
-                "YOU CAN'T JUDGE A BOOK BY ITS COVER",
-                "CLOTHES STYLE",
-                "READ TIME"
-            ],
-            "explanation": "The idiom 'YOU CAN'T JUDGE A BOOK BY ITS COVER' is represented by 📖🧥.",
-            "correctAnswer": "YOU CAN'T JUDGE A BOOK BY ITS COVER"
-        },
-        {
-            "word": "A PENNY FOR YOUR THOUGHTS",
-            "interactionType": "Emojify",
-            "topicEmoji": "🐙💭",
-            "id": "VOC_IDIOMS_L7_Q1",
-            "hint": "DEFINITION: Ask someone what they are thinking.",
-            "options": [
-                "MIND WORK",
-                "COIN DROP",
-                "MONEY TALK",
-                "A PENNY FOR YOUR THOUGHTS"
-            ],
-            "explanation": "The idiom 'A PENNY FOR YOUR THOUGHTS' is represented by 🐙💭.",
-            "correctAnswer": "A PENNY FOR YOUR THOUGHTS"
-        },
-        {
-            "word": "ADD INSULT TO INJURY",
-            "interactionType": "Emojify",
-            "topicEmoji": "🤕🩹🤡",
-            "id": "VOC_IDIOMS_L7_Q2",
-            "hint": "DEFINITION: Make a bad situation worse.",
-            "options": [
-                "FUNNY FACE",
-                "OUCH TIME",
-                "ADD INSULT TO INJURY",
-                "HURT FEELINGS"
-            ],
-            "explanation": "The idiom 'ADD INSULT TO INJURY' is represented by 🤕🩹🤡.",
-            "correctAnswer": "ADD INSULT TO INJURY"
-        },
-        {
-            "word": "ELEPHANT IN THE ROOM",
-            "interactionType": "Emojify",
-            "topicEmoji": "🐘🏠",
-            "id": "VOC_IDIOMS_L7_Q3",
-            "hint": "DEFINITION: An obvious problem that no one wants to discuss.",
-            "options": [
-                "HOME LIFE",
-                "LARGE ANIMAL",
-                "ELEPHANT IN THE ROOM",
-                "BIG SECRET"
-            ],
-            "explanation": "The idiom 'ELEPHANT IN THE ROOM' is represented by 🐘🏠.",
-            "correctAnswer": "ELEPHANT IN THE ROOM"
-        },
-        {
-            "word": "UNDER THE WEATHER",
-            "interactionType": "Emojify",
-            "topicEmoji": "☁🤒",
-            "id": "VOC_IDIOMS_L8_Q1",
-            "hint": "DEFINITION: Feeling sick or unwell.",
-            "options": [
-                "UNDER THE WEATHER",
-                "STORM CLOUD",
-                "RAINY DAY",
-                "COLD WIND"
-            ],
-            "explanation": "The idiom 'UNDER THE WEATHER' is represented by ☁🤒.",
-            "correctAnswer": "UNDER THE WEATHER"
-        },
-        {
-            "word": "BREAK A LEG",
-            "interactionType": "Emojify",
-            "topicEmoji": "🎭🤕",
+            "topicEmoji": "🛡️😟",
             "id": "VOC_IDIOMS_L8_Q2",
-            "hint": "DEFINITION: Good luck (usually for a performance).",
+            "hint": "DEFINITION: It's wiser to be careful than to regret later.",
             "options": [
-                "ACTOR LIFE",
-                "CRACK BONE",
-                "BREAK A LEG",
-                "STAMP FEET"
+                "SHIELD GUARD",
+                "WORRY FACE",
+                "BETTER SAFE THAN SORRY",
+                "SAFETY GEAR"
             ],
-            "explanation": "The idiom 'BREAK A LEG' is represented by 🎭🤕.",
-            "correctAnswer": "BREAK A LEG"
+            "explanation": "'BETTER SAFE THAN SORRY' means: It's wiser to be careful than to regret later. For example: \"Take an umbrella - better safe than sorry.\"",
+            "correctAnswer": "BETTER SAFE THAN SORRY"
         },
         {
-            "word": "PIECE OF CAKE",
+            "word": "EASY COME EASY GO",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "🍰✨",
+            "topicEmoji": "💸🌬️",
             "id": "VOC_IDIOMS_L8_Q3",
-            "hint": "DEFINITION: Something very easy to do.",
+            "hint": "DEFINITION: Things gained quickly are often lost quickly too.",
             "options": [
-                "BAKING TIME",
-                "SOFT BREAD",
-                "SWEET TREAT",
-                "PIECE OF CAKE"
+                "WIND MONEY",
+                "QUICK CASH",
+                "FAST BREEZE",
+                "EASY COME EASY GO"
             ],
-            "explanation": "The idiom 'PIECE OF CAKE' is represented by 🍰✨.",
-            "correctAnswer": "PIECE OF CAKE"
+            "explanation": "'EASY COME EASY GO' means: Things gained quickly are often lost quickly too. For example: \"He spent his lottery winnings in a month - easy come, easy go.\"",
+            "correctAnswer": "EASY COME EASY GO"
         },
         {
-            "word": "HIT THE NAIL ON THE HEAD",
+            "word": "BREAK THE ICE",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "🔨🎯",
+            "topicEmoji": "🧊👋",
             "id": "VOC_IDIOMS_L9_Q1",
-            "hint": "DEFINITION: Describe exactly what is causing a situation.",
+            "hint": "DEFINITION: Make people feel more comfortable in a social setting.",
             "options": [
-                "TOOL BOX",
-                "HIT THE NAIL ON THE HEAD",
-                "BUILDING WORK",
-                "SHARP POINT"
+                "COLD WATER",
+                "FROZEN GREETING",
+                "BREAK THE ICE",
+                "WINTER WAVE"
             ],
-            "explanation": "The idiom 'HIT THE NAIL ON THE HEAD' is represented by 🔨🎯.",
-            "correctAnswer": "HIT THE NAIL ON THE HEAD"
+            "explanation": "'BREAK THE ICE' means: Make people feel more comfortable in a social setting. For example: \"She told a joke to break the ice at the meeting.\"",
+            "correctAnswer": "BREAK THE ICE"
         },
         {
-            "word": "COSTS AN ARM AND A LEG",
+            "word": "KEEP YOUR FINGERS CROSSED",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "💰💪🤕",
+            "topicEmoji": "🤞🍀",
             "id": "VOC_IDIOMS_L9_Q2",
-            "hint": "DEFINITION: Very expensive.",
+            "hint": "DEFINITION: Hope for good luck.",
             "options": [
-                "COSTS AN ARM AND A LEG",
-                "HIGH PRICE",
-                "BODY PARTS",
-                "RICH LIFE"
+                "LUCKY CLOVER",
+                "HAND SIGN",
+                "GOOD CHARM",
+                "KEEP YOUR FINGERS CROSSED"
             ],
-            "explanation": "The idiom 'COSTS AN ARM AND A LEG' is represented by 💰💪🤕.",
-            "correctAnswer": "COSTS AN ARM AND A LEG"
+            "explanation": "'KEEP YOUR FINGERS CROSSED' means: Hope for good luck. For example: \"I'll keep my fingers crossed that you pass the exam.\"",
+            "correctAnswer": "KEEP YOUR FINGERS CROSSED"
         },
         {
-            "word": "BITE THE BULLET",
+            "word": "THE EARLY BIRD CATCHES THE WORM",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "😬🔫",
+            "topicEmoji": "🐦🪱",
             "id": "VOC_IDIOMS_L9_Q3",
-            "hint": "DEFINITION: Decide to do something difficult that you have been avoiding.",
+            "hint": "DEFINITION: People who act early gain an advantage.",
             "options": [
-                "HARD FOOD",
-                "WAR ZONE",
-                "METAL TEETH",
-                "BITE THE BULLET"
+                "THE EARLY BIRD CATCHES THE WORM",
+                "MORNING SONG",
+                "SMALL CREATURE",
+                "FEATHER FOOD"
             ],
-            "explanation": "The idiom 'BITE THE BULLET' is represented by 😬🔫.",
-            "correctAnswer": "BITE THE BULLET"
+            "explanation": "'THE EARLY BIRD CATCHES THE WORM' means: People who act early gain an advantage. For example: \"I always arrive an hour early - the early bird catches the worm.\"",
+            "correctAnswer": "THE EARLY BIRD CATCHES THE WORM"
         },
         {
-            "word": "BLESSING IN DISGUISE",
+            "word": "ACTIONS SPEAK LOUDER THAN WORDS",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "😇🎭",
+            "topicEmoji": "🤲🔇",
             "id": "VOC_IDIOMS_L10_Q1",
-            "hint": "DEFINITION: A good thing that seemed bad at first.",
+            "hint": "DEFINITION: What you do matters more than what you say.",
             "options": [
-                "HIDDEN GIFT",
-                "BLESSING IN DISGUISE",
-                "HOLY ACT",
-                "GHOST MASK"
+                "QUIET HANDS",
+                "MUTE TALK",
+                "SILENT ACT",
+                "ACTIONS SPEAK LOUDER THAN WORDS"
             ],
-            "explanation": "The idiom 'BLESSING IN DISGUISE' is represented by 😇🎭.",
-            "correctAnswer": "BLESSING IN DISGUISE"
+            "explanation": "'ACTIONS SPEAK LOUDER THAN WORDS' means: What you do matters more than what you say. For example: \"He didn't apologize, but he helped us move - actions speak louder than words.\"",
+            "correctAnswer": "ACTIONS SPEAK LOUDER THAN WORDS"
         },
         {
-            "word": "LET THE CAT OUT OF THE BAG",
+            "word": "BARKING UP THE WRONG TREE",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "🐈🎒",
+            "topicEmoji": "🐕🌳",
             "id": "VOC_IDIOMS_L10_Q2",
-            "hint": "DEFINITION: Reveal a secret by mistake.",
+            "hint": "DEFINITION: Looking for something in the wrong place.",
             "options": [
-                "PET SHOP",
-                "ANIMAL ESCAPE",
-                "OPEN ZIP",
-                "LET THE CAT OUT OF THE BAG"
+                "BARKING UP THE WRONG TREE",
+                "DOG FOREST",
+                "ANIMAL CLIMB",
+                "WOOD NOISE"
             ],
-            "explanation": "The idiom 'LET THE CAT OUT OF THE BAG' is represented by 🐈🎒.",
-            "correctAnswer": "LET THE CAT OUT OF THE BAG"
+            "explanation": "'BARKING UP THE WRONG TREE' means: Looking for something in the wrong place. For example: \"If you think I took your phone, you're barking up the wrong tree.\"",
+            "correctAnswer": "BARKING UP THE WRONG TREE"
         },
         {
-            "word": "ONCE IN A BLUE MOON",
+            "word": "DON'T COUNT YOUR CHICKENS BEFORE THEY HATCH",
+            "instruction": "Select the correct idiom for the given meaning.",
             "interactionType": "Emojify",
-            "topicEmoji": "🌑🔵",
+            "topicEmoji": "🐔🥚",
             "id": "VOC_IDIOMS_L10_Q3",
-            "hint": "DEFINITION: Very rarely.",
+            "hint": "DEFINITION: Don't celebrate something before it actually happens.",
             "options": [
-                "NIGHT SKY",
-                "ONCE IN A BLUE MOON",
-                "BLUE COLOR",
-                "DARK SPACE"
+                "FARM EGGS",
+                "DON'T COUNT YOUR CHICKENS BEFORE THEY HATCH",
+                "BIRD NEST",
+                "BREAKFAST FOOD"
             ],
-            "explanation": "The idiom 'ONCE IN A BLUE MOON' is represented by 🌑🔵.",
-            "correctAnswer": "ONCE IN A BLUE MOON"
+            "explanation": "'DON'T COUNT YOUR CHICKENS BEFORE THEY HATCH' means: Don't celebrate something before it actually happens. For example: \"We haven't won yet - don't count your chickens before they hatch.\"",
+            "correctAnswer": "DON'T COUNT YOUR CHICKENS BEFORE THEY HATCH"
         }
     ],
     "gameType": "idioms",
