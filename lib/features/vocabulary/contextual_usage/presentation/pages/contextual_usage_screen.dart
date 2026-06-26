@@ -201,24 +201,26 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
                       child: Text(
-                        "USAGE UNFOLD",
+                        quest.instruction?.toUpperCase() ?? "USAGE UNFOLD",
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'RobotoMono',
                           fontSize: 11.sp,
                           color: color,
-                          letterSpacing: 8,
+                          letterSpacing: 2,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                   )
                 : Text(
-                        "USAGE UNFOLD",
+                        quest.instruction?.toUpperCase() ?? "USAGE UNFOLD",
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'RobotoMono',
                           fontSize: 11.sp,
                           color: color,
-                          letterSpacing: 8,
+                          letterSpacing: 2,
                           fontWeight: FontWeight.bold,
                         ),
                       )
@@ -236,7 +238,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                       child: SizedBox(
                         width: constraints.maxWidth - 40.w,
                         child: ContextualUsageCard(
-                          question: quest.question ?? "",
+                          question: quest.prompt ?? "",
                           color: color,
                           isDark: isDark,
                           isAnswered: _isAnswered,
@@ -249,7 +251,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                 : Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.w),
                     child: ContextualUsageCard(
-                      question: quest.question ?? "",
+                      question: quest.prompt ?? "",
                       color: color,
                       isDark: isDark,
                       isAnswered: _isAnswered,

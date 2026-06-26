@@ -2,454 +2,484 @@
     "levels": "21-30",
     "quests": [
         {
-            "word": "ADAPT",
-            "interactionType": "Usage Unfold",
-            "question": "She had to _____ to the new climate.",
-            "hint": "DEFINITION: Adjust to new conditions.",
-            "id": "VOC_CONTEXTUAL_L21_Q1",
-            "options": [
-                "ADAPT",
-                "ADEPT",
-                "ADOPT",
-                "ADJOIN"
-            ],
-            "explanation": "The correct word is 'ADAPT'. She had to _____ to the new climate.",
-            "correctAnswer": "ADAPT"
-        },
-        {
-            "word": "AFFECT",
-            "interactionType": "Usage Unfold",
-            "question": "The news will _____ his decision.",
-            "hint": "DEFINITION: Influence or produce a change.",
-            "id": "VOC_CONTEXTUAL_L21_Q2",
-            "options": [
-                "EFFECT",
-                "ACCEPT",
-                "AFFECT",
-                "ASPECT"
-            ],
-            "explanation": "The correct word is 'AFFECT'. The news will _____ his decision.",
-            "correctAnswer": "AFFECT"
-        },
-        {
-            "word": "ALLUSION",
-            "interactionType": "Usage Unfold",
-            "question": "He made an _____ to the secret.",
-            "hint": "DEFINITION: An indirect or passing reference.",
-            "id": "VOC_CONTEXTUAL_L21_Q3",
-            "options": [
-                "ILLUSION",
-                "ALLUSION",
-                "ELUSION",
-                "COLLUSION"
-            ],
-            "explanation": "The correct word is 'ALLUSION'. He made an _____ to the secret.",
-            "correctAnswer": "ALLUSION"
-        },
-        {
-            "word": "COMPLEMENT",
-            "interactionType": "Usage Unfold",
-            "question": "The wine was a perfect _____ to the meal.",
-            "hint": "DEFINITION: Something that completes or brings to perfection.",
-            "id": "VOC_CONTEXTUAL_L22_Q1",
-            "options": [
-                "COMPLIMENT",
-                "COMPONENT",
-                "COMPLY",
-                "COMPLEMENT"
-            ],
-            "explanation": "The correct word is 'COMPLEMENT'. The wine was a perfect _____ to the meal.",
-            "correctAnswer": "COMPLEMENT"
-        },
-        {
-            "word": "DISCRETE",
-            "interactionType": "Usage Unfold",
-            "question": "The data is divided into _____ categories.",
-            "hint": "DEFINITION: Individually separate and distinct.",
-            "id": "VOC_CONTEXTUAL_L22_Q2",
-            "options": [
-                "DESERT",
-                "DISCREET",
-                "DIRECT",
-                "DISCRETE"
-            ],
-            "explanation": "The correct word is 'DISCRETE'. The data is divided into _____ categories.",
-            "correctAnswer": "DISCRETE"
-        },
-        {
-            "word": "ELICIT",
-            "interactionType": "Usage Unfold",
-            "question": "The teacher tried to _____ a response.",
-            "hint": "DEFINITION: Evoke or draw out a reaction.",
-            "id": "VOC_CONTEXTUAL_L22_Q3",
-            "options": [
-                "EXPLICIT",
-                "ELICIT",
-                "ILLICIT",
-                "ELECT"
-            ],
-            "explanation": "The correct word is 'ELICIT'. The teacher tried to _____ a response.",
-            "correctAnswer": "ELICIT"
-        },
-        {
-            "word": "EMINENT",
-            "interactionType": "Usage Unfold",
-            "question": "She is an _____ scientist in her field.",
-            "hint": "DEFINITION: Famous and respected within a particular sphere.",
-            "id": "VOC_CONTEXTUAL_L23_Q1",
-            "options": [
-                "IMMINENT",
-                "EMINENT",
-                "ELEMENT",
-                "EVIDENT"
-            ],
-            "explanation": "The correct word is 'EMINENT'. She is an _____ scientist in her field.",
-            "correctAnswer": "EMINENT"
-        },
-        {
-            "word": "IMPLY",
-            "interactionType": "Usage Unfold",
-            "question": "What do you mean to _____ by that remark?",
-            "hint": "DEFINITION: Strongly suggest the truth or existence of something not expressly stated.",
-            "id": "VOC_CONTEXTUAL_L23_Q2",
-            "options": [
-                "IMPLY",
-                "INFER",
-                "REPLY",
-                "APPLY"
-            ],
-            "explanation": "The correct word is 'IMPLY'. What do you mean to _____ by that remark?",
-            "correctAnswer": "IMPLY"
-        },
-        {
             "word": "LOOSE",
             "interactionType": "Usage Unfold",
-            "question": "The screw was _____ and needed tightening.",
-            "hint": "DEFINITION: Not firmly or tightly fixed in place.",
-            "id": "VOC_CONTEXTUAL_L23_Q3",
+            "question": "The button on his shirt was hanging by a _____ thread.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: Not firmly attached or held in place.",
+            "id": "VOC_CONTEXTUAL_L21_Q1",
             "options": [
-                "LEASE",
-                "LOUSE",
+                "LOOS",
+                "LOSS",
                 "LOOSE",
                 "LOSE"
             ],
-            "explanation": "The correct word is 'LOOSE'. The screw was _____ and needed tightening.",
+            "explanation": "'Loose' describes the thread barely attached to the shirt. 'Lose' means to no longer have something, which doesn't describe a thread's state.",
             "correctAnswer": "LOOSE"
         },
         {
-            "word": "PRECEDE",
+            "word": "LOSE",
             "interactionType": "Usage Unfold",
-            "question": "A prefix is a letter that _____s a word.",
-            "hint": "DEFINITION: Come before in time, order, or rank.",
-            "id": "VOC_CONTEXTUAL_L24_Q1",
+            "question": "If we don't score soon, we're going to _____ this match.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: To fail to win; to no longer have something.",
+            "id": "VOC_CONTEXTUAL_L21_Q2",
             "options": [
-                "PREDICT",
-                "PRECEDE",
-                "PROCEED",
-                "PRESIDE"
+                "LOSE",
+                "LOOZE",
+                "LOOSE",
+                "LOOSS"
             ],
-            "explanation": "The correct word is 'PRECEDE'. A prefix is a letter that _____s a word.",
-            "correctAnswer": "PRECEDE"
-        },
-        {
-            "word": "PRINCIPAL",
-            "interactionType": "Usage Unfold",
-            "question": "The _____ reason for the change was cost.",
-            "hint": "DEFINITION: First in order of importance; main.",
-            "id": "VOC_CONTEXTUAL_L24_Q2",
-            "options": [
-                "PRINCIPLE",
-                "PRINCIPAL",
-                "PRINCE",
-                "PRACTICAL"
-            ],
-            "explanation": "The correct word is 'PRINCIPAL'. The _____ reason for the change was cost.",
-            "correctAnswer": "PRINCIPAL"
-        },
-        {
-            "word": "STATIONARY",
-            "interactionType": "Usage Unfold",
-            "question": "The car remained _____ at the light.",
-            "hint": "DEFINITION: Not moving or not intended to be moved.",
-            "id": "VOC_CONTEXTUAL_L24_Q3",
-            "options": [
-                "STABILITY",
-                "STATIONARY",
-                "STATIONERY",
-                "STANDARD"
-            ],
-            "explanation": "The correct word is 'STATIONARY'. The car remained _____ at the light.",
-            "correctAnswer": "STATIONARY"
-        },
-        {
-            "word": "ADVERSE",
-            "interactionType": "Usage Unfold",
-            "question": "The drug had _____ side effects.",
-            "hint": "DEFINITION: Preventing success or development; harmful; unfavorable.",
-            "id": "VOC_CONTEXTUAL_L25_Q1",
-            "options": [
-                "AVERSE",
-                "ADVISE",
-                "REVERSE",
-                "ADVERSE"
-            ],
-            "explanation": "The correct word is 'ADVERSE'. The drug had _____ side effects.",
-            "correctAnswer": "ADVERSE"
-        },
-        {
-            "word": "ASSURE",
-            "interactionType": "Usage Unfold",
-            "question": "I can _____ you that everything is fine.",
-            "hint": "DEFINITION: Tell someone something positively or confidently to dispel any doubts.",
-            "id": "VOC_CONTEXTUAL_L25_Q2",
-            "options": [
-                "ASSESS",
-                "ENSURE",
-                "INSURE",
-                "ASSURE"
-            ],
-            "explanation": "The correct word is 'ASSURE'. I can _____ you that everything is fine.",
-            "correctAnswer": "ASSURE"
-        },
-        {
-            "word": "CONSCIENCE",
-            "interactionType": "Usage Unfold",
-            "question": "He had a guilty _____ after the lie.",
-            "hint": "DEFINITION: An inner feeling or voice viewed as acting as a guide to the rightness or wrongness of one's behavior.",
-            "id": "VOC_CONTEXTUAL_L25_Q3",
-            "options": [
-                "CONSCIENCE",
-                "CONSEQUENCE",
-                "CONSCIOUS",
-                "CONCURRENCE"
-            ],
-            "explanation": "The correct word is 'CONSCIENCE'. He had a guilty _____ after the lie.",
-            "correctAnswer": "CONSCIENCE"
-        },
-        {
-            "word": "ELUSIVE",
-            "interactionType": "Usage Unfold",
-            "question": "The criminal remained _____ for months.",
-            "hint": "DEFINITION: Difficult to find, catch, or achieve.",
-            "id": "VOC_CONTEXTUAL_L26_Q1",
-            "options": [
-                "EXCLUSIVE",
-                "INCLUSIVE",
-                "ILLUSIVE",
-                "ELUSIVE"
-            ],
-            "explanation": "The correct word is 'ELUSIVE'. The criminal remained _____ for months.",
-            "correctAnswer": "ELUSIVE"
-        },
-        {
-            "word": "FLARE",
-            "interactionType": "Usage Unfold",
-            "question": "The signal _____ lit up the night sky.",
-            "hint": "DEFINITION: A sudden brief burst of bright flame or light.",
-            "id": "VOC_CONTEXTUAL_L26_Q2",
-            "options": [
-                "FLARE",
-                "FLAIR",
-                "FLOUR",
-                "FLOOR"
-            ],
-            "explanation": "The correct word is 'FLARE'. The signal _____ lit up the night sky.",
-            "correctAnswer": "FLARE"
-        },
-        {
-            "word": "INFER",
-            "interactionType": "Usage Unfold",
-            "question": "What can we _____ from these results?",
-            "hint": "DEFINITION: Deduce or conclude (information) from evidence and reasoning rather than from explicit statements.",
-            "id": "VOC_CONTEXTUAL_L26_Q3",
-            "options": [
-                "INFER",
-                "IMPLY",
-                "DEFER",
-                "REFER"
-            ],
-            "explanation": "The correct word is 'INFER'. What can we _____ from these results?",
-            "correctAnswer": "INFER"
+            "explanation": "'Lose' means to fail to win, fitting the worry about the match. 'Loose' describes something not tightly fixed, which isn't an action.",
+            "correctAnswer": "LOSE"
         },
         {
             "word": "PEAK",
             "interactionType": "Usage Unfold",
-            "question": "They reached the _____ of the mountain.",
-            "hint": "DEFINITION: The pointed top of a mountain.",
-            "id": "VOC_CONTEXTUAL_L27_Q1",
+            "question": "Snow covered the _____ of the mountain even in summer.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: The pointed top of a mountain or the highest point of something.",
+            "id": "VOC_CONTEXTUAL_L21_Q3",
             "options": [
-                "PACK",
                 "PIQUE",
+                "PEAK",
                 "PEEK",
-                "PEAK"
+                "PEAKE"
             ],
-            "explanation": "The correct word is 'PEAK'. They reached the _____ of the mountain.",
+            "explanation": "'Peak' names the mountain's highest point. 'Peek' means a quick glance, and 'pique' means to provoke interest, so neither names a summit.",
             "correctAnswer": "PEAK"
         },
         {
-            "word": "RELUCTANT",
+            "word": "PEEK",
             "interactionType": "Usage Unfold",
-            "question": "He was _____ to leave the party.",
-            "hint": "DEFINITION: Unwilling and hesitant; disinclined.",
+            "question": "She took a quick _____ inside the box before her birthday.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: A quick or secret look at something.",
+            "id": "VOC_CONTEXTUAL_L22_Q1",
+            "options": [
+                "PEAK",
+                "PIQUE",
+                "PEEK",
+                "PEEKE"
+            ],
+            "explanation": "'Peek' means a quick glance, fitting her looking inside the gift box. 'Peak' names a mountaintop, which doesn't describe a glance.",
+            "correctAnswer": "PEEK"
+        },
+        {
+            "word": "VAIN",
+            "interactionType": "Usage Unfold",
+            "question": "He was too _____ to admit his haircut looked bad.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: Having an excessively high opinion of one's appearance.",
+            "id": "VOC_CONTEXTUAL_L22_Q2",
+            "options": [
+                "VAIN",
+                "VEIN",
+                "VAYNE",
+                "VANE"
+            ],
+            "explanation": "'Vain' describes someone overly proud of how they look. 'Vein' is a blood vessel, which doesn't describe personality.",
+            "correctAnswer": "VAIN"
+        },
+        {
+            "word": "CHORD",
+            "interactionType": "Usage Unfold",
+            "question": "The guitarist strummed the opening _____ of the song.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: Several musical notes played together.",
+            "id": "VOC_CONTEXTUAL_L22_Q3",
+            "options": [
+                "CHOARD",
+                "CORED",
+                "CORD",
+                "CHORD"
+            ],
+            "explanation": "'Chord' names the group of notes the guitarist played. 'Cord' refers to a length of wire or rope, not a music term.",
+            "correctAnswer": "CHORD"
+        },
+        {
+            "word": "DESERT",
+            "interactionType": "Usage Unfold",
+            "question": "The camels crossed the hot, dry _____ for three days.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: A large area of dry land with little rainfall.",
+            "id": "VOC_CONTEXTUAL_L23_Q1",
+            "options": [
+                "DESERTE",
+                "DISSERT",
+                "DESSERT",
+                "DESERT"
+            ],
+            "explanation": "'Desert' names the dry land the camels crossed. 'Dessert' is a sweet course after a meal, which has nothing to do with terrain.",
+            "correctAnswer": "DESERT"
+        },
+        {
+            "word": "DESSERT",
+            "interactionType": "Usage Unfold",
+            "question": "For _____, we shared a slice of chocolate cake.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: A sweet dish eaten at the end of a meal.",
+            "id": "VOC_CONTEXTUAL_L23_Q2",
+            "options": [
+                "DESSERT",
+                "DESSERTE",
+                "DESERTT",
+                "DESERT"
+            ],
+            "explanation": "'Dessert' names the sweet course after the meal. 'Desert' refers to a dry, sandy region, which doesn't fit a meal course.",
+            "correctAnswer": "DESSERT"
+        },
+        {
+            "word": "ACCEPT",
+            "interactionType": "Usage Unfold",
+            "question": "She decided to _____ the job offer on Monday.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: To agree to receive or take something offered.",
+            "id": "VOC_CONTEXTUAL_L23_Q3",
+            "options": [
+                "EXCEPT",
+                "ACCEPT",
+                "ASPECT",
+                "ACSEPT"
+            ],
+            "explanation": "'Accept' means to agree to take the offer. 'Except' means 'apart from', which can't replace the act of agreeing.",
+            "correctAnswer": "ACCEPT"
+        },
+        {
+            "word": "EXCEPT",
+            "interactionType": "Usage Unfold",
+            "question": "Everyone passed the test _____ for two students.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: Not including; apart from.",
+            "id": "VOC_CONTEXTUAL_L24_Q1",
+            "options": [
+                "ASPECT",
+                "ACCEPT",
+                "EXSEPT",
+                "EXCEPT"
+            ],
+            "explanation": "'Except' excludes the two students from the group who passed. 'Accept' means to agree to take something, which doesn't fit excluding people.",
+            "correctAnswer": "EXCEPT"
+        },
+        {
+            "word": "ADVICE",
+            "interactionType": "Usage Unfold",
+            "question": "My grandmother always gives helpful _____ about cooking.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: A suggestion about what someone should do (a noun).",
+            "id": "VOC_CONTEXTUAL_L24_Q2",
+            "options": [
+                "ADVYCE",
+                "ADVISD",
+                "ADVICE",
+                "ADVISE"
+            ],
+            "explanation": "'Advice' is the noun for the helpful suggestions given. 'Advise' is the verb form, meaning to give advice, so it can't follow 'helpful' as a noun would.",
+            "correctAnswer": "ADVICE"
+        },
+        {
+            "word": "ADVISE",
+            "interactionType": "Usage Unfold",
+            "question": "The lawyer will _____ you on which papers to sign.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: To give someone guidance or recommendations (a verb).",
+            "id": "VOC_CONTEXTUAL_L24_Q3",
+            "options": [
+                "ADVYSE",
+                "ADVISE",
+                "ADVICE",
+                "ADVIZE"
+            ],
+            "explanation": "'Advise' is the verb meaning to give guidance. 'Advice' is the noun form, which can't act as the main verb in this sentence.",
+            "correctAnswer": "ADVISE"
+        },
+        {
+            "word": "BREATH",
+            "interactionType": "Usage Unfold",
+            "question": "He took a deep _____ before diving into the pool.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: The air taken into and let out of the lungs (a noun).",
+            "id": "VOC_CONTEXTUAL_L25_Q1",
+            "options": [
+                "BRETH",
+                "BREATH",
+                "BREATHE",
+                "BREATHH"
+            ],
+            "explanation": "'Breath' is the noun for the air taken in before diving. 'Breathe' is the verb form, which can't follow 'deep' as a noun would.",
+            "correctAnswer": "BREATH"
+        },
+        {
+            "word": "BREATHE",
+            "interactionType": "Usage Unfold",
+            "question": "Try to _____ slowly to help calm your nerves.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: To take air into and let it out of the lungs (a verb).",
+            "id": "VOC_CONTEXTUAL_L25_Q2",
+            "options": [
+                "BREEATH",
+                "BREATH",
+                "BREATHE",
+                "BREETHE"
+            ],
+            "explanation": "'Breathe' is the verb describing the action of taking in air. 'Breath' is the noun form, which can't act as the main verb here.",
+            "correctAnswer": "BREATHE"
+        },
+        {
+            "word": "CLOTHES",
+            "interactionType": "Usage Unfold",
+            "question": "She packed warm _____ for the trip to the mountains.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: Items worn to cover the body, like shirts and pants.",
+            "id": "VOC_CONTEXTUAL_L25_Q3",
+            "options": [
+                "CLOTHES",
+                "CLOSE",
+                "CLOTHE",
+                "CLOATHS"
+            ],
+            "explanation": "'Clothes' names the items packed for the cold trip. 'Close' means nearby or to shut something, which doesn't name garments.",
+            "correctAnswer": "CLOTHES"
+        },
+        {
+            "word": "CLOSE",
+            "interactionType": "Usage Unfold",
+            "question": "Could you please _____ the window? It's getting cold.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: To shut something.",
+            "id": "VOC_CONTEXTUAL_L26_Q1",
+            "options": [
+                "CLOAS",
+                "CLOSE",
+                "CLOZE",
+                "CLOTHES"
+            ],
+            "explanation": "'Close' means to shut the window, fitting the request. 'Clothes' refers to garments, which can't be 'shut'.",
+            "correctAnswer": "CLOSE"
+        },
+        {
+            "word": "QUIET",
+            "interactionType": "Usage Unfold",
+            "question": "The library stays _____ so students can concentrate.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: Making little or no noise.",
+            "id": "VOC_CONTEXTUAL_L26_Q2",
+            "options": [
+                "QUIT",
+                "QUIET",
+                "QUIETE",
+                "QUITE"
+            ],
+            "explanation": "'Quiet' describes the library's low noise level. 'Quite' means 'very' or 'completely', which doesn't describe sound level.",
+            "correctAnswer": "QUIET"
+        },
+        {
+            "word": "QUITE",
+            "interactionType": "Usage Unfold",
+            "question": "The soup was _____ spicy, more than I expected.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: To a considerable extent; fairly or very.",
+            "id": "VOC_CONTEXTUAL_L26_Q3",
+            "options": [
+                "QUITT",
+                "QUIETT",
+                "QUITE",
+                "QUIET"
+            ],
+            "explanation": "'Quite' intensifies how spicy the soup was. 'Quiet' describes low noise, which doesn't fit describing spiciness.",
+            "correctAnswer": "QUITE"
+        },
+        {
+            "word": "LATER",
+            "interactionType": "Usage Unfold",
+            "question": "Let's finish this conversation _____, after dinner.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: At a future or more distant time.",
+            "id": "VOC_CONTEXTUAL_L27_Q1",
+            "options": [
+                "LATTER",
+                "LAITER",
+                "LATTERR",
+                "LATER"
+            ],
+            "explanation": "'Later' refers to a future time after dinner. 'Latter' refers to the second of two things mentioned, which doesn't describe time.",
+            "correctAnswer": "LATER"
+        },
+        {
+            "word": "LATTER",
+            "interactionType": "Usage Unfold",
+            "question": "Of the two essays, the _____ argument was far more convincing.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: The second of two things previously mentioned.",
             "id": "VOC_CONTEXTUAL_L27_Q2",
             "options": [
-                "RETICENT",
-                "RELUCTANT",
-                "RELIANT",
-                "RELEVANT"
+                "LATER'S",
+                "LATER",
+                "LATTER",
+                "LATTAR"
             ],
-            "explanation": "The correct word is 'RELUCTANT'. He was _____ to leave the party.",
-            "correctAnswer": "RELUCTANT"
+            "explanation": "'Latter' refers to the second essay just mentioned. 'Later' refers to future time, which doesn't point back to one of two items.",
+            "correctAnswer": "LATTER"
         },
         {
-            "word": "ADAPT",
+            "word": "PASSED",
             "interactionType": "Usage Unfold",
-            "question": "She had to _____ to the new climate.",
-            "hint": "DEFINITION: Adjust to new conditions.",
+            "question": "She _____ the driving test on her first try.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: Succeeded in a test (past tense of 'pass').",
             "id": "VOC_CONTEXTUAL_L27_Q3",
             "options": [
-                "ADEPT",
-                "ADOPT",
-                "ADAPT",
-                "ADJOIN"
+                "PASSD",
+                "PAST",
+                "PASSED",
+                "PASTE"
             ],
-            "explanation": "The correct word is 'ADAPT'. She had to _____ to the new climate.",
-            "correctAnswer": "ADAPT"
+            "explanation": "'Passed' shows she succeeded in the test. 'Past' refers to a time before now, which can't function as the main verb here.",
+            "correctAnswer": "PASSED"
         },
         {
-            "word": "AFFECT",
+            "word": "PAST",
             "interactionType": "Usage Unfold",
-            "question": "The news will _____ his decision.",
-            "hint": "DEFINITION: Influence or produce a change.",
+            "question": "He walked _____ the bakery without stopping.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: Beyond or further than a particular point.",
             "id": "VOC_CONTEXTUAL_L28_Q1",
             "options": [
-                "ACCEPT",
-                "EFFECT",
-                "AFFECT",
-                "ASPECT"
+                "PASSED",
+                "PASTT",
+                "PASTE",
+                "PAST"
             ],
-            "explanation": "The correct word is 'AFFECT'. The news will _____ his decision.",
-            "correctAnswer": "AFFECT"
+            "explanation": "'Past' shows movement beyond the bakery. 'Passed' is the verb form for succeeding or moving by, but here we need the preposition.",
+            "correctAnswer": "PAST"
         },
         {
-            "word": "ALLUSION",
+            "word": "COMPLIMENT",
             "interactionType": "Usage Unfold",
-            "question": "He made an _____ to the secret.",
-            "hint": "DEFINITION: An indirect or passing reference.",
+            "question": "Her boss gave her a nice _____ on the presentation.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: A polite expression of praise or admiration.",
             "id": "VOC_CONTEXTUAL_L28_Q2",
             "options": [
-                "COLLUSION",
-                "ALLUSION",
-                "ILLUSION",
-                "ELUSION"
+                "COMPLEMENT",
+                "COMPLIMENT",
+                "COMPLY",
+                "COMPONENT"
             ],
-            "explanation": "The correct word is 'ALLUSION'. He made an _____ to the secret.",
-            "correctAnswer": "ALLUSION"
+            "explanation": "'Compliment' names the praise given by the boss. 'Complement' means something that completes another thing, which isn't praise.",
+            "correctAnswer": "COMPLIMENT"
         },
         {
-            "word": "COMPLEMENT",
+            "word": "COUNCIL",
             "interactionType": "Usage Unfold",
-            "question": "The wine was a perfect _____ to the meal.",
-            "hint": "DEFINITION: Something that completes or brings to perfection.",
+            "question": "The city _____ voted to build a new park downtown.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: A group of people elected or chosen to manage local affairs.",
             "id": "VOC_CONTEXTUAL_L28_Q3",
             "options": [
-                "COMPLY",
-                "COMPONENT",
-                "COMPLIMENT",
-                "COMPLEMENT"
+                "COUNSIL",
+                "COUNCIL",
+                "COUNSEL",
+                "COUNCEL"
             ],
-            "explanation": "The correct word is 'COMPLEMENT'. The wine was a perfect _____ to the meal.",
-            "correctAnswer": "COMPLEMENT"
+            "explanation": "'Council' names the governing group that voted. 'Counsel' means advice or to advise, which doesn't name a group of officials.",
+            "correctAnswer": "COUNCIL"
         },
         {
-            "word": "DISCRETE",
+            "word": "COUNSEL",
             "interactionType": "Usage Unfold",
-            "question": "The data is divided into _____ categories.",
-            "hint": "DEFINITION: Individually separate and distinct.",
+            "question": "The therapist offered _____ to help him manage his stress.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: Advice, especially professional guidance.",
             "id": "VOC_CONTEXTUAL_L29_Q1",
             "options": [
-                "DISCREET",
-                "DIRECT",
-                "DESERT",
-                "DISCRETE"
+                "COUNSEL",
+                "COWNSEL",
+                "COUNCIL",
+                "COUNSAL"
             ],
-            "explanation": "The correct word is 'DISCRETE'. The data is divided into _____ categories.",
-            "correctAnswer": "DISCRETE"
+            "explanation": "'Counsel' names the professional advice given. 'Council' refers to a governing group, which doesn't describe advice.",
+            "correctAnswer": "COUNSEL"
         },
         {
-            "word": "ELICIT",
+            "word": "FLEW",
             "interactionType": "Usage Unfold",
-            "question": "The teacher tried to _____ a response.",
-            "hint": "DEFINITION: Evoke or draw out a reaction.",
+            "question": "We _____ to visit our grandparents last Christmas.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: Traveled through the air (past tense of 'fly').",
             "id": "VOC_CONTEXTUAL_L29_Q2",
             "options": [
-                "EXPLICIT",
-                "ILLICIT",
-                "ELICIT",
-                "ELECT"
+                "FLUE",
+                "FLEW",
+                "FLU",
+                "FLEWE"
             ],
-            "explanation": "The correct word is 'ELICIT'. The teacher tried to _____ a response.",
-            "correctAnswer": "ELICIT"
+            "explanation": "'Flew' is the past tense describing air travel last Christmas. 'Flu' is an illness, and 'flue' is a chimney pipe, so neither fits travel.",
+            "correctAnswer": "FLEW"
         },
         {
-            "word": "EMINENT",
+            "word": "ALTAR",
             "interactionType": "Usage Unfold",
-            "question": "She is an _____ scientist in her field.",
-            "hint": "DEFINITION: Famous and respected within a particular sphere.",
+            "question": "The bride walked slowly toward the _____ during the ceremony.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: A raised platform used in a religious ceremony.",
             "id": "VOC_CONTEXTUAL_L29_Q3",
             "options": [
-                "EVIDENT",
-                "IMMINENT",
-                "EMINENT",
-                "ELEMENT"
+                "ALTERR",
+                "ALTER",
+                "ALTAIR",
+                "ALTAR"
             ],
-            "explanation": "The correct word is 'EMINENT'. She is an _____ scientist in her field.",
-            "correctAnswer": "EMINENT"
+            "explanation": "'Altar' names the platform at the front of the ceremony. 'Alter' means to change something, which doesn't name a physical structure.",
+            "correctAnswer": "ALTAR"
         },
         {
-            "word": "IMPLY",
+            "word": "ALTER",
             "interactionType": "Usage Unfold",
-            "question": "What do you mean to _____ by that remark?",
-            "hint": "DEFINITION: Strongly suggest the truth or existence of something not expressly stated.",
+            "question": "The tailor agreed to _____ the suit so it would fit better.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: To change something slightly.",
             "id": "VOC_CONTEXTUAL_L30_Q1",
             "options": [
-                "INFER",
-                "REPLY",
-                "IMPLY",
-                "APPLY"
+                "ALTERE",
+                "ALTER",
+                "ALTOR",
+                "ALTAR"
             ],
-            "explanation": "The correct word is 'IMPLY'. What do you mean to _____ by that remark?",
-            "correctAnswer": "IMPLY"
+            "explanation": "'Alter' means to change the suit's fit. 'Altar' names a ceremonial platform, which isn't an action a tailor performs.",
+            "correctAnswer": "ALTER"
         },
         {
-            "word": "LOOSE",
+            "word": "BOARD",
             "interactionType": "Usage Unfold",
-            "question": "The screw was _____ and needed tightening.",
-            "hint": "DEFINITION: Not firmly or tightly fixed in place.",
+            "question": "The company's _____ of directors meets every quarter.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: A group of people who manage or advise an organization.",
             "id": "VOC_CONTEXTUAL_L30_Q2",
             "options": [
-                "LOUSE",
-                "LEASE",
-                "LOSE",
-                "LOOSE"
+                "BOARD",
+                "BORD",
+                "BORED",
+                "BOARDE"
             ],
-            "explanation": "The correct word is 'LOOSE'. The screw was _____ and needed tightening.",
-            "correctAnswer": "LOOSE"
+            "explanation": "'Board' names the group managing the company. 'Bored' describes a feeling of being uninterested, which doesn't name a committee.",
+            "correctAnswer": "BOARD"
         },
         {
-            "word": "PRECEDE",
+            "word": "CEREAL",
             "interactionType": "Usage Unfold",
-            "question": "A prefix is a letter that _____s a word.",
-            "hint": "DEFINITION: Come before in time, order, or rank.",
+            "question": "He poured milk over his bowl of _____ this morning.",
+            "instruction": "Select the correct word to complete the sentence.",
+            "hint": "DEFINITION: A breakfast food made from grain.",
             "id": "VOC_CONTEXTUAL_L30_Q3",
             "options": [
-                "PRESIDE",
-                "PRECEDE",
-                "PROCEED",
-                "PREDICT"
+                "SERIEL",
+                "SERIAL",
+                "CEREAL",
+                "CEARIAL"
             ],
-            "explanation": "The correct word is 'PRECEDE'. A prefix is a letter that _____s a word.",
-            "correctAnswer": "PRECEDE"
+            "explanation": "'Cereal' names the breakfast food with milk poured over it. 'Serial' describes something happening in a series, which isn't food.",
+            "correctAnswer": "CEREAL"
         }
     ],
     "gameType": "contextualUsage",
