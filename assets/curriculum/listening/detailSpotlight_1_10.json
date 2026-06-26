@@ -6,14 +6,15 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L1_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'detective' was mentioned.",
-            "textToSpeak": "The detective encrypts the device silently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the person's title or job mentioned in the audio.",
+            "explanation": "The correct person is detective - a person who investigates crimes, mysteries, or hidden information. The sentence tells us she works as a part-time detective.",
+            "textToSpeak": "She works as a part-time detective.",
             "targetDetail": "detective",
             "options": [
+                "robot",
+                "researcher",
                 "technician",
-                "analyst",
-                "scout",
                 "detective"
             ],
             "correctAnswerIndex": 3,
@@ -22,15 +23,16 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L1_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'restores' was mentioned.",
-            "textToSpeak": "The pilot restores the database efficiently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to what is happening, not who or what is involved.",
+            "explanation": "You heard restores. This verb means to bring something back to its original or working condition. In the audio, he restores old photos on his computer.",
+            "textToSpeak": "He restores old photos on his computer.",
             "targetDetail": "restores",
             "options": [
                 "restores",
-                "encrypts",
-                "locates",
-                "transfers"
+                "measures",
+                "scans",
+                "secures"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
@@ -38,63 +40,67 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L1_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'archive' was mentioned.",
-            "textToSpeak": "The engineer restores the archive immediately.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to the thing, not who is using it or what they do.",
+            "explanation": "The correct object is archive - a collection of stored records, files, or documents kept for future reference. In the audio, she keeps an archive of family pictures.",
+            "textToSpeak": "She keeps an archive of family pictures.",
             "targetDetail": "archive",
             "options": [
-                "node",
-                "drone",
                 "archive",
-                "signal"
+                "engine",
+                "sensor",
+                "terminal"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L2_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'scout' was mentioned.",
-            "textToSpeak": "The scout validates the device immediately.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which person's name or role do you hear in the sentence?",
+            "explanation": "Scout is correct - a person who goes ahead to gather information or find the best option. In the sentence, my neighbor works as a talent scout.",
+            "textToSpeak": "My neighbor works as a talent scout.",
             "targetDetail": "scout",
             "options": [
-                "commander",
-                "artist",
                 "scout",
-                "hero"
+                "droid",
+                "mentor",
+                "teacher"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L2_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'analyzes' was mentioned.",
-            "textToSpeak": "The artist analyzes the database steadily.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the action being performed in the audio.",
+            "explanation": "Analyzes is the action - to examine something carefully in detail to understand its parts or meaning. In the sentence, she analyzes the weather report every morning.",
+            "textToSpeak": "She analyzes the weather report every morning.",
             "targetDetail": "analyzes",
             "options": [
-                "repairs",
-                "restores",
-                "analyzes",
-                "observes"
+                "encrypts",
+                "activates",
+                "deploys",
+                "analyzes"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L2_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'circuit' was mentioned.",
-            "textToSpeak": "The pilot creates the circuit carefully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the object or concept named in the sentence.",
+            "explanation": "Circuit is correct - a closed path that lets electricity flow through to power a device. In the sentence, the lamp has a broken circuit inside.",
+            "textToSpeak": "The lamp has a broken circuit inside.",
             "targetDetail": "circuit",
             "options": [
                 "circuit",
                 "module",
-                "terminal",
-                "signal"
+                "code",
+                "terminal"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
@@ -102,14 +108,15 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L3_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'technician' was mentioned.",
-            "textToSpeak": "The technician analyzes the data efficiently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to who the sentence is about.",
+            "explanation": "You heard technician: a person skilled in the practical use of technology or machinery. The audio shows the school has a new IT technician.",
+            "textToSpeak": "The school has a new IT technician.",
             "targetDetail": "technician",
             "options": [
-                "student",
-                "researcher",
-                "droid",
+                "hero",
+                "commander",
+                "artist",
                 "technician"
             ],
             "correctAnswerIndex": 3,
@@ -118,110 +125,117 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L3_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'measures' was mentioned.",
-            "textToSpeak": "The technician measures the circuit securely.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the doing word, not the subject or object.",
+            "explanation": "Measures is the action - to determine the size, amount, or degree of something. In the sentence, he measures the classroom door carefully.",
+            "textToSpeak": "He measures the classroom door carefully.",
             "targetDetail": "measures",
             "options": [
-                "creates",
-                "transfers",
+                "encrypts",
                 "builds",
-                "measures"
+                "measures",
+                "deploys"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L3_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'device' was mentioned.",
-            "textToSpeak": "The robot repairs the device rapidly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the specific thing described in the audio.",
+            "explanation": "You heard device - a small machine or tool designed to perform a specific job. The audio describes the teacher uses a device in class.",
+            "textToSpeak": "The teacher uses a device in class.",
             "targetDetail": "device",
             "options": [
-                "archive",
-                "system",
-                "database",
-                "device"
+                "signal",
+                "software",
+                "device",
+                "data"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L4_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'technician' was mentioned.",
-            "textToSpeak": "The technician observes the network securely.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the person, not the action or the object they mention.",
+            "explanation": "The correct person is technician - a person skilled in the practical use of technology or machinery. The sentence tells us the technician fixes computers at our school.",
+            "textToSpeak": "The technician fixes computers at our school.",
             "targetDetail": "technician",
             "options": [
-                "teacher",
-                "scout",
-                "artist",
-                "technician"
+                "hacker",
+                "droid",
+                "technician",
+                "explorer"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L4_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'restores' was mentioned.",
-            "textToSpeak": "The traveler restores the chip instantly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for what is happening, not to whom or with what.",
+            "explanation": "The action is restores, meaning to bring something back to its original or working condition. Here, she restores deleted files on the laptop.",
+            "textToSpeak": "She restores deleted files on the laptop.",
             "targetDetail": "restores",
             "options": [
+                "creates",
                 "restores",
-                "launches",
                 "transfers",
-                "evaluates"
+                "analyzes"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L4_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'software' was mentioned.",
-            "textToSpeak": "The commander secures the software effectively.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word names a thing, not a person or an action.",
+            "explanation": "You heard software - the programs and instructions that tell a computer how to operate. The audio describes we use learning software in every lesson.",
+            "textToSpeak": "We use learning software in every lesson.",
             "targetDetail": "software",
             "options": [
+                "chip",
+                "signal",
                 "software",
-                "code",
-                "system",
-                "circuit"
+                "engine"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L5_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'engineer' was mentioned.",
-            "textToSpeak": "The engineer monitors the archive effectively.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word here is a person's title or role.",
+            "explanation": "You heard engineer: a person who designs, builds, or maintains machines or technical systems. The audio shows our company hires a skilled software engineer.",
+            "textToSpeak": "Our company hires a skilled software engineer.",
             "targetDetail": "engineer",
             "options": [
-                "student",
-                "hacker",
-                "researcher",
-                "engineer"
+                "engineer",
+                "mentor",
+                "droid",
+                "teacher"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L5_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'activates' was mentioned.",
-            "textToSpeak": "The pilot activates the module automatically.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word describes an action or activity.",
+            "explanation": "You heard activates. This verb means to start or switch something on so it begins to work. In the audio, he activates the security system each evening.",
+            "textToSpeak": "He activates the security system each evening.",
             "targetDetail": "activates",
             "options": [
-                "encrypts",
-                "creates",
+                "measures",
                 "secures",
+                "analyzes",
                 "activates"
             ],
             "correctAnswerIndex": 3,
@@ -230,126 +244,134 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L5_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'circuit' was mentioned.",
-            "textToSpeak": "The artist locates the circuit expertly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the name of the thing or object mentioned.",
+            "explanation": "You heard circuit - a closed path that lets electricity flow through to power a device. The audio describes the engineer tests the main circuit daily.",
+            "textToSpeak": "The engineer tests the main circuit daily.",
             "targetDetail": "circuit",
             "options": [
-                "protocol",
-                "circuit",
-                "device",
-                "portal"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L6_Q1",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'technician' was mentioned.",
-            "textToSpeak": "The technician builds the network instantly.",
-            "targetDetail": "technician",
-            "options": [
-                "student",
-                "artist",
-                "robot",
-                "technician"
+                "signal",
+                "database",
+                "portal",
+                "circuit"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
-            "id": "LIS_DETAILSPOTLIGHT_L6_Q2",
+            "id": "LIS_DETAILSPOTLIGHT_L6_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'updates' was mentioned.",
-            "textToSpeak": "The expert updates the drone consistently.",
-            "targetDetail": "updates",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the type of person described in the sentence.",
+            "explanation": "Technician is correct - a person skilled in the practical use of technology or machinery. In the sentence, the technician checks the servers every day.",
+            "textToSpeak": "The technician checks the servers every day.",
+            "targetDetail": "technician",
             "options": [
-                "updates",
-                "transfers",
-                "observes",
-                "evaluates"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L6_Q3",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'circuit' was mentioned.",
-            "textToSpeak": "The hacker creates the circuit smoothly.",
-            "targetDetail": "circuit",
-            "options": [
-                "portal",
-                "circuit",
-                "node",
-                "system"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L7_Q1",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'detective' was mentioned.",
-            "textToSpeak": "The detective measures the portal instantly.",
-            "targetDetail": "detective",
-            "options": [
-                "detective",
-                "student",
-                "teacher",
-                "pilot"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L7_Q2",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'sends' was mentioned.",
-            "textToSpeak": "The technician sends the code swiftly.",
-            "targetDetail": "sends",
-            "options": [
-                "sends",
-                "updates",
-                "deploys",
-                "secures"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L7_Q3",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'system' was mentioned.",
-            "textToSpeak": "The commander monitors the system swiftly.",
-            "targetDetail": "system",
-            "options": [
-                "satellite",
-                "software",
-                "system",
-                "code"
+                "hero",
+                "mentor",
+                "technician",
+                "detective"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
+            "id": "LIS_DETAILSPOTLIGHT_L6_Q2",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the action word - what is the person or thing doing?",
+            "explanation": "You heard updates. This verb means to make something current by adding new or recent information. In the audio, she updates the company website each morning.",
+            "textToSpeak": "She updates the company website each morning.",
+            "targetDetail": "updates",
+            "options": [
+                "sends",
+                "creates",
+                "updates",
+                "encrypts"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L6_Q3",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the item, not the person or action described.",
+            "explanation": "Circuit is correct - a closed path that lets electricity flow through to power a device. In the sentence, he replaces a damaged circuit in the machine.",
+            "textToSpeak": "He replaces a damaged circuit in the machine.",
+            "targetDetail": "circuit",
+            "options": [
+                "circuit",
+                "portal",
+                "terminal",
+                "module"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L7_Q1",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the name or role of the person in the sentence.",
+            "explanation": "The person mentioned is detective. A person who investigates crimes, mysteries, or hidden information. Here, a detective travels for work each week.",
+            "textToSpeak": "A detective travels for work each week.",
+            "targetDetail": "detective",
+            "options": [
+                "scientist",
+                "detective",
+                "robot",
+                "hero"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L7_Q2",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the verb, not the person or the thing they mention.",
+            "explanation": "Sends is the action - to cause something to go or be taken from one place to another. In the sentence, the agent sends booking details by email.",
+            "textToSpeak": "The agent sends travel booking details by email.",
+            "targetDetail": "sends",
+            "options": [
+                "builds",
+                "monitors",
+                "sends",
+                "restores"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L7_Q3",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which object or thing do you hear in the sentence?",
+            "explanation": "You heard system - a set of connected parts that work together to carry out a function. The audio describes the airport uses a modern check-in system.",
+            "textToSpeak": "The airport uses a modern check-in system.",
+            "targetDetail": "system",
+            "options": [
+                "chip",
+                "data",
+                "engine",
+                "system"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
+        },
+        {
             "id": "LIS_DETAILSPOTLIGHT_L8_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'hacker' was mentioned.",
-            "textToSpeak": "The hacker repairs the network silently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on who is being described, not what they do or use.",
+            "explanation": "You heard hacker: a person who finds and exploits weaknesses in computer systems. The audio shows the airport caught a hacker last summer.",
+            "textToSpeak": "The airport caught a hacker last summer.",
             "targetDetail": "hacker",
             "options": [
-                "traveler",
-                "teacher",
-                "expert",
+                "hero",
+                "robot",
+                "researcher",
                 "hacker"
             ],
             "correctAnswerIndex": 3,
@@ -358,95 +380,101 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L8_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'transfers' was mentioned.",
-            "textToSpeak": "The scientist transfers the node automatically.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which action or activity do you hear in the sentence?",
+            "explanation": "You heard transfers. This verb means to move something from one place, person, or system to another. In the audio, she transfers money before every trip abroad.",
+            "textToSpeak": "She transfers money before every trip abroad.",
             "targetDetail": "transfers",
             "options": [
-                "analyzes",
-                "updates",
+                "restores",
                 "transfers",
-                "creates"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L8_Q3",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'node' was mentioned.",
-            "textToSpeak": "The hacker locates the node expertly.",
-            "targetDetail": "node",
-            "options": [
-                "database",
-                "system",
-                "drone",
-                "node"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L9_Q1",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'analyst' was mentioned.",
-            "textToSpeak": "The analyst locates the satellite successfully.",
-            "targetDetail": "analyst",
-            "options": [
-                "scout",
-                "analyst",
-                "researcher",
-                "engineer"
+                "deploys",
+                "locates"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
+            "id": "LIS_DETAILSPOTLIGHT_L8_Q3",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the specific item being used, fixed, or mentioned.",
+            "explanation": "The thing mentioned is node: a single connection point within a larger network or system. Here, a weak network node at the hotel.",
+            "textToSpeak": "He found a weak network node at the hotel.",
+            "targetDetail": "node",
+            "options": [
+                "chip",
+                "drone",
+                "node",
+                "software"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L9_Q1",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the person's title or job mentioned in the audio.",
+            "explanation": "The correct person is analyst - a person who examines data and information to find patterns or meaning. The sentence tells us my aunt works as a data analyst.",
+            "textToSpeak": "My aunt works as a data analyst.",
+            "targetDetail": "analyst",
+            "options": [
+                "commander",
+                "detective",
+                "analyst",
+                "pilot"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
+        },
+        {
             "id": "LIS_DETAILSPOTLIGHT_L9_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'encrypts' was mentioned.",
-            "textToSpeak": "The commander encrypts the database steadily.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to what is happening, not who or what is involved.",
+            "explanation": "Encrypts is the action - to convert data into a code to protect it from unauthorized access. In the sentence, she encrypts her personal files every night.",
+            "textToSpeak": "She encrypts her personal files every night.",
             "targetDetail": "encrypts",
             "options": [
-                "encrypts",
+                "measures",
                 "scans",
-                "repairs",
-                "activates"
+                "encrypts",
+                "monitors"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L9_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'protocol' was mentioned.",
-            "textToSpeak": "The droid activates the protocol reliably.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to the thing, not who is using it or what they do.",
+            "explanation": "The thing mentioned is protocol: a set of official rules that controls how a process should be carried out. Here, a strict morning protocol.",
+            "textToSpeak": "Our family follows a strict morning protocol.",
             "targetDetail": "protocol",
             "options": [
-                "circuit",
-                "code",
-                "archive",
-                "protocol"
+                "database",
+                "module",
+                "protocol",
+                "drone"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L10_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'hacker' was mentioned.",
-            "textToSpeak": "The hacker sends the chip precisely.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which person's name or role do you hear in the sentence?",
+            "explanation": "The correct person is hacker - a person who finds and exploits weaknesses in computer systems. The sentence tells us my cousin trained as an ethical hacker.",
+            "textToSpeak": "My cousin trained as an ethical hacker.",
             "targetDetail": "hacker",
             "options": [
                 "hacker",
-                "detective",
                 "scientist",
-                "hero"
+                "engineer",
+                "robot"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
@@ -454,33 +482,35 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L10_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'builds' was mentioned.",
-            "textToSpeak": "The analyst builds the circuit instantly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the action being performed in the audio.",
+            "explanation": "Builds is the action - to construct or create something by putting parts together. In the sentence, he builds useful gadgets for the whole family.",
+            "textToSpeak": "He builds useful gadgets for the whole family.",
             "targetDetail": "builds",
             "options": [
+                "transfers",
                 "builds",
-                "analyzes",
-                "repairs",
-                "measures"
+                "encrypts",
+                "sends"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L10_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'data' was mentioned.",
-            "textToSpeak": "The robot transfers the data successfully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the object or concept named in the sentence.",
+            "explanation": "You heard data - information that is collected, stored, or processed, often by a computer. The audio describes my dad saves all family data online.",
+            "textToSpeak": "My dad saves all family data online.",
             "targetDetail": "data",
             "options": [
-                "protocol",
                 "data",
-                "chip",
-                "software"
+                "signal",
+                "terminal",
+                "portal"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         }
     ]

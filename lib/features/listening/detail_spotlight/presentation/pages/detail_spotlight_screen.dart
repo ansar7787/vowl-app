@@ -194,12 +194,14 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                                           child: DetailSpotlightInstruction(
                                             isAnswered: _isAnswered,
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction ?? "Listen to the audio and select the correct detail.",
                                           ),
                                         ),
                                       )
                                     : DetailSpotlightInstruction(
                                         isAnswered: _isAnswered,
                                         color: theme.primaryColor,
+                                        instruction: quest.instruction ?? "Listen to the audio and select the correct detail.",
                                       ),
                                 SizedBox(height: gapInstruction),
                                 isCompact

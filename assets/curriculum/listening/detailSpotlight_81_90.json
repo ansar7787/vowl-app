@@ -6,63 +6,67 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L81_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'scientist' was mentioned.",
-            "textToSpeak": "The scientist encrypts the terminal quietly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the person's title or job mentioned in the audio.",
+            "explanation": "Scientist is correct - a person who studies the natural world through observation and experiment. In the sentence, a data scientist has just moved in.",
+            "textToSpeak": "A data scientist has just moved into our neighborhood.",
             "targetDetail": "scientist",
             "options": [
-                "artist",
-                "scientist",
-                "scout",
-                "engineer"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L81_Q2",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'scans' was mentioned.",
-            "textToSpeak": "The expert scans the data successfully.",
-            "targetDetail": "scans",
-            "options": [
-                "measures",
-                "restores",
-                "creates",
-                "scans"
+                "researcher",
+                "mentor",
+                "analyst",
+                "scientist"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
-            "id": "LIS_DETAILSPOTLIGHT_L81_Q3",
+            "id": "LIS_DETAILSPOTLIGHT_L81_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'signal' was mentioned.",
-            "textToSpeak": "The engineer scans the signal properly.",
-            "targetDetail": "signal",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to what is happening, not who or what is involved.",
+            "explanation": "You heard scans. This verb means to look over something quickly to find specific information or objects. In the audio, scans her inbox as soon as the signal arrives.",
+            "textToSpeak": "She always scans her inbox as soon as the signal arrives.",
+            "targetDetail": "scans",
             "options": [
-                "archive",
-                "signal",
-                "node",
-                "sensor"
+                "measures",
+                "scans",
+                "analyzes",
+                "sends"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
+            "id": "LIS_DETAILSPOTLIGHT_L81_Q3",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to the thing, not who is using it or what they do.",
+            "explanation": "Signal is correct - a sound, light, or wave used to send information or a message. In the sentence, has just noticed the Wi-Fi signal dropping again.",
+            "textToSpeak": "She has just noticed the Wi-Fi signal dropping again.",
+            "targetDetail": "signal",
+            "options": [
+                "protocol",
+                "software",
+                "system",
+                "signal"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
+        },
+        {
             "id": "LIS_DETAILSPOTLIGHT_L82_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'hero' was mentioned.",
-            "textToSpeak": "The hero encrypts the device directly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which person's name or role do you hear in the sentence?",
+            "explanation": "The person mentioned is hero. A person admired for courage, great achievements, or noble qualities. Here, has always been her hero since childhood.",
+            "textToSpeak": "He has always been her hero since childhood.",
             "targetDetail": "hero",
             "options": [
                 "hero",
                 "expert",
-                "technician",
-                "traveler"
+                "student",
+                "researcher"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
@@ -70,143 +74,152 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L82_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'repairs' was mentioned.",
-            "textToSpeak": "The commander repairs the chip consistently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the action being performed in the audio.",
+            "explanation": "The correct action is repairs - to fix something that is broken or not working correctly. In this sentence, repairs appliances as soon as they break down.",
+            "textToSpeak": "She repairs household appliances as soon as they break down.",
             "targetDetail": "repairs",
             "options": [
-                "launches",
-                "scans",
-                "analyzes",
-                "repairs"
+                "updates",
+                "repairs",
+                "monitors",
+                "deploys"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L82_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'sensor' was mentioned.",
-            "textToSpeak": "The scientist launches the sensor immediately.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the object or concept named in the sentence.",
+            "explanation": "You heard sensor - a device that detects changes such as motion, light, heat, or sound. The audio describes has just replaced the broken sensor in the doorbell.",
+            "textToSpeak": "She has just replaced the broken sensor in the doorbell.",
             "targetDetail": "sensor",
             "options": [
+                "database",
                 "sensor",
-                "drone",
                 "satellite",
-                "archive"
+                "device"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L83_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'expert' was mentioned.",
-            "textToSpeak": "The expert transfers the satellite carefully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to who the sentence is about.",
+            "explanation": "The correct person is expert - a person with deep knowledge or advanced skill in a particular subject. The sentence tells us an educational expert has already reviewed the curriculum.",
+            "textToSpeak": "An educational expert has already reviewed the new curriculum.",
             "targetDetail": "expert",
             "options": [
-                "detective",
-                "analyst",
-                "scout",
-                "expert"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L83_Q2",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'measures' was mentioned.",
-            "textToSpeak": "The engineer measures the portal silently.",
-            "targetDetail": "measures",
-            "options": [
-                "updates",
-                "monitors",
-                "sends",
-                "measures"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L83_Q3",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'network' was mentioned.",
-            "textToSpeak": "The robot sends the network successfully.",
-            "targetDetail": "network",
-            "options": [
-                "network",
-                "circuit",
-                "database",
-                "module"
+                "expert",
+                "pilot",
+                "teacher",
+                "droid"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
-            "id": "LIS_DETAILSPOTLIGHT_L84_Q1",
+            "id": "LIS_DETAILSPOTLIGHT_L83_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'technician' was mentioned.",
-            "textToSpeak": "The technician locates the module consistently.",
-            "targetDetail": "technician",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the doing word, not the subject or object.",
+            "explanation": "The correct action is measures - to determine the size, amount, or degree of something. In this sentence, measures air quality for the network report.",
+            "textToSpeak": "The lab system measures air quality for the network report.",
+            "targetDetail": "measures",
             "options": [
-                "student",
-                "teacher",
-                "technician",
-                "pilot"
+                "observes",
+                "validates",
+                "measures",
+                "secures"
             ],
             "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L83_Q3",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the specific thing described in the audio.",
+            "explanation": "The correct object is network - a group of connected computers or devices that can share information. In the audio, has not yet upgraded its wireless network.",
+            "textToSpeak": "The school has not yet upgraded its aging wireless network.",
+            "targetDetail": "network",
+            "options": [
+                "node",
+                "terminal",
+                "network",
+                "data"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L84_Q1",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the person, not the action or the object they mention.",
+            "explanation": "The correct person is technician - a person skilled in the practical use of technology or machinery. The sentence tells us the IT technician has just launched a new system.",
+            "textToSpeak": "The school IT technician has just launched a new system.",
+            "targetDetail": "technician",
+            "options": [
+                "researcher",
+                "technician",
+                "pilot",
+                "analyst"
+            ],
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L84_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'launches' was mentioned.",
-            "textToSpeak": "The scout launches the node steadily.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for what is happening, not to whom or with what.",
+            "explanation": "You heard launches. This verb means to send something into action, space, or public use for the first time. In the audio, launches a new learning sensor program every term.",
+            "textToSpeak": "The school launches a new learning sensor program every term.",
             "targetDetail": "launches",
             "options": [
-                "validates",
-                "monitors",
-                "deploys",
-                "launches"
+                "encrypts",
+                "launches",
+                "repairs",
+                "updates"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L84_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'sensor' was mentioned.",
-            "textToSpeak": "The explorer activates the sensor swiftly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word names a thing, not a person or an action.",
+            "explanation": "Sensor is correct - a device that detects changes such as motion, light, heat, or sound. In the sentence, has just installed a new air quality sensor.",
+            "textToSpeak": "The lab has just installed a new air quality sensor.",
             "targetDetail": "sensor",
             "options": [
-                "circuit",
-                "device",
                 "sensor",
-                "archive"
+                "device",
+                "protocol",
+                "drone"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L85_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'artist' was mentioned.",
-            "textToSpeak": "The artist secures the database successfully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word here is a person's title or role.",
+            "explanation": "You heard artist: a person who creates paintings, music, or other forms of creative work. The audio shows the graphic artist has already located a new portal.",
+            "textToSpeak": "The graphic artist has already located a new design portal.",
             "targetDetail": "artist",
             "options": [
-                "technician",
+                "expert",
                 "artist",
-                "robot",
-                "pilot"
+                "hero",
+                "traveler"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
@@ -214,14 +227,15 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L85_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'locates' was mentioned.",
-            "textToSpeak": "The artist locates the protocol successfully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word describes an action or activity.",
+            "explanation": "You heard locates. This verb means to find the exact position or place of something. In the audio, locates the most reliable art supply portal online.",
+            "textToSpeak": "She always locates the most reliable art supply portal online.",
             "targetDetail": "locates",
             "options": [
-                "creates",
-                "scans",
-                "sends",
+                "launches",
+                "analyzes",
+                "deploys",
                 "locates"
             ],
             "correctAnswerIndex": 3,
@@ -230,31 +244,33 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L85_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'portal' was mentioned.",
-            "textToSpeak": "The hacker activates the portal consistently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the name of the thing or object mentioned.",
+            "explanation": "The thing mentioned is portal: an online gateway that allows access to specific services or information. Here, has just launched a brand-new employee portal.",
+            "textToSpeak": "The company has just launched a brand-new employee portal.",
             "targetDetail": "portal",
             "options": [
-                "terminal",
-                "database",
                 "portal",
-                "archive"
+                "network",
+                "signal",
+                "data"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L86_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'engineer' was mentioned.",
-            "textToSpeak": "The engineer scans the chip silently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the type of person described in the sentence.",
+            "explanation": "Engineer is correct - a person who designs, builds, or maintains machines or technical systems. In the sentence, a systems engineer has already created a faster terminal.",
+            "textToSpeak": "A systems engineer has already created a faster terminal interface.",
             "targetDetail": "engineer",
             "options": [
-                "detective",
-                "artist",
+                "technician",
+                "traveler",
                 "engineer",
-                "analyst"
+                "researcher"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
@@ -262,62 +278,66 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L86_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'creates' was mentioned.",
-            "textToSpeak": "The expert creates the software rapidly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the action word - what is the person or thing doing?",
+            "explanation": "Creates is the action - to make something new that did not exist before. In the sentence, creates a detailed terminal report every week.",
+            "textToSpeak": "He creates a detailed system terminal report every single week.",
             "targetDetail": "creates",
             "options": [
-                "secures",
-                "locates",
+                "validates",
                 "encrypts",
-                "creates"
+                "creates",
+                "scans"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L86_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'terminal' was mentioned.",
-            "textToSpeak": "The student restores the terminal consistently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the item, not the person or action described.",
+            "explanation": "The thing mentioned is terminal: a place where journeys begin or end, or a device used to access a network. Here, has just installed a new server terminal.",
+            "textToSpeak": "The IT team has just installed a new server terminal.",
             "targetDetail": "terminal",
             "options": [
-                "protocol",
-                "terminal",
-                "drone",
-                "code"
+                "portal",
+                "signal",
+                "engine",
+                "terminal"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L87_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'student' was mentioned.",
-            "textToSpeak": "The student scans the signal expertly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the name or role of the person in the sentence.",
+            "explanation": "The person mentioned is student. A person who is learning a subject, especially at a school or university. Here, a study-abroad student has already analyzed the visa process.",
+            "textToSpeak": "A study-abroad student has already analyzed the visa node process.",
             "targetDetail": "student",
             "options": [
+                "artist",
                 "droid",
-                "student",
-                "explorer",
-                "engineer"
+                "commander",
+                "student"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L87_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'analyzes' was mentioned.",
-            "textToSpeak": "The researcher analyzes the sensor expertly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the verb, not the person or the thing they mention.",
+            "explanation": "The action is analyzes, meaning to examine something carefully in detail to understand its parts or meaning. Here, analyzes the traffic node data before every journey.",
+            "textToSpeak": "She analyzes the traffic node data before every journey.",
             "targetDetail": "analyzes",
             "options": [
-                "activates",
                 "creates",
                 "deploys",
+                "scans",
                 "analyzes"
             ],
             "correctAnswerIndex": 3,
@@ -326,79 +346,84 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L87_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'node' was mentioned.",
-            "textToSpeak": "The traveler updates the node instantly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which object or thing do you hear in the sentence?",
+            "explanation": "You heard node - a single connection point within a larger network or system. The audio describes has just added a new connection node.",
+            "textToSpeak": "The travel app has just added a new connection node.",
             "targetDetail": "node",
             "options": [
-                "signal",
-                "drone",
-                "software",
-                "node"
+                "protocol",
+                "portal",
+                "node",
+                "sensor"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L88_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'teacher' was mentioned.",
-            "textToSpeak": "The teacher scans the code reliably.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on who is being described, not what they do or use.",
+            "explanation": "You heard teacher: a person who helps others learn a subject or develop a skill. The audio shows a retired teacher has just sent a protocol update.",
+            "textToSpeak": "A retired teacher has just sent a protocol update to the group.",
             "targetDetail": "teacher",
             "options": [
-                "teacher",
+                "hero",
                 "student",
-                "expert",
-                "traveler"
+                "detective",
+                "teacher"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L88_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'sends' was mentioned.",
-            "textToSpeak": "The technician sends the sensor properly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which action or activity do you hear in the sentence?",
+            "explanation": "The action is sends, meaning to cause something to go or be taken from one place to another. Here, sends the safety protocol document before every flight.",
+            "textToSpeak": "The airline sends the safety protocol document before every flight.",
             "targetDetail": "sends",
             "options": [
-                "sends",
-                "updates",
                 "secures",
-                "scans"
+                "transfers",
+                "deploys",
+                "sends"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L88_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'protocol' was mentioned.",
-            "textToSpeak": "The hacker deploys the protocol reliably.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the specific item being used, fixed, or mentioned.",
+            "explanation": "The correct object is protocol - a set of official rules that controls how a process should be carried out. In the audio, has just updated its emergency safety protocol.",
+            "textToSpeak": "The travel team has just updated its emergency safety protocol.",
             "targetDetail": "protocol",
             "options": [
+                "system",
+                "terminal",
                 "protocol",
-                "database",
-                "module",
-                "data"
+                "circuit"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L89_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'explorer' was mentioned.",
-            "textToSpeak": "The explorer deploys the circuit silently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the person's title or job mentioned in the audio.",
+            "explanation": "The person mentioned is explorer. A person who travels to new or unknown places to discover and investigate. Here, my explorer uncle has already analyzed the drone footage.",
+            "textToSpeak": "My adventurous explorer uncle has already analyzed the new drone footage.",
             "targetDetail": "explorer",
             "options": [
                 "explorer",
-                "droid",
-                "robot",
-                "analyst"
+                "expert",
+                "pilot",
+                "detective"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
@@ -406,81 +431,86 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L89_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'analyzes' was mentioned.",
-            "textToSpeak": "The mentor analyzes the protocol carefully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to what is happening, not who or what is involved.",
+            "explanation": "The correct action is analyzes - to examine something carefully in detail to understand its parts or meaning. In this sentence, analyzes every drone clip before sharing it with family.",
+            "textToSpeak": "He analyzes every drone clip before sharing it with the family.",
             "targetDetail": "analyzes",
             "options": [
+                "monitors",
+                "transfers",
                 "analyzes",
-                "secures",
-                "validates",
-                "launches"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L89_Q3",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'drone' was mentioned.",
-            "textToSpeak": "The hacker secures the drone swiftly.",
-            "targetDetail": "drone",
-            "options": [
-                "portal",
-                "terminal",
-                "satellite",
-                "drone"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L90_Q1",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'artist' was mentioned.",
-            "textToSpeak": "The artist secures the device successfully.",
-            "targetDetail": "artist",
-            "options": [
-                "robot",
-                "droid",
-                "artist",
-                "student"
+                "evaluates"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
-            "id": "LIS_DETAILSPOTLIGHT_L90_Q2",
+            "id": "LIS_DETAILSPOTLIGHT_L89_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'creates' was mentioned.",
-            "textToSpeak": "The hacker creates the sensor silently.",
-            "targetDetail": "creates",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to the thing, not who is using it or what they do.",
+            "explanation": "The thing mentioned is drone: an aircraft that flies without a pilot on board, often controlled remotely. Here, has just bought a new photography drone.",
+            "textToSpeak": "My brother has just bought a new photography drone.",
+            "targetDetail": "drone",
             "options": [
-                "builds",
-                "creates",
-                "evaluates",
-                "encrypts"
+                "drone",
+                "chip",
+                "engine",
+                "database"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L90_Q1",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which person's name or role do you hear in the sentence?",
+            "explanation": "Artist is correct - a person who creates paintings, music, or other forms of creative work. In the sentence, my sister the artist has just created a new module.",
+            "textToSpeak": "My sister the artist has just created a new module for her course.",
+            "targetDetail": "artist",
+            "options": [
+                "student",
+                "artist",
+                "explorer",
+                "hero"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
+            "id": "LIS_DETAILSPOTLIGHT_L90_Q2",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the action being performed in the audio.",
+            "explanation": "Creates is the action - to make something new that did not exist before. In the sentence, creates a new online module whenever she starts a project.",
+            "textToSpeak": "She creates a new online module whenever she starts a project.",
+            "targetDetail": "creates",
+            "options": [
+                "transfers",
+                "evaluates",
+                "validates",
+                "creates"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
+        },
+        {
             "id": "LIS_DETAILSPOTLIGHT_L90_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'module' was mentioned.",
-            "textToSpeak": "The droid updates the module swiftly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the object or concept named in the sentence.",
+            "explanation": "You heard module - a separate unit that is part of a larger system, course, or program. The audio describes has just finished the online art module.",
+            "textToSpeak": "My sister has just finished the online art module.",
             "targetDetail": "module",
             "options": [
-                "module",
-                "drone",
-                "portal",
-                "archive"
+                "software",
+                "engine",
+                "code",
+                "module"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         }
     ]

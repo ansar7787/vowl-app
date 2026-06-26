@@ -6,63 +6,67 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L131_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'detective' was mentioned.",
-            "textToSpeak": "The detective activates the network properly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to who the sentence is about.",
+            "explanation": "You heard detective: a person who investigates crimes, mysteries, or hidden information. The audio shows if the detective updates the portal, customers will be better protected.",
+            "textToSpeak": "If the fraud detective updates the security portal, all customers will be better protected.",
             "targetDetail": "detective",
             "options": [
-                "engineer",
-                "student",
-                "scout",
-                "detective"
+                "hero",
+                "detective",
+                "traveler",
+                "scout"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L131_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'updates' was mentioned.",
-            "textToSpeak": "The droid updates the sensor steadily.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the doing word, not the subject or object.",
+            "explanation": "The correct action is updates - to make something current by adding new or recent information. In this sentence, updates the portal so all members can see their points balance.",
+            "textToSpeak": "She updates the loyalty portal so that all members can see their current points balance.",
             "targetDetail": "updates",
             "options": [
+                "locates",
                 "updates",
-                "monitors",
-                "evaluates",
-                "activates"
+                "activates",
+                "secures"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L131_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'portal' was mentioned.",
-            "textToSpeak": "The scientist monitors the portal automatically.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the specific thing described in the audio.",
+            "explanation": "The correct object is portal - an online gateway that allows access to specific services or information. In the audio, if the portal crashes, the store cannot process card payments.",
+            "textToSpeak": "If the checkout portal crashes, the store will be unable to process any card payments.",
             "targetDetail": "portal",
             "options": [
+                "terminal",
                 "portal",
-                "module",
-                "chip",
-                "engine"
+                "network",
+                "code"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L132_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'analyst' was mentioned.",
-            "textToSpeak": "The analyst monitors the portal successfully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the person, not the action or the object they mention.",
+            "explanation": "The correct person is analyst - a person who examines data and information to find patterns or meaning. The sentence tells us if the analyst encrypts the file, no competitor can steal the plan.",
+            "textToSpeak": "If the data analyst encrypts the file, no competitor will be able to steal the system plan.",
             "targetDetail": "analyst",
             "options": [
                 "analyst",
-                "hero",
-                "detective",
-                "scientist"
+                "engineer",
+                "researcher",
+                "droid"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
@@ -70,15 +74,16 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L132_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'encrypts' was mentioned.",
-            "textToSpeak": "The researcher encrypts the archive precisely.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for what is happening, not to whom or with what.",
+            "explanation": "The correct action is encrypts - to convert data into a code to protect it from unauthorized access. In this sentence, encrypts the pricing system so no unauthorized person can view it.",
+            "textToSpeak": "She encrypts the pricing system so that no unauthorized person can view the data.",
             "targetDetail": "encrypts",
             "options": [
-                "deploys",
-                "evaluates",
+                "observes",
+                "transfers",
                 "encrypts",
-                "updates"
+                "sends"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
@@ -86,95 +91,101 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L132_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'system' was mentioned.",
-            "textToSpeak": "The artist evaluates the system efficiently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word names a thing, not a person or an action.",
+            "explanation": "The thing mentioned is system: a set of connected parts that work together to carry out a function. Here, if the checkout system crashes, customers must wait for a cashier.",
+            "textToSpeak": "If the self-checkout system crashes, customers will have to wait for a human cashier.",
             "targetDetail": "system",
             "options": [
+                "database",
                 "system",
                 "node",
-                "data",
-                "drone"
+                "portal"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L133_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'technician' was mentioned.",
-            "textToSpeak": "The technician locates the protocol swiftly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word here is a person's title or role.",
+            "explanation": "The correct person is technician - a person skilled in the practical use of technology or machinery. The sentence tells us if the technician launches the database, orders will process more quickly.",
+            "textToSpeak": "If the kitchen technician launches the new database, orders will process far more quickly.",
             "targetDetail": "technician",
             "options": [
                 "researcher",
-                "explorer",
-                "mentor",
-                "technician"
+                "technician",
+                "engineer",
+                "droid"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L133_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'launches' was mentioned.",
-            "textToSpeak": "The traveler launches the protocol rapidly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word describes an action or activity.",
+            "explanation": "Launches is the action - to send something into action, space, or public use for the first time. In the sentence, launches the delivery database so all orders can be tracked in real time.",
+            "textToSpeak": "She launches the new delivery database so that all orders can be tracked in real time.",
             "targetDetail": "launches",
             "options": [
-                "launches",
+                "repairs",
+                "encrypts",
                 "updates",
-                "sends",
-                "restores"
+                "launches"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L133_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'database' was mentioned.",
-            "textToSpeak": "The artist creates the database automatically.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the name of the thing or object mentioned.",
+            "explanation": "The thing mentioned is database: an organized collection of information stored electronically for easy access. Here, if the restaurant database goes down, app orders won't be received.",
+            "textToSpeak": "If the restaurant database goes down, no orders from the app will be received.",
             "targetDetail": "database",
             "options": [
-                "drone",
+                "sensor",
                 "module",
-                "signal",
-                "database"
+                "database",
+                "archive"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L134_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'expert' was mentioned.",
-            "textToSpeak": "The expert scans the system automatically.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the type of person described in the sentence.",
+            "explanation": "The correct person is expert - a person with deep knowledge or advanced skill in a particular subject. The sentence tells us if the expert transfers the recipe, the team can update the database.",
+            "textToSpeak": "If the nutrition expert transfers the recipe, the whole cooking team can update the database.",
             "targetDetail": "expert",
             "options": [
-                "researcher",
+                "expert",
+                "hero",
                 "droid",
-                "explorer",
-                "expert"
+                "scout"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L134_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'transfers' was mentioned.",
-            "textToSpeak": "The analyst transfers the software directly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the action word - what is the person or thing doing?",
+            "explanation": "The correct action is transfers - to move something from one place, person, or system to another. In this sentence, transfers the recipe to the database so chefs can access it.",
+            "textToSpeak": "She transfers the updated recipe to the central database so chefs can access it instantly.",
             "targetDetail": "transfers",
             "options": [
                 "transfers",
-                "creates",
-                "monitors",
-                "observes"
+                "scans",
+                "secures",
+                "encrypts"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
@@ -182,78 +193,83 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L134_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'database' was mentioned.",
-            "textToSpeak": "The scientist repairs the database efficiently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the item, not the person or action described.",
+            "explanation": "Database is correct - an organized collection of information stored electronically for easy access. In the sentence, if the allergy database is not kept current, customers could be harmed.",
+            "textToSpeak": "If the allergy database is not kept current, customers could be seriously harmed.",
             "targetDetail": "database",
             "options": [
+                "drone",
                 "database",
-                "system",
-                "engine",
-                "signal"
+                "module",
+                "software"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L135_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'analyst' was mentioned.",
-            "textToSpeak": "The analyst transfers the module successfully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the name or role of the person in the sentence.",
+            "explanation": "You heard analyst: a person who examines data and information to find patterns or meaning. The audio shows if the analyst updates the module, the platform will be better protected.",
+            "textToSpeak": "If the security analyst updates the module, the whole platform will be far better protected.",
             "targetDetail": "analyst",
             "options": [
-                "analyst",
-                "student",
-                "hero",
-                "technician"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L135_Q2",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'updates' was mentioned.",
-            "textToSpeak": "The scientist updates the circuit properly.",
-            "targetDetail": "updates",
-            "options": [
-                "measures",
-                "encrypts",
-                "builds",
-                "updates"
+                "technician",
+                "engineer",
+                "commander",
+                "analyst"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
+            "id": "LIS_DETAILSPOTLIGHT_L135_Q2",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the verb, not the person or the thing they mention.",
+            "explanation": "The correct action is updates - to make something current by adding new or recent information. In this sentence, updates the security module so all users are protected.",
+            "textToSpeak": "She updates the security module so that all users are protected from the latest threats.",
+            "targetDetail": "updates",
+            "options": [
+                "deploys",
+                "updates",
+                "analyzes",
+                "repairs"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight"
+        },
+        {
             "id": "LIS_DETAILSPOTLIGHT_L135_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'module' was mentioned.",
-            "textToSpeak": "The teacher validates the module efficiently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which object or thing do you hear in the sentence?",
+            "explanation": "The correct object is module - a separate unit that is part of a larger system, course, or program. In the audio, if the firewall module fails, all devices will be exposed.",
+            "textToSpeak": "If the firewall module fails, every connected device will be exposed to outside attacks.",
             "targetDetail": "module",
             "options": [
-                "module",
                 "data",
-                "device",
-                "satellite"
+                "protocol",
+                "module",
+                "archive"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L136_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'scout' was mentioned.",
-            "textToSpeak": "The scout deploys the network automatically.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on who is being described, not what they do or use.",
+            "explanation": "Scout is correct - a person who goes ahead to gather information or find the best option. In the sentence, if the scout repairs the portal, the team can resume work.",
+            "textToSpeak": "If the tech scout repairs the portal, the developer team can resume work this afternoon.",
             "targetDetail": "scout",
             "options": [
-                "teacher",
-                "analyst",
-                "researcher",
+                "explorer",
+                "hero",
+                "commander",
                 "scout"
             ],
             "correctAnswerIndex": 3,
@@ -262,15 +278,16 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L136_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'repairs' was mentioned.",
-            "textToSpeak": "The artist repairs the signal successfully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which action or activity do you hear in the sentence?",
+            "explanation": "You heard repairs. This verb means to fix something that is broken or not working correctly. In the audio, repairs the portal so all remote users can log in securely.",
+            "textToSpeak": "She repairs the main portal so that all remote users can log in securely from home.",
             "targetDetail": "repairs",
             "options": [
-                "evaluates",
+                "validates",
                 "repairs",
-                "monitors",
-                "observes"
+                "locates",
+                "updates"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
@@ -278,63 +295,67 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L136_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'portal' was mentioned.",
-            "textToSpeak": "The hacker validates the portal expertly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the specific item being used, fixed, or mentioned.",
+            "explanation": "Portal is correct - an online gateway that allows access to specific services or information. In the sentence, if the portal goes offline, the whole team will lose access.",
+            "textToSpeak": "If the developer portal goes offline, the whole engineering team will lose access to their tools.",
             "targetDetail": "portal",
             "options": [
+                "system",
                 "portal",
-                "sensor",
-                "database",
+                "protocol",
                 "device"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L137_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'analyst' was mentioned.",
-            "textToSpeak": "The analyst analyzes the satellite properly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the person's title or job mentioned in the audio.",
+            "explanation": "Analyst is correct - a person who examines data and information to find patterns or meaning. In the sentence, if the analyst scans the records, she'll identify the software error.",
+            "textToSpeak": "If the data analyst scans the records, she will identify which software version caused the error.",
             "targetDetail": "analyst",
             "options": [
-                "droid",
-                "scout",
                 "analyst",
-                "commander"
+                "technician",
+                "mentor",
+                "researcher"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L137_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'scans' was mentioned.",
-            "textToSpeak": "The pilot scans the device quietly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to what is happening, not who or what is involved.",
+            "explanation": "The correct action is scans - to look over something quickly to find specific information or objects. In this sentence, scans the patient software system so errors are detected early.",
+            "textToSpeak": "She scans the patient software system so that critical errors can be detected early.",
             "targetDetail": "scans",
             "options": [
-                "sends",
                 "validates",
-                "monitors",
-                "scans"
+                "measures",
+                "scans",
+                "transfers"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L137_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'software' was mentioned.",
-            "textToSpeak": "The traveler locates the software efficiently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to the thing, not who is using it or what they do.",
+            "explanation": "Software is correct - the programs and instructions that tell a computer how to operate. In the sentence, if the clinic software fails, appointments will be lost.",
+            "textToSpeak": "If the clinic software fails, patient bookings will be lost and appointments will be delayed.",
             "targetDetail": "software",
             "options": [
-                "database",
+                "data",
                 "software",
-                "engine",
-                "code"
+                "code",
+                "drone"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
@@ -342,14 +363,15 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L138_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'hero' was mentioned.",
-            "textToSpeak": "The hero evaluates the software effectively.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which person's name or role do you hear in the sentence?",
+            "explanation": "The person mentioned is hero. A person admired for courage, great achievements, or noble qualities. Here, if the hero builds the response network, rural clinics will be connected.",
+            "textToSpeak": "If the frontline hero builds the response network, rural clinics will be far better connected.",
             "targetDetail": "hero",
             "options": [
-                "explorer",
-                "droid",
-                "technician",
+                "commander",
+                "student",
+                "expert",
                 "hero"
             ],
             "correctAnswerIndex": 3,
@@ -358,15 +380,16 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L138_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'builds' was mentioned.",
-            "textToSpeak": "The teacher builds the protocol successfully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the action being performed in the audio.",
+            "explanation": "You heard builds. This verb means to construct or create something by putting parts together. In the audio, builds a stronger network so more remote patients receive treatment.",
+            "textToSpeak": "She builds a stronger care network so that more remote patients can receive regular treatment.",
             "targetDetail": "builds",
             "options": [
-                "analyzes",
-                "updates",
+                "transfers",
+                "launches",
                 "builds",
-                "locates"
+                "deploys"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
@@ -374,113 +397,120 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L138_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'network' was mentioned.",
-            "textToSpeak": "The commander builds the network silently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the object or concept named in the sentence.",
+            "explanation": "The thing mentioned is network: a group of connected computers or devices that can share information. Here, if the hospital network goes down, doctors cannot view records.",
+            "textToSpeak": "If the hospital network goes down, doctors will be unable to view any patient records.",
             "targetDetail": "network",
             "options": [
-                "database",
-                "node",
-                "chip",
-                "network"
+                "signal",
+                "network",
+                "system",
+                "sensor"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L139_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'researcher' was mentioned.",
-            "textToSpeak": "The researcher secures the sensor swiftly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to who the sentence is about.",
+            "explanation": "You heard researcher: a person who studies a subject carefully to discover new facts or knowledge. The audio shows if the researcher deploys the tool, the company can use the code results.",
+            "textToSpeak": "If the media researcher deploys the analysis tool, the company can use the code results today.",
             "targetDetail": "researcher",
             "options": [
-                "artist",
+                "technician",
+                "engineer",
                 "researcher",
-                "droid",
-                "student"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L139_Q2",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'deploys' was mentioned.",
-            "textToSpeak": "The detective deploys the node rapidly.",
-            "targetDetail": "deploys",
-            "options": [
-                "monitors",
-                "deploys",
-                "sends",
-                "creates"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L139_Q3",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'code' was mentioned.",
-            "textToSpeak": "The traveler encrypts the code carefully.",
-            "targetDetail": "code",
-            "options": [
-                "protocol",
-                "archive",
-                "code",
-                "data"
+                "teacher"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
-            "id": "LIS_DETAILSPOTLIGHT_L140_Q1",
+            "id": "LIS_DETAILSPOTLIGHT_L139_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'researcher' was mentioned.",
-            "textToSpeak": "The researcher creates the database properly.",
-            "targetDetail": "researcher",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the doing word, not the subject or object.",
+            "explanation": "You heard deploys. This verb means to put something or someone into use for a specific purpose. In the audio, deploys the streaming code early so viewers can access the show.",
+            "textToSpeak": "She deploys the streaming code early so that viewers can access the show without any problems.",
+            "targetDetail": "deploys",
             "options": [
-                "robot",
-                "droid",
-                "expert",
-                "researcher"
+                "repairs",
+                "creates",
+                "restores",
+                "deploys"
             ],
             "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L139_Q3",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the specific thing described in the audio.",
+            "explanation": "The thing mentioned is code: a set of written instructions that tells a computer what to do. Here, if the access code expires, subscribers will be locked out.",
+            "textToSpeak": "If the access code expires, subscribers will be locked out of the premium content section.",
+            "targetDetail": "code",
+            "options": [
+                "code",
+                "engine",
+                "archive",
+                "database"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L140_Q1",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the person, not the action or the object they mention.",
+            "explanation": "Researcher is correct - a person who studies a subject carefully to discover new facts or knowledge. In the sentence, if the researcher launches the platform, the satellite project goes live this month.",
+            "textToSpeak": "If the data researcher launches the new platform, the satellite project will go live this month.",
+            "targetDetail": "researcher",
+            "options": [
+                "scientist",
+                "scout",
+                "researcher",
+                "analyst"
+            ],
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L140_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'launches' was mentioned.",
-            "textToSpeak": "The researcher launches the device automatically.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for what is happening, not to whom or with what.",
+            "explanation": "Launches is the action - to send something into action, space, or public use for the first time. In the sentence, launches the satellite feed so viewers in remote regions can watch live.",
+            "textToSpeak": "She launches the satellite content feed so that viewers in remote regions can watch live.",
             "targetDetail": "launches",
             "options": [
-                "encrypts",
-                "sends",
-                "creates",
-                "launches"
+                "analyzes",
+                "launches",
+                "activates",
+                "deploys"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L140_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'satellite' was mentioned.",
-            "textToSpeak": "The traveler evaluates the satellite carefully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word names a thing, not a person or an action.",
+            "explanation": "Satellite is correct - an object sent into space that orbits the Earth to send or receive signals. In the sentence, if the broadcast satellite malfunctions, the live coverage will be interrupted.",
+            "textToSpeak": "If the broadcast satellite malfunctions, the live sports coverage will be completely interrupted.",
             "targetDetail": "satellite",
             "options": [
+                "engine",
+                "data",
                 "satellite",
-                "circuit",
-                "protocol",
-                "database"
+                "chip"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         }
     ]

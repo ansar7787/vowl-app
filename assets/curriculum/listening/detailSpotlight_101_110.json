@@ -6,47 +6,50 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L101_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'mentor' was mentioned.",
-            "textToSpeak": "The mentor repairs the sensor steadily.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word here is a person's title or role.",
+            "explanation": "The correct person is mentor - an experienced person who guides and advises someone less experienced. The sentence tells us her mentor was sending feedback when the engine alarm went off.",
+            "textToSpeak": "Her mentor was sending her daily feedback when the engine alarm went off.",
             "targetDetail": "mentor",
             "options": [
-                "detective",
-                "mentor",
-                "artist",
-                "commander"
+                "analyst",
+                "robot",
+                "hero",
+                "mentor"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L101_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'sends' was mentioned.",
-            "textToSpeak": "The detective sends the code immediately.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word describes an action or activity.",
+            "explanation": "The action is sends, meaning to cause something to go or be taken from one place to another. Here, sends a message about the engine when the warning light appears.",
+            "textToSpeak": "She sends a message about the engine whenever the warning light appears.",
             "targetDetail": "sends",
             "options": [
-                "sends",
+                "secures",
+                "deploys",
                 "transfers",
-                "scans",
-                "observes"
+                "sends"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L101_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'engine' was mentioned.",
-            "textToSpeak": "The expert sends the engine immediately.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the name of the thing or object mentioned.",
+            "explanation": "Engine is correct - the part of a vehicle or machine that produces power to make it move. In the sentence, was inspecting the engine when the warning light came on.",
+            "textToSpeak": "He was inspecting the engine when the warning light suddenly came on.",
             "targetDetail": "engine",
             "options": [
                 "engine",
-                "sensor",
-                "archive",
-                "system"
+                "chip",
+                "system",
+                "satellite"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
@@ -54,31 +57,33 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L102_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'mentor' was mentioned.",
-            "textToSpeak": "The mentor validates the system smoothly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the type of person described in the sentence.",
+            "explanation": "The correct person is mentor - an experienced person who guides and advises someone less experienced. The sentence tells us her mentor was analyzing habits when she asked about the engine.",
+            "textToSpeak": "Her mentor was analyzing habits when she asked for advice about the engine.",
             "targetDetail": "mentor",
             "options": [
-                "explorer",
-                "pilot",
-                "engineer",
-                "mentor"
+                "expert",
+                "detective",
+                "mentor",
+                "robot"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L102_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'analyzes' was mentioned.",
-            "textToSpeak": "The scientist analyzes the module reliably.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the action word - what is the person or thing doing?",
+            "explanation": "The action is analyzes, meaning to examine something carefully in detail to understand its parts or meaning. Here, analyzes engine usage whenever the energy bill arrives.",
+            "textToSpeak": "She analyzes household engine usage whenever the energy bill arrives.",
             "targetDetail": "analyzes",
             "options": [
                 "analyzes",
-                "updates",
-                "builds",
-                "repairs"
+                "scans",
+                "monitors",
+                "sends"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
@@ -86,95 +91,101 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L102_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'engine' was mentioned.",
-            "textToSpeak": "The scientist repairs the engine successfully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the item, not the person or action described.",
+            "explanation": "The correct object is engine - the part of a vehicle or machine that produces power to make it move. In the audio, was describing the engine noise when the mechanic called.",
+            "textToSpeak": "She was describing the engine noise when the mechanic called back.",
             "targetDetail": "engine",
             "options": [
+                "chip",
+                "portal",
                 "engine",
-                "network",
-                "terminal",
-                "sensor"
+                "drone"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L103_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'scientist' was mentioned.",
-            "textToSpeak": "The scientist activates the system consistently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the name or role of the person in the sentence.",
+            "explanation": "You heard scientist: a person who studies the natural world through observation and experiment. The audio shows the scientist was launching a drone survey when the wind picked up.",
+            "textToSpeak": "The data scientist was launching a drone survey when the wind picked up.",
             "targetDetail": "scientist",
             "options": [
-                "technician",
-                "pilot",
-                "expert",
-                "scientist"
+                "scientist",
+                "analyst",
+                "researcher",
+                "teacher"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L103_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'launches' was mentioned.",
-            "textToSpeak": "The scientist launches the satellite securely.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the verb, not the person or the thing they mention.",
+            "explanation": "You heard launches. This verb means to send something into action, space, or public use for the first time. In the audio, launches a drone science project whenever the weather allows.",
+            "textToSpeak": "The school launches a drone science project whenever the weather allows.",
             "targetDetail": "launches",
             "options": [
-                "launches",
-                "observes",
-                "updates",
-                "builds"
+                "secures",
+                "activates",
+                "repairs",
+                "launches"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L103_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'drone' was mentioned.",
-            "textToSpeak": "The hacker validates the drone silently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which object or thing do you hear in the sentence?",
+            "explanation": "Drone is correct - an aircraft that flies without a pilot on board, often controlled remotely. In the sentence, was testing the drone when the battery suddenly died.",
+            "textToSpeak": "The science class was testing the drone when the battery suddenly died.",
             "targetDetail": "drone",
             "options": [
-                "software",
                 "drone",
-                "archive",
-                "database"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L104_Q1",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'robot' was mentioned.",
-            "textToSpeak": "The robot restores the node directly.",
-            "targetDetail": "robot",
-            "options": [
-                "robot",
-                "expert",
-                "pilot",
-                "artist"
+                "device",
+                "circuit",
+                "system"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
+            "id": "LIS_DETAILSPOTLIGHT_L104_Q1",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on who is being described, not what they do or use.",
+            "explanation": "The correct person is robot - a machine programmed to carry out tasks automatically. The sentence tells us the robot was monitoring the archive when the system crashed.",
+            "textToSpeak": "The school robot was monitoring the archive when the system crashed.",
+            "targetDetail": "robot",
+            "options": [
+                "teacher",
+                "researcher",
+                "hero",
+                "robot"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
+        },
+        {
             "id": "LIS_DETAILSPOTLIGHT_L104_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'monitors' was mentioned.",
-            "textToSpeak": "The mentor monitors the protocol automatically.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which action or activity do you hear in the sentence?",
+            "explanation": "You heard monitors. This verb means to watch and check something regularly over a period of time. In the audio, monitors the digital archive whenever new materials are submitted.",
+            "textToSpeak": "She monitors the digital archive whenever new materials are submitted.",
             "targetDetail": "monitors",
             "options": [
                 "monitors",
-                "builds",
-                "transfers",
-                "measures"
+                "locates",
+                "observes",
+                "evaluates"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
@@ -182,14 +193,15 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L104_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'archive' was mentioned.",
-            "textToSpeak": "The researcher locates the archive silently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the specific item being used, fixed, or mentioned.",
+            "explanation": "You heard archive - a collection of stored records, files, or documents kept for future reference. The audio describes was updating the archive when the student arrived.",
+            "textToSpeak": "The librarian was updating the archive when the student arrived.",
             "targetDetail": "archive",
             "options": [
-                "circuit",
-                "satellite",
+                "module",
                 "network",
+                "software",
                 "archive"
             ],
             "correctAnswerIndex": 3,
@@ -198,31 +210,33 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L105_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'traveler' was mentioned.",
-            "textToSpeak": "The traveler locates the chip reliably.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the person's title or job mentioned in the audio.",
+            "explanation": "You heard traveler: a person who moves between places, often over long distances. The audio shows the traveler was validating expenses when the database failed.",
+            "textToSpeak": "The business traveler was validating expenses when the database failed.",
             "targetDetail": "traveler",
             "options": [
+                "pilot",
+                "explorer",
                 "expert",
-                "robot",
-                "traveler",
-                "technician"
+                "traveler"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L105_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'validates' was mentioned.",
-            "textToSpeak": "The detective validates the drone efficiently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to what is happening, not who or what is involved.",
+            "explanation": "The action is validates, meaning to confirm that something is correct, genuine, or acceptable. Here, validates every expense database entry whenever a trip ends.",
+            "textToSpeak": "She validates every expense database entry whenever a trip ends.",
             "targetDetail": "validates",
             "options": [
                 "validates",
-                "launches",
-                "encrypts",
-                "monitors"
+                "creates",
+                "monitors",
+                "builds"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
@@ -230,15 +244,16 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L105_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'database' was mentioned.",
-            "textToSpeak": "The pilot updates the database quietly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to the thing, not who is using it or what they do.",
+            "explanation": "Database is correct - an organized collection of information stored electronically for easy access. In the sentence, was searching the client database when his computer froze.",
+            "textToSpeak": "He was searching the client database when his computer froze.",
             "targetDetail": "database",
             "options": [
-                "satellite",
-                "code",
+                "software",
+                "module",
                 "database",
-                "network"
+                "sensor"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
@@ -246,31 +261,33 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L106_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'robot' was mentioned.",
-            "textToSpeak": "The robot updates the device steadily.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which person's name or role do you hear in the sentence?",
+            "explanation": "The correct person is robot - a machine programmed to carry out tasks automatically. The sentence tells us the robot was restoring a sensor file when the alarm triggered.",
+            "textToSpeak": "The warehouse robot was restoring a corrupted sensor file when the alarm triggered.",
             "targetDetail": "robot",
             "options": [
-                "commander",
                 "artist",
-                "droid",
-                "robot"
+                "hacker",
+                "robot",
+                "droid"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L106_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'restores' was mentioned.",
-            "textToSpeak": "The analyst restores the archive effectively.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the action being performed in the audio.",
+            "explanation": "You heard restores. This verb means to bring something back to its original or working condition. In the audio, restores corrupted sensor logs whenever it detects an error.",
+            "textToSpeak": "The system restores every corrupted sensor log whenever it detects an error.",
             "targetDetail": "restores",
             "options": [
-                "secures",
+                "builds",
                 "restores",
-                "sends",
-                "scans"
+                "monitors",
+                "updates"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
@@ -278,14 +295,15 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L106_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'sensor' was mentioned.",
-            "textToSpeak": "The pilot analyzes the sensor instantly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the object or concept named in the sentence.",
+            "explanation": "You heard sensor - a device that detects changes such as motion, light, heat, or sound. The audio describes was testing the warehouse sensor when the robot stopped.",
+            "textToSpeak": "She was testing the warehouse sensor when the robot stopped moving.",
             "targetDetail": "sensor",
             "options": [
-                "software",
                 "drone",
-                "circuit",
+                "engine",
+                "system",
                 "sensor"
             ],
             "correctAnswerIndex": 3,
@@ -294,15 +312,16 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L107_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'hero' was mentioned.",
-            "textToSpeak": "The hero repairs the network consistently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to who the sentence is about.",
+            "explanation": "You heard hero: a person admired for courage, great achievements, or noble qualities. The audio shows the hero was analyzing sensor data when the bus broke down.",
+            "textToSpeak": "The emergency hero was analyzing sensor data when the bus broke down.",
             "targetDetail": "hero",
             "options": [
-                "hacker",
+                "artist",
                 "hero",
-                "scientist",
-                "student"
+                "researcher",
+                "mentor"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
@@ -310,78 +329,83 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L107_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'analyzes' was mentioned.",
-            "textToSpeak": "The detective analyzes the sensor effectively.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the doing word, not the subject or object.",
+            "explanation": "Analyzes is the action - to examine something carefully in detail to understand its parts or meaning. In the sentence, analyzes road sensor data whenever a breakdown is reported.",
+            "textToSpeak": "He analyzes road sensor data whenever a vehicle breakdown is reported.",
             "targetDetail": "analyzes",
             "options": [
-                "monitors",
                 "analyzes",
-                "measures",
-                "secures"
+                "scans",
+                "repairs",
+                "observes"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L107_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'sensor' was mentioned.",
-            "textToSpeak": "The scout observes the sensor efficiently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the specific thing described in the audio.",
+            "explanation": "The correct object is sensor - a device that detects changes such as motion, light, heat, or sound. In the audio, was reading the road sensor report when the accident occurred.",
+            "textToSpeak": "She was reading the road sensor report when the accident occurred.",
             "targetDetail": "sensor",
             "options": [
-                "code",
                 "circuit",
                 "sensor",
-                "node"
+                "network",
+                "satellite"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L108_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'robot' was mentioned.",
-            "textToSpeak": "The robot encrypts the database rapidly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the person, not the action or the object they mention.",
+            "explanation": "You heard robot: a machine programmed to carry out tasks automatically. The audio shows the robot was transferring data to the terminal when the flight changed.",
+            "textToSpeak": "The airport robot was transferring luggage data to the terminal when the flight changed.",
             "targetDetail": "robot",
             "options": [
-                "technician",
+                "droid",
+                "robot",
                 "scientist",
-                "scout",
-                "robot"
+                "hero"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L108_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'transfers' was mentioned.",
-            "textToSpeak": "The artist transfers the portal silently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for what is happening, not to whom or with what.",
+            "explanation": "You heard transfers. This verb means to move something from one place, person, or system to another. In the audio, transfers passenger data to the terminal whenever a gate changes.",
+            "textToSpeak": "The system transfers passenger data to the terminal whenever a gate changes.",
             "targetDetail": "transfers",
             "options": [
-                "builds",
                 "secures",
-                "deploys",
-                "transfers"
+                "sends",
+                "transfers",
+                "updates"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L108_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'terminal' was mentioned.",
-            "textToSpeak": "The mentor encrypts the terminal carefully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word names a thing, not a person or an action.",
+            "explanation": "The thing mentioned is terminal: a place where journeys begin or end, or a device used to access a network. Here, was standing at the terminal when his flight was cancelled.",
+            "textToSpeak": "He was standing at the terminal when his connecting flight was cancelled.",
             "targetDetail": "terminal",
             "options": [
                 "terminal",
-                "system",
-                "engine",
+                "protocol",
+                "signal",
                 "drone"
             ],
             "correctAnswerIndex": 0,
@@ -390,97 +414,103 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L109_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'teacher' was mentioned.",
-            "textToSpeak": "The teacher restores the code instantly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word here is a person's title or role.",
+            "explanation": "The person mentioned is teacher. A person who helps others learn a subject or develop a skill. Here, my aunt was deploying a learning drone app when the call came.",
+            "textToSpeak": "My aunt the teacher was deploying a new learning drone app when the call came.",
             "targetDetail": "teacher",
             "options": [
-                "explorer",
-                "robot",
-                "technician",
-                "teacher"
+                "mentor",
+                "hero",
+                "teacher",
+                "technician"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L109_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'deploys' was mentioned.",
-            "textToSpeak": "The droid deploys the portal precisely.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word describes an action or activity.",
+            "explanation": "Deploys is the action - to put something or someone into use for a specific purpose. In the sentence, deploys the home learning drone app whenever her children study.",
+            "textToSpeak": "She deploys the home learning drone app whenever her children study.",
             "targetDetail": "deploys",
             "options": [
-                "analyzes",
-                "evaluates",
-                "scans",
-                "deploys"
+                "locates",
+                "deploys",
+                "activates",
+                "scans"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L109_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'drone' was mentioned.",
-            "textToSpeak": "The detective locates the drone rapidly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the name of the thing or object mentioned.",
+            "explanation": "The correct object is drone - an aircraft that flies without a pilot on board, often controlled remotely. In the audio, was flying his drone when the neighbours came.",
+            "textToSpeak": "My nephew was flying his drone when the neighbours came to complain.",
             "targetDetail": "drone",
             "options": [
-                "circuit",
-                "network",
-                "satellite",
-                "drone"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L110_Q1",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'scientist' was mentioned.",
-            "textToSpeak": "The scientist locates the protocol consistently.",
-            "targetDetail": "scientist",
-            "options": [
-                "hero",
-                "teacher",
-                "pilot",
-                "scientist"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L110_Q2",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'restores' was mentioned.",
-            "textToSpeak": "The droid restores the node effectively.",
-            "targetDetail": "restores",
-            "options": [
-                "restores",
-                "secures",
-                "observes",
-                "updates"
+                "drone",
+                "chip",
+                "engine",
+                "node"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
+            "id": "LIS_DETAILSPOTLIGHT_L110_Q1",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the type of person described in the sentence.",
+            "explanation": "The person mentioned is scientist. A person who studies the natural world through observation and experiment. Here, my dad was restoring old software when the hard drive failed.",
+            "textToSpeak": "My dad the scientist was restoring old software when the hard drive failed.",
+            "targetDetail": "scientist",
+            "options": [
+                "scientist",
+                "explorer",
+                "technician",
+                "engineer"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L110_Q2",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the action word - what is the person or thing doing?",
+            "explanation": "The action is restores, meaning to bring something back to its original or working condition. Here, restores deleted software whenever a family device crashes.",
+            "textToSpeak": "He always restores deleted software files whenever a family device crashes.",
+            "targetDetail": "restores",
+            "options": [
+                "encrypts",
+                "launches",
+                "repairs",
+                "restores"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
+        },
+        {
             "id": "LIS_DETAILSPOTLIGHT_L110_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'software' was mentioned.",
-            "textToSpeak": "The commander deploys the software expertly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the item, not the person or action described.",
+            "explanation": "The correct object is software - the programs and instructions that tell a computer how to operate. In the audio, was installing new software when the power cut occurred.",
+            "textToSpeak": "She was installing new family software when the power cut occurred.",
             "targetDetail": "software",
             "options": [
-                "satellite",
-                "portal",
-                "software",
-                "sensor"
+                "archive",
+                "sensor",
+                "database",
+                "software"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         }
     ]

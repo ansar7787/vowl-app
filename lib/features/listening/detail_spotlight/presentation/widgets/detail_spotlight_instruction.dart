@@ -3,11 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class DetailSpotlightInstruction extends StatelessWidget {
   final bool isAnswered;
   final Color color;
+  final String instruction;
 
   const DetailSpotlightInstruction({
     super.key,
     required this.isAnswered,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -26,7 +28,7 @@ class DetailSpotlightInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              isAnswered ? "EVIDENCE SECURED" : "DRAG TO SEARCH THE SHADOWS",
+              instruction.toUpperCase(),
               style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,

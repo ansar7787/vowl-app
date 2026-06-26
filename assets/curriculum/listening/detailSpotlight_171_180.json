@@ -6,79 +6,84 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L171_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'expert' was mentioned.",
-            "textToSpeak": "The expert builds the terminal swiftly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to who the sentence is about.",
+            "explanation": "The person mentioned is expert. A person with deep knowledge or advanced skill in a particular subject. Here, if the expert activates the loyalty signal early, more customers would register.",
+            "textToSpeak": "If a retail expert activates a loyalty signal early, more customers would register before the campaign closes.",
             "targetDetail": "expert",
             "options": [
-                "explorer",
-                "expert",
+                "droid",
                 "hero",
-                "technician"
+                "expert",
+                "robot"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L171_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'activates' was mentioned.",
-            "textToSpeak": "The mentor activates the module immediately.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the doing word, not the subject or object.",
+            "explanation": "The correct action is activates - to start or switch something on so it begins to work. In this sentence, activates a loyalty signal automatically and reaches far more customers in real time.",
+            "textToSpeak": "The promotion system that activates a loyalty signal automatically would reach far more customers in real time.",
             "targetDetail": "activates",
             "options": [
-                "builds",
-                "encrypts",
-                "sends",
-                "activates"
+                "activates",
+                "repairs",
+                "launches",
+                "deploys"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L171_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'signal' was mentioned.",
-            "textToSpeak": "The pilot scans the signal effectively.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the specific thing described in the audio.",
+            "explanation": "The thing mentioned is signal: a sound, light, or wave used to send information or a message. Here, if the app sent a clearer signal, customers would browse more during promotions.",
+            "textToSpeak": "If the shopping app sent a clearer signal, customers would spend more time browsing during promotional events.",
             "targetDetail": "signal",
             "options": [
+                "protocol",
                 "signal",
-                "terminal",
-                "drone",
-                "archive"
+                "node",
+                "network"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L172_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'droid' was mentioned.",
-            "textToSpeak": "The droid monitors the archive automatically.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the person, not the action or the object they mention.",
+            "explanation": "Droid is correct - a robot designed to perform tasks automatically, often resembling a human. In the sentence, if the droid transfers goods, replenishing the module section would be faster.",
+            "textToSpeak": "If the warehouse droid transfers goods between shelves, stock replenishment of the module section would be faster.",
             "targetDetail": "droid",
             "options": [
-                "droid",
-                "student",
-                "pilot",
-                "mentor"
+                "teacher",
+                "robot",
+                "artist",
+                "droid"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L172_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'transfers' was mentioned.",
-            "textToSpeak": "The explorer transfers the code immediately.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for what is happening, not to whom or with what.",
+            "explanation": "Transfers is the action - to move something from one place, person, or system to another. In the sentence, transfers inventory to the right module shelf and cuts restocking time.",
+            "textToSpeak": "The logistics droid that transfers inventory to the correct module shelf would cut restocking time significantly.",
             "targetDetail": "transfers",
             "options": [
                 "transfers",
-                "locates",
-                "restores",
-                "updates"
+                "sends",
+                "encrypts",
+                "secures"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
@@ -86,143 +91,152 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L172_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'module' was mentioned.",
-            "textToSpeak": "The analyst scans the module carefully.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word names a thing, not a person or an action.",
+            "explanation": "You heard module - a separate unit that is part of a larger system, course, or program. The audio describes if the store added a customization module, more shoppers would complete purchases.",
+            "textToSpeak": "If the online store added a customization module, shoppers would be far more likely to complete a purchase.",
             "targetDetail": "module",
             "options": [
-                "signal",
-                "data",
                 "module",
+                "code",
+                "data",
                 "database"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L173_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'student' was mentioned.",
-            "textToSpeak": "The student restores the terminal smoothly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word here is a person's title or role.",
+            "explanation": "You heard student: a person who is learning a subject, especially at a school or university. The audio shows if the student encrypts her app, no competitor could steal her chip formula.",
+            "textToSpeak": "If the culinary student encrypts her recipe app, no competitor would be able to steal her chip-based secret formula.",
             "targetDetail": "student",
             "options": [
-                "artist",
-                "pilot",
-                "researcher",
-                "student"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L173_Q2",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'encrypts' was mentioned.",
-            "textToSpeak": "The expert encrypts the database rapidly.",
-            "targetDetail": "encrypts",
-            "options": [
-                "encrypts",
-                "evaluates",
-                "repairs",
-                "builds"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L173_Q3",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'chip' was mentioned.",
-            "textToSpeak": "The scout validates the chip smoothly.",
-            "targetDetail": "chip",
-            "options": [
-                "data",
-                "archive",
-                "device",
-                "chip"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L174_Q1",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'scientist' was mentioned.",
-            "textToSpeak": "The scientist evaluates the system precisely.",
-            "targetDetail": "scientist",
-            "options": [
-                "researcher",
-                "hero",
-                "scientist",
-                "traveler"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L174_Q2",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'validates' was mentioned.",
-            "textToSpeak": "The technician validates the network silently.",
-            "targetDetail": "validates",
-            "options": [
-                "monitors",
-                "validates",
-                "creates",
-                "restores"
+                "mentor",
+                "student",
+                "robot",
+                "hero"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
-            "id": "LIS_DETAILSPOTLIGHT_L174_Q3",
+            "id": "LIS_DETAILSPOTLIGHT_L173_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'protocol' was mentioned.",
-            "textToSpeak": "The pilot transfers the protocol carefully.",
-            "targetDetail": "protocol",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word describes an action or activity.",
+            "explanation": "The action is encrypts, meaning to convert data into a code to protect it from unauthorized access. Here, encrypts each chip formula and protects years of research from theft.",
+            "textToSpeak": "The recipe manager who encrypts each digital chip formula would protect years of research from data theft.",
+            "targetDetail": "encrypts",
             "options": [
-                "network",
-                "system",
-                "protocol",
-                "drone"
+                "secures",
+                "sends",
+                "encrypts",
+                "transfers"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
-            "id": "LIS_DETAILSPOTLIGHT_L175_Q1",
+            "id": "LIS_DETAILSPOTLIGHT_L173_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'teacher' was mentioned.",
-            "textToSpeak": "The teacher encrypts the software silently.",
-            "targetDetail": "teacher",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the name of the thing or object mentioned.",
+            "explanation": "The thing mentioned is chip: a small electronic part that stores or processes information inside a device. Here, if the kitchen used a smarter chip, the cooking system would respond faster.",
+            "textToSpeak": "If the kitchen used a smarter processing chip, the automated cooking system would respond in real time.",
+            "targetDetail": "chip",
             "options": [
-                "teacher",
-                "artist",
-                "expert",
-                "hero"
+                "device",
+                "sensor",
+                "chip",
+                "circuit"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L174_Q1",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the type of person described in the sentence.",
+            "explanation": "The correct person is scientist - a person who studies the natural world through observation and experiment. The sentence tells us if the scientist validates the protocol, production could scale up immediately.",
+            "textToSpeak": "If a food scientist validates the new recipe protocol, the entire production line would be able to scale up immediately.",
+            "targetDetail": "scientist",
+            "options": [
+                "scientist",
+                "engineer",
+                "technician",
+                "analyst"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
+            "id": "LIS_DETAILSPOTLIGHT_L174_Q2",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the action word - what is the person or thing doing?",
+            "explanation": "The action is validates, meaning to confirm that something is correct, genuine, or acceptable. Here, validates every compliance protocol to ensure the menu meets international standards.",
+            "textToSpeak": "The quality manager who validates every compliance protocol would ensure that the entire menu meets international standards.",
+            "targetDetail": "validates",
+            "options": [
+                "validates",
+                "measures",
+                "analyzes",
+                "evaluates"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L174_Q3",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the item, not the person or action described.",
+            "explanation": "You heard protocol - a set of official rules that controls how a process should be carried out. The audio describes if the kitchen followed a stricter protocol, hygiene scores would improve significantly.",
+            "textToSpeak": "If the kitchen followed a stricter cleaning protocol, hygiene inspection scores would improve significantly across the board.",
+            "targetDetail": "protocol",
+            "options": [
+                "system",
+                "protocol",
+                "signal",
+                "node"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L175_Q1",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the name or role of the person in the sentence.",
+            "explanation": "Teacher is correct - a person who helps others learn a subject or develop a skill. In the sentence, if the teacher analyzes the circuit fault, the circuit could be repaired today.",
+            "textToSpeak": "If the coding teacher analyzes the circuit fault, the entire electronics circuit could be repaired the same day.",
+            "targetDetail": "teacher",
+            "options": [
+                "droid",
+                "mentor",
+                "teacher",
+                "hero"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
+        },
+        {
             "id": "LIS_DETAILSPOTLIGHT_L175_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'analyzes' was mentioned.",
-            "textToSpeak": "The teacher analyzes the circuit consistently.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the verb, not the person or the thing they mention.",
+            "explanation": "The correct action is analyzes - to examine something carefully in detail to understand its parts or meaning. In this sentence, analyzes circuit behavior and identifies the failure point within seconds.",
+            "textToSpeak": "The diagnostic tool that analyzes circuit behavior would identify the exact point of failure within seconds.",
             "targetDetail": "analyzes",
             "options": [
-                "creates",
+                "measures",
                 "analyzes",
-                "activates",
-                "observes"
+                "monitors",
+                "validates"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
@@ -230,14 +244,15 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L175_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'circuit' was mentioned.",
-            "textToSpeak": "The teacher monitors the circuit steadily.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which object or thing do you hear in the sentence?",
+            "explanation": "The thing mentioned is circuit: a closed path that lets electricity flow through to power a device. Here, if the team replaced the aging circuit, production would operate more reliably.",
+            "textToSpeak": "If the team replaced the aging circuit, the whole production environment would operate far more reliably.",
             "targetDetail": "circuit",
             "options": [
-                "satellite",
-                "chip",
-                "protocol",
+                "engine",
+                "sensor",
+                "device",
                 "circuit"
             ],
             "correctAnswerIndex": 3,
@@ -246,63 +261,67 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L176_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'droid' was mentioned.",
-            "textToSpeak": "The droid measures the archive properly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on who is being described, not what they do or use.",
+            "explanation": "The person mentioned is droid. A robot designed to perform tasks automatically, often resembling a human. Here, if the droid transfers updates to the cloud portal, all devices would sync.",
+            "textToSpeak": "If the maintenance droid transfers system updates to the cloud portal, all devices would sync automatically.",
             "targetDetail": "droid",
             "options": [
-                "teacher",
-                "technician",
-                "explorer",
-                "droid"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L176_Q2",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'transfers' was mentioned.",
-            "textToSpeak": "The explorer transfers the network successfully.",
-            "targetDetail": "transfers",
-            "options": [
-                "transfers",
-                "creates",
-                "analyzes",
-                "monitors"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L176_Q3",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'portal' was mentioned.",
-            "textToSpeak": "The scientist updates the portal smoothly.",
-            "targetDetail": "portal",
-            "options": [
-                "system",
-                "protocol",
-                "portal",
-                "drone"
+                "artist",
+                "mentor",
+                "droid",
+                "expert"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         },
         {
+            "id": "LIS_DETAILSPOTLIGHT_L176_Q2",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which action or activity do you hear in the sentence?",
+            "explanation": "The action is transfers, meaning to move something from one place, person, or system to another. Here, transfers all updates to a shared portal and eliminates manual patching.",
+            "textToSpeak": "The automated system that transfers all updates to a shared cloud portal would eliminate manual patching entirely.",
+            "targetDetail": "transfers",
+            "options": [
+                "secures",
+                "sends",
+                "transfers",
+                "encrypts"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L176_Q3",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the specific item being used, fixed, or mentioned.",
+            "explanation": "The correct object is portal - an online gateway that allows access to specific services or information. In the audio, if the team moved to a more stable portal, developers would work more productively.",
+            "textToSpeak": "If the team migrated to a more stable portal, all developers would work more productively from anywhere.",
+            "targetDetail": "portal",
+            "options": [
+                "terminal",
+                "portal",
+                "node",
+                "signal"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight"
+        },
+        {
             "id": "LIS_DETAILSPOTLIGHT_L177_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'detective' was mentioned.",
-            "textToSpeak": "The detective analyzes the chip immediately.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the person's title or job mentioned in the audio.",
+            "explanation": "The person mentioned is detective. A person who investigates crimes, mysteries, or hidden information. Here, if the detective observes the chip test results, a diagnostic error could be avoided.",
+            "textToSpeak": "If the health detective observes the chip test results, a crucial diagnostic error could be avoided entirely.",
             "targetDetail": "detective",
             "options": [
-                "student",
-                "artist",
+                "scout",
+                "traveler",
                 "detective",
-                "teacher"
+                "explorer"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
@@ -310,30 +329,32 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L177_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'observes' was mentioned.",
-            "textToSpeak": "The student observes the chip steadily.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to what is happening, not who or what is involved.",
+            "explanation": "The correct action is observes - to watch something carefully and attentively. In this sentence, observes each chip implant result and catches any rejection early.",
+            "textToSpeak": "The medical reviewer who observes each chip implant result would catch any rejection early in the process.",
             "targetDetail": "observes",
             "options": [
                 "scans",
-                "secures",
-                "updates",
-                "observes"
+                "observes",
+                "monitors",
+                "analyzes"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L177_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'chip' was mentioned.",
-            "textToSpeak": "The expert measures the chip securely.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to the thing, not who is using it or what they do.",
+            "explanation": "The thing mentioned is chip: a small electronic part that stores or processes information inside a device. Here, if the patient had a newer chip, the monitoring data would be more accurate.",
+            "textToSpeak": "If the patient received a newer diagnostic chip, the monitoring data would be significantly more accurate.",
             "targetDetail": "chip",
             "options": [
-                "software",
-                "protocol",
-                "code",
+                "circuit",
+                "engine",
+                "satellite",
                 "chip"
             ],
             "correctAnswerIndex": 3,
@@ -342,111 +363,118 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L178_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'artist' was mentioned.",
-            "textToSpeak": "The artist encrypts the network directly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Which person's name or role do you hear in the sentence?",
+            "explanation": "You heard artist: a person who creates paintings, music, or other forms of creative work. The audio shows if the artist repairs the circuit diagram, the surgical team would have clearer guidance.",
+            "textToSpeak": "If the medical illustrator artist repairs the instructional circuit diagram, the surgical team would have clearer guidance.",
             "targetDetail": "artist",
             "options": [
+                "artist",
+                "mentor",
                 "droid",
-                "robot",
-                "hacker",
-                "artist"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L178_Q2",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'repairs' was mentioned.",
-            "textToSpeak": "The mentor repairs the portal immediately.",
-            "targetDetail": "repairs",
-            "options": [
-                "sends",
-                "creates",
-                "repairs",
-                "activates"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L178_Q3",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'circuit' was mentioned.",
-            "textToSpeak": "The robot encrypts the circuit quietly.",
-            "targetDetail": "circuit",
-            "options": [
-                "portal",
-                "protocol",
-                "database",
-                "circuit"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L179_Q1",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'technician' was mentioned.",
-            "textToSpeak": "The technician validates the signal smoothly.",
-            "targetDetail": "technician",
-            "options": [
-                "pilot",
-                "researcher",
-                "technician",
-                "scout"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "detailSpotlight"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L179_Q2",
-            "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'encrypts' was mentioned.",
-            "textToSpeak": "The droid encrypts the satellite swiftly.",
-            "targetDetail": "encrypts",
-            "options": [
-                "encrypts",
-                "creates",
-                "scans",
-                "validates"
+                "hero"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
         },
         {
-            "id": "LIS_DETAILSPOTLIGHT_L179_Q3",
+            "id": "LIS_DETAILSPOTLIGHT_L178_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'engine' was mentioned.",
-            "textToSpeak": "The scientist measures the engine precisely.",
-            "targetDetail": "engine",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Notice the action being performed in the audio.",
+            "explanation": "The correct action is repairs - to fix something that is broken or not working correctly. In this sentence, repairs the heart circuit model and gives student doctors a clearer understanding.",
+            "textToSpeak": "The biomedical technician who repairs the heart circuit model would give student doctors a much clearer understanding.",
+            "targetDetail": "repairs",
             "options": [
-                "code",
-                "node",
-                "system",
-                "engine"
+                "launches",
+                "deploys",
+                "updates",
+                "repairs"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
+            "id": "LIS_DETAILSPOTLIGHT_L178_Q3",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the object or concept named in the sentence.",
+            "explanation": "The correct object is circuit - a closed path that lets electricity flow through to power a device. In the audio, if the hospital replaced the aging circuit, scan results would be more reliable.",
+            "textToSpeak": "If the hospital replaced the aging diagnostic circuit, scan results would be significantly more reliable for patients.",
+            "targetDetail": "circuit",
+            "options": [
+                "drone",
+                "circuit",
+                "engine",
+                "chip"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L179_Q1",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Pay attention to who the sentence is about.",
+            "explanation": "Technician is correct - a person skilled in the practical use of technology or machinery. In the sentence, if the technician encrypts the master file, the game engine could be secured.",
+            "textToSpeak": "If the studio technician encrypts the master engine file, the whole game engine could be secured before release.",
+            "targetDetail": "technician",
+            "options": [
+                "technician",
+                "scientist",
+                "analyst",
+                "researcher"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L179_Q2",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the doing word, not the subject or object.",
+            "explanation": "You heard encrypts. This verb means to convert data into a code to protect it from unauthorized access. In the audio, encrypts each game engine and prevents costly pre-release leaks.",
+            "textToSpeak": "The IP protection team that encrypts each proprietary game engine would prevent costly pre-release leaks to competitors.",
+            "targetDetail": "encrypts",
+            "options": [
+                "sends",
+                "encrypts",
+                "transfers",
+                "secures"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L179_Q3",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for the specific thing described in the audio.",
+            "explanation": "Engine is correct - the part of a vehicle or machine that produces power to make it move. In the sentence, if the developer rebuilt the engine, the frame rate would improve dramatically.",
+            "textToSpeak": "If the developer rebuilt the game engine from scratch, the frame rate would improve dramatically for all players.",
+            "targetDetail": "engine",
+            "options": [
+                "circuit",
+                "device",
+                "engine",
+                "sensor"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
+        },
+        {
             "id": "LIS_DETAILSPOTLIGHT_L180_Q1",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'artist' was mentioned.",
-            "textToSpeak": "The artist sends the chip reliably.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Focus on the person, not the action or the object they mention.",
+            "explanation": "The correct person is artist - a person who creates paintings, music, or other forms of creative work. The sentence tells us if the artist restores the recording, fans would hear it as it was made.",
+            "textToSpeak": "If the album artist restores the original circuit recording, fans would hear the song exactly as it was first made.",
             "targetDetail": "artist",
             "options": [
                 "artist",
-                "researcher",
-                "mentor",
-                "analyst"
+                "droid",
+                "student",
+                "mentor"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight"
@@ -454,33 +482,35 @@
         {
             "id": "LIS_DETAILSPOTLIGHT_L180_Q2",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'restores' was mentioned.",
-            "textToSpeak": "The artist restores the signal directly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "Listen for what is happening, not to whom or with what.",
+            "explanation": "The action is restores, meaning to bring something back to its original or working condition. Here, restores damaged circuit recordings and brings lost musical history back to life.",
+            "textToSpeak": "The archive team that restores damaged circuit recording files would bring lost musical history back to life.",
             "targetDetail": "restores",
             "options": [
-                "sends",
-                "monitors",
-                "restores",
-                "scans"
+                "launches",
+                "activates",
+                "deploys",
+                "restores"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L180_Q3",
             "interactionType": "Flashlight Search",
-            "hint": "Find the detail.",
-            "explanation": "'circuit' was mentioned.",
-            "textToSpeak": "The droid launches the circuit swiftly.",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The key word names a thing, not a person or an action.",
+            "explanation": "Circuit is correct - a closed path that lets electricity flow through to power a device. In the sentence, if the venue upgraded its audio circuit, every seat would sound better.",
+            "textToSpeak": "If the live venue upgraded its audio circuit, every seat in the hall would experience noticeably better sound.",
             "targetDetail": "circuit",
             "options": [
-                "data",
-                "software",
-                "drone",
-                "circuit"
+                "satellite",
+                "chip",
+                "circuit",
+                "device"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight"
         }
     ]
