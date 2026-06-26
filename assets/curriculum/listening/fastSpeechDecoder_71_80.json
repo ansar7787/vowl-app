@@ -6,29 +6,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L71_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher launches the software reliably.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'regular'/'daily', 'numerous'/'several', and 'benefits'/'effects'.",
+            "explanation": "'Numerous' (a large number - emphasises quantity) vs 'several' (more than two but not emphasising largeness). 'Regular' (consistently occurring) vs 'daily' (every day - more specific). 'Benefits for' (positive effects on) vs 'effects on' (neutral - could be positive or negative). Health and wellbeing vocabulary in formal English.",
+            "textToSpeak": "Regular exercise has numerous benefits for mental health.",
             "options": [
-                "The mentor launches the chip silently.",
-                "The student locates the terminal swiftly.",
-                "The mentor repairs the drone precisely.",
-                "The researcher launches the software reliably."
+                "Regular exercise has numerous benefits for mental health.",
+                "Regular exercise has several benefits for mental health.",
+                "Regular exercise has numerous effects on mental health.",
+                "Daily exercise has numerous benefits for mental health."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L71_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero scans the drone swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'she's'/'he's', 'advised'/'told', and 'has been'/'had been'.",
+            "explanation": "'Advised to' (given professional guidance) vs 'told to' (given a direct instruction - less professional tone). 'She's been' (recent advice, still relevant) vs 'she'd been' (advice given before another past event). 'She' vs 'he'. Medical advice using passive voice ('has been advised') is formal and common in health reporting.",
+            "textToSpeak": "She's been advised to follow a strict diet.",
             "options": [
-                "The droid launches the data efficiently.",
-                "The engineer transfers the code successfully.",
-                "The droid measures the system consistently.",
-                "The hero scans the drone swiftly."
+                "He's been advised to follow a strict diet.",
+                "She's been told to follow a strict diet.",
+                "She'd been advised to follow a strict diet.",
+                "She's been advised to follow a strict diet."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -36,44 +38,47 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L71_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler analyzes the chip swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'may'/'might', 'symptoms'/'signs', and 'weeks'/'months'.",
+            "explanation": "'May not appear' and 'might not appear' - both express possibility of non-occurrence but 'may' is slightly more formal/certain. 'Symptoms' (specific signs of illness - medical term) vs 'signs' (more general indicators). 'Weeks' vs 'months' - critical timing difference in medical contexts. Medical English for understanding health information.",
+            "textToSpeak": "The symptoms may not appear for several weeks.",
             "options": [
-                "The traveler analyzes the chip swiftly.",
-                "The engineer locates the portal precisely.",
-                "The scientist sends the sensor securely.",
-                "The hero observes the data silently."
+                "The symptoms might not appear for several weeks.",
+                "The symptoms may not appear for several weeks.",
+                "The symptoms may not appear for several months.",
+                "The signs may not appear for several weeks."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L72_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The droid builds the signal precisely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'claims'/'says', 'advertisement'/'advert', and the tense.",
+            "explanation": "'Claims' (asserts something that may be disputed) vs 'says' (neutral reporting). 'Advertisement' (full word) vs 'advert' (British abbreviation). 'Claims' (present - ongoing) vs 'claimed' (past - perhaps no longer running). Media literacy vocabulary - understanding the difference between 'claims' and 'says' is critical for analysing advertising.",
+            "textToSpeak": "The advertisement claims the product is completely natural.",
             "options": [
-                "The artist activates the network consistently.",
-                "The commander analyzes the protocol carefully.",
-                "The analyst sends the sensor expertly.",
-                "The droid builds the signal precisely."
+                "The advertisement claims the product is completely natural.",
+                "The advert claims the product is completely natural.",
+                "The advertisement claimed the product was completely natural.",
+                "The advertisement says the product is completely natural."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L72_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander activates the protocol carefully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'many'/'most', 'believe'/'think'/'know', and the relative clause.",
+            "explanation": "'Many' (a large number but not a majority necessarily) vs 'most' (the majority). 'Believe' (hold as an opinion/feeling) vs 'think' (similar but more cognitive) vs 'know' (certain - much stronger claim). Media influence language is increasingly important for modern English literacy.",
+            "textToSpeak": "Many people believe they're influenced by social media.",
             "options": [
-                "The scientist transfers the software consistently.",
-                "The expert measures the signal reliably.",
-                "The expert sends the drone steadily.",
-                "The commander activates the protocol carefully."
+                "Most people believe they're influenced by social media.",
+                "Many think that they're influenced by social media.",
+                "Many people know they're influenced by social media.",
+                "Many people believe they're influenced by social media."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -81,179 +86,191 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L72_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor encrypts the node rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'mixed'/'poor', 'film'/'movie', and 'received'/'had received'.",
+            "explanation": "'Mixed reviews' (some positive, some negative) vs 'poor reviews' (mostly negative). 'Film' (British English preferred) vs 'movie' (American English) - both are used worldwide. 'Received' (simple past - when it was released) vs 'had received' (past perfect - before something else happened). Entertainment journalism vocabulary.",
+            "textToSpeak": "The film received mixed reviews from critics.",
             "options": [
-                "The mentor encrypts the node rapidly.",
-                "The traveler encrypts the network immediately.",
-                "The student scans the database successfully.",
-                "The traveler validates the device smoothly."
+                "The film received poor reviews from critics.",
+                "The movie received mixed reviews from critics.",
+                "The film received mixed reviews from critics.",
+                "The film had received mixed reviews from critics."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L73_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer creates the signal efficiently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'deforestation'/'pollution', 'serious'/'major', and 'continues to be'/'remains'.",
+            "explanation": "'Serious' and 'major' are near-synonyms for emphasising the scale of a problem. 'Continues to be' (emphasises ongoing nature) vs 'remains' (shorter, same meaning). 'Deforestation' (cutting down forests) vs 'pollution' (environmental contamination) - both environmental issues. Environmental discourse English for academic and media contexts.",
+            "textToSpeak": "Deforestation continues to be a serious global problem.",
             "options": [
-                "The engineer creates the signal efficiently.",
-                "The pilot builds the engine automatically.",
-                "The scout monitors the protocol silently.",
-                "The pilot transfers the code reliably."
+                "Deforestation remains a serious global problem.",
+                "Pollution continues to be a serious global problem.",
+                "Deforestation continues to be a major global problem.",
+                "Deforestation continues to be a serious global problem."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L73_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student observes the code consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'countries'/'nations', 'working'/'trying', and 'reduce'/'increase'.",
+            "explanation": "'Countries' and 'nations' - both refer to states but 'nations' has slightly more cultural/political resonance. 'Working together' (collaborative effort) vs 'trying together' (slightly less natural English). 'Reduce' (decrease) vs 'increase' (opposite!). Climate policy language is essential for academic and current affairs English.",
+            "textToSpeak": "Countries are working together to reduce carbon emissions.",
             "options": [
-                "The student observes the code consistently.",
-                "The technician deploys the terminal immediately.",
-                "The student observes the circuit effectively.",
-                "The analyst restores the drone carefully."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L73_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout updates the device instantly.",
-            "options": [
-                "The hero secures the engine directly.",
-                "The scout updates the device instantly.",
-                "The commander deploys the code successfully.",
-                "The mentor validates the software successfully."
+                "Nations are working together to reduce carbon emissions.",
+                "Countries are working together to reduce carbon emissions.",
+                "Countries are working together to increase carbon emissions.",
+                "Countries are trying together to reduce carbon emissions."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L73_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'choices'/'actions', 'individual'/'personal', and 'can'/'could'.",
+            "explanation": "'Choices' (decisions made) vs 'actions' (things done - slightly more active emphasis). 'Individual' (relating to single persons) vs 'personal' (belonging to or for a person). 'Can' (present ability/possibility) vs 'could' (conditional - perhaps under certain circumstances). Civic and environmental responsibility language.",
+            "textToSpeak": "Individual choices can have a significant collective impact.",
+            "options": [
+                "Individual actions can have a significant collective impact.",
+                "Personal choices can have a significant collective impact.",
+                "Individual choices can have a significant collective impact.",
+                "Individual choices could have a significant collective impact."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L74_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher measures the sensor immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'school'/'university', 'introduced'/'implemented', and 'curriculum'/'programme'.",
+            "explanation": "'Introduced' (brought in for the first time) vs 'implemented' (put into practice - implies it was planned before). 'Curriculum' (the content of what is taught) vs 'programme' (the overall structure/schedule). 'School' (primary/secondary) vs 'university' (higher education). Education policy vocabulary.",
+            "textToSpeak": "The school introduced a new curriculum this term.",
             "options": [
-                "The researcher measures the sensor immediately.",
-                "The engineer builds the device silently.",
-                "The artist builds the database rapidly.",
-                "The scientist launches the chip quietly."
+                "The university introduced a new curriculum this term.",
+                "The school introduced a new curriculum this term.",
+                "The school introduced a new programme this term.",
+                "The school implemented a new curriculum this term."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L74_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler launches the signal precisely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'students'/'pupils', 'think'/'work', and 'are'/'were'.",
+            "explanation": "'Students' (typically secondary school and above) vs 'pupils' (more common for primary/younger children in British English). 'Think independently' (form your own opinions) vs 'work independently' (do tasks on your own). 'Are encouraged' (current policy) vs 'were encouraged' (past). Education methodology language.",
+            "textToSpeak": "Students are encouraged to think independently.",
             "options": [
-                "The droid updates the module carefully.",
-                "The artist secures the chip directly.",
-                "The mentor creates the database automatically.",
-                "The traveler launches the signal precisely."
+                "Students are encouraged to think independently.",
+                "Students are encouraged to work independently.",
+                "Students were encouraged to think independently.",
+                "Pupils are encouraged to think independently."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L74_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler repairs the code efficiently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'relationship'/'dynamic', singular vs plural, and 'student'/'pupil'.",
+            "explanation": "'Relationship' (connection/bond) vs 'dynamic' (pattern of interaction - more analytical term). Singular 'teacher and student' (the general type) vs plural 'teachers and students' (all of them). 'Student' vs 'pupil' - British English distinction. Discussing educational change uses these specific academic vocabulary items.",
+            "textToSpeak": "The relationship between teacher and student has changed.",
             "options": [
-                "The hacker locates the signal silently.",
-                "The student launches the drone effectively.",
-                "The technician analyzes the satellite rapidly.",
-                "The traveler repairs the code efficiently."
+                "The dynamic between teacher and student has changed.",
+                "The relationship between teacher and student has changed.",
+                "The relationship between teacher and pupil has changed.",
+                "The relationship between teachers and students has changed."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L75_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander secures the satellite reliably.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'will'/'came', 'legislation'/'regulations', and 'come into effect'/'take effect'.",
+            "explanation": "'Come into effect' and 'take effect' both mean to start being active - 'come into effect' is slightly more formal. 'Next year' (future) vs 'last year' (past). 'Legislation' (laws passed by parliament) vs 'regulations' (rules within a regulatory framework). Legal and political English for understanding news and government.",
+            "textToSpeak": "The new legislation will come into effect next year.",
             "options": [
-                "The commander secures the satellite reliably.",
-                "The teacher restores the terminal directly.",
-                "The robot evaluates the data quietly.",
-                "The student validates the drone properly."
+                "The new legislation came into effect last year.",
+                "The new regulations will come into effect next year.",
+                "The new legislation will come into effect next year.",
+                "The new legislation will take effect next year."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L75_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher transfers the portal properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'citizens'/'residents', 'right'/'duty', and 'challenge'/'question'.",
+            "explanation": "'Citizens' (legal members of a country) vs 'residents' (people who live somewhere). 'Right' (an entitlement) vs 'duty' (an obligation - opposite type of legal relationship). 'Challenge' (formally oppose in a legal/formal setting) vs 'question' (raise doubt about). Civic rights language is important for understanding democratic discourse.",
+            "textToSpeak": "Citizens have the right to challenge these decisions.",
             "options": [
-                "The teacher transfers the portal properly.",
-                "The detective validates the protocol reliably.",
-                "The commander monitors the circuit efficiently.",
-                "The analyst sends the engine directly."
+                "Residents have the right to challenge these decisions.",
+                "Citizens have the right to question these decisions.",
+                "Citizens have the right to challenge these decisions.",
+                "Citizens have the duty to challenge these decisions."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L75_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker evaluates the module smoothly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'enforcement'/'implementation', 'rules'/'law', and 'has been'/'was'.",
+            "explanation": "'Enforcement' (ensuring rules are followed) vs 'implementation' (putting plans or rules into practice). 'Rules' (specific regulations) vs 'law' (the legal system broadly). 'Has been inconsistent' (present perfect - ongoing problem) vs 'was inconsistent' (simple past - past period only). Institutional accountability language.",
+            "textToSpeak": "Enforcement of the rules has been inconsistent.",
             "options": [
-                "The hacker evaluates the module smoothly.",
-                "The pilot restores the network smoothly.",
-                "The commander launches the signal precisely.",
-                "The scientist locates the data consistently."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L76_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot validates the terminal successfully.",
-            "options": [
-                "The analyst locates the module effectively.",
-                "The teacher encrypts the data swiftly.",
-                "The expert evaluates the engine rapidly.",
-                "The robot validates the terminal successfully."
+                "Implementation of the rules has been inconsistent.",
+                "Enforcement of the law has been inconsistent.",
+                "Enforcement of the rules was inconsistent.",
+                "Enforcement of the rules has been inconsistent."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L76_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'is'/'has', 'transforming'/'changing', and 'artificial intelligence'/'new technology'.",
+            "explanation": "'Is transforming' (present continuous - happening right now, ongoing) vs 'has transformed' (present perfect - already happened, with current result). 'Transforming' (radical, fundamental change) vs 'changing' (more neutral change). 'Artificial intelligence' vs 'new technology' - specific vs general. Technology discourse.",
+            "textToSpeak": "Artificial intelligence is transforming many industries.",
+            "options": [
+                "Artificial intelligence has transformed many industries.",
+                "Artificial intelligence is transforming many industries.",
+                "New technology is transforming many industries.",
+                "Artificial intelligence is changing many industries."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L76_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer evaluates the sensor efficiently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'privacy'/'security', 'major'/'growing', and 'has'/'had'.",
+            "explanation": "'Data privacy' (control over personal data) vs 'data security' (protection from breaches) - related but different concepts. 'Major' (large in scale) vs 'growing' (increasing - implies it wasn't always a concern). 'Has become' (present perfect - now a current reality) vs 'had become' (past perfect). Digital rights vocabulary.",
+            "textToSpeak": "Data privacy has become a major concern for users.",
             "options": [
-                "The explorer evaluates the sensor efficiently.",
-                "The explorer builds the database securely.",
-                "The scientist deploys the satellite instantly.",
-                "The commander activates the software quietly."
+                "Data privacy has become a major concern for users.",
+                "Data privacy has become a growing concern for users.",
+                "Data privacy had become a major concern for users.",
+                "Data security has become a major concern for users."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -261,89 +278,95 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L76_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot sends the portal steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'jobs'/'tasks', 'many'/'several', and 'previously'/'traditionally'.",
+            "explanation": "'Jobs' (entire roles/positions) vs 'tasks' (specific activities within a role). 'Many' vs 'several' - 'many' suggests a larger number. 'Previously' (in the past - neutral) vs 'traditionally' (implies custom/long-standing practice). Automation and the future of work - important contemporary English topic.",
+            "textToSpeak": "Many jobs previously done by humans are now automated.",
             "options": [
-                "The pilot sends the portal steadily.",
-                "The robot launches the portal precisely.",
-                "The student scans the drone efficiently.",
-                "The expert updates the system steadily."
+                "Many tasks previously done by humans are now automated.",
+                "Several jobs previously done by humans are now automated.",
+                "Many jobs previously done by humans are now automated.",
+                "Many jobs traditionally done by humans are now automated."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L77_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher launches the satellite expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'company'/'firm', 'reported'/'announced', and 'decline'/'increase'.",
+            "explanation": "'Decline' (decrease) vs 'increase' (opposite!) - critical difference in financial news. 'Company' (general) vs 'firm' (slightly more formal, often used for professional services). 'Reported' (presented formally to shareholders/public) vs 'announced' (made a public statement). Business financial vocabulary.",
+            "textToSpeak": "The company reported a sharp decline in profits.",
             "options": [
-                "The mentor monitors the circuit properly.",
-                "The robot restores the satellite rapidly.",
-                "The commander creates the software rapidly.",
-                "The teacher launches the satellite expertly."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L77_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher encrypts the archive expertly.",
-            "options": [
-                "The researcher encrypts the archive expertly.",
-                "The scientist updates the archive successfully.",
-                "The explorer analyzes the node precisely.",
-                "The detective deploys the node efficiently."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L77_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler deploys the data smoothly.",
-            "options": [
-                "The researcher observes the signal quietly.",
-                "The traveler deploys the data smoothly.",
-                "The scientist activates the circuit directly.",
-                "The researcher sends the data quietly."
+                "The firm reported a sharp decline in profits.",
+                "The company reported a sharp decline in profits.",
+                "The company announced a sharp decline in profits.",
+                "The company reported a sharp increase in profits."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L77_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'are'/'were', 'interest'/'exchange' rates, and 'expected to'/'unlikely to'.",
+            "explanation": "'Interest rates' (cost of borrowing money) vs 'exchange rates' (value of currency relative to another). 'Are expected to remain stable' (current forecast: no change) vs 'are unlikely to remain stable' (current forecast: they will change). 'Were expected' (past forecast). Financial forecasting language.",
+            "textToSpeak": "Interest rates are expected to remain stable.",
+            "options": [
+                "Interest rates were expected to remain stable.",
+                "Interest rates are expected to remain stable.",
+                "Interest rates are unlikely to remain stable.",
+                "Exchange rates are expected to remain stable."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L77_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'investors'/'traders', 'cautious'/'nervous'/'optimistic', and 'due to'/'despite'.",
+            "explanation": "'Cautious' (careful, avoiding risk - professional tone) vs 'nervous' (anxious - more emotional). 'Investors' (those who put money in markets) vs 'traders' (those who actively buy and sell). 'Due to' (because of - causal) vs 'despite' (even though - concessive - completely different logical relationship!). Financial sentiment vocabulary.",
+            "textToSpeak": "Investors are cautious due to market uncertainty.",
+            "options": [
+                "Investors are nervous due to market uncertainty.",
+                "Traders are cautious due to market uncertainty.",
+                "Investors are cautious due to market uncertainty.",
+                "Investors are optimistic despite market uncertainty."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L78_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout monitors the protocol directly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'traditional'/'old', 'recipes'/'dishes', and 'are being'/'have been'.",
+            "explanation": "'Traditional' (established over time, culturally valued) vs 'old' (simply having existed for a long time - less positive). 'Recipes' (instructions for cooking) vs 'dishes' (the prepared food itself). 'Are being passed down' (present continuous passive - happening now) vs 'have been passed down' (present perfect passive - completed action). Food culture language.",
+            "textToSpeak": "Traditional recipes are being passed down through generations.",
             "options": [
-                "The scout monitors the protocol directly.",
-                "The analyst deploys the archive instantly.",
-                "The scientist scans the protocol reliably.",
-                "The student deploys the device efficiently."
+                "Old recipes are being passed down through generations.",
+                "Traditional recipes have been passed down through generations.",
+                "Traditional dishes are being passed down through generations.",
+                "Traditional recipes are being passed down through generations."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L78_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist encrypts the chip securely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'street food'/'fast food', 'has'/'had', and 'popular'/'common'.",
+            "explanation": "'Street food' (food sold in public spaces, often local/authentic) vs 'fast food' (standardised quick-service food). 'Popular' (liked by many people) vs 'common' (widespread - doesn't necessarily mean people like it). 'Has become' (present perfect - up to now) vs 'had become' (past perfect). Food trend language.",
+            "textToSpeak": "Street food has become increasingly popular in recent years.",
             "options": [
-                "The hero measures the satellite effectively.",
-                "The artist encrypts the chip securely.",
-                "The pilot analyzes the sensor smoothly.",
-                "The scout launches the satellite expertly."
+                "Fast food has become increasingly popular in recent years.",
+                "Street food has become increasingly popular in recent years.",
+                "Street food has become increasingly common in recent years.",
+                "Street food had become increasingly popular in recent years."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -351,44 +374,47 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L78_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The droid measures the node securely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'restaurant'/'café', 'prides itself on'/'values itself on', and 'on'/'in'.",
+            "explanation": "'Prides itself on' - a set phrase meaning 'is especially proud of'. 'Values itself on' is not standard English - a common learner error. 'On' vs 'in' - the preposition in 'prides itself on' is fixed. 'Restaurant' (sit-down meal) vs 'café' (lighter meals and drinks). Food business marketing language.",
+            "textToSpeak": "The restaurant prides itself on using local ingredients.",
             "options": [
-                "The droid measures the node securely.",
-                "The explorer encrypts the module consistently.",
-                "The hero secures the engine properly.",
-                "The hacker monitors the portal effectively."
+                "The café prides itself on using local ingredients.",
+                "The restaurant values itself on using local ingredients.",
+                "The restaurant prides itself in using local ingredients.",
+                "The restaurant prides itself on using local ingredients."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L79_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher restores the satellite expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'team'/'player', 'performed'/'played', and 'exceptionally'/'particularly'.",
+            "explanation": "'Performed' (used for overall performance assessment - formal) vs 'played' (more specific to the sport). 'Team' (the group) vs 'player' (individual). 'Exceptionally' (to an exceptional degree - very high praise) vs 'particularly' (especially - somewhat less emphatic). Sports commentary language.",
+            "textToSpeak": "The team performed exceptionally well under pressure.",
             "options": [
-                "The researcher restores the satellite expertly.",
-                "The droid measures the circuit directly.",
-                "The scout locates the code rapidly.",
-                "The analyst locates the portal securely."
+                "The player performed exceptionally well under pressure.",
+                "The team performed exceptionally well under pressure.",
+                "The team performed particularly well under pressure.",
+                "The team played exceptionally well under pressure."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L79_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot scans the system immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'she'/'he', 'trained'/'practised', and 'consistently'/'constantly'.",
+            "explanation": "'Consistently' (in a regular, reliable way) vs 'constantly' (without stopping - more extreme). 'Trained' (physical athletic preparation) vs 'practised' (rehearsed/worked on skills). 'She' vs 'he'. The distinction between 'consistently' and 'constantly' is important - one implies quality of effort, the other implies frequency.",
+            "textToSpeak": "She trained consistently throughout the entire season.",
             "options": [
-                "The pilot scans the system immediately.",
-                "The student builds the sensor smoothly.",
-                "The technician launches the software automatically.",
-                "The technician scans the archive immediately."
+                "She trained consistently throughout the entire season.",
+                "She practised consistently throughout the entire season.",
+                "She trained constantly throughout the entire season.",
+                "He trained consistently throughout the entire season."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -396,61 +422,65 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L79_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker monitors the software efficiently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'score'/'result', 'closer'/'better', and 'anticipated'/'expected'.",
+            "explanation": "'Score' (the specific numbers in a game) vs 'result' (the broader outcome - including who won). 'Closer' (the margin was smaller) vs 'better' (the quality was higher - different meanings). 'Anticipated' and 'expected' - near-synonyms, 'anticipated' slightly more formal. Sports outcome vocabulary.",
+            "textToSpeak": "The final score was closer than anyone anticipated.",
             "options": [
-                "The detective creates the data automatically.",
-                "The expert restores the database securely.",
-                "The hacker monitors the software efficiently.",
-                "The detective encrypts the portal efficiently."
+                "The final result was closer than anyone anticipated.",
+                "The final score was closer than anyone anticipated.",
+                "The final score was closer than anyone had expected.",
+                "The final score was better than anyone anticipated."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L80_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher restores the device automatically.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'journey'/'trip', 'longer'/'harder', and 'we'/'they'.",
+            "explanation": "'Journey' (the travel itself, especially longer/meaningful trips) vs 'trip' (more casual, could include the destination). 'Longer' (more time) vs 'harder' (more difficult - different dimension). 'We had planned' vs 'they had planned' - who made the plan. Travel narrative vocabulary for describing experiences.",
+            "textToSpeak": "The journey was longer than we had planned.",
             "options": [
-                "The hacker updates the portal carefully.",
-                "The teacher validates the network efficiently.",
-                "The researcher restores the device automatically.",
-                "The droid scans the node steadily."
+                "The trip was longer than we had planned.",
+                "The journey was longer than we had planned.",
+                "The journey was longer than they had planned.",
+                "The journey was harder than we had planned."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L80_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The droid transfers the module automatically.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'we'/'they', 'discovered'/'found', and 'hidden'/'small'.",
+            "explanation": "'Discovered' (found for the first time, with a sense of wonder) vs 'found' (more neutral - located). 'Hidden' (deliberately or naturally concealed) vs 'small' (describing size, not visibility). 'We' vs 'they'. Travel discovery narrative language - describing adventurous experiences in English.",
+            "textToSpeak": "We discovered a hidden village in the mountains.",
             "options": [
-                "The artist updates the satellite smoothly.",
-                "The pilot locates the network efficiently.",
-                "The scientist launches the engine properly.",
-                "The droid transfers the module automatically."
+                "They discovered a hidden village in the mountains.",
+                "We found a hidden village in the mountains.",
+                "We discovered a hidden village in the mountains.",
+                "We discovered a small village in the mountains."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L80_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor launches the sensor immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'incredibly'/'extremely', 'people'/'food', and 'friendly'/'reserved'.",
+            "explanation": "'Incredibly' and 'extremely' are both intensifiers - near-synonyms. 'People' (humans) vs 'food' (you can't describe food as 'welcoming'!). 'Friendly' (warm and kind) vs 'reserved' (quiet, not very open - almost opposite in social meaning). Travel experience reviews and cultural descriptions use this vocabulary constantly.",
+            "textToSpeak": "The local people were incredibly welcoming and friendly.",
             "options": [
-                "The scientist transfers the drone swiftly.",
-                "The mentor launches the sensor immediately.",
-                "The commander deploys the protocol steadily.",
-                "The traveler secures the node effectively."
+                "The local people were extremely welcoming and friendly.",
+                "The local food was incredibly welcoming and friendly.",
+                "The local people were incredibly welcoming and friendly.",
+                "The local people were incredibly welcoming but reserved."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         }
     ]

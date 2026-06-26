@@ -6,74 +6,79 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L11_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student monitors the protocol quietly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for whose kitchen and the size of the window.",
+            "explanation": "'Our' and 'her' both precede a noun and are often unstressed. 'Large' vs 'small' - opposite adjectives. 'Kitchen' vs 'bedroom' - different rooms. Home vocabulary like this comes up constantly when describing where you live or visiting someone's home.",
+            "textToSpeak": "Our kitchen has a large window.",
             "options": [
-                "The student deploys the terminal rapidly.",
-                "The student restores the satellite smoothly.",
-                "The hacker repairs the circuit reliably.",
-                "The student monitors the protocol quietly."
+                "Her kitchen has a large window.",
+                "Our kitchen has a small window.",
+                "Our kitchen has a large window.",
+                "Our bedroom has a large window."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L11_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist analyzes the node directly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice who is doing the painting, which room, and when.",
+            "explanation": "'They're' and 'we're' are contractions that sound similar. 'This weekend' (future plan) vs 'last weekend' (past). 'Living room' vs 'bedroom' - common home rooms. 'They're painting' - present continuous for a future plan - very natural spoken English.",
+            "textToSpeak": "They're painting the living room this weekend.",
             "options": [
-                "The scientist analyzes the node directly.",
-                "The artist repairs the circuit immediately.",
-                "The scientist launches the sensor properly.",
-                "The hacker encrypts the node effectively."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L11_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher transfers the circuit properly.",
-            "options": [
-                "The artist transfers the module quietly.",
-                "The researcher transfers the circuit properly.",
-                "The expert locates the software instantly.",
-                "The teacher encrypts the engine properly."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L12_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer encrypts the network effectively.",
-            "options": [
-                "The researcher evaluates the archive reliably.",
-                "The student restores the circuit carefully.",
-                "The hacker sends the portal quietly.",
-                "The explorer encrypts the network effectively."
+                "We're painting the living room this weekend.",
+                "They're painting the bedroom this weekend.",
+                "They painted the living room this weekend.",
+                "They're painting the living room this weekend."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L11_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on which door ('front'/'back') and what it needs.",
+            "explanation": "'Front' and 'back' are opposites for describing parts of a house. 'Lock' and 'handle' - both door parts but very different. 'Needs' (present) vs 'needed' (past) - one letter changes the tense. This is practical home English you'll use when talking about repairs.",
+            "textToSpeak": "The front door needs a new lock.",
+            "options": [
+                "The front door needs a new lock.",
+                "The front door needs a new handle.",
+                "The front door needed a new lock.",
+                "The back door needs a new lock."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L12_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the modal verb ('can'/'could') and the item requested.",
+            "explanation": "'Can' and 'could' are both request words, but 'could' is slightly more formal/polite. 'Salt' and 'sugar' - both table condiments - very easy to confuse in a noisy environment. 'You' vs 'she' - who is being asked. Table requests like this are extremely common everyday English.",
+            "textToSpeak": "Can you pass me the salt, please?",
+            "options": [
+                "Could you pass me the salt, please?",
+                "Can she pass me the salt, please?",
+                "Can you pass me the salt, please?",
+                "Can you pass me the sugar, please?"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L12_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert secures the software consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the subject, the ingredient, and the tense.",
+            "explanation": "'Garlic' and 'onion' are both cooking ingredients - classic vocabulary confusion. 'Add' vs 'added' - present habit vs past habit. 'I always add' vs 'she always adds' - note the third person 's' in 'adds/cooks'. Cooking vocabulary is practical everyday English.",
+            "textToSpeak": "I always add garlic when I cook pasta.",
             "options": [
-                "The explorer observes the terminal securely.",
-                "The explorer updates the device directly.",
-                "The teacher sends the network immediately.",
-                "The expert secures the software consistently."
+                "She always adds garlic when she cooks pasta.",
+                "I always add onion when I cook pasta.",
+                "I always added garlic when I cooked pasta.",
+                "I always add garlic when I cook pasta."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -81,164 +86,175 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L12_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker restores the code consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the food item, the time, and the tense.",
+            "explanation": "'Forty' and 'thirty' are easily confused at speed - both end in '-ty'. 'Cake' and 'bread' - both baked goods. 'Needs' (present instruction) vs 'needed' (past). Cooking time expressions are essential for following recipes in English.",
+            "textToSpeak": "The cake needs forty minutes in the oven.",
             "options": [
-                "The droid activates the code swiftly.",
-                "The explorer restores the data swiftly.",
-                "The hacker restores the code consistently.",
-                "The pilot builds the code automatically."
+                "The bread needs forty minutes in the oven.",
+                "The cake needs forty minutes in the oven.",
+                "The cake needs thirty minutes in the oven.",
+                "The cake needed forty minutes in the oven."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L13_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher secures the signal properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch the day of the week, the time, and the tense ('is'/'was').",
+            "explanation": "'Thursday' and 'Tuesday' both start with 'T' and end in '-day' - very commonly confused. 'Three' and 'two' sound different but are short words that disappear in fast speech. 'Is' vs 'was' - upcoming vs past meeting. Business scheduling language is essential professional English.",
+            "textToSpeak": "The meeting is on Thursday at three.",
             "options": [
-                "The engineer launches the node immediately.",
-                "The researcher secures the signal properly.",
-                "The scout updates the signal smoothly.",
-                "The commander creates the signal carefully."
+                "The meeting is on Thursday at three.",
+                "The meeting is on Thursday at two.",
+                "The meeting was on Thursday at three.",
+                "The meeting is on Tuesday at three."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L13_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst locates the protocol quietly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice the subject, 'before' vs 'after', and the tense.",
+            "explanation": "'Before' and 'after' are opposites - a one-word change that completely reverses the meaning. 'Wakes up' (present habit) vs 'woke up' (past). 'She' vs 'he' - subject pronoun. Daily routine vocabulary with time prepositions is core English for talking about your day.",
+            "textToSpeak": "She wakes up an hour before work.",
             "options": [
-                "The analyst locates the protocol quietly.",
-                "The analyst transfers the module directly.",
-                "The scout repairs the protocol properly.",
-                "The traveler monitors the network immediately."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L13_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher encrypts the drone precisely.",
-            "options": [
-                "The student sends the protocol effectively.",
-                "The engineer scans the system smoothly.",
-                "The teacher encrypts the drone precisely.",
-                "The technician observes the terminal silently."
+                "He wakes up an hour before work.",
+                "She wakes up an hour after work.",
+                "She wakes up an hour before work.",
+                "She woke up an hour before work."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L13_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch the subject, the meal, and the time - all three details matter.",
+            "explanation": "'Twelve' and 'one' sound completely different but both are common lunchtime hours. 'Lunch' and 'dinner' - different meals of the day. 'Half past twelve' = 12:30 - time expressions in English. 'We' vs 'they' - subject pronoun. Meal times are core everyday vocabulary.",
+            "textToSpeak": "We have lunch at half past twelve.",
+            "options": [
+                "We have lunch at half past twelve.",
+                "We have dinner at half past twelve.",
+                "We have lunch at half past one.",
+                "They have lunch at half past twelve."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L14_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot creates the module steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen carefully: is it 'thirteen' or 'thirty', and who is in the class?",
+            "explanation": "'Thirteen' (13) and 'thirty' (30) - one of the most common number confusions in English! The stress pattern is different: thir-TEEN vs THIR-ty. 'Students' vs 'teachers' - different people. 'Are' vs 'were' - tense. Number comprehension is fundamental listening accuracy.",
+            "textToSpeak": "There are thirty students in the class.",
             "options": [
-                "The mentor locates the signal swiftly.",
-                "The pilot creates the module steadily.",
-                "The scout observes the drone immediately.",
-                "The detective updates the sensor precisely."
+                "There are thirteen students in the class.",
+                "There are thirty teachers in the class.",
+                "There were thirty students in the class.",
+                "There are thirty students in the class."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L14_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler transfers the data swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'grandfather'/'grandmother', the age, and 'is'/'was'.",
+            "explanation": "'Grandfather' and 'grandmother' - one syllable difference ('grand-FA-ther' vs 'grand-MO-ther'). 'Eighty-two' and 'seventy-two' - both compound numbers. 'Is' (alive now) vs 'was' (past tense - may no longer be with us). Talking about family ages is essential social English.",
+            "textToSpeak": "My grandfather is eighty-two years old.",
             "options": [
-                "The traveler transfers the data swiftly.",
-                "The student observes the circuit successfully.",
-                "The hero monitors the database effectively.",
-                "The scientist monitors the terminal efficiently."
+                "My grandmother is eighty-two years old.",
+                "My grandfather is seventy-two years old.",
+                "My grandfather was eighty-two years old.",
+                "My grandfather is eighty-two years old."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L14_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer measures the sensor consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'city'/'country', the number ('two'/'three'), and the tense.",
+            "explanation": "'City' and 'country' - very different in meaning but both common geographical terms. 'Two million' and 'three million' - large numbers sound similar at speed. 'Has' vs 'had' - present vs past statistic. Geography and statistics language is important for understanding news and academic content.",
+            "textToSpeak": "The city has a population of two million.",
             "options": [
-                "The explorer measures the sensor consistently.",
-                "The detective updates the software instantly.",
-                "The traveler analyzes the circuit directly.",
-                "The hacker evaluates the software efficiently."
+                "The country has a population of two million.",
+                "The city had a population of two million.",
+                "The city has a population of three million.",
+                "The city has a population of two million."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L15_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher locates the node steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the adjective ('nice'/'great') and the verb ('meet'/'see').",
+            "explanation": "'Nice' and 'great' - both positive adjectives used in greetings. 'Meet' (for the first time - someone new) vs 'see' (someone you've seen before, or visual perception). 'It's' vs 'it was' - present vs past. This phrase is one of the most common English greetings in formal and informal situations.",
+            "textToSpeak": "It's nice to meet you for the first time.",
             "options": [
-                "The scientist creates the protocol expertly.",
-                "The teacher locates the node steadily.",
-                "The detective locates the module rapidly.",
-                "The pilot sends the circuit reliably."
+                "It was nice to meet you for the first time.",
+                "It's great to meet you for the first time.",
+                "It's nice to see you for the first time.",
+                "It's nice to meet you for the first time."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L15_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander launches the device steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice the subject and the activity - 'living' or 'working' - and the time period.",
+            "explanation": "'Three years' and 'thirteen years' - the -TEEN vs -TY distinction in reverse. 'Living' and 'working' - both continuous activities. 'I've been' vs 'she's been' - subject change. 'I've been living here' is the present perfect continuous - a very important grammar structure for talking about ongoing situations.",
+            "textToSpeak": "I've been living here for three years.",
             "options": [
-                "The commander launches the device steadily.",
-                "The hacker locates the module steadily.",
-                "The explorer repairs the signal successfully.",
-                "The hero observes the node directly."
+                "She's been living here for three years.",
+                "I've been working here for three years.",
+                "I've been living here for thirteen years.",
+                "I've been living here for three years."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L15_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist secures the system properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch the question structure - 'where are you from' or 'where do you come from'?",
+            "explanation": "Both 'where are you from' and 'where do you come from' mean the same thing - but they're grammatically different. 'When' asks a different question entirely. 'Are' (present) vs 'were' (past - perhaps they've moved). Introductory questions like this are the foundation of English social conversation.",
+            "textToSpeak": "Where are you from originally?",
             "options": [
-                "The scientist secures the system properly.",
-                "The engineer repairs the module directly.",
-                "The hero launches the terminal effectively.",
-                "The scientist transfers the sensor silently."
+                "Where do you come from originally?",
+                "When did you come from originally?",
+                "Where are you from originally?",
+                "Where were you from originally?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L16_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst measures the protocol consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice: 'did'/'do' (tense), 'you'/'she' (subject), and 'remember'/'forget' (meaning).",
+            "explanation": "'Did' (past question) vs 'do' (present question) - one word changes the whole tense. 'Remember' and 'forget' are opposite verbs - completely different meanings. 'You' vs 'she' - who is being asked. This is a very common real-world question when leaving the house.",
+            "textToSpeak": "Did you remember to lock the door?",
             "options": [
-                "The student sends the protocol rapidly.",
-                "The explorer analyzes the software efficiently.",
-                "The student builds the device properly.",
-                "The analyst measures the protocol consistently."
+                "Did she remember to lock the door?",
+                "Do you remember to lock the door?",
+                "Did you forget to lock the door?",
+                "Did you remember to lock the door?"
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -246,29 +262,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L16_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician deploys the device steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on: 'have'/'has'/'had' (tense/subject) and 'today'/'yet'.",
+            "explanation": "'Have you' (second person) vs 'has she' (third person) - subject-verb agreement. 'Today' vs 'yet' - both used with present perfect but 'yet' doesn't specify when. 'Had you eaten' is past perfect - a more complex tense. Asking if someone has eaten is essential social English.",
+            "textToSpeak": "Have you eaten anything today?",
             "options": [
-                "The expert creates the code effectively.",
-                "The technician deploys the device steadily.",
-                "The detective deploys the portal directly.",
-                "The droid encrypts the data quietly."
+                "Has she eaten anything today?",
+                "Have you eaten anything yet?",
+                "Have you eaten anything today?",
+                "Had you eaten anything today?"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L16_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert validates the circuit rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'is'/'was', 'brother'/'sister', and 'coming'/'going'.",
+            "explanation": "'Coming' (towards the speaker/place) vs 'going' (away from the speaker) - a subtle but important directional difference. 'Brother' vs 'sister' - male vs female sibling. 'Is' (present) vs 'was' (past). Party invitation language is very common in social English.",
+            "textToSpeak": "Is your brother coming to the party?",
             "options": [
-                "The artist launches the code successfully.",
-                "The expert validates the circuit rapidly.",
-                "The scout secures the sensor quietly.",
-                "The hero repairs the sensor precisely."
+                "Was your brother coming to the party?",
+                "Is your brother coming to the party?",
+                "Is your brother going to the party?",
+                "Is your sister coming to the party?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -276,44 +294,47 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L17_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher encrypts the archive expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Three physical details: the subject ('he'/'she'), hair length, and eye colour.",
+            "explanation": "Physical descriptions require catching multiple details at once. 'Long' vs 'short' - hair length adjective. 'Brown eyes' vs 'blue eyes' - eye colour. 'She' vs 'he' - a crucial detail in any description. This type of sentence is common in police reports, dating profiles, and everyday conversation.",
+            "textToSpeak": "She has long, dark hair and brown eyes.",
             "options": [
-                "The student transfers the engine swiftly.",
-                "The technician evaluates the module automatically.",
-                "The teacher encrypts the archive expertly.",
-                "The pilot creates the satellite reliably."
+                "He has long, dark hair and brown eyes.",
+                "She has long, dark hair and brown eyes.",
+                "She has long, dark hair and blue eyes.",
+                "She has short, dark hair and brown eyes."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L17_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician observes the database swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch the atmosphere adjective, the day, and the tense ('is'/'was').",
+            "explanation": "'Quiet' and 'busy' are opposite adjectives. 'Sunday' and 'Saturday' both end in '-day' and are adjacent weekend days. 'Was' (past description) vs 'is' (present). Describing the atmosphere of a morning is common in storytelling and everyday English conversation.",
+            "textToSpeak": "It was a quiet, peaceful Sunday morning.",
             "options": [
-                "The explorer monitors the node expertly.",
-                "The hacker restores the chip precisely.",
-                "The hacker updates the satellite securely.",
-                "The technician observes the database swiftly."
+                "It was a busy, peaceful Sunday morning.",
+                "It was a quiet, peaceful Sunday morning.",
+                "It is a quiet, peaceful Sunday morning.",
+                "It was a quiet, peaceful Saturday morning."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L17_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The detective analyzes the network directly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the adjective ('old'/'new'), location marker, and the type of building.",
+            "explanation": "'Old' and 'new' - opposite adjectives describing age. 'End' vs 'top' - different location words for position on a street. 'House' vs 'school' - different buildings. This is a typical description of a location, common when giving directions or describing a neighbourhood.",
+            "textToSpeak": "The old house at the end of the street.",
             "options": [
-                "The technician validates the node expertly.",
-                "The detective analyzes the network directly.",
-                "The traveler builds the network expertly.",
-                "The explorer measures the portal instantly."
+                "The new house at the end of the street.",
+                "The old house at the end of the street.",
+                "The old school at the end of the street.",
+                "The old house at the top of the street."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -321,29 +342,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L18_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout transfers the code rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch the family member and their job title.",
+            "explanation": "'Sister', 'brother', and 'cousin' - all family members, different relationships. 'Nurse' and 'doctor' - both medical professionals but very different roles. This is typical 'talking about family' English used in introductions and social conversations.",
+            "textToSpeak": "My sister is a nurse at the local hospital.",
             "options": [
-                "The explorer updates the circuit expertly.",
-                "The pilot monitors the software efficiently.",
-                "The scout transfers the code rapidly.",
-                "The pilot measures the drone smoothly."
+                "My sister is a nurse at the local hospital.",
+                "My sister is a doctor at the local hospital.",
+                "My cousin is a nurse at the local hospital.",
+                "My brother is a nurse at the local hospital."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L18_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The detective repairs the circuit steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice the subject, the school type, and the tense ('works'/'worked').",
+            "explanation": "'Primary school' (ages 5-11) vs 'secondary school' (ages 11-18) - important educational vocabulary. 'Works' (current job) vs 'worked' (past job). 'He' vs 'she' - subject pronoun. Describing someone's job with 'works as a...' is standard English structure.",
+            "textToSpeak": "He works as a teacher in a primary school.",
             "options": [
-                "The detective repairs the circuit steadily.",
-                "The pilot transfers the protocol successfully.",
-                "The researcher monitors the archive directly.",
-                "The detective scans the node silently."
+                "He works as a teacher in a primary school.",
+                "He works as a teacher in a secondary school.",
+                "He worked as a teacher in a primary school.",
+                "She works as a teacher in a primary school."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -351,106 +374,113 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L18_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher launches the device automatically.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the subject, the profession, and 'over'/'under' ten years.",
+            "explanation": "'Over ten years' vs 'under ten years' - completely opposite in meaning. 'Chef' vs 'teacher' - very different professions. 'She's been' uses the present perfect - meaning this is still happening now. This grammar is essential for talking about professional experience in English.",
+            "textToSpeak": "She's been a chef for over ten years.",
             "options": [
-                "The detective launches the database reliably.",
-                "The traveler launches the node quietly.",
-                "The researcher launches the device automatically.",
-                "The robot secures the database steadily."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L19_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician measures the protocol quietly.",
-            "options": [
-                "The commander validates the satellite steadily.",
-                "The technician measures the protocol quietly.",
-                "The explorer creates the satellite swiftly.",
-                "The commander builds the code successfully."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L19_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician evaluates the circuit immediately.",
-            "options": [
-                "The traveler updates the engine swiftly.",
-                "The technician evaluates the circuit immediately.",
-                "The commander updates the device immediately.",
-                "The traveler measures the archive successfully."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L19_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist sends the network instantly.",
-            "options": [
-                "The scientist deploys the terminal swiftly.",
-                "The engineer creates the circuit swiftly.",
-                "The traveler deploys the portal precisely.",
-                "The artist sends the network instantly."
+                "He's been a chef for over ten years.",
+                "She's been a teacher for over ten years.",
+                "She's been a chef for under ten years.",
+                "She's been a chef for over ten years."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L20_Q1",
+            "id": "LIS_FASTSPEECHDECODER_L19_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert activates the system precisely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Three details to catch: subject, city visited, and time of year.",
+            "explanation": "'Paris' and 'London' - both European capital cities. 'Summer' and 'winter' - opposite seasons. 'I visited' vs 'she visited' - subject change. Travel past tense stories are extremely common in everyday English conversation.",
+            "textToSpeak": "I visited Paris last summer with my family.",
             "options": [
-                "The expert activates the system precisely.",
-                "The commander transfers the code quietly.",
-                "The scout transfers the module silently.",
-                "The mentor secures the node quietly."
+                "She visited Paris last summer with her family.",
+                "I visited London last summer with my family.",
+                "I visited Paris last winter with my family.",
+                "I visited Paris last summer with my family."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L19_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the destination, the travel time, and the tense.",
+            "explanation": "'Beach' and 'park' - both leisure destinations. 'Two hours' and 'three hours' - different travel times. 'Is' (still the case now) vs 'was' (used to be that distance). Travel time expressions are vital practical English.",
+            "textToSpeak": "The beach is about two hours from here.",
+            "options": [
+                "The beach is about two hours from here.",
+                "The beach is about three hours from here.",
+                "The beach was about two hours from here.",
+                "The park is about two hours from here."
             ],
             "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L19_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch the subject, accommodation size and type, and location.",
+            "explanation": "'Hotel' and 'hostel' sound very similar - both accommodation types but very different in style and price. 'Small' vs 'large' - size of the hotel. 'We' vs 'they' - subject pronoun. Travel accommodation vocabulary is essential for discussing trips.",
+            "textToSpeak": "We stayed at a small hotel near the centre.",
+            "options": [
+                "We stayed at a small hotel near the centre.",
+                "We stayed at a large hotel near the centre.",
+                "We stayed at a small hostel near the centre.",
+                "They stayed at a small hotel near the centre."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L20_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice the subject, frequency adverb ('usually'/'always'), and time ('before'/'after').",
+            "explanation": "'Usually' and 'always' - different frequency adverbs. 'Before breakfast' vs 'after breakfast' - opposite times of day. 'She' vs 'he' - subject. Daily routine sentences with frequency adverbs are among the most common structures in English, used to describe habits and schedules.",
+            "textToSpeak": "She usually goes jogging before breakfast.",
+            "options": [
+                "He usually goes jogging before breakfast.",
+                "She usually goes jogging before breakfast.",
+                "She usually goes jogging after breakfast.",
+                "She always goes jogging before breakfast."
+            ],
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L20_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert secures the data expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for who needs to call, who they call, and 'this week'.",
+            "explanation": "'Dentist' and 'doctor' - both medical professionals. 'Need to call' (present obligation) vs 'needed to call' (past obligation). 'I need' vs 'she needs' - third person adds 's'. Health appointments language is practical everyday English.",
+            "textToSpeak": "I need to call the dentist this week.",
             "options": [
-                "The mentor sends the circuit precisely.",
-                "The teacher creates the portal immediately.",
-                "The expert secures the data expertly.",
-                "The expert evaluates the drone consistently."
+                "She needs to call the dentist this week.",
+                "I need to call the doctor this week.",
+                "I needed to call the dentist this week.",
+                "I need to call the dentist this week."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L20_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer analyzes the data expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Three transport details: vehicle, destination, and 'leaves'/'arrives'.",
+            "explanation": "'Train' and 'bus' - different modes of transport. 'London' and 'Manchester' - different UK cities. 'Leaves' (departs) vs 'arrives' (comes in) - critical difference at a station or airport. Travel timetable English is essential for real journeys.",
+            "textToSpeak": "The train to London leaves at six fifteen.",
             "options": [
-                "The explorer analyzes the data expertly.",
-                "The scientist deploys the database consistently.",
-                "The detective monitors the data expertly.",
-                "The explorer monitors the data properly."
+                "The bus to London leaves at six fifteen.",
+                "The train to Manchester leaves at six fifteen.",
+                "The train to London arrives at six fifteen.",
+                "The train to London leaves at six fifteen."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         }
     ]

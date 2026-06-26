@@ -6,14 +6,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L41_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander measures the sensor precisely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the first verb ('turn off'/'turn on'/'take off') and the second phrase.",
+            "explanation": "'Turn it off' (deactivate) vs 'turn it on' (activate) vs 'take it off' (remove). 'Put it away' (store it) vs 'throw it away' (discard). In fast speech, 'turn it off and put it away' runs together - the small words 'it', 'off', 'and' all link. These phrasal verbs are essential everyday English.",
+            "textToSpeak": "Turn it off and put it away.",
             "options": [
-                "The commander measures the sensor precisely.",
-                "The technician scans the protocol instantly.",
-                "The commander observes the protocol swiftly.",
-                "The researcher creates the data quietly."
+                "Turn it off and put it away.",
+                "Turn it on and put it away.",
+                "Turn it off and throw it away.",
+                "Take it off and put it away."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -21,29 +22,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L41_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert repairs the system properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the phrasal verb ('pick up'/'hang up'/'turn up') and 'might'/'must'.",
+            "explanation": "'Pick up the phone' (answer it) vs 'hang up the phone' (end the call) vs 'turn up the phone' (increase volume). 'Might be' (possibility) vs 'must be' (near certainty). Phrasal verbs with 'up' are very common in phone English.",
+            "textToSpeak": "Pick up the phone, it might be important.",
             "options": [
-                "The hacker locates the drone consistently.",
-                "The detective updates the device automatically.",
-                "The scout sends the device instantly.",
-                "The expert repairs the system properly."
+                "Pick up the phone, it might be important.",
+                "Hang up the phone, it might be important.",
+                "Turn up the phone, it might be important.",
+                "Pick up the phone, it must be important."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L41_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician sends the chip carefully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice subject, 'early'/'late', and 'walk'/'run'.",
+            "explanation": "'Got up early' vs 'got up late' - opposite timing. 'Walk' and 'run' are both activities but different in effort. 'I got up early and went for a walk' - two past actions in sequence. In fast speech, 'went for a' links into 'wentfora'. Past tense daily routines are common storytelling structures.",
+            "textToSpeak": "I got up early and went for a walk.",
             "options": [
-                "The technician sends the chip carefully.",
-                "The analyst restores the code directly.",
-                "The mentor creates the data silently.",
-                "The engineer updates the sensor swiftly."
+                "I got up early and went for a walk.",
+                "I got up late and went for a walk.",
+                "I got up early and went for a run.",
+                "She got up early and went for a walk."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -51,74 +54,79 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L42_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot evaluates the database steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the subject/object pronouns and the infinitive verb ('wait'/'look').",
+            "explanation": "'Asked me to' (requested politely) vs 'told me to' (instructed/commanded). 'Wait for her' vs 'look for her' - very different actions. 'She asked me / he asked me' - changing both subject and object pronoun. Reported requests are an important grammar structure.",
+            "textToSpeak": "She asked me to wait for her outside.",
             "options": [
-                "The explorer sends the device automatically.",
-                "The artist activates the data consistently.",
-                "The robot evaluates the database steadily.",
-                "The analyst updates the terminal carefully."
+                "He asked me to wait for him outside.",
+                "She asked me to wait for her outside.",
+                "She asked me to look for her outside.",
+                "She told me to wait for her outside."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L42_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The droid restores the module silently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the subject, 'can'/'can't'/'could', and who needs to be ready.",
+            "explanation": "'Can go' (able to go) vs 'can't go' (unable - a negative!) vs 'could go' (conditional/polite). 'We' vs 'she'. In fast speech, 'can' and 'can't' are very easy to confuse - listen for the final 't' sound. 'As soon as you're ready' is a very common time clause.",
+            "textToSpeak": "We can go as soon as you are ready.",
             "options": [
-                "The droid restores the module silently.",
-                "The detective repairs the signal steadily.",
-                "The pilot secures the satellite expertly.",
-                "The analyst repairs the archive carefully."
+                "She can go as soon as you are ready.",
+                "We can't go as soon as you are ready.",
+                "We can go as soon as you are ready.",
+                "We could go as soon as you are ready."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L42_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert activates the drone instantly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'I want'/'she wants', 'call'/'text', and 'me'/'her'.",
+            "explanation": "'Call me' (phone call) vs 'text me' (message). 'I want you to' vs 'she wants you to' - third person 's' and pronoun change. 'I asked you to' (past - already requested) vs 'I want you to' (present desire). Making requests about communication is very everyday English.",
+            "textToSpeak": "I want you to call me when you arrive.",
             "options": [
-                "The expert activates the drone instantly.",
-                "The explorer builds the data efficiently.",
-                "The pilot secures the software rapidly.",
-                "The teacher observes the chip effectively."
+                "She wants you to call her when you arrive.",
+                "I want you to text me when you arrive.",
+                "I asked you to call me when you arrive.",
+                "I want you to call me when you arrive."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L43_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot scans the circuit effectively.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the host's invitation phrase and what they say about returning.",
+            "explanation": "'Make yourself at home' (feel comfortable, treat it as your own home) vs 'make yourself comfortable' (similar but less idiomatic). 'I'll be right back' (returning soon) vs 'I'll be right here' (staying nearby). 'Make yourself at home' is one of the most common English hospitality phrases.",
+            "textToSpeak": "Make yourself at home, I'll be right back.",
             "options": [
-                "The robot scans the circuit effectively.",
-                "The robot secures the system expertly.",
-                "The student creates the system effectively.",
-                "The expert scans the circuit silently."
+                "Make yourself at home, I'll be right here.",
+                "Make yourself comfortable, I'll be right back.",
+                "Help yourself at home, I'll be right back.",
+                "Make yourself at home, I'll be right back."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L43_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst repairs the protocol properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice the imperative ('worry'/'panic') and 'everything's'/'nothing's'.",
+            "explanation": "'Don't worry' vs 'don't panic' - both reassuring but 'panic' is stronger. 'Everything's going to be fine' (positive reassurance) vs 'nothing's going to be fine' (the opposite - pessimistic). 'Was going to be fine' (past prediction). Offering reassurance is a key social function in English.",
+            "textToSpeak": "Don't worry, everything's going to be fine.",
             "options": [
-                "The analyst repairs the protocol properly.",
-                "The expert creates the software quietly.",
-                "The robot updates the satellite quietly.",
-                "The pilot launches the satellite expertly."
+                "Don't worry, everything's going to be fine.",
+                "Don't worry, nothing's going to be fine.",
+                "Don't worry, everything was going to be fine.",
+                "Don't panic, everything's going to be fine."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -126,29 +134,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L43_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer scans the database silently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the knowledge phrase, the subject, and the negative.",
+            "explanation": "'As far as I know' and 'so far as I know' mean the same but 'as far as I know' is far more natural. 'They haven't decided' (negative - no decision) vs 'they have decided' (positive). 'They' vs 'we'. 'As far as I know' is a hedge - common when sharing information you're not 100% certain of.",
+            "textToSpeak": "As far as I know, they haven't decided yet.",
             "options": [
-                "The technician validates the data effectively.",
-                "The engineer scans the database silently.",
-                "The analyst validates the terminal consistently.",
-                "The scientist sends the engine securely."
+                "So far as I know, they haven't decided yet.",
+                "As far as I know, we haven't decided yet.",
+                "As far as I know, they have decided yet.",
+                "As far as I know, they haven't decided yet."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L44_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist creates the signal swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'I'll'/'she'll', 'you'/'her', and 'on'/'about' that.",
+            "explanation": "'Get back to you' - promise to respond/reply. 'I'll' vs 'she'll' - speaker vs someone else responding. 'You' vs 'her' - who gets the reply. 'On that' vs 'about that' - slightly different prepositions. 'I'll get back to you' is one of the most important professional English phrases.",
+            "textToSpeak": "I'll get back to you on that by Friday.",
             "options": [
-                "The student deploys the portal instantly.",
-                "The scientist creates the signal swiftly.",
-                "The detective evaluates the code carefully.",
-                "The mentor validates the device immediately."
+                "She'll get back to you on that by Friday.",
+                "I'll get back to you on that by Friday.",
+                "I'll get back to you about that by Friday.",
+                "I'll get back to her on that by Friday."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -156,59 +166,63 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L44_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst encrypts the satellite immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'can'/'could', the subject, and 'meeting'/'call'.",
+            "explanation": "'Reschedule the meeting' (business meeting) vs 'reschedule the call' (phone call). 'Can' vs 'could' - 'could' is marginally more polite in requests. 'We' vs 'she' - subject. Rescheduling is a very frequent professional communication need.",
+            "textToSpeak": "Can we reschedule the meeting to Thursday?",
             "options": [
-                "The pilot deploys the archive directly.",
-                "The researcher encrypts the circuit immediately.",
-                "The technician restores the system swiftly.",
-                "The analyst encrypts the satellite immediately."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L44_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler measures the device smoothly.",
-            "options": [
-                "The droid repairs the archive efficiently.",
-                "The analyst updates the portal properly.",
-                "The traveler measures the device smoothly.",
-                "The researcher monitors the system automatically."
+                "Could we reschedule the meeting to Thursday?",
+                "Can she reschedule the meeting to Thursday?",
+                "Can we reschedule the meeting to Thursday?",
+                "Can we reschedule the call to Thursday?"
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L45_Q1",
+            "id": "LIS_FASTSPEECHDECODER_L44_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher locates the network immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'we're'/'they're', 'more'/'less', and tense.",
+            "explanation": "'More time' (need longer) vs 'less time' (would be quicker). 'We're going to need' (future - prediction/plan) vs 'we were going to need' (past plan that may have changed). 'We're' vs 'they're'. Discussing time needs is common in project management and everyday planning.",
+            "textToSpeak": "We're going to need more time for this.",
             "options": [
-                "The researcher locates the network immediately.",
-                "The droid creates the engine rapidly.",
-                "The researcher activates the sensor carefully.",
-                "The scientist monitors the satellite silently."
+                "We're going to need more time for this.",
+                "We're going to need less time for this.",
+                "We were going to need more time for this.",
+                "They're going to need more time for this."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L45_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'I've'/'she's', 'cut down on'/'cut out', and 'sugar'/'salt'.",
+            "explanation": "'Cut down on' (reduce) vs 'cut out' (eliminate completely) - an important nuance! 'Sugar' vs 'salt' - different things to reduce. 'I've been trying to' uses present perfect continuous - an ongoing effort that's been happening. Health lifestyle language is very practical modern English.",
+            "textToSpeak": "I've been trying to cut down on sugar.",
+            "options": [
+                "She's been trying to cut down on sugar.",
+                "I've been trying to cut out all sugar.",
+                "I've been trying to cut down on salt.",
+                "I've been trying to cut down on sugar."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L45_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler scans the database steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'enough'/'good', 'sleep'/'rest', and 'is'/'isn't'.",
+            "explanation": "'Enough sleep' (sufficient quantity) vs 'good sleep' (quality). 'Sleep' (specific rest type) vs 'rest' (more general). 'Is really important' (positive statement) vs 'isn't really important' (negative - opposite meaning!). Health advice language using gerunds ('getting...') is a common English structure.",
+            "textToSpeak": "Getting enough sleep is really important.",
             "options": [
-                "The technician sends the device reliably.",
-                "The technician secures the software directly.",
-                "The traveler scans the database steadily.",
-                "The teacher evaluates the archive rapidly."
+                "Getting good sleep is really important.",
+                "Getting enough rest is really important.",
+                "Getting enough sleep is really important.",
+                "Getting enough sleep isn't really important."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
@@ -216,89 +230,95 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L45_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The detective locates the satellite steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice subject, 'decided'/'tried', and 'smoking'/'drinking'.",
+            "explanation": "'Give up' is a phrasal verb meaning to stop permanently. 'Decided to give up' (made the choice to stop) vs 'tried to give up' (attempted but may not have succeeded). 'Smoking' and 'drinking' are both things people commonly give up for health. 'He' vs 'she' - subject.",
+            "textToSpeak": "He decided to give up smoking last year.",
             "options": [
-                "The detective locates the satellite steadily.",
-                "The traveler creates the circuit steadily.",
-                "The robot locates the drone immediately.",
-                "The engineer scans the signal effectively."
+                "She decided to give up smoking last year.",
+                "He tried to give up smoking last year.",
+                "He decided to give up drinking last year.",
+                "He decided to give up smoking last year."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L46_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher evaluates the drone immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch 'we've'/'they've', 'known each other'/'been friends', and 'about'/'almost'.",
+            "explanation": "'Known each other' (used 'know' as a state) vs 'been friends' (describes the relationship). 'About five years' (approximately) vs 'almost five years' (just under). 'We've' vs 'they've'. Present perfect with duration ('for five years') is one of the most important grammar structures in English.",
+            "textToSpeak": "We've known each other for about five years.",
             "options": [
-                "The student observes the sensor properly.",
-                "The scout deploys the satellite silently.",
-                "The analyst validates the circuit properly.",
-                "The teacher evaluates the drone immediately."
+                "We've known each other for about five years.",
+                "We've been friends for about five years.",
+                "We've known each other for almost five years.",
+                "They've known each other for about five years."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L46_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander evaluates the circuit precisely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for subject pronouns throughout and 'colleague'/'friend'.",
+            "explanation": "'She introduced me' vs 'he introduced me' - subject change. 'Me' vs 'him' - object change. 'Colleague' (work relationship) vs 'friend' (personal relationship). 'At work' - location. Social introductions are a key part of building professional English skills.",
+            "textToSpeak": "She introduced me to her colleague at work.",
             "options": [
-                "The commander evaluates the circuit precisely.",
-                "The robot creates the archive consistently.",
-                "The scout validates the system securely.",
-                "The mentor locates the portal precisely."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L46_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist validates the device smoothly.",
-            "options": [
-                "The student transfers the module instantly.",
-                "The engineer updates the network instantly.",
-                "The scientist repairs the portal instantly.",
-                "The scientist validates the device smoothly."
+                "He introduced me to his colleague at work.",
+                "She introduced him to her colleague at work.",
+                "She introduced me to her friend at work.",
+                "She introduced me to her colleague at work."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L46_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on subject, the time together, and 'broke up'/'split up'.",
+            "explanation": "'Three years' and 'two years' - different relationship durations. 'Broke up' and 'split up' - both phrasal verbs meaning to end a relationship, but 'split up' is slightly more casual. 'They' vs 'we' - subject. Relationship language is a very common topic in everyday English conversation.",
+            "textToSpeak": "They broke up after three years together.",
+            "options": [
+                "We broke up after three years together.",
+                "They broke up after three years together.",
+                "They split up after three years together.",
+                "They broke up after two years together."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L47_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander scans the portal precisely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'I'd'/'she'd', 'book'/'reserve', and 'room'/'table'.",
+            "explanation": "'Book a room' (hotel) vs 'book a table' (restaurant - you can't stay for 'two nights' at a table!). 'Book' vs 'reserve' - same meaning but 'book' is more British. 'I'd like to' is a very polite way to request something. Hotel booking language is immediately practical for travellers.",
+            "textToSpeak": "I'd like to book a room for two nights.",
             "options": [
-                "The commander scans the portal precisely.",
-                "The student measures the circuit efficiently.",
-                "The scout evaluates the code reliably.",
-                "The teacher validates the sensor securely."
+                "She'd like to book a room for two nights.",
+                "I'd like to book a table for two nights.",
+                "I'd like to reserve a room for two nights.",
+                "I'd like to book a room for two nights."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L47_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student updates the circuit rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'check-in'/'check-out', the time, and 'is from'/'starts at'.",
+            "explanation": "'Check-in' (arriving and getting your room) vs 'check-out' (leaving and returning your key). 'Three' vs 'two' - different afternoon times. 'Is from' vs 'starts at' - both express the beginning but use different prepositions. Hotel vocabulary is essential for any travel experience.",
+            "textToSpeak": "The check-in time is from three in the afternoon.",
             "options": [
-                "The student updates the circuit rapidly.",
-                "The teacher secures the chip effectively.",
-                "The hero analyzes the device immediately.",
-                "The detective validates the database rapidly."
+                "The check-in time is from three in the afternoon.",
+                "The check-in time is from two in the afternoon.",
+                "The check-in time starts at three in the afternoon.",
+                "The check-out time is from three in the afternoon."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -306,149 +326,159 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L47_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler updates the archive silently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice the meal ('breakfast'/'dinner'), tense, and 'room price'/'daily rate'.",
+            "explanation": "'Breakfast' (morning meal) vs 'dinner' (evening meal). 'Is included' (present - current policy) vs 'was included' (past - perhaps changed). 'Room price' vs 'daily rate' - same concept, different terminology. This is one of the most practical hotel English questions.",
+            "textToSpeak": "Is breakfast included in the room price?",
             "options": [
-                "The traveler updates the archive silently.",
-                "The detective observes the system securely.",
-                "The commander locates the data smoothly.",
-                "The mentor builds the database swiftly."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L48_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot monitors the data consistently.",
-            "options": [
-                "The mentor creates the portal properly.",
-                "The robot monitors the data consistently.",
-                "The traveler updates the archive smoothly.",
-                "The detective repairs the satellite effectively."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L48_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician evaluates the module properly.",
-            "options": [
-                "The droid monitors the module carefully.",
-                "The technician evaluates the module properly.",
-                "The scientist launches the network instantly.",
-                "The explorer evaluates the circuit rapidly."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L48_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot deploys the portal effectively.",
-            "options": [
-                "The mentor scans the signal steadily.",
-                "The robot deploys the portal effectively.",
-                "The robot validates the sensor consistently.",
-                "The scientist repairs the sensor consistently."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L49_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor deploys the portal silently.",
-            "options": [
-                "The mentor deploys the portal silently.",
-                "The detective encrypts the portal consistently.",
-                "The student measures the software properly.",
-                "The traveler deploys the archive swiftly."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L49_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander creates the protocol successfully.",
-            "options": [
-                "The commander creates the protocol successfully.",
-                "The traveler restores the chip reliably.",
-                "The artist sends the archive silently.",
-                "The commander evaluates the database efficiently."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L49_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout creates the data securely.",
-            "options": [
-                "The researcher transfers the satellite effectively.",
-                "The commander updates the drone instantly.",
-                "The researcher launches the portal properly.",
-                "The scout creates the data securely."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L50_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout measures the signal expertly.",
-            "options": [
-                "The explorer creates the drone efficiently.",
-                "The scout measures the signal expertly.",
-                "The researcher evaluates the node consistently.",
-                "The droid scans the chip effectively."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L50_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor measures the code successfully.",
-            "options": [
-                "The hero updates the module reliably.",
-                "The artist observes the circuit rapidly.",
-                "The mentor measures the code successfully.",
-                "The traveler observes the network smoothly."
+                "Is dinner included in the room price?",
+                "Was breakfast included in the room price?",
+                "Is breakfast included in the room price?",
+                "Is breakfast included in the daily rate?"
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L48_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'I'/'she', 'today'/'tomorrow', and 'need'/'want'.",
+            "explanation": "'Need to' (obligation - it must be done) vs 'want to' (desire - would like to). 'Today' (urgent) vs 'tomorrow' (one day later - less urgent). 'I' vs 'she' - and notice 'needs' for third person. 'Sort this out' is a very common British English phrasal verb for resolving problems.",
+            "textToSpeak": "I really need to sort this out today.",
+            "options": [
+                "She really needs to sort this out today.",
+                "I really need to sort this out tomorrow.",
+                "I really want to sort this out today.",
+                "I really need to sort this out today."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L48_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for subject, 'time'/'money', and 'don't'/'didn't'.",
+            "explanation": "'Time' and 'money' - two things often complained about being in short supply! 'Don't have' (present - current situation) vs 'didn't have' (past). 'We' vs 'they'. Expressing resource limitations is a very common communication need in work and home life.",
+            "textToSpeak": "We don't have enough time to finish it.",
+            "options": [
+                "They don't have enough time to finish it.",
+                "We don't have enough money to finish it.",
+                "We don't have enough time to finish it.",
+                "We didn't have enough time to finish it."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L48_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'could'/'would', who is asked, and 'give'/'lend' a hand.",
+            "explanation": "'Give me a hand' = 'lend me a hand' = 'help me' - all three are common English expressions for requesting assistance. 'Could you' vs 'would you' - both polite but subtly different formality levels. 'Possibly' makes the request even more tentative and polite. This is a very natural spoken English request.",
+            "textToSpeak": "Could you possibly give me a hand with this?",
+            "options": [
+                "Would you possibly give me a hand with this?",
+                "Could she possibly give me a hand with this?",
+                "Could you possibly give me a hand with this?",
+                "Could you possibly lend me a hand with this?"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L49_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'have you'/'has she', 'made up'/'changed', and 'have'/'had'.",
+            "explanation": "'Made up your mind' (reached a decision) vs 'changed your mind' (reversed a decision). 'Have you' (present perfect question) vs 'had you' (past perfect - before something). 'Has she' changes the subject. 'Make up your mind' is an idiom - very common when asking someone for a decision.",
+            "textToSpeak": "Have you made up your mind about it?",
+            "options": [
+                "Has she made up her mind about it?",
+                "Have you made up your mind about it?",
+                "Had you made up your mind about it?",
+                "Have you changed your mind about it?"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L49_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'it'/'that', the question word ('how long'/'how much'/'what time').",
+            "explanation": "'It all depends on...' - a very common phrase expressing contingency. 'How long' (duration) vs 'how much' (quantity/price) vs 'what time' (specific time). 'It' vs 'that' - both can introduce the phrase but 'it' is more natural here. This phrase is essential for expressing that something is conditional.",
+            "textToSpeak": "It all depends on how long it takes.",
+            "options": [
+                "That all depends on how long it takes.",
+                "It all depends on what time it takes.",
+                "It all depends on how long it takes.",
+                "It all depends on how much it takes."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L49_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice the subject, 'understand'/'agree', and the tense.",
+            "explanation": "'I'm not sure I understand' - present tense, ongoing confusion. 'I wasn't sure I understood' - past tense, looking back. 'I'm not sure I agree' - questioning the point rather than the understanding. This expression is essential for politely signalling confusion in English.",
+            "textToSpeak": "I'm not sure I understand what you mean.",
+            "options": [
+                "She's not sure she understands what you mean.",
+                "I'm not sure I agree with what you mean.",
+                "I'm not sure I understand what you mean.",
+                "I wasn't sure I understood what you meant."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L50_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the ordinal number, direction, and verb ('take'/'make' a turning).",
+            "explanation": "'Second' vs 'first' turning - ordinal numbers are critical in directions. 'Right' vs 'left' - a mistake could send you the wrong way entirely. 'Take a turning' (British English) vs 'make a turning' (less standard). Directions are one of the most practical real-world listening skills.",
+            "textToSpeak": "Take the second turning on the right.",
+            "options": [
+                "Take the second turning on the right.",
+                "Take the second turning on the left.",
+                "Make the second turning on the right.",
+                "Take the first turning on the right."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L50_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'can't miss'/'won't miss' and the landmark preposition.",
+            "explanation": "'Next to' (immediately beside) vs 'opposite' (directly across from) vs 'near to' (close but not specified). 'You can't miss it' (it's very obvious) vs 'you won't miss it' (a prediction rather than an idiom). The direction phrase 'you can't miss it' is a very common English idiom when giving directions.",
+            "textToSpeak": "You can't miss it - it's next to the bank.",
+            "options": [
+                "You won't miss it - it's next to the bank.",
+                "You can't miss it - it's next to the bank.",
+                "You can't miss it - it's near to the bank.",
+                "You can't miss it - it's opposite the bank."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L50_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot updates the engine successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch the landmark type and the movement verb/preposition.",
+            "explanation": "'Junction' (intersection/crossroads) vs 'roundabout' (traffic circle) - different road features requiring different actions. 'Go straight on' vs 'go straight through' - slightly different movement descriptions. 'Go' vs 'drive' - mode of movement. Road navigation vocabulary is essential for giving/receiving directions.",
+            "textToSpeak": "Go straight on until you reach the junction.",
             "options": [
-                "The robot updates the engine successfully.",
-                "The engineer deploys the system steadily.",
-                "The artist transfers the sensor reliably.",
-                "The teacher creates the protocol properly."
+                "Go straight on until you reach the junction.",
+                "Go straight through until you reach the junction.",
+                "Drive straight on until you reach the junction.",
+                "Go straight on until you reach the roundabout."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"

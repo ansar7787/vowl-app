@@ -6,44 +6,47 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L111_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer evaluates the software rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'she'/'he', 'mixed'/'strong', and 'feelings'/'thoughts'.",
+            "explanation": "'Mixed feelings' (a combination of positive and negative emotions - an idiom for ambivalence) vs 'strong feelings' (intense but could be all one direction). 'Feelings' (emotional response) vs 'thoughts' (cognitive considerations). 'She' vs 'he'. 'Mixed feelings' is one of the most common English idioms for expressing ambivalence about a decision.",
+            "textToSpeak": "She had mixed feelings about accepting the offer.",
             "options": [
-                "The engineer encrypts the database steadily.",
-                "The traveler deploys the network instantly.",
-                "The droid monitors the archive steadily.",
-                "The explorer evaluates the software rapidly."
+                "He had mixed feelings about accepting the offer.",
+                "She had strong feelings about accepting the offer.",
+                "She had mixed feelings about accepting the offer.",
+                "She had mixed thoughts about accepting the offer."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L111_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst repairs the chip quietly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'several'/'some', 'employees'/'workers', and 'raised'/'had raised'.",
+            "explanation": "'Several' (a definite small number - implies at least three) vs 'some' (vague - indefinite). 'Employees' (formal term for workers with contracts) vs 'workers' (broader, slightly less formal). 'Raised' (simple past) vs 'had raised' (past perfect - before something else). This sentence describes a notable pattern in workplace reports.",
+            "textToSpeak": "Several employees raised the same concern independently.",
             "options": [
-                "The analyst repairs the chip quietly.",
-                "The pilot encrypts the network reliably.",
-                "The engineer analyzes the database properly.",
-                "The explorer measures the software consistently."
+                "Some employees raised the same concern independently.",
+                "Several employees raised the same concern independently.",
+                "Several employees had raised the same concern independently.",
+                "Several workers raised the same concern independently."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L111_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker launches the data directly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'committee'/'board', 'in favour of'/'against', and 'voted'/'decided'.",
+            "explanation": "'In favour of' (supporting - for) vs 'against' (opposing - completely opposite outcome!). 'Committee' (a working group) vs 'board' (a governing body - higher level). 'Voted' (made a formal democratic decision) vs 'decided' (reached a conclusion - less formal process). Parliamentary and organisational governance vocabulary.",
+            "textToSpeak": "The committee voted in favour of the proposed amendment.",
             "options": [
-                "The pilot deploys the sensor instantly.",
-                "The expert transfers the portal successfully.",
-                "The hacker launches the data directly.",
-                "The commander builds the satellite effectively."
+                "The board voted in favour of the proposed amendment.",
+                "The committee voted against the proposed amendment.",
+                "The committee voted in favour of the proposed amendment.",
+                "The committee decided in favour of the proposed amendment."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
@@ -51,59 +54,63 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L112_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer transfers the data silently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'her'/'his', 'communicate'/'listen', and 'clearly'/'effectively'.",
+            "explanation": "'Communicate clearly' vs 'listen carefully' - different communication skills. 'Clearly' (in an unambiguous way) vs 'effectively' (producing the desired result - overlapping but different emphasis). 'Set her apart' - idiom meaning 'distinguished her from others'. 'Her' vs 'his'. Professional skills assessment vocabulary for CVs and interviews.",
+            "textToSpeak": "Her ability to communicate clearly set her apart.",
             "options": [
-                "The explorer transfers the data silently.",
-                "The commander evaluates the code reliably.",
-                "The mentor sends the device expertly.",
-                "The detective sends the database automatically."
+                "His ability to communicate clearly set him apart.",
+                "Her ability to communicate clearly set her apart.",
+                "Her ability to communicate effectively set her apart.",
+                "Her ability to listen carefully set her apart."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L112_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist scans the engine smoothly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'data'/'evidence', 'consistently'/'strongly', and the tense.",
+            "explanation": "'Data' (raw measurements) vs 'evidence' (anything that supports a conclusion - broader). 'Consistently' (always, without exception) vs 'strongly' (with a high degree). 'Supports' (present - ongoing validity) vs 'supported' (past - at the time). Note: 'data' with a singular verb is accepted in modern English. Scientific reporting vocabulary.",
+            "textToSpeak": "The data consistently supports the original hypothesis.",
             "options": [
-                "The analyst scans the engine securely.",
-                "The hero updates the archive expertly.",
-                "The technician builds the engine rapidly.",
-                "The artist scans the engine smoothly."
+                "The data consistently supports the original hypothesis.",
+                "The data strongly supports the original hypothesis.",
+                "The data consistently supported the original hypothesis.",
+                "The evidence consistently supports the original hypothesis."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L112_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist sends the portal steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'we've'/'they've', 'made'/'seen', and 'have'/'had'.",
+            "explanation": "'Made progress' (actively achieved advancement) vs 'seen progress' (observed it - slightly less active). 'We've made' (present perfect - current result) vs 'we'd made' (past perfect - before something else). 'We've' vs 'they've'. 'Considerable progress' is standard professional English for reporting advancement. Common in meeting and project update language.",
+            "textToSpeak": "We've made considerable progress since our last meeting.",
             "options": [
-                "The droid deploys the archive smoothly.",
-                "The teacher deploys the node instantly.",
-                "The detective sends the signal quietly.",
-                "The artist sends the portal steadily."
+                "They've made considerable progress since their last meeting.",
+                "We've seen considerable progress since our last meeting.",
+                "We've made considerable progress since our last meeting.",
+                "We'd made considerable progress since our last meeting."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L113_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero activates the chip consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'initiative'/'programme', 'widespread'/'considerable', and 'has received'/'received'.",
+            "explanation": "'Initiative' (a new project or strategy - often government or civic) vs 'programme' (a planned series of activities). 'Widespread' (across a large area or many people) vs 'considerable' (a large amount - less geographical). 'Has received' (present perfect - still relevant) vs 'received' (simple past - completed). Policy and civic engagement language.",
+            "textToSpeak": "The initiative has received widespread public support.",
             "options": [
-                "The scout encrypts the sensor securely.",
-                "The commander secures the portal steadily.",
-                "The hero activates the chip consistently.",
-                "The traveler transfers the network silently."
+                "The programme has received widespread public support.",
+                "The initiative has received considerable public support.",
+                "The initiative has received widespread public support.",
+                "The initiative received widespread public support."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
@@ -111,44 +118,47 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L113_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst sends the chip properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'preparation'/'practice', 'thorough'/'good', and 'successful'/'good'.",
+            "explanation": "'Preparation' (getting ready - planning, research, organisation) vs 'practice' (repeated rehearsal). 'Thorough' (complete, careful) vs 'good' (adequate - less demanding). 'Successful' (achieving the goal) vs 'good' (of high quality - slightly different). Public speaking and professional skills vocabulary.",
+            "textToSpeak": "Thorough preparation is the key to a successful presentation.",
             "options": [
-                "The analyst sends the chip properly.",
-                "The commander encrypts the engine effectively.",
-                "The technician deploys the circuit directly.",
-                "The hero updates the terminal smoothly."
+                "Thorough practice is the key to a successful presentation.",
+                "Good preparation is the key to a successful presentation.",
+                "Thorough preparation is the key to a good presentation.",
+                "Thorough preparation is the key to a successful presentation."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L113_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher activates the software successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', 'anticipated'/'identified', and 'objections'/'concerns'.",
+            "explanation": "'Anticipated' (predicted before they arose - proactive thinking) vs 'identified' (recognised when they appeared - reactive). 'Objections' (formal disagreements raised in discussion) vs 'concerns' (worries - less confrontational). 'Proactively' - acting before problems occur. Advanced professional communication vocabulary.",
+            "textToSpeak": "She anticipated the objections and addressed them proactively.",
             "options": [
-                "The teacher activates the software successfully.",
-                "The teacher measures the node smoothly.",
-                "The traveler validates the terminal directly.",
-                "The scout locates the network smoothly."
+                "He anticipated the objections and addressed them proactively.",
+                "She anticipated the concerns and addressed them proactively.",
+                "She anticipated the objections and addressed them proactively.",
+                "She identified the objections and addressed them proactively."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L114_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot validates the code rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'revised'/'updated', 'previous'/'recent', and 'takes'/'took'.",
+            "explanation": "'Revised' (changed based on review - implies corrections were needed) vs 'updated' (brought up to date - could be additions rather than corrections). 'Previous' (from before - may not be recent) vs 'recent' (happening recently). 'Takes into account' (present - currently considers) vs 'took into account' (past). Planning process vocabulary.",
+            "textToSpeak": "The revised plan takes into account previous feedback.",
             "options": [
-                "The pilot validates the code rapidly.",
-                "The scout measures the database immediately.",
-                "The scientist evaluates the circuit carefully.",
-                "The researcher repairs the circuit precisely."
+                "The revised plan takes into account previous feedback.",
+                "The revised plan takes into account recent feedback.",
+                "The revised plan took into account previous feedback.",
+                "The updated plan takes into account previous feedback."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -156,14 +166,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L114_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher encrypts the module directly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'budget'/'financial', 'constraints'/'restrictions', and 'limit'/'reduce'.",
+            "explanation": "'Budget constraints' (specifically about money limits) vs 'financial constraints' (broader financial limitations). 'Constraints' (factors that limit - often external or structural) vs 'restrictions' (deliberate limitations placed on something). 'Limit' (define the boundaries of) vs 'reduce' (make smaller). Resource management vocabulary in professional English.",
+            "textToSpeak": "The budget constraints limit our available options.",
             "options": [
-                "The teacher encrypts the module directly.",
-                "The teacher scans the chip efficiently.",
-                "The teacher evaluates the terminal precisely.",
-                "The expert activates the node swiftly."
+                "The budget constraints limit our available options.",
+                "The budget restrictions limit our available options.",
+                "The budget constraints reduce our available options.",
+                "The financial constraints limit our available options."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -171,104 +182,111 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L114_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician activates the sensor successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'collaboration'/'communication', 'across'/'within', and 'improved'/'increased'.",
+            "explanation": "'Collaboration' (working together jointly) vs 'communication' (sharing information). 'Across departments' (between different departments) vs 'within departments' (inside a single department). 'Improved' (got better - qualitative) vs 'increased' (grew in quantity - quantitative). Organisational development vocabulary.",
+            "textToSpeak": "Collaboration across departments has improved significantly.",
             "options": [
-                "The technician activates the sensor successfully.",
-                "The researcher builds the engine precisely.",
-                "The detective restores the module effectively.",
-                "The explorer scans the system precisely."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L115_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician deploys the signal carefully.",
-            "options": [
-                "The student transfers the portal steadily.",
-                "The student updates the archive instantly.",
-                "The explorer measures the circuit properly.",
-                "The technician deploys the signal carefully."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L115_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist creates the chip carefully.",
-            "options": [
-                "The mentor sends the device reliably.",
-                "The scientist creates the chip carefully.",
-                "The mentor locates the software precisely.",
-                "The detective deploys the module quietly."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L115_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist activates the drone steadily.",
-            "options": [
-                "The analyst sends the circuit rapidly.",
-                "The mentor scans the drone carefully.",
-                "The engineer monitors the engine efficiently.",
-                "The artist activates the drone steadily."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L116_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst creates the device carefully.",
-            "options": [
-                "The hero activates the code automatically.",
-                "The analyst creates the device carefully.",
-                "The mentor activates the node instantly.",
-                "The expert sends the satellite directly."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L116_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician repairs the sensor quietly.",
-            "options": [
-                "The scientist observes the system precisely.",
-                "The detective repairs the data steadily.",
-                "The technician repairs the sensor quietly.",
-                "The technician scans the software quietly."
+                "Communication across departments has improved significantly.",
+                "Collaboration within departments has improved significantly.",
+                "Collaboration across departments has improved significantly.",
+                "Collaboration across departments has increased significantly."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L115_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'outcomes'/'results', 'exceeded'/'fell short of', and 'initial'/'final'.",
+            "explanation": "'Exceeded' (went beyond - better than expected) vs 'fell short of' (didn't reach - worse than expected). 'Initial' (set at the start) vs 'final' (the last set of targets). 'Outcomes' (what happened as a result) vs 'results' (measurements of what was achieved). 'Exceeded targets' is positive; 'fell short of targets' is negative - completely opposite business performance language.",
+            "textToSpeak": "The outcomes exceeded initial performance targets.",
+            "options": [
+                "The outcomes exceeded initial performance targets.",
+                "The outcomes fell short of initial performance targets.",
+                "The outcomes exceeded final performance targets.",
+                "The results exceeded initial performance targets."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L115_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'she'/'he', 'demonstrated'/'showed', and 'under'/'in' difficult conditions.",
+            "explanation": "'Demonstrated' (showed through specific actions) vs 'showed' (near-synonym but less formal). 'Under difficult conditions' (preposition 'under' - standard collocation) vs 'in difficult conditions' ('in' is also used - slightly different nuance). 'She' vs 'he'. Leadership assessment vocabulary for performance reviews and case studies.",
+            "textToSpeak": "She demonstrated exceptional leadership under difficult conditions.",
+            "options": [
+                "He demonstrated exceptional leadership under difficult conditions.",
+                "She showed exceptional leadership under difficult conditions.",
+                "She demonstrated exceptional leadership under difficult conditions.",
+                "She demonstrated exceptional leadership in difficult conditions."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L115_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'impact'/'effect'/'consequences' and 'will be'/'was'.",
+            "explanation": "'Impact' (strong effect - implies significance) vs 'effect' (the result - neutral) vs 'consequences' (implications - often negative). 'Will be felt for years' (future - still to come) vs 'was felt for years' (past - already happened). These near-synonyms carry different connotations important in policy analysis and journalism.",
+            "textToSpeak": "The impact of the decision will be felt for years.",
+            "options": [
+                "The effect of the decision will be felt for years.",
+                "The impact of the decision will be felt for years.",
+                "The impact of the decision was felt for years.",
+                "The consequences of the decision will be felt for years."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L116_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'lack of'/'breakdown in', 'communication'/'transparency', and the tense.",
+            "explanation": "'Lack of communication' (absence of communication) vs 'breakdown in communication' (communication that existed but stopped or failed). 'Transparency' (openness - a different problem). 'Led to' (simple past - caused) vs 'has led to' (present perfect - still causing problems now). Organisational failure post-mortem vocabulary.",
+            "textToSpeak": "A lack of communication led to costly misunderstandings.",
+            "options": [
+                "A lack of communication led to costly misunderstandings.",
+                "A lack of transparency led to costly misunderstandings.",
+                "A lack of communication has led to costly misunderstandings.",
+                "A breakdown in communication led to costly misunderstandings."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L116_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'framework'/'structure', 'revised'/'updated', and 'needs'/'needed'.",
+            "explanation": "'Framework' (a conceptual structure for approaching something) vs 'structure' (physical or organisational arrangement). 'Revised' (amended, corrected) vs 'updated' (brought up to date - may or may not involve corrections). 'Needs to be' (present necessity) vs 'needed to be' (past - may now be done). Project planning vocabulary.",
+            "textToSpeak": "The framework needs to be revised before implementation.",
+            "options": [
+                "The framework needs to be revised before implementation.",
+                "The framework needs to be updated before implementation.",
+                "The framework needed to be revised before implementation.",
+                "The structure needs to be revised before implementation."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L116_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer locates the software swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'her'/'his', 'recommendations'/'conclusions', and 'thorough'/'recent'.",
+            "explanation": "'Recommendations' (suggested courses of action) vs 'conclusions' (findings/opinions reached from analysis). 'Thorough' (comprehensive, leaving nothing out) vs 'recent' (up to date - different quality dimension). 'Her' vs 'his'. Business and consulting report vocabulary where precise word choice signals different stages of analysis.",
+            "textToSpeak": "Her recommendations were based on thorough market analysis.",
             "options": [
-                "The teacher deploys the system precisely.",
-                "The mentor builds the module immediately.",
-                "The explorer locates the software swiftly.",
-                "The analyst repairs the circuit reliably."
+                "His recommendations were based on thorough market analysis.",
+                "Her conclusions were based on thorough market analysis.",
+                "Her recommendations were based on thorough market analysis.",
+                "Her recommendations were based on recent market analysis."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
@@ -276,29 +294,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L117_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert locates the device instantly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'proposal'/'suggestion', 'scepticism'/'enthusiasm', and 'met with'/'welcomed'.",
+            "explanation": "'Was met with scepticism' (received with doubt) vs 'was welcomed with scepticism' (not natural - 'welcomed' implies positive reception). 'Scepticism' (doubt) vs 'enthusiasm' (excitement - opposite reaction). 'Proposal' (more formal - a documented suggestion) vs 'suggestion' (more casual). Stakeholder meeting and governance vocabulary.",
+            "textToSpeak": "The proposal was met with scepticism by several members.",
             "options": [
-                "The teacher restores the circuit silently.",
-                "The expert locates the device instantly.",
-                "The technician updates the drone securely.",
-                "The pilot updates the engine smoothly."
+                "The suggestion was met with scepticism by several members.",
+                "The proposal was welcomed with scepticism by several members.",
+                "The proposal was met with scepticism by several members.",
+                "The proposal was met with enthusiasm by several members."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L117_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician repairs the device carefully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'we'/'they', 'prioritise'/'decide', and 'impact'/'risk'.",
+            "explanation": "'Prioritise' (rank items in order of importance) vs 'decide' (make a choice - broader). 'Impact' (the strength of the effect) vs 'risk' (the probability and severity of negative outcomes - different evaluation criteria). 'We' vs 'they'. Strategic planning vocabulary for professional decision-making contexts.",
+            "textToSpeak": "We need to prioritise based on impact and feasibility.",
             "options": [
-                "The student repairs the code smoothly.",
-                "The student updates the software silently.",
-                "The technician repairs the device carefully.",
-                "The explorer encrypts the database properly."
+                "They need to prioritise based on impact and feasibility.",
+                "We need to decide based on impact and feasibility.",
+                "We need to prioritise based on impact and feasibility.",
+                "We need to prioritise based on risk and feasibility."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
@@ -306,119 +326,127 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L117_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero launches the chip quietly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'all'/'every', 'share'/'have', and 'stakeholders'/'partners'.",
+            "explanation": "'Not all stakeholders' (referring to the group generally) vs 'not every stakeholder' (referring to each individual - same meaning but different grammatical form). 'Share the same priorities' (collectively hold) vs 'have the same priorities' (individually possess). 'Stakeholders' vs 'partners'. Governance and stakeholder management language.",
+            "textToSpeak": "Not all stakeholders share the same priorities.",
             "options": [
-                "The traveler launches the chip successfully.",
-                "The droid repairs the archive effectively.",
-                "The explorer repairs the circuit precisely.",
-                "The hero launches the chip quietly."
+                "Not every stakeholder shares the same priorities.",
+                "Not all stakeholders have the same priorities.",
+                "Not all stakeholders share the same priorities.",
+                "Not all partners share the same priorities."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L118_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer sends the satellite securely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'timeline'/'schedule', 'needs to'/'has to', and 'achievable'/'flexible'.",
+            "explanation": "'Timeline' (a visual/sequence of events over time) vs 'schedule' (a planned timetable - slightly more operational). 'Needs to be' (requirement) vs 'has to be' (strong obligation - similar but 'has to' is slightly more urgent). 'Achievable' (can be accomplished) vs 'flexible' (can be adjusted - a different quality). Project management planning vocabulary.",
+            "textToSpeak": "The timeline needs to be realistic and achievable.",
             "options": [
-                "The hero observes the software carefully.",
-                "The artist secures the network efficiently.",
-                "The explorer sends the satellite securely.",
-                "The hacker monitors the archive smoothly."
+                "The schedule needs to be realistic and achievable.",
+                "The timeline needs to be realistic and achievable.",
+                "The timeline needs to be realistic and flexible.",
+                "The timeline has to be realistic and achievable."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L118_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero activates the engine steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', 'pushed for'/'argued for', and 'transparent'/'clearer'.",
+            "explanation": "'Pushed for' (campaigned strongly, sometimes against resistance) vs 'argued for' (made a case for - verbal advocacy). 'Transparent' (open, honest - nothing hidden) vs 'clearer' (easier to understand - different quality). 'She' vs 'he'. Organisational governance and accountability advocacy vocabulary.",
+            "textToSpeak": "She pushed for a more transparent decision-making process.",
             "options": [
-                "The hero locates the sensor successfully.",
-                "The researcher locates the database rapidly.",
-                "The engineer locates the system consistently.",
-                "The hero activates the engine steadily."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L118_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer analyzes the data efficiently.",
-            "options": [
-                "The engineer analyzes the data efficiently.",
-                "The artist builds the archive securely.",
-                "The researcher observes the portal successfully.",
-                "The scientist measures the terminal carefully."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L119_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor creates the node securely.",
-            "options": [
-                "The mentor creates the node securely.",
-                "The engineer deploys the protocol effectively.",
-                "The researcher observes the code securely.",
-                "The technician builds the circuit quietly."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L119_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher monitors the node reliably.",
-            "options": [
-                "The analyst creates the device expertly.",
-                "The detective locates the node directly.",
-                "The researcher monitors the node reliably.",
-                "The scientist repairs the satellite properly."
+                "He pushed for a more transparent decision-making process.",
+                "She argued for a more transparent decision-making process.",
+                "She pushed for a more transparent decision-making process.",
+                "She pushed for a clearer decision-making process."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L118_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'restructuring'/'reorganisation', 'has had'/'had', and 'significant'/'positive'.",
+            "explanation": "'Restructuring' (major organisational change) vs 'reorganisation' (rearranging - similar but 'restructuring' implies more fundamental change). 'Has had' (present perfect - effect is still being felt) vs 'had' (simple past - effect is over). 'Significant' (notable - neutral) vs 'positive' (good - more specific). Workplace change management vocabulary.",
+            "textToSpeak": "The restructuring has had a significant impact on morale.",
+            "options": [
+                "The reorganisation has had a significant impact on morale.",
+                "The restructuring has had a significant impact on morale.",
+                "The restructuring has had a positive impact on morale.",
+                "The restructuring had a significant impact on morale."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L119_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'inherent'/'significant', 'risks'/'challenges', and 'associated with'/'involved in'.",
+            "explanation": "'Inherent' (built into the nature of something - cannot be removed) vs 'significant' (large in scale - could be managed). 'Risks' (potential negative outcomes) vs 'challenges' (difficulties - less threatening). 'Associated with' (connected to) vs 'involved in' (part of). Entrepreneurship and risk management vocabulary.",
+            "textToSpeak": "There are inherent risks associated with any new venture.",
+            "options": [
+                "There are significant risks associated with any new venture.",
+                "There are inherent risks associated with any new venture.",
+                "There are inherent risks involved in any new venture.",
+                "There are inherent challenges associated with any new venture."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L119_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'review'/'audit', 'identified'/'highlighted', and 'areas'/'opportunities'.",
+            "explanation": "'Review' (an evaluation process - general) vs 'audit' (a formal, systematic examination - more specific/official). 'Identified' (found and named specifically) vs 'highlighted' (drew attention to). 'Areas for improvement' (places needing work - standard phrase) vs 'opportunities for improvement' (more positive framing of the same thing). Quality management vocabulary.",
+            "textToSpeak": "The review identified several areas for improvement.",
+            "options": [
+                "The audit identified several areas for improvement.",
+                "The review identified several areas for improvement.",
+                "The review identified several opportunities for improvement.",
+                "The review highlighted several areas for improvement."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L119_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student analyzes the drone silently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'relevant'/'interested', 'should'/'need to', and 'consulted'/'informed'.",
+            "explanation": "'Relevant parties' (those with direct involvement or expertise) vs 'interested parties' (those with a stake/interest - may not have direct involvement). 'Should be consulted' (recommended) vs 'need to be consulted' (more obligatory). 'Consulted' (asked for their input) vs 'informed' (told - no input). Governance and process vocabulary.",
+            "textToSpeak": "All relevant parties should be consulted in advance.",
             "options": [
-                "The student analyzes the drone silently.",
-                "The hacker scans the node successfully.",
-                "The hacker locates the node directly.",
-                "The traveler updates the device effectively."
+                "All interested parties should be consulted in advance.",
+                "All relevant parties need to be consulted in advance.",
+                "All relevant parties should be consulted in advance.",
+                "All relevant parties should be informed in advance."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L120_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer encrypts the portal directly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'strategy'/'plan', 'must'/'needs to', and 'adaptable'/'flexible'.",
+            "explanation": "'Strategy' (long-term directional planning) vs 'plan' (specific set of actions - shorter term). 'Must be' (strong necessity) vs 'needs to be' (slightly softer requirement). 'Adaptable' (able to change and adjust) vs 'flexible' (able to bend - similar but 'adaptable' implies changing to fit new conditions). Strategic planning vocabulary.",
+            "textToSpeak": "The strategy must be adaptable to changing circumstances.",
             "options": [
-                "The hacker transfers the portal silently.",
-                "The engineer encrypts the portal directly.",
-                "The hero creates the data automatically.",
-                "The hacker measures the code quietly."
+                "The plan must be adaptable to changing circumstances.",
+                "The strategy must be adaptable to changing circumstances.",
+                "The strategy must be flexible to changing circumstances.",
+                "The strategy needs to be adaptable to changing circumstances."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -426,14 +454,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L120_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist locates the database silently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'important'/'essential', 'distinguish between'/'separate', and 'is'/'was'.",
+            "explanation": "'Essential' (absolutely necessary) vs 'important' (significant but slightly softer). 'Distinguish between' (identify the differences between two things) vs 'separate' (divide - less analytical). 'Is important' (current/ongoing truth) vs 'was important' (historical). Analytical and critical thinking vocabulary essential for academic English.",
+            "textToSpeak": "It is important to distinguish between cause and effect.",
             "options": [
-                "The scientist locates the database silently.",
-                "The hacker evaluates the network instantly.",
-                "The pilot repairs the sensor immediately.",
-                "The hero sends the archive effectively."
+                "It is important to distinguish between cause and effect.",
+                "It is important to separate cause from effect.",
+                "It was important to distinguish between cause and effect.",
+                "It is essential to distinguish between cause and effect."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -441,16 +470,17 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L120_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer secures the data properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'competing'/'conflicting', 'interests'/'pressures', and 'resolution'/'agreement'.",
+            "explanation": "'Competing interests' (interests in competition for priority) vs 'conflicting interests' (interests that contradict each other - slightly more adversarial). 'Resolution' (a formal solution to a dispute) vs 'agreement' (a mutual decision - broader). 'Pressures' (forces causing stress) vs 'interests' (stakes). Negotiation and conflict analysis vocabulary.",
+            "textToSpeak": "The competing interests make a resolution difficult to achieve.",
             "options": [
-                "The robot launches the module instantly.",
-                "The pilot scans the protocol instantly.",
-                "The hero updates the sensor reliably.",
-                "The explorer secures the data properly."
+                "The conflicting interests make a resolution difficult to achieve.",
+                "The competing pressures make a resolution difficult to achieve.",
+                "The competing interests make a resolution difficult to achieve.",
+                "The competing interests make agreement difficult to achieve."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         }
     ]

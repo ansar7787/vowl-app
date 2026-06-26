@@ -6,89 +6,95 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L91_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert secures the satellite steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'she'/'he', 'award'/'prize', and 'nominated'/'shortlisted'.",
+            "explanation": "'Nominated' (put forward as a candidate) vs 'shortlisted' (chosen as one of the final candidates - a later stage). 'Award' (formal recognition, often with a trophy/certificate) vs 'prize' (can also include money - overlapping but slightly different). 'Three times' - catch the number. Achievement recognition language.",
+            "textToSpeak": "She was nominated for an award three times.",
             "options": [
-                "The scientist builds the signal directly.",
-                "The robot transfers the protocol efficiently.",
-                "The expert secures the satellite steadily.",
-                "The hero restores the node quietly."
+                "He was nominated for an award three times.",
+                "She was nominated for an award three times.",
+                "She was shortlisted for an award three times.",
+                "She was nominated for a prize three times."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L91_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker validates the circuit efficiently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'policy shift'/'policy change'/'strategy shift' and the tense.",
+            "explanation": "'Policy shift' (a change in direction of a policy - implies movement) vs 'policy change' (more neutral). 'Strategy shift' (a change in broader strategic direction). 'Reflects' (present - ongoing truth) vs 'reflected' (past - may no longer be true). Political and governmental analysis vocabulary.",
+            "textToSpeak": "The policy shift reflects changing public opinion.",
             "options": [
-                "The hacker validates the circuit efficiently.",
-                "The technician validates the circuit securely.",
-                "The expert evaluates the sensor immediately.",
-                "The detective creates the software securely."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L91_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist launches the portal directly.",
-            "options": [
-                "The scientist repairs the software instantly.",
-                "The expert secures the node silently.",
-                "The robot activates the archive instantly.",
-                "The artist launches the portal directly."
+                "The policy change reflects changing public opinion.",
+                "The policy shift reflected changing public opinion.",
+                "The strategy shift reflects changing public opinion.",
+                "The policy shift reflects changing public opinion."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L92_Q1",
+            "id": "LIS_FASTSPEECHDECODER_L91_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler locates the archive efficiently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'agrees'/'believes', 'the'/'this', and 'agrees'/'agreed'.",
+            "explanation": "'Agrees' (concurs - specifically about a stated position) vs 'believes' (holds as a view - slightly more personal). 'The current system' (referring to an established one) vs 'this current system' (the one being discussed - subtle emphasis). 'Agrees' (present) vs 'agreed' (past). Critical discourse about institutional systems.",
+            "textToSpeak": "Not everyone agrees that the current system works.",
             "options": [
-                "The traveler locates the archive efficiently.",
-                "The technician observes the signal securely.",
-                "The traveler encrypts the drone steadily.",
-                "The engineer restores the code rapidly."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L92_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander launches the terminal immediately.",
-            "options": [
-                "The explorer evaluates the sensor swiftly.",
-                "The analyst locates the terminal carefully.",
-                "The commander launches the terminal immediately.",
-                "The technician secures the software efficiently."
+                "Not everyone believes that the current system works.",
+                "Not everyone agrees that this current system works.",
+                "Not everyone agrees that the current system works.",
+                "Not everyone agreed that the current system works."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L92_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'incident'/'event', 'prompted'/'led to', and 'internal'/'external'.",
+            "explanation": "'Incident' (an unpleasant or significant event - often implies something went wrong) vs 'event' (any occurrence - more neutral). 'Prompted' (triggered directly) vs 'led to' (resulted in - implies a chain of events). 'Internal' (within the organisation) vs 'external' (from outside). Institutional accountability language.",
+            "textToSpeak": "The incident prompted a thorough internal review.",
+            "options": [
+                "The event prompted a thorough internal review.",
+                "The incident led to a thorough internal review.",
+                "The incident prompted a thorough external review.",
+                "The incident prompted a thorough internal review."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L92_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'experts'/'specialists', 'divided'/'disagree', and 'best'/'right'.",
+            "explanation": "'Are divided' (split into camps with different views - neutral/formal) vs 'disagree' (more direct statement of conflict). 'Best' (optimal) vs 'right' (correct/appropriate - similar but 'right' can have ethical overtones). 'Experts' (broad term) vs 'specialists' (more specifically focused professionals). Expert opinion language.",
+            "textToSpeak": "Experts are divided on the best course of action.",
+            "options": [
+                "Specialists are divided on the best course of action.",
+                "Experts are divided on the best course of action.",
+                "Experts are divided on the right course of action.",
+                "Experts disagree on the best course of action."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L92_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer creates the code silently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'we'/'they', 'must'/'should', and 'ensure'/'make sure'.",
+            "explanation": "'Ensure' (formal - guarantee) and 'make sure' (informal - same meaning). 'Must' (strong obligation - no choice) vs 'should' (recommendation - a choice). 'We must' (inclusive - we are responsible) vs 'they must' (exclusive - others are responsible). Inclusive language for democratic and organisational communication.",
+            "textToSpeak": "We must ensure that all voices are heard.",
             "options": [
-                "The explorer creates the code silently.",
-                "The commander sends the engine expertly.",
-                "The analyst activates the data reliably.",
-                "The hacker transfers the signal silently."
+                "We must ensure that all voices are heard.",
+                "We should ensure that all voices are heard.",
+                "They must ensure that all voices are heard.",
+                "We must make sure that all voices are heard."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -96,104 +102,111 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L93_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist creates the terminal steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'extent'/'scale', 'is'/'was', and 'damage'/'problem'.",
+            "explanation": "'Extent' (how far something reaches) vs 'scale' (how large something is - overlapping but 'scale' emphasises size). 'Damage' (harm caused to something) vs 'problem' (a difficulty requiring a solution). 'Is being assessed' (passive continuous - happening right now) vs 'was being assessed' (past continuous - was happening). Crisis reporting vocabulary.",
+            "textToSpeak": "The extent of the damage is still being assessed.",
             "options": [
-                "The technician deploys the module precisely.",
-                "The pilot activates the node reliably.",
-                "The robot repairs the sensor effectively.",
-                "The artist creates the terminal steadily."
+                "The scale of the damage is still being assessed.",
+                "The extent of the damage is still being assessed.",
+                "The extent of the problem is still being assessed.",
+                "The extent of the damage was still being assessed."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L93_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker encrypts the module effectively.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'priority'/'attention', 'most'/'least', and 'should'/'will'.",
+            "explanation": "'Priority' (the most important consideration) vs 'attention' (focus - less of a ranking). 'Most vulnerable' (worst off - need the most help) vs 'least vulnerable' (best off - opposite!). 'Should be given' (recommendation) vs 'will be given' (future commitment). Social policy and welfare vocabulary.",
+            "textToSpeak": "Priority should be given to the most vulnerable groups.",
             "options": [
-                "The analyst restores the node reliably.",
-                "The hacker encrypts the module effectively.",
-                "The artist observes the engine rapidly.",
-                "The technician measures the network consistently."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L93_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert validates the code automatically.",
-            "options": [
-                "The expert validates the code automatically.",
-                "The expert deploys the sensor immediately.",
-                "The pilot sends the code reliably.",
-                "The student restores the system properly."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L94_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist restores the protocol effectively.",
-            "options": [
-                "The scientist secures the data quietly.",
-                "The droid measures the circuit silently.",
-                "The expert builds the node carefully.",
-                "The artist restores the protocol effectively."
+                "Attention should be given to the most vulnerable groups.",
+                "Priority should be given to the least vulnerable groups.",
+                "Priority will be given to the most vulnerable groups.",
+                "Priority should be given to the most vulnerable groups."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L94_Q2",
+            "id": "LIS_FASTSPEECHDECODER_L93_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer activates the terminal securely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'her'/'his', 'analysis'/'reading', and 'situation'/'problem'.",
+            "explanation": "'Analysis' (systematic examination using methods/frameworks) vs 'reading' (an interpretation - more metaphorical). 'Situation' (a set of circumstances) vs 'problem' (something that needs solving). 'Her' vs 'his'. 'Proved to be accurate' - acknowledging someone's correct prediction after the fact. Professional recognition language.",
+            "textToSpeak": "Her analysis of the situation proved to be accurate.",
             "options": [
-                "The engineer evaluates the sensor securely.",
-                "The engineer activates the terminal securely.",
-                "The hacker creates the network securely.",
-                "The explorer repairs the sensor silently."
+                "His analysis of the situation proved to be accurate.",
+                "Her analysis of the situation proved to be accurate.",
+                "Her analysis of the problem proved to be accurate.",
+                "Her reading of the situation proved to be accurate."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L94_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'I'/'she', 'put my finger on'/'quite say', and 'feels'/'seems'.",
+            "explanation": "'Can't put my finger on' - an idiom meaning 'can't identify exactly what it is'. 'Can't quite say' - more literal but similar meaning. 'Feels wrong' (intuitive discomfort - emotional response) vs 'seems wrong' (appears incorrect - more analytical). Idiom recognition is key to natural English comprehension.",
+            "textToSpeak": "I can't put my finger on why it feels wrong.",
+            "options": [
+                "She can't put her finger on why it feels wrong.",
+                "I can't quite say why it feels wrong.",
+                "I can't put my finger on why it feels wrong.",
+                "I can't put my finger on why it seems wrong."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L94_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'you've'/'she's', 'hit'/'struck', and 'comment'/'point'.",
+            "explanation": "'Hit the nail on the head' - an idiom meaning 'identified something exactly correctly'. 'Struck the nail' - not standard English (always 'hit the nail on the head'). 'Comment' (something said) vs 'point' (an argument or observation - similar). 'You've' vs 'she's'. Idiom comprehension is essential for natural English interaction.",
+            "textToSpeak": "You've hit the nail on the head with that comment.",
+            "options": [
+                "She's hit the nail on the head with that comment.",
+                "You've struck the nail on the head with that comment.",
+                "You've hit the nail on the head with that point.",
+                "You've hit the nail on the head with that comment."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L94_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot validates the protocol reliably.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'we're'/'they're', 'getting closer'/'getting there', and 'not there yet'/'nearly there'.",
+            "explanation": "'Getting closer' (making progress towards a goal) vs 'getting there' (common idiom: making progress). 'Not there yet' (haven't reached the goal) vs 'nearly there' (very close - almost done). 'We're' vs 'they're'. These are very natural spoken English phrases for discussing progress on tasks.",
+            "textToSpeak": "We're getting closer, but we're not there yet.",
             "options": [
-                "The pilot validates the protocol reliably.",
-                "The traveler deploys the module precisely.",
-                "The mentor sends the node quietly.",
-                "The detective observes the drone carefully."
+                "They're getting closer, but they're not there yet.",
+                "We're getting closer, but we're not there yet.",
+                "We're nearly there, but we're not there yet.",
+                "We're getting there, but we're not quite done yet."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L95_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker validates the node consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the introductory phrase and 'honesty'/'integrity'.",
+            "explanation": "'It goes without saying' (so obvious it doesn't need stating - but you're stating it anyway). 'Needless to say' (same meaning). 'It stands to reason' (logically follows - slightly different emphasis). 'Honesty' (telling the truth) vs 'integrity' (having moral principles - broader). These discourse markers signal that a strong claim follows.",
+            "textToSpeak": "It goes without saying that honesty is essential.",
             "options": [
-                "The droid scans the portal instantly.",
-                "The explorer updates the terminal carefully.",
-                "The commander creates the system precisely.",
-                "The hacker validates the node consistently."
+                "Needless to say, honesty is essential.",
+                "It stands to reason that honesty is essential.",
+                "It goes without saying that integrity is essential.",
+                "It goes without saying that honesty is essential."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -201,59 +214,63 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L95_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer deploys the drone instantly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'her'/'his', 'contribution'/'role', and 'team'/'group'.",
+            "explanation": "'Cannot be overstated' - means 'is so significant that no amount of praise is too much'. 'Contribution' (what was given to or done for a group) vs 'role' (position/function in a group). 'Team' (a working group in an organisation) vs 'group' (more general). Professional recognition and performance language.",
+            "textToSpeak": "Her contribution to the team cannot be overstated.",
             "options": [
-                "The mentor builds the module consistently.",
-                "The explorer deploys the drone instantly.",
-                "The artist locates the device consistently.",
-                "The traveler measures the network efficiently."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L95_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero launches the module properly.",
-            "options": [
-                "The hero launches the module properly.",
-                "The pilot observes the portal expertly.",
-                "The hacker monitors the node steadily.",
-                "The mentor measures the drone steadily."
+                "Her contribution to the team cannot be overstated.",
+                "Her role in the team cannot be overstated.",
+                "Her contribution to the group cannot be overstated.",
+                "His contribution to the team cannot be overstated."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L95_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'we're'/'they're', 'better'/'stronger', and the comparison structure.",
+            "explanation": "'Better' and 'stronger' - both positive comparisons but 'stronger' implies resilience/capacity. 'We're in a better position than six months ago' (improvement over time) vs 'we were in a better position six months ago' (things have got worse - completely opposite!). 'We're' vs 'they're'. Progress assessment language.",
+            "textToSpeak": "We're in a much better position than six months ago.",
+            "options": [
+                "They're in a much better position than six months ago.",
+                "We're in a much stronger position than six months ago.",
+                "We were in a much better position six months ago.",
+                "We're in a much better position than six months ago."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L96_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler validates the software silently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'gap'/'divide', 'grow'/'widen', and 'continues'/'continued'.",
+            "explanation": "'Gap' (a space or difference) and 'divide' (a separation - more political connotation) - both describe inequality. 'Grow' (increase in size) and 'widen' (become broader - more specific to gaps) are near-synonyms here. 'Continues to grow' (present - ongoing) vs 'continued to grow' (past). Social inequality vocabulary for academic and media English.",
+            "textToSpeak": "The gap between rich and poor continues to grow.",
             "options": [
-                "The hero repairs the data securely.",
-                "The scout observes the engine effectively.",
-                "The traveler validates the software silently.",
-                "The technician transfers the node successfully."
+                "The divide between rich and poor continues to grow.",
+                "The gap between rich and poor continues to grow.",
+                "The gap between rich and poor continued to grow.",
+                "The gap between rich and poor continues to widen."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L96_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler builds the engine efficiently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'addressing'/'solving', 'systemic'/'structural', and 'requires'/'will require'.",
+            "explanation": "'Addressing' (dealing with, tackling - doesn't imply completion) vs 'solving' (finding a solution - implies completion). 'Systemic' (built into the system) vs 'structural' (relating to structure - overlapping but 'systemic' is more critical/academic). 'Requires' (present truth) vs 'will require' (future prediction). Social reform vocabulary.",
+            "textToSpeak": "Addressing systemic issues requires long-term commitment.",
             "options": [
-                "The commander sends the chip precisely.",
-                "The traveler builds the engine efficiently.",
-                "The researcher launches the data properly.",
-                "The scout repairs the circuit automatically."
+                "Solving systemic issues requires long-term commitment.",
+                "Addressing systemic issues requires long-term commitment.",
+                "Addressing systemic issues will require long-term commitment.",
+                "Addressing structural issues requires long-term commitment."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -261,44 +278,47 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L96_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The detective monitors the terminal swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'research'/'study', 'highlights'/'reveals', and 'highlights'/'highlighted'.",
+            "explanation": "'Highlights' (brings to attention - emphasises) vs 'reveals' (discloses something hidden - stronger, more surprising). 'Research' (a body of work) vs 'study' (a specific piece). 'Highlights' (present - this is its ongoing significance) vs 'highlighted' (past - when it was published). Academic reporting and literature review language.",
+            "textToSpeak": "The research highlights a significant knowledge gap.",
             "options": [
-                "The detective activates the node instantly.",
-                "The expert locates the software reliably.",
-                "The traveler builds the network rapidly.",
-                "The detective monitors the terminal swiftly."
+                "The research highlights a significant knowledge gap.",
+                "The research reveals a significant knowledge gap.",
+                "The research highlighted a significant knowledge gap.",
+                "The study highlights a significant knowledge gap."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L97_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist deploys the terminal smoothly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'she'/'he', 'argued'/'claimed', and the direction of the comparison.",
+            "explanation": "'Argued' (presented a reasoned position - academic and debates) vs 'claimed' (asserted - implies the claim may be disputed). 'Benefits outweigh risks' (positive conclusion) vs 'costs outweigh benefits' (negative - opposite reasoning). 'She' vs 'he'. Academic argumentation vocabulary for essays and debates.",
+            "textToSpeak": "She argued that the benefits outweigh the risks.",
             "options": [
-                "The commander restores the data carefully.",
-                "The droid sends the software effectively.",
-                "The expert monitors the device properly.",
-                "The artist deploys the terminal smoothly."
+                "She argued that the benefits outweigh the risks.",
+                "She claimed that the benefits outweigh the risks.",
+                "She argued that the costs outweigh the benefits.",
+                "He argued that the benefits outweigh the risks."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L97_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor builds the terminal successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'implementation'/'planning', 'phase'/'stage', and 'presented'/'had presented'.",
+            "explanation": "'Implementation phase' (putting a plan into action) vs 'planning phase' (designing the plan - earlier stage). 'Phase' and 'stage' - near-synonyms for a period within a process. 'Presented' (simple past) vs 'had presented' (past perfect - before another past event). Project management and process vocabulary.",
+            "textToSpeak": "The implementation phase presented numerous challenges.",
             "options": [
-                "The mentor builds the terminal successfully.",
-                "The engineer monitors the signal steadily.",
-                "The mentor transfers the protocol properly.",
-                "The hero activates the portal rapidly."
+                "The implementation phase presented numerous challenges.",
+                "The implementation stage presented numerous challenges.",
+                "The implementation phase had presented numerous challenges.",
+                "The planning phase presented numerous challenges."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -306,151 +326,161 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L97_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher evaluates the code reliably.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'crucial'/'essential', 'we'/'they', and 'act'/'respond'.",
+            "explanation": "'Crucial' (absolutely critical - if not done, serious consequences) vs 'essential' (necessary - slightly softer but often interchangeable). 'Act' (take action - general) vs 'respond' (reply or react - implies there's something to respond to). 'We' (inclusive) vs 'they' (exclusive). Urgency language for crisis and persuasive communication.",
+            "textToSpeak": "It's crucial that we act before it's too late.",
             "options": [
-                "The teacher evaluates the code reliably.",
-                "The hero builds the satellite steadily.",
-                "The pilot sends the circuit automatically.",
-                "The commander updates the node successfully."
+                "It's essential that we act before it's too late.",
+                "It's crucial that they act before it's too late.",
+                "It's crucial that we act before it's too late.",
+                "It's crucial that we respond before it's too late."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L98_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout creates the portal steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'statistics'/'data'/'numbers' and 'paint'/'present'.",
+            "explanation": "'Statistics' (processed numerical data) vs 'data' (raw information) vs 'numbers' (informal term). 'Paint a picture' (vivid metaphor for describing a situation) vs 'present a picture' (less metaphorical - more neutral). Note: 'data' technically takes a plural verb ('data paint') - a common academic English usage issue.",
+            "textToSpeak": "The statistics paint a concerning picture of inequality.",
             "options": [
-                "The explorer monitors the satellite reliably.",
-                "The scout creates the portal steadily.",
-                "The mentor restores the chip effectively.",
-                "The explorer restores the network silently."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L98_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout observes the code smoothly.",
-            "options": [
-                "The expert measures the node precisely.",
-                "The scout observes the code smoothly.",
-                "The teacher analyzes the data instantly.",
-                "The robot repairs the module securely."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L98_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist measures the device automatically.",
-            "options": [
-                "The teacher secures the engine effectively.",
-                "The robot scans the portal instantly.",
-                "The scientist measures the device automatically.",
-                "The artist repairs the drone securely."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L99_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander sends the circuit steadily.",
-            "options": [
-                "The artist evaluates the sensor effectively.",
-                "The scientist evaluates the module automatically.",
-                "The commander sends the circuit steadily.",
-                "The expert transfers the chip consistently."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L99_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher analyzes the terminal properly.",
-            "options": [
-                "The traveler restores the chip immediately.",
-                "The traveler activates the sensor securely.",
-                "The teacher analyzes the terminal properly.",
-                "The student validates the database efficiently."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L99_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer validates the satellite quietly.",
-            "options": [
-                "The hero deploys the circuit steadily.",
-                "The artist deploys the archive securely.",
-                "The explorer validates the satellite quietly.",
-                "The scientist monitors the device expertly."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L100_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst secures the portal directly.",
-            "options": [
-                "The analyst secures the portal directly.",
-                "The teacher deploys the network instantly.",
-                "The engineer builds the engine steadily.",
-                "The pilot encrypts the archive expertly."
+                "The statistics paint a concerning picture of inequality.",
+                "The statistics present a concerning picture of inequality.",
+                "The numbers paint a concerning picture of inequality.",
+                "The data paint a concerning picture of inequality."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L98_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'stakeholders'/'partners', 'must'/'will', and 'consulted'/'informed'.",
+            "explanation": "'Stakeholders' (people with an interest or investment in an outcome) vs 'partners' (collaborating entities - smaller group, implies cooperation). 'Must be consulted' (obligation - their input is required) vs 'will be consulted' (future plan - could be less binding). 'Consulted' (asked for their opinion) vs 'informed' (told - no input sought). Governance vocabulary.",
+            "textToSpeak": "Stakeholders must be consulted before any decision is made.",
+            "options": [
+                "Partners must be consulted before any decision is made.",
+                "Stakeholders will be consulted before any decision is made.",
+                "Stakeholders must be informed before any decision is made.",
+                "Stakeholders must be consulted before any decision is made."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L98_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', 'demonstrated'/'showed', and 'remarkable'/'extraordinary'.",
+            "explanation": "'Demonstrated' (showed through actions/evidence - formal) vs 'showed' (less formal, same meaning). 'Remarkable' (deserving special notice) vs 'extraordinary' (beyond what is ordinary - slightly stronger). 'In the face of adversity' - a set phrase meaning 'when confronted with difficulty'. Character and leadership assessment language.",
+            "textToSpeak": "She demonstrated remarkable resilience in the face of adversity.",
+            "options": [
+                "She demonstrated remarkable resilience in the face of adversity.",
+                "She showed remarkable resilience in the face of adversity.",
+                "She demonstrated extraordinary resilience in the face of adversity.",
+                "He demonstrated remarkable resilience in the face of adversity."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L99_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'adequate'/'sufficient', 'funding'/'resources', and 'project'/'scheme'.",
+            "explanation": "'Adequate' (enough - meeting the minimum required) vs 'sufficient' (enough - slightly more formal, often interchangeable). 'Funding' (money provided for a specific purpose) vs 'resources' (broader - includes people, time, materials). 'Project' (a specific planned piece of work) vs 'scheme' (British English for a programme/plan). Funding and project management vocabulary.",
+            "textToSpeak": "Without adequate funding, the project cannot proceed.",
+            "options": [
+                "Without adequate funding, the project cannot proceed.",
+                "Without adequate resources, the project cannot proceed.",
+                "Without adequate funding, the scheme cannot proceed.",
+                "Without sufficient funding, the project cannot proceed."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L99_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'trial'/'study', 'determine'/'show', and 'drug'/'treatment'.",
+            "explanation": "'Trial' (a controlled test - specifically clinical trials for medicines) vs 'study' (broader research). 'Determine' (establish conclusively) vs 'show' (demonstrate - less conclusive). 'Drug' (a specific pharmaceutical compound) vs 'treatment' (broader - could be a procedure or therapy). Clinical and pharmaceutical English vocabulary.",
+            "textToSpeak": "The trial will determine whether the drug is effective.",
+            "options": [
+                "The study will determine whether the drug is effective.",
+                "The trial will determine whether the drug is effective.",
+                "The trial will determine whether the treatment is effective.",
+                "The trial will show whether the drug is effective."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L99_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'coordinated'/'collaborative', 'effort'/'response', and 'is'/'was'.",
+            "explanation": "'Coordinated' (organised to work together systematically) vs 'collaborative' (working together willingly). 'Effort' (work and energy applied) vs 'response' (a reply or reaction - implies there's a crisis). 'Is needed' (present necessity) vs 'was needed' (past). Policy and organisational action language.",
+            "textToSpeak": "A coordinated effort is needed to tackle this challenge.",
+            "options": [
+                "A collaborative effort is needed to tackle this challenge.",
+                "A coordinated effort is needed to tackle this challenge.",
+                "A coordinated effort was needed to tackle this challenge.",
+                "A coordinated response is needed to tackle this challenge."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L100_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'implications'/'consequences', 'discovery'/'finding', and 'are'/'were'.",
+            "explanation": "'Implications' (things that are suggested or hinted at - potential consequences) vs 'consequences' (actual results that follow - more concrete). 'Discovery' (finding something new) vs 'finding' (what was found - more academic). 'Are far-reaching' (present - still relevant) vs 'were far-reaching' (past). Scientific significance language.",
+            "textToSpeak": "The implications of this discovery are far-reaching.",
+            "options": [
+                "The consequences of this discovery are far-reaching.",
+                "The implications of this discovery are far-reaching.",
+                "The implications of this discovery were far-reaching.",
+                "The implications of this finding are far-reaching."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L100_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician updates the portal successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'should'/'must', 'we'/'they', and 'underestimate'/'overlook'.",
+            "explanation": "'Should not' (advice - not recommended) vs 'must not' (prohibition - stronger, this cannot be done). 'Underestimate' (judge something to be less significant than it is) vs 'overlook' (fail to notice or consider). 'We' vs 'they'. Warning language in academic and professional contexts.",
+            "textToSpeak": "We should not underestimate the complexity of this task.",
             "options": [
-                "The engineer secures the drone silently.",
-                "The expert measures the portal smoothly.",
-                "The technician updates the portal successfully.",
-                "The droid observes the network precisely."
+                "We should not underestimate the complexity of this task.",
+                "They should not underestimate the complexity of this task.",
+                "We should not overlook the complexity of this task.",
+                "We must not underestimate the complexity of this task."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L100_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker encrypts the database swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'her'/'his', 'argument'/'proposal', and 'convincing'/'persuasive'.",
+            "explanation": "'Convincing' (makes you believe/accept something) and 'persuasive' (makes you want to do something) - closely related but 'convincing' targets beliefs while 'persuasive' targets actions. 'Argument' (a reasoned case) vs 'proposal' (a plan put forward for consideration). 'Her' vs 'his'. Academic evaluation and critical appreciation language.",
+            "textToSpeak": "Her argument was both convincing and well-supported.",
             "options": [
-                "The expert analyzes the system effectively.",
-                "The hacker encrypts the database swiftly.",
-                "The analyst evaluates the code properly.",
-                "The technician encrypts the system properly."
+                "Her argument was both convincing and well-supported.",
+                "Her proposal was both convincing and well-supported.",
+                "Her argument was both persuasive and well-supported.",
+                "His argument was both convincing and well-supported."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         }
     ]

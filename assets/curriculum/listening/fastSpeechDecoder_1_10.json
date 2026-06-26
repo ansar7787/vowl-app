@@ -6,44 +6,47 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L1_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot secures the signal carefully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the subject and the family members - is it 'he' or 'she', and what comes first?",
+            "explanation": "In fast speech, 'she has' blends into 'sheez'. The key detail is the order: 'brothers' first, then 'a sister'. Distractors swap 'he/she' or reverse 'brothers/sisters' - common mishearing traps.",
+            "textToSpeak": "She has two brothers and a sister.",
             "options": [
-                "The pilot secures the signal carefully.",
-                "The explorer activates the portal swiftly.",
-                "The technician transfers the code expertly.",
-                "The detective activates the engine instantly."
+                "She has three brothers and a sister.",
+                "She has two sisters and a brother.",
+                "He has two brothers and a sister.",
+                "She has two brothers and a sister."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L1_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The detective validates the network steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on two things: whose dad is it ('his' or 'her'), and where does he work?",
+            "explanation": "'His' and 'her' are both short unstressed words - easy to mishear. In rapid speech, the key is catching both the possessive AND the place. 'Hospital' and 'school' sound very different, but learners often miss the subject word.",
+            "textToSpeak": "His dad works at a hospital.",
             "options": [
-                "The detective validates the network steadily.",
-                "The engineer deploys the archive automatically.",
-                "The scout builds the database silently.",
-                "The traveler measures the engine immediately."
+                "Her dad works at a hospital.",
+                "His mum works at a hospital.",
+                "His dad works at a hospital.",
+                "His dad works at a school."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L1_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist builds the network smoothly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the subject ('they' or 'we') and the adjective - is the apartment small or large?",
+            "explanation": "In connected speech, 'they live in a' runs together as 'theylivina'. The adjective 'small' vs 'large' is the main difference. 'They' and 'we' sound similar when unstressed. Always catch the key content word - here, the size of the apartment.",
+            "textToSpeak": "They live in a small apartment.",
             "options": [
-                "The scientist builds the network smoothly.",
-                "The expert scans the database quietly.",
-                "The student encrypts the module successfully.",
-                "The expert repairs the protocol steadily."
+                "They live in a small apartment.",
+                "They work in a small apartment.",
+                "They live in a large apartment.",
+                "We live in a small apartment."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -51,74 +54,79 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L2_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student deploys the engine carefully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the color AND the object AND the location - all three must match.",
+            "explanation": "Beginners often catch the color ('red') but miss the object ('bag' vs 'box') or the preposition ('on' vs 'under'). In fast speech, short prepositions like 'on' and 'under' are spoken very quickly - train your ear for these small but important words.",
+            "textToSpeak": "The red bag is on the table.",
             "options": [
-                "The expert updates the code precisely.",
-                "The analyst locates the signal rapidly.",
-                "The student deploys the engine carefully.",
-                "The engineer builds the module reliably."
+                "The red box is on the table.",
+                "The blue bag is on the table.",
+                "The red bag is under the table.",
+                "The red bag is on the table."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L2_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot monitors the satellite immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen carefully for the subject ('she' or 'he') and the clothing item.",
+            "explanation": "'Green' and 'grey' are easily confused - both start with 'gr'. 'Coat' and 'hat' are different but easy to mishear at speed. Notice 'she bought' - the past tense '-ed' ending in 'bought' sounds like 'bawt' in fast speech.",
+            "textToSpeak": "She bought a green coat yesterday.",
             "options": [
-                "The explorer locates the protocol silently.",
-                "The robot monitors the satellite immediately.",
-                "The traveler repairs the device smoothly.",
-                "The expert locates the node reliably."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L2_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert transfers the protocol precisely.",
-            "options": [
-                "The expert transfers the protocol precisely.",
-                "The traveler deploys the network effectively.",
-                "The scout activates the code efficiently.",
-                "The explorer repairs the protocol reliably."
+                "She bought a green coat yesterday.",
+                "He bought a green coat yesterday.",
+                "She bought a grey coat yesterday.",
+                "She bought a green hat yesterday."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L2_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the number and the location - and listen for 'are' vs 'were'.",
+            "explanation": "'Five' and 'four' sound very different, but many learners mishear numbers at speed. 'There are' (present) vs 'there were' (past) - the tense marker is one small word. 'Shelf' vs 'desk' are the location options. Catch all three details.",
+            "textToSpeak": "There are five books on the shelf.",
+            "options": [
+                "There were five books on the shelf.",
+                "There are four books on the shelf.",
+                "There are five books on the desk.",
+                "There are five books on the shelf."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L3_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert updates the satellite properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the subject ('he'/'she') and the time - and notice whether it's past or present tense.",
+            "explanation": "'Seven' and 'eleven' both end in '-even' and are frequently confused at speed. 'He gets' (present habit) vs 'he got' (past) - the tense difference is in one short word. Daily routine vocabulary is essential for everyday listening comprehension.",
+            "textToSpeak": "He gets up at seven every morning.",
             "options": [
-                "The hero transfers the sensor properly.",
-                "The teacher encrypts the chip securely.",
-                "The expert updates the satellite properly.",
-                "The hero updates the database directly."
+                "She gets up at seven every morning.",
+                "He gets up at seven every morning.",
+                "He gets up at eleven every morning.",
+                "He got up at seven every morning."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L3_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher monitors the protocol rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Three things to catch: the subject, the meal, and 'before' or 'after'.",
+            "explanation": "Meal words ('breakfast', 'lunch', 'dinner') are frequently confused at speed. 'Before' and 'after' are opposite in meaning but similar in length - a one-word difference that completely changes the sentence. Notice how 'before going' links into 'beforegoing' in fast speech.",
+            "textToSpeak": "They have breakfast before going to work.",
             "options": [
-                "The researcher monitors the protocol rapidly.",
-                "The detective analyzes the network reliably.",
-                "The pilot encrypts the protocol carefully.",
-                "The mentor evaluates the system securely."
+                "They have breakfast before going to work.",
+                "They have lunch before going to work.",
+                "She has breakfast before going to work.",
+                "They have breakfast after going to work."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -126,14 +134,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L3_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot measures the code consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for who takes what transport and where they go.",
+            "explanation": "'Bus' and 'train' are both common transport words. 'School' and 'work' are the two most common destinations in everyday English. In rapid speech, 'takes the' links into 'takesthe'. The subject 'she'/'he' is the first word - catch it immediately.",
+            "textToSpeak": "She takes the bus to school.",
             "options": [
-                "The robot measures the code consistently.",
-                "The hacker secures the engine reliably.",
-                "The commander deploys the device securely.",
-                "The student launches the network immediately."
+                "She takes the bus to school.",
+                "She takes the train to school.",
+                "She takes the bus to work.",
+                "He takes the bus to school."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -141,59 +150,63 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L4_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot launches the signal rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the adjective (cold/hot) and whether it's inside or outside.",
+            "explanation": "'Cold' and 'hot' are opposite but both one syllable - easy to mishear. 'It's' (present) vs 'it was' (past) is a tense shift. 'Outside' vs 'inside' - the prefix 'out-' vs 'in-' is the only difference. All four are common beginner listening challenges.",
+            "textToSpeak": "It's very cold outside today.",
             "options": [
-                "The engineer measures the signal carefully.",
-                "The hero updates the data smoothly.",
-                "The mentor measures the portal reliably.",
-                "The pilot launches the signal rapidly."
+                "It's very hot outside today.",
+                "It was very cold outside today.",
+                "It's very cold outside today.",
+                "It's very cold inside today."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L4_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist builds the engine consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch the subject and the item needed, plus the weather condition.",
+            "explanation": "Weather vocabulary ('rain', 'snow') sounds similar at speed - both are short, one-syllable words. 'Umbrella' and 'jacket' are very different, but fast speech can make unfamiliar words hard to catch. 'We' vs 'they' - both unstressed subject pronouns.",
+            "textToSpeak": "We need an umbrella in the rain.",
             "options": [
-                "The commander launches the sensor carefully.",
-                "The teacher validates the module carefully.",
-                "The hacker evaluates the code consistently.",
-                "The scientist builds the engine consistently."
+                "We need a jacket in the rain.",
+                "They need an umbrella in the rain.",
+                "We need an umbrella in the rain.",
+                "We need an umbrella in the snow."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L4_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot transfers the signal quietly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Identify the season, the possessive ('my'/'her'), and the tense ('is'/'was').",
+            "explanation": "Season names ('Spring', 'Summer', 'Autumn', 'Winter') are important vocabulary. 'Is' vs 'was' shifts from present to past - a tiny but meaningful word. 'My' vs 'her' - possessive pronouns are often unstressed and hard to catch in fast speech.",
+            "textToSpeak": "Spring is my favourite time of year.",
             "options": [
-                "The pilot transfers the signal quietly.",
-                "The droid scans the signal expertly.",
-                "The droid locates the module directly.",
-                "The droid monitors the network smoothly."
+                "Summer is my favourite time of year.",
+                "Spring was my favourite time of year.",
+                "Spring is her favourite time of year.",
+                "Spring is my favourite time of year."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L5_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander evaluates the system reliably.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the drink, the food item, and who is speaking ('I'd' or 'she'd').",
+            "explanation": "'Coffee' and 'tea' are the two most common hot drinks - both frequently ordered. 'I'd like' (contraction of 'I would like') - this is very common in polite requests. In fast speech, 'I'd like some' runs together quickly. Catch each food word clearly.",
+            "textToSpeak": "I'd like some coffee and toast, please.",
             "options": [
-                "The mentor evaluates the drone expertly.",
-                "The hero observes the satellite effectively.",
-                "The commander restores the network rapidly.",
-                "The commander evaluates the system reliably."
+                "I'd like some tea and toast, please.",
+                "I'd like some coffee and eggs, please.",
+                "She'd like some coffee and toast, please.",
+                "I'd like some coffee and toast, please."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -201,14 +214,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L5_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker secures the node instantly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the day of the week, and whether it opens or closes.",
+            "explanation": "'Sundays' and 'Saturdays' both end in '-days' - very easy to confuse at speed. 'Opens' vs 'closes' - opposite verbs but both start with a vowel sound. 'Opened' (past) vs 'opens' (present habit) - tense in just one letter. Restaurant vocabulary is essential daily English.",
+            "textToSpeak": "The restaurant opens at noon on Sundays.",
             "options": [
-                "The expert activates the drone precisely.",
-                "The hacker secures the node instantly.",
-                "The pilot restores the data automatically.",
-                "The hacker restores the software expertly."
+                "The restaurant opens at noon on Saturdays.",
+                "The restaurant opens at noon on Sundays.",
+                "The restaurant closes at noon on Sundays.",
+                "The restaurant opened at noon on Sundays."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -216,149 +230,159 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L5_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher observes the software effectively.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch the subject ('he'/'she') and both food items in the order.",
+            "explanation": "'Salad' and 'sandwich' both start with 'sa-' - a classic minimal pair confusion. 'Soup' and 'juice' are both drinks/sides. 'He' vs 'she' - the very first word is the key. In a fast food order, missing one word means missing the whole item.",
+            "textToSpeak": "He ordered a salad and a soup.",
             "options": [
-                "The hacker evaluates the satellite precisely.",
-                "The teacher observes the software effectively.",
-                "The pilot transfers the engine precisely.",
-                "The explorer builds the node steadily."
+                "She ordered a salad and a soup.",
+                "He ordered a sandwich and a soup.",
+                "He ordered a salad and a soup.",
+                "He ordered a salad and a juice."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L6_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst activates the network properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for whose class, when it starts (or ends), and the time.",
+            "explanation": "'Starts' vs 'ends' - opposite verbs that sound quite different, but at speed you might catch only the first syllable. 'Eight' and 'nine' are often confused - both are one syllable. 'Our' vs 'her' - possessive pronouns before 'class'. School time vocabulary is everyday English.",
+            "textToSpeak": "Our class starts at eight in the morning.",
             "options": [
-                "The technician scans the satellite carefully.",
-                "The expert measures the terminal rapidly.",
-                "The pilot sends the network silently.",
-                "The analyst activates the network properly."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L6_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor validates the protocol effectively.",
-            "options": [
-                "The mentor validates the protocol effectively.",
-                "The scientist activates the drone silently.",
-                "The explorer sends the archive automatically.",
-                "The hero scans the archive automatically."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L6_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The droid restores the device effectively.",
-            "options": [
-                "The traveler locates the network smoothly.",
-                "The droid restores the device effectively.",
-                "The pilot evaluates the drone consistently.",
-                "The student activates the system securely."
+                "Our class ends at eight in the morning.",
+                "Our class starts at eight in the morning.",
+                "Her class starts at eight in the morning.",
+                "Our class starts at nine in the morning."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L6_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice the subject, the item forgotten, and the verb - 'forgot' or 'lost'?",
+            "explanation": "'Forgot' and 'lost' are both irregular past tense verbs describing similar situations, but 'forgot' means you didn't bring it, while 'lost' means you can't find it. 'Homework' vs 'notebook' - both school items. This is very common real-world English for students.",
+            "textToSpeak": "She forgot her homework at home again.",
+            "options": [
+                "He forgot his homework at home again.",
+                "She forgot her notebook at home again.",
+                "She lost her homework at home again.",
+                "She forgot her homework at home again."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L6_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the place, the floor number, and whether it's present or past tense.",
+            "explanation": "Ordinal numbers ('second', 'third') are frequently confused at speed. 'Library' vs 'office' - both institutional locations. 'Is' vs 'was' - present vs past tense. When getting directions, catching the correct floor number is absolutely critical.",
+            "textToSpeak": "The library is on the second floor.",
+            "options": [
+                "The library is on the third floor.",
+                "The office is on the second floor.",
+                "The library is on the second floor.",
+                "The library was on the second floor."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L7_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher sends the terminal rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the transport, the direction verb ('leaves'/'arrives'), and the platform number.",
+            "explanation": "'Leaves' and 'arrives' are directional opposites - critical at a bus or train station. 'Three' and 'four' sound similar and are often confused by listeners. 'Bus' vs 'train' - both common public transport. This sentence type is vital for real travel situations.",
+            "textToSpeak": "The bus leaves from platform three.",
             "options": [
-                "The robot validates the module swiftly.",
-                "The student monitors the node quietly.",
-                "The technician validates the portal steadily.",
-                "The researcher sends the terminal rapidly."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L7_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor evaluates the code smoothly.",
-            "options": [
-                "The hacker builds the network instantly.",
-                "The teacher sends the node efficiently.",
-                "The mentor evaluates the code smoothly.",
-                "The hacker deploys the terminal rapidly."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L7_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer transfers the software smoothly.",
-            "options": [
-                "The artist measures the node expertly.",
-                "The traveler creates the chip successfully.",
-                "The engineer transfers the software smoothly.",
-                "The scientist validates the circuit immediately."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L8_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The droid secures the node effectively.",
-            "options": [
-                "The analyst secures the archive carefully.",
-                "The hero secures the portal automatically.",
-                "The robot encrypts the network directly.",
-                "The droid secures the node effectively."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L8_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician locates the module efficiently.",
-            "options": [
-                "The technician locates the module efficiently.",
-                "The traveler secures the satellite successfully.",
-                "The scout observes the device rapidly.",
-                "The teacher repairs the portal reliably."
+                "The bus leaves from platform three.",
+                "The train leaves from platform three.",
+                "The bus leaves from platform four.",
+                "The bus arrives at platform three."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L7_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the question word - 'how long', 'how much', or 'how soon'?",
+            "explanation": "'How long' (asks about time), 'how much' (asks about price), 'how soon' (asks about timing) - three different question types! 'Does it take' (present) vs 'did it take' (past) changes the tense. These question phrases are among the most common in everyday English conversation.",
+            "textToSpeak": "How long does it take to get there?",
+            "options": [
+                "How long does it take to get there?",
+                "How much does it cost to get there?",
+                "How long did it take to get there?",
+                "How soon does it take to get there?"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L7_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Direction vocabulary: listen for 'left'/'right', and the exact landmark.",
+            "explanation": "'Left' and 'right' are opposites - getting them wrong means going the wrong way! 'At' vs 'before' - the preposition changes when you turn. 'Traffic lights' vs 'roundabout' - different road features. Giving and following directions is one of the most practical listening skills.",
+            "textToSpeak": "Turn left at the traffic lights.",
+            "options": [
+                "Turn left at the traffic lights.",
+                "Turn left before the traffic lights.",
+                "Turn left at the roundabout.",
+                "Turn right at the traffic lights."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L8_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for who is speaking, the type of pain, and the tense.",
+            "explanation": "Health vocabulary: 'headache' and 'stomachache' both describe pain but in different places. 'I have' (present) vs 'I had' (past) - the tense tells us if it's happening now or before. 'Feel tired' is a very common phrase for expressing how you feel at the doctor's or with friends.",
+            "textToSpeak": "I have a headache and feel tired.",
+            "options": [
+                "He has a headache and feels tired.",
+                "I have a headache and feel tired.",
+                "I had a headache and felt tired.",
+                "I have a stomachache and feel tired."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L8_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on who needs to rest, what they need to do, and for how long.",
+            "explanation": "'Days' and 'weeks' sound similar but mean very different recovery times. 'Rest' vs 'eat more' are different medical advice. 'She' vs 'he' - subject pronoun at the start. Medical English like this is essential for doctor's visits and everyday health conversations.",
+            "textToSpeak": "She needs to rest for a few days.",
+            "options": [
+                "He needs to rest for a few days.",
+                "She needs to eat more for a few days.",
+                "She needs to rest for a few days.",
+                "She needs to rest for a few weeks."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L8_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero measures the software swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for who gave the advice and what they said to do.",
+            "explanation": "'Doctor' and 'nurse' are both medical professionals. 'Drink plenty of water', 'eat plenty of food', 'get plenty of rest' - three common pieces of medical advice. 'Said to drink/eat/get' - notice how all three use the same structure. This is reported speech - essential English grammar.",
+            "textToSpeak": "The doctor said to drink plenty of water.",
             "options": [
-                "The hero measures the software swiftly.",
-                "The analyst evaluates the signal swiftly.",
-                "The hacker locates the drone securely.",
-                "The technician updates the database securely."
+                "The doctor said to drink plenty of water.",
+                "The doctor said to eat plenty of food.",
+                "The doctor said to get plenty of rest.",
+                "The nurse said to drink plenty of water."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -366,74 +390,79 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L9_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst launches the drone successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch the question word phrase and what item is being asked about.",
+            "explanation": "'How much does' (present) vs 'how much did' (past) - one word changes the tense. 'Jacket' and 'sweater' are both clothing items - easy to confuse. 'Cost' and 'last' ask about completely different things (price vs durability). Shopping English is one of the most practical areas for learners.",
+            "textToSpeak": "How much does this jacket cost?",
             "options": [
-                "The researcher sends the chip quietly.",
-                "The expert validates the data swiftly.",
-                "The analyst launches the drone successfully.",
-                "The pilot repairs the protocol properly."
+                "How much did this jacket cost?",
+                "How much does this jacket cost?",
+                "How long does this jacket last?",
+                "How much does this sweater cost?"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L9_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero analyzes the database steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for who is looking, what size, and what clothing item.",
+            "explanation": "Clothing sizes ('medium', 'large', 'small') are important shopping vocabulary. 'Shirt' vs 'coat' - both clothing items. 'I'm looking' vs 'he's looking' - subject change. In a real shop, this phrase is used constantly. The contraction 'I'm' sounds like 'aim' at normal speed.",
+            "textToSpeak": "I'm looking for a size medium shirt.",
             "options": [
-                "The scientist encrypts the sensor quietly.",
-                "The droid creates the chip rapidly.",
-                "The droid measures the satellite immediately.",
-                "The hero analyzes the database steadily."
+                "He's looking for a size medium shirt.",
+                "I'm looking for a size medium shirt.",
+                "I'm looking for a size medium coat.",
+                "I'm looking for a size large shirt."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L9_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer repairs the terminal directly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the item, the tense ('are'/'were'), and the time ('this'/'next' week).",
+            "explanation": "'This week' vs 'next week' - a one-word difference that's crucial if you want to catch the sale. 'Are on sale' (now) vs 'were on sale' (past) - the verb tense. 'Shoes' and 'bags' - different product categories. Sale announcements use this exact structure in real stores.",
+            "textToSpeak": "The shoes are on sale this week.",
             "options": [
-                "The droid monitors the node silently.",
-                "The mentor encrypts the network successfully.",
-                "The scout analyzes the system properly.",
-                "The explorer repairs the terminal directly."
+                "The bags are on sale this week.",
+                "The shoes are on sale this week.",
+                "The shoes are on sale next week.",
+                "The shoes were on sale this week."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L10_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist measures the engine consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice the subject, the hobby verb, and the tense - 'loves' or 'loved'?",
+            "explanation": "'Read' and 'write' are both literacy activities but completely different hobbies. 'Loves' (present habit) vs 'loved' (past - perhaps she no longer does it). 'She' vs 'he' - the subject pronoun. Talking about hobbies and free time is essential conversational English.",
+            "textToSpeak": "She loves to read books in her free time.",
             "options": [
-                "The artist measures the engine consistently.",
-                "The researcher builds the engine swiftly.",
-                "The droid monitors the module efficiently.",
-                "The mentor deploys the database successfully."
+                "He loves to read books in his free time.",
+                "She loves to write books in her free time.",
+                "She loved to read books in her free time.",
+                "She loves to read books in her free time."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L10_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler measures the protocol expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for who plays, what sport, and which day of the week.",
+            "explanation": "'Tennis' and 'football' are both sports but very different. 'Saturday' and 'Sunday' are adjacent days and easily confused. 'We' vs 'they' - a small but important difference. Sports and leisure vocabulary is central to everyday social English conversation.",
+            "textToSpeak": "We play tennis every Saturday afternoon.",
             "options": [
-                "The artist activates the system silently.",
-                "The detective scans the sensor instantly.",
-                "The traveler measures the protocol expertly.",
-                "The pilot evaluates the chip securely."
+                "They play tennis every Saturday afternoon.",
+                "We play football every Saturday afternoon.",
+                "We play tennis every Saturday afternoon.",
+                "We play tennis every Sunday afternoon."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
@@ -441,16 +470,17 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L10_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist encrypts the terminal efficiently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Three details to catch: who, which instrument, and how long ago.",
+            "explanation": "'Guitar' and 'piano' - both instruments but completely different sounds. 'Months' vs 'years' - a massive time difference in one word. 'He' vs 'she' - the subject. 'Six months ago' is a very common time expression in English. Past tense with 'ago' tells us when something started.",
+            "textToSpeak": "He started learning guitar six months ago.",
             "options": [
-                "The hero encrypts the code securely.",
-                "The pilot validates the engine effectively.",
-                "The hero activates the protocol quietly.",
-                "The artist encrypts the terminal efficiently."
+                "He started learning guitar six months ago.",
+                "He started learning piano six months ago.",
+                "He started learning guitar six years ago.",
+                "She started learning guitar six months ago."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         }
     ]

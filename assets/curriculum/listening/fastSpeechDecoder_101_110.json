@@ -6,209 +6,223 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L101_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The detective observes the protocol successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "In fast speech, 'going to' becomes 'gonna'. Catch the subject, object, and verb.",
+            "explanation": "'Gonna' is the informal spoken reduction of 'going to' - extremely common in natural speech but rarely written. 'I'm gonna' vs 'she's gonna' - subject. 'You' vs 'her' - who is asked. 'I'm gonna need you to' is a common way to make requests at work. Recognising 'gonna' is essential for understanding real spoken English.",
+            "textToSpeak": "I'm gonna need you to resend that document.",
             "options": [
-                "The detective observes the protocol successfully.",
-                "The droid activates the circuit reliably.",
-                "The droid activates the archive properly.",
-                "The teacher transfers the circuit expertly."
+                "She's gonna need you to resend that document.",
+                "I'm gonna need her to resend that document.",
+                "I'm going to need you to resend that document.",
+                "I'm gonna need you to resend that document."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L101_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker monitors the drone securely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "'Wanna' is the reduction of 'want to'. Catch what is being suggested and with whom.",
+            "explanation": "'Wanna' = 'want to' in fast, informal speech - very common in conversation. 'Lunch' vs 'coffee' - different social plans. 'Wanna grab' (casual invitation - you) vs 'does she wanna grab' (asking about a third person). 'Want to' (the full, more formal form). Recognising 'wanna' is essential for everyday conversational English.",
+            "textToSpeak": "Wanna grab some lunch after the meeting?",
             "options": [
-                "The commander locates the protocol reliably.",
-                "The hacker monitors the drone securely.",
-                "The hacker secures the engine precisely.",
-                "The pilot locates the protocol instantly."
+                "Wanna grab some coffee after the meeting?",
+                "Does she wanna grab some lunch after the meeting?",
+                "Want to grab some lunch after the meeting?",
+                "Wanna grab some lunch after the meeting?"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L101_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student evaluates the signal expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "'Coulda' = 'could have'. Focus on the modal reduction and location.",
+            "explanation": "'Coulda' = 'could have' - informal spoken reduction. 'Shoulda' = 'should have'. 'Coulda sworn' is an idiom meaning 'I was almost certain that...'. 'Table' vs 'counter' - different pieces of furniture. 'My keys' vs 'her keys' - possession. Modal reductions ('coulda', 'shoulda', 'woulda') are very common in natural spoken English.",
+            "textToSpeak": "Coulda sworn I left my keys on the table.",
             "options": [
-                "The student evaluates the signal expertly.",
-                "The commander restores the terminal efficiently.",
-                "The student restores the terminal expertly.",
-                "The hero creates the protocol swiftly."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L102_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst restores the terminal instantly.",
-            "options": [
-                "The commander sends the protocol precisely.",
-                "The analyst restores the terminal instantly.",
-                "The pilot encrypts the signal quietly.",
-                "The mentor scans the terminal directly."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L102_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot transfers the drone immediately.",
-            "options": [
-                "The explorer updates the network reliably.",
-                "The detective observes the data properly.",
-                "The mentor observes the database consistently.",
-                "The pilot transfers the drone immediately."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L102_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert observes the database precisely.",
-            "options": [
-                "The expert observes the database precisely.",
-                "The explorer updates the signal expertly.",
-                "The robot deploys the drone automatically.",
-                "The artist monitors the archive immediately."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L103_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler measures the engine steadily.",
-            "options": [
-                "The droid deploys the protocol expertly.",
-                "The traveler measures the engine steadily.",
-                "The hero validates the signal quietly.",
-                "The detective monitors the sensor effectively."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L103_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert sends the database securely.",
-            "options": [
-                "The researcher deploys the archive reliably.",
-                "The teacher activates the node immediately.",
-                "The mentor encrypts the terminal reliably.",
-                "The expert sends the database securely."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L103_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The droid builds the node properly.",
-            "options": [
-                "The artist encrypts the node instantly.",
-                "The engineer measures the portal expertly.",
-                "The droid builds the node properly.",
-                "The scout sends the terminal instantly."
+                "Shoulda left my keys on the table.",
+                "I coulda sworn she left her keys on the table.",
+                "Coulda sworn I left my keys on the table.",
+                "Could've sworn I left my keys on the counter."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L104_Q1",
+            "id": "LIS_FASTSPEECHDECODER_L102_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician evaluates the node expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "'Dunno' = 'don't know', 'kinda' = 'kind of'. Focus on these reductions and what follows.",
+            "explanation": "'Dunno' = 'I don't know' - one of the most common spoken reductions in English. 'Kinda' = 'kind of' - a softener/hedge. 'Really depends' (stronger, more definite) vs 'kinda depends' (more tentative, hedged). 'She doesn't know' (full form) vs 'I dunno' (reduction). These informal reductions are everywhere in authentic English conversation.",
+            "textToSpeak": "I dunno - it kinda depends on the weather.",
             "options": [
-                "The droid updates the engine precisely.",
-                "The technician evaluates the circuit successfully.",
-                "The pilot deploys the archive consistently.",
-                "The technician evaluates the node expertly."
+                "She doesn't know - it kinda depends on the weather.",
+                "I dunno - it really depends on the weather.",
+                "I dunno - it kinda depends on the weather.",
+                "I dunno - it sort of depends on the weather."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L102_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "'Prolly' = 'probably', 'gonna' = 'going to'. Listen for both reductions and the consequence.",
+            "explanation": "'Prolly' = 'probably' - informal spoken reduction. 'Gonna be late' vs 'gonna miss it' - different consequences. 'We're prolly gonna' vs 'they're probably gonna' - both reductions but different subjects. 'We'll probably be late' - more standard English form of the same meaning. Recognising informal speech patterns is key for real-world English.",
+            "textToSpeak": "We're prolly gonna be late if we don't leave soon.",
+            "options": [
+                "They're probably gonna be late if they don't leave soon.",
+                "We're prolly gonna miss it if we don't leave soon.",
+                "We're prolly gonna be late if we don't leave soon.",
+                "We'll probably be late if we don't leave soon."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L102_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "'Lemme' = 'let me'. Focus on who is checking and how they'll respond.",
+            "explanation": "'Lemme' = 'let me' - informal spoken reduction. 'Check' (verify something) vs 'look' (examine visually - similar but less precise). 'Get back to you' (respond later) vs 'call you back' (specifically by phone). 'Me' vs 'her' - who is doing the action. Informal English in professional contexts.",
+            "textToSpeak": "Lemme just check and I'll get back to you.",
+            "options": [
+                "Let her just check and she'll get back to you.",
+                "Let me just look and I'll get back to you.",
+                "Lemme check and I'll call you back.",
+                "Lemme just check and I'll get back to you."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L104_Q2",
+            "id": "LIS_FASTSPEECHDECODER_L103_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer creates the module consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'she's'/'he's' and 'kind'/'sort'/'type' of person.",
+            "explanation": "'Kind of person', 'sort of person', 'type of person' - all three are natural English for characterising someone, with 'kind' being slightly more American and 'sort' slightly more British. 'She's' vs 'he's'. Character description language is important for recommendations, stories, and social conversations.",
+            "textToSpeak": "She's the kind of person who never gives up.",
             "options": [
-                "The commander locates the software swiftly.",
-                "The explorer creates the module consistently.",
-                "The engineer measures the circuit expertly.",
-                "The engineer updates the software successfully."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L104_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor evaluates the terminal rapidly.",
-            "options": [
-                "The mentor evaluates the terminal rapidly.",
-                "The scout validates the terminal immediately.",
-                "The droid builds the satellite precisely.",
-                "The technician repairs the device quietly."
+                "She's the kind of person who never gives up.",
+                "She's the sort of person who never gives up.",
+                "She's the type of person who never gives up.",
+                "He's the kind of person who never gives up."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L105_Q1",
+            "id": "LIS_FASTSPEECHDECODER_L103_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert transfers the satellite expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'I'/'she', 'laugh'/'cry', and 'couldn't'/'can't' (past vs present habit).",
+            "explanation": "'Couldn't help but' = couldn't stop myself from (past specific event). 'Can't help but' = present habit. 'Laugh' vs 'cry' - opposite emotional reactions. 'I couldn't help but laugh' is a very natural English expression for an involuntary reaction - essential idiom for intermediate learners.",
+            "textToSpeak": "I couldn't help but laugh when I heard it.",
             "options": [
-                "The scout evaluates the terminal rapidly.",
-                "The expert transfers the satellite expertly.",
-                "The detective measures the module consistently.",
-                "The pilot creates the software quietly."
+                "She couldn't help but laugh when she heard it.",
+                "I couldn't help but laugh when I heard it.",
+                "I can't help but laugh when I hear it.",
+                "I couldn't help but cry when I heard it."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L103_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'he'/'she', 'staying'/'leaving', and 'whole'/'entire'.",
+            "explanation": "'Ended up staying' (the final result - not originally planned) vs 'ended up leaving' (left - different outcome). 'Whole' and 'entire' - synonyms meaning 'complete'. 'He' vs 'she'. 'Ended up + gerund' is a very common English structure for describing unplanned final outcomes - very natural in storytelling.",
+            "textToSpeak": "He ended up staying for the whole weekend.",
+            "options": [
+                "She ended up staying for the whole weekend.",
+                "He ended up leaving for the whole weekend.",
+                "He ended up staying for the entire weekend.",
+                "He ended up staying for the whole weekend."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L104_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'they've'/'we've', and the exact phrase used to describe the disagreement.",
+            "explanation": "'Going back and forth' (idiom - debating or vacillating repeatedly) - the full idiom. 'Been back and forth' - grammatically incomplete without 'going'. 'Been arguing back and forth' - more explicit about the conflict. 'They've' vs 'we've'. 'Go back and forth' is an essential idiom for describing ongoing indecision or debate.",
+            "textToSpeak": "They've been going back and forth on this for weeks.",
+            "options": [
+                "We've been going back and forth on this for weeks.",
+                "They've been back and forth on this for weeks.",
+                "They've been going back and forth on this for weeks.",
+                "They've been arguing back and forth for weeks."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L104_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'goes to show'/'goes to prove'/'shows' and the presence of 'just'.",
+            "explanation": "'Goes to show' - an idiom meaning 'proves/demonstrates'. 'Goes to prove' - similar but 'show' is more natural. 'Just shows' - direct but loses the idiomatic quality. 'It just goes to show' emphasises the lesson drawn from something. This phrase is used constantly after describing a cautionary example in everyday English.",
+            "textToSpeak": "It just goes to show you can never be too careful.",
+            "options": [
+                "It just goes to show you can never be too careful.",
+                "It goes to show you can never be too careful.",
+                "It just shows you can never be too careful.",
+                "It just goes to prove you can never be too careful."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L104_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she's'/'he's', 'knack'/'gift', and 'solving problems'/'finding solutions'.",
+            "explanation": "'A knack for' (a natural talent/skill for something - very common idiom) vs 'a gift for' (similar but implies a more innate/impressive talent). 'Solving problems' vs 'finding solutions' - similar meaning but different word choice. 'She's' vs 'he's'. 'Has a knack for' is a very common English expression for describing practical skill.",
+            "textToSpeak": "She's always had a knack for solving problems.",
+            "options": [
+                "He's always had a knack for solving problems.",
+                "She's always had a knack for solving problems.",
+                "She's always had a knack for finding solutions.",
+                "She's always had a gift for solving problems."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L105_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'no point'/'no use' and 'worrying'/'thinking', and whose control.",
+            "explanation": "'There's no point worrying' and 'there's no use worrying' - both common idioms meaning it's futile. 'Worrying' (feeling anxious) vs 'thinking' (cognitive - less emotive). 'You can't control' vs 'she can't control' - who is the person. These are common pieces of advice in English - important for understanding self-help and social discourse.",
+            "textToSpeak": "There's no point worrying about things you can't control.",
+            "options": [
+                "There's no use worrying about things you can't control.",
+                "There's no point thinking about things you can't control.",
+                "There's no point worrying about things she can't control.",
+                "There's no point worrying about things you can't control."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L105_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician updates the module smoothly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'me'/'him', 'no'/'little', and 'one way or the other'/'either way'.",
+            "explanation": "'One way or the other' and 'either way' mean the same thing - the result is the same regardless. 'No difference' (absolutely none) vs 'little difference' (almost none - a small nuance). 'Me' vs 'him'. Expressing indifference using these phrases is a key social skill in English.",
+            "textToSpeak": "It makes no difference to me one way or the other.",
             "options": [
-                "The analyst locates the satellite automatically.",
-                "The teacher builds the network smoothly.",
-                "The artist updates the system swiftly.",
-                "The technician updates the module smoothly."
+                "It makes no difference to him one way or the other.",
+                "It makes little difference to me one way or the other.",
+                "It makes no difference to me either way.",
+                "It makes no difference to me one way or the other."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -216,14 +230,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L105_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout sends the network quietly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'I'm'/'she's', 'complain'/'judge', and 'this'/'that'.",
+            "explanation": "'I'm not one to complain' - a self-deprecating prefix before complaining (slightly ironic!). 'I'm not one to judge' - similarly used before making a judgement. 'This isn't good enough' (something currently being experienced) vs 'that isn't good enough' (something being referred to). Understanding ironic speech patterns is essential for natural English comprehension.",
+            "textToSpeak": "I'm not one to complain, but this isn't good enough.",
             "options": [
-                "The mentor monitors the node securely.",
-                "The scout sends the network quietly.",
-                "The pilot restores the drone carefully.",
-                "The scout evaluates the node silently."
+                "She's not one to complain, but this isn't good enough.",
+                "I'm not one to complain, but this isn't good enough.",
+                "I'm not one to complain, but that isn't good enough.",
+                "I'm not one to judge, but this isn't good enough."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -231,44 +246,47 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L106_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler locates the data effectively.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the introductory phrase and 'straightforward'/'simple'.",
+            "explanation": "'The thing is' (informal discourse marker - introducing an important point or complication). 'The issue is' (more formal - implies there's a problem). 'The fact is' (more assertive). 'Straightforward' (uncomplicated, direct) vs 'simple' (easy - slightly different). These discourse markers signal a complication is coming - essential for following spoken English.",
+            "textToSpeak": "The thing is, it's not as straightforward as it looks.",
             "options": [
-                "The hacker observes the archive efficiently.",
-                "The expert creates the software consistently.",
-                "The traveler locates the data effectively.",
-                "The traveler activates the code quietly."
+                "The issue is, it's not as straightforward as it looks.",
+                "The thing is, it's not as straightforward as it looks.",
+                "The thing is, it's not as simple as it looks.",
+                "The fact is, it's not as straightforward as it looks."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L106_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer deploys the software properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'I'/'she', 'think'/'believe', and 'all things considered'/'on reflection'.",
+            "explanation": "'All things considered' (taking everything into account - common discourse opener). 'On reflection' (after careful thought - implies a deliberate review). 'Think' vs 'believe' - 'think' is more casual, 'believe' more emphatic. 'Made the right call' - idiom for making the correct decision. Decision evaluation language.",
+            "textToSpeak": "All things considered, I think we made the right call.",
             "options": [
-                "The scientist launches the device directly.",
-                "The hacker transfers the circuit precisely.",
-                "The explorer transfers the signal quietly.",
-                "The engineer deploys the software properly."
+                "All things considered, she thinks we made the right call.",
+                "All things considered, I believe we made the right call.",
+                "All things considered, I think we made the right call.",
+                "On reflection, I think we made the right call."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L106_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst analyzes the engine securely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'your'/'her'/'our', and 'at the end of the day'/'when all is said and done'.",
+            "explanation": "'At the end of the day' - one of the most common English discourse idioms, meaning 'ultimately' or 'when you consider everything'. 'When all is said and done' - same meaning, slightly more emphatic. 'Your decision' vs 'her decision' vs 'our decision' - who is responsible. These phrases emphasise the final/most important point.",
+            "textToSpeak": "At the end of the day, it's your decision to make.",
             "options": [
-                "The robot secures the engine smoothly.",
-                "The explorer measures the protocol quietly.",
-                "The analyst analyzes the engine securely.",
-                "The traveler measures the drone directly."
+                "At the end of the day, it's her decision to make.",
+                "At the end of the day, it's our decision to make.",
+                "At the end of the day, it's your decision to make.",
+                "When all is said and done, it's your decision to make."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
@@ -276,44 +294,47 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L107_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero sends the code silently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'she's'/'he's', 'under'/'dealing with', and 'has been'/'had been'.",
+            "explanation": "'Under a lot of pressure' (an established idiom) vs 'dealing with a lot of pressure' (more explicit action). 'She's been' (present perfect - recently and still now) vs 'she'd been' (past perfect - before another event). 'She' vs 'he'. Workplace stress and wellbeing language is extremely common in modern English conversations.",
+            "textToSpeak": "She's been under a lot of pressure lately.",
             "options": [
-                "The hero sends the code silently.",
-                "The researcher encrypts the protocol directly.",
-                "The researcher restores the engine steadily.",
-                "The teacher sends the network steadily."
+                "He's been under a lot of pressure lately.",
+                "She's been dealing with a lot of pressure lately.",
+                "She'd been under a lot of pressure lately.",
+                "She's been under a lot of pressure lately."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L107_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher launches the database directly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'came up'/'happened', 'I'/'she', and 'cancel'/'change'.",
+            "explanation": "'Something came up' - a very common English idiom meaning an unexpected event arose. 'Something happened' - more neutral/direct. 'Cancel' (call off entirely) vs 'change' (alter - could still happen). 'I had to cancel' vs 'she had to cancel' - subject. 'Something came up' is one of the most used excuses/explanations in everyday English.",
+            "textToSpeak": "Something came up and I had to cancel our plans.",
             "options": [
-                "The teacher launches the database directly.",
-                "The student secures the archive securely.",
-                "The student validates the database carefully.",
-                "The artist activates the satellite automatically."
+                "Something happened and I had to cancel our plans.",
+                "Something came up and she had to cancel our plans.",
+                "Something came up and I had to cancel our plans.",
+                "Something came up and I had to change our plans."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L107_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero launches the module effectively.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'I've'/'she's', 'meaning'/'wanting', and 'ask'/'talk to'.",
+            "explanation": "'I've been meaning to' (intended to for a long time - common conversational opener). 'Wanting to' (similar but more direct desire). 'Ask you about' (seeking information) vs 'talk to you about' (broader conversation). 'For ages' (informal - a long time). This phrase is very common when finally bringing up a topic you've been postponing.",
+            "textToSpeak": "I've been meaning to ask you about this for ages.",
             "options": [
-                "The detective encrypts the database securely.",
-                "The engineer evaluates the code precisely.",
-                "The hacker evaluates the network carefully.",
-                "The hero launches the module effectively."
+                "She's been meaning to ask you about this for ages.",
+                "I've been wanting to ask you about this for ages.",
+                "I've been meaning to talk to you about this for ages.",
+                "I've been meaning to ask you about this for ages."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -321,134 +342,143 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L108_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student creates the engine rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'I'/'she', 'the less'/'the more', and 'more'/'longer'.",
+            "explanation": "'The more I think, the less sense' - inverse proportional relationship (thinking MORE leads to LESS clarity). 'The more I think, the more sense' - direct relationship (thinking MORE leads to MORE clarity - opposite meaning!). 'More' vs 'longer' - frequency vs duration. 'The more...the less/more' structure is a key comparative structure.",
+            "textToSpeak": "The more I think about it, the less sense it makes.",
             "options": [
-                "The student creates the engine rapidly.",
-                "The droid launches the node consistently.",
-                "The teacher validates the software rapidly.",
-                "The analyst validates the software consistently."
+                "The more she thinks about it, the less sense it makes.",
+                "The more I think about it, the more sense it makes.",
+                "The more I think about it, the less sense it makes.",
+                "The longer I think about it, the less sense it makes."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L108_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student measures the sensor smoothly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'him'/'her', 'put it past'/'count on', and 'change'/'make up' his mind.",
+            "explanation": "'Wouldn't put it past him' - idiom meaning 'I believe he is capable of this (usually something negative or surprising)'. 'Wouldn't count on him' (wouldn't rely on him). 'Change his mind' (reverse a decision) vs 'make up his mind' (reach a decision). 'Him' vs 'her'. Understanding English idioms is essential for natural comprehension.",
+            "textToSpeak": "I wouldn't put it past him to change his mind again.",
             "options": [
-                "The droid secures the code instantly.",
-                "The commander scans the sensor directly.",
-                "The droid evaluates the network automatically.",
-                "The student measures the sensor smoothly."
+                "I wouldn't put it past her to change her mind again.",
+                "I wouldn't count on him to change his mind again.",
+                "I wouldn't put it past him to change his mind again.",
+                "I wouldn't put it past him to make up his mind."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L108_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler creates the database carefully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'we'/'they', 'barely'/'hardly', and 'time'/'money'.",
+            "explanation": "'Barely' and 'hardly' are near-synonyms both meaning 'almost not' - 'barely' often focuses on quantity, 'hardly' on quality or manner, but they're usually interchangeable. 'Time' vs 'money' - different limited resources. 'We' vs 'they'. Expressing something was just barely achieved is common in storytelling and complaint language.",
+            "textToSpeak": "We barely had enough time to finish before the deadline.",
             "options": [
-                "The traveler creates the database carefully.",
-                "The detective evaluates the code expertly.",
-                "The technician evaluates the satellite smoothly.",
-                "The engineer scans the software efficiently."
+                "They barely had enough time to finish before the deadline.",
+                "We hardly had enough time to finish before the deadline.",
+                "We barely had enough money to finish before the deadline.",
+                "We barely had enough time to finish before the deadline."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L109_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist deploys the node automatically.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'I take it'/'I assume', 'recent'/'new', and 'I'/'she'.",
+            "explanation": "'I take it' - a conversational phrase meaning 'I assume/presume'. 'I assume' - more direct and slightly more formal. 'Recent' (having happened lately) vs 'new' (not existing before). 'I take it' vs 'she takes it' - subject. This phrase is used when you expect the listener already knows something - very common in professional conversations.",
+            "textToSpeak": "I take it you've heard about the recent changes.",
             "options": [
-                "The artist deploys the node automatically.",
-                "The scout evaluates the satellite rapidly.",
-                "The artist analyzes the satellite carefully.",
-                "The analyst validates the software swiftly."
+                "She takes it you've heard about the recent changes.",
+                "I take it you've heard about the recent changes.",
+                "I take it you've heard about the new changes.",
+                "I assume you've heard about the recent changes."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L109_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The droid evaluates the satellite carefully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'something'/'a lot', who says it, and 'taking'/'making' your time.",
+            "explanation": "'There's something to be said for' - a phrase meaning 'there are good reasons to do this'. 'A lot to be said for' - stronger endorsement. 'Taking your time' (not rushing - common advice) vs 'making your time' (not a natural English phrase). 'She thinks there's something...' - reported view. This expression hedges positive advice beautifully.",
+            "textToSpeak": "There's something to be said for taking your time.",
             "options": [
-                "The explorer locates the archive steadily.",
-                "The detective transfers the archive effectively.",
-                "The mentor encrypts the circuit silently.",
-                "The droid evaluates the satellite carefully."
+                "There's a lot to be said for taking your time.",
+                "She thinks there's something to be said for taking your time.",
+                "There's something to be said for taking your time.",
+                "There's something to be said for making your time."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L109_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker monitors the data carefully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', the idiom used, and 'make us feel'/'help us feel'.",
+            "explanation": "'Went out of her way' - idiom meaning she made special extra effort beyond what was required. 'Made a point of' - deliberately ensured something happened. 'Make us feel welcome' vs 'help us feel welcome' - similar but 'make' is more direct. 'She' vs 'he'. Hospitality and appreciation language in English.",
+            "textToSpeak": "She went out of her way to make us feel welcome.",
             "options": [
-                "The hacker monitors the data carefully.",
-                "The engineer deploys the protocol directly.",
-                "The artist sends the archive directly.",
-                "The traveler measures the portal consistently."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L110_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer sends the network consistently.",
-            "options": [
-                "The engineer sends the network consistently.",
-                "The analyst repairs the data effectively.",
-                "The artist locates the drone steadily.",
-                "The mentor transfers the terminal consistently."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L110_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer deploys the system directly.",
-            "options": [
-                "The traveler locates the module automatically.",
-                "The droid evaluates the drone quietly.",
-                "The scientist repairs the software properly.",
-                "The explorer deploys the system directly."
+                "He went out of his way to make us feel welcome.",
+                "She made a point of helping us feel welcome.",
+                "She went out of her way to help us feel welcome.",
+                "She went out of her way to make us feel welcome."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L110_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'I'/'she', 'quickly'/'slowly', and 'can't'/'couldn't'.",
+            "explanation": "'Time has flown by' - idiom meaning time has passed very quickly. 'Quickly' vs 'slowly' - opposite speeds. 'Can't believe' (present - still reacting) vs 'couldn't believe' (past - reacted before). 'I' vs 'she'. 'Time flies' and 'time has flown' are essential English idioms for expressing how quickly time passes.",
+            "textToSpeak": "I can't believe how quickly time has flown by.",
+            "options": [
+                "She can't believe how quickly time has flown by.",
+                "I can't believe how slowly time has flown by.",
+                "I can't believe how quickly time has flown by.",
+                "I couldn't believe how quickly time had flown by."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L110_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'ceases'/'fails', 'amaze'/'surprise', and the structure 'never ceases to'.",
+            "explanation": "'Never ceases to amaze' - an emphatic idiom meaning 'always continues to amaze'. 'Never fails to amaze' - same meaning, equally common. 'Amaze' (cause wonder/admiration) vs 'surprise' (cause unexpected reaction - weaker). 'It always amazes me' - same meaning but less idiomatic. These expressions of admiration are common in English social language.",
+            "textToSpeak": "It never ceases to amaze me how resilient people are.",
+            "options": [
+                "It never fails to amaze me how resilient people are.",
+                "It never ceases to amaze me how resilient people are.",
+                "It always amazes me how resilient people are.",
+                "It never ceases to surprise me how resilient people are."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L110_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student creates the archive automatically.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'meeting'/'conference', 'held virtually'/'held remotely'/'cancelled', and why.",
+            "explanation": "'Virtually' (online/via video) vs 'remotely' (from a different location - includes online but broader). Both mean an online meeting in modern usage. 'Cancelled virtually' - sounds like 'almost cancelled' - ambiguous! 'Meeting' (smaller) vs 'conference' (larger/more formal). Modern remote work vocabulary is essential in contemporary English.",
+            "textToSpeak": "The meeting was held virtually due to the circumstances.",
             "options": [
-                "The student creates the archive automatically.",
-                "The artist launches the device rapidly.",
-                "The researcher deploys the satellite properly.",
-                "The mentor activates the sensor consistently."
+                "The meeting was held virtually due to the circumstances.",
+                "The meeting was cancelled virtually due to the circumstances.",
+                "The meeting was held remotely due to the circumstances.",
+                "The conference was held virtually due to the circumstances."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"

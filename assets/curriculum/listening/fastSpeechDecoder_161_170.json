@@ -6,14 +6,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L161_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The detective evaluates the code properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'circle'/'approach'/'spiral', and 'presents'/'poses'.",
+            "explanation": "'The hermeneutic circle' (the problem that understanding a part requires understanding the whole, and vice versa - Schleiermacher, Heidegger, Gadamer) vs 'the hermeneutic approach' (the general method). 'Hermeneutic spiral' (a later refinement - understanding deepens with each iteration rather than being a closed circle). 'Presents' vs 'poses' - near-synonyms; 'poses a challenge' is also very common. Philosophy of interpretation vocabulary.",
+            "textToSpeak": "The hermeneutic circle presents a fundamental challenge to interpretation.",
             "options": [
-                "The detective evaluates the code properly.",
-                "The pilot deploys the engine automatically.",
-                "The robot sends the satellite properly.",
-                "The hacker observes the terminal carefully."
+                "The hermeneutic circle presents a fundamental challenge to interpretation.",
+                "The hermeneutic circle poses a fundamental challenge to interpretation.",
+                "The hermeneutic spiral presents a fundamental challenge to interpretation.",
+                "The hermeneutic approach presents a fundamental challenge to interpretation."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -21,29 +22,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L161_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert validates the drone rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', and 'delineates'/'outlines'/'maps'.",
+            "explanation": "'Delineates' (describes or portrays precisely - formal, implies careful tracing of boundaries) vs 'outlines' (gives the main features - less precise) vs 'maps' (describes the terrain - spatial metaphor). 'Contours' (the outlines and features of something - geographical metaphor for conceptual territory). 'Post-humanist ethics' - ethics after the human-centred tradition. Advanced continental philosophy vocabulary.",
+            "textToSpeak": "She delineates the contours of a post-humanist ethics.",
             "options": [
-                "The expert validates the drone rapidly.",
-                "The commander launches the circuit securely.",
-                "The pilot creates the software immediately.",
-                "The artist locates the software quietly."
+                "He delineates the contours of a post-humanist ethics.",
+                "She delineates the contours of a post-humanist ethics.",
+                "She maps the contours of a post-humanist ethics.",
+                "She outlines the contours of a post-humanist ethics."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L161_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot builds the node quietly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'autopoietic'/'self-organising', 'system'/'structure', and 'reproduces'/'regenerates'.",
+            "explanation": "'Autopoietic' (self-producing - Maturana and Varela's term for systems that produce their own components) vs 'self-organising' (broader - organises without external direction but doesn't necessarily self-produce). 'Structure' (how it is arranged) vs 'system' (the whole operating entity). 'Reproduces' (creates copies of itself) vs 'regenerates' (restores itself). Systems theory and cybernetics vocabulary.",
+            "textToSpeak": "The autopoietic system reproduces itself through its own operations.",
             "options": [
-                "The detective locates the circuit successfully.",
-                "The robot builds the node quietly.",
-                "The analyst updates the circuit directly.",
-                "The traveler transfers the system automatically."
+                "The self-organising system reproduces itself through its own operations.",
+                "The autopoietic system reproduces itself through its own operations.",
+                "The autopoietic system regenerates itself through its own operations.",
+                "The autopoietic structure reproduces itself through its own operations."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -51,134 +54,143 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L162_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout activates the chip effectively.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'ontological'/'theoretical', 'resists'/'avoids', and 'a single'/'one'.",
+            "explanation": "'Ontological pluralism' (the view that there are multiple fundamental kinds of being or reality - philosophical position) vs 'theoretical pluralism' (using multiple theories - less fundamental). 'Resists' (actively opposes) vs 'avoids' (steers clear of - more passive). 'A single framework' vs 'one framework' - same meaning, subtle stylistic difference. Metaphysics and philosophy of social science.",
+            "textToSpeak": "Ontological pluralism resists reduction to a single explanatory framework.",
             "options": [
-                "The scientist monitors the drone effectively.",
-                "The scout activates the chip effectively.",
-                "The scientist measures the network quietly.",
-                "The commander sends the circuit securely."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L162_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout activates the device securely.",
-            "options": [
-                "The researcher transfers the database effectively.",
-                "The pilot scans the device precisely.",
-                "The hacker restores the portal steadily.",
-                "The scout activates the device securely."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L162_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker analyzes the circuit instantly.",
-            "options": [
-                "The hacker analyzes the circuit instantly.",
-                "The detective measures the data silently.",
-                "The droid creates the data automatically.",
-                "The mentor transfers the network steadily."
+                "Ontological pluralism resists reduction to a single explanatory framework.",
+                "Ontological pluralism avoids reduction to a single explanatory framework.",
+                "Ontological pluralism resists reduction to one explanatory framework.",
+                "Theoretical pluralism resists reduction to a single explanatory framework."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L163_Q1",
+            "id": "LIS_FASTSPEECHDECODER_L162_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler creates the chip effectively.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'abductive'/'inductive', 'reasoning'/'logic', and 'draws on'/'relies on'.",
+            "explanation": "'Abductive reasoning' (inferring the most plausible explanation from available evidence - Peirce's third type, alongside deductive and inductive) vs 'inductive reasoning' (generalising from specific cases). 'Reasoning' (the cognitive process) vs 'logic' (the formal system). 'Draws on' (uses, takes from) vs 'relies on' (depends on). Philosophy of science - the three forms of inference vocabulary.",
+            "textToSpeak": "Abductive reasoning draws on contextual inferences to reach conclusions.",
             "options": [
-                "The engineer encrypts the archive directly.",
-                "The student launches the drone automatically.",
-                "The traveler updates the module automatically.",
-                "The traveler creates the chip effectively."
+                "Abductive reasoning draws on contextual inferences to reach conclusions.",
+                "Abductive logic draws on contextual inferences to reach conclusions.",
+                "Abductive reasoning relies on contextual inferences to reach conclusions.",
+                "Inductive reasoning draws on contextual inferences to reach conclusions."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L162_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', and 'foregrounds'/'reveals'/'highlights'.",
+            "explanation": "'Foregrounds' (brings to the front of attention - strongest academic verb for methodological emphasis) vs 'reveals' (uncovers - implies it was hidden) vs 'highlights' (draws attention to). 'Contingency' (the fact that something could have been otherwise - not necessary). 'Historically naturalised categories' - categories made to seem natural over time but are actually historical constructions. Critical social theory.",
+            "textToSpeak": "She foregrounds the contingency of historically naturalised categories.",
+            "options": [
+                "He foregrounds the contingency of historically naturalised categories.",
+                "She reveals the contingency of historically naturalised categories.",
+                "She highlights the contingency of historically naturalised categories.",
+                "She foregrounds the contingency of historically naturalised categories."
             ],
             "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L163_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'method'/'approach', 'traces'/'explores', and 'emergence'/'development'.",
+            "explanation": "'Genealogical method' (Nietzsche via Foucault: tracing the historical origins of concepts to destabilise their apparent necessity) vs 'genealogical approach' (slightly less precise). 'Traces' (follows back through history - specific, careful) vs 'explores' (investigates - less directed). 'Emergence' (coming into being - implies something new) vs 'development' (growing and changing - implies continuity). Foucauldian historiography vocabulary.",
+            "textToSpeak": "The genealogical method traces the historical emergence of concepts.",
+            "options": [
+                "The genealogical approach traces the historical emergence of concepts.",
+                "The genealogical method traces the historical emergence of concepts.",
+                "The genealogical method traces the historical development of concepts.",
+                "The genealogical method explores the historical emergence of concepts."
+            ],
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L163_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot locates the data consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'recursive self-reference'/'self-referential structures', 'generates'/'produces', and 'paradoxes'/'contradictions'.",
+            "explanation": "'Recursive self-reference' (a process that refers to itself - Gödel, Russell's paradox) vs 'self-referential structures' (structures that refer to themselves - less dynamic). 'Generates' (creates) vs 'produces' (near-synonym). 'Paradoxes' (seemingly contradictory truths) vs 'contradictions' (logical impossibilities - stronger). Mathematical logic and formal systems vocabulary at expert level.",
+            "textToSpeak": "Recursive self-reference generates paradoxes in formal systems.",
             "options": [
-                "The teacher launches the satellite instantly.",
-                "The droid measures the drone properly.",
-                "The traveler scans the system automatically.",
-                "The pilot locates the data consistently."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L163_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher locates the protocol effectively.",
-            "options": [
-                "The researcher sends the sensor successfully.",
-                "The robot launches the code reliably.",
-                "The teacher locates the protocol effectively.",
-                "The robot builds the circuit precisely."
+                "Self-referential structures generate paradoxes in formal systems.",
+                "Recursive self-reference produces paradoxes in formal systems.",
+                "Recursive self-reference generates paradoxes in formal systems.",
+                "Recursive self-reference generates contradictions in formal systems."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L163_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'her'/'his', 'praxis'/'work', and 'integrates'/'combines'.",
+            "explanation": "'Praxis' (the synthesis of theory and practice - Aristotle, Marx, Freire: it is not just doing theory but enacting it in the world) vs 'work' (general - loses the theoretical/practical unity). 'Integrates' (brings into a unified whole - more intellectually sophisticated) vs 'combines' (puts together - simpler). 'Theoretical critique with political engagement' - the hallmark of critical theory. Marxist and critical pedagogy vocabulary.",
+            "textToSpeak": "Her praxis integrates theoretical critique with political engagement.",
+            "options": [
+                "His praxis integrates theoretical critique with political engagement.",
+                "Her praxis integrates theoretical critique with political engagement.",
+                "Her praxis combines theoretical critique with political engagement.",
+                "Her work integrates theoretical critique with political engagement."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L164_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot evaluates the software securely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'indeterminate'/'ambiguous', 'nature'/'character', and 'signifier'/'sign'.",
+            "explanation": "'Indeterminate' (not precisely fixed or determined - philosophical precision) vs 'ambiguous' (having more than one meaning - more common but less theoretical). 'Signifier' (the sound-image in Saussurean linguistics - not the same as 'sign') vs 'sign' (the complete unit of signifier + signified - broader). 'Character' vs 'nature' - near-synonyms. Post-Saussurean linguistics and deconstruction vocabulary.",
+            "textToSpeak": "The indeterminate nature of the signifier enables multiple readings.",
             "options": [
-                "The teacher validates the chip consistently.",
-                "The student analyzes the engine efficiently.",
-                "The expert sends the circuit successfully.",
-                "The robot evaluates the software securely."
+                "The ambiguous nature of the signifier enables multiple readings.",
+                "The indeterminate nature of the signifier enables multiple readings.",
+                "The indeterminate nature of the sign enables multiple readings.",
+                "The indeterminate character of the signifier enables multiple readings."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L164_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician evaluates the node immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'validation'/'agreement', 'offers'/'provides', and 'alternative'/'challenge'.",
+            "explanation": "'Intersubjective validation' (establishing truth through agreement between subjects - Habermas) vs 'intersubjective agreement' (similar but less epistemological). 'Offers an alternative' (provides a different option) vs 'provides a challenge' (poses a problem for - different relationship). 'Objectivist epistemology' (the view that there are mind-independent facts). Epistemology and phenomenology vocabulary.",
+            "textToSpeak": "Intersubjective validation offers an alternative to objectivist epistemology.",
             "options": [
-                "The hacker analyzes the protocol rapidly.",
-                "The pilot secures the code consistently.",
-                "The explorer monitors the data quietly.",
-                "The technician evaluates the node immediately."
+                "Intersubjective agreement offers an alternative to objectivist epistemology.",
+                "Intersubjective validation offers an alternative to objectivist epistemology.",
+                "Intersubjective validation offers a challenge to objectivist epistemology.",
+                "Intersubjective validation provides an alternative to objectivist epistemology."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L164_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker encrypts the engine reliably.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', 'negotiates'/'navigates'/'addresses', and the content.",
+            "explanation": "'Negotiates' (works through by finding a path between - active engagement with tension) vs 'navigates' (steers through - spatial metaphor) vs 'addresses' (deals with - less engaged). 'Aporia' (Greek: an impasse or irresolvable difficulty - Derrida uses this extensively) - the tension between deconstruction (which questions foundations) and political commitment (which needs them). Deconstructive political theory vocabulary.",
+            "textToSpeak": "She negotiates the aporia between deconstruction and political commitment.",
             "options": [
-                "The hacker encrypts the engine reliably.",
-                "The robot evaluates the engine swiftly.",
-                "The droid monitors the database properly.",
-                "The commander monitors the data effectively."
+                "She negotiates the aporia between deconstruction and political commitment.",
+                "She navigates the aporia between deconstruction and political commitment.",
+                "She addresses the aporia between deconstruction and political commitment.",
+                "He negotiates the aporia between deconstruction and political commitment."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -186,89 +198,95 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L165_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician sends the portal swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'reduction'/'analysis', 'brackets'/'suspends'/'questions'.",
+            "explanation": "'Phenomenological reduction' (epoché - Husserl's method of suspending judgement about the external world to focus on pure consciousness) vs 'analysis' (general examination). 'Brackets' (puts in brackets, sets aside - Husserl's specific metaphor) vs 'suspends' (temporarily halts - similar but different image) vs 'questions' (actively challenges - weaker). Husserlian phenomenology vocabulary.",
+            "textToSpeak": "The phenomenological reduction brackets assumptions about external reality.",
             "options": [
-                "The detective updates the device smoothly.",
-                "The technician sends the portal swiftly.",
-                "The explorer measures the device instantly.",
-                "The scout secures the code quietly."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L165_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker observes the code directly.",
-            "options": [
-                "The robot sends the code rapidly.",
-                "The scout measures the data expertly.",
-                "The hacker observes the code directly.",
-                "The student scans the circuit rapidly."
+                "The phenomenological analysis brackets assumptions about external reality.",
+                "The phenomenological reduction suspends assumptions about external reality.",
+                "The phenomenological reduction brackets assumptions about external reality.",
+                "The phenomenological reduction questions assumptions about external reality."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L165_Q3",
+            "id": "LIS_FASTSPEECHDECODER_L165_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher repairs the terminal successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'rhizomatic'/'non-linear', 'thinking'/'approaches', and 'undermines'/'challenges'.",
+            "explanation": "'Rhizomatic' (Deleuze and Guattari's concept: like a rhizome - spreading horizontally without root or hierarchy, as opposed to arborescent/tree-like thinking) vs 'non-linear' (not following a line - weaker). 'Undermines' (weakens the foundation of) vs 'challenges' (questions). 'Thinking' vs 'approaches'. Deleuzian philosophy and poststructuralist pedagogy.",
+            "textToSpeak": "Rhizomatic thinking undermines hierarchical models of knowledge production.",
             "options": [
-                "The scout repairs the signal quietly.",
-                "The teacher repairs the terminal successfully.",
-                "The explorer launches the archive swiftly.",
-                "The researcher validates the signal efficiently."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L166_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot activates the protocol rapidly.",
-            "options": [
-                "The artist evaluates the module securely.",
-                "The technician secures the satellite properly.",
-                "The traveler measures the system carefully.",
-                "The robot activates the protocol rapidly."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L166_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher scans the chip effectively.",
-            "options": [
-                "The researcher scans the chip effectively.",
-                "The expert monitors the database directly.",
-                "The researcher measures the terminal directly.",
-                "The researcher launches the code instantly."
+                "Rhizomatic thinking undermines hierarchical models of knowledge production.",
+                "Rhizomatic approaches undermine hierarchical models of knowledge production.",
+                "Rhizomatic thinking challenges hierarchical models of knowledge production.",
+                "Non-linear thinking undermines hierarchical models of knowledge production."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L165_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'her'/'his', 'analysis'/'work', and 'foregrounds'/'emphasises'.",
+            "explanation": "'Foregrounds' (makes the materiality the main focus - methodological statement) vs 'emphasises' (stresses importance - less methodological). 'Discursive practices' (the practices that constitute discourse - Foucauldian) - emphasising their 'materiality' (they have real, physical effects) counters the idea that discourse is merely abstract. Foucauldian discourse analysis and new materialism vocabulary.",
+            "textToSpeak": "Her analysis foregrounds the materiality of discursive practices.",
+            "options": [
+                "Her analysis foregrounds the materiality of discursive practices.",
+                "Her work foregrounds the materiality of discursive practices.",
+                "Her analysis emphasises the materiality of discursive practices.",
+                "His analysis foregrounds the materiality of discursive practices."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L166_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'voice'/'perspective', 'systematically'/'often', and 'subaltern'/'minority'.",
+            "explanation": "'Subaltern' (Gramsci via Spivak: those subordinated by hegemonic power, unable to represent themselves - not simply 'minority') vs 'minority' (a numerical or power minority - less theoretically loaded). 'Voice' (the capacity to speak and be heard - often denied) vs 'perspective' (a viewpoint - more neutral). 'Occluded' (blocked from view - more sophisticated than 'hidden') vs 'often' vs 'systematically' (the latter implies structural pattern). Postcolonial theory - Spivak's 'Can the Subaltern Speak?' vocabulary.",
+            "textToSpeak": "The subaltern's voice is systematically occluded by dominant discourse.",
+            "options": [
+                "The subaltern's perspective is systematically occluded by dominant discourse.",
+                "The subaltern's voice is systematically occluded by dominant discourse.",
+                "The minority voice is systematically occluded by dominant discourse.",
+                "The subaltern's voice is often occluded by dominant discourse."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L166_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'diaspora literature'/'diasporic writing', and 'interrogates'/'questions'/'examines'.",
+            "explanation": "'Diaspora literature' (literature produced by diaspora communities - from scattered peoples) vs 'diasporic writing' (same but more adjective-focused). 'Interrogates' (rigorously questions using theory) vs 'questions' (raises doubt) vs 'examines' (looks at). 'Fixed notions' - ideas assumed to be stable but are actually constructed. 'Belonging and origin' - core concerns in diaspora and postcolonial studies. Transcultural literary studies.",
+            "textToSpeak": "Diaspora literature interrogates fixed notions of belonging and origin.",
+            "options": [
+                "Diasporic writing interrogates fixed notions of belonging and origin.",
+                "Diaspora literature interrogates fixed notions of belonging and origin.",
+                "Diaspora literature examines fixed notions of belonging and origin.",
+                "Diaspora literature questions fixed notions of belonging and origin."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L166_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist transfers the drone swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', and 'deploys'/'uses'/'employs'.",
+            "explanation": "'Deploys' (strategically uses - military/tactical metaphor, implies purposeful use of a tool) vs 'uses' (simply makes use of - neutral) vs 'employs' (puts to work - more formal than 'uses', less specific than 'deploys'). 'Subvert the very discourse she inhabits' - a self-referential critical move: using the dominant language to undermine itself from within. Critical and postcolonial literary theory.",
+            "textToSpeak": "She deploys irony to subvert the very discourse she inhabits.",
             "options": [
-                "The artist transfers the drone swiftly.",
-                "The explorer creates the network smoothly.",
-                "The traveler activates the archive quietly.",
-                "The hacker sends the software immediately."
+                "She deploys irony to subvert the very discourse she inhabits.",
+                "She uses irony to subvert the very discourse she inhabits.",
+                "She employs irony to subvert the very discourse she inhabits.",
+                "He deploys irony to subvert the very discourse he inhabits."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -276,14 +294,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L167_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher transfers the device carefully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'discrepancy'/'gap'/'difference' and 'is'/'remains'.",
+            "explanation": "'Discrepancy' (a specific difference that should not exist - implies misalignment) vs 'gap' (a space between - spatial metaphor) vs 'difference' (a general non-identity). 'Irreducible' (cannot be reduced or eliminated - key philosophical term). 'Is irreducible' (general truth) vs 'remains irreducible' (continues to be, despite attempts). Saussurean and post-Saussurean linguistics - the arbitrary nature of the sign.",
+            "textToSpeak": "The discrepancy between signifier and signified is irreducible.",
             "options": [
-                "The pilot creates the satellite quietly.",
-                "The traveler locates the device effectively.",
-                "The researcher transfers the device carefully.",
-                "The detective validates the terminal successfully."
+                "The gap between signifier and signified is irreducible.",
+                "The difference between signifier and signified is irreducible.",
+                "The discrepancy between signifier and signified is irreducible.",
+                "The discrepancy between signifier and signified remains irreducible."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
@@ -291,29 +310,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L167_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot evaluates the portal smoothly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'her'/'his', 'stance'/'position', and 'critical'/'intellectual'.",
+            "explanation": "'Stance' (a position taken - implies active posture) vs 'position' (a location in intellectual space - slightly more static). 'Critical' (using critical theory or critical analysis) vs 'intellectual' (relating to the intellect - broader). 'Domestication' (taming something to fit within an institution) - the academy 'domesticating' radical thought by incorporating and neutralising it. Critical theory and academic politics.",
+            "textToSpeak": "Her critical stance refuses easy domestication by the academy.",
             "options": [
-                "The explorer deploys the software reliably.",
-                "The student validates the engine quietly.",
-                "The robot evaluates the portal smoothly.",
-                "The hacker launches the portal silently."
+                "His critical stance refuses easy domestication by the academy.",
+                "Her intellectual stance refuses easy domestication by the academy.",
+                "Her critical position refuses easy domestication by the academy.",
+                "Her critical stance refuses easy domestication by the academy."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L167_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout updates the satellite immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'palimpsest'/'legacy', 'cultural'/'historical', and 'shapes'/'influences'.",
+            "explanation": "'Palimpsest' (a manuscript where old writing shows through new - metaphor for layered history where previous layers remain visible beneath the present) vs 'legacy' (what is left behind - less nuanced). 'Cultural memory' (shared memory constructed by a group) vs 'historical memory' (similar but more factual). 'Shapes' (gives form to - more determining) vs 'influences' (affects - weaker). Memory studies and cultural theory vocabulary.",
+            "textToSpeak": "The palimpsest of cultural memory shapes contemporary identity formation.",
             "options": [
-                "The teacher transfers the network quietly.",
-                "The scientist locates the protocol directly.",
-                "The analyst restores the module automatically.",
-                "The scout updates the satellite immediately."
+                "The legacy of cultural memory shapes contemporary identity formation.",
+                "The palimpsest of historical memory shapes contemporary identity formation.",
+                "The palimpsest of cultural memory influences contemporary identity formation.",
+                "The palimpsest of cultural memory shapes contemporary identity formation."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -321,14 +342,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L168_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer transfers the engine effectively.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', 'traces'/'maps', and 'genealogy'/'history'.",
+            "explanation": "'Genealogy' (Nietzschean/Foucauldian: a critical history that reveals contingency and power - not just chronology) vs 'history' (a neutral account of events). 'Traces' (follows carefully - implies patient, detailed work) vs 'maps' (provides a chart of - spatial metaphor). 'Through multiple historical layers' - the palimpsest structure again. Advanced Foucauldian historiography.",
+            "textToSpeak": "She traces the genealogy of the concept through multiple historical layers.",
             "options": [
-                "The teacher measures the device securely.",
-                "The engineer transfers the engine effectively.",
-                "The scout analyzes the protocol properly.",
-                "The pilot observes the system expertly."
+                "He traces the genealogy of the concept through multiple historical layers.",
+                "She traces the genealogy of the concept through multiple historical layers.",
+                "She traces the history of the concept through multiple historical layers.",
+                "She maps the genealogy of the concept through multiple historical layers."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -336,74 +358,79 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L168_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist activates the satellite securely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'political'/'cultural', 'mediates between'/'connects', and 'ideology'/'power'.",
+            "explanation": "'Political unconscious' (Fredric Jameson's concept: the way political and historical realities are repressed and return through narrative and aesthetic form) vs 'cultural unconscious' (less specific). 'Mediates between' (acts as an intermediary - preserving the difference while enabling relation) vs 'connects' (links - simpler). 'Ideology' vs 'power' - different Marxist/Foucauldian emphases. Jameson's Marxist literary theory.",
+            "textToSpeak": "The political unconscious mediates between ideology and aesthetic form.",
             "options": [
-                "The commander validates the chip directly.",
-                "The hacker scans the database effectively.",
-                "The scientist activates the satellite securely.",
-                "The traveler creates the code smoothly."
+                "The political unconscious mediates between ideology and aesthetic form.",
+                "The political unconscious connects ideology and aesthetic form.",
+                "The political unconscious mediates between power and aesthetic form.",
+                "The cultural unconscious mediates between ideology and aesthetic form."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L168_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot deploys the chip properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'her'/'his', 'reading'/'analysis', and 'exposes'/'reveals'.",
+            "explanation": "'Reading' (an interpretive act applied to a text or situation) vs 'analysis' (systematic examination). 'Exposes' (brings into the open - active uncovering of something deliberately or inadvertently hidden) vs 'reveals' (uncovers - similar but slightly less active). 'Latent violence' (violence hidden within) in 'ostensibly benign structures' (things that appear harmless) - critiquing civilisation and normalcy. Critical theory and deconstructive analysis.",
+            "textToSpeak": "Her reading exposes the violence latent within ostensibly benign structures.",
             "options": [
-                "The researcher monitors the protocol automatically.",
-                "The artist scans the signal directly.",
-                "The teacher measures the drone carefully.",
-                "The robot deploys the chip properly."
+                "His reading exposes the violence latent within ostensibly benign structures.",
+                "Her reading exposes the violence latent within ostensibly benign structures.",
+                "Her reading reveals the violence latent within ostensibly benign structures.",
+                "Her analysis exposes the violence latent within ostensibly benign structures."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L169_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout locates the circuit reliably.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'decolonising'/'reforming', 'curriculum'/'education', and 'requires'/'demands'.",
+            "explanation": "'Decolonising' (removing colonial structures, assumptions, and ways of knowing - not merely diversifying) vs 'reforming' (improving within existing structures - less radical). 'Curriculum' (the specific content taught) vs 'education' (the whole system). 'Requires' vs 'demands' - 'demands' is more urgent and insistent. 'Epistemic assumptions' - assumptions about what constitutes valid knowledge. Postcolonial education theory.",
+            "textToSpeak": "Decolonising the curriculum requires rethinking fundamental epistemic assumptions.",
             "options": [
-                "The hero measures the protocol expertly.",
-                "The explorer secures the archive silently.",
-                "The scout locates the circuit reliably.",
-                "The expert locates the drone quietly."
+                "Decolonising the curriculum requires rethinking fundamental epistemic assumptions.",
+                "Decolonising education requires rethinking fundamental epistemic assumptions.",
+                "Decolonising the curriculum demands rethinking fundamental epistemic assumptions.",
+                "Reforming the curriculum requires rethinking fundamental epistemic assumptions."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L169_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician activates the satellite properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'text'/'work'/'narrative', and 'enacts'/'performs'.",
+            "explanation": "'Enacts' (brings into being through action - the text performs its theme in its own structure) vs 'performs' (carries out - similar but 'performs' has a theatrical connotation). 'Text' (the written or readable object) vs 'work' (the artistic object) vs 'narrative' (the story). 'Thematises' (makes into a theme - treats explicitly as a subject). Self-referential textual analysis - how form mirrors content. Advanced literary theory.",
+            "textToSpeak": "The text enacts the very instability it thematises.",
             "options": [
-                "The hero launches the signal immediately.",
-                "The artist deploys the module steadily.",
-                "The analyst secures the sensor effectively.",
-                "The technician activates the satellite properly."
+                "The work enacts the very instability it thematises.",
+                "The text enacts the very instability it thematises.",
+                "The narrative enacts the very instability it thematises.",
+                "The text performs the very instability it thematises."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L169_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst secures the node automatically.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'her'/'his', 'scholarship'/'work'/'research', and 'disciplines'/'fields'.",
+            "explanation": "'Scholarship' (body of learned knowledge and study - most formal) vs 'work' (general) vs 'research' (empirical investigation). 'Occupies' (holds a position in) vs 'inhabits' (lives within - more organic). 'Disciplines' (academic fields with their own methods and canons) vs 'fields' (areas of study - less institutional). 'Liminal space' (threshold space - between, neither one thing nor another; Turner, Van Gennep). Interdisciplinary and cultural studies vocabulary.",
+            "textToSpeak": "Her scholarship occupies a liminal space between disciplines.",
             "options": [
-                "The detective validates the portal instantly.",
-                "The technician locates the terminal swiftly.",
-                "The analyst secures the node automatically.",
-                "The hero validates the portal smoothly."
+                "His scholarship occupies a liminal space between disciplines.",
+                "Her work inhabits a liminal space between disciplines.",
+                "Her scholarship occupies a liminal space between disciplines.",
+                "Her research occupies a liminal space between fields."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
@@ -411,46 +438,49 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L170_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist scans the protocol precisely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'iterative'/'repetitive', 'performativity'/'construction', and 'challenges'/'questions'.",
+            "explanation": "'Iterative' (involving repetition with variation - more precise than 'repetitive') vs 'repetitive' (simply repeating - less analytical). 'Performativity' (Butler's concept: identity is constituted through repeated performances, not pre-existing) vs 'construction' (built - less dynamic). 'Challenges' (actively contests) vs 'questions' (raises doubt - weaker). Judith Butler's gender theory and performativity vocabulary.",
+            "textToSpeak": "The iterative performativity of identity challenges essentialist conceptions.",
             "options": [
-                "The detective evaluates the protocol expertly.",
-                "The student observes the circuit consistently.",
-                "The hero locates the circuit securely.",
-                "The scientist scans the protocol precisely."
+                "The repetitive performativity of identity challenges essentialist conceptions.",
+                "The iterative construction of identity challenges essentialist conceptions.",
+                "The iterative performativity of identity challenges essentialist conceptions.",
+                "The iterative performativity of identity questions essentialist conceptions."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L170_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert sends the protocol swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'suturing'/'interpellating', 'ideology'/'discourse', and 'produces'/'creates'.",
+            "explanation": "'Suturing' (Lacanian/film theory: the stitching of the subject into the symbolic order - fixing a position) vs 'interpellating' (Althusser: hailing the subject into ideology - calling them into a subject position). 'Ideology' (Althusserian: the imaginary relationship to real conditions) vs 'discourse' (Foucauldian: systems of knowledge/power). 'Produces' vs 'creates' - near-synonyms. Althusserian Marxism and Lacanian psychoanalysis vocabulary.",
+            "textToSpeak": "Suturing the subject into ideology produces a misrecognition of freedom.",
             "options": [
-                "The pilot deploys the device carefully.",
-                "The expert sends the protocol swiftly.",
-                "The pilot deploys the engine securely.",
-                "The hacker launches the portal reliably."
+                "Suturing the subject into ideology produces a misrecognition of freedom.",
+                "Suturing the subject into discourse produces a misrecognition of freedom.",
+                "Suturing the subject into ideology creates a misrecognition of freedom.",
+                "Interpellating the subject into ideology produces a misrecognition of freedom."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L170_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker locates the code successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', and 'deciphers'/'uncovers'/'reads'.",
+            "explanation": "'Deciphers' (decodes - implies the traces are written in a code, requires active interpretive work) vs 'uncovers' (removes what hides them) vs 'reads' (interprets - less specific but also common). 'Sedimented' (accumulated in layers like geological sediment - metaphor for how history accumulates in culture) vs 'historical' (simply past). Trauma theory and memory studies - vocabulary from psychoanalytically informed cultural criticism.",
+            "textToSpeak": "She deciphers the sedimented traces of historical trauma in contemporary life.",
             "options": [
-                "The hacker locates the code successfully.",
-                "The expert repairs the module properly.",
-                "The mentor updates the chip immediately.",
-                "The hacker deploys the module precisely."
+                "He deciphers the sedimented traces of historical trauma in contemporary life.",
+                "She uncovers the sedimented traces of historical trauma in contemporary life.",
+                "She reads the sedimented traces of historical trauma in contemporary life.",
+                "She deciphers the sedimented traces of historical trauma in contemporary life."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         }
     ]

@@ -193,18 +193,20 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 SizedBox(height: gapTop),
-                                isCompact
+                                        isCompact
                                     ? SizedBox(
                                         height: 35.h,
                                         child: FittedBox(
                                           fit: BoxFit.scaleDown,
                                           child: FastSpeechDecoderInstruction(
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction ?? "CALIBRATE SPEED TO DECODE",
                                           ),
                                         ),
                                       )
                                     : FastSpeechDecoderInstruction(
                                         color: theme.primaryColor,
+                                        instruction: quest.instruction ?? "CALIBRATE SPEED TO DECODE",
                                       ),
                                 SizedBox(height: gapInstruction),
                                 ValueListenableBuilder<double>(

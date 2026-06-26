@@ -6,89 +6,95 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L141_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero launches the module immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "At advanced level, focus on 'ostensibly'/'apparently', 'neutral'/'fair', and 'different'/'various'.",
+            "explanation": "'Ostensibly' (appearing to be so on the surface - but perhaps not in reality) vs 'apparently' (seemingly - less sceptical connotation). 'Neutral' (not favouring any side) vs 'fair' (just, equitable). 'Different groups' and 'various groups' - near-synonyms; 'various' slightly more formal. 'Disparate effects' - a key phrase in social policy analysis meaning disproportionately unequal impacts on different populations.",
+            "textToSpeak": "The ostensibly neutral policy has disparate effects on different groups.",
             "options": [
-                "The hero launches the module immediately.",
-                "The scientist activates the terminal consistently.",
-                "The technician restores the drone steadily.",
-                "The traveler encrypts the sensor efficiently."
+                "The apparently neutral policy has disparate effects on different groups.",
+                "The ostensibly neutral policy has disparate effects on different groups.",
+                "The ostensibly neutral policy has disparate effects on various groups.",
+                "The ostensibly fair policy has disparate effects on different groups."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L141_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout evaluates the node precisely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'her'/'his', 'incisive'/'sharp', and 'critique'/'analysis'.",
+            "explanation": "'Incisive' (penetratingly clear and sharp in argument - more formal and precise than 'sharp') vs 'sharp' (clever and cutting - less academic). 'Critique' (a structured critical evaluation) vs 'analysis' (a systematic examination - doesn't necessarily oppose). 'Dismantled the prevailing consensus' - a very important academic phrase for an argument that overturns established thinking.",
+            "textToSpeak": "Her incisive critique dismantled the prevailing consensus.",
             "options": [
-                "The detective monitors the node expertly.",
-                "The detective scans the signal silently.",
-                "The droid validates the module effectively.",
-                "The scout evaluates the node precisely."
+                "His incisive critique dismantled the prevailing consensus.",
+                "Her incisive critique dismantled the prevailing consensus.",
+                "Her incisive analysis dismantled the prevailing consensus.",
+                "Her sharp critique dismantled the prevailing consensus."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L141_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student encrypts the system automatically.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the type of assumptions ('epistemological'/'methodological'/'theoretical') and the preposition.",
+            "explanation": "'Epistemological' (relating to the theory of knowledge - what counts as knowledge and how we know it) vs 'methodological' (relating to research methods) vs 'theoretical' (relating to theory). 'Underpinning' (supporting from below - more vivid) vs 'underlying' (lying beneath - similar). These distinctions are fundamental in philosophy of science and critical research methods.",
+            "textToSpeak": "The epistemological assumptions underpinning the study are questionable.",
             "options": [
-                "The expert deploys the drone successfully.",
-                "The pilot scans the drone swiftly.",
-                "The student encrypts the system automatically.",
-                "The mentor activates the device rapidly."
+                "The methodological assumptions underpinning the study are questionable.",
+                "The epistemological assumptions underpinning the study are questionable.",
+                "The epistemological assumptions underlying the study are questionable.",
+                "The theoretical assumptions underpinning the study are questionable."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L142_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher restores the data immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'legislation'/'regulation', 'inadvertently'/'deliberately', and 'created'/'led to'.",
+            "explanation": "'Inadvertently' (without intention - by accident) vs 'deliberately' (intentionally - the opposite!). 'Perverse incentives' - a key economic concept: rewards that motivate behaviour contrary to the goal intended. 'Legislation' vs 'regulation'. 'Created' (directly produced) vs 'led to' (resulted in through a chain). Advanced policy analysis vocabulary.",
+            "textToSpeak": "The legislation inadvertently created perverse incentives.",
             "options": [
-                "The teacher restores the data immediately.",
-                "The traveler observes the drone smoothly.",
-                "The droid restores the sensor consistently.",
-                "The explorer transfers the portal efficiently."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L142_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst restores the software reliably.",
-            "options": [
-                "The mentor restores the node instantly.",
-                "The analyst secures the system immediately.",
-                "The robot launches the chip effectively.",
-                "The analyst restores the software reliably."
+                "The regulation inadvertently created perverse incentives.",
+                "The legislation deliberately created perverse incentives.",
+                "The legislation inadvertently led to perverse incentives.",
+                "The legislation inadvertently created perverse incentives."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L142_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'reconciling'/'balancing', 'growth'/'development', and 'is'/'remains'.",
+            "explanation": "'Reconciling' (making compatible two seemingly contradictory things) vs 'balancing' (maintaining equilibrium between two things - less about contradiction). 'Growth' (increase in economic output) vs 'development' (improvement in quality/capability - broader). 'Is an ongoing challenge' vs 'remains an ongoing challenge' - 'remains' emphasises persistence. Environmental economics vocabulary.",
+            "textToSpeak": "Reconciling growth with sustainability is an ongoing challenge.",
+            "options": [
+                "Reconciling growth with sustainability is an ongoing challenge.",
+                "Reconciling development with sustainability is an ongoing challenge.",
+                "Reconciling growth with sustainability remains an ongoing challenge.",
+                "Balancing growth with sustainability is an ongoing challenge."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L142_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student analyzes the circuit efficiently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'findings'/'results', 'corroborate'/'contradict'/'support', and the meaning shift.",
+            "explanation": "'Corroborate' (provide additional evidence that confirms - stronger than 'support') vs 'contradict' (directly oppose - opposite!) vs 'support' (back up - weaker and less formal than corroborate). 'Findings' vs 'results'. 'Corroborate' is a key academic verb in research writing indicating convergent evidence from multiple sources.",
+            "textToSpeak": "The findings corroborate earlier studies on the subject.",
             "options": [
-                "The student analyzes the circuit efficiently.",
-                "The commander creates the database efficiently.",
-                "The robot launches the chip automatically.",
-                "The mentor scans the device rapidly."
+                "The findings corroborate earlier studies on the subject.",
+                "The findings contradict earlier studies on the subject.",
+                "The findings support earlier studies on the subject.",
+                "The results corroborate earlier studies on the subject."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -96,29 +102,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L143_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander measures the network expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', 'drew attention to'/'highlighted', and 'systemic'/'structural'.",
+            "explanation": "'Drew attention to' (directed focus towards - perhaps in a meeting or publication) vs 'highlighted' (emphasised - more visual metaphor). 'Systemic' (embedded throughout an entire system) vs 'structural' (built into the structure - overlapping but 'systemic' is more critical/sociological). 'She' vs 'he'. Social justice and institutional critique vocabulary.",
+            "textToSpeak": "She drew attention to the systemic nature of the problem.",
             "options": [
-                "The engineer activates the protocol rapidly.",
-                "The technician launches the code quietly.",
-                "The commander measures the network expertly.",
-                "The student creates the chip expertly."
+                "He drew attention to the systemic nature of the problem.",
+                "She drew attention to the systemic nature of the problem.",
+                "She drew attention to the structural nature of the problem.",
+                "She highlighted the systemic nature of the problem."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L143_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert transfers the chip effectively.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'doctrine'/'principle', 'applied'/'interpreted', and 'has'/'had'.",
+            "explanation": "'Doctrine' (an established set of beliefs or principles - especially legal or political) vs 'principle' (a fundamental truth or rule). 'Applied' (put into practice) vs 'interpreted' (understood or explained - the first step before application). 'Across jurisdictions' - legal territories with their own legal systems. Legal comparative analysis vocabulary.",
+            "textToSpeak": "The doctrine has been applied inconsistently across jurisdictions.",
             "options": [
-                "The expert transfers the chip effectively.",
-                "The artist repairs the terminal rapidly.",
-                "The explorer creates the device expertly.",
-                "The hero monitors the code directly."
+                "The doctrine has been applied inconsistently across jurisdictions.",
+                "The doctrine has been interpreted inconsistently across jurisdictions.",
+                "The doctrine had been applied inconsistently across jurisdictions.",
+                "The principle has been applied inconsistently across jurisdictions."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -126,44 +134,47 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L143_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor restores the archive immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'effective'/'good', 'requires'/'demands', and 'transparency'/'efficiency'.",
+            "explanation": "'Effective' (producing the desired results) vs 'good' (morally sound and of high quality - broader). 'Requires' (makes necessary) vs 'demands' (insists upon - slightly stronger). 'Transparency' (openness of processes) vs 'efficiency' (doing things without waste - a different governance value). Political science and public administration vocabulary.",
+            "textToSpeak": "Effective governance requires both accountability and transparency.",
             "options": [
-                "The researcher analyzes the engine effectively.",
-                "The mentor restores the archive immediately.",
-                "The artist evaluates the terminal efficiently.",
-                "The technician encrypts the device rapidly."
+                "Good governance requires both accountability and transparency.",
+                "Effective governance demands both accountability and transparency.",
+                "Effective governance requires both accountability and transparency.",
+                "Effective governance requires both accountability and efficiency."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L144_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot secures the system swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'premise'/'basis', 'argument'/'theory', and 'warrants'/'requires'.",
+            "explanation": "'Premise' (a foundational assumption on which an argument rests - logical term) vs 'basis' (the underlying foundation - more general). 'Warrants' (justifies, deserves - implies the examination is earned) vs 'requires' (needs - more neutral obligation). 'Argument' vs 'theory'. Critical analysis of logical reasoning - essential for academic English at advanced level.",
+            "textToSpeak": "The premise of the argument warrants closer examination.",
             "options": [
-                "The explorer measures the software carefully.",
-                "The researcher creates the code efficiently.",
-                "The mentor builds the database successfully.",
-                "The robot secures the system swiftly."
+                "The basis of the argument warrants closer examination.",
+                "The premise of the argument warrants closer examination.",
+                "The premise of the argument requires closer examination.",
+                "The premise of the theory warrants closer examination."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L144_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor monitors the module securely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'she'/'he', 'articulates'/'demonstrates', and 'nuance'/'complexity'.",
+            "explanation": "'Articulates' (expresses clearly in words) vs 'demonstrates' (shows through action or evidence). 'Nuance' (fine distinctions, subtle differences) vs 'complexity' (many interconnected parts - different concept). 'Sophisticated understanding of cultural nuance' vs 'nuanced understanding of cultural complexity' - these sound similar but emphasise different things. Intercultural communication vocabulary.",
+            "textToSpeak": "She articulates a sophisticated understanding of cultural nuance.",
             "options": [
-                "The robot encrypts the satellite effectively.",
-                "The mentor monitors the module securely.",
-                "The artist repairs the drone immediately.",
-                "The pilot monitors the node precisely."
+                "He articulates a sophisticated understanding of cultural nuance.",
+                "She articulates a sophisticated understanding of cultural nuance.",
+                "She articulates a nuanced understanding of cultural complexity.",
+                "She demonstrates a sophisticated understanding of cultural nuance."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -171,14 +182,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L144_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor observes the node rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'unintended'/'unforeseen', 'consequences'/'effects', and 'highlight'/'reveal'.",
+            "explanation": "'Unintended' (not intended - by design, not outcome) vs 'unforeseen' (not predicted - by foresight). 'Consequences' (outcomes that follow causally) vs 'effects' (impacts - broader and less causal). 'Highlight' (draw attention to) vs 'reveal' (uncover - stronger, implies something hidden). 'Top-down planning' - key concept in governance and development studies.",
+            "textToSpeak": "The unintended consequences highlight the limits of top-down planning.",
             "options": [
-                "The scout encrypts the drone smoothly.",
-                "The mentor observes the node rapidly.",
-                "The researcher transfers the terminal immediately.",
-                "The hero sends the chip efficiently."
+                "The unforeseen consequences highlight the limits of top-down planning.",
+                "The unintended consequences highlight the limits of top-down planning.",
+                "The unintended consequences reveal the limits of top-down planning.",
+                "The unintended effects highlight the limits of top-down planning."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -186,89 +198,95 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L145_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer activates the code swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'tension'/'conflict', 'sovereignty'/'autonomy', and 'is'/'remains'.",
+            "explanation": "'Sovereignty' (the supreme authority of a state over its own affairs) vs 'autonomy' (self-governance - broader, can apply to individuals, regions, or states). 'Tension' (a state of strain - not yet open conflict) vs 'conflict' (active clash). 'Is longstanding' vs 'remains longstanding' - 'remains' emphasises continuity. International relations and political theory vocabulary.",
+            "textToSpeak": "The tension between sovereignty and global governance is longstanding.",
             "options": [
-                "The droid deploys the code efficiently.",
-                "The mentor launches the archive expertly.",
-                "The traveler encrypts the module carefully.",
-                "The engineer activates the code swiftly."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L145_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler repairs the engine silently.",
-            "options": [
-                "The traveler repairs the engine silently.",
-                "The commander encrypts the terminal smoothly.",
-                "The scientist repairs the signal swiftly.",
-                "The scientist updates the code efficiently."
+                "The tension between sovereignty and global governance is longstanding.",
+                "The tension between autonomy and global governance is longstanding.",
+                "The tension between sovereignty and global governance remains longstanding.",
+                "The conflict between sovereignty and global governance is longstanding."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L145_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'her'/'his', 'reading'/'analysis', and 'nuanced'/'careful'.",
+            "explanation": "'Reading' (an interpretation of a text or situation - academic usage) vs 'analysis' (systematic examination). 'Nuanced' (sensitive to subtle distinctions) vs 'careful' (attentive but less specific). 'Binary interpretations' (either/or thinking - X or Y with nothing in between). 'Resists simplistic binary interpretations' - a key phrase in poststructuralist and literary criticism.",
+            "textToSpeak": "Her nuanced reading resists simplistic binary interpretations.",
+            "options": [
+                "His nuanced reading resists simplistic binary interpretations.",
+                "Her nuanced reading resists simplistic binary interpretations.",
+                "Her nuanced analysis resists simplistic binary interpretations.",
+                "Her careful reading resists simplistic binary interpretations."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L145_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero validates the system expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'incremental'/'gradual', 'reform'/'change', and 'may'/'might'.",
+            "explanation": "'Incremental' (small steps - systematic, planned) vs 'gradual' (slow, step by step - less systematic). 'Reform' (improvement within the system) vs 'change' (any alteration - 'reform' implies the status quo is flawed). 'May be' and 'might be' - both express possibility, 'may' slightly more formal. Policy and social change discourse - important for understanding political debates.",
+            "textToSpeak": "Incremental reform may be insufficient given the scale of the challenge.",
             "options": [
-                "The explorer validates the portal instantly.",
-                "The engineer secures the system silently.",
-                "The expert sends the archive properly.",
-                "The hero validates the system expertly."
+                "Incremental reform may be insufficient given the scale of the challenge.",
+                "Incremental change may be insufficient given the scale of the challenge.",
+                "Incremental reform might be insufficient given the scale of the challenge.",
+                "Gradual reform may be insufficient given the scale of the challenge."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L146_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander sends the archive consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'rhetoric'/'language', 'progress'/'development', and 'often'/'can'.",
+            "explanation": "'Rhetoric' (persuasive language - often implies it's more performance than substance) vs 'language' (neutral). 'Progress' (movement forward - a modern concept) vs 'development' (improvement - also forward-looking but broader). 'Often obscures' (frequently hides - habitual claim) vs 'can obscure' (is capable of hiding - possibility claim). Critical theory vocabulary essential for advanced academic English.",
+            "textToSpeak": "The rhetoric of progress often obscures underlying inequalities.",
             "options": [
-                "The mentor creates the engine swiftly.",
-                "The researcher monitors the network steadily.",
-                "The scout repairs the system efficiently.",
-                "The commander sends the archive consistently."
+                "The language of progress often obscures underlying inequalities.",
+                "The rhetoric of development often obscures underlying inequalities.",
+                "The rhetoric of progress often obscures underlying inequalities.",
+                "The rhetoric of progress can obscure underlying inequalities."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L146_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher builds the terminal efficiently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', and 'interrogates'/'questions'/'examines'.",
+            "explanation": "'Interrogates' (critically questions using theory - very active academic term, implies systematic probing) vs 'questions' (raises doubt about - less intensive) vs 'examines' (looks closely at - most neutral). 'Embedded' (built into, hidden within). 'She' vs 'he'. Literary and cultural studies vocabulary - 'interrogate a text' is standard academic English in humanities.",
+            "textToSpeak": "She interrogates the assumptions embedded in the text.",
             "options": [
-                "The mentor builds the software expertly.",
-                "The hero repairs the sensor successfully.",
-                "The scout analyzes the chip successfully.",
-                "The researcher builds the terminal efficiently."
+                "He interrogates the assumptions embedded in the text.",
+                "She questions the assumptions embedded in the text.",
+                "She interrogates the assumptions embedded in the text.",
+                "She examines the assumptions embedded in the text."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L146_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher analyzes the engine reliably.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'interplay'/'relationship'/'tension' and 'is'/'remains'.",
+            "explanation": "'Interplay' (mutual or reciprocal influence - implies dynamic interaction, neither fully dominant) vs 'relationship' (broader connection) vs 'tension' (implies strain between the two). 'Structure and agency' - one of the most important theoretical debates in sociology: to what extent do social structures determine behaviour vs individual agency. Advanced social theory vocabulary.",
+            "textToSpeak": "The interplay between structure and agency is a central concern.",
             "options": [
-                "The teacher monitors the portal silently.",
-                "The detective transfers the circuit steadily.",
-                "The artist creates the signal rapidly.",
-                "The researcher analyzes the engine reliably."
+                "The relationship between structure and agency is a central concern.",
+                "The tension between structure and agency is a central concern.",
+                "The interplay between structure and agency remains a central concern.",
+                "The interplay between structure and agency is a central concern."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -276,164 +294,175 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L147_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician transfers the code automatically.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'hegemonic'/'dominant', 'narratives'/'stories', and 'tend to'/'often'.",
+            "explanation": "'Hegemonic' (relating to hegemony - dominance of one group over others, often through consent not force - Gramscian term) vs 'dominant' (more general - simply the most powerful). 'Narratives' (structured accounts that shape understanding - more analytical) vs 'stories' (informal - less theoretical). 'Tend to' (general pattern) vs 'often' (frequent - less analytical). Critical theory vocabulary.",
+            "textToSpeak": "Hegemonic narratives tend to marginalise alternative perspectives.",
             "options": [
-                "The technician restores the engine instantly.",
-                "The expert monitors the sensor precisely.",
-                "The analyst activates the portal consistently.",
-                "The technician transfers the code automatically."
+                "Dominant narratives tend to marginalise alternative perspectives.",
+                "Hegemonic stories tend to marginalise alternative perspectives.",
+                "Hegemonic narratives tend to marginalise alternative perspectives.",
+                "Hegemonic narratives often marginalise alternative perspectives."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L147_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The droid validates the circuit rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'her'/'his', 'work'/'research', and 'synthesises'/'combines'.",
+            "explanation": "'Synthesises' (brings together into a coherent, integrated whole - implies active intellectual work creating something new) vs 'combines' (puts together - less creative). 'Work' (body of scholarship - broad) vs 'research' (more specific to empirical investigation). 'Postcolonial theory' (critiques of colonialism and its legacies) + 'feminist theory' - intersectional academic framework vocabulary.",
+            "textToSpeak": "Her work synthesises postcolonial and feminist theory.",
             "options": [
-                "The traveler locates the data rapidly.",
-                "The detective creates the network instantly.",
-                "The hacker activates the circuit carefully.",
-                "The droid validates the circuit rapidly."
+                "His work synthesises postcolonial and feminist theory.",
+                "Her research synthesises postcolonial and feminist theory.",
+                "Her work synthesises postcolonial and feminist theory.",
+                "Her work combines postcolonial and feminist theory."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L147_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor creates the portal immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'empirical'/'research', 'evidence'/'data', and 'remains'/'had remained'.",
+            "explanation": "'Empirical evidence' (based on observation and experiment) vs 'research evidence' (broader - could include theoretical). 'Evidence' (anything supporting a claim) vs 'data' (raw measurements/observations). 'Remains inconclusive' (still undecided - present) vs 'had remained inconclusive' (was undecided up to a point in the past). Scientific epistemology vocabulary.",
+            "textToSpeak": "The empirical evidence remains inconclusive on this point.",
             "options": [
-                "The mentor creates the portal immediately.",
-                "The hacker launches the portal successfully.",
-                "The pilot encrypts the sensor directly.",
-                "The pilot encrypts the module rapidly."
+                "The research evidence remains inconclusive on this point.",
+                "The empirical data remains inconclusive on this point.",
+                "The empirical evidence remains inconclusive on this point.",
+                "The empirical evidence had remained inconclusive on this point."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L148_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot observes the drone swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', and 'foregrounds'/'emphasises'/'highlights'.",
+            "explanation": "'Foregrounds' (brings to the front - a metaphor from art, making something the main focus) vs 'emphasises' (stresses the importance of) vs 'highlights' (draws attention to - more visual). In critical and postcolonial theory, 'foregrounding marginalised voices' is a specific methodological and political stance. Advanced humanities vocabulary.",
+            "textToSpeak": "She foregrounds the voices of those traditionally excluded.",
             "options": [
-                "The pilot observes the drone swiftly.",
-                "The technician transfers the software steadily.",
-                "The detective creates the device effectively.",
-                "The droid repairs the satellite successfully."
+                "He foregrounds the voices of those traditionally excluded.",
+                "She emphasises the voices of those traditionally excluded.",
+                "She highlights the voices of those traditionally excluded.",
+                "She foregrounds the voices of those traditionally excluded."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L148_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler monitors the database automatically.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'normative'/'ethical', 'underpinning'/'underlying', and 'decisions'/'choices'.",
+            "explanation": "'Normative' (relating to norms/standards of what should be - prescriptive) vs 'ethical' (relating to moral principles). 'Underpinning' (supporting from below - vivid) vs 'underlying' (lying beneath - near-synonym). 'Decisions' (choices made in a formal process) vs 'choices' (more general). 'Contested' - a key academic term meaning widely disputed. Policy theory vocabulary.",
+            "textToSpeak": "The normative framework underpinning policy decisions is contested.",
             "options": [
-                "The commander scans the satellite consistently.",
-                "The hero observes the node precisely.",
-                "The hacker launches the code reliably.",
-                "The traveler monitors the database automatically."
+                "The normative framework underpinning policy decisions is contested.",
+                "The normative framework underlying policy decisions is contested.",
+                "The normative framework underpinning policy choices is contested.",
+                "The ethical framework underpinning policy decisions is contested."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L148_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero measures the module successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'reductive'/'simplistic', 'interpretations'/'analyses', and 'fail to'/'cannot'.",
+            "explanation": "'Reductive' (oversimplifying by reducing to fewer elements than the complexity warrants - more analytical criticism) vs 'simplistic' (naively simple - more pejorative). 'Interpretations' (readings of meaning) vs 'analyses' (systematic examinations). 'Fail to' (do not succeed in - implies an attempt was made) vs 'cannot' (are unable to - stronger impossibility). Critical methodology vocabulary.",
+            "textToSpeak": "Reductive interpretations fail to capture the complexity of the issue.",
             "options": [
-                "The hero measures the module successfully.",
-                "The hero monitors the protocol immediately.",
-                "The researcher updates the module expertly.",
-                "The artist monitors the terminal carefully."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L149_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout measures the device precisely.",
-            "options": [
-                "The scout measures the device precisely.",
-                "The technician measures the engine silently.",
-                "The engineer locates the drone immediately.",
-                "The analyst analyzes the portal securely."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L149_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero scans the system expertly.",
-            "options": [
-                "The engineer measures the device reliably.",
-                "The artist scans the system steadily.",
-                "The technician encrypts the terminal quietly.",
-                "The hero scans the system expertly."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L149_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander secures the protocol quietly.",
-            "options": [
-                "The artist locates the signal successfully.",
-                "The commander secures the protocol quietly.",
-                "The hero deploys the module steadily.",
-                "The student observes the archive automatically."
+                "Simplistic interpretations fail to capture the complexity of the issue.",
+                "Reductive interpretations fail to capture the complexity of the issue.",
+                "Reductive interpretations cannot capture the complexity of the issue.",
+                "Reductive analyses fail to capture the complexity of the issue."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L150_Q1",
+            "id": "LIS_FASTSPEECHDECODER_L149_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student encrypts the device directly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'dialectical'/'internal', 'tension'/'conflict', and 'within'/'in'.",
+            "explanation": "'Dialectical' (relating to dialectics - the tension between opposing forces that drives change; Hegelian/Marxist term) vs 'internal' (simply inside - not theoretical). 'Tension' (opposing forces in equilibrium) vs 'conflict' (active clash). 'Within the text' (deep inside) vs 'in the text' (simply located there). Advanced critical theory and literary analysis vocabulary.",
+            "textToSpeak": "The dialectical tension within the text resists easy resolution.",
             "options": [
-                "The student encrypts the device directly.",
-                "The hacker activates the terminal consistently.",
-                "The detective transfers the data silently.",
-                "The mentor transfers the node swiftly."
+                "The internal tension within the text resists easy resolution.",
+                "The dialectical tension within the text resists easy resolution.",
+                "The dialectical tension in the text resists easy resolution.",
+                "The dialectical conflict within the text resists easy resolution."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L149_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'ontological'/'philosophical', 'status'/'nature', and 'entity'/'concept'.",
+            "explanation": "'Ontological status' (the question of what kind of being something is - does it exist, and in what mode?) vs 'philosophical status' (more vague). 'Entity' (a thing with distinct existence - more specific) vs 'concept' (an abstract idea). 'Contentious' (causing disagreement) - 'philosophically contentious' is a precise academic qualifier. Metaphysics and philosophy of science vocabulary.",
+            "textToSpeak": "The ontological status of the entity remains philosophically contentious.",
+            "options": [
+                "The ontological status of the entity remains philosophically contentious.",
+                "The ontological nature of the entity remains philosophically contentious.",
+                "The ontological status of the concept remains philosophically contentious.",
+                "The philosophical status of the entity remains contentious."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L149_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'her'/'his', 'argument'/'theory', and 'rests on'/'is built on'.",
+            "explanation": "'Rests on' (depends on, is supported by - the foundation imagery) vs 'is built on' (constructed upon - similar but more active-build metaphor). 'Argument' vs 'theory'. 'Logical scaffolding' - a sophisticated metaphor for the supporting structure of reasoning: temporary but necessary for construction. Advanced philosophical and analytical discourse vocabulary.",
+            "textToSpeak": "Her argument rests on a carefully constructed logical scaffolding.",
+            "options": [
+                "His argument rests on a carefully constructed logical scaffolding.",
+                "Her theory rests on a carefully constructed logical scaffolding.",
+                "Her argument rests on a carefully constructed logical scaffolding.",
+                "Her argument is built on a carefully constructed logical scaffolding."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L150_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'critique'/'analysis', 'post-structuralist'/'structuralist', and 'destabilises'/'challenges'.",
+            "explanation": "'Post-structuralist' (after and critical of structuralism - Derrida, Foucault etc.) vs 'structuralist' (an earlier movement seeing language as a system of differences). 'Destabilises' (undermines the stability of - more radical) vs 'challenges' (questions - less radical). 'Fixed notions of meaning' - the post-structuralist target: stable, determinate meanings. Advanced literary and cultural theory.",
+            "textToSpeak": "The post-structuralist critique destabilises fixed notions of meaning.",
+            "options": [
+                "The post-structuralist analysis destabilises fixed notions of meaning.",
+                "The structuralist critique destabilises fixed notions of meaning.",
+                "The post-structuralist critique destabilises fixed notions of meaning.",
+                "The post-structuralist critique challenges fixed notions of meaning."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L150_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer launches the engine expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'provides'/'offers', 'nuanced'/'clearer'/'complex', and the framing.",
+            "explanation": "'Provides' (gives/supplies) vs 'offers' (makes available - near-synonyms, 'offers' slightly more tentative). 'Nuanced' (sensitive to fine distinctions) vs 'clearer' (more transparent - different quality) vs 'complex' (complicated - not necessarily better). 'Intersectionality' (Kimberlé Crenshaw's term: how race, gender, class etc. intersect) is foundational vocabulary for advanced social justice and critical theory.",
+            "textToSpeak": "Intersectionality provides a more nuanced lens for analysis.",
             "options": [
-                "The technician encrypts the portal silently.",
-                "The engineer launches the engine expertly.",
-                "The scout evaluates the engine properly.",
-                "The technician sends the data effectively."
+                "Intersectionality offers a more nuanced lens for analysis.",
+                "Intersectionality provides a more nuanced lens for analysis.",
+                "Intersectionality provides a more complex lens for analysis.",
+                "Intersectionality provides a clearer lens for analysis."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -441,14 +470,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L150_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot scans the sensor successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'author'/'writer'/'scholar' and 'deconstructs'/'dismantles'.",
+            "explanation": "'Author' (general term for who wrote the text) vs 'writer' (same but less formal) vs 'scholar' (an academic - implies this is an analytical work, not creative). 'Deconstructs' (applies Derridean deconstruction - revealing how binary oppositions are unstable) vs 'dismantles' (breaks apart - less philosophically specific). 'Binary oppositions' (pairs like presence/absence, inside/outside) - core Derridean vocabulary.",
+            "textToSpeak": "The author deconstructs the binary oppositions within the text.",
             "options": [
-                "The engineer sends the data automatically.",
-                "The commander encrypts the engine carefully.",
-                "The explorer creates the sensor securely.",
-                "The pilot scans the sensor successfully."
+                "The writer deconstructs the binary oppositions within the text.",
+                "The scholar deconstructs the binary oppositions within the text.",
+                "The author dismantles the binary oppositions within the text.",
+                "The author deconstructs the binary oppositions within the text."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"

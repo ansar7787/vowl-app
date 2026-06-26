@@ -6,44 +6,47 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L21_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot activates the signal smoothly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'he's'/'she's', the activity, and 'been waiting'/'been working'.",
+            "explanation": "'He's been waiting' uses the present perfect continuous - he started waiting and is still waiting now. 'He'd been waiting' uses the past perfect - he had already been waiting (before something else happened). 'Waiting' and 'working' - different activities. This is common in complaints and everyday stories.",
+            "textToSpeak": "He's been waiting for over an hour.",
             "options": [
-                "The pilot activates the signal smoothly.",
-                "The student measures the satellite immediately.",
-                "The hacker repairs the archive quietly.",
-                "The detective analyzes the code consistently."
+                "She's been waiting for over an hour.",
+                "He's been working for over an hour.",
+                "He's been waiting for over an hour.",
+                "He'd been waiting for over an hour."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L21_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout builds the module reliably.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the temperature comparison and the comparison word ('today'/'yesterday').",
+            "explanation": "'Cold' and 'warm' are opposites in weather talk. 'It's not as cold as it was' - comparative structure. 'Yesterday' vs 'today' - changes the comparison time. 'It wasn't' (past negative) vs 'it's not' (present negative). Weather comparisons are extremely common everyday English.",
+            "textToSpeak": "It's not as cold as it was yesterday.",
             "options": [
-                "The mentor deploys the engine swiftly.",
-                "The scout builds the module reliably.",
-                "The hacker validates the satellite rapidly.",
-                "The droid monitors the node steadily."
+                "It's not as warm as it was yesterday.",
+                "It wasn't as cold as it was yesterday.",
+                "It's not as cold as it was yesterday.",
+                "It's not as cold as it is today."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L21_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot launches the network steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch 'they're'/'we're', the activity, and 'next week'.",
+            "explanation": "'They're going to' is 'going to' future - a very common spoken English structure for plans. 'They're' vs 'we're' - both contractions but different subjects. 'Visit' vs 'call' - in person vs by phone. 'They'd go' is conditional. Future plans language is essential conversational English.",
+            "textToSpeak": "They're going to visit their parents next week.",
             "options": [
-                "The artist builds the node properly.",
-                "The hacker launches the signal reliably.",
-                "The teacher restores the drone silently.",
-                "The pilot launches the network steadily."
+                "We're going to visit our parents next week.",
+                "They're going to call their parents next week.",
+                "They'd go to visit their parents next week.",
+                "They're going to visit their parents next week."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -51,89 +54,95 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L22_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer observes the protocol quietly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice the subject and what they're looking forward to.",
+            "explanation": "'I'm looking forward to' - a very important English expression for anticipating something positive. 'Looking forward to' vs 'looking back at' - completely different phrases (anticipating vs remembering). 'Weekend' vs 'holiday' - what you're excited about. This phrase is used constantly in spoken English.",
+            "textToSpeak": "I'm really looking forward to the weekend.",
             "options": [
-                "The expert evaluates the software consistently.",
-                "The hacker creates the software quietly.",
-                "The engineer measures the network securely.",
-                "The explorer observes the protocol quietly."
+                "I'm really looking forward to the weekend.",
+                "I'm really looking forward to the holiday.",
+                "I'm really looking back at the weekend.",
+                "He's really looking forward to the weekend."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L22_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher validates the module rapidly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the subject, 'say'/'do', and 'him'/'her'.",
+            "explanation": "'Doesn't know' (present) vs 'didn't know' (past). 'Say to him' vs 'do about him' - very different situations. 'She' vs 'he' (and correspondingly 'him' vs 'her'). Describing someone's emotional uncertainty is common in storytelling and gossip in English.",
+            "textToSpeak": "She doesn't know what to say to him.",
             "options": [
-                "The teacher validates the module rapidly.",
-                "The scout sends the engine efficiently.",
-                "The droid updates the archive properly.",
-                "The robot updates the drone effectively."
+                "He doesn't know what to say to her.",
+                "She doesn't know what to say to him.",
+                "She didn't know what to say to him.",
+                "She doesn't know what to do about him."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L22_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician transfers the module properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch 'we've'/'they've', the decision ('move'/'sell'), and the tense.",
+            "explanation": "'We've decided' uses the present perfect - a recent decision. 'We'd decided' is past perfect - decided before something else. 'Move to' vs 'sell' - completely different actions regarding a home. Housing decisions language is very relevant for adult learners.",
+            "textToSpeak": "We've decided to move to a bigger place.",
             "options": [
-                "The engineer restores the signal consistently.",
-                "The technician transfers the module properly.",
-                "The scout deploys the signal silently.",
-                "The analyst sends the terminal reliably."
+                "They've decided to move to a bigger place.",
+                "We've decided to sell the bigger place.",
+                "We've decided to move to a bigger place.",
+                "We'd decided to move to a bigger place."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L23_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert encrypts the system directly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the subject, whether they bought or sold, and the phone condition.",
+            "explanation": "'Bought' (past of 'buy') and 'sold' (past of 'sell') - opposite financial actions. 'New' vs 'old' - condition of the phone. 'He' vs 'she' - subject. Past tense irregular verbs like 'bought' and 'sold' are essential for describing events that happened.",
+            "textToSpeak": "He bought a new phone last Friday.",
             "options": [
-                "The expert encrypts the system directly.",
-                "The commander launches the signal carefully.",
-                "The technician measures the engine expertly.",
-                "The technician measures the portal securely."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L23_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker validates the portal successfully.",
-            "options": [
-                "The analyst activates the protocol consistently.",
-                "The hacker validates the portal successfully.",
-                "The engineer locates the satellite efficiently.",
-                "The researcher evaluates the node effectively."
+                "She bought a new phone last Friday.",
+                "He bought a new phone last Friday.",
+                "He bought an old phone last Friday.",
+                "He sold a new phone last Friday."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L23_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice the subject, the entertainment venue, and the direction of movement.",
+            "explanation": "'Cinema' and 'theatre' - both entertainment venues. 'Went to' (moving towards) vs 'came from' (moving away from) - directional opposites. 'They' vs 'we' - subject pronouns. Past tense social activities language is core conversational English.",
+            "textToSpeak": "They went to the cinema on Saturday.",
+            "options": [
+                "They went to the cinema on Saturday.",
+                "They went to the theatre on Saturday.",
+                "They came from the cinema on Saturday.",
+                "We went to the cinema on Saturday."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L23_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout deploys the system smoothly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the subject, the verb ('told'/'showed'), and the indirect object ('me'/'you').",
+            "explanation": "'Told' (conveyed verbally) vs 'showed' (demonstrated or displayed) - different ways of communicating information. 'She' vs 'he' - subject. 'Me' vs 'you' - the difference between the speaker receiving information and addressing someone else. Past tense reporting verbs are essential grammar.",
+            "textToSpeak": "She told me the news this morning.",
             "options": [
-                "The scout deploys the system smoothly.",
-                "The robot measures the protocol steadily.",
-                "The artist updates the satellite smoothly.",
-                "The droid activates the module instantly."
+                "She told me the news this morning.",
+                "She showed me the news this morning.",
+                "She told you the news this morning.",
+                "He told me the news this morning."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -141,74 +150,79 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L24_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero validates the chip successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the tense ('does'/'did'/'will') and whether it's a 'show' or 'film'.",
+            "explanation": "'Does start' (present/habitual), 'did start' (past), 'will start' (future) - three different tenses using the same question structure. 'Show' and 'film' - both entertainment content. Asking about entertainment times is very common in daily life.",
+            "textToSpeak": "What time does the show start tonight?",
             "options": [
-                "The hero validates the chip successfully.",
-                "The analyst analyzes the module precisely.",
-                "The technician measures the portal steadily.",
-                "The commander measures the node expertly."
+                "What time did the show start tonight?",
+                "What time will the show start tonight?",
+                "What time does the show start tonight?",
+                "What time does the film start tonight?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L24_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot locates the network reliably.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice the question type: negative question vs positive question, and tense.",
+            "explanation": "'Haven't you seen' is a negative question suggesting surprise (implying you should have seen it). 'Have you seen' is a neutral question. 'Didn't you see' uses simple past. Negative questions in English express surprise or seek confirmation - very common in conversation.",
+            "textToSpeak": "Haven't you seen this movie before?",
             "options": [
-                "The pilot locates the network reliably.",
-                "The explorer restores the protocol properly.",
-                "The hacker validates the module automatically.",
-                "The detective restores the drone reliably."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L24_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander evaluates the database effectively.",
-            "options": [
-                "The robot measures the circuit steadily.",
-                "The commander evaluates the database effectively.",
-                "The researcher creates the database steadily.",
-                "The engineer creates the network effectively."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L25_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist deploys the sensor swiftly.",
-            "options": [
-                "The pilot measures the circuit smoothly.",
-                "The teacher analyzes the satellite directly.",
-                "The hacker locates the software precisely.",
-                "The scientist deploys the sensor swiftly."
+                "Didn't you see this movie before?",
+                "Have you seen this movie before?",
+                "Haven't she seen this movie before?",
+                "Haven't you seen this movie before?"
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L24_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen carefully: 'where'/'when', 'did you'/'have you', and 'you'/'she'.",
+            "explanation": "'Where did you put' (simple past - a specific moment) vs 'where have you put' (present perfect - the result matters now). 'When did you put' asks about time, not place. 'You' vs 'she' - who is being blamed for moving the glasses! Common in everyday domestic conversations.",
+            "textToSpeak": "Where did you put my glasses?",
+            "options": [
+                "Where have you put my glasses?",
+                "When did you put my glasses?",
+                "Where did she put my glasses?",
+                "Where did you put my glasses?"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L25_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the tense ('was'/'is') and the price fraction ('half'/'twice').",
+            "explanation": "'Half' (50% of the price) vs 'twice' (200% - double!) - a huge difference! 'Was on sale' (past) vs 'is on sale' (present). 'On sale' vs 'on offer' - 'on offer' is also used in British English but is slightly different. Shopping discount language is essential practical English.",
+            "textToSpeak": "It was on sale for half the price.",
+            "options": [
+                "It is on sale for half the price.",
+                "It was on sale for twice the price.",
+                "It was on sale for half the price.",
+                "It was on offer for half the price."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L25_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher scans the engine immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'can'/'could', who is asking, and 'refund'/'receipt'.",
+            "explanation": "'Can I' (informal request) vs 'could I' (more formal/polite). 'Refund' (money back) vs 'receipt' (proof of purchase) - very different things to ask for at customer service. 'I' vs 'she' - who is asking. Consumer English for returns and complaints is very practical.",
+            "textToSpeak": "Can I get a refund for this item?",
             "options": [
-                "The researcher scans the engine immediately.",
-                "The mentor restores the device properly.",
-                "The droid scans the chip reliably.",
-                "The mentor activates the data precisely."
+                "Can I get a refund for this item?",
+                "Can she get a refund for this item?",
+                "Can I get a receipt for this item?",
+                "Could I get a refund for this item?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -216,44 +230,47 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L25_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The detective restores the module instantly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch the subject, payment method, and frequency word ('only'/'rarely').",
+            "explanation": "'Cash' vs 'cards' - important payment method vocabulary. 'Only' (exclusively) vs 'rarely' (almost never) - very different meanings. 'They only accept cash' is very common in shops - essential practical English. The difference between cash and card policies is critical for real shopping.",
+            "textToSpeak": "They only accept cash at this store.",
             "options": [
-                "The explorer measures the terminal rapidly.",
-                "The detective restores the module instantly.",
-                "The pilot secures the module smoothly.",
-                "The scientist monitors the archive carefully."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L26_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student builds the archive reliably.",
-            "options": [
-                "The student builds the archive reliably.",
-                "The robot sends the data rapidly.",
-                "The commander measures the engine automatically.",
-                "The mentor launches the signal rapidly."
+                "They only accept cash at this store.",
+                "They only accept cards at this store.",
+                "They rarely accept cash at this store.",
+                "We only accept cash at this store."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L26_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for who is ordering, the type of soup, or if it's soup vs salad.",
+            "explanation": "'Chicken soup' vs 'tomato soup' - different flavours. 'Soup' vs 'salad' - very different dishes. 'I'll have' vs 'she'll have' - who is ordering. Restaurant ordering language is immediately practical - you'll use it every time you eat out in an English-speaking country.",
+            "textToSpeak": "I'll have the chicken soup to start.",
+            "options": [
+                "She'll have the chicken soup to start.",
+                "I'll have the tomato soup to start.",
+                "I'll have the chicken salad to start.",
+                "I'll have the chicken soup to start."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L26_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout restores the code smoothly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on the modal, what's being requested ('bill'/'menu'), and who wants it.",
+            "explanation": "'The bill' (payment) vs 'the menu' (food choices) - very different things to request at a restaurant. 'Can' vs 'could' - both polite but 'could' is more formal. 'We' vs 'he' - who is asking. 'Can we get the bill' is one of the most used phrases in English restaurants.",
+            "textToSpeak": "Can we get the bill when you're ready?",
             "options": [
-                "The artist sends the network instantly.",
-                "The scout locates the satellite automatically.",
-                "The researcher sends the module immediately.",
-                "The scout restores the code smoothly."
+                "Could we get the bill when you're ready?",
+                "Can we see the menu when you're ready?",
+                "Can he get the bill when he's ready?",
+                "Can we get the bill when you're ready?"
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -261,104 +278,111 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L26_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist monitors the satellite consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for 'without'/'with', the food restriction, and the tense.",
+            "explanation": "'Without meat' (vegetarian request) vs 'with fish' - opposite dietary considerations. 'Is there anything' (singular, present) vs 'are there things' (slightly more colloquial but grammatically different). 'Was there' - past tense. Dietary restriction vocabulary is essential for eating out.",
+            "textToSpeak": "Is there anything without meat on the menu?",
             "options": [
-                "The scientist updates the terminal properly.",
-                "The engineer sends the circuit carefully.",
-                "The teacher evaluates the device steadily.",
-                "The artist monitors the satellite consistently."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L27_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist repairs the terminal silently.",
-            "options": [
-                "The scientist repairs the terminal silently.",
-                "The student builds the node smoothly.",
-                "The researcher analyzes the signal swiftly.",
-                "The student transfers the terminal carefully."
+                "Is there anything without meat on the menu?",
+                "Are there things without meat on the menu?",
+                "Was there anything without meat on the menu?",
+                "Is there anything with fish on the menu?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L27_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'this morning'/'this afternoon', tense, and 'exam'/'test'.",
+            "explanation": "'Exam results' and 'test results' - 'exams' are usually more formal/important than 'tests'. 'Came out this morning' (past - already happened) vs 'come out this morning' (present - happening now). 'Morning' vs 'afternoon' - different times of day. Academic results language is very relevant for students.",
+            "textToSpeak": "The exam results came out this morning.",
+            "options": [
+                "The exam results came out this afternoon.",
+                "The exam results come out this morning.",
+                "The test results came out this morning.",
+                "The exam results came out this morning."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L27_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician measures the database expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the subject, 'project'/'assignment', and 'have'/'had'.",
+            "explanation": "'Project' and 'assignment' are both school tasks - often used interchangeably but 'project' implies more extended work. 'Have' (upcoming deadline) vs 'had' (past deadline). 'We' vs 'she' - subject change. Academic deadline language is essential for students.",
+            "textToSpeak": "We have a project due by Friday.",
             "options": [
-                "The droid analyzes the archive instantly.",
-                "The commander validates the signal immediately.",
-                "The commander observes the data properly.",
-                "The technician measures the database expertly."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L27_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The droid launches the drone efficiently.",
-            "options": [
-                "The pilot locates the software precisely.",
-                "The teacher deploys the module efficiently.",
-                "The researcher restores the system effectively.",
-                "The droid launches the drone efficiently."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L28_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The traveler launches the sensor silently.",
-            "options": [
-                "The engineer locates the device quietly.",
-                "The explorer evaluates the portal instantly.",
-                "The artist activates the protocol immediately.",
-                "The traveler launches the sensor silently."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L28_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The droid sends the engine precisely.",
-            "options": [
-                "The analyst sends the satellite instantly.",
-                "The researcher creates the code efficiently.",
-                "The droid sends the engine precisely.",
-                "The student evaluates the engine reliably."
+                "She has a project due by Friday.",
+                "We have an assignment due by Friday.",
+                "We have a project due by Friday.",
+                "We had a project due by Friday."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L27_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Three things: subject, mark quality ('top'/'low'), and subject area.",
+            "explanation": "'Top marks' (excellent results) vs 'low marks' (poor results) - opposite outcomes. 'Math' vs 'science' - different school subjects. 'She' vs 'he' - subject pronoun. Discussing academic performance is very common - both for students and parents.",
+            "textToSpeak": "She got top marks in her math test.",
+            "options": [
+                "She got top marks in her math test.",
+                "She got low marks in her math test.",
+                "She got top marks in her science test.",
+                "He got top marks in his math test."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L28_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch the family members, tense ('are coming'/'went'), and the meal.",
+            "explanation": "'Aunt and uncle' vs 'mum and dad' - different family relationships. 'Are coming to dinner' (future - they will arrive) vs 'went to dinner' (past - they already ate). 'Dinner' vs 'lunch' - different meals. Family gathering language is very common in everyday English.",
+            "textToSpeak": "My aunt and uncle are coming to dinner.",
+            "options": [
+                "My mum and dad are coming to dinner.",
+                "My aunt and uncle are coming to dinner.",
+                "My aunt and uncle are coming to lunch.",
+                "My aunt and uncle went to dinner."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L28_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the possessive, 'younger'/'older', and 'brother'/'sister'.",
+            "explanation": "'Her' vs 'his' - possessive pronouns. 'Younger' vs 'older' - completely different ages. 'Brother' vs 'sister' - different genders. 'Just started' uses the present perfect with 'just' - indicating a very recent event. Family news language is a core part of everyday English conversation.",
+            "textToSpeak": "Her younger brother just started university.",
+            "options": [
+                "His younger brother just started university.",
+                "Her older brother just started university.",
+                "Her younger sister just started university.",
+                "Her younger brother just started university."
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L28_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert measures the network securely.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'we're'/'they're', the occasion, and 'are'/'were' (tense).",
+            "explanation": "'We're all getting together' - the contraction 'we're' and the inclusive 'all' are common in family speech. 'Christmas' vs 'Easter' - different holidays. 'We're getting together' (plan/future) vs 'we were getting together' (past plan). Holiday and family gathering language is extremely common.",
+            "textToSpeak": "We're all getting together for Christmas.",
             "options": [
-                "The expert measures the network securely.",
-                "The teacher validates the signal expertly.",
-                "The pilot creates the software carefully.",
-                "The droid sends the device silently."
+                "We're all getting together for Christmas.",
+                "We're all getting together for Easter.",
+                "We were all getting together for Christmas.",
+                "They're all getting together for Christmas."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -366,29 +390,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L29_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The detective restores the software properly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for the subject, the emotion, and 'next month'/'last month'.",
+            "explanation": "'Excited' and 'nervous' - two emotions that often go together before a big event, but with very different meanings. 'I'm so excited' (present - ongoing feeling) vs 'I was so excited' (past). 'I'm' vs 'he's' - subject. Expressing enthusiasm is an essential social skill in English.",
+            "textToSpeak": "I'm so excited about the trip next month.",
             "options": [
-                "The expert validates the portal precisely.",
-                "The student repairs the engine swiftly.",
-                "The detective restores the software properly.",
-                "The analyst creates the code directly."
+                "He's so excited about the trip next month.",
+                "I'm so nervous about the trip next month.",
+                "I was so excited about the trip next month.",
+                "I'm so excited about the trip next month."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L29_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician locates the engine immediately.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on subject, the emotion, and tense ('felt'/'feels').",
+            "explanation": "'Upset' (negative emotion) vs 'happy' (positive emotion) - completely different emotional responses. 'Felt/heard' (past - specific event) vs 'feels/hears' (present habit - general pattern). 'She' vs 'he'. Emotional reactions to news are very common in storytelling.",
+            "textToSpeak": "She felt really upset when she heard the news.",
             "options": [
-                "The technician locates the engine immediately.",
-                "The engineer locates the database swiftly.",
-                "The explorer secures the node smoothly.",
-                "The scout locates the signal precisely."
+                "She felt really upset when she heard the news.",
+                "She felt really happy when she heard the news.",
+                "She feels really upset when she hears the news.",
+                "He felt really upset when he heard the news."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -396,14 +422,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L29_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scientist scans the signal consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'we'/'they', the emotion word, and the tense ('were'/'are').",
+            "explanation": "'Surprised' and 'shocked' - both responses to unexpected news, but 'shocked' is stronger/more negative. 'Were' (past) vs 'are' (present). 'We' vs 'they'. Expressing reactions to events using passive constructions ('surprised BY') is important English grammar.",
+            "textToSpeak": "We were really surprised by the result.",
             "options": [
-                "The expert launches the module precisely.",
-                "The scientist scans the signal consistently.",
-                "The technician encrypts the archive directly.",
-                "The engineer builds the system carefully."
+                "They were really surprised by the result.",
+                "We were really surprised by the result.",
+                "We are really surprised by the result.",
+                "We were really shocked by the result."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -411,14 +438,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L30_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer creates the data successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'I'/'she', 'leave'/'arrive', and 'usually'/'often'.",
+            "explanation": "'Leave work' vs 'arrive at work' - completely opposite. 'Usually' and 'often' are both frequency adverbs but 'usually' implies slightly more regularly. 'I usually leave' vs 'she usually leaves' - third person 's'. Daily schedule language is essential for describing your routine.",
+            "textToSpeak": "I usually leave work at around six.",
             "options": [
-                "The robot validates the protocol rapidly.",
-                "The engineer creates the data successfully.",
-                "The technician analyzes the node successfully.",
-                "The scientist scans the sensor steadily."
+                "She usually leaves work at around six.",
+                "I usually leave work at around six.",
+                "I often leave work at around six.",
+                "I usually arrive at work at around six."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -426,29 +454,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L30_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer validates the engine consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Catch the subject, the fitness activity location, and the tense.",
+            "explanation": "'Gym' and 'pool' - both fitness venues. 'Goes' (present habit) vs 'went' (past). 'He' vs 'she'. 'Three times a week' is a very natural frequency expression. Fitness and health routines are a major topic in everyday English conversation.",
+            "textToSpeak": "He goes to the gym three times a week.",
             "options": [
-                "The scout validates the drone carefully.",
-                "The engineer validates the engine consistently.",
-                "The hacker encrypts the system efficiently.",
-                "The detective launches the circuit smoothly."
+                "She goes to the gym three times a week.",
+                "He goes to the pool three times a week.",
+                "He went to the gym three times a week.",
+                "He goes to the gym three times a week."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L30_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert restores the portal carefully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Listen for subject, frequency word, and 'late'/'early'.",
+            "explanation": "'Generally' and 'usually' are both frequency adverbs with nearly the same meaning, but 'generally' sounds slightly more formal. 'Late' and 'early' - opposite. 'We' vs 'they'. Talking about meal time habits is very common in social English, especially when meeting people from different cultures.",
+            "textToSpeak": "We generally have dinner quite late.",
             "options": [
-                "The expert transfers the signal directly.",
-                "The hero encrypts the database carefully.",
-                "The expert restores the portal carefully.",
-                "The droid observes the module silently."
+                "They generally have dinner quite late.",
+                "We usually have dinner quite late.",
+                "We generally have dinner quite late.",
+                "We generally have dinner quite early."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"

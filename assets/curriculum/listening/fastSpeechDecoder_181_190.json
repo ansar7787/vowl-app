@@ -6,59 +6,63 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L181_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor sends the archive expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Expert level: distinguish 'antinomy'/'contradiction', 'practical'/'pure' reason, and 'deterministic'/'mechanistic'.",
+            "explanation": "'Antinomy' (Kantian term: a conflict of two equally valid and rational principles - not a simple contradiction but a structural tension within reason itself) vs 'contradiction' (logical incompatibility - simpler). 'Practical reason' (Kant: reason as it applies to action and ethics - the will) vs 'pure reason' (reason as it applies to knowledge). 'Deterministic causation' (causal determination by prior events) vs 'mechanistic causation' (caused by mechanical forces - slightly different framing). Kantian critical philosophy.",
+            "textToSpeak": "The antinomy between practical reason and deterministic causation is irresoluble.",
             "options": [
-                "The scientist locates the protocol consistently.",
-                "The expert scans the system properly.",
-                "The mentor sends the archive expertly.",
-                "The detective updates the signal instantly."
+                "The contradiction between practical reason and deterministic causation is irresoluble.",
+                "The antinomy between pure reason and deterministic causation is irresoluble.",
+                "The antinomy between practical reason and mechanistic causation is irresoluble.",
+                "The antinomy between practical reason and deterministic causation is irresoluble."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L181_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The technician scans the database swiftly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'apophantic'/'predicative', 'assumes'/'presupposes', and 'discourse'/'logic'.",
+            "explanation": "'Apophantic discourse' (Heidegger: the mode of discourse that asserts something about something - propositional, truth/false) vs 'predicative discourse' (discourse with predication - related but less Heideggerian). 'Assumes' (takes for granted - possibly without awareness) vs 'presupposes' (logically requires as a prior condition - more technical). 'Discourse' vs 'logic'. Heidegger's phenomenology of language and truth - Being and Time.",
+            "textToSpeak": "Apophantic discourse assumes what phenomenology seeks to bracket.",
             "options": [
-                "The technician scans the database swiftly.",
-                "The hero scans the portal steadily.",
-                "The engineer restores the software quietly.",
-                "The artist creates the data automatically."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L181_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert scans the code successfully.",
-            "options": [
-                "The hacker secures the circuit quietly.",
-                "The expert scans the code successfully.",
-                "The technician launches the drone properly.",
-                "The commander validates the node smoothly."
+                "Predicative discourse assumes what phenomenology seeks to bracket.",
+                "Apophantic discourse assumes what phenomenology seeks to bracket.",
+                "Apophantic logic assumes what phenomenology seeks to bracket.",
+                "Apophantic discourse presupposes what phenomenology seeks to bracket."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L181_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', and 'recasts'/'reframes'/'reconceives'.",
+            "explanation": "'Recasts' (casts again in a new mould - completely reformulates) vs 'reframes' (puts in a new frame - changes perspective) vs 'reconceives' (conceives anew - rethinks fundamentally). 'Epistemic injustice' (Miranda Fricker: injustice in the domain of knowledge - testimonial injustice, hermeneutic injustice). 'Structural hermeneutic exclusion' (exclusion from the resources for making sense of one's own experience). Feminist epistemology and social philosophy.",
+            "textToSpeak": "She recasts epistemic injustice as a form of structural hermeneutic exclusion.",
+            "options": [
+                "She recasts epistemic injustice as a form of structural hermeneutic exclusion.",
+                "She reframes epistemic injustice as a form of structural hermeneutic exclusion.",
+                "She reconceives epistemic injustice as a form of structural hermeneutic exclusion.",
+                "He recasts epistemic injustice as a form of structural hermeneutic exclusion."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L182_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The analyst measures the engine silently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'transcendental idealism'/'transcendental realism'/'critical idealism', and 'posits'/'locates'.",
+            "explanation": "'Transcendental idealism' (Kant's position: space and time are not features of things-in-themselves but of the way we intuit them) vs 'transcendental realism' (the position Kant opposes: that space and time are features of things as they really are) vs 'critical idealism' (alternative name for Kant's own position). 'Posits' (asserts as a theoretical position) vs 'locates' (places - less philosophical). Kantian metaphysics - Critique of Pure Reason.",
+            "textToSpeak": "Transcendental idealism posits space and time as forms of sensible intuition.",
             "options": [
-                "The hero restores the sensor directly.",
-                "The researcher locates the network directly.",
-                "The student restores the software effectively.",
-                "The analyst measures the engine silently."
+                "Transcendental realism posits space and time as forms of sensible intuition.",
+                "Transcendental idealism locates space and time as forms of sensible intuition.",
+                "Critical idealism posits space and time as forms of sensible intuition.",
+                "Transcendental idealism posits space and time as forms of sensible intuition."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -66,29 +70,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L182_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The scout updates the code consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'architectonic'/'system'/'critique', and 'subdivides'/'divides'.",
+            "explanation": "'Architectonic' (the systematic arrangement of knowledge according to rational principles - a specifically Kantian metaphor from architecture) vs 'system' (general) vs 'critique' (Kant's three Critiques). 'Subdivides' (divides into sub-parts within an existing structure) vs 'divides' (simply splits). Kant's faculties: pure theoretical reason, practical reason, judgement. Kantian systematic philosophy vocabulary.",
+            "textToSpeak": "The Kantian architectonic subdivides reason into its constitutive faculties.",
             "options": [
-                "The scout updates the code consistently.",
-                "The droid deploys the terminal carefully.",
-                "The expert measures the node effectively.",
-                "The teacher deploys the circuit automatically."
+                "The Kantian system subdivides reason into its constitutive faculties.",
+                "The Kantian critique subdivides reason into its constitutive faculties.",
+                "The Kantian architectonic subdivides reason into its constitutive faculties.",
+                "The Kantian architectonic divides reason into its constitutive faculties."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L182_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The pilot secures the node instantly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', and 'navigates'/'addresses'/'negotiates'.",
+            "explanation": "'Navigates' (steers through - implying skill and movement) vs 'addresses' (deals with - less active) vs 'negotiates' (finds a way through by bargaining or compromise). 'Antinomies of teleological judgement' (the conflicts within Kant's Critique of Judgement regarding purposiveness in nature and art). 'Teleological judgement' (judging things as if they have purposes). Kant's Third Critique - philosophy of aesthetics and biology.",
+            "textToSpeak": "She navigates the antinomies of teleological judgement with sophistication.",
             "options": [
-                "The explorer restores the archive carefully.",
-                "The hacker deploys the data reliably.",
-                "The pilot secures the node instantly.",
-                "The traveler encrypts the circuit directly."
+                "He navigates the antinomies of teleological judgement with sophistication.",
+                "She addresses the antinomies of teleological judgement with sophistication.",
+                "She navigates the antinomies of teleological judgement with sophistication.",
+                "She negotiates the antinomies of teleological judgement with sophistication."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
@@ -96,74 +102,79 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L183_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The robot deploys the code quietly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'Lacanian'/'Freudian', 'subject'/'ego', and 'constituted'/'structured'.",
+            "explanation": "'Lacanian subject' (the divided subject of desire - split by language and lack) vs 'Freudian subject' (the ego-centred psychoanalytic subject - Lacan's reinterpretation of Freud). 'Constituted' (brought into being - ontological) vs 'structured' (given a structure - less strong). 'Subject' (the divided speaking being) vs 'ego' (one agency within the psyche). 'Decentring from the signifying chain' - the subject is not master of language but spoken by it. Lacanian psychoanalytic theory.",
+            "textToSpeak": "The Lacanian subject is constituted through its decentring from the signifying chain.",
             "options": [
-                "The expert observes the node reliably.",
-                "The scout encrypts the system quietly.",
-                "The robot deploys the code quietly.",
-                "The analyst secures the satellite steadily."
+                "The Lacanian subject is constituted through its decentring from the signifying chain.",
+                "The Lacanian subject is structured through its decentring from the signifying chain.",
+                "The Lacanian ego is constituted through its decentring from the signifying chain.",
+                "The Freudian subject is constituted through its decentring from the signifying chain."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L183_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer launches the node expertly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'Aufhebung'/'dialectic', and 'preserves'/'cancels'/'incorporates'.",
+            "explanation": "'Aufhebung' (the key Hegelian term - untranslatable: simultaneously 'to cancel', 'to preserve', and 'to lift up' - dialectical sublation) vs 'dialectic' (the general process). 'Preserves' (keeps while transforming - this is the point: what is negated is not destroyed but raised to a higher level) vs 'cancels' (only negates - misses the positive moment) vs 'incorporates' (takes in - misses the negation). Hegelian dialectics - the most technical vocabulary in the curriculum.",
+            "textToSpeak": "Hegel's Aufhebung preserves what it negates within a higher synthesis.",
             "options": [
-                "The artist creates the archive silently.",
-                "The explorer launches the node expertly.",
-                "The traveler secures the portal properly.",
-                "The teacher restores the portal precisely."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L183_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer measures the node reliably.",
-            "options": [
-                "The explorer measures the code immediately.",
-                "The engineer launches the device quietly.",
-                "The technician encrypts the archive consistently.",
-                "The engineer measures the node reliably."
+                "Hegel's dialectic preserves what it negates within a higher synthesis.",
+                "Hegel's Aufhebung cancels what it negates within a higher synthesis.",
+                "Hegel's Aufhebung incorporates what it negates within a higher synthesis.",
+                "Hegel's Aufhebung preserves what it negates within a higher synthesis."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L183_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', and 'reconstructs'/'addresses'/'articulates'.",
+            "explanation": "'Reconstructs' (builds again from the ground up - implies the aporia requires complete rebuilding of understanding) vs 'addresses' (deals with - less reconstructive) vs 'articulates' (expresses clearly). 'Aporia' (Greek: impasse - here the impossibility of fulfilling the demand of the wholly other). 'The wholly other' (Derrida/Levinas: the radically different Other - 'tout autre' - whose demand exceeds all calculation). Levinasian ethics and Derridean deconstruction.",
+            "textToSpeak": "She reconstructs the aporia of ethical responsibility toward the wholly other.",
+            "options": [
+                "He reconstructs the aporia of ethical responsibility toward the wholly other.",
+                "She addresses the aporia of ethical responsibility toward the wholly other.",
+                "She reconstructs the aporia of ethical responsibility toward the wholly other.",
+                "She articulates the aporia of ethical responsibility toward the wholly other."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L184_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist deploys the engine automatically.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'bioethics'/'philosophy', 'must grapple'/'must engage'/'will have to grapple'.",
+            "explanation": "'Bioethics' (the ethics of biological and medical research) vs 'philosophy' (broader - bioethics is a subdiscipline). 'Grapple with' (struggle with, trying to come to terms with something difficult) vs 'engage with' (connect with - less combative). 'Must grapple' (present obligation) vs 'will have to grapple' (future necessity - implies it hasn't yet fully done so). 'Synthetic biology' (designing organisms from scratch). Applied philosophy and emerging technology ethics.",
+            "textToSpeak": "Bioethics must grapple with the possibilities opened by synthetic biology.",
             "options": [
-                "The traveler observes the protocol smoothly.",
-                "The artist deploys the engine automatically.",
-                "The explorer evaluates the node instantly.",
-                "The robot repairs the code quietly."
+                "Philosophy must grapple with the possibilities opened by synthetic biology.",
+                "Bioethics must engage with the possibilities opened by synthetic biology.",
+                "Bioethics will have to grapple with the possibilities opened by synthetic biology.",
+                "Bioethics must grapple with the possibilities opened by synthetic biology."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L184_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker analyzes the sensor successfully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'non-identity'/'tension'/'gap', and 'concept'/'subject' vs 'object'.",
+            "explanation": "'Non-identity' (Adorno's key term: things are never identical to their concepts - the concept always fails to capture the thing, and this failure is productive) vs 'tension' (more general) vs 'gap' (spatial metaphor). 'Concept and object' (the relation between thought and thing - Adorno's version of the subject/object problem) vs 'subject and object'. 'Motor' (driving force). Adorno's Negative Dialectics - the critique of identity thinking. Critical Theory - Frankfurt School.",
+            "textToSpeak": "The non-identity of concept and object is the motor of Adorno's negative dialectics.",
             "options": [
-                "The hacker analyzes the sensor successfully.",
-                "The engineer transfers the code carefully.",
-                "The scout validates the drone effectively.",
-                "The researcher scans the drone swiftly."
+                "The non-identity of concept and object is the motor of Adorno's negative dialectics.",
+                "The gap between concept and object is the motor of Adorno's negative dialectics.",
+                "The non-identity of subject and object is the motor of Adorno's negative dialectics.",
+                "The tension between concept and object is the motor of Adorno's negative dialectics."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -171,14 +182,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L184_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander encrypts the device effectively.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', 'deconstructs'/'challenges', and 'logic'/'structure' of sovereignty.",
+            "explanation": "'Deconstructs' (applies deconstruction - reveals internal contradiction) vs 'challenges' (questions - less methodologically specific). 'Logic of sovereignty' vs 'structure of sovereignty'. 'Constitutive exception' (Agamben via Schmitt/Benjamin: the exception that is excluded to constitute the rule - the state of exception that founds legal order). 'Exposing' (revealing what is concealed). Agamben's biopolitical philosophy - Homo Sacer.",
+            "textToSpeak": "She deconstructs the logic of sovereignty by exposing its constitutive exception.",
             "options": [
-                "The scout updates the device precisely.",
-                "The artist measures the protocol automatically.",
-                "The scientist repairs the device instantly.",
-                "The commander encrypts the device effectively."
+                "He deconstructs the logic of sovereignty by exposing its constitutive exception.",
+                "She challenges the logic of sovereignty by exposing its constitutive exception.",
+                "She deconstructs the structure of sovereignty by exposing its constitutive exception.",
+                "She deconstructs the logic of sovereignty by exposing its constitutive exception."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -186,29 +198,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L185_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The commander updates the signal smoothly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'immanent'/'internal', 'critique'/'analysis', and 'instrumental'/'technical' reason.",
+            "explanation": "'Immanent critique' (criticises from within - Adorno and Horkheimer's method) vs 'internal critique' (simply from inside - weaker). 'Instrumental reason' (reason reduced to means-end calculation - Weber's rationalisation, Horkheimer's critique) vs 'technical reason' (reason applied to technique - related but less Frankfurt School specific). 'Dialectic of Enlightenment' - Horkheimer and Adorno's central claim: reason becomes its own opposite. Frankfurt School Critical Theory.",
+            "textToSpeak": "The immanent critique of instrumental reason exposes the dialectic of Enlightenment.",
             "options": [
-                "The mentor measures the drone successfully.",
-                "The hacker launches the archive effectively.",
-                "The commander updates the signal smoothly.",
-                "The hacker analyzes the network swiftly."
+                "The internal critique of instrumental reason exposes the dialectic of Enlightenment.",
+                "The immanent critique of instrumental reason exposes the dialectic of Enlightenment.",
+                "The immanent critique of technical reason exposes the dialectic of Enlightenment.",
+                "The immanent analysis of instrumental reason exposes the dialectic of Enlightenment."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L185_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The student builds the device effectively.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'indeterminacy'/'uncertainty'/'entanglement', and 'challenges'/'questions'.",
+            "explanation": "'Quantum indeterminacy' (the fundamental impossibility of simultaneously knowing certain pairs of properties - Heisenberg's uncertainty principle - but 'indeterminacy' is ontological while 'uncertainty' is epistemological) vs 'quantum uncertainty' (the more common but less precise term) vs 'quantum entanglement' (non-local correlation - a different quantum phenomenon). 'Challenges' vs 'questions'. Philosophy of quantum mechanics - the measurement problem and realism debate.",
+            "textToSpeak": "Quantum indeterminacy challenges classical assumptions about measurement and reality.",
             "options": [
-                "The scientist analyzes the chip expertly.",
-                "The teacher analyzes the device rapidly.",
-                "The mentor secures the portal reliably.",
-                "The student builds the device effectively."
+                "Quantum uncertainty challenges classical assumptions about measurement and reality.",
+                "Quantum indeterminacy questions classical assumptions about measurement and reality.",
+                "Quantum entanglement challenges classical assumptions about measurement and reality.",
+                "Quantum indeterminacy challenges classical assumptions about measurement and reality."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -216,14 +230,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L185_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher observes the circuit effectively.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', and 'theorises'/'explores'/'maps' the resonance.",
+            "explanation": "'Theorises' (constructs a theoretical account of) vs 'explores' (investigates - less constructive) vs 'maps' (charts the territory of - spatial metaphor). 'Libidinal economy' (Lyotard's term: the economy of drives and intensities - Freudian economics) and 'political organisation' - how desire structures politics. 'Resonance' (the way two things vibrate together - non-causal but structural relation). Lyotard's Libidinal Economy and psychoanalytic Marxism.",
+            "textToSpeak": "She theorises the resonance between libidinal economy and political organisation.",
             "options": [
-                "The engineer observes the module rapidly.",
-                "The artist measures the module silently.",
-                "The analyst launches the protocol reliably.",
-                "The teacher observes the circuit effectively."
+                "He theorises the resonance between libidinal economy and political organisation.",
+                "She explores the resonance between libidinal economy and political organisation.",
+                "She maps the resonance between libidinal economy and political organisation.",
+                "She theorises the resonance between libidinal economy and political organisation."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
@@ -231,29 +246,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L186_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The explorer scans the system consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'pharmacological'/'pharmaceutical'/'ambivalent', and 'dimension'/'nature'.",
+            "explanation": "'Pharmacological' (Stiegler via Derrida: the pharmakon - Greek word for both remedy and poison - technology is irreducibly both; this is not just 'pharmaceutical') vs 'pharmaceutical' (relating to drugs - too narrow). 'Ambivalent' (having two conflicting aspects - loses the specific pharmakon vocabulary). 'Dimension' vs 'nature' - 'dimension' suggests an aspect of something larger. Stiegler's philosophy of technology and Derrida's 'Plato's Pharmacy'.",
+            "textToSpeak": "The pharmacological dimension of technology makes it simultaneously remedy and poison.",
             "options": [
-                "The explorer scans the system consistently.",
-                "The scientist analyzes the data properly.",
-                "The pilot locates the signal properly.",
-                "The droid activates the engine directly."
+                "The pharmaceutical dimension of technology makes it simultaneously remedy and poison.",
+                "The pharmacological dimension of technology makes it simultaneously remedy and poison.",
+                "The ambivalent dimension of technology makes it simultaneously remedy and poison.",
+                "The pharmacological nature of technology makes it simultaneously remedy and poison."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L186_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist sends the archive smoothly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'her'/'his', 'cartography'/'analysis'/'genealogy' of power.",
+            "explanation": "'Cartography of power' (mapping power - spatial, systematic) vs 'analysis of power' (examination - less spatial) vs 'genealogy of power' (historical tracing - different method). 'Capillary operations' (Foucauldian: power that flows through the smallest channels - not just top-down but everywhere in the social body, like blood through capillaries) vs 'sovereign prohibition' (the old model: power as the sovereign's right to say no). Foucault's Power/Knowledge.",
+            "textToSpeak": "Her cartography of power traces capillary operations beyond sovereign prohibition.",
             "options": [
-                "The pilot activates the portal instantly.",
-                "The artist sends the archive smoothly.",
-                "The hero encrypts the portal immediately.",
-                "The pilot transfers the node expertly."
+                "His cartography of power traces capillary operations beyond sovereign prohibition.",
+                "Her cartography of power traces capillary operations beyond sovereign prohibition.",
+                "Her genealogy of power traces capillary operations beyond sovereign prohibition.",
+                "Her analysis of power traces capillary operations beyond sovereign prohibition."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
@@ -261,29 +278,31 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L186_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist secures the database consistently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'psychoanalytic'/'Lacanian', 'topology'/'thought', and 'redefines'/'reconceives'.",
+            "explanation": "'Psychoanalytic topology' (using topological figures - Möbius strip, torus, Klein bottle, cross-cap - to think psychic space without inside/outside distinction) vs 'Lacanian topology' (more specific) vs 'psychoanalytic thought' (general). 'Redefines' (gives a new definition) vs 'reconceives' (thinks anew - less definitional). 'Interiority as irreducibly relational' - the inside is always already constituted by the outside. Late Lacanian topology.",
+            "textToSpeak": "Psychoanalytic topology redefines interiority as irreducibly relational and material.",
             "options": [
-                "The artist secures the database consistently.",
-                "The scout repairs the chip directly.",
-                "The pilot analyzes the system consistently.",
-                "The robot deploys the code directly."
+                "Lacanian topology redefines interiority as irreducibly relational and material.",
+                "Psychoanalytic thought redefines interiority as irreducibly relational and material.",
+                "Psychoanalytic topology redefines interiority as irreducibly relational and material.",
+                "Psychoanalytic topology reconceives interiority as irreducibly relational and material."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L187_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher restores the engine effectively.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', and 'excavates'/'uncovers'/'probes'.",
+            "explanation": "'Excavates' (digs out - archaeological metaphor: she removes layers to find what lies beneath) vs 'uncovers' (removes the cover) vs 'probes' (investigates by prodding - less complete removal). 'Ideological substratum' (the ideological layer beneath the surface - 'substratum' = the layer underneath). 'Neutral administrative rationality' - the appearance of value-free bureaucracy. Critique of ideology and bureaucratic reason - Weber/Frankfurt School.",
+            "textToSpeak": "She excavates the ideological substratum beneath neutral administrative rationality.",
             "options": [
-                "The commander secures the device instantly.",
-                "The teacher sends the network swiftly.",
-                "The teacher restores the engine effectively.",
-                "The robot observes the drone carefully."
+                "He excavates the ideological substratum beneath neutral administrative rationality.",
+                "She uncovers the ideological substratum beneath neutral administrative rationality.",
+                "She excavates the ideological substratum beneath neutral administrative rationality.",
+                "She probes the ideological substratum beneath neutral administrative rationality."
             ],
             "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
@@ -291,119 +310,127 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L187_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert activates the system silently.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'abyss'/'void', 'groundlessness'/'contingency', and 'subtends'/'undermines'.",
+            "explanation": "'Abyss' (bottomless depth - more dramatic and philosophical than 'void' which is simply empty space). 'Groundlessness' (the lack of ultimate foundation - Abgrund in German, Heidegger) vs 'contingency' (could have been otherwise - related but different emphasis). 'Subtends' (extends beneath, underlies - geometric/structural term: the groundlessness is always there beneath any claim) vs 'undermines' (weakens from below - more active/negative). Post-foundationalist political philosophy - Laclau.",
+            "textToSpeak": "The abyss of groundlessness subtends every normative claim to universal validity.",
             "options": [
-                "The expert activates the system silently.",
-                "The scientist scans the protocol silently.",
-                "The scientist encrypts the terminal expertly.",
-                "The student evaluates the terminal consistently."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L187_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hero deploys the portal precisely.",
-            "options": [
-                "The technician repairs the satellite precisely.",
-                "The teacher locates the drone silently.",
-                "The droid sends the node smoothly.",
-                "The hero deploys the portal precisely."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L188_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The mentor deploys the network effectively.",
-            "options": [
-                "The detective locates the signal efficiently.",
-                "The commander deploys the archive directly.",
-                "The mentor deploys the network effectively.",
-                "The traveler restores the software directly."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L188_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The teacher evaluates the chip carefully.",
-            "options": [
-                "The hero builds the network immediately.",
-                "The droid transfers the data carefully.",
-                "The hacker transfers the device steadily.",
-                "The teacher evaluates the chip carefully."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L188_Q3",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist validates the system steadily.",
-            "options": [
-                "The robot analyzes the system precisely.",
-                "The scientist sends the system swiftly.",
-                "The artist validates the system steadily.",
-                "The explorer secures the portal consistently."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L189_Q1",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The researcher updates the portal properly.",
-            "options": [
-                "The technician sends the code steadily.",
-                "The researcher launches the terminal silently.",
-                "The robot updates the circuit efficiently.",
-                "The researcher updates the portal properly."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder"
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L189_Q2",
-            "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The hacker activates the portal carefully.",
-            "options": [
-                "The robot transfers the software immediately.",
-                "The hacker activates the portal carefully.",
-                "The scientist updates the module rapidly.",
-                "The expert deploys the node precisely."
+                "The void of groundlessness subtends every normative claim to universal validity.",
+                "The abyss of groundlessness subtends every normative claim to universal validity.",
+                "The abyss of groundlessness undermines every normative claim to universal validity.",
+                "The abyss of contingency subtends every normative claim to universal validity."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L187_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'iterability'/'citationality', and 'conditions'/'determines'/'grounds'.",
+            "explanation": "'Iterability' (Derrida: the structural feature of signs that they can be cited/repeated in contexts other than the original - iter from Sanskrit 'other') vs 'citationality' (the capacity to be cited - related but less radical). 'Conditions' (makes possible as a condition - transcendental-like move) vs 'determines' (fully causes) vs 'grounds' (provides the foundation). 'Impurity' - iterability means repetition always differs from itself. Derrida's speech act theory critique - 'Signature Event Context'.",
+            "textToSpeak": "Iterability conditions the possibility and impurity of every ideal repetition.",
+            "options": [
+                "Citationality conditions the possibility and impurity of every ideal repetition.",
+                "Iterability determines the possibility and impurity of every ideal repetition.",
+                "Iterability conditions the possibility and impurity of every ideal repetition.",
+                "Iterability grounds the possibility and impurity of every ideal repetition."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L188_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'thanatological'/'biopolitical', and 'turn'/'moment'/'shift'.",
+            "explanation": "'Thanatological' (relating to death and dying - thanatos, Greek for death) vs 'biopolitical' (relating to the governance of life - the other side). 'Turn' (a paradigm shift in a field - 'the linguistic turn', 'the affective turn') vs 'moment' (a phase - less paradigmatic) vs 'shift' (a change - near-synonym to 'turn' but less established as academic vocabulary). 'Precarious life' (Butler: lives made vulnerable by economic and political forces). Critical theory and biopolitics intersection.",
+            "textToSpeak": "The thanatological turn in critical theory rethinks the politics of precarious life.",
+            "options": [
+                "The biopolitical turn in critical theory rethinks the politics of precarious life.",
+                "The thanatological turn in critical theory rethinks the politics of precarious life.",
+                "The thanatological shift in critical theory rethinks the politics of precarious life.",
+                "The thanatological moment in critical theory rethinks the politics of precarious life."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L188_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'her'/'his', 'genealogy'/'analysis', and 'subject'/'self'.",
+            "explanation": "'Genealogy' (Foucauldian critical history - tracing emergence rather than origin) vs 'analysis' (general). 'Subject' (the Foucauldian subject - constituted through power/knowledge practices) vs 'self' (the personal, reflexive identity - less Foucauldian). 'Confessional technologies' (the practices of confession - religious confession as a technique of the self, extended to psychiatry, autobiography, therapy). Foucault's History of Sexuality Vol. 1 and Technologies of the Self.",
+            "textToSpeak": "Her genealogy of the modern subject traces its constitution through confessional technologies.",
+            "options": [
+                "His genealogy of the modern subject traces its constitution through confessional technologies.",
+                "Her genealogy of the modern self traces its constitution through confessional technologies.",
+                "Her genealogy of the modern subject traces its constitution through confessional technologies.",
+                "Her analysis of the modern subject traces its constitution through confessional technologies."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L188_Q3",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'fold'/'boundary', 'inside'/'interior', and 'redefines'/'reconstitutes'.",
+            "explanation": "'Fold' (Deleuze's reading of Foucault: subjectivity as a folding of the outside - the inside is a fold of the outside, not something separate) vs 'boundary' (a line of separation - misses the fold metaphor entirely). 'Inside/outside' vs 'interior/exterior' - same meaning but Deleuze prefers the terms fold/unfold. 'Redefines' vs 'reconstitutes'. Deleuze's Foucault - 'The Fold' and subjectivity as the affect of outside forces folded inward.",
+            "textToSpeak": "The fold between inside and outside redefines the topology of the Foucauldian self.",
+            "options": [
+                "The fold between inside and outside redefines the topology of the Foucauldian self.",
+                "The boundary between inside and outside redefines the topology of the Foucauldian self.",
+                "The fold between inside and outside reconstitutes the topology of the Foucauldian self.",
+                "The fold between interior and exterior redefines the topology of the Foucauldian self."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L189_Q1",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'cosmopolitanism'/'universalism', 'must contend'/'must grapple'/'needs to contend'.",
+            "explanation": "'Cosmopolitanism' (the ideal of world citizenship, transcending national borders - Kant's perpetual peace) vs 'universalism' (the view that some principles apply everywhere - broader). 'Contend with' (struggle with, deal with - implies difficulty) vs 'grapple with' (struggle intensely - similar but slightly more physical metaphor). 'Must' (strong obligation) vs 'needs to' (softer). The postcolonial critique of cosmopolitanism - Pheng Cheah, Gayatri Spivak.",
+            "textToSpeak": "Cosmopolitanism must contend with its own Eurocentric genealogy and exclusions.",
+            "options": [
+                "Universalism must contend with its own Eurocentric genealogy and exclusions.",
+                "Cosmopolitanism must contend with its own Eurocentric genealogy and exclusions.",
+                "Cosmopolitanism needs to contend with its own Eurocentric genealogy and exclusions.",
+                "Cosmopolitanism must grapple with its own Eurocentric genealogy and exclusions."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L189_Q2",
+            "interactionType": "Rapid Decoder",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', and 'reads'/'interprets'/'frames'.",
+            "explanation": "'Reads' (applies interpretive analysis) vs 'interprets' (assigns meaning - less active method) vs 'frames' (places within a frame - emphasises the framing operation). 'Hauntological return' (Derrida's hauntology - from 'Specters of Marx': the haunting of the present by the past/future that should not return but does; Freud's repetition compulsion in trauma is hauntological). 'Uncanny temporal structure of trauma' (trauma disrupts linear time). Trauma studies and Derridean hauntology.",
+            "textToSpeak": "She reads the uncanny temporal structure of trauma as hauntological return.",
+            "options": [
+                "He reads the uncanny temporal structure of trauma as hauntological return.",
+                "She interprets the uncanny temporal structure of trauma as hauntological return.",
+                "She reads the uncanny temporal structure of trauma as hauntological return.",
+                "She frames the uncanny temporal structure of trauma as hauntological return."
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "fastSpeechDecoder"
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L189_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The expert builds the system directly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'general'/'total', 'restricted'/'market', and 'acknowledges'/'recognises'.",
+            "explanation": "'General economy' (Bataille: an economy of excess, waste, and expenditure without return - as opposed to useful accumulation) vs 'total economy' (simply an all-encompassing economy - loses Bataille's meaning). 'Restricted economy' (Bataille: the economy of productive use and calculation - which Hegel represents) vs 'market economy' (capitalism - not the same distinction). 'Acknowledges' vs 'recognises' - near-synonyms. Bataille's general economy and sovereignty - his critique of Hegel.",
+            "textToSpeak": "The general economy, unlike restricted economy, acknowledges sovereign expenditure.",
             "options": [
-                "The expert builds the system directly.",
-                "The engineer encrypts the portal directly.",
-                "The engineer transfers the network carefully.",
-                "The artist locates the chip effectively."
+                "The general economy, unlike restricted economy, acknowledges sovereign expenditure.",
+                "The general economy, unlike market economy, acknowledges sovereign expenditure.",
+                "The general economy, unlike restricted economy, recognises sovereign expenditure.",
+                "The total economy, unlike restricted economy, acknowledges sovereign expenditure."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder"
@@ -411,46 +438,49 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L190_Q1",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist updates the portal steadily.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'her'/'his', and 'interlocution'/'engagement'/'dialogue' with Heidegger.",
+            "explanation": "'Interlocution' (speaking with someone in a philosophical conversation - the most formal and precise term for philosophical dialogue) vs 'engagement' (connecting with - broader) vs 'dialogue' (two-way conversation - less precise for academic philosophical exchange). 'Unsettles' (disturbs without resolving - leaves in question) the 'anthropocentric limits of Dasein' (Heidegger's Dasein is human existence - critics ask whether it can be opened to non-human life). Post-humanist readings of Heidegger.",
+            "textToSpeak": "Her interlocution with Heidegger unsettles the anthropocentric limits of Dasein.",
             "options": [
-                "The scout scans the code quietly.",
-                "The engineer sends the drone reliably.",
-                "The detective launches the data rapidly.",
-                "The artist updates the portal steadily."
+                "His interlocution with Heidegger unsettles the anthropocentric limits of Dasein.",
+                "Her interlocution with Heidegger unsettles the anthropocentric limits of Dasein.",
+                "Her dialogue with Heidegger unsettles the anthropocentric limits of Dasein.",
+                "Her engagement with Heidegger unsettles the anthropocentric limits of Dasein."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L190_Q2",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The artist measures the node carefully.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Focus on 'contradiction'/'paradox', and 'ensnares'/'undermines'/'entangles'.",
+            "explanation": "'Performative contradiction' (Habermas: the attempt to deny communicative rationality must use it - you contradict your claim through the very act of making it) vs 'performative paradox' (similar but 'contradiction' is more technically precise in logic). 'Ensnares' (catches in a trap - active, the agent is caught by their own move) vs 'undermines' (weakens) vs 'entangles' (catches in a web - less trapping). 'Universal validity claims' (Habermasian discourse ethics - claims to truth, rightness, sincerity).",
+            "textToSpeak": "The performative contradiction ensnares any attempt to ground universal validity claims.",
             "options": [
-                "The mentor deploys the protocol rapidly.",
-                "The researcher sends the portal consistently.",
-                "The artist measures the node carefully.",
-                "The technician launches the terminal rapidly."
+                "The performative paradox ensnares any attempt to ground universal validity claims.",
+                "The performative contradiction undermines any attempt to ground universal validity claims.",
+                "The performative contradiction entangles any attempt to ground universal validity claims.",
+                "The performative contradiction ensnares any attempt to ground universal validity claims."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder"
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L190_Q3",
             "interactionType": "Rapid Decoder",
-            "hint": "Identify the rapid sentence.",
-            "explanation": "Correct sentence identified.",
-            "textToSpeak": "The engineer restores the archive directly.",
+            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "hint": "Notice 'she'/'he', and 'theorises'/'explores'/'articulates'.",
+            "explanation": "'Theorises' (constructs a theory) vs 'explores' (investigates) vs 'articulates' (expresses clearly). 'Agential realism' (Karen Barad: matter and meaning are not separate - they co-produce each other through 'intra-action', not interaction - agential cuts constitute phenomena). 'Entanglement of matter and meaning' - the quantum-physics-informed claim that matter is always already meaningful and meaning is always material. Feminist new materialism - Meeting the Universe Halfway.",
+            "textToSpeak": "She theorises the entanglement of matter and meaning through agential realism.",
             "options": [
-                "The explorer observes the engine securely.",
-                "The scout sends the circuit steadily.",
-                "The teacher secures the database instantly.",
-                "The engineer restores the archive directly."
+                "He theorises the entanglement of matter and meaning through agential realism.",
+                "She explores the entanglement of matter and meaning through agential realism.",
+                "She theorises the entanglement of matter and meaning through agential realism.",
+                "She articulates the entanglement of matter and meaning through agential realism."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder"
         }
     ]

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class FastSpeechDecoderInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const FastSpeechDecoderInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -27,7 +29,7 @@ class FastSpeechDecoderInstruction extends StatelessWidget {
           ),
           SizedBox(width: 12.w),
           Text(
-            "CALIBRATE SPEED TO DECODE",
+            instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
