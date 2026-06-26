@@ -654,10 +654,10 @@
     "shortAnswerWriting": "Brevity and Power. Convey your message with maximum efficiency.",
     "summarizeStoryWriting": "The Narrative Distiller. Capture the core of a story in just a few words.",
     "writingEmail": "Digital Correspondence. Master the art of professional and personal emails.",
-    "storyBuilder": "The Legend Creator. Build an epic narrative that will be remembered forever.",
-    "idiomMatch": "Cultural Expert. Prove your deep understanding of the language's soul.",
-    "speedSpelling": "Rapid Precision. Master the orthography of the most difficult words.",
-    "accentShadowing": "The Ultimate Chameleon. Reach the pinnacle of native-level resonance.",
+    "storyBuilder": "Read the scrambled sentences and arrange them in the correct logical order to build a complete story.",
+    "idiomMatch": "Read the context and choose the correct English idiom that matches the meaning.",
+    "speedSpelling": "Unscramble the letters to spell the hidden vocabulary word correctly.",
+    "accentShadowing": "Listen to the native speaker and repeat the exact phrase into your microphone to match their pronunciation.",
     "alphabet": "Hi little explorer! Let's find all the hidden magic letters in the forest! 🕵️‍♂️",
     "numbers": "One, two, three... Let's count all the twinkling stars in the night sky! ✨",
     "colors": "The world is a giant rainbow! Can you help me find the juicy red apple? 🍎",
@@ -801,40 +801,39 @@
     },
     "storyBuilder": {
       "title": "Story Builder",
-      "objective": "Drag sentences into chronological order to rebuild the story.",
+      "objective": "Arrange the scrambled sentences into the correct logical order.",
       "actionText": "Build Story",
-      "tip": "PRO TIP: Look for transition words like 'However', 'Consequently', or 'Subsequently' to link sequences!",
-      "rule_0": "3 Hearts per mission",
-      "rule_1": "2 Strikes (Mistakes Re-queued)",
-      "rule_2": "Logic and context are key"
+      "tip": "PRO TIP: Look for transition words like 'However' or 'Therefore' to link sentences!",
+      "rule_0": "Tap sentences in order",
+      "rule_1": "1 mistake loses 1 life",
+      "rule_2": "2 mistakes queues it to the end"
     },
     "idiomMatch": {
       "title": "Idiom Match",
-      "objective": "Pair the idioms with their true definitions and meanings.",
-      "actionText": "Match Idioms",
-      "tip": "PRO TIP: Don't take idioms literally! They usually describe a feeling or social situation.",
-      "rule_0": "Match correctly to win",
-      "rule_1": "Avoid literal traps",
-      "rule_2": "3 Hearts per mission"
+      "objective": "Select the correct meaning for the highlighted English idiom.",
+      "actionText": "Match Idiom",
+      "tip": "PRO TIP: Don't take idioms literally! They usually describe a feeling or situation.",
+      "rule_0": "Read the context carefully",
+      "rule_1": "1 mistake loses 1 life",
+      "rule_2": "2 mistakes queues it to the end"
     },
     "speedSpelling": {
       "title": "Speed Spelling",
-      "objective": "Spell the target word correctly before the timer runs out.",
+      "objective": "Listen to the audio and tap the letters to spell the word.",
       "actionText": "Start Spelling",
-      "tip": "PRO TIP: Trust your muscle memory! Trying to think about every letter can slow you down.",
+      "tip": "PRO TIP: Sound the word out slowly in your head before tapping the letters.",
       "rule_0": "Spelling must be exact",
-      "rule_1": "Watch the timer",
-      "rule_2": "3 Hearts per mission"
+      "rule_1": "1 mistake loses 1 life",
+      "rule_2": "2 mistakes queues it to the end"
     },
     "accentShadowing": {
       "title": "Accent Shadowing",
-      "objective": "Speak along with the audio. Match the speaker's pitch and rhythm.",
+      "objective": "Listen to the native speaker and repeat the phrase exactly.",
       "actionText": "Shadow Voice",
-      "tip": "PRO TIP: Focus on the musicality! Accent is about the 'song' of the language.",
-      "rule_0": "Listen first",
-      "rule_1": "then speak",
-      "rule_2": "Match the waveform",
-      "rule_3": "3 Hearts per mission"
+      "tip": "PRO TIP: Focus on the pronunciation! Try to mimic their exact tone and stress.",
+      "rule_0": "Listen closely to the audio",
+      "rule_1": "1 mistake loses 1 life",
+      "rule_2": "2 mistakes queues it to the end"
     },
     "voiceSwap": {
       "title": "Voice Swap",

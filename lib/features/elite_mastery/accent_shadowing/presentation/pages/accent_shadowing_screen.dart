@@ -264,10 +264,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: context.tr('games.accent_shadowing_title'),
-          subtitle:
-              quest?.instruction ??
-              context.tr('games.accent_shadowing_subtitle'),
+          title: quest?.instruction ?? context.tr('games.accent_shadowing_title'),
           onContinue: () {
             setState(() {
               _isAnswered = false;

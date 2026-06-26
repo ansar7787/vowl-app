@@ -195,9 +195,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: context.tr('games.idiom_master_title'),
-          subtitle:
-              quest?.instruction ?? context.tr('games.idiom_match_subtitle'),
+          title: quest?.instruction ?? context.tr('games.idiom_master_title'),
           visualConfig: quest?.visualConfig,
           onContinue: () {
             setState(() {
@@ -315,6 +313,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               selectedIndex: _selectedIndex,
               wrongIndices: _wrongIndices,
               isAnswered: _isAnswered,
+              showCorrectAnswer: _isCorrect == true,
               correctAnswerIndex: quest.correctAnswerIndex ?? 0,
               isDark: isDark,
               primaryColor: theme.primaryColor,

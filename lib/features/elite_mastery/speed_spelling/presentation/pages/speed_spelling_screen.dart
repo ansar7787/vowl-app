@@ -202,11 +202,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title:
-              (quest?.instruction ??
-                      context.tr('games.speed_spelling_title_fallback'))
-                  .toUpperCase(),
-          subtitle: "",
+          title: quest?.instruction ?? context.tr('games.speed_spelling_title_fallback'),
           onContinue: () {
             setState(() {
               _isAnswered = false;

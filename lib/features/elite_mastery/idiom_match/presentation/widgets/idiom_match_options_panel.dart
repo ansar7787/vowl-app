@@ -11,6 +11,7 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
   final int? selectedIndex;
   final List<int> wrongIndices;
   final bool isAnswered;
+  final bool showCorrectAnswer;
   final int correctAnswerIndex;
   final bool isDark;
   final Color primaryColor;
@@ -23,6 +24,7 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
     this.selectedIndex,
     required this.wrongIndices,
     required this.isAnswered,
+    required this.showCorrectAnswer,
     required this.correctAnswerIndex,
     required this.isDark,
     required this.primaryColor,
@@ -37,7 +39,7 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
         final isSelected = selectedIndex == index;
         final isWrong = wrongIndices.contains(index);
         final isCorrect =
-            isAnswered && originalIndices[index] == correctAnswerIndex;
+            showCorrectAnswer && originalIndices[index] == correctAnswerIndex;
         Color textColor = isDark ? Colors.white : Colors.black87;
 
         // FIX: this option previously had zero Semantics. A sighted player

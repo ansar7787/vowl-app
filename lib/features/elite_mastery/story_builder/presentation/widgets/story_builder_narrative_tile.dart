@@ -45,8 +45,10 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
     Color borderColor = isDark
         ? Colors.white.withValues(alpha: 0.15)
         : Colors.black.withValues(alpha: 0.08);
-    if (isAnswered || isCorrect == false) {
-      borderColor = isCorrectPosition ? Colors.greenAccent : Colors.redAccent;
+    if (isCorrect == true) {
+      borderColor = Colors.greenAccent;
+    } else if (isCorrect == false) {
+      borderColor = Colors.redAccent;
     } else if (isHintVisible && isCorrectPosition) {
       borderColor = theme.primaryColor;
     }
@@ -166,11 +168,10 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
       'games.semantic_story_tile_position',
       args: [(index + 1).toString()],
     );
-    if (isAnswered || isCorrect == false) {
-      final state = isCorrectPosition
-          ? context.tr('games.semantic_correct_suffix')
-          : context.tr('games.semantic_incorrect_suffix');
-      return '$position $sentence. $state';
+    if (isCorrect == true) {
+      return '$position $sentence. ${context.tr('games.semantic_correct_suffix')}';
+    } else if (isCorrect == false) {
+      return '$position $sentence. ${context.tr('games.semantic_incorrect_suffix')}';
     }
     return '$position $sentence';
   }
