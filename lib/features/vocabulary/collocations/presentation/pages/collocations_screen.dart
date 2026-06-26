@@ -206,10 +206,11 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                       child: _buildInstruction(
                                         theme.primaryColor,
                                         isDark,
+                                        quest.instruction,
                                       ),
                                     ),
                                   )
-                                : _buildInstruction(theme.primaryColor, isDark),
+                                : _buildInstruction(theme.primaryColor, isDark, quest.instruction),
                             SizedBox(height: gapInstruction),
                             isCompact
                                 ? SizedBox(
@@ -307,7 +308,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
     );
   }
 
-  Widget _buildInstruction(Color color, bool isDark) {
+  Widget _buildInstruction(Color color, bool isDark, String instruction) {
     return Container(
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
           decoration: BoxDecoration(
@@ -318,7 +319,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
             border: Border.all(color: color.withValues(alpha: 0.3)),
           ),
           child: Text(
-            "FUSE THE COLLOCATION PAIR",
+            instruction.toUpperCase(),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'RobotoMono',
