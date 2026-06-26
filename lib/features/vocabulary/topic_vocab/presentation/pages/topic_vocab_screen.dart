@@ -209,12 +209,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
             : "";
         final correctAnswer = quest?.correctAnswer ?? "";
 
-        String displayInstruction = quest?.instruction ?? "";
-        if (displayInstruction.toLowerCase().contains(
-          "choose the correct answer",
-        )) {
-          displayInstruction = "SORT THE WORDS INTO BINS";
-        }
+        String displayInstruction = quest?.instruction ?? "SORT THE WORDS INTO BINS";
 
         return VocabularyBaseLayout(
           gameType: widget.gameType,
