@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SoundImageMatchInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const SoundImageMatchInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -24,7 +26,7 @@ class SoundImageMatchInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              "DRAG LENS TO SCAN • DOUBLE-TAP TO SELECT",
+              instruction.toUpperCase(),
               style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,

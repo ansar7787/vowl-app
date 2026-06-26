@@ -186,11 +186,13 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                           fit: BoxFit.scaleDown,
                                           child: SoundImageMatchInstruction(
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction ?? "Listen to the audio and select the matching image.",
                                           ),
                                         ),
                                       )
                                     : SoundImageMatchInstruction(
                                         color: theme.primaryColor,
+                                        instruction: quest.instruction ?? "Listen to the audio and select the matching image.",
                                       ),
                                 SizedBox(height: gapInstruction),
                                 isCompact

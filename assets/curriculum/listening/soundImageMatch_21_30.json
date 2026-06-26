@@ -6,44 +6,47 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L21_Q1",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "network is the object.",
-            "textToSpeak": "The traveler evaluates the network silently.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen for the keyword that matches one of the pictures.",
+            "explanation": "Listen for drone: an aircraft that flies without a pilot on board, often controlled remotely. Mentioned in the sentence: flew his new drone outside.",
+            "textToSpeak": "Yesterday, my neighbor flew his new drone outside.",
             "options": [
-                "circuit",
-                "chip",
-                "system",
-                "network"
+                "drone",
+                "protocol",
+                "archive",
+                "node"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L21_Q2",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "circuit is the object.",
-            "textToSpeak": "The analyst restores the circuit efficiently.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Tune in to the exact object named in the sentence.",
+            "explanation": "Engine is the object in the sentence. It means the part of a vehicle or machine that produces power to make it move. From the audio: made a strange noise.",
+            "textToSpeak": "Last night, the car engine made a strange noise.",
             "options": [
-                "drone",
-                "device",
-                "software",
-                "circuit"
+                "system",
+                "engine",
+                "node",
+                "signal"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L21_Q3",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "node is the object.",
-            "textToSpeak": "The technician deploys the node steadily.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen for the main object word in the sentence.",
+            "explanation": "Listen for module: a separate section that is part of a larger system, course, or program. Mentioned in the sentence: finished the cooking module on her app.",
+            "textToSpeak": "She finished the cooking module on her app last week.",
             "options": [
-                "archive",
-                "node",
                 "drone",
-                "software"
+                "module",
+                "engine",
+                "satellite"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch"
@@ -51,14 +54,15 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L22_Q1",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "data is the object.",
-            "textToSpeak": "The engineer observes the data successfully.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Tune in to the exact object named in the sentence.",
+            "explanation": "Listen for network: a group of connected computers or devices that share information. Mentioned in the sentence: stopped working yesterday morning.",
+            "textToSpeak": "Our home network stopped working yesterday morning.",
             "options": [
-                "system",
-                "archive",
                 "device",
-                "data"
+                "engine",
+                "drone",
+                "network"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch"
@@ -66,14 +70,15 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L22_Q2",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "module is the object.",
-            "textToSpeak": "The traveler transfers the module securely.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen for the main object word in the sentence.",
+            "explanation": "Node is the object in the sentence. It means a single connection point within a larger network. From the audio: noticed a blinking node on the router.",
+            "textToSpeak": "He noticed a blinking node on the router last night.",
             "options": [
-                "module",
-                "signal",
-                "software",
-                "code"
+                "node",
+                "satellite",
+                "device",
+                "engine"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch"
@@ -81,29 +86,31 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L22_Q3",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "module is the object.",
-            "textToSpeak": "The droid evaluates the module quietly.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Focus on the noun, not the action or description.",
+            "explanation": "Listen for portal: an online gateway used to access certain information or services. Mentioned in the sentence: checked the family portal before dinner.",
+            "textToSpeak": "She checked the family portal before dinner.",
             "options": [
-                "database",
-                "module",
-                "terminal",
-                "chip"
+                "drone",
+                "circuit",
+                "portal",
+                "satellite"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L23_Q1",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "circuit is the object.",
-            "textToSpeak": "The researcher launches the circuit immediately.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen for the main object word in the sentence.",
+            "explanation": "The correct answer is protocol - a set of official rules that controls how something is done. Heard in the audio: explained the new safety protocol.",
+            "textToSpeak": "Last week, the school explained the new safety protocol.",
             "options": [
-                "database",
-                "software",
+                "engine",
                 "satellite",
-                "circuit"
+                "device",
+                "protocol"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch"
@@ -111,14 +118,15 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L23_Q2",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "software is the object.",
-            "textToSpeak": "The artist observes the software swiftly.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Focus on the noun, not the action or description.",
+            "explanation": "Listen for satellite: an object sent into space that orbits the Earth to send or receive signals. Mentioned in the sentence: watched a satellite launch yesterday.",
+            "textToSpeak": "Our class watched a satellite launch yesterday.",
             "options": [
-                "code",
-                "node",
-                "software",
-                "terminal"
+                "protocol",
+                "portal",
+                "satellite",
+                "software"
             ],
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch"
@@ -126,44 +134,47 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L23_Q3",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "data is the object.",
-            "textToSpeak": "The engineer secures the data precisely.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Notice which thing the sentence is describing.",
+            "explanation": "Sensor is correct. A device that detects changes, such as light, heat, or movement. Context in the audio: tested a light sensor this morning.",
+            "textToSpeak": "The science lab tested a light sensor this morning.",
             "options": [
-                "data",
-                "protocol",
-                "signal",
-                "sensor"
+                "terminal",
+                "code",
+                "sensor",
+                "network"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L24_Q1",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "system is the object.",
-            "textToSpeak": "The hacker restores the system silently.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Focus on the noun, not the action or description.",
+            "explanation": "Signal is the object in the sentence. It means a sound, light, or wave used to send information or a message. From the audio: was weak during the test.",
+            "textToSpeak": "The Wi-Fi signal was weak during the test yesterday.",
             "options": [
-                "system",
-                "portal",
-                "protocol",
+                "chip",
+                "sensor",
+                "signal",
                 "device"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L24_Q2",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "engine is the object.",
-            "textToSpeak": "The hero locates the engine carefully.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Notice which thing the sentence is describing.",
+            "explanation": "Software is the object in the sentence. It means the programs and instructions that tell a computer what to do. From the audio: installed new software last Monday.",
+            "textToSpeak": "Our teacher installed new software last Monday.",
             "options": [
-                "code",
-                "archive",
+                "device",
                 "circuit",
-                "engine"
+                "drone",
+                "software"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch"
@@ -171,14 +182,15 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L24_Q3",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "drone is the object.",
-            "textToSpeak": "The expert repairs the drone instantly.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Pay attention to the specific item mentioned by name.",
+            "explanation": "System is correct. A set of parts that work together as a whole. Context in the audio: updated its grading system last year.",
+            "textToSpeak": "The school updated its grading system last year.",
             "options": [
+                "system",
                 "drone",
-                "protocol",
-                "database",
-                "code"
+                "circuit",
+                "chip"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch"
@@ -186,59 +198,63 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L25_Q1",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "engine is the object.",
-            "textToSpeak": "The hacker updates the engine effectively.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Notice which thing the sentence is describing.",
+            "explanation": "Terminal is the object in the sentence. It means a place where journeys begin or end, or a computer used to access a network. From the audio: worked at the checkout terminal all morning.",
+            "textToSpeak": "He worked at the checkout terminal all morning.",
             "options": [
-                "protocol",
                 "satellite",
-                "engine",
-                "node"
+                "sensor",
+                "drone",
+                "terminal"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L25_Q2",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "terminal is the object.",
-            "textToSpeak": "The traveler encrypts the terminal silently.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Pay attention to the specific item mentioned by name.",
+            "explanation": "Archive is correct. A collection of stored records or files kept for future reference. Context in the audio: organized the old company archive.",
+            "textToSpeak": "She organized the old company archive last week.",
             "options": [
-                "drone",
-                "terminal",
-                "code",
-                "database"
+                "chip",
+                "satellite",
+                "archive",
+                "device"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L25_Q3",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "node is the object.",
-            "textToSpeak": "The pilot activates the node rapidly.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen for the single key word that names an object.",
+            "explanation": "Chip is correct. A small electronic part that stores or processes information inside a device. Context in the audio: tested a faulty chip yesterday.",
+            "textToSpeak": "The factory tested a faulty chip yesterday.",
             "options": [
-                "node",
-                "engine",
-                "drone",
-                "data"
+                "network",
+                "signal",
+                "data",
+                "chip"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L26_Q1",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "code is the object.",
-            "textToSpeak": "The detective monitors the code successfully.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Pay attention to the specific item mentioned by name.",
+            "explanation": "Listen for circuit: a closed path that lets electricity flow to power a device. Mentioned in the sentence: repaired a broken circuit this afternoon.",
+            "textToSpeak": "He repaired a broken circuit this afternoon.",
             "options": [
-                "code",
+                "circuit",
+                "system",
                 "terminal",
-                "engine",
-                "archive"
+                "signal"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch"
@@ -246,104 +262,111 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L26_Q2",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "chip is the object.",
-            "textToSpeak": "The scientist encrypts the chip carefully.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen for the single key word that names an object.",
+            "explanation": "The correct answer is code - a set of written instructions that tells a computer what to do. Heard in the audio: wrote the billing code last Friday.",
+            "textToSpeak": "She wrote the billing code last Friday.",
             "options": [
-                "archive",
+                "circuit",
+                "drone",
                 "chip",
-                "data",
-                "circuit"
+                "code"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L26_Q3",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "portal is the object.",
-            "textToSpeak": "The researcher activates the portal immediately.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Ignore the verb and adjectives; focus on the object itself.",
+            "explanation": "Data is correct. Information that is collected, stored, or processed, often by a computer. Context in the audio: reviewed sales data yesterday morning.",
+            "textToSpeak": "The team reviewed sales data yesterday morning.",
             "options": [
-                "portal",
-                "archive",
-                "system",
-                "drone"
+                "sensor",
+                "drone",
+                "circuit",
+                "data"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L27_Q1",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "device is the object.",
-            "textToSpeak": "The robot deploys the device reliably.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen for the single key word that names an object.",
+            "explanation": "Listen for database: an organized collection of information stored electronically for easy access. Mentioned in the sentence: updated its booking database last night.",
+            "textToSpeak": "The airline updated its booking database last night.",
             "options": [
-                "device",
-                "portal",
-                "protocol",
-                "satellite"
+                "sensor",
+                "drone",
+                "database",
+                "circuit"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L27_Q2",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "node is the object.",
-            "textToSpeak": "The droid secures the node securely.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Ignore the verb and adjectives; focus on the object itself.",
+            "explanation": "Device is correct. A small machine or tool designed to do a specific job. Context in the audio: used a translation device during his trip.",
+            "textToSpeak": "He used a translation device during his trip.",
             "options": [
-                "node",
-                "terminal",
-                "software",
-                "drone"
+                "database",
+                "portal",
+                "archive",
+                "device"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L27_Q3",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "protocol is the object.",
-            "textToSpeak": "The scientist activates the protocol quietly.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Notice the noun that the sentence centers around.",
+            "explanation": "The correct answer is drone - an aircraft that flies without a pilot on board, often controlled remotely. Heard in the audio: filmed the coastline with a drone.",
+            "textToSpeak": "They filmed the coastline with a drone last summer.",
             "options": [
                 "protocol",
-                "sensor",
-                "system",
-                "software"
+                "module",
+                "drone",
+                "code"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L28_Q1",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "drone is the object.",
-            "textToSpeak": "The droid measures the drone reliably.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Ignore the verb and adjectives; focus on the object itself.",
+            "explanation": "The correct answer is engine - the part of a vehicle or machine that produces power to make it move. Heard in the audio: was checked before takeoff.",
+            "textToSpeak": "The plane's engine was checked before takeoff.",
             "options": [
-                "archive",
-                "drone",
-                "portal",
-                "chip"
+                "engine",
+                "module",
+                "software",
+                "system"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L28_Q2",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "archive is the object.",
-            "textToSpeak": "The researcher scans the archive steadily.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Notice the noun that the sentence centers around.",
+            "explanation": "Module is the object in the sentence. It means a separate section that is part of a larger system, course, or program. From the audio: completed a travel safety module online.",
+            "textToSpeak": "She completed a travel safety module online.",
             "options": [
-                "protocol",
-                "engine",
-                "circuit",
-                "archive"
+                "drone",
+                "sensor",
+                "device",
+                "module"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch"
@@ -351,14 +374,15 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L28_Q3",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "software is the object.",
-            "textToSpeak": "The commander validates the software steadily.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen closely for the object's name, not who or how.",
+            "explanation": "The correct answer is network - a group of connected computers or devices that share information. Heard in the audio: joined the airport network automatically.",
+            "textToSpeak": "His phone joined the airport network automatically.",
             "options": [
-                "drone",
-                "software",
-                "chip",
-                "archive"
+                "sensor",
+                "network",
+                "device",
+                "engine"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch"
@@ -366,14 +390,15 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L29_Q1",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "data is the object.",
-            "textToSpeak": "The explorer scans the data swiftly.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Notice the noun that the sentence centers around.",
+            "explanation": "The correct answer is node - a single connection point within a larger network. Heard in the audio: found a small node during dad's checkup.",
+            "textToSpeak": "The doctor found a small node during dad's checkup.",
             "options": [
-                "data",
-                "terminal",
-                "database",
-                "module"
+                "node",
+                "chip",
+                "drone",
+                "sensor"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch"
@@ -381,29 +406,31 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L29_Q2",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "code is the object.",
-            "textToSpeak": "The scout deploys the code steadily.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen closely for the object's name, not who or how.",
+            "explanation": "The correct answer is portal - an online gateway used to access certain information or services. Heard in the audio: paid the bills through the bank portal.",
+            "textToSpeak": "My mom paid the bills through the bank portal.",
             "options": [
-                "code",
-                "software",
+                "satellite",
+                "portal",
                 "circuit",
-                "protocol"
+                "engine"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L29_Q3",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "satellite is the object.",
-            "textToSpeak": "The technician secures the satellite rapidly.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Pick out the specific item described in the audio.",
+            "explanation": "Listen for protocol: a set of official rules that controls how something is done. Mentioned in the sentence: followed a strict bedtime protocol.",
+            "textToSpeak": "Our family followed a strict bedtime protocol last month.",
             "options": [
-                "module",
-                "satellite",
-                "node",
-                "database"
+                "drone",
+                "protocol",
+                "device",
+                "satellite"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch"
@@ -411,14 +438,15 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L30_Q1",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "module is the object.",
-            "textToSpeak": "The droid secures the module immediately.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen closely for the object's name, not who or how.",
+            "explanation": "Satellite is the object in the sentence. It means an object sent into space that orbits the Earth to send or receive signals. From the audio: watched the satellite move across the sky.",
+            "textToSpeak": "We watched the satellite move across the sky last night.",
             "options": [
-                "system",
-                "software",
-                "device",
-                "module"
+                "code",
+                "signal",
+                "database",
+                "satellite"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch"
@@ -426,29 +454,31 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L30_Q2",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "node is the object.",
-            "textToSpeak": "The droid activates the node quietly.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Pick out the specific item described in the audio.",
+            "explanation": "Sensor is the object in the sentence. It means a device that detects changes, such as light, heat, or movement. From the audio: installed a motion sensor at our door.",
+            "textToSpeak": "My dad installed a motion sensor at our door.",
             "options": [
-                "node",
-                "database",
+                "module",
                 "data",
-                "portal"
+                "network",
+                "sensor"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L30_Q3",
             "interactionType": "Visual Correlator",
-            "hint": "Match sound to object.",
-            "explanation": "software is the object.",
-            "textToSpeak": "The hacker scans the software directly.",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Focus on the thing being used, fixed, or mentioned.",
+            "explanation": "Listen for signal: a sound, light, or wave used to send information or a message. Mentioned in the sentence: disappeared during the camping trip.",
+            "textToSpeak": "Our phone signal disappeared during the camping trip.",
             "options": [
-                "software",
-                "node",
-                "drone",
-                "system"
+                "signal",
+                "engine",
+                "sensor",
+                "device"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch"
