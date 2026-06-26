@@ -12,7 +12,6 @@ import 'package:vowl/features/settings/presentation/pages/settings_screen.dart';
 import 'package:vowl/features/home/presentation/pages/vowl_mascot_screen.dart';
 import 'package:vowl/features/premium/presentation/pages/premium_screen.dart';
 import 'package:vowl/features/home/presentation/pages/streak_screen.dart';
-import 'package:vowl/features/settings/presentation/pages/admin_dashboard.dart';
 import 'package:vowl/features/home/presentation/pages/quest_library_page.dart';
 import 'package:vowl/features/profile/presentation/pages/trophy_room_screen.dart';
 
@@ -24,7 +23,7 @@ class HomeRoutes {
   static const String gamesRoute = '/games';
   static const String premiumRoute = '/premium';
   static const String profileRoute = '/profile';
-  static const String adminRoute = '/admin';
+
   static const String settingsRoute = '/settings';
   static const String leaderboardRoute = '/leaderboard';
   static const String libraryRoute = '/library';
@@ -127,21 +126,7 @@ class HomeRoutes {
       pageBuilder: (context, state) =>
           fadeTransitionPage(child: const StreakScreen(), state: state),
     ),
-    // SECURITY — VERIFY BEFORE RELEASE: this route has no route-level guard
-    // here. If `AdminDashboard` does not independently verify the current
-    // user's admin role on its own (and is not otherwise protected, e.g.
-    // by being unreachable from any in-app navigation for non-admins), any
-    // user who learns or guesses this path could navigate straight to it.
-    // Route-level enforcement (e.g. a `redirect:` callback checking
-    // something like `AuthBloc.state.user?.isAdmin`) is the correct fix,
-    // but the field/contract to check isn't visible in this file slice —
-    // confirm the actual role field on UserEntity before wiring a redirect
-    // here, since guessing the wrong field name would fail to compile.
-    GoRoute(
-      path: adminRoute,
-      pageBuilder: (context, state) =>
-          fadeTransitionPage(child: const AdminDashboard(), state: state),
-    ),
+
     GoRoute(
       path: trophyRoomRoute,
       pageBuilder: (context, state) =>

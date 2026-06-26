@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:intl/intl.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
 
-/// Legacy Map-based plan card.
-///
-/// Superseded by [PremiumPlanCardV2], which takes a typed
-/// `SubscriptionPlan` domain entity instead of an untyped
-/// `Map<String, dynamic>` (no compile-time safety, no validation).
-///
-/// Kept in place only for backward compatibility in case another part of
-/// the app still references it outside this reviewed slice. New code
-/// should use `PremiumPlanCardV2`. Once nothing imports this file, delete
-/// it and remove its export from `widgets.dart`.
-@Deprecated('Use PremiumPlanCardV2 with the SubscriptionPlan entity instead.')
 class PremiumPlanCard extends StatelessWidget {
-  final Map<String, dynamic> plan;
+  final SubscriptionPlan plan;
   final bool isSelected;
   final VoidCallback onTap;
 
@@ -29,18 +20,23 @@ class PremiumPlanCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final accentColor = plan['color'] as Color;
-    final name = plan['name'].toString();
-    final price = plan['price'] as double;
-    final oldPrice = plan['oldPrice'] as double?;
-    final days = plan['days'] as int;
-    final tag = plan['tag'] as String?;
+    final accentColor = plan.getColorFromHex();
+    // Locale-aware grouping (e.g. ₹1,499 vs ₹1.499 depending on locale)
+    // while keeping the INR symbol fixed, since the underlying Razorpay
+    // charge is always in INR regardless of the device's display locale.
+    final currencyFormat = NumberFormat.currency(
+      locale: Localizations.localeOf(context).toString(),
+      symbol: '₹',
+      decimalDigits: 0,
+    );
+    final savings = plan.oldPrice - plan.price;
 
     return Semantics(
       button: true,
       selected: isSelected,
       label:
-          '$name, ₹${price.toInt()}, $days ${context.tr('premium.days_access')}',
+          '${plan.name}, ${currencyFormat.format(plan.price)}, '
+          '${context.tr('premium.days_of_elite_access', args: ['${plan.days}'])}',
       child: GestureDetector(
         onTap: onTap,
         child: AnimatedContainer(
@@ -80,7 +76,7 @@ class PremiumPlanCard extends StatelessWidget {
                       children: [
                         Flexible(
                           child: Text(
-                            name.toUpperCase(),
+                            plan.name.toUpperCase(),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
@@ -92,37 +88,35 @@ class PremiumPlanCard extends StatelessWidget {
                             ),
                           ),
                         ),
-                        if (tag != null) ...[
-                          SizedBox(width: 8.w),
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 6.w,
-                              vertical: 2.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: accentColor.withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(6.r),
-                            ),
-                            child: Text(
-                              tag,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                color: accentColor,
-                                fontSize: 8.sp,
-                                fontWeight: FontWeight.w900,
-                              ),
+                        SizedBox(width: 8.w),
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 6.w,
+                            vertical: 2.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: accentColor.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(6.r),
+                          ),
+                          child: Text(
+                            plan.tag,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: accentColor,
+                              fontSize: 8.sp,
+                              fontWeight: FontWeight.w900,
                             ),
                           ),
-                        ],
+                        ),
                       ],
                     ),
                     SizedBox(height: 4.h),
                     Text(
                       context.tr(
                         'premium.days_of_elite_access',
-                        args: ['$days'],
+                        args: ['${plan.days}'],
                       ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -138,27 +132,27 @@ class PremiumPlanCard extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(width: 8.w),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (oldPrice != null) ...[
-                        Text(
-                          '₹${oldPrice.toInt()}',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            color: isDark
-                                ? const Color(0x3DFFFFFF)
-                                : const Color(0x42000000),
-                            fontSize: 13.sp,
-                            decoration: TextDecoration.lineThrough,
-                          ),
-                        ),
-                        SizedBox(width: 6.w),
-                      ],
                       Text(
-                        '₹${price.toInt()}',
+                        currencyFormat.format(plan.oldPrice),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          color: isDark
+                              ? const Color(0x3DFFFFFF)
+                              : const Color(0x42000000),
+                          fontSize: 13.sp,
+                          decoration: TextDecoration.lineThrough,
+                        ),
+                      ),
+                      SizedBox(width: 6.w),
+                      Text(
+                        currencyFormat.format(plan.price),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           color: isDark ? Colors.white : Colors.black,
@@ -168,30 +162,28 @@ class PremiumPlanCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  if (oldPrice != null) ...[
-                    SizedBox(height: 4.h),
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 6.w,
-                        vertical: 2.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: accentColor.withValues(alpha: 0.15),
-                        borderRadius: BorderRadius.circular(4.r),
-                      ),
-                      child: Text(
-                        // BUG FIX: original was missing the ₹ symbol, e.g.
-                        // showing "Save 50" instead of "Save ₹50".
-                        '${context.tr('premium.save')} ₹${(oldPrice - price).toStringAsFixed(0)}',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          color: accentColor,
-                          fontSize: 9.sp,
-                          fontWeight: FontWeight.w900,
-                        ),
+                  SizedBox(height: 4.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 6.w,
+                      vertical: 2.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: accentColor.withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(4.r),
+                    ),
+                    child: Text(
+                      '${context.tr('premium.save')} ${currencyFormat.format(savings)}',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: accentColor,
+                        fontSize: 9.sp,
+                        fontWeight: FontWeight.w900,
                       ),
                     ),
-                  ],
+                  ),
                 ],
               ),
             ],

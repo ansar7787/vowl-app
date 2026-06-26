@@ -8,7 +8,6 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/presentation/widgets/games/vowl_letter_background.dart';
 import 'package:vowl/core/presentation/widgets/games/modern_path_painter.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
@@ -214,11 +213,6 @@ class ModernPathGameMap extends StatelessWidget {
               segmentHeight,
             ),
           ],
-        ),
-        // Custom letter background for texture
-        const VowlLetterBackground(
-          color: Color(0x0DFFFFFF), // Colors.white at alpha 0.05
-          style: VowlBackgroundStyle.scatter,
         ),
       ],
     );

@@ -58,6 +58,7 @@ import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
 import 'package:vowl/features/auth/presentation/bloc/signup_cubit.dart';
+import 'package:vowl/features/auth/presentation/bloc/forgot_password_cubit.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/leaderboard/presentation/bloc/leaderboard_bloc.dart';
 
@@ -266,6 +267,12 @@ void initAuthFeature(GetIt sl) {
     () => SignUpCubit(
       signUp: sl<SignUp>(),
       sendEmailVerification: sl<SendEmailVerification>(),
+      networkInfo: sl<NetworkInfo>(),
+    ),
+  );
+  sl.registerFactory<ForgotPasswordCubit>(
+    () => ForgotPasswordCubit(
+      forgotPassword: sl<ForgotPassword>(),
       networkInfo: sl<NetworkInfo>(),
     ),
   );

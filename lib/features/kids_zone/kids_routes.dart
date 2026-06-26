@@ -32,7 +32,6 @@ import 'package:vowl/features/kids_zone/presentation/pages/games/body_parts_game
 import 'package:vowl/features/kids_zone/presentation/pages/games/clothing_game_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/buddy_boutique_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/kids_room_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/admin/kids_admin_screen.dart';
 
 class KidsRoutes {
   static const String kidsZoneRoute = '/kids-zone';
@@ -62,7 +61,6 @@ class KidsRoutes {
   static const String kidsBodyPartsRoute = '/kids-body-parts';
   static const String kidsClothingRoute = '/kids-clothing';
   static const String kidsBuddyBoutiqueRoute = '/kids-zone/boutique';
-  static const String kidsAdminRoute = '/kids-admin';
   static const String kidsRoomRoute = '/kids-room';
 
   static String getKidsGameTitle(String gameType) {
@@ -398,11 +396,6 @@ class KidsRoutes {
         ),
         state: state,
       ),
-    ),
-    GoRoute(
-      path: kidsAdminRoute,
-      pageBuilder: (context, state) =>
-          fadeTransitionPage(child: const KidsAdminScreen(), state: state),
     ),
     GoRoute(
       path: kidsRoomRoute,

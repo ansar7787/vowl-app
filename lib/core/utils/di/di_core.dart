@@ -8,13 +8,11 @@ import 'package:internet_connection_checker_plus/internet_connection_checker_plu
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 
 import 'package:vowl/core/network/network_info.dart';
-import 'package:vowl/core/utils/seeding_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/local_smart_tutor.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/core/utils/speech_service.dart';
-import 'package:vowl/core/utils/quest_upload_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/data/services/asset_quest_service.dart';
 import 'package:vowl/core/utils/story_service.dart';
@@ -71,9 +69,6 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<NetworkInfo>(
     () => NetworkInfoImpl(sl<InternetConnection>()),
   );
-  sl.registerLazySingleton<SeedingService>(
-    () => SeedingService(sl<FirebaseFirestore>()),
-  );
   // NOTE: TtsService must be registered before SoundService since
   // SoundService depends on it. Both are lazy singletons so the order
   // here only matters for readability; the actual resolution is deferred.
@@ -92,7 +87,6 @@ Future<void> initExternalAndCore(GetIt sl) async {
     () => SubscriptionPlansService(firestore: sl<FirebaseFirestore>()),
   );
   sl.registerLazySingleton<SpeechService>(() => SpeechService());
-  sl.registerLazySingleton<QuestUploadService>(() => QuestUploadService());
   sl.registerLazySingleton<KidsTTSService>(() => KidsTTSService());
   sl.registerLazySingleton<KidsAudioService>(() => KidsAudioService());
   sl.registerLazySingleton<AssetQuestService>(() => AssetQuestService());

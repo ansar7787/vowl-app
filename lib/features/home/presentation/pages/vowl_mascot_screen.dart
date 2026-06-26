@@ -13,7 +13,6 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
-import 'package:vowl/core/presentation/widgets/banner_ad_widget.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -524,8 +523,6 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
             ),
           ),
           SizedBox(height: 32.h),
-          const RepaintBoundary(child: BannerAdWidget()),
-          SizedBox(height: 32.h),
           if (user.vowlMascot != null)
             RepaintBoundary(
               child: _buildEquippedSection(
@@ -597,8 +594,6 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
               ),
             ),
           ),
-          SizedBox(height: 32.h),
-          const RepaintBoundary(child: BannerAdWidget()),
           SizedBox(height: 100.h),
         ]),
       ),

@@ -373,7 +373,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   Widget _buildPlanList() {
     return Column(
       children: List.generate(_plans.length, (index) {
-        return PremiumPlanCardV2(
+        return PremiumPlanCard(
           plan: _plans[index],
           isSelected: _selectedPlanIndex == index,
           onTap: () {
