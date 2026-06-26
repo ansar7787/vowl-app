@@ -3,422 +3,452 @@
     "quests": [
         {
             "id": "VOC_ANTONYMSEARCH_L31_Q1",
-            "word": "COHERENT",
-            "hint": "Think about a word meaning confused or jumbled.",
-            "explanation": "Coherent means logical and consistent; muddled means confused.",
+            "word": "EDIBLE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning not safe or fit to eat.",
+            "explanation": "Edible means safe and fit to eat; inedible means not safe to eat.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "MUDDLED",
+            "correctAnswer": "INEDIBLE",
             "options": [
-                "MUDDLED",
-                "CLEAR",
-                "LOGICAL",
-                "ORDERLY"
+                "CONSUMABLE",
+                "DIGESTIBLE",
+                "INEDIBLE",
+                "PALATABLE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L31_Q2",
-            "word": "KINDLE",
-            "hint": "Look for a word meaning to put out a fire.",
-            "explanation": "Kindle means to light a fire; extinguish means to put it out.",
+            "word": "MATURE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning behaving in a childish way.",
+            "explanation": "Mature means behaving in a sensible, adult way; immature means behaving in a childish way.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "EXTINGUISH",
+            "correctAnswer": "IMMATURE",
             "options": [
-                "SPARK",
-                "EXTINGUISH",
-                "IGNITE",
-                "LIGHT"
+                "GROWN",
+                "ADULT",
+                "SEASONED",
+                "IMMATURE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L31_Q3",
-            "word": "AUGMENT",
-            "hint": "Look for a word meaning to make or become less.",
-            "explanation": "Augment means to make greater; diminish means to make less.",
+            "word": "ADEQUATE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning not enough for a particular purpose.",
+            "explanation": "Adequate means enough for a purpose; inadequate means not enough for it.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "DIMINISH",
+            "correctAnswer": "INADEQUATE",
             "options": [
-                "DIMINISH",
-                "BOOST",
-                "GROW",
-                "INCREASE"
+                "INADEQUATE",
+                "SUFFICIENT",
+                "SATISFACTORY",
+                "ACCEPTABLE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L32_Q1",
-            "word": "ANALOGOUS",
-            "hint": "Look for a word meaning essentially different.",
-            "explanation": "Analogous means comparable; disparate means essentially different.",
+            "word": "RELEVANT",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning not connected to the matter at hand.",
+            "explanation": "Relevant means connected to the matter at hand; irrelevant means not connected to it.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "DISPARATE",
+            "correctAnswer": "IRRELEVANT",
             "options": [
-                "KIN",
-                "PARALLEL",
-                "DISPARATE",
-                "SIMILAR"
+                "APPLICABLE",
+                "IRRELEVANT",
+                "PERTINENT",
+                "RELATED"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L32_Q2",
-            "word": "AMBIGUOUS",
-            "hint": "Look for a word meaning clear and easy to understand.",
-            "explanation": "Ambiguous means unclear; lucid means clear and easy to understand.",
+            "word": "REGULAR",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning not following a fixed pattern.",
+            "explanation": "Regular means following a fixed pattern; irregular means not following one.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "LUCID",
+            "correctAnswer": "IRREGULAR",
             "options": [
-                "DUBIOUS",
-                "VAGUE",
-                "LUCID",
-                "OBSCURE"
+                "CONSISTENT",
+                "UNIFORM",
+                "IRREGULAR",
+                "STEADY"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L32_Q3",
-            "word": "AMALGAMATE",
-            "hint": "Think about setting things apart.",
-            "explanation": "Amalgamate means to combine; separate means to set apart.",
+            "word": "CAPABLE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning unable to do something.",
+            "explanation": "Capable means able to do something well; incapable means unable to do it.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "SEPARATE",
+            "correctAnswer": "INCAPABLE",
             "options": [
-                "MERGE",
-                "BLEND",
-                "COMBINE",
-                "SEPARATE"
+                "COMPETENT",
+                "SKILLED",
+                "QUALIFIED",
+                "INCAPABLE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L33_Q1",
-            "word": "CONSECRATE",
-            "hint": "Think about treating something sacred with violent disrespect.",
-            "explanation": "Consecrate means to make sacred; desecrate means to treat with disrespect.",
+            "word": "GRACEFUL",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning awkward in movement.",
+            "explanation": "Graceful means smooth and elegant in movement; clumsy means awkward in movement.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "DESECRATE",
+            "correctAnswer": "CLUMSY",
             "options": [
-                "BLESS",
-                "SANCTIFY",
-                "DESECRATE",
-                "HALLOW"
+                "CLUMSY",
+                "ELEGANT",
+                "POISED",
+                "SMOOTH"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L33_Q2",
-            "word": "AFFABLE",
-            "hint": "Think about a word meaning bad-tempered or unfriendly.",
-            "explanation": "Affable means friendly; surly means bad-tempered.",
+            "word": "ELEGANT",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning rough or lacking refinement.",
+            "explanation": "Elegant means stylish and refined; crude means rough and lacking refinement.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "SURLY",
+            "correctAnswer": "CRUDE",
             "options": [
-                "FRIENDLY",
-                "AMICABLE",
-                "SURLY",
-                "GENIAL"
+                "REFINED",
+                "CRUDE",
+                "STYLISH",
+                "POLISHED"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L33_Q3",
-            "word": "AUSTERE",
-            "hint": "Think about providing great comfort and wealth.",
-            "explanation": "Austere means severe or strict; luxurious means comfortable and wealthy.",
+            "word": "PRECISE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning not exact or accurate.",
+            "explanation": "Precise means exact and accurate; imprecise means not exact.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "LUXURIOUS",
+            "correctAnswer": "IMPRECISE",
             "options": [
-                "LUXURIOUS",
-                "STERN",
-                "STRICT",
-                "HARSH"
+                "EXACT",
+                "ACCURATE",
+                "IMPRECISE",
+                "METICULOUS"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L34_Q1",
-            "word": "COPIOUS",
-            "hint": "Think about something lacking in quantity.",
-            "explanation": "Copious means abundant in supply; meager means lacking in quantity.",
+            "word": "STEADY",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning trembling or unstable.",
+            "explanation": "Steady means firm and not shaking; shaky means trembling or unstable.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "MEAGER",
+            "correctAnswer": "SHAKY",
             "options": [
-                "AMPLE",
-                "ABUNDANT",
-                "MEAGER",
-                "PLENTIFUL"
+                "FIRM",
+                "STABLE",
+                "SOLID",
+                "SHAKY"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L34_Q2",
-            "word": "CREDULOUS",
-            "hint": "Think about not being easily convinced.",
-            "explanation": "Credulous means having a tendency to be too ready to believe; skeptical means not easily convinced.",
+            "word": "SECURE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning open to being harmed or attacked.",
+            "explanation": "Secure means safe from harm; vulnerable means open to being harmed.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "SKEPTICAL",
+            "correctAnswer": "VULNERABLE",
             "options": [
-                "NAIVE",
-                "GULLIBLE",
-                "TRUSTING",
-                "SKEPTICAL"
+                "VULNERABLE",
+                "SAFE",
+                "PROTECTED",
+                "SHIELDED"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L34_Q3",
-            "word": "CONGENIAL",
-            "hint": "Think about a word meaning unpleasant or unfriendly.",
-            "explanation": "Congenial means pleasant or friendly; disagreeable means unpleasant.",
+            "word": "ROBUST",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning easily broken or damaged.",
+            "explanation": "Robust means strong and sturdy; fragile means easily broken or damaged.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "DISAGREEABLE",
+            "correctAnswer": "FRAGILE",
             "options": [
-                "FRIENDLY",
-                "DISAGREEABLE",
-                "GENIAL",
-                "PLEASANT"
+                "STURDY",
+                "FRAGILE",
+                "RUGGED",
+                "TOUGH"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L35_Q1",
-            "word": "CONTENTIOUS",
-            "hint": "Look for a word meaning inclined to avoid conflict.",
-            "explanation": "Contentious means likely to cause an argument; peaceable means avoiding conflict.",
+            "word": "FERTILE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning unable to produce crops or plants.",
+            "explanation": "Fertile means able to produce abundant crops; barren means unable to produce them.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "PEACEABLE",
+            "correctAnswer": "BARREN",
             "options": [
-                "PEACEABLE",
-                "HOSTILE",
-                "QUARRELSOME",
-                "ANTAGONISTIC"
+                "PRODUCTIVE",
+                "RICH",
+                "BARREN",
+                "LUSH"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L35_Q2",
-            "word": "QUIESCENT",
-            "hint": "Look for a word meaning engaging in action.",
-            "explanation": "Quiescent means in a state of inactivity; active means engaging in action.",
+            "word": "SPACIOUS",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning uncomfortably small in space.",
+            "explanation": "Spacious means having plenty of room; cramped means uncomfortably small.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "ACTIVE",
+            "correctAnswer": "CRAMPED",
             "options": [
-                "CALM",
-                "STILL",
-                "LATENT",
-                "ACTIVE"
+                "ROOMY",
+                "EXPANSIVE",
+                "AMPLE",
+                "CRAMPED"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L35_Q3",
-            "word": "DEMURE",
-            "hint": "Think about being bold and without shame.",
-            "explanation": "Demure means reserved, modest, and shy; brazen means bold and without shame.",
+            "word": "LUXURIOUS",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning simple and not showy or expensive.",
+            "explanation": "Luxurious means extremely comfortable and costly; modest means simple and not showy.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "BRAZEN",
+            "correctAnswer": "MODEST",
             "options": [
-                "MEEK",
                 "MODEST",
-                "SHY",
-                "BRAZEN"
+                "LAVISH",
+                "OPULENT",
+                "PLUSH"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L36_Q1",
-            "word": "CIRCUITOUS",
-            "hint": "Look for a word meaning straight or non-stop.",
-            "explanation": "Circuitous means indirect and roundabout; direct means straight.",
+            "word": "ELABORATE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning simple and without decoration.",
+            "explanation": "Elaborate means detailed and decorated; plain means simple and without decoration.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "DIRECT",
+            "correctAnswer": "PLAIN",
             "options": [
-                "ROUNDABOUT",
-                "DIRECT",
-                "INDIRECT",
-                "WINDING"
+                "INTRICATE",
+                "PLAIN",
+                "ORNATE",
+                "DETAILED"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L36_Q2",
-            "word": "CAPRICIOUS",
-            "hint": "Think about a word meaning resolutely dutiful.",
-            "explanation": "Capricious means impulsive and unpredictable; steadfast means dutiful.",
+            "word": "VIBRANT",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning lacking brightness, color, or excitement.",
+            "explanation": "Vibrant means full of life and bright color; dull means lacking brightness or excitement.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "STEADFAST",
+            "correctAnswer": "DULL",
             "options": [
-                "STEADFAST",
-                "VARIABLE",
-                "UNSTABLE",
-                "FICKLE"
+                "LIVELY",
+                "COLORFUL",
+                "DULL",
+                "VIVID"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L36_Q3",
-            "word": "CONTRITE",
-            "hint": "Think about showing no regret for one's wrongdoings.",
-            "explanation": "Contrite means feeling remorse; unrepentant means showing no regret.",
+            "word": "FERVENT",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning having no particular interest or concern.",
+            "explanation": "Fervent means showing intense feeling; indifferent means having no particular interest.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "UNREPENTANT",
+            "correctAnswer": "INDIFFERENT",
             "options": [
-                "UNREPENTANT",
-                "SORRY",
-                "REMORSEFUL",
-                "PENITENT"
+                "PASSIONATE",
+                "ARDENT",
+                "ZEALOUS",
+                "INDIFFERENT"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L37_Q1",
-            "word": "CLANDESTINE",
-            "hint": "Think about a word meaning done or shown openly.",
-            "explanation": "Clandestine means kept secret; overt means done openly.",
+            "word": "ADVENTUROUS",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning careful to avoid risk.",
+            "explanation": "Adventurous means willing to take risks; cautious means careful to avoid risk.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "OVERT",
+            "correctAnswer": "CAUTIOUS",
             "options": [
-                "COVERT",
-                "SECRET",
-                "OVERT",
-                "HIDDEN"
+                "CAUTIOUS",
+                "DARING",
+                "BOLD",
+                "DAREDEVIL"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L37_Q2",
-            "word": "CONCILIATORY",
-            "hint": "Look for a word meaning hostile and aggressive.",
-            "explanation": "Conciliatory means intended to pacify; belligerent means aggressive.",
+            "word": "INVENTIVE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning lacking new or creative ideas.",
+            "explanation": "Inventive means having new and creative ideas; unoriginal means lacking new ideas.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "BELLIGERENT",
+            "correctAnswer": "UNORIGINAL",
             "options": [
-                "GENTLE",
-                "CALM",
-                "BELLIGERENT",
-                "PEACEABLE"
+                "CREATIVE",
+                "UNORIGINAL",
+                "IMAGINATIVE",
+                "RESOURCEFUL"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L37_Q3",
-            "word": "ABUNDANT",
-            "hint": "Think about limited availability.",
-            "explanation": "Abundant means plentiful, while scarce means insufficient or rare.",
+            "word": "PERSUASIVE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning failing to make someone believe something.",
+            "explanation": "Persuasive means good at making people believe something; unconvincing means failing to do so.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "SCARCE",
+            "correctAnswer": "UNCONVINCING",
             "options": [
-                "COPIOUS",
-                "BOUNTIFUL",
-                "AMPLER",
-                "SCARCE"
+                "COMPELLING",
+                "CONVINCING",
+                "UNCONVINCING",
+                "EFFECTIVE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L38_Q1",
-            "word": "CONSUMMATE",
-            "hint": "Look for a word meaning lacking skill or knowledge.",
-            "explanation": "Consummate means showing great skill; inexpert means lacking skill.",
+            "word": "ACCOMMODATING",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning requiring a great deal of effort or attention.",
+            "explanation": "Accommodating means willing to help and adapt; demanding means requiring a great deal of effort.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "INEXPERT",
+            "correctAnswer": "DEMANDING",
             "options": [
-                "INEXPERT",
-                "SUPERIOR",
-                "EXPERT",
-                "PERFECT"
+                "HELPFUL",
+                "FLEXIBLE",
+                "OBLIGING",
+                "DEMANDING"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L38_Q2",
-            "word": "IMMUTABLE",
-            "hint": "Look for a word meaning temporary.",
-            "explanation": "Immutable means unchanging; transient means lasting only a short time.",
+            "word": "VERSATILE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning restricted to only a few uses or abilities.",
+            "explanation": "Versatile means able to do many different things; limited means restricted to only a few.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "TRANSIENT",
+            "correctAnswer": "LIMITED",
             "options": [
-                "TRANSIENT",
-                "FIXED",
-                "STABLE",
-                "RIGID"
+                "LIMITED",
+                "ADAPTABLE",
+                "MULTI-SKILLED",
+                "FLEXIBLE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L38_Q3",
-            "word": "CULPABLE",
-            "hint": "Think about not being responsible for a crime.",
-            "explanation": "Culpable means deserving blame; innocent means not responsible.",
+            "word": "COOPERATIVE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning unwilling to work helpfully with others.",
+            "explanation": "Cooperative means willing to work helpfully with others; uncooperative means unwilling to do so.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "INNOCENT",
+            "correctAnswer": "UNCOOPERATIVE",
             "options": [
-                "BLAMEWORTHY",
-                "INNOCENT",
-                "GUILTY",
-                "LIABLE"
+                "HELPFUL",
+                "UNCOOPERATIVE",
+                "WILLING",
+                "SUPPORTIVE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L39_Q1",
-            "word": "COLLUSION",
-            "hint": "Look for a word meaning the quality of being truthful.",
-            "explanation": "Collusion is secret cooperation for deceit; honesty is being truthful.",
+            "word": "THRIFTY",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning using more than is needed without care.",
+            "explanation": "Thrifty means careful with money and resources; wasteful means using more than is needed.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "HONESTY",
+            "correctAnswer": "WASTEFUL",
             "options": [
-                "HONESTY",
-                "PLOT",
-                "SCHEME",
-                "CONSPIRACY"
+                "FRUGAL",
+                "ECONOMICAL",
+                "WASTEFUL",
+                "SPARING"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L39_Q2",
-            "word": "DESPONDENT",
-            "hint": "Look for a word meaning noticeable happy and optimistic.",
-            "explanation": "Despondent means in low spirits from loss of hope; cheerful means happy.",
+            "word": "SPONTANEOUS",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning arranged carefully in advance.",
+            "explanation": "Spontaneous means done without planning; planned means arranged carefully in advance.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "CHEERFUL",
+            "correctAnswer": "PLANNED",
             "options": [
-                "GLOOMY",
-                "CHEERFUL",
-                "HOPELESS",
-                "SAD"
+                "IMPULSIVE",
+                "UNPLANNED",
+                "UNREHEARSED",
+                "PLANNED"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L39_Q3",
-            "word": "CLEMENCY",
-            "hint": "Look for a word meaning behavior that causes pain.",
-            "explanation": "Clemency is mercy or lenience; cruelty is behavior causing pain.",
+            "word": "AFFORDABLE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning too expensive for most people to buy.",
+            "explanation": "Affordable means reasonably priced; unaffordable means too expensive to buy.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "CRUELTY",
+            "correctAnswer": "UNAFFORDABLE",
             "options": [
-                "MERCY",
-                "LENIENCY",
-                "CRUELTY",
-                "PITY"
+                "UNAFFORDABLE",
+                "INEXPENSIVE",
+                "REASONABLE",
+                "ECONOMICAL"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L40_Q1",
-            "word": "ARTICULATE",
-            "hint": "Look for a word meaning unclear or confused.",
-            "explanation": "Articulate means fluent and clear; incoherent means unclear.",
+            "word": "DURABLE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning easily damaged or broken.",
+            "explanation": "Durable means able to last a long time without damage; flimsy means easily damaged.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "INCOHERENT",
+            "correctAnswer": "FLIMSY",
             "options": [
-                "CLEAR",
-                "INCOHERENT",
-                "ELOQUENT",
-                "FLUENT"
+                "STURDY",
+                "FLIMSY",
+                "TOUGH",
+                "LONG-LASTING"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L40_Q2",
-            "word": "BLITHE",
-            "hint": "Look for a word meaning feeling or showing grief.",
-            "explanation": "Blithe means happy and carefree; sorrowful means feeling grief.",
+            "word": "TRANSPARENT",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning unwilling to share information openly.",
+            "explanation": "Transparent means open and easy to understand; secretive means unwilling to share information.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "SORROWFUL",
+            "correctAnswer": "SECRETIVE",
             "options": [
-                "CHEERFUL",
-                "HAPPY",
-                "SORROWFUL",
-                "CAREFREE"
+                "OPEN",
+                "CLEAR",
+                "SECRETIVE",
+                "FORTHCOMING"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L40_Q3",
-            "word": "DELUDE",
-            "hint": "Look for a word meaning to give someone greater knowledge and understanding.",
-            "explanation": "Delude means to impose a misleading belief; enlighten means to give greater knowledge.",
+            "word": "DECISIVE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning unable to make decisions quickly.",
+            "explanation": "Decisive means able to make decisions quickly; indecisive means unable to make decisions quickly.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "ENLIGHTEN",
+            "correctAnswer": "INDECISIVE",
             "options": [
-                "TRICK",
-                "FOOL",
-                "ENLIGHTEN",
-                "DECEIVE"
+                "RESOLUTE",
+                "DETERMINED",
+                "CONFIDENT",
+                "INDECISIVE"
             ]
         }
     ],

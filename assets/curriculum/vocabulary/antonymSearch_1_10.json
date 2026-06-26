@@ -3,422 +3,452 @@
     "quests": [
         {
             "id": "VOC_ANTONYMSEARCH_L1_Q1",
-            "word": "CHRONIC",
-            "hint": "Think about lasting for only a limited period of time.",
-            "explanation": "Chronic means long-lasting; temporary means lasting for a short time.",
+            "word": "HAPPY",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning feeling unhappy or sorrowful.",
+            "explanation": "Happy means feeling joy or pleasure; sad means feeling unhappy.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "TEMPORARY",
+            "correctAnswer": "SAD",
             "options": [
-                "STUBBORN",
-                "TEMPORARY",
-                "PERSISTENT",
-                "CONSTANT"
+                "SAD",
+                "CHEERFUL",
+                "JOYFUL",
+                "PLEASED"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L1_Q2",
-            "word": "ANTAGONISM",
-            "hint": "Look for a word meaning friendly relations.",
-            "explanation": "Antagonism is active hostility; amity is a friendly relationship.",
+            "word": "BRAVE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning lacking courage in the face of danger.",
+            "explanation": "Brave means having courage; cowardly means lacking courage.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "AMITY",
+            "correctAnswer": "COWARDLY",
             "options": [
-                "HOSTILITY",
-                "ENMITY",
-                "AMITY",
-                "STRIFE"
+                "BOLD",
+                "COWARDLY",
+                "FEARLESS",
+                "DARING"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L1_Q3",
-            "word": "CASTIGATE",
-            "hint": "Look for a word meaning to praise someone.",
-            "explanation": "Castigate means to reprimand severely; compliment means to praise.",
+            "word": "HONEST",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning not telling the truth.",
+            "explanation": "Honest means telling the truth; dishonest means not telling the truth.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "COMPLIMENT",
+            "correctAnswer": "DISHONEST",
             "options": [
-                "COMPLIMENT",
-                "REPRIMAND",
-                "SCOLD",
-                "PUNISH"
+                "TRUTHFUL",
+                "SINCERE",
+                "DISHONEST",
+                "FRANK"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L2_Q1",
-            "word": "COMPLACENT",
-            "hint": "Think about a word meaning having a modest estimate of one's importance.",
-            "explanation": "Complacent means smug and self-satisfied; humble means modest.",
+            "word": "GENEROUS",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning unwilling to share or spend money.",
+            "explanation": "Generous means willing to give; stingy means unwilling to share.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "HUMBLE",
+            "correctAnswer": "STINGY",
             "options": [
-                "VAIN",
-                "SATISFIED",
-                "SMUG",
-                "HUMBLE"
+                "CHARITABLE",
+                "GIVING",
+                "UNSELFISH",
+                "STINGY"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L2_Q2",
-            "word": "DEROGATORY",
-            "hint": "Look for a word meaning expressing a compliment; praising or approving.",
-            "explanation": "Derogatory means showing a critical or disrespectful attitude; complimentary means praising.",
+            "word": "POLITE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning showing bad manners.",
+            "explanation": "Polite means having good manners; rude means showing bad manners.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "COMPLIMENTARY",
+            "correctAnswer": "RUDE",
             "options": [
-                "COMPLIMENTARY",
-                "INSULTING",
                 "RUDE",
-                "OFFENSIVE"
+                "COURTEOUS",
+                "RESPECTFUL",
+                "WELL-MANNERED"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L2_Q3",
-            "word": "ASSIDUOUS",
-            "hint": "Look for a word meaning avoiding work.",
-            "explanation": "Assiduous means showing great care; lazy means avoiding work.",
+            "word": "PATIENT",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning unable to wait calmly.",
+            "explanation": "Patient means able to wait calmly; impatient means unable to wait calmly.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "LAZY",
+            "correctAnswer": "IMPATIENT",
             "options": [
-                "BUSY",
-                "DILIGENT",
-                "ACTIVE",
-                "LAZY"
+                "CALM",
+                "IMPATIENT",
+                "TOLERANT",
+                "EASYGOING"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L3_Q1",
-            "word": "ASTUTE",
-            "hint": "Think about a word meaning easily persuaded to believe something.",
-            "explanation": "Astute means shrewd and clever; gullible means easily fooled.",
+            "word": "CONFIDENT",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning feeling worried or uneasy.",
+            "explanation": "Confident means feeling sure of oneself; nervous means feeling worried.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "GULLIBLE",
+            "correctAnswer": "NERVOUS",
             "options": [
-                "CLEVER",
-                "SHARP",
-                "SHREWD",
-                "GULLIBLE"
+                "SELF-ASSURED",
+                "BOLD",
+                "NERVOUS",
+                "CERTAIN"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L3_Q2",
-            "word": "NEFARIOUS",
-            "hint": "Think about a word meaning having high moral standards.",
-            "explanation": "Nefarious means wicked; virtuous means having high moral standards.",
+            "word": "CAREFUL",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning not paying enough attention.",
+            "explanation": "Careful means paying close attention; careless means not paying enough attention.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "VIRTUOUS",
+            "correctAnswer": "CARELESS",
             "options": [
-                "EVIL",
-                "WICKED",
-                "VIRTUOUS",
-                "CRUEL"
+                "CAUTIOUS",
+                "ATTENTIVE",
+                "THOROUGH",
+                "CARELESS"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L3_Q3",
-            "word": "TENACIOUS",
-            "hint": "Think about a word meaning giving way under pressure.",
-            "explanation": "Tenacious means holding firm; yielding means giving way under pressure.",
+            "word": "STRONG",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning lacking physical power.",
+            "explanation": "Strong means having great power; weak means lacking power.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "YIELDING",
+            "correctAnswer": "WEAK",
             "options": [
-                "YIELDING",
-                "STUBBORN",
-                "TOUGH",
-                "FIRM"
+                "WEAK",
+                "POWERFUL",
+                "STURDY",
+                "TOUGH"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L4_Q1",
-            "word": "ANONYMOUS",
-            "hint": "Think about a word meaning recognized.",
-            "explanation": "Anonymous means not identified; identified means recognized.",
+            "word": "FRIENDLY",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning not kind or welcoming toward others.",
+            "explanation": "Friendly means kind and welcoming; unfriendly means not kind toward others.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "IDENTIFIED",
+            "correctAnswer": "UNFRIENDLY",
             "options": [
-                "UNKNOWN",
-                "IDENTIFIED",
-                "NAMELESS",
-                "HIDDEN"
+                "WARM",
+                "UNFRIENDLY",
+                "SOCIABLE",
+                "KIND"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L4_Q2",
-            "word": "AMICABLE",
-            "hint": "Think about a word meaning unfriendly or antagonistic.",
-            "explanation": "Amicable means friendly; hostile means unfriendly.",
+            "word": "CHEERFUL",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning dark and without hope.",
+            "explanation": "Cheerful means happy and bright; gloomy means dark and without hope.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "HOSTILE",
+            "correctAnswer": "GLOOMY",
             "options": [
-                "HOSTILE",
-                "PEACEABLE",
-                "GENIAL",
-                "FRIENDLY"
+                "MERRY",
+                "UPBEAT",
+                "GLOOMY",
+                "JOYFUL"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L4_Q3",
-            "word": "AUDACIOUS",
-            "hint": "Think about showing a lack of courage.",
-            "explanation": "Audacious means bold and daring; timid means showing a lack of courage.",
+            "word": "ENERGETIC",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning extremely tired.",
+            "explanation": "Energetic means full of energy; exhausted means extremely tired.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "TIMID",
+            "correctAnswer": "EXHAUSTED",
             "options": [
-                "BOLD",
-                "DARING",
-                "TIMID",
-                "BRAVE"
+                "LIVELY",
+                "VIGOROUS",
+                "ACTIVE",
+                "EXHAUSTED"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L5_Q1",
-            "word": "DEBILITATE",
-            "hint": "Think about making something stronger.",
-            "explanation": "Debilitate means to make weak; strengthen means to make strong.",
+            "word": "RELIABLE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning not able to be trusted or depended on.",
+            "explanation": "Reliable means able to be trusted; unreliable means not able to be depended on.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "STRENGTHEN",
+            "correctAnswer": "UNRELIABLE",
             "options": [
-                "WEAKEN",
-                "DRAIN",
-                "STRENGTHEN",
-                "ENERVATE"
+                "UNRELIABLE",
+                "DEPENDABLE",
+                "TRUSTWORTHY",
+                "CONSISTENT"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L5_Q2",
-            "word": "ALTRUISM",
-            "hint": "Think about concern for oneself.",
-            "explanation": "Altruism is selfless concern for others; selfishness is concern for oneself.",
+            "word": "SIMPLE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning difficult to understand because of many parts.",
+            "explanation": "Simple means easy to understand; complicated means difficult because of many parts.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "SELFISHNESS",
+            "correctAnswer": "COMPLICATED",
             "options": [
-                "SELFISHNESS",
-                "CHARITY",
-                "KINDNESS",
-                "BOUNTY"
+                "EASY",
+                "COMPLICATED",
+                "PLAIN",
+                "BASIC"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L5_Q3",
-            "word": "ACQUIESCE",
-            "hint": "Look for a word meaning to struggle against.",
-            "explanation": "Acquiesce means to accept something reluctantly; resist means to oppose.",
+            "word": "MODERN",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning belonging to the very distant past.",
+            "explanation": "Modern means belonging to the present time; ancient means belonging to the very distant past.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "RESIST",
+            "correctAnswer": "ANCIENT",
             "options": [
-                "AGREE",
-                "RESIST",
-                "YIELD",
-                "COMPLY"
+                "CONTEMPORARY",
+                "RECENT",
+                "ANCIENT",
+                "CURRENT"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L6_Q1",
-            "word": "LOQUACIOUS",
-            "hint": "Think about a word meaning reserved in speech.",
-            "explanation": "Loquacious means talkative; taciturn means reserved in speech.",
+            "word": "EXPENSIVE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning costing very little money.",
+            "explanation": "Expensive means costing a lot of money; cheap means costing very little.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "TACITURN",
+            "correctAnswer": "CHEAP",
             "options": [
-                "TACITURN",
-                "TALKATIVE",
-                "FLUENT",
-                "VOCAL"
+                "COSTLY",
+                "PRICEY",
+                "LUXURIOUS",
+                "CHEAP"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L6_Q2",
-            "word": "EPHEMERAL",
-            "hint": "Look for a word meaning never-ending.",
-            "explanation": "Ephemeral means short-lived; perpetual means never-ending.",
+            "word": "CROWDED",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning containing no people or things.",
+            "explanation": "Crowded means full of people; empty means containing nothing.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "PERPETUAL",
+            "correctAnswer": "EMPTY",
             "options": [
-                "BRIEF",
-                "PERPETUAL",
-                "FLEETING",
-                "SHORT"
+                "EMPTY",
+                "PACKED",
+                "BUSY",
+                "FULL"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L6_Q3",
-            "word": "DESICCATED",
-            "hint": "Think about slightly wet; damp or humid.",
-            "explanation": "Desiccated means removed the moisture from; moist means slightly wet.",
+            "word": "NOISY",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning making no sound at all.",
+            "explanation": "Noisy means making a lot of sound; silent means making no sound.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "MOIST",
+            "correctAnswer": "SILENT",
             "options": [
-                "MOIST",
-                "WITHERED",
-                "PARCHED",
-                "DRY"
+                "LOUD",
+                "SILENT",
+                "DEAFENING",
+                "BOISTEROUS"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L7_Q1",
-            "word": "CONDONE",
-            "hint": "Think about refusing to allow something.",
-            "explanation": "Condone means to accept or allow; forbid means to refuse to allow.",
+            "word": "CLEAN",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning covered with dirt or stains.",
+            "explanation": "Clean means free from dirt; dirty means covered with dirt.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "FORBID",
+            "correctAnswer": "DIRTY",
             "options": [
-                "FORBID",
-                "EXCUSE",
-                "ALLOW",
-                "IGNORE"
+                "SPOTLESS",
+                "TIDY",
+                "DIRTY",
+                "NEAT"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L7_Q2",
-            "word": "DERIDE",
-            "hint": "Think about lavishing someone with excessive compliment.",
-            "explanation": "Deride means to express contempt for; flatter means to lavish with compliments.",
+            "word": "SAFE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning likely to cause harm.",
+            "explanation": "Safe means free from danger; dangerous means likely to cause harm.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "FLATTER",
+            "correctAnswer": "DANGEROUS",
             "options": [
-                "FLATTER",
-                "RIDICULE",
-                "SCOFF",
-                "MOCK"
+                "SECURE",
+                "PROTECTED",
+                "HARMLESS",
+                "DANGEROUS"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L7_Q3",
-            "word": "ACCLAIM",
-            "hint": "Think about expressing disapproval.",
-            "explanation": "Acclaim means to praise enthusiastically; criticize means to find fault.",
+            "word": "HEALTHY",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning likely to cause illness.",
+            "explanation": "Healthy means good for the body; unhealthy means likely to cause illness.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "CRITICIZE",
+            "correctAnswer": "UNHEALTHY",
             "options": [
-                "CRITICIZE",
-                "PRAISE",
-                "EXTOL",
-                "HONOR"
+                "UNHEALTHY",
+                "FIT",
+                "WELL",
+                "NUTRITIOUS"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L8_Q1",
-            "word": "ZEALOUS",
-            "hint": "Think about a word meaning showing no interest or concern.",
-            "explanation": "Zealous means showing great energy; apathetic means showing no interest.",
+            "word": "EASY",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning needing a lot of effort or skill.",
+            "explanation": "Easy means done without much effort; difficult means needing a lot of effort.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "APATHETIC",
+            "correctAnswer": "DIFFICULT",
             "options": [
-                "APATHETIC",
-                "ACTIVE",
-                "EAGER",
-                "KEEN"
+                "SIMPLE",
+                "DIFFICULT",
+                "EFFORTLESS",
+                "MANAGEABLE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L8_Q2",
-            "word": "ARDUOUS",
-            "hint": "Think about something requiring no effort.",
-            "explanation": "Arduous means requiring great effort; effortless means easy.",
+            "word": "FAST",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning moving or happening with little speed.",
+            "explanation": "Fast means moving with great speed; slow means moving with little speed.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "EFFORTLESS",
+            "correctAnswer": "SLOW",
             "options": [
-                "TAXING",
-                "HARD",
-                "DIFFICULT",
-                "EFFORTLESS"
+                "QUICK",
+                "RAPID",
+                "SLOW",
+                "SPEEDY"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L8_Q3",
-            "word": "APATHY",
-            "hint": "Think about intense and eager enjoyment.",
-            "explanation": "Apathy is lack of interest; enthusiasm is intense enjoyment.",
+            "word": "EARLY",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning happening after the expected time.",
+            "explanation": "Early means happening before the expected time; late means happening after it.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "ENTHUSIASM",
+            "correctAnswer": "LATE",
             "options": [
-                "ENTHUSIASM",
-                "INDIFFERENCE",
-                "ENNUI",
-                "LETHARGY"
+                "PROMPT",
+                "TIMELY",
+                "SOON",
+                "LATE"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L9_Q1",
-            "word": "SAGACIOUS",
-            "hint": "Look for a word meaning lacking good sense.",
-            "explanation": "Sagacious means wise; foolish means lacking good sense.",
+            "word": "NEAR",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning far away in space.",
+            "explanation": "Near means close in distance; distant means far away.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "FOOLISH",
+            "correctAnswer": "DISTANT",
             "options": [
-                "CLEVER",
-                "FOOLISH",
-                "WISE",
-                "SHREWD"
+                "DISTANT",
+                "CLOSE",
+                "NEARBY",
+                "ADJACENT"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L9_Q2",
-            "word": "BEQUEATH",
-            "hint": "Think about getting or being given something.",
-            "explanation": "Bequeath means to leave to a person by a will; receive means to be given.",
+            "word": "HEAVY",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning not weighing very much.",
+            "explanation": "Heavy means weighing a lot; light means not weighing very much, here describing weight rather than brightness.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "RECEIVE",
+            "correctAnswer": "LIGHT",
             "options": [
-                "LEAVE",
-                "RECEIVE",
-                "GIVE",
-                "BESTOW"
+                "WEIGHTY",
+                "LIGHT",
+                "DENSE",
+                "BULKY"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L9_Q3",
-            "word": "DILIGENT",
-            "hint": "Think about a word meaning lazy or avoiding work.",
-            "explanation": "Diligent means hard-working; indolent means lazy.",
+            "word": "WIDE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning having only a small distance from side to side.",
+            "explanation": "Wide means having a large distance from side to side; narrow means having only a small distance.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "INDOLENT",
+            "correctAnswer": "NARROW",
             "options": [
-                "EAGER",
-                "ACTIVE",
-                "BUSY",
-                "INDOLENT"
+                "BROAD",
+                "EXPANSIVE",
+                "NARROW",
+                "SPACIOUS"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L10_Q1",
-            "word": "DELETERIOUS",
-            "hint": "Think about resulting in good; favorable or advantageous.",
-            "explanation": "Deleterious means causing harm or damage; beneficial means favorable.",
+            "word": "DEEP",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning not far from the surface.",
+            "explanation": "Deep means extending far down; shallow means not far from the surface.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "BENEFICIAL",
+            "correctAnswer": "SHALLOW",
             "options": [
-                "BENEFICIAL",
-                "DAMAGING",
-                "INJURIOUS",
-                "HARMFUL"
+                "PROFOUND",
+                "BOTTOMLESS",
+                "SUNKEN",
+                "SHALLOW"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L10_Q2",
-            "word": "BANAL",
-            "hint": "Look for a word meaning new and creative.",
-            "explanation": "Banal means lacking in originality; original means new and creative.",
+            "word": "LOOSE",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning fitting very closely.",
+            "explanation": "Loose means not fitting closely; tight means fitting very closely.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "ORIGINAL",
+            "correctAnswer": "TIGHT",
             "options": [
-                "STALE",
-                "ORIGINAL",
-                "COMMON",
-                "TRITE"
+                "TIGHT",
+                "BAGGY",
+                "SLACK",
+                "RELAXED"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L10_Q3",
-            "word": "CURSORY",
-            "hint": "Look for a word meaning complete with regard to every detail.",
-            "explanation": "Cursory means hasty and not thorough; thorough means complete in every detail.",
+            "word": "SMOOTH",
+            "instruction": "Select the antonym for the given word.",
+            "hint": "Think about a word meaning having an uneven or bumpy surface.",
+            "explanation": "Smooth means having an even surface; rough means having an uneven, bumpy surface.",
             "interactionType": "Polarity Pull",
-            "correctAnswer": "THOROUGH",
+            "correctAnswer": "ROUGH",
             "options": [
-                "QUICK",
-                "BRIEF",
-                "THOROUGH",
-                "HASTY"
+                "EVEN",
+                "ROUGH",
+                "POLISHED",
+                "SLEEK"
             ]
         }
     ],
