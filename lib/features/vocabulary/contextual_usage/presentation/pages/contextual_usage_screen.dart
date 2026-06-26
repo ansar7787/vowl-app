@@ -201,7 +201,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
                       child: Text(
-                        quest.instruction?.toUpperCase() ?? "USAGE UNFOLD",
+                        quest.instruction.toUpperCase(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'RobotoMono',
@@ -214,7 +214,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                     ),
                   )
                 : Text(
-                        quest.instruction?.toUpperCase() ?? "USAGE UNFOLD",
+                        quest.instruction.toUpperCase(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'RobotoMono',
