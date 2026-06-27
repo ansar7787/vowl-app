@@ -91,8 +91,8 @@ class _VictoryFlightOverlayState extends State<VictoryFlightOverlay> {
                           .moveX(
                             begin: 0,
                             end: 1.5.sw,
-                            duration: 800.ms,
-                            delay: (i * 100).ms,
+                            duration: 400.ms,
+                            delay: (i * 50).ms,
                           )
                           .fadeOut(),
                 ),
@@ -117,39 +117,39 @@ class _VictoryFlightOverlayState extends State<VictoryFlightOverlay> {
                         .moveX(
                           begin: 0,
                           end: 1.2.sw + 200,
-                          duration: 1200.ms,
+                          duration: 600.ms,
                           curve: Curves.easeInCubic,
                         )
                         .moveY(
                           begin: 0,
                           end: -150.h,
-                          duration: 600.ms,
+                          duration: 300.ms,
                           curve: Curves.easeOutQuad,
                         )
                         .then()
                         .moveY(
                           begin: 0,
                           end: 200.h,
-                          duration: 600.ms,
+                          duration: 300.ms,
                           curve: Curves.easeInQuad,
                         )
                         .rotate(
                           begin: 0.1,
                           end: 0.4,
-                          duration: 1200.ms,
+                          duration: 600.ms,
                           curve: Curves.easeInOut,
                         )
                         .scale(
                           begin: const Offset(0.8, 0.8),
                           end: const Offset(1.2, 1.2),
-                          duration: 600.ms,
+                          duration: 300.ms,
                           curve: Curves.easeOutBack,
                         )
                         .then()
                         .scale(
                           begin: const Offset(1, 1),
                           end: const Offset(0.4, 0.4),
-                          duration: 600.ms,
+                          duration: 300.ms,
                           curve: Curves.easeInBack,
                         ),
               ),
@@ -165,7 +165,7 @@ class _VictoryFlightOverlayState extends State<VictoryFlightOverlay> {
   }
 
   Widget _buildSparkle(_SparkleData data, int index) {
-    final delay = (index * 100).ms;
+    final delay = (index * 50).ms;
 
     return Positioned(
       left: -50,
@@ -176,24 +176,24 @@ class _VictoryFlightOverlayState extends State<VictoryFlightOverlay> {
             .moveX(
               begin: 0,
               end: 1.2.sw + 50,
-              duration: 1000.ms,
+              duration: 500.ms,
               curve: Curves.easeInOutBack,
               delay: delay,
             )
             .scale(
               begin: const Offset(0, 0),
               end: const Offset(1.2, 1.2),
-              duration: 200.ms,
+              duration: 100.ms,
               delay: delay,
             )
             .then()
             .scale(
               begin: const Offset(1, 1),
               end: const Offset(0, 0),
-              duration: 400.ms,
-              delay: 500.ms,
+              duration: 200.ms,
+              delay: 250.ms,
             )
-            .fadeOut(delay: 750.ms),
+            .fadeOut(delay: 375.ms),
       ),
     );
   }
