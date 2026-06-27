@@ -13,6 +13,7 @@ import 'package:vowl/features/auth/domain/usecases/forgot_password.dart';
 import 'package:vowl/features/auth/domain/usecases/get_current_user.dart';
 import 'package:vowl/features/auth/domain/usecases/send_email_verification.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/network/network_info.dart';
 
 class MockGetUserStream extends Mock implements GetUserStream {}
 class MockLogOut extends Mock implements LogOut {}
@@ -21,6 +22,7 @@ class MockDeleteAccount extends Mock implements DeleteAccount {}
 class MockForgotPassword extends Mock implements ForgotPassword {}
 class MockGetCurrentUser extends Mock implements GetCurrentUser {}
 class MockSendEmailVerification extends Mock implements SendEmailVerification {}
+class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 class FakeNoParams extends Fake implements NoParams {}
 
@@ -37,6 +39,7 @@ void main() {
   late MockForgotPassword mockForgotPassword;
   late MockGetCurrentUser mockGetCurrentUser;
   late MockSendEmailVerification mockSendEmailVerification;
+  late MockNetworkInfo mockNetworkInfo;
   late StreamController<UserEntity?> userStreamController;
 
   final tUser = UserEntity(
@@ -53,7 +56,10 @@ void main() {
     mockForgotPassword = MockForgotPassword();
     mockGetCurrentUser = MockGetCurrentUser();
     mockSendEmailVerification = MockSendEmailVerification();
+    mockNetworkInfo = MockNetworkInfo();
     userStreamController = StreamController<UserEntity?>();
+
+    when(() => mockNetworkInfo.setPremiumOverride(any())).thenReturn(null);
 
     when(() => mockGetUserStream()).thenAnswer((_) => userStreamController.stream);
 
@@ -65,6 +71,7 @@ void main() {
       forgotPassword: mockForgotPassword,
       getCurrentUser: mockGetCurrentUser,
       sendEmailVerification: mockSendEmailVerification,
+      networkInfo: mockNetworkInfo,
     );
   });
 
