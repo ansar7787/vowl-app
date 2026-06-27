@@ -276,13 +276,13 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                               child:
                                                   PitchPatternMatchInstruction(
                                                     color: theme.primaryColor,
-                                                    instruction: quest.instruction ?? "",
+                                                    instruction: quest.instruction,
                                                   ),
                                             ),
                                           )
                                         : PitchPatternMatchInstruction(
                                             color: theme.primaryColor,
-                                            instruction: quest.instruction ?? "",
+                                            instruction: quest.instruction,
                                           ),
                                     SizedBox(height: gapInstruction),
 
