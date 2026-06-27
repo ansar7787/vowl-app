@@ -279,6 +279,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                                     instruction: quest.instruction ?? "",
                                                   ),
                                             ),
+                                          )
                                         : PitchPatternMatchInstruction(
                                             color: theme.primaryColor,
                                             instruction: quest.instruction ?? "",
