@@ -22,6 +22,8 @@ import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 
+import 'package:vowl/core/utils/app_router.dart';
+
 // Decoupled modular imports
 import 'package:vowl/core/presentation/painters/category_path_painter.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/glass_map_header.dart';
@@ -966,23 +968,31 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.monetization_on_rounded, size: 64.r, color: Colors.amber),
+              Container(
+                padding: EdgeInsets.all(16.r),
+                decoration: BoxDecoration(
+                  color: Colors.amber.withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(Icons.lock_open_rounded, size: 56.r, color: Colors.amber.shade600),
+              ),
               SizedBox(height: 16.h),
               Text(
                 context.tr('games.unlock_level_title', fallback: 'Unlock Next 3 Levels!'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 24.sp,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w900,
+                  color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
                 ),
               ),
               SizedBox(height: 8.h),
               Text(
                 context.tr('games.unlock_level_desc', args: [cost.toString()], fallback: 'You need $cost coins to unlock the next 3 levels.'),
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16.sp, color: Colors.grey),
+                style: TextStyle(fontSize: 14.sp, color: Colors.grey.shade500, fontWeight: FontWeight.w500),
               ),
-              SizedBox(height: 32.h),
+              SizedBox(height: 24.h),
               if (userCoins >= cost) ...[
                 ScaleButton(
                   onTap: () async {
@@ -1000,9 +1010,13 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                   },
                   child: Container(
                     width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                    padding: EdgeInsets.symmetric(vertical: 14.h),
                     decoration: BoxDecoration(
-                      color: Colors.amber,
+                      gradient: LinearGradient(
+                        colors: [Colors.amber.shade400, Colors.amber.shade600],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
                       borderRadius: BorderRadius.circular(16.r),
                       boxShadow: [
                         BoxShadow(
@@ -1013,18 +1027,26 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                       ],
                     ),
                     alignment: Alignment.center,
-                    child: Text(
-                      context.tr('games.unlock_button', args: [cost.toString()], fallback: 'Unlock ($cost Coins)'),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black87,
-                      ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.monetization_on_rounded, color: Colors.white, size: 20.r),
+                        SizedBox(width: 8.w),
+                        Text(
+                          context.tr('games.unlock_button', args: [cost.toString()], fallback: 'Unlock ($cost Coins)'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                SizedBox(height: 16.h),
+                SizedBox(height: 12.h),
               ],
               ScaleButton(
                 onTap: () {
@@ -1049,13 +1071,17 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                 },
                 child: Container(
                   width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 16.h),
+                  padding: EdgeInsets.symmetric(vertical: 14.h),
                   decoration: BoxDecoration(
-                    color: Colors.blueAccent,
+                    gradient: LinearGradient(
+                      colors: [Colors.indigo.shade400, Colors.indigo.shade600],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
                     borderRadius: BorderRadius.circular(16.r),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.blueAccent.withValues(alpha: 0.3),
+                        color: Colors.indigo.withValues(alpha: 0.3),
                         blurRadius: 10.r,
                         offset: Offset(0, 4.h),
                       ),
@@ -1065,15 +1091,16 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.play_circle_filled_rounded, color: Colors.white, size: 24.r),
+                      Icon(Icons.play_circle_fill_rounded, color: Colors.white, size: 20.r),
                       SizedBox(width: 8.w),
                       Text(
                         context.tr('games.watch_ad_unlock_button', fallback: 'Watch Ad to Unlock'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w800,
                           color: Colors.white,
+                          letterSpacing: 0.5,
                         ),
                       ),
                     ],
@@ -1081,6 +1108,63 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                 ),
               ),
               SizedBox(height: 24.h),
+              
+              // Premium Upsell Section
+              ScaleButton(
+                onTap: () {
+                  Navigator.pop(sheetContext);
+                  context.push(AppRouter.premiumRoute);
+                },
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(16.r),
+                  decoration: BoxDecoration(
+                    color: Colors.amber.withValues(alpha: 0.08),
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(8.r),
+                        decoration: BoxDecoration(
+                          color: Colors.amber.withValues(alpha: 0.2),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(Icons.workspace_premium_rounded, color: Colors.amber.shade700, size: 24.r),
+                      ),
+                      SizedBox(width: 16.w),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              context.tr('games.premium_upsell_title', fallback: 'Tired of locks & ads?'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.bold,
+                                color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
+                              ),
+                            ),
+                            SizedBox(height: 4.h),
+                            Text(
+                              context.tr('games.premium_upsell_desc', fallback: 'Get Premium for unlimited levels!'),
+                              style: TextStyle(
+                                fontSize: 12.sp,
+                                color: Colors.grey.shade500,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Icon(Icons.arrow_forward_ios_rounded, color: Colors.grey.shade400, size: 16.r),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.h),
             ],
           ),
         );

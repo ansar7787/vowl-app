@@ -1008,29 +1008,29 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
               Container(
                 padding: EdgeInsets.all(16.r),
                 decoration: BoxDecoration(
-                  color: Colors.amber.withValues(alpha: 0.1),
+                  color: Colors.amber.withValues(alpha: 0.15),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(Icons.auto_awesome_rounded, size: 64.r, color: Colors.amber),
+                child: Icon(Icons.auto_awesome_rounded, size: 56.r, color: Colors.amber.shade600),
               ),
               SizedBox(height: 16.h),
               Text(
-                context.tr('games.magic_lock_title', fallback: '🪄 MAGIC LOCK!'),
+                context.tr('games.magic_lock_title', fallback: 'Unlock 3 Magical Levels!'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 24.sp,
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w900,
                   color: widget.primaryColor,
-                  letterSpacing: 1.5,
+                  letterSpacing: 1.0,
                 ),
               ),
               SizedBox(height: 8.h),
               Text(
-                context.tr('games.magic_lock_desc', fallback: 'Watch a quick video to get the magic key for this level!'),
+                context.tr('games.magic_lock_desc', fallback: 'Watch a quick video to unlock the next 3 levels!'),
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16.sp, color: Colors.grey.shade600, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 14.sp, color: Colors.grey.shade500, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 32.h),
+              SizedBox(height: 24.h),
               ScaleButton(
                 onTap: () {
                   Navigator.pop(sheetContext);
@@ -1043,7 +1043,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                       if (result.isRight() && context.mounted) {
                         CustomSnackBar.show(
                           context: context,
-                          message: context.tr('games.magic_lock_success', fallback: 'Magic Lock Opened! ✨'),
+                          message: context.tr('games.magic_lock_success', fallback: '3 Levels Unlocked! ✨'),
                           type: CustomSnackBarType.success,
                         );
                       }
@@ -1053,10 +1053,14 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                 },
                 child: Container(
                   width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 16.h),
+                  padding: EdgeInsets.symmetric(vertical: 14.h),
                   decoration: BoxDecoration(
-                    color: widget.primaryColor,
-                    borderRadius: BorderRadius.circular(20.r),
+                    gradient: LinearGradient(
+                      colors: [widget.primaryColor, widget.primaryColor.withValues(alpha: 0.8)],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(16.r),
                     boxShadow: [
                       BoxShadow(
                         color: widget.primaryColor.withValues(alpha: 0.3),
@@ -1069,15 +1073,16 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.play_circle_filled_rounded, color: Colors.white, size: 28.r),
+                      Icon(Icons.play_circle_fill_rounded, color: Colors.white, size: 20.r),
                       SizedBox(width: 8.w),
                       Text(
                         context.tr('games.watch_ad_unlock_button', fallback: 'Watch Ad to Unlock'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w900,
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w800,
                           color: Colors.white,
+                          letterSpacing: 0.5,
                         ),
                       ),
                     ],
@@ -1085,6 +1090,63 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                 ),
               ),
               SizedBox(height: 24.h),
+              
+              // Premium Upsell Section
+              ScaleButton(
+                onTap: () {
+                  Navigator.pop(sheetContext);
+                  context.push(AppRouter.premiumRoute);
+                },
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(16.r),
+                  decoration: BoxDecoration(
+                    color: Colors.amber.withValues(alpha: 0.08),
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(8.r),
+                        decoration: BoxDecoration(
+                          color: Colors.amber.withValues(alpha: 0.2),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(Icons.workspace_premium_rounded, color: Colors.amber.shade700, size: 24.r),
+                      ),
+                      SizedBox(width: 16.w),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              context.tr('games.premium_upsell_title', fallback: 'Tired of locks & ads?'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.bold,
+                                color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
+                              ),
+                            ),
+                            SizedBox(height: 4.h),
+                            Text(
+                              context.tr('games.premium_upsell_desc', fallback: 'Get Premium for unlimited levels!'),
+                              style: TextStyle(
+                                fontSize: 12.sp,
+                                color: Colors.grey.shade500,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Icon(Icons.arrow_forward_ios_rounded, color: Colors.grey.shade400, size: 16.r),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.h),
             ],
           ),
         );
