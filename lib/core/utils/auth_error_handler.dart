@@ -37,6 +37,8 @@ class AuthErrorHandler {
       'auth.error.requires_recent_login';
   static const String _kCredentialInUse = 'auth.error.credential_in_use';
   static const String _kSignInCancelled = 'auth.error.sign_in_cancelled';
+  static const String _kAccountExistsWithDifferentCredential =
+      'auth.error.account_exists_with_different_credential';
   static const String _kGeneric = 'auth.error.generic';
 
   // ── Public API ────────────────────────────────────────────────────────────
@@ -131,6 +133,12 @@ class AuthErrorHandler {
         clean.contains('aborted-by-user') ||
         clean.contains('sign_in_canceled')) {
       return _kSignInCancelled;
+    }
+
+    // 12. Account exists with different credential
+    if (clean.contains('account-exists-with-different-credential') ||
+        clean.contains('account_exists_with_different_credential')) {
+      return _kAccountExistsWithDifferentCredential;
     }
 
     return _kGeneric;
