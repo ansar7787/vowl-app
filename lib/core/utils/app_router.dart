@@ -123,6 +123,8 @@ class AppRouter {
     final isForgotPasswordRoute = path == forgotPasswordRoute;
     final isSplashRoute = path == splashRoute;
     final isAuthRoute = isLoginRoute || isSignupRoute || isForgotPasswordRoute;
+    final isTransitionRoute = path == verifyEmailRoute || path == hatchingRoute;
+    final isAllowedUnauth = isAuthRoute || isSplashRoute || isTransitionRoute;
 
     // Splash: always allowed while auth resolves.
     if (isSplashRoute) return null;
@@ -133,14 +135,14 @@ class AppRouter {
     // 2. Logout in progress — do not redirect mid-transition.
     if (authState.status == AuthStatus.loggingOut) return null;
 
-    // 3. Unauthenticated — must be on an auth or splash route.
+    // 3. Unauthenticated — must be on an allowed route.
     if (!isAuthenticated) {
-      return (!isAuthRoute && !isSplashRoute) ? loginRoute : null;
+      return !isAllowedUnauth ? loginRoute : null;
     }
 
     // 4. Authenticated but email not verified.
     if (!isVerified) {
-      if (path != verifyEmailRoute && !isAuthRoute) return verifyEmailRoute;
+      if (path != verifyEmailRoute) return verifyEmailRoute;
       return null;
     }
 
