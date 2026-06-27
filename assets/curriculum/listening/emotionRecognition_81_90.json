@@ -6,104 +6,111 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L81_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The analyst transfers the sensor silently.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A known pattern of disagreement replaced by a sudden new alliance — what does the observer feel?",
+            "explanation": "Former opponents forming an unexplained sudden alliance naturally produces curiosity about the reason.",
+            "textToSpeak": "The two colleagues who always disagreed about everything suddenly started having lunch together every day.",
             "options": [
-                "neutral",
-                "excited",
-                "sad",
-                "curious"
+                "bored 🥱",
+                "neutral 😐",
+                "angry 😠",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L81_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The commander analyzes the module swiftly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Complete factual preparation not resolving uncertainty about the human response — what remains?",
+            "explanation": "Knowing the facts but not knowing how people will receive them leaves an unresolvable nervousness.",
+            "textToSpeak": "I've memorized every fact about this pitch, but facts won't tell me how the room will react.",
             "options": [
-                "nervous",
-                "angry",
-                "sad",
-                "happy"
+                "nervous 😬",
+                "excited 🤩",
+                "confident 😎",
+                "happy 😊"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L81_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The detective restores the network precisely.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "'Exactly where I'm supposed to be' in a quiet morning moment — what feeling does that certainty name?",
+            "explanation": "Feeling entirely in the right place at the right moment is a description of deep contentment and happiness.",
+            "textToSpeak": "I watched the sunrise with my coffee from the balcony. I thought: this is exactly where I'm supposed to be.",
             "options": [
-                "happy",
-                "surprised",
-                "sad",
-                "excited"
+                "sad 😢",
+                "curious 🤔",
+                "happy 😊",
+                "bored 🥱"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L82_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The technician analyzes the drone consistently.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "One photograph left behind among cleared belongings — what deliberate choice does this reveal?",
+            "explanation": "Leaving one photograph when everything else is gone suggests it is too significant to take — a sad gesture.",
+            "textToSpeak": "The photograph was still on the wall. Everything else had been packed up, but he'd left that one.",
             "options": [
-                "sad",
-                "bored",
-                "happy",
-                "angry"
+                "curious 🤔",
+                "neutral 😐",
+                "angry 😠",
+                "sad 😢"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L82_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The robot monitors the terminal smoothly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Being penalized for acting on information that was deliberately given as optional — what is this?",
+            "explanation": "Receiving a formal warning for following the stated terms creates a sense of injustice and anger.",
+            "textToSpeak": "I was told this meeting was optional. I then received a written warning for not attending it.",
             "options": [
-                "angry",
-                "happy",
-                "sad",
-                "confident"
+                "curious 🤔",
+                "surprised 😲",
+                "angry 😠",
+                "sad 😢"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L82_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The traveler scans the system immediately.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A hidden, decades-long professional identity revealed by an unexpected conversation — what is this?",
+            "explanation": "A significant identity hidden for years in a neighbor you thought you knew produces genuine surprise.",
+            "textToSpeak": "My very quiet neighbor, who never talks to anyone, has been a concert violinist for thirty years. She told me when I knocked about the noise.",
             "options": [
-                "surprised",
-                "excited",
-                "neutral",
-                "bored"
+                "curious 🤔",
+                "surprised 😲",
+                "bored 🥱",
+                "happy 😊"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L83_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The teacher measures the software silently.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A coffee-shop script from two years ago being optioned for production — what does this personal win produce?",
+            "explanation": "A self-written script being optioned for production two years later is a career-defining source of excitement.",
+            "textToSpeak": "The script I wrote two years ago in a coffee shop has been optioned by a production company. They want to make it.",
             "options": [
-                "angry",
-                "neutral",
-                "happy",
-                "sad"
+                "sad 😢",
+                "nervous 😬",
+                "bored 🥱",
+                "excited 🤩"
             ],
             "correctAnswerIndex": 3,
             "subtype": "emotionRecognition"
@@ -111,29 +118,31 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L83_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The researcher validates the module expertly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Six hours of content that could be absorbed in fifteen minutes — what emotion fills the remaining time?",
+            "explanation": "An orientation session with a content-to-time ratio that far exceeds necessity produces deep boredom.",
+            "textToSpeak": "The orientation session was six hours and covered material anyone could read in fifteen minutes.",
             "options": [
-                "happy",
-                "sad",
-                "angry",
-                "surprised"
+                "sad 😢",
+                "bored 🥱",
+                "angry 😠",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L83_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The engineer validates the software rapidly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Pattern recognition so strong that the outcome is predicted in advance — what mindset is this?",
+            "explanation": "Predicting the exact outcome of a negotiation based on repeated prior exposure expresses total confidence.",
+            "textToSpeak": "I know exactly how this negotiation ends. I've seen this pattern too many times to be surprised by what they'll offer.",
             "options": [
-                "surprised",
-                "nervous",
-                "neutral",
-                "happy"
+                "confident 😎",
+                "nervous 😬",
+                "bored 🥱",
+                "excited 🤩"
             ],
             "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
@@ -141,14 +150,15 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L84_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The explorer secures the engine consistently.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Two unrelated emails twelve seconds apart from one account — what anomaly does the observer feel?",
+            "explanation": "Two unrelated emails so close together from one account suggests something worth investigating — curiosity.",
+            "textToSpeak": "The two emails were sent from the same account twelve seconds apart and neither was related to the other.",
             "options": [
-                "neutral",
-                "happy",
-                "curious",
-                "sad"
+                "neutral 😐",
+                "bored 🥱",
+                "angry 😠",
+                "curious 🤔"
             ],
             "correctAnswerIndex": 3,
             "subtype": "emotionRecognition"
@@ -156,74 +166,79 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L84_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The robot encrypts the engine properly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A smell that recreates someone else's house making you pause mid-task — what emotion is triggered?",
+            "explanation": "A sensory memory that recreates an absent person's presence and requires you to pause reflects sadness.",
+            "textToSpeak": "Every time I cook that recipe, the kitchen smells like her house, and I have to stop for a moment.",
             "options": [
-                "confident",
-                "nervous",
-                "excited",
-                "angry"
+                "sad 😢",
+                "surprised 😲",
+                "happy 😊",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L84_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The traveler launches the signal carefully.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "'I'm not letting this go' after a refund reversal with no explanation — what does this resolve signal?",
+            "explanation": "A refund that is processed and then silently reversed produces the kind of anger that won't be dismissed.",
+            "textToSpeak": "The refund was processed but reversed the following day with no explanation. I'm not letting this go.",
             "options": [
-                "neutral",
-                "surprised",
-                "confident",
-                "nervous"
+                "angry 😠",
+                "bored 🥱",
+                "sad 😢",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L85_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The hero creates the module steadily.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A fundraising goal met in forty-eight hours with a phone that hasn't stopped — what state is this?",
+            "explanation": "Hitting a goal far ahead of time and receiving ongoing response is a cause of genuine, energized happiness.",
+            "textToSpeak": "We hit our fundraising goal in forty-eight hours. The phone hasn't stopped ringing since.",
             "options": [
-                "surprised",
-                "sad",
-                "neutral",
-                "angry"
+                "nervous 😬",
+                "surprised 😲",
+                "happy 😊",
+                "bored 🥱"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L85_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The expert activates the sensor swiftly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Urgently seeking a quiet room and stable signal for the most important call of your career — what is this?",
+            "explanation": "Seeking conditions for a critical career call that keeps failing describes acute nervousness and desperation.",
+            "textToSpeak": "This is the most important call of my career and the signal keeps dropping. I need five minutes and a quiet room.",
             "options": [
-                "neutral",
-                "sad",
-                "happy",
-                "angry"
+                "excited 🤩",
+                "nervous 😬",
+                "confident 😎",
+                "angry 😠"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L85_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The robot transfers the signal instantly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "The most committed person departing — why does commitment make the departure more surprising?",
+            "explanation": "A resignation from the person least expected to leave is surprising precisely because of their visible commitment.",
+            "textToSpeak": "The resignation letter came from the person everyone considered the most committed to the company's mission.",
             "options": [
-                "angry",
-                "excited",
-                "bored",
-                "surprised"
+                "sad 😢",
+                "curious 🤔",
+                "neutral 😐",
+                "surprised 😲"
             ],
             "correctAnswerIndex": 3,
             "subtype": "emotionRecognition"
@@ -231,29 +246,31 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L86_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The detective evaluates the data immediately.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "'What are we even doing?' after three identical redesigns — what emotion does purposeless repetition produce?",
+            "explanation": "Three redesigns producing the same result and asking 'what are we doing?' reflects frustrated boredom.",
+            "textToSpeak": "We've redesigned the homepage three times in two years and it looks almost identical each time. What are we even doing?",
             "options": [
-                "sad",
-                "bored",
-                "confident",
-                "happy"
+                "curious 🤔",
+                "bored 🥱",
+                "sad 😢",
+                "angry 😠"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L86_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The engineer monitors the signal consistently.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A kept but empty chair at a holiday table — what does keeping it, and leaving it empty, communicate?",
+            "explanation": "Maintaining an absent person's place at the table on the first holiday without them reflects deep sadness.",
+            "textToSpeak": "It's the first holiday without him. We kept his chair at the table. Nobody sat in it.",
             "options": [
-                "angry",
-                "sad",
-                "happy",
-                "curious"
+                "sad 😢",
+                "angry 😠",
+                "curious 🤔",
+                "neutral 😐"
             ],
             "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
@@ -261,14 +278,15 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L86_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The scout measures the database properly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Identical independent accounts of an old event from people unaware of each other — what does this raise?",
+            "explanation": "Independent identical testimony from unrelated sources about an old event raises intriguing curiosity.",
+            "textToSpeak": "Two of the town's oldest residents gave exactly the same account of a 1974 event. Neither knows the other told the same story.",
             "options": [
-                "surprised",
-                "excited",
-                "sad",
-                "bored"
+                "curious 🤔",
+                "bored 🥱",
+                "neutral 😐",
+                "sad 😢"
             ],
             "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
@@ -276,14 +294,15 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L87_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The robot transfers the drone consistently.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Four months of renovation noise with no management response — what has patience turned into?",
+            "explanation": "Four months of an unaddressed intrusion with no management response has turned patience into anger.",
+            "textToSpeak": "The noise from the renovation above has been ongoing for four months and the building management has done absolutely nothing.",
             "options": [
-                "surprised",
-                "nervous",
-                "angry",
-                "sad"
+                "bored 🥱",
+                "curious 🤔",
+                "sad 😢",
+                "angry 😠"
             ],
             "correctAnswerIndex": 3,
             "subtype": "emotionRecognition"
@@ -291,29 +310,31 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L87_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The hacker validates the database securely.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Calling for a data review when everyone else was wrong about your forecast — what tone is this?",
+            "explanation": "Inviting analysts to recheck numbers after your unpopular forecast proved correct shows firm confidence.",
+            "textToSpeak": "Every analyst in the room disagreed with my forecast six months ago. It's time to look at those numbers again.",
             "options": [
-                "happy",
-                "angry",
-                "sad",
-                "surprised"
+                "confident 😎",
+                "sad 😢",
+                "nervous 😬",
+                "angry 😠"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L87_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The analyst analyzes the network consistently.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "'Real budget' after presumably working without one, plus a major streaming deal — what is the emotional tone?",
+            "explanation": "A major streaming deal and a proper budget for a project previously made cheaply produces clear excitement.",
+            "textToSpeak": "The documentary was picked up by a major streaming platform. We start filming again with a real budget.",
             "options": [
-                "curious",
-                "surprised",
-                "sad",
-                "happy"
+                "bored 🥱",
+                "excited 🤩",
+                "sad 😢",
+                "nervous 😬"
             ],
             "correctAnswerIndex": 1,
             "subtype": "emotionRecognition"
@@ -321,29 +342,31 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L88_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The hero measures the protocol successfully.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A single cryptic note in an otherwise empty archive box — what does the reader naturally feel?",
+            "explanation": "A single cryptic message in an otherwise empty box creates an irresistible sense of curiosity.",
+            "textToSpeak": "The archive box was labeled 1987 but contained only one item — a handwritten note that simply said 'not yet.'",
             "options": [
-                "angry",
-                "happy",
-                "bored",
-                "sad"
+                "bored 🥱",
+                "neutral 😐",
+                "curious 🤔",
+                "sad 😢"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L88_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The scout measures the network steadily.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Finding only four contacts in someone's phone after they are gone — what does that number say?",
+            "explanation": "A phone with only four contacts reveals an isolated person, and being one of four is a poignant sad discovery.",
+            "textToSpeak": "I went through his phone to find numbers to call. There were only four contacts. I was one of them.",
             "options": [
-                "surprised",
-                "neutral",
-                "sad",
-                "angry"
+                "curious 🤔",
+                "neutral 😐",
+                "angry 😠",
+                "sad 😢"
             ],
             "correctAnswerIndex": 3,
             "subtype": "emotionRecognition"
@@ -351,29 +374,31 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L88_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The engineer updates the network precisely.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Twenty minutes with your hand on 'send' — what emotion is delaying the action?",
+            "explanation": "Being unable to press send for twenty minutes on a consequential email is a textbook sign of nervousness.",
+            "textToSpeak": "My hand is literally on the 'send' button. This email changes everything. I've been sitting here for twenty minutes.",
             "options": [
-                "happy",
-                "surprised",
-                "sad",
-                "angry"
+                "excited 🤩",
+                "confident 😎",
+                "nervous 😬",
+                "angry 😠"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L89_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The expert sends the circuit immediately.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "'No guilt about enjoying it' is key — what emotion results from truly earned, guilt-free rest?",
+            "explanation": "Guilt-free enjoyment after years of work describes a rare and genuine feeling of happiness.",
+            "textToSpeak": "For the first time in three years, I had a full week with no deadlines, no meetings, and no guilt about enjoying it.",
             "options": [
-                "sad",
-                "nervous",
-                "excited",
-                "bored"
+                "happy 😊",
+                "sad 😢",
+                "bored 🥱",
+                "nervous 😬"
             ],
             "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
@@ -381,29 +406,31 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L89_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The mentor builds the satellite rapidly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A shared failure between student and professor, revealed unexpectedly — what does this reversal produce?",
+            "explanation": "Finding out your authority figure failed the same thing as you is a source of genuine surprise.",
+            "textToSpeak": "She told me she failed her university entrance exam, and that her professor found out. The professor had also failed it.",
             "options": [
-                "excited",
-                "happy",
-                "sad",
-                "angry"
+                "surprised 😲",
+                "neutral 😐",
+                "curious 🤔",
+                "happy 😊"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L89_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The engineer locates the network swiftly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Two months of advance planning erased with no acknowledgment — what emotion does the dismissal produce?",
+            "explanation": "Advance planning ignored and dismissed without apology or explanation is a cause of clear anger.",
+            "textToSpeak": "I made the reservation two months in advance. I arrive and there's no record of it. No apology, no explanation.",
             "options": [
-                "excited",
-                "nervous",
-                "surprised",
-                "angry"
+                "bored 🥱",
+                "curious 🤔",
+                "angry 😠",
+                "sad 😢"
             ],
             "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
@@ -411,46 +438,49 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L90_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The researcher activates the chip expertly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A workshop that only confirmed existing knowledge with nothing new or practical — what did the attendees feel?",
+            "explanation": "A workshop that confirms what you know and delivers nothing actionable is a waste of time that breeds boredom.",
+            "textToSpeak": "I sat through the workshop waiting for something practical to happen. It never came. We confirmed what we already knew.",
             "options": [
-                "nervous",
-                "sad",
-                "excited",
-                "happy"
+                "bored 🥱",
+                "angry 😠",
+                "curious 🤔",
+                "sad 😢"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L90_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The student restores the satellite steadily.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A floor skipped by the lift that nobody knows the purpose of — what does this omission produce?",
+            "explanation": "An inaccessible, unexplained floor in a familiar building produces strong curiosity.",
+            "textToSpeak": "No one in the building seems to know what the third floor is used for. The lift skips it.",
             "options": [
-                "angry",
-                "surprised",
-                "neutral",
-                "confident"
+                "bored 🥱",
+                "angry 😠",
+                "neutral 😐",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L90_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The hero builds the data steadily.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "'Every possible objection' addressed with evidence — what state does this complete preparation create?",
+            "explanation": "Having evidence-based answers prepared for every objection is a description of total, grounded confidence.",
+            "textToSpeak": "I've prepared for every possible objection. Whatever comes up, I have an answer grounded in evidence.",
             "options": [
-                "surprised",
-                "neutral",
-                "nervous",
-                "sad"
+                "sad 😢",
+                "nervous 😬",
+                "confident 😎",
+                "excited 🤩"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
         }
     ]

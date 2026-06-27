@@ -6,119 +6,127 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L191_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The robot monitors the archive consistently.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Not thinking about the alternative most days as proof of a correct decision — what does the exception carry?",
+            "explanation": "The days when the unlived life is thought about, despite mostly not being, carry the quiet sadness of any road not taken.",
+            "textToSpeak": "I think about the version of my life I would have had if I'd stayed. Most days I don't. That's how I know I made the right choice.",
             "options": [
-                "confident",
-                "excited",
-                "curious",
-                "sad"
+                "curious 🤔",
+                "nervous 😬",
+                "sad 😢",
+                "neutral 😐"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L191_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The pilot creates the system immediately.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Two authenticated timelines that cannot coexist and no public acknowledgment of the contradiction — what is this?",
+            "explanation": "Authenticated contradiction that is publicly unacknowledged is a significant puzzle that produces deep curiosity.",
+            "textToSpeak": "The two timelines in the case cannot both be accurate. Both have been authenticated. Nobody has publicly noted the discrepancy.",
             "options": [
-                "bored",
-                "surprised",
-                "angry",
-                "neutral"
+                "curious 🤔",
+                "bored 🥱",
+                "angry 😠",
+                "neutral 😐"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L191_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The student evaluates the satellite automatically.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "The recognition of over-preparation as avoidance while doubt persists — what does this meta-awareness produce?",
+            "explanation": "Knowing that over-preparation is avoidance, and doubting anyway, describes a nervousness that sees itself.",
+            "textToSpeak": "I have prepared for this. I have over-prepared. I know over-preparation is its own form of avoidance. The room is ready. So is my doubt.",
             "options": [
-                "excited",
-                "surprised",
-                "angry",
-                "happy"
+                "sad 😢",
+                "excited 🤩",
+                "nervous 😬",
+                "confident 😎"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L192_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The engineer deploys the circuit smoothly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Noticing a once-a-year light event because there is nowhere urgent to be — what does this moment of presence produce?",
+            "explanation": "Noticing rare beauty because you have enough and are unhurried is a description of complete, present happiness.",
+            "textToSpeak": "I walked home a different way. I had nowhere urgent to be. I had enough of what I needed. The light was doing something it does once a year. I noticed it.",
             "options": [
-                "sad",
-                "happy",
-                "bored",
-                "curious"
+                "bored 🥱",
+                "happy 😊",
+                "sad 😢",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L192_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The scientist measures the satellite quietly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A self-governing review known to be circular at its design and unchanged — what does this produce?",
+            "explanation": "A review structure designed to be self-referential and left so intentionally produces institutional anger.",
+            "textToSpeak": "The framework that governs the review of the framework is the framework being reviewed. The circularity was noted at conception and not altered.",
             "options": [
-                "curious",
-                "neutral",
-                "angry",
-                "bored"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L192_Q3",
-            "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The commander measures the sensor efficiently.",
-            "options": [
-                "surprised",
-                "angry",
-                "sad",
-                "bored"
+                "angry 😠",
+                "neutral 😐",
+                "bored 🥱",
+                "curious 🤔"
             ],
             "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
         },
         {
-            "id": "LIS_EMOTIONRECOGNITION_L193_Q1",
+            "id": "LIS_EMOTIONRECOGNITION_L192_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The explorer repairs the data silently.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "An impossible conclusion reached by an impossible method — what does a double impossibility producing an outcome produce?",
+            "explanation": "An outcome produced by means declared impossible via methods declared impossible is a cause of total surprise.",
+            "textToSpeak": "The conclusion every model predicted was impossible was reached by the method every model said could not produce it.",
             "options": [
-                "confident",
-                "angry",
-                "sad",
-                "curious"
+                "curious 🤔",
+                "angry 😠",
+                "surprised 😲",
+                "neutral 😐"
             ],
             "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
         },
         {
+            "id": "LIS_EMOTIONRECOGNITION_L193_Q1",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Five years of identical priorities presented as this year's transformative finding — what does this pattern produce?",
+            "explanation": "Five cycles of the same priorities presented freshly each time creates a specific form of institutional boredom.",
+            "textToSpeak": "The strategic priorities identified this cycle were described by leadership as transformative. They are identical to those published every cycle for five years.",
+            "options": [
+                "bored 🥱",
+                "angry 😠",
+                "curious 🤔",
+                "sad 😢"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "emotionRecognition"
+        },
+        {
             "id": "LIS_EMOTIONRECOGNITION_L193_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The scientist locates the data securely.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A judge agreeing with two witnesses who agree on facts but disagree on relevance — what does this produce?",
+            "explanation": "A case where agreement on facts and disagreement on relevance are both sustained by the judge is a legal curiosity.",
+            "textToSpeak": "The expert witness and the opposing expert agree on the facts. They disagree only on which facts are relevant. The judge agreed with both.",
             "options": [
-                "surprised",
-                "neutral",
-                "sad",
-                "angry"
+                "angry 😠",
+                "neutral 😐",
+                "bored 🥱",
+                "curious 🤔"
             ],
             "correctAnswerIndex": 3,
             "subtype": "emotionRecognition"
@@ -126,14 +134,15 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L193_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The scout launches the module quietly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Knowing the cost, counting it, and remaining — what does this sequence of awareness and decision express?",
+            "explanation": "Knowing the full cost of something and choosing it anyway is the most deliberate expression of confidence.",
+            "textToSpeak": "I know what's being asked of me here. I know what it costs. I've counted the cost. I'm still here.",
             "options": [
-                "surprised",
-                "angry",
-                "sad",
-                "happy"
+                "confident 😎",
+                "excited 🤩",
+                "nervous 😬",
+                "sad 😢"
             ],
             "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
@@ -141,44 +150,47 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L194_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The teacher analyzes the protocol effectively.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Not feeling the expected emotion upon finding a long-sought object — why is absence of feeling 'somehow worse'?",
+            "explanation": "Expected feeling replaced by emotional blankness upon finding something long-sought is a specific form of sadness.",
+            "textToSpeak": "I finally found the photograph I'd been looking for for years. I looked at it for a long time. I didn't feel what I expected to feel. That was somehow worse.",
             "options": [
-                "sad",
-                "bored",
-                "angry",
-                "happy"
+                "nervous 😬",
+                "neutral 😐",
+                "sad 😢",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L194_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The traveler analyzes the protocol precisely.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "'We started anyway' on a Saturday morning after a fourteen-month wait — what does this immediate action express?",
+            "explanation": "Starting work on a Saturday morning after fourteen months of waiting expresses the excitement of finally being cleared.",
+            "textToSpeak": "After fourteen months of regulatory review, the clearance came through at 11:47 p.m. on a Friday. We found out Saturday morning. We started anyway.",
             "options": [
-                "nervous",
-                "excited",
-                "happy",
-                "angry"
+                "confident 😎",
+                "nervous 😬",
+                "excited 🤩",
+                "bored 🥱"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L194_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The expert activates the engine silently.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A task at the exact limit of capability with no way to determine which side you're on — what is this?",
+            "explanation": "Being asked to work at the exact edge of your ability with no way to assess which side you fall produces nervousness.",
+            "textToSpeak": "The thing I'm being asked to do exists at the exact boundary of what I'm capable of. I have no way of knowing which side of the boundary I'm on.",
             "options": [
-                "neutral",
-                "sad",
-                "excited",
-                "surprised"
+                "sad 😢",
+                "excited 🤩",
+                "confident 😎",
+                "nervous 😬"
             ],
             "correctAnswerIndex": 3,
             "subtype": "emotionRecognition"
@@ -186,29 +198,31 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L195_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The detective evaluates the engine instantly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Irreversible consequences delivered as notification after the fact — what does this sequence produce?",
+            "explanation": "Informing people of irreversible consequences only after those consequences have been imposed produces anger.",
+            "textToSpeak": "The decision had irreversible consequences for a large number of people who were informed of it after it had already taken effect.",
             "options": [
-                "sad",
-                "happy",
-                "nervous",
-                "confident"
+                "curious 🤔",
+                "sad 😢",
+                "angry 😠",
+                "neutral 😐"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L195_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The technician monitors the database rapidly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "'More than enough' established by comparing to successful prior situations with less — what is this judgment?",
+            "explanation": "Establishing sufficiency by reference to prior success achieved with demonstrably less is a grounded confidence.",
+            "textToSpeak": "I have made better arguments with less and persuaded harder rooms. What I have now is, by every measure, more than enough.",
             "options": [
-                "angry",
-                "excited",
-                "curious",
-                "bored"
+                "confident 😎",
+                "sad 😢",
+                "nervous 😬",
+                "excited 🤩"
             ],
             "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
@@ -216,59 +230,63 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L195_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The analyst launches the engine carefully.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Four recurrences each described as unprecedented by an observer present for all four — what does this language produce?",
+            "explanation": "An institution calling a fourth recurrence 'unprecedented' having witnessed three previous ones produces curiosity.",
+            "textToSpeak": "The pattern has repeated four times. Each recurrence was described as unprecedented by the same institution that observed the previous three.",
             "options": [
-                "neutral",
-                "bored",
-                "surprised",
-                "sad"
+                "neutral 😐",
+                "curious 🤔",
+                "angry 😠",
+                "bored 🥱"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L196_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The hacker measures the node silently.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Forty years of consensus overturned accidentally by an unrelated team without the original data — what is this?",
+            "explanation": "An accidental discovery overturning four decades of consensus by people who weren't looking for it is a cause of surprise.",
+            "textToSpeak": "The research that overturned forty years of consensus was conducted by a team working on an unrelated question with no access to the original dataset.",
             "options": [
-                "sad",
-                "curious",
-                "angry",
-                "happy"
+                "curious 🤔",
+                "surprised 😲",
+                "happy 😊",
+                "neutral 😐"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L196_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The engineer repairs the device reliably.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A new direction release being verbatim identical to a previous direction change — what does this produce?",
+            "explanation": "A press release about new direction being word-for-word the previous direction announcement produces deep institutional boredom.",
+            "textToSpeak": "The company's 'new direction' press release contained every phrase from the 'change of direction' press release of three years ago. Verbatim.",
             "options": [
-                "confident",
-                "surprised",
-                "angry",
-                "neutral"
+                "bored 🥱",
+                "sad 😢",
+                "curious 🤔",
+                "angry 😠"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L196_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The pilot validates the database directly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "The surprise at closeness on the days it is thought about — what does this gap between frequency and intensity describe?",
+            "explanation": "Something thought about less frequently but still feeling immediately close describes a particular kind of persistent sadness.",
+            "textToSpeak": "I don't think about it every day anymore. On the days I do, I'm still surprised by how close it still feels.",
             "options": [
-                "curious",
-                "excited",
-                "surprised",
-                "happy"
+                "curious 🤔",
+                "angry 😠",
+                "sad 😢",
+                "neutral 😐"
             ],
             "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
@@ -276,89 +294,95 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L197_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The teacher sends the satellite quietly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "'I can't undo it' about a positive shift in perception — what does an irreversible improvement in outlook produce?",
+            "explanation": "An irreversible shift toward noticing what is good rather than waiting for sense is a description of recovered happiness.",
+            "textToSpeak": "At some point I stopped waiting for things to make sense and started noticing the things that were already good. Something shifted. I can't undo it.",
             "options": [
-                "confident",
-                "angry",
-                "sad",
-                "neutral"
+                "bored 🥱",
+                "nervous 😬",
+                "sad 😢",
+                "happy 😊"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L197_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The pilot creates the chip securely.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Identical outputs from two systems with no recorded connection — what does consistent unattributed identity produce?",
+            "explanation": "Two systems consistently producing identical outputs with no integration record is a technical curiosity.",
+            "textToSpeak": "The two systems have never had a recorded integration event. They have always produced identical outputs when given the same input.",
             "options": [
-                "happy",
-                "neutral",
-                "curious",
-                "angry"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L197_Q3",
-            "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The scientist activates the archive swiftly.",
-            "options": [
-                "confident",
-                "neutral",
-                "surprised",
-                "happy"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L198_Q1",
-            "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The mentor measures the signal expertly.",
-            "options": [
-                "neutral",
-                "happy",
-                "bored",
-                "sad"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L198_Q2",
-            "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The droid secures the device automatically.",
-            "options": [
-                "bored",
-                "angry",
-                "nervous",
-                "neutral"
+                "bored 🥱",
+                "curious 🤔",
+                "neutral 😐",
+                "angry 😠"
             ],
             "correctAnswerIndex": 1,
             "subtype": "emotionRecognition"
         },
         {
+            "id": "LIS_EMOTIONRECOGNITION_L197_Q3",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Accountability replaced by self-reporting — what does the erosion of external accountability produce?",
+            "explanation": "Replacing accountability with self-reporting by the monitored body removes accountability entirely — producing anger.",
+            "textToSpeak": "The accountability measure was replaced with a monitoring measure. The monitoring measure is self-reported by the body being monitored.",
+            "options": [
+                "curious 🤔",
+                "neutral 😐",
+                "sad 😢",
+                "angry 😠"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "emotionRecognition"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L198_Q1",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Being ready and not recognizing what readiness feels like — what does this uncertainty within preparation produce?",
+            "explanation": "Genuine readiness not feeling recognizable produces the nervousness of doubting your own prepared state.",
+            "textToSpeak": "I was told I was ready for this years before I was ready for it. Now I'm ready for it, and I find I'm not certain what ready feels like.",
+            "options": [
+                "sad 😢",
+                "confident 😎",
+                "nervous 😬",
+                "excited 🤩"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L198_Q2",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Expertise used to confirm genuine novelty — what does a specialist's recognition of something new produce?",
+            "explanation": "A field expert recognizing genuine novelty is one of the most authoritative sources of intellectual excitement.",
+            "textToSpeak": "It will take time to understand the implications. But I've been in this field long enough to know when something is genuinely new. And this is genuinely new.",
+            "options": [
+                "excited 🤩",
+                "nervous 😬",
+                "bored 🥱",
+                "sad 😢"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "emotionRecognition"
+        },
+        {
             "id": "LIS_EMOTIONRECOGNITION_L198_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The droid scans the chip silently.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Finding your own wordless experience described by someone else who also found no words for it — what is this?",
+            "explanation": "Finding your own ineffable experience described by someone who also described it as ineffable is a precise, sad recognition.",
+            "textToSpeak": "The clearest description of what I was going through was written in 1921. By someone who had never found words for it either.",
             "options": [
-                "angry",
-                "surprised",
-                "curious",
-                "sad"
+                "surprised 😲",
+                "sad 😢",
+                "curious 🤔",
+                "neutral 😐"
             ],
             "correctAnswerIndex": 1,
             "subtype": "emotionRecognition"
@@ -366,14 +390,15 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L199_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The droid sends the device reliably.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Evidence over audience — what does trusting the argument over the reception express?",
+            "explanation": "Trusting sound evidence to move any audience without needing pre-approval is a foundational expression of confidence.",
+            "textToSpeak": "I've never needed the room to be on my side to make my case. If the evidence is sound, the room will follow the evidence.",
             "options": [
-                "nervous",
-                "neutral",
-                "sad",
-                "surprised"
+                "sad 😢",
+                "excited 🤩",
+                "confident 😎",
+                "nervous 😬"
             ],
             "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
@@ -381,14 +406,15 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L199_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The traveler locates the module instantly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A stated consultation with no evidence of participation from its primary stakeholders — what does this gap produce?",
+            "explanation": "A consultation record contradicting its own stated reach is a gap that produces pointed curiosity.",
+            "textToSpeak": "The policy states it was developed through consultation. The consultation report contains no evidence of participation from those most affected.",
             "options": [
-                "angry",
-                "sad",
-                "excited",
-                "nervous"
+                "curious 🤔",
+                "neutral 😐",
+                "angry 😠",
+                "bored 🥱"
             ],
             "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
@@ -396,29 +422,31 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L199_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The scientist transfers the terminal effectively.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "The creator of a dominant theory being its most sustained critic — what does this self-reversal produce?",
+            "explanation": "The primary theorist of a field becoming its own theory's most persistent critic is a cause of genuine surprise.",
+            "textToSpeak": "The most sustained critique of the dominant theory in the field was authored by the theorist who developed it.",
             "options": [
-                "happy",
-                "bored",
-                "neutral",
-                "surprised"
+                "surprised 😲",
+                "neutral 😐",
+                "angry 😠",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L200_Q1",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is sad.",
-            "textToSpeak": "The hacker validates the terminal quietly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "An unchanged shelf as the breaking point — what does deliberate preservation of arrangement communicate?",
+            "explanation": "Leaving everything exactly as it was, as the one chosen act, is a silence that communicates a specific, breaking sadness.",
+            "textToSpeak": "She left the shelf exactly as it was. Everything in its place, exactly where it had always been. That was the choice that broke me.",
             "options": [
-                "nervous",
-                "surprised",
-                "sad",
-                "bored"
+                "curious 🤔",
+                "neutral 😐",
+                "sad 😢",
+                "angry 😠"
             ],
             "correctAnswerIndex": 2,
             "subtype": "emotionRecognition"
@@ -426,14 +454,15 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L200_Q2",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is angry.",
-            "textToSpeak": "The artist repairs the protocol directly.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "'Light in a way that's hard to name' — what does the completion of a long burden produce when the burden lifts?",
+            "explanation": "A happiness defined by the absence of weight, arriving when long-held work is completed, is among the deepest kinds.",
+            "textToSpeak": "I don't know how to describe what the work finally being done feels like. Maybe it feels like the absence of what I'd been carrying. Light in a way that's hard to name.",
             "options": [
-                "excited",
-                "confident",
-                "surprised",
-                "angry"
+                "sad 😢",
+                "bored 🥱",
+                "nervous 😬",
+                "happy 😊"
             ],
             "correctAnswerIndex": 3,
             "subtype": "emotionRecognition"
@@ -441,16 +470,17 @@
         {
             "id": "LIS_EMOTIONRECOGNITION_L200_Q3",
             "interactionType": "Tone Analyzer",
-            "hint": "Identify the emotion.",
-            "explanation": "Tone is surprised.",
-            "textToSpeak": "The detective scans the module automatically.",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "An appeal right made structurally inaccessible by the process it is supposed to check — what does this produce?",
+            "explanation": "An appeal mechanism rendered unusable by the sequence it is embedded in produces the purest form of systemic anger.",
+            "textToSpeak": "The right to appeal the decision exists within a framework requiring the decision to not have been implemented before the appeal can be filed. The decision is always implemented first.",
             "options": [
-                "nervous",
-                "surprised",
-                "neutral",
-                "excited"
+                "angry 😠",
+                "sad 😢",
+                "neutral 😐",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition"
         }
     ]

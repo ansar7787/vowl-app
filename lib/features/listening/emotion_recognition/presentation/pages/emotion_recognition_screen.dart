@@ -198,12 +198,14 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                                           child: EmotionRecognitionInstruction(
                                             isAnswered: _isAnswered,
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
                                         ),
                                       )
                                     : EmotionRecognitionInstruction(
                                         isAnswered: _isAnswered,
                                         color: theme.primaryColor,
+                                        instruction: quest.instruction,
                                       ),
                                 SizedBox(height: gapInstruction),
                                 isCompact
