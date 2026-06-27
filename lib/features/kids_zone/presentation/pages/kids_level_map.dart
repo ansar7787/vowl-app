@@ -24,6 +24,7 @@ import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/features/auth/domain/usecases/purchase_level_unlock.dart';
 
 class KidsLevelMap extends StatefulWidget {
   final String gameType;
@@ -189,8 +190,12 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
       child: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           int unlockedLevel = 1;
+          List<int> completedLevels = [];
+          bool isPremium = false;
           if (state.status == AuthStatus.authenticated && state.user != null) {
             unlockedLevel = state.user!.unlockedLevels[widget.gameType] ?? 1;
+            completedLevels = state.user!.completedLevels[widget.gameType] ?? [];
+            isPremium = state.user!.isPremium;
           }
 
           final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
@@ -269,6 +274,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                           final isLocked = level > unlockedLevel;
                           final isCurrent = level == unlockedLevel;
                           final isLast = index == 199;
+                          final isTollGate = !isPremium && level > 10 && level == unlockedLevel + 1 && completedLevels.contains(level - 1);
 
                           final currentOffset = _getHorizontalOffset(
                             level,
@@ -287,6 +293,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                             currentOffset,
                             nextOffset,
                             state.status == AuthStatus.unknown,
+                            isTollGate,
                           );
                         }, childCount: 200),
                       ),
@@ -416,6 +423,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     double currentOffset,
     double nextOffset,
     bool isLoading,
+    bool isTollGate,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -425,9 +433,11 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
 
     return CustomPaint(
       painter: SegmentPathPainter(
-        color: isLocked 
-            ? (isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05))
-            : Colors.white,
+        color: isTollGate
+            ? Colors.amber.shade300
+            : (isLocked 
+                ? (isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05))
+                : Colors.white),
         currentOffset: currentOffset,
         nextOffset: nextOffset,
         isLast: isLast,
@@ -442,7 +452,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
             Positioned(
               left: currentOffset,
               top: 50.h, // Vertically center the node in the 200.h segment
-              child: _buildLevelNode(context, level, isLocked, isCurrent)
+              child: _buildLevelNode(context, level, isLocked, isCurrent, isTollGate)
                   .animate()
                   .fadeIn(duration: 800.ms, delay: (level % 5 * 100).ms)
                   .scale(begin: const Offset(0.7, 0.7), curve: Curves.easeOutBack)
@@ -780,11 +790,18 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     int level,
     bool isLocked,
     bool isCurrent,
+    bool isTollGate,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
     return ScaleButton(
-      onTap: isLocked ? null : () => _navigateToGame(context, level),
+      onTap: () {
+        if (isTollGate) {
+          _showKidsTollGate(context, level);
+        } else if (!isLocked) {
+          _navigateToGame(context, level);
+        }
+      },
       child: Stack(
         alignment: Alignment.center,
         children: [
@@ -796,7 +813,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: (isLocked ? Colors.black : widget.primaryColor).withValues(alpha: 0.15),
+                  color: (isTollGate ? Colors.amber : isLocked ? Colors.black : widget.primaryColor).withValues(alpha: 0.15),
                   blurRadius: 20.r,
                   offset: Offset(0, 10.h),
                 ),
@@ -810,29 +827,38 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
             height: isCurrent ? 100.r : 85.r,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: isLocked
-                  ? (isDark ? Colors.grey[800] : Colors.grey[200])
-                  : Colors.white,
+              color: isTollGate
+                  ? Colors.amber.shade400
+                  : isLocked
+                      ? (isDark ? Colors.grey[800] : Colors.grey[200])
+                      : Colors.white,
               border: Border.all(
-                color: isLocked ? Colors.transparent : widget.primaryColor,
+                color: isTollGate ? Colors.amber.shade700 : (isLocked ? Colors.transparent : widget.primaryColor),
                 width: isCurrent ? 5.r : 3.r,
               ),
             ),
             child: Center(
-              child: isLocked
+              child: isTollGate
                   ? Icon(
-                      Icons.lock_rounded,
-                      color: isDark ? Colors.white24 : Colors.black12,
-                      size: 24.r,
+                      Icons.key_rounded,
+                      color: Colors.white,
+                      size: 40.r,
+                      shadows: [Shadow(color: Colors.black26, offset: Offset(0, 2), blurRadius: 4)],
                     )
-                  : Text(
-                      "$level",
-                      style: TextStyle(fontFamily: 'Outfit', 
-                        fontSize: (isCurrent ? 32 : 26).sp,
-                        fontWeight: FontWeight.w900,
-                        color: widget.primaryColor,
-                      ),
-                    ),
+                  : isLocked
+                      ? Icon(
+                          Icons.lock_rounded,
+                          color: isDark ? Colors.white24 : Colors.black12,
+                          size: 24.r,
+                        )
+                      : Text(
+                          "$level",
+                          style: TextStyle(fontFamily: 'Outfit', 
+                            fontSize: (isCurrent ? 32 : 26).sp,
+                            fontWeight: FontWeight.w900,
+                            color: widget.primaryColor,
+                          ),
+                        ),
             ),
           ).animate(onPlay: (c) => c.repeat(reverse: true))
            .moveY(begin: -5.r, end: 5.r, duration: 2.seconds, curve: Curves.easeInOutSine),
@@ -909,6 +935,109 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
         type: CustomSnackBarType.warning,
       );
     }
+  }
+
+  void _showKidsTollGate(BuildContext context, int level) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (sheetContext) {
+        return Container(
+          padding: EdgeInsets.all(24.r),
+          decoration: BoxDecoration(
+            color: Theme.of(context).brightness == Brightness.dark ? const Color(0xFF1E293B) : Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
+            border: Border.all(color: widget.primaryColor.withValues(alpha: 0.5), width: 4.r),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: EdgeInsets.all(16.r),
+                decoration: BoxDecoration(
+                  color: Colors.amber.withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(Icons.auto_awesome_rounded, size: 64.r, color: Colors.amber),
+              ),
+              SizedBox(height: 16.h),
+              Text(
+                context.tr('games.magic_lock_title', fallback: '🪄 MAGIC LOCK!'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w900,
+                  color: widget.primaryColor,
+                  letterSpacing: 1.5,
+                ),
+              ),
+              SizedBox(height: 8.h),
+              Text(
+                context.tr('games.magic_lock_desc', fallback: 'Watch a quick video to get the magic key for this level!'),
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16.sp, color: Colors.grey.shade600, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 32.h),
+              ScaleButton(
+                onTap: () {
+                  Navigator.pop(sheetContext);
+                  di.sl<AdService>().showRewardedAd(
+                    isPremium: false,
+                    onUserEarnedReward: (_) async {
+                      final result = await di.sl<PurchaseLevelUnlock>().call(
+                        PurchaseLevelUnlockParams(gameType: widget.gameType, cost: 0)
+                      );
+                      if (result.isRight() && context.mounted) {
+                        CustomSnackBar.show(
+                          context: context,
+                          message: context.tr('games.magic_lock_success', fallback: 'Magic Lock Opened! ✨'),
+                          type: CustomSnackBarType.success,
+                        );
+                      }
+                    },
+                    onDismissed: () {},
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(vertical: 16.h),
+                  decoration: BoxDecoration(
+                    color: widget.primaryColor,
+                    borderRadius: BorderRadius.circular(20.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: widget.primaryColor.withValues(alpha: 0.3),
+                        blurRadius: 10.r,
+                        offset: Offset(0, 4.h),
+                      ),
+                    ],
+                  ),
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.play_circle_filled_rounded, color: Colors.white, size: 28.r),
+                      SizedBox(width: 8.w),
+                      Text(
+                        context.tr('games.watch_ad_unlock_button', fallback: 'Watch Ad to Unlock'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 24.h),
+            ],
+          ),
+        );
+      },
+    );
   }
 }
 
