@@ -25,7 +25,9 @@ import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
-import 'package:vowl/features/auth/domain/usecases/purchase_level_unlock.dart';
+
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_toll_gate_bottom_sheet.dart';
+import 'package:vowl/features/kids_zone/presentation/painters/kids_segment_path_painter.dart';
 
 class KidsLevelMap extends StatefulWidget {
   final String gameType;
@@ -814,7 +816,12 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     return ScaleButton(
       onTap: () {
         if (isTollGate) {
-          _showKidsTollGate(context, level);
+          KidsTollGateBottomSheet.show(
+            context: context,
+            level: level,
+            gameType: widget.gameType,
+            primaryColor: widget.primaryColor,
+          );
         } else if (isPlayable || isCompleted) {
           _navigateToGame(context, level);
         } else if (!isLocked && !isPlayable && !isCompleted) {
@@ -988,261 +995,9 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
       );
     }
   }
-
-  void _showKidsTollGate(BuildContext context, int level) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      isScrollControlled: true,
-      builder: (sheetContext) {
-        return Container(
-          padding: EdgeInsets.all(24.r),
-          decoration: BoxDecoration(
-            color: Theme.of(context).brightness == Brightness.dark ? const Color(0xFF1E293B) : Colors.white,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
-            border: Border.all(color: widget.primaryColor.withValues(alpha: 0.5), width: 4.r),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                padding: EdgeInsets.all(16.r),
-                decoration: BoxDecoration(
-                  color: Colors.amber.withValues(alpha: 0.15),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(Icons.auto_awesome_rounded, size: 56.r, color: Colors.amber.shade600),
-              ),
-              SizedBox(height: 16.h),
-              Text(
-                context.tr('games.magic_lock_title', fallback: 'Unlock 3 Magical Levels!'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w900,
-                  color: widget.primaryColor,
-                  letterSpacing: 1.0,
-                ),
-              ),
-              SizedBox(height: 8.h),
-              Text(
-                context.tr('games.magic_lock_desc', fallback: 'Watch a quick video to unlock the next 3 levels!'),
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 14.sp, color: Colors.grey.shade500, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 24.h),
-              ScaleButton(
-                onTap: () {
-                  Navigator.pop(sheetContext);
-                  di.sl<AdService>().showRewardedAd(
-                    isPremium: false,
-                    onUserEarnedReward: (_) async {
-                      final result = await di.sl<PurchaseLevelUnlock>().call(
-                        PurchaseLevelUnlockParams(gameType: widget.gameType, cost: 0)
-                      );
-                      if (result.isRight() && context.mounted) {
-                        CustomSnackBar.show(
-                          context: context,
-                          message: context.tr('games.magic_lock_success', fallback: '3 Levels Unlocked! ✨'),
-                          type: CustomSnackBarType.success,
-                        );
-                      }
-                    },
-                    onDismissed: () {},
-                  );
-                },
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 14.h),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [widget.primaryColor, widget.primaryColor.withValues(alpha: 0.8)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    borderRadius: BorderRadius.circular(16.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: widget.primaryColor.withValues(alpha: 0.3),
-                        blurRadius: 10.r,
-                        offset: Offset(0, 4.h),
-                      ),
-                    ],
-                  ),
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.play_circle_fill_rounded, color: Colors.white, size: 20.r),
-                      SizedBox(width: 8.w),
-                      Text(
-                        context.tr('games.watch_ad_unlock_button', fallback: 'Watch Ad to Unlock'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 24.h),
-              
-              // Premium Upsell Section
-              ScaleButton(
-                onTap: () {
-                  Navigator.pop(sheetContext);
-                  context.push(AppRouter.premiumRoute);
-                },
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(16.r),
-                  decoration: BoxDecoration(
-                    color: Colors.amber.withValues(alpha: 0.08),
-                    borderRadius: BorderRadius.circular(16.r),
-                    border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(8.r),
-                        decoration: BoxDecoration(
-                          color: Colors.amber.withValues(alpha: 0.2),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(Icons.workspace_premium_rounded, color: Colors.amber.shade700, size: 24.r),
-                      ),
-                      SizedBox(width: 16.w),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              context.tr('games.premium_upsell_title', fallback: 'Tired of locks & ads?'),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
-                              ),
-                            ),
-                            SizedBox(height: 4.h),
-                            Text(
-                              context.tr('games.premium_upsell_desc', fallback: 'Get Premium for unlimited levels!'),
-                              style: TextStyle(
-                                fontSize: 12.sp,
-                                color: Colors.grey.shade500,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Icon(Icons.arrow_forward_ios_rounded, color: Colors.grey.shade400, size: 16.r),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 16.h),
-            ],
-          ),
-        );
-      },
-    );
-  }
 }
 
-class SegmentPathPainter extends CustomPainter {
-  final Color color;
-  final double currentOffset;
-  final double nextOffset;
-  final bool isLast;
-  final int level;
 
-  SegmentPathPainter({
-    required this.color,
-    required this.currentOffset,
-    required this.nextOffset,
-    required this.isLast,
-    required this.level,
-  });
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    if (isLast) return;
-
-    final paint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 14.r
-      ..strokeCap = StrokeCap.round;
-
-    final double startX = currentOffset + 50.r;
-    final double endX = nextOffset + 50.r;
-    final double centerY = size.height / 2;
-    
-    final path = Path();
-    
-    if (level == 1) {
-      // 1. Clean Connection from Dashboard
-      canvas.drawCircle(Offset(size.width / 2, 0), 10.r, Paint()..color = Colors.white);
-      
-      path.moveTo(size.width / 2, 0);
-      path.lineTo(startX, centerY);
-    } else {
-      // 2. Continuous Path
-      path.moveTo(startX, 0);
-      path.lineTo(startX, centerY);
-    }
-
-    // 3. Smooth Modern Curve
-    final midY = centerY + (size.height - centerY) * 0.5;
-    
-    path.cubicTo(
-      startX,
-      centerY + 50.h,
-      endX,
-      midY - 50.h,
-      endX,
-      size.height,
-    );
-
-    // Subtle Shadow for the line
-    canvas.drawPath(
-      path, 
-      Paint()
-        ..color = Colors.black.withValues(alpha: 0.05)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 14.r
-        ..strokeCap = StrokeCap.round
-        ..maskFilter = MaskFilter.blur(BlurStyle.normal, 4.r)
-    );
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant SegmentPathPainter oldDelegate) {
-    return oldDelegate.color != color ||
-        oldDelegate.currentOffset != currentOffset ||
-        oldDelegate.nextOffset != nextOffset ||
-        oldDelegate.level != level;
-  }
-}
-
-class WindingPathPainter extends CustomPainter {
-  // This class can be removed as we are now using SegmentPathPainter
-  final Color lineColor;
-  final int nodeCount;
-  WindingPathPainter({required this.lineColor, required this.nodeCount});
-  @override
-  void paint(Canvas canvas, Size size) {}
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
 
 class _BubbleTailPainter extends CustomPainter {
   final Color color;
