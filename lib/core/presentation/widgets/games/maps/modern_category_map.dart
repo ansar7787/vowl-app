@@ -673,7 +673,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     final bool isTollGate = level == completedLevels + 1 && level > unlockedLevels && !isPremium;
     final bool isHalfUnlocked = level > completedLevels + 1 && level <= unlockedLevels;
     
-    final bool isUnlockedForClick = isCompleted || isPlayable || isHalfUnlocked;
+    // They can only play if they actually reached it sequentially.
+    final bool isUnlockedForClick = isCompleted || isPlayable;
     final bool isCurrent = isPlayable || isTollGate;
     Color tierColor = theme.primaryColor;
     if (isTollGate) {
@@ -942,7 +943,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   void _showTollGatePurchaseSheet(BuildContext context, int level, String gameType) {
     final user = context.read<AuthBloc>().state.user;
     final int userCoins = user?.coins ?? 0;
-    const int cost = 250;
+    const int cost = 150;
     
     showModalBottomSheet(
       context: context,
@@ -964,7 +965,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
               Icon(Icons.monetization_on_rounded, size: 64.r, color: Colors.amber),
               SizedBox(height: 16.h),
               Text(
-                context.tr('games.unlock_level_title', args: [level.toString()], fallback: 'Unlock Level $level'),
+                context.tr('games.unlock_level_title', fallback: 'Unlock Next 3 Levels!'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 24.sp,
@@ -973,7 +974,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
               ),
               SizedBox(height: 8.h),
               Text(
-                context.tr('games.unlock_level_desc', args: [cost.toString()], fallback: 'You need $cost coins to unlock this level.'),
+                context.tr('games.unlock_level_desc', args: [cost.toString()], fallback: 'You need $cost coins to unlock the next 3 levels.'),
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16.sp, color: Colors.grey),
               ),
@@ -988,7 +989,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                     if (result.isRight() && context.mounted) {
                       CustomSnackBar.show(
                         context: context,
-                        message: context.tr('games.level_unlocked_success', args: [level.toString()], fallback: 'Level $level Unlocked!'),
+                        message: context.tr('games.level_unlocked_success', fallback: 'Next 3 Levels Unlocked!'),
                         type: CustomSnackBarType.success,
                       );
                     }

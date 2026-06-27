@@ -534,7 +534,7 @@ class GamificationRepositoryImpl
         }
 
         final currentUnlocked = unlockedLevels[gameType] ?? 1;
-        unlockedLevels[gameType] = currentUnlocked + 1;
+        unlockedLevels[gameType] = currentUnlocked + 3;
 
         transaction.update(docRef, {
           'coins': currentCoins - cost,

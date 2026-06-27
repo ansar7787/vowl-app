@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math' as math;
 import 'dart:ui';
 import 'dart:math';
 import 'package:flutter/material.dart';
@@ -271,10 +272,14 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                           index,
                         ) {
                           final level = index + 1;
-                          final isLocked = level > unlockedLevel;
-                          final isCurrent = level == unlockedLevel;
+                          final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
+                          final isCompleted = level <= highestCompleted;
+                          final isPlayable = level == highestCompleted + 1 && level <= unlockedLevel;
+                          final isTollGate = level == highestCompleted + 1 && level > unlockedLevel && !isPremium;
+                          final isHalfUnlocked = level > highestCompleted + 1 && level <= unlockedLevel;
+                          final isLocked = !isCompleted && !isPlayable && !isHalfUnlocked && !isTollGate;
+                          final isCurrent = isPlayable || isTollGate;
                           final isLast = index == 199;
-                          final isTollGate = !isPremium && level > 10 && level == unlockedLevel + 1 && completedLevels.contains(level - 1);
 
                           final currentOffset = _getHorizontalOffset(
                             level,
@@ -283,8 +288,6 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                           final nextOffset = isLast
                               ? currentOffset
                               : _getHorizontalOffset(level + 1, screenWidth);
-
-                          final isCompleted = completedLevels.contains(level);
 
                           return _buildMapSegment(
                             context,
@@ -297,6 +300,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                             state.status == AuthStatus.unknown,
                             isTollGate,
                             isCompleted,
+                            isPlayable,
                           );
                         }, childCount: 200),
                       ),
@@ -428,6 +432,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     bool isLoading,
     bool isTollGate,
     bool isCompleted,
+    bool isPlayable,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -456,7 +461,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
             Positioned(
               left: currentOffset,
               top: 50.h, // Vertically center the node in the 200.h segment
-              child: _buildLevelNode(context, level, isLocked, isCurrent, isTollGate, isCompleted)
+              child: _buildLevelNode(context, level, isLocked, isCurrent, isTollGate, isCompleted, isPlayable)
                   .animate()
                   .fadeIn(duration: 800.ms, delay: (level % 5 * 100).ms)
                   .scale(begin: const Offset(0.7, 0.7), curve: Curves.easeOutBack)
@@ -796,6 +801,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     bool isCurrent,
     bool isTollGate,
     bool isCompleted,
+    bool isPlayable,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
@@ -803,8 +809,14 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
       onTap: () {
         if (isTollGate) {
           _showKidsTollGate(context, level);
-        } else if (!isLocked) {
+        } else if (isPlayable || isCompleted) {
           _navigateToGame(context, level);
+        } else if (!isLocked && !isPlayable && !isCompleted) {
+          CustomSnackBar.show(
+            context: context,
+            message: context.tr('games.kids_level_locked_sequence', fallback: 'Complete previous levels first!'),
+            type: CustomSnackBarType.info,
+          );
         }
       },
       child: Stack(
