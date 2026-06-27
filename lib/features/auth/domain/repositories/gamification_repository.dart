@@ -55,5 +55,6 @@ abstract class GamificationRepository {
   Future<Either<Failure, void>> purchaseLevelUnlock({
     required String gameType,
     required int cost,
+    bool isKidsMode = false,
   });
 }

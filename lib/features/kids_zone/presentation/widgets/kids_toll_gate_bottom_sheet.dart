@@ -62,21 +62,25 @@ class KidsTollGateBottomSheet {
               ScaleButton(
                 onTap: () async {
                   final user = context.read<AuthBloc>().state.user;
-                  final userCoins = user?.coins ?? 0;
+                  final userCoins = user?.kidsCoins ?? 0;
                   const int cost = 100;
                   
                   if (userCoins < cost) {
                     Navigator.pop(sheetContext);
                     CustomSnackBar.show(
                       context: context,
-                      message: context.tr('games.not_enough_coins', fallback: 'Not enough coins!'),
+                      message: context.tr('games.not_enough_toys', fallback: 'Not enough toys!'),
                       type: CustomSnackBarType.error,
                     );
                     return;
                   }
                   Navigator.pop(sheetContext);
                   final result = await di.sl<PurchaseLevelUnlock>().call(
-                    PurchaseLevelUnlockParams(gameType: gameType, cost: cost)
+                    PurchaseLevelUnlockParams(
+                      gameType: gameType,
+                      cost: cost,
+                      isKidsMode: true,
+                    )
                   );
                   if (result.isRight() && context.mounted) {
                     CustomSnackBar.show(
@@ -89,7 +93,7 @@ class KidsTollGateBottomSheet {
                 child: Builder(
                   builder: (context) {
                     final user = context.read<AuthBloc>().state.user;
-                    final userCoins = user?.coins ?? 0;
+                    final userCoins = user?.kidsCoins ?? 0;
                     const int cost = 100;
                     
                     return Container(
@@ -117,10 +121,10 @@ class KidsTollGateBottomSheet {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.monetization_on_rounded, color: Colors.white, size: 20.r),
+                          Icon(Icons.toys_rounded, color: Colors.white, size: 20.r),
                           SizedBox(width: 8.w),
                           Text(
-                            context.tr('games.unlock_button', args: [cost.toString()], fallback: 'Unlock ($cost Coins)'),
+                            context.tr('games.unlock_button_toys', args: [cost.toString()], fallback: 'Unlock ($cost Toys)'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 16.sp,

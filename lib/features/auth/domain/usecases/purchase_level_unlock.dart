@@ -7,14 +7,16 @@ import 'package:vowl/features/auth/domain/repositories/gamification_repository.d
 class PurchaseLevelUnlockParams extends Equatable {
   final String gameType;
   final int cost;
+  final bool isKidsMode;
 
   const PurchaseLevelUnlockParams({
     required this.gameType,
     required this.cost,
+    this.isKidsMode = false,
   });
 
   @override
-  List<Object?> get props => [gameType, cost];
+  List<Object?> get props => [gameType, cost, isKidsMode];
 }
 
 class PurchaseLevelUnlock implements UseCase<void, PurchaseLevelUnlockParams> {
@@ -27,6 +29,7 @@ class PurchaseLevelUnlock implements UseCase<void, PurchaseLevelUnlockParams> {
     return await repository.purchaseLevelUnlock(
       gameType: params.gameType,
       cost: params.cost,
+      isKidsMode: params.isKidsMode,
     );
   }
 }

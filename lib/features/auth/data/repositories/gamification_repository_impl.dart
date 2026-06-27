@@ -490,6 +490,7 @@ class GamificationRepositoryImpl
   Future<Either<Failure, void>> purchaseLevelUnlock({
     required String gameType,
     required int cost,
+    bool isKidsMode = false,
   }) async {
     try {
       final user = _firebaseAuth.currentUser;
@@ -503,8 +504,10 @@ class GamificationRepositoryImpl
         }
 
         final data = doc.data()!;
-        final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
-        if (currentCoins < cost) throw Exception('Not enough coins');
+        final coinField = isKidsMode ? 'kidsCoins' : 'coins';
+        final currentCoins = (data[coinField] as num?)?.toInt() ?? 0;
+        
+        if (currentCoins < cost) throw Exception('Not enough ${isKidsMode ? 'toys' : 'coins'}');
 
         var history = <Map<String, dynamic>>[];
         if (data['coinHistory'] != null) {
@@ -537,7 +540,7 @@ class GamificationRepositoryImpl
         unlockedLevels[gameType] = currentUnlocked + 3;
 
         transaction.update(docRef, {
-          'coins': currentCoins - cost,
+          coinField: currentCoins - cost,
           'unlockedLevels': unlockedLevels,
           'coinHistory': history,
         });
