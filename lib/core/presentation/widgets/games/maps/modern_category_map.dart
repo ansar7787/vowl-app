@@ -11,7 +11,6 @@ import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_level_unlock.dart';
-import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -948,7 +947,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   void _showTollGatePurchaseSheet(BuildContext context, int level, String gameType) {
     final user = context.read<AuthBloc>().state.user;
     final int userCoins = user?.coins ?? 0;
-    const int cost = 50;
+    const int cost = 250;
     
     showModalBottomSheet(
       context: context,
@@ -984,7 +983,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                 style: TextStyle(fontSize: 16.sp, color: Colors.grey),
               ),
               SizedBox(height: 32.h),
-              if (userCoins >= cost)
+              if (userCoins >= cost) ...[
                 ScaleButton(
                   onTap: () async {
                     Navigator.pop(sheetContext);
@@ -1024,57 +1023,63 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                       ),
                     ),
                   ),
-                )
-              else
-                ScaleButton(
-                  onTap: () {
-                    Navigator.pop(sheetContext);
-                    di.sl<AdService>().showRewardedAd(
-                      isPremium: false,
-                      onUserEarnedReward: (_) async {
-                        await di.sl<UpdateUserCoins>().call(
-                           UpdateUserCoinsParams(amountChange: cost, title: 'Ad Reward', isEarned: true)
+                ),
+                SizedBox(height: 16.h),
+              ],
+              ScaleButton(
+                onTap: () {
+                  Navigator.pop(sheetContext);
+                  di.sl<AdService>().showRewardedAd(
+                    isPremium: false,
+                    onUserEarnedReward: (_) async {
+                      // Free unlock via Ad!
+                      final result = await di.sl<PurchaseLevelUnlock>().call(
+                        PurchaseLevelUnlockParams(gameType: gameType, cost: 0)
+                      );
+                      if (result.isRight() && context.mounted) {
+                        CustomSnackBar.show(
+                          context: context,
+                          message: context.tr('games.level_unlocked_success', args: [level.toString()], fallback: 'Level $level Unlocked!'),
+                          type: CustomSnackBarType.success,
                         );
-                        if (context.mounted) {
-                           _showTollGatePurchaseSheet(context, level, gameType);
-                        }
-                      },
-                      onDismissed: () {},
-                    );
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 16.h),
-                    decoration: BoxDecoration(
-                      color: Colors.blueAccent,
-                      borderRadius: BorderRadius.circular(16.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.blueAccent.withValues(alpha: 0.3),
-                          blurRadius: 10.r,
-                          offset: Offset(0, 4.h),
+                      }
+                    },
+                    onDismissed: () {},
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(vertical: 16.h),
+                  decoration: BoxDecoration(
+                    color: Colors.blueAccent,
+                    borderRadius: BorderRadius.circular(16.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.blueAccent.withValues(alpha: 0.3),
+                        blurRadius: 10.r,
+                        offset: Offset(0, 4.h),
+                      ),
+                    ],
+                  ),
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.play_circle_filled_rounded, color: Colors.white, size: 24.r),
+                      SizedBox(width: 8.w),
+                      Text(
+                        context.tr('games.watch_ad_unlock_button', fallback: 'Watch Ad to Unlock'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
                         ),
-                      ],
-                    ),
-                    alignment: Alignment.center,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.play_circle_filled_rounded, color: Colors.white, size: 24.r),
-                        SizedBox(width: 8.w),
-                        Text(
-                          context.tr('games.watch_ad_button', fallback: 'Watch Ad to Earn Coins'),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
+              ),
               SizedBox(height: 24.h),
             ],
           ),
