@@ -277,6 +277,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                           final isPlayable = level == highestCompleted + 1 && level <= unlockedLevel;
                           final isTollGate = level == highestCompleted + 1 && level > unlockedLevel && !isPremium;
                           final isHalfUnlocked = level > highestCompleted + 1 && level <= unlockedLevel;
+                          final isNextZone = level > unlockedLevel + 1 && level <= unlockedLevel + 3 && !isPremium;
                           final isLocked = !isCompleted && !isPlayable && !isHalfUnlocked && !isTollGate;
                           final isCurrent = isPlayable || isTollGate;
                           final isLast = index == 199;
@@ -301,6 +302,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                             isTollGate,
                             isCompleted,
                             isPlayable,
+                            isNextZone,
                           );
                         }, childCount: 200),
                       ),
@@ -433,6 +435,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     bool isTollGate,
     bool isCompleted,
     bool isPlayable,
+    bool isNextZone,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -444,9 +447,11 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
       painter: SegmentPathPainter(
         color: isTollGate
             ? Colors.amber.shade300
-            : (isLocked 
-                ? (isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05))
-                : Colors.white),
+            : isNextZone
+                ? Colors.amber.shade100.withValues(alpha: 0.5)
+                : (isLocked 
+                    ? (isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05))
+                    : Colors.white),
         currentOffset: currentOffset,
         nextOffset: nextOffset,
         isLast: isLast,
@@ -461,7 +466,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
             Positioned(
               left: currentOffset,
               top: 50.h, // Vertically center the node in the 200.h segment
-              child: _buildLevelNode(context, level, isLocked, isCurrent, isTollGate, isCompleted, isPlayable)
+              child: _buildLevelNode(context, level, isLocked, isCurrent, isTollGate, isCompleted, isPlayable, isNextZone)
                   .animate()
                   .fadeIn(duration: 800.ms, delay: (level % 5 * 100).ms)
                   .scale(begin: const Offset(0.7, 0.7), curve: Curves.easeOutBack)
@@ -802,6 +807,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     bool isTollGate,
     bool isCompleted,
     bool isPlayable,
+    bool isNextZone,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
@@ -846,37 +852,27 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
               shape: BoxShape.circle,
               color: isTollGate
                   ? Colors.amber.shade400
-                  : isLocked
-                      ? (isDark ? Colors.grey[800] : Colors.grey[200])
-                      : Colors.white,
+                  : isNextZone
+                      ? Colors.amber.shade100.withValues(alpha: 0.5)
+                      : isLocked
+                          ? (isDark ? Colors.grey[800] : Colors.grey[200])
+                          : Colors.white,
               border: Border.all(
-                color: isTollGate ? Colors.amber.shade700 : (isLocked ? Colors.transparent : widget.primaryColor),
+                color: isTollGate 
+                    ? Colors.amber.shade700 
+                    : isNextZone 
+                        ? Colors.amber.shade300.withValues(alpha: 0.5)
+                        : (isLocked ? Colors.transparent : widget.primaryColor),
                 width: isCurrent ? 5.r : 3.r,
               ),
             ),
             child: Center(
               child: isTollGate
-                  ? Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '+3',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 22.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                            height: 1.0,
-                            shadows: const [Shadow(color: Colors.black26, offset: Offset(0, 2), blurRadius: 4)],
-                          ),
-                        ),
-                        Icon(
-                          Icons.lock_rounded,
-                          color: Colors.white,
-                          size: 20.r,
-                          shadows: const [Shadow(color: Colors.black26, offset: Offset(0, 2), blurRadius: 4)],
-                        ),
-                      ],
+                  ? Icon(
+                      Icons.key_rounded,
+                      color: Colors.white,
+                      size: 40.r,
+                      shadows: const [Shadow(color: Colors.black26, offset: Offset(0, 2), blurRadius: 4)],
                     )
                   : isLocked
                       ? Icon(

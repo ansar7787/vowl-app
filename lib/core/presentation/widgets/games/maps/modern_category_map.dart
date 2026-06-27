@@ -672,6 +672,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     final bool isPlayable = level == completedLevels + 1 && level <= unlockedLevels;
     final bool isTollGate = level == completedLevels + 1 && level > unlockedLevels && !isPremium;
     final bool isHalfUnlocked = level > completedLevels + 1 && level <= unlockedLevels;
+    final bool isNextZone = level > unlockedLevels + 1 && level <= unlockedLevels + 3 && !isPremium;
     
     // They can only play if they actually reached it sequentially.
     final bool isUnlockedForClick = isCompleted || isPlayable;
@@ -763,10 +764,15 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                                 Colors.amber.shade200,
                                                 Colors.amber.shade400,
                                               ]
-                                            : [
-                                                Colors.grey.shade400,
-                                                Colors.grey.shade600,
-                                              ],
+                                            : isNextZone
+                                                ? [
+                                                    Colors.amber.withValues(alpha: 0.1),
+                                                    Colors.amber.withValues(alpha: 0.3),
+                                                  ]
+                                                : [
+                                                    Colors.grey.shade400,
+                                                    Colors.grey.shade600,
+                                                  ],
                                     begin: Alignment.topLeft,
                                     end: Alignment.bottomRight,
                                   ),
@@ -789,7 +795,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                         ? tierColor
                                         : isTollGate
                                           ? Colors.amber.shade600
-                                          : Colors.white24,
+                                          : isNextZone
+                                              ? Colors.amber.withValues(alpha: 0.4)
+                                              : Colors.white24,
                                     width: isCurrent ? 4.r : 3.r,
                                   ),
                                 ),
@@ -809,32 +817,14 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                   ),
                                   child: Center(
                                     child: isTollGate
-                                        ? Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                '+3',
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 20.sp,
-                                                  fontWeight: FontWeight.w900,
-                                                  color: Colors.white,
-                                                  height: 1,
-                                                  shadows: const [
-                                                    Shadow(color: Colors.black38, offset: Offset(0, 2), blurRadius: 4),
-                                                  ],
-                                                ),
-                                              ),
-                                              Icon(
-                                                Icons.lock_rounded,
-                                                size: 24.r,
-                                                color: Colors.white,
-                                                shadows: const [
-                                                  Shadow(color: Colors.black38, offset: Offset(0, 2), blurRadius: 4),
-                                                ],
-                                              ),
-                                            ],
-                                          )
+                                        ? Icon(
+                                              Icons.lock_rounded,
+                                              size: 36.r,
+                                              color: Colors.white,
+                                              shadows: const [
+                                                Shadow(color: Colors.black38, offset: Offset(0, 2), blurRadius: 4),
+                                              ],
+                                            )
                                         : (isCompleted || isPlayable || isHalfUnlocked)
                                             ? Padding(
                                                 padding: EdgeInsets.all(4.r),
