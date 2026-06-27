@@ -66,6 +66,7 @@ class TollGateBottomSheet {
               ScaleButton(
                 onTap: () async {
                   if (userCoins < cost) {
+                    Navigator.pop(sheetContext);
                     CustomSnackBar.show(
                       context: context,
                       message: context.tr('games.not_enough_coins', fallback: 'Not enough coins!'),

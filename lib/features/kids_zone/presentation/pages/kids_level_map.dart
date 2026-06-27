@@ -69,11 +69,11 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
   void _scrollToUnlockedLevel() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      
+
       // Delay slightly to ensure page transition is finished
       Future.delayed(const Duration(milliseconds: 400), () {
         if (!mounted) return;
-        
+
         final user = context.read<AuthBloc>().state.user;
         if (user != null) {
           final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
@@ -151,7 +151,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
       ),
       '',
     );
-    
+
     debugPrint("KIDS_MAP: Buddy speaking: $cleanMessage");
     di.sl<SoundService>().playMascotInteraction();
     di.sl<TtsService>().speak(cleanMessage);
@@ -197,22 +197,23 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
           bool isPremium = false;
           if (state.status == AuthStatus.authenticated && state.user != null) {
             unlockedLevel = state.user!.unlockedLevels[widget.gameType] ?? 1;
-            completedLevels = state.user!.completedLevels[widget.gameType] ?? [];
+            completedLevels =
+                state.user!.completedLevels[widget.gameType] ?? [];
             isPremium = state.user!.isPremium;
           }
 
           final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
-          final bgColor = isMidnight 
-              ? Colors.black 
-              : (isDark 
-                  ? Color.alphaBlend(
-                      widget.primaryColor.withAlpha(100),
-                      const Color(0xFF0F172A),
-                    )
-                  : Color.alphaBlend(
-                      widget.primaryColor.withAlpha(60),
-                      const Color(0xFFF8FAFC),
-                    ));
+          final bgColor = isMidnight
+              ? Colors.black
+              : (isDark
+                    ? Color.alphaBlend(
+                        widget.primaryColor.withAlpha(100),
+                        const Color(0xFF0F172A),
+                      )
+                    : Color.alphaBlend(
+                        widget.primaryColor.withAlpha(60),
+                        const Color(0xFFF8FAFC),
+                      ));
 
           return Scaffold(
             backgroundColor: bgColor,
@@ -269,18 +270,34 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                     SliverPadding(
                       padding: EdgeInsets.symmetric(vertical: 20.h),
                       sliver: SliverList(
-                        delegate: SliverChildBuilderDelegate((
-                          context,
-                          index,
-                        ) {
+                        delegate: SliverChildBuilderDelegate((context, index) {
                           final level = index + 1;
-                          final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
+                          final highestCompleted = completedLevels.isEmpty
+                              ? 0
+                              : completedLevels.reduce(math.max);
                           final isCompleted = level <= highestCompleted;
-                          final isPlayable = level == highestCompleted + 1 && level <= unlockedLevel;
-                          final isTollGate = level == highestCompleted + 1 && level > unlockedLevel && !isPremium;
-                          final isHalfUnlocked = level > highestCompleted + 1 && level <= unlockedLevel && unlockedLevel > 10;
-                          final isNextZone = level > unlockedLevel + 1 && level <= unlockedLevel + 3 && !isPremium && highestCompleted >= unlockedLevel;
-                          final isLocked = !isCompleted && !isPlayable && !isHalfUnlocked && !isTollGate && !isNextZone;
+                          final isPlayable =
+                              level == highestCompleted + 1 &&
+                              level <= unlockedLevel;
+                          final isTollGate =
+                              level == highestCompleted + 1 &&
+                              level > unlockedLevel &&
+                              !isPremium;
+                          final isHalfUnlocked =
+                              level > highestCompleted + 1 &&
+                              level <= unlockedLevel &&
+                              unlockedLevel > 10;
+                          final isNextZone =
+                              level > unlockedLevel + 1 &&
+                              level <= unlockedLevel + 3 &&
+                              !isPremium &&
+                              highestCompleted >= unlockedLevel;
+                          final isLocked =
+                              !isCompleted &&
+                              !isPlayable &&
+                              !isHalfUnlocked &&
+                              !isTollGate &&
+                              !isNextZone;
                           final isCurrent = isPlayable || isTollGate;
                           final isLast = index == 199;
 
@@ -354,25 +371,25 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                 ),
 
               VowlMascot(
-                size: 55.r,
-                state: _buddyState,
-                useFloatingAnimation: true,
-                isKidsMode: true,
-              )
-              .animate(target: _buddyMessage != null ? 1 : 0)
-              .shake(hz: 10, curve: Curves.easeInOut)
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.2, 1.2),
-                duration: 200.ms,
-                curve: Curves.easeOutBack,
-              )
-              .then()
-              .scale(
-                begin: const Offset(1.2, 1.2),
-                end: const Offset(1, 1),
-                duration: 200.ms,
-              ),
+                    size: 55.r,
+                    state: _buddyState,
+                    useFloatingAnimation: true,
+                    isKidsMode: true,
+                  )
+                  .animate(target: _buddyMessage != null ? 1 : 0)
+                  .shake(hz: 10, curve: Curves.easeInOut)
+                  .scale(
+                    begin: const Offset(1, 1),
+                    end: const Offset(1.2, 1.2),
+                    duration: 200.ms,
+                    curve: Curves.easeOutBack,
+                  )
+                  .then()
+                  .scale(
+                    begin: const Offset(1.2, 1.2),
+                    end: const Offset(1, 1),
+                    duration: 200.ms,
+                  ),
             ],
           ),
         ).animate().scale(curve: Curves.easeOutBack).fadeIn();
@@ -401,7 +418,8 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
               ),
               child: Text(
                 text,
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 13.sp,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xFF1E293B),
@@ -450,17 +468,19 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
         color: isTollGate
             ? Colors.amber.shade300
             : isNextZone
-                ? Colors.amber.shade100.withValues(alpha: 0.5)
-                : (isLocked 
-                    ? (isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05))
-                    : Colors.white),
+            ? Colors.amber.shade100.withValues(alpha: 0.5)
+            : (isLocked
+                  ? (isDark
+                        ? Colors.white.withValues(alpha: 0.1)
+                        : Colors.black.withValues(alpha: 0.05))
+                  : Colors.white),
         currentOffset: currentOffset,
         nextOffset: nextOffset,
         isLast: isLast,
         level: level,
       ),
       child: SizedBox(
-        height: 200.h, 
+        height: 200.h,
         width: double.infinity,
         child: Stack(
           clipBehavior: Clip.none,
@@ -468,17 +488,35 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
             Positioned(
               left: currentOffset,
               top: 50.h, // Vertically center the node in the 200.h segment
-              child: _buildLevelNode(context, level, isLocked, isCurrent, isTollGate, isCompleted, isPlayable, isNextZone)
-                  .animate()
-                  .fadeIn(duration: 800.ms, delay: (level % 5 * 100).ms)
-                  .scale(begin: const Offset(0.7, 0.7), curve: Curves.easeOutBack)
-                  .moveY(begin: 40, end: 0, curve: Curves.easeOutQuad),
+              child:
+                  _buildLevelNode(
+                        context,
+                        level,
+                        isLocked,
+                        isCurrent,
+                        isTollGate,
+                        isCompleted,
+                        isPlayable,
+                        isNextZone,
+                      )
+                      .animate()
+                      .fadeIn(duration: 800.ms, delay: (level % 5 * 100).ms)
+                      .scale(
+                        begin: const Offset(0.7, 0.7),
+                        curve: Curves.easeOutBack,
+                      )
+                      .moveY(begin: 40, end: 0, curve: Curves.easeOutQuad),
             ),
             if (isCurrent)
               Positioned(
-                left: currentOffset > 0.5.sw ? currentOffset - 35.r : currentOffset + 45.r,
+                left: currentOffset > 0.5.sw
+                    ? currentOffset - 35.r
+                    : currentOffset + 45.r,
                 top: 25.h, // Moved closer to the node center
-                child: _buildBuddy(context, isNearRightEdge: currentOffset > 0.5.sw),
+                child: _buildBuddy(
+                  context,
+                  isNearRightEdge: currentOffset > 0.5.sw,
+                ),
               ),
             if (level == 10 || level == 50 || level == 100 || level == 200)
               _buildStickerGoal(level, isLocked),
@@ -598,7 +636,8 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                     ),
                     child: Text(
                       isLocked ? "LVL $level $tierName" : "STICKER WON! ✨",
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 9.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
@@ -617,7 +656,12 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     );
   }
 
-  Widget _buildShimmerSegment(BuildContext context, double currentOffset, double nextOffset, bool isLast) {
+  Widget _buildShimmerSegment(
+    BuildContext context,
+    double currentOffset,
+    double nextOffset,
+    bool isLast,
+  ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final baseColor = isDark ? Colors.white10 : Colors.grey[300]!;
     final highlightColor = isDark ? Colors.white24 : Colors.grey[100]!;
@@ -656,7 +700,9 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
-          color: isDark ? Colors.white.withValues(alpha: 0.08) : Colors.white.withValues(alpha: 0.6),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.08)
+              : Colors.white.withValues(alpha: 0.6),
           borderRadius: BorderRadius.circular(32.r),
           border: Border.all(color: widget.primaryColor.withValues(alpha: 0.2)),
           boxShadow: [
@@ -698,7 +744,8 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                 children: [
                   Text(
                     "KIDS QUEST",
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w800,
                       color: widget.primaryColor,
@@ -708,7 +755,8 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                   SizedBox(height: 4.h),
                   Text(
                     widget.title,
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -717,7 +765,10 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                   SizedBox(height: 8.h),
                   // Coins Mini-Pill
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 4.h,
+                    ),
                     decoration: BoxDecoration(
                       color: const Color(0xFFEF4444).withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12.r),
@@ -725,11 +776,16 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.toys_rounded, color: const Color(0xFFEF4444), size: 10.r),
+                        Icon(
+                          Icons.toys_rounded,
+                          color: const Color(0xFFEF4444),
+                          size: 10.r,
+                        ),
                         SizedBox(width: 4.w),
                         Text(
                           "${user?.kidsCoins ?? 0} TOYS",
-                          style: TextStyle(fontFamily: 'Outfit', 
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
                             fontSize: 9.sp,
                             fontWeight: FontWeight.w900,
                             color: const Color(0xFFEF4444),
@@ -812,20 +868,31 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     bool isNextZone,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return ScaleButton(
       onTap: () {
         if (isTollGate) {
-          final completedLevels = context.read<AuthBloc>().state.user?.completedLevels[widget.gameType] ?? [];
-          final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
-          
+          final completedLevels =
+              context
+                  .read<AuthBloc>()
+                  .state
+                  .user
+                  ?.completedLevels[widget.gameType] ??
+              [];
+          final highestCompleted = completedLevels.isEmpty
+              ? 0
+              : completedLevels.reduce(math.max);
+
           if (level > highestCompleted + 1) {
-             CustomSnackBar.show(
-               context: context,
-               message: context.tr('games.kids_level_locked_sequence', fallback: 'Complete previous levels first!'),
-               type: CustomSnackBarType.info,
-             );
-             return;
+            CustomSnackBar.show(
+              context: context,
+              message: context.tr(
+                'games.kids_level_locked_sequence',
+                fallback: 'Complete previous levels first!',
+              ),
+              type: CustomSnackBarType.info,
+            );
+            return;
           }
           KidsTollGateBottomSheet.show(
             context: context,
@@ -838,7 +905,10 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
         } else if (!isLocked && !isPlayable && !isCompleted) {
           CustomSnackBar.show(
             context: context,
-            message: context.tr('games.kids_level_locked_sequence', fallback: 'Complete previous levels first!'),
+            message: context.tr(
+              'games.kids_level_locked_sequence',
+              fallback: 'Complete previous levels first!',
+            ),
             type: CustomSnackBarType.info,
           );
         }
@@ -854,7 +924,13 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: (isTollGate ? Colors.amber : isLocked ? Colors.black : widget.primaryColor).withValues(alpha: 0.15),
+                  color:
+                      (isTollGate
+                              ? Colors.amber
+                              : isLocked
+                              ? Colors.black
+                              : widget.primaryColor)
+                          .withValues(alpha: 0.15),
                   blurRadius: 20.r,
                   offset: Offset(0, 10.h),
                 ),
@@ -864,35 +940,41 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
 
           // 2. Main Disk Body
           Container(
-            width: isCurrent ? 100.r : 85.r,
-            height: isCurrent ? 100.r : 85.r,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: isTollGate
-                  ? Colors.amber.shade400
-                  : isNextZone
+                width: isCurrent ? 100.r : 85.r,
+                height: isCurrent ? 100.r : 85.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: isTollGate
+                      ? Colors.amber.shade400
+                      : isNextZone
                       ? Colors.amber.shade100.withValues(alpha: 0.5)
                       : isLocked
-                          ? (isDark ? Colors.grey[800] : Colors.grey[200])
-                          : Colors.white,
-              border: Border.all(
-                color: isTollGate 
-                    ? Colors.amber.shade700 
-                    : isNextZone 
+                      ? (isDark ? Colors.grey[800] : Colors.grey[200])
+                      : Colors.white,
+                  border: Border.all(
+                    color: isTollGate
+                        ? Colors.amber.shade700
+                        : isNextZone
                         ? Colors.amber.shade300.withValues(alpha: 0.5)
                         : (isLocked ? Colors.transparent : widget.primaryColor),
-                width: isCurrent ? 5.r : 3.r,
-              ),
-            ),
-            child: Center(
-              child: isTollGate
-                  ? Icon(
-                      Icons.key_rounded,
-                      color: Colors.white,
-                      size: 40.r,
-                      shadows: const [Shadow(color: Colors.black26, offset: Offset(0, 2), blurRadius: 4)],
-                    )
-                  : isLocked
+                    width: isCurrent ? 5.r : 3.r,
+                  ),
+                ),
+                child: Center(
+                  child: isTollGate
+                      ? Icon(
+                          Icons.key_rounded,
+                          color: Colors.white,
+                          size: 40.r,
+                          shadows: const [
+                            Shadow(
+                              color: Colors.black26,
+                              offset: Offset(0, 2),
+                              blurRadius: 4,
+                            ),
+                          ],
+                        )
+                      : isLocked
                       ? Icon(
                           Icons.lock_rounded,
                           color: isDark ? Colors.white24 : Colors.black12,
@@ -907,7 +989,8 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                               children: [
                                 Text(
                                   "$level",
-                                  style: TextStyle(fontFamily: 'Outfit', 
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
                                     fontSize: (isCurrent ? 32 : 26).sp,
                                     fontWeight: FontWeight.w900,
                                     color: widget.primaryColor,
@@ -919,9 +1002,21 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
-                                      Icon(Icons.star_rounded, size: 14.r, color: Colors.amber),
-                                      Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
+                                      Icon(
+                                        Icons.star_rounded,
+                                        size: 10.r,
+                                        color: Colors.amber,
+                                      ),
+                                      Icon(
+                                        Icons.star_rounded,
+                                        size: 14.r,
+                                        color: Colors.amber,
+                                      ),
+                                      Icon(
+                                        Icons.star_rounded,
+                                        size: 10.r,
+                                        color: Colors.amber,
+                                      ),
                                     ],
                                   ),
                                 ],
@@ -929,23 +1024,36 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                             ),
                           ),
                         ),
-            ),
-          ).animate(onPlay: (c) => c.repeat(reverse: true))
-           .moveY(begin: -5.r, end: 5.r, duration: 2.seconds, curve: Curves.easeInOutSine),
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .moveY(
+                begin: -5.r,
+                end: 5.r,
+                duration: 2.seconds,
+                curve: Curves.easeInOutSine,
+              ),
 
           // 3. Current Level Indicator
           if (isCurrent)
             Container(
-              width: 120.r,
-              height: 120.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: widget.primaryColor.withValues(alpha: 0.3),
-                  width: 2.r,
-                ),
-              ),
-            ).animate(onPlay: (c) => c.repeat()).scale(begin: const Offset(0.8, 0.8), end: const Offset(1.2, 1.2), duration: 1.5.seconds).fadeOut(),
+                  width: 120.r,
+                  height: 120.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: widget.primaryColor.withValues(alpha: 0.3),
+                      width: 2.r,
+                    ),
+                  ),
+                )
+                .animate(onPlay: (c) => c.repeat())
+                .scale(
+                  begin: const Offset(0.8, 0.8),
+                  end: const Offset(1.2, 1.2),
+                  duration: 1.5.seconds,
+                )
+                .fadeOut(),
         ],
       ),
     );
@@ -1007,8 +1115,6 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     }
   }
 }
-
-
 
 class _BubbleTailPainter extends CustomPainter {
   final Color color;

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -57,6 +59,83 @@ class KidsTollGateBottomSheet {
                 style: TextStyle(fontSize: 14.sp, color: Colors.grey.shade500, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 24.h),
+              ScaleButton(
+                onTap: () async {
+                  final user = context.read<AuthBloc>().state.user;
+                  final userCoins = user?.coins ?? 0;
+                  const int cost = 100;
+                  
+                  if (userCoins < cost) {
+                    Navigator.pop(sheetContext);
+                    CustomSnackBar.show(
+                      context: context,
+                      message: context.tr('games.not_enough_coins', fallback: 'Not enough coins!'),
+                      type: CustomSnackBarType.error,
+                    );
+                    return;
+                  }
+                  Navigator.pop(sheetContext);
+                  final result = await di.sl<PurchaseLevelUnlock>().call(
+                    PurchaseLevelUnlockParams(gameType: gameType, cost: cost)
+                  );
+                  if (result.isRight() && context.mounted) {
+                    CustomSnackBar.show(
+                      context: context,
+                      message: context.tr('games.magic_lock_success', fallback: '3 Levels Unlocked! ✨'),
+                      type: CustomSnackBarType.success,
+                    );
+                  }
+                },
+                child: Builder(
+                  builder: (context) {
+                    final user = context.read<AuthBloc>().state.user;
+                    final userCoins = user?.coins ?? 0;
+                    const int cost = 100;
+                    
+                    return Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(vertical: 14.h),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: userCoins >= cost 
+                              ? [Colors.amber.shade400, Colors.amber.shade600]
+                              : [Colors.grey.shade400, Colors.grey.shade500],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius: BorderRadius.circular(16.r),
+                        boxShadow: [
+                          if (userCoins >= cost)
+                            BoxShadow(
+                              color: Colors.amber.withValues(alpha: 0.3),
+                              blurRadius: 10.r,
+                              offset: Offset(0, 4.h),
+                            ),
+                        ],
+                      ),
+                      alignment: Alignment.center,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.monetization_on_rounded, color: Colors.white, size: 20.r),
+                          SizedBox(width: 8.w),
+                          Text(
+                            context.tr('games.unlock_button', args: [cost.toString()], fallback: 'Unlock ($cost Coins)'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  }
+                ),
+              ),
+              SizedBox(height: 12.h),
               ScaleButton(
                 onTap: () {
                   Navigator.pop(sheetContext);
