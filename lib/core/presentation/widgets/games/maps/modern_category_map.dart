@@ -245,6 +245,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     if (isPremium && unlockedLevels <= completedLevels) {
       unlockedLevels = completedLevels + 1;
     }
+    final effectiveUnlockedLevel = unlockedLevels + 9;
 
     final List<Offset> points = _generatePointsCached(theme.category);
     final double rowSpacing = _getVerticalSpacing(theme.category);
@@ -406,7 +407,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                   color: theme.primaryColor,
                                   category: theme.category,
                                   isDark: isDark,
-                                  unlockedLevels: unlockedLevels,
+                                  unlockedLevels: effectiveUnlockedLevel,
                                   completedLevels: completedLevels,
                                 ),
                               ),

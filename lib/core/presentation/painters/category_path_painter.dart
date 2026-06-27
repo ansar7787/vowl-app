@@ -58,8 +58,8 @@ class CategoryPathPainter extends CustomPainter {
     canvas.drawPath(lockedPath, lockedPaint);
 
     // ── Active (unlocked) path ───────────────────────────────────────────
-    if (points.isNotEmpty && unlockedLevels > 0) {
-      final activeNodeCount = unlockedLevels.clamp(0, points.length);
+    if (points.isNotEmpty) {
+      final activeNodeCount = (completedLevels + 1).clamp(0, points.length);
       final activePath = _buildPath(topCenter, points, 0, activeNodeCount);
 
       // Soft glow layer beneath the active path.
