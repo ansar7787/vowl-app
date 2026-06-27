@@ -227,7 +227,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(
             state.copyWith(
               status: AuthStatus.unauthenticated,
-              message: () => 'auth_errors.requires_recent_login_delete',
+              message: () => 'settings_dialogs.requires_recent_login_delete',
             ),
           );
         } else {
