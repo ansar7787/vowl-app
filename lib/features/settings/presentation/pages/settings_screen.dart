@@ -396,6 +396,15 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               isLoading: isLoading,
               onChanged: onToggleNotifications,
             ),
+            SettingsSwitchTile(
+              title: context.tr('settings.midnight_mode', fallback: 'Midnight Mode'),
+              subtitle: context.tr('settings.midnight_mode_subtitle', fallback: 'True black background for OLED screens'),
+              icon: Icons.nightlight_round,
+              color: Colors.indigo,
+              value: context.watch<ThemeCubit>().state.isMidnight,
+              isLoading: false,
+              onChanged: (val) => context.read<ThemeCubit>().toggleMidnight(val),
+            ),
             SettingsTile(
               title: context.tr('settings.language_selection'),
               icon: Icons.language_rounded,
