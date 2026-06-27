@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
@@ -306,11 +307,22 @@ class GoogleLoginButton extends StatelessWidget {
                 : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(Icons.g_mobiledata, size: 32),
-                      SizedBox(width: 8.w),
-                      Text(
-                        context.tr('auth.sign_in_with_google'),
-                        style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp),
+                      SvgPicture.asset(
+                        'assets/icons/google_logo.svg',
+                        width: 24.w,
+                        height: 24.w,
+                        fit: BoxFit.contain,
+                      ),
+                      SizedBox(width: 12.w),
+                      Flexible(
+                        child: Text(
+                          context.tr('auth.sign_in_with_google'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                     ],
                   ),
