@@ -34,7 +34,7 @@ class ModernPathGameMap extends StatelessWidget {
     final authState = context.watch<AuthBloc>().state;
 
     // Fallback logic for unlocked levels
-    final int unlockedLevels = math.max(10, authState.user?.unlockedLevels[gameType] ?? 10);
+    final int unlockedLevels = authState.user?.unlockedLevels[gameType] ?? 1;
 
     final List<Offset> points = [];
     for (int i = 0; i < totalLevels; i++) {

@@ -76,7 +76,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
         
         final user = context.read<AuthBloc>().state.user;
         if (user != null) {
-          final unlockedLevel = math.max(10, user.unlockedLevels[widget.gameType] ?? 10);
+          final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
           final double targetOffset = (unlockedLevel - 1) * 200.h;
           final double centeredOffset = max(0, targetOffset - 300.h);
 
@@ -95,7 +95,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
   void _checkAndShowStoryBeat() {
     final user = context.read<AuthBloc>().state.user;
     if (user != null) {
-      final unlockedLevel = math.max(10, user.unlockedLevels[widget.gameType] ?? 10);
+      final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
       final beat = di.sl<StoryService>().getStoryBeat(
         context,
         widget.gameType,
@@ -118,7 +118,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
 
   void _handleBuddyTap() {
     final authState = context.read<AuthBloc>().state;
-    final level = math.max(10, authState.user?.unlockedLevels[widget.gameType] ?? 10);
+    final level = authState.user?.unlockedLevels[widget.gameType] ?? 1;
 
     final messages = [
       "Level $level! Superstar! ⭐",
@@ -183,8 +183,8 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     return BlocListener<AuthBloc, AuthState>(
       listenWhen: (previous, current) {
         final prevUnlocked =
-            math.max(10, previous.user?.unlockedLevels[widget.gameType] ?? 10);
-        final currUnlocked = math.max(10, current.user?.unlockedLevels[widget.gameType] ?? 10);
+            previous.user?.unlockedLevels[widget.gameType] ?? 1;
+        final currUnlocked = current.user?.unlockedLevels[widget.gameType] ?? 1;
         return prevUnlocked != currUnlocked;
       },
       listener: (context, state) {
@@ -196,7 +196,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
           List<int> completedLevels = [];
           bool isPremium = false;
           if (state.status == AuthStatus.authenticated && state.user != null) {
-            unlockedLevel = math.max(10, state.user!.unlockedLevels[widget.gameType] ?? 10);
+            unlockedLevel = state.user!.unlockedLevels[widget.gameType] ?? 1;
             completedLevels = state.user!.completedLevels[widget.gameType] ?? [];
             isPremium = state.user!.isPremium;
           }
@@ -275,11 +275,12 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                         ) {
                           final level = index + 1;
                           final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
+                          final effectiveUnlockedLevel = unlockedLevel + 9;
                           final isCompleted = level <= highestCompleted;
-                          final isPlayable = level == highestCompleted + 1 && level <= unlockedLevel;
-                          final isTollGate = level == highestCompleted + 1 && level > unlockedLevel && !isPremium;
-                          final isHalfUnlocked = level > highestCompleted + 1 && level <= unlockedLevel && unlockedLevel > 10;
-                          final isNextZone = level > unlockedLevel + 1 && level <= unlockedLevel + 3 && !isPremium && highestCompleted >= unlockedLevel;
+                          final isPlayable = level == highestCompleted + 1 && level <= effectiveUnlockedLevel;
+                          final isTollGate = level == highestCompleted + 1 && level > effectiveUnlockedLevel && !isPremium;
+                          final isHalfUnlocked = level > highestCompleted + 1 && level <= effectiveUnlockedLevel && effectiveUnlockedLevel > 10;
+                          final isNextZone = level > effectiveUnlockedLevel + 1 && level <= effectiveUnlockedLevel + 3 && !isPremium && highestCompleted >= effectiveUnlockedLevel;
                           final isLocked = !isCompleted && !isPlayable && !isHalfUnlocked && !isTollGate && !isNextZone;
                           final isCurrent = isPlayable || isTollGate;
                           final isLast = index == 199;

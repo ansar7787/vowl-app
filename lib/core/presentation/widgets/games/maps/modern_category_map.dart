@@ -97,7 +97,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     // Preload current quest batch
     final user = context.read<AuthBloc>().state.user;
     if (user != null) {
-      final unlockedLevel = math.max(10, user.unlockedLevels[widget.gameType] ?? 10);
+      final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
       di.sl<AssetQuestService>().preloadBatch(widget.gameType, unlockedLevel);
     }
 
@@ -140,7 +140,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   void _checkAndShowStoryBeat() {
     final user = context.read<AuthBloc>().state.user;
     if (user != null) {
-      final unlockedLevel = math.max(10, user.unlockedLevels[widget.gameType] ?? 10);
+      final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
       final beat = di.sl<StoryService>().getStoryBeat(
         context,
         widget.gameType,
@@ -181,7 +181,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
 
     final authState = context.read<AuthBloc>().state;
     final int unlockedLevels =
-        math.max(10, authState.user?.unlockedLevels[widget.gameType] ?? 10);
+        authState.user?.unlockedLevels[widget.gameType] ?? 1;
 
     final theme = LevelThemeHelper.getCategoryTheme(
       widget.categoryId,
@@ -231,7 +231,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     final user = context.select<AuthBloc, UserEntity?>(
       (bloc) => bloc.state.user,
     );
-    int unlockedLevels = math.max(10, user?.unlockedLevels[widget.gameType] ?? 10);
+    int unlockedLevels = user?.unlockedLevels[widget.gameType] ?? 1;
     final completedLevelsList = user?.completedLevels[widget.gameType] ?? [];
     int completedLevels = completedLevelsList.isEmpty ? 0 : completedLevelsList.reduce(math.max);
     if (completedLevels == 0 && unlockedLevels > 1) {
@@ -668,13 +668,14 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     ThemeResult theme,
     bool isPremium,
   ) {
+    final effectiveUnlockedLevel = unlockedLevels + 9;
     final bool isCompleted = level <= completedLevels;
-    final bool isPlayable = level == completedLevels + 1 && level <= unlockedLevels;
+    final bool isPlayable = level == completedLevels + 1 && level <= effectiveUnlockedLevel;
     // Hide Toll Gate until user actually reaches it
-    final bool isTollGate = level == completedLevels + 1 && level > unlockedLevels && !isPremium;
-    final bool isHalfUnlocked = level > completedLevels + 1 && level <= unlockedLevels && unlockedLevels > 10;
+    final bool isTollGate = level == completedLevels + 1 && level > effectiveUnlockedLevel && !isPremium;
+    final bool isHalfUnlocked = level > completedLevels + 1 && level <= effectiveUnlockedLevel && effectiveUnlockedLevel > 10;
     // Hide Next Zone until Toll Gate is visible
-    final bool isNextZone = level > unlockedLevels + 1 && level <= unlockedLevels + 3 && !isPremium && completedLevels >= unlockedLevels;
+    final bool isNextZone = level > effectiveUnlockedLevel + 1 && level <= effectiveUnlockedLevel + 3 && !isPremium && completedLevels >= effectiveUnlockedLevel;
     
     // They can only play if they actually reached it sequentially.
     final bool isUnlockedForClick = isCompleted || isPlayable;
@@ -955,7 +956,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     final theme = LevelThemeHelper.getTheme(widget.gameType, isDark: isDark);
 
     final user = context.read<AuthBloc>().state.user;
-    final unlockedLevels = math.max(10, user?.unlockedLevels[widget.gameType] ?? 10);
+    final unlockedLevels = user?.unlockedLevels[widget.gameType] ?? 1;
     final mascotId = user?.vowlMascot ?? 'vowl_prime';
 
     return Semantics(
