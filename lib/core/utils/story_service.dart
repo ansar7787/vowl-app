@@ -678,28 +678,33 @@ class StoryServiceImpl implements StoryService {
 
   Color _getCategoryColor(String categoryId) {
     final String id = categoryId.toLowerCase();
-    if (id.contains('alphabet') || id.contains('speak')) {
-      return const Color(0xFFE11D48); // Rose 600 (was 500)
+    
+    if (id.contains('alphabet') || id.contains('speak') || id.contains('bodypart') || id.contains('family')) {
+      return const Color(0xFFE11D48); // Rose 600
     }
-    if (id.contains('number') || id.contains('grammar')) {
-      return const Color(0xFF0284C7); // Sky 600 (was 500)
+    if (id.contains('number') || id.contains('grammar') || id.contains('clothing') || id.contains('time')) {
+      return const Color(0xFF0284C7); // Sky 600
     }
-    if (id.contains('color') || id.contains('write')) {
-      return const Color(0xFFD97706); // Amber 600 (was 500)
+    if (id.contains('color') || id.contains('write') || id.contains('shape') || id.contains('home')) {
+      return const Color(0xFFD97706); // Amber 600
     }
-    if (id.contains('animal') || id.contains('listen')) {
-      return const Color(0xFF4F46E5); // Indigo 600 (was 500)
+    if (id.contains('animal') || id.contains('listen') || id.contains('school') || id.contains('routine')) {
+      return const Color(0xFF4F46E5); // Indigo 600
     }
-    if (id.contains('fruit') || id.contains('accent')) {
-      return const Color(0xFFDC2626); // Red 600 (was 500)
+    if (id.contains('fruit') || id.contains('accent') || id.contains('food') || id.contains('opposite')) {
+      return const Color(0xFFDC2626); // Red 600
     }
-    if (id.contains('emotion') || id.contains('roleplay')) {
-      return const Color(0xFF0891B2); // Cyan 600 (was 500)
+    if (id.contains('emotion') || id.contains('roleplay') || id.contains('daynight') || id.contains('verb')) {
+      return const Color(0xFF0891B2); // Cyan 600
     }
-    if (id.contains('transport') || id.contains('read')) {
-      return const Color(0xFF1D4ED8); // Blue 700 (was 600)
+    if (id.contains('transport') || id.contains('read') || id.contains('preposition') || id.contains('phonics')) {
+      return const Color(0xFF1D4ED8); // Blue 700
     }
-    if (id.contains('elite')) return const Color(0xFFEAB308); // Yellow 500 (was Gold)
+    if (id.contains('nature') || id.contains('vocab')) {
+      return const Color(0xFF059669); // Emerald 600
+    }
+    if (id.contains('elite')) return const Color(0xFFEAB308); // Yellow 500
+    
     return const Color(0xFF4F46E5); // Indigo 600
   }
 }
