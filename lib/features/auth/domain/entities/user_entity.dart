@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:collection/collection.dart';
 import 'package:meta/meta.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -211,7 +212,7 @@ class UserEntity {
     final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
     var totalCleared = 0;
     for (final subtype in subtypes) {
-      final unlockedLevel = unlockedLevels[subtype.name] ?? 1;
+      final unlockedLevel = math.max(10, unlockedLevels[subtype.name] ?? 10);
       if (unlockedLevel > 1) totalCleared += unlockedLevel - 1;
     }
     return totalCleared;

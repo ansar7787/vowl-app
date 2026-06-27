@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:math' as math;
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 
@@ -126,7 +127,7 @@ class GamificationRepositoryImpl
           completedLevels[gameType] = categoryCompleted;
         }
 
-        final currentUnlocked = unlockedLevels[gameType] ?? 1;
+        final currentUnlocked = math.max(10, unlockedLevels[gameType] ?? 10);
         if (level >= currentUnlocked) {
           // Free levels (1-10) or Premium users automatically unlock the next level.
           // Otherwise, the user must explicitly purchase the next level via the Toll Gate.
@@ -246,7 +247,7 @@ class GamificationRepositoryImpl
           }
         }
 
-        final currentUnlocked = unlockedLevels[categoryId] ?? 1;
+        final currentUnlocked = math.max(10, unlockedLevels[categoryId] ?? 10);
         if (newLevel > currentUnlocked) {
           unlockedLevels[categoryId] = newLevel;
           transaction.update(docRef, {'unlockedLevels': unlockedLevels});
@@ -533,7 +534,7 @@ class GamificationRepositoryImpl
           );
         }
 
-        final currentUnlocked = unlockedLevels[gameType] ?? 1;
+        final currentUnlocked = math.max(10, unlockedLevels[gameType] ?? 10);
         unlockedLevels[gameType] = currentUnlocked + 3;
 
         transaction.update(docRef, {

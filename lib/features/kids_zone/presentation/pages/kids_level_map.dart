@@ -76,7 +76,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
         
         final user = context.read<AuthBloc>().state.user;
         if (user != null) {
-          final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
+          final unlockedLevel = math.max(10, user.unlockedLevels[widget.gameType] ?? 10);
           final double targetOffset = (unlockedLevel - 1) * 200.h;
           final double centeredOffset = max(0, targetOffset - 300.h);
 
@@ -95,7 +95,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
   void _checkAndShowStoryBeat() {
     final user = context.read<AuthBloc>().state.user;
     if (user != null) {
-      final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
+      final unlockedLevel = math.max(10, user.unlockedLevels[widget.gameType] ?? 10);
       final beat = di.sl<StoryService>().getStoryBeat(
         context,
         widget.gameType,
@@ -118,7 +118,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
 
   void _handleBuddyTap() {
     final authState = context.read<AuthBloc>().state;
-    final level = authState.user?.unlockedLevels[widget.gameType] ?? 1;
+    final level = math.max(10, authState.user?.unlockedLevels[widget.gameType] ?? 10);
 
     final messages = [
       "Level $level! Superstar! ⭐",
@@ -183,8 +183,8 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     return BlocListener<AuthBloc, AuthState>(
       listenWhen: (previous, current) {
         final prevUnlocked =
-            previous.user?.unlockedLevels[widget.gameType] ?? 1;
-        final currUnlocked = current.user?.unlockedLevels[widget.gameType] ?? 1;
+            math.max(10, previous.user?.unlockedLevels[widget.gameType] ?? 10);
+        final currUnlocked = math.max(10, current.user?.unlockedLevels[widget.gameType] ?? 10);
         return prevUnlocked != currUnlocked;
       },
       listener: (context, state) {
@@ -196,7 +196,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
           List<int> completedLevels = [];
           bool isPremium = false;
           if (state.status == AuthStatus.authenticated && state.user != null) {
-            unlockedLevel = state.user!.unlockedLevels[widget.gameType] ?? 1;
+            unlockedLevel = math.max(10, state.user!.unlockedLevels[widget.gameType] ?? 10);
             completedLevels = state.user!.completedLevels[widget.gameType] ?? [];
             isPremium = state.user!.isPremium;
           }

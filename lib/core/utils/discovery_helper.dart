@@ -202,7 +202,7 @@ class DiscoveryHelper {
     GameSubtype subtype,
     String instructionKey,
   ) {
-    final currentLevel = user.unlockedLevels[subtype.name] ?? 1;
+    final currentLevel = user.unlockedLevels[subtype.name] ?? 10;
     return GameQuest(
       id: '${subtype.name}_$currentLevel',
       type: subtype.category,

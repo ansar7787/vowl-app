@@ -294,7 +294,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     // Calculate Progress (200 levels per game)
     int clearedLevels = 0;
     for (var g in games) {
-      final level = user.unlockedLevels[g.name] ?? 1;
+      final level = user.unlockedLevels[g.name] ?? 10;
       clearedLevels += (level - 1).clamp(0, 200);
     }
     final totalLevels = games.length * 200;
@@ -529,7 +529,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     int index,
   ) {
     final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
-    final currentLevel = user.unlockedLevels[subtype.name] ?? 1;
+    final currentLevel = user.unlockedLevels[subtype.name] ?? 10;
     final isNew =
         !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
     final displayColor = isDark

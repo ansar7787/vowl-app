@@ -97,7 +97,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     // Preload current quest batch
     final user = context.read<AuthBloc>().state.user;
     if (user != null) {
-      final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
+      final unlockedLevel = math.max(10, user.unlockedLevels[widget.gameType] ?? 10);
       di.sl<AssetQuestService>().preloadBatch(widget.gameType, unlockedLevel);
     }
 
@@ -140,7 +140,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   void _checkAndShowStoryBeat() {
     final user = context.read<AuthBloc>().state.user;
     if (user != null) {
-      final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
+      final unlockedLevel = math.max(10, user.unlockedLevels[widget.gameType] ?? 10);
       final beat = di.sl<StoryService>().getStoryBeat(
         context,
         widget.gameType,
@@ -181,7 +181,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
 
     final authState = context.read<AuthBloc>().state;
     final int unlockedLevels =
-        authState.user?.unlockedLevels[widget.gameType] ?? 1;
+        math.max(10, authState.user?.unlockedLevels[widget.gameType] ?? 10);
 
     final theme = LevelThemeHelper.getCategoryTheme(
       widget.categoryId,
@@ -231,7 +231,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     final user = context.select<AuthBloc, UserEntity?>(
       (bloc) => bloc.state.user,
     );
-    int unlockedLevels = user?.unlockedLevels[widget.gameType] ?? 1;
+    int unlockedLevels = math.max(10, user?.unlockedLevels[widget.gameType] ?? 10);
     final completedLevelsList = user?.completedLevels[widget.gameType] ?? [];
     int completedLevels = completedLevelsList.isEmpty ? 0 : completedLevelsList.reduce(math.max);
     if (completedLevels == 0 && unlockedLevels > 1) {
@@ -955,7 +955,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     final theme = LevelThemeHelper.getTheme(widget.gameType, isDark: isDark);
 
     final user = context.read<AuthBloc>().state.user;
-    final unlockedLevels = user?.unlockedLevels[widget.gameType] ?? 1;
+    final unlockedLevels = math.max(10, user?.unlockedLevels[widget.gameType] ?? 10);
     final mascotId = user?.vowlMascot ?? 'vowl_prime';
 
     return Semantics(
