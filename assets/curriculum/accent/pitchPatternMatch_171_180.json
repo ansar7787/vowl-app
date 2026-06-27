@@ -4,18 +4,18 @@
     "levels": "171-180",
     "quests": [
         {
-            "id": "ACC_PITCHPATTERNMATCH_L171_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_511",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "Not the morning meeting - the afternoon one.",
+            "textToSpeak": "Not the morning meeting - the afternoon one.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Emphasis on MORNING (Given/Rejected Information)",
+                "Emphasis on AFTERNOON (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
+            "correctAnswer": "Emphasis on AFTERNOON (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -24,71 +24,71 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 171-1)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "'The morning meeting' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'afternoon'.",
+            "explanation": "Even in this short fragment, the rejected 'morning' stays deaccented, while the corrected 'afternoon' carries the nuclear stress."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L171_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_512",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "Chicken, not beef.",
+            "textToSpeak": "Chicken, not beef.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Emphasis on CHICKEN (New/Corrected Information)",
+                "Emphasis on BEEF (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CHICKEN (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 171-2)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "'Beef' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'chicken'.",
+            "explanation": "In this short fragment, 'chicken' is the new, corrected information, so it carries the nuclear stress, not the rejected 'beef'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L171_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_513",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "The blue one, not the red.",
+            "textToSpeak": "The blue one, not the red.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Emphasis on RED (Given/Rejected Information)",
+                "Emphasis on BLUE (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
+            "correctAnswer": "Emphasis on BLUE (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 171-3)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "'Red' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'blue'.",
+            "explanation": "In this short fragment, 'blue' is the corrected choice, so it carries the nuclear stress, not the rejected 'red'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L172_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_514",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "Not today - tomorrow.",
+            "textToSpeak": "Not today - tomorrow.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Emphasis on TOMORROW (New/Corrected Information)",
+                "Emphasis on TODAY (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on TOMORROW (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -96,70 +96,70 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 172-1)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "'Today' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'tomorrow'.",
+            "explanation": "Even in this short fragment, the rejected 'today' stays deaccented, while the corrected 'tomorrow' carries the nuclear stress."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L172_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_515",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "My sister, not my brother.",
+            "textToSpeak": "My sister, not my brother.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Emphasis on SISTER (New/Corrected Information)",
+                "Emphasis on BROTHER (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SISTER (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 172-2)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "'My brother' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'sister'.",
+            "explanation": "In this short fragment, 'sister' is the corrected information, so it carries the nuclear stress, not the rejected 'brother'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L172_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_516",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "The window seat, not the aisle.",
+            "textToSpeak": "The window seat, not the aisle.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Emphasis on WINDOW (New/Corrected Information)",
+                "Emphasis on AISLE (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on WINDOW (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 172-3)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "'The aisle' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'window'.",
+            "explanation": "In this short fragment, 'window' is the corrected choice, so it carries the nuclear stress, not the rejected 'aisle'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L173_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_517",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "Not the printer - the scanner.",
+            "textToSpeak": "Not the printer - the scanner.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Emphasis on PRINTER (Given/Rejected Information)",
+                "Emphasis on SCANNER (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
+            "correctAnswer": "Emphasis on SCANNER (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -168,70 +168,70 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 173-1)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "'The printer' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'scanner'.",
+            "explanation": "Even in this short fragment, the rejected 'printer' stays deaccented, while the corrected 'scanner' carries the nuclear stress."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L173_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_518",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "Math class, not science class.",
+            "textToSpeak": "Math class, not science class.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Emphasis on SCIENCE (Given/Rejected Information)",
+                "Emphasis on MATH (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Emphasis on MATH (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 173-2)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "'Science class' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'math'.",
+            "explanation": "In this short fragment, 'math' is the corrected information, so it carries the nuclear stress, not the rejected 'science'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L173_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_519",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "The small size, not the large.",
+            "textToSpeak": "The small size, not the large.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Emphasis on LARGE (Given/Rejected Information)",
+                "Emphasis on SMALL (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
+            "correctAnswer": "Emphasis on SMALL (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 173-3)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "'The large' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'small'.",
+            "explanation": "In this short fragment, 'small' is the corrected size, so it carries the nuclear stress, not the rejected 'large'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L174_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_520",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "Not Monday - Wednesday.",
+            "textToSpeak": "Not Monday - Wednesday.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Emphasis on MONDAY (Given/Rejected Information)",
+                "Emphasis on WEDNESDAY (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
+            "correctAnswer": "Emphasis on WEDNESDAY (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -240,71 +240,71 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 174-1)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "'Monday' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'Wednesday'.",
+            "explanation": "Even in this short fragment, the rejected 'Monday' stays deaccented, while the corrected 'Wednesday' carries the nuclear stress."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L174_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_521",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "The dentist, not the doctor.",
+            "textToSpeak": "The dentist, not the doctor.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Emphasis on DOCTOR (Given/Rejected Information)",
+                "Emphasis on DENTIST (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
+            "correctAnswer": "Emphasis on DENTIST (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 174-2)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "'The doctor' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'dentist'.",
+            "explanation": "In this short fragment, 'dentist' is the corrected information, so it carries the nuclear stress, not the rejected 'doctor'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L174_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_522",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "Two tickets, not four.",
+            "textToSpeak": "Two tickets, not four.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Emphasis on FOUR (Given/Rejected Information)",
+                "Emphasis on TWO (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
+            "correctAnswer": "Emphasis on TWO (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 174-3)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "'Four' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'two'.",
+            "explanation": "In this short fragment, 'two' is the corrected quantity, so it carries the nuclear stress, not the rejected 'four'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L175_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_523",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "Not the highway - the back road.",
+            "textToSpeak": "Not the highway - the back road.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Emphasis on BACK (New/Corrected Information)",
+                "Emphasis on HIGHWAY (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on BACK (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -312,47 +312,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 175-1)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "'The highway' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'back road'.",
+            "explanation": "Even in this short fragment, the rejected 'highway' stays deaccented, while the corrected 'back road' carries the nuclear stress."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L175_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_524",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "The comedy, not the drama.",
+            "textToSpeak": "The comedy, not the drama.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Emphasis on DRAMA (Given/Rejected Information)",
+                "Emphasis on COMEDY (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
+            "correctAnswer": "Emphasis on COMEDY (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 175-2)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "'The drama' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'comedy'.",
+            "explanation": "In this short fragment, 'comedy' is the corrected choice, so it carries the nuclear stress, not the rejected 'drama'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L175_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_525",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "Not my keys - my wallet.",
+            "textToSpeak": "Not my keys - my wallet.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Emphasis on WALLET (New/Corrected Information)",
+                "Emphasis on KEYS (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on WALLET (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -360,70 +360,70 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 175-3)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "'My keys' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'wallet'.",
+            "explanation": "Even in this short fragment, the rejected 'keys' stays deaccented, while the corrected 'wallet' carries the nuclear stress."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L176_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_526",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "The second floor, not the first.",
+            "textToSpeak": "The second floor, not the first.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Emphasis on SECOND (New/Corrected Information)",
+                "Emphasis on FIRST (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SECOND (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 176-1)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "'The first' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'second'.",
+            "explanation": "In this short fragment, 'second' is the corrected floor, so it carries the nuclear stress, not the rejected 'first'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L176_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_527",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "Decaf, not regular.",
+            "textToSpeak": "Decaf, not regular.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Emphasis on REGULAR (Given/Rejected Information)",
+                "Emphasis on DECAF (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
+            "correctAnswer": "Emphasis on DECAF (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 176-2)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "'Regular' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'decaf'.",
+            "explanation": "In this short fragment, 'decaf' is the corrected choice, so it carries the nuclear stress, not the rejected 'regular'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L176_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_528",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "Not the manager - the owner.",
+            "textToSpeak": "Not the manager - the owner.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Emphasis on MANAGER (Given/Rejected Information)",
+                "Emphasis on OWNER (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Emphasis on OWNER (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -432,47 +432,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 176-3)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "'The manager' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'owner'.",
+            "explanation": "Even in this short fragment, the rejected 'manager' stays deaccented, while the corrected 'owner' carries the nuclear stress."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L177_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_529",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "The red folder, not the blue one.",
+            "textToSpeak": "The red folder, not the blue one.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Emphasis on RED (New/Corrected Information)",
+                "Emphasis on BLUE (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on RED (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 177-1)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "'The blue one' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'red'.",
+            "explanation": "In this short fragment, 'red' is the corrected folder, so it carries the nuclear stress, not the rejected 'blue'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L177_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_530",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "Not lunch - dinner.",
+            "textToSpeak": "Not lunch - dinner.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Emphasis on DINNER (New/Corrected Information)",
+                "Emphasis on LUNCH (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DINNER (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -480,71 +480,71 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 177-2)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "'Lunch' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'dinner'.",
+            "explanation": "Even in this short fragment, the rejected 'lunch' stays deaccented, while the corrected 'dinner' carries the nuclear stress."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L177_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_531",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "My cousin's car, not mine.",
+            "textToSpeak": "My cousin's car, not mine.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Emphasis on MINE (Given/Rejected Information)",
+                "Emphasis on COUSIN'S (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
+            "correctAnswer": "Emphasis on COUSIN'S (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 177-3)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "'Mine' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'cousin's'.",
+            "explanation": "In this short fragment, 'cousin's' is the corrected owner, so it carries the nuclear stress, not the rejected 'mine'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L178_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_532",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "The early flight, not the late one.",
+            "textToSpeak": "The early flight, not the late one.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Emphasis on LATE (Given/Rejected Information)",
+                "Emphasis on EARLY (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
+            "correctAnswer": "Emphasis on EARLY (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 178-1)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "'The late one' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'early'.",
+            "explanation": "In this short fragment, 'early' is the corrected choice, so it carries the nuclear stress, not the rejected 'late'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L178_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_533",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "Not the cat - the dog.",
+            "textToSpeak": "Not the cat - the dog.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Emphasis on DOG (New/Corrected Information)",
+                "Emphasis on CAT (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DOG (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -552,71 +552,71 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 178-2)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "'The cat' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'dog'.",
+            "explanation": "Even in this short fragment, the rejected 'cat' stays deaccented, while the corrected 'dog' carries the nuclear stress."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L178_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_534",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "The science exam, not the math exam.",
+            "textToSpeak": "The science exam, not the math exam.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Emphasis on SCIENCE (New/Corrected Information)",
+                "Emphasis on MATH (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SCIENCE (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 178-3)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "'The math exam' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'science'.",
+            "explanation": "In this short fragment, 'science' is the corrected subject, so it carries the nuclear stress, not the rejected 'math'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L179_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_535",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "Just water, not soda.",
+            "textToSpeak": "Just water, not soda.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Emphasis on SODA (Given/Rejected Information)",
+                "Emphasis on WATER (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
+            "correctAnswer": "Emphasis on WATER (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 179-1)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "'Soda' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'water'.",
+            "explanation": "In this short fragment, 'water' is the corrected choice, so it carries the nuclear stress, not the rejected 'soda'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L179_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_536",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "Not the hallway - the lobby.",
+            "textToSpeak": "Not the hallway - the lobby.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Emphasis on LOBBY (New/Corrected Information)",
+                "Emphasis on HALLWAY (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on LOBBY (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -624,46 +624,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 179-2)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "'The hallway' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'lobby'.",
+            "explanation": "Even in this short fragment, the rejected 'hallway' stays deaccented, while the corrected 'lobby' carries the nuclear stress."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L179_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_537",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "The violin, not the cello.",
+            "textToSpeak": "The violin, not the cello.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Emphasis on VIOLIN (New/Corrected Information)",
+                "Emphasis on CELLO (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on VIOLIN (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 179-3)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "'The cello' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'violin'.",
+            "explanation": "In this short fragment, 'violin' is the corrected instrument, so it carries the nuclear stress, not the rejected 'cello'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L180_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_538",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "Not Friday - Saturday.",
+            "textToSpeak": "Not Friday - Saturday.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Emphasis on FRIDAY (Given/Rejected Information)",
+                "Emphasis on SATURDAY (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Emphasis on SATURDAY (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -672,46 +672,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 180-1)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "'Friday' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'Saturday'.",
+            "explanation": "Even in this short fragment, the rejected 'Friday' stays deaccented, while the corrected 'Saturday' carries the nuclear stress."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L180_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_539",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "The left side, not the right.",
+            "textToSpeak": "The left side, not the right.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Emphasis on LEFT (New/Corrected Information)",
+                "Emphasis on RIGHT (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on LEFT (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 180-2)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "'The right' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'left'.",
+            "explanation": "In this short fragment, 'left' is the corrected side, so it carries the nuclear stress, not the rejected 'right'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L180_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_540",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 5,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "Not coffee - tea.",
+            "textToSpeak": "Not coffee - tea.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Emphasis on COFFEE (Given/Rejected Information)",
+                "Emphasis on TEA (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
+            "correctAnswer": "Emphasis on TEA (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -720,8 +720,8 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 180-3)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "'Coffee' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'tea'.",
+            "explanation": "Even in this short fragment, the rejected 'coffee' stays deaccented, while the corrected 'tea' carries the nuclear stress."
         }
     ]
 }

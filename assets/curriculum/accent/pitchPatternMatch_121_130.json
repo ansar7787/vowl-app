@@ -4,42 +4,42 @@
     "levels": "121-130",
     "quests": [
         {
-            "id": "ACC_PITCHPATTERNMATCH_L121_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_361",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "Get this: the cake fell off the table.",
+            "textToSpeak": "Get this: the cake fell off the table.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Narrow Focus on TABLE Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 121-1)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "'Get this' introduces a whole surprising event, not just one detail. Listen for moderate prominence spread across several words, not one sharp peak.",
+            "explanation": "The entire event - the cake falling - is new information, so prominence spreads broadly across the predicate rather than peaking sharply on just one word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L121_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_362",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "Only one thing is different: the bus arrived early.",
+            "textToSpeak": "Only one thing is different: the bus arrived early.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Broad Focus (the Whole Event is News)",
+                "Narrow Focus on EARLY Only"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
+            "correctAnswer": "Narrow Focus on EARLY Only",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -48,47 +48,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 121-2)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "'Only one thing is different' tells you just a single detail is new. Listen for one sharp pitch peak, on 'early'.",
+            "explanation": "'Only one thing is different' signals that just 'early' is new information, so the nuclear stress sharply peaks there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L121_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_363",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "You should know what happened: the printer caught fire.",
+            "textToSpeak": "You should know what happened: the printer caught fire.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Narrow Focus on FIRE Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 121-3)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "The whole alarming event is news here, not one isolated word. Listen for moderate prominence spread across the sentence.",
+            "explanation": "Since the whole event - the printer catching fire - is new, prominence spreads across the predicate rather than peaking on a single word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L122_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_364",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "Just to clarify, the meeting starts at three.",
+            "textToSpeak": "Just to clarify, the meeting starts at three.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Narrow Focus on THREE Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on THREE Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -96,47 +96,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 122-1)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "'Just to clarify' signals only one specific detail needs confirming. Listen for one sharp pitch peak, on 'three'.",
+            "explanation": "'Just to clarify' signals that only the time 'three' is the new, confirmed detail, so the nuclear stress peaks sharply there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L122_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_365",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "Here's the big news: the company is moving offices.",
+            "textToSpeak": "Here's the big news: the company is moving offices.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Narrow Focus on OFFICES Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 122-2)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "'Here's the big news' introduces a whole new situation, not one isolated fact. Listen for prominence spread across several words.",
+            "explanation": "The entire move is presented as news, so prominence spreads broadly across the predicate instead of peaking on one word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L122_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_366",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "The only change is that the price increased slightly.",
+            "textToSpeak": "The only change is that the price increased slightly.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Narrow Focus on SLIGHTLY Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on SLIGHTLY Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -144,47 +144,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 122-3)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "'The only change' signals just one specific detail is new. Listen for one sharp pitch peak, on 'slightly'.",
+            "explanation": "'The only change' signals that just the degree, 'slightly', is the new detail, so the nuclear stress peaks sharply there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L123_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_367",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "Listen to this: the flight got rerouted entirely.",
+            "textToSpeak": "Listen to this: the flight got rerouted entirely.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Narrow Focus on ENTIRELY Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 123-1)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "'Listen to this' introduces a whole surprising development, not one isolated word. Listen for prominence spread across the sentence.",
+            "explanation": "Since the whole rerouting situation is new, prominence spreads across the predicate rather than peaking sharply on a single word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L123_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_368",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "Just to confirm, the package weighs two kilograms.",
+            "textToSpeak": "Just to confirm, the package weighs two kilograms.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Narrow Focus on TWO Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on TWO Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -192,46 +192,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 123-2)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "'Just to confirm' signals only one specific number needs verifying. Listen for one sharp pitch peak, on 'two'.",
+            "explanation": "'Just to confirm' signals that only the quantity, 'two', is the detail being verified, so the nuclear stress peaks sharply there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L123_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_369",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "Something unexpected happened: the power went out citywide.",
+            "textToSpeak": "Something unexpected happened: the power went out citywide.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Broad Focus (the Whole Event is News)",
+                "Narrow Focus on CITYWIDE Only"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 123-3)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "'Something unexpected happened' introduces a whole new event, not one isolated detail. Listen for prominence spread broadly.",
+            "explanation": "The entire power outage is new information, so prominence spreads across the predicate rather than peaking on just one word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L124_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_370",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "One small detail changed: the room number is twelve.",
+            "textToSpeak": "One small detail changed: the room number is twelve.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Broad Focus (the Whole Event is News)",
+                "Narrow Focus on TWELVE Only"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
+            "correctAnswer": "Narrow Focus on TWELVE Only",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -240,47 +240,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 124-1)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "'One small detail changed' signals just one specific fact is new. Listen for one sharp pitch peak, on 'twelve'.",
+            "explanation": "'One small detail changed' signals that only the room number, 'twelve', is new, so the nuclear stress peaks sharply there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L124_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_371",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "Get this: the puppy chewed through the couch.",
+            "textToSpeak": "Get this: the puppy chewed through the couch.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Broad Focus (the Whole Event is News)",
+                "Narrow Focus on COUCH Only"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 124-2)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "'Get this' introduces a whole funny mishap, not one isolated word. Listen for prominence spread across several words.",
+            "explanation": "Since the whole incident with the puppy is new, prominence spreads across the predicate rather than peaking sharply on one word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L124_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_372",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "Just to clarify, the exam covers only chapter five.",
+            "textToSpeak": "Just to clarify, the exam covers only chapter five.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Narrow Focus on FIVE Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on FIVE Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -288,47 +288,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 124-3)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "'Just to clarify' signals only one specific number needs confirming. Listen for one sharp pitch peak, on 'five'.",
+            "explanation": "'Just to clarify' signals that only the chapter number, 'five', is the detail being confirmed, so the nuclear stress peaks sharply there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L125_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_373",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "You should know what happened: the server crashed overnight.",
+            "textToSpeak": "You should know what happened: the server crashed overnight.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Broad Focus (the Whole Event is News)",
+                "Narrow Focus on OVERNIGHT Only"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 125-1)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "'You should know what happened' introduces a whole new problem, not one isolated word. Listen for prominence spread broadly.",
+            "explanation": "Since the entire server crash is news, prominence spreads across the predicate rather than peaking sharply on a single word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L125_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_374",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "The only update is that the flight is delayed thirty minutes.",
+            "textToSpeak": "The only update is that the flight is delayed thirty minutes.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Narrow Focus on THIRTY Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on THIRTY Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -336,46 +336,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 125-2)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "'The only update' signals just one specific number is new. Listen for one sharp pitch peak, on 'thirty'.",
+            "explanation": "'The only update' signals that only the delay length, 'thirty' minutes, is new, so the nuclear stress peaks sharply there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L125_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_375",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "Here's the big news: the concert got moved to a stadium.",
+            "textToSpeak": "Here's the big news: the concert got moved to a stadium.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Narrow Focus on STADIUM Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 125-3)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "'Here's the big news' introduces a whole new development, not one isolated detail. Listen for prominence spread across the sentence.",
+            "explanation": "The entire venue change is presented as news, so prominence spreads broadly across the predicate instead of peaking on one word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L126_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_376",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "Just to confirm, the dosage is two pills daily.",
+            "textToSpeak": "Just to confirm, the dosage is two pills daily.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Broad Focus (the Whole Event is News)",
+                "Narrow Focus on TWO Only"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
+            "correctAnswer": "Narrow Focus on TWO Only",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -384,47 +384,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 126-1)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "'Just to confirm' signals only one specific dosage detail needs verifying. Listen for one sharp pitch peak, on 'two'.",
+            "explanation": "'Just to confirm' signals that only the quantity, 'two' pills, is the detail being verified, so the nuclear stress peaks sharply there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L126_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_377",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "Listen to this: the test got cancelled completely.",
+            "textToSpeak": "Listen to this: the test got cancelled completely.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Narrow Focus on COMPLETELY Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 126-2)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "'Listen to this' introduces a whole surprising update, not one isolated word. Listen for prominence spread across the sentence.",
+            "explanation": "Since the entire cancellation is news, prominence spreads across the predicate rather than peaking sharply on a single word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L126_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_378",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "One small detail changed: the deadline moved to Friday.",
+            "textToSpeak": "One small detail changed: the deadline moved to Friday.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Narrow Focus on FRIDAY Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on FRIDAY Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -432,46 +432,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 126-3)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "'One small detail changed' signals just one specific fact is new. Listen for one sharp pitch peak, on 'Friday'.",
+            "explanation": "'One small detail changed' signals that only the new date, 'Friday', is new, so the nuclear stress peaks sharply there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L127_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_379",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "Something unexpected happened: the pipes froze overnight.",
+            "textToSpeak": "Something unexpected happened: the pipes froze overnight.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Narrow Focus on OVERNIGHT Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 127-1)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "'Something unexpected happened' introduces a whole new problem, not one isolated detail. Listen for prominence spread broadly.",
+            "explanation": "Since the entire freezing incident is new, prominence spreads across the predicate rather than peaking sharply on one word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L127_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_380",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "Just to clarify, the discount applies to one item only.",
+            "textToSpeak": "Just to clarify, the discount applies to one item only.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Broad Focus (the Whole Event is News)",
+                "Narrow Focus on ONE Only"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
+            "correctAnswer": "Narrow Focus on ONE Only",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -480,47 +480,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 127-2)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "'Just to clarify' signals only one specific limit needs confirming. Listen for one sharp pitch peak, on 'one'.",
+            "explanation": "'Just to clarify' signals that only the limit, 'one' item, is the detail being confirmed, so the nuclear stress peaks sharply there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L127_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_381",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "Get this: the chef quit in the middle of service.",
+            "textToSpeak": "Get this: the chef quit in the middle of service.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Narrow Focus on SERVICE Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 127-3)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "'Get this' introduces a whole dramatic event, not one isolated word. Listen for prominence spread across several words.",
+            "explanation": "Since the entire incident with the chef is new, prominence spreads across the predicate rather than peaking sharply on one word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L128_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_382",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "The only difference is the recipe needs one more egg.",
+            "textToSpeak": "The only difference is the recipe needs one more egg.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Narrow Focus on ONE Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on ONE Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -528,46 +528,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 128-1)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "'The only difference' signals just one specific number is new. Listen for one sharp pitch peak, on 'one'.",
+            "explanation": "'The only difference' signals that only the extra egg count, 'one', is new, so the nuclear stress peaks sharply there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L128_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_383",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "You should know what happened: the patient's condition changed suddenly.",
+            "textToSpeak": "You should know what happened: the patient's condition changed suddenly.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Broad Focus (the Whole Event is News)",
+                "Narrow Focus on SUDDENLY Only"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 128-2)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "'You should know what happened' introduces a whole urgent update, not one isolated word. Listen for prominence spread broadly.",
+            "explanation": "Since the entire change in condition is news, prominence spreads across the predicate rather than peaking sharply on a single word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L128_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_384",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "Just to confirm, the rehearsal lasts two hours.",
+            "textToSpeak": "Just to confirm, the rehearsal lasts two hours.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Broad Focus (the Whole Event is News)",
+                "Narrow Focus on TWO Only"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
+            "correctAnswer": "Narrow Focus on TWO Only",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -576,47 +576,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 128-3)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "'Just to confirm' signals only one specific duration needs verifying. Listen for one sharp pitch peak, on 'two'.",
+            "explanation": "'Just to confirm' signals that only the duration, 'two' hours, is the detail being verified, so the nuclear stress peaks sharply there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L129_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_385",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "Here's the big news: the museum extended its hours.",
+            "textToSpeak": "Here's the big news: the museum extended its hours.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Narrow Focus on HOURS Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 129-1)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "'Here's the big news' introduces a whole new policy, not one isolated detail. Listen for prominence spread across the sentence.",
+            "explanation": "The entire schedule change is presented as news, so prominence spreads broadly across the predicate instead of peaking on one word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L129_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_386",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "One small detail changed: the password needs eight characters.",
+            "textToSpeak": "One small detail changed: the password needs eight characters.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Narrow Focus on EIGHT Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on EIGHT Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -624,46 +624,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 129-2)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "'One small detail changed' signals just one specific number is new. Listen for one sharp pitch peak, on 'eight'.",
+            "explanation": "'One small detail changed' signals that only the character count, 'eight', is new, so the nuclear stress peaks sharply there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L129_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_387",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "Listen to this: the store ran out of everything.",
+            "textToSpeak": "Listen to this: the store ran out of everything.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Broad Focus (the Whole Event is News)",
+                "Narrow Focus on EVERYTHING Only"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 129-3)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "'Listen to this' introduces a whole dramatic situation, not one isolated word. Listen for prominence spread across the sentence.",
+            "explanation": "Since the entire shortage is news, prominence spreads across the predicate rather than peaking sharply on a single word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L130_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_388",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "Just to clarify, the trail is only three miles.",
+            "textToSpeak": "Just to clarify, the trail is only three miles.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Broad Focus (the Whole Event is News)",
+                "Narrow Focus on THREE Only"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Narrow Focus on THREE Only",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -672,47 +672,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 130-1)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "'Just to clarify' signals only one specific number needs confirming. Listen for one sharp pitch peak, on 'three'.",
+            "explanation": "'Just to clarify' signals that only the distance, 'three' miles, is the detail being confirmed, so the nuclear stress peaks sharply there alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L130_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_389",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "Something unexpected happened: the wifi went down citywide.",
+            "textToSpeak": "Something unexpected happened: the wifi went down citywide.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Broad Focus (the Whole Event is News)",
+                "Narrow Focus on CITYWIDE Only"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Broad Focus (the Whole Event is News)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 130-2)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "'Something unexpected happened' introduces a whole new outage, not one isolated detail. Listen for prominence spread broadly.",
+            "explanation": "Since the entire outage is new, prominence spreads across the predicate rather than peaking sharply on one word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L130_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_390",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "The only update is the appointment moved up one day.",
+            "textToSpeak": "The only update is the appointment moved up one day.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Narrow Focus on ONE Only",
+                "Broad Focus (the Whole Event is News)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on ONE Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -720,8 +720,8 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 130-3)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "'The only update' signals just one specific number is new. Listen for one sharp pitch peak, on 'one'.",
+            "explanation": "'The only update' signals that only the day count, 'one', is new, so the nuclear stress peaks sharply there alone."
         }
     ]
 }

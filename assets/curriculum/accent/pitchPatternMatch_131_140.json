@@ -4,724 +4,724 @@
     "levels": "131-140",
     "quests": [
         {
-            "id": "ACC_PITCHPATTERNMATCH_L131_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_391",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "Tom cooked the pasta, and Lisa made the salad.",
+            "textToSpeak": "Tom cooked the pasta, and Lisa made the salad.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Single Nucleus: Emphasis only on SALAD (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on PASTA and SALAD (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on PASTA and SALAD (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 131-1)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "Each half of this sentence reports its own separate news. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'pasta' and 'salad' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L131_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_392",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "The boys played soccer, and the girls played basketball.",
+            "textToSpeak": "The boys played soccer, and the girls played basketball.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Single Nucleus: Emphasis only on BASKETBALL (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on SOCCER and BASKETBALL (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on SOCCER and BASKETBALL (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 131-2)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "Each group is doing something different, so each part gets its own news value. Listen for two separate pitch peaks.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'soccer' and 'basketball' are both peaked, not just 'basketball' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L131_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_393",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "My father grills the meat, and my mother prepares the salad.",
+            "textToSpeak": "My father grills the meat, and my mother prepares the salad.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Single Nucleus: Emphasis only on SALAD (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on MEAT and SALAD (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on MEAT and SALAD (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 131-3)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "Each parent is handling a separate task, so each task is its own piece of news. Listen for two separate pitch peaks.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'meat' and 'salad' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L132_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_394",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "The pilot checked the engine, and the crew loaded the luggage.",
+            "textToSpeak": "The pilot checked the engine, and the crew loaded the luggage.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Single Nucleus: Emphasis only on LUGGAGE (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on ENGINE and LUGGAGE (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on ENGINE and LUGGAGE (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 132-1)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "Two separate teams are doing two separate jobs here. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'engine' and 'luggage' are both peaked, not just 'luggage' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L132_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_395",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "She studies biology, and he studies chemistry.",
+            "textToSpeak": "She studies biology, and he studies chemistry.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Single Nucleus: Emphasis only on CHEMISTRY (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on BIOLOGY and CHEMISTRY (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on BIOLOGY and CHEMISTRY (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 132-2)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "Each person studies something different, so each subject is its own piece of news. Listen for two separate pitch peaks.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'biology' and 'chemistry' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L132_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_396",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "The nurse measured the temperature, and the doctor reviewed the chart.",
+            "textToSpeak": "The nurse measured the temperature, and the doctor reviewed the chart.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Single Nucleus: Emphasis only on CHART (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on TEMPERATURE and CHART (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on TEMPERATURE and CHART (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 132-3)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "Two separate medical staff are doing two separate tasks. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'temperature' and 'chart' are both peaked, not just 'chart' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L133_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_397",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "We visited the museum, and they explored the park.",
+            "textToSpeak": "We visited the museum, and they explored the park.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Single Nucleus: Emphasis only on PARK (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on MUSEUM and PARK (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on MUSEUM and PARK (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 133-1)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "Two separate groups visited two separate places. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'museum' and 'park' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L133_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_398",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "The manager reviewed the budget, and the assistant filed the paperwork.",
+            "textToSpeak": "The manager reviewed the budget, and the assistant filed the paperwork.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Single Nucleus: Emphasis only on PAPERWORK (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on BUDGET and PAPERWORK (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on BUDGET and PAPERWORK (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 133-2)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "Two coworkers handled two separate tasks. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'budget' and 'paperwork' are both peaked, not just 'paperwork' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L133_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_399",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "I cleaned the kitchen, and my roommate organized the closet.",
+            "textToSpeak": "I cleaned the kitchen, and my roommate organized the closet.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Two Nuclei: Emphasis on KITCHEN and CLOSET (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on CLOSET (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Two Nuclei: Emphasis on KITCHEN and CLOSET (One Peak per Clause)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 133-3)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "Two housemates tackled two separate chores. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'kitchen' and 'closet' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L134_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_400",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "The chef prepared the appetizer, and the baker finished the dessert.",
+            "textToSpeak": "The chef prepared the appetizer, and the baker finished the dessert.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Two Nuclei: Emphasis on APPETIZER and DESSERT (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on DESSERT (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Two Nuclei: Emphasis on APPETIZER and DESSERT (One Peak per Clause)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 134-1)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "Two kitchen staff handled two separate courses. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'appetizer' and 'dessert' are both peaked, not just 'dessert' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L134_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_401",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "The coach reviewed the footage, and the players studied the playbook.",
+            "textToSpeak": "The coach reviewed the footage, and the players studied the playbook.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Single Nucleus: Emphasis only on PLAYBOOK (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on FOOTAGE and PLAYBOOK (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on FOOTAGE and PLAYBOOK (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 134-2)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "Two groups prepared in two separate ways. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'footage' and 'playbook' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L134_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_402",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "My sister practices the violin, and my brother practices the drums.",
+            "textToSpeak": "My sister practices the violin, and my brother practices the drums.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Two Nuclei: Emphasis on VIOLIN and DRUMS (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on DRUMS (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Two Nuclei: Emphasis on VIOLIN and DRUMS (One Peak per Clause)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 134-3)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "Two siblings play two different instruments. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'violin' and 'drums' are both peaked, not just 'drums' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L135_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_403",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "The technician installed the software, and the engineer tested the hardware.",
+            "textToSpeak": "The technician installed the software, and the engineer tested the hardware.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Single Nucleus: Emphasis only on HARDWARE (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on SOFTWARE and HARDWARE (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on SOFTWARE and HARDWARE (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 135-1)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "Two workers handled two separate parts of the project. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'software' and 'hardware' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L135_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_404",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "The librarian organized the books, and the volunteer sorted the donations.",
+            "textToSpeak": "The librarian organized the books, and the volunteer sorted the donations.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Single Nucleus: Emphasis only on DONATIONS (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on BOOKS and DONATIONS (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on BOOKS and DONATIONS (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 135-2)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "Two people handled two separate tasks at the library. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'books' and 'donations' are both peaked, not just 'donations' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L135_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_405",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "He repaired the engine, and she replaced the battery.",
+            "textToSpeak": "He repaired the engine, and she replaced the battery.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Two Nuclei: Emphasis on ENGINE and BATTERY (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on BATTERY (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Two Nuclei: Emphasis on ENGINE and BATTERY (One Peak per Clause)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 135-3)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "Two people worked on two separate parts of the car. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'engine' and 'battery' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L136_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_406",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "The waiter took the order, and the chef started the meal.",
+            "textToSpeak": "The waiter took the order, and the chef started the meal.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Two Nuclei: Emphasis on ORDER and MEAL (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on MEAL (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Two Nuclei: Emphasis on ORDER and MEAL (One Peak per Clause)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 136-1)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "Two restaurant staff handled two separate steps. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'order' and 'meal' are both peaked, not just 'meal' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L136_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_407",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "The tourists photographed the landmark, and the guide explained the history.",
+            "textToSpeak": "The tourists photographed the landmark, and the guide explained the history.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Single Nucleus: Emphasis only on HISTORY (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on LANDMARK and HISTORY (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on LANDMARK and HISTORY (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 136-2)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "Two groups did two separate things during the tour. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'landmark' and 'history' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L136_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_408",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "My uncle painted the fence, and my aunt planted the garden.",
+            "textToSpeak": "My uncle painted the fence, and my aunt planted the garden.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Single Nucleus: Emphasis only on GARDEN (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on FENCE and GARDEN (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on FENCE and GARDEN (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 136-3)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "Two relatives tackled two separate outdoor projects. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'fence' and 'garden' are both peaked, not just 'garden' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L137_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_409",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "The student answered the question, and the teacher graded the test.",
+            "textToSpeak": "The student answered the question, and the teacher graded the test.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Two Nuclei: Emphasis on QUESTION and TEST (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on TEST (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Two Nuclei: Emphasis on QUESTION and TEST (One Peak per Clause)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 137-1)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "Two people did two separate academic tasks. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'question' and 'test' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L137_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_410",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "The athlete stretched the muscles, and the trainer adjusted the schedule.",
+            "textToSpeak": "The athlete stretched the muscles, and the trainer adjusted the schedule.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Single Nucleus: Emphasis only on SCHEDULE (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on MUSCLES and SCHEDULE (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on MUSCLES and SCHEDULE (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 137-2)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "Two people each handled a separate part of the training. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'muscles' and 'schedule' are both peaked, not just 'schedule' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L137_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_411",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "We booked the flights, and they reserved the hotel.",
+            "textToSpeak": "We booked the flights, and they reserved the hotel.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Two Nuclei: Emphasis on FLIGHTS and HOTEL (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on HOTEL (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Two Nuclei: Emphasis on FLIGHTS and HOTEL (One Peak per Clause)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 137-3)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "Two groups handled two separate parts of the trip planning. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'flights' and 'hotel' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L138_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_412",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "The designer updated the logo, and the developer fixed the website.",
+            "textToSpeak": "The designer updated the logo, and the developer fixed the website.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Two Nuclei: Emphasis on LOGO and WEBSITE (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on WEBSITE (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Two Nuclei: Emphasis on LOGO and WEBSITE (One Peak per Clause)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 138-1)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "Two coworkers worked on two separate parts of the project. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'logo' and 'website' are both peaked, not just 'website' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L138_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_413",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "She wrote the introduction, and he wrote the conclusion.",
+            "textToSpeak": "She wrote the introduction, and he wrote the conclusion.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Two Nuclei: Emphasis on INTRODUCTION and CONCLUSION (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on CONCLUSION (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Two Nuclei: Emphasis on INTRODUCTION and CONCLUSION (One Peak per Clause)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 138-2)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "Two co-authors each wrote a separate section. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'introduction' and 'conclusion' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L138_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_414",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "The vet examined the puppy, and the assistant prepared the medicine.",
+            "textToSpeak": "The vet examined the puppy, and the assistant prepared the medicine.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Two Nuclei: Emphasis on PUPPY and MEDICINE (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on MEDICINE (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Two Nuclei: Emphasis on PUPPY and MEDICINE (One Peak per Clause)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 138-3)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "Two clinic staff each handled a separate task. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'puppy' and 'medicine' are both peaked, not just 'medicine' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L139_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_415",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "My mother ironed the shirts, and my father washed the dishes.",
+            "textToSpeak": "My mother ironed the shirts, and my father washed the dishes.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Single Nucleus: Emphasis only on DISHES (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on SHIRTS and DISHES (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on SHIRTS and DISHES (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 139-1)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "Two parents handled two separate household chores. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'shirts' and 'dishes' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L139_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_416",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "The barista made the latte, and the cashier processed the payment.",
+            "textToSpeak": "The barista made the latte, and the cashier processed the payment.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Single Nucleus: Emphasis only on PAYMENT (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on LATTE and PAYMENT (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on LATTE and PAYMENT (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 139-2)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "Two café staff handled two separate steps of the order. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'latte' and 'payment' are both peaked, not just 'payment' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L139_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_417",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "The actor rehearsed the script, and the director adjusted the lighting.",
+            "textToSpeak": "The actor rehearsed the script, and the director adjusted the lighting.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Single Nucleus: Emphasis only on LIGHTING (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on SCRIPT and LIGHTING (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on SCRIPT and LIGHTING (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 139-3)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "Two crew members each handled a separate part of the rehearsal. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'script' and 'lighting' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L140_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_418",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "The farmer harvested the crop, and the driver loaded the truck.",
+            "textToSpeak": "The farmer harvested the crop, and the driver loaded the truck.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Single Nucleus: Emphasis only on TRUCK (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on CROP and TRUCK (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on CROP and TRUCK (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 140-1)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "Two workers handled two separate stages of the harvest. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'crop' and 'truck' are both peaked, not just 'truck' alone."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L140_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_419",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "The analyst reviewed the data, and the manager approved the proposal.",
+            "textToSpeak": "The analyst reviewed the data, and the manager approved the proposal.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Two Nuclei: Emphasis on DATA and PROPOSAL (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on PROPOSAL (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Two Nuclei: Emphasis on DATA and PROPOSAL (One Peak per Clause)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 140-2)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "Two coworkers handled two separate steps of the process. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'data' and 'proposal' are peaked, not just the final word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L140_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_420",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "The singer rehearsed the melody, and the band tuned the instruments.",
+            "textToSpeak": "The singer rehearsed the melody, and the band tuned the instruments.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Single Nucleus: Emphasis only on INSTRUMENTS (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on MELODY and INSTRUMENTS (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
+            "correctAnswer": "Two Nuclei: Emphasis on MELODY and INSTRUMENTS (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 140-3)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "Two parts of the group each prepared separately. Listen for two separate pitch peaks, not just one at the very end.",
+            "explanation": "Each parallel clause carries its own nuclear stress, so 'melody' and 'instruments' are both peaked, not just 'instruments' alone."
         }
     ]
 }

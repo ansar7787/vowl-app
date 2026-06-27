@@ -4,42 +4,42 @@
     "levels": "151-160",
     "quests": [
         {
-            "id": "ACC_PITCHPATTERNMATCH_L151_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_451",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "I didn't say she stole it - someone else did.",
+            "textToSpeak": "I didn't say she stole it - someone else did.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Emphasis on SAY (Correcting How It Was Communicated)",
+                "Emphasis on SHE (Correcting WHO Did It)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
+            "correctAnswer": "Emphasis on SHE (Correcting WHO Did It)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 151-1)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "The follow-up clause 'someone else did' tells you the correction is about identity, not wording. Listen for the pitch to peak on 'she'.",
+            "explanation": "Since the correction is about who is responsible, the nuclear stress falls on the embedded subject 'she', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L151_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_452",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "I didn't say she stole it - she borrowed it.",
+            "textToSpeak": "I didn't say she stole it - she borrowed it.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Emphasis on SAY (Correcting How It Was Communicated)",
+                "Emphasis on STOLE (Correcting the Action)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
+            "correctAnswer": "Emphasis on STOLE (Correcting the Action)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -48,71 +48,71 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 151-2)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "The follow-up clause 'she borrowed it' tells you the correction is about the action, not the wording. Listen for the pitch to peak on 'stole'.",
+            "explanation": "Since the correction is about what action happened, the nuclear stress falls on the embedded verb 'stole', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L151_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_453",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "I didn't say she stole it - I just thought it.",
+            "textToSpeak": "I didn't say she stole it - I just thought it.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Emphasis on SHE (Correcting WHO Did It)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
+            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 151-3)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "'I just thought it' tells you the correction is about the mode of communication, not who did it. Listen for the pitch to peak on 'say'.",
+            "explanation": "Since the correction is about whether it was said aloud versus merely thought, the nuclear stress falls on 'say' itself."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L152_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_454",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "I didn't say the manager approved it - the director did.",
+            "textToSpeak": "I didn't say the manager approved it - the director did.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Emphasis on SAY (Correcting How It Was Communicated)",
+                "Emphasis on MANAGER (Correcting WHO Did It)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
+            "correctAnswer": "Emphasis on MANAGER (Correcting WHO Did It)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 152-1)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "The follow-up clause 'the director did' tells you the correction is about identity. Listen for the pitch to peak on 'manager'.",
+            "explanation": "Since the correction is about who approved it, the nuclear stress falls on the embedded subject 'manager', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L152_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_455",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "I didn't say he broke the vase - he cracked it.",
+            "textToSpeak": "I didn't say he broke the vase - he cracked it.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Emphasis on BROKE (Correcting the Action)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on BROKE (Correcting the Action)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -120,71 +120,71 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 152-2)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "The follow-up clause 'he cracked it' tells you the correction is about the action. Listen for the pitch to peak on 'broke'.",
+            "explanation": "Since the correction is about what exactly happened to the vase, the nuclear stress falls on the embedded verb 'broke', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L152_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_456",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "I didn't say the deal fell through - I only suspected it.",
+            "textToSpeak": "I didn't say the deal fell through - I only suspected it.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Emphasis on DEAL (Correcting WHO Did It)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
+            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 152-3)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "'I only suspected it' tells you the correction is about the mode of communication, not the content. Listen for the pitch to peak on 'say'.",
+            "explanation": "Since the correction is about how the information was conveyed - said versus merely suspected - the nuclear stress falls on 'say' itself."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L153_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_457",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "I didn't say my brother broke it - my cousin did.",
+            "textToSpeak": "I didn't say my brother broke it - my cousin did.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Emphasis on BROTHER (Correcting WHO Did It)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on BROTHER (Correcting WHO Did It)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 153-1)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "The follow-up clause 'my cousin did' tells you the correction is about identity. Listen for the pitch to peak on 'brother'.",
+            "explanation": "Since the correction is about who broke it, the nuclear stress falls on the embedded subject 'brother', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L153_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_458",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "I didn't say the team lost the game - they tied it.",
+            "textToSpeak": "I didn't say the team lost the game - they tied it.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Emphasis on LOST (Correcting the Action)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on LOST (Correcting the Action)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -192,71 +192,71 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 153-2)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "The follow-up clause 'they tied it' tells you the correction is about the outcome. Listen for the pitch to peak on 'lost'.",
+            "explanation": "Since the correction is about what actually happened in the game, the nuclear stress falls on the embedded verb 'lost', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L153_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_459",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "I didn't say the medicine failed - I merely wondered about it.",
+            "textToSpeak": "I didn't say the medicine failed - I merely wondered about it.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Emphasis on SAY (Correcting How It Was Communicated)",
+                "Emphasis on MEDICINE (Correcting WHO Did It)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 153-3)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "'I merely wondered about it' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
+            "explanation": "Since the correction is about whether it was said versus merely wondered, the nuclear stress falls on 'say' itself."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L154_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_460",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "I didn't say the teacher graded it - the assistant did.",
+            "textToSpeak": "I didn't say the teacher graded it - the assistant did.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Emphasis on TEACHER (Correcting WHO Did It)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on TEACHER (Correcting WHO Did It)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 154-1)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "The follow-up clause 'the assistant did' tells you the correction is about identity. Listen for the pitch to peak on 'teacher'.",
+            "explanation": "Since the correction is about who graded it, the nuclear stress falls on the embedded subject 'teacher', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L154_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_461",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "I didn't say the company fired him - he resigned.",
+            "textToSpeak": "I didn't say the company fired him - he resigned.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Emphasis on FIRED (Correcting the Action)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on FIRED (Correcting the Action)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -264,71 +264,71 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 154-2)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "The follow-up clause 'he resigned' tells you the correction is about the action. Listen for the pitch to peak on 'fired'.",
+            "explanation": "Since the correction is about what actually ended his employment, the nuclear stress falls on the embedded verb 'fired', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L154_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_462",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "I didn't say the trip was cancelled - I simply assumed it.",
+            "textToSpeak": "I didn't say the trip was cancelled - I simply assumed it.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Emphasis on SAY (Correcting How It Was Communicated)",
+                "Emphasis on TRIP (Correcting WHO Did It)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 154-3)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "'I simply assumed it' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
+            "explanation": "Since the correction is about whether it was said versus merely assumed, the nuclear stress falls on 'say' itself."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L155_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_463",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "I didn't say the chef burned it - the new cook did.",
+            "textToSpeak": "I didn't say the chef burned it - the new cook did.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Emphasis on CHEF (Correcting WHO Did It)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CHEF (Correcting WHO Did It)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 155-1)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "The follow-up clause 'the new cook did' tells you the correction is about identity. Listen for the pitch to peak on 'chef'.",
+            "explanation": "Since the correction is about who burned it, the nuclear stress falls on the embedded subject 'chef', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L155_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_464",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "I didn't say the doctor cured the illness - he managed it.",
+            "textToSpeak": "I didn't say the doctor cured the illness - he managed it.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Emphasis on CURED (Correcting the Action)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CURED (Correcting the Action)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -336,71 +336,71 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 155-2)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "The follow-up clause 'he managed it' tells you the correction is about the action. Listen for the pitch to peak on 'cured'.",
+            "explanation": "Since the correction is about what exactly the treatment achieved, the nuclear stress falls on the embedded verb 'cured', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L155_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_465",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "I didn't say the project was late - I only worried about it.",
+            "textToSpeak": "I didn't say the project was late - I only worried about it.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Emphasis on PROJECT (Correcting WHO Did It)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
+            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 155-3)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "'I only worried about it' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
+            "explanation": "Since the correction is about whether it was said versus merely worried about, the nuclear stress falls on 'say' itself."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L156_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_466",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "I didn't say the mechanic fixed it - the technician did.",
+            "textToSpeak": "I didn't say the mechanic fixed it - the technician did.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Emphasis on MECHANIC (Correcting WHO Did It)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on MECHANIC (Correcting WHO Did It)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 156-1)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "The follow-up clause 'the technician did' tells you the correction is about identity. Listen for the pitch to peak on 'mechanic'.",
+            "explanation": "Since the correction is about who fixed it, the nuclear stress falls on the embedded subject 'mechanic', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L156_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_467",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "I didn't say the printer broke - it just jammed.",
+            "textToSpeak": "I didn't say the printer broke - it just jammed.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Emphasis on BROKE (Correcting the Action)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on BROKE (Correcting the Action)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -408,70 +408,70 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 156-2)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "The follow-up clause 'it just jammed' tells you the correction is about the severity of the problem. Listen for the pitch to peak on 'broke'.",
+            "explanation": "Since the correction is about what actually went wrong with the printer, the nuclear stress falls on the embedded verb 'broke', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L156_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_468",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "I didn't say the cake was ruined - I privately feared it.",
+            "textToSpeak": "I didn't say the cake was ruined - I privately feared it.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Emphasis on CAKE (Correcting WHO Did It)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 156-3)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "'I privately feared it' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
+            "explanation": "Since the correction is about whether it was said versus merely feared privately, the nuclear stress falls on 'say' itself."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L157_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_469",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "I didn't say the nurse lost it - the orderly did.",
+            "textToSpeak": "I didn't say the nurse lost it - the orderly did.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Emphasis on NURSE (Correcting WHO Did It)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on NURSE (Correcting WHO Did It)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 157-1)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "The follow-up clause 'the orderly did' tells you the correction is about identity. Listen for the pitch to peak on 'nurse'.",
+            "explanation": "Since the correction is about who lost it, the nuclear stress falls on the embedded subject 'nurse', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L157_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_470",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "I didn't say the student failed the test - she passed it narrowly.",
+            "textToSpeak": "I didn't say the student failed the test - she passed it narrowly.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Emphasis on SAY (Correcting How It Was Communicated)",
+                "Emphasis on FAILED (Correcting the Action)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
+            "correctAnswer": "Emphasis on FAILED (Correcting the Action)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -480,70 +480,70 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 157-2)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "The follow-up clause 'she passed it narrowly' tells you the correction is about the outcome. Listen for the pitch to peak on 'failed'.",
+            "explanation": "Since the correction is about what actually happened with the test result, the nuclear stress falls on the embedded verb 'failed', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L157_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_471",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "I didn't say the test was hard - I quietly believed it.",
+            "textToSpeak": "I didn't say the test was hard - I quietly believed it.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Emphasis on SAY (Correcting How It Was Communicated)",
+                "Emphasis on TEST (Correcting WHO Did It)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 157-3)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "'I quietly believed it' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
+            "explanation": "Since the correction is about whether it was said versus merely believed quietly, the nuclear stress falls on 'say' itself."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L158_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_472",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "I didn't say the pilot delayed it - air traffic control did.",
+            "textToSpeak": "I didn't say the pilot delayed it - air traffic control did.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Emphasis on SAY (Correcting How It Was Communicated)",
+                "Emphasis on PILOT (Correcting WHO Did It)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
+            "correctAnswer": "Emphasis on PILOT (Correcting WHO Did It)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 158-1)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "The follow-up clause 'air traffic control did' tells you the correction is about identity. Listen for the pitch to peak on 'pilot'.",
+            "explanation": "Since the correction is about who caused the delay, the nuclear stress falls on the embedded subject 'pilot', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L158_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_473",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "I didn't say the storm destroyed the roof - it damaged it.",
+            "textToSpeak": "I didn't say the storm destroyed the roof - it damaged it.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Emphasis on SAY (Correcting How It Was Communicated)",
+                "Emphasis on DESTROYED (Correcting the Action)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
+            "correctAnswer": "Emphasis on DESTROYED (Correcting the Action)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -552,71 +552,71 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 158-2)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "The follow-up clause 'it damaged it' tells you the correction is about the severity of the action. Listen for the pitch to peak on 'destroyed'.",
+            "explanation": "Since the correction is about the extent of what happened, the nuclear stress falls on the embedded verb 'destroyed', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L158_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_474",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "I didn't say the engine was broken - I only guessed it.",
+            "textToSpeak": "I didn't say the engine was broken - I only guessed it.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Emphasis on ENGINE (Correcting WHO Did It)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
+            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 158-3)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "'I only guessed it' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
+            "explanation": "Since the correction is about whether it was said versus merely guessed, the nuclear stress falls on 'say' itself."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L159_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_475",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "I didn't say the intern sent it - the manager did.",
+            "textToSpeak": "I didn't say the intern sent it - the manager did.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Emphasis on INTERN (Correcting WHO Did It)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on INTERN (Correcting WHO Did It)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 159-1)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "The follow-up clause 'the manager did' tells you the correction is about identity. Listen for the pitch to peak on 'intern'.",
+            "explanation": "Since the correction is about who sent it, the nuclear stress falls on the embedded subject 'intern', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L159_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_476",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "I didn't say the chef ruined the dish - he just changed it.",
+            "textToSpeak": "I didn't say the chef ruined the dish - he just changed it.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Emphasis on RUINED (Correcting the Action)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on RUINED (Correcting the Action)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -624,70 +624,70 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 159-2)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "The follow-up clause 'he just changed it' tells you the correction is about the action. Listen for the pitch to peak on 'ruined'.",
+            "explanation": "Since the correction is about what exactly happened to the dish, the nuclear stress falls on the embedded verb 'ruined', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L159_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_477",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "I didn't say the show was cancelled - I merely heard a rumor.",
+            "textToSpeak": "I didn't say the show was cancelled - I merely heard a rumor.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Emphasis on SHOW (Correcting WHO Did It)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
+            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 159-3)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "'I merely heard a rumor' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
+            "explanation": "Since the correction is about whether it was said versus merely heard as a rumor, the nuclear stress falls on 'say' itself."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L160_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_478",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "I didn't say the dog ate it - the cat did.",
+            "textToSpeak": "I didn't say the dog ate it - the cat did.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Emphasis on SAY (Correcting How It Was Communicated)",
+                "Emphasis on DOG (Correcting WHO Did It)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Emphasis on DOG (Correcting WHO Did It)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 160-1)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "The follow-up clause 'the cat did' tells you the correction is about identity. Listen for the pitch to peak on 'dog'.",
+            "explanation": "Since the correction is about which animal ate it, the nuclear stress falls on the embedded subject 'dog', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L160_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_479",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "I didn't say the airline cancelled the flight - they delayed it.",
+            "textToSpeak": "I didn't say the airline cancelled the flight - they delayed it.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Emphasis on SAY (Correcting How It Was Communicated)",
+                "Emphasis on CANCELLED (Correcting the Action)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
+            "correctAnswer": "Emphasis on CANCELLED (Correcting the Action)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -696,32 +696,32 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 160-2)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "The follow-up clause 'they delayed it' tells you the correction is about the action. Listen for the pitch to peak on 'cancelled'.",
+            "explanation": "Since the correction is about what actually happened to the flight, the nuclear stress falls on the embedded verb 'cancelled', not on 'say'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L160_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_480",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "I didn't say the patient was worse - I only noted it privately.",
+            "textToSpeak": "I didn't say the patient was worse - I only noted it privately.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Emphasis on PATIENT (Correcting WHO Did It)",
+                "Emphasis on SAY (Correcting How It Was Communicated)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
+            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 160-3)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "'I only noted it privately' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
+            "explanation": "Since the correction is about whether it was said versus merely noted privately, the nuclear stress falls on 'say' itself."
         }
     ]
 }

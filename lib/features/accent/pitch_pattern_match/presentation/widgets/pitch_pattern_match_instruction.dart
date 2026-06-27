@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class PitchPatternMatchInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const PitchPatternMatchInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -23,7 +25,7 @@ class PitchPatternMatchInstruction extends StatelessWidget {
           Icon(Icons.music_note_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            "IDENTIFY THE PITCH BLUEPRINT MATCHING NUCLEAR STRESS",
+            instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,

@@ -4,724 +4,724 @@
     "levels": "101-110",
     "quests": [
         {
-            "id": "ACC_PITCHPATTERNMATCH_L101_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_301",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "Despite your doubts, I did lock the door.",
+            "textToSpeak": "Despite your doubts, I did lock the door.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on DOOR (Object focus)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 101-1)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "'Despite your doubts' signals the speaker is pushing back against disbelief. Listen for a strong pitch peak on 'did'.",
+            "explanation": "To emphatically counter doubt, English stresses the auxiliary 'did' itself, not the object 'door'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L101_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_302",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "Contrary to what you think, she does understand French.",
+            "textToSpeak": "Contrary to what you think, she does understand French.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Emphasis on FRENCH (Object focus)",
+                "Emphasis on DOES (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
+            "correctAnswer": "Emphasis on DOES (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 101-2)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "'Contrary to what you think' signals a pushback against a wrong belief. Listen for the pitch to peak on 'does'.",
+            "explanation": "The auxiliary 'does' carries the nuclear stress here, emphatically confirming the fact against the listener's wrong belief."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L101_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_303",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "I promise you, we have finished the project.",
+            "textToSpeak": "I promise you, we have finished the project.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Emphasis on PROJECT (Object focus)",
+                "Emphasis on HAVE (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
+            "correctAnswer": "Emphasis on HAVE (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 101-3)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "'I promise you' signals the speaker is reassuring against doubt. Listen for the pitch to peak on 'have'.",
+            "explanation": "'Have' takes the nuclear stress as an emphatic reassurance, not the object 'project'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L102_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_304",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "Despite what they said, he can swim.",
+            "textToSpeak": "Despite what they said, he can swim.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Emphasis on SWIM (Verb focus)",
+                "Emphasis on CAN (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
+            "correctAnswer": "Emphasis on CAN (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 102-1)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "'Despite what they said' signals a correction of a false claim. Listen for the pitch to peak sharply on 'can'.",
+            "explanation": "The auxiliary 'can' carries the nuclear stress, emphatically contradicting the earlier claim, rather than the verb 'swim'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L102_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_305",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "Contrary to popular belief, the team will win the match.",
+            "textToSpeak": "Contrary to popular belief, the team will win the match.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Emphasis on MATCH (Object focus)",
+                "Emphasis on WILL (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
+            "correctAnswer": "Emphasis on WILL (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 102-2)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "'Contrary to popular belief' signals pushback against a common assumption. Listen for the pitch to peak on 'will'.",
+            "explanation": "'Will' takes the nuclear stress as an emphatic prediction against popular doubt, not the object 'match'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L102_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_306",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "I assure you, I did pay the bill.",
+            "textToSpeak": "I assure you, I did pay the bill.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Emphasis on BILL (Object focus)",
+                "Emphasis on DID (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 102-3)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "'I assure you' signals reassurance against suspicion. Listen for the pitch to peak on 'did'.",
+            "explanation": "The auxiliary 'did' carries the nuclear stress here as an emphatic confirmation, not the object 'bill'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L103_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_307",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "Despite your concerns, the doctor has examined the patient.",
+            "textToSpeak": "Despite your concerns, the doctor has examined the patient.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Emphasis on PATIENT (Object focus)",
+                "Emphasis on HAS (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
+            "correctAnswer": "Emphasis on HAS (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 103-1)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "'Despite your concerns' signals reassurance against worry. Listen for the pitch to peak on 'has'.",
+            "explanation": "'Has' takes the nuclear stress as an emphatic reassurance, not the object 'patient'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L103_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_308",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "Contrary to expectations, the kids did finish their homework.",
+            "textToSpeak": "Contrary to expectations, the kids did finish their homework.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Emphasis on HOMEWORK (Object focus)",
+                "Emphasis on DID (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 103-2)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "'Contrary to expectations' signals a surprising confirmation. Listen for the pitch to peak sharply on 'did'.",
+            "explanation": "The auxiliary 'did' carries the nuclear stress, emphatically confirming the unexpected fact, not the object 'homework'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L103_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_309",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "I promise you, the company will deliver the package.",
+            "textToSpeak": "I promise you, the company will deliver the package.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Emphasis on WILL (Auxiliary/Polarity focus)",
+                "Emphasis on PACKAGE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on WILL (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 103-3)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "'I promise you' signals a firm reassurance. Listen for the pitch to peak on 'will'.",
+            "explanation": "'Will' takes the nuclear stress as an emphatic promise, not the object 'package'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L104_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_310",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "Despite the rumors, she does enjoy her job.",
+            "textToSpeak": "Despite the rumors, she does enjoy her job.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Emphasis on JOB (Object focus)",
+                "Emphasis on DOES (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
+            "correctAnswer": "Emphasis on DOES (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 104-1)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "'Despite the rumors' signals a correction of gossip. Listen for the pitch to peak on 'does'.",
+            "explanation": "The auxiliary 'does' carries the nuclear stress, emphatically countering the rumor, not the object 'job'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L104_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_311",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "Contrary to what you heard, we have booked the flight.",
+            "textToSpeak": "Contrary to what you heard, we have booked the flight.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Emphasis on FLIGHT (Object focus)",
+                "Emphasis on HAVE (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
+            "correctAnswer": "Emphasis on HAVE (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 104-2)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "'Contrary to what you heard' signals a correction of misinformation. Listen for the pitch to peak on 'have'.",
+            "explanation": "'Have' takes the nuclear stress as an emphatic correction, not the object 'flight'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L104_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_312",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "I assure you, he did call the office.",
+            "textToSpeak": "I assure you, he did call the office.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Emphasis on OFFICE (Object focus)",
+                "Emphasis on DID (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 104-3)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "'I assure you' signals reassurance against doubt. Listen for the pitch to peak on 'did'.",
+            "explanation": "The auxiliary 'did' carries the nuclear stress here as an emphatic confirmation, not the object 'office'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L105_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_313",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "Despite your skepticism, the medicine does work.",
+            "textToSpeak": "Despite your skepticism, the medicine does work.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Emphasis on DOES (Auxiliary/Polarity focus)",
+                "Emphasis on WORK (Verb focus)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DOES (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 105-1)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "'Despite your skepticism' signals pushback against disbelief. Listen for the pitch to peak sharply on 'does'.",
+            "explanation": "The auxiliary 'does' carries the nuclear stress, emphatically confirming effectiveness, rather than the verb 'work'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L105_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_314",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "Contrary to the report, the bridge has been inspected.",
+            "textToSpeak": "Contrary to the report, the bridge has been inspected.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Emphasis on HAS (Auxiliary/Polarity focus)",
+                "Emphasis on INSPECTED (Verb focus)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on HAS (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 105-2)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "'Contrary to the report' signals a correction of a false claim. Listen for the pitch to peak on 'has'.",
+            "explanation": "'Has' takes the nuclear stress as an emphatic correction, not the participle 'inspected'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L105_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_315",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "I promise you, I will finish the report.",
+            "textToSpeak": "I promise you, I will finish the report.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Emphasis on WILL (Auxiliary/Polarity focus)",
+                "Emphasis on REPORT (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on WILL (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 105-3)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "'I promise you' signals a firm commitment. Listen for the pitch to peak on 'will'.",
+            "explanation": "'Will' takes the nuclear stress as an emphatic promise, not the object 'report'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L106_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_316",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "Despite his nerves, he did pass the exam.",
+            "textToSpeak": "Despite his nerves, he did pass the exam.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on EXAM (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 106-1)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "'Despite his nerves' signals an unexpected but confirmed success. Listen for the pitch to peak sharply on 'did'.",
+            "explanation": "The auxiliary 'did' carries the nuclear stress, emphatically confirming the success, not the object 'exam'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L106_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_317",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "Contrary to what you assumed, they have already left.",
+            "textToSpeak": "Contrary to what you assumed, they have already left.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Emphasis on HAVE (Auxiliary/Polarity focus)",
+                "Emphasis on LEFT (Verb focus)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on HAVE (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 106-2)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "'Contrary to what you assumed' signals a correction of a wrong guess. Listen for the pitch to peak on 'have'.",
+            "explanation": "'Have' takes the nuclear stress as an emphatic correction, not the verb 'left'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L106_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_318",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "I assure you, the chef does taste every dish.",
+            "textToSpeak": "I assure you, the chef does taste every dish.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Emphasis on DISH (Object focus)",
+                "Emphasis on DOES (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Emphasis on DOES (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 106-3)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "'I assure you' signals reassurance against doubt about quality control. Listen for the pitch to peak on 'does'.",
+            "explanation": "The auxiliary 'does' carries the nuclear stress here as an emphatic reassurance, not the object 'dish'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L107_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_319",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "Despite the delay, the train will arrive shortly.",
+            "textToSpeak": "Despite the delay, the train will arrive shortly.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Emphasis on SHORTLY (Time focus)",
+                "Emphasis on WILL (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
+            "correctAnswer": "Emphasis on WILL (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 107-1)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "'Despite the delay' signals reassurance against worry about lateness. Listen for the pitch to peak on 'will'.",
+            "explanation": "'Will' takes the nuclear stress as an emphatic reassurance, not the time word 'shortly'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L107_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_320",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "Contrary to your worries, the team did submit the proposal.",
+            "textToSpeak": "Contrary to your worries, the team did submit the proposal.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on PROPOSAL (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 107-2)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "'Contrary to your worries' signals reassurance against anxiety. Listen for the pitch to peak sharply on 'did'.",
+            "explanation": "The auxiliary 'did' carries the nuclear stress, emphatically confirming completion, not the object 'proposal'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L107_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_321",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "I promise you, she has read the entire book.",
+            "textToSpeak": "I promise you, she has read the entire book.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Emphasis on HAS (Auxiliary/Polarity focus)",
+                "Emphasis on BOOK (Object focus)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on HAS (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 107-3)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "'I promise you' signals a firm reassurance. Listen for the pitch to peak on 'has'.",
+            "explanation": "'Has' takes the nuclear stress as an emphatic reassurance, not the object 'book'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L108_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_322",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "Despite appearances, the engine does run smoothly.",
+            "textToSpeak": "Despite appearances, the engine does run smoothly.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Emphasis on DOES (Auxiliary/Polarity focus)",
+                "Emphasis on SMOOTHLY (Manner focus)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DOES (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 108-1)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "'Despite appearances' signals pushback against a wrong impression. Listen for the pitch to peak sharply on 'does'.",
+            "explanation": "The auxiliary 'does' carries the nuclear stress, emphatically countering the wrong impression, rather than the adverb 'smoothly'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L108_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_323",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "Contrary to what you think, I can cook.",
+            "textToSpeak": "Contrary to what you think, I can cook.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Emphasis on COOK (Verb focus)",
+                "Emphasis on CAN (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
+            "correctAnswer": "Emphasis on CAN (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 108-2)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "'Contrary to what you think' signals a correction of a wrong belief. Listen for the pitch to peak on 'can'.",
+            "explanation": "'Can' takes the nuclear stress as an emphatic correction of the listener's assumption, not the verb 'cook'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L108_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_324",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "I assure you, we will fix the issue.",
+            "textToSpeak": "I assure you, we will fix the issue.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Emphasis on WILL (Auxiliary/Polarity focus)",
+                "Emphasis on ISSUE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on WILL (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 108-3)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "'I assure you' signals a firm commitment against doubt. Listen for the pitch to peak on 'will'.",
+            "explanation": "'Will' takes the nuclear stress as an emphatic promise, not the object 'issue'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L109_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_325",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "Despite the criticism, the movie does deserve praise.",
+            "textToSpeak": "Despite the criticism, the movie does deserve praise.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Emphasis on PRAISE (Object focus)",
+                "Emphasis on DOES (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
+            "correctAnswer": "Emphasis on DOES (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 109-1)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "'Despite the criticism' signals pushback against negative opinions. Listen for the pitch to peak sharply on 'does'.",
+            "explanation": "The auxiliary 'does' carries the nuclear stress, emphatically defending the movie, rather than the object 'praise'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L109_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_326",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "Contrary to the forecast, it did rain yesterday.",
+            "textToSpeak": "Contrary to the forecast, it did rain yesterday.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Emphasis on YESTERDAY (Time focus)",
+                "Emphasis on DID (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 109-2)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "'Contrary to the forecast' signals a correction of a wrong prediction. Listen for the pitch to peak on 'did'.",
+            "explanation": "The auxiliary 'did' carries the nuclear stress, emphatically correcting the forecast, not the time word 'yesterday'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L109_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_327",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "I promise you, the staff has cleaned the rooms.",
+            "textToSpeak": "I promise you, the staff has cleaned the rooms.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Emphasis on HAS (Auxiliary/Polarity focus)",
+                "Emphasis on ROOMS (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on HAS (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 109-3)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "'I promise you' signals firm reassurance about a task being done. Listen for the pitch to peak on 'has'.",
+            "explanation": "'Has' takes the nuclear stress as an emphatic reassurance, not the object 'rooms'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L110_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_328",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "Despite his age, my grandfather can still dance.",
+            "textToSpeak": "Despite his age, my grandfather can still dance.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Emphasis on CAN (Auxiliary/Polarity focus)",
+                "Emphasis on DANCE (Verb focus)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CAN (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 110-1)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "'Despite his age' signals a surprising ability despite an assumption. Listen for the pitch to peak sharply on 'can'.",
+            "explanation": "The auxiliary 'can' carries the nuclear stress, emphatically confirming the surprising ability, rather than the verb 'dance'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L110_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_329",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "Contrary to your fears, the surgery did go well.",
+            "textToSpeak": "Contrary to your fears, the surgery did go well.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on WELL (Manner focus)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 110-2)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "'Contrary to your fears' signals reassurance against worry. Listen for the pitch to peak on 'did'.",
+            "explanation": "The auxiliary 'did' carries the nuclear stress, emphatically reassuring against the listener's fear, not the adverb 'well'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L110_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_330",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 3,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "I assure you, the bank will approve the loan.",
+            "textToSpeak": "I assure you, the bank will approve the loan.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Emphasis on LOAN (Object focus)",
+                "Emphasis on WILL (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
+            "correctAnswer": "Emphasis on WILL (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 110-3)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "'I assure you' signals a firm, reassuring commitment. Listen for the pitch to peak on 'will'.",
+            "explanation": "'Will' takes the nuclear stress as an emphatic reassurance, not the object 'loan'."
         }
     ]
 }

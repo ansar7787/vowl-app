@@ -4,43 +4,43 @@
     "levels": "41-50",
     "quests": [
         {
-            "id": "ACC_PITCHPATTERNMATCH_L41_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_121",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "Actually, the intern fixed the printer.",
+            "textToSpeak": "Actually, the intern fixed the printer.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Emphasis on INTERN (Subject focus)",
+                "Emphasis on PRINTER (Object focus)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on INTERN (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 41-1)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "The word 'actually' signals a correction about who did it, not what was fixed. Listen for the pitch to peak early, on 'intern'.",
+            "explanation": "'Actually' introduces a correction about who performed the action, so the nuclear stress shifts onto 'intern' instead of the object."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L41_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_122",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "The dentist examines the teeth carefully.",
+            "textToSpeak": "The dentist examines the teeth carefully.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Emphasis on TEETH (Object focus)",
+                "Emphasis on DENTIST (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on TEETH (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -48,46 +48,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 41-2)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "There's no correction cue here - this is a plain statement, so the pitch peak stays on the final content word.",
+            "explanation": "With no contrastive cue, this sentence keeps the default pattern: the nuclear stress falls on 'teeth', not 'dentist'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L41_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_123",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "No, the assistant scheduled the meeting.",
+            "textToSpeak": "No, the assistant scheduled the meeting.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Emphasis on ASSISTANT (Subject focus)",
+                "Emphasis on MEETING (Object focus)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on ASSISTANT (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 41-3)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "'No' signals that someone guessed the wrong person. Listen for the pitch to peak early, on 'assistant'.",
+            "explanation": "The opening 'No' corrects an assumption about who scheduled it, so the nuclear stress moves to 'assistant'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L42_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_124",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "My father mows the lawn weekly.",
+            "textToSpeak": "My father mows the lawn weekly.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Emphasis on FATHER (Subject focus)",
+                "Emphasis on LAWN (Object focus)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
+            "correctAnswer": "Emphasis on LAWN (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -96,47 +96,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 42-1)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "This is a routine fact with no correction involved - the pitch peak stays near the end of the sentence.",
+            "explanation": "There's no contrastive cue here, so the nuclear stress stays on 'lawn', the final content word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L42_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_125",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "In fact, my roommate cooked the dinner.",
+            "textToSpeak": "In fact, my roommate cooked the dinner.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Emphasis on ROOMMATE (Subject focus)",
+                "Emphasis on DINNER (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on ROOMMATE (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 42-2)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "'In fact' signals a correction about who actually cooked. Listen for the pitch to peak early, on 'roommate'.",
+            "explanation": "'In fact' corrects a wrong assumption about who cooked, so the nuclear stress shifts onto 'roommate'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L42_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_126",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "The baker decorates the cupcakes beautifully.",
+            "textToSpeak": "The baker decorates the cupcakes beautifully.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Emphasis on CUPCAKES (Object focus)",
+                "Emphasis on BAKER (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CUPCAKES (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -144,71 +144,71 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 42-3)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "There's no hint of correction here - this is just a plain description, so listen for the peak near the end.",
+            "explanation": "With no contrastive cue, the nuclear stress falls on 'cupcakes', the sentence's final content word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L43_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_127",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "Surprisingly, the rookie scored the goal.",
+            "textToSpeak": "Surprisingly, the rookie scored the goal.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Emphasis on ROOKIE (Subject focus)",
+                "Emphasis on GOAL (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on ROOKIE (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 43-1)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "'Surprisingly' signals that the identity of the scorer is the unexpected part. Listen for the pitch to peak on 'rookie'.",
+            "explanation": "'Surprisingly' marks the subject as the unexpected new information, so the nuclear stress shifts onto 'rookie'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L43_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_128",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "Honestly, the toddler solved the puzzle.",
+            "textToSpeak": "Honestly, the toddler solved the puzzle.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Emphasis on TODDLER (Subject focus)",
+                "Emphasis on PUZZLE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on TODDLER (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 43-2)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "'Honestly' signals genuine surprise at who managed it. Listen for the pitch to peak early, on 'toddler'.",
+            "explanation": "'Honestly' highlights surprise about who solved it, so the nuclear stress moves onto 'toddler' instead of 'puzzle'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L43_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_129",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "The journalist writes the article quickly.",
+            "textToSpeak": "The journalist writes the article quickly.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Emphasis on ARTICLE (Object focus)",
+                "Emphasis on JOURNALIST (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on ARTICLE (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -216,22 +216,22 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 43-3)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "This is a plain, routine description with no correction cue - listen for the pitch peak landing on 'article'.",
+            "explanation": "With no contrastive cue, the nuclear stress falls on 'article', the sentence's final content word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L44_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_130",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "My roommate organizes the closet neatly.",
+            "textToSpeak": "My roommate organizes the closet neatly.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Emphasis on ROOMMATE (Subject focus)",
+                "Emphasis on CLOSET (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
+            "correctAnswer": "Emphasis on CLOSET (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -240,22 +240,22 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 44-1)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "There's no correction involved here - this is routine information, so the pitch peak stays near the end.",
+            "explanation": "With no contrastive cue, the nuclear stress stays on 'closet', not on 'roommate'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L44_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_131",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "The captain steers the ship skillfully.",
+            "textToSpeak": "The captain steers the ship skillfully.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Emphasis on CAPTAIN (Subject focus)",
+                "Emphasis on SHIP (Object focus)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
+            "correctAnswer": "Emphasis on SHIP (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -264,71 +264,71 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 44-2)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "This is a plain statement about routine duties - listen for the pitch peak on the final content word.",
+            "explanation": "With no contrastive cue, the nuclear stress falls on 'ship', the sentence's final content word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L44_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_132",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "As it turns out, the janitor reported the leak.",
+            "textToSpeak": "As it turns out, the janitor reported the leak.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Emphasis on LEAK (Object focus)",
+                "Emphasis on JANITOR (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
+            "correctAnswer": "Emphasis on JANITOR (Subject focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 44-3)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "'As it turns out' signals that who reported it is the surprising part. Listen for the pitch to peak on 'janitor'.",
+            "explanation": "'As it turns out' marks the subject as unexpected new information, so the nuclear stress shifts onto 'janitor'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L45_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_133",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "Believe it or not, my grandmother won the race.",
+            "textToSpeak": "Believe it or not, my grandmother won the race.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Emphasis on GRANDMOTHER (Subject focus)",
+                "Emphasis on RACE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on GRANDMOTHER (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 45-1)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "'Believe it or not' flags the winner's identity as the shocking detail. Listen for the pitch to peak on 'grandmother'.",
+            "explanation": "'Believe it or not' highlights surprise about who won, so the nuclear stress moves onto 'grandmother' instead of 'race'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L45_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_134",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "The artist paints the mural creatively.",
+            "textToSpeak": "The artist paints the mural creatively.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Emphasis on MURAL (Object focus)",
+                "Emphasis on ARTIST (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on MURAL (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -336,47 +336,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 45-2)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "There's no correction cue here - this is a plain description, so the pitch peak stays near the end.",
+            "explanation": "With no contrastive cue, the nuclear stress falls on 'mural', the sentence's final content word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L45_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_135",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "Actually, the substitute taught the class.",
+            "textToSpeak": "Actually, the substitute taught the class.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Emphasis on SUBSTITUTE (Subject focus)",
+                "Emphasis on CLASS (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SUBSTITUTE (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 45-3)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "'Actually' signals a correction about who taught it. Listen for the pitch to peak early, on 'substitute'.",
+            "explanation": "'Actually' corrects an assumption about who taught the class, so the nuclear stress shifts onto 'substitute'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L46_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_136",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "My grandson builds the puzzle patiently.",
+            "textToSpeak": "My grandson builds the puzzle patiently.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Emphasis on PUZZLE (Object focus)",
+                "Emphasis on GRANDSON (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PUZZLE (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -384,46 +384,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 46-1)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "This is a calm, routine description with no correction involved - listen for the peak near the end.",
+            "explanation": "With no contrastive cue, the nuclear stress stays on 'puzzle', not on 'grandson'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L46_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_137",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "No, the volunteer organized the event.",
+            "textToSpeak": "No, the volunteer organized the event.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Emphasis on VOLUNTEER (Subject focus)",
+                "Emphasis on EVENT (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on VOLUNTEER (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 46-2)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "'No' signals that someone guessed the wrong organizer. Listen for the pitch to peak early, on 'volunteer'.",
+            "explanation": "The opening 'No' corrects a wrong assumption about who organized it, so the nuclear stress moves to 'volunteer'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L46_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_138",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "The electrician wires the house safely.",
+            "textToSpeak": "The electrician wires the house safely.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Emphasis on ELECTRICIAN (Subject focus)",
+                "Emphasis on HOUSE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Emphasis on HOUSE (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -432,47 +432,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 46-3)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "There's no hint of correction here - this is just a plain statement, so listen for the pitch peak on 'house'.",
+            "explanation": "With no contrastive cue, the nuclear stress falls on 'house', the sentence's final content word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L47_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_139",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "In fact, the new employee closed the deal.",
+            "textToSpeak": "In fact, the new employee closed the deal.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Emphasis on EMPLOYEE (Subject focus)",
+                "Emphasis on DEAL (Object focus)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on EMPLOYEE (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 47-1)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "'In fact' signals a correction about who closed it. Listen for the pitch to peak early, on 'employee'.",
+            "explanation": "'In fact' corrects an assumption about who closed the deal, so the nuclear stress shifts onto 'employee'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L47_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_140",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "The coach reviews the footage closely.",
+            "textToSpeak": "The coach reviews the footage closely.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Emphasis on FOOTAGE (Object focus)",
+                "Emphasis on COACH (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on FOOTAGE (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -480,46 +480,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 47-2)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "This is routine post-game behavior with no correction cue - listen for the pitch peak near the end.",
+            "explanation": "With no contrastive cue, the nuclear stress falls on 'footage', the sentence's final content word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L47_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_141",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "Surprisingly, the puppy found the keys.",
+            "textToSpeak": "Surprisingly, the puppy found the keys.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Emphasis on KEYS (Object focus)",
+                "Emphasis on PUPPY (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
+            "correctAnswer": "Emphasis on PUPPY (Subject focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 47-3)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "'Surprisingly' flags the finder's identity as the unexpected detail. Listen for the pitch to peak on 'puppy'.",
+            "explanation": "'Surprisingly' marks the subject as the unexpected new information, so the nuclear stress shifts onto 'puppy'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L48_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_142",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "My teacher grades the essays thoroughly.",
+            "textToSpeak": "My teacher grades the essays thoroughly.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Emphasis on TEACHER (Subject focus)",
+                "Emphasis on ESSAYS (Object focus)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
+            "correctAnswer": "Emphasis on ESSAYS (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -528,22 +528,22 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 48-1)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "There's no correction here - this is routine academic information, so listen for the peak near the end.",
+            "explanation": "With no contrastive cue, the nuclear stress stays on 'essays', not on 'teacher'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L48_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_143",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "The vet vaccinates the kitten gently.",
+            "textToSpeak": "The vet vaccinates the kitten gently.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Emphasis on VET (Subject focus)",
+                "Emphasis on KITTEN (Object focus)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
+            "correctAnswer": "Emphasis on KITTEN (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -552,95 +552,95 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 48-2)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "This is a plain, calm description with no correction involved - listen for the pitch peak near the end.",
+            "explanation": "With no contrastive cue, the nuclear stress falls on 'kitten', the sentence's final content word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L48_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_144",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "Honestly, my neighbor planted the tree.",
+            "textToSpeak": "Honestly, my neighbor planted the tree.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Emphasis on NEIGHBOR (Subject focus)",
+                "Emphasis on TREE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on NEIGHBOR (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 48-3)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "'Honestly' signals genuine surprise or correction about who planted it. Listen for the pitch to peak on 'neighbor'.",
+            "explanation": "'Honestly' highlights a correction about who did the planting, so the nuclear stress moves onto 'neighbor'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L49_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_145",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "As it turns out, the trainee diagnosed the issue.",
+            "textToSpeak": "As it turns out, the trainee diagnosed the issue.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Emphasis on TRAINEE (Subject focus)",
+                "Emphasis on ISSUE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on TRAINEE (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 49-1)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "'As it turns out' flags the diagnoser's identity as the surprising detail. Listen for the pitch to peak on 'trainee'.",
+            "explanation": "'As it turns out' marks the subject as unexpected new information, so the nuclear stress shifts onto 'trainee'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L49_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_146",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "Believe it or not, the freshman won the award.",
+            "textToSpeak": "Believe it or not, the freshman won the award.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Emphasis on AWARD (Object focus)",
+                "Emphasis on FRESHMAN (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
+            "correctAnswer": "Emphasis on FRESHMAN (Subject focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 49-2)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "'Believe it or not' flags the winner's identity as the shocking detail. Listen for the pitch to peak on 'freshman'.",
+            "explanation": "'Believe it or not' highlights surprise about who won, so the nuclear stress moves onto 'freshman' instead of 'award'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L49_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_147",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "The translator interprets the speech accurately.",
+            "textToSpeak": "The translator interprets the speech accurately.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Emphasis on SPEECH (Object focus)",
+                "Emphasis on TRANSLATOR (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SPEECH (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -648,22 +648,22 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 49-3)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "There's no correction cue here - this is a plain description, so listen for the pitch peak on 'speech'.",
+            "explanation": "With no contrastive cue, the nuclear stress falls on 'speech', the sentence's final content word."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L50_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_148",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "My sister braids the hair carefully.",
+            "textToSpeak": "My sister braids the hair carefully.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Emphasis on SISTER (Subject focus)",
+                "Emphasis on HAIR (Object focus)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Emphasis on HAIR (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -672,47 +672,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 50-1)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "This is routine, everyday information with no correction involved - listen for the pitch peak on 'hair'.",
+            "explanation": "With no contrastive cue, the nuclear stress stays on 'hair', not on 'sister'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L50_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_149",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "Actually, the waitress caught the thief.",
+            "textToSpeak": "Actually, the waitress caught the thief.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Emphasis on WAITRESS (Subject focus)",
+                "Emphasis on THIEF (Object focus)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on WAITRESS (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 50-2)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "'Actually' signals a correction about who caught him. Listen for the pitch to peak early, on 'waitress'.",
+            "explanation": "'Actually' corrects an assumption about who caught the thief, so the nuclear stress shifts onto 'waitress'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L50_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_150",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 2,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "The waiter clears the table swiftly.",
+            "textToSpeak": "The waiter clears the table swiftly.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Emphasis on TABLE (Object focus)",
+                "Emphasis on WAITER (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on TABLE (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -720,8 +720,8 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 50-3)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "There's no hint of correction here - this is just a plain statement, so listen for the pitch peak on 'table'.",
+            "explanation": "With no contrastive cue, the nuclear stress falls on 'table', the sentence's final content word."
         }
     ]
 }

@@ -4,42 +4,42 @@
     "levels": "141-150",
     "quests": [
         {
-            "id": "ACC_PITCHPATTERNMATCH_L141_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_421",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "We grow tomatoes in the greenhouse.",
+            "textToSpeak": "We grow tomatoes in the greenhouse.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Phrase Stress: green HOUSE (a House That Is Green)",
+                "Compound Stress: GREENhouse (a Glass Building for Plants)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
+            "correctAnswer": "Compound Stress: GREENhouse (a Glass Building for Plants)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 141-1)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "This is a single object with one specific purpose - a glass structure for growing plants. Listen for the stress to land on the first part, 'GREEN'.",
+            "explanation": "As a compound noun naming a specific kind of structure, 'greenhouse' stresses the first element, unlike a plain color description."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L141_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_422",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "They just painted the green house on the corner.",
+            "textToSpeak": "They just painted the green house on the corner.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Compound Stress: GREENhouse (a Glass Building for Plants)",
+                "Phrase Stress: green HOUSE (a House That Is Green)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
+            "correctAnswer": "Phrase Stress: green HOUSE (a House That Is Green)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -48,47 +48,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 141-2)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "This is just an ordinary house that happens to be painted green - not a special structure. Listen for the stress to land on 'HOUSE'.",
+            "explanation": "Here 'green' simply describes the house's color, so as an adjective + noun phrase, the stress falls on the noun 'house'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L141_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_423",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "A blackbird landed on the fence this morning.",
+            "textToSpeak": "A blackbird landed on the fence this morning.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Compound Stress: BLACKbird (a Specific Bird Species)",
+                "Phrase Stress: black BIRD (Any Bird That Is Black)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Compound Stress: BLACKbird (a Specific Bird Species)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 141-3)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "This names one specific species of bird, not just any dark-colored bird. Listen for the stress to land on 'BLACK'.",
+            "explanation": "'Blackbird' names a specific species, so as a compound noun it stresses the first element, 'black'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L142_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_424",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "I saw a black bird eating from the feeder.",
+            "textToSpeak": "I saw a black bird eating from the feeder.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Phrase Stress: black BIRD (Any Bird That Is Black)",
+                "Compound Stress: BLACKbird (a Specific Bird Species)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Phrase Stress: black BIRD (Any Bird That Is Black)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -96,46 +96,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 142-1)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "This could be any bird at all that happens to be black, not one named species. Listen for the stress to land on 'BIRD'.",
+            "explanation": "Here 'black' just describes the color of an unspecified bird, so the adjective + noun phrase stresses the noun 'bird'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L142_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_425",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "The photographer develops film in the darkroom.",
+            "textToSpeak": "The photographer develops film in the darkroom.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Compound Stress: DARKroom (a Room for Developing Photos)",
+                "Phrase Stress: dark ROOM (Any Room That Is Dark)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Compound Stress: DARKroom (a Room for Developing Photos)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 142-2)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "This names a specific kind of workroom, not just any unlit space. Listen for the stress to land on 'DARK'.",
+            "explanation": "'Darkroom' names a specific type of room, so as a compound noun it stresses the first element, 'dark'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L142_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_426",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "Please turn on the light - this dark room is hard to see in.",
+            "textToSpeak": "Please turn on the light - this dark room is hard to see in.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Compound Stress: DARKroom (a Room for Developing Photos)",
+                "Phrase Stress: dark ROOM (Any Room That Is Dark)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
+            "correctAnswer": "Phrase Stress: dark ROOM (Any Room That Is Dark)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -144,47 +144,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 142-3)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "This is simply an ordinary room that lacks light, not a special photography space. Listen for the stress to land on 'ROOM'.",
+            "explanation": "Here 'dark' just describes the lighting of an ordinary room, so the adjective + noun phrase stresses the noun 'room'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L143_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_427",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "We grilled hotdogs for the barbecue.",
+            "textToSpeak": "We grilled hotdogs for the barbecue.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Compound Stress: HOTdogs (a Type of Food)",
+                "Phrase Stress: hot DOGS (Dogs That Are Overheated)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Compound Stress: HOTdogs (a Type of Food)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 143-1)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "This is a food item being grilled, not an overheated animal. Listen for the stress to land on 'HOT'.",
+            "explanation": "'Hotdog' names a specific food, so as a compound noun it stresses the first element, 'hot'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L143_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_428",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "The poor dog was panting - that hot dog needed water badly.",
+            "textToSpeak": "The poor dog was panting - that hot dog needed water badly.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Phrase Stress: hot DOG (a Dog That Is Overheated)",
+                "Compound Stress: HOTdog (a Type of Food)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Phrase Stress: hot DOG (a Dog That Is Overheated)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -192,46 +192,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 143-2)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "This is a literal animal suffering from heat, not a food item. Listen for the stress to land on 'DOG'.",
+            "explanation": "Here 'hot' describes the temperature of an actual dog, so the adjective + noun phrase stresses the noun 'dog'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L143_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_429",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "Bluebells bloom across the forest every spring.",
+            "textToSpeak": "Bluebells bloom across the forest every spring.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Compound Stress: BLUEbells (a Type of Flower)",
+                "Phrase Stress: blue BELLS (Bells That Are Blue)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Compound Stress: BLUEbells (a Type of Flower)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 143-3)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "These are flowers blooming in a forest, not literal ringing bells. Listen for the stress to land on 'BLUE'.",
+            "explanation": "'Bluebell' names a flower species, so as a compound noun it stresses the first element, 'blue'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L144_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_430",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "The blue bell on the bicycle rang loudly.",
+            "textToSpeak": "The blue bell on the bicycle rang loudly.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Compound Stress: BLUEbell (a Type of Flower)",
+                "Phrase Stress: blue BELL (a Bell That Is Blue)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
+            "correctAnswer": "Phrase Stress: blue BELL (a Bell That Is Blue)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -240,47 +240,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 144-1)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "This is a literal bell attached to a bicycle, not a flower. Listen for the stress to land on 'BELL'.",
+            "explanation": "Here 'blue' just describes the color of an actual bell, so the adjective + noun phrase stresses the noun 'bell'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L144_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_431",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "The teacher wrote the homework on the whiteboard.",
+            "textToSpeak": "The teacher wrote the homework on the whiteboard.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Compound Stress: WHITEboard (a Writing Surface for Class)",
+                "Phrase Stress: white BOARD (a Board That Is White)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Compound Stress: WHITEboard (a Writing Surface for Class)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 144-2)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "This names a specific classroom writing surface, not just any pale-colored board. Listen for the stress to land on 'WHITE'.",
+            "explanation": "'Whiteboard' names a specific writing surface, so as a compound noun it stresses the first element, 'white'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L144_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_432",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "We need a plain white board for the new sign.",
+            "textToSpeak": "We need a plain white board for the new sign.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Phrase Stress: white BOARD (a Board That Is White)",
+                "Compound Stress: WHITEboard (a Writing Surface for Class)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Phrase Stress: white BOARD (a Board That Is White)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -288,46 +288,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 144-3)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "This is just an ordinary board that happens to be white, not a classroom writing surface. Listen for the stress to land on 'BOARD'.",
+            "explanation": "Here 'white' just describes the color of an ordinary board, so the adjective + noun phrase stresses the noun 'board'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L145_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_433",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "The students copied notes from the blackboard.",
+            "textToSpeak": "The students copied notes from the blackboard.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Compound Stress: BLACKboard (a Classroom Writing Surface)",
+                "Phrase Stress: black BOARD (a Board That Is Black)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Compound Stress: BLACKboard (a Classroom Writing Surface)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 145-1)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "This names a specific classroom surface, not just any dark-colored board. Listen for the stress to land on 'BLACK'.",
+            "explanation": "'Blackboard' names a specific classroom item, so as a compound noun it stresses the first element, 'black'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L145_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_434",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "He painted the board black, and that black board now hangs in the garage.",
+            "textToSpeak": "He painted the board black, and that black board now hangs in the garage.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Compound Stress: BLACKboard (a Classroom Writing Surface)",
+                "Phrase Stress: black BOARD (a Board That Is Black)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
+            "correctAnswer": "Phrase Stress: black BOARD (a Board That Is Black)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -336,46 +336,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 145-2)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "This is just an ordinary board that someone painted black, not a classroom item. Listen for the stress to land on 'BOARD'.",
+            "explanation": "Here 'black' just describes the color of an ordinary board, so the adjective + noun phrase stresses the noun 'board'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L145_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_435",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "The baby sat happily in the highchair.",
+            "textToSpeak": "The baby sat happily in the highchair.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Phrase Stress: high CHAIR (Any Chair That Is Tall)",
+                "Compound Stress: HIGHchair (a Baby's Feeding Chair)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
+            "correctAnswer": "Compound Stress: HIGHchair (a Baby's Feeding Chair)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 145-3)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "This names a specific kind of chair for feeding a baby, not just any tall seat. Listen for the stress to land on 'HIGH'.",
+            "explanation": "'Highchair' names a specific piece of furniture, so as a compound noun it stresses the first element, 'high'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L146_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_436",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "Please bring me that high chair from the storage room.",
+            "textToSpeak": "Please bring me that high chair from the storage room.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Compound Stress: HIGHchair (a Baby's Feeding Chair)",
+                "Phrase Stress: high CHAIR (Any Chair That Is Tall)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
+            "correctAnswer": "Phrase Stress: high CHAIR (Any Chair That Is Tall)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -384,46 +384,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 146-1)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "This is just any tall chair from storage, not a baby's feeding chair. Listen for the stress to land on 'CHAIR'.",
+            "explanation": "Here 'high' just describes the height of an ordinary chair, so the adjective + noun phrase stresses the noun 'chair'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L146_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_437",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "The lighthouse guided ships safely into the harbor.",
+            "textToSpeak": "The lighthouse guided ships safely into the harbor.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Compound Stress: LIGHThouse (a Coastal Navigation Tower)",
+                "Phrase Stress: light HOUSE (a House That Is Light or Light-Coloured)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Compound Stress: LIGHThouse (a Coastal Navigation Tower)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 146-2)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "This names a specific navigational structure on the coast, not just a pale or lightweight house. Listen for the stress to land on 'LIGHT'.",
+            "explanation": "'Lighthouse' names a specific structure, so as a compound noun it stresses the first element, 'light'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L146_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_438",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "We rented a light house near the beach for the summer.",
+            "textToSpeak": "We rented a light house near the beach for the summer.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Compound Stress: LIGHThouse (a Coastal Navigation Tower)",
+                "Phrase Stress: light HOUSE (a House That Is Light or Light-Coloured)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
+            "correctAnswer": "Phrase Stress: light HOUSE (a House That Is Light or Light-Coloured)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -432,47 +432,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 146-3)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "This is just an ordinary rental house that happens to be light-colored, not a navigation tower. Listen for the stress to land on 'HOUSE'.",
+            "explanation": "Here 'light' just describes the color of an ordinary house, so the adjective + noun phrase stresses the noun 'house'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L147_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_439",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "My daughter won a goldfish at the school fair.",
+            "textToSpeak": "My daughter won a goldfish at the school fair.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Phrase Stress: gold FISH (a Fish Made of or Coloured Gold)",
+                "Compound Stress: GOLDfish (a Small Pet Fish)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
+            "correctAnswer": "Compound Stress: GOLDfish (a Small Pet Fish)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 147-1)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "This is a common small pet fish, not literally a fish made of gold. Listen for the stress to land on 'GOLD'.",
+            "explanation": "'Goldfish' names a specific kind of pet fish, so as a compound noun it stresses the first element, 'gold'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L147_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_440",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "The artist sculpted a gold fish for the fountain.",
+            "textToSpeak": "The artist sculpted a gold fish for the fountain.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Phrase Stress: gold FISH (a Fish Made of or Coloured Gold)",
+                "Compound Stress: GOLDfish (a Small Pet Fish)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Phrase Stress: gold FISH (a Fish Made of or Coloured Gold)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -480,47 +480,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 147-2)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "This is a sculpture made of the metal gold, not a living pet. Listen for the stress to land on 'FISH'.",
+            "explanation": "Here 'gold' describes the material of a sculpted fish, so the adjective + noun phrase stresses the noun 'fish'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L147_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_441",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The commander builds a laser boldly.",
-            "textToSpeak": "The commander builds a laser boldly.",
+            "word": "The actors relaxed in the greenroom before the show.",
+            "textToSpeak": "The actors relaxed in the greenroom before the show.",
             "options": [
-                "Emphasis on COMMANDER (Subject focus)",
-                "Emphasis on LASER (Object focus)"
+                "Phrase Stress: green ROOM (a Room That Is Painted Green)",
+                "Compound Stress: GREENroom (a Backstage Waiting Area)"
             ],
-            "correctAnswer": "Emphasis on LASER (Object focus)",
+            "correctAnswer": "Compound Stress: GREENroom (a Backstage Waiting Area)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 147-3)",
-            "explanation": "In neutral connected speech, English highlights the final content word (the noun 'laser') with the primary pitch peak."
+            "hint": "This names a specific backstage waiting area for performers, not just a room painted that color. Listen for the stress to land on 'GREEN'.",
+            "explanation": "'Greenroom' names a specific backstage space, so as a compound noun it stresses the first element, 'green'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L148_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_442",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A scientist upgrades the module quietly.",
-            "textToSpeak": "A scientist upgrades the module quietly.",
+            "word": "We repainted the green room into a soft blue.",
+            "textToSpeak": "We repainted the green room into a soft blue.",
             "options": [
-                "Emphasis on SCIENTIST (Subject focus)",
-                "Emphasis on MODULE (Object focus)"
+                "Phrase Stress: green ROOM (a Room That Is Painted Green)",
+                "Compound Stress: GREENroom (a Backstage Waiting Area)"
             ],
-            "correctAnswer": "Emphasis on MODULE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Phrase Stress: green ROOM (a Room That Is Painted Green)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -528,46 +528,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 148-1)",
-            "explanation": "Neutral intonation places the main accent on the final noun 'module', rising and then falling."
+            "hint": "This is just an ordinary room that used to be green, not a backstage space. Listen for the stress to land on 'ROOM'.",
+            "explanation": "Here 'green' just describes the former color of an ordinary room, so the adjective + noun phrase stresses the noun 'room'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L148_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_443",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A spy repairs the circuit rapidly.",
-            "textToSpeak": "A spy repairs the circuit rapidly.",
+            "word": "A bluebottle buzzed loudly around the kitchen.",
+            "textToSpeak": "A bluebottle buzzed loudly around the kitchen.",
             "options": [
-                "Emphasis on SPY (Subject focus)",
-                "Emphasis on CIRCUIT (Object focus)"
+                "Phrase Stress: blue BOTTLE (a Bottle That Is Blue)",
+                "Compound Stress: BLUEbottle (a Type of Fly)"
             ],
-            "correctAnswer": "Emphasis on CIRCUIT (Object focus)",
+            "correctAnswer": "Compound Stress: BLUEbottle (a Type of Fly)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 148-2)",
-            "explanation": "Primary stress occurs on the object 'circuit' with pitch peak peaking on the first syllable /sɜː/."
+            "hint": "This is a buzzing insect in the kitchen, not a glass container. Listen for the stress to land on 'BLUE'.",
+            "explanation": "'Bluebottle' names a species of fly, so as a compound noun it stresses the first element, 'blue'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L148_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_444",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The doctor activates the engine cautiously.",
-            "textToSpeak": "The doctor activates the engine cautiously.",
+            "word": "The collector displayed a rare blue bottle on the shelf.",
+            "textToSpeak": "The collector displayed a rare blue bottle on the shelf.",
             "options": [
-                "Emphasis on DOCTOR (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Compound Stress: BLUEbottle (a Type of Fly)",
+                "Phrase Stress: blue BOTTLE (a Bottle That Is Blue)"
             ],
-            "correctAnswer": "Emphasis on ENGINE (Object focus)",
+            "correctAnswer": "Phrase Stress: blue BOTTLE (a Bottle That Is Blue)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -576,47 +576,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 148-3)",
-            "explanation": "The focal pitch accent targets the final content word 'engine' under neutral connected speech."
+            "hint": "This is a glass container being displayed, not an insect. Listen for the stress to land on 'BOTTLE'.",
+            "explanation": "Here 'blue' just describes the color of an actual bottle, so the adjective + noun phrase stresses the noun 'bottle'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L149_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_445",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A student observes a system quickly.",
-            "textToSpeak": "A student observes a system quickly.",
+            "word": "He called his wife 'sweetheart' every morning.",
+            "textToSpeak": "He called his wife 'sweetheart' every morning.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Compound Stress: SWEETheart (a Term of Endearment)",
+                "Phrase Stress: sweet HEART (a Heart That Tastes Sweet)"
             ],
-            "correctAnswer": "Emphasis on SYSTEM (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Compound Stress: SWEETheart (a Term of Endearment)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 149-1)",
-            "explanation": "Standard phrasing highlights 'system' with the nuclear pitch accent contour."
+            "hint": "This is an affectionate nickname for a loved one, not a literal description of a heart. Listen for the stress to land on 'SWEET'.",
+            "explanation": "'Sweetheart' is a term of endearment, so as a compound noun it stresses the first element, 'sweet'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L149_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_446",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hero protects the software smoothly.",
-            "textToSpeak": "The hero protects the software smoothly.",
+            "word": "The candy shaped like a sweet heart melted in the sun.",
+            "textToSpeak": "The candy shaped like a sweet heart melted in the sun.",
             "options": [
-                "Emphasis on HERO (Subject focus)",
-                "Emphasis on SOFTWARE (Object focus)"
+                "Phrase Stress: sweet HEART (a Heart-Shaped Sweet)",
+                "Compound Stress: SWEETheart (a Term of Endearment)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Phrase Stress: sweet HEART (a Heart-Shaped Sweet)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -624,47 +624,47 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 149-2)",
-            "explanation": "Standard declarative pitch peak falls on the final noun 'software'."
+            "hint": "This is a literal heart-shaped piece of candy, not a nickname for a person. Listen for the stress to land on 'HEART'.",
+            "explanation": "Here 'sweet' describes a literal heart-shaped candy, so the adjective + noun phrase stresses the noun 'heart'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L149_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_447",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A chef assembles the shield silently.",
-            "textToSpeak": "A chef assembles the shield silently.",
+            "word": "The bigwig from headquarters visited the office today.",
+            "textToSpeak": "The bigwig from headquarters visited the office today.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on SHIELD (Object focus)"
+                "Compound Stress: BIGwig (an Important, Influential Person)",
+                "Phrase Stress: big WIG (a Wig That Is Large)"
             ],
-            "correctAnswer": "Emphasis on SHIELD (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Compound Stress: BIGwig (an Important, Influential Person)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 149-3)",
-            "explanation": "The nucleus of the tone unit falls on 'shield', creating a pitch match on the target noun."
+            "hint": "This refers to an important visiting executive, not a piece of hair. Listen for the stress to land on 'BIG'.",
+            "explanation": "'Bigwig' refers to an important person, so as a compound noun it stresses the first element, 'big'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L150_Q1",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_448",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver receives a reactor immediately.",
-            "textToSpeak": "The driver receives a reactor immediately.",
+            "word": "The actor wore a big wig for his comedic role.",
+            "textToSpeak": "The actor wore a big wig for his comedic role.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on REACTOR (Object focus)"
+                "Phrase Stress: big WIG (a Wig That Is Large)",
+                "Compound Stress: BIGwig (an Important, Influential Person)"
             ],
-            "correctAnswer": "Emphasis on REACTOR (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Phrase Stress: big WIG (a Wig That Is Large)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -672,46 +672,46 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 150-1)",
-            "explanation": "Neutral intonation targets the noun 'reactor' with rising-falling nuclear pitch stress."
+            "hint": "This is a literal large hairpiece worn for a costume, not a reference to an important person. Listen for the stress to land on 'WIG'.",
+            "explanation": "Here 'big' describes the size of a literal wig, so the adjective + noun phrase stresses the noun 'wig'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L150_Q2",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_449",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A technician configures a drone carefully.",
-            "textToSpeak": "A technician configures a drone carefully.",
+            "word": "We kept the jewelry locked in the strongbox.",
+            "textToSpeak": "We kept the jewelry locked in the strongbox.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on DRONE (Object focus)"
+                "Compound Stress: STRONGbox (a Small Safe for Valuables)",
+                "Phrase Stress: strong BOX (a Box That Is Sturdy)"
             ],
-            "correctAnswer": "Emphasis on DRONE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Compound Stress: STRONGbox (a Small Safe for Valuables)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 150-2)",
-            "explanation": "The focus is centered on 'drone' with the pitch peak occurring on its diphthong /əʊ/."
+            "hint": "This names a specific small safe for valuables, not just any sturdy container. Listen for the stress to land on 'STRONG'.",
+            "explanation": "'Strongbox' names a specific kind of safe, so as a compound noun it stresses the first element, 'strong'."
         },
         {
-            "id": "ACC_PITCHPATTERNMATCH_L150_Q3",
-            "instruction": "IDENTIFY THE CORRECT PITCH BluePRINT THAT MATCHES THE SENTENCE NUCLEAR STRESS",
+            "id": "pitchPatternMatch_450",
+            "instruction": "Listen to the audio and select the matching pitch pattern.",
             "difficulty": 4,
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "A manager launches the sensor perfectly.",
-            "textToSpeak": "A manager launches the sensor perfectly.",
+            "word": "He built a strong box to ship the fragile vases.",
+            "textToSpeak": "He built a strong box to ship the fragile vases.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on SENSOR (Object focus)"
+                "Compound Stress: STRONGbox (a Small Safe for Valuables)",
+                "Phrase Stress: strong BOX (a Box That Is Sturdy)"
             ],
-            "correctAnswer": "Emphasis on SENSOR (Object focus)",
+            "correctAnswer": "Phrase Stress: strong BOX (a Box That Is Sturdy)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -720,8 +720,8 @@
                 3,
                 1
             ],
-            "hint": "Listen to where the pitch peaks in the sentence. Does the voice emphasize the subject or the direct object? (Calibration 150-3)",
-            "explanation": "Standard inflective contour places nuclear pitch emphasis on the noun 'sensor'."
+            "hint": "This is just an ordinary sturdy shipping container, not a safe for valuables. Listen for the stress to land on 'BOX'.",
+            "explanation": "Here 'strong' just describes the durability of an ordinary box, so the adjective + noun phrase stresses the noun 'box'."
         }
     ]
 }
