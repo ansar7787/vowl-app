@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -148,6 +149,20 @@ class AppRouter {
 
     // 5. Authenticated + verified — redirect away from auth/verify/root.
     if (isAuthRoute || path == verifyEmailRoute || path == '/') {
+      final currentUser = FirebaseAuth.instance.currentUser;
+      final isNewUser = currentUser != null &&
+          currentUser.metadata.creationTime != null &&
+          currentUser.metadata.lastSignInTime != null &&
+          currentUser.metadata.creationTime!
+                  .difference(currentUser.metadata.lastSignInTime!)
+                  .inSeconds
+                  .abs() <
+              5;
+
+      if (isNewUser) {
+        final name = currentUser.displayName ?? 'Traveler';
+        return '$hatchingRoute?name=${Uri.encodeComponent(name)}';
+      }
       return homeRoute;
     }
 

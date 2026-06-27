@@ -2,11 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
-import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -133,10 +131,9 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
         // Navigation: email verified
         if (state.user?.isEmailVerified == true) {
           _verificationTimer?.cancel();
-          final name = state.user?.displayName ?? 'Traveler';
-          context.go(
-            '${AppRouter.hatchingRoute}?name=${Uri.encodeComponent(name)}',
-          );
+          // Do nothing. We rely on GoRouter's automatic redirect (refreshListenable)
+          // which evaluates _redirect in app_router.dart when AuthBloc completes its
+          // backend synchronization. This automatically routes new users to hatching.
           return;
         }
 

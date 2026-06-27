@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -66,15 +65,10 @@ class _LoginViewState extends State<LoginView> {
           listener: (context, state) {
             if (state.isSuccess) {
               context.read<AuthBloc>().add(const AuthReloadUser());
-              if (state.isNewUser) {
-                final userName = FirebaseAuth.instance.currentUser?.displayName ?? 'Traveler';
-                context.go('${AppRouter.hatchingRoute}?name=${Uri.encodeComponent(userName)}');
-              } else {
-                // Do nothing. We rely on GoRouter's automatic redirect (refreshListenable)
-                // which evaluates _redirect in app_router.dart when AuthBloc completes its
-                // backend synchronization. This ensures the LoadingOverlay remains perfectly
-                // visible without flashing the login form during the transition.
-              }
+              // Do nothing. We rely on GoRouter's automatic redirect (refreshListenable)
+              // which evaluates _redirect in app_router.dart when AuthBloc completes its
+              // backend synchronization. This ensures the LoadingOverlay remains perfectly
+              // visible without flashing the login form during the transition.
             }
             if (state.errorMessage != null) {
               final isWarning = state.errorMessage!.contains('cancel');
