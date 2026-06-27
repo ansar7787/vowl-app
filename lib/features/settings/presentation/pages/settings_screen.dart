@@ -7,12 +7,10 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:vowl/features/settings/presentation/pages/legal_content_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_widgets.dart';
-import 'package:vowl/features/settings/presentation/widgets/legal_constants.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -140,17 +138,26 @@ class _SettingsScreenState extends State<SettingsScreen> {
         .join('&');
   }
 
-  void _handleLegalLink(BuildContext context, String title) {
-    final content = title == context.tr('settings.terms_of_service')
-        ? LegalConstants.termsOfService
-        : LegalConstants.privacyPolicy;
+  Future<void> _handleLegalLink(BuildContext context, String title) async {
+    final isTerms = title == context.tr('settings.terms_of_service');
+    
+    final urlString = isTerms 
+        ? 'https://ansar7787.github.io/vowl-legal/terms.html'
+        : 'https://ansar7787.github.io/vowl-legal/privacy.html';
 
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => LegalContentScreen(title: title, content: content),
-      ),
-    );
+    final Uri url = Uri.parse(urlString);
+
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+    } else {
+      if (context.mounted) {
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr('settings.email_error', fallback: 'Could not open link'),
+          type: CustomSnackBarType.error,
+        );
+      }
+    }
   }
 
   Future<void> _handleClearCache(BuildContext context) async {
