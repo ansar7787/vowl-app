@@ -679,27 +679,27 @@ class StoryServiceImpl implements StoryService {
   Color _getCategoryColor(String categoryId) {
     final String id = categoryId.toLowerCase();
     if (id.contains('alphabet') || id.contains('speak')) {
-      return const Color(0xFFF43F5E);
+      return const Color(0xFFE11D48); // Rose 600 (was 500)
     }
     if (id.contains('number') || id.contains('grammar')) {
-      return const Color(0xFF0EA5E9);
+      return const Color(0xFF0284C7); // Sky 600 (was 500)
     }
     if (id.contains('color') || id.contains('write')) {
-      return const Color(0xFFF59E0B);
+      return const Color(0xFFD97706); // Amber 600 (was 500)
     }
     if (id.contains('animal') || id.contains('listen')) {
-      return const Color(0xFF6366F1);
+      return const Color(0xFF4F46E5); // Indigo 600 (was 500)
     }
     if (id.contains('fruit') || id.contains('accent')) {
-      return const Color(0xFFEF4444);
+      return const Color(0xFFDC2626); // Red 600 (was 500)
     }
     if (id.contains('emotion') || id.contains('roleplay')) {
-      return const Color(0xFF06B6D4);
+      return const Color(0xFF0891B2); // Cyan 600 (was 500)
     }
     if (id.contains('transport') || id.contains('read')) {
-      return const Color(0xFF2563EB);
+      return const Color(0xFF1D4ED8); // Blue 700 (was 600)
     }
-    if (id.contains('elite')) return const Color(0xFFFFD700);
-    return const Color(0xFF6366F1);
+    if (id.contains('elite')) return const Color(0xFFEAB308); // Yellow 500 (was Gold)
+    return const Color(0xFF4F46E5); // Indigo 600
   }
 }
