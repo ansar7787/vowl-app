@@ -14,16 +14,27 @@ abstract class NetworkInfo {
 
   /// Emits real-time, deduped network connectivity status updates.
   Stream<AppNetworkStatus> get onStatusChange;
+
+  /// Sets a persistent override that forces network checks to return online.
+  /// Used to enable offline-play for Premium users seamlessly.
+  void setPremiumOverride(bool isPremium);
 }
 
 /// Concrete high-performance implementation of the [NetworkInfo] contract.
 class NetworkInfoImpl implements NetworkInfo {
   final InternetConnection _connectionChecker;
+  bool _isPremiumOverride = false;
 
   NetworkInfoImpl(this._connectionChecker);
 
   @override
+  void setPremiumOverride(bool isPremium) {
+    _isPremiumOverride = isPremium;
+  }
+
+  @override
   Future<bool> get isConnected async {
+    if (_isPremiumOverride) return true;
     try {
       // Defensive timeout protection: prevents hanging indefinitely on highly congested networks.
       return await _connectionChecker.hasInternetAccess.timeout(
@@ -40,6 +51,8 @@ class NetworkInfoImpl implements NetworkInfo {
     // Dynamic mapping: converts third-party InternetStatus into application-specific AppNetworkStatus.
     return _connectionChecker.onStatusChange.map(
       (status) {
+        if (_isPremiumOverride) return AppNetworkStatus.online;
+        
         switch (status) {
           case InternetStatus.connected:
             return AppNetworkStatus.online;

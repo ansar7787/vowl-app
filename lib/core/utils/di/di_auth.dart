@@ -218,6 +218,7 @@ void initAuthFeature(GetIt sl) {
       forgotPassword: sl<ForgotPassword>(),
       getCurrentUser: sl<GetCurrentUser>(),
       sendEmailVerification: sl<SendEmailVerification>(),
+      networkInfo: sl<NetworkInfo>(),
     ),
   );
   sl.registerLazySingleton<EconomyBloc>(

@@ -11,6 +11,7 @@ import 'package:vowl/features/auth/domain/usecases/get_user_stream.dart';
 import 'package:vowl/features/auth/domain/usecases/log_out.dart';
 import 'package:vowl/features/auth/domain/usecases/reload_user.dart';
 import 'package:vowl/features/auth/domain/usecases/send_email_verification.dart';
+import 'package:vowl/core/network/network_info.dart';
 
 // ============================================================================
 // EVENTS
@@ -129,6 +130,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final ForgotPassword _forgotPassword;
   final GetCurrentUser _getCurrentUser;
   final SendEmailVerification _sendEmailVerification;
+  final NetworkInfo _networkInfo;
 
   StreamSubscription<UserEntity?>? _userSubscription;
 
@@ -140,6 +142,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     required ForgotPassword forgotPassword,
     required GetCurrentUser getCurrentUser,
     required SendEmailVerification sendEmailVerification,
+    required NetworkInfo networkInfo,
   }) : _getUserStream = getUserStream,
        _logOut = logOut,
        _reloadUser = reloadUser,
@@ -147,6 +150,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
        _forgotPassword = forgotPassword,
        _getCurrentUser = getCurrentUser,
        _sendEmailVerification = sendEmailVerification,
+       _networkInfo = networkInfo,
        super(const AuthState.unknown()) {
     on<AuthUserChanged>(_onUserChanged);
     on<AuthLogoutRequested>(_onLogoutRequested);
@@ -167,6 +171,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   // ---------------------------------------------------------------------------
 
   void _onUserChanged(AuthUserChanged event, Emitter<AuthState> emit) {
+    _networkInfo.setPremiumOverride(event.user?.isPremium ?? false);
+    
     if (event.user != null) {
       emit(AuthState.authenticated(event.user!));
     } else {
