@@ -66,7 +66,10 @@ class _SignUpViewState extends State<SignUpView> {
       listener: (context, state) {
         if (state.isSuccess) {
           context.read<AuthBloc>().add(const AuthReloadUser());
-          context.go(AppRouter.verifyEmailRoute);
+          // Do nothing. We rely on GoRouter's automatic redirect (refreshListenable)
+          // which evaluates _redirect in app_router.dart when AuthBloc completes its
+          // backend synchronization. This ensures the LoadingOverlay remains perfectly
+          // visible without flashing any intermediate UI during the transition.
         }
         if (state.errorMessage != null) {
           _showSnackBar(context, state.errorMessage!, CustomSnackBarType.error);

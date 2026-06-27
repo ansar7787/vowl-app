@@ -70,7 +70,10 @@ class _LoginViewState extends State<LoginView> {
                 final userName = FirebaseAuth.instance.currentUser?.displayName ?? 'Traveler';
                 context.go('${AppRouter.hatchingRoute}?name=${Uri.encodeComponent(userName)}');
               } else {
-                context.go(AppRouter.homeRoute);
+                // Do nothing. We rely on GoRouter's automatic redirect (refreshListenable)
+                // which evaluates _redirect in app_router.dart when AuthBloc completes its
+                // backend synchronization. This ensures the LoadingOverlay remains perfectly
+                // visible without flashing the login form during the transition.
               }
             }
             if (state.errorMessage != null) {
