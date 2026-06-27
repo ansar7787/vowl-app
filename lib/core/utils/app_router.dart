@@ -124,8 +124,7 @@ class AppRouter {
     final isForgotPasswordRoute = path == forgotPasswordRoute;
     final isSplashRoute = path == splashRoute;
     final isAuthRoute = isLoginRoute || isSignupRoute || isForgotPasswordRoute;
-    final isTransitionRoute = path == verifyEmailRoute || path == hatchingRoute;
-    final isAllowedUnauth = isAuthRoute || isSplashRoute || isTransitionRoute;
+    final isAllowedUnauth = isAuthRoute || isSplashRoute;
 
     // Splash: always allowed while auth resolves.
     if (isSplashRoute) return null;
