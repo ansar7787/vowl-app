@@ -277,11 +277,11 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                           final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
                           final isCompleted = level <= highestCompleted;
                           final isPlayable = level == highestCompleted + 1 && level <= unlockedLevel;
-                          final isTollGate = level == highestCompleted + 1 && level > unlockedLevel && !isPremium;
+                          final isTollGate = level == unlockedLevel + 1 && !isPremium;
                           final isHalfUnlocked = level > highestCompleted + 1 && level <= unlockedLevel;
                           final isNextZone = level > unlockedLevel + 1 && level <= unlockedLevel + 3 && !isPremium;
-                          final isLocked = !isCompleted && !isPlayable && !isHalfUnlocked && !isTollGate;
-                          final isCurrent = isPlayable || isTollGate;
+                          final isLocked = !isCompleted && !isPlayable && !isHalfUnlocked && !isTollGate && !isNextZone;
+                          final isCurrent = isPlayable || (isTollGate && level == highestCompleted + 1);
                           final isLast = index == 199;
 
                           final currentOffset = _getHorizontalOffset(
@@ -816,6 +816,17 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     return ScaleButton(
       onTap: () {
         if (isTollGate) {
+          final completedLevels = context.read<AuthBloc>().state.user?.completedLevels[widget.gameType] ?? [];
+          final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
+          
+          if (level > highestCompleted + 1) {
+             CustomSnackBar.show(
+               context: context,
+               message: context.tr('games.kids_level_locked_sequence', fallback: 'Complete previous levels first!'),
+               type: CustomSnackBarType.info,
+             );
+             return;
+          }
           KidsTollGateBottomSheet.show(
             context: context,
             level: level,

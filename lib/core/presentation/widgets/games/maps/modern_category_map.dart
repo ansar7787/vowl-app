@@ -670,13 +670,15 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   ) {
     final bool isCompleted = level <= completedLevels;
     final bool isPlayable = level == completedLevels + 1 && level <= unlockedLevels;
-    final bool isTollGate = level == completedLevels + 1 && level > unlockedLevels && !isPremium;
+    // Toll Gate always visible ahead of time
+    final bool isTollGate = level == unlockedLevels + 1 && !isPremium;
     final bool isHalfUnlocked = level > completedLevels + 1 && level <= unlockedLevels;
     final bool isNextZone = level > unlockedLevels + 1 && level <= unlockedLevels + 3 && !isPremium;
     
     // They can only play if they actually reached it sequentially.
     final bool isUnlockedForClick = isCompleted || isPlayable;
-    final bool isCurrent = isPlayable || isTollGate;
+    // Only pulse if it's the current actionable step
+    final bool isCurrent = isPlayable || (isTollGate && level == completedLevels + 1);
     Color tierColor = theme.primaryColor;
     if (isTollGate) {
       tierColor = Colors.amber;
@@ -715,6 +717,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
             child: ScaleButton(
               onTap: () {
                 if (isTollGate) {
+                  if (level > completedLevels + 1) {
+                    _showLockedFeedback(context, Colors.amber);
+                    return;
+                  }
                   TollGateBottomSheet.show(context: context, level: level, gameType: widget.gameType);
                   return;
                 }
