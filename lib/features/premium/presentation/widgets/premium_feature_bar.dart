@@ -51,8 +51,8 @@ class ModernFeatureBar extends StatelessWidget {
           ),
           Expanded(
             child: FeatureItem(
-              icon: Icons.workspace_premium_rounded,
-              label: context.tr('premium.feature_pro_status'),
+              icon: Icons.lock_open_rounded,
+              label: context.tr('premium.feature_unlimited_levels'),
               isDark: isDark,
             ),
           ),
