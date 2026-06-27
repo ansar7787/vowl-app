@@ -945,8 +945,8 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final deleteWord = context.tr('common.delete').toUpperCase();
-    final isConfirmed = _confirmController.text == deleteWord;
+    const deleteWord = 'DELETE';
+    final isConfirmed = _confirmController.text.trim() == deleteWord;
 
     return GlassTile(
       width: widget.dialogWidth,
@@ -977,13 +977,14 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
           SizedBox(height: 24.h),
           TextField(
             controller: _confirmController,
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
               color: isDark ? Colors.white : const Color(0xFF0F172A),
               fontWeight: FontWeight.bold,
             ),
             decoration: InputDecoration(
-              hintText: deleteWord,
+              hintText: 'DELETE',
               hintStyle: TextStyle(
                 fontFamily: 'Outfit',
                 color: isDark ? Colors.white10 : Colors.black12,

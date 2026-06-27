@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import 'package:vowl/core/network/network_info.dart';
@@ -83,7 +84,7 @@ void initAuthFeature(GetIt sl) {
       remoteDataSource: sl<AuthRemoteDataSource>(),
       firebaseAuth: sl<FirebaseAuth>(),
       firestore: sl<FirebaseFirestore>(),
-      storage: sl<FirebaseStorage>(),
+      firebaseMessaging: sl<FirebaseMessaging>(),
     ),
   );
   sl.registerLazySingleton<UserRepository>(

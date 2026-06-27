@@ -318,13 +318,14 @@ class _MyAppState extends State<MyApp> {
                                   final isWarning =
                                       msg.contains('security') ||
                                       msg.contains('cancelled');
-                                  final isVerificationMsg =
-                                      msg == 'auth.email_verification_sent';
+                                  final isSuccessMsg =
+                                      msg == 'auth.email_verification_sent' ||
+                                      msg == 'settings_dialogs.account_deleted_success';
                                   CustomSnackBar.show(
                                     context: context,
                                     // Localize the message key
                                     message: context.tr(msg),
-                                    type: isVerificationMsg
+                                    type: isSuccessMsg
                                         ? CustomSnackBarType.success
                                         : (authState.status ==
                                                   AuthStatus.unauthenticated &&

@@ -241,7 +241,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       },
       (_) async {
         await _logOut(const NoParams());
-        emit(const AuthState.unauthenticated());
+        emit(
+          state.copyWith(
+            status: AuthStatus.unauthenticated,
+            message: () => 'settings_dialogs.account_deleted_success',
+          ),
+        );
       },
     );
   }

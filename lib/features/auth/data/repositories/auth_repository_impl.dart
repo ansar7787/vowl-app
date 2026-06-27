@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/error/failures.dart';
@@ -28,20 +28,17 @@ import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
 /// repository instances repeatedly.
 ///
 /// ### deleteAccount ordering
-/// Firebase Auth deletion happens **first** so that, if it fails with
-/// [requires-recent-login], no user data is lost. After a successful auth
-/// deletion the SDK retains a briefly-valid cached token that allows the
-/// subsequent Firestore and Storage cleanup calls to proceed. All cleanup
-/// failures are caught and logged as non-blocking — orphaned server data is a
-/// recoverable operational concern, whereas leaving the auth account active
-/// after a user requested deletion is not.
+/// We use the Firebase "Delete User Data" Extension to handle database cleanup.
+/// Therefore, this repository only needs to delete the Auth account. If the
+/// auth deletion fails (e.g. requires-recent-login), the user retains all their
+/// data safely. Once auth deletion succeeds, the Extension wipes Firestore and Storage.
 class AuthRepositoryImpl
     with FirebaseFailureHandlerMixin
     implements AuthRepository {
   final AuthRemoteDataSource _remoteDataSource;
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
-  final FirebaseStorage _storage;
+  final FirebaseMessaging _firebaseMessaging;
 
   // ---------------------------------------------------------------------------
   // Stream controller & subscriptions
@@ -56,11 +53,11 @@ class AuthRepositoryImpl
     required AuthRemoteDataSource remoteDataSource,
     firebase_auth.FirebaseAuth? firebaseAuth,
     FirebaseFirestore? firestore,
-    FirebaseStorage? storage,
+    FirebaseMessaging? firebaseMessaging,
   }) : _remoteDataSource = remoteDataSource,
        _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
        _firestore = firestore ?? FirebaseFirestore.instance,
-       _storage = storage ?? FirebaseStorage.instance {
+       _firebaseMessaging = firebaseMessaging ?? FirebaseMessaging.instance {
     _initUserStream();
   }
 
@@ -314,35 +311,35 @@ class AuthRepositoryImpl
         return Left(AuthFailure('User not logged in'));
       }
 
-      final uid = user.uid;
+      // STOP LISTENING to Firestore before we delete the document.
+      // If we don't do this, the deletion triggers a snapshot event saying the
+      // doc doesn't exist, which causes the AuthBloc to briefly emit a "fresh account"
+      // state, hiding the loading overlay and flashing the Home Screen.
+      _firestoreSubscription?.cancel();
+      _firestoreSubscription = null;
 
-      // Step 1 — Delete Firestore Data FIRST
+      // Step 1 — Delete the Firebase Auth account
       //
-      // If we delete the Auth user first, the authentication token is immediately
-      // revoked, causing Firestore security rules to block the deletion of the
-      // user's document. This leads to orphaned data and "new account" bugs
-      // if the user signs up again with the same email.
-      try {
-        await _firestore.collection('users').doc(uid).delete();
-      } catch (e) {
-        _log('DeleteAccount: Firestore cleanup failed (non-critical): $e');
-      }
-
-      // Step 2 — Delete Storage Profile Picture
-      try {
-        await _storage.ref().child('profile_pics').child('$uid.jpg').delete();
-      } catch (e) {
-        _log('DeleteAccount: Storage cleanup failed (non-critical): $e');
-      }
-
-      // Step 3 — Delete the Firebase Auth account
+      // Because we use the Firebase "Delete User Data" Extension on the server,
+      // we only need to delete the Auth account here. The extension will automatically
+      // detect the deletion and securely wipe the user's Firestore and Storage data
+      // using Admin privileges in the background.
       //
-      // If this fails with `requires-recent-login`, the user's data was already
-      // wiped, which aligns with their intent to delete. The UI will prompt
-      // them to log in again to finalize the Auth account deletion.
+      // If this fails with `requires-recent-login`, the user is prompted to
+      // log in again to finalize the deletion. Since no data was deleted yet,
+      // the user experiences zero data loss or ghost-account bugs.
       await user.delete();
 
-      // Step 4 — Clear all locally-persisted preferences so they don't bleed
+      // Step 2 — Unregister the device from Firebase Cloud Messaging
+      // This ensures that even if they sign up again, the old device token
+      // is completely invalidated and disconnected from the server.
+      try {
+        await _firebaseMessaging.deleteToken();
+      } catch (e) {
+        _log('DeleteAccount: FCM token deletion failed: $e');
+      }
+
+      // Step 3 — Clear all locally-persisted preferences so they don't bleed
       // into a subsequent user session on the same device.
       try {
         final prefs = await SharedPreferences.getInstance();

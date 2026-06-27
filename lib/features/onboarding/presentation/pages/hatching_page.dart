@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -27,7 +28,6 @@ class _HatchingPageState extends State<HatchingPage> {
   int _stage = 0;
   final FlutterTts _tts = FlutterTts();
   Timer? _hatchTimer;
-
 
   @override
   void initState() {
@@ -77,16 +77,13 @@ class _HatchingPageState extends State<HatchingPage> {
     }
   }
 
+  String get _introMessage =>
+      "Hoot! I'm Owly, your AI companion. Welcome to Vowl, ${widget.userName}! We're not just here to beat levels—we're here to master English together. Let's embrace the journey and start your adventure!";
+
   Future<void> _speakIntroduction() async {
     if (!mounted) return;
     try {
-      // TTS speech is intentionally in English — the app teaches English and
-      // Owly's introduction is part of the immersive English-learning experience.
-      // FIX (HIGH-2): userName is already dynamic; the surrounding display text
-      // is now localised via context.tr().
-      final message =
-          "Hoot hoot! I am Owly, your new companion! Welcome, ${widget.userName}. Always remember: simply completing levels isn't the goal here. Your true learning, growth, and curiosity are our top priorities. Let's embrace the joy of discovery and start our wonderful adventure!";
-      await _tts.speak(message);
+      await _tts.speak(_introMessage);
     } catch (e) {
       debugPrint('HatchingPage: TTS speak failed: $e');
     }
@@ -114,6 +111,7 @@ class _HatchingPageState extends State<HatchingPage> {
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
                         minHeight: constraints.maxHeight,
+                        minWidth: constraints.maxWidth,
                       ),
                       child: Padding(
                         padding: EdgeInsets.symmetric(
@@ -175,7 +173,7 @@ class _HatchingPageState extends State<HatchingPage> {
             else
               const VowlMascot(
                 state: VowlMascotState.happy,
-                size: 140,
+                size: 70,
               ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
           ],
         ),
@@ -247,15 +245,67 @@ class _HatchingPageState extends State<HatchingPage> {
   }
 
   Widget _buildStatusText(BuildContext context) {
-    // FIX (HIGH-2): All display text now goes through the l10n system.
-    final String text;
-    if (_stage == 0) {
-      text = context.tr('hatching.tap_to_begin');
-    } else if (_stage == 1) {
-      text = context.tr('hatching.something_happening');
-    } else {
-      text = context.tr('hatching.hatched');
+    if (_stage >= 2) {
+      return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        child: TweenAnimationBuilder<int>(
+          key: ValueKey('hatching_status_$_stage'),
+          tween: IntTween(begin: 0, end: _introMessage.length),
+          duration: Duration(milliseconds: _introMessage.length * 40),
+          builder: (context, value, child) {
+            return GlassTile(
+              padding: EdgeInsets.all(20.r),
+              borderRadius: BorderRadius.circular(24.r),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.format_quote_rounded,
+                        color: const Color(0xFF2563EB).withValues(alpha: 0.5),
+                        size: 24.r,
+                      ),
+                      SizedBox(width: 8.w),
+                      Text(
+                        "Owly",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF2563EB),
+                          letterSpacing: 1.2,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 12.h),
+                  Text(
+                    _introMessage.substring(
+                      0,
+                      value.clamp(0, _introMessage.length),
+                    ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      height: 1.5,
+                      fontWeight: FontWeight.w600,
+                      color: const Color(0xFF334155),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      );
     }
+
+    final String text = _stage == 0
+        ? context.tr('hatching.tap_to_begin')
+        : context.tr('hatching.something_happening');
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 40.w),
@@ -276,7 +326,10 @@ class _HatchingPageState extends State<HatchingPage> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 40.w),
       child: ScaleButton(
-        onTap: () => context.go('/home'),
+        onTap: () {
+          _tts.stop();
+          context.go('/home');
+        },
         child: Container(
           height: 60.h,
           width: double.infinity,
