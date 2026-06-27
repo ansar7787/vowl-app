@@ -232,7 +232,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     final user = context.select<AuthBloc, UserEntity?>(
       (bloc) => bloc.state.user,
     );
-    final int unlockedLevels = user?.unlockedLevels[widget.gameType] ?? 1;
+    int unlockedLevels = user?.unlockedLevels[widget.gameType] ?? 1;
     final completedLevelsList = user?.completedLevels[widget.gameType] ?? [];
     int completedLevels = completedLevelsList.isEmpty ? 0 : completedLevelsList.reduce(math.max);
     if (completedLevels == 0 && unlockedLevels > 1) {
@@ -240,6 +240,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     }
     
     final bool isPremium = user?.isPremium ?? false;
+    
+    // Auto-correct unlockedLevels for premium users who previously hit a free-tier toll gate
+    // and then upgraded, so they don't have to replay the previous level to trigger the unlock.
+    if (isPremium && unlockedLevels <= completedLevels) {
+      unlockedLevels = completedLevels + 1;
+    }
 
     final List<Offset> points = _generatePointsCached(theme.category);
     final double rowSpacing = _getVerticalSpacing(theme.category);
