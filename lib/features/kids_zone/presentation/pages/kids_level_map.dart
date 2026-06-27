@@ -856,11 +856,27 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
             ),
             child: Center(
               child: isTollGate
-                  ? Icon(
-                      Icons.key_rounded,
-                      color: Colors.white,
-                      size: 40.r,
-                      shadows: [Shadow(color: Colors.black26, offset: Offset(0, 2), blurRadius: 4)],
+                  ? Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '+3',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 22.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            height: 1.0,
+                            shadows: const [Shadow(color: Colors.black26, offset: Offset(0, 2), blurRadius: 4)],
+                          ),
+                        ),
+                        Icon(
+                          Icons.lock_rounded,
+                          color: Colors.white,
+                          size: 20.r,
+                          shadows: const [Shadow(color: Colors.black26, offset: Offset(0, 2), blurRadius: 4)],
+                        ),
+                      ],
                     )
                   : isLocked
                       ? Icon(

@@ -809,15 +809,29 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                   ),
                                   child: Center(
                                     child: isTollGate
-                                        ? Icon(
-                                            Icons.monetization_on_rounded,
-                                            size: 40.r,
-                                            color: Colors.white,
-                                            shadows: [
-                                              Shadow(
-                                                color: Colors.black38,
-                                                offset: Offset(0, 2.h),
-                                                blurRadius: 4.r,
+                                        ? Column(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                '+3',
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 20.sp,
+                                                  fontWeight: FontWeight.w900,
+                                                  color: Colors.white,
+                                                  height: 1,
+                                                  shadows: const [
+                                                    Shadow(color: Colors.black38, offset: Offset(0, 2), blurRadius: 4),
+                                                  ],
+                                                ),
+                                              ),
+                                              Icon(
+                                                Icons.lock_rounded,
+                                                size: 24.r,
+                                                color: Colors.white,
+                                                shadows: const [
+                                                  Shadow(color: Colors.black38, offset: Offset(0, 2), blurRadius: 4),
+                                                ],
                                               ),
                                             ],
                                           )
@@ -943,7 +957,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   void _showTollGatePurchaseSheet(BuildContext context, int level, String gameType) {
     final user = context.read<AuthBloc>().state.user;
     final int userCoins = user?.coins ?? 0;
-    const int cost = 150;
+    const int cost = 100;
     
     showModalBottomSheet(
       context: context,
