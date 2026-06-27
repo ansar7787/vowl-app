@@ -85,7 +85,7 @@ class _HatchingPageState extends State<HatchingPage> {
       // FIX (HIGH-2): userName is already dynamic; the surrounding display text
       // is now localised via context.tr().
       final message =
-          "Hoot hoot! I am Owly. I have been waiting for a brave traveler like you, ${widget.userName}, to help me unlock the secrets of English. Let's begin our quest!";
+          "Hoot hoot! I am Owly, your new companion! Welcome, ${widget.userName}. Always remember: simply completing levels isn't the goal here. Your true learning, growth, and curiosity are our top priorities. Let's embrace the joy of discovery and start our wonderful adventure!";
       await _tts.speak(message);
     } catch (e) {
       debugPrint('HatchingPage: TTS speak failed: $e');

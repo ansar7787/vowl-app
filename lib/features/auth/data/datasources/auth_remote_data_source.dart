@@ -27,8 +27,8 @@ abstract class AuthRemoteDataSource {
   });
 
   /// Initiates a Google Sign-In flow and provisions a Firestore document for
-  /// first-time Google users.
-  Future<void> logInWithGoogle();
+  /// first-time Google users. Returns true if the user is new.
+  Future<bool> logInWithGoogle();
 
   /// Signs out from Firebase Auth and, best-effort, from the Google provider.
   Future<void> logOut();
@@ -145,7 +145,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   // ---------------------------------------------------------------------------
 
   @override
-  Future<void> logInWithGoogle() async {
+  Future<bool> logInWithGoogle() async {
     final googleUser = await _googleSignIn.signIn();
     if (googleUser == null) {
       throw FirebaseAuthException(
@@ -166,10 +166,13 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
     final userCredential = await _firebaseAuth.signInWithCredential(credential);
     final user = userCredential.user;
+    
+    bool isNewUser = userCredential.additionalUserInfo?.isNewUser ?? false;
 
     if (user != null) {
       final userDoc = await _firestore.collection('users').doc(user.uid).get();
       if (!userDoc.exists) {
+        isNewUser = true;
         final newUser = UserModel(
           id: user.uid,
           email: user.email ?? '',
@@ -184,6 +187,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         await _firestore.collection('users').doc(user.uid).set(newUser.toMap());
       }
     }
+    
+    return isNewUser;
   }
 
   // ---------------------------------------------------------------------------

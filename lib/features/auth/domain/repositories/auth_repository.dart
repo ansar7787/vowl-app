@@ -32,8 +32,8 @@ abstract class AuthRepository {
     required String password,
   });
 
-  /// Initiates a Google Sign-In OAuth flow.
-  Future<Either<Failure, void>> logInWithGoogle();
+  /// Initiates a Google Sign-In OAuth flow. Returns true if the user is new.
+  Future<Either<Failure, bool>> logInWithGoogle();
 
   /// Signs out from Firebase Auth and clears any cached provider sessions.
   Future<Either<Failure, void>> logOut();

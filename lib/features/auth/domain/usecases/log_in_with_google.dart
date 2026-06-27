@@ -12,12 +12,12 @@ import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
 ///
 /// Returns [AuthFailure('aborted-by-user')] when the user dismisses the
 /// Google account picker without selecting an account.
-class LogInWithGoogle extends UseCase<void, NoParams> {
+class LogInWithGoogle extends UseCase<bool, NoParams> {
   final AuthRepository repository;
 
   const LogInWithGoogle(this.repository);
 
   @override
-  Future<Either<Failure, void>> call(NoParams params) =>
+  Future<Either<Failure, bool>> call(NoParams params) =>
       repository.logInWithGoogle();
 }

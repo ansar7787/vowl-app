@@ -257,10 +257,10 @@ class AuthRepositoryImpl
   }
 
   @override
-  Future<Either<Failure, void>> logInWithGoogle() async {
+  Future<Either<Failure, bool>> logInWithGoogle() async {
     try {
-      await _remoteDataSource.logInWithGoogle();
-      return const Right(null);
+      final isNewUser = await _remoteDataSource.logInWithGoogle();
+      return Right(isNewUser);
     } catch (e) {
       return Left(handleFirebaseException(e));
     }

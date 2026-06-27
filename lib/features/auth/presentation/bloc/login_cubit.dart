@@ -18,6 +18,7 @@ class LoginState extends Equatable {
   final String? errorMessage;
   final String? successMessage;
   final bool isPasswordVisible;
+  final bool isNewUser;
 
   const LoginState({
     this.email = '',
@@ -27,6 +28,7 @@ class LoginState extends Equatable {
     this.errorMessage,
     this.successMessage,
     this.isPasswordVisible = false,
+    this.isNewUser = false,
   });
 
   /// Uses the nullable-function pattern so callers can:
@@ -44,6 +46,7 @@ class LoginState extends Equatable {
     String? Function()? errorMessage,
     String? Function()? successMessage,
     bool? isPasswordVisible,
+    bool? isNewUser,
   }) {
     return LoginState(
       email: email ?? this.email,
@@ -55,6 +58,7 @@ class LoginState extends Equatable {
           ? successMessage()
           : this.successMessage,
       isPasswordVisible: isPasswordVisible ?? this.isPasswordVisible,
+      isNewUser: isNewUser ?? this.isNewUser,
     );
   }
 
@@ -67,6 +71,7 @@ class LoginState extends Equatable {
     errorMessage,
     successMessage,
     isPasswordVisible,
+    isNewUser,
   ];
 }
 
@@ -204,7 +209,11 @@ class LoginCubit extends Cubit<LoginState> {
           errorMessage: () => AuthErrorHandler.getKey(failure.message),
         ),
       ),
-      (_) => emit(state.copyWith(isSubmitting: false, isSuccess: true)),
+      (isNewUser) => emit(state.copyWith(
+        isSubmitting: false, 
+        isSuccess: true,
+        isNewUser: isNewUser,
+      )),
     );
   }
 }
