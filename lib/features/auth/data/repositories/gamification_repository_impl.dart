@@ -128,7 +128,11 @@ class GamificationRepositoryImpl
 
         final currentUnlocked = unlockedLevels[gameType] ?? 1;
         if (level >= currentUnlocked) {
-          unlockedLevels[gameType] = level + 1;
+          // Free levels (1-10) or Premium users automatically unlock the next level.
+          // Otherwise, the user must explicitly purchase the next level via the Toll Gate.
+          if (level < 10 || data['isPremium'] == true) {
+            unlockedLevels[gameType] = level + 1;
+          }
         }
 
         // ---- Daily XP history ----
@@ -478,5 +482,69 @@ class GamificationRepositoryImpl
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // purchaseLevelUnlock
+  // ---------------------------------------------------------------------------
 
+  @override
+  Future<Either<Failure, void>> purchaseLevelUnlock({
+    required String gameType,
+    required int cost,
+  }) async {
+    try {
+      final user = _firebaseAuth.currentUser;
+      if (user == null) return Left(AuthFailure('User not logged in'));
+
+      final docRef = _firestore.collection('users').doc(user.uid);
+      await _firestore.runTransaction((transaction) async {
+        final doc = await transaction.get(docRef);
+        if (!doc.exists || doc.data() == null) {
+          throw Exception('User data not found');
+        }
+
+        final data = doc.data()!;
+        final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
+        if (currentCoins < cost) throw Exception('Not enough coins');
+
+        var history = <Map<String, dynamic>>[];
+        if (data['coinHistory'] != null) {
+          history = List<Map<String, dynamic>>.from(
+            (data['coinHistory'] as List<dynamic>)
+                .whereType<Map<Object?, Object?>>()
+                .map((m) => m.map((k, v) => MapEntry(k.toString(), v))),
+          );
+        }
+        history.insert(0, {
+          'title': 'Unlocked ${gameType.toUpperCase()} Level',
+          'amount': -cost,
+          'isEarned': false,
+          'date': DateTime.now().toIso8601String(),
+        });
+        if (history.length > UserGameConstants.kActivityHistoryLimit) {
+          history = history.sublist(0, UserGameConstants.kActivityHistoryLimit);
+        }
+
+        var unlockedLevels = <String, int>{};
+        if (data['unlockedLevels'] != null) {
+          unlockedLevels = Map<String, int>.from(
+            (data['unlockedLevels'] as Map<Object?, Object?>).map(
+              (k, v) => MapEntry(k.toString(), (v as num?)?.toInt() ?? 0),
+            ),
+          );
+        }
+
+        final currentUnlocked = unlockedLevels[gameType] ?? 1;
+        unlockedLevels[gameType] = currentUnlocked + 1;
+
+        transaction.update(docRef, {
+          'coins': currentCoins - cost,
+          'unlockedLevels': unlockedLevels,
+          'coinHistory': history,
+        });
+      });
+      return const Right(null);
+    } catch (e) {
+      return Left(handleFirebaseException(e));
+    }
+  }
 }

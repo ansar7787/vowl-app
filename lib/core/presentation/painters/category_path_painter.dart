@@ -13,6 +13,7 @@ class CategoryPathPainter extends CustomPainter {
   final GameCategory category;
   final bool isDark;
   final int unlockedLevels;
+  final int completedLevels;
 
   const CategoryPathPainter({
     required this.points,
@@ -20,6 +21,7 @@ class CategoryPathPainter extends CustomPainter {
     required this.category,
     required this.isDark,
     required this.unlockedLevels,
+    required this.completedLevels,
   });
 
   @override
@@ -57,7 +59,7 @@ class CategoryPathPainter extends CustomPainter {
 
     // ── Active (unlocked) path ───────────────────────────────────────────
     if (points.isNotEmpty && unlockedLevels > 0) {
-      final activeNodeCount = (unlockedLevels - 1).clamp(0, points.length);
+      final activeNodeCount = unlockedLevels.clamp(0, points.length);
       final activePath = _buildPath(topCenter, points, 0, activeNodeCount);
 
       // Soft glow layer beneath the active path.
@@ -71,6 +73,42 @@ class CategoryPathPainter extends CustomPainter {
       );
 
       canvas.drawPath(activePath, activePaint);
+    }
+    
+    // ── Toll Gate Path (Dashed Gold) ──────────────────────────────────────
+    if (points.isNotEmpty && completedLevels == unlockedLevels && completedLevels < points.length) {
+      // The segment from completedLevels to completedLevels + 1 is the toll gate segment
+      final tollStart = completedLevels == 0 ? topCenter : points[completedLevels - 1];
+      final tollEnd = points[completedLevels];
+      
+      final tollPath = Path()..moveTo(tollStart.dx, tollStart.dy);
+      final mid = (tollEnd.dy - tollStart.dy) / 2;
+      tollPath.cubicTo(tollStart.dx, tollStart.dy + mid, tollEnd.dx, tollEnd.dy - mid, tollEnd.dx, tollEnd.dy);
+      
+      final tollPaint = Paint()
+        ..color = Colors.amber
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 6.0
+        ..strokeCap = StrokeCap.round;
+        
+      _drawDashedPath(canvas, tollPath, tollPaint);
+    }
+  }
+  
+  void _drawDashedPath(Canvas canvas, Path path, Paint paint) {
+    const dashWidth = 15.0;
+    const dashSpace = 10.0;
+    double distance = 0.0;
+    
+    for (final pathMetric in path.computeMetrics()) {
+      while (distance < pathMetric.length) {
+        canvas.drawPath(
+          pathMetric.extractPath(distance, distance + dashWidth),
+          paint,
+        );
+        distance += dashWidth + dashSpace;
+      }
+      distance = 0.0;
     }
   }
 
@@ -94,6 +132,7 @@ class CategoryPathPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CategoryPathPainter oldDelegate) {
     return oldDelegate.unlockedLevels != unlockedLevels ||
+        oldDelegate.completedLevels != completedLevels ||
         oldDelegate.color != color ||
         oldDelegate.isDark != isDark ||
         oldDelegate.points.length != points.length ||

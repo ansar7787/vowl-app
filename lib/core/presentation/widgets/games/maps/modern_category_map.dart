@@ -10,6 +10,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/domain/usecases/purchase_level_unlock.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -231,6 +233,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
       (bloc) => bloc.state.user,
     );
     final int unlockedLevels = user?.unlockedLevels[widget.gameType] ?? 1;
+    final completedLevelsList = user?.completedLevels[widget.gameType] ?? [];
+    int completedLevels = completedLevelsList.isEmpty ? 0 : completedLevelsList.reduce(math.max);
+    if (completedLevels == 0 && unlockedLevels > 1) {
+      completedLevels = unlockedLevels - 1;
+    }
+    
     final bool isPremium = user?.isPremium ?? false;
 
     final List<Offset> points = _generatePointsCached(theme.category);
@@ -298,6 +306,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                     surfaceTintColor: Colors.transparent,
                     elevation: 0,
                     toolbarHeight: 50.h,
+                    centerTitle: false,
                     title: Align(
                       alignment: AlignmentDirectional.centerStart,
                       child: Semantics(
@@ -393,6 +402,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                   category: theme.category,
                                   isDark: isDark,
                                   unlockedLevels: unlockedLevels,
+                                  completedLevels: completedLevels,
                                 ),
                               ),
 
@@ -421,10 +431,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                 children: [
                                   ...List.generate(_totalLevels, (index) {
                                     final levelNumber = index + 1;
-                                    final isUnlocked =
-                                        levelNumber <= unlockedLevels;
-                                    final isCurrent =
-                                        levelNumber == unlockedLevels;
                                     final point = points[index];
 
                                     return Container(
@@ -440,8 +446,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                           child: _buildPathNode(
                                             context,
                                             levelNumber,
-                                            isUnlocked,
-                                            isCurrent,
+                                            unlockedLevels,
+                                            completedLevels,
                                             isDark,
                                             theme,
                                             isPremium,
@@ -651,28 +657,42 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   Widget _buildPathNode(
     BuildContext context,
     int level,
-    bool isUnlocked,
-    bool isCurrent,
+    int unlockedLevels,
+    int completedLevels,
     bool isDark,
     ThemeResult theme,
     bool isPremium,
   ) {
+    final bool isCompleted = level <= completedLevels;
+    final bool isPlayable = level == completedLevels + 1 && level <= unlockedLevels;
+    final bool isTollGate = level == completedLevels + 1 && level > unlockedLevels && !isPremium;
+    final bool isHalfUnlocked = level > completedLevels + 1 && level <= unlockedLevels;
+    
+    final bool isUnlockedForClick = isCompleted || isPlayable || isHalfUnlocked;
+    final bool isCurrent = isPlayable || isTollGate;
     Color tierColor = theme.primaryColor;
-    if (level >= 50 && level < 100) {
+    if (isTollGate) {
+      tierColor = Colors.amber;
+    } else if (level >= 50 && level < 100) {
       tierColor = const Color(0xFFCD7F32);
-    }
-    if (level >= 100 && level < 150) {
+    } else if (level >= 100 && level < 150) {
       tierColor = const Color(0xFFC0C0C0);
-    }
-    if (level >= 150) {
+    } else if (level >= 150) {
       tierColor = const Color(0xFFFFD700);
     }
 
-    final statusLabel = !isUnlocked
-        ? context.tr('games.level_locked', fallback: 'Locked')
-        : (isCurrent
-              ? context.tr('games.level_current', fallback: 'Current level')
-              : context.tr('games.level_completed', fallback: 'Completed'));
+    final String statusLabel;
+    if (isCompleted) {
+      statusLabel = context.tr('games.level_completed', fallback: 'Completed');
+    } else if (isPlayable) {
+      statusLabel = context.tr('games.level_current', fallback: 'Current level');
+    } else if (isTollGate) {
+      statusLabel = context.tr('games.level_locked_toll', fallback: 'Unlock required');
+    } else if (isHalfUnlocked) {
+      statusLabel = context.tr('games.level_locked_sequence', fallback: 'Complete previous to play');
+    } else {
+      statusLabel = context.tr('games.level_locked', fallback: 'Locked');
+    }
 
     return SizedBox(
       width: 160.r,
@@ -687,7 +707,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                 '${context.tr('games.level_label_short', args: [level.toString()], fallback: 'Level $level')}, $statusLabel',
             child: ScaleButton(
               onTap: () {
-                if (!isUnlocked) {
+                if (isTollGate) {
+                  _showTollGatePurchaseSheet(context, level, widget.gameType);
+                  return;
+                }
+                
+                if (!isUnlockedForClick) {
                   _showLockedFeedback(context, theme.primaryColor);
                   return;
                 }
@@ -722,35 +747,43 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   gradient: LinearGradient(
-                                    colors: isUnlocked
+                                    colors: (isCompleted || isPlayable || isHalfUnlocked)
                                         ? [
                                             Colors.white,
                                             const Color(0xFFF1F5F9),
                                           ]
-                                        : [
-                                            Colors.grey.shade400,
-                                            Colors.grey.shade600,
-                                          ],
+                                        : isTollGate
+                                            ? [
+                                                Colors.amber.shade200,
+                                                Colors.amber.shade400,
+                                              ]
+                                            : [
+                                                Colors.grey.shade400,
+                                                Colors.grey.shade600,
+                                              ],
                                     begin: Alignment.topLeft,
                                     end: Alignment.bottomRight,
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color:
-                                          (isUnlocked
-                                                  ? tierColor
-                                                  : Colors.black)
-                                              .withValues(
-                                                alpha: isDark ? 0.4 : 0.2,
-                                              ),
+                                      color: ((isCompleted || isPlayable || isHalfUnlocked)
+                                              ? tierColor
+                                              : isTollGate 
+                                                ? Colors.amber 
+                                                : Colors.black)
+                                          .withValues(
+                                            alpha: isDark ? 0.4 : 0.2,
+                                          ),
                                       offset: Offset(0, 8.h),
                                       blurRadius: 15.r,
                                     ),
                                   ],
                                   border: Border.all(
-                                    color: isUnlocked
+                                    color: (isCompleted || isPlayable || isHalfUnlocked)
                                         ? tierColor
-                                        : Colors.white24,
+                                        : isTollGate
+                                          ? Colors.amber.shade600
+                                          : Colors.white24,
                                     width: isCurrent ? 4.r : 3.r,
                                   ),
                                 ),
@@ -769,62 +802,81 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                     ),
                                   ),
                                   child: Center(
-                                    child: isUnlocked
-                                        ? Padding(
-                                            padding: EdgeInsets.all(4.r),
-                                            child: FittedBox(
-                                              fit: BoxFit.contain,
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    context.tr(
-                                                      'home.level_label',
-                                                    ),
-                                                    style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 8.sp,
-                                                      fontWeight:
-                                                          FontWeight.w900,
-                                                      color: tierColor,
-                                                      letterSpacing: 2,
-                                                    ),
-                                                    maxLines: 1,
-                                                  ),
-                                                  Text(
-                                                    "$level",
-                                                    style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize:
-                                                          (isCurrent ? 32 : 26)
-                                                              .sp,
-                                                      fontWeight:
-                                                          FontWeight.w900,
-                                                      color: tierColor,
-                                                      height: 0.9,
-                                                      shadows: [
-                                                        Shadow(
-                                                          color: Colors.black38,
-                                                          offset: Offset(
-                                                            0,
-                                                            2.h,
-                                                          ),
-                                                          blurRadius: 4.r,
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    maxLines: 1,
+                                    child: isCompleted
+                                        ? Icon(
+                                            Icons.check_rounded,
+                                            size: 40.r,
+                                            color: tierColor,
+                                          )
+                                        : isTollGate
+                                            ? Icon(
+                                                Icons.monetization_on_rounded,
+                                                size: 40.r,
+                                                color: Colors.white,
+                                                shadows: [
+                                                  Shadow(
+                                                    color: Colors.black38,
+                                                    offset: Offset(0, 2.h),
+                                                    blurRadius: 4.r,
                                                   ),
                                                 ],
-                                              ),
-                                            ),
-                                          )
-                                        : Icon(
-                                            Icons.lock_rounded,
-                                            size: 32.r,
-                                            color: Colors.white54,
-                                          ),
+                                              )
+                                            : (isPlayable || isHalfUnlocked)
+                                                ? Padding(
+                                                    padding: EdgeInsets.all(4.r),
+                                                    child: FittedBox(
+                                                      fit: BoxFit.contain,
+                                                      child: Column(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment.center,
+                                                        children: [
+                                                          Text(
+                                                            context.tr(
+                                                              'home.level_label',
+                                                            ),
+                                                            style: TextStyle(
+                                                              fontFamily: 'Outfit',
+                                                              fontSize: 8.sp,
+                                                              fontWeight:
+                                                                  FontWeight.w900,
+                                                              color: tierColor,
+                                                              letterSpacing: 2,
+                                                            ),
+                                                            maxLines: 1,
+                                                          ),
+                                                          Text(
+                                                            "$level",
+                                                            style: TextStyle(
+                                                              fontFamily: 'Outfit',
+                                                              fontSize:
+                                                                  (isPlayable ? 32 : 26)
+                                                                      .sp,
+                                                              fontWeight:
+                                                                  FontWeight.w900,
+                                                              color: tierColor,
+                                                              height: 0.9,
+                                                              shadows: [
+                                                                Shadow(
+                                                                  color: Colors.black38,
+                                                                  offset: Offset(
+                                                                    0,
+                                                                    2.h,
+                                                                  ),
+                                                                  blurRadius: 4.r,
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            maxLines: 1,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  )
+                                                : Icon(
+                                                    Icons.lock_rounded,
+                                                    size: 32.r,
+                                                    color: Colors.white54,
+                                                  ),
                                   ),
                                 ),
                               )
@@ -884,6 +936,144 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         fallback: 'MASTER PREVIOUS LEVELS TO UNLOCK',
       ),
       type: CustomSnackBarType.info,
+    );
+  }
+
+  void _showTollGatePurchaseSheet(BuildContext context, int level, String gameType) {
+    final user = context.read<AuthBloc>().state.user;
+    final int userCoins = user?.coins ?? 0;
+    const int cost = 50;
+    
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (sheetContext) {
+        return Container(
+          padding: EdgeInsets.all(24.r),
+          decoration: BoxDecoration(
+            color: Theme.of(context).brightness == Brightness.dark
+                ? const Color(0xFF1E293B)
+                : Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
+            border: Border(top: BorderSide(color: Colors.amber.withValues(alpha: 0.3), width: 2)),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.monetization_on_rounded, size: 64.r, color: Colors.amber),
+              SizedBox(height: 16.h),
+              Text(
+                context.tr('games.unlock_level_title', args: [level.toString()], fallback: 'Unlock Level $level'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 8.h),
+              Text(
+                context.tr('games.unlock_level_desc', args: [cost.toString()], fallback: 'You need $cost coins to unlock this level.'),
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16.sp, color: Colors.grey),
+              ),
+              SizedBox(height: 32.h),
+              if (userCoins >= cost)
+                ScaleButton(
+                  onTap: () async {
+                    Navigator.pop(sheetContext);
+                    final result = await di.sl<PurchaseLevelUnlock>().call(
+                      PurchaseLevelUnlockParams(gameType: gameType, cost: cost)
+                    );
+                    if (result.isRight() && context.mounted) {
+                      CustomSnackBar.show(
+                        context: context,
+                        message: context.tr('games.level_unlocked_success', args: [level.toString()], fallback: 'Level $level Unlocked!'),
+                        type: CustomSnackBarType.success,
+                      );
+                    }
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                    decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.circular(16.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.amber.withValues(alpha: 0.3),
+                          blurRadius: 10.r,
+                          offset: Offset(0, 4.h),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      context.tr('games.unlock_button', args: [cost.toString()], fallback: 'Unlock ($cost Coins)'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
+                      ),
+                    ),
+                  ),
+                )
+              else
+                ScaleButton(
+                  onTap: () {
+                    Navigator.pop(sheetContext);
+                    di.sl<AdService>().showRewardedAd(
+                      isPremium: false,
+                      onUserEarnedReward: (_) async {
+                        await di.sl<UpdateUserCoins>().call(
+                           UpdateUserCoinsParams(amountChange: cost, title: 'Ad Reward', isEarned: true)
+                        );
+                        if (context.mounted) {
+                           _showTollGatePurchaseSheet(context, level, gameType);
+                        }
+                      },
+                      onDismissed: () {},
+                    );
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                    decoration: BoxDecoration(
+                      color: Colors.blueAccent,
+                      borderRadius: BorderRadius.circular(16.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.blueAccent.withValues(alpha: 0.3),
+                          blurRadius: 10.r,
+                          offset: Offset(0, 4.h),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.play_circle_filled_rounded, color: Colors.white, size: 24.r),
+                        SizedBox(width: 8.w),
+                        Text(
+                          context.tr('games.watch_ad_button', fallback: 'Watch Ad to Earn Coins'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              SizedBox(height: 24.h),
+            ],
+          ),
+        );
+      },
     );
   }
 

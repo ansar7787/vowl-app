@@ -49,4 +49,11 @@ abstract class GamificationRepository {
 
   /// Deducts [cost] coins and activates the 2× XP power-up for 24 hours.
   Future<Either<Failure, void>> activateDoubleXP(int cost);
+
+  /// Deducts [cost] coins and explicitly increments the unlocked level
+  /// for the specified [gameType]. Used for Toll Gate monetization.
+  Future<Either<Failure, void>> purchaseLevelUnlock({
+    required String gameType,
+    required int cost,
+  });
 }

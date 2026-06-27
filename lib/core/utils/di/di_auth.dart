@@ -50,6 +50,7 @@ import 'package:vowl/features/auth/domain/usecases/update_kids_mascot.dart';
 import 'package:vowl/features/auth/domain/usecases/buy_kids_accessory.dart';
 import 'package:vowl/features/auth/domain/usecases/equip_kids_accessory.dart';
 import 'package:vowl/features/auth/domain/usecases/update_unlocked_level.dart';
+import 'package:vowl/features/auth/domain/usecases/purchase_level_unlock.dart';
 import 'package:vowl/features/writing/domain/usecases/use_writing_hint.dart';
 
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -148,6 +149,9 @@ void initAuthFeature(GetIt sl) {
   );
   sl.registerLazySingleton<UpdateUnlockedLevel>(
     () => UpdateUnlockedLevel(sl<GamificationRepository>()),
+  );
+  sl.registerLazySingleton<PurchaseLevelUnlock>(
+    () => PurchaseLevelUnlock(sl<GamificationRepository>()),
   );
   sl.registerLazySingleton<SendEmailVerification>(
     () => SendEmailVerification(sl<AuthRepository>()),

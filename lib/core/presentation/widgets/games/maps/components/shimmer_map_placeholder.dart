@@ -46,6 +46,7 @@ class ShimmerMapPlaceholder extends StatelessWidget {
                 category: theme.category,
                 isDark: isDark,
                 unlockedLevels: 0,
+                completedLevels: 0,
               ),
             )
             .animate(onPlay: (c) => c.repeat())
