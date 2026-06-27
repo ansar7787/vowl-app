@@ -100,34 +100,37 @@ class KidsGameDialogs {
                               ),
                             ),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                _buildReward(
-                                  context,
-                                  state.coinsEarned * (rewardsDoubled ? 3 : 1),
-                                  "🌟",
-                                  context.tr('games.kids_coins').isEmpty ||
-                                          context.tr('games.kids_coins') ==
-                                              'games.kids_coins'
-                                      ? 'KIDS COINS'
-                                      : context.tr('games.kids_coins'),
-                                  Colors.amber,
+                                Expanded(
+                                  child: _buildReward(
+                                    context,
+                                    state.coinsEarned * (rewardsDoubled ? 3 : 1),
+                                    "🌟",
+                                    context.tr('games.kids_coins').isEmpty ||
+                                            context.tr('games.kids_coins') ==
+                                                'games.kids_coins'
+                                        ? 'KIDS COINS'
+                                        : context.tr('games.kids_coins'),
+                                    Colors.amber,
+                                  ),
                                 ),
                                 Container(
                                   width: 1.5,
                                   height: 50.h,
                                   color: Colors.grey.withValues(alpha: 0.2),
                                 ),
-                                _buildReward(
-                                  context,
-                                  state.xpEarned,
-                                  "⚡",
-                                  context.tr('games.kids_xp').isEmpty ||
-                                          context.tr('games.kids_xp') ==
-                                              'games.kids_xp'
-                                      ? 'XP'
-                                      : context.tr('games.kids_xp'),
-                                  Colors.blueAccent,
+                                Expanded(
+                                  child: _buildReward(
+                                    context,
+                                    state.xpEarned,
+                                    "⚡",
+                                    context.tr('games.kids_xp').isEmpty ||
+                                            context.tr('games.kids_xp') ==
+                                                'games.kids_xp'
+                                        ? 'XP'
+                                        : context.tr('games.kids_xp'),
+                                    Colors.blueAccent,
+                                  ),
                                 ),
                               ],
                             ),
@@ -247,14 +250,18 @@ class KidsGameDialogs {
                                             size: 20.r,
                                           ),
                                           SizedBox(width: 8.w),
-                                          Text(
-                                            "TRIPLE REWARDS",
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontWeight: FontWeight.w900,
-                                              color: Colors.white,
-                                              fontSize: 13.sp,
-                                              letterSpacing: 1,
+                                          Flexible(
+                                            child: Text(
+                                              "TRIPLE REWARDS",
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontWeight: FontWeight.w900,
+                                                color: Colors.white,
+                                                fontSize: 13.sp,
+                                                letterSpacing: 1,
+                                              ),
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
                                             ),
                                           ),
                                         ],
@@ -669,6 +676,9 @@ class KidsGameDialogs {
 
         Text(
           label.toUpperCase(),
+          textAlign: TextAlign.center,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
           style: TextStyle(
             fontFamily: 'Outfit',
             fontWeight: FontWeight.w800,
