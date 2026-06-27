@@ -856,29 +856,36 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                           color: isDark ? Colors.white24 : Colors.black12,
                           size: 24.r,
                         )
-                      : Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "$level",
-                              style: TextStyle(fontFamily: 'Outfit', 
-                                fontSize: (isCurrent ? 32 : 26).sp,
-                                fontWeight: FontWeight.w900,
-                                color: widget.primaryColor,
-                              ),
-                            ),
-                            if (isCompleted) ...[
-                              SizedBox(height: 2.h),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
-                                  Icon(Icons.star_rounded, size: 14.r, color: Colors.amber),
-                                  Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
+                      : Padding(
+                          padding: EdgeInsets.all(8.r),
+                          child: FittedBox(
+                            fit: BoxFit.contain,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "$level",
+                                  style: TextStyle(fontFamily: 'Outfit', 
+                                    fontSize: (isCurrent ? 32 : 26).sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: widget.primaryColor,
+                                    height: 1.0,
+                                  ),
+                                ),
+                                if (isCompleted) ...[
+                                  SizedBox(height: 2.h),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
+                                      Icon(Icons.star_rounded, size: 14.r, color: Colors.amber),
+                                      Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
+                                    ],
+                                  ),
                                 ],
-                              ),
-                            ],
-                          ],
+                              ],
+                            ),
+                          ),
                         ),
             ),
           ).animate(onPlay: (c) => c.repeat(reverse: true))
