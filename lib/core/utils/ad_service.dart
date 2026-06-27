@@ -37,10 +37,10 @@ class AdService {
   int _completedLevelsSinceLastAd = 0;
 
   /// Show an interstitial every N completed levels.
-  static const int levelsPerInterstitial = 2;
+  static const int levelsPerInterstitial = 3;
 
   /// Minimum cooldown between interstitials regardless of level count.
-  static const int interstitialCooldownMinutes = 2;
+  static const int interstitialCooldownMinutes = 4;
 
   static const int _maxFailedLoadAttempts = 3;
 
