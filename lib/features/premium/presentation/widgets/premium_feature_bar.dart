@@ -56,6 +56,13 @@ class ModernFeatureBar extends StatelessWidget {
               isDark: isDark,
             ),
           ),
+          Expanded(
+            child: FeatureItem(
+              icon: Icons.airplanemode_active_rounded,
+              label: context.tr('premium.feature_play_offline', fallback: 'Play Offline'),
+              isDark: isDark,
+            ),
+          ),
         ],
       ),
     );
