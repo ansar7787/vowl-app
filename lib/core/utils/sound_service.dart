@@ -76,7 +76,6 @@ class SoundServiceImpl implements SoundService {
   static const String assetCorrect = 'sounds/correct.mp3';
   static const String assetWrong = 'sounds/wrong.mp3';
   static const String assetHint = 'sounds/hint.mp3';
-  static const String assetClick = 'sounds/click.mp3';
   static const String assetLevelCompleted = 'sounds/level_completed.mp3';
 
   static const String _prefsKeySoundEnabled = 'sound_enabled';
@@ -166,28 +165,9 @@ class SoundServiceImpl implements SoundService {
 
   @override
   Future<void> playClick() async {
-    await _initFuture;
-    if (_isMuted) return;
-    try {
-      if (_player.state == PlayerState.playing) await _player.stop();
-      // BUG FIX: this previously played `assetCorrect` (the "correct
-      // answer" chime) for every single UI tap, per a comment literally
-      // reading "Using correct.mp3 as a generic click for now". That
-      // meant ordinary button taps sounded identical to getting a
-      // question right, which both confuses the feedback semantics and
-      // dilutes how rewarding the real "correct" chime feels. Now points
-      // at its own dedicated asset.
-      //
-      // ACTION REQUIRED: add an actual `assets/sounds/click.mp3` file to
-      // the project and register it in pubspec.yaml's assets list - this
-      // is a real audio asset that has to be supplied by you; I can't
-      // fabricate a binary file. Until it's added, this will safely no-op
-      // (caught below) rather than crash.
-      await _player.setSource(AssetSource(assetClick));
-      await _player.resume();
-    } catch (e) {
-      di.sl<AppLogger>().error('SoundService: Error playing sound (click)', error: e);
-    }
+    // Intentionally left empty. 
+    // We rely on HapticService for UI tap feedback rather than audio clicks
+    // to prevent the app from becoming noisy and annoying.
   }
 
   @override
