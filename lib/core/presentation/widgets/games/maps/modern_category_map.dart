@@ -807,77 +807,72 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                     ),
                                   ),
                                   child: Center(
-                                    child: isCompleted
+                                    child: isTollGate
                                         ? Icon(
-                                            Icons.check_rounded,
+                                            Icons.monetization_on_rounded,
                                             size: 40.r,
-                                            color: tierColor,
+                                            color: Colors.white,
+                                            shadows: [
+                                              Shadow(
+                                                color: Colors.black38,
+                                                offset: Offset(0, 2.h),
+                                                blurRadius: 4.r,
+                                              ),
+                                            ],
                                           )
-                                        : isTollGate
-                                            ? Icon(
-                                                Icons.monetization_on_rounded,
-                                                size: 40.r,
-                                                color: Colors.white,
-                                                shadows: [
-                                                  Shadow(
-                                                    color: Colors.black38,
-                                                    offset: Offset(0, 2.h),
-                                                    blurRadius: 4.r,
-                                                  ),
-                                                ],
-                                              )
-                                            : (isPlayable || isHalfUnlocked)
-                                                ? Padding(
-                                                    padding: EdgeInsets.all(4.r),
-                                                    child: FittedBox(
-                                                      fit: BoxFit.contain,
-                                                      child: Column(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment.center,
-                                                        children: [
-                                                          Text(
-                                                            context.tr(
-                                                              'home.level_label',
-                                                            ),
-                                                            style: TextStyle(
-                                                              fontFamily: 'Outfit',
-                                                              fontSize: 8.sp,
-                                                              fontWeight:
-                                                                  FontWeight.w900,
-                                                              color: tierColor,
-                                                              letterSpacing: 2,
-                                                            ),
-                                                            maxLines: 1,
-                                                          ),
-                                                          Text(
-                                                            "$level",
-                                                            style: TextStyle(
-                                                              fontFamily: 'Outfit',
-                                                              fontSize:
-                                                                  (isPlayable ? 32 : 26)
-                                                                      .sp,
-                                                              fontWeight:
-                                                                  FontWeight.w900,
-                                                              color: tierColor,
-                                                              height: 0.9,
-                                                              shadows: [
-                                                                Shadow(
-                                                                  color: Colors.black38,
-                                                                  offset: Offset(
-                                                                    0,
-                                                                    2.h,
-                                                                  ),
-                                                                  blurRadius: 4.r,
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            maxLines: 1,
-                                                          ),
-                                                        ],
+                                        : (isCompleted || isPlayable || isHalfUnlocked)
+                                            ? Padding(
+                                                padding: EdgeInsets.all(4.r),
+                                                child: FittedBox(
+                                                  fit: BoxFit.contain,
+                                                  child: Column(
+                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                    children: [
+                                                      Text(
+                                                        context.tr('home.level_label'),
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 8.sp,
+                                                          fontWeight: FontWeight.w900,
+                                                          color: tierColor,
+                                                          letterSpacing: 2,
+                                                        ),
+                                                        maxLines: 1,
                                                       ),
-                                                    ),
-                                                  )
-                                                : Icon(
+                                                      Text(
+                                                        "$level",
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: (isPlayable || isCompleted ? 32 : 26).sp,
+                                                          fontWeight: FontWeight.w900,
+                                                          color: tierColor,
+                                                          height: 0.9,
+                                                          shadows: [
+                                                            Shadow(
+                                                              color: Colors.black38,
+                                                              offset: Offset(0, 2.h),
+                                                              blurRadius: 4.r,
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        maxLines: 1,
+                                                      ),
+                                                      if (isCompleted) ...[
+                                                        SizedBox(height: 2.h),
+                                                        Row(
+                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                          children: [
+                                                            Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
+                                                            Icon(Icons.star_rounded, size: 14.r, color: Colors.amber),
+                                                            Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    ],
+                                                  ),
+                                                ),
+                                              )
+                                            : Icon(
                                                     Icons.lock_rounded,
                                                     size: 32.r,
                                                     color: Colors.white54,

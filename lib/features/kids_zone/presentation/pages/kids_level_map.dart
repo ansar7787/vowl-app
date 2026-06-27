@@ -284,6 +284,8 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                               ? currentOffset
                               : _getHorizontalOffset(level + 1, screenWidth);
 
+                          final isCompleted = completedLevels.contains(level);
+
                           return _buildMapSegment(
                             context,
                             level,
@@ -294,6 +296,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                             nextOffset,
                             state.status == AuthStatus.unknown,
                             isTollGate,
+                            isCompleted,
                           );
                         }, childCount: 200),
                       ),
@@ -424,6 +427,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     double nextOffset,
     bool isLoading,
     bool isTollGate,
+    bool isCompleted,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -452,7 +456,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
             Positioned(
               left: currentOffset,
               top: 50.h, // Vertically center the node in the 200.h segment
-              child: _buildLevelNode(context, level, isLocked, isCurrent, isTollGate)
+              child: _buildLevelNode(context, level, isLocked, isCurrent, isTollGate, isCompleted)
                   .animate()
                   .fadeIn(duration: 800.ms, delay: (level % 5 * 100).ms)
                   .scale(begin: const Offset(0.7, 0.7), curve: Curves.easeOutBack)
@@ -791,6 +795,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     bool isLocked,
     bool isCurrent,
     bool isTollGate,
+    bool isCompleted,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
@@ -851,13 +856,29 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                           color: isDark ? Colors.white24 : Colors.black12,
                           size: 24.r,
                         )
-                      : Text(
-                          "$level",
-                          style: TextStyle(fontFamily: 'Outfit', 
-                            fontSize: (isCurrent ? 32 : 26).sp,
-                            fontWeight: FontWeight.w900,
-                            color: widget.primaryColor,
-                          ),
+                      : Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "$level",
+                              style: TextStyle(fontFamily: 'Outfit', 
+                                fontSize: (isCurrent ? 32 : 26).sp,
+                                fontWeight: FontWeight.w900,
+                                color: widget.primaryColor,
+                              ),
+                            ),
+                            if (isCompleted) ...[
+                              SizedBox(height: 2.h),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
+                                  Icon(Icons.star_rounded, size: 14.r, color: Colors.amber),
+                                  Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
+                                ],
+                              ),
+                            ],
+                          ],
                         ),
             ),
           ).animate(onPlay: (c) => c.repeat(reverse: true))
