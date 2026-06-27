@@ -282,12 +282,6 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
                 isCorrect: true,
               ),
             ),
-            updateUnlockedLevel(
-              UpdateUnlockedLevelParams(
-                categoryId: _currentGameType!,
-                newLevel: _currentLevel! + 1,
-              ),
-            ),
             awardBadge(AccentGameConstants.accentMasterBadge),
           ]);
         } catch (e, stack) {

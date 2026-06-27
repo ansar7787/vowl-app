@@ -268,9 +268,6 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
         updateCategoryStats(
           UpdateCategoryStatsParams(categoryId: gameType, isCorrect: true),
         ).catchError(_swallow),
-        updateUnlockedLevel(
-          UpdateUnlockedLevelParams(categoryId: gameType, newLevel: level + 1),
-        ).catchError(_swallow),
         // NOTE: AwardBadge must be idempotent at the use-case level —
         // it is called on every level completion.
         awardBadge(

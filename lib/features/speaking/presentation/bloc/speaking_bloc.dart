@@ -278,12 +278,6 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
             isCorrect: true,
           ),
         ),
-        updateUnlockedLevel(
-          UpdateUnlockedLevelParams(
-            categoryId: s.gameType.name,
-            newLevel: s.level + 1,
-          ),
-        ),
         awardBadge(_kSpeakingMasterBadge),
       ]);
     } catch (e, st) {

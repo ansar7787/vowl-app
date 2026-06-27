@@ -295,12 +295,6 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
             isCorrect: true,
           ),
         ),
-        updateUnlockedLevel(
-          UpdateUnlockedLevelParams(
-            categoryId: s.gameType.name,
-            newLevel: s.level + 1,
-          ),
-        ),
         awardBadge(_writingBadgeId),
       ]);
     } catch (e, st) {

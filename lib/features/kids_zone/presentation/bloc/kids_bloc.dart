@@ -376,12 +376,6 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
                 coinIncrease: 10,
               ),
             ),
-            updateUnlockedLevel(
-              UpdateUnlockedLevelParams(
-                categoryId: s.gameType,
-                newLevel: s.level + 1,
-              ),
-            ),
             if (newSticker != null) awardKidsSticker(newSticker),
           ]);
         } else {

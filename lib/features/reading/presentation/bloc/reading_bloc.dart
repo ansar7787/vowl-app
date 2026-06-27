@@ -288,12 +288,6 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
             isCorrect: true,
           ),
         ),
-        updateUnlockedLevel(
-          UpdateUnlockedLevelParams(
-            categoryId: currentGameType!,
-            newLevel: currentLevel! + 1,
-          ),
-        ),
         awardBadge('reading_master'),
       ]);
     } catch (e) {

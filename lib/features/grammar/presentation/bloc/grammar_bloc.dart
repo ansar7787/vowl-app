@@ -246,12 +246,6 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
             isCorrect: true,
           ),
         ),
-        updateUnlockedLevel(
-          UpdateUnlockedLevelParams(
-            categoryId: _currentGameType!.name,
-            newLevel: _currentLevel! + 1,
-          ),
-        ),
         awardBadge('grammar_master'),
       ]);
     } catch (e, st) {

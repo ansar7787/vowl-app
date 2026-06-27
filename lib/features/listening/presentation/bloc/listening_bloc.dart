@@ -305,12 +305,6 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
               isCorrect: true,
             ),
           ),
-          updateUnlockedLevel(
-            UpdateUnlockedLevelParams(
-              categoryId: _currentGameType!,
-              newLevel: _currentLevel! + 1,
-            ),
-          ),
           awardBadge(_kListeningBadge),
         ]);
         return; // success

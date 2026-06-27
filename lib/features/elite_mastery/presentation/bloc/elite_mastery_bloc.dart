@@ -254,15 +254,6 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
             ),
           ),
         ),
-        _persistRewardSafely(
-          'updateUnlockedLevel',
-          () => updateUnlockedLevel(
-            UpdateUnlockedLevelParams(
-              categoryId: gameTypeName,
-              newLevel: level + 1,
-            ),
-          ),
-        ),
       ]);
     } else {
       // Wrong answer on the last quest — stay and retry.

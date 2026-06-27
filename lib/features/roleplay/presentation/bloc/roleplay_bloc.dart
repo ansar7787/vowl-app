@@ -262,12 +262,6 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     await updateCategoryStats(
       UpdateCategoryStatsParams(categoryId: s.gameType.name, isCorrect: true),
     );
-    await updateUnlockedLevel(
-      UpdateUnlockedLevelParams(
-        categoryId: s.gameType.name,
-        newLevel: s.level + 1,
-      ),
-    );
     await awardBadge(kRoleplayBadgeId);
   }
 
