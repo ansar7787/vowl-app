@@ -465,15 +465,11 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
 
     return CustomPaint(
       painter: SegmentPathPainter(
-        color: isTollGate
-            ? Colors.amber.shade300
-            : isNextZone
-            ? Colors.amber.shade100.withValues(alpha: 0.5)
-            : (isLocked
-                  ? (isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : Colors.black.withValues(alpha: 0.05))
-                  : Colors.white),
+        color: isCompleted
+            ? widget.primaryColor
+            : (isDark
+                ? Colors.white.withValues(alpha: 0.1)
+                : Colors.black.withValues(alpha: 0.05)),
         currentOffset: currentOffset,
         nextOffset: nextOffset,
         isLast: isLast,
@@ -950,13 +946,13 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                       ? Colors.amber.shade100.withValues(alpha: 0.5)
                       : isLocked
                       ? (isDark ? Colors.grey[800] : Colors.grey[200])
-                      : Colors.white,
+                      : widget.primaryColor,
                   border: Border.all(
                     color: isTollGate
                         ? Colors.amber.shade700
                         : isNextZone
                         ? Colors.amber.shade300.withValues(alpha: 0.5)
-                        : (isLocked ? Colors.transparent : widget.primaryColor),
+                        : (isLocked ? Colors.transparent : Colors.white),
                     width: isCurrent ? 5.r : 3.r,
                   ),
                 ),
@@ -993,11 +989,11 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                                     fontFamily: 'Outfit',
                                     fontSize: (isCurrent ? 32 : 26).sp,
                                     fontWeight: FontWeight.w900,
-                                    color: widget.primaryColor,
+                                    color: Colors.white,
                                     height: 1.0,
                                   ),
                                 ),
-                                if (isCompleted) ...[
+                                if (isCompleted || isPlayable) ...[
                                   SizedBox(height: 2.h),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -1005,17 +1001,17 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                                       Icon(
                                         Icons.star_rounded,
                                         size: 10.r,
-                                        color: Colors.amber,
+                                        color: isCompleted ? Colors.amber : Colors.white38,
                                       ),
                                       Icon(
                                         Icons.star_rounded,
                                         size: 14.r,
-                                        color: Colors.amber,
+                                        color: isCompleted ? Colors.amber : Colors.white38,
                                       ),
                                       Icon(
                                         Icons.star_rounded,
                                         size: 10.r,
-                                        color: Colors.amber,
+                                        color: isCompleted ? Colors.amber : Colors.white38,
                                       ),
                                     ],
                                   ),
