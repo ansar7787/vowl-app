@@ -245,7 +245,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     if (isPremium && unlockedLevels <= completedLevels) {
       unlockedLevels = completedLevels + 1;
     }
-    final effectiveUnlockedLevel = unlockedLevels + 9;
 
     final List<Offset> points = _generatePointsCached(theme.category);
     final double rowSpacing = _getVerticalSpacing(theme.category);
@@ -407,7 +406,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                   color: theme.primaryColor,
                                   category: theme.category,
                                   isDark: isDark,
-                                  unlockedLevels: effectiveUnlockedLevel,
+                                  unlockedLevels: unlockedLevels,
                                   completedLevels: completedLevels,
                                 ),
                               ),
@@ -669,14 +668,13 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     ThemeResult theme,
     bool isPremium,
   ) {
-    final effectiveUnlockedLevel = unlockedLevels + 9;
     final bool isCompleted = level <= completedLevels;
-    final bool isPlayable = level == completedLevels + 1 && level <= effectiveUnlockedLevel;
+    final bool isPlayable = level == completedLevels + 1 && level <= unlockedLevels;
     // Hide Toll Gate until user actually reaches it
-    final bool isTollGate = level == completedLevels + 1 && level > effectiveUnlockedLevel && !isPremium;
-    final bool isHalfUnlocked = level > completedLevels + 1 && level <= effectiveUnlockedLevel && effectiveUnlockedLevel > 10;
+    final bool isTollGate = level == completedLevels + 1 && level > unlockedLevels && !isPremium;
+    final bool isHalfUnlocked = level > completedLevels + 1 && level <= unlockedLevels && unlockedLevels > 10;
     // Hide Next Zone until Toll Gate is visible
-    final bool isNextZone = level > effectiveUnlockedLevel + 1 && level <= effectiveUnlockedLevel + 3 && !isPremium && completedLevels >= effectiveUnlockedLevel;
+    final bool isNextZone = level > unlockedLevels + 1 && level <= unlockedLevels + 3 && !isPremium && completedLevels >= unlockedLevels;
     
     // They can only play if they actually reached it sequentially.
     final bool isUnlockedForClick = isCompleted || isPlayable;

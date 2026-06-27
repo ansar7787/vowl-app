@@ -275,12 +275,11 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                         ) {
                           final level = index + 1;
                           final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
-                          final effectiveUnlockedLevel = unlockedLevel + 9;
                           final isCompleted = level <= highestCompleted;
-                          final isPlayable = level == highestCompleted + 1 && level <= effectiveUnlockedLevel;
-                          final isTollGate = level == highestCompleted + 1 && level > effectiveUnlockedLevel && !isPremium;
-                          final isHalfUnlocked = level > highestCompleted + 1 && level <= effectiveUnlockedLevel && effectiveUnlockedLevel > 10;
-                          final isNextZone = level > effectiveUnlockedLevel + 1 && level <= effectiveUnlockedLevel + 3 && !isPremium && highestCompleted >= effectiveUnlockedLevel;
+                          final isPlayable = level == highestCompleted + 1 && level <= unlockedLevel;
+                          final isTollGate = level == highestCompleted + 1 && level > unlockedLevel && !isPremium;
+                          final isHalfUnlocked = level > highestCompleted + 1 && level <= unlockedLevel && unlockedLevel > 10;
+                          final isNextZone = level > unlockedLevel + 1 && level <= unlockedLevel + 3 && !isPremium && highestCompleted >= unlockedLevel;
                           final isLocked = !isCompleted && !isPlayable && !isHalfUnlocked && !isTollGate && !isNextZone;
                           final isCurrent = isPlayable || isTollGate;
                           final isLast = index == 199;
