@@ -670,15 +670,15 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   ) {
     final bool isCompleted = level <= completedLevels;
     final bool isPlayable = level == completedLevels + 1 && level <= unlockedLevels;
-    // Toll Gate always visible ahead of time
-    final bool isTollGate = level == unlockedLevels + 1 && !isPremium;
+    // Hide Toll Gate until user actually reaches it
+    final bool isTollGate = level == completedLevels + 1 && level > unlockedLevels && !isPremium;
     final bool isHalfUnlocked = level > completedLevels + 1 && level <= unlockedLevels;
-    final bool isNextZone = level > unlockedLevels + 1 && level <= unlockedLevels + 3 && !isPremium;
+    // Hide Next Zone until Toll Gate is visible
+    final bool isNextZone = level > unlockedLevels + 1 && level <= unlockedLevels + 3 && !isPremium && completedLevels >= unlockedLevels;
     
     // They can only play if they actually reached it sequentially.
     final bool isUnlockedForClick = isCompleted || isPlayable;
-    // Only pulse if it's the current actionable step
-    final bool isCurrent = isPlayable || (isTollGate && level == completedLevels + 1);
+    final bool isCurrent = isPlayable || isTollGate;
     Color tierColor = theme.primaryColor;
     if (isTollGate) {
       tierColor = Colors.amber;

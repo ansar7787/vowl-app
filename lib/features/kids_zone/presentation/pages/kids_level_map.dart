@@ -277,11 +277,11 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                           final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
                           final isCompleted = level <= highestCompleted;
                           final isPlayable = level == highestCompleted + 1 && level <= unlockedLevel;
-                          final isTollGate = level == unlockedLevel + 1 && !isPremium;
+                          final isTollGate = level == highestCompleted + 1 && level > unlockedLevel && !isPremium;
                           final isHalfUnlocked = level > highestCompleted + 1 && level <= unlockedLevel;
-                          final isNextZone = level > unlockedLevel + 1 && level <= unlockedLevel + 3 && !isPremium;
+                          final isNextZone = level > unlockedLevel + 1 && level <= unlockedLevel + 3 && !isPremium && highestCompleted >= unlockedLevel;
                           final isLocked = !isCompleted && !isPlayable && !isHalfUnlocked && !isTollGate && !isNextZone;
-                          final isCurrent = isPlayable || (isTollGate && level == highestCompleted + 1);
+                          final isCurrent = isPlayable || isTollGate;
                           final isLast = index == 199;
 
                           final currentOffset = _getHorizontalOffset(
