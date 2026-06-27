@@ -316,27 +316,31 @@ class AuthRepositoryImpl
 
       final uid = user.uid;
 
-      // Step 1 — Delete the Firebase Auth account FIRST.
+      // Step 1 — Delete Firestore Data FIRST
       //
-      // If this fails with `requires-recent-login`, no user data is lost and
-      // the caller can prompt re-authentication before retrying. All subsequent
-      // cleanup steps rely on the brief SDK-cached token that remains valid
-      // after a successful `user.delete()` call.
-      await user.delete();
-
-      // Step 2 — Best-effort Firestore cleanup (non-blocking on failure).
+      // If we delete the Auth user first, the authentication token is immediately
+      // revoked, causing Firestore security rules to block the deletion of the
+      // user's document. This leads to orphaned data and "new account" bugs
+      // if the user signs up again with the same email.
       try {
         await _firestore.collection('users').doc(uid).delete();
       } catch (e) {
         _log('DeleteAccount: Firestore cleanup failed (non-critical): $e');
       }
 
-      // Step 3 — Best-effort Storage cleanup (non-blocking on failure).
+      // Step 2 — Delete Storage Profile Picture
       try {
         await _storage.ref().child('profile_pics').child('$uid.jpg').delete();
       } catch (e) {
         _log('DeleteAccount: Storage cleanup failed (non-critical): $e');
       }
+
+      // Step 3 — Delete the Firebase Auth account
+      //
+      // If this fails with `requires-recent-login`, the user's data was already
+      // wiped, which aligns with their intent to delete. The UI will prompt
+      // them to log in again to finalize the Auth account deletion.
+      await user.delete();
 
       // Step 4 — Clear all locally-persisted preferences so they don't bleed
       // into a subsequent user session on the same device.
