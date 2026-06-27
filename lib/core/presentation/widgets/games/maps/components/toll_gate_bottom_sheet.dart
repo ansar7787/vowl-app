@@ -63,61 +63,70 @@ class TollGateBottomSheet {
                 style: TextStyle(fontSize: 14.sp, color: Colors.grey.shade500, fontWeight: FontWeight.w500),
               ),
               SizedBox(height: 24.h),
-              if (userCoins >= cost) ...[
-                ScaleButton(
-                  onTap: () async {
-                    Navigator.pop(sheetContext);
-                    final result = await di.sl<PurchaseLevelUnlock>().call(
-                      PurchaseLevelUnlockParams(gameType: gameType, cost: cost)
+              ScaleButton(
+                onTap: () async {
+                  if (userCoins < cost) {
+                    CustomSnackBar.show(
+                      context: context,
+                      message: context.tr('games.not_enough_coins', fallback: 'Not enough coins!'),
+                      type: CustomSnackBarType.error,
                     );
-                    if (result.isRight() && context.mounted) {
-                      CustomSnackBar.show(
-                        context: context,
-                        message: context.tr('games.level_unlocked_success', fallback: 'Next 3 Levels Unlocked!'),
-                        type: CustomSnackBarType.success,
-                      );
-                    }
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 14.h),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Colors.amber.shade400, Colors.amber.shade600],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      borderRadius: BorderRadius.circular(16.r),
-                      boxShadow: [
+                    return;
+                  }
+                  Navigator.pop(sheetContext);
+                  final result = await di.sl<PurchaseLevelUnlock>().call(
+                    PurchaseLevelUnlockParams(gameType: gameType, cost: cost)
+                  );
+                  if (result.isRight() && context.mounted) {
+                    CustomSnackBar.show(
+                      context: context,
+                      message: context.tr('games.level_unlocked_success', fallback: 'Next 3 Levels Unlocked!'),
+                      type: CustomSnackBarType.success,
+                    );
+                  }
+                },
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(vertical: 14.h),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: userCoins >= cost 
+                          ? [Colors.amber.shade400, Colors.amber.shade600]
+                          : [Colors.grey.shade400, Colors.grey.shade500],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(16.r),
+                    boxShadow: [
+                      if (userCoins >= cost)
                         BoxShadow(
                           color: Colors.amber.withValues(alpha: 0.3),
                           blurRadius: 10.r,
                           offset: Offset(0, 4.h),
                         ),
-                      ],
-                    ),
-                    alignment: Alignment.center,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.monetization_on_rounded, color: Colors.white, size: 20.r),
-                        SizedBox(width: 8.w),
-                        Text(
-                          context.tr('games.unlock_button', args: [cost.toString()], fallback: 'Unlock ($cost Coins)'),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w800,
-                            color: Colors.white,
-                            letterSpacing: 0.5,
-                          ),
+                    ],
+                  ),
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.monetization_on_rounded, color: Colors.white, size: 20.r),
+                      SizedBox(width: 8.w),
+                      Text(
+                        context.tr('games.unlock_button', args: [cost.toString()], fallback: 'Unlock ($cost Coins)'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white,
+                          letterSpacing: 0.5,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(height: 12.h),
-              ],
+              ),
+              SizedBox(height: 12.h),
               ScaleButton(
                 onTap: () {
                   Navigator.pop(sheetContext);
