@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -16,33 +15,25 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  bool _timerFinished = false;
   bool _hasNavigated = false;
-  Timer? _timer;
 
   @override
   void initState() {
     super.initState();
-    _startTimer();
+    // Wait for the first frame to render before checking auth state,
+    // ensuring the GoRouter context is fully ready.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _checkNavigation();
+    });
   }
 
   @override
   void dispose() {
-    _timer?.cancel();
     super.dispose();
   }
 
-  void _startTimer() {
-    _timer = Timer(const Duration(milliseconds: 2000), () {
-      if (mounted) {
-        setState(() => _timerFinished = true);
-        _checkNavigation();
-      }
-    });
-  }
-
   void _checkNavigation() {
-    if (!_timerFinished || _hasNavigated) return;
+    if (_hasNavigated) return;
 
     final authState = context.read<AuthBloc>().state;
     if (authState.status == AuthStatus.unknown) {
