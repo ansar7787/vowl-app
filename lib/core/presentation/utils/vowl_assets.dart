@@ -58,6 +58,20 @@ class VowlAssets {
     'cosmic_unicorn': 'Traveler of the Infinite Stars',
   };
 
+  // ── Mascot prices (Vowl Coins) ────────────────────────────────────────
+  static const Map<String, int> mascotPrices = {
+    'vowl_prime': 0,
+    'silver_wing': 0,
+    'crystal_swan': 0,
+    'neon_parrot': 0,
+    'night_bat': 5000,
+    'emerald_peacock': 10000,
+    'golden_dragon': 20000,
+    'shadow_wolf': 35000,
+    'frost_penguin': 50000,
+    'cosmic_unicorn': 75000,
+  };
+
   // ── Accessory emoji map ──────────────────────────────────────────────────
   static const Map<String, String> accessoryMap = {
     'scholar_cap': '🎓',
@@ -157,6 +171,10 @@ class VowlAssets {
     String key, {
     String fallback = 'Ancient Spirit of Vowl',
   }) => mascotTraits[key] ?? fallback;
+
+  /// Resolves the Vowl Coin price for a mascot [key].
+  static int getMascotPrice(String key, {int fallback = 5000}) =>
+      mascotPrices[key] ?? fallback;
 
   /// Resolves the emoji for an accessory [key].
   static String getAccessoryEmoji(String key, {String fallback = '✨'}) =>

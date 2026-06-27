@@ -51,7 +51,9 @@ class LeaderboardRankCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(24.r),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF2563EB).withValues(alpha: 0.2),
+              color: isDark
+                  ? Colors.black.withValues(alpha: 0.2)
+                  : Colors.black.withValues(alpha: 0.05),
               blurRadius: 30,
               spreadRadius: -5,
               offset: const Offset(0, 8),
@@ -61,10 +63,12 @@ class LeaderboardRankCard extends StatelessWidget {
         child: GlassTile(
           padding: EdgeInsets.all(16.r),
           borderRadius: BorderRadius.circular(24.r),
-          borderColor: const Color(0xFF2563EB).withValues(alpha: 0.6),
-          color: const Color(
-            0xFF2563EB,
-          ).withValues(alpha: isDark ? 0.15 : 0.08),
+          borderColor: isDark
+              ? Colors.white.withValues(alpha: 0.15)
+              : const Color(0xFFCBD5E1),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.05)
+              : Colors.white.withValues(alpha: 0.95),
           borderWidth: 1.5,
           child: Column(
             children: [
@@ -137,6 +141,8 @@ class LeaderboardRankCard extends StatelessWidget {
                             color: secondaryTextColor,
                             letterSpacing: 2,
                           ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                         Text(
                           currentUser.displayName?.toUpperCase() ??
@@ -153,6 +159,7 @@ class LeaderboardRankCard extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(width: 12.w),
                   // Levels badge
                   Container(
                     padding: EdgeInsets.symmetric(
@@ -162,12 +169,12 @@ class LeaderboardRankCard extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: isDark
                           ? Colors.white.withValues(alpha: 0.12)
-                          : const Color(0xFF2563EB).withValues(alpha: 0.1),
+                          : const Color(0xFF94A3B8).withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(14.r),
                       border: Border.all(
                         color: isDark
                             ? Colors.white.withValues(alpha: 0.15)
-                            : const Color(0xFF2563EB).withValues(alpha: 0.2),
+                            : const Color(0xFF94A3B8).withValues(alpha: 0.25),
                       ),
                     ),
                     child: Column(
@@ -180,7 +187,7 @@ class LeaderboardRankCard extends StatelessWidget {
                             fontWeight: FontWeight.w900,
                             color: isDark
                                 ? Colors.white
-                                : const Color(0xFF2563EB),
+                                : const Color(0xFF334155),
                             height: 1,
                           ),
                         ),
@@ -192,11 +199,11 @@ class LeaderboardRankCard extends StatelessWidget {
                             fontWeight: FontWeight.w800,
                             color: isDark
                                 ? Colors.white60
-                                : const Color(
-                                    0xFF2563EB,
-                                  ).withValues(alpha: 0.7),
+                                : const Color(0xFF64748B),
                             letterSpacing: 1,
                           ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ],
                     ),

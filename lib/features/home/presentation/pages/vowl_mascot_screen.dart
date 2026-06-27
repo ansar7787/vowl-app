@@ -59,7 +59,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
   Widget build(BuildContext context) {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final primaryColor = Colors.greenAccent;
+    final primaryColor = Theme.of(context).primaryColor;
     final surfaceColor = isMidnight
         ? const Color(0xFF020617)
         : (isDark ? const Color(0xFF0F172A) : Colors.white);
@@ -116,11 +116,11 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                   colors: isDark
                       ? [
                           primaryColor.withValues(alpha: 0.25),
-                          Colors.green.withValues(alpha: 0.15),
+                          primaryColor.withValues(alpha: 0.15),
                         ]
                       : [
                           primaryColor.withValues(alpha: 0.12),
-                          Colors.green.withValues(alpha: 0.08),
+                          primaryColor.withValues(alpha: 0.08),
                         ],
                 ),
 
@@ -237,13 +237,13 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                             },
                             child: Container(
                               constraints: BoxConstraints(
-                                minWidth: 48.r,
-                                minHeight: 48.r,
+                                minWidth: 32.r,
+                                minHeight: 32.r,
                               ),
                               alignment: Alignment.center,
                               child: ExcludeSemantics(
                                 child: Container(
-                                  padding: EdgeInsets.all(8.r),
+                                  padding: EdgeInsets.all(6.r),
                                   decoration: BoxDecoration(
                                     color: textColor.withValues(alpha: 0.05),
                                     shape: BoxShape.circle,
@@ -256,7 +256,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                         ? Icons.arrow_forward_ios_rounded
                                         : Icons.arrow_back_ios_new_rounded,
                                     color: textColor,
-                                    size: 14.r,
+                                    size: 12.r,
                                   ),
                                 ),
                               ),
@@ -274,10 +274,10 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                   context.tr('vowl_mascot.nest_title'),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
+                                    fontSize: 12.sp,
                                     fontWeight: FontWeight.w900,
                                     color: textColor,
-                                    letterSpacing: 3,
+                                    letterSpacing: 2,
                                   ),
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
@@ -286,10 +286,10 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                   context.tr('vowl_mascot.nest_subtitle'),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: 8.sp,
+                                    fontSize: 7.sp,
                                     fontWeight: FontWeight.w700,
-                                    color: primaryColor.withValues(alpha: 0.7),
-                                    letterSpacing: 1.5,
+                                    color: primaryColor.withValues(alpha: 0.8),
+                                    letterSpacing: 1.0,
                                   ),
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
@@ -303,7 +303,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                               context.tr('vowl_mascot.nest_title'),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 14.sp,
+                                fontSize: 10.sp,
                                 fontWeight: FontWeight.w900,
                                 color: textColor,
                                 letterSpacing: 2,
@@ -343,7 +343,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
         args: [user.coins.toString()],
       ),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
         decoration: BoxDecoration(
           color: primaryColor.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(16.r),
@@ -353,15 +353,15 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.attach_money_rounded, color: primaryColor, size: 16.r),
-              SizedBox(width: 4.w),
+              Icon(Icons.attach_money_rounded, color: primaryColor, size: 12.r),
+              SizedBox(width: 2.w),
               Text(
                 '${user.coins}',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   color: isDark ? Colors.white : Colors.black,
                   fontWeight: FontWeight.w900,
-                  fontSize: 13.sp,
+                  fontSize: 10.sp,
                 ),
                 maxLines: 1,
               ),
@@ -504,6 +504,8 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                   final id = mascots[index];
                   final emoji = VowlAssets.mascotMap[id]!;
                   final name = VowlAssets.mascotNames[id]!;
+                  final isOwned = user.vowlOwnedMascots.contains(id);
+                  final price = VowlAssets.getMascotPrice(id);
                   final isSelected =
                       user.vowlMascot == id ||
                       (user.vowlMascot == null && id == 'vowl_prime');
@@ -514,9 +516,12 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                     name,
                     emoji,
                     isSelected,
+                    isOwned,
+                    price,
                     isDark,
                     primaryColor,
                     textColor,
+                    user,
                   );
                 },
               ),
@@ -606,27 +611,44 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     String name,
     String emoji,
     bool isSelected,
+    bool isOwned,
+    int price,
     bool isDark,
     Color primaryColor,
     Color textColor,
+    UserEntity user,
   ) {
     final statusLabel = isSelected
         ? context.tr('vowl_mascot.equipped_status')
-        : context.tr('vowl_mascot.sync_ready');
+        : isOwned
+        ? context.tr('vowl_mascot.sync_ready')
+        : '$price 🪙';
 
     return Semantics(
       button: true,
       selected: isSelected,
       label: '${name.toUpperCase()}, $statusLabel',
       child: ScaleButton(
-        onTap: _isProcessing
+        onTap: _isProcessing || isSelected
             ? null
             : () async {
                 setState(() => _isProcessing = true);
-                _hapticService.light();
-                context.read<ProfileBloc>().add(
-                  ProfileUpdateVowlMascotRequested(id),
-                );
+                if (isOwned) {
+                  _hapticService.light();
+                  context.read<ProfileBloc>().add(
+                    ProfileUpdateVowlMascotRequested(id),
+                  );
+                } else {
+                  if (user.coins >= price) {
+                    _hapticService.light();
+                    context.read<ProfileBloc>().add(
+                      ProfileBuyVowlMascotRequested(id, price),
+                    );
+                  } else {
+                    _hapticService.error();
+                    _showModernSnackbar(context, "Not enough coins!", false);
+                  }
+                }
                 await Future.delayed(const Duration(milliseconds: 1000));
                 if (mounted) setState(() => _isProcessing = false);
               },
@@ -710,7 +732,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                       color: primaryColor,
                       size: 14,
                     ).animate().scale()
-                  else
+                  else if (isOwned)
                     Text(
                       context.tr('vowl_mascot.sync_ready'),
                       style: TextStyle(
@@ -721,6 +743,28 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                       ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
+                    )
+                  else
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.attach_money_rounded,
+                          color: primaryColor,
+                          size: 12.r,
+                        ),
+                        SizedBox(width: 2.w),
+                        Text(
+                          '$price',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w700,
+                            color: textColor.withValues(alpha: 0.7),
+                          ),
+                        ),
+                      ],
                     ),
                 ],
               ),

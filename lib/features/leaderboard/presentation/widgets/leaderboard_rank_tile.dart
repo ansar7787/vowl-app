@@ -42,15 +42,15 @@ class LeaderboardRankTile extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 14.r, vertical: 12.r),
           borderRadius: BorderRadius.circular(18.r),
           borderColor: isMe
-              ? const Color(0xFF2563EB).withValues(alpha: 0.7)
+              ? (isDark
+                    ? Colors.white.withValues(alpha: 0.2)
+                    : const Color(0xFF94A3B8))
               : (isDark
                     ? Colors.white.withValues(alpha: 0.1)
                     : const Color(0xFFCBD5E1)),
-          color: isMe
-              ? const Color(0xFF2563EB).withValues(alpha: isDark ? 0.15 : 0.08)
-              : (isDark
-                    ? Colors.white.withValues(alpha: 0.05)
-                    : Colors.white.withValues(alpha: 0.95)),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.05)
+              : Colors.white.withValues(alpha: 0.95),
           borderWidth: isMe ? 1.5 : 1,
           child: Row(
             children: [
@@ -63,11 +63,9 @@ class LeaderboardRankTile extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
-                    color: isMe
-                        ? (isDark ? Colors.white : const Color(0xFF2563EB))
-                        : (isDark
-                              ? tierColor.withValues(alpha: 0.8)
-                              : const Color(0xFF334155)),
+                    color: isDark
+                        ? tierColor.withValues(alpha: 0.8)
+                        : const Color(0xFF334155),
                   ),
                   textAlign: TextAlign.center,
                 ),

@@ -22,7 +22,7 @@ class CustomSnackBar {
     required BuildContext context,
     required String message,
     required CustomSnackBarType type,
-    Duration duration = const Duration(seconds: 4),
+    Duration duration = const Duration(seconds: 3),
   }) {
     if (!context.mounted) return;
 

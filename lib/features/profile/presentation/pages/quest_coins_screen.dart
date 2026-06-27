@@ -171,7 +171,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                     title: 'Watch Rewarded Ads',
                                     subtitle: 'Earn 20 coins instantly',
                                     icon: Icons.play_circle_filled_rounded,
-                                    color: const Color(0xFF10B981),
+                                    color: Theme.of(context).primaryColor,
                                     onTap: () {},
                                     isAdPlaceholder: true,
                                   ),
@@ -247,7 +247,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                     subtitle:
                                         'Get $_bulkHintAmount hints for $_bulkHintCost coins',
                                     icon: Icons.auto_awesome_rounded,
-                                    color: const Color(0xFF10B981),
+                                    color: Theme.of(context).primaryColor,
                                     onTap: () => _purchaseHint(
                                       context,
                                       user,
@@ -307,14 +307,18 @@ class VowlCoinsScreen extends StatelessWidget {
   Widget _buildCoinBalanceCard(BuildContext context, UserEntity user) {
     final int coins = user.coins;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    const color = Color(0xFF10B981);
+    final color = const Color(0xFF10B981); // Emerald Green for adult coins
 
     return GlassTile(
       padding: EdgeInsets.all(32.r),
       borderRadius: BorderRadius.circular(40.r),
-      borderColor: color.withValues(alpha: 0.3),
-      color: color.withValues(alpha: 0.05),
-      borderWidth: 2,
+      borderColor: isDark
+          ? Colors.white.withValues(alpha: 0.15)
+          : const Color(0xFFCBD5E1),
+      color: isDark
+          ? Colors.white.withValues(alpha: 0.05)
+          : Colors.white.withValues(alpha: 0.95),
+      borderWidth: 1.5,
       child: SizedBox(
         width: double.infinity,
         child: Column(
@@ -651,8 +655,12 @@ class VowlCoinsScreen extends StatelessWidget {
               child: GlassTile(
                 padding: EdgeInsets.all(16.r),
                 borderRadius: BorderRadius.circular(24.r),
-                borderColor: color.withValues(alpha: 0.2),
-                color: color.withValues(alpha: 0.03),
+                borderColor: isDark
+                    ? Colors.white.withValues(alpha: 0.15)
+                    : const Color(0xFFCBD5E1),
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : Colors.white.withValues(alpha: 0.95),
                 borderWidth: 1,
                 child: Row(
                   children: [

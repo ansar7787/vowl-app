@@ -57,7 +57,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final primaryColor = Colors.greenAccent;
+    final primaryColor = Theme.of(context).primaryColor;
     final isRtl = Directionality.of(context) == TextDirection.rtl;
 
     // BUG FIX: this used to be a plain BlocBuilder, so this card's

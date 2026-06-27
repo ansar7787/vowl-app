@@ -86,6 +86,14 @@ class ProfileUpdateVowlMascotRequested extends ProfileEvent {
   List<Object?> get props => [mascotId];
 }
 
+class ProfileBuyVowlMascotRequested extends ProfileEvent {
+  final String mascotId;
+  final int cost;
+  const ProfileBuyVowlMascotRequested(this.mascotId, this.cost);
+  @override
+  List<Object?> get props => [mascotId, cost];
+}
+
 class ProfileBuyVowlAccessoryRequested extends ProfileEvent {
   final String accessoryId;
   final int cost;
@@ -182,6 +190,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<ProfileUpdateFurnitureRequested>(_onUpdateFurniture);
     on<ProfileBuyFurnitureRequested>(_onBuyFurniture);
     on<ProfileUpdateVowlMascotRequested>(_onUpdateVowlMascot);
+    on<ProfileBuyVowlMascotRequested>(_onBuyVowlMascot);
     on<ProfileBuyVowlAccessoryRequested>(_onBuyVowlAccessory);
     on<ProfileEquipVowlAccessoryRequested>(_onEquipVowlAccessory);
     on<ProfileEquipStickerRequested>(_onEquipSticker);
@@ -342,6 +351,53 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) => authBloc.add(const AuthReloadUser()),
+    );
+  }
+
+  Future<void> _onBuyVowlMascot(
+    ProfileBuyVowlMascotRequested event,
+    Emitter<ProfileState> emit,
+  ) async {
+    if (!_isAuthenticated) return;
+    final user = authBloc.state.user;
+    if (user == null) return;
+
+    if (user.coins < event.cost) {
+      emit(
+        state.copyWith(
+          message: () => 'Not enough coins!',
+          lastPurchaseType: () => 'vowl_mascot',
+          lastPurchaseSuccess: () => false,
+        ),
+      );
+      return;
+    }
+
+    final newOwned = [...user.vowlOwnedMascots, event.mascotId];
+    final updatedUser = user.copyWith(
+      coins: user.coins - event.cost,
+      vowlOwnedMascots: newOwned,
+      vowlMascot: event.mascotId,
+    );
+
+    final result = await updateUser(UpdateUserParams(user: updatedUser));
+    result.fold(
+      (failure) => emit(
+        state.copyWith(
+          message: () => failure.message,
+          lastPurchaseType: () => 'vowl_mascot',
+          lastPurchaseSuccess: () => false,
+        ),
+      ),
+      (_) {
+        authBloc.add(const AuthReloadUser());
+        emit(
+          state.copyWith(
+            lastPurchaseType: () => 'vowl_mascot',
+            lastPurchaseSuccess: () => true,
+          ),
+        );
+      },
     );
   }
 

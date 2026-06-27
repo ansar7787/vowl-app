@@ -81,8 +81,12 @@ abstract final class UserGameConstants {
   // Vowl Mascot Defaults
   // ---------------------------------------------------------------------------
 
-  /// Default mascot collection every new user receives at registration.
-  static const List<String> kDefaultVowlOwnedMascots = ['vowl_prime'];
+  static const List<String> kDefaultVowlOwnedMascots = [
+    'vowl_prime',
+    'silver_wing',
+    'crystal_swan',
+    'neon_parrot'
+  ];
 
   // ---------------------------------------------------------------------------
   // Kids Game Type Registry
