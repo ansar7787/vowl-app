@@ -43,3 +43,7 @@
 -keep class sun.misc.Unsafe { *; }
 -dontwarn java.nio.file.*
 -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+
+# ─── Google Play Core (Fixes R8 Build Error) ─────────────────────
+-keep class com.google.android.play.core.** { *; }
+-dontwarn com.google.android.play.core.**
