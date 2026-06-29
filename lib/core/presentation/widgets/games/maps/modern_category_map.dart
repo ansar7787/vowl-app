@@ -255,7 +255,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
           prev.user?.unlockedLevels[widget.gameType] !=
           curr.user?.unlockedLevels[widget.gameType],
       listener: (context, state) {
-        Future.delayed(const Duration(milliseconds: 500), () {
+        Future.delayed(const Duration(milliseconds: 1500), () {
           if (mounted) {
             _scrollToCurrentLevel(animate: true);
           }

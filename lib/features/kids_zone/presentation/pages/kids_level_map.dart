@@ -70,8 +70,8 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
 
-      // Delay slightly to ensure page transition is finished
-      Future.delayed(const Duration(milliseconds: 400), () {
+      // Delay slightly to ensure page transition is finished and allow user to see their completion
+      Future.delayed(const Duration(milliseconds: 1500), () {
         if (!mounted) return;
 
         final user = context.read<AuthBloc>().state.user;
