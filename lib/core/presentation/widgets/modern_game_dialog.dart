@@ -37,7 +37,10 @@ class ModernGameDialog extends StatelessWidget {
     this.isRescueLife = false,
     this.isExitConfirmation = false,
     this.customIcon,
+    this.starsListener, // Optional ValueNotifier for reactive stars
   });
+
+  final ValueNotifier<int>? starsListener;
 
   @override
   Widget build(BuildContext context) {
@@ -101,6 +104,29 @@ class ModernGameDialog extends StatelessWidget {
                   color: isDark ? Colors.white : const Color(0xFF1E293B),
                 ),
               ),
+
+              if (starsListener != null) ...[
+                SizedBox(height: 16.h),
+                ValueListenableBuilder<int>(
+                  valueListenable: starsListener!,
+                  builder: (context, stars, _) {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(3, (index) {
+                        final isEarned = index < stars;
+                        return Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 4.w),
+                          child: Icon(
+                            Icons.star_rounded,
+                            size: index == 1 ? 50.r : 40.r,
+                            color: isEarned ? const Color(0xFFFFD700) : isDark ? Colors.white12 : Colors.black12,
+                          ).animate(target: isEarned ? 1 : 0).scale(duration: 400.ms, curve: Curves.elasticOut),
+                        );
+                      }),
+                    ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2);
+                  },
+                ),
+              ],
 
               SizedBox(height: 12.h),
 

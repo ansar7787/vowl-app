@@ -11,6 +11,7 @@ import 'package:vowl/core/presentation/widgets/victory_flight_overlay.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/features/auth/data/repositories/gamification_repository_impl.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════
 //  GameDialogHelper — Shared completion & game-over dialogs for ALL games.
@@ -94,6 +95,7 @@ class GameDialogHelper {
         title: resolvedTitle,
         description: desc,
         buttonText: resolvedButtonText,
+        starsListener: GamificationRepositoryImpl.lastEarnedStars,
         onButtonPressed: () {
           Navigator.of(dialogCtx).pop();
           if (context.mounted) {
