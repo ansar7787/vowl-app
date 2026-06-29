@@ -9,7 +9,6 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
@@ -45,11 +44,11 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
 
   int _calculateTotalStars(Map<String, dynamic> categoryStars) {
     int gameplayStars = 0;
-    final magicStars = categoryStars['magic_stars'] ?? 0;
+    final magicStars = (categoryStars['magic_stars'] as num?)?.toInt() ?? 0;
     
     categoryStars.forEach((key, value) {
       if (key != 'magic_stars' && key != 'claimed_chests') {
-        gameplayStars += value as int;
+        gameplayStars += (value as num?)?.toInt() ?? 0;
       }
     });
     return gameplayStars + magicStars;
@@ -87,7 +86,6 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
 
     if (mounted) {
       context.read<AuthBloc>().add(const AuthRefreshUser());
-      context.read<EconomyBloc>().add(EconomyFetchCoins());
       
       setState(() {
         _showConfetti = true;

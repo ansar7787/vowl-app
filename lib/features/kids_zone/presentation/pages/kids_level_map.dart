@@ -468,8 +468,8 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
         color: isCompleted
             ? widget.primaryColor
             : (isDark
-                ? Colors.white.withValues(alpha: 0.1)
-                : Colors.black.withValues(alpha: 0.05)),
+                  ? Colors.white.withValues(alpha: 0.1)
+                  : Colors.black.withValues(alpha: 0.05)),
         currentOffset: currentOffset,
         nextOffset: nextOffset,
         isLast: isLast,
@@ -867,13 +867,17 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
         final magicStars = categoryStars['magic_stars'] ?? 0;
         categoryStars.forEach((key, value) {
           if (key != 'magic_stars' && key != 'claimed_chests') {
-            gameplayStars += value as int;
+            gameplayStars += value;
           }
         });
         final totalStars = gameplayStars + magicStars;
 
         return ScaleButton(
-          onTap: () => KidsStarVaultBottomSheet.show(context, widget.gameType, widget.primaryColor),
+          onTap: () => KidsStarVaultBottomSheet.show(
+            context,
+            widget.gameType,
+            widget.primaryColor,
+          ),
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             decoration: BoxDecoration(
@@ -891,14 +895,27 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.lock_outline_rounded, color: Colors.white, size: 20.sp),
+                Icon(
+                  Icons.lock_outline_rounded,
+                  color: Colors.white,
+                  size: 20.sp,
+                ),
                 SizedBox(width: 8.w),
                 Text(
                   "$totalStars",
-                  style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.white, fontSize: 16.sp),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    fontSize: 16.sp,
+                  ),
                 ),
                 SizedBox(width: 4.w),
-                Icon(Icons.star_rounded, color: const Color(0xFFFFD700), size: 18.sp),
+                Icon(
+                  Icons.star_rounded,
+                  color: const Color(0xFFFFD700),
+                  size: 18.sp,
+                ),
               ],
             ),
           ).animate().shimmer(duration: 2.seconds, delay: 3.seconds),
@@ -1051,15 +1068,25 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                                   SizedBox(height: 2.h),
                                   Builder(
                                     builder: (context) {
-                                      final earnedStars = context.read<AuthBloc>().state.user?.starRatings[widget.gameType]?[level.toString()] ?? 0;
+                                      final earnedStars =
+                                          context
+                                              .read<AuthBloc>()
+                                              .state
+                                              .user
+                                              ?.starRatings[widget
+                                              .gameType]?[level.toString()] ??
+                                          0;
                                       return Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: List.generate(3, (index) {
                                           final isEarned = index < earnedStars;
                                           return Icon(
-                                            Icons.star_rounded, 
-                                            size: index == 1 ? 14.r : 10.r, 
-                                            color: isEarned ? Colors.amber : Colors.white38,
+                                            Icons.star_rounded,
+                                            size: index == 1 ? 14.r : 10.r,
+                                            color: isEarned
+                                                ? Colors.amber
+                                                : Colors.white38,
                                           );
                                         }),
                                       );

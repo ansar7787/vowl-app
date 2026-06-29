@@ -5,7 +5,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
@@ -46,11 +45,11 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
 
   int _calculateTotalStars(Map<String, dynamic> categoryStars) {
     int gameplayStars = 0;
-    final magicStars = categoryStars['magic_stars'] ?? 0;
+    final magicStars = (categoryStars['magic_stars'] as num?)?.toInt() ?? 0;
     
     categoryStars.forEach((key, value) {
       if (key != 'magic_stars' && key != 'claimed_chests') {
-        gameplayStars += value as int;
+        gameplayStars += (value as num?)?.toInt() ?? 0;
       }
     });
     return gameplayStars + magicStars;
@@ -92,7 +91,6 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
       final currencyName = isKidsMode ? "Toys" : "Coins";
 
       context.read<AuthBloc>().add(const AuthRefreshUser());
-      context.read<EconomyBloc>().add(EconomyFetchCoins());
       
       setState(() {
         _showConfetti = true;

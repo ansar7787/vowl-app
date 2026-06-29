@@ -556,7 +556,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         final magicStars = categoryStars['magic_stars'] ?? 0;
         categoryStars.forEach((key, value) {
           if (key != 'magic_stars' && key != 'claimed_chests') {
-            gameplayStars += value as int;
+            gameplayStars += value;
           }
         });
         final totalStars = gameplayStars + magicStars;
