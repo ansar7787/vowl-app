@@ -551,7 +551,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   Widget _buildStarVaultButton(ThemeResult theme) {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
-        final categoryStars = state.user?.starRatings[theme.category.name] ?? {};
+        final categoryStars = state.user?.starRatings[widget.gameType] ?? {};
         int gameplayStars = 0;
         final magicStars = categoryStars['magic_stars'] ?? 0;
         categoryStars.forEach((key, value) {
@@ -562,7 +562,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         final totalStars = gameplayStars + magicStars;
 
         return ScaleButton(
-          onTap: () => StarVaultBottomSheet.show(context, theme.category.name, theme.primaryColor),
+          onTap: () => StarVaultBottomSheet.show(context, widget.gameType, theme.primaryColor),
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             decoration: BoxDecoration(
