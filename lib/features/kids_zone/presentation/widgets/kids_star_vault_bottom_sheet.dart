@@ -337,7 +337,17 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                               boxShadow: [BoxShadow(color: const Color(0xFFEC4899).withValues(alpha: 0.4), blurRadius: 16, offset: const Offset(0, 6))],
                             ),
                             child: _isProcessing 
-                              ? const Center(child: CircularProgressIndicator(color: Colors.white))
+                              ? Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SizedBox(width: 24.sp, height: 24.sp, child: const CircularProgressIndicator(color: Colors.white, strokeWidth: 3)),
+                                    SizedBox(width: 12.w),
+                                    Text(
+                                      "Loading Ad...",
+                                      style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w800, color: Colors.white70),
+                                    ),
+                                  ],
+                                )
                               : Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
