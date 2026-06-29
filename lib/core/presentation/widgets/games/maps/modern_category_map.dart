@@ -589,7 +589,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                 Icon(Icons.star_rounded, color: const Color(0xFFFFD700), size: 18.sp),
               ],
             ),
-          ).animate().shimmer(duration: 2.seconds, delay: 3.seconds),
+          ),
         );
       },
     );

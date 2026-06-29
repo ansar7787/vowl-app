@@ -343,6 +343,12 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                       ),
                     ).animate().fadeIn(),
                   ),
+                // Global Star Vault FAB
+                Positioned(
+                  bottom: 32.h,
+                  right: 24.w,
+                  child: _buildStarVaultButton(),
+                ),
               ],
             ),
           );
@@ -516,12 +522,6 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
               ),
             if (level == 10 || level == 50 || level == 100 || level == 200)
               _buildStickerGoal(level, isLocked),
-            // Star Vault FAB
-            Positioned(
-              bottom: 32.h,
-              right: 24.w,
-              child: _buildStarVaultButton(),
-            ),
           ],
         ),
       ),
@@ -918,7 +918,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                 ),
               ],
             ),
-          ).animate().shimmer(duration: 2.seconds, delay: 3.seconds),
+          ),
         );
       },
     );
