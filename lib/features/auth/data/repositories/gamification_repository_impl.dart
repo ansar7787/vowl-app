@@ -20,7 +20,7 @@ class GamificationRepositoryImpl
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
 
-  static final ValueNotifier<int> lastEarnedStars = ValueNotifier<int>(3);
+  static final ValueNotifier<int> lastEarnedStars = ValueNotifier<int>(0);
 
   GamificationRepositoryImpl({
     firebase_auth.FirebaseAuth? firebaseAuth,
