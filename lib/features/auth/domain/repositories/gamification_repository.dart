@@ -21,6 +21,8 @@ abstract class GamificationRepository {
     required int coinIncrease,
     bool isDoubleReward = false,
     int? starsEarned,
+    int? addMagicStars,
+    int? claimChestTier,
   });
 
   /// Advances the unlocked level for [categoryId] to [newLevel] if [newLevel]

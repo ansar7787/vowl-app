@@ -40,6 +40,8 @@ class GamificationRepositoryImpl
     required int coinIncrease,
     bool isDoubleReward = false,
     int? starsEarned,
+    int? addMagicStars,
+    int? claimChestTier,
   }) async {
     try {
       final user = _firebaseAuth.currentUser;
@@ -156,15 +158,36 @@ class GamificationRepositoryImpl
         final int finalStarsEarned = starsEarned ?? 3;
         
         // Update the reactive notifier immediately so the Victory Screen rebuilds
-        Future.microtask(() {
-          lastEarnedStars.value = finalStarsEarned;
-        });
+        if (starsEarned != null) {
+          Future.microtask(() {
+            lastEarnedStars.value = finalStarsEarned;
+          });
+        }
 
         final categoryStars = starRatings[gameType] ?? {};
-        final currentStars = categoryStars[level.toString()] ?? 0;
-        if (finalStarsEarned > currentStars) {
-          categoryStars[level.toString()] = finalStarsEarned;
+        
+        // 1. Update Gameplay Stars
+        if (starsEarned != null) {
+          final currentStars = categoryStars[level.toString()] ?? 0;
+          if (finalStarsEarned > currentStars) {
+            categoryStars[level.toString()] = finalStarsEarned;
+          }
         }
+
+        // 2. Add Magic Stars
+        if (addMagicStars != null) {
+          final currentMagicStars = categoryStars['magic_stars'] ?? 0;
+          categoryStars['magic_stars'] = currentMagicStars + addMagicStars;
+        }
+
+        // 3. Update Claimed Chest Tier
+        if (claimChestTier != null) {
+          final currentClaimedTier = categoryStars['claimed_chests'] ?? 0;
+          if (claimChestTier > currentClaimedTier) {
+            categoryStars['claimed_chests'] = claimChestTier;
+          }
+        }
+        
         starRatings[gameType] = categoryStars;
 
         // ---- Daily XP history ----

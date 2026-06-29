@@ -36,6 +36,8 @@ class UpdateUserRewards extends UseCase<void, UpdateUserRewardsParams> {
         coinIncrease: params.coinIncrease,
         isDoubleReward: params.isDoubleReward,
         starsEarned: params.starsEarned,
+        addMagicStars: params.addMagicStars,
+        claimChestTier: params.claimChestTier,
       );
 }
 
@@ -48,6 +50,8 @@ class UpdateUserRewardsParams extends Equatable {
   final int coinIncrease;
   final bool isDoubleReward;
   final int? starsEarned;
+  final int? addMagicStars;
+  final int? claimChestTier;
 
   const UpdateUserRewardsParams({
     required this.gameType,
@@ -56,6 +60,8 @@ class UpdateUserRewardsParams extends Equatable {
     required this.coinIncrease,
     this.isDoubleReward = false,
     this.starsEarned,
+    this.addMagicStars,
+    this.claimChestTier,
   });
 
   @override
