@@ -37,11 +37,11 @@ class KidsStarVaultBottomSheet extends StatefulWidget {
 }
 
 class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
-  // Extended chest tiers up to 600 stars (200 levels * 3 stars) for maximum engagement!
-  final List<int> _chestTiers = [
-    15, 30, 45, 60, 80, 100, 125, 150, 175, 200,
-    230, 260, 290, 320, 350, 390, 430, 470, 510, 550, 600
-  ];
+  // Extended chest tiers up to 3000+ stars to account for Ad watches!
+  final List<int> _chestTiers = List.generate(100, (index) {
+    if (index < 10) return 15 + (index * 15);
+    return 150 + ((index - 9) * 30);
+  });
   bool _isProcessing = false;
   bool _showConfetti = false;
 
@@ -67,9 +67,9 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     final updateUserRewards = di.sl<UpdateUserRewards>();
     
     final random = math.Random();
-    // Dynamic scalable reward calculation based on tier index
-    final baseReward = 15 + (tierIndex * 20); // 15, 35, 55... 415
-    final variance = 10 + (tierIndex * 5);    // 10, 15, 20... 110
+    // Balanced game economy: Moderate rewards to protect IAP revenue
+    final baseReward = 15 + (tierIndex * 5); 
+    final variance = 5 + (tierIndex * 2);
     final int coinReward = baseReward + random.nextInt(variance + 1);
 
     await updateUserRewards(
