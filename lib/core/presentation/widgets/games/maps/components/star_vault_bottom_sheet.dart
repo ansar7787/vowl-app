@@ -38,7 +38,11 @@ class StarVaultBottomSheet extends StatefulWidget {
 }
 
 class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
-  final List<int> _chestTiers = [15, 30, 45, 60, 75];
+  // Extended chest tiers up to 600 stars (200 levels * 3 stars) for maximum engagement!
+  final List<int> _chestTiers = [
+    15, 30, 45, 60, 80, 100, 125, 150, 175, 200,
+    230, 260, 290, 320, 350, 390, 430, 470, 510, 550, 600
+  ];
   bool _isProcessing = false;
   bool _showConfetti = false;
 
@@ -65,14 +69,10 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
     
     // Randomized rewards based on tier (Scarcity Psychology for Ad Revenue)
     final random = math.Random();
-    int coinReward = 0;
-    switch(tierIndex) {
-      case 0: coinReward = 15 + random.nextInt(21); break; // 15-35
-      case 1: coinReward = 30 + random.nextInt(21); break; // 30-50
-      case 2: coinReward = 50 + random.nextInt(31); break; // 50-80
-      case 3: coinReward = 80 + random.nextInt(41); break; // 80-120
-      case 4: coinReward = 120 + random.nextInt(31); break; // 120-150
-    }
+    // Dynamic scalable reward calculation based on tier index
+    final baseReward = 15 + (tierIndex * 20); // 15, 35, 55... 415
+    final variance = 10 + (tierIndex * 5);    // 10, 15, 20... 110
+    final int coinReward = baseReward + random.nextInt(variance + 1);
 
     await updateUserRewards(
       UpdateUserRewardsParams(
