@@ -12,7 +12,6 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 class StarVaultBottomSheet extends StatefulWidget {
   final String gameType;
