@@ -241,7 +241,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
               gameType: gameTypeName,
               level: level,
               xpIncrease: _xpReward,
-              coinIncrease: _coinReward,
+              coinIncrease: _coinReward, starsEarned: state is EliteMasteryLoaded ? (state as EliteMasteryLoaded).livesRemaining : 1,
             ),
           ),
         ),
@@ -425,3 +425,4 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     return List<EliteMasteryQuest>.from(quests)..removeLast();
   }
 }
+

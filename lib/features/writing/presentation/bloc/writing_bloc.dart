@@ -286,7 +286,7 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
             gameType: s.gameType.name,
             level: s.level,
             xpIncrease: _rewardXp,
-            coinIncrease: _rewardCoins,
+            coinIncrease: _rewardCoins, starsEarned: state is WritingLoaded ? (state as WritingLoaded).livesRemaining : 1,
           ),
         ),
         updateCategoryStats(
@@ -306,3 +306,4 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     }
   }
 }
+

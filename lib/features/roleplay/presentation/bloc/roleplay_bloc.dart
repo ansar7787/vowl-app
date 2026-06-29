@@ -256,7 +256,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
         gameType: s.gameType.name,
         level: s.level,
         xpIncrease: kRoleplayLevelCompleteXp,
-        coinIncrease: kRoleplayLevelCompleteCoins,
+        coinIncrease: kRoleplayLevelCompleteCoins, starsEarned: state is RoleplayLoaded ? (state as RoleplayLoaded).livesRemaining : 1,
       ),
     );
     await updateCategoryStats(
@@ -337,3 +337,4 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     }
   }
 }
+

@@ -296,7 +296,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
               gameType: _currentGameType!,
               level: _currentLevel!,
               xpIncrease: _kXpReward,
-              coinIncrease: _kCoinReward,
+              coinIncrease: _kCoinReward, starsEarned: state is ListeningLoaded ? (state as ListeningLoaded).livesRemaining : 1,
             ),
           ),
           updateCategoryStats(
@@ -322,3 +322,4 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     debugPrint('[ListeningBloc] All $_kMaxSaveRetries save attempts failed.');
   }
 }
+

@@ -269,7 +269,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
             gameType: s.gameType.name,
             level: s.level,
             xpIncrease: xp,
-            coinIncrease: coins,
+            coinIncrease: coins, starsEarned: state is SpeakingLoaded ? (state as SpeakingLoaded).livesRemaining : 1,
           ),
         ),
         updateCategoryStats(
@@ -398,3 +398,4 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
     }
   }
 }
+

@@ -237,7 +237,7 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
             gameType: _currentGameType!.name,
             level: _currentLevel!,
             xpIncrease: GrammarConstants.xpPerLevel,
-            coinIncrease: GrammarConstants.coinsPerLevel,
+            coinIncrease: GrammarConstants.coinsPerLevel, starsEarned: state is GrammarLoaded ? (state as GrammarLoaded).livesRemaining : 1,
           ),
         ),
         updateCategoryStats(
@@ -318,3 +318,4 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     );
   }
 }
+

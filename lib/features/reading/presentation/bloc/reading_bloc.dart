@@ -279,7 +279,7 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
             gameType: currentGameType!,
             level: currentLevel!,
             xpIncrease: ReadingGameConfig.xpPerLevel,
-            coinIncrease: ReadingGameConfig.coinsPerLevel,
+            coinIncrease: ReadingGameConfig.coinsPerLevel, starsEarned: state is ReadingLoaded ? (state as ReadingLoaded).livesRemaining : 1,
           ),
         ),
         updateCategoryStats(
@@ -295,3 +295,4 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
     }
   }
 }
+

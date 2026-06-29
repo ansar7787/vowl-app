@@ -262,7 +262,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
             gameType: gameType,
             level: level,
             xpIncrease: xp,
-            coinIncrease: coins,
+            coinIncrease: coins, starsEarned: state is VocabularyLoaded ? (state as VocabularyLoaded).livesRemaining : 1,
           ),
         ).catchError(_swallow),
         updateCategoryStats(
@@ -347,3 +347,4 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     emit(s.copyWith(hintsAvailable: s.hintsAvailable + event.count));
   }
 }
+
