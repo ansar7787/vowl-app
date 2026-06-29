@@ -267,7 +267,24 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                           final isNext = index == nextTierIndex;
 
                           return ScaleButton(
-                            onTap: canClaim ? () => _claimChest(index, totalStars) : null,
+                            onTap: () {
+                              if (canClaim) {
+                                _claimChest(index, totalStars);
+                              } else if (isClaimed) {
+                                CustomSnackBar.show(
+                                  context: context,
+                                  message: "You already claimed this chest!",
+                                  type: CustomSnackBarType.info,
+                                );
+                              } else {
+                                final needed = requirement - totalStars;
+                                CustomSnackBar.show(
+                                  context: context,
+                                  message: "You need $needed more stars!",
+                                  type: CustomSnackBarType.warning,
+                                );
+                              }
+                            },
                             child: Container(
                               width: 110.w,
                               margin: EdgeInsets.only(right: 16.w),
