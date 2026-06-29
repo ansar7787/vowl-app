@@ -67,13 +67,15 @@ class AdService {
         _isInitialized = true;
         if (kDebugMode) debugPrint('AdService: MobileAds initialised.');
 
-        if (kDebugMode) {
-          MobileAds.instance.updateRequestConfiguration(
-            RequestConfiguration(
-              testDeviceIds: ['6739FCB31DECCBA1A191319DC27E562A'],
-            ),
-          );
-        }
+        // Enforce COPPA/Families Policy compliance globally for all users
+        // This is strictly required to prevent AdMob bans for kids games.
+        MobileAds.instance.updateRequestConfiguration(
+          RequestConfiguration(
+            testDeviceIds: kDebugMode ? ['6739FCB31DECCBA1A191319DC27E562A'] : null,
+            tagForChildDirectedTreatment: TagForChildDirectedTreatment.yes,
+            maxAdContentRating: MaxAdContentRating.g,
+          ),
+        );
 
         // Stagger ad loading to avoid competing with app startup rendering.
         Future.delayed(const Duration(seconds: 2), loadInterstitialAd);
