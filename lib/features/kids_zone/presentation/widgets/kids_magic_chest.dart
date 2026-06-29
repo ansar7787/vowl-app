@@ -121,7 +121,7 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                     context.read<EconomyBloc>().add(EconomyClaimKidsDailyRewardRequested(amount));
                     widget.showNotification(
                       context,
-                      "🎁 HOORAY! YOU FOUND $amount ⭐!",
+                      "🎁 HOORAY! YOU FOUND $amount 🪙!",
                     );
                     di.sl<SoundService>().playCorrect();
                   }

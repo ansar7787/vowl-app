@@ -43,7 +43,7 @@ class HomeQuickStats extends StatelessWidget {
             context,
             context.tr('home.kids'),
             '${user.kidsCoins}',
-            Icons.star_rounded,
+            Icons.monetization_on_rounded,
             const Color(0xFFF59E0B),
             '${AppRouter.kidsZoneRoute}/boutique',
           ),
