@@ -116,11 +116,37 @@ class ModernGameDialog extends StatelessWidget {
                         final isEarned = index < stars;
                         return Padding(
                           padding: EdgeInsets.symmetric(horizontal: 4.w),
-                          child: Icon(
-                            Icons.star_rounded,
-                            size: index == 1 ? 50.r : 40.r,
-                            color: isEarned ? const Color(0xFFFFD700) : isDark ? Colors.white12 : Colors.black12,
-                          ).animate(target: isEarned ? 1 : 0).scale(duration: 400.ms, curve: Curves.elasticOut),
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              // 1. Static grey background placeholder
+                              Icon(
+                                Icons.star_rounded,
+                                size: index == 1 ? 50.r : 40.r,
+                                color: isDark ? Colors.white12 : Colors.black12,
+                              ),
+                              // 2. Golden star that sequentially scales in if earned
+                              if (isEarned)
+                                Icon(
+                                  Icons.star_rounded,
+                                  size: index == 1 ? 50.r : 40.r,
+                                  color: const Color(0xFFFFD700),
+                                )
+                                    .animate(key: ValueKey(stars))
+                                    .scale(
+                                      begin: const Offset(0, 0),
+                                      end: const Offset(1, 1),
+                                      duration: 500.ms,
+                                      curve: Curves.elasticOut,
+                                      delay: (100 + index * 200).ms,
+                                    )
+                                    .then()
+                                    .shimmer(
+                                      duration: 800.ms,
+                                      color: Colors.white54,
+                                    ),
+                            ],
+                          ),
                         );
                       }),
                     ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2);
