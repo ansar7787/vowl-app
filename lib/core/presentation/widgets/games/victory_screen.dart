@@ -13,6 +13,7 @@ import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/features/auth/data/repositories/gamification_repository_impl.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -116,43 +117,45 @@ class _VictoryScreenState extends State<VictoryScreen> {
   }
 
   Widget _buildTrophy(Color primaryColor) {
-    const goldColor = Color(0xFFFFD700);
-
-    return ExcludeSemantics(
-      child:
-          Container(
-                padding: EdgeInsets.all(32.r),
-                decoration: BoxDecoration(
-                  color: goldColor.withValues(alpha: 0.15),
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: goldColor.withValues(alpha: 0.2),
-                      blurRadius: 30,
-                      spreadRadius: 5,
-                    ),
-                  ],
-                  border: Border.all(
-                    color: goldColor.withValues(alpha: 0.3),
-                    width: 2,
+    return ValueListenableBuilder<int>(
+      valueListenable: GamificationRepositoryImpl.lastEarnedStars,
+      builder: (context, stars, child) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(3, (index) {
+            final isEarned = index < stars;
+            return Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4.w),
+              child: Icon(
+                Icons.star_rounded,
+                size: index == 1 ? 90.r : 60.r,
+                color: isEarned ? const Color(0xFFFFD700) : Colors.black12,
+                shadows: isEarned
+                    ? [
+                        Shadow(
+                          color: const Color(0xFFFFD700).withValues(alpha: 0.5),
+                          blurRadius: 20.r,
+                          offset: const Offset(0, 4),
+                        ),
+                      ]
+                    : null,
+              )
+                  .animate(delay: (200 * index).ms)
+                  .scale(
+                    begin: const Offset(0, 0),
+                    duration: 600.ms,
+                    curve: Curves.elasticOut,
+                  )
+                  .then()
+                  .shimmer(
+                    delay: 2.seconds,
+                    duration: 1.seconds,
+                    color: Colors.white,
                   ),
-                ),
-                child: Icon(
-                  Icons.emoji_events_rounded,
-                  color: goldColor,
-                  size: 80.r,
-                ),
-              )
-              .animate()
-              .rotate(
-                begin: -0.2,
-                end: 0,
-                duration: 1000.ms,
-                curve: Curves.elasticOut,
-              )
-              .scale(duration: 800.ms, curve: Curves.elasticOut)
-              .shake(hz: 3, curve: Curves.easeInOutCubic, duration: 1000.ms)
-              .shimmer(delay: 1.seconds, duration: 2.seconds),
+            );
+          }),
+        ).animate().slideY(begin: -0.2, curve: Curves.easeOutCubic);
+      },
     );
   }
 

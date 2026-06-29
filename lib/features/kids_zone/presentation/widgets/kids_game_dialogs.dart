@@ -11,6 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
+import 'package:vowl/features/auth/data/repositories/gamification_repository_impl.dart';
 
 class KidsGameDialogs {
   static Future<void> showCompletionDialog({
@@ -55,19 +56,27 @@ class KidsGameDialogs {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           // ICON HEADER
-                          Container(
-                            padding: EdgeInsets.all(12.r),
-                            decoration: BoxDecoration(
-                              color: primaryColor.withValues(alpha: 0.1),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Text(
-                              "🏆",
-                              style: TextStyle(fontSize: 32.sp),
-                            ),
-                          ).animate().scale(
-                            duration: 600.ms,
-                            curve: Curves.elasticOut,
+                          ValueListenableBuilder<int>(
+                            valueListenable: GamificationRepositoryImpl.lastEarnedStars,
+                            builder: (context, stars, child) {
+                              return Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: List.generate(3, (index) {
+                                  final isEarned = index < stars;
+                                  return Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 4.w),
+                                    child: Icon(
+                                      Icons.star_rounded,
+                                      size: index == 1 ? 48.sp : 36.sp,
+                                      color: isEarned ? const Color(0xFFFFD700) : Colors.black12,
+                                    ).animate(delay: (150 * index).ms).scale(
+                                      duration: 500.ms,
+                                      curve: Curves.elasticOut,
+                                    ),
+                                  );
+                                }),
+                              );
+                            },
                           ),
 
                           SizedBox(height: 16.h),

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
+import 'package:flutter/foundation.dart';
 
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/features/auth/data/repositories/firebase_failure_handler_mixin.dart';
@@ -18,6 +19,8 @@ class GamificationRepositoryImpl
     implements GamificationRepository {
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
+
+  static final ValueNotifier<int> lastEarnedStars = ValueNotifier<int>(3);
 
   GamificationRepositoryImpl({
     firebase_auth.FirebaseAuth? firebaseAuth,
@@ -150,14 +153,19 @@ class GamificationRepositoryImpl
           }
         }
 
-        if (starsEarned != null) {
-          final categoryStars = starRatings[gameType] ?? {};
-          final currentStars = categoryStars[level.toString()] ?? 0;
-          if (starsEarned > currentStars) {
-             categoryStars[level.toString()] = starsEarned;
-          }
-          starRatings[gameType] = categoryStars;
+        final int finalStarsEarned = starsEarned ?? 3;
+        
+        // Update the reactive notifier immediately so the Victory Screen rebuilds
+        Future.microtask(() {
+          lastEarnedStars.value = finalStarsEarned;
+        });
+
+        final categoryStars = starRatings[gameType] ?? {};
+        final currentStars = categoryStars[level.toString()] ?? 0;
+        if (finalStarsEarned > currentStars) {
+          categoryStars[level.toString()] = finalStarsEarned;
         }
+        starRatings[gameType] = categoryStars;
 
         // ---- Daily XP history ----
         final now = DateTime.now();
