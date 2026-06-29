@@ -284,10 +284,10 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     );
 
     if (_currentGameType == null || _currentLevel == null) return;
-    await _saveWithRetry();
+    await _saveWithRetry(s.livesRemaining);
   }
 
-  Future<void> _saveWithRetry() async {
+  Future<void> _saveWithRetry(int starsEarned) async {
     for (int attempt = 1; attempt <= _kMaxSaveRetries; attempt++) {
       try {
         await Future.wait([
@@ -296,7 +296,8 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
               gameType: _currentGameType!,
               level: _currentLevel!,
               xpIncrease: _kXpReward,
-              coinIncrease: _kCoinReward, starsEarned: state is ListeningLoaded ? (state as ListeningLoaded).livesRemaining : 1,
+              coinIncrease: _kCoinReward,
+              starsEarned: starsEarned,
             ),
           ),
           updateCategoryStats(

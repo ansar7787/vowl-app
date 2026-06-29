@@ -220,7 +220,7 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
           questCount: s.quests.length,
         ),
       );
-      await _persistLevelCompletion();
+      await _persistLevelCompletion(s.livesRemaining);
     } else {
       emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
     }
@@ -263,7 +263,7 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
   ///
   /// Called AFTER [ReadingGameComplete] is emitted — a failure here never
   /// affects the UI. Offline guard prevents pointless requests.
-  Future<void> _persistLevelCompletion() async {
+  Future<void> _persistLevelCompletion(int starsEarned) async {
     if (currentGameType == null || currentLevel == null) return;
 
     final isOnline = await networkInfo.isConnected;
@@ -279,7 +279,8 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
             gameType: currentGameType!,
             level: currentLevel!,
             xpIncrease: ReadingGameConfig.xpPerLevel,
-            coinIncrease: ReadingGameConfig.coinsPerLevel, starsEarned: state is ReadingLoaded ? (state as ReadingLoaded).livesRemaining : 1,
+            coinIncrease: ReadingGameConfig.coinsPerLevel,
+            starsEarned: starsEarned,
           ),
         ),
         updateCategoryStats(

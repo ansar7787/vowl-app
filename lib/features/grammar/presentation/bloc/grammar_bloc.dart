@@ -211,8 +211,7 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
           questCount: GrammarConstants.questsPerLevel,
         ),
       );
-
-      await _persistLevelCompletion();
+      await _persistLevelCompletion(currentState.livesRemaining);
     } else {
       // Wrong answer on the very last question — allow retry.
       emit(
@@ -227,7 +226,7 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
   /// Persists level completion atomically. Errors are caught and logged rather
   /// than surfaced to the UI since [GrammarGameComplete] is already emitted.
   /// The use-case layer is responsible for retry / offline queuing.
-  Future<void> _persistLevelCompletion() async {
+  Future<void> _persistLevelCompletion(int starsEarned) async {
     if (_currentGameType == null || _currentLevel == null) return;
 
     try {
@@ -237,7 +236,8 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
             gameType: _currentGameType!.name,
             level: _currentLevel!,
             xpIncrease: GrammarConstants.xpPerLevel,
-            coinIncrease: GrammarConstants.coinsPerLevel, starsEarned: state is GrammarLoaded ? (state as GrammarLoaded).livesRemaining : 1,
+            coinIncrease: GrammarConstants.coinsPerLevel,
+            starsEarned: starsEarned,
           ),
         ),
         updateCategoryStats(

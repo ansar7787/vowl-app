@@ -262,7 +262,8 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
             gameType: gameType,
             level: level,
             xpIncrease: xp,
-            coinIncrease: coins, starsEarned: state is VocabularyLoaded ? (state as VocabularyLoaded).livesRemaining : 1,
+            coinIncrease: coins,
+            starsEarned: s.livesRemaining,
           ),
         ).catchError(_swallow),
         updateCategoryStats(

@@ -273,7 +273,8 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
                 gameType: _currentGameType!,
                 level: _currentLevel!,
                 xpIncrease: AccentGameConstants.rewardXp,
-                coinIncrease: AccentGameConstants.rewardCoins, starsEarned: state is AccentLoaded ? (state as AccentLoaded).livesRemaining : 1,
+                coinIncrease: AccentGameConstants.rewardCoins,
+                starsEarned: s.livesRemaining,
               ),
             ),
             updateCategoryStats(
