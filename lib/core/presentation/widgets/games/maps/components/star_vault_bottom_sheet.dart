@@ -101,6 +101,12 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
         message: "Chest Unlocked! +$coinReward $currencyName!",
         type: CustomSnackBarType.success,
       );
+
+      Future.delayed(const Duration(seconds: 3), () {
+        if (mounted && context.mounted) {
+          Navigator.of(context).pop();
+        }
+      });
     }
   }
 
@@ -171,7 +177,6 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
           alignment: Alignment.center,
           clipBehavior: Clip.none,
           children: [
-            if (_showConfetti) const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
             Container(
               constraints: BoxConstraints(maxHeight: ScreenUtil().screenHeight * 0.85),
               decoration: BoxDecoration(
@@ -346,6 +351,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                 ),
               ),
             ),
+            if (_showConfetti) const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
           ],
         );
       },

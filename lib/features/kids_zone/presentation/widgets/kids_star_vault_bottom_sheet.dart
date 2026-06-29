@@ -96,6 +96,12 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         message: "Magical Chest Unlocked! +$coinReward Toys!",
         type: CustomSnackBarType.success,
       );
+
+      Future.delayed(const Duration(seconds: 3), () {
+        if (mounted && context.mounted) {
+          Navigator.of(context).pop();
+        }
+      });
     }
   }
 
@@ -164,7 +170,6 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
           alignment: Alignment.center,
           clipBehavior: Clip.none,
           children: [
-            if (_showConfetti) const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
             Container(
               constraints: BoxConstraints(maxHeight: ScreenUtil().screenHeight * 0.85),
               decoration: BoxDecoration(
@@ -338,6 +343,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                 ),
               ),
             ),
+            if (_showConfetti) const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
           ],
         );
       },
