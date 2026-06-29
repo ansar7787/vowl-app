@@ -130,8 +130,21 @@ class TollGateBottomSheet {
               SizedBox(height: 12.h),
               ScaleButton(
                 onTap: () {
+                  final adService = di.sl<AdService>();
+                  if (!adService.isRewardedAdLoaded) {
+                    Navigator.pop(sheetContext);
+                    CustomSnackBar.show(
+                      context: context,
+                      message: context.tr(
+                        'games.ad_not_ready',
+                        fallback: 'Ad not ready yet, try again in a moment.',
+                      ),
+                      type: CustomSnackBarType.warning,
+                    );
+                    return;
+                  }
                   Navigator.pop(sheetContext);
-                  di.sl<AdService>().showRewardedAd(
+                  adService.showRewardedAd(
                     isPremium: false,
                     onUserEarnedReward: (_) async {
                       // Free unlock via Ad!

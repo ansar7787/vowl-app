@@ -315,6 +315,8 @@ class KidsGameDialogs {
 
                           ScaleButton(
                             onTap: () {
+                              adService.recordLevelCompletion();
+                              context.read<AuthBloc>().add(const AuthRefreshUser());
                               context.pop(); // Pop dialog
                               context.pop(); // Pop game screen to return to map
                             },

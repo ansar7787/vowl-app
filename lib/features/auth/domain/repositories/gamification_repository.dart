@@ -20,6 +20,7 @@ abstract class GamificationRepository {
     required int xpIncrease,
     required int coinIncrease,
     bool isDoubleReward = false,
+    int? starsEarned,
   });
 
   /// Advances the unlocked level for [categoryId] to [newLevel] if [newLevel]

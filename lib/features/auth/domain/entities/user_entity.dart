@@ -62,6 +62,7 @@ class UserEntity {
   final Map<String, int> categoryStats;
   final Map<String, int> unlockedLevels;
   final Map<String, List<int>> completedLevels;
+  final Map<String, Map<String, int>> starRatings;
   final List<String> badges;
   final int streakFreezes;
   final int hintCount;
@@ -111,6 +112,7 @@ class UserEntity {
     // Single source of truth via UserGameConstants — no more inline duplication.
     this.unlockedLevels = UserGameConstants.kDefaultUnlockedLevels,
     this.completedLevels = const {},
+    this.starRatings = const {},
     this.badges = const [],
     this.streakFreezes = 0,
     this.hintCount = 0,
@@ -244,6 +246,7 @@ class UserEntity {
     List<Map<String, dynamic>>? coinHistory,
     int? coins,
     Map<String, List<int>>? completedLevels,
+    Map<String, Map<String, int>>? starRatings,
     int? currentStreak,
     Map<String, int>? dailyXpHistory,
     int? doubleXP,
@@ -298,6 +301,7 @@ class UserEntity {
       coinHistory: coinHistory ?? this.coinHistory,
       coins: coins ?? this.coins,
       completedLevels: completedLevels ?? this.completedLevels,
+      starRatings: starRatings ?? this.starRatings,
       currentStreak: currentStreak ?? this.currentStreak,
       dailyXpHistory: dailyXpHistory ?? this.dailyXpHistory,
       doubleXP: doubleXP ?? this.doubleXP,
@@ -397,6 +401,7 @@ class UserEntity {
         _mapEq.equals(other.categoryStats, categoryStats) &&
         _mapEq.equals(other.unlockedLevels, unlockedLevels) &&
         _deepEq.equals(other.completedLevels, completedLevels) &&
+        _deepEq.equals(other.starRatings, starRatings) &&
         _listEq.equals(other.badges, badges) &&
         other.streakFreezes == streakFreezes &&
         other.hintCount == hintCount &&
@@ -452,6 +457,7 @@ class UserEntity {
       _mapEq.hash(categoryStats),
       _mapEq.hash(unlockedLevels),
       _deepEq.hash(completedLevels),
+      _deepEq.hash(starRatings),
       _listEq.hash(badges),
       streakFreezes,
       hintCount,

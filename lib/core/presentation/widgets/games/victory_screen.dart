@@ -401,6 +401,9 @@ class _VictoryScreenState extends State<VictoryScreen> {
   }
 
   void _navigateBack() {
+    di.sl<AdService>().recordLevelCompletion();
+    context.read<AuthBloc>().add(const AuthRefreshUser());
+    
     final route =
         '/levels?category=${Uri.encodeQueryComponent(widget.category)}&gameType=${Uri.encodeQueryComponent(widget.gameType)}';
     context.go(route);

@@ -466,30 +466,35 @@ class NotificationService {
 
     final location = _currentLocation;
     final now = tz.TZDateTime.now(location);
-    // Anchor to exactly 8:00 PM local time tomorrow
+    // Anchor to exactly 9:15 PM local time
     var scheduledDate = tz.TZDateTime(
       location,
       now.year,
       now.month,
       now.day,
-      20, // 8 PM
-      0,
+      21, // 9 PM
+      15, // 15 mins
     );
 
-    // If it's already past 8 PM today, we still want it tomorrow
-    scheduledDate = scheduledDate.add(const Duration(days: 1));
+    // If it's already past 9:15 PM today, schedule for tomorrow
+    if (scheduledDate.isBefore(now)) {
+      scheduledDate = scheduledDate.add(const Duration(days: 1));
+    }
+
+    final titles = [
+      'You\'re on a roll 🔥',
+      'Don\'t break the chain ⚡',
+      'Your streak misses you 🎯',
+    ];
+    final title = titles[_idRandom.nextInt(titles.length)];
 
     await _localNotifications.zonedSchedule(
       streakReminderNotificationId,
-      _t(
-        'notifications.streak_reminder_title',
-        fallback: 'Owly is Waiting! 🦉🔥',
-      ),
+      _t('notifications.streak_reminder_title', fallback: title),
       _t(
         'notifications.streak_reminder_body',
         args: [currentStreak.toString()],
-        fallback:
-            'Your $currentStreak-day streak is in danger! Play now to keep it alive!',
+        fallback: '$currentStreak days strong. One quick round keeps it going.',
       ),
       scheduledDate,
       platformDetails,
@@ -504,7 +509,7 @@ class NotificationService {
 
     if (kDebugMode) {
       debugPrint(
-        'Scheduled streak reminder for $currentStreak days at 8:00 PM tomorrow local time',
+        'Scheduled streak reminder for $currentStreak days at 9:15 PM local time',
       );
     }
   }
@@ -536,14 +541,13 @@ class NotificationService {
       weeklyMotivationNotificationId,
       _t(
         'notifications.weekly_motivation_title',
-        fallback: 'Sunday Study Session! 📚',
+        fallback: 'Sunday wind-down 🎧',
       ),
       _t(
         'notifications.weekly_motivation_body',
-        fallback:
-            "Ready to crush your goals this week? Let's review what you learned!",
+        fallback: 'Relax with a few rounds before the week begins.',
       ),
-      _nextInstanceOfSundayTenAM(location),
+      _nextInstanceOfSundaySixThirtyPM(location),
       platformDetails,
       androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
       uiLocalNotificationDateInterpretation:
@@ -553,18 +557,19 @@ class NotificationService {
     );
 
     if (kDebugMode) {
-      debugPrint('Scheduled weekly motivation for Sundays at 10 AM');
+      debugPrint('Scheduled weekly motivation for Sundays at 6:30 PM');
     }
   }
 
-  tz.TZDateTime _nextInstanceOfSundayTenAM(tz.Location location) {
+  tz.TZDateTime _nextInstanceOfSundaySixThirtyPM(tz.Location location) {
     final tz.TZDateTime now = tz.TZDateTime.now(location);
     tz.TZDateTime scheduledDate = tz.TZDateTime(
       location,
       now.year,
       now.month,
       now.day,
-      10,
+      18, // 6 PM
+      30, // 30 mins
     );
     while (scheduledDate.weekday != DateTime.sunday) {
       scheduledDate = scheduledDate.add(const Duration(days: 1));

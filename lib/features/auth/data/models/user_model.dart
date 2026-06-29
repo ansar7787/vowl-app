@@ -46,6 +46,7 @@ class UserModel extends UserEntity {
     super.categoryStats,
     super.unlockedLevels,
     super.completedLevels,
+    super.starRatings,
     super.badges,
     super.streakFreezes,
     super.hintCount,
@@ -106,6 +107,7 @@ class UserModel extends UserEntity {
           ? _parseIntMap(map['unlockedLevels'])
           : UserGameConstants.kDefaultUnlockedLevels,
       completedLevels: _parseCompletedLevels(map['completedLevels']),
+      starRatings: _parseStarRatings(map['starRatings']),
       badges: _parseStringList(map['badges']),
       streakFreezes: (map['streakFreezes'] as num?)?.toInt() ?? 0,
       hintCount: (map['hintCount'] as num?)?.toInt() ?? 0,
@@ -183,6 +185,7 @@ class UserModel extends UserEntity {
       'categoryStats': categoryStats,
       'unlockedLevels': unlockedLevels,
       'completedLevels': completedLevels,
+      'starRatings': starRatings,
       'badges': badges,
       'streakFreezes': streakFreezes,
       'hintCount': hintCount,
@@ -241,6 +244,7 @@ class UserModel extends UserEntity {
     List<Map<String, dynamic>>? coinHistory,
     int? coins,
     Map<String, List<int>>? completedLevels,
+    Map<String, Map<String, int>>? starRatings,
     int? currentStreak,
     Map<String, int>? dailyXpHistory,
     int? doubleXP,
@@ -292,6 +296,7 @@ class UserModel extends UserEntity {
       coinHistory: coinHistory ?? this.coinHistory,
       coins: coins ?? this.coins,
       completedLevels: completedLevels ?? this.completedLevels,
+      starRatings: starRatings ?? this.starRatings,
       currentStreak: currentStreak ?? this.currentStreak,
       dailyXpHistory: dailyXpHistory ?? this.dailyXpHistory,
       doubleXP: doubleXP ?? this.doubleXP,
@@ -424,6 +429,20 @@ class UserModel extends UserEntity {
           .map((v) => (v as num?)?.toInt() ?? 0)
           .toList();
       return MapEntry(key.toString(), levels);
+    });
+  }
+
+  /// Parses the nested [starRatings] map: `{String → {String → int}}`.
+  static Map<String, Map<String, int>> _parseStarRatings(dynamic raw) {
+    if (raw == null) return const {};
+    final outer = raw as Map<Object?, Object?>;
+    return outer.map((categoryKey, categoryMapRaw) {
+      if (categoryMapRaw == null) return MapEntry(categoryKey.toString(), const {});
+      final inner = categoryMapRaw as Map<Object?, Object?>;
+      final parsedInner = inner.map((levelKey, starsRaw) {
+        return MapEntry(levelKey.toString(), (starsRaw as num?)?.toInt() ?? 0);
+      });
+      return MapEntry(categoryKey.toString(), parsedInner);
     });
   }
 }

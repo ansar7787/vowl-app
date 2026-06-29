@@ -1056,10 +1056,6 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
   }
 
   void _navigateToGame(BuildContext context, int level) {
-    final adService = di.sl<AdService>();
-    final user = context.read<AuthBloc>().state.user;
-    final isPremium = user?.isPremium ?? false;
-
     final routeMap = {
       'alphabet': AppRouter.kidsAlphabetRoute,
       'numbers': AppRouter.kidsNumbersRoute,
@@ -1091,14 +1087,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     );
 
     if (route != null) {
-      adService.showInterstitialAd(
-        isPremium: isPremium,
-        onDismissed: () {
-          if (context.mounted) {
-            context.push(route, extra: level);
-          }
-        },
-      );
+      context.push(route, extra: level);
     } else {
       debugPrint(
         "KIDS_MAP_ERROR: Route for gameType '${widget.gameType}' not found!",

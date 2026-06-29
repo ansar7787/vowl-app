@@ -730,174 +730,24 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                   return;
                 }
 
-                di.sl<AdService>().showInterstitialAd(
-                  isPremium: isPremium,
-                  onDismissed: () async {
-                    if (context.mounted) {
-                      await context.push(
-                        '/game?category=${Uri.encodeQueryComponent(theme.category.name)}&gameType=${Uri.encodeQueryComponent(widget.gameType)}&level=$level',
-                      );
+                context.push(
+                  '/game?category=${Uri.encodeQueryComponent(theme.category.name)}&gameType=${Uri.encodeQueryComponent(widget.gameType)}&level=$level',
+                ).then((_) {
+                  if (mounted) {
+                    Future.delayed(const Duration(milliseconds: 300), () {
                       if (mounted) {
-                        Future.delayed(const Duration(milliseconds: 300), () {
-                          if (mounted) {
-                            _scrollToCurrentLevel(animate: true);
-                          }
-                        });
+                        _scrollToCurrentLevel(animate: true);
                       }
-                    }
-                  },
-                );
+                    });
+                  }
+                });
               },
               child: ExcludeSemantics(
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
                     RepaintBoundary(
-                      child:
-                          Container(
-                                width: isCurrent ? 100.r : 85.r,
-                                height: isCurrent ? 100.r : 85.r,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  gradient: LinearGradient(
-                                    colors: (isCompleted || isPlayable || isHalfUnlocked)
-                                        ? [
-                                            Colors.white,
-                                            const Color(0xFFF1F5F9),
-                                          ]
-                                        : isTollGate
-                                            ? [
-                                                Colors.amber.shade200,
-                                                Colors.amber.shade400,
-                                              ]
-                                            : isNextZone
-                                                ? [
-                                                    Colors.amber.withValues(alpha: 0.1),
-                                                    Colors.amber.withValues(alpha: 0.3),
-                                                  ]
-                                                : [
-                                                    Colors.grey.shade400,
-                                                    Colors.grey.shade600,
-                                                  ],
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: ((isCompleted || isPlayable || isHalfUnlocked)
-                                              ? tierColor
-                                              : isTollGate 
-                                                ? Colors.amber 
-                                                : Colors.black)
-                                          .withValues(
-                                            alpha: isDark ? 0.4 : 0.2,
-                                          ),
-                                      offset: Offset(0, 8.h),
-                                      blurRadius: 15.r,
-                                    ),
-                                  ],
-                                  border: Border.all(
-                                    color: (isCompleted || isPlayable || isHalfUnlocked)
-                                        ? tierColor
-                                        : isTollGate
-                                          ? Colors.amber.shade600
-                                          : isNextZone
-                                              ? Colors.amber.withValues(alpha: 0.4)
-                                              : Colors.white24,
-                                    width: isCurrent ? 4.r : 3.r,
-                                  ),
-                                ),
-                                child: Container(
-                                  margin: EdgeInsets.all(4.r),
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                      colors: [
-                                        Colors.white.withValues(alpha: 0.4),
-                                        Colors.transparent,
-                                        Colors.black.withValues(alpha: 0.1),
-                                      ],
-                                    ),
-                                  ),
-                                  child: Center(
-                                    child: isTollGate
-                                        ? Icon(
-                                              Icons.lock_rounded,
-                                              size: 36.r,
-                                              color: Colors.white,
-                                              shadows: const [
-                                                Shadow(color: Colors.black38, offset: Offset(0, 2), blurRadius: 4),
-                                              ],
-                                            )
-                                        : (isCompleted || isPlayable || isHalfUnlocked)
-                                            ? Padding(
-                                                padding: EdgeInsets.all(4.r),
-                                                child: FittedBox(
-                                                  fit: BoxFit.contain,
-                                                  child: Column(
-                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                    children: [
-                                                      Text(
-                                                        context.tr('home.level_label'),
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 8.sp,
-                                                          fontWeight: FontWeight.w900,
-                                                          color: tierColor,
-                                                          letterSpacing: 2,
-                                                        ),
-                                                        maxLines: 1,
-                                                      ),
-                                                      Text(
-                                                        "$level",
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: (isPlayable || isCompleted ? 32 : 26).sp,
-                                                          fontWeight: FontWeight.w900,
-                                                          color: tierColor,
-                                                          height: 0.9,
-                                                          shadows: [
-                                                            Shadow(
-                                                              color: Colors.black38,
-                                                              offset: Offset(0, 2.h),
-                                                              blurRadius: 4.r,
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        maxLines: 1,
-                                                      ),
-                                                      if (isCompleted) ...[
-                                                        SizedBox(height: 2.h),
-                                                        Row(
-                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                          children: [
-                                                            Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
-                                                            Icon(Icons.star_rounded, size: 14.r, color: Colors.amber),
-                                                            Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
-                                                          ],
-                                                        ),
-                                                      ],
-                                                    ],
-                                                  ),
-                                                ),
-                                              )
-                                            : Icon(
-                                                    Icons.lock_rounded,
-                                                    size: 32.r,
-                                                    color: Colors.white54,
-                                                  ),
-                                  ),
-                                ),
-                              )
-                              .animate(onPlay: (c) => c.repeat(reverse: true))
-                              .moveY(
-                                begin: isCurrent ? -6.r : -3.r,
-                                end: isCurrent ? 6.r : 3.r,
-                                duration: (isCurrent ? 1.2 : 2.0).seconds,
-                                curve: Curves.easeInOut,
-                              ),
+                      child: _buildNodeCircle(context, level, isCurrent, isCompleted, isPlayable, isHalfUnlocked, isTollGate, isNextZone, tierColor, isDark),
                     ),
 
                     PositionedDirectional(
@@ -1084,5 +934,130 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
               .animate(onPlay: (c) => c.repeat(reverse: true))
               .moveY(begin: -2, end: 2, duration: 2.seconds),
     );
+  }
+
+  Widget _buildNodeCircle(BuildContext context, int level, bool isCurrent, bool isCompleted, bool isPlayable, bool isHalfUnlocked, bool isTollGate, bool isNextZone, Color tierColor, bool isDark) {
+    Widget circleWidget = Container(
+      width: isCurrent ? 100.r : 85.r,
+      height: isCurrent ? 100.r : 85.r,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: LinearGradient(
+          colors: (isCompleted || isPlayable || isHalfUnlocked)
+              ? [Colors.white, const Color(0xFFF1F5F9)]
+              : isTollGate
+                  ? [Colors.amber.shade200, Colors.amber.shade400]
+                  : isNextZone
+                      ? [Colors.amber.withValues(alpha: 0.1), Colors.amber.withValues(alpha: 0.3)]
+                      : [Colors.grey.shade400, Colors.grey.shade600],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: ((isCompleted || isPlayable || isHalfUnlocked) ? tierColor : isTollGate ? Colors.amber : Colors.black)
+                .withValues(alpha: isDark ? 0.4 : 0.2),
+            offset: Offset(0, 8.h),
+            blurRadius: 15.r,
+          ),
+        ],
+        border: Border.all(
+          color: (isCompleted || isPlayable || isHalfUnlocked)
+              ? tierColor
+              : isTollGate
+                ? Colors.amber.shade600
+                : isNextZone
+                    ? Colors.amber.withValues(alpha: 0.4)
+                    : Colors.white24,
+          width: isCurrent ? 4.r : 3.r,
+        ),
+      ),
+      child: Container(
+        margin: EdgeInsets.all(4.r),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Colors.white.withValues(alpha: 0.4),
+              Colors.transparent,
+              Colors.black.withValues(alpha: 0.1),
+            ],
+          ),
+        ),
+        child: Center(
+          child: isTollGate
+              ? Icon(
+                    Icons.lock_rounded,
+                    size: 36.r,
+                    color: Colors.white,
+                    shadows: const [Shadow(color: Colors.black38, offset: Offset(0, 2), blurRadius: 4)],
+                  )
+              : (isCompleted || isPlayable || isHalfUnlocked)
+                  ? Padding(
+                      padding: EdgeInsets.all(4.r),
+                      child: FittedBox(
+                        fit: BoxFit.contain,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              context.tr('home.level_label'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 8.sp,
+                                fontWeight: FontWeight.w900,
+                                color: tierColor,
+                                letterSpacing: 2,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              "$level",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: (isPlayable || isCompleted ? 32 : 26).sp,
+                                fontWeight: FontWeight.w900,
+                                color: tierColor,
+                                height: 0.9,
+                                shadows: [
+                                  Shadow(color: Colors.black38, offset: Offset(0, 2.h), blurRadius: 4.r),
+                                ],
+                              ),
+                              maxLines: 1,
+                            ),
+                            if (isCompleted) ...[
+                              SizedBox(height: 2.h),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
+                                  Icon(Icons.star_rounded, size: 14.r, color: Colors.amber),
+                                  Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
+                                ],
+                              ),
+                            ],
+                          ],
+                        ),
+                      ),
+                    )
+                  : Icon(Icons.lock_rounded, size: 32.r, color: Colors.white54),
+        ),
+      ),
+    );
+
+    if (isCurrent) {
+      return circleWidget
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .moveY(
+            begin: -6.r,
+            end: 6.r,
+            duration: 1.2.seconds,
+            curve: Curves.easeInOut,
+          );
+    }
+
+    return circleWidget;
   }
 }

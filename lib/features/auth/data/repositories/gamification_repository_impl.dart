@@ -36,6 +36,7 @@ class GamificationRepositoryImpl
     required int xpIncrease,
     required int coinIncrease,
     bool isDoubleReward = false,
+    int? starsEarned,
   }) async {
     try {
       final user = _firebaseAuth.currentUser;
@@ -90,6 +91,20 @@ class GamificationRepositoryImpl
           );
         }
 
+        var starRatings = <String, Map<String, int>>{};
+        if (data['starRatings'] != null) {
+          final rawOuter = data['starRatings'] as Map<Object?, Object?>;
+          for (final entry in rawOuter.entries) {
+             final k = entry.key.toString();
+             final rawInner = entry.value as Map<Object?, Object?>;
+             final innerMap = <String, int>{};
+             for (final innerEntry in rawInner.entries) {
+                 innerMap[innerEntry.key.toString()] = (innerEntry.value as num?)?.toInt() ?? 0;
+             }
+             starRatings[k] = innerMap;
+          }
+        }
+
         var coinHistoryList = <Map<String, dynamic>>[];
         if (data['coinHistory'] != null) {
           coinHistoryList = List<Map<String, dynamic>>.from(
@@ -133,6 +148,15 @@ class GamificationRepositoryImpl
           if (level < 10 || data['isPremium'] == true) {
             unlockedLevels[gameType] = level + 1;
           }
+        }
+
+        if (starsEarned != null) {
+          final categoryStars = starRatings[gameType] ?? {};
+          final currentStars = categoryStars[level.toString()] ?? 0;
+          if (starsEarned > currentStars) {
+             categoryStars[level.toString()] = starsEarned;
+          }
+          starRatings[gameType] = categoryStars;
         }
 
         // ---- Daily XP history ----
@@ -209,6 +233,7 @@ class GamificationRepositoryImpl
           'recentActivities': activities,
           'completedLevels': completedLevels,
           'unlockedLevels': unlockedLevels,
+          'starRatings': starRatings,
         });
       });
 

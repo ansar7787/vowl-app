@@ -35,6 +35,7 @@ class UpdateUserRewards extends UseCase<void, UpdateUserRewardsParams> {
         xpIncrease: params.xpIncrease,
         coinIncrease: params.coinIncrease,
         isDoubleReward: params.isDoubleReward,
+        starsEarned: params.starsEarned,
       );
 }
 
@@ -46,6 +47,7 @@ class UpdateUserRewardsParams extends Equatable {
   final int xpIncrease;
   final int coinIncrease;
   final bool isDoubleReward;
+  final int? starsEarned;
 
   const UpdateUserRewardsParams({
     required this.gameType,
@@ -53,6 +55,7 @@ class UpdateUserRewardsParams extends Equatable {
     required this.xpIncrease,
     required this.coinIncrease,
     this.isDoubleReward = false,
+    this.starsEarned,
   });
 
   @override
@@ -62,5 +65,6 @@ class UpdateUserRewardsParams extends Equatable {
     xpIncrease,
     coinIncrease,
     isDoubleReward,
+    starsEarned,
   ];
 }
