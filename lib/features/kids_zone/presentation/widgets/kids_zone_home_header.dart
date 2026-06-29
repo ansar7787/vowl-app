@@ -42,7 +42,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'Little Explorer 🌟',
+                          'Little Explorer',
                           style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 28.sp,
                             fontWeight: FontWeight.w900,

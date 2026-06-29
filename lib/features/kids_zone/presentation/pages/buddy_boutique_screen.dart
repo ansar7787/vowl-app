@@ -332,7 +332,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
-                    Icons.star_rounded,
+                    Icons.monetization_on_rounded,
                     color: Colors.amber,
                     size: 32,
                   ),
@@ -601,7 +601,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(Icons.star_rounded, color: Color(0xFFF59E0B), size: 14),
+          const Icon(Icons.monetization_on_rounded, color: Color(0xFFF59E0B), size: 14),
           SizedBox(width: 4.w),
           Text(
             "$price",

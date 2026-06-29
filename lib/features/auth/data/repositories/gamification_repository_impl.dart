@@ -165,7 +165,7 @@ class GamificationRepositoryImpl
           });
         }
 
-        final categoryStars = starRatings[gameType] ?? {};
+        final categoryStars = Map<String, int>.from(starRatings[gameType] ?? {});
         
         // 1. Update Gameplay Stars
         if (starsEarned != null) {
