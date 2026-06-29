@@ -114,7 +114,7 @@ class KidsGameDialogs {
                                   child: _buildReward(
                                     context,
                                     state.coinsEarned * (rewardsDoubled ? 3 : 1),
-                                    "🌟",
+                                    "🪙",
                                     context.tr('games.kids_coins').isEmpty ||
                                             context.tr('games.kids_coins') ==
                                                 'games.kids_coins'
