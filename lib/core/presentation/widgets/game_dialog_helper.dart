@@ -99,6 +99,7 @@ class GameDialogHelper {
         onButtonPressed: () {
           Navigator.of(dialogCtx).pop();
           if (context.mounted) {
+            context.read<AuthBloc>().add(const AuthRefreshUser());
             Navigator.of(context).pop(popResult);
           }
         },
