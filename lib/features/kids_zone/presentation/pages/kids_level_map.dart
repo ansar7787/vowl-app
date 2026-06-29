@@ -16,7 +16,6 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/animated_kids_asset.dart';
 import 'package:vowl/core/utils/app_router.dart';
-import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
 import 'package:vowl/core/utils/story_service.dart';

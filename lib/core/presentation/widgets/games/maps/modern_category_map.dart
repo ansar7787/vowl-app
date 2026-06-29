@@ -18,7 +18,6 @@ import 'package:vowl/core/presentation/widgets/story_dialogue_box.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/data/services/asset_quest_service.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
-import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/toll_gate_bottom_sheet.dart';
 
