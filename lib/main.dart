@@ -156,8 +156,7 @@ void main() async {
 
   runApp(const MyApp());
 
-  // Delay splash removal to ensure first frame is fully rendered
-  Future.delayed(const Duration(milliseconds: 200), FlutterNativeSplash.remove);
+  // Native splash will be removed dynamically in SplashPage once the image is decoded!
 
   // 5. Defer heavy SDKs until UI is stable
   WidgetsBinding.instance.addPostFrameCallback((_) {

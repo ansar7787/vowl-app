@@ -5,6 +5,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -15,6 +16,18 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   bool _hasNavigated = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Pre-cache the logo image to prevent any visual "popping"
+    // Once decoded into memory, we remove the Native Splash screen
+    // so the transition to Flutter is absolutely seamless!
+    precacheImage(const AssetImage('assets/images/vowl_logo.webp'), context)
+        .then((_) {
+      FlutterNativeSplash.remove();
+    });
+  }
 
   @override
   void initState() {
