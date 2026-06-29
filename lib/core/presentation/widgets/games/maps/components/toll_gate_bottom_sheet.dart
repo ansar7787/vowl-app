@@ -19,7 +19,7 @@ class TollGateBottomSheet {
   }) {
     final user = context.read<AuthBloc>().state.user;
     final int userCoins = user?.coins ?? 0;
-    const int cost = 100;
+    const int cost = 150;
     
     showModalBottomSheet(
       context: context,

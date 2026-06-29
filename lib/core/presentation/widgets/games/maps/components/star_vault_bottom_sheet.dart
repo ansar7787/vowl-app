@@ -64,8 +64,8 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
 
     final updateUserRewards = di.sl<UpdateUserRewards>();
     
-    // Give 500 coins per tier level
-    final coinReward = (tierIndex + 1) * 500;
+    // Give a standard, balanced reward to protect the coin economy
+    final coinReward = (tierIndex + 1) * 100;
 
     await updateUserRewards(
       UpdateUserRewardsParams(

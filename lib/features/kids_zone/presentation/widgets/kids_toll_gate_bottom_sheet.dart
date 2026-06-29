@@ -63,7 +63,7 @@ class KidsTollGateBottomSheet {
                 onTap: () async {
                   final user = context.read<AuthBloc>().state.user;
                   final userCoins = user?.kidsCoins ?? 0;
-                  const int cost = 100;
+                  const int cost = 150;
                   
                   if (userCoins < cost) {
                     Navigator.pop(sheetContext);
@@ -94,7 +94,7 @@ class KidsTollGateBottomSheet {
                   builder: (context) {
                     final user = context.read<AuthBloc>().state.user;
                     final userCoins = user?.kidsCoins ?? 0;
-                    const int cost = 100;
+                    const int cost = 150;
                     
                     return Container(
                       width: double.infinity,
