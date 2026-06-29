@@ -547,7 +547,8 @@ class VowlCoinsScreen extends StatelessWidget {
   // ── Coin History Ledger (Vision 2026) ──
   Widget _buildCoinHistory(BuildContext context, UserEntity user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final recentHistory = user.coinHistory.reversed.take(10).toList();
+    // Take the 10 most recent transactions, but display them with the newest at the bottom
+    final recentHistory = user.coinHistory.reversed.take(10).toList().reversed.toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
