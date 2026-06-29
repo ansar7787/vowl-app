@@ -354,7 +354,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
       ),
       child: Row(
         children: [
-          Text('⭐', style: TextStyle(fontSize: 20.sp)),
+          Text('🪙', style: TextStyle(fontSize: 20.sp)),
           SizedBox(width: 8.w),
           Text(
             coins.toString(),
@@ -450,7 +450,7 @@ class _FloatingCoinState extends State<_FloatingCoin>
             opacity: _animOpacity.value,
             child: Transform.scale(
               scale: _animScale.value,
-              child: Text('⭐', style: TextStyle(fontSize: 30.sp)),
+              child: Text('🪙', style: TextStyle(fontSize: 30.sp)),
             ),
           ),
         );

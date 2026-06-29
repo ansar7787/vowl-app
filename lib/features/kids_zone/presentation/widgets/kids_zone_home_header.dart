@@ -32,7 +32,8 @@ class KidsZoneHomeHeader extends StatelessWidget {
                   children: [
                     Text(
                       'Welcome Back!',
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w600,
                         color: isDark ? Colors.white60 : Colors.black45,
@@ -42,11 +43,14 @@ class KidsZoneHomeHeader extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'Little Explorer',
-                          style: TextStyle(fontFamily: 'Outfit', 
+                          'Little Explorer 🌟',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
                             fontSize: 28.sp,
                             fontWeight: FontWeight.w900,
-                            color: isDark ? Colors.white : const Color(0xFF1E293B),
+                            color: isDark
+                                ? Colors.white
+                                : const Color(0xFF1E293B),
                             height: 1.2,
                           ),
                         ),
@@ -61,7 +65,8 @@ class KidsZoneHomeHeader extends StatelessWidget {
             SizedBox(height: 32.h),
             Text(
               'LEARNING ADVENTURES',
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 11.sp,
                 fontWeight: FontWeight.w900,
                 color: const Color(0xFF6366F1),
@@ -82,10 +87,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
       },
       child: ScaleButton(
         onTap: () => context.push(AppRouter.kidsMascotSelectionRoute),
-        child: VowlMascot(
-          size: 40.r,
-          isKidsMode: true,
-        ),
+        child: VowlMascot(size: 40.r, isKidsMode: true),
       ),
     );
   }

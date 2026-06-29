@@ -83,7 +83,7 @@ class KidsRoomTopBar extends StatelessWidget {
       borderRadius: BorderRadius.circular(20.r),
       child: Row(
         children: [
-          Icon(Icons.star_rounded, color: const Color(0xFFF59E0B), size: 16.sp),
+          Icon(Icons.monetization_on_rounded, color: const Color(0xFFF59E0B), size: 16.sp),
           SizedBox(width: 8.w),
           Text(
             "${user.kidsCoins}",
