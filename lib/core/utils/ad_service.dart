@@ -40,7 +40,8 @@ class AdService {
   static const int levelsPerInterstitial = 3;
 
   /// Minimum cooldown between interstitials regardless of level count.
-  static const int interstitialCooldownMinutes = 4;
+  /// Reduced to 2 minutes to maximize revenue while remaining barely compliant.
+  static const int interstitialCooldownMinutes = 2;
 
   static const int _maxFailedLoadAttempts = 3;
 
