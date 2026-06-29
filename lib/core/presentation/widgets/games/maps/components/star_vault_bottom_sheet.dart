@@ -357,7 +357,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                   ],
                                 ),
                           ),
-                        ).animate().shimmer(duration: 2.seconds, delay: 1.seconds),
+                        ),
                       ),
                       SizedBox(height: 12.h),
                       Text("Magic Stars permanently count towards your total!", style: TextStyle(fontSize: 11.sp, color: Colors.grey)),

@@ -350,7 +350,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                   ],
                                 ),
                           ),
-                        ).animate().shimmer(duration: 2.seconds, delay: 1.seconds),
+                        ),
                       ),
                       SizedBox(height: 16.h),
                     ],
