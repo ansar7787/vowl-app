@@ -374,6 +374,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
                 level: s.level,
                 xpIncrease: 3,
                 coinIncrease: 10,
+                starsEarned: s.livesRemaining > 0 ? s.livesRemaining : 1,
               ),
             ),
             if (newSticker != null) awardKidsSticker(newSticker),

@@ -245,7 +245,10 @@ class NotificationService {
       if (kDebugMode) {
         debugPrint('App opened from terminated state by notification');
       }
-      _handleNotificationTap(initialMessage.data['path'] as String?);
+      final path = initialMessage.data['path'] as String?;
+      if (path != null && path.isNotEmpty && _isSafeInternalPath(path)) {
+        AppRouter.pendingDeepLink = path;
+      }
     }
   }
 

@@ -21,6 +21,8 @@ class AppRouter {
 
   // ── Route path constants ──────────────────────────────────────────────────
 
+  static String? pendingDeepLink;
+
   static const String initialRoute = '/splash';
   static const String splashRoute = '/splash';
   static const String homeRoute = '/home';
@@ -144,6 +146,13 @@ class AppRouter {
     if (!isVerified) {
       if (path != verifyEmailRoute) return verifyEmailRoute;
       return null;
+    }
+
+    // Process pending deep link if app cold-started from notification
+    if (AppRouter.pendingDeepLink != null) {
+      final link = AppRouter.pendingDeepLink!;
+      AppRouter.pendingDeepLink = null;
+      return link;
     }
 
     // 5. Authenticated + verified — redirect away from auth/verify/root.

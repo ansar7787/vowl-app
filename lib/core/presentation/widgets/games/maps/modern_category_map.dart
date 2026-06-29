@@ -1029,13 +1029,21 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                             ),
                             if (isCompleted) ...[
                               SizedBox(height: 2.h),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
-                                  Icon(Icons.star_rounded, size: 14.r, color: Colors.amber),
-                                  Icon(Icons.star_rounded, size: 10.r, color: Colors.amber),
-                                ],
+                              Builder(
+                                builder: (context) {
+                                  final earnedStars = context.read<AuthBloc>().state.user?.starRatings[widget.gameType]?[level.toString()] ?? 0;
+                                  return Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: List.generate(3, (index) {
+                                      final isEarned = index < earnedStars;
+                                      return Icon(
+                                        Icons.star_rounded, 
+                                        size: index == 1 ? 14.r : 10.r, 
+                                        color: isEarned ? Colors.amber : Colors.black26,
+                                      );
+                                    }),
+                                  );
+                                },
                               ),
                             ],
                           ],
