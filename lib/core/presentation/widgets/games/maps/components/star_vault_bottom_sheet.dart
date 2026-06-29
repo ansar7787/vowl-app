@@ -65,15 +65,15 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
 
     final updateUserRewards = di.sl<UpdateUserRewards>();
     
-    // Randomized rewards based on tier
+    // Randomized rewards based on tier (Scarcity Psychology for Ad Revenue)
     final random = math.Random();
-    int coinReward = 100;
+    int coinReward = 0;
     switch(tierIndex) {
-      case 0: coinReward = 50 + random.nextInt(101); break; // 50-150
-      case 1: coinReward = 150 + random.nextInt(151); break; // 150-300
-      case 2: coinReward = 300 + random.nextInt(201); break; // 300-500
-      case 3: coinReward = 500 + random.nextInt(301); break; // 500-800
-      case 4: coinReward = 800 + random.nextInt(401); break; // 800-1200
+      case 0: coinReward = 15 + random.nextInt(21); break; // 15-35
+      case 1: coinReward = 30 + random.nextInt(21); break; // 30-50
+      case 2: coinReward = 50 + random.nextInt(31); break; // 50-80
+      case 3: coinReward = 80 + random.nextInt(41); break; // 80-120
+      case 4: coinReward = 120 + random.nextInt(31); break; // 120-150
     }
 
     await updateUserRewards(

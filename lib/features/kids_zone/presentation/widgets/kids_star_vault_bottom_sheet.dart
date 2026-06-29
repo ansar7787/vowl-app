@@ -65,13 +65,13 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     final updateUserRewards = di.sl<UpdateUserRewards>();
     
     final random = math.Random();
-    int coinReward = 100;
+    int coinReward = 0;
     switch(tierIndex) {
-      case 0: coinReward = 50 + random.nextInt(101); break;
-      case 1: coinReward = 150 + random.nextInt(151); break;
-      case 2: coinReward = 300 + random.nextInt(201); break;
-      case 3: coinReward = 500 + random.nextInt(301); break;
-      case 4: coinReward = 800 + random.nextInt(401); break;
+      case 0: coinReward = 15 + random.nextInt(21); break; // 15-35
+      case 1: coinReward = 30 + random.nextInt(21); break; // 30-50
+      case 2: coinReward = 50 + random.nextInt(31); break; // 50-80
+      case 3: coinReward = 80 + random.nextInt(41); break; // 80-120
+      case 4: coinReward = 120 + random.nextInt(31); break; // 120-150
     }
 
     await updateUserRewards(
