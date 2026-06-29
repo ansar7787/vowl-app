@@ -88,7 +88,7 @@ class _SplashPageState extends State<SplashPage> {
                     ),
                   ),
                 ),
-              ).animate().fadeIn(duration: 1.seconds),
+              ),
 
               // Centre logo
               Center(
@@ -150,7 +150,7 @@ class _SplashLogo extends StatelessWidget {
           ),
         ),
       ),
-    ).animate().scale(duration: 800.ms, curve: Curves.easeOutBack).fadeIn();
+    );
   }
 }
 
@@ -182,7 +182,7 @@ class _SplashFooter extends StatelessWidget {
                 ),
               ],
             ),
-          ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.1),
+          ),
           SizedBox(height: 6.h),
           Text(
             'Your Complete English Quest',
@@ -193,7 +193,7 @@ class _SplashFooter extends StatelessWidget {
               color: isDark ? Colors.white30 : Colors.black26,
               letterSpacing: 2,
             ),
-          ).animate().fadeIn(delay: 800.ms),
+          ),
         ],
       ),
     );
