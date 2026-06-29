@@ -20,6 +20,7 @@ abstract class GamificationRepository {
     required int xpIncrease,
     required int coinIncrease,
     bool isDoubleReward = false,
+    bool isVaultReward = false,
     int? starsEarned,
     int? addMagicStars,
     int? claimChestTier,

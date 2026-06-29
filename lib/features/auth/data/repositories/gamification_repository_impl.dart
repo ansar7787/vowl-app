@@ -39,6 +39,7 @@ class GamificationRepositoryImpl
     required int xpIncrease,
     required int coinIncrease,
     bool isDoubleReward = false,
+    bool isVaultReward = false,
     int? starsEarned,
     int? addMagicStars,
     int? claimChestTier,
@@ -141,13 +142,13 @@ class GamificationRepositoryImpl
         final finalXpIncrease = (baseXp * xpMultiplier).round();
 
         // ---- Completed & unlocked levels ----
-        if (!isReplay) {
+        if (!isReplay && !isVaultReward) {
           categoryCompleted.add(level);
           completedLevels[gameType] = categoryCompleted;
         }
 
         final currentUnlocked = unlockedLevels[gameType] ?? 1;
-        if (level >= currentUnlocked) {
+        if (!isVaultReward && level >= currentUnlocked) {
           // Free levels (1-10) or Premium users automatically unlock the next level.
           // Otherwise, the user must explicitly purchase the next level via the Toll Gate.
           if (level < 10 || data['isPremium'] == true) {
@@ -231,7 +232,7 @@ class GamificationRepositoryImpl
         // instantiating a new Set on every transaction invocation.
         final isKidsGame = UserGameConstants.kKidsGameTypes.contains(gameType);
 
-        var finalCoinIncrease = (isReplay && !isDoubleReward)
+        var finalCoinIncrease = (!isVaultReward && isReplay && !isDoubleReward)
             ? 0
             : coinIncrease;
         if (!isReplay && (data['isPremium'] == true || userLevel >= 100)) {

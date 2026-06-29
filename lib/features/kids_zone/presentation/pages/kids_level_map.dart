@@ -24,7 +24,7 @@ import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
-import 'package:vowl/core/presentation/widgets/games/maps/components/star_vault_bottom_sheet.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_star_vault_bottom_sheet.dart';
 
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_toll_gate_bottom_sheet.dart';
 import 'package:vowl/features/kids_zone/presentation/painters/kids_segment_path_painter.dart';
@@ -873,7 +873,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
         final totalStars = gameplayStars + magicStars;
 
         return ScaleButton(
-          onTap: () => StarVaultBottomSheet.show(context, widget.gameType, widget.primaryColor),
+          onTap: () => KidsStarVaultBottomSheet.show(context, widget.gameType, widget.primaryColor),
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             decoration: BoxDecoration(

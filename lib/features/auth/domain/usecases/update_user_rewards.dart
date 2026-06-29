@@ -35,6 +35,7 @@ class UpdateUserRewards extends UseCase<void, UpdateUserRewardsParams> {
         xpIncrease: params.xpIncrease,
         coinIncrease: params.coinIncrease,
         isDoubleReward: params.isDoubleReward,
+        isVaultReward: params.isVaultReward,
         starsEarned: params.starsEarned,
         addMagicStars: params.addMagicStars,
         claimChestTier: params.claimChestTier,
@@ -49,6 +50,7 @@ class UpdateUserRewardsParams extends Equatable {
   final int xpIncrease;
   final int coinIncrease;
   final bool isDoubleReward;
+  final bool isVaultReward;
   final int? starsEarned;
   final int? addMagicStars;
   final int? claimChestTier;
@@ -59,6 +61,7 @@ class UpdateUserRewardsParams extends Equatable {
     required this.xpIncrease,
     required this.coinIncrease,
     this.isDoubleReward = false,
+    this.isVaultReward = false,
     this.starsEarned,
     this.addMagicStars,
     this.claimChestTier,
