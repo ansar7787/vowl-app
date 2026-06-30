@@ -5,10 +5,11 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/usecases/purchase_level_unlock.dart';
 import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/presentation/widgets/game_confetti.dart';
+import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class TollGateBottomSheet {
@@ -67,10 +68,15 @@ class TollGateBottomSheet {
                 onTap: () async {
                   if (userCoins < cost) {
                     Navigator.pop(sheetContext);
-                    CustomSnackBar.show(
+                    showDialog(
                       context: context,
-                      message: context.tr('games.not_enough_coins', fallback: 'Not enough coins!'),
-                      type: CustomSnackBarType.error,
+                      builder: (ctx) => ModernGameDialog(
+                        title: 'NOT ENOUGH COINS',
+                        description: context.tr('games.not_enough_coins', fallback: 'Not enough coins!'),
+                        buttonText: 'KEEP PLAYING',
+                        isSuccess: false,
+                        onButtonPressed: () => Navigator.of(ctx).pop(),
+                      ),
                     );
                     return;
                   }
@@ -79,10 +85,24 @@ class TollGateBottomSheet {
                     PurchaseLevelUnlockParams(gameType: gameType, cost: cost)
                   );
                   if (result.isRight() && context.mounted) {
-                    CustomSnackBar.show(
+                    showDialog(
                       context: context,
-                      message: context.tr('games.level_unlocked_success', fallback: 'Next 3 Levels Unlocked!'),
-                      type: CustomSnackBarType.success,
+                      builder: (ctx) => Material(
+                        type: MaterialType.transparency,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
+                            ModernGameDialog(
+                              title: 'GATE UNLOCKED!',
+                              description: context.tr('games.level_unlocked_success', fallback: 'Next 3 Levels Unlocked!'),
+                              buttonText: 'AWESOME',
+                              isSuccess: true,
+                              onButtonPressed: () => Navigator.of(ctx).pop(),
+                            ),
+                          ],
+                        ),
+                      ),
                     );
                   }
                 },
@@ -133,13 +153,16 @@ class TollGateBottomSheet {
                   final adService = di.sl<AdService>();
                   if (!adService.isRewardedAdLoaded) {
                     Navigator.pop(sheetContext);
-                    CustomSnackBar.show(
+                    showDialog(
                       context: context,
-                      message: context.tr(
-                        'games.ad_not_ready',
-                        fallback: 'Ad not ready yet, try again in a moment.',
+                      builder: (ctx) => ModernGameDialog(
+                        title: 'AD NOT READY',
+                        description: context.tr('games.ad_not_ready', fallback: 'Ad not ready yet, try again in a moment.'),
+                        buttonText: 'OK',
+                        isSuccess: false,
+                        onButtonPressed: () => Navigator.of(ctx).pop(),
+                        customIcon: Icon(Icons.hourglass_empty_rounded, color: Colors.orange, size: 48.sp),
                       ),
-                      type: CustomSnackBarType.warning,
                     );
                     return;
                   }
@@ -152,10 +175,24 @@ class TollGateBottomSheet {
                         PurchaseLevelUnlockParams(gameType: gameType, cost: 0)
                       );
                       if (result.isRight() && context.mounted) {
-                        CustomSnackBar.show(
+                        showDialog(
                           context: context,
-                          message: context.tr('games.level_unlocked_success', args: [level.toString()], fallback: 'Level $level Unlocked!'),
-                          type: CustomSnackBarType.success,
+                          builder: (ctx) => Material(
+                            type: MaterialType.transparency,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
+                                ModernGameDialog(
+                                  title: 'GATE UNLOCKED!',
+                                  description: context.tr('games.level_unlocked_success', args: [level.toString()], fallback: 'Level $level Unlocked!'),
+                                  buttonText: 'AWESOME',
+                                  isSuccess: true,
+                                  onButtonPressed: () => Navigator.of(ctx).pop(),
+                                ),
+                              ],
+                            ),
+                          ),
                         );
                       }
                     },
