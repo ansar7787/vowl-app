@@ -132,6 +132,7 @@ class UnifiedKidsGameScreen extends StatelessWidget {
       case 'phonics': return Icons.volume_up_rounded;
       case 'time': return Icons.access_time_filled_rounded;
       case 'opposites': return Icons.compare_rounded;
+      case 'day_night': return Icons.nights_stay_rounded;
       case 'nature': return Icons.park_rounded;
       case 'home': return Icons.home_rounded;
       case 'food': return Icons.restaurant_rounded;

@@ -5,6 +5,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_image.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 /// Sky Observatory Theme for Day & Night Game
 /// Space Complexity: O(1)
@@ -32,41 +33,59 @@ class KidsDayNightLayout extends StatelessWidget {
       buildGameUI: (context, state, onHintTap) {
         final quest = state.currentQuest;
 
-        return Column(
+        return Stack(
           children: [
-            SizedBox(height: 120.h),
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildSkyView(quest.imageUrl),
-              ),
-            ),
-            Flexible(
-              flex: 5,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Row(
-                  children: List.generate(quest.options?.length ?? 0, (index) {
-                    final option = quest.options![index];
-                    return Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8.w),
-                        child: _buildCelestialCard(
-                          context,
-                          state,
-                          option,
-                          quest.correctAnswer == option,
-                        ),
-                      ),
-                    );
-                  }),
+            // Ambient Floating Clouds in Background
+            Positioned(top: 80.h, left: 10.w, child: _buildCloud(40.w)),
+            Positioned(top: 150.h, right: 20.w, child: _buildCloud(60.w)),
+            Positioned(top: 250.h, left: -20.w, child: _buildCloud(80.w)),
+
+            Column(
+              children: [
+                SizedBox(height: 120.h),
+                // The Observatory Telescope View
+                Expanded(
+                  flex: 5,
+                  child: Center(
+                    child: _buildSkyView(quest.imageUrl),
+                  ),
                 ),
-              ),
+                // Celestial Cards (Options)
+                Flexible(
+                  flex: 5,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(quest.options?.length ?? 0, (index) {
+                        final option = quest.options![index];
+                        return Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 8.w),
+                            child: _buildCelestialCard(
+                              context,
+                              state,
+                              option,
+                              quest.correctAnswer == option,
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         );
       },
     );
+  }
+
+  Widget _buildCloud(double size) {
+    return Icon(Icons.cloud_rounded, color: Colors.white.withValues(alpha: 0.2), size: size)
+      .animate(onPlay: (c) => c.repeat(reverse: true))
+      .moveX(begin: -10.w, end: 10.w, duration: 6.seconds, curve: Curves.easeInOutSine);
   }
 
   Widget _buildSkyView(String? imageUrl) {
@@ -76,22 +95,44 @@ class KidsDayNightLayout extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF0F172A),
         borderRadius: BorderRadius.circular(40.r), // Chunky rounded rectangle
-        border: Border.all(color: Colors.white, width: 4),
+        border: Border.all(color: const Color(0xFF64748B), width: 8.r), // Thick observatory metal frame
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.15),
+            color: Colors.black.withValues(alpha: 0.3),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
+          BoxShadow(
+            color: const Color(0xFF0EA5E9).withValues(alpha: 0.1), // Slight atmospheric glow
+            blurRadius: 40,
+            spreadRadius: 5,
+          ),
         ],
       ),
-      padding: EdgeInsets.all(20.r),
-      child: KidsImage(
-        imageUrl: imageUrl,
-        fallbackIcon: Icons.nights_stay_rounded,
-        iconColor: Colors.amber[200],
+      child: Stack(
+        children: [
+          // Twinkling stars in the observatory view
+          Positioned(top: 20.h, left: 30.w, child: _buildTwinklingStar()),
+          Positioned(bottom: 40.h, right: 40.w, child: _buildTwinklingStar()),
+          Positioned(top: 60.h, right: 30.w, child: _buildTwinklingStar()),
+
+          Center(
+            child: KidsImage(
+              imageUrl: imageUrl,
+              fallbackIcon: Icons.nights_stay_rounded,
+              iconColor: Colors.amber[200],
+            ),
+          ),
+        ],
       ),
     );
+  }
+
+  Widget _buildTwinklingStar() {
+    return Icon(Icons.star_rounded, color: Colors.white.withValues(alpha: 0.8), size: 12.r)
+      .animate(onPlay: (c) => c.repeat(reverse: true))
+      .fade(begin: 0.2, end: 1.0, duration: 1500.ms)
+      .scale(begin: const Offset(0.8, 0.8), end: const Offset(1.2, 1.2), duration: 1500.ms);
   }
 
   Widget _buildCelestialCard(
@@ -100,8 +141,11 @@ class KidsDayNightLayout extends StatelessWidget {
     String text,
     bool isCorrect,
   ) {
-    final isDay = text.toLowerCase().contains("day") || text.toLowerCase().contains("sun");
-    final color = isDay ? const Color(0xFF0EA5E9) : const Color(0xFF334155);
+    final isDay = text.toLowerCase().contains("day") || text.toLowerCase().contains("sun") || text.toLowerCase().contains("morning");
+    
+    // Day = Sunny Sky colors, Night = Deep Space colors
+    final color = isDay ? const Color(0xFF38BDF8) : const Color(0xFF1E293B);
+    final borderColor = isDay ? const Color(0xFF7DD3FC) : const Color(0xFF334155);
     final shadowColor = isDay ? const Color(0xFF0284C7) : const Color(0xFF0F172A);
 
     return ScaleButton(
@@ -113,7 +157,7 @@ class KidsDayNightLayout extends StatelessWidget {
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(color: Colors.white, width: 3),
+          border: Border.all(color: borderColor, width: 4.r),
           boxShadow: [
             BoxShadow(
               color: shadowColor,
@@ -125,12 +169,17 @@ class KidsDayNightLayout extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              // Bouncing icon (Sun or Moon)
               Icon(
                 isDay ? Icons.wb_sunny_rounded : Icons.mode_night_rounded,
-                color: Colors.white,
-                size: 32.sp,
-              ),
-              SizedBox(height: 8.h),
+                color: isDay ? const Color(0xFFFEF08A) : const Color(0xFFE2E8F0),
+                size: 42.sp,
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .moveY(begin: -2.h, end: 2.h, duration: 2.seconds, curve: Curves.easeInOutSine),
+              
+              SizedBox(height: 12.h),
+              
               Text(
                 text,
                 style: TextStyle(
@@ -138,7 +187,11 @@ class KidsDayNightLayout extends StatelessWidget {
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,
+                  shadows: [
+                    Shadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 4, offset: const Offset(0, 2)),
+                  ],
                 ),
+                textAlign: TextAlign.center,
               ),
             ],
           ),
