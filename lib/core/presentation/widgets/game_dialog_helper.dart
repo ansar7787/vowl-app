@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/widgets/victory_flight_overlay.dart';
+import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
@@ -91,61 +92,70 @@ class GameDialogHelper {
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (dialogCtx) => ModernGameDialog(
-        title: resolvedTitle,
-        description: desc,
-        buttonText: resolvedButtonText,
-        starsListener: GamificationRepositoryImpl.lastEarnedStars,
-        onButtonPressed: () {
-          Navigator.of(dialogCtx).pop();
-          if (context.mounted) {
-            context.read<AuthBloc>().add(const AuthRefreshUser());
-            Navigator.of(context).pop(popResult);
-          }
-        },
-        onAdAction: enableDoubleUp
-            ? () {
-                final adService = di.sl<AdService>();
-                if (!adService.isRewardedAdLoaded) {
-                  showPremiumSnackBar(
-                    context,
-                    context.tr('games.ad_not_ready'),
-                    icon: Icons.hourglass_empty_rounded,
-                    color: Colors.orange,
-                  );
-                  return;
-                }
-
-                Navigator.of(dialogCtx).pop();
-                final isPrem =
-                    context.read<AuthBloc>().state.user?.isPremium ?? false;
-
-                adService.showRewardedAd(
-                  isPremium: isPrem,
-                  onUserEarnedReward: (_) {
-                    if (!context.mounted) return;
-                    context.read<EconomyBloc>().add(
-                      EconomyTripleUpRewardsRequested(0, coins * 2),
-                    );
-                    showPremiumSnackBar(
-                      context,
-                      context.tr('games.coins_tripled'),
-                      icon: Icons.auto_awesome_rounded,
-                      color: const Color(0xFF10B981),
-                    );
-                    if (context.mounted) {
-                      Navigator.of(context).pop(popResult);
-                    }
-                  },
-                  onDismissed: () {
-                    if (context.mounted) {
-                      Navigator.of(context).pop(popResult);
-                    }
-                  },
-                );
+      builder: (dialogCtx) => Stack(
+        children: [
+          ModernGameDialog(
+            title: resolvedTitle,
+            description: desc,
+            buttonText: resolvedButtonText,
+            starsListener: GamificationRepositoryImpl.lastEarnedStars,
+            onButtonPressed: () {
+              Navigator.of(dialogCtx).pop();
+              if (context.mounted) {
+                context.read<AuthBloc>().add(const AuthRefreshUser());
+                Navigator.of(context).pop(popResult);
               }
-            : null,
-        adButtonText: 'TRIPLE COINS',
+            },
+            onAdAction: enableDoubleUp
+                ? () {
+                    final adService = di.sl<AdService>();
+                    if (!adService.isRewardedAdLoaded) {
+                      showPremiumSnackBar(
+                        context,
+                        context.tr('games.ad_not_ready'),
+                        icon: Icons.hourglass_empty_rounded,
+                        color: Colors.orange,
+                      );
+                      return;
+                    }
+
+                    Navigator.of(dialogCtx).pop();
+                    final isPrem =
+                        context.read<AuthBloc>().state.user?.isPremium ?? false;
+
+                    adService.showRewardedAd(
+                      isPremium: isPrem,
+                      onUserEarnedReward: (_) {
+                        if (!context.mounted) return;
+                        context.read<EconomyBloc>().add(
+                          EconomyTripleUpRewardsRequested(0, coins * 2),
+                        );
+                        showPremiumSnackBar(
+                          context,
+                          context.tr('games.coins_tripled'),
+                          icon: Icons.auto_awesome_rounded,
+                          color: const Color(0xFF10B981),
+                        );
+                        if (context.mounted) {
+                          Navigator.of(context).pop(popResult);
+                        }
+                      },
+                      onDismissed: () {
+                        if (context.mounted) {
+                          Navigator.of(context).pop(popResult);
+                        }
+                      },
+                    );
+                  }
+                : null,
+            adButtonText: 'TRIPLE COINS',
+          ),
+          const Positioned.fill(
+            child: IgnorePointer(
+              child: RepaintBoundary(child: GameConfetti(shouldPop: false)),
+            ),
+          ),
+        ],
       ),
     );
   }
