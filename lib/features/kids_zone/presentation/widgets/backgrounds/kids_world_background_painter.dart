@@ -11,58 +11,27 @@ class KidsWorldBackgroundPainter extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
+    // A crisp, pedagogical "school" aesthetic background.
+    // Light mode: Clean, crisp white with subtle grey notebook dots.
+    // Dark mode: Deep slate with subtle dark-blue dots.
+    final bgColor = isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC);
+    final dotColor = isDark ? const Color(0xFF1E293B) : const Color(0xFFE2E8F0);
+    
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: isDark 
-              ? [const Color(0xFF0F172A), const Color(0xFF1E3A8A)] // Deep Navy to Royal Blue
-              : [const Color(0xFFE0F2FE), const Color(0xFFF0FDF4)], // Sky Blue to Mint Green
-        ),
-      ),
+      color: bgColor,
       child: Stack(
         children: [
-          ...List.generate(3, (i) => _buildMeshBlob(context, i)),
-          ...List.generate(15, (i) => _buildFloatingEmoji(i)),
-          ...List.generate(10, (i) => _buildSparkle(i)),
+          // Background Dot Grid (Notebook/School Style)
+          Positioned.fill(
+            child: CustomPaint(
+              painter: _DotGridPainter(color: dotColor, spacing: 30.w),
+            ),
+          ),
+          
+          // Floating Pedagogical Emojis (No blurry glass!)
+          ...List.generate(12, (i) => _buildFloatingEmoji(i)),
         ],
       ),
-    );
-  }
-
-  Widget _buildMeshBlob(BuildContext context, int i) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final random = math.Random(i + 1000);
-    final colors = isDark 
-      ? [
-          Colors.blue[700]!.withValues(alpha: 0.15),
-          Colors.purple[700]!.withValues(alpha: 0.15),
-          Colors.indigo[700]!.withValues(alpha: 0.15),
-        ]
-      : [
-          Colors.blue[100]!.withValues(alpha: 0.3),
-          Colors.green[100]!.withValues(alpha: 0.3),
-          Colors.purple[100]!.withValues(alpha: 0.3),
-        ];
-    
-    return Positioned(
-      top: random.nextDouble() * 1.sh,
-      left: random.nextDouble() * 1.sw,
-      child: Container(
-        width: 300.r,
-        height: 300.r,
-        decoration: BoxDecoration(
-          color: colors[i % colors.length],
-          shape: BoxShape.circle,
-        ),
-      ).animate(onPlay: (c) => c.repeat(reverse: true))
-       .blur(begin: const Offset(50, 50), end: const Offset(80, 80))
-       .move(
-         begin: Offset.zero, 
-         end: Offset(random.nextDouble() * 50 - 25, random.nextDouble() * 50 - 25), 
-         duration: (20 + random.nextDouble() * 20).seconds,
-       ),
     );
   }
 
@@ -76,37 +45,60 @@ class KidsWorldBackgroundPainter extends StatelessWidget {
       left: random.nextDouble() * 1.sw,
       child: Text(
         emoji,
-        style: TextStyle(fontSize: (14 + random.nextInt(12)).sp),
-      ).animate(onPlay: (c) => c.repeat(reverse: true))
-       .moveY(begin: 0, end: (random.nextBool() ? 30.h : -30.h), duration: (5 + random.nextDouble() * 5).seconds)
-       .fadeOut(begin: 0.3, duration: 2.seconds),
-    );
-  }
-
-  Widget _buildSparkle(int i) {
-    final random = math.Random(i + 3000);
-    return Positioned(
-      top: random.nextDouble() * 1.sh,
-      left: random.nextDouble() * 1.sw,
-      child: Container(
-        width: 4.r,
-        height: 4.r,
-        decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-      ).animate(onPlay: (c) => c.repeat(reverse: true))
-       .scale(begin: const Offset(0.5, 0.5), end: const Offset(1.5, 1.5), duration: (1 + random.nextDouble() * 2).seconds)
-       .fadeOut(duration: 1.seconds),
+        style: TextStyle(
+          fontSize: (20 + random.nextInt(15)).sp,
+        ),
+      )
+      .animate(onPlay: (c) => c.repeat(reverse: true))
+      .moveY(
+        begin: 0, 
+        end: (random.nextBool() ? 20.h : -20.h), 
+        duration: (5 + random.nextDouble() * 5).seconds,
+        curve: Curves.easeInOutSine,
+      )
+      // Fade out slowly to make them very subtle and not distract from the game
+      .fadeOut(begin: 0.15, duration: 2.seconds),
     );
   }
 
   List<String> _getEmojisForGame(String type) {
+    // School-themed and game-specific crisp emojis
     switch (type) {
-      case 'alphabet': return ['🔤', '🅰️', '🅱️', '🔠', '✏️'];
-      case 'numbers': return ['🔢', '1️⃣', '2️⃣', '3️⃣', '➕'];
-      case 'colors': return ['🎨', '🌈', '🖍️', '🖌️', '✨'];
-      case 'shapes': return ['📐', '🔷', '🔶', '🟢', '🟥'];
-      case 'animals': return ['🐘', '🦁', '🦓', '🦒', '🦒'];
-      case 'fruits': return ['🍎', '🍓', '🍇', '🍍', '🍒'];
-      default: return ['🎈', '🧸', '🌟', '🧩', '🎨'];
+      case 'alphabet': return ['A', 'b', 'C', '✏️', '📚'];
+      case 'numbers': return ['1', '2', '3', '➕', '📐'];
+      case 'colors': return ['🔴', '🔵', '🟡', '🖍️', '🎨'];
+      case 'shapes': return ['⬛', '🔺', '🔵', '⭐', '📏'];
+      case 'animals': return ['🐱', '🐶', '🐘', '🐾', '🦋'];
+      case 'fruits': return ['🍎', '🍌', '🍇', '🍉', '🍓'];
+      case 'school': return ['🏫', '🎒', '✏️', '📚', '✂️'];
+      case 'time': return ['⏰', '⌚', '⏳', '📅', '🗓️'];
+      case 'day_night': return ['☀️', '🌙', '⭐', '☁️', '🌎'];
+      default: return ['⭐', '💡', '📚', '✏️', '🎯'];
     }
+  }
+}
+
+class _DotGridPainter extends CustomPainter {
+  final Color color;
+  final double spacing;
+
+  _DotGridPainter({required this.color, required this.spacing});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.fill;
+
+    for (double x = 0; x < size.width; x += spacing) {
+      for (double y = 0; y < size.height; y += spacing) {
+        canvas.drawCircle(Offset(x, y), 2.r, paint);
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _DotGridPainter oldDelegate) {
+    return oldDelegate.color != color || oldDelegate.spacing != spacing;
   }
 }
