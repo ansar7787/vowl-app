@@ -1,0 +1,228 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
+
+/// Cozy Bedroom Theme for Routine Game
+/// Space Complexity: O(1)
+/// Time Complexity: O(N) where N is the number of options (max 4)
+class KidsRoutineLayout extends StatelessWidget {
+  final int level;
+  final String title;
+  final Color primaryColor;
+
+  const KidsRoutineLayout({
+    super.key,
+    required this.level,
+    required this.title,
+    required this.primaryColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return KidsGameBaseScreen(
+      title: title,
+      gameType: 'routine',
+      level: level,
+      primaryColor: primaryColor,
+      backgroundColors: const [],
+      buildGameUI: (context, state, onHintTap) {
+        final quest = state.currentQuest;
+
+        return Column(
+          children: [
+            SizedBox(height: 120.h),
+            // The Bedroom Window
+            Expanded(
+              flex: 5,
+              child: Center(
+                child: _buildBedroomWindow(quest.question ?? "?"),
+              ),
+            ),
+            // The Bed with Pillows
+            Flexible(
+              flex: 5,
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  // The Bed Blanket
+                  Container(
+                    height: 80.h,
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(horizontal: 16.w),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF6366F1), // Indigo blanket
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
+                      border: Border.all(color: const Color(0xFF4338CA), width: 2),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.15),
+                          offset: const Offset(0, -4),
+                          blurRadius: 10,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 20.h, left: 24.w, right: 24.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: List.generate(quest.options?.length ?? 0, (index) {
+                        final option = quest.options![index];
+                        return Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 4.w),
+                            child: _buildPillowOption(
+                              context,
+                              state,
+                              option,
+                              quest.correctAnswer == option,
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildBedroomWindow(String text) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        // The Window pane
+        Container(
+          width: 220.w,
+          height: 160.h,
+          decoration: BoxDecoration(
+            color: const Color(0xFF38BDF8), // Light blue daytime sky
+            borderRadius: BorderRadius.circular(8.r),
+            border: Border.all(color: Colors.white, width: 8.r), // White window frame
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.1),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Stack(
+            children: [
+              // Window mullions (cross pattern)
+              Center(
+                child: Container(
+                  width: double.infinity,
+                  height: 4.h,
+                  color: Colors.white,
+                ),
+              ),
+              Center(
+                child: Container(
+                  width: 4.w,
+                  height: double.infinity,
+                  color: Colors.white,
+                ),
+              ),
+              // The text
+              Center(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.8),
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                  child: Text(
+                    text,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 32.sp,
+                      fontWeight: FontWeight.w900,
+                      color: const Color(0xFF0F172A),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        // Curtains
+        Positioned(
+          left: 10.w,
+          top: 0,
+          bottom: 0,
+          child: Container(
+            width: 40.w,
+            decoration: BoxDecoration(
+              color: const Color(0xFFF43F5E), // Rose red curtains
+              borderRadius: BorderRadius.horizontal(left: Radius.circular(8.r)),
+            ),
+          ),
+        ),
+        Positioned(
+          right: 10.w,
+          top: 0,
+          bottom: 0,
+          child: Container(
+            width: 40.w,
+            decoration: BoxDecoration(
+              color: const Color(0xFFF43F5E), // Rose red curtains
+              borderRadius: BorderRadius.horizontal(right: Radius.circular(8.r)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildPillowOption(
+    BuildContext context,
+    KidsLoaded state,
+    String text,
+    bool isCorrect,
+  ) {
+    return ScaleButton(
+      onTap: () {
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      child: Container(
+        height: 70.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: const Color(0xFFE2E8F0), width: 2),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.2),
+              offset: const Offset(0, 4),
+              blurRadius: 4,
+            ),
+          ],
+        ),
+        child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w800,
+              color: const Color(0xFF475569),
+            ),
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -6,6 +6,11 @@ import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_number
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_colors_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_shapes_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_animals_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_fruits_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_family_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_school_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_verbs_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_routine_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_picker_template.dart';
 
 class UnifiedKidsGameScreen extends StatelessWidget {
@@ -38,6 +43,21 @@ class UnifiedKidsGameScreen extends StatelessWidget {
     }
     if (gameType == 'animals') {
       return KidsAnimalsLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'fruits') {
+      return KidsFruitsLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'family') {
+      return KidsFamilyLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'school') {
+      return KidsSchoolLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'verbs') {
+      return KidsVerbsLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'routine') {
+      return KidsRoutineLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
     }
 
     return KidsPickerTemplate(
