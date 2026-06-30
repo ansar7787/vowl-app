@@ -27,7 +27,12 @@ class TollGateBottomSheet {
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (sheetContext) {
-        return Container(
+        return GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () => Navigator.pop(sheetContext),
+          child: GestureDetector(
+            onTap: () {}, // Prevent taps on the sheet content from closing it
+            child: Container(
           padding: EdgeInsets.all(24.r),
           decoration: BoxDecoration(
             color: Theme.of(context).brightness == Brightness.dark
@@ -298,6 +303,8 @@ class TollGateBottomSheet {
               ),
               SizedBox(height: 16.h),
             ],
+          ),
+          ),
           ),
           ),
         );

@@ -210,7 +210,12 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
         }
         final nextRequirement = _chestTiers[nextTierIndex];
 
-        return Stack(
+        return GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () => Navigator.pop(context),
+          child: GestureDetector(
+            onTap: () {}, // Prevent taps on the sheet content from closing it
+            child: Stack(
           alignment: Alignment.center,
           clipBehavior: Clip.none,
           children: [
@@ -439,6 +444,8 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
               ),
               ),
           ],
+        ),
+        ),
         );
       },
     );
