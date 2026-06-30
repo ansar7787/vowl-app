@@ -348,7 +348,6 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                   color: isClaimed ? Colors.transparent : canClaim ? Colors.white.withValues(alpha: 0.5) : isNext ? widget.primaryColor.withValues(alpha: 0.3) : Colors.transparent,
                                   width: canClaim ? 2 : 1,
                                 ),
-                                boxShadow: canClaim ? [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.5), blurRadius: 16, spreadRadius: 2, offset: const Offset(0, 4))] : [],
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
