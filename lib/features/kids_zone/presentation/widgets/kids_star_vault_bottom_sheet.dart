@@ -44,7 +44,6 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     return 150 + ((index - 9) * 30);
   });
   bool _isProcessing = false;
-  bool _showConfetti = false;
 
   int _calculateTotalStars(Map<String, dynamic> categoryStars) {
     int gameplayStars = 0;
@@ -88,23 +87,31 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
       context.read<AuthBloc>().add(const AuthRefreshUser());
       
       setState(() {
-        _showConfetti = true;
         _isProcessing = false;
       });
 
       showDialog(
         context: context,
-        builder: (ctx) => ModernGameDialog(
-          title: 'CHEST UNLOCKED!',
-          description: 'You found +$coinReward Toys in the magical chest!',
-          buttonText: 'COLLECT',
-          isSuccess: true,
-          onButtonPressed: () {
-            Navigator.of(ctx).pop();
-            if (mounted && context.mounted) {
-              Navigator.of(context).pop();
-            }
-          },
+        builder: (ctx) => Material(
+          type: MaterialType.transparency,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
+              ModernGameDialog(
+                title: 'CHEST UNLOCKED!',
+                description: 'You found +$coinReward Toys in the magical chest!',
+                buttonText: 'COLLECT',
+                isSuccess: true,
+                onButtonPressed: () {
+                  Navigator.of(ctx).pop();
+                  if (mounted && context.mounted) {
+                    Navigator.of(context).pop();
+                  }
+                },
+              ),
+            ],
+          ),
         ),
       );
     }
@@ -147,13 +154,22 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
           context.read<AuthBloc>().add(const AuthRefreshUser());
           showDialog(
             context: context,
-            builder: (ctx) => ModernGameDialog(
-              title: 'MAGIC STARS EARNED!',
-              description: 'You got +2 Magic Stars for watching the ad!',
-              buttonText: 'AWESOME',
-              isSuccess: true,
-              onButtonPressed: () => Navigator.of(ctx).pop(),
-              customIcon: Icon(Icons.auto_awesome_rounded, color: const Color(0xFF10B981), size: 48.sp),
+            builder: (ctx) => Material(
+              type: MaterialType.transparency,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
+                  ModernGameDialog(
+                    title: 'MAGIC STARS EARNED!',
+                    description: 'You got +2 Magic Stars for watching the ad!',
+                    buttonText: 'AWESOME',
+                    isSuccess: true,
+                    onButtonPressed: () => Navigator.of(ctx).pop(),
+                    customIcon: Icon(Icons.auto_awesome_rounded, color: const Color(0xFF10B981), size: 48.sp),
+                  ),
+                ],
+              ),
             ),
           );
         }
@@ -401,8 +417,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                   ],
                 ),
               ),
-            ),
-            if (_showConfetti) const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
+              ),
           ],
         );
       },
