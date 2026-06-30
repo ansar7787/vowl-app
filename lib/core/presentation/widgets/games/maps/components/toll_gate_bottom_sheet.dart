@@ -36,9 +36,11 @@ class TollGateBottomSheet {
             borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
             border: Border(top: BorderSide(color: Colors.amber.withValues(alpha: 0.3), width: 2)),
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
               Container(
                 padding: EdgeInsets.all(16.r),
                 decoration: BoxDecoration(
@@ -296,6 +298,7 @@ class TollGateBottomSheet {
               ),
               SizedBox(height: 16.h),
             ],
+          ),
           ),
         );
       },

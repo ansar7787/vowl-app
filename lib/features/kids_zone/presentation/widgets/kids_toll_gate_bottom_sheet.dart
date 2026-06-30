@@ -31,9 +31,11 @@ class KidsTollGateBottomSheet {
             borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
             border: Border.all(color: primaryColor.withValues(alpha: 0.5), width: 4.r),
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
               Container(
                 padding: EdgeInsets.all(16.r),
                 decoration: BoxDecoration(
@@ -307,6 +309,7 @@ class KidsTollGateBottomSheet {
               ),
               SizedBox(height: 16.h),
             ],
+          ),
           ),
         );
       },

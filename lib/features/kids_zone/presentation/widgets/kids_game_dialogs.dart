@@ -412,9 +412,11 @@ class KidsGameDialogs {
             borderRadius: BorderRadius.circular(32.r),
             side: const BorderSide(color: Colors.redAccent, width: 2),
           ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
+          content: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
               Container(
                 padding: EdgeInsets.all(20.r),
                 decoration: BoxDecoration(
@@ -515,7 +517,8 @@ class KidsGameDialogs {
                   ),
                 ),
               ),
-            ],
+              ],
+            ),
           ),
         ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
       ),
@@ -541,9 +544,11 @@ class KidsGameDialogs {
                   width: 1.5,
                 ),
               ),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
+              content: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
                   // ICON HEADER
                   Container(
                     padding: EdgeInsets.all(16.r),
@@ -651,6 +656,7 @@ class KidsGameDialogs {
                     ],
                   ),
                 ],
+              ),
               ),
             ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
           ),

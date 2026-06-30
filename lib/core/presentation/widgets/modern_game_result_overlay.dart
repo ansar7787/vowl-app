@@ -57,9 +57,11 @@ class ModernGameResultOverlay extends StatelessWidget {
                       padding: EdgeInsets.all(32.r),
                       child: SafeArea(
                         top: false,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
+                        child: SingleChildScrollView(
+                          physics: const BouncingScrollPhysics(),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
                             // ── Result header ─────────────────────────────────
                             Row(
                               children: [
@@ -248,6 +250,7 @@ class ModernGameResultOverlay extends StatelessWidget {
                               ),
                             ),
                           ],
+                        ),
                         ),
                       ),
                     ),

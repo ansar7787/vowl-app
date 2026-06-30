@@ -223,9 +223,11 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
               ),
               child: BackdropFilter(
                 filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
                     SizedBox(height: 12.h),
                     Container(width: 40.w, height: 4.h, decoration: BoxDecoration(color: Colors.grey.withValues(alpha: 0.3), borderRadius: BorderRadius.circular(2.r))),
                     SizedBox(height: 24.h),
@@ -433,6 +435,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                     SizedBox(height: MediaQuery.of(context).padding.bottom + 24.h),
                   ],
                 ),
+              ),
               ),
               ),
           ],

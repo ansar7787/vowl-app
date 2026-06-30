@@ -240,9 +240,11 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
               ),
               child: BackdropFilter(
                 filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
                     SizedBox(height: 12.h),
                     Container(
                       width: 50.w,
@@ -655,6 +657,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                     ),
                   ],
                 ),
+              ),
               ),
             ),
           ],
