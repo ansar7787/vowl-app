@@ -38,7 +38,7 @@ class KidsClothingLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildClosetBoard(quest.question ?? "?"),
+                child: _buildClosetBoard(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Clothing Hangers (Options)
@@ -94,7 +94,7 @@ class KidsClothingLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildClosetBoard(String text) {
+  Widget _buildClosetBoard(String text, String? emoji) {
     return Container(
       width: 240.w,
       height: 160.h,
@@ -111,15 +111,25 @@ class KidsClothingLayout extends StatelessWidget {
         ],
       ),
       child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 42.sp,
-            fontWeight: FontWeight.w900,
-            color: const Color(0xFF78350F),
-          ),
-          textAlign: TextAlign.center,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (emoji != null)
+              Text(
+                emoji,
+                style: TextStyle(fontSize: 48.sp),
+              ),
+            Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 42.sp,
+                fontWeight: FontWeight.w900,
+                color: const Color(0xFF78350F),
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );

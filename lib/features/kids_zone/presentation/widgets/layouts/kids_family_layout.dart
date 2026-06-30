@@ -38,7 +38,7 @@ class KidsFamilyLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildFramedPainting(quest.question ?? "?"),
+                child: _buildFramedPainting(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Polaroid Pictures on Mantle
@@ -96,7 +96,7 @@ class KidsFamilyLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildFramedPainting(String text) {
+  Widget _buildFramedPainting(String text, String? emoji) {
     return Container(
       width: 240.w,
       height: 180.h,
@@ -113,15 +113,25 @@ class KidsFamilyLayout extends StatelessWidget {
         ],
       ),
       child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 42.sp,
-            fontWeight: FontWeight.w900,
-            color: const Color(0xFF451A03),
-          ),
-          textAlign: TextAlign.center,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (emoji != null)
+              Text(
+                emoji,
+                style: TextStyle(fontSize: 48.sp),
+              ),
+            Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 42.sp,
+                fontWeight: FontWeight.w900,
+                color: const Color(0xFF451A03),
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );

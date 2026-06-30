@@ -38,7 +38,7 @@ class KidsTransportLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildRoadSign(quest.question ?? "?"),
+                child: _buildRoadSign(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The License Plates (Options)
@@ -96,7 +96,7 @@ class KidsTransportLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildRoadSign(String text) {
+  Widget _buildRoadSign(String text, String? emoji) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -117,15 +117,25 @@ class KidsTransportLayout extends StatelessWidget {
             ],
           ),
           child: Center(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 42.sp,
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-              ),
-              textAlign: TextAlign.center,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (emoji != null)
+                  Text(
+                    emoji,
+                    style: TextStyle(fontSize: 48.sp),
+                  ),
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 42.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
           ),
         ),

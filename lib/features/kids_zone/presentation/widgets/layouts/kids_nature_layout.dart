@@ -47,7 +47,7 @@ class KidsNatureLayout extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: Center(
-                    child: _buildTreeSign(quest.question ?? "?"),
+                    child: _buildTreeSign(quest.question ?? "?", quest.emoji),
                   ),
                 ),
                 // Glowing River Stones (Options)
@@ -118,7 +118,7 @@ class KidsNatureLayout extends StatelessWidget {
      .fade(begin: 0.2, end: 1.0, duration: 1.seconds);
   }
 
-  Widget _buildTreeSign(String text) {
+  Widget _buildTreeSign(String text, String? emoji) {
     return Container(
       width: 240.w,
       height: 160.h,
@@ -151,15 +151,25 @@ class KidsNatureLayout extends StatelessWidget {
           ),
           
           Center(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 42.sp,
-                fontWeight: FontWeight.w900,
-                color: const Color(0xFFFEF3C7), // Light wood text
-              ),
-              textAlign: TextAlign.center,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (emoji != null)
+                  Text(
+                    emoji,
+                    style: TextStyle(fontSize: 48.sp),
+                  ),
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 42.sp,
+                    fontWeight: FontWeight.w900,
+                    color: const Color(0xFFFEF3C7), // Light wood text
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
           ),
         ],

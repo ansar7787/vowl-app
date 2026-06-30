@@ -38,7 +38,7 @@ class KidsSchoolLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildBusWindow(quest.question ?? "?"),
+                child: _buildBusWindow(quest.question ?? "?", quest.emoji),
               ),
             ),
             // Backpacks on Seats
@@ -87,7 +87,7 @@ class KidsSchoolLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildBusWindow(String text) {
+  Widget _buildBusWindow(String text, String? emoji) {
     return Container(
       width: 280.w,
       height: 160.h,
@@ -104,15 +104,25 @@ class KidsSchoolLayout extends StatelessWidget {
         ],
       ),
       child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 48.sp,
-            fontWeight: FontWeight.w900,
-            color: const Color(0xFF0F172A),
-          ),
-          textAlign: TextAlign.center,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (emoji != null)
+              Text(
+                emoji,
+                style: TextStyle(fontSize: 48.sp),
+              ),
+            Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 48.sp,
+                fontWeight: FontWeight.w900,
+                color: const Color(0xFF0F172A),
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );

@@ -38,7 +38,7 @@ class KidsFruitsLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildAwningFrame(quest.question ?? "?"),
+                child: _buildAwningFrame(quest.question ?? "?", quest.emoji),
               ),
             ),
             // Wicker Baskets for Options
@@ -72,7 +72,7 @@ class KidsFruitsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildAwningFrame(String text) {
+  Widget _buildAwningFrame(String text, String? emoji) {
     return Stack(
       alignment: Alignment.center,
       children: [
@@ -93,14 +93,24 @@ class KidsFruitsLayout extends StatelessWidget {
             ],
           ),
           child: Center(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 48.sp,
-                fontWeight: FontWeight.w900,
-                color: const Color(0xFF78350F),
-              ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (emoji != null)
+                  Text(
+                    emoji,
+                    style: TextStyle(fontSize: 48.sp),
+                  ),
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 48.sp,
+                    fontWeight: FontWeight.w900,
+                    color: const Color(0xFF78350F),
+                  ),
+                ),
+              ],
             ),
           ),
         ),

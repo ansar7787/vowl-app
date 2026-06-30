@@ -38,7 +38,7 @@ class KidsBodyPartsLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildXRayBoard(quest.question ?? "?"),
+                child: _buildXRayBoard(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Band-aids (Options)
@@ -89,7 +89,7 @@ class KidsBodyPartsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildXRayBoard(String text) {
+  Widget _buildXRayBoard(String text, String? emoji) {
     return Container(
       width: 240.w,
       height: 160.h,
@@ -106,18 +106,28 @@ class KidsBodyPartsLayout extends StatelessWidget {
         ],
       ),
       child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 42.sp,
-            fontWeight: FontWeight.w900,
-            color: const Color(0xFFE0F2FE), // Glowing light blue text
-            shadows: const [
-              Shadow(color: Color(0xFF38BDF8), blurRadius: 10),
-            ],
-          ),
-          textAlign: TextAlign.center,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (emoji != null)
+              Text(
+                emoji,
+                style: TextStyle(fontSize: 48.sp),
+              ),
+            Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 42.sp,
+                fontWeight: FontWeight.w900,
+                color: const Color(0xFFE0F2FE), // Glowing light blue text
+                shadows: const [
+                  Shadow(color: Color(0xFF38BDF8), blurRadius: 10),
+                ],
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );

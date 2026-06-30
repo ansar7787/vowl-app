@@ -39,7 +39,7 @@ class KidsVerbsLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildScoreboard(quest.question ?? "?"),
+                child: _buildScoreboard(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Sports Balls (Bouncing slightly)
@@ -88,7 +88,7 @@ class KidsVerbsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildScoreboard(String text) {
+  Widget _buildScoreboard(String text, String? emoji) {
     return Container(
       width: 260.w,
       height: 140.h,
@@ -105,18 +105,28 @@ class KidsVerbsLayout extends StatelessWidget {
         ],
       ),
       child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'CourierPrime', // Use a digital/monospace looking font if possible
-            fontSize: 48.sp,
-            fontWeight: FontWeight.w900,
-            color: const Color(0xFFFBBF24), // Glowing yellow
-            shadows: const [
-              Shadow(color: Color(0xFFF59E0B), blurRadius: 10),
-            ],
-          ),
-          textAlign: TextAlign.center,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (emoji != null)
+              Text(
+                emoji,
+                style: TextStyle(fontSize: 48.sp),
+              ),
+            Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'CourierPrime', // Use a digital/monospace looking font if possible
+                fontSize: 48.sp,
+                fontWeight: FontWeight.w900,
+                color: const Color(0xFFFBBF24), // Glowing yellow
+                shadows: const [
+                  Shadow(color: Color(0xFFF59E0B), blurRadius: 10),
+                ],
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );

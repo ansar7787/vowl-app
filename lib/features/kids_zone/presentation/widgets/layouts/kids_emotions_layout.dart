@@ -38,7 +38,7 @@ class KidsEmotionsLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildTheaterStage(quest.question ?? "?"),
+                child: _buildTheaterStage(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Theater Masks (Options)
@@ -89,7 +89,7 @@ class KidsEmotionsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildTheaterStage(String text) {
+  Widget _buildTheaterStage(String text, String? emoji) {
     return Stack(
       alignment: Alignment.center,
       children: [
@@ -119,15 +119,25 @@ class KidsEmotionsLayout extends StatelessWidget {
                   BoxShadow(color: Colors.black26, offset: Offset(0, 4), blurRadius: 4),
                 ],
               ),
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 42.sp,
-                  fontWeight: FontWeight.w900,
-                  color: const Color(0xFF0F172A),
-                ),
-                textAlign: TextAlign.center,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (emoji != null)
+                    Text(
+                      emoji,
+                      style: TextStyle(fontSize: 48.sp),
+                    ),
+                  Text(
+                    text,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 42.sp,
+                      fontWeight: FontWeight.w900,
+                      color: const Color(0xFF0F172A),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
             ),
           ),

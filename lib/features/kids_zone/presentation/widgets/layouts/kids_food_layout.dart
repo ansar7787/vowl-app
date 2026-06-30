@@ -38,7 +38,7 @@ class KidsFoodLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildKitchenBoard(quest.question ?? "?"),
+                child: _buildKitchenBoard(quest.question ?? "?", quest.emoji),
               ),
             ),
             // Serving Platters (Options)
@@ -87,7 +87,7 @@ class KidsFoodLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildKitchenBoard(String text) {
+  Widget _buildKitchenBoard(String text, String? emoji) {
     return Stack(
       alignment: Alignment.topCenter,
       clipBehavior: Clip.none,
@@ -109,15 +109,25 @@ class KidsFoodLayout extends StatelessWidget {
             ],
           ),
           child: Center(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 42.sp,
-                fontWeight: FontWeight.w900,
-                color: const Color(0xFFE11D48), // Tasty red text
-              ),
-              textAlign: TextAlign.center,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (emoji != null)
+                  Text(
+                    emoji,
+                    style: TextStyle(fontSize: 48.sp),
+                  ),
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 42.sp,
+                    fontWeight: FontWeight.w900,
+                    color: const Color(0xFFE11D48), // Tasty red text
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
           ),
         ),
