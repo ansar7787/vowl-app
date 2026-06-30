@@ -14,6 +14,12 @@ import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/features/auth/data/repositories/gamification_repository_impl.dart';
 
 class KidsGameDialogs {
+  static String _safeTr(BuildContext context, String key, String fallback) {
+    final translation = context.tr(key);
+    if (translation.isEmpty || translation == key) return fallback;
+    return translation;
+  }
+
   static Future<void> showCompletionDialog({
     required BuildContext context,
     required KidsGameComplete state,
@@ -34,9 +40,7 @@ class KidsGameDialogs {
             filter: ui.ImageFilter.blur(sigmaX: 12, sigmaY: 12),
             child: Stack(
               children: [
-                const Positioned.fill(
-                  child: IgnorePointer(child: GameConfetti(shouldPop: false)),
-                ),
+
                 Center(
                   child: AlertDialog(
                     backgroundColor:
@@ -115,11 +119,7 @@ class KidsGameDialogs {
                                     context,
                                     state.coinsEarned * (rewardsDoubled ? 3 : 1),
                                     "🪙",
-                                    context.tr('games.kids_coins').isEmpty ||
-                                            context.tr('games.kids_coins') ==
-                                                'games.kids_coins'
-                                        ? 'KIDS COINS'
-                                        : context.tr('games.kids_coins'),
+                                    _safeTr(context, 'games.kids_coins', 'KIDS COINS'),
                                     Colors.amber,
                                   ),
                                 ),
@@ -133,11 +133,7 @@ class KidsGameDialogs {
                                     context,
                                     state.xpEarned,
                                     "⚡",
-                                    context.tr('games.kids_xp').isEmpty ||
-                                            context.tr('games.kids_xp') ==
-                                                'games.kids_xp'
-                                        ? 'XP'
-                                        : context.tr('games.kids_xp'),
+                                    _safeTr(context, 'games.kids_xp', 'XP'),
                                     Colors.blueAccent,
                                   ),
                                 ),
@@ -186,13 +182,7 @@ class KidsGameDialogs {
 
                           if (!rewardsDoubled) ...[
                             Text(
-                              context
-                                          .tr('games.triple_reward_desc')
-                                          .isNotEmpty &&
-                                      context.tr('games.triple_reward_desc') !=
-                                          'games.triple_reward_desc'
-                                  ? context.tr('games.triple_reward_desc')
-                                  : "Watch an ad to get 3x Coins!",
+                              _safeTr(context, 'games.triple_reward_desc', "Watch an ad to get 3x Coins!"),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontWeight: FontWeight.w700,
@@ -364,6 +354,9 @@ class KidsGameDialogs {
                       ),
                     ),
                   ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+                ),
+                const Positioned.fill(
+                  child: IgnorePointer(child: GameConfetti(shouldPop: false)),
                 ),
               ],
             ),

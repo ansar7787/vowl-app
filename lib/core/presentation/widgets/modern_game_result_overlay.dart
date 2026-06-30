@@ -40,12 +40,6 @@ class ModernGameResultOverlay extends StatelessWidget {
 
     return Stack(
       children: [
-        // Confetti — isolated in its own repaint boundary
-        if (isCorrect)
-          const Positioned.fill(
-            child: IgnorePointer(child: RepaintBoundary(child: GameConfetti())),
-          ),
-
         ColoredBox(
           color: Colors.black.withValues(alpha: 0.4),
           child: Align(
@@ -266,6 +260,12 @@ class ModernGameResultOverlay extends StatelessWidget {
             ),
           ),
         ),
+
+        // Confetti — isolated in its own repaint boundary
+        if (isCorrect)
+          const Positioned.fill(
+            child: IgnorePointer(child: RepaintBoundary(child: GameConfetti())),
+          ),
       ],
     );
   }
