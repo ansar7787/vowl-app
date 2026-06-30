@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vowl/features/kids_zone/kids_routes.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/day_night_game_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_alphabet_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_numbers_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_colors_layout.dart';
@@ -16,6 +15,13 @@ import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_prepos
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_phonics_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_time_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_opposites_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_day_night_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_nature_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_home_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_food_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_transport_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_body_parts_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_clothing_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_picker_template.dart';
 
 class UnifiedKidsGameScreen extends StatelessWidget {
@@ -31,7 +37,7 @@ class UnifiedKidsGameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (gameType == 'day_night') {
-      return DayNightGameScreen(level: level);
+      return KidsDayNightLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
     }
     
     if (gameType == 'alphabet') {
@@ -78,6 +84,24 @@ class UnifiedKidsGameScreen extends StatelessWidget {
     }
     if (gameType == 'opposites') {
       return KidsOppositesLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'nature') {
+      return KidsNatureLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'home') {
+      return KidsHomeLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'food') {
+      return KidsFoodLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'transport') {
+      return KidsTransportLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'body_parts') {
+      return KidsBodyPartsLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'clothing') {
+      return KidsClothingLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
     }
 
     return KidsPickerTemplate(

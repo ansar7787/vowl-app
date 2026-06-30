@@ -6,24 +6,35 @@ import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_image.dart';
 
-class DayNightGameScreen extends StatelessWidget {
+/// Sky Observatory Theme for Day & Night Game
+/// Space Complexity: O(1)
+/// Time Complexity: O(N) where N is the number of options (max 4)
+class KidsDayNightLayout extends StatelessWidget {
   final int level;
-  const DayNightGameScreen({super.key, required this.level});
+  final String title;
+  final Color primaryColor;
+
+  const KidsDayNightLayout({
+    super.key,
+    required this.level,
+    required this.title,
+    required this.primaryColor,
+  });
 
   @override
   Widget build(BuildContext context) {
     return KidsGameBaseScreen(
-      title: "Day & Night",
+      title: title,
       gameType: "day_night",
       level: level,
-      primaryColor: const Color(0xFF1E293B),
-      backgroundColors: const [], // Using Unified Background
+      primaryColor: primaryColor,
+      backgroundColors: const [],
       buildGameUI: (context, state, onHintTap) {
         final quest = state.currentQuest;
 
         return Column(
           children: [
-            SizedBox(height: 120.h), // Room for Mascot + Speech Bubble
+            SizedBox(height: 120.h),
             Expanded(
               flex: 5,
               child: Center(

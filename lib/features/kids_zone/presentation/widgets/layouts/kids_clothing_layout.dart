@@ -1,0 +1,208 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
+
+/// Fashion Wardrobe Theme for Clothing Game
+/// Space Complexity: O(1)
+/// Time Complexity: O(N) where N is the number of options (max 4)
+class KidsClothingLayout extends StatelessWidget {
+  final int level;
+  final String title;
+  final Color primaryColor;
+
+  const KidsClothingLayout({
+    super.key,
+    required this.level,
+    required this.title,
+    required this.primaryColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return KidsGameBaseScreen(
+      title: title,
+      gameType: 'clothing',
+      level: level,
+      primaryColor: primaryColor,
+      backgroundColors: const [],
+      buildGameUI: (context, state, onHintTap) {
+        final quest = state.currentQuest;
+
+        return Column(
+          children: [
+            SizedBox(height: 120.h),
+            // The Open Closet
+            Expanded(
+              flex: 5,
+              child: Center(
+                child: _buildClosetBoard(quest.question ?? "?"),
+              ),
+            ),
+            // The Clothing Hangers (Options)
+            Flexible(
+              flex: 5,
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  // The metal closet rod
+                  Positioned(
+                    top: 15.h,
+                    left: 16.w,
+                    right: 16.w,
+                    child: Container(
+                      height: 8.h,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF94A3B8), // Silver rod
+                        borderRadius: BorderRadius.circular(4.r),
+                        boxShadow: const [
+                          BoxShadow(color: Colors.black26, offset: Offset(0, 2)),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 20.h, left: 16.w, right: 16.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: List.generate(quest.options?.length ?? 0, (index) {
+                        final option = quest.options![index];
+                        return Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 4.w),
+                            child: _buildHangerOption(
+                              context,
+                              state,
+                              option,
+                              quest.correctAnswer == option,
+                              index,
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildClosetBoard(String text) {
+    return Container(
+      width: 240.w,
+      height: 160.h,
+      decoration: BoxDecoration(
+        color: const Color(0xFFFEF3C7), // Light wood inside closet
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: const Color(0xFFB45309), width: 12.r), // Dark wood frame
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.2),
+            blurRadius: 15,
+            offset: const Offset(0, 8),
+          ),
+        ],
+      ),
+      child: Center(
+        child: Text(
+          text,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 42.sp,
+            fontWeight: FontWeight.w900,
+            color: const Color(0xFF78350F),
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHangerOption(
+    BuildContext context,
+    KidsLoaded state,
+    String text,
+    bool isCorrect,
+    int index,
+  ) {
+    final colors = [
+      const Color(0xFFFCA5A5), // Light Red
+      const Color(0xFF93C5FD), // Light Blue
+      const Color(0xFF6EE7B7), // Mint
+      const Color(0xFFC4B5FD), // Light Purple
+    ];
+    final tagColor = colors[index % colors.length];
+
+    return ScaleButton(
+      onTap: () {
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // Metal Hanger Hook
+          Container(
+            width: 20.w,
+            height: 15.h,
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(color: const Color(0xFF94A3B8), width: 3.r),
+                left: BorderSide(color: const Color(0xFF94A3B8), width: 3.r),
+                right: BorderSide(color: const Color(0xFF94A3B8), width: 3.r),
+              ),
+              borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
+            ),
+          ),
+          // Wooden Hanger Base
+          Container(
+            height: 10.h,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: const Color(0xFFD97706),
+              borderRadius: BorderRadius.circular(10.r),
+            ),
+          ),
+          // Clothing Tag hanging from it
+          Container(
+            height: 60.h,
+            margin: EdgeInsets.symmetric(horizontal: 10.w),
+            decoration: BoxDecoration(
+              color: tagColor,
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(8.r)),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.15),
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                child: Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w900,
+                    color: const Color(0xFF0F172A),
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
