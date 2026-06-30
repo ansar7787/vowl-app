@@ -5,6 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
+import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
@@ -110,6 +111,16 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     setState(() => _isProcessing = true);
 
     final adService = di.sl<AdService>();
+    if (!adService.isRewardedAdLoaded) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Ad not ready yet. Please wait a moment.",
+        type: CustomSnackBarType.warning,
+      );
+      setState(() => _isProcessing = false);
+      return;
+    }
+
     final user = context.read<AuthBloc>().state.user;
     final isPremium = user?.isPremium ?? false;
 
@@ -267,22 +278,33 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
 
                           return ScaleButton(
                             onTap: () {
-                              if (canClaim) {
-                                _claimChest(index, totalStars);
-                              } else if (isClaimed) {
-                                CustomSnackBar.show(
-                                  context: context,
-                                  message: "You already claimed this chest!",
-                                  type: CustomSnackBarType.info,
-                                );
-                              } else {
-                                final needed = requirement - totalStars;
-                                CustomSnackBar.show(
-                                  context: context,
-                                  message: "You need $needed more stars!",
-                                  type: CustomSnackBarType.warning,
-                                );
-                              }
+                                if (canClaim) {
+                                  _claimChest(index, totalStars);
+                                } else if (isClaimed) {
+                                  showDialog(
+                                    context: context,
+                                    builder: (ctx) => ModernGameDialog(
+                                      title: 'ALREADY CLAIMED',
+                                      description: 'You have already opened this chest!',
+                                      buttonText: 'OK',
+                                      isSuccess: true,
+                                      onButtonPressed: () => Navigator.of(ctx).pop(),
+                                    ),
+                                  );
+                                } else {
+                                  final needed = requirement - totalStars;
+                                  showDialog(
+                                    context: context,
+                                    builder: (ctx) => ModernGameDialog(
+                                      title: 'NOT ENOUGH STARS',
+                                      description: 'You need $needed more stars to open this chest!',
+                                      buttonText: 'KEEP PLAYING',
+                                      isSuccess: false,
+                                      onButtonPressed: () => Navigator.of(ctx).pop(),
+                                      customIcon: Icon(Icons.star_border_rounded, color: Colors.orange, size: 48.sp),
+                                    ),
+                                  );
+                                }
                             },
                             child: Container(
                               width: 120.w,
