@@ -35,7 +35,7 @@ class KidsAlphabetLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildChalkboard(quest.question ?? "?"),
+                child: _buildChalkboard(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Wooden Blocks for Options
@@ -68,7 +68,7 @@ class KidsAlphabetLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildChalkboard(String text) {
+  Widget _buildChalkboard(String text, String? emoji) {
     return Container(
       width: 260.w,
       height: 180.h,
@@ -85,15 +85,25 @@ class KidsAlphabetLayout extends StatelessWidget {
         ],
       ),
       child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'ComicSans', // Or a chalk-like font if available
-            fontSize: 72.sp,
-            fontWeight: FontWeight.w900,
-            color: Colors.white.withValues(alpha: 0.9), // Chalk white
-            letterSpacing: 2,
-          ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (emoji != null)
+              Text(
+                emoji,
+                style: TextStyle(fontSize: 48.sp),
+              ),
+            Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'ComicSans', // Or a chalk-like font if available
+                fontSize: 72.sp,
+                fontWeight: FontWeight.w900,
+                color: Colors.white.withValues(alpha: 0.9), // Chalk white
+                letterSpacing: 2,
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -4,7 +4,6 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_image.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 /// Sky Observatory Theme for Day & Night Game
@@ -47,7 +46,7 @@ class KidsDayNightLayout extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: Center(
-                    child: _buildSkyView(quest.imageUrl),
+                    child: _buildSkyView(quest.question ?? "?", quest.emoji),
                   ),
                 ),
                 // Celestial Cards (Options)
@@ -88,7 +87,7 @@ class KidsDayNightLayout extends StatelessWidget {
       .moveX(begin: -10.w, end: 10.w, duration: 6.seconds, curve: Curves.easeInOutSine);
   }
 
-  Widget _buildSkyView(String? imageUrl) {
+  Widget _buildSkyView(String text, String? emoji) {
     return Container(
       width: 240.w,
       height: 180.h,
@@ -117,10 +116,24 @@ class KidsDayNightLayout extends StatelessWidget {
           Positioned(top: 60.h, right: 30.w, child: _buildTwinklingStar()),
 
           Center(
-            child: KidsImage(
-              imageUrl: imageUrl,
-              fallbackIcon: Icons.nights_stay_rounded,
-              iconColor: Colors.amber[200],
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (emoji != null)
+                  Text(
+                    emoji,
+                    style: TextStyle(fontSize: 48.sp),
+                  ),
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 42.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
           ),
         ],

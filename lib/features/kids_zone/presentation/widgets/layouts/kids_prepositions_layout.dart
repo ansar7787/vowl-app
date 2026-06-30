@@ -40,7 +40,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildMagicStage(quest.question ?? "?"),
+                child: _buildMagicStage(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Magician Top Hats (Options)
@@ -74,7 +74,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildMagicStage(String text) {
+  Widget _buildMagicStage(String text, String? emoji) {
     return Container(
       width: 240.w,
       height: 160.h,
@@ -99,18 +99,28 @@ class KidsPrepositionsLayout extends StatelessWidget {
           Positioned(top: 80.h, right: 20.w, child: _buildSparkle(10)),
           
           Center(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 48.sp,
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-                shadows: const [
-                  Shadow(color: Color(0xFFD8B4FE), blurRadius: 10),
-                ],
-              ),
-              textAlign: TextAlign.center,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (emoji != null)
+                  Text(
+                    emoji,
+                    style: TextStyle(fontSize: 48.sp),
+                  ),
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 48.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    shadows: const [
+                      Shadow(color: Color(0xFFD8B4FE), blurRadius: 10),
+                    ],
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
           ),
         ],

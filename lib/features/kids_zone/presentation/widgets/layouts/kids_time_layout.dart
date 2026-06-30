@@ -40,7 +40,7 @@ class KidsTimeLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildClockFace(quest.question ?? "?"),
+                child: _buildClockFace(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Pocket Watches (Options)
@@ -90,7 +90,7 @@ class KidsTimeLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildClockFace(String text) {
+  Widget _buildClockFace(String text, String? emoji) {
     return Container(
       width: 220.r,
       height: 220.r,
@@ -128,15 +128,25 @@ class KidsTimeLayout extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8.r),
                 border: Border.all(color: const Color(0xFFD97706), width: 2),
               ),
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 42.sp,
-                  fontWeight: FontWeight.w900,
-                  color: const Color(0xFF1E293B),
-                ),
-                textAlign: TextAlign.center,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (emoji != null)
+                    Text(
+                      emoji,
+                      style: TextStyle(fontSize: 48.sp),
+                    ),
+                  Text(
+                    text,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 42.sp,
+                      fontWeight: FontWeight.w900,
+                      color: const Color(0xFF1E293B),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
             ),
           ),

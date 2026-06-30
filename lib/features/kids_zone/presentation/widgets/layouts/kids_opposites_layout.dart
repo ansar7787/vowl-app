@@ -38,7 +38,7 @@ class KidsOppositesLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildSplitWorld(quest.question ?? "?"),
+                child: _buildSplitWorld(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Split Plaques (Options)
@@ -88,7 +88,7 @@ class KidsOppositesLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildSplitWorld(String text) {
+  Widget _buildSplitWorld(String text, String? emoji) {
     return Container(
       width: 260.w,
       height: 180.h,
@@ -143,15 +143,25 @@ class KidsOppositesLayout extends StatelessWidget {
                   border: Border.all(color: const Color(0xFF1E293B), width: 4.r),
                 ),
                 child: Center(
-                  child: Text(
-                    text,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 32.sp,
-                      fontWeight: FontWeight.w900,
-                      color: const Color(0xFF0F172A),
-                    ),
-                    textAlign: TextAlign.center,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (emoji != null)
+                        Text(
+                          emoji,
+                          style: TextStyle(fontSize: 48.sp),
+                        ),
+                      Text(
+                        text,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 32.sp,
+                          fontWeight: FontWeight.w900,
+                          color: const Color(0xFF0F172A),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
               ),

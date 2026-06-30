@@ -38,7 +38,7 @@ class KidsColorsLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildEasel(quest.question ?? "?"),
+                child: _buildEasel(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Squeezed Paint Tubes
@@ -71,7 +71,7 @@ class KidsColorsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildEasel(String text) {
+  Widget _buildEasel(String text, String? emoji) {
     return Stack(
       alignment: Alignment.center,
       children: [
@@ -106,14 +106,24 @@ class KidsColorsLayout extends StatelessWidget {
             ],
           ),
           child: Center(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 48.sp,
-                fontWeight: FontWeight.w900,
-                color: const Color(0xFF3F3F46),
-              ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (emoji != null)
+                  Text(
+                    emoji,
+                    style: TextStyle(fontSize: 48.sp),
+                  ),
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 48.sp,
+                    fontWeight: FontWeight.w900,
+                    color: const Color(0xFF3F3F46),
+                  ),
+                ),
+              ],
             ),
           ),
         ),

@@ -38,7 +38,7 @@ class KidsNumbersLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildRocketWindow(quest.question ?? "?"),
+                child: _buildRocketWindow(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Planets/Asteroids for Options
@@ -71,7 +71,7 @@ class KidsNumbersLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildRocketWindow(String text) {
+  Widget _buildRocketWindow(String text, String? emoji) {
     return Container(
       width: 220.r,
       height: 220.r,
@@ -102,17 +102,27 @@ class KidsNumbersLayout extends StatelessWidget {
           Positioned(bottom: 60.r, right: 40.r, child: _buildStar(14)),
           Positioned(top: 80.r, right: 60.r, child: _buildStar(8)),
           
-          Text(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 80.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.white,
-              shadows: const [
-                Shadow(color: Color(0xFF38BDF8), blurRadius: 15),
-              ],
-            ),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (emoji != null)
+                Text(
+                  emoji,
+                  style: TextStyle(fontSize: 48.sp),
+                ),
+              Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 80.sp,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  shadows: const [
+                    Shadow(color: Color(0xFF38BDF8), blurRadius: 15),
+                  ],
+                ),
+              ),
+            ],
           ),
         ],
       ),

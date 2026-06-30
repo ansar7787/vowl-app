@@ -38,7 +38,7 @@ class KidsRoutineLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildBedroomWindow(quest.question ?? "?"),
+                child: _buildBedroomWindow(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Bed with Pillows
@@ -95,7 +95,7 @@ class KidsRoutineLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildBedroomWindow(String text) {
+  Widget _buildBedroomWindow(String text, String? emoji) {
     return Stack(
       alignment: Alignment.center,
       children: [
@@ -140,15 +140,25 @@ class KidsRoutineLayout extends StatelessWidget {
                     color: Colors.white.withValues(alpha: 0.8),
                     borderRadius: BorderRadius.circular(12.r),
                   ),
-                  child: Text(
-                    text,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 32.sp,
-                      fontWeight: FontWeight.w900,
-                      color: const Color(0xFF0F172A),
-                    ),
-                    textAlign: TextAlign.center,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (emoji != null)
+                        Text(
+                          emoji,
+                          style: TextStyle(fontSize: 48.sp),
+                        ),
+                      Text(
+                        text,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 32.sp,
+                          fontWeight: FontWeight.w900,
+                          color: const Color(0xFF0F172A),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
               ),

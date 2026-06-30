@@ -40,7 +40,7 @@ class KidsPhonicsLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildStudioMonitor(quest.question ?? "?"),
+                child: _buildStudioMonitor(quest.question ?? "?", quest.emoji),
               ),
             ),
             // Vinyl Records
@@ -90,7 +90,7 @@ class KidsPhonicsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildStudioMonitor(String text) {
+  Widget _buildStudioMonitor(String text, String? emoji) {
     return Container(
       width: 260.w,
       height: 160.h,
@@ -119,17 +119,27 @@ class KidsPhonicsLayout extends StatelessWidget {
           ),
           
           Center(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 52.sp,
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-                shadows: const [
-                  Shadow(color: Color(0xFF22C55E), blurRadius: 15), // Neon green glow
-                ],
-              ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (emoji != null)
+                  Text(
+                    emoji,
+                    style: TextStyle(fontSize: 48.sp),
+                  ),
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 52.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    shadows: const [
+                      Shadow(color: Color(0xFF22C55E), blurRadius: 15), // Neon green glow
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ],

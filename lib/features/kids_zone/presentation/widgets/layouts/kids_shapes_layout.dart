@@ -38,7 +38,7 @@ class KidsShapesLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildBlueprintCrane(quest.question ?? "?"),
+                child: _buildBlueprintCrane(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Toy Building Blocks
@@ -72,7 +72,7 @@ class KidsShapesLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildBlueprintCrane(String text) {
+  Widget _buildBlueprintCrane(String text, String? emoji) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -119,15 +119,25 @@ class KidsShapesLayout extends StatelessWidget {
                 ),
               ),
               Center(
-                child: Text(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 42.sp,
-                    fontWeight: FontWeight.w400, // Thinner weight for blueprint aesthetic
-                    color: Colors.white,
-                    letterSpacing: 1,
-                  ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (emoji != null)
+                      Text(
+                        emoji,
+                        style: TextStyle(fontSize: 48.sp),
+                      ),
+                    Text(
+                      text,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 42.sp,
+                        fontWeight: FontWeight.w400, // Thinner weight for blueprint aesthetic
+                        color: Colors.white,
+                        letterSpacing: 1,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

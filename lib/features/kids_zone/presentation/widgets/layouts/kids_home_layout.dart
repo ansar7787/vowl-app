@@ -38,7 +38,7 @@ class KidsHomeLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildDollhouse(quest.question ?? "?"),
+                child: _buildDollhouse(quest.question ?? "?", quest.emoji),
               ),
             ),
             // The Furniture pieces (Options)
@@ -89,7 +89,7 @@ class KidsHomeLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildDollhouse(String text) {
+  Widget _buildDollhouse(String text, String? emoji) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -118,15 +118,25 @@ class KidsHomeLayout extends StatelessWidget {
             ],
           ),
           child: Center(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 36.sp,
-                fontWeight: FontWeight.w900,
-                color: const Color(0xFF451A03),
-              ),
-              textAlign: TextAlign.center,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (emoji != null)
+                  Text(
+                    emoji,
+                    style: TextStyle(fontSize: 48.sp),
+                  ),
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 36.sp,
+                    fontWeight: FontWeight.w900,
+                    color: const Color(0xFF451A03),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
           ),
         ),
