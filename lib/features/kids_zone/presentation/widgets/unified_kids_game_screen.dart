@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:vowl/features/kids_zone/kids_routes.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/games/day_night_game_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_alphabet_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_numbers_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_colors_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_shapes_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_animals_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_picker_template.dart';
 
 class UnifiedKidsGameScreen extends StatelessWidget {
@@ -21,11 +25,19 @@ class UnifiedKidsGameScreen extends StatelessWidget {
     }
     
     if (gameType == 'alphabet') {
-      return KidsAlphabetLayout(
-        level: level,
-        title: KidsRoutes.getKidsGameTitle(gameType),
-        primaryColor: KidsRoutes.getKidsGameColor(gameType),
-      );
+      return KidsAlphabetLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'numbers') {
+      return KidsNumbersLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'colors') {
+      return KidsColorsLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'shapes') {
+      return KidsShapesLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'animals') {
+      return KidsAnimalsLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
     }
 
     return KidsPickerTemplate(
