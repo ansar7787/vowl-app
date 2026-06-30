@@ -24,12 +24,19 @@ class KidsRoomActionPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(20.r),
-      padding: EdgeInsets.all(16.r),
+      padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 12.w),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.6),
-        borderRadius: BorderRadius.circular(30.r),
-        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 20)],
-        border: Border.all(color: Colors.white),
+        color: Theme.of(context).brightness == Brightness.dark 
+            ? const Color(0xFF1E293B) 
+            : Colors.white,
+        borderRadius: BorderRadius.circular(40.r),
+        border: Border.all(color: Colors.grey.shade300, width: 4.w),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade300,
+            offset: Offset(0, 8.h),
+          ),
+        ],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -62,21 +69,29 @@ class KidsRoomActionPanel extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(12.r),
+            padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
               color: color.withValues(alpha: 0.1),
               shape: BoxShape.circle,
-              border: Border.all(color: color.withValues(alpha: 0.2), width: 1),
+              border: Border.all(color: color, width: 4.w),
+              boxShadow: [
+                BoxShadow(
+                  color: color,
+                  offset: Offset(0, 5.h),
+                ),
+              ],
             ),
-            child: Icon(icon, color: color, size: 20.sp),
+            child: Icon(icon, color: color, size: 28.sp),
           ),
-          SizedBox(height: 6.h),
+          SizedBox(height: 12.h),
           Text(
-            label,
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 10.sp,
+            label.toUpperCase(),
+            style: TextStyle(
+              fontFamily: 'Outfit', 
+              fontSize: 12.sp,
               fontWeight: FontWeight.w900,
-              color: Theme.of(context).brightness == Brightness.dark ? Colors.white38 : Colors.black54,
+              color: color,
+              letterSpacing: 1.2,
             ),
           ),
         ],

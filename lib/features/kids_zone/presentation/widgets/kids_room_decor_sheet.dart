@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
@@ -18,8 +17,20 @@ class KidsRoomDecorSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GlassTile(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
+    return Container(
+      decoration: BoxDecoration(
+        color: Theme.of(context).brightness == Brightness.dark 
+            ? const Color(0xFF1E293B) 
+            : Colors.white,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+        border: Border.all(color: Colors.amber, width: 4.w),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.amber.shade700,
+            offset: Offset(0, -4.h),
+          ),
+        ],
+      ),
       child: Container(
         padding: EdgeInsets.all(24.r),
         child: DefaultTabController(
@@ -27,17 +38,32 @@ class KidsRoomDecorSheet extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              Container(
+                width: 60.w,
+                height: 6.h,
+                decoration: BoxDecoration(
+                  color: Colors.amber.withValues(alpha: 0.5),
+                  borderRadius: BorderRadius.circular(3.r),
+                ),
+              ),
+              SizedBox(height: 20.h),
               Text(
                 "DECORATE ROOM",
                 style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 18.sp,
+                  fontSize: 22.sp,
                   fontWeight: FontWeight.w900,
+                  color: Colors.amber.shade700,
+                  letterSpacing: 1.2,
                 ),
               ),
-              const TabBar(
-                tabs: [Tab(text: "BEDS"), Tab(text: "WINDOWS")],
-                labelColor: Colors.black87,
-                indicatorColor: Colors.black87,
+              SizedBox(height: 10.h),
+              TabBar(
+                tabs: const [Tab(text: "BEDS"), Tab(text: "WINDOWS")],
+                labelColor: Colors.amber.shade700,
+                unselectedLabelColor: Colors.grey,
+                indicatorColor: Colors.amber.shade700,
+                indicatorWeight: 4,
+                labelStyle: TextStyle(fontFamily: 'Outfit', fontSize: 14.sp, fontWeight: FontWeight.w900),
               ),
               SizedBox(
                 height: 250.h,
@@ -74,26 +100,48 @@ class KidsRoomDecorSheet extends StatelessWidget {
           onTap: () => onItemTap(category, item),
           child: Container(
             decoration: BoxDecoration(
-              color: isEquipped ? Colors.black.withValues(alpha: 0.05) : Colors.white.withValues(alpha: 0.4),
-              borderRadius: BorderRadius.circular(15.r),
-              border: Border.all(color: isEquipped ? Colors.black26 : Colors.transparent),
+              color: isEquipped 
+                  ? Colors.amber.withValues(alpha: 0.1) 
+                  : (Theme.of(context).brightness == Brightness.dark ? Colors.white.withValues(alpha: 0.05) : Colors.white),
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(
+                color: isEquipped ? Colors.amber : Colors.grey.shade300, 
+                width: isEquipped ? 4.w : 2.w,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: isEquipped ? Colors.amber.withValues(alpha: 0.5) : Colors.grey.shade300,
+                  offset: Offset(0, 4.h),
+                ),
+              ],
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(item['icon'] as String, style: TextStyle(fontSize: 24.sp)),
-                Text(item['name'] as String, style: TextStyle(fontFamily: 'Outfit', fontSize: 11.sp, fontWeight: FontWeight.bold)),
-                if (!isOwned)
+                Text(item['icon'] as String, style: TextStyle(fontSize: 32.sp)),
+                SizedBox(height: 6.h),
+                Text(
+                  item['name'] as String, 
+                  style: TextStyle(
+                    fontFamily: 'Outfit', 
+                    fontSize: 13.sp, 
+                    fontWeight: FontWeight.w900, 
+                    color: Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black87
+                  ),
+                ),
+                if (!isOwned) ...[
+                  SizedBox(height: 4.h),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         "${item['price']} ",
-                        style: TextStyle(fontFamily: 'Outfit', fontSize: 9.sp, fontWeight: FontWeight.w900, color: Colors.black54),
+                        style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp, fontWeight: FontWeight.w900, color: Colors.amber.shade700),
                       ),
-                      Icon(Icons.star_rounded, size: 9.sp, color: const Color(0xFFF59E0B)),
+                      Icon(Icons.monetization_on_rounded, size: 14.sp, color: Colors.amber.shade700),
                     ],
                   ),
+                ],
               ],
             ),
           ),

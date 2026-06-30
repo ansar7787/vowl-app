@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
@@ -28,13 +27,20 @@ class KidsRoomTopBar extends StatelessWidget {
             children: [
               ScaleButton(
                 onTap: onBack,
-                child: GlassTile(
-                  padding: EdgeInsets.all(10.r),
-                  borderRadius: BorderRadius.circular(20.r),
+                child: Container(
+                  padding: EdgeInsets.all(12.r),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.r),
+                    border: Border.all(color: Colors.grey.shade300, width: 3.w),
+                    boxShadow: [
+                      BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 4.h)),
+                    ],
+                  ),
                   child: Icon(
                     Icons.arrow_back_ios_new_rounded,
-                    color: Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black54,
-                    size: 18.sp,
+                    color: Colors.grey.shade600,
+                    size: 20.sp,
                   ),
                 ),
               ),
@@ -52,24 +58,34 @@ class KidsRoomTopBar extends StatelessWidget {
   }
 
   Widget _buildTopStatusCapsule(BuildContext context) {
-    return GlassTile(
+    return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      borderRadius: BorderRadius.circular(20.r),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: const Color(0xFFFBBF24), width: 3.w),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFFD97706),
+            offset: Offset(0, 4.h),
+          ),
+        ],
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
             KidsAssets.mascotMap[user.kidsMascot] ?? "🦉", 
-            style: TextStyle(fontSize: 16.sp)
+            style: TextStyle(fontSize: 18.sp)
           ),
           SizedBox(width: 8.w),
           Text(
             "BUDDY ROOM",
             style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w900,
-              color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
-              letterSpacing: 1,
+              color: const Color(0xFFD97706),
+              letterSpacing: 1.5,
             ),
           ),
         ],
@@ -78,18 +94,26 @@ class KidsRoomTopBar extends StatelessWidget {
   }
 
   Widget _buildCurrencyBadge(BuildContext context) {
-    return GlassTile(
+    return Container(
       padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      borderRadius: BorderRadius.circular(20.r),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: const Color(0xFF10B981), width: 3.w),
+        boxShadow: [
+          BoxShadow(color: const Color(0xFF047857), offset: Offset(0, 4.h)),
+        ],
+      ),
       child: Row(
         children: [
-          Icon(Icons.monetization_on_rounded, color: const Color(0xFFF59E0B), size: 16.sp),
+          Icon(Icons.monetization_on_rounded, color: const Color(0xFF10B981), size: 20.sp),
           SizedBox(width: 8.w),
           Text(
             "${user.kidsCoins}",
             style: TextStyle(fontFamily: 'Outfit', 
+              fontSize: 16.sp,
               fontWeight: FontWeight.w900,
-              color: Theme.of(context).brightness == Brightness.dark ? Colors.white : const Color(0xFF1E293B),
+              color: const Color(0xFF047857),
             ),
           ),
         ],
@@ -98,40 +122,47 @@ class KidsRoomTopBar extends StatelessWidget {
   }
 
   Widget _buildCompactLoveMeter() {
-    return GlassTile(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-      borderRadius: BorderRadius.circular(30.r),
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: const Color(0xFFEC4899), width: 3.w),
+        boxShadow: [
+          BoxShadow(color: const Color(0xFFBE185D), offset: Offset(0, 4.h)),
+        ],
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text("❤️", style: TextStyle(fontSize: 14.sp))
+          Text("❤️", style: TextStyle(fontSize: 18.sp))
               .animate(onPlay: (c) => c.repeat(reverse: true))
               .scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2)),
-          SizedBox(width: 8.w),
+          SizedBox(width: 12.w),
           Stack(
             children: [
               Container(
-                width: 100.w,
-                height: 6.h,
+                width: 120.w,
+                height: 12.h,
                 decoration: BoxDecoration(
-                  color: Colors.black.withValues(alpha: 0.05),
+                  color: Colors.grey.shade200,
                   borderRadius: BorderRadius.circular(10.r),
+                  border: Border.all(color: Colors.grey.shade300, width: 2.w),
                 ),
               ),
               AnimatedContainer(
                 duration: 500.ms,
-                width: 100.w * happiness,
-                height: 6.h,
+                width: 120.w * happiness,
+                height: 12.h,
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(colors: [Color(0xFFFB7185), Color(0xFFE11D48)]),
                   borderRadius: BorderRadius.circular(10.r),
-                  boxShadow: [BoxShadow(color: const Color(0xFFE11D48).withValues(alpha: 0.3), blurRadius: 4)],
                 ),
               ),
             ],
           ),
-          SizedBox(width: 6.w),
-          Text("${(happiness * 100).toInt()}%", style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: const Color(0xFFE11D48))),
+          SizedBox(width: 12.w),
+          Text("${(happiness * 100).toInt()}%", style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp, fontWeight: FontWeight.w900, color: const Color(0xFFE11D48))),
         ],
       ),
     ).animate().fadeIn().slideY(begin: -0.2, end: 0);
