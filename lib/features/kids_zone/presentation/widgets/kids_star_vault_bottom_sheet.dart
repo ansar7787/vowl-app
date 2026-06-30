@@ -92,17 +92,21 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         _isProcessing = false;
       });
 
-      CustomSnackBar.show(
+      showDialog(
         context: context,
-        message: "Magical Chest Unlocked! +$coinReward Toys!",
-        type: CustomSnackBarType.success,
+        builder: (ctx) => ModernGameDialog(
+          title: 'CHEST UNLOCKED!',
+          description: 'You found +$coinReward Toys in the magical chest!',
+          buttonText: 'COLLECT',
+          isSuccess: true,
+          onButtonPressed: () {
+            Navigator.of(ctx).pop();
+            if (mounted && context.mounted) {
+              Navigator.of(context).pop();
+            }
+          },
+        ),
       );
-
-      Future.delayed(const Duration(seconds: 3), () {
-        if (mounted && context.mounted) {
-          Navigator.of(context).pop();
-        }
-      });
     }
   }
 
@@ -141,10 +145,16 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
 
         if (mounted) {
           context.read<AuthBloc>().add(const AuthRefreshUser());
-          CustomSnackBar.show(
+          showDialog(
             context: context,
-            message: "+2 Magic Stars Added!",
-            type: CustomSnackBarType.success,
+            builder: (ctx) => ModernGameDialog(
+              title: 'MAGIC STARS EARNED!',
+              description: 'You got +2 Magic Stars for watching the ad!',
+              buttonText: 'AWESOME',
+              isSuccess: true,
+              onButtonPressed: () => Navigator.of(ctx).pop(),
+              customIcon: Icon(Icons.auto_awesome_rounded, color: const Color(0xFF10B981), size: 48.sp),
+            ),
           );
         }
       },
