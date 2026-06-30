@@ -74,8 +74,10 @@ class KidsGameDialogs {
                                       size: index == 1 ? 48.sp : 36.sp,
                                       color: isEarned ? const Color(0xFFFFD700) : Colors.black12,
                                     ).animate(delay: (150 * index).ms).scale(
-                                      duration: 500.ms,
                                       curve: Curves.elasticOut,
+                                    ).shimmer(
+                                      delay: 1.seconds,
+                                      duration: 1500.ms,
                                     ),
                                   );
                                 }),
@@ -102,15 +104,31 @@ class KidsGameDialogs {
                             width: double.infinity,
                             padding: EdgeInsets.symmetric(vertical: 16.h),
                             decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.03)
-                                  : Colors.black.withValues(alpha: 0.02),
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: isDark
+                                    ? [
+                                        primaryColor.withValues(alpha: 0.15),
+                                        primaryColor.withValues(alpha: 0.05),
+                                      ]
+                                    : [
+                                        primaryColor.withValues(alpha: 0.1),
+                                        Colors.white,
+                                      ],
+                              ),
                               borderRadius: BorderRadius.circular(24.r),
                               border: Border.all(
-                                color: isDark
-                                    ? Colors.white.withValues(alpha: 0.05)
-                                    : Colors.black.withValues(alpha: 0.05),
+                                color: primaryColor.withValues(alpha: 0.3),
+                                width: 2,
                               ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: primaryColor.withValues(alpha: 0.1),
+                                  blurRadius: 20,
+                                  spreadRadius: 2,
+                                ),
+                              ],
                             ),
                             child: Row(
                               children: [
@@ -256,7 +274,7 @@ class KidsGameDialogs {
                                                 fontFamily: 'Outfit',
                                                 fontWeight: FontWeight.w900,
                                                 color: Colors.white,
-                                                fontSize: 13.sp,
+                                                fontSize: 14.sp,
                                                 letterSpacing: 1,
                                               ),
                                               maxLines: 1,
@@ -323,13 +341,20 @@ class KidsGameDialogs {
                               width: double.infinity,
                               height: 48.h,
                               decoration: BoxDecoration(
-                                color: primaryColor,
+                                gradient: LinearGradient(
+                                  colors: [
+                                    primaryColor,
+                                    primaryColor.withValues(alpha: 0.8),
+                                  ],
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                ),
                                 borderRadius: BorderRadius.circular(16.r),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: primaryColor.withValues(alpha: 0.3),
-                                    blurRadius: 16,
-                                    offset: const Offset(0, 6),
+                                    color: primaryColor.withValues(alpha: 0.4),
+                                    blurRadius: 12,
+                                    offset: const Offset(0, 4),
                                   ),
                                 ],
                               ),
@@ -343,8 +368,8 @@ class KidsGameDialogs {
                                     fontFamily: 'Outfit',
                                     fontWeight: FontWeight.w900,
                                     color: Colors.white,
-                                    fontSize: 13.sp,
-                                    letterSpacing: 0.5,
+                                    fontSize: 15.sp,
+                                    letterSpacing: 1,
                                   ),
                                 ),
                               ),
