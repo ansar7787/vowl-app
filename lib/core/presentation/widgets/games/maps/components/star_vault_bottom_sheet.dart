@@ -292,7 +292,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
 
                     // Chests ListView
                     SizedBox(
-                      height: 140.h,
+                      height: 160.h,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -334,38 +334,48 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                 }
                             },
                             child: Container(
-                              width: 110.w,
+                              width: 120.w,
                               margin: EdgeInsets.only(right: 16.w),
                               decoration: BoxDecoration(
-                                color: isClaimed ? Colors.grey.withValues(alpha: 0.1) : canClaim ? widget.primaryColor.withValues(alpha: 0.15) : isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02),
-                                borderRadius: BorderRadius.circular(20.r),
+                                gradient: canClaim ? LinearGradient(
+                                  colors: [widget.primaryColor, widget.primaryColor.withValues(alpha: 0.7)],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                ) : null,
+                                color: canClaim ? null : (isClaimed ? Colors.grey.withValues(alpha: 0.1) : isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02)),
+                                borderRadius: BorderRadius.circular(24.r),
                                 border: Border.all(
-                                  color: isClaimed ? Colors.transparent : canClaim ? widget.primaryColor : isNext ? widget.primaryColor.withValues(alpha: 0.3) : Colors.transparent,
+                                  color: isClaimed ? Colors.transparent : canClaim ? Colors.white.withValues(alpha: 0.5) : isNext ? widget.primaryColor.withValues(alpha: 0.3) : Colors.transparent,
                                   width: canClaim ? 2 : 1,
                                 ),
+                                boxShadow: canClaim ? [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.5), blurRadius: 16, spreadRadius: 2, offset: const Offset(0, 4))] : [],
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(
                                     isClaimed ? Icons.inventory_2_rounded : canClaim ? Icons.redeem_rounded : Icons.lock_rounded,
-                                    size: 40.sp,
-                                    color: isClaimed ? Colors.grey : canClaim ? widget.primaryColor : Colors.grey.shade400,
-                                  ).animate(target: canClaim ? 1 : 0).shake(hz: 2, duration: 1.seconds),
+                                    size: 44.sp,
+                                    color: isClaimed ? Colors.grey : canClaim ? Colors.white : Colors.grey.shade400,
+                                  ).animate(target: canClaim ? 1 : 0).shake(hz: 3, duration: 1.5.seconds).then().shimmer(duration: 1.seconds, color: Colors.white),
                                   SizedBox(height: 8.h),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Text("$requirement", style: TextStyle(fontWeight: FontWeight.w800, color: isClaimed ? Colors.grey : canClaim ? widget.primaryColor : isDark ? Colors.white70 : Colors.black87)),
-                                      Icon(Icons.star_rounded, size: 14.sp, color: isClaimed ? Colors.grey : const Color(0xFFFFD700)),
+                                      Text("$requirement", style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16.sp, color: isClaimed ? Colors.grey : canClaim ? Colors.white : isDark ? Colors.white70 : Colors.black87)),
+                                      Icon(Icons.star_rounded, size: 16.sp, color: isClaimed ? Colors.grey : const Color(0xFFFFD700)),
                                     ],
                                   ),
                                   if (isClaimed) ...[
-                                    SizedBox(height: 4.h),
+                                    SizedBox(height: 6.h),
                                     Text("OPENED", style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.grey)),
                                   ] else if (canClaim) ...[
-                                    SizedBox(height: 4.h),
-                                    Text("TAP TO OPEN", style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w900, color: widget.primaryColor)),
+                                    SizedBox(height: 6.h),
+                                    Container(
+                                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12.r)),
+                                      child: Text("OPEN", style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w900, color: widget.primaryColor)),
+                                    ),
                                   ]
                                 ],
                               ),
