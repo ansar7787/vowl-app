@@ -1,4 +1,4 @@
-import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -59,8 +59,8 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
 
         return Column(
           children: [
-            SizedBox(height: 20.h),
-            _buildInstruction(quest.instruction),
+            // Extra space at the top to accommodate the Mascot + Speech Bubble injected by KidsGameBaseScreen
+            SizedBox(height: 120.h),
             
             Expanded(
               flex: 5,
@@ -72,7 +72,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
             Flexible(
               flex: 5,
               child: Padding(
-                padding: EdgeInsets.only(bottom: 30.h, left: 16.w, right: 16.w),
+                padding: EdgeInsets.only(bottom: 40.h, left: 16.w, right: 16.w),
                 child: Center(
                   child: _buildOptions(context, state, quest),
                 ),
@@ -82,32 +82,6 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
         );
       },
     );
-  }
-
-  Widget _buildInstruction(String instruction) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20.r),
-        child: BackdropFilter(
-          filter: ui.ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-            decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.8),
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(color: Colors.white.withValues(alpha: 0.8), width: 1.5),
-              boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10, offset: const Offset(0, 4))],
-            ),
-            child: Text(
-              instruction,
-              style: TextStyle(fontFamily: 'Outfit', fontSize: 22.sp, fontWeight: FontWeight.w700, color: const Color(0xFF1E293B), height: 1.1),
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ),
-      ),
-    ).animate().fadeIn(duration: 800.ms).scale(begin: const Offset(0.8, 0.8));
   }
 
   Widget _buildDragTarget(BuildContext context, KidsLoaded state, KidsQuest quest) {
@@ -126,7 +100,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
       builder: (context, candidateData, rejectedData) {
         return AnimatedContainer(
           duration: 300.ms,
-          transform: Matrix4.diagonal3Values(_isOverTarget ? 1.1 : 1.0, _isOverTarget ? 1.1 : 1.0, 1.0),
+          transform: Matrix4.diagonal3Values(_isOverTarget ? 1.05 : 1.0, _isOverTarget ? 1.05 : 1.0, 1.0),
           child: _buildCentralVisual(quest, isHighlighted: _isOverTarget),
         );
       },
@@ -140,49 +114,50 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
 
     return Stack(
       alignment: Alignment.center,
+      clipBehavior: Clip.none,
       children: [
-        // Outer Glow
+        // Solid, high-contrast circle
         Container(
-          width: 180.r, height: 180.r,
+          width: 200.r, height: 200.r,
           decoration: BoxDecoration(
-            color: widget.primaryColor.withValues(alpha: isHighlighted ? 0.4 : 0.2),
+            color: Colors.white,
             shape: BoxShape.circle,
+            border: Border.all(
+              color: isHighlighted ? widget.primaryColor : widget.primaryColor.withValues(alpha: 0.3),
+              width: isHighlighted ? 8 : 4,
+            ),
             boxShadow: [
-              BoxShadow(color: widget.primaryColor.withValues(alpha: isHighlighted ? 0.5 : 0.3), blurRadius: isHighlighted ? 60 : 40, spreadRadius: isHighlighted ? 20 : 10),
+              BoxShadow(
+                color: widget.primaryColor.withValues(alpha: isHighlighted ? 0.3 : 0.15),
+                blurRadius: isHighlighted ? 30 : 15,
+                offset: const Offset(0, 10),
+              ),
             ],
           ),
-        ).animate(onPlay: (c) => c.repeat(reverse: true))
-         .scale(begin: const Offset(0.8, 0.8), end: const Offset(1.2, 1.2), duration: 2.seconds),
-
-        // Glass Orb
-        ClipRRect(
-          borderRadius: BorderRadius.circular(100),
-          child: BackdropFilter(
-            filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-            child: Container(
-              width: 180.r, height: 180.r,
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.7), 
-                shape: BoxShape.circle,
-                border: Border.all(color: widget.primaryColor.withValues(alpha: isHighlighted ? 0.5 : 0.1), width: isHighlighted ? 4 : 2),
-                gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Colors.white, Colors.white.withValues(alpha: 0.3)]),
-              ),
-              child: Center(
-                child: Padding(
-                  padding: EdgeInsets.all(hasImage ? 30.r : 20.r),
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: hasImage 
-                      ? SizedBox(width: 120.r, height: 120.r, child: KidsImage(imageUrl: quest.imageUrl, fallbackIcon: widget.fallbackIcon, iconColor: widget.primaryColor.withValues(alpha: 0.5)))
-                      : Text(
-                          displayValue,
-                          style: TextStyle(fontFamily: 'Outfit', fontSize: _getCentralFontSize(displayValue, isEmoji), fontWeight: FontWeight.w900, color: const Color(0xFF1E293B), letterSpacing: isEmoji ? 4 : 0, height: 1.0, shadows: [const Shadow(color: Colors.white, blurRadius: 10)]),
-                          textAlign: TextAlign.center,
-                          softWrap: false,
-                          overflow: TextOverflow.visible,
-                        ),
-                  ),
-                ),
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.all(hasImage ? 25.r : 20.r),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: hasImage 
+                  ? SizedBox(
+                      width: 140.r, height: 140.r, 
+                      child: KidsImage(imageUrl: quest.imageUrl, fallbackIcon: widget.fallbackIcon, iconColor: widget.primaryColor.withValues(alpha: 0.5))
+                    )
+                  : Text(
+                      displayValue,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: _getCentralFontSize(displayValue, isEmoji),
+                        fontWeight: FontWeight.w900,
+                        color: const Color(0xFF1E293B),
+                        letterSpacing: isEmoji ? 4 : 0,
+                        height: 1.0,
+                      ),
+                      textAlign: TextAlign.center,
+                      softWrap: false,
+                      overflow: TextOverflow.visible,
+                    ),
               ),
             ),
           ),
@@ -190,22 +165,30 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
         
         if (isHighlighted)
           Positioned(
-            bottom: 10.h,
+            bottom: -15.h,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
-              decoration: BoxDecoration(color: widget.primaryColor, borderRadius: BorderRadius.circular(12.r)),
-              child: Text(context.tr('games.kids_drop_here'), style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white)),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+              decoration: BoxDecoration(
+                color: widget.primaryColor,
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(color: Colors.white, width: 3),
+                boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 4))],
+              ),
+              child: Text(
+                context.tr('games.kids_drop_here'),
+                style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white),
+              ),
             ).animate().fadeIn().scale(),
           ),
       ],
-    ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -10, end: 10, duration: 3.seconds, curve: Curves.easeInOut);
+    ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -5, end: 5, duration: 2.seconds, curve: Curves.easeInOut);
   }
 
   Widget _buildOptions(BuildContext context, KidsLoaded state, KidsQuest quest) {
     final options = quest.options ?? [];
     
     return Wrap(
-      spacing: 16.r, runSpacing: 16.r, alignment: WrapAlignment.center,
+      spacing: 16.w, runSpacing: 20.h, alignment: WrapAlignment.center,
       children: List.generate(options.length, (index) {
         final option = options[index];
         final isCorrect = quest.correctAnswer == option;
@@ -215,7 +198,6 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
         bool isRemovedByHint = false;
         if (state.hintUsed && !isCorrect && options.length > 2) {
           final distractors = options.where((o) => o != quest.correctAnswer).toList();
-          // Keep the first distractor, eliminate the rest
           if (option != distractors.first) {
             isRemovedByHint = true;
           }
@@ -234,14 +216,14 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
             },
             child: optionWidget,
           ),
-        ).animate().scale(delay: (index * 120).ms, duration: 600.ms, curve: Curves.elasticOut).slideY(begin: 0.3, end: 0);
+        ).animate().scale(delay: (index * 100).ms, duration: 500.ms, curve: Curves.easeOutBack).slideY(begin: 0.2, end: 0);
 
         if (isRemovedByHint) {
           return AnimatedOpacity(
-            duration: 600.ms,
+            duration: 500.ms,
             opacity: 0.0,
             child: AnimatedScale(
-              duration: 600.ms,
+              duration: 500.ms,
               scale: 0.5,
               curve: Curves.easeOutCubic,
               child: IgnorePointer(child: childWidget),
@@ -255,27 +237,36 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
   }
 
   Widget _buildOptionCard(String option, bool isAnswered, {bool isFeedback = false}) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(25.r),
-      child: BackdropFilter(
-        filter: ui.ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-        child: Container(
-          constraints: BoxConstraints(minWidth: 110.w),
-          padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 24.w),
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.9),
-            borderRadius: BorderRadius.circular(25.r),
-            border: Border.all(color: widget.primaryColor.withValues(alpha: isFeedback ? 0.5 : 0.2), width: isFeedback ? 3 : 2),
-            boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.03), blurRadius: 12, offset: const Offset(0, 6))],
-          ),
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Text(
-              option,
-              style: TextStyle(fontFamily: 'Outfit', fontSize: _getOptionFontSize(option), fontWeight: FontWeight.w800, color: const Color(0xFF1E293B)),
-              textAlign: TextAlign.center,
+    return Container(
+      constraints: BoxConstraints(minWidth: 120.w),
+      padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 24.w),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: isFeedback ? widget.primaryColor : Colors.grey.shade300, 
+          width: isFeedback ? 3 : 2,
+        ),
+        // Chunky 3D Duolingo-style bottom shadow
+        boxShadow: [
+          if (!isFeedback)
+            BoxShadow(
+              color: Colors.grey.shade300,
+              offset: const Offset(0, 6),
             ),
+        ],
+      ),
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text(
+          option,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: _getOptionFontSize(option),
+            fontWeight: FontWeight.w800,
+            color: const Color(0xFF334155),
           ),
+          textAlign: TextAlign.center,
         ),
       ),
     );
@@ -299,12 +290,12 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
   double _getOptionFontSize(String text) {
     if (_isEmoji(text)) {
       int count = text.runes.length;
-      if (count <= 1) return 40.sp;
-      if (count <= 3) return 30.sp;
-      return 24.sp;
+      if (count <= 1) return 45.sp;
+      if (count <= 3) return 35.sp;
+      return 28.sp;
     }
-    if (text.length <= 2) return 32.sp;
-    return 20.sp;
+    if (text.length <= 2) return 36.sp;
+    if (text.length > 12) return 18.sp;
+    return 24.sp;
   }
 }
-

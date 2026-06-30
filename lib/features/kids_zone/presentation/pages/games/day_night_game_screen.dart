@@ -23,36 +23,33 @@ class DayNightGameScreen extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 30.h),
-            Text(
-              quest.instruction,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 26.sp,
-                fontWeight: FontWeight.w800,
-                color: const Color(0xFF1E293B),
+            SizedBox(height: 120.h), // Room for Mascot + Speech Bubble
+            Expanded(
+              flex: 5,
+              child: Center(
+                child: _buildSkyView(quest.imageUrl),
               ),
-              textAlign: TextAlign.center,
             ),
-            SizedBox(height: 40.h),
-            _buildSkyView(quest.imageUrl),
-            SizedBox(height: 40.h),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Row(
-                children: List.generate(quest.options?.length ?? 0, (index) {
-                  final option = quest.options![index];
-                  return Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.w),
-                      child: _buildCelestialCard(
-                        context,
-                        state,
-                        option,
-                        quest.correctAnswer == option,
+            Flexible(
+              flex: 5,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Row(
+                  children: List.generate(quest.options?.length ?? 0, (index) {
+                    final option = quest.options![index];
+                    return Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8.w),
+                        child: _buildCelestialCard(
+                          context,
+                          state,
+                          option,
+                          quest.correctAnswer == option,
+                        ),
                       ),
-                    ),
-                  );
-                }),
+                    );
+                  }),
+                ),
               ),
             ),
           ],
@@ -63,12 +60,19 @@ class DayNightGameScreen extends StatelessWidget {
 
   Widget _buildSkyView(String? imageUrl) {
     return Container(
-      width: 260.w,
-      height: 200.h,
+      width: 240.w,
+      height: 180.h,
       decoration: BoxDecoration(
         color: const Color(0xFF0F172A),
-        borderRadius: BorderRadius.circular(100.r), // Capsule shape
-        border: Border.all(color: Colors.white24, width: 4),
+        borderRadius: BorderRadius.circular(40.r), // Chunky rounded rectangle
+        border: Border.all(color: Colors.white, width: 4),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.15),
+            blurRadius: 20,
+            offset: const Offset(0, 10),
+          ),
+        ],
       ),
       padding: EdgeInsets.all(20.r),
       child: KidsImage(
@@ -85,33 +89,24 @@ class DayNightGameScreen extends StatelessWidget {
     String text,
     bool isCorrect,
   ) {
-    final isDay =
-        text.toLowerCase().contains("day") ||
-        text.toLowerCase().contains("sun");
+    final isDay = text.toLowerCase().contains("day") || text.toLowerCase().contains("sun");
+    final color = isDay ? const Color(0xFF0EA5E9) : const Color(0xFF334155);
+    final shadowColor = isDay ? const Color(0xFF0284C7) : const Color(0xFF0F172A);
+
     return ScaleButton(
       onTap: () {
-        context.read<KidsBloc>().add(SubmitKidsAnswer(
-              isCorrect,
-            ));
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
       },
       child: Container(
         height: 120.h,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: isDay
-                ? [const Color(0xFF38BDF8), const Color(0xFF0EA5E9)]
-                : [const Color(0xFF334155), const Color(0xFF0F172A)],
-          ),
+          color: color,
           borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(color: Colors.white, width: 3),
           boxShadow: [
             BoxShadow(
-              color: (isDay ? Colors.blue : Colors.black).withValues(
-                alpha: 0.2,
-              ),
-              blurRadius: 10,
-              offset: const Offset(0, 5),
+              color: shadowColor,
+              offset: const Offset(0, 8),
             ),
           ],
         ),
@@ -127,8 +122,9 @@ class DayNightGameScreen extends StatelessWidget {
               SizedBox(height: 8.h),
               Text(
                 text,
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 18.sp,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,
                 ),
@@ -140,4 +136,3 @@ class DayNightGameScreen extends StatelessWidget {
     );
   }
 }
-

@@ -18,6 +18,9 @@ import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
 import 'package:vowl/core/utils/game_instruction_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/hint_utility.dart' as import_hint;
+import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 
 class KidsGameBaseScreen extends StatefulWidget {
   final String title;
@@ -76,7 +79,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
     try {
       final tts = di.sl<KidsTTSService>();
       if (await tts.isNarrationEnabled()) await tts.speak(instruction);
-    } catch (e) { debugPrint("KIDS_TTS_ERROR: $e"); }
+    } catch (e) { debugPrint("KIDS_TTS_ERROR: \$e"); }
   }
 
   Future<void> speakHint(String hint) async {
@@ -91,7 +94,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
       Future.delayed(const Duration(seconds: 5), () {
         if (mounted) setState(() => _hintText = null);
       });
-    } catch (e) { debugPrint("KIDS_HINT_TTS_ERROR: $e"); }
+    } catch (e) { debugPrint("KIDS_HINT_TTS_ERROR: \$e"); }
   }
 
   @override
@@ -111,7 +114,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
         } else if (state is KidsLoaded) {
           if (state.lastAnswerCorrect == true) {
             audio.playSuccessSFX();
-            speakHint("That's right! ${state.currentQuest.hint}");
+            speakHint("That's right! \${state.currentQuest.hint}");
             final bloc = context.read<KidsBloc>();
             Future.delayed(const Duration(seconds: 5), () {
               if (mounted && context.mounted && bloc.state == state) bloc.add(NextKidsQuestion());
@@ -177,10 +180,16 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                         level: widget.level,
                         primaryColor: widget.primaryColor,
                         state: state,
-                        hintText: _hintText,
                         onInfoTap: () => setState(() => _showBriefing = true),
                       ),
-                      Expanded(child: _buildBody(context, state)),
+                      Expanded(
+                        child: Stack(
+                          children: [
+                            _buildBody(context, state),
+                            if (state is KidsLoaded) _buildDynamicMascot(context, state),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -224,14 +233,17 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [widget.primaryColor, widget.primaryColor.withValues(alpha: 0.8)]),
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(30.r),
-                    boxShadow: [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.3), blurRadius: 15)],
+                    border: Border.all(color: Colors.grey.shade200, width: 2),
+                    boxShadow: [
+                      BoxShadow(color: Colors.black12, blurRadius: 10, offset: const Offset(0, 4)),
+                    ],
                   ),
                   child: Row(mainAxisSize: MainAxisSize.min, children: [
-                    Text(context.tr('common.next').toUpperCase(), style: TextStyle(fontFamily: 'Outfit', color: Colors.white, fontWeight: FontWeight.w900, fontSize: 14.sp, letterSpacing: 1)),
+                    Text(context.tr('common.next').toUpperCase(), style: TextStyle(fontFamily: 'Outfit', color: widget.primaryColor, fontWeight: FontWeight.w900, fontSize: 16.sp, letterSpacing: 1)),
                     SizedBox(width: 8.w),
-                    Icon(Icons.arrow_forward_rounded, color: Colors.white, size: 20.sp),
+                    Icon(Icons.arrow_forward_rounded, color: widget.primaryColor, size: 22.sp),
                   ]),
                 ),
               ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1.0, 1.0), end: const Offset(1.1, 1.1), duration: 800.ms).animate().fadeIn(delay: 1.seconds),
@@ -264,7 +276,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               Container(
                 padding: EdgeInsets.all(24.r),
                 decoration: BoxDecoration(
-                  color: widget.primaryColor.withValues(alpha: 0.1),
+                  color: Colors.white.withValues(alpha: 0.2),
                   shape: BoxShape.circle,
                 ),
                 child: const AnimatedKidsAsset(
@@ -290,7 +302,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
-                  color: Colors.white.withValues(alpha: 0.7),
+                  color: Colors.white.withValues(alpha: 0.9),
                   height: 1.5,
                 ),
               ).animate().fadeIn(delay: 200.ms),
@@ -302,11 +314,11 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(30.r),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.1),
+                        color: Colors.black12,
                         blurRadius: 20,
-                        offset: const Offset(0, 10),
+                        offset: Offset(0, 10),
                       ),
                     ],
                   ),
@@ -334,5 +346,95 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
       );
     }
     return const SizedBox.shrink();
+  }
+
+  Widget _buildDynamicMascot(BuildContext context, KidsLoaded state) {
+    bool isComplete = false;
+    bool isGameOver = false;
+    bool isAnswered = state.lastAnswerCorrect != null;
+    bool? isCorrect = state.lastAnswerCorrect;
+    int lives = state.livesRemaining;
+
+    final mascotState = MascotMessageHelper.getMascotState(
+      isComplete: isComplete,
+      isGameOver: isGameOver,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      lives: lives,
+    );
+
+    return BlocBuilder<AuthBloc, AuthState>(
+      builder: (context, authState) {
+        final mascotId = authState.user?.kidsMascot ?? 'owly';
+        
+        String displayMessage = "";
+        if (_hintText != null) {
+          displayMessage = _hintText!;
+        } else if (state.lastAnswerCorrect == null) {
+          displayMessage = state.currentQuest.instruction;
+        } else {
+          displayMessage = MascotMessageHelper.getMessage(
+            context,
+            category: 'kids',
+            mascotId: mascotId,
+            isComplete: isComplete,
+            isAnswered: isAnswered,
+            isCorrect: isCorrect,
+            lives: lives,
+          );
+        }
+
+        return Positioned(
+          left: 16.w,
+          top: 10.h,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              VowlMascot(
+                isKidsMode: true,
+                size: 65.r,
+                state: mascotState,
+                useFloatingAnimation: true,
+              ),
+              if (displayMessage.isNotEmpty)
+                Padding(
+                  padding: EdgeInsets.only(left: 12.w, top: 10.h),
+                  child: _buildSpeechBubble(context, displayMessage),
+                ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildSpeechBubble(BuildContext context, String text) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      constraints: BoxConstraints(maxWidth: 240.w),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(4.r),
+          topRight: Radius.circular(20.r),
+          bottomRight: Radius.circular(20.r),
+          bottomLeft: Radius.circular(20.r),
+        ),
+        border: Border.all(color: Colors.grey.shade200, width: 2),
+        boxShadow: const [
+          BoxShadow(color: Colors.black12, blurRadius: 10, offset: Offset(0, 4)),
+        ],
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 18.sp,
+          fontWeight: FontWeight.w800,
+          color: const Color(0xFF1E293B),
+          height: 1.2,
+        ),
+      ),
+    ).animate().scale(begin: Offset.zero, duration: 400.ms, curve: Curves.easeOutBack);
   }
 }
