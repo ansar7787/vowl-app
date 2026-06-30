@@ -109,24 +109,26 @@ class KidsGameDialogs {
                                 end: Alignment.bottomRight,
                                 colors: isDark
                                     ? [
-                                        primaryColor.withValues(alpha: 0.15),
-                                        primaryColor.withValues(alpha: 0.05),
+                                        Colors.amber.withValues(alpha: 0.15),
+                                        Colors.blueAccent.withValues(alpha: 0.15),
                                       ]
                                     : [
-                                        primaryColor.withValues(alpha: 0.1),
-                                        Colors.white,
+                                        Colors.amber.withValues(alpha: 0.08),
+                                        Colors.blueAccent.withValues(alpha: 0.08),
                                       ],
                               ),
                               borderRadius: BorderRadius.circular(24.r),
                               border: Border.all(
-                                color: primaryColor.withValues(alpha: 0.3),
-                                width: 2,
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.1)
+                                    : Colors.grey.withValues(alpha: 0.2),
+                                width: 1.5,
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: primaryColor.withValues(alpha: 0.1),
-                                  blurRadius: 20,
-                                  spreadRadius: 2,
+                                  color: Colors.black.withValues(alpha: 0.03),
+                                  blurRadius: 10,
+                                  offset: const Offset(0, 4),
                                 ),
                               ],
                             ),
