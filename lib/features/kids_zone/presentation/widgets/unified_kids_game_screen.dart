@@ -11,6 +11,11 @@ import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_family
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_school_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_verbs_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_routine_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_emotions_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_prepositions_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_phonics_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_time_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_opposites_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_picker_template.dart';
 
 class UnifiedKidsGameScreen extends StatelessWidget {
@@ -58,6 +63,21 @@ class UnifiedKidsGameScreen extends StatelessWidget {
     }
     if (gameType == 'routine') {
       return KidsRoutineLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'emotions') {
+      return KidsEmotionsLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'prepositions') {
+      return KidsPrepositionsLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'phonics') {
+      return KidsPhonicsLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'time') {
+      return KidsTimeLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
+    }
+    if (gameType == 'opposites') {
+      return KidsOppositesLayout(level: level, title: KidsRoutes.getKidsGameTitle(gameType), primaryColor: KidsRoutes.getKidsGameColor(gameType));
     }
 
     return KidsPickerTemplate(
