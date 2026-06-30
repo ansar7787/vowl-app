@@ -224,13 +224,19 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         return GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: () => Navigator.pop(context),
-          child: GestureDetector(
-            onTap: () {}, // Prevent taps on the sheet content from closing it
-            child: Stack(
-          alignment: Alignment.center,
-          clipBehavior: Clip.none,
-          children: [
-            Container(
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height,
+            width: double.infinity,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                GestureDetector(
+                  onTap: () {}, // Prevent taps on the sheet content from closing it
+                  child: Stack(
+                    alignment: Alignment.center,
+                    clipBehavior: Clip.none,
+                    children: [
+                      Container(
               constraints: BoxConstraints(
                 maxHeight: ScreenUtil().screenHeight * 0.85,
               ),
@@ -664,10 +670,13 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                 ),
               ),
               ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-        ),
+          ),
         );
       },
     );
