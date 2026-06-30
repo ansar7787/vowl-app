@@ -8,28 +8,7 @@ import 'package:vowl/features/kids_zone/presentation/pages/sticker_book_screen.d
 import 'package:vowl/features/kids_zone/presentation/pages/mascot_selection_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/kids_zone_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/kids_level_map.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/alphabet_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/numbers_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/colors_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/shapes_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/animals_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/fruits_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/family_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/school_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/verbs_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/routine_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/emotions_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/prepositions_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/phonics_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/time_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/opposites_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/day_night_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/nature_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/home_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/food_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/transport_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/body_parts_game_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/games/clothing_game_screen.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/unified_kids_game_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/buddy_boutique_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/kids_room_screen.dart';
 
@@ -202,198 +181,154 @@ class KidsRoutes {
     GoRoute(
       path: kidsAlphabetRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          AlphabetGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'alphabet', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsNumbersRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          NumbersGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'numbers', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsColorsRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          ColorsGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'colors', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsShapesRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          ShapesGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'shapes', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsAnimalsRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          AnimalsGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'animals', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsFruitsRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          FruitsGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'fruits', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsFamilyRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          FamilyGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'family', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsSchoolRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          SchoolGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'school', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsVerbsRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          VerbsGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'verbs', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsRoutineRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          RoutineGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'routine', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsEmotionsRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          EmotionsGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'emotions', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsPrepositionsRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          PrepositionsGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'prepositions', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsPhonicsRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          PhonicsGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'phonics', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsTimeRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          TimeGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'time', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsOppositesRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          OppositesGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'opposites', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsDayNightRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          DayNightGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'day_night', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsNatureRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          NatureGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'nature', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsHomeRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          HomeGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'home', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsFoodRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          FoodGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'food', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsTransportRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          TransportGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'transport', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsBodyPartsRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          BodyPartsGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'body_parts', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
     GoRoute(
       path: kidsClothingRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
-        child: _getKidsBlocWrapper(
-          ClothingGameScreen(level: state.extra as int? ?? 1),
-        ),
+        child: _getKidsBlocWrapper(UnifiedKidsGameScreen(gameType: 'clothing', level: state.extra as int? ?? 1)),
         state: state,
       ),
     ),
