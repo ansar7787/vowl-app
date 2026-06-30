@@ -101,10 +101,12 @@ class KidsGameHeader extends StatelessWidget {
         children: [
           LayoutBuilder(
             builder: (context, constraints) {
+              final availableWidth = constraints.maxWidth > 0 ? constraints.maxWidth : 0.0;
+              final targetWidth = availableWidth * progress;
               return AnimatedContainer(
                 duration: const Duration(milliseconds: 600),
-                curve: Curves.easeOutBack,
-                width: constraints.maxWidth * progress,
+                curve: Curves.easeOut,
+                width: targetWidth > 0 ? targetWidth : 0.0,
                 height: double.infinity,
                 decoration: BoxDecoration(
                   color: primaryColor,
