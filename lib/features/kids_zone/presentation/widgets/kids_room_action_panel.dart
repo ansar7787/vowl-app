@@ -41,17 +41,17 @@ class KidsRoomActionPanel extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _buildModernActionButton(context, "Decor", Icons.palette_rounded, Colors.indigo, onDecor),
-          _buildModernActionButton(context, "Feed", Icons.restaurant_rounded, Colors.pink, onFeed),
-          _buildModernActionButton(
+          Expanded(child: _buildModernActionButton(context, "Decor", "🎨", Colors.indigo, onDecor)),
+          Expanded(child: _buildModernActionButton(context, "Feed", "🍎", Colors.pink, onFeed)),
+          Expanded(child: _buildModernActionButton(
             context,
             isSleeping ? "Wake" : "Sleep",
-            isSleeping ? Icons.wb_sunny_rounded : Icons.bedtime_rounded,
+            isSleeping ? "☀️" : "🌙",
             Colors.amber,
             onSleepToggle,
-          ),
-          _buildModernActionButton(context, "Talk", Icons.chat_bubble_rounded, Colors.lightBlue, onTalk),
-          _buildModernActionButton(context, "Theme", Icons.auto_awesome_rounded, Colors.teal, onThemeCycle),
+          )),
+          Expanded(child: _buildModernActionButton(context, "Talk", "💬", Colors.lightBlue, onTalk)),
+          Expanded(child: _buildModernActionButton(context, "Theme", "✨", Colors.teal, onThemeCycle)),
         ],
       ),
     );
@@ -60,7 +60,7 @@ class KidsRoomActionPanel extends StatelessWidget {
   Widget _buildModernActionButton(
     BuildContext context,
     String label,
-    IconData icon,
+    String emoji,
     Color color,
     VoidCallback onTap,
   ) {
@@ -69,29 +69,29 @@ class KidsRoomActionPanel extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(16.r),
+            padding: EdgeInsets.all(12.r),
             decoration: BoxDecoration(
               color: color.withValues(alpha: 0.1),
               shape: BoxShape.circle,
-              border: Border.all(color: color, width: 4.w),
+              border: Border.all(color: color, width: 3.w),
               boxShadow: [
                 BoxShadow(
                   color: color,
-                  offset: Offset(0, 5.h),
+                  offset: Offset(0, 4.h),
                 ),
               ],
             ),
-            child: Icon(icon, color: color, size: 28.sp),
+            child: Text(emoji, style: TextStyle(fontSize: 22.sp)),
           ),
-          SizedBox(height: 12.h),
+          SizedBox(height: 8.h),
           Text(
             label.toUpperCase(),
             style: TextStyle(
               fontFamily: 'Outfit', 
-              fontSize: 12.sp,
+              fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: color,
-              letterSpacing: 1.2,
+              letterSpacing: 1.0,
             ),
           ),
         ],

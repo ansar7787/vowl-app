@@ -391,9 +391,15 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             width: size,
             height: size,
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.4),
+              color: Colors.white,
               shape: BoxShape.circle,
-              boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 15)],
+              border: Border.all(color: Colors.amber, width: 4.w),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.amber.shade700,
+                  offset: Offset(0, 6.h),
+                ),
+              ],
             ),
             child: Center(
               child: Text(emoji, style: TextStyle(fontSize: size * 0.45)),
@@ -518,18 +524,25 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
            ),
         SizedBox(height: 20.h),
         if (_isTalking)
-          GlassTile(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-            borderRadius: BorderRadius.circular(15.r),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(color: Colors.lightBlue, width: 4.w),
+              boxShadow: [
+                BoxShadow(color: Colors.lightBlue.shade700, offset: Offset(0, 6.h)),
+              ],
+            ),
             child: Text(
               _buddyMessage,
               style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 12.sp,
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w900,
+                color: Colors.lightBlue.shade700,
               ),
             ),
-          ).animate().scale().fadeIn(),
+          ).animate().scale(curve: Curves.easeOutBack, duration: 400.ms).fadeIn(),
       ],
     );
   }
