@@ -35,10 +35,16 @@ class _GameConfettiState extends State<GameConfetti> {
   @override
   void initState() {
     super.initState();
-    _controller = ConfettiController(duration: const Duration(seconds: 4));
+    _controller = ConfettiController(duration: const Duration(seconds: 2));
 
-    // Auto-play on first mount if shouldPop is already true (e.g., on
-    // immediate completion screen).
+    _controller.addListener(() {
+      if (_controller.state == ConfettiControllerState.stopped && mounted) {
+        Future.delayed(const Duration(milliseconds: 1500), () {
+          if (mounted) _controller.play();
+        });
+      }
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) _controller.play();
     });
