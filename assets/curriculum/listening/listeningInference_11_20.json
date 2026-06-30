@@ -6,15 +6,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L11_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert analyzes the device smoothly.",
-            "question": "Who is analyzing the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for who must be asked.",
+            "explanation": "'Ask your teacher' - the teacher is the authority figure in the classroom who grants permission. The sentence gives a direct instruction: you must ask the teacher (not a friend or parent) before leaving. 'Before you leave' shows the required sequence.",
+            "textToSpeak": "Please ask your teacher before you leave the classroom.",
+            "question": "Who can give you permission to leave?",
             "options": [
-                "technician",
-                "teacher",
-                "scientist",
-                "expert"
+                "A parent",
+                "A classmate",
+                "The headteacher",
+                "The teacher"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -22,95 +23,101 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L11_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler encrypts the sensor quietly.",
-            "question": "Who is encrypting the sensor?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the family member described.",
+            "explanation": "'My older brother' is the subject who 'picked me up' (collected/drove someone). 'Older' distinguishes this from a younger brother. 'From school' is the pickup location. 'Picked up' is a phrasal verb meaning to collect someone by vehicle.",
+            "textToSpeak": "My older brother picked me up from school today.",
+            "question": "Who came to collect the speaker?",
             "options": [
-                "traveler",
-                "hacker",
-                "researcher",
-                "detective"
+                "A classmate",
+                "Their older brother",
+                "Their father",
+                "A taxi driver"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L11_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot launches the terminal precisely.",
-            "question": "Who is launching the terminal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for which medical professional gave the advice.",
+            "explanation": "'The dentist says' - the dentist is the professional speaking or giving advice. 'Come back' means return for a follow-up appointment. Six months is a standard dental check-up interval. The speaker didn't visit a doctor or optician.",
+            "textToSpeak": "The dentist says I need to come back in six months.",
+            "question": "Who will the speaker need to see again?",
             "options": [
-                "scientist",
-                "engineer",
-                "student",
-                "robot"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L12_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist updates the satellite automatically.",
-            "question": "Who is updating the satellite?",
-            "options": [
-                "artist",
-                "traveler",
-                "analyst",
-                "hero"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L12_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout scans the signal efficiently.",
-            "question": "Who is scanning the signal?",
-            "options": [
-                "traveler",
-                "teacher",
-                "scout",
-                "mentor"
+                "Their doctor",
+                "Their optician",
+                "Their dentist",
+                "Their pharmacist"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L12_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the reason given after 'because of'.",
+            "explanation": "'Because of a parents' evening' - this is the cause. 'Because of' introduces a reason. A parents' evening is a school event where teachers meet parents to discuss students' progress. This is why normal school hours change.",
+            "textToSpeak": "School finishes early today because of a parents' evening.",
+            "question": "Why does school finish early?",
+            "options": [
+                "Because of a sports day",
+                "Because of a parents' evening",
+                "Because of a fire drill",
+                "Because of a staff meeting"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L12_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the time period mentioned.",
+            "explanation": "'About twenty minutes' - 'about' signals an approximation. 'Popping to the shops' means making a quick, short trip to a nearby shop. The combination of 'popping' (quick) and 'twenty minutes' confirms a short absence.",
+            "textToSpeak": "I'll be back in about twenty minutes - I'm just popping to the shops.",
+            "question": "How long will they be away?",
+            "options": [
+                "Five minutes",
+                "Twenty minutes",
+                "An hour",
+                "All day"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L12_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher restores the network swiftly.",
-            "question": "Who is restoring the network?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the platform number.",
+            "explanation": "'From platform three' - 'from' tells you the departure point. Two details: time (eight minutes) and location (platform three). In transport announcements, catching numbers quickly is essential. 'In eight minutes' = the departure time from now.",
+            "textToSpeak": "The next train leaves in eight minutes from platform three.",
+            "question": "Which platform does the train leave from?",
             "options": [
-                "traveler",
-                "robot",
-                "mentor",
-                "teacher"
+                "Platform one",
+                "Platform three",
+                "Platform two",
+                "Platform four"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L13_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist restores the protocol properly.",
-            "question": "Who is restoring the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for what his diet means he avoids.",
+            "explanation": "Vegetarians don't eat meat. Chicken is a type of meat. Therefore, being vegetarian means he won't eat the chicken. 'So' links the reason (vegetarian) to the consequence (won't eat chicken). Fish is also meat, but the sentence specifically mentions chicken.",
+            "textToSpeak": "He's vegetarian, so he won't eat the chicken.",
+            "question": "What won't he eat?",
             "options": [
-                "student",
-                "droid",
-                "analyst",
-                "scientist"
+                "Fish",
+                "Vegetables",
+                "Pasta",
+                "Chicken"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -118,79 +125,84 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L13_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician updates the system steadily.",
-            "question": "Who is updating the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for both what is included and what is excluded.",
+            "explanation": "'With milk but no sugar' - 'with milk' = milk is added; 'but no sugar' = sugar is excluded. The conjunction 'but' signals a contrast. Two things are true: milk yes, sugar no. This is a very common coffee order in everyday English.",
+            "textToSpeak": "She takes her coffee with milk but no sugar.",
+            "question": "How does she like her coffee?",
             "options": [
-                "student",
-                "engineer",
-                "droid",
-                "technician"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L13_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student analyzes the signal properly.",
-            "question": "Who is analyzing the signal?",
-            "options": [
-                "student",
-                "expert",
-                "traveler",
-                "detective"
+                "With milk but no sugar",
+                "With milk and sugar",
+                "Black with nothing added",
+                "With sugar but no milk"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L14_Q1",
+            "id": "LIS_LISTENINGINFERENCE_L13_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout updates the node directly.",
-            "question": "Who is updating the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the cuisine mentioned.",
+            "explanation": "'Fancies Italian' = wants Italian food. 'Fancy' in British English means to want or feel like having something. 'Going out for dinner' = eating at a restaurant. She specifically suggests Italian - meaning Italian cuisine (pizza, pasta, etc.).",
+            "textToSpeak": "They're going out for dinner and she fancies Italian.",
+            "question": "What type of food does she want?",
             "options": [
-                "pilot",
-                "scout",
-                "analyst",
-                "mentor"
+                "Chinese",
+                "Indian",
+                "Italian",
+                "Mexican"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L14_Q2",
+            "id": "LIS_LISTENINGINFERENCE_L14_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician deploys the chip immediately.",
-            "question": "Who is deploying the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the two prices and which is the new price.",
+            "explanation": "'From thirty to twenty' - 'from' = original price (£30); 'to' = new/reduced price (£20). 'Reduced' means the price was lowered. The current price is twenty pounds. This is sale/discount language very common in shops.",
+            "textToSpeak": "It was reduced from thirty pounds to twenty.",
+            "question": "How much does it cost now?",
             "options": [
-                "mentor",
-                "scout",
-                "explorer",
-                "technician"
+                "Thirty pounds",
+                "Ten pounds",
+                "Fifteen pounds",
+                "Twenty pounds"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L14_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the size they're asking for, not their usual size.",
+            "explanation": "The customer is asking for 'a small' because the item 'runs large' (is bigger than its labelled size). Their usual size is medium, but they need to size down. This is common shopping language when items don't fit true to size.",
+            "textToSpeak": "Do you have this in a small? I usually take a medium but this runs large.",
+            "question": "What size does the customer want to try?",
+            "options": [
+                "Small",
+                "Extra small",
+                "Medium",
+                "Large"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L14_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot restores the module expertly.",
-            "question": "Who is restoring the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the two items mentioned.",
+            "explanation": "'A birthday card and some flowers' - two items: card and flowers. 'For her mum' = the recipient. 'Some flowers' uses 'some' with uncountable/plural items. The purpose (birthday card) tells us the occasion is someone's birthday.",
+            "textToSpeak": "She bought a birthday card and some flowers for her mum.",
+            "question": "What did she buy?",
             "options": [
-                "researcher",
-                "artist",
-                "analyst",
-                "robot"
+                "A present and a card",
+                "A book and chocolates",
+                "Chocolates and wine",
+                "Flowers and a card"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -198,63 +210,67 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L15_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher launches the system rapidly.",
-            "question": "Who is launching the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the bus number.",
+            "explanation": "'The number seven bus' - bus numbers are essential for navigation. 'Get off at the library stop' tells you where to exit. 'Get off' is the phrasal verb for leaving a bus/train. Number seven is the key information here.",
+            "textToSpeak": "Take the number seven bus and get off at the library stop.",
+            "question": "What bus should they take?",
             "options": [
-                "technician",
-                "teacher",
-                "droid",
-                "mentor"
+                "Number five",
+                "Number six",
+                "Number seven",
+                "Number eight"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L15_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher analyzes the sensor consistently.",
-            "question": "Who is analyzing the sensor?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the reason given before 'so'.",
+            "explanation": "'The road was closed' - this is the cause. 'So' links it to the effect (taking a detour). A detour = an alternative route taken when the normal one is blocked. 'Had to' shows obligation or necessity due to circumstances.",
+            "textToSpeak": "The road was closed so we had to take a detour through the town centre.",
+            "question": "Why did they take a different route?",
             "options": [
-                "robot",
-                "teacher",
-                "commander",
-                "student"
+                "They got lost",
+                "They wanted to go shopping",
+                "The road was closed",
+                "There was a diversion sign"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L15_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot scans the terminal properly.",
-            "question": "Who is scanning the terminal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the method of transport she used to get home.",
+            "explanation": "'Had to get a taxi' = was obliged to take a taxi because of the missed train. 'Had to' = past obligation. She didn't choose the taxi - she was forced to use it because she missed the train. The missed train is the cause; the taxi is the result.",
+            "textToSpeak": "She missed the last train and had to get a taxi home.",
+            "question": "How did she get home?",
             "options": [
-                "robot",
-                "explorer",
-                "hacker",
-                "researcher"
+                "She walked",
+                "She got a bus",
+                "A friend drove her",
+                "She got a taxi"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L16_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert secures the archive carefully.",
-            "question": "Who is securing the archive?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the two pieces of advice given.",
+            "explanation": "'Rest for a week and drink plenty of water' - two instructions joined by 'and'. 'Told him to' is reported speech using the infinitive. This is common medical advice structure. 'Plenty of' = a large amount of.",
+            "textToSpeak": "The doctor told him to rest for a week and drink plenty of water.",
+            "question": "What did the doctor advise?",
             "options": [
-                "expert",
-                "robot",
-                "commander",
-                "artist"
+                "Rest and drink plenty of water",
+                "Go to hospital immediately",
+                "Take medicine twice a day",
+                "Eat more vegetables"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -262,47 +278,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L16_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst locates the module directly.",
-            "question": "Who is locating the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the specific type of pain mentioned.",
+            "explanation": "'A headache all day' - the headache is the named symptom. 'All day' emphasises how long it has lasted. 'Hasn't eaten much' is a secondary symptom or consequence. In health conversations, the first symptom mentioned is usually the main complaint.",
+            "textToSpeak": "She's had a headache all day and hasn't eaten much.",
+            "question": "What is her main complaint?",
             "options": [
-                "analyst",
-                "student",
-                "hacker",
-                "robot"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L16_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective encrypts the sensor precisely.",
-            "question": "Who is encrypting the sensor?",
-            "options": [
-                "pilot",
-                "commander",
-                "expert",
-                "detective"
+                "A toothache",
+                "A sore throat",
+                "A stomachache",
+                "A headache"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L16_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the specific body part and the type of injury.",
+            "explanation": "'Twisted his ankle' = turned the ankle joint sharply, causing pain. 'Playing football' = when it happened. 'Can't walk properly' = the result. A twisted ankle is different from a break (fracture) or a pulled muscle. Body part + injury type are both important.",
+            "textToSpeak": "He twisted his ankle playing football and can't walk properly.",
+            "question": "What happened to him?",
+            "options": [
+                "He twisted his ankle",
+                "He hurt his knee",
+                "He broke his leg",
+                "He pulled a muscle"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L17_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist encrypts the network properly.",
-            "question": "Who is encrypting the network?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the specific task requested.",
+            "explanation": "'Take the rubbish out' = carry the rubbish/garbage outside for collection. 'Before eight' is the deadline. 'Could you' is a polite request. 'Rubbish' (British English) = garbage/trash. The urgency comes from the collection time.",
+            "textToSpeak": "Could you take the rubbish out? It needs to go before eight.",
+            "question": "What does the speaker want done?",
             "options": [
-                "explorer",
-                "droid",
-                "scientist",
-                "analyst"
+                "Help with the washing up",
+                "The floors swept",
+                "The rubbish taken out",
+                "The table set"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -310,127 +329,135 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L17_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst monitors the device expertly.",
-            "question": "Who is monitoring the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the request made after the washing machine has finished.",
+            "explanation": "'Hang it out' = hang the washed clothes outside to dry. 'It' refers to the washing inside the machine. 'Has finished' = present perfect showing a completed action relevant now. 'Hang out' is a phrasal verb meaning to hang laundry to dry.",
+            "textToSpeak": "The washing machine has finished - can you hang it out?",
+            "question": "What does the person need to do?",
             "options": [
-                "artist",
-                "analyst",
-                "hero",
-                "explorer"
+                "Put washing in the machine",
+                "Start the machine again",
+                "Iron the clothes",
+                "Hang the washing out to dry"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L17_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective locates the device carefully.",
-            "question": "Who is locating the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for what is described as still needing to be done.",
+            "explanation": "'Still needs mopping' - 'still' = not yet done. The floor is what remains. 'Already done the dishes' = the dishes are finished. The contrast between 'already' (completed) and 'still' (incomplete) is important for understanding what remains to be done.",
+            "textToSpeak": "I've already done the dishes, but the floor still needs mopping.",
+            "question": "What still needs doing?",
             "options": [
-                "detective",
-                "engineer",
-                "scientist",
-                "student"
+                "The dishes",
+                "The floor",
+                "The windows",
+                "The dusting"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L18_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot restores the device instantly.",
-            "question": "Who is restoring the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the ending time of the shift.",
+            "explanation": "'Works until three' - 'until' marks the end point. The shift starts at seven and ends at three. That's an eight-hour shift. 'Until' is used to show the end of a time period, while 'at' shows a specific time point.",
+            "textToSpeak": "She starts her shift at seven in the morning and works until three.",
+            "question": "When does her shift end?",
             "options": [
-                "hacker",
-                "technician",
-                "pilot",
-                "commander"
+                "Seven in the morning",
+                "At noon",
+                "At five",
+                "At three"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L18_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert encrypts the archive efficiently.",
-            "question": "Who is encrypting the archive?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the duration of employment.",
+            "explanation": "'For over ten years' - 'over' = more than. 'Has been working' is the present perfect continuous, showing an action that started in the past and continues now. 'For' + duration is used with this tense to show how long.",
+            "textToSpeak": "He's been working at the same company for over ten years.",
+            "question": "How long has he worked there?",
             "options": [
-                "expert",
-                "pilot",
-                "robot",
-                "mentor"
+                "Less than a year",
+                "About five years",
+                "Over ten years",
+                "Just started"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L18_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker launches the data carefully.",
-            "question": "Who is launching the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for what 'handed in her notice' means.",
+            "explanation": "'Handed in her notice' = formally told her employer she is leaving (resigned). 'Last day is Friday' confirms she is leaving. 'Hand in your notice' is a set phrase meaning to submit a letter of resignation. This is different from being dismissed.",
+            "textToSpeak": "She handed in her notice last week and her last day is Friday.",
+            "question": "What did she do last week?",
             "options": [
-                "hero",
-                "hacker",
-                "technician",
-                "commander"
+                "She got promoted",
+                "She was dismissed",
+                "She resigned from her job",
+                "She started a new role"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L19_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot measures the network quietly.",
-            "question": "Who is measuring the network?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the weather condition mentioned.",
+            "explanation": "'Supposed to rain' = expected to rain, according to the forecast. 'It's supposed to' is used for predictions based on what's been planned or forecast. Rain = umbrella. This is a practical cause-and-effect relationship.",
+            "textToSpeak": "Take an umbrella - it's supposed to rain this afternoon.",
+            "question": "Why should the person take an umbrella?",
             "options": [
-                "robot",
-                "expert",
-                "pilot",
-                "explorer"
+                "Because it's sunny",
+                "Because it might snow",
+                "Because it's very windy",
+                "Because it's going to rain"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L19_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot validates the database swiftly.",
-            "question": "Who is validating the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the superlative description of this summer.",
+            "explanation": "'Hottest summer on record' = the highest temperature recorded in history. 'On record' means compared to all documented history. 'According to' = citing the source. 'Has been' uses the present perfect to describe the whole summer period up to now.",
+            "textToSpeak": "It's been the hottest summer on record, according to the forecast.",
+            "question": "What is unusual about this summer?",
             "options": [
-                "student",
-                "pilot",
-                "hero",
-                "commander"
+                "It has been very cold",
+                "It has been very wet",
+                "It has been very windy",
+                "It has been the hottest ever recorded"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L19_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer locates the node immediately.",
-            "question": "Who is locating the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the road condition and the advice given.",
+            "explanation": "'Roads are icy' = the cause. 'Leave earlier' = the advice/effect. 'So' connects cause to consequence. 'A bit earlier' = slightly sooner. Icy roads are dangerous and require more caution and time. 'Than usual' compares to the normal departure time.",
+            "textToSpeak": "The roads are icy, so leave a bit earlier than usual.",
+            "question": "Why should the person leave earlier?",
             "options": [
-                "commander",
-                "teacher",
-                "technician",
-                "explorer"
+                "Because there's heavy traffic",
+                "Because it's raining heavily",
+                "Because there are roadworks",
+                "Because the roads are icy"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -438,31 +465,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L20_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot launches the portal successfully.",
-            "question": "Who is launching the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Count the number of days mentioned.",
+            "explanation": "Tuesday and Thursday = two days per week. 'Every Tuesday and Thursday' = a regular routine. Two days per week = twice a week. 'Evening' tells us the time of day. Counting the mentioned days gives you the frequency.",
+            "textToSpeak": "She goes swimming every Tuesday and Thursday evening.",
+            "question": "How often does she go swimming?",
             "options": [
-                "expert",
-                "student",
-                "technician",
-                "robot"
+                "Twice a week",
+                "Once a week",
+                "Every evening",
+                "Only at weekends"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L20_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher updates the circuit swiftly.",
-            "question": "Who is updating the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the time phrase after 'started'.",
+            "explanation": "'Six months ago' tells you when he started. 'Ago' always refers to time measured backwards from now. 'Practises every day' shows his commitment. Six months is distinct from six weeks (shorter) or a year (longer).",
+            "textToSpeak": "He started learning guitar six months ago and practises every day.",
+            "question": "How long has he been learning guitar?",
             "options": [
-                "detective",
-                "researcher",
-                "student",
-                "traveler"
+                "Six weeks",
+                "Six months",
+                "Three months",
+                "A year"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -470,17 +499,18 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L20_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher locates the signal rapidly.",
-            "question": "Who is locating the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about how you would feel after hiking all weekend.",
+            "explanation": "'Must be exhausted' - 'must be' expresses a strong logical deduction. Hiking for an entire weekend is very physically demanding. 'Exhausted' means extremely tired. This is inference from physical activity: all-weekend hiking → exhaustion.",
+            "textToSpeak": "They've been hiking in the mountains all weekend - they must be exhausted.",
+            "question": "How do they probably feel?",
             "options": [
-                "hero",
-                "researcher",
-                "commander",
-                "mentor"
+                "Exhausted",
+                "Well rested",
+                "Bored",
+                "Excited and energetic"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         }
     ]

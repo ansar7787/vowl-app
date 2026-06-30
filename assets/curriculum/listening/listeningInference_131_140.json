@@ -6,63 +6,67 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L131_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker repairs the device precisely.",
-            "question": "Who is repairing the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'too thorough for our purposes' add to the praise of thoroughness?",
+            "explanation": "'Thorough' = praise. 'Perhaps too thorough for our purposes' = the thoroughness exceeds what was needed in this context. This is a nuanced evaluation: the quality (thoroughness) is real, but it was applied in excess for the specific need. It's implicit criticism through praise taken too far.",
+            "textToSpeak": "The report was thorough - perhaps too thorough for our purposes.",
+            "question": "What does perhaps too thorough suggest?",
             "options": [
-                "expert",
-                "detective",
-                "scout",
-                "hacker"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L131_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker launches the code automatically.",
-            "question": "Who is launching the code?",
-            "options": [
-                "traveler",
-                "teacher",
-                "droid",
-                "hacker"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L131_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst secures the engine immediately.",
-            "question": "Who is securing the engine?",
-            "options": [
-                "hacker",
-                "student",
-                "analyst",
-                "commander"
+                "The report was exactly what was needed",
+                "The report is not detailed enough",
+                "The report has more detail than the situation requires",
+                "The report was poorly written"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L131_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'as anyone who has worked with him knows' imply about his strong opinions?",
+            "explanation": "The aside 'as anyone who has worked with him knows' signals this is well-known - not a private observation but a shared experience. Strong opinions + well-known quality = he's persistently opinionated, which can challenge collaboration. It's an indirect acknowledgement of a difficult trait without direct criticism.",
+            "textToSpeak": "He's a man of strong opinions, as anyone who has worked with him knows.",
+            "question": "What is subtly implied?",
+            "options": [
+                "His strong views can make collaboration or disagreement challenging",
+                "He is excellent to work with",
+                "He is universally popular with colleagues",
+                "He is always open to changing his mind"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L131_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'bold in concept / less so in execution' contrast?",
+            "explanation": "'Bold in concept' = ambitious, daring idea (positive). 'Less so in execution' = the implementation didn't live up to the ambition (negative qualification). This is a classic praise-with-reservation structure: the vision was strong, the delivery was underwhelming. 'Less so' is an understated comparative.",
+            "textToSpeak": "The initiative was bold in concept but perhaps less so in execution.",
+            "question": "What does this mean?",
+            "options": [
+                "The idea and delivery were both excellent",
+                "The idea was ambitious but the implementation was less impressive",
+                "The idea was weak but the execution was good",
+                "Both concept and execution were problematic"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L132_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher secures the system securely.",
-            "question": "Who is securing the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the 'while... describes it as' structure show about the two groups?",
+            "explanation": "Two identical changes, two opposite interpretations: management (efficiency gain) vs. employees (burden increase). 'While' creates the contrast. Neither view is stated as correct - both are presented as valid perspectives. This is a key insight: the same event can be genuinely experienced differently by different stakeholders.",
+            "textToSpeak": "While management sees it as an efficiency gain, employees describe it as an increased burden.",
+            "question": "What does this reveal?",
             "options": [
-                "researcher",
-                "commander",
-                "droid",
-                "explorer"
+                "The two groups have completely opposite interpretations of the same change",
+                "Both groups interpret the change identically",
+                "Management is objectively correct",
+                "Employees are being unreasonable"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -70,79 +74,84 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L132_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout restores the code rapidly.",
-            "question": "Who is restoring the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the parallel structure 'critics call X / supporters call Y' reveal?",
+            "explanation": "The same quality (the same action or decision) is described as 'reckless' (negative) by critics and 'bold' (positive) by supporters. Same reality, diametrically opposed framings. This is a powerful demonstration that language choices carry evaluative weight - perspective shapes description.",
+            "textToSpeak": "What critics call reckless, supporters call bold.",
+            "question": "What does this sentence show?",
             "options": [
-                "analyst",
-                "detective",
-                "traveler",
-                "scout"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L132_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist scans the device reliably.",
-            "question": "Who is scanning the device?",
-            "options": [
-                "expert",
-                "researcher",
-                "artist",
-                "traveler"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L133_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert encrypts the signal quietly.",
-            "question": "Who is encrypting the signal?",
-            "options": [
-                "commander",
-                "expert",
-                "mentor",
-                "artist"
+                "There is universal support for the decision",
+                "People interpret the same quality through opposite lenses",
+                "The critics are objectively correct",
+                "The decision is universally praised"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L133_Q2",
+            "id": "LIS_LISTENINGINFERENCE_L132_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert deploys the terminal steadily.",
-            "question": "Who is deploying the terminal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What do 'some', 'others', and 'most' together tell us about the response distribution?",
+            "explanation": "Three groups: some (welcome it - minority positive), others (suspicious - minority negative), most (ignore it - majority indifferent). The majority response is indifference ('ignored by most'). This is a characterisation of a reform that hasn't captured widespread interest or enthusiasm despite provoking some reactions at the margins.",
+            "textToSpeak": "The reform is welcomed by some, viewed with suspicion by others, and ignored by most.",
+            "question": "What is the overall response?",
             "options": [
-                "explorer",
-                "traveler",
-                "droid",
-                "expert"
+                "Universally enthusiastic",
+                "Universally negative",
+                "Enthusiastic across all groups",
+                "Mixed and largely indifferent"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L133_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'while acknowledging' plus 'ultimately decided to proceed' create?",
+            "explanation": "'While acknowledging the risks' = they knew the risks (no ignorance). 'Ultimately decided to proceed' = despite knowing them, they went ahead. This is a conscious risk-acceptance decision - they weighed risk against benefit and chose to continue. The word 'ultimately' suggests deliberation before decision.",
+            "textToSpeak": "While acknowledging the risks, the committee ultimately decided to proceed.",
+            "question": "What does this show?",
+            "options": [
+                "The risks were acknowledged but the decision was made to go ahead anyway",
+                "The committee was unaware of the risks",
+                "The committee rejected the proposal",
+                "The risks were found to be minimal"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L133_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'even granting' plus a contrasting outcome communicate?",
+            "explanation": "'Even granting' = hypothetically accepting the best possible interpretation. 'The outcome was damaging' = the result was bad regardless. The structure: even if we accept the kindest interpretation, the outcome was still bad. This is an argument that consequences matter regardless of intent.",
+            "textToSpeak": "Even granting that the intentions were good, the outcome was damaging.",
+            "question": "What is the speaker saying?",
+            "options": [
+                "Good intentions always produce good outcomes",
+                "The intentions excuse the outcome",
+                "Good intentions don't justify or explain away a damaging outcome",
+                "The intentions were bad"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L133_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician measures the drone steadily.",
-            "question": "Who is measuring the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'admittedly' plus 'but benefits far outweigh' communicate?",
+            "explanation": "'Admittedly' = conceding a point honestly. 'Far outweigh' = the benefits are significantly greater than the costs. Together: the speaker acknowledges the negatives (intellectual honesty) but maintains that the positives dominate. This is a transparent, honest case for something despite known downsides.",
+            "textToSpeak": "Admittedly, there are drawbacks, but the benefits far outweigh them.",
+            "question": "What is the speaker's overall view?",
             "options": [
-                "robot",
-                "technician",
-                "hacker",
-                "engineer"
+                "The drawbacks are too serious to proceed",
+                "The benefits are significant enough to justify the drawbacks",
+                "Both sides are equal",
+                "The drawbacks are not real"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -150,31 +159,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L134_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout activates the device successfully.",
-            "question": "Who is activating the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'had the warning been heeded' (third conditional) imply about what actually happened?",
+            "explanation": "Third conditional (had + past perfect + would have) describes an unreal past. 'Had it been heeded' = implies it WASN'T heeded. 'Might have been avoided' = the crisis happened. Together: the warning wasn't followed, which likely contributed to the crisis. This is hypothetical retrospection about what could have prevented something.",
+            "textToSpeak": "Had the warning been heeded, the crisis might have been avoided.",
+            "question": "What does this imply?",
             "options": [
-                "hero",
-                "detective",
-                "scout",
-                "researcher"
+                "The warning was ignored, contributing to the crisis",
+                "The warning was heeded and the crisis was avoided",
+                "Warnings are always ignored",
+                "No warning was given"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L134_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student deploys the code swiftly.",
-            "question": "Who is deploying the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What type of statement is 'should this trend continue'?",
+            "explanation": "'Should this trend continue' = if this trend continues. 'Should' here is a formal conditional. 'We can expect significant consequences' = the predicted result of the condition. This is contingent prediction: outcome X follows if condition Y persists. It's a warning about a possible future.",
+            "textToSpeak": "Should this trend continue, we can expect significant consequences.",
+            "question": "What is the speaker doing?",
             "options": [
-                "student",
-                "expert",
-                "droid",
-                "artist"
+                "Describing a conditional future outcome",
+                "Predicting a certain outcome",
+                "Denying the trend exists",
+                "Welcoming the consequences"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -182,15 +193,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L134_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker restores the signal successfully.",
-            "question": "Who is restoring the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'without X, Y would have happened' communicate about X's role?",
+            "explanation": "Counterfactual: without X (support team intervention) → failure. Therefore: the support team's intervention caused success (or prevented failure). 'Almost certainly' = very high confidence in the counterfactual. The support team was pivotal - without them, the outcome would have been negative.",
+            "textToSpeak": "Without the support team's intervention, the project would almost certainly have failed.",
+            "question": "What does this tell us?",
             "options": [
-                "hero",
-                "hacker",
-                "scientist",
-                "artist"
+                "The project failed despite the support",
+                "The support team's involvement was crucial",
+                "The support team was not needed",
+                "The project would have succeeded regardless"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -198,63 +210,67 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L135_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer restores the engine directly.",
-            "question": "Who is restoring the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'have a point - but only up to a point' communicate?",
+            "explanation": "'Have a point' = their objection has some validity. 'But only up to a point' = the validity is limited. Together: partial concession without full agreement. The speaker acknowledges the opposition has something valid to say but that the objection only goes so far. This is a sophisticated balanced position.",
+            "textToSpeak": "Those who oppose the measure have a point - but only up to a point.",
+            "question": "What is the speaker doing?",
             "options": [
-                "scout",
-                "droid",
-                "expert",
-                "engineer"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L135_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher evaluates the signal steadily.",
-            "question": "Who is evaluatesing the signal?",
-            "options": [
-                "teacher",
-                "detective",
-                "artist",
-                "droid"
+                "Partially conceding to the opposition but not completely",
+                "Fully rejecting the opposing view",
+                "Fully agreeing with opponents",
+                "Refusing to engage with opponents"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L135_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'from their perspective, given what they knew at the time' acknowledge?",
+            "explanation": "This is contextual sympathy: the decision is judged within its information context, not with hindsight. 'From their perspective' = not claiming it was right, just that it seemed right to them. 'Given what they knew' = information was limited. This is a fair, non-judgmental historical analysis.",
+            "textToSpeak": "From their perspective, the decision made sense - given what they knew at the time.",
+            "question": "What is the speaker acknowledging?",
+            "options": [
+                "The decision was clearly wrong by any standard",
+                "The decision was the objectively right one",
+                "The decision was reasonable given the information available then",
+                "There was no information available at the time"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L135_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist secures the sensor swiftly.",
-            "question": "Who is securing the sensor?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does sympathising with a dilemma but not endorsing the solution separate?",
+            "explanation": "Two distinct positions: (1) understanding/sympathising with the difficulty faced (empathy). (2) Not endorsing what was chosen as the solution (critical evaluation). You can understand why someone found a situation hard without approving of how they handled it. This separates emotional sympathy from moral endorsement.",
+            "textToSpeak": "One can sympathise with the dilemma without necessarily endorsing the solution.",
+            "question": "What is the speaker saying?",
             "options": [
-                "hero",
-                "artist",
-                "analyst",
-                "droid"
+                "They understand the difficulty without approving the outcome",
+                "They agree completely with the solution",
+                "They disagree with both the problem and the solution",
+                "They have no opinion on the matter"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L136_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist activates the module rapidly.",
-            "question": "Who is activating the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would an author explicitly state what their paper does NOT examine?",
+            "explanation": "Explicitly stating what is NOT covered = defining scope limitations. Authors do this to manage reader expectations and to defend against accusations of incompleteness. By stating it explicitly, the author signals awareness of the gap while making clear it's a deliberate choice, not an oversight.",
+            "textToSpeak": "It is not the purpose of this paper to examine these questions in detail.",
+            "question": "What is the speaker doing?",
             "options": [
-                "artist",
-                "scientist",
-                "droid",
-                "mentor"
+                "Introducing the main topic of the paper",
+                "Limiting the scope of the paper explicitly",
+                "Criticising another paper for its limited scope",
+                "Apologising for the paper's inadequacy"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -262,31 +278,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L136_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist measures the chip steadily.",
-            "question": "Who is measuring the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'not the place for a full discussion, but worth noting' signal?",
+            "explanation": "This phrase introduces a brief, parenthetical point. 'Not the place for a full discussion' = no depth here. 'Worth noting' = but this point is important enough to mention briefly. The listener should expect: a concise observation, not a thorough treatment. This is discourse scope management.",
+            "textToSpeak": "This is not the place for a full discussion, but it is worth noting that...",
+            "question": "What will follow immediately?",
             "options": [
-                "scientist",
-                "explorer",
-                "hacker",
-                "student"
+                "A comprehensive, lengthy discussion",
+                "The end of the document",
+                "A brief observation or point",
+                "A reference to an external source"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L136_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective validates the software effectively.",
-            "question": "Who is validating the software?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the function of 'I shall return to this point later'?",
+            "explanation": "'Shall return to' = forward reference - signalling that this topic will come back. It tells the listener: (1) this point matters enough to revisit, (2) it won't be fully treated here, (3) pay attention when it comes up again. This is textual/speech navigation - helping listeners track the structure.",
+            "textToSpeak": "I shall return to this point later in the analysis.",
+            "question": "What does this tell the listener?",
             "options": [
-                "scientist",
-                "explorer",
-                "droid",
-                "detective"
+                "The point is unimportant",
+                "The analysis is nearly finished",
+                "The point will be raised again and developed further",
+                "The point has already been thoroughly discussed"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -294,15 +312,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L137_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student repairs the module quietly.",
-            "question": "Who is repairing the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'I'm sure you know what you're doing, but' communicate?",
+            "explanation": "'I'm sure you know' = apparent expression of confidence (but undermined by 'but'). 'Just be careful' = the real message. The 'but' negates or qualifies what came before. Together: I'm not fully confident (despite saying so) and I'm worried enough to warn you. This is indirect concern disguised as confidence.",
+            "textToSpeak": "I'm sure you know what you're doing, but just be careful.",
+            "question": "What is the speaker really communicating?",
             "options": [
-                "student",
-                "scientist",
-                "droid",
-                "pilot"
+                "A subtle concern or warning disguised as confidence",
+                "Full confidence in the person's ability",
+                "Instructions on precisely how to proceed",
+                "An order to stop what they're doing"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -310,63 +329,67 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L137_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer updates the device smoothly.",
-            "question": "Who is updating the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What experience is the speaker drawing on to make this observation?",
+            "explanation": "'Things have a way of' = they tend to, by experience. 'Getting complicated when money's involved' = financial stakes increase complexity and conflict. This is a general warning based on observed pattern: introduce money into relationships or decisions and complications often follow. It's implicit advice to be cautious.",
+            "textToSpeak": "Things have a way of getting complicated when there's money involved.",
+            "question": "What is the speaker implying?",
             "options": [
-                "scout",
-                "explorer",
-                "analyst",
-                "hacker"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L137_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot observes the portal directly.",
-            "question": "Who is observing the portal?",
-            "options": [
-                "expert",
-                "commander",
-                "pilot",
-                "teacher"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L138_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer activates the system quietly.",
-            "question": "Who is activating the system?",
-            "options": [
-                "scout",
-                "artist",
-                "mentor",
-                "explorer"
+                "Money is always beneficial",
+                "Money is completely irrelevant to this situation",
+                "The speaker is worried about not being paid",
+                "Financial matters often lead to complications or conflict"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L137_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'tread carefully' mean idiomatically?",
+            "explanation": "'Tread carefully' = proceed with great caution, avoid making wrong moves. 'If I were in your position' = hypothetical empathy - the speaker is imagining themselves in your situation. Together: I think your situation requires extreme care - be very cautious. This is an implicit warning about the difficulty or risk of the situation.",
+            "textToSpeak": "I'd tread carefully if I were in your position.",
+            "question": "What is the speaker advising?",
+            "options": [
+                "To walk slowly",
+                "To speed up the decision-making process",
+                "To stop what you're doing entirely",
+                "To be very cautious in how you proceed"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L138_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why does independence from financial ties matter for credibility?",
+            "explanation": "Independence = no financial incentive to produce favourable findings. Conflicts of interest (financial ties) can consciously or unconsciously bias research. An independent body has no such incentive - their conclusions are more likely to reflect the evidence than any financial pressure. Independence increases credibility.",
+            "textToSpeak": "The report was written by an independent body with no financial ties to the industry.",
+            "question": "Why is this detail important?",
+            "options": [
+                "It proves the report is definitely accurate",
+                "It makes the report more credible by removing conflicts of interest",
+                "It shows the report is less credible",
+                "It confirms the report is expensive to produce"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L138_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert encrypts the signal steadily.",
-            "question": "Who is encrypting the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How does a track record of inaccuracy affect a current prediction's credibility?",
+            "explanation": "If a source was previously inaccurate, their current prediction should be treated with caution - their track record undermines their credibility. Past performance is relevant to assessing future reliability. This is an inference about source credibility from historical accuracy.",
+            "textToSpeak": "The same source that predicted this also made the previous inaccurate forecast.",
+            "question": "What does this suggest?",
             "options": [
-                "expert",
-                "researcher",
-                "technician",
-                "traveler"
+                "The current prediction should be questioned",
+                "The source is highly reliable",
+                "The current prediction is definitely correct",
+                "The source has improved since the last forecast"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -374,113 +397,120 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L138_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid locates the protocol silently.",
-            "question": "Who is locating the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why is the absence of sources significant despite an authoritative delivery?",
+            "explanation": "Authority of delivery ≠ accuracy of content. Without cited sources, there's no way to verify the claims - we must take his word. A careful listener distinguishes between persuasive presentation style and substantive evidence. Absence of sources doesn't mean he's wrong, but it does limit verifiability.",
+            "textToSpeak": "He spoke with great authority on the subject but cited no sources.",
+            "question": "What might a careful listener note?",
             "options": [
-                "hero",
-                "droid",
-                "researcher",
-                "technician"
+                "His authority means sources are unnecessary",
+                "He has memorised all his sources",
+                "He is definitely wrong",
+                "The absence of sources reduces the claim's verifiability"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L139_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert monitors the signal properly.",
-            "question": "Who is monitoring the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the idiom 'tight-lipped' mean?",
+            "explanation": "'Tight-lipped' = saying very little, not revealing information. The image: lips pressed tightly closed (not talking). Applied to a spokesperson: they gave minimal information, possibly declining to discuss certain things. This is often used in news reports when officials won't comment.",
+            "textToSpeak": "The spokesperson was tight-lipped about the details.",
+            "question": "What does tight-lipped mean here?",
             "options": [
-                "explorer",
-                "scout",
-                "engineer",
-                "expert"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L139_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler updates the system automatically.",
-            "question": "Who is updating the system?",
-            "options": [
-                "traveler",
-                "artist",
-                "droid",
-                "hacker"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L139_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero locates the database swiftly.",
-            "question": "Who is locating the database?",
-            "options": [
-                "mentor",
-                "engineer",
-                "technician",
-                "hero"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L140_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher validates the satellite quietly.",
-            "question": "Who is validating the satellite?",
-            "options": [
-                "mentor",
-                "teacher",
-                "hero",
-                "scout"
+                "They spoke very quickly",
+                "They refused to share information",
+                "They were very detailed in their explanation",
+                "They spoke at length"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L139_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'measured tones' describe about her speech delivery?",
+            "explanation": "'Measured' = carefully controlled, not excessive or reactive. 'Measured tones' = a calm, controlled, thoughtful delivery - choosing words carefully, not raising voice. This is the opposite of emotional or reactive speech. It suggests professionalism and composure when discussing difficult topics.",
+            "textToSpeak": "The CEO spoke in measured tones about the challenges ahead.",
+            "question": "What does measured tones suggest?",
+            "options": [
+                "She was very emotional and upset",
+                "She was calm, controlled, and deliberate",
+                "She was dismissive of the challenges",
+                "She was visibly angry"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L139_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'guarded' mean when describing how someone responds?",
+            "explanation": "'Guarded' = careful, cautious, revealing limited information. Unlike 'open' or 'transparent', being guarded means protecting information - choosing words to avoid disclosing more than intended. He spoke but was strategic and limited in what he revealed. It's between complete silence and full openness.",
+            "textToSpeak": "He was guarded in his responses to reporters.",
+            "question": "What does guarded mean here?",
+            "options": [
+                "He was aggressive towards reporters",
+                "He was careful not to reveal too much",
+                "He was very open and transparent",
+                "He refused to speak at all"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L140_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does pouring everything into something then finding what follows difficult imply?",
+            "explanation": "Total investment in a role creates deep emotional attachment. When that role ends, the void is significant - there's nothing left having given everything. 'Perhaps explains' = the investment in the past explains the difficulty of the transition. Full commitment can make endings harder to process.",
+            "textToSpeak": "She poured everything into that role, which perhaps explains why what came after was so difficult.",
+            "question": "What is implied?",
+            "options": [
+                "She invested so much that adjusting afterwards was emotionally hard",
+                "The role wasn't important to her",
+                "She didn't work hard enough",
+                "She failed in the role"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L140_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher monitors the system consistently.",
-            "question": "Who is monitoring the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'mellowed' mean as a personality descriptor?",
+            "explanation": "'Mellowed' = become less intense, less harsh, more relaxed and gentle with age or experience. 'Considerably' = significantly. 'Since his early days' = the change happened over time in the industry. Early = intense/harsh; now = mellow/softer. This is a positive character development description.",
+            "textToSpeak": "He has mellowed considerably since his early days in the industry.",
+            "question": "What does mellowed mean here?",
             "options": [
-                "analyst",
-                "scientist",
-                "researcher",
-                "droid"
+                "He has become more successful and driven",
+                "He has become less intense or harsh over time",
+                "He has become older and wiser",
+                "He has learned many new technical skills"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L140_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker observes the device rapidly.",
-            "question": "Who is observing the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'even when fairness cost her politically' add to being scrupulously fair?",
+            "explanation": "'Scrupulously fair' = meticulously, uncompromisingly fair. 'Even when it cost her politically' = fairness came at personal/political cost. Together: she maintained her standard of fairness even when it was disadvantageous to do so. This shows integrity over self-interest - a notably strong moral commitment.",
+            "textToSpeak": "She was scrupulously fair - even when fairness cost her politically.",
+            "question": "What does this reveal?",
             "options": [
-                "student",
-                "detective",
-                "commander",
-                "hacker"
+                "She compromised her principles when under pressure",
+                "She was fair only when it suited her",
+                "She prioritised fairness over political advantage",
+                "She was unfair in private settings"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         }
     ]

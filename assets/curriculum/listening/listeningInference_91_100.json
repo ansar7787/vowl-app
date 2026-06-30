@@ -6,47 +6,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L91_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective restores the engine effectively.",
-            "question": "Who is restoring the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why might someone accept a lower salary without negotiation?",
+            "explanation": "Accepting without negotiating, despite a lower offer, typically signals that something other than salary mattered more - most likely securing the job itself. This could be desperation, extreme enthusiasm for the role, or prioritising other benefits. 'Without negotiating' suggests urgency to accept.",
+            "textToSpeak": "She accepted the lower salary without negotiating.",
+            "question": "What might this suggest?",
             "options": [
-                "teacher",
-                "hero",
-                "detective",
-                "engineer"
+                "She was very eager to secure the job",
+                "She thought the salary was very high",
+                "She didn't know she could negotiate",
+                "She has very few expenses"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L91_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot launches the module quietly.",
-            "question": "Who is launching the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone who earns well keep an old car for twelve years?",
+            "explanation": "Keeping a car for twelve years when you can afford a new one suggests the person doesn't prioritise material status symbols or is naturally frugal. 'Despite earning well' makes the inference explicit - it's not inability, it's choice. This is value-based inference: he values practicality over status.",
+            "textToSpeak": "He kept the same car for twelve years despite earning well.",
+            "question": "What does this suggest?",
             "options": [
-                "detective",
-                "robot",
-                "hacker",
-                "scientist"
+                "He couldn't find a better car to buy",
+                "He loves that specific car model deeply",
+                "He lives very far from a car dealership",
+                "He is frugal or doesn't value status symbols"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L91_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid encrypts the signal consistently.",
-            "question": "Who is encrypting the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why might someone choose not to correct a name error?",
+            "explanation": "Not correcting a name mispronunciation or error in a social setting is a common choice when the cost (potential awkwardness) outweighs the benefit. It's a social calculation: is it worth causing a moment of embarrassment to fix a minor error? Many people choose to let it go.",
+            "textToSpeak": "She didn't correct him when he got her name wrong.",
+            "question": "What might this suggest?",
             "options": [
-                "droid",
-                "scientist",
-                "hero",
-                "student"
+                "She didn't think it was worth the social awkwardness",
+                "She didn't hear him say her name",
+                "She doesn't know her own name in that language",
+                "She was distracted by something else"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -54,63 +57,67 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L92_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician launches the drone precisely.",
-            "question": "Who is launching the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone regularly check their bank statements independently?",
+            "explanation": "Double-checking bank statements suggests mild distrust of automatic financial recording - he wants to verify himself rather than just trust the bank's figures. This reflects either a past experience with errors or a general attitude of personal financial vigilance. It's a habit of verification.",
+            "textToSpeak": "He always double-checks his bank statements at the end of the month.",
+            "question": "What does this suggest?",
             "options": [
-                "technician",
-                "mentor",
-                "droid",
-                "commander"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L92_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler observes the terminal securely.",
-            "question": "Who is observing the terminal?",
-            "options": [
-                "scientist",
-                "traveler",
-                "technician",
-                "scout"
+                "He is a financial expert by profession",
+                "He doesn't fully trust that bank records are always accurate",
+                "He earns a very large amount of money",
+                "He enjoys working with numbers"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L92_Q3",
+            "id": "LIS_LISTENINGINFERENCE_L92_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher monitors the engine silently.",
-            "question": "Who is monitoring the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does carefully reading ingredient lists signal?",
+            "explanation": "Reading ingredient lists before buying = caring about what goes into food (or products). This is a health-conscious or allergen-aware behaviour. It's distinct from working in food - a professional wouldn't need to read labels for personal knowledge. It's a consumer awareness behaviour.",
+            "textToSpeak": "She reads the ingredients list on every product she buys.",
+            "question": "What does this reveal?",
             "options": [
-                "researcher",
-                "teacher",
-                "explorer",
-                "analyst"
+                "She is health-conscious and careful about what she consumes",
+                "She is a professional chef",
+                "She can't decide between products",
+                "She works in the food industry"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L92_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone seek a second medical opinion?",
+            "explanation": "Seeking a second opinion is a rational, responsible health behaviour. It doesn't mean the first doctor was wrong - it means the patient wants confirmation before proceeding with treatment, especially for serious conditions. This is autonomy in healthcare - taking an active role in one's own health decisions.",
+            "textToSpeak": "He questioned the doctor's diagnosis and sought a second opinion.",
+            "question": "What does this suggest?",
+            "options": [
+                "He doesn't believe in modern medicine",
+                "He was being unreasonable",
+                "He wants to be sure before making a health decision",
+                "He is a medical professional himself"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L93_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist repairs the drone silently.",
-            "question": "Who is repairing the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'while... there are concerns' structure communicate?",
+            "explanation": "'While the proposal has merits' = concession (acknowledging positives). 'Significant concerns about the cost' = the main problem. 'While' + concession + main point is a balanced structure. The cost concern is the primary issue despite the proposal's acknowledged merits.",
+            "textToSpeak": "While the proposal has merits, there are significant concerns about the cost.",
+            "question": "What is the speaker saying?",
             "options": [
-                "scientist",
-                "pilot",
-                "detective",
-                "traveler"
+                "The proposal has good points but cost is a serious problem",
+                "The proposal is perfect",
+                "The proposal should be immediately rejected",
+                "The cost is the only consideration that matters"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -118,95 +125,101 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L93_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student encrypts the database rapidly.",
-            "question": "Who is encrypting the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'even if I agreed with X, Y is questionable' structure tell you about priorities?",
+            "explanation": "'Even if I agreed with the conclusion' = hypothetically accepting it. 'The method is questionable' = the real objection. By conceding the conclusion hypothetically, the speaker makes clear their concern is specifically with how the conclusion was reached, not what it was.",
+            "textToSpeak": "Even if I agreed with the conclusion, the method used to reach it is questionable.",
+            "question": "What is the speaker's main concern?",
             "options": [
-                "student",
-                "artist",
-                "expert",
-                "traveler"
+                "The conclusion itself",
+                "The method used",
+                "Both the conclusion and method equally",
+                "Neither - they agree with everything"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L93_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero updates the device reliably.",
-            "question": "Who is updating the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'notwithstanding' communicate about the relationship between difficulties and results?",
+            "explanation": "'Notwithstanding' = despite, in spite of. It introduces a concession (difficulties existed) before the main point (exceptional results). The emphasis is on achievement despite adversity - the results are more impressive because they came through difficulty. It's a praise structure.",
+            "textToSpeak": "Notwithstanding the difficulties, the team delivered exceptional results.",
+            "question": "What is the speaker emphasising?",
             "options": [
-                "technician",
-                "commander",
-                "hero",
-                "hacker"
+                "The team succeeded despite facing challenges",
+                "The difficulties made the results worse",
+                "The results were only average",
+                "The difficulties weren't actually real"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L94_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot transfers the data carefully.",
-            "question": "Who is transferring the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'not a single detail overlooked' tell you about the word 'meticulous'?",
+            "explanation": "'Not a single detail was overlooked' = every detail was attended to. This defines 'meticulous' through context: it means extremely careful and thorough, paying attention to every detail. Context definition is a key listening strategy for unknown vocabulary.",
+            "textToSpeak": "She was meticulous in her preparation - not a single detail was overlooked.",
+            "question": "What does meticulous mean here?",
             "options": [
-                "analyst",
-                "pilot",
-                "student",
-                "droid"
+                "Extremely thorough and careful",
+                "Rushed and careless",
+                "Quick and efficient",
+                "Simple and straightforward"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L94_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher transfers the chip steadily.",
-            "question": "Who is transferring the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does being 'candid about challenges' suggest about how he communicated?",
+            "explanation": "Being candid = speaking honestly and directly, without evasion. Acknowledging challenges candidly means not hiding or minimising problems. The opposite of candid would be diplomatic to the point of dishonesty or evasive. Here, candid = open, honest communication about difficulties.",
+            "textToSpeak": "He was candid about the challenges the company was facing.",
+            "question": "What does candid mean in this context?",
             "options": [
-                "student",
-                "researcher",
-                "teacher",
-                "detective"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L94_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst encrypts the chip successfully.",
-            "question": "Who is encrypting the chip?",
-            "options": [
-                "robot",
-                "researcher",
-                "analyst",
-                "scout"
+                "Dishonest and evasive",
+                "Overly optimistic",
+                "Honest and direct",
+                "Silent about the problems"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L94_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the contrast between 'eloquent' and 'lacked substance'?",
+            "explanation": "'Eloquent' = speaking beautifully and persuasively (style). 'Lacked substance' = insufficient content or depth (content). Together: impressive delivery, poor content. This is a common criticism: form without content - the presentation was excellent but the ideas were thin.",
+            "textToSpeak": "The speaker was eloquent, but her argument lacked substance.",
+            "question": "What does this assessment mean?",
+            "options": [
+                "She spoke well and made a strong argument",
+                "She was too detailed and technical",
+                "She didn't speak well",
+                "She spoke beautifully but what she said had little depth"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L95_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective locates the satellite successfully.",
-            "question": "Who is locating the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'hoping for more competitive' reveal about the speaker's view of the current offer?",
+            "explanation": "'More competitive' = better than currently offered. 'Were hoping for' = politely expressing that the current offer doesn't meet expectations. This is negotiation language - signalling dissatisfaction with terms to prompt improvement without directly rejecting the offer.",
+            "textToSpeak": "We were hoping for a more competitive offer.",
+            "question": "What is the speaker communicating?",
             "options": [
-                "detective",
-                "traveler",
-                "robot",
-                "droid"
+                "They want a better financial deal",
+                "They accept the current offer",
+                "They are happy with the terms",
+                "They are withdrawing from the deal"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -214,63 +227,67 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L95_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor activates the database expertly.",
-            "question": "Who is activating the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would parties to a negotiation suggest 'pausing to reflect'?",
+            "explanation": "Pausing and reflecting suggests something has stalled or become difficult. It's a diplomatic way of saying: we need time, something isn't working, or we need to reconsider. Smooth negotiations don't typically need a pause. This signals a need for recalibration.",
+            "textToSpeak": "At this point in the negotiations, we think it's best to pause and reflect.",
+            "question": "What does this suggest?",
             "options": [
-                "mentor",
-                "technician",
-                "analyst",
-                "student"
+                "The negotiations are going very well for both sides",
+                "One or both sides want time to reconsider their positions",
+                "The deal is fully agreed",
+                "Both sides agree on all terms"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L95_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher analyzes the engine quietly.",
-            "question": "Who is analyzing the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'broadly aligned' with 'just the details' signal about progress?",
+            "explanation": "'Broadly aligned' = generally in agreement on the main points. 'Just the details' = only specifics remain. Together: the major issues are resolved; fine-tuning remains. This is very close to agreement - the hard work is done. 'Just' minimises what remains.",
+            "textToSpeak": "I think we're broadly aligned - it's just the details that need working out.",
+            "question": "What stage are the negotiations at?",
             "options": [
-                "researcher",
-                "scout",
-                "hacker",
-                "teacher"
+                "Close to a final agreement",
+                "Just beginning to discuss main principles",
+                "Very early stages with much to agree on",
+                "Completely stuck with no progress"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L96_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert deploys the circuit instantly.",
-            "question": "Who is deploying the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What discourse structure does 'on the one hand / on the other' create?",
+            "explanation": "'On the one hand / on the other hand' = a balancing structure, presenting two contrasting aspects of the same issue. The speaker is neither advocating nor rejecting - they're evaluating both sides. This is balanced discourse analysis, not persuasion.",
+            "textToSpeak": "On the one hand, we save money. On the other, we lose flexibility.",
+            "question": "What is the speaker doing?",
             "options": [
-                "researcher",
-                "hacker",
-                "engineer",
-                "expert"
+                "Arguing strongly for one option",
+                "Dismissing both options",
+                "Weighing up two sides of an issue",
+                "Strongly agreeing with someone"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L96_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer restores the node smoothly.",
-            "question": "Who is restoring the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does listing three simultaneous problems communicate?",
+            "explanation": "Three problems simultaneously (budget, schedule, staff) paint a comprehensively problematic picture. 'To summarise' = condensing the key points. The project is in multiple crises at once, not just one difficulty. The accumulation of three problems creates a stronger overall impression of distress.",
+            "textToSpeak": "To summarise: we're over budget, behind schedule, and understaffed.",
+            "question": "What is the state of the project?",
             "options": [
-                "detective",
-                "teacher",
-                "engineer",
-                "scientist"
+                "Excellent across all areas",
+                "Slightly behind on one metric",
+                "Challenging in three separate ways",
+                "Just behind schedule"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -278,15 +295,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L96_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler sends the drone rapidly.",
-            "question": "Who is sending the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'first and foremost' signal about what follows?",
+            "explanation": "'First and foremost' = above everything else, the top priority. It's an emphatic discourse marker that ranks what follows as the highest priority. Safety is explicitly identified as the primary concern - not budget or schedule. Understanding priority markers is key to following arguments.",
+            "textToSpeak": "First and foremost, we need to address the safety concerns.",
+            "question": "What is the most important issue?",
             "options": [
-                "traveler",
-                "droid",
-                "engineer",
-                "explorer"
+                "Safety concerns",
+                "The timeline",
+                "The budget",
+                "The staffing levels"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -294,111 +312,118 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L97_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer restores the circuit silently.",
-            "question": "Who is restoring the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the cultural meaning of standing when someone enters?",
+            "explanation": "Standing when someone enters is a traditional gesture of respect - acknowledging their arrival and their status. It's associated with deference and politeness. The gesture communicates: 'I acknowledge you and show you respect.' This is a non-verbal social signal.",
+            "textToSpeak": "He stood when she entered the room.",
+            "question": "What does this gesture typically suggest?",
             "options": [
-                "scout",
-                "explorer",
-                "hero",
-                "hacker"
+                "He was showing respect",
+                "He was about to leave the room",
+                "He was surprised to see her",
+                "He needed to stretch"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L97_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor builds the protocol efficiently.",
-            "question": "Who is building the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone send a handwritten note after a job interview?",
+            "explanation": "A handwritten note (rather than email) signals extra effort and distinctiveness. It's a deliberate attempt to differentiate herself from other candidates. 'Handwritten' shows personal effort; 'thank-you' = gratitude. Together: a strategic impression management move.",
+            "textToSpeak": "She sent a handwritten thank-you note after the job interview.",
+            "question": "What does this tell us?",
             "options": [
-                "researcher",
-                "scientist",
-                "mentor",
-                "analyst"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L97_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid transfers the protocol efficiently.",
-            "question": "Who is transferring the protocol?",
-            "options": [
-                "droid",
-                "pilot",
-                "robot",
-                "student"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L98_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker transfers the node expertly.",
-            "question": "Who is transferring the node?",
-            "options": [
-                "researcher",
-                "hacker",
-                "explorer",
-                "scientist"
+                "She was told to send a thank-you note",
+                "She was trying to make a distinctive lasting impression",
+                "She was rejected from the position",
+                "The interview went very badly"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L98_Q2",
+            "id": "LIS_LISTENINGINFERENCE_L97_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher encrypts the node immediately.",
-            "question": "Who is encrypting the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone deliberately keep conversation light at a meal?",
+            "explanation": "Keeping conversation 'light' = avoiding heavy, serious, or controversial topics. This is deliberate - he could have raised serious subjects but chose not to. The most likely reason: there's a difficult topic he wants to avoid, or he wants the meal to be pleasant rather than stressful.",
+            "textToSpeak": "He kept the conversation light throughout the meal.",
+            "question": "What was he probably trying to do?",
             "options": [
-                "researcher",
-                "engineer",
-                "hero",
-                "traveler"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L98_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist repairs the engine efficiently.",
-            "question": "Who is repairing the engine?",
-            "options": [
-                "student",
-                "explorer",
-                "scout",
-                "artist"
+                "Impress his companions",
+                "Practise his language skills",
+                "End the meal quickly",
+                "Avoid bringing up a serious or difficult topic"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L98_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does three years of investment followed by cancellation imply emotionally?",
+            "explanation": "Three years of work on something = significant personal investment. Cancellation of that = loss of all that effort. 'Hit hard' explicitly states the emotional impact. The inference: she was deeply disappointed and possibly devastated by the loss of her work.",
+            "textToSpeak": "She had spent three years on the project, so when it was cancelled, it hit hard.",
+            "question": "What can be inferred about her feelings?",
+            "options": [
+                "She was deeply disappointed",
+                "She was relieved it was over",
+                "She was angry with her colleagues",
+                "She didn't really care"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L98_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does warning someone something will fail - and being right - reveal?",
+            "explanation": "He warned them = he tried to prevent the failure through early communication. 'As it turned out, he was right' = his prediction was accurate. He didn't cause the failure; he tried to stop it. This is a 'told you so' narrative structure, highlighting his foresight.",
+            "textToSpeak": "He had warned them it would fail. As it turned out, he was right.",
+            "question": "What does this tell us?",
+            "options": [
+                "He caused the failure",
+                "He didn't warn anyone",
+                "He tried to prevent the failure by warning them",
+                "He was wrong in his prediction"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L98_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'initial resistance' followed by 'ended up enjoying' describe?",
+            "explanation": "'Initial resistance' = didn't want it at first. 'Ended up enjoying' = the eventual outcome was positive. 'Despite' marks the reversal. This is a narrative arc: reluctance → exposure → changed opinion. It's a very common English storytelling structure for describing how views change.",
+            "textToSpeak": "Despite her initial resistance, she ended up enjoying the course.",
+            "question": "What happened to her view?",
+            "options": [
+                "She came to enjoy it despite her earlier reluctance",
+                "She continued to dislike it throughout",
+                "She left the course early",
+                "She had always secretly enjoyed it"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L99_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert secures the code precisely.",
-            "question": "Who is securing the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does praising effort separately from result reveal about someone's values?",
+            "explanation": "Praising effort independently shows he values the process, not just the product. This is a 'growth mindset' approach - recognising that hard work has intrinsic value even when results aren't perfect. This is a valuable management and teaching quality.",
+            "textToSpeak": "He praised the effort, not just the result.",
+            "question": "What does this tell us about him?",
             "options": [
-                "teacher",
-                "commander",
-                "mentor",
-                "expert"
+                "He was disappointed in the result",
+                "He doesn't understand the result",
+                "He is easily impressed",
+                "He values hard work regardless of outcome"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -406,31 +431,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L99_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid encrypts the portal smoothly.",
-            "question": "Who is encrypting the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does consistent treatment of all customers regardless of spend reveal?",
+            "explanation": "Treating all customers equally regardless of spending is a fairness principle - not showing preferential treatment based on money. This reveals professionalism, fairness, and commitment to equal service. It's a notable character quality because many people (consciously or not) treat high-spending customers better.",
+            "textToSpeak": "She treats every customer the same way, whether they spend a lot or a little.",
+            "question": "What does this tell us about her?",
             "options": [
-                "detective",
-                "analyst",
-                "droid",
-                "researcher"
+                "She treats people equally regardless of their spending",
+                "She doesn't care about money",
+                "She gives discounts to all customers",
+                "She doesn't pay attention to individual customers"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L99_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert restores the network successfully.",
-            "question": "Who is restoring the network?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone read submissions that have no chance of selection?",
+            "explanation": "Reading all submissions regardless of quality shows a commitment to fairness - every submission gets the same attention. It's time-consuming but principled. This reveals thoroughness and integrity: he won't dismiss something without proper engagement, even when the outcome seems clear.",
+            "textToSpeak": "He read every submission carefully, even the ones with no chance of selection.",
+            "question": "What does this suggest about his character?",
             "options": [
-                "expert",
-                "hero",
-                "hacker",
-                "scout"
+                "He is fair and thorough in his process",
+                "He is inefficient with his time",
+                "He doesn't know how to filter effectively",
+                "He is slow to complete tasks"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -438,49 +465,52 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L100_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher creates the chip securely.",
-            "question": "Who is creating the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'they didn't say no' communicate about the outcome?",
+            "explanation": "'They didn't say no' = the best positive B can offer is the absence of a rejection. Not 'they loved it' or 'they said yes'. The minimally positive framing suggests the pitch didn't go well but wasn't a disaster. This is understated communication about a disappointing outcome.",
+            "textToSpeak": "A: How did the pitch go? B: Well, they didn't say no.",
+            "question": "What does B's answer imply?",
             "options": [
-                "teacher",
-                "robot",
-                "researcher",
-                "artist"
+                "The pitch was a clear success",
+                "The pitch was rejected",
+                "The pitch may not have gone brilliantly",
+                "The client said yes"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L100_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective locates the drone quietly.",
-            "question": "Who is locating the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How would you feel if you worked harder than everyone but received no recognition?",
+            "explanation": "Working harder than others + receiving no recognition = frustration. The effort is visible to the speaker (who is observing) but invisible to those who matter. 'Nobody seems to have noticed' implies she expected or deserved acknowledgement. Inference from effort + lack of recognition = frustrated.",
+            "textToSpeak": "She's been putting in longer hours than anyone, but nobody seems to have noticed.",
+            "question": "What is the implied emotion?",
             "options": [
-                "scout",
-                "student",
-                "commander",
-                "detective"
+                "Pride",
+                "Frustration",
+                "Satisfaction",
+                "Indifference"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L100_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician validates the module efficiently.",
-            "question": "Who is validating the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the symmetrical phrase 'says what he means / means what he says' describe?",
+            "explanation": "'Says what he means' = doesn't hide or soften his views. 'Means what he says' = follows through on what he states. Together: he is honest and direct - no gap between words and intentions. This is a positive description of straightforward, trustworthy communication.",
+            "textToSpeak": "He says what he means and means what he says.",
+            "question": "What character trait is being described?",
             "options": [
-                "expert",
-                "hero",
-                "teacher",
-                "technician"
+                "Stubbornness",
+                "Rudeness",
+                "Honesty and directness",
+                "Intelligence"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         }
     ]

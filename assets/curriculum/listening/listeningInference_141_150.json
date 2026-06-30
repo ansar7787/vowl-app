@@ -6,15 +6,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L141_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert observes the signal instantly.",
-            "question": "Who is observing the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What do 'challenges the consensus' and 'limits generalisability' together create?",
+            "explanation": "Two simultaneous facts: it challenges consensus (noteworthy intellectual contribution) + small sample limits how broadly the findings apply (methodological limitation). 'Though' signals the qualification. This is an honest, balanced research assessment: significant finding with a specific limitation.",
+            "textToSpeak": "The study challenges the prevailing consensus, though the small sample limits generalisability.",
+            "question": "What is the speaker pointing out?",
             "options": [
-                "analyst",
-                "scientist",
-                "artist",
-                "expert"
+                "The study confirms what we already knew",
+                "The sample is very large",
+                "The study is excellent in all respects",
+                "The study challenges established views but has a methodological limitation"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -22,31 +23,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L141_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist sends the portal automatically.",
-            "question": "Who is sending the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'intuitive appeal' versus 'empirical support remains limited' contrast?",
+            "explanation": "'Intuitive appeal' = it seems plausible, makes sense intuitively (subjective). 'Empirical support remains limited' = evidence doesn't strongly back it (objective). This contrast is critical: something can seem right without being demonstrated to be right. The theory appeals to reason but lacks evidential grounding.",
+            "textToSpeak": "While the theory has intuitive appeal, empirical support remains limited.",
+            "question": "What is the speaker saying?",
             "options": [
-                "robot",
-                "scientist",
-                "student",
-                "commander"
+                "The theory seems logical but lacks strong evidence",
+                "The theory is fully supported by evidence",
+                "The theory is completely wrong",
+                "Empirical support is unnecessary for good theory"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L141_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher measures the module consistently.",
-            "question": "Who is measuring the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'internally consistent' plus 'premises not all would accept' identify?",
+            "explanation": "'Internally consistent' = the logic holds together - the conclusion follows from the premises. 'Premises not all would accept' = the starting assumptions are controversial or disputed. The flaw isn't the logic but the foundation: if you don't accept the premises, the argument fails even if the reasoning is valid.",
+            "textToSpeak": "The argument is internally consistent but rests on premises that not all would accept.",
+            "question": "What is the flaw being identified?",
             "options": [
-                "expert",
-                "traveler",
-                "researcher",
-                "teacher"
+                "The argument contradicts itself internally",
+                "The argument is essentially perfect",
+                "The conclusion doesn't follow from the logic",
+                "The logic is sound but the starting assumptions may be disputed"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -54,15 +57,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L142_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot secures the drone immediately.",
-            "question": "Who is securing the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the government's own framing ('necessary and proportionate') suggest about potential opposition?",
+            "explanation": "Governments use 'necessary and proportionate' precisely because critics argue otherwise. The phrasing preemptively defends against exactly those accusations. By asserting these qualities, the government signals awareness that the measures could be seen as unnecessary or disproportionate - and is getting ahead of that criticism.",
+            "textToSpeak": "The government described the measures as necessary and proportionate.",
+            "question": "What might critics argue?",
             "options": [
-                "pilot",
-                "mentor",
-                "teacher",
-                "scout"
+                "The measures are disproportionate or unjustified",
+                "The measures are clearly necessary",
+                "The government is being fully transparent",
+                "The critics support the measures"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -70,143 +74,152 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L142_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert secures the sensor immediately.",
-            "question": "Who is securing the sensor?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'popular short-term / significant long-term consequences' imply about the policy?",
+            "explanation": "Short-term popularity + long-term consequences = the policy pleased people immediately but at a future cost. The implicit criticism: the policy prioritised short-term approval (perhaps for political benefit) over long-term wellbeing. 'Consequences' is neutral but typically implies negative results.",
+            "textToSpeak": "The policy was popular in the short term but had significant long-term consequences.",
+            "question": "What is the implied criticism?",
             "options": [
-                "pilot",
-                "teacher",
-                "artist",
-                "expert"
+                "The policy only had positive effects",
+                "The policy was excellent throughout",
+                "Short-term gains came at a longer-term cost",
+                "There were no longer-term consequences"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L142_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer launches the sensor immediately.",
-            "question": "Who is launching the sensor?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Who commissioned the report, and what is their relationship to it?",
+            "explanation": "Those who commissioned (paid for) the report have a stake in it being seen as good. Describing it as 'comprehensive' = a positive self-assessment from a potentially biased source. A more credible assessment would come from an independent party. This is source credibility inference: assess who made the claim and whether they're partial.",
+            "textToSpeak": "The report was described as comprehensive by those who commissioned it.",
+            "question": "Why might the phrasing be notable?",
             "options": [
-                "scientist",
-                "student",
-                "engineer",
-                "explorer"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L143_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer creates the engine silently.",
-            "question": "Who is creating the engine?",
-            "options": [
-                "hero",
-                "pilot",
-                "explorer",
-                "droid"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L143_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander analyzes the signal smoothly.",
-            "question": "Who is analyzing the signal?",
-            "options": [
-                "expert",
-                "student",
-                "pilot",
-                "commander"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L143_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist observes the terminal silently.",
-            "question": "Who is observing the terminal?",
-            "options": [
-                "researcher",
-                "artist",
-                "hacker",
-                "scientist"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L144_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher evaluates the engine quietly.",
-            "question": "Who is evaluatesing the engine?",
-            "options": [
-                "teacher",
-                "technician",
-                "traveler",
-                "hacker"
+                "The positive description comes from a potentially partial source",
+                "The commissioner is always the most reliable assessor",
+                "The report is clearly independent and reliable",
+                "The phrasing is standard and neutral"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L144_Q2",
+            "id": "LIS_LISTENINGINFERENCE_L143_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot activates the drone smoothly.",
-            "question": "Who is activating the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does knowing a number by memory despite years without contact reveal?",
+            "explanation": "Remembering a phone number from memory after years of no contact reveals the depth of a previous relationship - the number is embedded enough to be recalled automatically. This small detail conveys the significance of the relationship despite the estrangement, and the emotional weight of making the call.",
+            "textToSpeak": "He hadn't spoken to his brother in years, yet found himself dialling the number from memory.",
+            "question": "What does dialling from memory suggest?",
             "options": [
-                "robot",
-                "expert",
-                "explorer",
-                "pilot"
+                "Despite the estrangement, the number was still deeply embedded",
+                "He looked it up online before calling",
+                "He never used the number before",
+                "He had to ask someone for the number"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L143_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'exactly as remembered' and 'the same curtains' tell us about time and change?",
+            "explanation": "'Down to the same curtains' = even the smallest details were unchanged. This signals the passage of time (she had been away long enough to have memories) while emphasising stasis (nothing changed). The detail creates a sense of suspended time - the house as a fixed anchor while life moved on.",
+            "textToSpeak": "The house was exactly as she remembered it - down to the same curtains.",
+            "question": "What does this tell us?",
+            "options": [
+                "The house had been recently renovated",
+                "Time had passed but the house remained unchanged",
+                "She had never actually been there before",
+                "She had only seen it in photographs"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L143_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'not a happy laugh' tell you about the emotion behind it?",
+            "explanation": "The clarification 'not a happy laugh' signals that laughter here isn't joy. It's a laugh of disbelief, bitterness, or dark irony - the kind that comes when something is so painful or absurd that it provokes laughter instead of tears. The note apparently confirmed something he found bitterly ironic.",
+            "textToSpeak": "He laughed when he found the note - not a happy laugh.",
+            "question": "What kind of laugh was it?",
+            "options": [
+                "A joyful and warm laugh",
+                "A laugh of bitter irony or disbelief",
+                "A polite social laugh",
+                "A nervous laugh of anticipation"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L144_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'insofar as' communicate about the relationship between data and conclusion?",
+            "explanation": "'Insofar as' = to the extent that, within the limits that. It sets a condition on the claim: the conclusion is supported, but only to the degree the data permits. This is maximum caution - the speaker isn't claiming more than the evidence allows, acknowledging the data's limitations openly.",
+            "textToSpeak": "Insofar as the data supports any conclusion, it is this.",
+            "question": "What does insofar as signal?",
+            "options": [
+                "The data fully and completely supports the conclusion",
+                "The speaker is certain about the conclusion",
+                "The data is irrelevant",
+                "The conclusion is tentative and limited by the data's extent"
             ],
             "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L144_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'disingenuous' mean, and what does it imply about the claim?",
+            "explanation": "'Disingenuous' = not sincere, deliberately misleading. 'It would be disingenuous to suggest X' = X is not true; claiming X would be dishonest. Therefore: the decision WAS made with political considerations. This is an indirect way of asserting something by saying it would be dishonest to deny it.",
+            "textToSpeak": "It would be disingenuous to suggest the decision was made without political considerations.",
+            "question": "What is being implied?",
+            "options": [
+                "The decision was made purely on merit",
+                "Political considerations were transparently declared",
+                "Political factors clearly influenced the decision",
+                "The decision was the correct one"
+            ],
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L144_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout encrypts the engine successfully.",
-            "question": "Who is encrypting the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does reframing the question from 'whether' to 'how fundamental' achieve?",
+            "explanation": "Shifting from 'whether' (binary: yes/no) to 'how fundamental' (degree: how much) assumes the answer to 'whether' is settled. The speaker is saying: we all agree change is needed; the debate is now about the scale. This reframing closes one debate and opens another at a higher level.",
+            "textToSpeak": "The question is not whether change is needed, but how fundamental that change needs to be.",
+            "question": "What does this signal?",
             "options": [
-                "hacker",
-                "student",
-                "traveler",
-                "scout"
+                "Whether change is needed is still being debated",
+                "Change is not needed at all",
+                "Everyone agrees change is needed, but the extent is contested",
+                "The question has been resolved"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L145_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert monitors the device immediately.",
-            "question": "Who is monitoring the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'respect the argument but find evidence insufficient' communicate?",
+            "explanation": "Respecting the argument = acknowledging its logic or merit. 'Evidence insufficient for such a strong claim' = the specific problem: the claim is bigger than what the evidence can support. This is a targeted criticism: not rejecting the argument outright but questioning whether the evidence justifies the strength of the conclusion.",
+            "textToSpeak": "While I respect the argument, I find the evidence insufficient to support such a strong claim.",
+            "question": "What is the speaker's position?",
             "options": [
-                "expert",
-                "commander",
-                "explorer",
-                "scout"
+                "Acknowledges the argument but isn't convinced by the evidence",
+                "Complete rejection of the argument",
+                "Full agreement with the argument",
+                "No opinion at all"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -214,31 +227,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L145_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero monitors the satellite carefully.",
-            "question": "Who is monitoring the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'compelling but misses a distinction' accomplish?",
+            "explanation": "'Compelling' = the counterargument is strong and persuasive - genuine acknowledgement. 'Misses a crucial distinction' = but there's a specific error. This is sophisticated debate engagement: taking the opposing argument seriously then locating precisely where it fails. The strength of the concession makes the critique more credible.",
+            "textToSpeak": "The counterargument is compelling but misses a crucial distinction.",
+            "question": "What is the speaker doing?",
             "options": [
-                "technician",
-                "hero",
-                "student",
-                "commander"
+                "Acknowledging the counterargument's strength while identifying its flaw",
+                "Completely dismissing the counterargument",
+                "Fully agreeing with the counterargument",
+                "Ignoring the counterargument"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L145_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero deploys the device consistently.",
-            "question": "Who is deploying the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does accepting a premise but rejecting the conclusion reveal about where the problem lies?",
+            "explanation": "If you accept the premise but not the conclusion, the problem is in the reasoning that connects them - the logic, evidence, or steps used to get from premise to conclusion are what's being contested. This is a precise, technically sophisticated form of disagreement: agreeing with the starting point but disputing the path.",
+            "textToSpeak": "I accept the premise but not the conclusion derived from it.",
+            "question": "What does this mean?",
             "options": [
-                "pilot",
-                "scientist",
-                "scout",
-                "hero"
+                "Complete disagreement with everything",
+                "Complete agreement with everything",
+                "The speaker is confused about the argument",
+                "The starting point is accepted but the reasoning or derivation is challenged"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -246,31 +261,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L146_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker evaluates the chip consistently.",
-            "question": "Who is evaluatesing the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is NOT mentioned in the claim about spending cuts?",
+            "explanation": "The claim assumes only positive effects: cut spending → reduce deficit. It doesn't consider potential negative effects of cuts (reduced services, economic slowdown, social harm). The hidden assumption: spending cuts have no significant costs. Critical listening asks: what is assumed but not stated?",
+            "textToSpeak": "If we reduce spending, we can reduce the deficit.",
+            "question": "What assumption underlies this statement?",
             "options": [
-                "mentor",
-                "hacker",
-                "scientist",
-                "researcher"
+                "Spending cuts always work perfectly",
+                "Deficits are always wrong",
+                "Spending cuts will have no other negative effects",
+                "There is no other way to reduce the deficit"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L146_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot secures the system expertly.",
-            "question": "Who is securing the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What connection is assumed between critical thinking and citizenship?",
+            "explanation": "The claim assumes: better thinking → better citizenship. But this connection isn't inevitable - critical thinking could lead to any values, not necessarily civic virtue. The assumption that improved thinking automatically produces better citizens involves an unstated causal link that could be questioned.",
+            "textToSpeak": "Teaching critical thinking will make students better citizens.",
+            "question": "What assumption is being made?",
             "options": [
-                "pilot",
-                "student",
-                "researcher",
-                "robot"
+                "Critical thinking automatically produces better citizenship",
+                "All teachers can easily teach critical thinking",
+                "Students already have critical thinking skills",
+                "The concept of citizenship is uncontested"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -278,47 +295,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L146_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert evaluates the database smoothly.",
-            "question": "Who is evaluatesing the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does claiming private sector efficiency assume about the comparison?",
+            "explanation": "The claim assumes private sector is systematically more efficient - but this is an empirical claim that may not hold universally. It also assumes efficiency is the primary criterion, ignoring other values (equity, access, safety). Recognising unstated assumptions behind efficiency claims is critical for sophisticated analysis.",
+            "textToSpeak": "The private sector can deliver this more efficiently than the public sector.",
+            "question": "What assumption does this rest on?",
             "options": [
-                "pilot",
-                "droid",
-                "expert",
-                "artist"
+                "That private sector always outperforms public in all contexts",
+                "That efficiency is the only goal that matters",
+                "That the service is currently failing",
+                "That costs are the main issue"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L147_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero evaluates the device directly.",
-            "question": "Who is evaluatesing the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'still kept' after 'everything that had happened' imply?",
+            "explanation": "'Even after everything' = despite difficult or painful events. 'Still kept' = retained despite those events. The inference: the letter holds meaning that transcended whatever happened between them. Keeping something you could discard, after painful events, signals deep unresolved attachment or significance.",
+            "textToSpeak": "She still kept the letter, even after everything that had happened.",
+            "question": "What does this suggest?",
             "options": [
-                "detective",
-                "scientist",
-                "mentor",
-                "hero"
+                "The letter was unimportant to her",
+                "She had forgotten why she kept it",
+                "Despite a difficult history, the letter still held meaning",
+                "She had no other personal letters"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L147_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher scans the drone effectively.",
-            "question": "Who is scanning the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What happens to memories through repeated narration?",
+            "explanation": "Repeated storytelling can change memories - each retelling potentially alters emphasis, detail, or framing. Eventually, the narrative version and the original memory become indistinguishable. This is a psychological insight: storytelling about one's own experience can replace or alter the original memory.",
+            "textToSpeak": "He had told the story so many times that he was no longer sure what was true.",
+            "question": "What does this reveal?",
             "options": [
-                "teacher",
-                "scout",
-                "hero",
-                "mentor"
+                "Repeated retelling can blur the boundary between memory and narrative",
+                "The story changes each time it's told",
+                "He is deliberately lying",
+                "He has a genuinely poor memory"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -326,111 +346,118 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L147_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician observes the data effectively.",
-            "question": "Who is observing the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does mutual silence about a topic imply?",
+            "explanation": "Both the non-asking and the non-offering are deliberate. Each knows the other knows. Their shared silence is a mutual decision - either understood or tacit - not to engage with the topic. This implies either a tense truce or a mutually protective avoidance. The symmetry of the silence is significant.",
+            "textToSpeak": "She didn't ask where he had been. He didn't offer to say.",
+            "question": "What is implied about their relationship?",
             "options": [
-                "hero",
-                "scout",
-                "engineer",
-                "technician"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L148_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher repairs the circuit immediately.",
-            "question": "Who is repairing the circuit?",
-            "options": [
-                "scientist",
-                "detective",
-                "researcher",
-                "mentor"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L148_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert observes the engine efficiently.",
-            "question": "Who is observing the engine?",
-            "options": [
-                "explorer",
-                "technician",
-                "expert",
-                "scout"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L148_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist transfers the terminal securely.",
-            "question": "Who is transferring the terminal?",
-            "options": [
-                "scientist",
-                "explorer",
-                "technician",
-                "artist"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L149_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot activates the drone swiftly.",
-            "question": "Who is activating the drone?",
-            "options": [
-                "pilot",
-                "hero",
-                "hacker",
-                "commander"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L149_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot encrypts the terminal automatically.",
-            "question": "Who is encrypting the terminal?",
-            "options": [
-                "scout",
-                "robot",
-                "expert",
-                "student"
+                "They are strangers with nothing to discuss",
+                "There is a mutual, possibly tense, decision not to discuss it",
+                "They communicate completely openly",
+                "They are completely content and at ease"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L148_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'generally understood' + 'senior member makes the call' establish?",
+            "explanation": "'Generally understood' = an informal but widely shared norm, not a written rule. 'Senior member makes the final call' = hierarchy determines decision authority. This is an implicit governance rule - not stated but assumed by all participants. Understanding such unstated norms is essential for navigating organisations.",
+            "textToSpeak": "It is generally understood that the senior member makes the final call.",
+            "question": "What is the implied rule?",
+            "options": [
+                "Seniority determines who decides",
+                "Everyone has equal say in the decision",
+                "The most junior person makes the final decision",
+                "Decisions are made by majority vote"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L148_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does a raised eyebrow typically communicate non-verbally?",
+            "explanation": "A raised eyebrow = a non-verbal signal of questioning, scepticism, surprise, or mild disapproval. 'Said nothing' = chose not to voice the reaction verbally. Together: she had a visible reaction (surprise/disapproval) but chose restraint in not speaking. The eyebrow is the only visible sign of her real response.",
+            "textToSpeak": "She raised an eyebrow but said nothing.",
+            "question": "What does this gesture likely communicate?",
+            "options": [
+                "Complete approval",
+                "Enthusiastic agreement",
+                "Genuine confusion",
+                "Surprise or disapproval expressed non-verbally"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L148_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would a room go quiet when someone enters?",
+            "explanation": "A room going quiet on entry signals that the person carries significant presence - whether through authority, status, or a powerful personality. It's not necessarily negative; it could be respect. The immediate effect on the room shows the person commands attention without saying a word.",
+            "textToSpeak": "The room went quiet when he walked in.",
+            "question": "What does this suggest about the person?",
+            "options": [
+                "He entered very quietly",
+                "He is liked and warmly welcomed",
+                "He commands attention or carries authority",
+                "He had done something wrong recently"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L149_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would consistently applying logic lead to an 'uncomfortable' conclusion?",
+            "explanation": "An 'uncomfortable conclusion' suggests the logic, if consistently applied, produces a result that conflicts with other beliefs, values, or positions the speaker or audience holds. This is a reductio ad absurdum strategy: follow the logic to its conclusion to reveal its unacceptability.",
+            "textToSpeak": "If we apply the same logic here, we arrive at an uncomfortable conclusion.",
+            "question": "What is the speaker implying?",
+            "options": [
+                "The logic is entirely correct and the conclusion welcome",
+                "The logic should only be applied in specific cases",
+                "The conclusion is welcome and expected",
+                "The logic, consistently applied, reveals a problem or contradiction"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L149_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the logical meaning of 'the exception proves the rule'?",
+            "explanation": "This counterintuitive phrase means: an exception that needs to be noted actually confirms that a rule exists (you can only have an exception if there's a rule to except from). 'Proves' = tests or demonstrates (older meaning). The exception's existence implies a general rule from which it deviates.",
+            "textToSpeak": "The exception, in this case, proves the rule.",
+            "question": "What does this mean?",
+            "options": [
+                "The existence of an exception confirms the rule exists",
+                "The exception disproves the rule",
+                "There are no exceptions to this rule",
+                "The rule is wrong because of the exception"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L149_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer analyzes the protocol rapidly.",
-            "question": "Who is analyzing the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the same argument being used for different conclusions reveal?",
+            "explanation": "If the same reasoning can justify opposite conclusions, it reveals the argument's flexibility - which may signal vagueness, internal weakness, or susceptibility to cherry-picking applications. Strong arguments should lead consistently to the same types of conclusions; arguments that don't are suspect.",
+            "textToSpeak": "This line of argument has been used to justify very different conclusions at different times.",
+            "question": "What is the speaker warning about?",
             "options": [
-                "hacker",
-                "pilot",
-                "analyst",
-                "explorer"
+                "The argument is perfectly consistent",
+                "The argument always leads to the same conclusion",
+                "The argument is historically new",
+                "The argument is flexible enough to be used by opposing sides"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -438,15 +465,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L150_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker scans the portal reliably.",
-            "question": "Who is scanning the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What do 'competent' and 'met the required standard' (rather than exceeded it) signal?",
+            "explanation": "'Competent' = capable, adequate (not inspired). 'Met the required standard' = did what was necessary (didn't go beyond). Together: the work was sufficient, not exceptional. This is damning with faint praise - technically positive but implying nothing more than the minimum. Performance reviews are full of such coded language.",
+            "textToSpeak": "The work was competent and met the required standard.",
+            "question": "What is the subtle assessment?",
             "options": [
-                "hacker",
-                "mentor",
-                "technician",
-                "teacher"
+                "The work was adequate but not remarkable",
+                "The work was excellent",
+                "The work was inadequate",
+                "The work was outstanding"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -454,15 +482,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L150_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor scans the drone steadily.",
-            "question": "Who is scanning the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'technical skills fine / soft skills need development' communicate?",
+            "explanation": "Technical skills (specific job competencies) = assessed as sufficient. Soft skills (communication, teamwork, emotional intelligence) = identified as the development area. This is a common performance or job interview assessment: technically capable, but less effective in interpersonal dimensions. Soft skills often distinguish adequate from excellent.",
+            "textToSpeak": "He has all the technical skills - it's the soft skills that need development.",
+            "question": "What does this assessment mean?",
             "options": [
-                "scout",
-                "expert",
-                "student",
-                "mentor"
+                "He is ready for the role immediately",
+                "He is not suitable for the role",
+                "He needs to improve technical skills",
+                "Technical ability is fine but interpersonal skills need work"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -470,17 +499,18 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L150_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer transfers the data smoothly.",
-            "question": "Who is transferring the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'too ambitious for its own good' mean?",
+            "explanation": "'Too ambitious for its own good' = the ambition exceeds what can actually be achieved - reach exceeds grasp. The ambition (positive) becomes a liability because it sets goals the work can't fully realise. This is a specific type of failure: not lack of effort or intelligence but overreaching. The qualifier 'for its own good' creates an internal tension.",
+            "textToSpeak": "The novel is ambitious - perhaps too ambitious for its own good.",
+            "question": "What is being suggested?",
             "options": [
-                "pilot",
-                "explorer",
-                "researcher",
-                "commander"
+                "The novel tries to do too much and may not fully succeed",
+                "The novel does not try hard enough",
+                "The novel is excellent and well-executed",
+                "The novel is perfectly balanced"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         }
     ]

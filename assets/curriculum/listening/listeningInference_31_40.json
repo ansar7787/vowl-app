@@ -6,79 +6,84 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L31_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician scans the archive reliably.",
-            "question": "Who is scanning the archive?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about why someone calls about an advertisement for a flat.",
+            "explanation": "'Calling about the advertisement for the flat' = responding to a rental listing. The flat is being offered (advertisement), and the caller is interested. This is how potential tenants make initial contact with landlords or letting agencies.",
+            "textToSpeak": "I'm calling about the advertisement for the flat in the window.",
+            "question": "Why is the person calling?",
             "options": [
-                "droid",
-                "scientist",
-                "commander",
-                "technician"
+                "To complain about noise from the flat",
+                "To ask about renting the flat",
+                "To report a problem to the council",
+                "To advertise their own property"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L31_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor launches the device consistently.",
-            "question": "Who is launching the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the key phrase that reveals the purpose.",
+            "explanation": "'Thank you for everything you did' = expressing gratitude. 'Just wanted to say' is a softening phrase before the main point. 'Everything you did' shows broad appreciation for past help. This is a social communication function: thanking someone.",
+            "textToSpeak": "I just wanted to say thank you for everything you did for us.",
+            "question": "What is the main purpose of this message?",
             "options": [
-                "engineer",
-                "droid",
-                "mentor",
-                "scout"
+                "To apologise for something",
+                "To express gratitude",
+                "To ask for help with a task",
+                "To give important information"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L31_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero creates the code automatically.",
-            "question": "Who is creating the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the action word and the reason given.",
+            "explanation": "'Cancel my appointment' = the action. 'For Thursday' = the specific appointment. 'Something's come up' is an idiom meaning an unexpected event has occurred that prevents the appointment. The speaker isn't rescheduling - they're cancelling.",
+            "textToSpeak": "I need to cancel my appointment for Thursday - something's come up.",
+            "question": "What is the speaker doing?",
             "options": [
-                "technician",
-                "artist",
-                "hero",
-                "robot"
+                "Making a new appointment",
+                "Cancelling an appointment",
+                "Rescheduling to a different day",
+                "Asking about opening hours"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L32_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst restores the protocol carefully.",
-            "question": "Who is restoring the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for when during the speech the problem happened.",
+            "explanation": "'Halfway through' = in the middle of the speech. 'Lost her notes' = couldn't find them. So she was partway through when this happened - not at the start, not at the end. 'Halfway through' is an important time adverb meaning at the 50% point.",
+            "textToSpeak": "She was halfway through her speech when she lost her notes.",
+            "question": "What happened during the speech?",
             "options": [
-                "analyst",
-                "traveler",
-                "hero",
-                "scout"
+                "She forgot all her words at the start",
+                "She lost her notes in the middle of the speech",
+                "She finished early without notes",
+                "She started again from the beginning"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L32_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist restores the database securely.",
-            "question": "Who is restoring the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what 'looks like a disaster zone' implies about the kitchen.",
+            "explanation": "'Disaster zone' = a place in complete chaos and mess. 'All weekend cooking' explains why - intensive cooking creates mess. This is inference from effect to cause: messy kitchen = consequence of extensive cooking. The hyperbole 'disaster zone' emphasises the level of mess.",
+            "textToSpeak": "He spent all weekend cooking and the kitchen looks like a disaster zone.",
+            "question": "What can be inferred?",
             "options": [
-                "engineer",
-                "robot",
-                "detective",
-                "scientist"
+                "He loves cleaning up after himself",
+                "He barely cooked anything",
+                "He ordered takeaway all weekend",
+                "He made a big mess while cooking"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -86,63 +91,67 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L32_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician evaluates the drone effectively.",
-            "question": "Who is evaluatesing the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what 'had already started' tells you about the timing.",
+            "explanation": "'Had already started' uses the past perfect, showing the film began BEFORE they arrived. So they arrived after the film started = they were late. 'By the time' + past perfect shows the sequence: film started → then they arrived.",
+            "textToSpeak": "By the time we arrived, the film had already started.",
+            "question": "What does this tell us?",
             "options": [
-                "engineer",
-                "expert",
-                "technician",
-                "explorer"
+                "They arrived before the film began",
+                "They arrived right on time",
+                "They missed the entire film",
+                "They arrived late and missed the start"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L33_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor secures the sensor reliably.",
-            "question": "Who is securing the sensor?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for 'prefer' and the criticism of the new version.",
+            "explanation": "'Prefer the original' = the original is better in their opinion. 'Too sweet' is a criticism of the new version. 'Too' + adjective = excessive, negative quality. Together: original preferred, new version criticised for being overly sweet.",
+            "textToSpeak": "I prefer the original recipe - the new version is too sweet.",
+            "question": "What is the speaker's opinion?",
             "options": [
-                "robot",
-                "student",
-                "mentor",
-                "droid"
+                "The new version is better",
+                "Neither version is good",
+                "Both versions taste the same",
+                "The original recipe is better"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L33_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker validates the circuit efficiently.",
-            "question": "Who is validating the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the contrast and which candidate 'stood out'.",
+            "explanation": "'Really stood out' = was noticeably better or more impressive. The 'but' creates a contrast: good (first) vs. really stood out (second). 'Stood out' = was more impressive than others. The second candidate made a stronger impression.",
+            "textToSpeak": "The first candidate was good, but the second one really stood out.",
+            "question": "Who does the speaker prefer?",
             "options": [
-                "hacker",
-                "pilot",
-                "engineer",
-                "hero"
+                "The first candidate",
+                "The second candidate",
+                "Both equally",
+                "Neither of them"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L33_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot launches the node instantly.",
-            "question": "Who is launching the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for both comparative adjectives - size and organisation.",
+            "explanation": "Two comparisons: 'bigger' (positive - improved) and 'not as well organised' (negative - worse). Together: it grew in scale but lost quality of organisation. 'But' signals the contrast between the two comparisons.",
+            "textToSpeak": "This year's festival was bigger than last year's but not as well organised.",
+            "question": "What is true about this year's festival?",
             "options": [
-                "hero",
-                "student",
-                "pilot",
-                "expert"
+                "It was smaller and better organised than last year",
+                "It was bigger and better organised than last year",
+                "It was larger but less well organised than last year",
+                "It was exactly the same as last year"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -150,95 +159,101 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L34_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist sends the portal immediately.",
-            "question": "Who is sending the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the cause before 'so'.",
+            "explanation": "'The car wouldn't start' = the problem. 'So she called a mechanic' = the solution/response. 'Wouldn't start' suggests a mechanical failure. 'So' links cause to effect. A mechanic fixes mechanical problems - appropriate response to a starting failure.",
+            "textToSpeak": "The car wouldn't start this morning, so she called a mechanic.",
+            "question": "Why did she call a mechanic?",
             "options": [
-                "student",
-                "artist",
-                "detective",
-                "robot"
+                "She had a flat tyre",
+                "The car had a dent",
+                "The car wouldn't start",
+                "She wanted a routine service"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L34_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander scans the software rapidly.",
-            "question": "Who is scanning the software?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the consequence of not agreeing.",
+            "explanation": "'Couldn't agree on where to go' = disagreement. 'Stayed home in the end' = the final outcome. 'In the end' signals the eventual resolution. When people can't agree on a plan, staying home is a common default. The inability to decide led to no action.",
+            "textToSpeak": "They couldn't agree on where to go, so they stayed home in the end.",
+            "question": "What did they do?",
             "options": [
-                "commander",
-                "researcher",
-                "hacker",
-                "scientist"
+                "They went somewhere they both agreed on",
+                "They stayed home because they couldn't decide",
+                "They went to different places separately",
+                "They asked someone else to decide"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L34_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot analyzes the database precisely.",
-            "question": "Who is analyzing the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the response to the long queue.",
+            "explanation": "'Came back later' = left and returned at a different time. He didn't wait (too long) or go elsewhere - he came back to the same place later. This inference about practical behaviour is common in everyday English contexts.",
+            "textToSpeak": "The queue was too long, so he came back later.",
+            "question": "What did he do when he saw the long queue?",
             "options": [
-                "analyst",
-                "hero",
-                "pilot",
-                "robot"
+                "He left and returned later",
+                "He waited for over two hours",
+                "He went to a different shop",
+                "He complained to the manager"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L35_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert observes the portal efficiently.",
-            "question": "Who is observing the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about the cause-and-effect relationship stated.",
+            "explanation": "Sequence: wore sunscreen every day → skin looked great. This is a direct cause-and-effect statement. The daily use of sunscreen is presented as the reason for good skin. 'Every day' shows the consistency that produced the result.",
+            "textToSpeak": "She wore sunscreen every day and her skin always looked great.",
+            "question": "What helped her skin look good?",
             "options": [
-                "detective",
-                "expert",
-                "technician",
-                "robot"
+                "She stayed indoors all day",
+                "She went to a skin clinic",
+                "She drank a lot of water",
+                "She applied sunscreen daily"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L35_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid scans the drone rapidly.",
-            "question": "Who is scanning the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the direct consequence of forgetting to set the alarm.",
+            "explanation": "'Woke up two hours late' is the direct consequence of 'forgot to set his alarm'. Cause: no alarm set. Effect: overslept by two hours. 'Two hours late' is the quantity of oversleeping. The alarm would have woken him on time; without it, he slept longer.",
+            "textToSpeak": "He forgot to set his alarm and woke up two hours late.",
+            "question": "What happened because he forgot to set his alarm?",
             "options": [
-                "teacher",
-                "droid",
-                "student",
-                "pilot"
+                "He woke up two hours later than planned",
+                "He woke up earlier than planned",
+                "He felt very tired",
+                "He missed his alarm sound"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L35_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero monitors the software smoothly.",
-            "question": "Who is monitoring the software?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the reason given after 'because of'.",
+            "explanation": "'Because of a staff shortage' = not enough staff to operate the shop. 'Staff shortage' = fewer workers than required. 'Because of' introduces the cause. This is different from a planned closure (holiday) or structural closure (renovation).",
+            "textToSpeak": "The shop was closed because of a staff shortage.",
+            "question": "Why was the shop closed?",
             "options": [
-                "scout",
-                "pilot",
-                "droid",
-                "hero"
+                "It was a bank holiday",
+                "The manager was ill",
+                "The shop was being renovated",
+                "There weren't enough staff to open"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -246,47 +261,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L36_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid secures the circuit properly.",
-            "question": "Who is securing the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the reason after the dash.",
+            "explanation": "'Too much going on' = too busy, too much activity. This is the speaker's stated reason. They like London as a city to visit ('great city') but find permanent residence overwhelming. 'Too much going on' is an informal expression for excessive activity or stimulation.",
+            "textToSpeak": "London is a great city but I couldn't live there - too much going on.",
+            "question": "Why doesn't the speaker want to live in London?",
             "options": [
-                "robot",
-                "explorer",
-                "mentor",
-                "droid"
+                "It's too quiet for them",
+                "It's too expensive",
+                "It's too busy and overwhelming",
+                "It's too far from their family"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L36_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout locates the archive silently.",
-            "question": "Who is locating the archive?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for 'used to' (past) and 'now' (present) to understand the change.",
+            "explanation": "'Used to eat out' = past habit. 'Now prefers cooking at home' = present habit. The change is from eating out (frequent restaurants) to cooking at home (fewer restaurants). 'Used to' + infinitive describes a past habit that has changed.",
+            "textToSpeak": "She used to eat out most nights but now she prefers cooking at home.",
+            "question": "How has her behaviour changed?",
             "options": [
-                "scout",
-                "student",
-                "technician",
-                "teacher"
+                "She eats out more than before",
+                "She used to cook and now she eats out",
+                "She now cooks more than she used to",
+                "She has stopped eating altogether"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L36_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor launches the protocol reliably.",
-            "question": "Who is launching the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "If today's was 'much more productive', what does that tell you about last week's?",
+            "explanation": "If today's meeting was 'much more productive THAN last week's', last week's meeting was less productive by comparison. 'Much more... than' is a comparative structure - it directly implies the compared item was inferior. Inference from comparatives is an important listening skill.",
+            "textToSpeak": "The meeting today was much more productive than last week's.",
+            "question": "What is implied about last week's meeting?",
             "options": [
-                "mentor",
-                "robot",
-                "scout",
-                "analyst"
+                "It was not as productive as today's",
+                "It was also very productive",
+                "It was cancelled",
+                "It was better than this week's"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -294,79 +312,84 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L37_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid repairs the sensor consistently.",
-            "question": "Who is repairing the sensor?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for both the challenge and the final outcome.",
+            "explanation": "'A bit of a struggle' = it was difficult. 'Finally got there' = eventually succeeded. 'But' signals the contrast: struggle → success. 'Finally' suggests it took time and effort. This is a positive outcome despite difficulty - a common narrative structure.",
+            "textToSpeak": "It was a bit of a struggle, but we finally got there.",
+            "question": "What does this suggest?",
             "options": [
-                "scout",
-                "commander",
-                "droid",
-                "student"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L37_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist analyzes the archive securely.",
-            "question": "Who is analyzing the archive?",
-            "options": [
-                "scientist",
-                "technician",
-                "hacker",
-                "explorer"
+                "It was challenging but they succeeded",
+                "It was very easy but took time",
+                "It was easy and straightforward",
+                "They failed in the end"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L37_Q3",
+            "id": "LIS_LISTENINGINFERENCE_L37_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist updates the network securely.",
-            "question": "Who is updating the network?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what 'went on and on' and 'nearly an hour' suggest about the listener's experience.",
+            "explanation": "'Went on and on' = spoke repetitively and at excessive length. This phrase expresses frustration with someone who talks too much or repeats themselves. 'Nearly an hour' emphasises the length. Together, the speaker is signalling boredom or irritation.",
+            "textToSpeak": "He went on and on about the same thing for nearly an hour.",
+            "question": "What is the speaker's attitude?",
             "options": [
-                "pilot",
-                "droid",
-                "scientist",
-                "student"
+                "They found it very interesting",
+                "They wanted to hear more",
+                "They were bored or frustrated",
+                "They were impressed by his knowledge"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L37_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Analyse the two halves of this sentence for meaning.",
+            "explanation": "'Not exactly what I had in mind' = not what I wanted (partial dissatisfaction). 'It'll do' = it's acceptable/good enough (resigned acceptance). Together: they accept it despite it not being ideal. This is qualified acceptance - common in everyday English understatement.",
+            "textToSpeak": "It's not exactly what I had in mind, but it'll do.",
+            "question": "How does the speaker feel?",
+            "options": [
+                "Completely satisfied with the result",
+                "Somewhat satisfied but not fully",
+                "Very unhappy and disappointed",
+                "Very enthusiastic"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L38_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert builds the drone swiftly.",
-            "question": "Who is building the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Focus on the strong prohibition and its condition.",
+            "explanation": "'Don't press... until I get back' = strong instruction to wait. 'Whatever you do' is an emphatic phrase that reinforces the importance of the prohibition. The condition is the person's return. This is a clear prioritisation of waiting over acting.",
+            "textToSpeak": "Whatever you do, don't press that button until I get back.",
+            "question": "What is most important?",
             "options": [
-                "hero",
-                "scout",
-                "commander",
-                "expert"
+                "Wait until the person returns before pressing",
+                "Press the button immediately",
+                "Find a different button",
+                "Do it before they return"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L38_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist updates the network carefully.",
-            "question": "Who is updating the network?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the deadline and the urgency marker.",
+            "explanation": "'Really urgent' = very high priority. 'By noon today' = the deadline (not tomorrow, not this week - today by 12:00). 'By' + time = deadline. 'Really urgent' + specific tight deadline = high-pressure, time-sensitive situation.",
+            "textToSpeak": "This is really urgent - we need the documents by noon today.",
+            "question": "What does the speaker emphasise?",
             "options": [
-                "traveler",
-                "scientist",
-                "robot",
-                "engineer"
+                "The documents are not very important",
+                "The deadline is noon today",
+                "They need the documents tomorrow morning",
+                "They have plenty of time"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -374,63 +397,67 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L38_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot scans the signal securely.",
-            "question": "Who is scanning the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the action advised and the reason given.",
+            "explanation": "'Save your work regularly' = the advice. 'You don't want to lose it all' = the reason (negative consequence of not saving). 'Make sure' adds emphasis. This is practical computer/work advice about data safety - very common in professional and student contexts.",
+            "textToSpeak": "Make sure you save your work regularly - you don't want to lose it all.",
+            "question": "What is the advice?",
             "options": [
-                "robot",
-                "student",
-                "hero",
-                "analyst"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L39_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker validates the archive rapidly.",
-            "question": "Who is validating the archive?",
-            "options": [
-                "hacker",
-                "analyst",
-                "teacher",
-                "expert"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L39_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective monitors the chip directly.",
-            "question": "Who is monitoring the chip?",
-            "options": [
-                "explorer",
-                "researcher",
-                "scientist",
-                "detective"
+                "Delete your work often to keep files tidy",
+                "Share your work with others for safety",
+                "Use a different programme",
+                "Save your work frequently to prevent losing it"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L39_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what 'most people had already left' implies about her timing.",
+            "explanation": "'Had already left' (past perfect) = people left BEFORE she arrived. 'Most people' = the majority were gone. She arrived after the party was largely over. 'By the time' + past perfect is a common structure for showing a sequence: one thing happened, then another.",
+            "textToSpeak": "By the time she got to the party, most people had already left.",
+            "question": "What does this tell us?",
+            "options": [
+                "She arrived before most people",
+                "She arrived after most people had gone",
+                "She arrived at exactly the right time",
+                "She didn't go to the party"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L39_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for 'had just' and 'when' to understand the timing.",
+            "explanation": "'Had just sat down' = sat down very recently (moments before). 'When the phone rang' = simultaneous event. Together: he barely sat down and immediately the phone rang. 'Had just' + 'when' describes near-simultaneous events with the first barely completed.",
+            "textToSpeak": "He had just sat down when the phone rang.",
+            "question": "When did the phone ring?",
+            "options": [
+                "Immediately after he sat down",
+                "While he was about to sit down",
+                "Long before he sat down",
+                "Long after he sat down"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L39_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer launches the software swiftly.",
-            "question": "Who is launching the software?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the sequence of events.",
+            "explanation": "Three events mentioned: homework, dinner, TV. 'Before dinner' tells us homework came first. 'Then watched TV' comes after dinner. Sequence: homework → dinner → TV. 'Before' and 'then' are sequencing words that organise the order of events.",
+            "textToSpeak": "She finished her homework before dinner, then watched TV.",
+            "question": "What did she do first?",
             "options": [
-                "explorer",
-                "researcher",
-                "traveler",
-                "scientist"
+                "She finished her homework",
+                "She had dinner",
+                "She watched TV",
+                "She called a friend"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -438,15 +465,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L40_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer restores the portal properly.",
-            "question": "Who is restoring the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Identify the register by the vocabulary and sentence structure.",
+            "explanation": "'Your presence is requested' = very formal passive construction. 'Annual awards ceremony' = formal event. 'The fourteenth' = formal date reference. This is official/ceremonial language. Informal equivalents: 'We'd love you to come to our awards dinner.'",
+            "textToSpeak": "Your presence is requested at the annual awards ceremony on the fourteenth.",
+            "question": "What kind of language is being used?",
             "options": [
-                "engineer",
-                "analyst",
-                "hero",
-                "artist"
+                "Formal and official",
+                "Casual and informal",
+                "Friendly and personal",
+                "Urgent and direct"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -454,33 +482,35 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L40_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective transfers the system automatically.",
-            "question": "Who is transferring the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Notice the vocabulary and contractions used.",
+            "explanation": "'Come on then' = informal encouragement. 'Let's get a move on' = informal idiom meaning let's hurry. 'Before it gets dark' = casual time reference. Everything here is informal, encouraging language - the opposite of formal professional communication.",
+            "textToSpeak": "Come on then, let's get a move on before it gets dark.",
+            "question": "What tone does this have?",
             "options": [
-                "detective",
-                "scout",
-                "hero",
-                "researcher"
+                "Formal and professional",
+                "Apologetic and polite",
+                "Serious and academic",
+                "Encouraging and informal"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L40_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician validates the protocol reliably.",
-            "question": "Who is validating the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Identify the meaning of 'unsuccessful' and the formal delivery.",
+            "explanation": "'Regret to inform you' = I'm sorry to tell you (formal expression of regret). 'Unsuccessful' = it failed/was rejected. This is a standard rejection formula used in job, university, or grant applications. The formal phrasing softens the negative message.",
+            "textToSpeak": "I regret to inform you that your application was unsuccessful.",
+            "question": "What is being communicated?",
             "options": [
-                "technician",
-                "hero",
-                "researcher",
-                "analyst"
+                "Good news about an application",
+                "Bad news delivered politely",
+                "A request for more information",
+                "Angry feedback about the application"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         }
     ]

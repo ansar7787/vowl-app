@@ -6,47 +6,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L21_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician measures the system properly.",
-            "question": "Who is measuring the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what 'turn down' means and why they want it.",
+            "explanation": "'Turn that down' = reduce the volume. 'A bit' = slightly. The reason is 'trying to concentrate', which is difficult with loud noise. This is an indirect request: the speaker asks about the noise but wants quiet to focus.",
+            "textToSpeak": "Could you turn that down a bit? I'm trying to concentrate.",
+            "question": "What does the speaker really want?",
             "options": [
-                "student",
-                "commander",
-                "technician",
-                "hacker"
+                "The volume reduced",
+                "The TV turned up louder",
+                "The lights turned off",
+                "The window opened"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L21_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot updates the module successfully.",
-            "question": "Who is updating the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for what has been used up.",
+            "explanation": "'Used the last of it' = finished the supply. 'It' refers to coffee, which was mentioned in the question 'Have we got any more coffee?' The speaker is checking if more coffee is available because the current supply is gone.",
+            "textToSpeak": "Have we got any more coffee? I've just used the last of it.",
+            "question": "What is the speaker looking for?",
             "options": [
-                "artist",
-                "hero",
-                "robot",
-                "pilot"
+                "Tea",
+                "Coffee",
+                "Milk",
+                "Sugar"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L21_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert scans the drone directly.",
-            "question": "Who is scanning the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the specific time phrase used.",
+            "explanation": "'First thing Monday morning' is an idiom meaning the very beginning of Monday (early morning, before other tasks). 'On my desk' specifies where it should be. This is a deadline instruction combining day and time-of-day.",
+            "textToSpeak": "I'm going to need that report on my desk first thing Monday morning.",
+            "question": "When does the person need the report?",
             "options": [
-                "student",
-                "droid",
-                "mentor",
-                "expert"
+                "Friday afternoon",
+                "Monday lunchtime",
+                "End of Monday",
+                "First thing Monday morning"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -54,31 +57,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L22_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician validates the chip properly.",
-            "question": "Who is validating the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about where you ask 'Is this seat taken?'",
+            "explanation": "'Is this seat taken?' = is someone sitting here? This question is typically asked on public transport, in cinemas, or other places where seats are limited. You wouldn't typically ask this in a library (silence) or hotel lobby (seats aren't assigned).",
+            "textToSpeak": "Excuse me, is this seat taken?",
+            "question": "Where is this conversation most likely happening?",
             "options": [
-                "technician",
-                "pilot",
-                "student",
-                "analyst"
+                "In a library",
+                "On a bus or in a cinema",
+                "In a restaurant",
+                "In a hotel lobby"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L22_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher sends the satellite steadily.",
-            "question": "Who is sending the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about where someone asks about a table and reservations.",
+            "explanation": "'Table for two' = a table for two people to eat at. 'Do you have a reservation?' = have you booked in advance? Both questions together strongly suggest a restaurant. Hotels ask about bookings, not tables for dining parties.",
+            "textToSpeak": "Table for two? Do you have a reservation?",
+            "question": "Where is this conversation happening?",
             "options": [
-                "droid",
-                "researcher",
-                "hero",
-                "student"
+                "A hotel reception",
+                "A restaurant",
+                "A cinema",
+                "An airport lounge"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -86,63 +91,67 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L22_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher sends the data steadily.",
-            "question": "Who is sending the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about where you 'try on' clothes and there are changing rooms.",
+            "explanation": "'Try it on' = put on a piece of clothing to see if it fits. 'Changing rooms' are cubicles in clothing shops for trying on clothes. This combination of vocabulary - trying on, changing rooms - clearly indicates a clothing shop/boutique.",
+            "textToSpeak": "Would you like to try it on? The changing rooms are on your left.",
+            "question": "Where is this conversation happening?",
             "options": [
-                "commander",
-                "teacher",
-                "hero",
-                "mentor"
+                "A clothing shop",
+                "A gym",
+                "A hotel",
+                "A pharmacy"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L23_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist measures the protocol effectively.",
-            "question": "Who is measuring the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about why someone takes aspirin and lies down.",
+            "explanation": "Taking aspirin suggests pain (headache, fever). Lying down after taking medicine suggests he wasn't feeling well. This is inference: two actions together (medicine + lying down) suggest illness. A healthy person wouldn't typically take aspirin and rest.",
+            "textToSpeak": "He took an aspirin and went to lie down.",
+            "question": "Why did he probably lie down?",
             "options": [
-                "student",
-                "hero",
-                "hacker",
-                "scientist"
+                "He was tired from travelling",
+                "He just wanted to sleep",
+                "He was probably feeling unwell",
+                "He was bored"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L23_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor measures the software consistently.",
-            "question": "Who is measuring the software?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about why you look in the fridge before shopping.",
+            "explanation": "The sequence is: check fridge → write shopping list. The logical reason is to see what food is already there and what is needed. If you know what's in the fridge, you can write an accurate shopping list. This is logical cause-and-effect inference.",
+            "textToSpeak": "She checked the fridge before writing the shopping list.",
+            "question": "Why did she check the fridge?",
             "options": [
-                "technician",
-                "droid",
-                "expert",
-                "mentor"
+                "To see what they needed to buy",
+                "To find something to eat quickly",
+                "To make sure the fridge was working",
+                "To put food away"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L23_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler builds the chip swiftly.",
-            "question": "Who is building the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about why someone carries an umbrella when it's not raining.",
+            "explanation": "Taking an umbrella when it's not raining suggests anticipation of future rain. 'Even though it wasn't raining' sets up the contrast that requires inference - he was prepared for rain despite clear skies. This is forward-planning behaviour.",
+            "textToSpeak": "He took his umbrella even though it wasn't raining.",
+            "question": "Why did he take his umbrella?",
             "options": [
-                "scientist",
-                "explorer",
-                "traveler",
-                "mentor"
+                "He always carries one for style",
+                "He left it there by mistake",
+                "He expected it might rain",
+                "He borrowed it from someone"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -150,191 +159,203 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L24_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker updates the terminal automatically.",
-            "question": "Who is updating the terminal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what happens after you pack a suitcase.",
+            "explanation": "Packing a suitcase is a preparation for travel. The next logical step is to travel - go somewhere. 'Just finished packing' uses the present perfect to show a very recently completed action. The suitcase suggests a departure is imminent.",
+            "textToSpeak": "She's just finished packing her suitcase.",
+            "question": "What will she probably do next?",
             "options": [
-                "hacker",
-                "engineer",
-                "student",
-                "scout"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L24_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist restores the sensor steadily.",
-            "question": "Who is restoring the sensor?",
-            "options": [
-                "detective",
-                "scientist",
-                "explorer",
-                "artist"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L24_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer monitors the circuit efficiently.",
-            "question": "Who is monitoring the circuit?",
-            "options": [
-                "robot",
-                "student",
-                "commander",
-                "engineer"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L25_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst secures the satellite immediately.",
-            "question": "Who is securing the satellite?",
-            "options": [
-                "commander",
-                "scout",
-                "engineer",
-                "analyst"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L25_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst transfers the software rapidly.",
-            "question": "Who is transferring the software?",
-            "options": [
-                "analyst",
-                "artist",
-                "researcher",
-                "robot"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L25_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician restores the engine expertly.",
-            "question": "Who is restoring the engine?",
-            "options": [
-                "hacker",
-                "scout",
-                "technician",
-                "scientist"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L26_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective sends the drone automatically.",
-            "question": "Who is sending the drone?",
-            "options": [
-                "scout",
-                "pilot",
-                "detective",
-                "robot"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L26_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert measures the archive securely.",
-            "question": "Who is measuring the archive?",
-            "options": [
-                "expert",
-                "scientist",
-                "robot",
-                "hacker"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L26_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician encrypts the signal rapidly.",
-            "question": "Who is encrypting the signal?",
-            "options": [
-                "pilot",
-                "technician",
-                "explorer",
-                "engineer"
+                "Unpack her clothes",
+                "Go on a trip",
+                "Go to sleep",
+                "Go grocery shopping"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L27_Q1",
+            "id": "LIS_LISTENINGINFERENCE_L24_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot sends the sensor smoothly.",
-            "question": "Who is sending the sensor?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what you do when you can't decide from a menu.",
+            "explanation": "Reading the menu three times without deciding suggests he's overwhelmed. Asking the waiter is the most natural next step - waiters know the menu well and can recommend dishes. This is an inference about social behaviour in a restaurant.",
+            "textToSpeak": "He's read the menu three times and still can't decide.",
+            "question": "What will he probably do next?",
             "options": [
-                "pilot",
-                "teacher",
-                "student",
-                "droid"
+                "Leave the restaurant",
+                "Order quickly",
+                "Ask the waiter for a recommendation",
+                "Call a friend for advice"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L24_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what running shoes and leg stretches prepare you for.",
+            "explanation": "Running shoes + leg stretching = preparation for running. These are actions that directly precede a run. 'About to' = on the verge of starting. The combination of equipment (shoes) and preparation (stretching) makes the inference very clear.",
+            "textToSpeak": "She put on her running shoes and stretched her legs.",
+            "question": "What is she about to do?",
+            "options": [
+                "Go to work",
+                "Watch TV",
+                "Go for a run",
+                "Cook dinner"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L25_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the type of seat the speaker always chooses.",
+            "explanation": "'Always choose the aisle seat' - stated explicitly. 'Hate feeling trapped' is the reason - a window or middle seat feels enclosed. The aisle seat allows easy access to the corridor. The speaker's preference and reason are both given.",
+            "textToSpeak": "I always choose the aisle seat on flights - I hate feeling trapped.",
+            "question": "What kind of seat does the speaker prefer?",
+            "options": [
+                "The window seat",
+                "An aisle seat",
+                "A seat at the back",
+                "A seat near the exit"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L25_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what skipping dessert and having herbal tea suggests.",
+            "explanation": "Skipping dessert = choosing not to eat more. Herbal tea = a light, often low-calorie drink. Together, these suggest she's either full or watching what she eats, and doesn't want anything more. Inference from what she didn't choose is as important as what she did.",
+            "textToSpeak": "She skipped dessert and just had a herbal tea.",
+            "question": "What does this suggest about her?",
+            "options": [
+                "She loves sweet things",
+                "She prefers coffee to tea",
+                "She doesn't want anything more to eat",
+                "She was still very hungry"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L25_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the positive preference ('books a villa') and the contrast ('never a hotel').",
+            "explanation": "'Books a villa with a pool' = his preference. 'Never a hotel' = explicitly rejected alternative. 'Always/never' are strong frequency words that make preferences clear. A villa with a pool suggests he values space, privacy, and amenities.",
+            "textToSpeak": "He books a villa with a pool when they go on holiday - never a hotel.",
+            "question": "What does he prefer for holidays?",
+            "options": [
+                "Renting a villa with a pool",
+                "Camping in nature",
+                "Staying in hotels",
+                "Going on cruises"
             ],
             "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L26_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what shaking hands typically indicate.",
+            "explanation": "Shaking hands is a physical symptom of nervousness or anxiety. Opening exam results is a high-stakes moment. The combination strongly suggests anxiety. Physical symptoms of emotion are valuable clues: shaking = nervous, smiling = happy, frowning = unhappy.",
+            "textToSpeak": "Her hands were shaking as she opened the exam results.",
+            "question": "How was she probably feeling?",
+            "options": [
+                "Excited and completely calm",
+                "Angry",
+                "Bored and uninterested",
+                "Nervous and anxious"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L26_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what slamming a door typically communicates.",
+            "explanation": "Slamming a door = a forceful, aggressive action typically caused by anger or frustration. In social contexts, door-slamming is culturally understood as a sign of anger. 'On his way out' suggests he was leaving after an argument or upsetting event.",
+            "textToSpeak": "He slammed the door on his way out.",
+            "question": "What does this suggest about his mood?",
+            "options": [
+                "He was in a great hurry",
+                "He was angry",
+                "He was very happy",
+                "He forgot something"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L26_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what these behaviours together suggest.",
+            "explanation": "Silence + pushing food around = lack of appetite and emotional distance. These two behaviours together suggest she's preoccupied or unwell, not simply disliking the food (which might cause her to say something) or being excited (which would show energy).",
+            "textToSpeak": "She didn't say much at dinner and just pushed her food around her plate.",
+            "question": "What can you infer about her?",
+            "options": [
+                "She didn't like the food",
+                "She was excited about something",
+                "She was very hungry",
+                "She wasn't feeling her best"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L27_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about why someone comments on tiredness and asks about sleep.",
+            "explanation": "Saying 'you look tired' + asking about sleep directly implies the person needs more sleep. The speaker is making an observation (tired appearance) and an implicit suggestion (sleep more). This is indirect advice through observation.",
+            "textToSpeak": "You look tired - when did you last get a proper night's sleep?",
+            "question": "What is the speaker suggesting?",
+            "options": [
+                "That the person should see a doctor",
+                "That the person should work fewer hours",
+                "That the person looks ill",
+                "That the person needs more sleep"
+            ],
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L27_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander sends the database precisely.",
-            "question": "Who is sending the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "'It wouldn't hurt to call first' - what action is being suggested?",
+            "explanation": "'It wouldn't hurt to' = a gentle, indirect recommendation. 'Call her first' = phone before going. 'Make sure she's in' = verify she's at home. This is advice to check before going - to avoid wasted journeys. The phrasing is polite and non-directive.",
+            "textToSpeak": "It wouldn't hurt to call her first and make sure she's in.",
+            "question": "What is the speaker advising?",
             "options": [
-                "commander",
-                "hero",
-                "scientist",
-                "pilot"
+                "Go and visit without calling ahead",
+                "Phone before going to visit",
+                "Send a message instead of calling",
+                "Wait until the evening"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L27_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist measures the drone swiftly.",
-            "question": "Who is measuring the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for what action is advised in the conditional.",
+            "explanation": "'If I were you, I'd...' is a classic advice structure (second conditional for advice). 'Get it fixed' = arrange a repair. 'Before it gets worse' = urgency - act now, not later. The speaker implies the problem will worsen without action.",
+            "textToSpeak": "If I were you, I'd get it fixed before it gets any worse.",
+            "question": "What is the speaker recommending?",
             "options": [
-                "scientist",
-                "technician",
-                "traveler",
-                "student"
+                "Getting it repaired soon",
+                "Waiting to see what happens",
+                "Buying a replacement",
+                "Ignoring the problem for now"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -342,31 +363,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L28_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher repairs the terminal securely.",
-            "question": "Who is repairing the terminal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Notice the sarcastic tone - does 'fantastic' match the situation?",
+            "explanation": "This is sarcasm - 'fantastic' in a complaining tone about something unwanted. 'Another Monday morning meeting' implies there have been many already (repetition = annoyance). When spoken with a sigh or flat tone, 'fantastic' means the opposite of its literal meaning.",
+            "textToSpeak": "Oh, fantastic - another Monday morning meeting.",
+            "question": "What is the speaker's actual feeling about the meeting?",
             "options": [
-                "technician",
-                "robot",
-                "pilot",
-                "researcher"
+                "They are genuinely excited",
+                "They always enjoy meetings",
+                "They dislike Monday morning meetings",
+                "They are looking forward to it"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L28_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician monitors the node immediately.",
-            "question": "Who is monitoring the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen to what 'only' ironically suggests about frequency.",
+            "explanation": "'Only the third time this week' - used ironically. 'Only' normally minimises, but here it's sarcastic: being late three times in one week is clearly excessive. The emphasis is on the repetition of lateness, not on it being a small number.",
+            "textToSpeak": "That's only the third time this week he's been late.",
+            "question": "What does the speaker imply?",
             "options": [
-                "pilot",
-                "scientist",
-                "technician",
-                "mentor"
+                "He is rarely late",
+                "Three times is acceptable",
+                "He has been late several times this week",
+                "He was only late once"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -374,113 +397,120 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L28_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero updates the database automatically.",
-            "question": "Who is updating the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the hesitation and understated evaluation.",
+            "explanation": "'I suppose', 'all right', and 'nothing special' together signal mediocrity. 'All right' = passable but not good. 'Nothing special' = not impressive. 'I suppose' adds hesitation. The speaker is damning with faint praise - technically positive but actually lukewarm.",
+            "textToSpeak": "Well, I suppose the food was all right - nothing special.",
+            "question": "How did the speaker feel about the food?",
             "options": [
-                "traveler",
-                "hero",
-                "commander",
-                "scientist"
+                "It was average - neither bad nor good",
+                "They hated it",
+                "They loved it",
+                "It was excellent"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L29_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist builds the software properly.",
-            "question": "Who is building the software?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what 'I'll think about it' typically signals in English.",
+            "explanation": "'I'll think about it' is often a polite way of declining without saying 'no' directly. It avoids confrontation while signalling reluctance. In English social norms, a definite 'yes' is stated directly; 'I'll think about it' usually means the answer is leaning towards no.",
+            "textToSpeak": "She said she'd think about it.",
+            "question": "What does this probably mean?",
             "options": [
-                "explorer",
-                "artist",
-                "detective",
-                "technician"
+                "She will definitely do it",
+                "She has already decided positively",
+                "She is probably going to say no",
+                "She is very enthusiastic"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L29_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist deploys the database automatically.",
-            "question": "Who is deploying the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Notice the pause before 'interesting' - what does that signal?",
+            "explanation": "The hesitation (signalled by '...') before 'interesting' indicates the speaker is choosing the word carefully. 'Interesting' used with hesitation is often a polite understatement for something unusual, confusing, or disappointing. A genuinely positive reaction would use 'excellent', 'brilliant', or 'impressive'.",
+            "textToSpeak": "The presentation was... interesting.",
+            "question": "What does the speaker really mean?",
             "options": [
-                "scientist",
-                "technician",
-                "hero",
-                "artist"
+                "The presentation was excellent",
+                "The speaker found it strange or disappointing",
+                "The speaker was highly impressed",
+                "The speaker is uncertain"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L29_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot observes the network securely.",
-            "question": "Who is observing the network?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Analyse the qualified praise in this statement.",
+            "explanation": "'Not bad' = acceptable, not great. 'For a first attempt' acknowledges the newness and sets lower expectations. Together: it's a positive-ish assessment given the circumstances, but implicitly suggests improvement is expected. This is a classic backhanded or qualified compliment.",
+            "textToSpeak": "Not bad for a first attempt.",
+            "question": "What is the speaker implying?",
             "options": [
-                "robot",
-                "explorer",
-                "researcher",
-                "mentor"
+                "The work was perfect",
+                "The work was very poor",
+                "It's a reasonable start but there's room for improvement",
+                "The work was worse than expected"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L30_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student restores the database quietly.",
-            "question": "Who is restoring the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about who gives this type of instruction in real life.",
+            "explanation": "Telling someone to tidy their room and setting a curfew (be back by nine) are typical parental instructions to a child. A boss wouldn't tell an employee to tidy their room. A teacher wouldn't set a curfew. This is classic domestic, authoritative parenting language.",
+            "textToSpeak": "Don't forget to tidy your room before you go out, and be back by nine.",
+            "question": "What is the likely relationship between the speakers?",
             "options": [
-                "student",
-                "explorer",
-                "droid",
-                "scientist"
+                "Teacher and student",
+                "Boss and employee",
+                "Parent and child",
+                "Two friends"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L30_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid observes the satellite directly.",
-            "question": "Who is observing the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Who has the power to give someone a pay rise?",
+            "explanation": "Only someone in authority (a manager, employer) can give someone a pay rise. 'We've decided' = a management decision. 'Starting next month' = it will take effect. This is workplace communication from an employer to an employee.",
+            "textToSpeak": "We've decided to give you a pay rise starting next month.",
+            "question": "What is the likely relationship?",
             "options": [
-                "pilot",
-                "student",
-                "robot",
-                "droid"
+                "Manager and employee",
+                "Customer and shop assistant",
+                "Two colleagues",
+                "Landlord and tenant"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L30_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer locates the code precisely.",
-            "question": "Who is locating the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about when you ask for 'the bill' and from whom.",
+            "explanation": "'The bill' = the payment receipt for food and drinks at a restaurant. You ask for the bill from a waiter or waitress at the end of a meal. 'When you have a moment' is polite phrasing showing the speaker doesn't want to interrupt. This is classic restaurant end-of-meal language.",
+            "textToSpeak": "Could I get the bill when you have a moment?",
+            "question": "Who is the speaker talking to?",
             "options": [
-                "scientist",
-                "artist",
-                "student",
-                "engineer"
+                "A waiter",
+                "A librarian",
+                "A doctor",
+                "A bank teller"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         }
     ]

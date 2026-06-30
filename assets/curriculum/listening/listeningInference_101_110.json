@@ -6,31 +6,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L101_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician restores the satellite reliably.",
-            "question": "Who is restoring the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "This is an idiom. What does 'a lot on your plate' mean?",
+            "explanation": "'A lot on your plate' = a lot to deal with, many demands on your time and energy. It's a metaphor: your 'plate' is your capacity; a full plate = being very busy. 'Right now' suggests this is a current, temporary state. Idiom comprehension is essential for understanding natural spoken English.",
+            "textToSpeak": "She's got a lot on her plate right now.",
+            "question": "What does this mean?",
             "options": [
-                "artist",
-                "scout",
-                "technician",
-                "expert"
+                "She is eating a large meal",
+                "She is overwhelmed by a difficult meal",
+                "She enjoys cooking",
+                "She has many commitments and responsibilities at the moment"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L101_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher secures the code directly.",
-            "question": "Who is securing the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'beat around the bush' mean, and why is it used here?",
+            "explanation": "'Beat around the bush' = avoid the main point by talking around it. 'Let's not beat around the bush' = let's be direct. The directness applies to: 'the numbers don't add up' = there's a financial discrepancy or problem. The idiom announces their intention to be blunt.",
+            "textToSpeak": "Let's not beat around the bush - the numbers simply don't add up.",
+            "question": "What is the speaker saying?",
             "options": [
-                "researcher",
-                "robot",
-                "commander",
-                "mentor"
+                "They want to be direct about a financial problem",
+                "There is an arithmetic error in the numbers",
+                "They want to stop the meeting",
+                "They love working with data"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -38,255 +40,271 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L101_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler secures the archive silently.",
-            "question": "Who is securing the archive?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the idiom 'drop the ball' mean?",
+            "explanation": "'Drop the ball' = fail to do something properly, make an error in something you were responsible for. It's a sports metaphor (dropping a ball = a mistake in a game). 'On that one' = in that specific situation or task. He failed at something that was his responsibility.",
+            "textToSpeak": "He dropped the ball on that one.",
+            "question": "What happened?",
             "options": [
-                "analyst",
-                "researcher",
-                "traveler",
-                "commander"
+                "He failed to deliver or made a significant mistake",
+                "He made a literal error in a sport",
+                "He solved a problem badly",
+                "He dropped something he was carrying"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L102_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist monitors the terminal efficiently.",
-            "question": "Who is monitoring the terminal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'off the grid' mean in modern usage?",
+            "explanation": "'Off the grid' = disconnected from mainstream infrastructure, especially technology and communication networks. 'Completely off the grid' = no social media, no email, no phone. It suggests a deliberate withdrawal from digital life. Different from just losing a phone - it's intentional disconnection.",
+            "textToSpeak": "She's gone completely off the grid.",
+            "question": "What has she done?",
             "options": [
-                "scientist",
-                "commander",
-                "mentor",
-                "researcher"
+                "She moved to another country",
+                "She has disconnected from digital communication and technology",
+                "She lost her phone",
+                "She is on a weekend hiking trip"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L102_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist launches the chip smoothly.",
-            "question": "Who is launching the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'ghosted' mean in modern dating language?",
+            "explanation": "'Ghosted' = when someone you've been dating or communicating with suddenly stops responding to all messages without explanation - they 'disappear like a ghost'. It happened after three dates (so there was an established contact), making it more hurtful than being ignored initially.",
+            "textToSpeak": "He was ghosted after three dates.",
+            "question": "What happened?",
             "options": [
-                "artist",
-                "robot",
-                "student",
-                "hacker"
+                "He disappeared from three dates",
+                "The other person stopped responding with no explanation",
+                "He ended the relationship himself",
+                "They argued on their third date"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L102_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker restores the network carefully.",
-            "question": "Who is restoring the network?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'go viral' mean in digital media language?",
+            "explanation": "'Viral' = spreading rapidly like a virus, reaching a massive audience in a short time. 'Went viral overnight' = became massively popular and widely shared in one night. This is modern digital media vocabulary for rapid, organic spreading of content across platforms.",
+            "textToSpeak": "The video went viral overnight.",
+            "question": "What happened to the video?",
             "options": [
-                "scientist",
-                "artist",
-                "robot",
-                "hacker"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L103_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher secures the engine efficiently.",
-            "question": "Who is securing the engine?",
-            "options": [
-                "droid",
-                "traveler",
-                "technician",
-                "teacher"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L103_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer validates the network immediately.",
-            "question": "Who is validating the network?",
-            "options": [
-                "researcher",
-                "expert",
-                "scout",
-                "explorer"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L103_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker updates the software swiftly.",
-            "question": "Who is updating the software?",
-            "options": [
-                "technician",
-                "mentor",
-                "traveler",
-                "hacker"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L104_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician creates the circuit expertly.",
-            "question": "Who is creating the circuit?",
-            "options": [
-                "expert",
-                "technician",
-                "droid",
-                "mentor"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L104_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert updates the circuit automatically.",
-            "question": "Who is updating the circuit?",
-            "options": [
-                "student",
-                "robot",
-                "hero",
-                "expert"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L104_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student transfers the device instantly.",
-            "question": "Who is transferring the device?",
-            "options": [
-                "analyst",
-                "student",
-                "scout",
-                "researcher"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L105_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher analyzes the archive swiftly.",
-            "question": "Who is analyzing the archive?",
-            "options": [
-                "student",
-                "teacher",
-                "analyst",
-                "researcher"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L105_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer analyzes the module properly.",
-            "question": "Who is analyzing the module?",
-            "options": [
-                "commander",
-                "analyst",
-                "student",
-                "explorer"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L105_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander creates the signal automatically.",
-            "question": "Who is creating the signal?",
-            "options": [
-                "hero",
-                "commander",
-                "robot",
-                "scientist"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L106_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler encrypts the software automatically.",
-            "question": "Who is encrypting the software?",
-            "options": [
-                "scientist",
-                "robot",
-                "traveler",
-                "student"
+                "It was removed from the internet",
+                "It received very negative feedback",
+                "It spread rapidly and was viewed by very many people",
+                "It was seen by very few people"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L106_Q2",
+            "id": "LIS_LISTENINGINFERENCE_L103_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst evaluates the protocol carefully.",
-            "question": "Who is evaluatesing the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'just a job' with 'at the end of the day' suggest?",
+            "explanation": "'At the end of the day' = ultimately, when everything is considered. 'Just a job' = it's only employment - not everything in life. Together: a reminder that work has its place but shouldn't overshadow everything else (health, family, happiness). This is a perspective-keeping statement.",
+            "textToSpeak": "At the end of the day, it's just a job.",
+            "question": "What is the speaker's attitude?",
             "options": [
-                "analyst",
-                "engineer",
-                "droid",
-                "student"
+                "Work should be kept in perspective relative to other things",
+                "Work is the most important thing in life",
+                "The job is a great opportunity",
+                "The speaker is about to resign"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L103_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'ticks all the boxes' plus 'something feels off' create?",
+            "explanation": "'Ticks all the boxes' = meets all the listed requirements objectively. 'Something feels off' = an intuitive, unexplained unease despite objective suitability. The tension: logical criteria met vs. gut feeling of wrongness. This is a nuanced human evaluation - data says yes; instinct says wait.",
+            "textToSpeak": "She ticks all the boxes, but something feels off.",
+            "question": "What is the speaker saying?",
+            "options": [
+                "She is perfect in every respect",
+                "She meets all the criteria but something seems wrong",
+                "She doesn't meet the required criteria",
+                "The speaker can't identify their concern"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L103_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'not rocket science' communicate about difficulty level?",
+            "explanation": "'Rocket science' = a proverbially difficult field. 'It's not rocket science' = it's not that difficult. 'Anyone can do it' reinforces the simplicity. This is a common English expression for dismissing the difficulty of a task. It's often used when others seem to be overcomplying something simple.",
+            "textToSpeak": "It's not rocket science - anyone can do it.",
+            "question": "What is the speaker implying?",
+            "options": [
+                "The task requires scientific expertise",
+                "The task is very complicated",
+                "The task is straightforward and not difficult",
+                "The task is actually impossible"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L104_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Trace the exchange: what happened to A's position after B's challenge?",
+            "explanation": "A suggested waiting. B used 'with respect' (polite disagreement) to challenge: waiting hasn't worked. A said 'That's fair' = conceded the point. The exchange shows productive disagreement: B challenged respectfully, A accepted gracefully. This is mature professional discourse.",
+            "textToSpeak": "A: I think we should wait. B: With respect, waiting has gotten us nowhere so far. A: That's fair.",
+            "question": "What can be inferred about this exchange?",
+            "options": [
+                "Both agreed from the start",
+                "B wants to wait even longer",
+                "A and B are having a serious argument",
+                "B politely challenged A's suggestion and A accepted the point"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L104_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'Give me ten minutes' communicate as a response to an urgent request?",
+            "explanation": "'Give me ten minutes' = I'll help, but after a brief delay. It's neither an outright refusal nor an immediate drop-everything response. B acknowledges the urgency (doesn't ask for hours) while managing their current workload. It's a practical, time-bounded commitment to help.",
+            "textToSpeak": "A: I know you're busy, but this really can't wait. B: Give me ten minutes.",
+            "question": "What does B's response mean?",
+            "options": [
+                "B will not help at all",
+                "B will help but needs a short time first",
+                "B is not available today",
+                "B agrees immediately and completely"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L104_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What do 'it's early days' and 'seems to' signal about B's confidence level?",
+            "explanation": "'It's early days' = too soon to fully judge (hedging). 'Seems to know' = appears competent (qualified positive). Together: B has a cautiously positive first impression but isn't ready to make a definitive judgment. This is careful, measured evaluation language.",
+            "textToSpeak": "A: What do you think of the new CEO? B: It's early days, but she seems to know what she's doing.",
+            "question": "What is B's assessment of the new CEO?",
+            "options": [
+                "Strongly and enthusiastically positive",
+                "Very uncertain without any view",
+                "Negative with reservations",
+                "Cautiously positive but not fully committed"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L105_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone specifically seek the most challenging project?",
+            "explanation": "Choosing the hardest option when easier ones exist is a motivated choice - seeking difficulty for its learning or career value. It signals ambition, confidence, and desire for growth or recognition. This is a positive inference about drive and self-belief.",
+            "textToSpeak": "She volunteered for the most challenging project on offer.",
+            "question": "What does this suggest?",
+            "options": [
+                "She had no other options available",
+                "She was assigned to it",
+                "She is seeking challenge, growth, or recognition",
+                "She wants to earn overtime"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L105_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone choose a longer route home deliberately?",
+            "explanation": "Taking a deliberately longer route home to 'avoid the argument' = procrastinating before a difficult confrontation. 'Waiting for him' = he knows it's coming. The route extension is a way of delaying, not avoiding permanently. He's buying time before an emotionally difficult encounter.",
+            "textToSpeak": "He took the longer route home to avoid the argument waiting for him.",
+            "question": "What was his primary reason?",
+            "options": [
+                "He enjoys the scenic route",
+                "His usual route was closed",
+                "He was avoiding a difficult conversation at home",
+                "He wanted to arrive later than agreed"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L105_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What advantage does public posting have over private communication for a complaint?",
+            "explanation": "Public complaints create reputational pressure - companies respond faster to avoid visible bad press. 'Rather than emailing' shows it was a deliberate choice. The goal: pressure through visibility. Social media complaints often get resolved faster than private complaints for this reason.",
+            "textToSpeak": "She posted the complaint publicly rather than emailing the company directly.",
+            "question": "What was she probably hoping to achieve?",
+            "options": [
+                "A private and quiet resolution",
+                "An apology in private",
+                "Maximum visibility and a faster response",
+                "To warn other customers and nothing more"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L106_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would nobody contradict someone who holds senior power?",
+            "explanation": "The absence of contradiction in the presence of a senior figure suggests power asymmetry silencing dissent. It doesn't necessarily mean everyone agreed - some may have disagreed but felt unsafe saying so. Hierarchical pressure can suppress honest feedback, creating an illusion of consensus.",
+            "textToSpeak": "Nobody contradicted the senior partner in the room.",
+            "question": "What does this imply?",
+            "options": [
+                "The idea was obviously excellent",
+                "The meeting was too short for debate",
+                "The team is extremely collaborative",
+                "There is a power dynamic that discourages dissent"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L106_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the usual expectation for a new team member's behaviour?",
+            "explanation": "In most team settings, new members are expected to listen and learn before contributing - it's a social norm. Speaking first, as the newest person, reverses this expectation. It could signal confidence, important information, or social unawareness. The surprise is in violating the expected hierarchy.",
+            "textToSpeak": "The newest team member was the first to speak.",
+            "question": "What might be surprising about this?",
+            "options": [
+                "New members are expected to lead discussions",
+                "This contradicts the typical social norm of new members listening first",
+                "The team didn't want to hear from them",
+                "They had the most important information"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L106_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout measures the chip effectively.",
-            "question": "Who is measuring the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does an immediate tone shift upon someone's departure tell us?",
+            "explanation": "An immediate change in tone when authority leaves = the manager's presence was affecting behaviour. People were behaving differently because the manager was watching. When supervision is removed, the authentic tone emerges - possibly more relaxed, frank, or critical. This is impression management in action.",
+            "textToSpeak": "When the manager left the room, the tone immediately shifted.",
+            "question": "What does this suggest?",
             "options": [
-                "scientist",
-                "scout",
-                "mentor",
-                "hero"
+                "The team hated the manager",
+                "The manager's presence was influencing the group's behaviour",
+                "The team continued working normally",
+                "The meeting ended when the manager left"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -294,79 +312,84 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L107_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot launches the node automatically.",
-            "question": "Who is launching the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'elected to pursue an alternative course of action' mean?",
+            "explanation": "'Elected' = decided (formal). 'Pursue' = follow or carry out (formal). 'Alternative course of action' = a different approach. Together in plain language: the board decided to do something different. This is formal institutional language - understanding it requires knowing that 'elected' here doesn't mean voted for a person.",
+            "textToSpeak": "The board has elected to pursue an alternative course of action.",
+            "question": "What does this mean in plain language?",
             "options": [
-                "student",
-                "droid",
-                "pilot",
-                "technician"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L107_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid scans the signal rapidly.",
-            "question": "Who is scanning the signal?",
-            "options": [
-                "analyst",
-                "technician",
-                "hacker",
-                "droid"
+                "The board has voted for a new board member",
+                "The board is waiting for more information",
+                "The board is going on a course",
+                "The board has decided to do something different"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L107_Q3",
+            "id": "LIS_LISTENINGINFERENCE_L107_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout builds the terminal automatically.",
-            "question": "Who is building the terminal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'in arrears' mean in financial correspondence?",
+            "explanation": "'In arrears' = money owed that is overdue and hasn't been paid on time. It's a formal financial and legal term. 'We write to inform you' = a formal letter. Together: the account holder owes money that should have been paid by now. This is debt notification language.",
+            "textToSpeak": "We write to inform you that your account is in arrears.",
+            "question": "What does arrears mean here?",
             "options": [
-                "detective",
-                "scout",
-                "student",
-                "hero"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L108_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist measures the circuit instantly.",
-            "question": "Who is measuring the circuit?",
-            "options": [
-                "scientist",
-                "mentor",
-                "pilot",
-                "explorer"
+                "Your account has an overdue unpaid balance",
+                "Your account has no recent activity",
+                "Your account is very profitable",
+                "Your account has been permanently closed"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L107_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'yet to reach a determination' communicate about the decision status?",
+            "explanation": "'Yet to reach' = hasn't happened yet. 'Determination' = formal decision or ruling. Together: no decision has been made yet. This is formal committee/institutional language. 'Determination' in this context doesn't mean personal resolve - it means an official ruling or conclusion.",
+            "textToSpeak": "The committee is yet to reach a determination on the matter.",
+            "question": "What does this mean?",
+            "options": [
+                "The committee has reached a decision",
+                "The committee will never decide",
+                "The committee has not yet decided",
+                "The committee is meeting about something else"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L108_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'to a fault' add to a positive quality?",
+            "explanation": "'To a fault' = excessively, beyond what is ideal. 'Very thorough' = positive. 'To a fault' = the thoroughness can be a weakness too - perhaps he's so detailed he's slow or gets lost in minutiae. This is a common English structure: [positive quality] + 'to a fault' = that quality taken too far.",
+            "textToSpeak": "He's very thorough - sometimes to a fault.",
+            "question": "What is the full picture of the person?",
+            "options": [
+                "He is perfectly thorough",
+                "His thoroughness is always an advantage",
+                "He is not thorough enough",
+                "He can be excessively thorough at times"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L108_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student transfers the module securely.",
-            "question": "Who is transferring the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the potential negative aspect of always defending your position?",
+            "explanation": "Being passionate + always defending your position = strong conviction but possible inflexibility. You 'can count on her' to defend - which is positive in some contexts but suggests she may dig in rather than compromise. The downside of passion can be stubbornness or difficulty collaborating.",
+            "textToSpeak": "She's passionate about her work - you can always count on her to defend her position.",
+            "question": "What might be a potential downside of this trait?",
             "options": [
-                "student",
-                "hacker",
-                "scout",
-                "scientist"
+                "She may be difficult to persuade or compromise with",
+                "She never completes her work",
+                "She lacks energy and conviction",
+                "She gives up on challenges easily"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -374,31 +397,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L108_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler activates the data immediately.",
-            "question": "Who is activating the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What can 'always very detailed' imply beyond the positive surface meaning?",
+            "explanation": "'Very detailed' = thorough and comprehensive (positive). 'Always very detailed' = consistently so, even when brevity might serve better. In professional settings, excessive detail = losing the audience, going over time, or obscuring the key message. This is implicit critique of balance between detail and clarity.",
+            "textToSpeak": "His presentations are always very detailed.",
+            "question": "In a professional context, what might this imply?",
             "options": [
-                "expert",
-                "analyst",
-                "scout",
-                "traveler"
+                "He is brilliant at summarising complex information",
+                "He is always concise and to the point",
+                "He is thorough but may go on too long",
+                "He doesn't prepare well enough"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L109_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician repairs the protocol effectively.",
-            "question": "Who is repairing the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'reckon' mean in informal British English?",
+            "explanation": "'Reckon' = think, believe, estimate (informal British English). 'She reckons' = she thinks. 'Eventually' adds a time qualifier - not right now but in time. The informal 'reckons' is common in spoken British English as a softer alternative to 'thinks' or 'believes'.",
+            "textToSpeak": "She reckons he'll be fine eventually.",
+            "question": "What does reckons mean here?",
             "options": [
-                "pilot",
-                "technician",
-                "commander",
-                "detective"
+                "She is certain",
+                "She thinks or believes",
+                "She hopes strongly",
+                "She fears"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -406,31 +431,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L109_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor launches the device quietly.",
-            "question": "Who is launching the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the idiom 'dark horse' mean?",
+            "explanation": "'Dark horse' = a person whose abilities or talents are hidden or not widely known, who then surprises others by performing better than expected. Originally a racing term for an unknown horse that wins unexpectedly. 'A bit of a' softens the idiom in casual speech.",
+            "textToSpeak": "He's a bit of a dark horse.",
+            "question": "What does this idiom mean?",
             "options": [
-                "commander",
-                "scout",
-                "mentor",
-                "scientist"
+                "He is a dangerous person",
+                "He is very quiet and shy",
+                "He is dishonest",
+                "He is unexpectedly talented or capable beyond what's obvious"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L109_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout updates the chip steadily.",
-            "question": "Who is updating the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'not let things slide' mean?",
+            "explanation": "'Let things slide' = ignore problems and allow them to worsen through inaction. 'Not one to let things slide' = she acts on issues rather than ignoring them. This is a character description: she's proactive and addresses problems directly rather than hoping they resolve themselves.",
+            "textToSpeak": "She's not one to let things slide.",
+            "question": "What does this tell us about her?",
             "options": [
-                "technician",
-                "analyst",
-                "scout",
-                "droid"
+                "She ignores problems that arise",
+                "She avoids any form of confrontation",
+                "She actively addresses problems rather than ignoring them",
+                "She often forgets to follow up"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -438,47 +465,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L110_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot validates the archive smoothly.",
-            "question": "Who is validating the archive?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'as a result of declining student interest' identify?",
+            "explanation": "'As a result of' = because of (cause-and-effect marker). 'Declining student interest' = the cause. 'Restructured its curriculum' = the effect/response. The restructuring was a response to falling numbers - adapting the programme to attract more students.",
+            "textToSpeak": "As a result of declining student interest, the department restructured its curriculum.",
+            "question": "What caused the restructuring?",
             "options": [
-                "explorer",
-                "robot",
-                "engineer",
-                "pilot"
+                "The department wanted to modernise",
+                "The students stopped attending classes",
+                "Fewer students were choosing the subject",
+                "The staff requested changes"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L110_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot transfers the chip effectively.",
-            "question": "Who is transferring the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "'Made redundant' means which employment outcome?",
+            "explanation": "'Made redundant' = job eliminated (British English term). 'Following the merger' = this happened as a result of or after the merger. Mergers commonly eliminate duplicate roles - especially senior ones. 'Following' as a discourse marker = caused by or coming after.",
+            "textToSpeak": "Following the merger, several senior roles were made redundant.",
+            "question": "What happened because of the merger?",
             "options": [
-                "robot",
-                "commander",
-                "traveler",
-                "student"
+                "New senior positions were created",
+                "Senior staff lost their jobs",
+                "The company grew significantly",
+                "The merger failed"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L110_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist locates the drone effectively.",
-            "question": "Who is locating the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'in light of' mean as a prepositional phrase?",
+            "explanation": "'In light of' = considering, taking into account, given. 'In light of the new data' = because of what the data shows, considering the new evidence. The projections were revised = changed because the data revealed they were wrong. This is a formal discourse marker for presenting a cause.",
+            "textToSpeak": "In light of the new data, we've had to revise our initial projections.",
+            "question": "What does in light of mean here?",
             "options": [
-                "technician",
-                "scientist",
-                "hero",
-                "artist"
+                "Without consulting the data at all",
+                "Before the data was collected",
+                "Despite what the data shows",
+                "After receiving and considering the data"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"

@@ -6,63 +6,67 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L41_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor measures the protocol precisely.",
-            "question": "Who is measuring the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'in a meeting until three' tell you about when the manager is available?",
+            "explanation": "'Until three' = the meeting ends at three. Until then, the manager is unavailable. 'In a meeting' = currently occupied. The inference: you cannot see the manager before 3 PM. 'Until' marks the endpoint of unavailability.",
+            "textToSpeak": "A: Is the manager in? B: He's in a meeting until three.",
+            "question": "What can be inferred from this exchange?",
             "options": [
-                "technician",
-                "mentor",
-                "traveler",
-                "scout"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L41_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist validates the archive securely.",
-            "question": "Who is validating the archive?",
-            "options": [
-                "artist",
-                "mentor",
-                "pilot",
-                "researcher"
+                "The manager will be free no earlier than three o'clock",
+                "You can speak to the manager right now",
+                "The meeting starts at three",
+                "You should leave a message and come back tomorrow"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L41_Q3",
+            "id": "LIS_LISTENINGINFERENCE_L41_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker measures the chip immediately.",
-            "question": "Who is measuring the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about why someone sets multiple alarms.",
+            "explanation": "Setting three alarms suggests she can't risk oversleeping - she has something important requiring an early, reliable wake-up time. One alarm would do for an ordinary day; three alarms signals a critical morning commitment.",
+            "textToSpeak": "She set three alarms for the next morning.",
+            "question": "What does this suggest?",
             "options": [
-                "researcher",
-                "scientist",
-                "pilot",
-                "hacker"
+                "She usually sleeps through alarms",
+                "She works night shifts",
+                "She just bought a new phone",
+                "She has an important reason to wake up early"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L41_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what ordering all three courses implies about appetite.",
+            "explanation": "Ordering all three courses - starter (appetiser), main (entrée), dessert - represents a full, substantial restaurant meal. This implies significant hunger or appetite. Someone not hungry would typically skip the starter or dessert.",
+            "textToSpeak": "He ordered a starter, a main course, and a dessert.",
+            "question": "What does this suggest?",
+            "options": [
+                "He wasn't very hungry",
+                "He was very hungry and had a large meal",
+                "He was on a strict diet",
+                "He was sharing food with someone"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L42_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor monitors the software expertly.",
-            "question": "Who is monitoring the software?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about why someone comments on warmth indoors.",
+            "explanation": "Commenting on indoor warmth is typically an indirect request for action - open a window, turn down the heating, or turn on a fan. It's not a sincere question about whether others agree; it's a socially softened request. Indirect requests are very common in British English.",
+            "textToSpeak": "It's quite warm in here, don't you think?",
+            "question": "What is the speaker really suggesting?",
             "options": [
-                "mentor",
-                "robot",
-                "hacker",
-                "artist"
+                "They want someone to open a window or turn down the heating",
+                "They want to have a conversation about temperature",
+                "They are making small talk",
+                "They need a glass of water"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -70,15 +74,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L42_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher monitors the portal carefully.",
-            "question": "Who is monitoring the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why does someone draw attention to a full bin?",
+            "explanation": "Drawing attention to a full bin is an indirect way of requesting that someone empties it. Direct requests ('please empty the bin') can seem rude; indirect observations ('the bin is full') achieve the same goal more politely. This is a common pattern in shared living or working spaces.",
+            "textToSpeak": "I notice the bin is completely full.",
+            "question": "What might the speaker want?",
             "options": [
-                "researcher",
-                "student",
-                "expert",
-                "technician"
+                "Someone to empty the bin",
+                "To buy a new bin",
+                "Information about bin collections",
+                "They are just making an observation"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -86,15 +91,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L42_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher sends the database reliably.",
-            "question": "Who is sending the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone draw attention to unwashed dishes?",
+            "explanation": "Pointing out that dishes have been sitting there for a long time is an indirect way of saying they need washing. The length of time ('since this morning') adds urgency and mild reproach. It's a passive observation with an implicit request.",
+            "textToSpeak": "The dishes have been sitting there since this morning.",
+            "question": "What is implied?",
             "options": [
-                "researcher",
-                "robot",
-                "technician",
-                "commander"
+                "The dishes need to be washed",
+                "The dishes are a new purchase",
+                "Someone should buy more plates",
+                "The kitchen is very large"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -102,95 +108,101 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L43_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist evaluates the circuit reliably.",
-            "question": "Who is evaluatesing the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what physical reaction going pale suggests.",
+            "explanation": "Going pale = losing colour from your face - a physical sign of shock or alarm. Looking at a bill and going pale means the amount was unexpectedly high. This is a physiological response to a shocking stimulus: shock → facial pallor.",
+            "textToSpeak": "She took one look at the bill and went pale.",
+            "question": "How did she feel?",
             "options": [
-                "pilot",
-                "artist",
-                "mentor",
-                "traveler"
+                "Shocked",
+                "Delighted",
+                "Calm and unbothered",
+                "Confused"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L43_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler restores the node quietly.",
-            "question": "Who is restoring the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about why reading the same paragraph multiple times might be necessary.",
+            "explanation": "Re-reading the same paragraph repeatedly suggests difficulty concentrating - the information isn't being absorbed. If he were enjoying it, he'd move forward; if studying, he'd take notes. Re-reading suggests distraction or an inability to take in the content.",
+            "textToSpeak": "He kept reading the same paragraph over and over.",
+            "question": "What might this suggest?",
             "options": [
-                "traveler",
-                "artist",
-                "analyst",
-                "hacker"
+                "He was enjoying it so much he wanted to memorise it",
+                "He was looking for a specific word",
+                "He was reading very carefully as a study technique",
+                "He was distracted and couldn't focus"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L43_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher encrypts the protocol consistently.",
-            "question": "Who is encrypting the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Is there one clear reason, or could this be ambiguous?",
+            "explanation": "Silence between people can mean many things: they argued (tension), they're comfortable together (contentment), they're tired, or they're processing something. Unlike crying or laughing, silence is ambiguous. Recognising when a situation has multiple plausible explanations is an important inference skill.",
+            "textToSpeak": "They walked in silence for most of the journey home.",
+            "question": "What might this suggest?",
             "options": [
-                "researcher",
-                "teacher",
-                "scout",
-                "hero"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L44_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot launches the database effectively.",
-            "question": "Who is launching the database?",
-            "options": [
-                "technician",
-                "mentor",
-                "robot",
-                "student"
+                "They don't like talking",
+                "They had argued about something",
+                "Several of these are possible",
+                "They were both tired and comfortable"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L44_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for who claims to have organised it.",
+            "explanation": "'I organised it' - the first person singular 'I' in B's statement. B is the organiser. The question from A ('are you coming?') shows A didn't know B was involved. This is a common conversational revelation of hidden information.",
+            "textToSpeak": "A: Are you coming to the staff meeting? B: Of course - I organised it.",
+            "question": "Who organised the meeting?",
+            "options": [
+                "Person A",
+                "A colleague not present",
+                "Their manager",
+                "Person B"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L44_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst scans the terminal automatically.",
-            "question": "Who is scanning the terminal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the word that reveals the relationship.",
+            "explanation": "'Mum' (British English for 'Mum') = mother. A calls B 'Mum' directly, immediately revealing the relationship. B's response ('you said you'd be back by six') is a typical parental reproach. Together: child arriving home late, mother noting the broken promise.",
+            "textToSpeak": "A: Sorry I'm late, Mum. B: You said you'd be back by six.",
+            "question": "What is the likely relationship?",
             "options": [
-                "explorer",
-                "analyst",
-                "commander",
-                "scout"
+                "Mother and child",
+                "Two friends",
+                "Teacher and student",
+                "Employer and employee"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L44_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot encrypts the device effectively.",
-            "question": "Who is encrypting the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for B's exclamation to understand the occasion.",
+            "explanation": "B says 'our anniversary!' - revealing the reason for the booking. 'Anniversary' typically refers to a wedding anniversary. 'Oh lovely' shows B is pleased and perhaps surprised. B's reaction reveals what A hasn't explicitly stated.",
+            "textToSpeak": "A: I've booked a table for two at seven. B: Oh lovely - our anniversary!",
+            "question": "Why did person A book the table?",
             "options": [
-                "analyst",
-                "robot",
-                "hero",
-                "commander"
+                "It's a business dinner",
+                "It's their wedding anniversary",
+                "It's a birthday celebration",
+                "It's a routine dinner"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -198,159 +210,169 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L45_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student locates the database directly.",
-            "question": "Who is locating the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "This is a common English idiom - what does crossing a bridge represent?",
+            "explanation": "'Cross that bridge when you come to it' = deal with a problem only when it actually becomes a problem, not in advance. The 'bridge' represents a future obstacle. It's practical wisdom: don't worry about hypothetical problems - wait to see if they actually arise.",
+            "textToSpeak": "She said she'd cross that bridge when she came to it.",
+            "question": "What does she mean?",
             "options": [
-                "explorer",
-                "engineer",
-                "student",
-                "droid"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L45_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective validates the satellite rapidly.",
-            "question": "Who is validating the satellite?",
-            "options": [
-                "researcher",
-                "detective",
-                "explorer",
-                "droid"
+                "She plans a specific route to walk",
+                "She'll deal with the problem if and when it arises",
+                "She is worried about the future",
+                "She refuses to think about the problem at all"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L45_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'bite the bullet' mean?",
+            "explanation": "'Bite the bullet' = endure something painful or unpleasant with courage. Making the appointment was something he'd been avoiding (perhaps a difficult medical or professional appointment). 'Finally' confirms he'd been delaying. He forced himself to act despite reluctance.",
+            "textToSpeak": "He bit the bullet and finally made the appointment.",
+            "question": "What does this tell us?",
+            "options": [
+                "He was excited about the appointment",
+                "He avoided the appointment",
+                "He cancelled the appointment",
+                "He did something difficult or unpleasant despite reluctance"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L45_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout locates the protocol automatically.",
-            "question": "Who is locating the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'let sleeping dogs lie' mean?",
+            "explanation": "'Let sleeping dogs lie' = leave an old problem alone rather than bringing it up again and causing new trouble. The idiom suggests that disturbing a settled situation (sleeping dog) is likely to cause problems (angry dog waking up). It's advice to leave the past alone.",
+            "textToSpeak": "They decided to let sleeping dogs lie.",
+            "question": "What did they decide?",
             "options": [
-                "scout",
-                "mentor",
-                "technician",
-                "artist"
+                "To adopt a dog",
+                "To move to a quieter area",
+                "To investigate the issue again",
+                "Not to raise an old problem or reopen a settled issue"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L46_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout secures the chip silently.",
-            "question": "Who is securing the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about why people make pros-and-cons lists.",
+            "explanation": "A pros-and-cons list is a decision-making tool - listing advantages (pros) and disadvantages (cons) to help choose between options. 'Before making her decision' confirms the purpose: the list is a structured way to think through choices.",
+            "textToSpeak": "She made a list of pros and cons before making her decision.",
+            "question": "Why did she make the list?",
             "options": [
-                "artist",
-                "traveler",
-                "scout",
-                "explorer"
+                "To write it in her diary",
+                "To help her evaluate options and decide",
+                "To share her thoughts with a friend",
+                "To understand both sides as an academic exercise"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L46_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander secures the drone smoothly.",
-            "question": "Who is securing the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about why performers take deep breaths before going on stage.",
+            "explanation": "Deep breathing before performing is a calming technique. 'Going on stage' = a performance context where nerves are common. Deep breaths slow the heart rate and reduce anxiety. The context (stage performance) + the action (deep breaths) = calming nerves.",
+            "textToSpeak": "He took several deep breaths before going on stage.",
+            "question": "Why did he do this?",
             "options": [
-                "technician",
-                "student",
-                "robot",
-                "commander"
+                "He was bored and restless",
+                "He was practising breathing exercises",
+                "He was trying to calm himself down",
+                "He was stretching before exercise"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L46_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot activates the data silently.",
-            "question": "Who is activating the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about why you reread something before sending.",
+            "explanation": "Rereading before sending is a quality-check habit - looking for errors, unclear wording, or missing information. 'Before sending' = a final review stage. This is a common professional behaviour: reviewing your own writing to ensure accuracy and clarity.",
+            "textToSpeak": "She reread the email before sending it.",
+            "question": "What was she probably doing?",
             "options": [
-                "traveler",
-                "researcher",
-                "robot",
-                "commander"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L47_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective locates the database immediately.",
-            "question": "Who is locating the database?",
-            "options": [
-                "commander",
-                "engineer",
-                "scientist",
-                "detective"
+                "Writing a reply to it",
+                "Deleting parts of the message",
+                "Forwarding it to someone else",
+                "Checking for mistakes or unclear wording"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L47_Q2",
+            "id": "LIS_LISTENINGINFERENCE_L47_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist scans the drone quietly.",
-            "question": "Who is scanning the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the comparison and which receives stronger praise.",
+            "explanation": "'Wasn't bad' = lukewarm praise for the film. 'Much better' = strong positive comparison for the book. 'But' signals the contrast. The speaker prefers the book significantly. 'Much better' is a stronger comparative - not just 'better' but 'much' better.",
+            "textToSpeak": "The film wasn't bad, but the book was much better.",
+            "question": "What does the speaker prefer?",
             "options": [
-                "artist",
-                "robot",
-                "scientist",
-                "droid"
+                "The film",
+                "Both were equally good",
+                "The book",
+                "Neither was worth the time"
             ],
             "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L47_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'you wouldn't know it now' imply about his current personality?",
+            "explanation": "'You wouldn't know it now' = you can't tell he was shy by looking at him today. The contrast is: past (very shy) vs. present (apparently not shy at all). He has transformed - the shyness has gone. 'Used to be' describes a past state that no longer applies.",
+            "textToSpeak": "He used to be very shy, but you wouldn't know it now.",
+            "question": "What can be inferred?",
+            "options": [
+                "He is still very shy",
+                "He has become much more confident",
+                "He pretends to be confident but is still shy",
+                "He moved to a different city"
+            ],
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L47_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student repairs the engine quietly.",
-            "question": "Who is repairing the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for 'while' introducing a contrast between what was good and what wasn't.",
+            "explanation": "'While... well structured' = the structure was good (concession). 'Content was hard to follow' = the main problem. 'While' introduces a positive concession before the negative. The structure (how it was organised) was fine; the content itself (what was said) was the issue.",
+            "textToSpeak": "While the presentation was well structured, the content was hard to follow.",
+            "question": "What was the main problem?",
             "options": [
-                "hero",
-                "commander",
-                "student",
-                "droid"
+                "The content was unclear or difficult",
+                "The structure was confusing",
+                "The speaker was poorly organised",
+                "The topic was boring"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L48_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer observes the chip precisely.",
-            "question": "Who is observing the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about where nurses work and explain dosages.",
+            "explanation": "A nurse who explains dosage (the amount of medicine to take) works in a medical setting. 'Dosage' is a medical/pharmaceutical term. Nurses are found in hospitals, clinics, or GP surgeries. The vocabulary - nurse + dosage - locates the scene in a healthcare environment.",
+            "textToSpeak": "She asked the nurse to explain the dosage again.",
+            "question": "Where is she most likely?",
             "options": [
-                "student",
-                "mentor",
-                "robot",
-                "engineer"
+                "At a supermarket",
+                "At a hotel",
+                "At a gym",
+                "In a hospital or clinic"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -358,79 +380,84 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L48_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander monitors the circuit steadily.",
-            "question": "Who is monitoring the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about where there's a screen at the front and people speak quietly.",
+            "explanation": "Lowering the voice + a screen at the front of the room suggests either a cinema (watching a film) or a lecture hall (a presentation). The combination of quiet (lowered voice) and a shared visual screen narrows the context significantly.",
+            "textToSpeak": "He lowered his voice and pointed to the screen at the front of the room.",
+            "question": "Where are they probably?",
             "options": [
-                "commander",
-                "droid",
-                "analyst",
-                "detective"
+                "In a library",
+                "At a sports stadium",
+                "In a cinema or lecture hall",
+                "In a coffee shop"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L48_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker validates the portal rapidly.",
-            "question": "Who is validating the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about where you check in luggage and find duty-free shops.",
+            "explanation": "'Checked in her luggage' = submitted bags for transport. 'Duty-free shop' = a shop selling goods without import tax, found exclusively in airports. Both pieces of vocabulary together make the location unmistakably an airport.",
+            "textToSpeak": "She checked in her luggage and headed to the duty-free shop.",
+            "question": "Where is she?",
             "options": [
-                "technician",
-                "robot",
-                "droid",
-                "hacker"
+                "At a hotel",
+                "At a train station",
+                "At an airport",
+                "At a shopping centre"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L49_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student creates the database precisely.",
-            "question": "Who is creating the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what consistent early arrival tells you about someone's character.",
+            "explanation": "Consistently arriving early (not just on time, but 15 minutes early) indicates a habit of punctuality and good organisation. It requires advance planning, good time management, and reliability. This is a character trait, not an accidental behaviour.",
+            "textToSpeak": "She always arrives fifteen minutes early for meetings.",
+            "question": "What can be inferred about her?",
             "options": [
-                "analyst",
-                "student",
-                "researcher",
-                "hacker"
+                "She has too much free time",
+                "She is nervous about being late",
+                "She is punctual and well-organised",
+                "She doesn't trust public transport"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L49_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician creates the code quietly.",
-            "question": "Who is creating the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does regular charitable giving tell you about someone?",
+            "explanation": "Regular, substantial charitable giving indicates generosity - prioritising others' needs over personal wealth accumulation. It's a choice, not an obligation. The inference is about character (generous) based on behaviour (monthly donations), not about income level.",
+            "textToSpeak": "He donated a significant part of his salary to charity every month.",
+            "question": "What can be inferred about him?",
             "options": [
-                "technician",
-                "expert",
-                "hero",
-                "analyst"
+                "He earns a very large salary",
+                "He is a generous person",
+                "He has no personal expenses",
+                "He is trying to avoid paying taxes"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L49_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot measures the chip precisely.",
-            "question": "Who is measuring the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what reading terms and conditions reveals about decision-making style.",
+            "explanation": "Reading terms and conditions (usually long and detailed) before agreeing shows careful, thorough decision-making. It's not the same as general suspicion - it's due diligence. This suggests a methodical character who protects themselves through information.",
+            "textToSpeak": "She checked the terms and conditions before agreeing to anything.",
+            "question": "What does this suggest about her?",
             "options": [
-                "explorer",
-                "expert",
-                "robot",
-                "droid"
+                "She is slow to read",
+                "She is suspicious of everyone",
+                "She is careful and thorough",
+                "She doesn't trust the company at all"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -438,49 +465,52 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L50_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot monitors the module rapidly.",
-            "question": "Who is monitoring the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What would you normally expect after twelve hours of work?",
+            "explanation": "'Despite' introduces a surprising contrast: twelve hours of work → normally = exhaustion. 'Didn't feel tired' contradicts the expected outcome. 'Despite' + surprising result is a key signal of unexpected contrast. The surprise is the absence of tiredness, not the work itself.",
+            "textToSpeak": "Despite working for twelve hours, she didn't feel tired.",
+            "question": "What is surprising about this?",
             "options": [
-                "expert",
-                "droid",
-                "engineer",
-                "pilot"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L50_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander builds the data rapidly.",
-            "question": "Who is building the data?",
-            "options": [
-                "explorer",
-                "expert",
-                "commander",
-                "robot"
+                "She worked for twelve hours",
+                "She felt very tired",
+                "She wasn't tired after twelve hours of work",
+                "She worked quickly"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L50_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'not exactly the world's greatest' imply?",
+            "explanation": "'Not exactly' softens a critical statement. 'The world's greatest cook' is a hyperbolic positive that, when negated, becomes mild criticism. Together: he's not a good cook, expressed diplomatically with understatement. British understatement often works this way.",
+            "textToSpeak": "He's not exactly the world's greatest cook.",
+            "question": "What does the speaker mean?",
+            "options": [
+                "He is a brilliant cook",
+                "He is a celebrated chef",
+                "He is improving his cooking",
+                "He is not a very good cook"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L50_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot creates the engine instantly.",
-            "question": "Who is creating the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'plucked up the courage' tell you about the action?",
+            "explanation": "'Pluck up the courage' = gather enough bravery to do something difficult or anxiety-inducing. 'Finally' suggests it took a long time - she'd been putting it off. Together: she'd been avoiding a conversation she found intimidating and eventually forced herself to do it.",
+            "textToSpeak": "She finally plucked up the courage to speak to her manager.",
+            "question": "What does this suggest?",
             "options": [
-                "pilot",
-                "explorer",
-                "commander",
-                "droid"
+                "She speaks to her manager every day",
+                "She had been hesitating because it felt difficult",
+                "Talking to her manager felt easy",
+                "She and her manager are very close friends"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         }
     ]

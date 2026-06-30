@@ -6,47 +6,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L61_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid observes the engine efficiently.",
-            "question": "Who is observing the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what 'eventually' and 'on hold for forty minutes' together tell you.",
+            "explanation": "'On hold' = waiting on a phone call before speaking to a real person. 'Forty minutes' = a very long wait. 'Eventually' = finally, after a long time. The difficulty was the extended wait to get through - not finding the number or understanding what was said.",
+            "textToSpeak": "A: Did you manage to get through to them? B: Eventually - I was on hold for forty minutes.",
+            "question": "What was difficult about the interaction?",
             "options": [
-                "researcher",
-                "student",
-                "robot",
-                "droid"
+                "Finding the correct phone number",
+                "Understanding what was said",
+                "Getting someone to actually answer",
+                "Explaining the problem clearly"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L61_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer validates the data consistently.",
-            "question": "Who is validating the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'I talked too much' tell you about B's self-assessment?",
+            "explanation": "B's self-criticism ('I talked too much') shows awareness of a specific weakness in their performance. They're evaluating their own behaviour negatively - self-critical. This is different from general nervousness or relief; it's a specific assessment that something went wrong.",
+            "textToSpeak": "A: How did the interview go? B: I think I talked too much.",
+            "question": "How does B feel about the interview?",
             "options": [
-                "explorer",
-                "teacher",
-                "analyst",
-                "engineer"
+                "Confident it went well",
+                "Self-critical about their own performance",
+                "Relieved it's over",
+                "Nervous about the outcome"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L61_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher secures the protocol consistently.",
-            "question": "Who is securing the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'not a word' with 'three days ago' imply about the situation?",
+            "explanation": "'Not a word' = zero response (emphasised with complete absence). 'Three days ago' = significant time has passed. Together, B implies frustration at the silence after a reasonable waiting period. The emphasis on 'three days' suggests this is too long to wait.",
+            "textToSpeak": "A: Has she replied yet? B: Not a word - I sent that three days ago.",
+            "question": "What is B implying?",
             "options": [
-                "mentor",
-                "engineer",
-                "teacher",
-                "hero"
+                "The reply arrived quickly",
+                "He didn't expect a reply",
+                "The lack of reply is frustrating",
+                "The message was probably not received"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -54,31 +57,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L62_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero restores the module instantly.",
-            "question": "Who is restoring the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the significance of the word 'again' here?",
+            "explanation": "'Again' = this has happened before. It signals repetition and, in this context, implicit frustration - this is a recurring problem, not a first occurrence. The pause before 'again' (or its placement at the end) emphasises the pattern. It's a marker of repeated failure.",
+            "textToSpeak": "The project is behind schedule - again.",
+            "question": "What does 'again' tell us?",
             "options": [
-                "hero",
-                "scientist",
-                "hacker",
-                "expert"
+                "This is the first delay",
+                "The team is surprised by the delay",
+                "The speaker is not concerned",
+                "It has been delayed before"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L62_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst analyzes the signal directly.",
-            "question": "Who is analyzing the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'take it under consideration' typically mean in corporate language?",
+            "explanation": "'Take it under consideration' is a formal, non-committal phrase. It acknowledges the feedback without promising action. This is corporate language for 'we've heard you' without guaranteeing change. It's more diplomatic than 'yes' or 'no', and in practice often means the suggestion may not be pursued.",
+            "textToSpeak": "Thank you for your feedback. We'll take it under consideration.",
+            "question": "What is the company really communicating?",
             "options": [
-                "student",
-                "traveler",
-                "detective",
-                "analyst"
+                "They will definitely implement the change",
+                "They strongly disagree with the feedback",
+                "They have already implemented the change",
+                "They appreciate the feedback and may or may not act on it"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -86,63 +91,67 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L62_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander repairs the network expertly.",
-            "question": "Who is repairing the network?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Does 'let's make it happen' confirm a plan or express an intention?",
+            "explanation": "'Let's make it happen' sounds enthusiastic but is actually vague - no specific time, date, or place is mentioned. This is a common social expression of intention without commitment. The enthusiasm doesn't equal a firm plan; it's aspirational language without concrete follow-through.",
+            "textToSpeak": "We'd love to catch up soon - let's make it happen!",
+            "question": "What does this most likely mean?",
             "options": [
-                "technician",
-                "commander",
-                "artist",
-                "researcher"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L63_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher locates the drone successfully.",
-            "question": "Who is locating the drone?",
-            "options": [
-                "student",
-                "scientist",
-                "researcher",
-                "artist"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L63_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout activates the chip expertly.",
-            "question": "Who is activating the chip?",
-            "options": [
-                "scout",
-                "student",
-                "analyst",
-                "artist"
+                "They want to meet but haven't made firm plans",
+                "They have booked a specific meeting time",
+                "They meet each other regularly",
+                "They are about to meet right now"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L63_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does continuing to practise when you don't feel like it show?",
+            "explanation": "'Even when she doesn't feel like it' = despite reluctance. Continuing regardless of mood demonstrates discipline and strong motivation. This is genuine dedication: doing what needs to be done even without enjoyment in the moment. Dedication trumps momentary feelings.",
+            "textToSpeak": "She practises every day even when she doesn't feel like it.",
+            "question": "What does this tell us about her?",
+            "options": [
+                "She has no choice but to practise",
+                "She is highly dedicated",
+                "She enjoys every practice session",
+                "She is forced to practise by someone else"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L63_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone research ten models but buy the cheapest?",
+            "explanation": "Researching ten models shows effort and thoroughness. Choosing the cheapest despite all the research suggests the primary criterion was price. This combination - thorough research + budget choice - indicates someone who is careful with money and prioritises cost over quality.",
+            "textToSpeak": "He researched ten different models before buying the cheapest one.",
+            "question": "What does this suggest?",
+            "options": [
+                "He makes impulsive decisions",
+                "He is very careful with money",
+                "He doesn't know much about the product",
+                "He bought the best quality option"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L63_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot deploys the node smoothly.",
-            "question": "Who is deploying the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why take notes when a recording exists?",
+            "explanation": "Taking notes even with a recording available suggests she's comprehensive in her preparation. She doesn't rely on one system; she has a backup. 'Even though it was being recorded' makes her note-taking notable - it signals a thorough, belt-and-braces approach to information retention.",
+            "textToSpeak": "She took notes during the meeting even though it was being recorded.",
+            "question": "What does this tell us about her?",
             "options": [
-                "scout",
-                "robot",
-                "artist",
-                "researcher"
+                "She doesn't trust technology",
+                "She is extremely thorough in how she works",
+                "She didn't know it was being recorded",
+                "She learns better from writing things down"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -150,79 +159,84 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L64_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer encrypts the circuit quietly.",
-            "question": "Who is encrypting the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'not exactly' + a superlative positive tell you?",
+            "explanation": "'Not exactly the most punctual' = an understatement. 'Not exactly' softens criticism; 'the most punctual in the world' is an extreme positive, which when negated signals the opposite. The whole phrase politely means: he is often late. British understatement works by denying extreme positives.",
+            "textToSpeak": "He's not exactly the most punctual person in the world.",
+            "question": "What does the speaker mean?",
             "options": [
-                "detective",
-                "engineer",
-                "researcher",
-                "scientist"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L64_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler encrypts the system automatically.",
-            "question": "Who is encrypting the system?",
-            "options": [
-                "artist",
-                "traveler",
-                "technician",
-                "researcher"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L64_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher secures the circuit rapidly.",
-            "question": "Who is securing the circuit?",
-            "options": [
-                "scientist",
-                "researcher",
-                "teacher",
-                "technician"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L65_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot evaluates the sensor directly.",
-            "question": "Who is evaluatesing the sensor?",
-            "options": [
-                "pilot",
-                "expert",
-                "technician",
-                "commander"
+                "He is often late",
+                "He is always perfectly on time",
+                "He is the most punctual person they know",
+                "He has been improving his punctuality"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L64_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does extreme understatement ('tiny bit') communicate?",
+            "explanation": "'Tiny bit overwhelming' is a classic British understatement. 'Tiny bit' minimises the emotion, but the word 'overwhelming' (extreme by definition) makes the understatement humorous or expressive. The extreme contrast signals the real feeling: it was very overwhelming. Understatement says less but means more.",
+            "textToSpeak": "It was a tiny bit overwhelming.",
+            "question": "What does the speaker actually mean?",
+            "options": [
+                "It was completely and extremely overwhelming",
+                "It was slightly overwhelming",
+                "It was manageable once they started",
+                "It wasn't really overwhelming at all"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L64_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Analyse the double negative understatement.",
+            "explanation": "'Wouldn't say it was the most exciting' = the opposite of exciting. This negative + superlative structure is understatement: by denying the extreme positive, the speaker implies the negative. Translation: 'it was boring'. A truly exciting meeting would be described positively, not through denial.",
+            "textToSpeak": "I wouldn't say it was the most exciting meeting I've ever been to.",
+            "question": "What does the speaker feel about the meeting?",
+            "options": [
+                "It was exciting and stimulating",
+                "It was the most exciting meeting they've attended",
+                "It was somewhat interesting",
+                "It was very boring"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L65_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'no longer available in her size' mean for her options?",
+            "explanation": "'No longer available' = out of stock or discontinued. 'In her size' = the specific size she needs. The shop cannot help her for now. Her options: go elsewhere, try a different size, or shop online independently. The shop assistant has closed off this immediate option.",
+            "textToSpeak": "The shop assistant told her the item was no longer available in her size.",
+            "question": "What does the woman now know?",
+            "options": [
+                "She can order it online from the same shop",
+                "The shop doesn't stock her size at all",
+                "She needs to look elsewhere or change her plans",
+                "She can come back when new stock arrives"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L65_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander repairs the module swiftly.",
-            "question": "Who is repairing the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What caused the change of hotel? Listen for the causal connection.",
+            "explanation": "'After reading all the reviews' = the research step. 'Booked a different hotel' = the changed outcome. The reviews are the stated cause of the change - presumably positive reviews of the new choice or negative reviews of the original. Research led to a different decision.",
+            "textToSpeak": "After reading all the reviews, he booked a different hotel from his first choice.",
+            "question": "What made him change his choice?",
             "options": [
-                "hacker",
-                "technician",
-                "explorer",
-                "commander"
+                "The price was lower at the second hotel",
+                "The first hotel was fully booked",
+                "His friend recommended the different hotel",
+                "The reviews convinced him another hotel was better"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -230,127 +244,135 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L65_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor creates the module automatically.",
-            "question": "Who is creating the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'need to take the next one' mean for her travel plans?",
+            "explanation": "'Overbooked' = more passengers booked than seats available. 'Take the next one' = the next available flight. She hasn't missed it by being late - she's been displaced by overbooking. This is an airline operational situation. She will still travel, just later than planned.",
+            "textToSpeak": "She was told the flight was overbooked and she'd need to take the next one.",
+            "question": "What is her situation?",
             "options": [
-                "mentor",
-                "student",
-                "technician",
-                "scientist"
+                "She missed her flight",
+                "She has to take a later flight",
+                "She got an upgrade to business class",
+                "She was refused travel permanently"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L66_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer activates the data properly.",
-            "question": "Who is activating the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What happens when someone proactively introduces themselves?",
+            "explanation": "Introducing yourself proactively reduces social awkwardness - others don't have to wonder who you are. 'Put everyone at ease' is explicitly stated: the effect was comfort and relaxation. Proactive self-introduction is a socially confident and considerate behaviour.",
+            "textToSpeak": "He introduced himself without being asked, and this immediately put everyone at ease.",
+            "question": "What effect did his action have?",
             "options": [
-                "robot",
-                "technician",
-                "hacker",
-                "explorer"
+                "People felt uncomfortable",
+                "People felt relaxed and at ease",
+                "People were confused about who he was",
+                "People ignored him"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L66_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor secures the engine efficiently.",
-            "question": "Who is securing the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why specifically bring cake on your 'last day'?",
+            "explanation": "'On her last day' = the day she's leaving the job. Bringing cake is a farewell gesture - a tradition in many workplaces. 'Homemade cake' shows extra effort and thoughtfulness. The occasion is clearly her own departure, not someone else's birthday or arrival.",
+            "textToSpeak": "She brought homemade cake to the office on her last day.",
+            "question": "What was the likely occasion?",
             "options": [
-                "mentor",
-                "student",
-                "droid",
-                "explorer"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L66_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero measures the system carefully.",
-            "question": "Who is measuring the system?",
-            "options": [
-                "engineer",
-                "robot",
-                "hacker",
-                "hero"
+                "She wanted to share her hobby",
+                "It was someone else's birthday",
+                "It was an office party for a new arrival",
+                "It was her final day before leaving"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L67_Q1",
+            "id": "LIS_LISTENINGINFERENCE_L66_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer encrypts the database securely.",
-            "question": "Who is encrypting the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why might people say nothing when someone arrives late?",
+            "explanation": "Silence when someone arrives late could mean: it's too awkward to point it out, it happens regularly and has been accepted, or people are too polite. The silence is notable because the expected response (acknowledgement) didn't happen. The most likely explanation is social discomfort or normalised acceptance.",
+            "textToSpeak": "Nobody said anything when he walked in late.",
+            "question": "What does this suggest?",
             "options": [
-                "engineer",
-                "explorer",
-                "scout",
-                "robot"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L67_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist restores the system smoothly.",
-            "question": "Who is restoring the system?",
-            "options": [
-                "teacher",
-                "hacker",
-                "scientist",
-                "analyst"
+                "Everyone was asleep",
+                "No one noticed him arrive",
+                "It was too awkward to comment, or his lateness had become accepted",
+                "He was invited to arrive late"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L67_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'raised concerns' tell you about residents' attitudes?",
+            "explanation": "'Raised concerns' = expressed worries or objections. In news/media language, 'concerns' signals opposition or unease - not support. 'Local residents' are those directly affected. This is typical journalistic framing of community opposition to planned changes.",
+            "textToSpeak": "Local residents have raised concerns about the proposed development.",
+            "question": "What do residents think about the development?",
+            "options": [
+                "They fully support it",
+                "They are unaware of it",
+                "They suggested the development themselves",
+                "They are worried or opposed to it"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L67_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'denied any wrongdoing' imply about what the company is responding to?",
+            "explanation": "A company only denies 'wrongdoing' if it has been accused of wrongdoing. The denial is a response to an accusation. 'Wrongdoing' = illegal or unethical behaviour. 'Released a statement' = formal, public response. The company is responding to allegations of misconduct.",
+            "textToSpeak": "The company denied any wrongdoing in a statement released today.",
+            "question": "What had the company been accused of?",
+            "options": [
+                "Breaking sales records",
+                "Launching a new product",
+                "Being very successful",
+                "Doing something wrong or illegal"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L67_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero transfers the system successfully.",
-            "question": "Who is transferring the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'divided' mean in the context of expert opinion?",
+            "explanation": "'Divided' = split between two or more positions. Some experts think it will work; others don't. There is no agreement. This is a media phrase used when experts don't all agree. It's important for listeners to recognise 'expert consensus' vs. 'expert division'.",
+            "textToSpeak": "Experts are divided on whether the measure will be effective.",
+            "question": "What does this tell us?",
             "options": [
-                "hero",
-                "technician",
-                "detective",
-                "scientist"
+                "All experts agree it will work",
+                "All experts agree it will fail",
+                "There is no consensus among experts about its effectiveness",
+                "The measure has already been thoroughly tested"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L68_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor sends the sensor consistently.",
-            "question": "Who is sending the sensor?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How indirect is this suggestion? What does 'may be worth considering' signal?",
+            "explanation": "'May be worth considering' is heavily hedged: 'may' = possibility; 'worth considering' = worthy of thought (not necessarily action). This is a very soft, indirect suggestion - the speaker is proposing evaluation of an alternative without demanding change. This is typical of cautious professional communication.",
+            "textToSpeak": "It may be worth considering an alternative approach.",
+            "question": "What is the speaker suggesting?",
             "options": [
-                "mentor",
-                "robot",
-                "hero",
-                "scout"
+                "There might be a better way to do this",
+                "The current approach is definitely wrong",
+                "The speaker strongly disagrees with the current plan",
+                "The speaker is giving a direct order to change"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -358,15 +380,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L68_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor creates the chip precisely.",
-            "question": "Who is creating the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'couldn't help noticing' + 'slightly different from what we agreed' communicate?",
+            "explanation": "'Couldn't help noticing' = a soft opening (not accusatory). 'Slightly different from what we agreed' = a polite way of saying the report doesn't match the agreement (possibly significantly). This is indirect professional confrontation - pointing out a problem diplomatically without open accusation.",
+            "textToSpeak": "I couldn't help noticing the report was slightly different from what we agreed.",
+            "question": "What is the speaker politely pointing out?",
             "options": [
-                "mentor",
-                "expert",
-                "teacher",
-                "student"
+                "There is a discrepancy from what was agreed",
+                "The report was excellent",
+                "The report was too long",
+                "The report arrived late"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -374,15 +397,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L68_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler evaluates the drone silently.",
-            "question": "Who is evaluatesing the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone suggest double-checking if everything looked right?",
+            "explanation": "'Might want to double-check' = a soft warning. If the figures were correct, there'd be no reason to suggest checking again. The implication: the speaker has noticed or suspects an error. 'Double-check' = verify again, suggesting a first check may have missed something.",
+            "textToSpeak": "You might want to double-check the figures before sending.",
+            "question": "What does the speaker imply?",
             "options": [
-                "droid",
-                "traveler",
-                "scout",
-                "pilot"
+                "The figures are definitely correct",
+                "There may be errors in the figures",
+                "The figures look fine to them",
+                "You should delete the figures"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -390,95 +414,101 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L69_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist monitors the data silently.",
-            "question": "Who is monitoring the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Notice the two parts separated by 'but' - which is positive and which is negative?",
+            "explanation": "'Interesting' = positive (the research itself). 'Methodology leaves something to be desired' = critical (how it was conducted). 'But' signals that the criticism outweighs or qualifies the positive. The speaker appreciates the topic but has reservations about the method. This is a mixed review.",
+            "textToSpeak": "The research is interesting, but the methodology leaves something to be desired.",
+            "question": "What is the speaker's view?",
             "options": [
-                "scientist",
-                "detective",
-                "artist",
-                "hero"
+                "They fully support the research",
+                "They don't understand the research methodology",
+                "They think the research is worthless",
+                "They are partly critical of the research"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L69_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker monitors the portal instantly.",
-            "question": "Who is monitoring the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'lean towards' mean as a preference expression?",
+            "explanation": "'Lean towards' = tend to prefer, but not strongly committed. 'I can see both sides' shows fair acknowledgement. 'Personally' adds the speaker's individual stance. Together: balanced acknowledgement of both sides with a slight personal preference for one. This is careful, qualified opinion-giving.",
+            "textToSpeak": "I can see both sides, but personally I lean towards the first option.",
+            "question": "What is the speaker doing?",
             "options": [
-                "explorer",
-                "technician",
-                "mentor",
-                "hacker"
+                "Refusing to express any preference",
+                "Saying both options are equal",
+                "Showing a preference for the first option while acknowledging the other",
+                "Dismissing the second option completely"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L69_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander transfers the terminal consistently.",
-            "question": "Who is transferring the terminal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'not for me to say' communicate about the speaker's role?",
+            "explanation": "'Not for me to say' = it's not my place to judge. This is a distancing phrase - the speaker has an opinion but considers it inappropriate to express it, perhaps because they're not directly involved or because it would be presumptuous. It's a way of declining to judge without saying 'I have no view'.",
+            "textToSpeak": "It's not for me to say whether it was the right decision.",
+            "question": "What does the speaker mean?",
             "options": [
-                "scout",
-                "researcher",
-                "teacher",
-                "commander"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L70_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher measures the drone swiftly.",
-            "question": "Who is measuring the drone?",
-            "options": [
-                "technician",
-                "droid",
-                "engineer",
-                "teacher"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L70_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician activates the sensor consistently.",
-            "question": "Who is activating the sensor?",
-            "options": [
-                "technician",
-                "student",
-                "mentor",
-                "robot"
+                "They don't think it's their place to judge",
+                "They have no opinion at all",
+                "They strongly agree with the decision",
+                "They think the decision was wrong"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L70_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'not dealt with early' and 'escalate' tell you about the warning?",
+            "explanation": "'Escalate' = get worse/grow. 'Not dealt with early' = the cause of escalation. The warning: if you don't address a problem promptly, it will grow into a bigger one. 'You'd be surprised' = the growth is faster than expected. This is advice for early intervention.",
+            "textToSpeak": "You'd be surprised how quickly things can escalate if they're not dealt with early.",
+            "question": "What is the speaker warning about?",
+            "options": [
+                "Acting too quickly without thinking",
+                "Waiting too long to address a problem",
+                "Getting involved in other people's arguments",
+                "Being too sensitive to small issues"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L70_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone tell you how another person responds to criticism?",
+            "explanation": "'Just so you know' = a conversational softener before useful information. Telling you someone 'doesn't take criticism well' is a social warning - be careful how you phrase feedback or opinions around this person. It's preparatory advice for social navigation.",
+            "textToSpeak": "Just so you know, he doesn't take criticism very well.",
+            "question": "What is the speaker doing?",
+            "options": [
+                "Criticising the person themselves",
+                "Warning you about how to handle someone",
+                "Asking for your opinion",
+                "Defending the person from criticism"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L70_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist repairs the engine directly.",
-            "question": "Who is repairing the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'if I were doing it again, I'd...' structure communicate?",
+            "explanation": "'If I were doing it again, I'd...' is a hypothetical reflection - looking back and identifying what should have been different. 'Spend more time on planning' = the regret. This is retrospective advice: a lesson learned from experience that planning was insufficient the first time.",
+            "textToSpeak": "If I were doing it again, I'd spend more time on the planning stage.",
+            "question": "What lesson is the speaker sharing?",
             "options": [
-                "detective",
-                "student",
-                "mentor",
-                "scientist"
+                "Planning is not very important",
+                "They are very happy with how it went",
+                "The planning stage was perfect",
+                "They wish they had planned more carefully"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"

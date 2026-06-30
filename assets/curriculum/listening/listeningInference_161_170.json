@@ -6,47 +6,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L161_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker activates the software precisely.",
-            "question": "Who is activating the software?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the rhetorical effect of provoking then retreating?",
+            "explanation": "Opening with provocation grabs attention; retreating from its implications avoids full commitment. This is having it both ways: the provocative claim generates interest, but the speaker doesn't have to defend it fully. Critics would call this intellectually dishonest; sympathisers might call it cautious. The observation identifies a structural inconsistency.",
+            "textToSpeak": "He opens with a provocation, then immediately retreats from its implications.",
+            "question": "What does this observation describe?",
             "options": [
-                "hacker",
-                "hero",
-                "droid",
-                "detective"
+                "A strong and consistent argument",
+                "A clear and direct speech that builds progressively",
+                "A rhetorical move that raises a bold claim without fully committing to it",
+                "A speech that lacks any strong opening"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L161_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher observes the terminal rapidly.",
-            "question": "Who is observing the terminal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the significance of manufacturing the appearance of spontaneity?",
+            "explanation": "Scripted spontaneity = the illusion of naturalness is itself a technique. A speech that looks improvised but was written is a performance of authenticity - which is arguably inauthentic. This requires significant skill but raises questions about the genuineness of the connection with the audience.",
+            "textToSpeak": "The speech was designed to appear spontaneous while being carefully scripted.",
+            "question": "What does this reveal?",
             "options": [
-                "scout",
-                "teacher",
-                "pilot",
-                "hero"
+                "The speech was genuinely improvised",
+                "The speaker was reading from written notes",
+                "The speech had no script",
+                "The appearance of naturalness was deliberately constructed"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L161_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid locates the terminal carefully.",
-            "question": "Who is locating the terminal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How does invoking shared values preempt disagreement?",
+            "explanation": "If a speaker establishes that 'we all agree on X', then any objection to what follows appears to violate X - even if it doesn't. This is a rhetorical preemption strategy: by framing the argument as built on shared values, the speaker makes it psychologically harder to object without seeming to contradict values you've just agreed to.",
+            "textToSpeak": "By invoking shared values, the speaker preempts disagreement.",
+            "question": "What technique is being identified?",
             "options": [
-                "droid",
-                "teacher",
-                "engineer",
-                "pilot"
+                "Appealing to common ground to make objection seem unreasonable",
+                "Creating division among the audience",
+                "Presenting empirical evidence",
+                "Citing external authority"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -54,47 +57,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L162_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician locates the signal carefully.",
-            "question": "Who is locating the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the transition from 'radical' to 'taken for granted' illustrate?",
+            "explanation": "What seems extreme in one era seems obvious or natural in another. This reflects the historical contingency of norms - they're not fixed truths but products of time and context. What was unthinkable becomes unremarkable through cultural change. This is a key insight about how values and expectations evolve.",
+            "textToSpeak": "What was once considered radical is now taken for granted.",
+            "question": "What does this reflect?",
             "options": [
-                "droid",
-                "technician",
-                "pilot",
-                "hero"
+                "Nothing has changed over time",
+                "People have simply given up on radical ideas",
+                "Radical ideas are always eventually accepted",
+                "Social norms and expectations shift significantly over time"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L162_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist secures the engine immediately.",
-            "question": "Who is securing the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the difference between linguistic change and material change?",
+            "explanation": "Language evolves (new terms, euphemisms, reframings) without necessarily changing the reality being described. Renaming something doesn't alter it. This is a critical observation about discourse: we can update our vocabulary without addressing the underlying problem. Language change can create an illusion of progress.",
+            "textToSpeak": "The language we use to describe this has changed, even if the reality has not.",
+            "question": "What distinction is the speaker making?",
             "options": [
-                "scientist",
-                "scout",
-                "artist",
-                "technician"
+                "Language change always reflects real-world change",
+                "The speaker rejects all new terminology",
+                "The words have changed but the underlying situation may remain the same",
+                "Language is unimportant compared to reality"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L162_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero repairs the satellite securely.",
-            "question": "Who is repairing the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the parallel between our view of the past and future views of the present suggest?",
+            "explanation": "By noting our discomfort at past attitudes and applying the same logic forward, the speaker implies moral humility: we are likely making equivalent errors today that future generations will judge. This challenges moral smugness - the assumption that we are uniquely enlightened compared to past and future.",
+            "textToSpeak": "We look back on past attitudes with discomfort - just as future generations may look back on ours.",
+            "question": "What is the speaker implying?",
             "options": [
-                "student",
-                "mentor",
-                "hero",
-                "droid"
+                "Our current attitudes are perfect and will be admired",
+                "The past was morally superior to the present",
+                "Current attitudes may also be judged critically in the future",
+                "History never repeats its moral patterns"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -102,15 +108,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L163_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer transfers the protocol instantly.",
-            "question": "Who is transferring the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'which is perhaps the point' signal about the narrator's unreliability?",
+            "explanation": "'Which is perhaps the point' = the uncertainty is deliberate. An unreliable narrator creates productive uncertainty: readers must actively interpret, question, and not take claims at face value. This is a sophisticated narrative technique that mirrors how we navigate unreliable information in life.",
+            "textToSpeak": "The reader is never quite sure whether to trust the narrator - which is perhaps the point.",
+            "question": "What is being suggested?",
             "options": [
-                "artist",
-                "explorer",
-                "engineer",
-                "researcher"
+                "The narrator is clearly reliable and honest",
+                "The story is confusing because of poor writing",
+                "The narrator's unreliability is an intentional narrative device",
+                "The author made an accidental error"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -118,31 +125,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L163_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander transfers the code efficiently.",
-            "question": "Who is transferring the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does a novel revealing more about its writing era than its historical setting mean?",
+            "explanation": "Authors inevitably project their contemporary concerns, anxieties, and values onto historical settings. A Victorian novel about ancient Rome tells us more about Victorian Britain than Rome. This is a historiographical insight about anachronism - and a way of 'reading' texts as cultural documents of their time.",
+            "textToSpeak": "The novel tells us less about its historical setting than the period in which it was written.",
+            "question": "What is the speaker suggesting?",
             "options": [
-                "commander",
-                "detective",
-                "mentor",
-                "traveler"
+                "Historical novels are always perfectly accurate",
+                "The novel is set in the present",
+                "The book reveals more about its time of writing than the era it depicts",
+                "The novelist did no historical research"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L163_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student observes the drone consistently.",
-            "question": "Who is observing the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does dialogue that is 'never really about' its surface subject reveal?",
+            "explanation": "Dialogue that functions on two levels - surface subject and deeper real subject - is a literary technique. Characters discuss one thing while really communicating something else (a relationship, a fear, a subtext). This is subtext: the gap between what is said and what is meant, creating narrative depth.",
+            "textToSpeak": "By the end, we understand that what the characters spoke about, they were never really speaking about.",
+            "question": "What does this convey about the dialogue?",
             "options": [
-                "detective",
-                "hacker",
-                "student",
-                "engineer"
+                "The dialogue is meaningless",
+                "The characters are deliberately confused",
+                "The dialogue has a literal surface and a deeper hidden meaning",
+                "The author failed to write meaningful dialogue"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -150,15 +159,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L164_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective repairs the satellite directly.",
-            "question": "Who is repairing the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the logical distinction this maxim draws?",
+            "explanation": "Not finding evidence ≠ evidence of non-existence. Absence of evidence could mean: we haven't looked in the right place, our methods aren't sensitive enough, or the evidence is hidden. The maxim prevents premature conclusions from negative results. Important in science, investigation, and everyday reasoning.",
+            "textToSpeak": "The absence of evidence is not evidence of absence.",
+            "question": "What does this maxim mean?",
             "options": [
-                "robot",
-                "teacher",
-                "researcher",
-                "detective"
+                "If we can't find evidence, the thing definitely doesn't exist",
+                "Evidence is always obtainable if we look hard enough",
+                "We should only believe things supported by evidence",
+                "Not finding something doesn't mean it doesn't exist"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -166,31 +176,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L164_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist restores the database consistently.",
-            "question": "Who is restoring the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the limitation of anecdotal evidence in argumentation?",
+            "explanation": "Anecdotes = individual stories that are vivid and relatable. Vivid ≠ representative. One or several stories may be real but atypical - not generalisable. The danger: emotional resonance makes us feel the argument is stronger than it is logically. Anecdotes illustrate; they don't prove at scale.",
+            "textToSpeak": "He argued by anecdote, making his case vivid but not necessarily valid.",
+            "question": "What is the concern?",
             "options": [
-                "scientist",
-                "engineer",
-                "researcher",
-                "pilot"
+                "Anecdotes are always the best form of evidence",
+                "Personal stories can be compelling but may not represent the general truth",
+                "The argument lacked any examples at all",
+                "The argument was completely unconvincing"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L164_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander measures the portal consistently.",
-            "question": "Who is measuring the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does it mean for a conclusion to 'not follow from premises'?",
+            "explanation": "In logic, a valid argument is one where if the premises are true, the conclusion must be true. 'Doesn't follow' = the conclusion isn't logically entailed by the premises - even if both premises and conclusion are individually true, the logical connection between them is absent or faulty. This is a formal logical criticism.",
+            "textToSpeak": "The study's conclusion did not follow from its premises.",
+            "question": "What is the logical problem?",
             "options": [
-                "explorer",
-                "droid",
-                "scout",
-                "commander"
+                "The conclusion was too brief",
+                "The study had no stated conclusion",
+                "The premises were stated incorrectly",
+                "The conclusion was not logically supported by the evidence and reasoning"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -198,47 +210,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L165_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid locates the software quietly.",
-            "question": "Who is locating the software?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'one might be forgiven for thinking' contribute to the claim?",
+            "explanation": "'One might be forgiven for thinking' = it's an understandable interpretation, but I'm not confirming it. The passive, impersonal 'one' distances the speaker; 'forgiven' implies the interpretation may be incorrect. This is maximum epistemic caution: floating an interpretation while maintaining deniability.",
+            "textToSpeak": "One might be forgiven for thinking this represents a shift in policy.",
+            "question": "What is the speaker doing?",
             "options": [
-                "pilot",
-                "detective",
-                "hacker",
-                "droid"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L165_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist restores the engine precisely.",
-            "question": "Who is restoring the engine?",
-            "options": [
-                "traveler",
-                "scientist",
-                "teacher",
-                "expert"
+                "Clearly confirming a policy shift",
+                "Using hedged language to suggest a possible interpretation without committing to it",
+                "Denying any policy shift",
+                "Making a direct and definitive claim"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L165_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'would not be unreasonable' mean logically?",
+            "explanation": "Double negation: 'not unreasonable' = reasonable. But the double negative creates distance from a direct claim. 'Would not be unreasonable to interpret as' = it's a reasonable interpretation, but I'm not making it definitively. The indirection allows the speaker to plant the idea without formally asserting it.",
+            "textToSpeak": "It would not be unreasonable to interpret this as an admission of weakness.",
+            "question": "What is the speaker doing?",
+            "options": [
+                "Clearly stating it is an admission of weakness",
+                "Refusing to interpret the action at all",
+                "Clearly denying it is an admission of weakness",
+                "Making a qualified claim through double negation"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L165_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor locates the data rapidly.",
-            "question": "Who is locating the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does acknowledging disagreement before making a case signal?",
+            "explanation": "Acknowledging that 'not everyone would agree' signals the speaker knows the position is contestable - they're not pretending consensus where none exists. 'There is a case to be made' = the speaker will argue for the position while being transparent about its controversial nature. This is intellectually honest advocacy.",
+            "textToSpeak": "Not everyone would agree, but there is a case to be made for the idea that...",
+            "question": "What is the speaker signalling?",
             "options": [
-                "mentor",
-                "analyst",
-                "scout",
-                "droid"
+                "The idea is contested and the speaker will argue for it despite disagreement",
+                "The idea is universally accepted",
+                "The speaker personally opposes the idea",
+                "The idea has been definitively proved"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -246,31 +261,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L166_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective validates the node swiftly.",
-            "question": "Who is validating the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does it mean for a question to 'contain its own answer'?",
+            "explanation": "A question that contains its own answer is a leading question or a circular question - it's framed in a way that predetermines the conclusion. Example: 'When did you stop being dishonest?' assumes you were dishonest. The form of the question makes critical examination impossible. It's a rhetorical device masquerading as inquiry.",
+            "textToSpeak": "The question, as posed, contains its own answer.",
+            "question": "What is the speaker saying?",
             "options": [
-                "student",
-                "droid",
-                "analyst",
-                "detective"
+                "The question is profound and self-revealing",
+                "The question is genuinely unanswerable",
+                "The question is biased or circular - it assumes its conclusion",
+                "The question is irrelevant to the discussion"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L166_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer transfers the satellite quietly.",
-            "question": "Who is transferring the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'invited to celebrate' contrasted with 'more honestly described as compromise' reveal?",
+            "explanation": "The framing (celebration) is questioned: what's being presented as achievement ('celebrate') would be more accurately described as a compromise - something less than was sought. The speaker challenges the positive spin: the language of celebration obscures the partial nature of the outcome. This is ideology-critique of framing.",
+            "textToSpeak": "We are invited to celebrate what might more honestly be described as a compromise.",
+            "question": "What is the speaker implying?",
             "options": [
-                "researcher",
-                "scientist",
-                "analyst",
-                "explorer"
+                "The achievement fully deserves celebration",
+                "The invitation is entirely sincere and appropriate",
+                "The outcome is entirely negative",
+                "What is presented as success is actually only a partial or imperfect outcome"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -278,47 +295,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L166_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert validates the portal securely.",
-            "question": "Who is validating the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the epistemological observation here?",
+            "explanation": "More examination → less certainty. This is counterintuitive but real: complex evidence often reveals more nuance, more exceptions, more complicating factors. Initial impressions of certainty dissolve under scrutiny. This is an important epistemic insight about the relationship between depth of inquiry and confidence in conclusions.",
+            "textToSpeak": "The more one examines the evidence, the less certain the conclusion becomes.",
+            "question": "What does this suggest?",
             "options": [
-                "explorer",
-                "researcher",
-                "technician",
-                "expert"
+                "The evidence strongly supports the conclusion",
+                "The conclusion is clear and unambiguous",
+                "Deeper examination reveals increasing uncertainty",
+                "The evidence is irrelevant to the conclusion"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L167_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout deploys the archive securely.",
-            "question": "Who is deploying the archive?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why does passive voice in 'it has been claimed' create distance?",
+            "explanation": "Passive construction removes the claimant from view - 'it has been claimed' doesn't say by whom, or whether the speaker agrees. This creates epistemic distance: the speaker is reporting a claim, not endorsing it. By using passive voice, the speaker avoids both identifying the source and taking responsibility for the claim.",
+            "textToSpeak": "It has been claimed that...",
+            "question": "What does the passive construction signal?",
             "options": [
-                "artist",
-                "mentor",
-                "hero",
-                "scout"
+                "The speaker is endorsing the claim",
+                "The speaker is the one making the claim",
+                "The speaker is distancing themselves from the claim",
+                "The claim is definitely and verifiably true"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L167_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid monitors the data steadily.",
-            "question": "Who is monitoring the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the function of 'though not all are persuaded' as an embedded qualification?",
+            "explanation": "The embedded parenthetical ('though not all are persuaded') interrupts the argument to acknowledge disagreement. This signals: I'm aware this isn't universally accepted; I'm being transparent about the contested nature of the claim. It's a display of intellectual honesty and fair-mindedness in a potentially one-sided argument.",
+            "textToSpeak": "As some have argued - though not all are persuaded - the evidence points this way.",
+            "question": "What does this construction show?",
             "options": [
-                "droid",
-                "mentor",
-                "hero",
-                "analyst"
+                "The speaker is carefully noting the argument is contested",
+                "There is complete consensus on this interpretation",
+                "The speaker is presenting their own definitive view",
+                "The evidence is very strong and widely accepted"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -326,111 +346,118 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L167_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist repairs the system silently.",
-            "question": "Who is repairing the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'according to X' signal about the reliability of the claim?",
+            "explanation": "'According to X' = this is X's claim, not an independently verified fact. When X is a party with interests at stake (like a company under scrutiny), their claim requires independent corroboration. The phrase 'according to the company' introduces the claim while signalling its source - and therefore its potential limitations.",
+            "textToSpeak": "According to the company, all relevant procedures were followed.",
+            "question": "Why is 'according to the company' significant?",
             "options": [
-                "robot",
-                "artist",
-                "traveler",
-                "mentor"
+                "The company is always the most reliable source",
+                "The company is clearly being transparent",
+                "The procedures were definitely followed correctly",
+                "The claim comes from a potentially interested source"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L168_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander evaluates the node swiftly.",
-            "question": "Who is evaluatesing the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the distinction between a solution and a deferral?",
+            "explanation": "Solution = the problem is resolved. Deferral = the problem is postponed, moved to the future. 'Amounts to a deferral' = despite being presented as a solution, it actually just delays. This is a substantive criticism: it challenges whether the proposal actually does what it claims to do.",
+            "textToSpeak": "Rather than a solution, the proposal amounts to a deferral.",
+            "question": "What is the speaker saying?",
             "options": [
-                "expert",
-                "scientist",
-                "commander",
-                "teacher"
+                "The proposal solves the problem effectively",
+                "The proposal only postpones addressing the problem",
+                "The proposal is the best available option",
+                "The proposal has already been implemented"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L168_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst encrypts the code automatically.",
-            "question": "Who is encrypting the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the critique of 'repackaged convention presented as innovation'?",
+            "explanation": "Calling something 'innovative' implies novelty - something genuinely new. If it's actually 'repackaged convention', the newness is superficial (new packaging, new terminology) while the underlying idea is old. The speaker challenges the marketing or framing of convention as innovation - unmasking superficial novelty.",
+            "textToSpeak": "What is presented as innovation is, in many cases, repackaged convention.",
+            "question": "What is the speaker arguing?",
             "options": [
-                "droid",
-                "student",
-                "analyst",
-                "hero"
+                "All innovation is genuinely new",
+                "Some things called innovative are actually old ideas in new packaging",
+                "Conventional approaches are always superior",
+                "The speaker opposes all forms of change"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L168_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler deploys the data efficiently.",
-            "question": "Who is deploying the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does it mean for a word to 'do a lot of work' in an argument?",
+            "explanation": "'Doing a lot of work' = carrying significant rhetorical weight - the argument depends heavily on the word's positive connotations. 'Reform' sounds positive (improvement), so attaching it to something makes that thing sound good by association. The speaker is pointing out: the label 'reform' is doing the positive evaluative work rather than evidence.",
+            "textToSpeak": "The term 'reform' is doing a lot of work in this argument.",
+            "question": "What does this mean?",
             "options": [
-                "pilot",
-                "researcher",
-                "scout",
-                "traveler"
+                "The word 'reform' is used accurately throughout",
+                "Reform is always a genuinely positive concept",
+                "The word is being used to make something sound positive when it may not deserve the label",
+                "The argument is logically sound"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L169_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer encrypts the circuit reliably.",
-            "question": "Who is encrypting the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the meta-level inference being made?",
+            "explanation": "The meta-inference: the question's existence is itself informative. If a question is now being asked that wasn't before, something must have changed to make it askable - a shift in circumstances, norms, or knowledge. The question itself is evidence of something, independent of its answer.",
+            "textToSpeak": "The fact that this question is being asked at all tells us something important.",
+            "question": "What does the speaker imply?",
             "options": [
-                "pilot",
-                "robot",
-                "droid",
-                "engineer"
+                "The very act of asking the question reveals something about the current state of affairs",
+                "The question is interesting but routine",
+                "The question is irrelevant",
+                "Questions should not be asked publicly"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L169_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor activates the code effectively.",
-            "question": "Who is activating the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would the absence of challenge be as significant as the claim?",
+            "explanation": "Silence = implicit acceptance. If a claim goes unchallenged, it may mean: everyone agreed (positive sign) OR people felt unable or unwilling to challenge (negative sign - possibly due to power, fear, or norms). The speaker is saying the silence tells a story about the context, not just the claim.",
+            "textToSpeak": "That nobody challenged the claim at the time says as much as the claim itself.",
+            "question": "What is the speaker suggesting?",
             "options": [
-                "artist",
-                "analyst",
-                "hero",
-                "mentor"
+                "The lack of opposition at the time is itself significant and revealing",
+                "The claim was correct",
+                "Nobody was paying attention",
+                "The claim was too complex to challenge"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L169_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler measures the device efficiently.",
-            "question": "Who is measuring the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the paradox and meaning of 'deafening silence'?",
+            "explanation": "An oxymoron: silence can't be literally deafening (loud). But 'deafening' describes the impact - the absence of sound is so notable it has the same impact as loud noise. Applied to discourse: the absence of comment or acknowledgement is so conspicuous it demands notice. The non-response is the loudest response.",
+            "textToSpeak": "The silence on this issue has been deafening.",
+            "question": "What does deafening silence mean?",
             "options": [
-                "detective",
-                "teacher",
-                "analyst",
-                "traveler"
+                "There was literal loud noise",
+                "People tried to speak but couldn't be heard",
+                "The issue is genuinely unknown",
+                "The absence of comment on the issue is very noticeable and significant"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -438,31 +465,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L170_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander validates the chip smoothly.",
-            "question": "Who is validating the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the combination of smiling and avoiding eye contact create?",
+            "explanation": "Smile (positive expression) + no eye contact (avoidance) = a split between performed and felt response. Eye contact avoidance typically signals discomfort, guilt, sadness, or concealment. Together: the smile may be social performance; the avoiding eyes may be the more honest signal. The combination creates ambiguity about her true feeling.",
+            "textToSpeak": "She smiled at the news but didn't meet his eyes.",
+            "question": "What does avoiding eye contact suggest?",
             "options": [
-                "traveler",
-                "pilot",
-                "explorer",
-                "commander"
+                "She was very happy and relaxed",
+                "She was embarrassed by the news",
+                "There was something she wasn't fully expressing",
+                "She couldn't see properly"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L170_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective locates the device securely.",
-            "question": "Who is locating the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone describe a difficult period with detachment?",
+            "explanation": "Detachment in describing past suffering can mean: the emotions have been processed deeply enough to discuss without re-experiencing them; or distance (physical, temporal, psychological) has been established. It's not absence of feeling but sufficient distance from it - the opposite of being triggered by retelling.",
+            "textToSpeak": "He described the years of struggle with surprising detachment.",
+            "question": "What does detachment imply?",
             "options": [
-                "student",
-                "robot",
-                "scientist",
-                "detective"
+                "He was completely unaffected by the experience",
+                "He had forgotten the details",
+                "He was lying about the struggle",
+                "He may have processed the pain so deeply that he can now discuss it without distress"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -470,17 +499,18 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L170_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero repairs the engine securely.",
-            "question": "Who is repairing the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone talk around a subject without addressing it?",
+            "explanation": "Extensive talking around a subject - filling time with other things while the real subject waits - is avoidance behaviour. 'What she had come to say' implies she had a specific purpose she wasn't fulfilling. The stalling suggests the real subject is difficult: emotionally hard, potentially confrontational, or scary to raise.",
+            "textToSpeak": "She talked for a long time without saying what she had come to say.",
+            "question": "What can be inferred?",
             "options": [
-                "hero",
-                "technician",
-                "analyst",
-                "student"
+                "She forgot her main purpose",
+                "She was stalling because the real topic was difficult to raise",
+                "She simply had many unrelated things to discuss",
+                "She had no main purpose"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         }
     ]

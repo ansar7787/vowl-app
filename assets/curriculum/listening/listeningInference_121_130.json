@@ -6,31 +6,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L121_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician analyzes the satellite precisely.",
-            "question": "Who is analyzing the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the subject of 'attributed'? What quality is being credited?",
+            "explanation": "'Attributed success to' = identified as the cause of success. 'Primarily' = mainly. 'Willingness to adapt' = adaptability. She is saying adaptability was the main driver of success, not individual work or tools. Identifying what someone attributes success to requires precise listening.",
+            "textToSpeak": "She attributed their success primarily to the team's willingness to adapt.",
+            "question": "What did she credit for their success?",
             "options": [
-                "teacher",
-                "robot",
-                "detective",
-                "technician"
+                "Hard individual effort",
+                "Technological advantages",
+                "The team's adaptability",
+                "Strong leadership"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L121_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst secures the circuit securely.",
-            "question": "Who is securing the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What do 'acknowledges improvements' and 'highlights areas requiring attention' together convey?",
+            "explanation": "Two balanced elements: improvements (positive) + areas needing attention (gap). 'While' links them as simultaneous truths. Together: a mixed picture - some progress, some remaining challenges. This is balanced assessment language, avoiding both pure praise and pure criticism.",
+            "textToSpeak": "The report acknowledges improvements while highlighting areas that still require attention.",
+            "question": "What is the overall message?",
             "options": [
-                "student",
-                "artist",
-                "analyst",
-                "robot"
+                "Everything is excellent",
+                "Everything is poor",
+                "Progress has been made, but there is still work to do",
+                "The report is overly positive"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -38,15 +40,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L121_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist transfers the module efficiently.",
-            "question": "Who is transferring the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the adverb 'graciously' tell you about how he responded?",
+            "explanation": "'Graciously' = with grace - politely, without complaint, without defensiveness. 'Accepted graciously' = took the criticism well, without bitterness. This is a positive description of emotional maturity in receiving feedback. The opposite would be: defensively, resentfully, angrily.",
+            "textToSpeak": "He accepted the criticism graciously and promised to do better.",
+            "question": "What does graciously mean here?",
             "options": [
-                "technician",
-                "teacher",
-                "scientist",
-                "student"
+                "He became defensive",
+                "He pretended not to care",
+                "He accepted it politely and without resentment",
+                "He dismissed the criticism as irrelevant"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -54,207 +57,220 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L122_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker transfers the signal instantly.",
-            "question": "Who is transferring the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What rhetorical move does 'of course, one could argue... but' make?",
+            "explanation": "Acknowledging the opposing view ('of course one could argue') then redirecting ('but let's look at evidence') is a rhetorical move that concedes the existence of the other view while steering away from it. The speaker isn't abandoning their position - they're using evidence to overcome the objection.",
+            "textToSpeak": "Of course, one could argue the opposite - but let's look at the evidence.",
+            "question": "What is the speaker doing?",
             "options": [
-                "engineer",
-                "commander",
-                "teacher",
-                "hacker"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L122_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist analyzes the terminal steadily.",
-            "question": "Who is analyzing the terminal?",
-            "options": [
-                "artist",
-                "analyst",
-                "traveler",
-                "commander"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L122_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid locates the chip automatically.",
-            "question": "Who is locating the chip?",
-            "options": [
-                "droid",
-                "researcher",
-                "expert",
-                "scout"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L123_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective builds the device carefully.",
-            "question": "Who is building the device?",
-            "options": [
-                "detective",
-                "expert",
-                "commander",
-                "researcher"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L123_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler secures the satellite automatically.",
-            "question": "Who is securing the satellite?",
-            "options": [
-                "student",
-                "researcher",
-                "droid",
-                "traveler"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L123_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer restores the code automatically.",
-            "question": "Who is restoring the code?",
-            "options": [
-                "hacker",
-                "engineer",
-                "scout",
-                "commander"
+                "Changing their position to the opposite view",
+                "Dismissing the opposing view and moving to evidence",
+                "Inviting the audience to debate both sides",
+                "Admitting they were wrong"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L124_Q1",
+            "id": "LIS_LISTENINGINFERENCE_L122_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student encrypts the satellite immediately.",
-            "question": "Who is encrypting the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'perhaps' + a rhetorical question accomplish?",
+            "explanation": "'Some might say idealistic' = acknowledging the criticism. 'Perhaps' = slight concession. 'But without ideals, where would we be?' = a rhetorical question defending idealism. The structure: acknowledge → slight concede → defend. The rhetorical question implies: ideals are necessary, so the criticism misses the point.",
+            "textToSpeak": "Some might say this is idealistic. Perhaps. But without ideals, where would we be?",
+            "question": "What is the speaker doing?",
             "options": [
-                "student",
-                "explorer",
-                "technician",
-                "detective"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L124_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor secures the signal quietly.",
-            "question": "Who is securing the signal?",
-            "options": [
-                "expert",
-                "hacker",
-                "student",
-                "mentor"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L124_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler secures the module properly.",
-            "question": "Who is securing the module?",
-            "options": [
-                "traveler",
-                "mentor",
-                "scientist",
-                "explorer"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L125_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid repairs the device reliably.",
-            "question": "Who is repairing the device?",
-            "options": [
-                "explorer",
-                "student",
-                "commander",
-                "droid"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L125_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher transfers the chip efficiently.",
-            "question": "Who is transferring the chip?",
-            "options": [
-                "explorer",
-                "technician",
-                "teacher",
-                "scout"
+                "Fully agreeing with the criticism of idealism",
+                "Abandoning their idealistic position",
+                "Acknowledging but defending idealism with a counter-question",
+                "Asking a sincere factual question"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L125_Q3",
+            "id": "LIS_LISTENINGINFERENCE_L122_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero transfers the software immediately.",
-            "question": "Who is transferring the software?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'now let's consider the facts' signal after hearing the opposing view?",
+            "explanation": "After presenting the opposition ('we've heard the arguments against'), the speaker shifts to facts ('what the facts actually say'). This is a classic rhetorical structure: present opposing views → then turn to evidence to counter them. 'Actually' subtly implies the facts contradict the arguments just presented.",
+            "textToSpeak": "We've heard the arguments against. Now let's consider what the facts actually say.",
+            "question": "What rhetorical move is being made?",
             "options": [
-                "mentor",
-                "student",
-                "teacher",
-                "hero"
+                "Ending the debate entirely",
+                "Shifting from opinion to factual evidence",
+                "Admitting the opposing arguments are correct",
+                "Starting a completely new topic"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L123_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the distinction between correlation and causation?",
+            "explanation": "Correlation = two things occurring together or moving together. Causation = one thing causing the other. Correlation doesn't prove causation - they might both be caused by a third factor. This is a fundamental research and critical thinking principle: don't assume A causes B just because A and B are linked.",
+            "textToSpeak": "The correlation between the two variables does not establish causation.",
+            "question": "What is the speaker warning against?",
+            "options": [
+                "Ignoring the correlation entirely",
+                "Using the wrong variable in the analysis",
+                "Assuming one thing causes the other simply because they're correlated",
+                "Publishing inconclusive results"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L123_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the distinction between statistical significance and effect size?",
+            "explanation": "Statistical significance = the result is real, not due to chance. Effect size = how large or important the difference is in practice. A result can be statistically real but practically tiny. Example: a drug that works but only slightly. Large studies can find statistically significant but trivially small effects.",
+            "textToSpeak": "The results were statistically significant but the effect size was small.",
+            "question": "What does this mean?",
+            "options": [
+                "The results are real but may not be practically important",
+                "The results are very impactful",
+                "The results are false positives",
+                "The results have no practical value at all"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L123_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'replication' mean in research, and why is it important?",
+            "explanation": "'Replication' = repeating the study to see if the same results occur. 'Robust' = reliable, consistent across studies. One study finding something is preliminary; multiple studies finding the same thing = robust. Science relies on replication to filter out false positives and confirm real effects.",
+            "textToSpeak": "Further replication is needed before the findings can be considered robust.",
+            "question": "What does this mean?",
+            "options": [
+                "The study was methodologically perfect",
+                "The findings are already confirmed",
+                "The study should not be published yet",
+                "Other researchers need to reproduce the findings to confirm them"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L124_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What hidden assumption is built into this question?",
+            "explanation": "'When did you stop' presupposes you DID stop - it assumes the stopping happened. If you hadn't stopped, the question would be unanswerable. This is a 'loaded question' - it contains an assumed fact. Recognising built-in assumptions is essential for critical listening.",
+            "textToSpeak": "When did you stop coming to the meetings?",
+            "question": "What does this question assume?",
+            "options": [
+                "You have never attended the meetings",
+                "Meetings are not important to you",
+                "You come to every meeting currently",
+                "You used to come but have stopped"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L124_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'even' add to a statement about experienced members?",
+            "explanation": "'Even' = this is surprising, or this applies despite expectations. 'Even the most experienced found it difficult' = those expected to cope best still struggled. The implication: if they struggled, those with less experience found it even harder. 'Even' sets up a scale with the experienced end being the surprising case.",
+            "textToSpeak": "Even the most experienced members found it difficult.",
+            "question": "What does even imply?",
+            "options": [
+                "The experienced members had no problems",
+                "Less experienced members probably found it even harder",
+                "Only inexperienced members had difficulties",
+                "Everyone managed without difficulty"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L124_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the adverb 'still' add to the verb 'believes'?",
+            "explanation": "'Still' = continuing despite something - despite time passing, setbacks, or others giving up. 'Still believes' = her belief persists against the odds. The word 'still' implies there's a reason she might NOT believe anymore (setbacks, opposition), making her persistence notable.",
+            "textToSpeak": "She still believes the project can succeed.",
+            "question": "What does still imply?",
+            "options": [
+                "She has always been consistently confident",
+                "She has recently changed her mind",
+                "Everyone around her is equally optimistic",
+                "Despite setbacks or others' doubts, she maintains her confidence"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L125_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Count the hedges in this request - what do they signal?",
+            "explanation": "Multiple hedges: 'was wondering' (past tense softens), 'if' (conditional), 'might' (possibility), 'possibly' (even more tentative), 'a moment' (minimises the time ask). This is maximum politeness through extreme hedging - the speaker feels they have significantly less power or status than the recipient.",
+            "textToSpeak": "I was wondering if you might possibly have a moment.",
+            "question": "What does this heavily hedged request reveal?",
+            "options": [
+                "The speaker is very confident and direct",
+                "The speaker is very cautious about imposing on the other person",
+                "The speaker is being sarcastic about the other person's time",
+                "The speaker is giving a direct order"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L125_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does maximum hedging before a request reveal about the requester's position?",
+            "explanation": "'If it's not too much trouble' = apologising for asking. 'Could you' = polite request. 'Perhaps' = even more tentative. Together: extreme deference. This level of hedging suggests the speaker feels they're asking a favour from someone with more power - making the request feel like an imposition.",
+            "textToSpeak": "If it's not too much trouble, could you perhaps take a look at this?",
+            "question": "What does this phrasing suggest about the power relationship?",
+            "options": [
+                "The speaker has significantly more power",
+                "They are equal colleagues",
+                "They are close friends speaking informally",
+                "The speaker has less power or is being very deferential"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L125_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does choosing to ask rather than tell in a position of authority signal?",
+            "explanation": "A manager could give orders but chose to ask - this is voluntary restraint of authority. Asking rather than telling shows respect for team members' autonomy and agency. This is collaborative leadership: using authority sparingly and preferring dialogue to direction. It reflects a specific management philosophy.",
+            "textToSpeak": "He asked rather than told - even though he was the manager.",
+            "question": "What does this tell us about his management style?",
+            "options": [
+                "He is weak and avoids making decisions",
+                "He is collaborative and respectful of his team",
+                "He doesn't know how to use his authority",
+                "He avoids making decisions"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L126_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid validates the engine successfully.",
-            "question": "Who is validating the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would two people actively avoid each other at an event?",
+            "explanation": "Active avoidance at an event (where people generally socialise) strongly suggests interpersonal tension or conflict. If they just had different schedules, they'd still encounter each other by chance. Deliberate avoidance implies choosing not to interact - following some negative event or relationship breakdown.",
+            "textToSpeak": "They avoided each other for the rest of the conference.",
+            "question": "What can be inferred?",
             "options": [
-                "hacker",
-                "explorer",
-                "technician",
-                "droid"
+                "They simply had different schedules",
+                "They were both very busy",
+                "They didn't know each other",
+                "Something negative happened between them"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -262,15 +278,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L126_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst deploys the code reliably.",
-            "question": "Who is deploying the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would someone choose words very carefully when raising mistakes?",
+            "explanation": "Careful word choice = tactfulness. Raising 'past mistakes' is potentially hurtful or defensive-triggering. Choosing carefully = trying to deliver difficult feedback without causing unnecessary hurt. This shows consideration for his emotional response and awareness that the topic is sensitive.",
+            "textToSpeak": "She chose her words very carefully when raising his past mistakes.",
+            "question": "What does this tell us?",
             "options": [
-                "mentor",
-                "hero",
-                "technician",
-                "analyst"
+                "She didn't know about the mistakes",
+                "She was indifferent to his feelings",
+                "She was angry and wanted to upset him",
+                "She was trying to be tactful about a sensitive subject"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -278,15 +295,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L126_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker locates the archive silently.",
-            "question": "Who is locating the archive?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does silence instead of expected applause communicate?",
+            "explanation": "Expected applause that doesn't come = the reaction fell below expectations. Silence after an announcement (especially where applause was expected) signals displeasure, shock, or disappointment. The contrast ('rather than the expected applause') makes the disappointment explicit.",
+            "textToSpeak": "The announcement was met with silence rather than the expected applause.",
+            "question": "What does this suggest?",
             "options": [
-                "hacker",
-                "hero",
-                "teacher",
-                "student"
+                "The audience was not pleased with the news",
+                "The announcement was well received",
+                "The audience was very tired",
+                "The audience was distracted"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -294,47 +312,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L127_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker builds the data effectively.",
-            "question": "Who is building the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the idiom 'nip in the bud' mean?",
+            "explanation": "'Nip in the bud' = stop something at the earliest stage, before it develops further. It's a horticultural metaphor: removing a bud (early growth) to prevent the plant from flowering. Applied to problems: stop it early while it's small, before it grows into something harder to manage.",
+            "textToSpeak": "We need to nip this in the bud before it becomes a bigger problem.",
+            "question": "What is the speaker saying?",
             "options": [
-                "technician",
-                "expert",
-                "hacker",
-                "scout"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L127_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid observes the device properly.",
-            "question": "Who is observing the device?",
-            "options": [
-                "droid",
-                "traveler",
-                "student",
-                "teacher"
+                "The problem should be addressed early before it grows",
+                "The problem should be ignored",
+                "The problem involves plants",
+                "The problem is already serious"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L127_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'treading water' mean as a business metaphor?",
+            "explanation": "'Treading water' = keeping afloat by constant effort but going nowhere (like treading water in a swimming pool - you stay in place). Applied to business: the company is surviving (not drowning) but not advancing. There's no growth - just enough effort to maintain current position.",
+            "textToSpeak": "The company is treading water - surviving but not growing.",
+            "question": "What is the company's situation?",
+            "options": [
+                "It is thriving and profitable",
+                "It is barely maintaining itself with no real progress",
+                "It is in steep decline",
+                "It is preparing for a major launch"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L127_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander transfers the data effectively.",
-            "question": "Who is transferring the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the metaphor 'double-edged sword' mean?",
+            "explanation": "'Double-edged sword' = something with both benefits and drawbacks - the same qualities that make it useful also make it dangerous or problematic. Like a sword with two sharp edges: both can cut. Applied here: the project's positive aspects come with simultaneous negative aspects.",
+            "textToSpeak": "She said the project was a double-edged sword.",
+            "question": "What does she mean?",
             "options": [
-                "hacker",
-                "teacher",
-                "student",
-                "commander"
+                "The project involves some physical danger",
+                "The project is a complete failure",
+                "The project is an excellent opportunity",
+                "The project has both advantages and disadvantages"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -342,47 +363,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L128_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander monitors the terminal quietly.",
-            "question": "Who is monitoring the terminal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'in many respects' add to a claim about significance?",
+            "explanation": "'In many respects' = in various ways, but not necessarily in all ways. It qualifies the claim - significant in some dimensions but the speaker isn't claiming it's significant in every possible way. This is careful, precise language that avoids overstating the case.",
+            "textToSpeak": "In many respects, this represents a significant shift in policy.",
+            "question": "What does in many respects signal?",
             "options": [
-                "commander",
-                "researcher",
-                "scout",
-                "engineer"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L128_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid deploys the circuit instantly.",
-            "question": "Who is deploying the circuit?",
-            "options": [
-                "scout",
-                "analyst",
-                "student",
-                "droid"
+                "This is the most important policy shift ever",
+                "It is not a policy shift at all",
+                "The policy is completely unchanged",
+                "The shift is significant in some dimensions but perhaps not all"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L128_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'under certain conditions' add to a claim about effectiveness?",
+            "explanation": "'Under certain conditions' = only when specific circumstances are in place. This qualifies the effectiveness claim: it's not universally or always effective - context matters. This is important: the method isn't being dismissed or universally endorsed; it's context-dependent.",
+            "textToSpeak": "Under certain conditions, this method can be highly effective.",
+            "question": "What does under certain conditions signal?",
+            "options": [
+                "It works in all situations equally",
+                "It never works",
+                "Its effectiveness is conditional on the specific context",
+                "It generally works quite well"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L128_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot encrypts the node instantly.",
-            "question": "Who is encrypting the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'some evidence to suggest' communicate about certainty level?",
+            "explanation": "'Some' = limited, not extensive. 'To suggest' = points towards but doesn't prove. Together: very low certainty - there are indications but not proof. This is the most tentative form of positive evidence claim. Compare: 'the evidence shows' (more certain) vs. 'some evidence suggests' (very tentative).",
+            "textToSpeak": "There is some evidence to suggest that the policy has reduced inequality.",
+            "question": "What level of certainty is the speaker expressing?",
             "options": [
-                "pilot",
-                "droid",
-                "hacker",
-                "scientist"
+                "Tentative, limited evidence",
+                "Strong confidence",
+                "Complete certainty",
+                "No evidence at all"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -390,97 +414,103 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L129_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher deploys the system directly.",
-            "question": "Who is deploying the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the discourse marker 'that said' communicate?",
+            "explanation": "'That said' = despite what I just said, or acknowledging what came before while introducing a contrasting or additional point. Here: problems were described, then 'that said, I remain optimistic' = despite those problems, optimism persists. It's a pivot from negative to positive while retaining both.",
+            "textToSpeak": "That said, I remain optimistic about the long-term prospects.",
+            "question": "What does that said signal?",
             "options": [
-                "teacher",
-                "researcher",
-                "detective",
-                "pilot"
+                "The speaker is changing to an entirely new topic",
+                "Despite what was just said, the speaker holds a positive view",
+                "The speaker is repeating their previous point",
+                "The speaker is summarising everything said so far"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L129_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective restores the code precisely.",
-            "question": "Who is restoring the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'all things considered' mean as a discourse opener?",
+            "explanation": "'All things considered' = after weighing all relevant factors together. It signals a holistic evaluation: not cherry-picking positives or negatives but assessing the whole picture. The conclusion: 'better than expected' is a measured positive assessment that accounts for all factors.",
+            "textToSpeak": "All things considered, the outcome was better than expected.",
+            "question": "What does all things considered signal?",
             "options": [
-                "hero",
-                "robot",
-                "researcher",
-                "detective"
+                "Looking at only the most positive aspects",
+                "Taking everything into account overall, the outcome is positive",
+                "The outcome was exactly as predicted",
+                "Only some things contributed to the outcome"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L129_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst updates the portal quietly.",
-            "question": "Who is updating the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'be that as it may' communicate about the response to an objection?",
+            "explanation": "'Be that as it may' = even if that is true, it doesn't change things. It acknowledges an objection (concession) while maintaining the position (non-concession on the main point). The decision stands regardless. This is a firm maintenance of position while appearing to acknowledge the other side.",
+            "textToSpeak": "Be that as it may, the decision stands.",
+            "question": "What does be that as it may signal?",
             "options": [
-                "technician",
-                "explorer",
-                "teacher",
-                "analyst"
+                "The speaker agrees with the objection raised",
+                "The speaker is open to reconsidering",
+                "Even if the objection is valid, it won't change the outcome",
+                "The speaker doesn't understand the objection"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L130_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist updates the device effectively.",
-            "question": "Who is updating the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What do 'appears that' and 'though further testing is needed' together communicate?",
+            "explanation": "'Appears that' = tentative observation. 'Though further testing is needed' = the claim isn't final. Together: a carefully hedged positive finding - something seems to be happening, but it's not confirmed yet. This is responsible academic communication: sharing a finding while being honest about its limitations.",
+            "textToSpeak": "It appears that longer exposure leads to stronger results, though further testing is needed.",
+            "question": "What is the speaker doing?",
             "options": [
-                "scientist",
-                "traveler",
-                "hero",
-                "pilot"
+                "Making a definitive claim",
+                "Claiming the results are perfect",
+                "Dismissing previous research entirely",
+                "Suggesting a pattern while acknowledging uncertainty"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L130_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid encrypts the module effectively.",
-            "question": "Who is encrypting the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'contested in the literature' mean?",
+            "explanation": "'Contested' = disputed, argued over, not agreed upon. 'In the literature' = among published academic work. Together: researchers who have published on this topic disagree about how to interpret the findings. 'Remains contested' = this disagreement continues, hasn't been resolved.",
+            "textToSpeak": "The interpretation of these findings remains contested in the literature.",
+            "question": "What does this mean?",
             "options": [
-                "droid",
-                "mentor",
-                "explorer",
-                "student"
+                "Everyone agrees on what the findings mean",
+                "The findings have been proved wrong",
+                "Researchers disagree about what the findings mean",
+                "The literature is unreliable on this topic"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L130_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician creates the protocol steadily.",
-            "question": "Who is creating the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'could potentially offer' express about the probability?",
+            "explanation": "Triple hedging: 'could' (possibility), 'potentially' (possibility again), 'offer' (not 'guarantee'). This stacks uncertainty markers to convey: maybe, under the right circumstances, there might be advantages. It's extremely cautious positive language - open to the possibility without committing to it.",
+            "textToSpeak": "This approach could potentially offer significant advantages.",
+            "question": "What level of certainty is being expressed?",
             "options": [
-                "technician",
-                "robot",
-                "pilot",
-                "commander"
+                "Very high certainty",
+                "Moderate - it's possible but not certain",
+                "Very low certainty",
+                "The speaker is certain it won't work"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         }
     ]

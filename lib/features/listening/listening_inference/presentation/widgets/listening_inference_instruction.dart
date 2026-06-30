@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ListeningInferenceInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const ListeningInferenceInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -23,7 +25,7 @@ class ListeningInferenceInstruction extends StatelessWidget {
           Icon(Icons.radar_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            "PROBE SUBTEXT TO INFER INTENT",
+            instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,

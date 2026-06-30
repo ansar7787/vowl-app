@@ -6,127 +6,135 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L181_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer evaluates the archive quietly.",
-            "question": "Who is evaluatesing the archive?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Where does the real dispute in this argument lie?",
+            "explanation": "Valid argument = if premises are true, conclusion must follow. The observation: the logic is fine (conclusion follows from premise). The real dispute: the premise itself. Arguments can be logically valid while resting on contested assumptions. The weak point is before the argument even starts - in what is granted as given.",
+            "textToSpeak": "If the premise is conceded, the conclusion follows - yet the premise itself is far from obvious.",
+            "question": "What is the key issue?",
             "options": [
-                "explorer",
-                "expert",
-                "hero",
-                "droid"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L181_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician validates the node automatically.",
-            "question": "Who is validating the node?",
-            "options": [
-                "expert",
-                "artist",
-                "technician",
-                "pilot"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L181_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot monitors the drone smoothly.",
-            "question": "Who is monitoring the drone?",
-            "options": [
-                "commander",
-                "analyst",
-                "artist",
-                "robot"
+                "The logic is faulty",
+                "The argument has no weaknesses",
+                "The conclusion is obviously wrong",
+                "The argument is valid but the starting assumption is questionable"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L182_Q1",
+            "id": "LIS_LISTENINGINFERENCE_L181_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist locates the protocol carefully.",
-            "question": "Who is locating the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the relationship between falsifiability and explanatory value?",
+            "explanation": "Popper's insight: a theory that can explain any possible outcome - including contradictory ones - makes no specific predictions and therefore can't be tested. If everything confirms the theory, nothing challenges it, and it tells us nothing specific. Explanatory value requires the ability to be wrong. Unfalsifiable theories are vacuous.",
+            "textToSpeak": "A theory that explains everything explains nothing.",
+            "question": "What does this philosophical observation mean?",
             "options": [
-                "droid",
-                "student",
-                "scientist",
-                "hero"
+                "The best theories have the widest explanatory power",
+                "A theory so broad it cannot be falsified has no real explanatory power",
+                "All theories should be as simple as possible",
+                "Explaining more is always better"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L181_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does the sequence of ideas in a speech reveal beyond the content?",
+            "explanation": "Sequence = rhetoric. What you put first creates the frame for everything after; what you put last is what you leave with people. Sequencing reflects priorities, aims, and strategies. Analysing order - what was introduced when and why - reveals the architecture of persuasion beneath the apparent content.",
+            "textToSpeak": "The most revealing aspect of the speech was not what was said but the order in which it was said.",
+            "question": "What is being analysed?",
+            "options": [
+                "The content of the speech",
+                "The speaker's vocabulary choices",
+                "The rhetorical structure and sequencing as a form of argument",
+                "The audience's response"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L182_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How can absence be a statement?",
+            "explanation": "Deliberate omission communicates: this doesn't belong here, this isn't worthy of mention, this is beneath acknowledgement. Choosing not to include something is a choice - and choices carry meaning. A deliberate silence is a way of stating something without words: the act of not saying is itself saying something.",
+            "textToSpeak": "The omission is not an oversight - it is itself a statement.",
+            "question": "What does this claim mean?",
+            "options": [
+                "The author made a careless mistake",
+                "The absence of something from the text carries deliberate and significant meaning",
+                "All omissions are accidental",
+                "Statements require explicit words to count as statements"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L182_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero repairs the protocol silently.",
-            "question": "Who is repairing the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the sophisticated skill of appearing neutral while actually advocating?",
+            "explanation": "This is a high-level rhetorical technique: framing, word choice, selection of emphasis, question formulation all allow a speaker to guide audiences toward a conclusion while appearing to present 'just the facts'. The appearance of neutrality makes the advocacy more effective because it's invisible.",
+            "textToSpeak": "The speaker managed to take a strong position without appearing to have taken any position at all.",
+            "question": "What rhetorical skill is being described?",
             "options": [
-                "hero",
-                "researcher",
-                "explorer",
-                "detective"
+                "Genuine indecisiveness",
+                "Stating opinions with complete clarity",
+                "Avoiding all controversy",
+                "The ability to communicate a view while maintaining an appearance of neutrality"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L182_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor updates the signal steadily.",
-            "question": "Who is updating the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the epistemological claim about the situated nature of knowledge?",
+            "explanation": "All knowing is situated: our history, culture, position, and perspective shape what questions we ask, what we notice, and how we interpret. There is no 'view from nowhere'. 'Cannot escape' = these conditions aren't optional or removable. This is a radical claim about the impossibility of fully objective knowledge.",
+            "textToSpeak": "We cannot escape the conditions of our own knowing.",
+            "question": "What does this philosophical observation mean?",
             "options": [
-                "mentor",
-                "detective",
-                "hacker",
-                "scout"
+                "Knowledge is completely impossible",
+                "We know everything fully",
+                "Our own perspective, history, and position always shape what we can know",
+                "Some people are truly objective"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L183_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student sends the engine consistently.",
-            "question": "Who is sending the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why would more knowledge make understanding the past harder in one specific way?",
+            "explanation": "More knowledge = more context, more subsequent events, more hindsight. But those who lived through a period had none of that subsequent knowledge - they experienced only the present of their time. The expert's knowledge is precisely what removes them from the perspective of ignorance and uncertainty that characterised the lived experience.",
+            "textToSpeak": "The historian's dilemma: the more you know about a period, the harder it becomes to see it as those who lived through it did.",
+            "question": "What is the paradox?",
             "options": [
-                "student",
-                "teacher",
-                "traveler",
-                "pilot"
+                "Historical knowledge makes understanding easier",
+                "Historical sources are always reliable and sufficient",
+                "Historians always understand the past perfectly",
+                "Expertise can create distance from the lived experience being studied"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L183_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander scans the chip directly.",
-            "question": "Who is scanning the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the relationship between focus and exclusion in interpretation?",
+            "explanation": "Interpretation requires selection: what to attend to, what to emphasise, what to connect. By choosing what to interpret, you simultaneously choose what not to interpret. Every reading of a text, situation, or event has its constitutive outside - what it leaves out to maintain its coherence. No interpretation is total.",
+            "textToSpeak": "Every interpretation is also a choice of what not to interpret.",
+            "question": "What does this mean?",
             "options": [
-                "technician",
-                "student",
-                "analyst",
-                "commander"
+                "Interpretations cover everything",
+                "We should avoid interpreting",
+                "The best interpretations are always total",
+                "Every act of interpretation necessarily focuses some things while setting others aside"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -134,111 +142,118 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L183_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot measures the engine rapidly.",
-            "question": "Who is measuring the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the significance of discipline-specific evidence standards?",
+            "explanation": "A randomised controlled trial is gold standard in medicine; ethnographic immersion in anthropology; mathematical proof in mathematics. These aren't interchangeable. When disciplines engage, conflicts often stem from different, unarticulated standards. The observation: this difference exists and matters, but isn't often named or examined.",
+            "textToSpeak": "What counts as evidence varies significantly between disciplines, and those differences are rarely acknowledged.",
+            "question": "What is being pointed out?",
             "options": [
-                "pilot",
-                "engineer",
-                "technician",
-                "teacher"
+                "All disciplines use identical standards",
+                "Evidence is always objective",
+                "Different fields have different standards for evidence, which is rarely discussed openly",
+                "Disciplines always agree on methods"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L184_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer encrypts the system smoothly.",
-            "question": "Who is encrypting the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why is claiming methodological neutrality a theoretical position?",
+            "explanation": "Claiming neutrality isn't neutral - it's a stance that refuses to acknowledge its own assumptions. Every methodology embeds assumptions about what counts as evidence, what questions are worth asking, what counts as rigour. Claiming to have no such assumptions is itself an assumption. Neutrality is a claim requiring examination, not a default state.",
+            "textToSpeak": "The field assumes its own methodology to be neutral, which is itself a theoretical position.",
+            "question": "What is the critique?",
             "options": [
-                "engineer",
-                "expert",
-                "commander",
-                "pilot"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L184_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor creates the drone expertly.",
-            "question": "Who is creating the drone?",
-            "options": [
-                "robot",
-                "student",
-                "expert",
-                "mentor"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L184_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout validates the sensor consistently.",
-            "question": "Who is validating the sensor?",
-            "options": [
-                "scout",
-                "explorer",
-                "artist",
-                "commander"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L185_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist encrypts the archive consistently.",
-            "question": "Who is encrypting the archive?",
-            "options": [
-                "technician",
-                "scientist",
-                "student",
-                "artist"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L185_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot updates the system efficiently.",
-            "question": "Who is updating the system?",
-            "options": [
-                "detective",
-                "pilot",
-                "traveler",
-                "scientist"
+                "The methodology is genuinely neutral",
+                "Claiming neutrality is itself a form of methodological bias",
+                "The field has no methodology",
+                "Theoretical positions are unimportant"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L184_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What prerequisite knowledge is needed even for formulating good questions?",
+            "explanation": "Formulating the right question = knowing enough to know where the gaps are. A complete novice doesn't know what they don't know - they can't identify the right question because they don't have the framework within which the question makes sense. Knowing what you don't know requires knowing what you do know.",
+            "textToSpeak": "To ask the right questions, you must already understand enough to know what you don't know.",
+            "question": "What does this reveal about inquiry?",
+            "options": [
+                "Knowing your own ignorance requires a foundation of knowledge",
+                "Understanding and questioning are completely independent",
+                "The most ignorant ask the best questions",
+                "Questions are always obvious and simple"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L184_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why does engaging with objections make an argument more persuasive?",
+            "explanation": "Ignoring objections makes an argument look weak or evasive. Engaging with the strongest objections and responding to them shows: the speaker has considered other views seriously; the argument can survive challenge; the conclusion is more reliable for having been tested. This pre-empts objections and demonstrates intellectual confidence.",
+            "textToSpeak": "The most persuasive arguments are not those that leave no room for doubt, but those that anticipate and answer the best objections.",
+            "question": "What does this mean?",
+            "options": [
+                "Certainty is the most persuasive quality",
+                "Addressing strong objections proactively is more persuasive than projecting certainty",
+                "Arguments should simply ignore objections",
+                "Simple arguments are always most persuasive"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L185_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is a dialectical 'change of terms'?",
+            "explanation": "Conceding a specific point while reframing the larger debate is a sophisticated move: you accept the criticism at one level to contest at a higher or different level. This prevents full defeat while maintaining the substantive position. The terms of the debate are shifted to ground where the speaker has advantage.",
+            "textToSpeak": "He concedes the point but changes the terms of the debate - a classic dialectical move.",
+            "question": "What is happening?",
+            "options": [
+                "He accepts one point while shifting the discussion to more favourable ground",
+                "He is giving up his argument entirely",
+                "He agrees completely with the opposition",
+                "He ends the debate"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L185_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the problem with empirically untestable arguments?",
+            "explanation": "Empirical testability = the ability to be confirmed or refuted by evidence. An argument too abstract to test can neither be proved nor disproved - it floats free of evidence. This doesn't make it false, but it means we have no way of checking it against reality. The argument is insulated from disconfirmation, which is epistemically problematic.",
+            "textToSpeak": "The argument operates at a level of abstraction that makes it impossible to test empirically.",
+            "question": "What is the concern?",
+            "options": [
+                "Abstract arguments are always true",
+                "Abstract thinking is never useful",
+                "An argument that cannot be tested empirically cannot be verified or falsified",
+                "Empirical testing is the least important test of an argument"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L185_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor validates the code steadily.",
-            "question": "Who is validating the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does introducing something quietly before a long weekend suggest strategically?",
+            "explanation": "A holiday weekend = reduced media attention, reduced public engagement, fewer people working to respond. Introducing significant measures at such times can minimise initial scrutiny and debate. 'Quietly' + 'before a holiday' = the conjunction is suspicious, suggesting deliberate low-profile rollout. Strategic timing is a form of political management.",
+            "textToSpeak": "The reform was introduced quietly just before a holiday weekend.",
+            "question": "What can be inferred about the timing?",
             "options": [
-                "mentor",
-                "teacher",
-                "researcher",
-                "expert"
+                "The timing appears strategic - designed to reduce public scrutiny",
+                "The timing was entirely coincidental",
+                "The government was being efficient",
+                "The reform was unimportant enough to avoid scrutiny"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -246,79 +261,84 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L186_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer restores the system effectively.",
-            "question": "Who is restoring the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why might the intensity of a denial be informative?",
+            "explanation": "The most emphatic denials targeting the most significant accusations may reflect the stakes of those specific accusations rather than the falseness of others. Emphasis can signal: this is where the real vulnerability is. Vehement denial isn't proof of guilt, but can indicate where the greatest exposure lies. It's worth noticing which denials attract most energy.",
+            "textToSpeak": "His most emphatic denials came precisely in response to the accusations he had most reason to deny.",
+            "question": "What does this suggest?",
             "options": [
-                "hacker",
-                "explorer",
-                "artist",
-                "engineer"
+                "His denials prove his innocence",
+                "Denial always proves guilt",
+                "The intensity of certain denials may itself be revealing",
+                "He was honest about everything"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L186_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander locates the satellite reliably.",
-            "question": "Who is locating the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the rhetorical difference between 'concession as generosity' vs 'acknowledgement of error'?",
+            "explanation": "Framing a concession as generosity = 'I chose to give this'. Framing it as error = 'I was wrong and had to change'. The first preserves agency and face; the second admits failure. Same outcome, entirely different meaning. Framing choices reveal attempts to manage perception and maintain power even in defeat.",
+            "textToSpeak": "She framed the concession as a generous offer rather than an acknowledgement of error.",
+            "question": "What was she doing?",
             "options": [
-                "researcher",
-                "engineer",
-                "student",
-                "commander"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L186_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot deploys the chip immediately.",
-            "question": "Who is deploying the chip?",
-            "options": [
-                "mentor",
-                "pilot",
-                "artist",
-                "droid"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L187_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout creates the database automatically.",
-            "question": "Who is creating the database?",
-            "options": [
-                "scout",
-                "technician",
-                "hacker",
-                "commander"
+                "Reframing a defeat as a voluntary choice to preserve her position",
+                "Being genuinely generous",
+                "Making a genuine apology",
+                "Admitting full responsibility"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L186_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How can opening questions be more valuable than providing answers?",
+            "explanation": "Opening questions = expanding what's knowable, creating new research directions, identifying new problems. Providing wrong or premature answers = closing down inquiry. In early stages of a field, the right questions may be more valuable than available answers. The paper's contribution is generative - it grows what can be asked.",
+            "textToSpeak": "The paper's most valuable contribution may be the questions it opens rather than the answers it provides.",
+            "question": "What does this assessment suggest?",
+            "options": [
+                "The paper answers all questions definitively",
+                "The paper has no answers",
+                "The paper's value lies primarily in generating further inquiry",
+                "The paper is not valuable"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L187_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How can the research question itself introduce bias before data is collected?",
+            "explanation": "The research question determines what is looked for, what data is collected, what counts as relevant. A question framed to look for X will find X-type evidence. The question embeds assumptions about what matters, what to compare, and what an answer would look like. Methodology can be impeccable while the question is already skewed.",
+            "textToSpeak": "While the methodology is sound, the framing of the research question itself may introduce bias.",
+            "question": "What is the concern?",
+            "options": [
+                "The methodology is the main source of bias",
+                "The research question is perfect",
+                "Even with good methods, how the question is asked can affect what is found",
+                "Framing never affects research outcomes"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L187_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor monitors the portal successfully.",
-            "question": "Who is monitoring the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is circular reasoning and why is it a flaw?",
+            "explanation": "Circular reasoning = the conclusion is used (explicitly or implicitly) as a premise. The argument goes around: A because B, and B because A. This looks like reasoning but isn't - it assumes what it claims to demonstrate. You need independently established premises to make a non-circular argument.",
+            "textToSpeak": "The paper assumes what it sets out to prove - a classic instance of circular reasoning.",
+            "question": "What is the logical flaw?",
             "options": [
-                "explorer",
-                "technician",
-                "researcher",
-                "mentor"
+                "The paper proves its conclusion through rigorous argument",
+                "The conclusion is wrong",
+                "The premises are very strong independently",
+                "The conclusion is used as a hidden premise, making the argument self-referential"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -326,31 +346,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L187_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician measures the device swiftly.",
-            "question": "Who is measuring the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does a narrative of universal progress conceal?",
+            "explanation": "Claiming universal progress (we're all getting better) averages out gains that are unevenly distributed. If some groups improve dramatically and others stagnate or worsen, the aggregate 'progress' narrative obscures growing inequality. The smooth narrative of advancement hides the differential experience within it.",
+            "textToSpeak": "The narrative of progress obscures the unevenness of that progress across different groups.",
+            "question": "What is the critique?",
             "options": [
-                "technician",
-                "teacher",
-                "commander",
-                "robot"
+                "Progress is always equal across all groups",
+                "Framing everything as 'progress' can hide the unequal distribution of gains",
+                "Progress doesn't exist",
+                "All groups benefit equally from change"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L188_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist repairs the signal precisely.",
-            "question": "Who is repairing the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the distinction between manufactured and discovered consensus?",
+            "explanation": "Discovered consensus = independent agreement arising organically from evidence. Manufactured consensus = strategically constructed through media, messaging, framing to create the appearance of agreement that doesn't naturally exist. The critique: what looks like widespread agreement may be an artefact of coordination, not genuine convergence.",
+            "textToSpeak": "The consensus is manufactured, not discovered.",
+            "question": "What does this claim mean?",
             "options": [
-                "student",
-                "commander",
-                "hero",
-                "artist"
+                "There is genuine widespread agreement on this topic",
+                "Manufacturing consensus is impossible",
+                "Consensus is always genuine",
+                "The appearance of agreement has been constructed rather than emerging naturally"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -358,79 +380,84 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L188_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer encrypts the code consistently.",
-            "question": "Who is encrypting the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why is power most effective when it appears natural?",
+            "explanation": "Power that seems natural is unquestioned - it looks like 'just the way things are', not like someone's interest being served. When people internalise it as normal, they reproduce it without coercion. Explicit power requires enforcement; naturalised power reproduces itself. This is the insight about ideology: power through normalisation.",
+            "textToSpeak": "Power rarely announces itself - it operates most effectively when it appears most natural.",
+            "question": "What does this observation mean?",
             "options": [
-                "analyst",
-                "student",
-                "droid",
-                "explorer"
+                "The most effective power is that which seems inevitable and natural rather than imposed",
+                "Power is always visible and explicit",
+                "Natural-seeming things have no power",
+                "Power only operates through explicit force"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L188_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero builds the drone consistently.",
-            "question": "Who is building the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How does a word's history affect its current use?",
+            "explanation": "Words accumulate connotations, associations, and histories through use. A word associated with significant historical events, ideologies, or struggles cannot be fully stripped of those associations by individual users. Attempting neutral use still activates the historical resonance - hearers bring that history to the word whether speakers intend it or not.",
+            "textToSpeak": "The word carries so much historical baggage that using it neutrally is now impossible.",
+            "question": "What does this mean?",
             "options": [
-                "student",
-                "scientist",
-                "researcher",
-                "hero"
+                "The word's history is irrelevant to its current use",
+                "Historical associations make neutral use of the word impossible",
+                "Words can always be used neutrally",
+                "Historical usage is unimportant"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L189_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician evaluates the sensor carefully.",
-            "question": "Who is evaluatesing the sensor?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How does language shape what can be conceived?",
+            "explanation": "The Sapir-Whorf hypothesis (moderate version): the language available to us partly determines what we can easily think, categorise, and communicate. Concepts without words are harder to sustain and share. Language provides cognitive scaffolding - not just labels for pre-existing concepts but structures that enable certain thoughts and make others harder.",
+            "textToSpeak": "Language not only describes reality - it also shapes what we can conceive of.",
+            "question": "What is this claim about?",
             "options": [
-                "researcher",
-                "droid",
-                "commander",
-                "technician"
+                "Language both reflects and constrains the possibilities of thought",
+                "Description is language's only function",
+                "Language is a passive tool",
+                "Thinking requires no language"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L189_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout locates the node precisely.",
-            "question": "Who is locating the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why is naming a political and evaluative act?",
+            "explanation": "Naming = categorising, framing, bringing into a particular conceptual order. What you call something determines how it is thought about. 'Refugee' vs. 'economic migrant'; 'freedom fighter' vs. 'terrorist'; 'pro-life' vs. 'anti-choice' - the same referent, completely different evaluation built into the name. Naming is a power act.",
+            "textToSpeak": "Naming something is never a neutral act.",
+            "question": "What does this mean?",
             "options": [
-                "scientist",
-                "teacher",
-                "scout",
-                "expert"
+                "Names are purely descriptive and value-free",
+                "Names have no power or effect",
+                "All naming conventions are fully agreed upon",
+                "The act of naming involves choices that carry values and consequences"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L189_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid measures the portal effectively.",
-            "question": "Who is measuring the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why might certainty signal insufficient thought?",
+            "explanation": "Deep thinking reveals complexity, exceptions, and alternative perspectives that simple thinking misses. Complete certainty may mean the thinker hasn't encountered these complications - hasn't gone deep enough to find the difficulties. 'The more I know, the more I know I don't know' is the epistemology here. Expertise often increases not certainty but appreciated uncertainty.",
+            "textToSpeak": "To be certain about something is sometimes a sign of not having thought carefully enough.",
+            "question": "What is this observation about?",
             "options": [
-                "commander",
-                "droid",
-                "hacker",
-                "artist"
+                "Certainty is always a reliable sign of knowledge",
+                "Genuine deep thinking often reveals complexity that reduces certainty",
+                "Thinking carefully always leads to certainty",
+                "Uncertainty is always negative"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -438,15 +465,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L190_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective monitors the system instantly.",
-            "question": "Who is monitoring the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How can the pursuit of objectivity become ideological?",
+            "explanation": "If you commit to objectivity as an absolute value - refusing to acknowledge that perspectives always exist - this itself becomes a dogmatic position. Ironically, extreme objectivism is a subjective commitment that can't examine itself critically. It becomes a closed system: the claim to objectivity protects itself from the critique that no perspective is truly objective.",
+            "textToSpeak": "Objectivity, pursued too absolutely, becomes a kind of ideology.",
+            "question": "What does this claim mean?",
             "options": [
-                "hero",
-                "explorer",
-                "technician",
-                "detective"
+                "Objectivity is always valuable",
+                "Ideology is always positive",
+                "Objectivity is never valuable",
+                "Extreme commitment to objectivity can itself become a rigid and unreflective stance"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -454,33 +482,35 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L190_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor measures the signal properly.",
-            "question": "Who is measuring the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the relationship between observation and interpretation?",
+            "explanation": "What we call 'pure observation' always involves interpretation: selecting what to attend to, categorising what we see, recognising patterns. There is no raw, pre-interpretive observation available to us. This challenges the naive distinction between 'objective fact' (observed) and 'subjective opinion' (interpreted). The two are always intertwined.",
+            "textToSpeak": "We are always interpreting, even when we believe we are merely observing.",
+            "question": "What does this challenge?",
             "options": [
-                "explorer",
-                "student",
-                "traveler",
-                "mentor"
+                "The value of interpretation",
+                "The possibility of pure unmediated observation",
+                "The distinction between good and bad interpreters",
+                "The scientific method as a whole"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L190_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist builds the system successfully.",
-            "question": "Who is building the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the distinction between freedom as condition versus freedom as practice?",
+            "explanation": "Freedom as condition = a state granted by law, protected by rights (you either have it or you don't). Freedom as practice = actively exercised, lived, enacted in daily choices and self-determination. The observation reframes freedom from passive possession to active exercise - you don't just have it; you do it, and it can atrophy without being practised.",
+            "textToSpeak": "Freedom, it turns out, is less a condition than a practice - less something you have than something you do.",
+            "question": "What does this observation mean?",
             "options": [
-                "student",
-                "artist",
-                "researcher",
-                "analyst"
+                "Freedom is purely a legal status",
+                "Freedom is impossible to achieve",
+                "Freedom is better understood as an ongoing activity or mode of existence",
+                "Freedom depends only on external conditions"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         }
     ]

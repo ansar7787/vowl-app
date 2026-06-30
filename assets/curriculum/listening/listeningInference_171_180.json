@@ -6,31 +6,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L171_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer activates the circuit securely.",
-            "question": "Who is activating the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How can strength and vulnerability be the same quality?",
+            "explanation": "Precision is the quality: it makes the argument clear and compelling (strength), but a highly precise claim applies to a narrower range of cases (limitation). The same exactness that makes it convincing also makes it less widely applicable. Strength and weakness stem from the same root - this is a sophisticated analytical observation.",
+            "textToSpeak": "The strongest part of the argument is also its most vulnerable - the precision that makes it compelling also limits its scope.",
+            "question": "What does this observation mean?",
             "options": [
-                "explorer",
-                "mentor",
-                "scientist",
-                "traveler"
+                "The argument is weak throughout",
+                "The argument's strength and weakness are the same quality",
+                "The argument is perfectly balanced",
+                "The argument is imprecise and vague"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L171_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher builds the node swiftly.",
-            "question": "Who is building the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the distinction between vehemence and rigour?",
+            "explanation": "'Vehemence' = forceful, intense, passionate delivery. 'Rigour' = methodical, careful, well-evidenced reasoning. Mistaking one for the other = assuming that because an argument is delivered forcefully it is therefore well-reasoned. This is a logical error: the intensity of assertion has no bearing on its logical quality.",
+            "textToSpeak": "He mistakes vehemence for rigour.",
+            "question": "What does this criticism mean?",
             "options": [
-                "teacher",
-                "engineer",
-                "student",
-                "scout"
+                "He argues loudly but without careful reasoning",
+                "His arguments are both passionate and well-reasoned",
+                "He is too careful and systematic",
+                "His argument is correct"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -38,47 +40,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L171_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher evaluates the code successfully.",
-            "question": "Who is evaluatesing the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the dangerous conflation being identified?",
+            "explanation": "Elegance = aesthetic quality (simplicity, beauty, symmetry in theory). Truth = correspondence to reality. These are different: a theory can be beautiful and wrong, or ugly and true. The warning: don't let the aesthetic appeal of a theory substitute for evidence of its accuracy. Beauty is not epistemological validation.",
+            "textToSpeak": "The theory is elegant, but elegance is not truth.",
+            "question": "What is the speaker warning against?",
             "options": [
-                "researcher",
-                "artist",
-                "hacker",
-                "mentor"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L172_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist transfers the database directly.",
-            "question": "Who is transferring the database?",
-            "options": [
-                "explorer",
-                "hero",
-                "artist",
-                "hacker"
+                "Using elegant language in academic work",
+                "Seeking truth in theoretical work",
+                "Accepting a theory as true simply because it is aesthetically satisfying",
+                "Rejecting all theories regardless of elegance"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L172_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the problem with a film that flatters its audience?",
+            "explanation": "A film that confirms existing beliefs = no intellectual challenge, no perspective shift, no growth. It makes audiences feel good about what they already think. The implicit criticism: art should expand thinking, not reinforce comfort. 'Flattering' the audience prioritises approval over challenge - entertainment over enlightenment.",
+            "textToSpeak": "The film flatters its audience by confirming what they already believe.",
+            "question": "What is being criticised?",
+            "options": [
+                "The film offers comfort rather than challenge - it's self-affirming rather than thought-provoking",
+                "The film is intellectually demanding",
+                "The audience is wrong in their beliefs",
+                "The audience doesn't like the film"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L172_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander launches the chip securely.",
-            "question": "Who is launching the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does popular culture as a reflection of anxieties reveal about its function?",
+            "explanation": "If popular culture reflects not just aspirations (what we want) but anxieties (what we fear), it functions as a cultural mirror - showing the full emotional and psychological landscape of a society. Horror films, dystopias, thrillers reflect fears; romances, success stories reflect aspirations. Both are culturally informative.",
+            "textToSpeak": "Popular culture reflects society's anxieties as much as its aspirations.",
+            "question": "What does this claim suggest?",
             "options": [
-                "scientist",
-                "commander",
-                "detective",
-                "robot"
+                "Popular culture only shows positive, aspirational content",
+                "Popular culture reveals both what people fear and what they hope for",
+                "Popular culture is always inaccurate",
+                "Society has no anxieties worth noting"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -86,15 +91,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L172_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The engineer is the actor.",
-            "textToSpeak": "The engineer deploys the circuit rapidly.",
-            "question": "Who is deploying the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the epistemological claim about absence in public discourse?",
+            "explanation": "Absences are as informative as presences: what a culture doesn't talk about, doesn't celebrate, doesn't acknowledge - these silences reveal values, hierarchies, and exclusions as much as what IS celebrated. The speaker is making a critical cultural observation: reading the gaps is as important as reading the content.",
+            "textToSpeak": "What a society chooses to celebrate tells us as much as what it chooses to ignore.",
+            "question": "What is the speaker arguing?",
             "options": [
-                "scout",
-                "engineer",
-                "pilot",
-                "robot"
+                "Celebrations are always more revealing than silence",
+                "What is absent from public discourse can be as revealing as what is present",
+                "Celebrations are the only reliable social indicator",
+                "Society always ignores the most important things"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -102,287 +108,305 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L173_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler analyzes the circuit directly.",
-            "question": "Who is analyzing the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What are the two directions of the gap between knowing and saying?",
+            "explanation": "Gap 1: know more than can say = tacit knowledge, embodied skills, intuitions that resist verbal articulation. Gap 2: say more than we know = overconfident speech, stating things beyond our actual knowledge. Both reveal the imperfect fit between language and knowledge - they're not simply equivalent.",
+            "textToSpeak": "We may know more than we can say, or say more than we know.",
+            "question": "What is this paradox about?",
             "options": [
-                "traveler",
-                "engineer",
-                "mentor",
-                "technician"
+                "Communication is always perfect and complete",
+                "Words are always more important than knowledge",
+                "We should say nothing if we can't say everything",
+                "There are gaps between knowledge and language, and between language and knowledge"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L173_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher sends the drone swiftly.",
-            "question": "Who is sending the drone?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the epistemological lesson of the map metaphor?",
+            "explanation": "Maps must simplify - they can't be 1:1 scale. Every simplification involves choices: what to include, what to omit, what to emphasise. Applied broadly: all models, frameworks, and representations are partial - they illuminate some aspects while necessarily concealing others. Knowing what's left out is as important as knowing what's included.",
+            "textToSpeak": "Every map is also a simplification that leaves things out.",
+            "question": "What is this metaphor conveying?",
             "options": [
-                "hero",
-                "mentor",
-                "detective",
-                "teacher"
+                "Any model or representation involves choices about what to include and exclude",
+                "Maps are always wrong and unreliable",
+                "Maps are complete and accurate representations",
+                "Models should be avoided entirely"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L173_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker updates the sensor successfully.",
-            "question": "Who is updating the sensor?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the logical error the speaker is cautioning against?",
+            "explanation": "The error: if something can't be measured, it doesn't count. This creates a perverse incentive - only measurable things get attention and resources, while unmeasurable things (meaning, dignity, wellbeing, justice) are neglected. The speaker argues: the limits of measurement don't define the limits of importance.",
+            "textToSpeak": "The most important things often can't be measured, but that doesn't mean only what can be measured matters.",
+            "question": "What is the speaker warning against?",
             "options": [
-                "hacker",
-                "researcher",
-                "mentor",
-                "droid"
+                "Ignoring all measurement",
+                "Overvaluing subjective experience",
+                "Using any measurements at all",
+                "Reducing value to only what can be quantified"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L174_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout repairs the satellite properly.",
-            "question": "Who is repairing the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the relationship between confidence and care in examining evidence?",
+            "explanation": "Inverse relationship suggested: more careful examination → more aware of complexity → less certain. Quick examination → misses complexity → overconfident. The implication: confidence as a signal is actually unreliable - it may indicate the examiner hasn't looked hard enough, not that the evidence is clear.",
+            "textToSpeak": "It is striking that those most confident in their conclusions tend to have examined the evidence least carefully.",
+            "question": "What is the speaker implying?",
             "options": [
-                "analyst",
-                "engineer",
-                "scout",
-                "hero"
+                "Confidence is always reliable",
+                "Overconfidence often reflects insufficient engagement with the evidence",
+                "The most careful researchers are the most certain",
+                "Everyone is equally confident"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L174_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher deploys the database consistently.",
-            "question": "Who is deploying the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the trade-off between intellectual commitment and intellectual safety?",
+            "explanation": "Not committing = never being wrong (technically). But also: never being right, never contributing, never advancing understanding. The observation reveals a choice: intellectual safety through silence/vagueness versus intellectual engagement through commitment with the risk of error. Epistemic courage requires risking being wrong.",
+            "textToSpeak": "The easiest way to avoid being wrong is to never commit to a position.",
+            "question": "What does this reveal about intellectual risk?",
             "options": [
-                "teacher",
-                "hero",
-                "scientist",
-                "analyst"
+                "Avoiding positions is the wisest approach",
+                "The best thinkers never commit to positions",
+                "Taking a position means risking being wrong, but not taking one avoids that risk",
+                "Commitment is always the right approach"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L174_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero deploys the circuit smoothly.",
-            "question": "Who is deploying the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What lesson does the history of scientific revision teach?",
+            "explanation": "Scientific history shows confident claims being overturned: Earth at the centre, bloodletting, fixed continents. This pattern suggests: current confident scientific claims may also be wrong. Knowledge is therefore provisional - the best we have now, but not the final word. Intellectual humility about present certainties is historically warranted.",
+            "textToSpeak": "The history of science is partly a history of what was once confidently stated being later overturned.",
+            "question": "What does this suggest about knowledge?",
             "options": [
-                "hero",
-                "scout",
-                "commander",
-                "student"
+                "Science is essentially always wrong",
+                "Certainty is never valuable in scientific work",
+                "Old science is always better than new science",
+                "Knowledge is provisional and should remain open to revision"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L175_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist validates the signal successfully.",
-            "question": "Who is validating the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does reframing from 'can we?' to 'should we?' accomplish?",
+            "explanation": "Shifting from 'can' (technical capability) to 'should' (ethical appropriateness) moves from a technical to a normative question. 'Can we?' assumes the ethical question is settled; 'should we?' opens it. This reframing insists that capability doesn't determine what's right - technical possibility requires ethical examination.",
+            "textToSpeak": "The real question this raises is not 'can we?' but 'should we?'",
+            "question": "What is the speaker doing?",
             "options": [
-                "scout",
-                "teacher",
-                "technician",
-                "artist"
+                "Dismissing technical concerns about capability",
+                "Answering both questions simultaneously",
+                "Shifting from a question of technical capability to one of ethical appropriateness",
+                "Saying that we can and we should"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L175_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero updates the network silently.",
-            "question": "Who is updating the network?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What asymmetry is the speaker identifying in how we approach technology?",
+            "explanation": "The asymmetry: technical questions (what can we do?) are well-developed; ethical questions (what should we do?) lag behind. We innovate first and ask ethical questions later - or not at all. This is a critique of a culture that privileges capability over responsibility, where technology races ahead of wisdom.",
+            "textToSpeak": "We are good at asking what we can do with new technology. Less good at asking what we should.",
+            "question": "What is the speaker critiquing?",
             "options": [
-                "hero",
-                "artist",
-                "robot",
-                "student"
+                "Technology itself as a concept",
+                "Our communication about technology",
+                "The pace of technological change",
+                "The lack of ethical reflection accompanying technological development"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L175_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher sends the database carefully.",
-            "question": "Who is sending the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What are the consequences of ethics always lagging behind technology?",
+            "explanation": "If ethics is always behind, technology is deployed without adequate ethical consideration. New capabilities create realities before we've decided whether we want them. By the time ethics catches up, technology is already entrenched. The lag creates a window where harmful applications may already have caused damage.",
+            "textToSpeak": "The ethical debates are always three steps behind the technological developments.",
+            "question": "What concern does this raise?",
             "options": [
-                "hacker",
-                "researcher",
-                "droid",
-                "engineer"
+                "Ethics progresses faster than technology",
+                "Ethics is simply unimportant compared to progress",
+                "Technology should slow down to match ethical progress",
+                "There is a dangerous lag between what is possible and what has been ethically evaluated"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L176_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot evaluates the code precisely.",
-            "question": "Who is evaluatesing the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How does full knowledge of one's actions affect moral responsibility?",
+            "explanation": "Knowing exactly what you're doing while doing it = full intentionality. In moral terms, intentional action carries more responsibility than accidental action. The 'problem' is that knowledge removes the defence of ignorance or accident. She can't claim she didn't know - she did know, which is what makes it worse.",
+            "textToSpeak": "She knew exactly what she was doing, which was the problem.",
+            "question": "What is implied?",
             "options": [
-                "hacker",
-                "researcher",
-                "pilot",
-                "teacher"
+                "The action was good and she acted with full awareness",
+                "She didn't know what she was doing",
+                "She made an innocent mistake",
+                "Full awareness of the action makes her more, not less, responsible"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L176_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout analyzes the database quietly.",
-            "question": "Who is analyzing the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the role of context in determining the outcome of good intentions?",
+            "explanation": "Good intentions alone don't guarantee good outcomes - context matters. A well-intentioned intervention inappropriate to its context can be damaging (e.g., imposing a solution from one culture onto another). The observation: moral worth of intention and material outcome are separate - good intentions don't confer good outcomes automatically.",
+            "textToSpeak": "The worst outcomes often come from the best intentions operating in the wrong context.",
+            "question": "What does this mean?",
             "options": [
-                "researcher",
-                "teacher",
-                "scout",
-                "droid"
+                "Good intentions always lead to good results",
+                "Even good intentions can cause serious harm if the context is misunderstood or inappropriate",
+                "Context is irrelevant to outcomes",
+                "Only bad intentions cause harm"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L176_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective restores the circuit swiftly.",
-            "question": "Who is restoring the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the irreversibility being described?",
+            "explanation": "Some knowledge, once gained, cannot be removed from consciousness - it permanently alters how you see things. Some words, once spoken, cannot be taken back - they permanently alter relationships or situations. Both highlight irreversibility: the before/after is permanently changed. This is an observation about the non-neutrality of information and speech.",
+            "textToSpeak": "There are things we cannot unknow, and things we cannot unsay.",
+            "question": "What is this observation about?",
             "options": [
-                "detective",
-                "droid",
-                "hacker",
-                "student"
+                "Some things are easily forgotten",
+                "Certain knowledge and words, once gained or spoken, permanently change situations",
+                "Words are unimportant",
+                "Knowledge can always be reversed or ignored"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L177_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician observes the module immediately.",
-            "question": "Who is observing the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the internal tension in being 'famous for humility'?",
+            "explanation": "Humility = modesty, not seeking attention or recognition. Being 'famous' for it = widely noticed, publicly celebrated. These are in tension: genuine humility might be invisible; if it's famous, was it performed? This is a gentle irony: the fame attached to humility potentially undermines its authenticity.",
+            "textToSpeak": "He was famous for his humility.",
+            "question": "What makes this statement potentially ironic?",
             "options": [
-                "hero",
-                "researcher",
-                "scientist",
-                "technician"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L177_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot launches the chip quietly.",
-            "question": "Who is launching the chip?",
-            "options": [
-                "engineer",
-                "teacher",
-                "pilot",
-                "researcher"
+                "Humility is never genuine in public figures",
+                "Famous people are always humble",
+                "True humility is typically quiet and unnoticed, not publicly famous",
+                "Humility and fame are simply unrelated qualities"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L177_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the irony of an efficiency committee's own operations?",
+            "explanation": "A committee on efficiency meeting twice weekly for three years raises the question: is this itself efficient? The irony: the body tasked with improving efficiency is itself a potentially inefficient structure (frequent meetings over years). The gap between the committee's stated goal and its own operation is the ironic point.",
+            "textToSpeak": "The committee on efficiency met twice weekly for three years.",
+            "question": "What is potentially ironic?",
+            "options": [
+                "Committees are always well-organised",
+                "The committee designed to create efficiency may itself have been inefficient",
+                "All committees meet too often",
+                "Three years is the standard duration for such committees"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L177_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero activates the satellite directly.",
-            "question": "Who is activating the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the structural irony of being open-minded about the impossibility of changing minds?",
+            "explanation": "True open-mindedness = being open to being changed. But being open-minded about the impossibility of mind change = a fixed belief (about fixedness). The irony: his 'open-minded' analysis concluded others can't be changed - which he held with the certainty of a closed mind. Open-mindedness deployed in service of closed conclusions.",
+            "textToSpeak": "He was the most open-minded person in the room about why other minds couldn't be changed.",
+            "question": "What is ironic?",
             "options": [
-                "analyst",
-                "explorer",
-                "pilot",
-                "hero"
+                "His apparent open-mindedness was actually a form of closed-mindedness about disagreement",
+                "He genuinely listened to and was changed by all views",
+                "He frequently changed his mind",
+                "He had no opinions of his own"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L178_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot scans the circuit swiftly.",
-            "question": "Who is scanning the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the problem with prioritising the measurable?",
+            "explanation": "What can be measured gets counted, funded, and valued - because measurement makes it visible and comparable. What resists measurement (dignity, meaning, quality of connection) gets systematically undervalued or ignored. This creates a distortion: important things are neglected because they're unmeasurable, not because they're unimportant.",
+            "textToSpeak": "We are more comfortable measuring what can be quantified than valuing what cannot.",
+            "question": "What societal tendency is being described?",
             "options": [
-                "hero",
-                "pilot",
-                "detective",
-                "hacker"
+                "Society correctly values all things proportionally",
+                "Qualitative things don't matter to society",
+                "Measurement is never useful",
+                "Society tends to prioritise measurable things over things that resist measurement"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L178_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot monitors the signal instantly.",
-            "question": "Who is monitoring the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does a crisis reveal about values that ordinary times conceal?",
+            "explanation": "Crises force choices under pressure, revealing actual priorities rather than stated ones. When resources are scarce, decisions reveal what's really valued. Ordinary times allow stated and enacted values to coexist without conflict; crises force a reckoning. The gap between them becomes visible and undeniable.",
+            "textToSpeak": "The crisis revealed the gap between what we said we valued and what we actually prioritised.",
+            "question": "What does this reveal?",
             "options": [
-                "artist",
-                "robot",
-                "commander",
-                "researcher"
+                "Our stated values and actual priorities are always aligned",
+                "The values we hold are all correct",
+                "A crisis made visible the discrepancy between professed and enacted values",
+                "The crisis improved institutional performance"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L178_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander launches the database efficiently.",
-            "question": "Who is launching the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the inverse relationship between rights discourse and rights practice?",
+            "explanation": "Expansion of 'rights language' (more concepts, more declarations) + contraction of 'practice' (less actual protection) = an ironic divergence. More rights talk may actually disguise or compensate for fewer real rights protections. The proliferation of rights language can become rhetorical substitution for genuine rights realisation.",
+            "textToSpeak": "The language of rights has expanded as the practice of rights has contracted.",
+            "question": "What is the speaker arguing?",
             "options": [
-                "robot",
-                "student",
-                "droid",
-                "commander"
+                "Rights have improved in both language and practice",
+                "Rights have never been protected",
+                "Rights language is inaccurate",
+                "More talk of rights has accompanied less actual protection of them"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -390,47 +414,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L179_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout scans the network expertly.",
-            "question": "Who is scanning the network?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does word choice reveal about the writer's position?",
+            "explanation": "Calling the same situation an 'opportunity' vs. a 'problem' encodes an evaluative stance - positive vs. negative framing of the same reality. This isn't neutral description; it's position-taking through lexical choice. Identifying word choices and what they reveal is a sophisticated form of textual and linguistic analysis.",
+            "textToSpeak": "The choice of 'opportunity' rather than 'problem' tells you whose side the author is on.",
+            "question": "What does this analysis reveal?",
             "options": [
-                "droid",
-                "scout",
-                "robot",
-                "researcher"
+                "Word choice in writing is always accidental",
+                "Problems and opportunities are identical concepts",
+                "The author is neutral and objective",
+                "The selection of particular words can reveal the writer's perspective or bias"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L179_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot observes the signal smoothly.",
-            "question": "Who is observing the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How can passive voice function as a tool of evasion?",
+            "explanation": "Passive voice: 'mistakes were made' vs. active: 'we made mistakes'. The passive omits the agent - no one is named. Systematic passive voice in a report discussing failures could be strategic: describing what happened without specifying who caused it. This removes accountability through grammatical choice.",
+            "textToSpeak": "They used passive voice throughout, which conveniently removed any named responsible party.",
+            "question": "What does this observation suggest?",
             "options": [
-                "robot",
-                "hacker",
-                "droid",
-                "student"
+                "Passive voice is always neutral and appropriate",
+                "The passive voice makes the writing clearer",
+                "The passive voice was used deliberately to avoid attributing responsibility",
+                "The report accurately identified those responsible"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L179_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist builds the module steadily.",
-            "question": "Who is building the module?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the difference between 'stakeholders' and 'those affected'?",
+            "explanation": "'Stakeholders' = those with a recognised stake or interest, often defined formally (investors, partners, users). 'Those affected' = anyone impacted, including people outside formal structures (communities, future generations). By choosing 'stakeholders', the scope of who matters is implicitly narrowed. Language defines who counts.",
+            "textToSpeak": "Note the use of 'stakeholders' rather than 'those affected' - a much narrower term.",
+            "question": "What is the speaker pointing out?",
             "options": [
-                "scientist",
-                "traveler",
-                "engineer",
-                "analyst"
+                "'Stakeholders' is a narrower category than 'those affected', and the choice matters",
+                "Both words mean exactly the same thing",
+                "'Those affected' is the less inclusive term",
+                "Language never affects meaning or scope"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -438,47 +465,50 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L180_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student analyzes the archive immediately.",
-            "question": "Who is analyzing the archive?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the logical issue when multiple theories are consistent with the same evidence?",
+            "explanation": "Consistency ≠ proof. Evidence consistent with a theory is necessary but not sufficient for the theory's truth - if other explanations also fit the evidence, the evidence can't distinguish between them. This is underdetermination: multiple theories are equally supported by the available data. More discriminating evidence is needed.",
+            "textToSpeak": "The evidence is consistent with the theory, but also with several competing explanations.",
+            "question": "What is the speaker warning about?",
             "options": [
-                "scientist",
-                "analyst",
-                "student",
-                "hero"
+                "Consistent evidence proves a theory conclusively",
+                "Evidence can support a theory without proving it if other explanations also fit",
+                "The competing explanations are definitely wrong",
+                "No evidence matters if there are competing theories"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L180_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero evaluates the node steadily.",
-            "question": "Who is evaluatesing the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the implication of having an ability but choosing not to use it?",
+            "explanation": "Capability without deployment = deliberate choice. The criticism isn't 'he can't think rigorously' but 'he chose not to'. This makes the intellectual failure more serious: it wasn't a limitation but a decision. The reason for the choice - convenience, self-interest, intellectual laziness - is implied but unstated.",
+            "textToSpeak": "He was capable of rigorous thinking but chose not to deploy it here.",
+            "question": "What is the speaker saying?",
             "options": [
-                "hero",
-                "expert",
-                "detective",
-                "engineer"
+                "He is not a rigorous thinker generally",
+                "His thinking here was actually rigorous",
+                "He had the ability but deliberately didn't use it in this instance",
+                "He couldn't apply rigour in this case"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L180_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher builds the archive rapidly.",
-            "question": "Who is building the archive?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does 'forces the reader to think' describe as the highest textual value?",
+            "explanation": "A text that forces thinking = doesn't deliver conclusions but creates the conditions for the reader to think towards them. The reader becomes active, not passive. This values productive ambiguity over didactic clarity, questioning over answering. The text's power is generative rather than declarative.",
+            "textToSpeak": "The power of the text lies not in what it says but in what it forces the reader to think.",
+            "question": "What is being valued?",
             "options": [
-                "student",
-                "technician",
-                "artist",
-                "researcher"
+                "Texts that spell out all meanings explicitly",
+                "Texts that contain the most information",
+                "Simple and direct texts",
+                "Texts that generate active thinking in the reader rather than delivering conclusions"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"

@@ -6,15 +6,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L1_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist deploys the engine carefully.",
-            "question": "Who is deploying the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the family member mentioned at the start.",
+            "explanation": "'My sister made pancakes' - the subject of the sentence is 'my sister'. In English, the subject usually comes before the verb. Here, 'my sister' = the person doing the action.",
+            "textToSpeak": "My sister made pancakes this morning.",
+            "question": "Who made pancakes this morning?",
             "options": [
-                "student",
-                "explorer",
-                "scout",
-                "scientist"
+                "My mother",
+                "My brother",
+                "A friend",
+                "My sister"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -22,15 +23,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L1_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist encrypts the satellite precisely.",
-            "question": "Who is encrypting the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Focus on who is giving the instruction.",
+            "explanation": "The bus driver asked everyone to move. 'The bus driver' is the subject performing the action of asking. Passengers are the people being asked, not the ones asking.",
+            "textToSpeak": "The bus driver asked everyone to move to the back.",
+            "question": "Who asked people to move?",
             "options": [
-                "explorer",
-                "engineer",
-                "artist",
-                "droid"
+                "The passengers",
+                "A police officer",
+                "The bus driver",
+                "The conductor"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
@@ -38,15 +40,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L1_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot observes the portal expertly.",
-            "question": "Who is observing the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the activity mentioned after 'is'.",
+            "explanation": "'Is watching the news' - the present continuous tense ('is + -ing') tells us the action happening right now. Dad's activity is watching the news, not cooking or reading.",
+            "textToSpeak": "Dad is watching the news in the living room.",
+            "question": "What is Dad doing?",
             "options": [
-                "robot",
-                "explorer",
-                "hero",
-                "expert"
+                "Watching the news",
+                "Cooking dinner",
+                "Reading a book",
+                "Sleeping on the sofa"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -54,63 +57,67 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L2_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher scans the data steadily.",
-            "question": "Who is scanning the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the drink mentioned alongside the food.",
+            "explanation": "She ordered 'a glass of water' to drink. 'A glass of' tells you it's a drink, not food. The sandwich is the food item. Listening for drink vocabulary helps: glass, cup, bottle.",
+            "textToSpeak": "She ordered a chicken sandwich and a glass of water.",
+            "question": "What did she order to drink?",
             "options": [
-                "researcher",
-                "teacher",
-                "commander",
-                "artist"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L2_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot updates the protocol successfully.",
-            "question": "Who is updating the protocol?",
-            "options": [
-                "scout",
-                "scientist",
-                "engineer",
-                "pilot"
+                "Orange juice",
+                "Tea",
+                "Coffee",
+                "Water"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L2_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the activity after 'are'.",
+            "explanation": "'Are playing football' - present continuous for an action in progress. The location is 'in the park', which confirms an outdoor physical activity. Football is the sport they're playing.",
+            "textToSpeak": "The children are playing football in the park.",
+            "question": "What are the children doing?",
+            "options": [
+                "Sleeping",
+                "Reading books",
+                "Playing football",
+                "Watching TV"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L2_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective deploys the chip instantly.",
-            "question": "Who is deploying the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the location mentioned after 'put his phone'.",
+            "explanation": "'Put his phone on the table' - 'on' is the preposition indicating position. 'Table' is the surface. He did two things: put his phone down, then went to bed. These happened in that order.",
+            "textToSpeak": "He put his phone on the table and went to bed.",
+            "question": "Where did he put his phone?",
             "options": [
-                "detective",
-                "explorer",
-                "commander",
-                "analyst"
+                "On the chair",
+                "On the table",
+                "In his bag",
+                "Under his pillow"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L3_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid launches the engine efficiently.",
-            "question": "Who is launching the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the location word after 'at'.",
+            "explanation": "'At the front door' - 'front' distinguishes this from the back door. The preposition 'at' is used for specific points. Knowing front/back, inside/outside helps you catch location details quickly.",
+            "textToSpeak": "She's waiting for you at the front door.",
+            "question": "Where is she waiting?",
             "options": [
-                "mentor",
-                "scout",
-                "traveler",
-                "droid"
+                "At the back door",
+                "In the kitchen",
+                "In the garden",
+                "At the front door"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -118,207 +125,220 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L3_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert measures the node quietly.",
-            "question": "Who is measuring the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Focus on the preposition describing the pharmacy's position.",
+            "explanation": "'Next to' means immediately beside something. 'On the high street' gives the street location. 'Next to' is different from 'inside', 'opposite', or 'behind'. These spatial prepositions are essential for understanding directions.",
+            "textToSpeak": "The pharmacy is next to the supermarket on the high street.",
+            "question": "Where is the pharmacy?",
             "options": [
-                "robot",
-                "scientist",
-                "pilot",
-                "expert"
+                "Inside the supermarket",
+                "Next to the supermarket",
+                "Opposite the supermarket",
+                "Behind the supermarket"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L3_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher scans the portal automatically.",
-            "question": "Who is scanning the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for which seat is mentioned.",
+            "explanation": "'Back seat' refers to the rear passenger area of a car. Key vocabulary: boot (UK: trunk), passenger seat (front), back seat (rear). 'On' indicates it's resting on the surface of the seat.",
+            "textToSpeak": "I left my jacket on the back seat of the car.",
+            "question": "Where is the jacket?",
             "options": [
-                "robot",
-                "technician",
-                "student",
-                "teacher"
+                "In the boot",
+                "On the passenger seat",
+                "On the back seat",
+                "Under the seat"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L4_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert transfers the data directly.",
-            "question": "Who is transferring the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen carefully for the time phrase - which half past?",
+            "explanation": "'Half past seven' = 7:30. 'Half past' means 30 minutes after the hour. Common confusion: 'half past six' (6:30) vs 'half past seven' (7:30). The hour mentioned is the key word to catch.",
+            "textToSpeak": "The match starts at half past seven.",
+            "question": "When does the match start?",
             "options": [
-                "student",
-                "expert",
-                "commander",
-                "traveler"
+                "Seven o'clock",
+                "Quarter past seven",
+                "Half past seven",
+                "Half past six"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L4_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot updates the signal instantly.",
-            "question": "Who is updating the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for both the time and the days mentioned.",
+            "explanation": "'Six every weekday' - she wakes at six (6:00 AM) and specifically on weekdays (Monday–Friday), not weekends. Two details matter: the time (six) and the frequency (every weekday).",
+            "textToSpeak": "She wakes up at six every weekday.",
+            "question": "When does she wake up?",
             "options": [
-                "commander",
-                "pilot",
-                "detective",
-                "artist"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L4_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher secures the engine effectively.",
-            "question": "Who is securing the engine?",
-            "options": [
-                "researcher",
-                "commander",
-                "teacher",
-                "engineer"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L5_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The artist is the actor.",
-            "textToSpeak": "The artist repairs the system effectively.",
-            "question": "Who is repairing the system?",
-            "options": [
-                "mentor",
-                "commander",
-                "artist",
-                "student"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L5_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher evaluates the archive precisely.",
-            "question": "Who is evaluatesing the archive?",
-            "options": [
-                "student",
-                "scout",
-                "droid",
-                "researcher"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L5_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scout is the actor.",
-            "textToSpeak": "The scout measures the database precisely.",
-            "question": "Who is measuring the database?",
-            "options": [
-                "hacker",
-                "artist",
-                "analyst",
-                "scout"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L6_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert observes the system steadily.",
-            "question": "Who is observing the system?",
-            "options": [
-                "scientist",
-                "expert",
-                "hero",
-                "robot"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L6_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor creates the drone quietly.",
-            "question": "Who is creating the drone?",
-            "options": [
-                "mentor",
-                "expert",
-                "analyst",
-                "robot"
+                "At six on weekdays",
+                "At seven every day",
+                "At six on weekends",
+                "At five in the morning"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L6_Q3",
+            "id": "LIS_LISTENINGINFERENCE_L4_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher sends the circuit successfully.",
-            "question": "Who is sending the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the closing time and whether it's morning or night.",
+            "explanation": "'Ten at night' = 10 PM. 'At night' distinguishes this from 10 AM. In spoken English, 'at night' or 'in the morning' clarifies the AM/PM difference. The verb 'closes' tells you this is the closing time.",
+            "textToSpeak": "The café closes at ten at night.",
+            "question": "When does the café close?",
             "options": [
-                "robot",
-                "researcher",
-                "scientist",
-                "teacher"
+                "Eight in the morning",
+                "Ten at night",
+                "Eight at night",
+                "Ten in the morning"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L5_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the colour and the object the speaker asks for.",
+            "explanation": "The speaker asks for 'my red scarf' and says it's on the sofa. Two details: the object (scarf) and its colour (red). The location (sofa) confirms where to find it. 'Can you pass me' = a polite request.",
+            "textToSpeak": "Can you pass me my red scarf? It's on the sofa.",
+            "question": "What does the speaker want?",
+            "options": [
+                "A red scarf from the sofa",
+                "A blue jacket",
+                "Something from the kitchen",
+                "Their bag"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L5_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the colour word the speaker uses to identify their bag.",
+            "explanation": "'My bag is the black one' - the speaker is correcting a mistake and identifying their bag by colour. 'The black one' uses the adjective as a noun, a common pattern when the noun is already known from context.",
+            "textToSpeak": "That's not mine - my bag is the black one.",
+            "question": "What colour is the speaker's bag?",
+            "options": [
+                "Red",
+                "White",
+                "Black",
+                "Blue"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L5_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the object they left behind.",
+            "explanation": "'Left our umbrella at the restaurant' - 'left' here means forgot/left behind accidentally. The location is 'at the restaurant'. The object is 'umbrella'. 'Our' tells you it belongs to two or more people.",
+            "textToSpeak": "We left our umbrella at the restaurant.",
+            "question": "What did they forget at the restaurant?",
+            "options": [
+                "Their umbrella",
+                "Their phone",
+                "Their coats",
+                "Their keys"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L6_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the number that comes before 'eggs'.",
+            "explanation": "'Three eggs' - the number comes directly before the noun. 'A cup of milk' tells you the quantity of milk (one cup). In recipes, listening for numbers and containers (cup, litre, tablespoon) is very important.",
+            "textToSpeak": "I need three eggs and a cup of milk for this recipe.",
+            "question": "How many eggs are needed?",
+            "options": [
+                "One",
+                "Two",
+                "Four",
+                "Three"
             ],
             "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L6_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the number between 'are' and 'students'.",
+            "explanation": "'Fifteen students' - note: fifteen (15) and fifty (50) sound similar in fast speech. Fifteen has stress on the second syllable: fif-TEEN. Fifty has stress on the first: FIF-ty. Today's count is specifically mentioned.",
+            "textToSpeak": "There are fifteen students in the class today.",
+            "question": "How many students are there?",
+            "options": [
+                "Five",
+                "Ten",
+                "Twenty",
+                "Fifteen"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L6_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the time duration mentioned.",
+            "explanation": "'About forty minutes' - 'about' signals an approximate time. Forty minutes = 40 minutes. 'We've been waiting' uses the present perfect continuous to show an action that started in the past and is still going on.",
+            "textToSpeak": "We've been waiting for about forty minutes.",
+            "question": "How long have they been waiting?",
+            "options": [
+                "Twenty minutes",
+                "Half an hour",
+                "Forty minutes",
+                "An hour"
+            ],
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L7_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor transfers the satellite securely.",
-            "question": "Who is transferring the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for two physical details: hair and eyewear.",
+            "explanation": "Two details: 'shoulder-length brown hair' (medium-length, brown colour) and 'wears glasses'. Both must match. 'Shoulder-length' means hair that reaches the shoulders. This kind of multi-detail description requires catching all parts.",
+            "textToSpeak": "She has shoulder-length brown hair and wears glasses.",
+            "question": "What does she look like?",
             "options": [
-                "expert",
-                "pilot",
-                "artist",
-                "mentor"
+                "Shoulder-length brown hair and glasses",
+                "Short black hair and glasses",
+                "Long blonde hair, no glasses",
+                "Brown hair in a ponytail"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L7_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot activates the protocol precisely.",
-            "question": "Who is activating the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the adjectives used to describe the garden.",
+            "explanation": "'Lovely big garden' - two adjectives: lovely (beautiful) and big (large). Note the contrast: 'small' describes the house, 'big' describes the garden. The word 'but' signals a contrast between the house and garden.",
+            "textToSpeak": "The house is small but has a lovely big garden.",
+            "question": "How is the garden described?",
             "options": [
-                "pilot",
-                "hero",
-                "student",
-                "scout"
+                "Large and lovely",
+                "Small and neat",
+                "Overgrown and wild",
+                "Tiny and paved"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -326,161 +346,171 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L7_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician sends the code precisely.",
-            "question": "Who is sending the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the compound colour adjective before 'car'.",
+            "explanation": "'Dark blue' is a compound colour - two adjectives together. 'Dark' modifies 'blue' to make it a deeper shade. Common compound colours: light blue, dark green, bright red. Both words together form the complete colour description.",
+            "textToSpeak": "He drives a dark blue car.",
+            "question": "What colour is his car?",
             "options": [
-                "teacher",
-                "student",
-                "droid",
-                "technician"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L8_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student locates the network precisely.",
-            "question": "Who is locating the network?",
-            "options": [
-                "pilot",
-                "explorer",
-                "scientist",
-                "student"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L8_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot deploys the protocol instantly.",
-            "question": "Who is deploying the protocol?",
-            "options": [
-                "detective",
-                "analyst",
-                "pilot",
-                "traveler"
+                "Light blue",
+                "Black",
+                "Dark blue",
+                "Navy grey"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L8_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for what he always has, not what he never drinks.",
+            "explanation": "'Never drinks coffee' = he avoids coffee. 'Always has tea' = his preference. The contrast between 'never' (zero times) and 'always' (every time) makes his preference very clear. Focus on the positive preference, not the negative.",
+            "textToSpeak": "He never drinks coffee - he always has tea.",
+            "question": "What does he prefer to drink?",
+            "options": [
+                "Tea",
+                "Water",
+                "Coffee",
+                "Juice"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L8_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "'She'd rather... than...' - which option does she choose?",
+            "explanation": "'Would rather A than B' means preferring A over B. 'Rather walk' = she prefers walking. 'Than take the bus' = the thing she's comparing to and rejecting. 'On foot' = by walking. This structure is very common for expressing preferences.",
+            "textToSpeak": "She'd rather walk than take the bus.",
+            "question": "How does she prefer to travel?",
+            "options": [
+                "By bus",
+                "By car",
+                "By train",
+                "On foot"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L8_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher launches the circuit quietly.",
-            "question": "Who is launching the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for where they choose to sit.",
+            "explanation": "'Always sit by the window' - 'always' shows a habitual preference. 'By the window' = next to the window (the preposition 'by' means next to/beside). Habitual preferences are often expressed with frequency adverbs like always, usually, often.",
+            "textToSpeak": "They always sit by the window at the restaurant.",
+            "question": "Where do they like to sit?",
             "options": [
-                "explorer",
-                "teacher",
-                "artist",
-                "detective"
+                "Near the kitchen",
+                "At the bar",
+                "By the window",
+                "At a corner table"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L9_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician sends the engine immediately.",
-            "question": "Who is sending the engine?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the negative construction that describes the problem.",
+            "explanation": "'Isn't working' = is not functioning. 'Freezing' describes the result of the broken heating. The problem is the heating failure, not any external cause like a broken window. 'Isn't working' is a very common spoken way to report a malfunction.",
+            "textToSpeak": "The heating isn't working and it's freezing in here.",
+            "question": "What is the problem?",
             "options": [
-                "teacher",
-                "researcher",
-                "pilot",
-                "technician"
+                "The heating is too hot",
+                "A window is broken",
+                "The heating isn't working",
+                "The door won't close"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L9_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler updates the software efficiently.",
-            "question": "Who is updating the software?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for what the speaker can't find.",
+            "explanation": "'Can't find my glasses' is the core problem. 'Anywhere' and 'everywhere' emphasise the thorough search. This is different from needing new glasses (which implies the glasses exist and work, just aren't stylish). The speaker simply cannot locate their glasses.",
+            "textToSpeak": "I can't find my glasses anywhere - I've looked everywhere.",
+            "question": "What is the speaker's problem?",
             "options": [
-                "droid",
-                "traveler",
-                "technician",
-                "explorer"
+                "Their phone is missing",
+                "They need new glasses",
+                "They can't find their glasses",
+                "Their eyes are hurting"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L9_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The technician is the actor.",
-            "textToSpeak": "The technician updates the sensor immediately.",
-            "question": "Who is updating the sensor?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for which ingredient has run out.",
+            "explanation": "'No milk left' - 'no... left' means the supply has been exhausted. The speaker needs milk specifically for the recipe. Other ingredients (eggs, sugar, flour) aren't mentioned as missing. 'Left' here means 'remaining', not a direction.",
+            "textToSpeak": "There's no milk left and we need it for the recipe.",
+            "question": "What is missing?",
             "options": [
-                "technician",
-                "engineer",
-                "student",
-                "explorer"
+                "Eggs",
+                "Sugar",
+                "Flour",
+                "Milk"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L10_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective activates the device smoothly.",
-            "question": "Who is activating the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about what emotion makes someone unable to stop smiling.",
+            "explanation": "Smiling = a sign of happiness. 'Couldn't stop smiling' means she was very happy. Upset and angry people don't usually smile. This is a basic emotion-behaviour link: smiling → happy. Body language and facial expressions help infer feelings.",
+            "textToSpeak": "She couldn't stop smiling when she heard the news.",
+            "question": "How did she feel?",
             "options": [
-                "mentor",
-                "explorer",
-                "traveler",
-                "detective"
+                "Upset",
+                "Happy",
+                "Confused",
+                "Angry"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L10_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero encrypts the signal rapidly.",
-            "question": "Who is encrypting the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Think about which emotion causes restless behaviour like clock-watching and foot-tapping.",
+            "explanation": "Both checking the clock and tapping his foot are signs of nervousness or impatience. Tired people rest; relaxed people are still; bored people might also watch the clock but wouldn't typically tap their foot. Together, these suggest anxiety or nervousness.",
+            "textToSpeak": "He kept checking the clock and tapping his foot.",
+            "question": "How did he feel?",
             "options": [
-                "hero",
-                "pilot",
-                "mentor",
-                "hacker"
+                "Tired",
+                "Nervous",
+                "Bored",
+                "Relaxed"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L10_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The expert is the actor.",
-            "textToSpeak": "The expert transfers the satellite smoothly.",
-            "question": "Who is transferring the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Listen for the verb phrase describing their reaction.",
+            "explanation": "'Burst out laughing' means to suddenly start laughing - a strong, spontaneous reaction. 'Burst out' + an activity indicates a sudden start to that activity (also: burst out crying, burst out singing). They reacted with laughter, not tears or anger.",
+            "textToSpeak": "They burst out laughing when they heard the joke.",
+            "question": "What did they do when they heard the joke?",
             "options": [
-                "detective",
-                "pilot",
-                "hacker",
-                "expert"
+                "They cried",
+                "They laughed",
+                "They left the room",
+                "They got angry"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         }
     ]

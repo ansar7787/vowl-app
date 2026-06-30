@@ -192,11 +192,13 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                           fit: BoxFit.scaleDown,
                                           child: ListeningInferenceInstruction(
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
                                         ),
                                       )
                                     : ListeningInferenceInstruction(
                                         color: theme.primaryColor,
+                                        instruction: quest.instruction,
                                       ),
                                 SizedBox(height: gapInstruction),
                                 isCompact

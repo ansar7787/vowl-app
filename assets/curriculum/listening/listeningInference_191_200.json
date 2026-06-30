@@ -6,111 +6,118 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L191_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid repairs the signal swiftly.",
-            "question": "Who is repairing the signal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How does precision → authority → reduced scrutiny form a self-reinforcing circle?",
+            "explanation": "Precision creates an impression of expertise (authority). Authority makes people less likely to question (scrutiny reduced). Reduced scrutiny means the precision doesn't need to be genuinely deep. The appearance of exactness generates trust that removes the examination that would test the exactness. It's a self-protective rhetorical loop.",
+            "textToSpeak": "The speaker uses precision to imply authority, and authority to deflect scrutiny.",
+            "question": "What circular strategy is being identified?",
             "options": [
-                "explorer",
-                "droid",
-                "student",
-                "traveler"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L191_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot activates the software expertly.",
-            "question": "Who is activating the software?",
-            "options": [
-                "scientist",
-                "traveler",
-                "robot",
-                "explorer"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L191_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist locates the archive directly.",
-            "question": "Who is locating the archive?",
-            "options": [
-                "scientist",
-                "droid",
-                "mentor",
-                "expert"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L192_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer monitors the network consistently.",
-            "question": "Who is monitoring the network?",
-            "options": [
-                "explorer",
-                "pilot",
-                "engineer",
-                "artist"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L192_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero secures the circuit consistently.",
-            "question": "Who is securing the circuit?",
-            "options": [
-                "artist",
-                "scout",
-                "hero",
-                "engineer"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L192_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander evaluates the protocol efficiently.",
-            "question": "Who is evaluatesing the protocol?",
-            "options": [
-                "scientist",
-                "scout",
-                "engineer",
-                "commander"
+                "The speaker is being genuinely authoritative",
+                "Precision is always a reliable sign of authority",
+                "The speaker's authority is independently verified",
+                "The speaker uses the appearance of precision and authority to avoid examination"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L191_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is a structurally misleading comparison?",
+            "explanation": "A misleading comparison selects elements that are superficially similar while ignoring crucial differences in structure or context. The flattery = it makes the subject look good. The structural misleading = the comparison doesn't hold when examined carefully, because the two things being compared differ in ways that matter more than their similarities.",
+            "textToSpeak": "The comparison is flattering but structurally misleading.",
+            "question": "What does this evaluation mean?",
+            "options": [
+                "The comparison is entirely valid and accurate",
+                "The comparison is irrelevant",
+                "The comparison is unflattering",
+                "The comparison makes something look good but obscures important differences"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L191_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is cherry-picking in argumentation?",
+            "explanation": "Cherry-picking = selecting only the evidence or quotes that support your position while omitting evidence that contradicts it. Applied to citation: quoting a source out of context or selectively to make it appear to support something it actually doesn't. This creates a misleading impression of the source's position.",
+            "textToSpeak": "He quotes selectively from a source to suggest a conclusion the source doesn't support.",
+            "question": "What technique is being identified?",
+            "options": [
+                "Accurate and fair citation",
+                "Summarising a source comprehensively",
+                "Cherry-picking quotations to misrepresent the source's actual position",
+                "Presenting multiple perspectives fairly"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L192_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the gap between the report's language and its data?",
+            "explanation": "The report uses 'progress' (positive framing) while its own data (which presumably it can't change) shows options have narrowed (negative). This is a contradiction internal to the document itself: the interpretation (progress) and the evidence (narrowing) don't align. The speaker reads the data against the report's own narrative.",
+            "textToSpeak": "What the report calls progress, its own data reveals to be a narrowing of options.",
+            "question": "What is the speaker pointing out?",
+            "options": [
+                "The report's language accurately represents the data",
+                "The data confirms that progress has been made",
+                "The report uses positive language while the data tells a more complicated story",
+                "The report is wrong about everything"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L192_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How does crisis function as a diagnostic tool for institutional values?",
+            "explanation": "Crises force choices with limited resources and high stakes. When institutions must choose, their choices reveal their real priorities - those they protect when they can't protect everything. Stated values are cheap; enacted values under pressure are expensive. The crisis 'tests' the commitment by creating real trade-offs.",
+            "textToSpeak": "A crisis reveals what an institution actually values, as opposed to what it claims to value.",
+            "question": "What does a crisis reveal?",
+            "options": [
+                "Under pressure, what organisations actually prioritise becomes visible",
+                "Nothing - institutions don't change under pressure",
+                "Institutions always live up to their stated values",
+                "Crises always improve institutional performance"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L192_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What problem arises when key terms are contested but assumed to be shared?",
+            "explanation": "If participants use the same words but mean different things, the debate is illusory - they appear to argue about the same thing but are actually arguing about different things. Terms like 'freedom', 'justice', 'democracy' are contested in this way. Without acknowledging the contestation, the debate produces heat without light.",
+            "textToSpeak": "Public debate assumes shared understanding of terms that are, in practice, deeply contested.",
+            "question": "What is the speaker identifying?",
+            "options": [
+                "An apparent agreement on terms conceals fundamental disagreements about meaning",
+                "Public debate is always very clear",
+                "All key terms are clearly defined",
+                "Public debate is always productive and effective"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L193_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The researcher is the actor.",
-            "textToSpeak": "The researcher measures the archive instantly.",
-            "question": "Who is measuring the archive?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the difference between describing and prescribing reality?",
+            "explanation": "Descriptive = tells how things are. Prescriptive = tells how things should be, or naturalises certain orders. Myths that appear to describe ('this is how things are') actually prescribe ('this is how things must be') - they make the contingent seem necessary. Identifying this reveals myth's ideological function.",
+            "textToSpeak": "The myth does not describe reality - it prescribes it.",
+            "question": "What does this mean about myth?",
             "options": [
-                "researcher",
-                "technician",
-                "droid",
-                "teacher"
+                "Myths don't just represent how things are - they tell people how things should be",
+                "Myths are purely fictional with no social function",
+                "Myths are always accurate descriptions",
+                "Myths and reality are identical"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -118,175 +125,186 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L193_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective analyzes the database consistently.",
-            "question": "Who is analyzing the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How do metaphors limit as well as enable inquiry?",
+            "explanation": "A metaphor brings certain associations with it and excludes others. 'Debate as battle' frames it as won or lost, excludes collaborative or exploratory framings. 'Mind as computer' enables questions about processing and storage, excludes questions about embodiment and emotion. Every metaphor illuminates something and obscures something else.",
+            "textToSpeak": "The metaphor structures the debate in ways that exclude certain questions.",
+            "question": "What does this mean?",
             "options": [
-                "mentor",
-                "explorer",
-                "student",
-                "detective"
+                "Metaphors are always neutral",
+                "Metaphors are always explicit",
+                "The choice of metaphor shapes what can be asked within that frame",
+                "Questions are independent of the language used to frame them"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L193_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hacker is the actor.",
-            "textToSpeak": "The hacker repairs the protocol smoothly.",
-            "question": "Who is repairing the protocol?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why might a quiet once-said thing be more influential than loud repetition?",
+            "explanation": "Loud repetition can create resistance, fatigue, or cynicism. Something said quietly, once, can slip past defences precisely because it doesn't trigger resistance. It's absorbed rather than rejected. There's also the power of the implicit: what's said once, without insistence, can seem self-evident rather than pushed. The mode of communication shapes reception.",
+            "textToSpeak": "What is said once quietly can be more influential than what is said repeatedly and loudly.",
+            "question": "What is this observation about the mechanics of influence?",
             "options": [
-                "hacker",
-                "pilot",
-                "hero",
-                "traveler"
+                "Volume always determines influence",
+                "Repeated statements are always most influential",
+                "Quiet speech is always less important",
+                "Subtle, understated communication can sometimes penetrate more deeply"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L194_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist restores the portal securely.",
-            "question": "Who is restoring the portal?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the distinction between individual and systemic explanations for bad outcomes?",
+            "explanation": "Individual explanation: bad people in a system cause problems; fix the people. Systemic explanation: the system creates incentives and pressures that produce bad outcomes even from normally-behaving people; fix the system. The claim: even good people behaving normally within a badly designed system will produce bad outcomes. Systemic change is what's needed.",
+            "textToSpeak": "The problem is not individuals acting badly within a good system - it is individuals acting normally within a bad one.",
+            "question": "What is the claim?",
             "options": [
-                "robot",
-                "explorer",
-                "scientist",
-                "mentor"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L194_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The explorer is the actor.",
-            "textToSpeak": "The explorer secures the circuit rapidly.",
-            "question": "Who is securing the circuit?",
-            "options": [
-                "analyst",
-                "hero",
-                "expert",
-                "explorer"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L194_Q3",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid transfers the archive precisely.",
-            "question": "Who is transferring the archive?",
-            "options": [
-                "scout",
-                "droid",
-                "traveler",
-                "hero"
+                "Individual behaviour is the main issue",
+                "The system itself produces the problematic outcomes, not individual failure",
+                "The system is fine",
+                "Individual and systemic factors are equally important"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
-            "id": "LIS_LISTENINGINFERENCE_L195_Q1",
+            "id": "LIS_LISTENINGINFERENCE_L194_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander sends the node quietly.",
-            "question": "Who is sending the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why might incentives override values?",
+            "explanation": "Values are ideals; incentives are material realities (money, survival, advancement). Under conditions of genuine choice, many people maintain their values. Under sustained pressure from misaligned incentives, stated values are gradually compromised. The observation: system design (incentives) often determines behaviour more reliably than moral commitment.",
+            "textToSpeak": "When incentives and values diverge, incentives tend to win.",
+            "question": "What does this observation mean?",
             "options": [
-                "commander",
-                "mentor",
-                "student",
-                "robot"
+                "Values always determine behaviour",
+                "When material incentives conflict with stated values, the incentives often prevail",
+                "Incentives and values never conflict",
+                "People always act according to their values regardless of incentives"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L194_Q3",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the most significant claim in 'dysfunction as designed function'?",
+            "explanation": "Calling it 'dysfunction' assumes it wasn't supposed to work this way. But if the outcomes are what the system consistently produces, they may be features, not bugs - produced by design or predictably by the design's incentive structure. This forces asking: who benefits from the 'dysfunction'? The 'failure' is a failure only from some perspectives.",
+            "textToSpeak": "The dysfunction was not a failure of the system - it was the system functioning as designed.",
+            "question": "What does this mean?",
+            "options": [
+                "The problematic outcomes were the intended or predictable result of the system's design",
+                "The system was designed poorly by accident",
+                "The system has been fixed",
+                "The system had no design"
             ],
             "correctAnswerIndex": 0,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L195_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the appeal to authority fallacy?",
+            "explanation": "Appeal to authority (ad verecundiam) = accepting a claim as true because a respected person makes it, rather than evaluating the logic or evidence independently. Authority can be relevant context but doesn't substitute for reasoning. The fallacy is treating the speaker's status as itself the argument. Who says it ≠ whether it's true.",
+            "textToSpeak": "The argument carries weight not because of its logic but because of who is making it.",
+            "question": "What kind of logical fallacy is being identified?",
+            "options": [
+                "An appeal to evidence",
+                "Appeal to authority - accepting something because of the speaker's status rather than the reasoning",
+                "A valid deductive argument",
+                "An appeal to common sense"
+            ],
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L195_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The pilot is the actor.",
-            "textToSpeak": "The pilot updates the circuit effectively.",
-            "question": "Who is updating the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What does citation as agreement rather than quality suggest?",
+            "explanation": "If scholars are cited because they're easy to agree with (accessible, confirming, popular) rather than because they're most rigorous or challenging, citation counts are measuring something other than intellectual contribution. The observation: citation economies can reward agreement over challenge, accessibility over depth.",
+            "textToSpeak": "The most cited scholars in this field are those who made it easiest to agree with them.",
+            "question": "What is the implicit critique?",
             "options": [
-                "scientist",
-                "student",
-                "mentor",
-                "pilot"
+                "Popularity always reflects intellectual quality",
+                "High citation counts and intellectual rigour don't always coincide",
+                "All scholars are equally cited",
+                "Citation is always a measure of agreement"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L195_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid launches the system carefully.",
-            "question": "Who is launching the system?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the irony of expertise defined by non-challenge?",
+            "explanation": "Expertise that's constituted by never challenging the field = expertise that maintains the field's existing assumptions. Such an 'expert' validates orthodoxy rather than advancing knowledge. The implication: expertise in this case may be a social role (recognised authority) rather than an epistemological one (advancing understanding). Expertise can be conformist.",
+            "textToSpeak": "He is considered an expert precisely in the field whose conventional wisdom he never challenges.",
+            "question": "What is being implied?",
             "options": [
-                "scout",
-                "mentor",
-                "droid",
-                "hero"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L196_Q1",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student validates the circuit rapidly.",
-            "question": "Who is validating the circuit?",
-            "options": [
-                "analyst",
-                "researcher",
-                "student",
-                "teacher"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "listeningInference"
-        },
-        {
-            "id": "LIS_LISTENINGINFERENCE_L196_Q2",
-            "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst encrypts the protocol securely.",
-            "question": "Who is encrypting the protocol?",
-            "options": [
-                "analyst",
-                "student",
-                "commander",
-                "droid"
+                "His expertise may be defined by agreement with orthodoxy rather than critical engagement",
+                "He is a genuine expert",
+                "He regularly challenges mainstream thinking",
+                "His expertise is widely and deservedly respected"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
+            "id": "LIS_LISTENINGINFERENCE_L196_Q1",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why do solutions in complex systems generate new problems?",
+            "explanation": "Complex systems have many interconnected variables. Changing one element changes relationships throughout the system, producing unintended consequences. Solutions that work for one problem may introduce new imbalances or create unexpected dependencies. This is why complex problems resist simple solutions - they're systemic, not isolated.",
+            "textToSpeak": "Every solution at this level of complexity generates its own new set of problems.",
+            "question": "What does this suggest about complex systems?",
+            "options": [
+                "Complex problems can be solved completely",
+                "Interventions in complex systems often create unexpected new challenges",
+                "Solutions always work",
+                "Problems in complex systems are predictable"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "listeningInference"
+        },
+        {
+            "id": "LIS_LISTENINGINFERENCE_L196_Q2",
+            "interactionType": "Inference Engine",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the distinction between practical and fundamental impossibility of prediction?",
+            "explanation": "Practical impossibility = we can't predict because our tools or data aren't good enough (fixable in principle). Fundamental impossibility = the system's nature itself prevents accurate prediction - not a limitation of our tools but of the phenomenon (chaos, emergence, genuine indeterminism). More computing power doesn't solve fundamental unpredictability.",
+            "textToSpeak": "The variables interact in ways that make prediction fundamentally, not just practically, impossible.",
+            "question": "What does this claim suggest?",
+            "options": [
+                "Prediction is merely difficult but possible with better tools",
+                "Prediction is always possible",
+                "Better computing will solve the prediction problem",
+                "The limits of prediction are intrinsic to the system, not just computational"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "listeningInference"
+        },
+        {
             "id": "LIS_LISTENINGINFERENCE_L196_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero secures the satellite consistently.",
-            "question": "Who is securing the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the risk of excessive simplification?",
+            "explanation": "Simplification is necessary for communication, but there's a threshold beyond which the simplified version stops being a version of the original and becomes something else. At that point, the explanation is accurate about the simplified model but misleading about the reality. The model has lost fidelity to the thing it purports to represent.",
+            "textToSpeak": "He simplified until the thing he was explaining no longer resembled the thing itself.",
+            "question": "What does this criticism mean?",
             "options": [
-                "student",
-                "hero",
-                "scout",
-                "traveler"
+                "Simplification is always helpful",
+                "The explanation was so reduced it lost the essential character of what it described",
+                "He explained with too much detail",
+                "The simplification was accurate"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference"
@@ -294,15 +312,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L197_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The robot is the actor.",
-            "textToSpeak": "The robot sends the device reliably.",
-            "question": "Who is sending the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why is 'restore order' a political claim?",
+            "explanation": "'Order' implies the current state is disordered - a judgment. 'Restore' implies there was a better prior state - another judgment. Who defines order? Whose order? Claiming to restore it frames the status quo (or a desired state) as natural order being disrupted. The phrase looks descriptive but embeds political evaluation.",
+            "textToSpeak": "The phrase 'restore order' is almost always a political claim dressed as a description.",
+            "question": "What is the speaker pointing out?",
             "options": [
-                "scientist",
-                "commander",
-                "technician",
-                "robot"
+                "Restoring order is always a neutral, descriptive statement",
+                "'Order' is an unambiguous concept",
+                "Political language is always clearly labelled",
+                "The phrase appears descriptive but carries evaluative and political dimensions"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -310,31 +329,33 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L197_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The student is the actor.",
-            "textToSpeak": "The student transfers the satellite reliably.",
-            "question": "Who is transferring the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How does calling something inevitable remove it from politics?",
+            "explanation": "If something is described as inevitable ('there is no alternative', 'this had to happen'), it appears as a fact rather than a choice. This removes it from democratic debate - you can't choose or contest what's inevitable. 'Inevitability' is often used to naturalise political choices, making contestable decisions appear as forces of nature.",
+            "textToSpeak": "The language of inevitability serves to depoliticise what are actually political choices.",
+            "question": "What does this mean?",
             "options": [
-                "droid",
-                "scientist",
-                "hacker",
-                "student"
+                "Political choices are genuinely inevitable",
+                "All political choices are inevitable",
+                "Calling something inevitable removes it from the domain of choice and debate",
+                "Language is never political"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L197_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The analyst is the actor.",
-            "textToSpeak": "The analyst builds the device efficiently.",
-            "question": "Who is building the device?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the problem with invoking 'the national interest'?",
+            "explanation": "Nations contain multiple groups with potentially divergent interests. 'The national interest' (singular, definite article) implies there is one, shared, obvious interest - erasing internal differences. When used in political argument, it typically advances one group's interests while claiming universal scope. The 'national' framing legitimises particular interests.",
+            "textToSpeak": "What is called the 'national interest' often reflects a particular version of it, not the only one.",
+            "question": "What does this observation suggest?",
             "options": [
-                "explorer",
-                "commander",
-                "mentor",
-                "analyst"
+                "The national interest is always obvious and agreed upon",
+                "The national interest cannot be defined",
+                "Politicians always act in the genuine national interest",
+                "Claiming to represent the national interest often conceals a partial or contested view"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference"
@@ -342,127 +363,135 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L198_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The hero is the actor.",
-            "textToSpeak": "The hero builds the chip silently.",
-            "question": "Who is building the chip?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How do social and institutional priorities shape what knowledge is produced?",
+            "explanation": "Research requires funding, institutions, questions, and cultural permission. What gets funded, what questions are considered legitimate, what results are publishable - these are all social decisions that shape what knowledge is produced. Knowledge is therefore not neutral but reflects the priorities of those who fund and govern knowledge production.",
+            "textToSpeak": "Knowledge is never produced in a vacuum - it reflects the questions a society is prepared to fund and ask.",
+            "question": "What does this mean?",
             "options": [
-                "hero",
-                "student",
-                "detective",
-                "analyst"
+                "Knowledge is always objective",
+                "All questions are equally likely to be asked",
+                "What we know is shaped by what is socially and institutionally prioritised",
+                "Knowledge has no relationship to power or resources"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L198_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The scientist is the actor.",
-            "textToSpeak": "The scientist builds the node directly.",
-            "question": "Who is building the node?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why is the interpreter of evidence as important as the evidence itself?",
+            "explanation": "Evidence doesn't speak for itself - it requires interpretation, which involves: choice of framework, what counts as relevant, how to weigh competing factors, what background knowledge to bring. Different interpreters of the same evidence can reach different conclusions. Who does the interpreting - their interests, frameworks, assumptions - shapes what the evidence 'shows'.",
+            "textToSpeak": "Who decides what the evidence means is at least as important as what the evidence shows.",
+            "question": "What is the speaker claiming?",
             "options": [
-                "scientist",
-                "robot",
-                "mentor",
-                "detective"
+                "Evidence speaks for itself without interpretation",
+                "Evidence is always correctly interpreted",
+                "Interpretation is not neutral and depends on who is interpreting",
+                "Interpretation is irrelevant to evidence"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L198_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler deploys the satellite properly.",
-            "question": "Who is deploying the satellite?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "How does finitude enable rather than obstruct understanding?",
+            "explanation": "This is a Heideggerian insight: understanding requires being positioned, having perspective, caring about things - all of which come with being finite and embedded in a particular situation. Unlimited knowing from no perspective isn't understanding; it's just information. Understanding requires the situated, finite perspective that makes some things matter more than others.",
+            "textToSpeak": "The recognition that we are finite is not an obstacle to understanding - it is its precondition.",
+            "question": "What is the claim?",
             "options": [
-                "traveler",
-                "scout",
-                "student",
-                "detective"
+                "Our limits prevent genuine understanding",
+                "Finite beings cannot understand anything meaningful",
+                "Understanding requires unlimited knowledge",
+                "Accepting our limitations is what makes genuine understanding possible"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L199_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The teacher is the actor.",
-            "textToSpeak": "The teacher secures the data instantly.",
-            "question": "Who is securing the data?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the significance of the gap between unconditional demand and limited capacity?",
+            "explanation": "Ethics demands the impossible: perfect justice, absolute care, complete responsibility. We are finite and fallible. This gap isn't resolvable - it's constitutive of ethical life. The unconditional demand keeps us striving; our incapacity means we always fall short. This is not a failure but the structure of ethical existence.",
+            "textToSpeak": "The ethical demand is unconditional - but our capacity to meet it never is.",
+            "question": "What is this tension about?",
             "options": [
-                "teacher",
-                "artist",
-                "hacker",
-                "mentor"
+                "Ethics is always achievable",
+                "Ethical demands should be reduced to what's achievable",
+                "There is a gap between the absolute nature of ethical demands and our limited human capacity",
+                "Ethical demands are conditional"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L199_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The mentor is the actor.",
-            "textToSpeak": "The mentor activates the code immediately.",
-            "question": "Who is activating the code?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the epistemological value of recognising your own incomplete understanding?",
+            "explanation": "Knowing what you don't know = a form of meta-knowledge. Recognising incompleteness requires knowing enough to map the gap. Socratic 'knowing that I know nothing' is more sophisticated than confident ignorance. The recognition of incompleteness prevents false closure and keeps inquiry open - it's epistemically more advanced than the illusion of completeness.",
+            "textToSpeak": "Understanding is always incomplete, and the recognition of that incompleteness is itself a form of understanding.",
+            "question": "What is the observation about?",
             "options": [
-                "scout",
-                "mentor",
-                "detective",
-                "technician"
+                "Understanding is never possible",
+                "A full and complete picture is achievable",
+                "Knowing the limits of your understanding is itself a kind of knowledge",
+                "All understanding is equally limited"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L199_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The commander is the actor.",
-            "textToSpeak": "The commander locates the network smoothly.",
-            "question": "Who is locating the network?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why might open, resistant questions be more valuable than answered ones?",
+            "explanation": "Questions that remain open force continued engagement: they demand ongoing thought, resist comfortable closure, prevent intellectual stagnation. Answered questions close the inquiry. Open questions that 'resist premature resolution' keep us honest - they prevent us from mistaking our current understanding for final truth. They're generative, not merely unanswered.",
+            "textToSpeak": "The most important questions are those that resist premature resolution and force continued thought.",
+            "question": "What does this observation value?",
             "options": [
-                "pilot",
-                "traveler",
-                "commander",
-                "scout"
+                "Questions whose openness generates ongoing productive thinking",
+                "Questions settled quickly",
+                "Simple questions with clear answers",
+                "Questions that have already been definitively resolved"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L200_Q1",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The droid is the actor.",
-            "textToSpeak": "The droid scans the database precisely.",
-            "question": "Who is scanning the database?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why might question-asking be more important than answer-mastery?",
+            "explanation": "Answers are contextual and temporary - what's the right answer now may not be later. But the ability to ask good questions - to identify what matters, to frame inquiry productively, to locate the right problem - is transferable, durable, and fundamental. Learning to ask better questions is meta-learning: it improves all future learning.",
+            "textToSpeak": "The best learners are not those who master answers but those who learn to ask better questions.",
+            "question": "What does this value?",
             "options": [
-                "scientist",
-                "artist",
-                "droid",
-                "robot"
+                "Knowing all the answers",
+                "The skill of formulating increasingly sophisticated and productive questions",
+                "The ability to recall information accurately",
+                "Following instructions closely"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L200_Q2",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The traveler is the actor.",
-            "textToSpeak": "The traveler launches the circuit carefully.",
-            "question": "Who is launching the circuit?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "Why is unlearning wrong questions harder than learning right answers?",
+            "explanation": "Wrong questions feel like the right questions - they're embedded in frameworks that feel natural. Unlearning requires recognising that your framing is the problem, not just your answers. This demands meta-cognitive awareness and a willingness to discard existing conceptual structures. Unlearning is more threatening to identity and competence than learning new content.",
+            "textToSpeak": "The hardest thing in any field is not learning the answers but unlearning the wrong questions.",
+            "question": "What does this mean?",
             "options": [
-                "traveler",
-                "technician",
-                "explorer",
-                "mentor"
+                "Removing mistaken framing and assumptions is more difficult than acquiring new knowledge",
+                "Learning answers is always the hardest task",
+                "Unlearning is easy compared to learning",
+                "Wrong questions don't exist in mature fields"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference"
@@ -470,17 +499,18 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L200_Q3",
             "interactionType": "Inference Engine",
-            "hint": "Infer the subject.",
-            "explanation": "The detective is the actor.",
-            "textToSpeak": "The detective creates the archive automatically.",
-            "question": "Who is creating the archive?",
+            "instruction": "Listen to the audio and answer the question.",
+            "hint": "What is the epistemological experience described here?",
+            "explanation": "Expertise reveals the depth and complexity of a field - showing how much more there is that isn't yet known or understood. The novice sees a simple surface; the expert sees an intricate, unresolved, and expanding landscape. True learning expands not just what you know but your awareness of the vast unknown. Wisdom includes knowing the limits of knowledge.",
+            "textToSpeak": "At the end of learning, you discover that what you have really learned is how much more there is to learn.",
+            "question": "What does this final observation convey?",
             "options": [
-                "detective",
-                "researcher",
-                "scout",
-                "robot"
+                "Learning eventually produces complete knowledge",
+                "The deeper you go, the more you discover the vastness of what remains unknown",
+                "Education is pointless since it reveals only ignorance",
+                "Experts know everything in their field"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference"
         }
     ]
