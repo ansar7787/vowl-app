@@ -106,9 +106,6 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              const Positioned.fill(
-                child: IgnorePointer(child: GameConfetti()),
-              ),
               ModernGameDialog(
                 title: 'CHEST UNLOCKED!',
                 description:
@@ -121,6 +118,9 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                     Navigator.of(context).pop();
                   }
                 },
+              ),
+              const Positioned.fill(
+                child: IgnorePointer(child: GameConfetti()),
               ),
             ],
           ),
@@ -171,9 +171,6 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  const Positioned.fill(
-                    child: IgnorePointer(child: GameConfetti()),
-                  ),
                   ModernGameDialog(
                     title: 'MAGIC STARS EARNED!',
                     description: 'You got +2 Magic Stars for watching the ad!',
@@ -185,6 +182,9 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                       color: const Color(0xFF10B981),
                       size: 48.sp,
                     ),
+                  ),
+                  const Positioned.fill(
+                    child: IgnorePointer(child: GameConfetti()),
                   ),
                 ],
               ),

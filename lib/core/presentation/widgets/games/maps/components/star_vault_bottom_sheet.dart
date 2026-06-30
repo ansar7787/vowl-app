@@ -102,7 +102,6 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
               ModernGameDialog(
                 title: 'CHEST UNLOCKED!',
                 description: 'You found +$coinReward $currencyName in the magical chest!',
@@ -115,6 +114,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                   }
                 },
               ),
+              const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
             ],
           ),
         ),
@@ -164,7 +164,6 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
                   ModernGameDialog(
                     title: 'MAGIC STARS EARNED!',
                     description: 'You got +2 Magic Stars for watching the ad!',
@@ -173,6 +172,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                     onButtonPressed: () => Navigator.of(ctx).pop(),
                     customIcon: Icon(Icons.auto_awesome_rounded, color: const Color(0xFF10B981), size: 48.sp),
                   ),
+                  const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
                 ],
               ),
             ),

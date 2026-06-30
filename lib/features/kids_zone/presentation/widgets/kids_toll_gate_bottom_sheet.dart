@@ -96,7 +96,6 @@ class KidsTollGateBottomSheet {
                         child: Stack(
                           alignment: Alignment.center,
                           children: [
-                            const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
                             ModernGameDialog(
                               title: 'GATE UNLOCKED!',
                               description: context.tr('games.magic_lock_success', fallback: '3 Levels Unlocked! ✨'),
@@ -104,6 +103,7 @@ class KidsTollGateBottomSheet {
                               isSuccess: true,
                               onButtonPressed: () => Navigator.of(ctx).pop(),
                             ),
+                            const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
                           ],
                         ),
                       ),
@@ -193,7 +193,6 @@ class KidsTollGateBottomSheet {
                             child: Stack(
                               alignment: Alignment.center,
                               children: [
-                                const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
                                 ModernGameDialog(
                                   title: 'GATE UNLOCKED!',
                                   description: context.tr('games.magic_lock_success', fallback: '3 Levels Unlocked! ✨'),
@@ -201,6 +200,7 @@ class KidsTollGateBottomSheet {
                                   isSuccess: true,
                                   onButtonPressed: () => Navigator.of(ctx).pop(),
                                 ),
+                                const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
                               ],
                             ),
                           ),

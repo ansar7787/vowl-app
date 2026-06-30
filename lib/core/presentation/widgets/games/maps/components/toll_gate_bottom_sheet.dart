@@ -92,7 +92,6 @@ class TollGateBottomSheet {
                         child: Stack(
                           alignment: Alignment.center,
                           children: [
-                            const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
                             ModernGameDialog(
                               title: 'GATE UNLOCKED!',
                               description: context.tr('games.level_unlocked_success', fallback: 'Next 3 Levels Unlocked!'),
@@ -100,6 +99,7 @@ class TollGateBottomSheet {
                               isSuccess: true,
                               onButtonPressed: () => Navigator.of(ctx).pop(),
                             ),
+                            const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
                           ],
                         ),
                       ),
@@ -182,7 +182,6 @@ class TollGateBottomSheet {
                             child: Stack(
                               alignment: Alignment.center,
                               children: [
-                                const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
                                 ModernGameDialog(
                                   title: 'GATE UNLOCKED!',
                                   description: context.tr('games.level_unlocked_success', args: [level.toString()], fallback: 'Level $level Unlocked!'),
@@ -190,6 +189,7 @@ class TollGateBottomSheet {
                                   isSuccess: true,
                                   onButtonPressed: () => Navigator.of(ctx).pop(),
                                 ),
+                                const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
                               ],
                             ),
                           ),
