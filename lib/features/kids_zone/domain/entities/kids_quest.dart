@@ -13,6 +13,7 @@ class KidsQuest extends Equatable {
   final Map<String, dynamic>? metadata;
   final String? painter;
   final String? shader;
+  final String? emoji;
   final String hint;
 
   const KidsQuest({
@@ -28,6 +29,7 @@ class KidsQuest extends Equatable {
     this.metadata,
     this.painter,
     this.shader,
+    this.emoji,
     this.hint = "Think carefully!",
   });
 
@@ -45,6 +47,7 @@ class KidsQuest extends Equatable {
     metadata,
     painter,
     shader,
+    emoji,
     hint,
   ];
 
@@ -61,6 +64,7 @@ class KidsQuest extends Equatable {
     Map<String, dynamic>? metadata,
     String? painter,
     String? shader,
+    String? emoji,
     String? hint,
   }) {
     return KidsQuest(
@@ -76,6 +80,7 @@ class KidsQuest extends Equatable {
       metadata: metadata ?? this.metadata,
       painter: painter ?? this.painter,
       shader: shader ?? this.shader,
+      emoji: emoji ?? this.emoji,
       hint: hint ?? this.hint,
     );
   }

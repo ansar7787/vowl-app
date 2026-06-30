@@ -45,7 +45,7 @@ class KidsAnimalsLayout extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: Center(
-                    child: _buildSafariFrame(quest.question ?? "?"),
+                    child: _buildSafariFrame(quest.question ?? "?", quest.emoji),
                   ),
                 ),
                 // Wooden Signposts for Options
@@ -105,7 +105,7 @@ class KidsAnimalsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildSafariFrame(String text) {
+  Widget _buildSafariFrame(String text, String? emoji) {
     return Container(
       width: 260.w,
       height: 160.h,
@@ -137,14 +137,24 @@ class KidsAnimalsLayout extends StatelessWidget {
                 color: Colors.white.withValues(alpha: 0.8),
                 borderRadius: BorderRadius.circular(20.r),
               ),
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 42.sp,
-                  fontWeight: FontWeight.w900,
-                  color: const Color(0xFF1E293B),
-                ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (emoji != null)
+                    Text(
+                      emoji,
+                      style: TextStyle(fontSize: 48.sp),
+                    ),
+                  Text(
+                    text,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 32.sp,
+                      fontWeight: FontWeight.w900,
+                      color: const Color(0xFF1E293B),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

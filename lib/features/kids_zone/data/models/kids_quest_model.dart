@@ -14,6 +14,7 @@ class KidsQuestModel extends KidsQuest {
     super.metadata,
     super.painter,
     super.shader,
+    super.emoji,
     super.hint = "Think carefully!",
   });
 
@@ -41,6 +42,7 @@ class KidsQuestModel extends KidsQuest {
           : null,
       painter: json['painter'] as String?,
       shader: json['shader'] as String?,
+      emoji: json['emoji'] as String?,
       hint: json['hint'] as String? ?? 'Think carefully!',
     );
   }
@@ -59,6 +61,7 @@ class KidsQuestModel extends KidsQuest {
       'metadata': metadata,
       'painter': painter,
       'shader': shader,
+      'emoji': emoji,
       'hint': hint,
     };
   }
