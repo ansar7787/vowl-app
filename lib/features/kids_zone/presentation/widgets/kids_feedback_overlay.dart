@@ -1,4 +1,3 @@
-import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -63,134 +62,126 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
   @override
   Widget build(BuildContext context) {
     final primaryColor = widget.isCorrect ? const Color(0xFF10B981) : const Color(0xFFEF4444);
-    final accentColor = widget.isCorrect ? const Color(0xFF3B82F6) : const Color(0xFFF59E0B);
+    final shadowColor = widget.isCorrect ? const Color(0xFF047857) : const Color(0xFFB91C1C);
 
     return Positioned.fill(
       child: Stack(
         children: [
-          // GLASSMORPHIC BLUR LAYER
-          TweenAnimationBuilder<double>(
-            tween: Tween(begin: 0.0, end: 1.0),
-            duration: 400.ms,
-            builder: (context, value, child) {
-              return BackdropFilter(
-                filter: ui.ImageFilter.blur(sigmaX: 10 * value, sigmaY: 10 * value),
-                child: Container(
-                  color: primaryColor.withValues(alpha: 0.15 * value),
-                ),
-              );
-            },
-          ),
-
-          // VIBRANT GRADIENT GLOWS
-          Positioned(
-            top: -100,
-            right: -50,
-            child: _buildGlowCircle(primaryColor.withValues(alpha: 0.3), 300),
-          ).animate().scale(duration: 1.seconds, curve: Curves.easeOutBack),
-          
-          Positioned(
-            bottom: -150,
-            left: -100,
-            child: _buildGlowCircle(accentColor.withValues(alpha: 0.2), 400),
-          ).animate().scale(duration: 1.5.seconds, curve: Curves.easeOutBack),
+          // Semi-transparent dim background
+          Container(color: Colors.black.withValues(alpha: 0.6)),
 
           // CONTENT
-          GestureDetector(
-            onTap: widget.onTap,
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _buildMascotSection(context, primaryColor),
-                  SizedBox(height: 40.h),
-                  
-                  // MAIN TITLE
-                  Text(
-                    widget.isCorrect ? context.tr('games.kids_awesome') : context.tr('games.kids_oh_no'),
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 44.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                      letterSpacing: 2,
-                      shadows: [
-                        Shadow(color: Colors.black26, offset: const Offset(0, 10), blurRadius: 20),
-                      ],
+          Center(
+            child: ScaleButton(
+              onTap: widget.onTap,
+              child: Container(
+                width: 340.w,
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
+                decoration: BoxDecoration(
+                  color: primaryColor,
+                  borderRadius: BorderRadius.circular(40.r),
+                  border: Border.all(color: Colors.white, width: 8.w),
+                  boxShadow: [
+                    BoxShadow(
+                      color: shadowColor,
+                      offset: Offset(0, 12.h),
                     ),
-                  ).animate().scale(delay: 200.ms, curve: Curves.elasticOut),
-
-                  SizedBox(height: 8.h),
-
-                  // SUBTITLE
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(20.r),
-                      border: Border.all(color: Colors.white24),
-                    ),
-                    child: Text(
-                      widget.isCorrect 
-                        ? context.tr('games.kids_success_msg') 
-                        : (widget.attempts >= 2 
-                           ? context.tr('games.kids_review_msg') 
-                           : context.tr('games.kids_try_again_msg')),
-                      style: TextStyle(fontFamily: 'Outfit', 
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white.withValues(alpha: 0.9),
-                      ),
-                    ),
-                  ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.5, end: 0),
-
-                  if (!widget.isCorrect) ...[
-                    SizedBox(height: 20.h),
-                    // STRIKE INDICATOR (Two-Strike Mastery)
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(2, (index) {
-                        final isUsed = index < widget.attempts;
-                        return Container(
-                          margin: EdgeInsets.symmetric(horizontal: 6.w),
-                          padding: EdgeInsets.all(8.r),
-                          decoration: BoxDecoration(
-                            color: isUsed ? Colors.black26 : Colors.white24,
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: isUsed ? Colors.white38 : Colors.white,
-                              width: 2,
-                            ),
-                          ),
-                          child: Icon(
-                            isUsed ? Icons.close_rounded : Icons.favorite_rounded,
-                            color: isUsed ? Colors.white54 : Colors.redAccent,
-                            size: 24.sp,
-                          ),
-                        ).animate(target: isUsed ? 1 : 0).shake(duration: 500.ms).scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2));
-                      }),
-                    ).animate().fadeIn(delay: 600.ms),
                   ],
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    _buildMascotSection(context, shadowColor),
+                    SizedBox(height: 24.h),
+                    
+                    // MAIN TITLE
+                    Text(
+                      widget.isCorrect ? context.tr('games.kids_awesome') : context.tr('games.kids_oh_no'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit', 
+                        fontSize: 48.sp,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
+                        letterSpacing: 2,
+                        shadows: [
+                          Shadow(color: shadowColor, offset: const Offset(0, 4), blurRadius: 0),
+                        ],
+                      ),
+                      textAlign: TextAlign.center,
+                    ).animate().scale(delay: 200.ms, curve: Curves.elasticOut),
 
-                  SizedBox(height: 60.h),
+                    SizedBox(height: 16.h),
 
-                  // MODERN 3D BUTTON
-                  ScaleButton(
-                    onTap: widget.onTap,
-                    child: Container(
-                      width: 220.w,
+                    // SUBTITLE
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(color: shadowColor, width: 3.w),
+                        boxShadow: [
+                           BoxShadow(color: shadowColor, offset: Offset(0, 4.h))
+                        ]
+                      ),
+                      child: Text(
+                        widget.isCorrect 
+                          ? context.tr('games.kids_success_msg') 
+                          : (widget.attempts >= 2 
+                             ? context.tr('games.kids_review_msg') 
+                             : context.tr('games.kids_try_again_msg')),
+                        style: TextStyle(
+                          fontFamily: 'Outfit', 
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w900,
+                          color: primaryColor,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.5, end: 0),
+
+                    if (!widget.isCorrect) ...[
+                      SizedBox(height: 24.h),
+                      // STRIKE INDICATOR
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(2, (index) {
+                          final isUsed = index < widget.attempts;
+                          return Container(
+                            margin: EdgeInsets.symmetric(horizontal: 8.w),
+                            width: 36.w,
+                            height: 36.w,
+                            decoration: BoxDecoration(
+                              color: isUsed ? Colors.grey[400] : Colors.white,
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: isUsed ? Colors.grey[600]! : shadowColor,
+                                width: 3.w,
+                              ),
+                            ),
+                            child: Icon(
+                              isUsed ? Icons.close_rounded : Icons.favorite_rounded,
+                              color: isUsed ? Colors.white : Colors.redAccent,
+                              size: 20.sp,
+                            ),
+                          ).animate(target: isUsed ? 1 : 0).shake(duration: 500.ms).scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2));
+                        }),
+                      ).animate().fadeIn(delay: 600.ms),
+                    ],
+
+                    SizedBox(height: 32.h),
+
+                    // MODERN 3D BUTTON
+                    Container(
+                      width: double.infinity,
                       height: 64.h,
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [Colors.white, Colors.white.withValues(alpha: 0.9)],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                        ),
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(32.r),
+                        border: Border.all(color: shadowColor, width: 4.w),
                         boxShadow: [
                           BoxShadow(
-                            color: primaryColor.withValues(alpha: 0.4),
-                            blurRadius: 20,
-                            offset: const Offset(0, 10),
+                            color: shadowColor,
+                            offset: Offset(0, 6.h),
                           ),
                         ],
                       ),
@@ -200,24 +191,25 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
                           children: [
                             Text(
                               context.tr('common.continue_text').toUpperCase(),
-                              style: TextStyle(fontFamily: 'Outfit', 
-                                fontSize: 18.sp,
+                              style: TextStyle(
+                                fontFamily: 'Outfit', 
+                                fontSize: 24.sp,
                                 fontWeight: FontWeight.w900,
                                 color: primaryColor,
                                 letterSpacing: 1.5,
                               ),
                             ),
                             SizedBox(width: 8.w),
-                            Icon(Icons.arrow_forward_rounded, color: primaryColor, size: 22.sp),
+                            Icon(Icons.arrow_forward_rounded, color: primaryColor, size: 30.sp),
                           ],
                         ),
                       ),
-                    ),
-                  ).animate().fadeIn(delay: 600.ms).scale(begin: const Offset(0.8, 0.8)),
-                ],
+                    ).animate().fadeIn(delay: 600.ms).scale(begin: const Offset(0.8, 0.8)),
+                  ],
+                ),
               ),
             ),
-          ),
+          ).animate().slideY(begin: 1, end: 0, duration: 400.ms, curve: Curves.easeOutBack),
 
           // CONFETTI
           if (widget.isCorrect)
@@ -236,58 +228,29 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
     );
   }
 
-  Widget _buildGlowCircle(Color color, double size) {
-    return Container(
-      width: size.r,
-      height: size.r,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        boxShadow: [
-          BoxShadow(
-            color: color,
-            blurRadius: size / 2,
-            spreadRadius: 20,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildMascotSection(BuildContext context, Color color) {
+  Widget _buildMascotSection(BuildContext context, Color shadowColor) {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, authState) {
-        return Stack(
-          alignment: Alignment.center,
-          children: [
-            // RADIATING RINGS
-            ...List.generate(3, (index) {
-              return Container(
-                width: (180 + (index * 40)).r,
-                height: (180 + (index * 40)).r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Colors.white.withValues(alpha: 0.1),
-                    width: 2,
-                  ),
-                ),
-              ).animate(onPlay: (c) => c.repeat()).scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.2, 1.2),
-                    duration: (1.5 + index).seconds,
-                    curve: Curves.easeOut,
-                  ).fadeOut();
-            }),
-
-            // SMART MASCOT
-            VowlMascot(
-              isKidsMode: true,
-              size: 90.r,
-              state: widget.isCorrect ? VowlMascotState.happy : VowlMascotState.worried,
-              useFloatingAnimation: true,
-            ).animate().scale(delay: 300.ms, curve: Curves.elasticOut),
-          ],
-        );
+        return Container(
+          padding: EdgeInsets.all(16.r),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            shape: BoxShape.circle,
+            border: Border.all(color: shadowColor, width: 6.w),
+            boxShadow: [
+              BoxShadow(
+                color: shadowColor,
+                offset: Offset(0, 4.h),
+              ),
+            ],
+          ),
+          child: VowlMascot(
+            isKidsMode: true,
+            size: 110.r,
+            state: widget.isCorrect ? VowlMascotState.happy : VowlMascotState.worried,
+            useFloatingAnimation: true,
+          ),
+        ).animate().scale(delay: 300.ms, curve: Curves.elasticOut);
       },
     );
   }

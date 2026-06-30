@@ -42,20 +42,24 @@ class KidsGameDialogs {
               children: [
 
                 Center(
-                  child: AlertDialog(
-                    backgroundColor:
-                        (isDark ? const Color(0xFF1E293B) : Colors.white)
-                            .withValues(alpha: 0.95),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32.r),
-                      side: BorderSide(
-                        color: primaryColor.withValues(alpha: 0.5),
-                        width: 3,
+                  child: Dialog(
+                    backgroundColor: Colors.transparent,
+                    elevation: 0,
+                    insetPadding: EdgeInsets.symmetric(horizontal: 24.w),
+                    child: Container(
+                      padding: EdgeInsets.all(24.w),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                        borderRadius: BorderRadius.circular(40.r),
+                        border: Border.all(color: const Color(0xFFFBBF24), width: 8.w),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0xFFD97706),
+                            offset: Offset(0, 12.h),
+                          ),
+                        ],
                       ),
-                    ),
-                    elevation: 24,
-                    shadowColor: primaryColor.withValues(alpha: 0.4),
-                    content: SingleChildScrollView(
+                      child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -238,24 +242,15 @@ class KidsGameDialogs {
                                   },
                                   child: Container(
                                     width: double.infinity,
-                                    height: 48.h,
+                                    height: 56.h,
                                     decoration: BoxDecoration(
-                                      gradient: const LinearGradient(
-                                        colors: [
-                                          Color(0xFFFFD700),
-                                          Color(0xFFFF9500),
-                                        ],
-                                        begin: Alignment.topLeft,
-                                        end: Alignment.bottomRight,
-                                      ),
-                                      borderRadius: BorderRadius.circular(20.r),
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(28.r),
+                                      border: Border.all(color: const Color(0xFFD97706), width: 3.w),
                                       boxShadow: [
                                         BoxShadow(
-                                          color: const Color(
-                                            0xFFFF9500,
-                                          ).withValues(alpha: 0.4),
-                                          blurRadius: 16,
-                                          offset: const Offset(0, 6),
+                                          color: const Color(0xFFD97706),
+                                          offset: Offset(0, 5.h),
                                         ),
                                       ],
                                     ),
@@ -265,8 +260,8 @@ class KidsGameDialogs {
                                         children: [
                                           Icon(
                                             Icons.play_circle_fill_rounded,
-                                            color: Colors.white,
-                                            size: 20.r,
+                                            color: const Color(0xFFF59E0B),
+                                            size: 24.sp,
                                           ),
                                           SizedBox(width: 8.w),
                                           Flexible(
@@ -275,8 +270,8 @@ class KidsGameDialogs {
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 fontWeight: FontWeight.w900,
-                                                color: Colors.white,
-                                                fontSize: 14.sp,
+                                                color: const Color(0xFFF59E0B),
+                                                fontSize: 16.sp,
                                                 letterSpacing: 1,
                                               ),
                                               maxLines: 1,
@@ -341,22 +336,15 @@ class KidsGameDialogs {
                             },
                             child: Container(
                               width: double.infinity,
-                              height: 48.h,
+                              height: 64.h,
                               decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [
-                                    primaryColor,
-                                    primaryColor.withValues(alpha: 0.8),
-                                  ],
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter,
-                                ),
-                                borderRadius: BorderRadius.circular(16.r),
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(32.r),
+                                border: Border.all(color: const Color(0xFFD97706), width: 4.w),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: primaryColor.withValues(alpha: 0.4),
-                                    blurRadius: 12,
-                                    offset: const Offset(0, 4),
+                                    color: const Color(0xFFD97706),
+                                    offset: Offset(0, 6.h),
                                   ),
                                 ],
                               ),
@@ -369,9 +357,9 @@ class KidsGameDialogs {
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    fontSize: 15.sp,
-                                    letterSpacing: 1,
+                                    color: const Color(0xFFF59E0B),
+                                    fontSize: 22.sp,
+                                    letterSpacing: 1.5,
                                   ),
                                 ),
                               ),
@@ -380,9 +368,10 @@ class KidsGameDialogs {
                         ],
                       ),
                     ),
-                  ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+                  ),
                 ),
-                const Positioned.fill(
+              ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+              const Positioned.fill(
                   child: IgnorePointer(child: GameConfetti(shouldPop: false)),
                 ),
               ],
@@ -407,14 +396,24 @@ class KidsGameDialogs {
       barrierDismissible: false,
       builder: (context) => BackdropFilter(
         filter: ui.ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-        child: AlertDialog(
-          backgroundColor: (isDark ? const Color(0xFF1E293B) : Colors.white)
-              .withValues(alpha: 0.9),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(32.r),
-            side: const BorderSide(color: Colors.redAccent, width: 2),
-          ),
-          content: SingleChildScrollView(
+        child: Dialog(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          insetPadding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Container(
+            padding: EdgeInsets.all(24.w),
+            decoration: BoxDecoration(
+              color: isDark ? const Color(0xFF1E293B) : Colors.white,
+              borderRadius: BorderRadius.circular(40.r),
+              border: Border.all(color: const Color(0xFFEF4444), width: 8.w),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xFFB91C1C),
+                  offset: Offset(0, 12.h),
+                ),
+              ],
+            ),
+            child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -462,45 +461,44 @@ class KidsGameDialogs {
                     onDismissed: () {},
                   );
                 },
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 16.h),
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [Colors.green, Color(0xFF10B981)],
-                    ),
-                    borderRadius: BorderRadius.circular(20.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.green.withValues(alpha: 0.3),
-                        blurRadius: 15,
-                        offset: const Offset(0, 8),
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          context.tr('games.kids_resume_game'),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                            fontSize: 18.sp,
-                          ),
-                        ),
-                        SizedBox(width: 8.w),
-                        Icon(
-                          Icons.play_circle_fill_rounded,
-                          color: Colors.white,
-                          size: 24.sp,
+                  child: Container(
+                    width: double.infinity,
+                    height: 64.h,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(32.r),
+                      border: Border.all(color: const Color(0xFF047857), width: 4.w),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xFF047857),
+                          offset: Offset(0, 6.h),
                         ),
                       ],
                     ),
+                    child: Center(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            context.tr('games.kids_resume_game').toUpperCase(),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontWeight: FontWeight.w900,
+                              color: const Color(0xFF10B981),
+                              fontSize: 20.sp,
+                              letterSpacing: 1,
+                            ),
+                          ),
+                          SizedBox(width: 8.w),
+                          Icon(
+                            Icons.play_circle_fill_rounded,
+                            color: const Color(0xFF10B981),
+                            size: 28.sp,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
               ),
 
               SizedBox(height: 16.h),
@@ -522,6 +520,7 @@ class KidsGameDialogs {
               ],
             ),
           ),
+          ),
         ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
       ),
     );
@@ -532,21 +531,28 @@ class KidsGameDialogs {
     required Color primaryColor,
   }) async {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return await showDialog<bool>(
+    final result = await showDialog<bool?>(
           context: context,
           builder: (context) => BackdropFilter(
             filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-            child: AlertDialog(
-              backgroundColor: (isDark ? const Color(0xFF1E293B) : Colors.white)
-                  .withValues(alpha: 0.85),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.r),
-                side: BorderSide(
-                  color: Colors.white.withValues(alpha: 0.2),
-                  width: 1.5,
+            child: Dialog(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              insetPadding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Container(
+                padding: EdgeInsets.all(24.w),
+                decoration: BoxDecoration(
+                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  borderRadius: BorderRadius.circular(40.r),
+                  border: Border.all(color: const Color(0xFF8B5CF6), width: 8.w), // Playful purple
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF6D28D9),
+                      offset: Offset(0, 12.h),
+                    ),
+                  ],
                 ),
-              ),
-              content: SingleChildScrollView(
+                child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -600,21 +606,29 @@ class KidsGameDialogs {
                         child: ScaleButton(
                           onTap: () => Navigator.pop(context, true),
                           child: Container(
-                            padding: EdgeInsets.symmetric(vertical: 14.h),
+                            height: 60.h,
                             decoration: BoxDecoration(
-                              color: isDark ? Colors.white10 : Colors.grey[200],
-                              borderRadius: BorderRadius.circular(20.r),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(30.r),
+                              border: Border.all(color: Colors.grey[400]!, width: 4.w),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey[400]!,
+                                  offset: Offset(0, 5.h),
+                                ),
+                              ],
                             ),
-                            child: Text(
-                              context.tr('games.kids_quit_button'),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontWeight: FontWeight.w800,
-                                color: isDark
-                                    ? Colors.white60
-                                    : Colors.grey[600],
-                                letterSpacing: 1,
+                            child: Center(
+                              child: Text(
+                                context.tr('games.kids_quit_button').toUpperCase(),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.grey[600],
+                                  fontSize: 16.sp,
+                                  letterSpacing: 1,
+                                ),
                               ),
                             ),
                           ),
@@ -625,31 +639,29 @@ class KidsGameDialogs {
                         child: ScaleButton(
                           onTap: () => Navigator.pop(context, false),
                           child: Container(
-                            padding: EdgeInsets.symmetric(vertical: 14.h),
+                            height: 60.h,
                             decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  primaryColor,
-                                  primaryColor.withValues(alpha: 0.8),
-                                ],
-                              ),
-                              borderRadius: BorderRadius.circular(20.r),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(30.r),
+                              border: Border.all(color: const Color(0xFF6D28D9), width: 4.w),
                               boxShadow: [
                                 BoxShadow(
-                                  color: primaryColor.withValues(alpha: 0.3),
-                                  blurRadius: 15,
-                                  offset: const Offset(0, 5),
+                                  color: const Color(0xFF6D28D9),
+                                  offset: Offset(0, 5.h),
                                 ),
                               ],
                             ),
-                            child: Text(
-                              context.tr('games.kids_play_on'),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white,
-                                letterSpacing: 1,
+                            child: Center(
+                              child: Text(
+                                context.tr('games.kids_play_on').toUpperCase(),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontWeight: FontWeight.w900,
+                                  color: const Color(0xFF8B5CF6),
+                                  fontSize: 16.sp,
+                                  letterSpacing: 1,
+                                ),
                               ),
                             ),
                           ),
@@ -660,10 +672,11 @@ class KidsGameDialogs {
                 ],
               ),
               ),
+              ),
             ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
           ),
-        ) ??
-        false;
+        );
+    return result ?? false;
   }
 
   static Widget _buildReward(
