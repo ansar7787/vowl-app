@@ -73,10 +73,30 @@ class KidsGameDialogs {
                                   final isEarned = index < stars;
                                   return Padding(
                                     padding: EdgeInsets.symmetric(horizontal: 4.w),
-                                    child: Icon(
-                                      Icons.star_rounded,
-                                      size: index == 1 ? 36.sp : 28.sp,
-                                      color: isEarned ? const Color(0xFFFFD700) : Colors.black12,
+                                    child: Container(
+                                      width: index == 1 ? 65.r : 50.r,
+                                      height: index == 1 ? 65.r : 50.r,
+                                      decoration: BoxDecoration(
+                                        color: isEarned ? const Color(0xFFFFD700) : Colors.grey[300],
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                          color: Colors.white,
+                                          width: 4.w,
+                                        ),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: isEarned ? const Color(0xFFD97706) : Colors.grey[500]!,
+                                            offset: Offset(0, 4.h),
+                                          ),
+                                        ],
+                                      ),
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.star_rounded,
+                                          size: index == 1 ? 45.sp : 35.sp,
+                                          color: Colors.white,
+                                        ),
+                                      ),
                                     ).animate(delay: (150 * index).ms).scale(
                                       curve: Curves.elasticOut,
                                     ).shimmer(
@@ -90,15 +110,32 @@ class KidsGameDialogs {
                           ),
 
                           SizedBox(height: 16.h),
-                          Text(
-                            context.tr('games.kids_level_up'),
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontWeight: FontWeight.w900,
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+                            decoration: BoxDecoration(
                               color: primaryColor,
-                              fontSize: 20.sp,
-                              letterSpacing: 1.5,
+                              borderRadius: BorderRadius.circular(20.r),
+                              border: Border.all(
+                                color: Colors.white,
+                                width: 4.w,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: primaryColor.withValues(alpha: 0.6),
+                                  offset: Offset(0, 5.h),
+                                ),
+                              ],
+                            ),
+                            child: Text(
+                              context.tr('games.kids_level_up'),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                                fontSize: 20.sp,
+                                letterSpacing: 1.5,
+                              ),
                             ),
                           ),
                           SizedBox(height: 20.h),
@@ -108,31 +145,16 @@ class KidsGameDialogs {
                             width: double.infinity,
                             padding: EdgeInsets.symmetric(vertical: 16.h),
                             decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                                colors: isDark
-                                    ? [
-                                        Colors.amber.withValues(alpha: 0.15),
-                                        Colors.blueAccent.withValues(alpha: 0.15),
-                                      ]
-                                    : [
-                                        Colors.amber.withValues(alpha: 0.08),
-                                        Colors.blueAccent.withValues(alpha: 0.08),
-                                      ],
-                              ),
+                              color: isDark ? const Color(0xFF1E293B) : Colors.white,
                               borderRadius: BorderRadius.circular(24.r),
                               border: Border.all(
-                                color: isDark
-                                    ? Colors.white.withValues(alpha: 0.1)
-                                    : Colors.grey.withValues(alpha: 0.2),
-                                width: 1.5,
+                                color: const Color(0xFFFBBF24),
+                                width: 4.w,
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withValues(alpha: 0.03),
-                                  blurRadius: 10,
-                                  offset: const Offset(0, 4),
+                                  color: const Color(0xFFD97706),
+                                  offset: Offset(0, 6.h),
                                 ),
                               ],
                             ),
@@ -690,20 +712,19 @@ class KidsGameDialogs {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          padding: EdgeInsets.all(8.r),
+          padding: EdgeInsets.all(12.r),
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
+            color: color,
             shape: BoxShape.circle,
-            border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+            border: Border.all(color: Colors.white, width: 3.w),
             boxShadow: [
               BoxShadow(
-                color: color.withValues(alpha: 0.15),
-                blurRadius: 10,
-                spreadRadius: 1,
+                color: color.withValues(alpha: 0.5),
+                offset: Offset(0, 4.h),
               ),
             ],
           ),
-          child: Text(emoji, style: TextStyle(fontSize: 20.sp)),
+          child: Text(emoji, style: TextStyle(fontSize: 24.sp)),
         ).animate().scale(
           delay: 200.ms,
           duration: 400.ms,
