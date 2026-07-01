@@ -5,7 +5,10 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class KidsZoneHomeHeader extends StatelessWidget {
   final String mascot;
@@ -26,6 +29,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,6 +64,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
                     ),
                   ],
                 ),
+                _buildKeyShopButton(context),
               ],
             ),
             SizedBox(height: 16.h),
@@ -89,6 +94,53 @@ class KidsZoneHomeHeader extends StatelessWidget {
         onTap: () => context.push(AppRouter.kidsMascotSelectionRoute),
         child: VowlMascot(size: 40.r, isKidsMode: true),
       ),
+    );
+  }
+
+  Widget _buildKeyShopButton(BuildContext context) {
+    return BlocBuilder<AuthBloc, AuthState>(
+      builder: (context, state) {
+        final keys = state.user?.keys ?? 0;
+        return ScaleButton(
+          onTap: () {
+            KeyShopBottomSheet.show(
+              context: context,
+              isKidsMode: true,
+              primaryColor: const Color(0xFF6366F1),
+            );
+          },
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+            decoration: BoxDecoration(
+              color: Colors.amber.shade400,
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(color: Colors.amber.shade700, width: 3.w),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.amber.shade700,
+                  offset: Offset(0, 4.h),
+                ),
+              ],
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.key_rounded, color: Colors.white, size: 20.r),
+                SizedBox(width: 6.w),
+                Text(
+                  keys.toString(),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

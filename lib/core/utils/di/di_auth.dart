@@ -52,6 +52,8 @@ import 'package:vowl/features/auth/domain/usecases/buy_kids_accessory.dart';
 import 'package:vowl/features/auth/domain/usecases/equip_kids_accessory.dart';
 import 'package:vowl/features/auth/domain/usecases/update_unlocked_level.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_level_unlock.dart';
+import 'package:vowl/features/auth/domain/usecases/purchase_golden_key.dart';
+import 'package:vowl/features/auth/domain/usecases/add_golden_key.dart';
 import 'package:vowl/features/writing/domain/usecases/use_writing_hint.dart';
 
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -153,6 +155,12 @@ void initAuthFeature(GetIt sl) {
   );
   sl.registerLazySingleton<PurchaseLevelUnlock>(
     () => PurchaseLevelUnlock(sl<GamificationRepository>()),
+  );
+  sl.registerLazySingleton<PurchaseGoldenKey>(
+    () => PurchaseGoldenKey(sl<GamificationRepository>()),
+  );
+  sl.registerLazySingleton<AddGoldenKey>(
+    () => AddGoldenKey(sl<GamificationRepository>()),
   );
   sl.registerLazySingleton<SendEmailVerification>(
     () => SendEmailVerification(sl<AuthRepository>()),

@@ -561,28 +561,9 @@ class GamificationRepositoryImpl
         }
 
         final data = doc.data()!;
-        final coinField = isKidsMode ? 'kidsCoins' : 'coins';
-        final currentCoins = (data[coinField] as num?)?.toInt() ?? 0;
+        final currentKeys = (data['keys'] as num?)?.toInt() ?? 0;
         
-        if (currentCoins < cost) throw Exception('Not enough ${isKidsMode ? 'toys' : 'coins'}');
-
-        var history = <Map<String, dynamic>>[];
-        if (data['coinHistory'] != null) {
-          history = List<Map<String, dynamic>>.from(
-            (data['coinHistory'] as List<dynamic>)
-                .whereType<Map<Object?, Object?>>()
-                .map((m) => m.map((k, v) => MapEntry(k.toString(), v))),
-          );
-        }
-        history.insert(0, {
-          'title': 'Unlocked ${gameType.toUpperCase()} Level',
-          'amount': -cost,
-          'isEarned': false,
-          'date': DateTime.now().toIso8601String(),
-        });
-        if (history.length > UserGameConstants.kActivityHistoryLimit) {
-          history = history.sublist(0, UserGameConstants.kActivityHistoryLimit);
-        }
+        if (currentKeys < cost) throw Exception('Not enough Golden Keys');
 
         var unlockedLevels = <String, int>{};
         if (data['unlockedLevels'] != null) {
@@ -597,9 +578,77 @@ class GamificationRepositoryImpl
         unlockedLevels[gameType] = currentUnlocked + 3;
 
         transaction.update(docRef, {
-          coinField: currentCoins - cost,
+          'keys': currentKeys - cost,
           'unlockedLevels': unlockedLevels,
-          'coinHistory': history,
+        });
+      });
+      return const Right(null);
+    } catch (e) {
+      return Left(handleFirebaseException(e));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> purchaseGoldenKey({
+    required int cost,
+    required bool isKidsMode,
+  }) async {
+    try {
+      final user = _firebaseAuth.currentUser;
+      if (user == null) return Left(AuthFailure('User not logged in'));
+
+      final docRef = _firestore.collection('users').doc(user.uid);
+      await _firestore.runTransaction((transaction) async {
+        final doc = await transaction.get(docRef);
+        if (!doc.exists || doc.data() == null) {
+          throw Exception('User data not found');
+        }
+
+        final data = doc.data()!;
+        final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
+        final currentKidsCoins = (data['kidsCoins'] as num?)?.toInt() ?? 0;
+        final currentKeys = (data['keys'] as num?)?.toInt() ?? 0;
+
+        if (isKidsMode) {
+          if (currentKidsCoins < cost) throw Exception('Not enough Toys');
+          transaction.update(docRef, {
+            'kidsCoins': currentKidsCoins - cost,
+            'keys': currentKeys + 1,
+          });
+        } else {
+          if (currentCoins < cost) throw Exception('Not enough Coins');
+          transaction.update(docRef, {
+            'coins': currentCoins - cost,
+            'keys': currentKeys + 1,
+          });
+        }
+      });
+      return const Right(null);
+    } catch (e) {
+      return Left(handleFirebaseException(e));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> addGoldenKey({
+    required int amount,
+  }) async {
+    try {
+      final user = _firebaseAuth.currentUser;
+      if (user == null) return Left(AuthFailure('User not logged in'));
+
+      final docRef = _firestore.collection('users').doc(user.uid);
+      await _firestore.runTransaction((transaction) async {
+        final doc = await transaction.get(docRef);
+        if (!doc.exists || doc.data() == null) {
+          throw Exception('User data not found');
+        }
+
+        final data = doc.data()!;
+        final currentKeys = (data['keys'] as num?)?.toInt() ?? 0;
+
+        transaction.update(docRef, {
+          'keys': currentKeys + amount,
         });
       });
       return const Right(null);

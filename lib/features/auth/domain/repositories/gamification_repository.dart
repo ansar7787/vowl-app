@@ -61,4 +61,13 @@ abstract class GamificationRepository {
     required int cost,
     bool isKidsMode = false,
   });
+
+  Future<Either<Failure, void>> purchaseGoldenKey({
+    required int cost,
+    required bool isKidsMode,
+  });
+
+  Future<Either<Failure, void>> addGoldenKey({
+    required int amount,
+  });
 }

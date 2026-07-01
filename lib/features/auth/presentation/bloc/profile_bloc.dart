@@ -116,6 +116,21 @@ class ProfileEquipStickerRequested extends ProfileEvent {
   List<Object?> get props => [stickerId];
 }
 
+class ProfileUpdateKeysRequested extends ProfileEvent {
+  final int amount;
+  const ProfileUpdateKeysRequested(this.amount);
+  @override
+  List<Object?> get props => [amount];
+}
+
+class ProfileBuyKeyRequested extends ProfileEvent {
+  final int cost;
+  final bool isKidsMode;
+  const ProfileBuyKeyRequested({required this.cost, required this.isKidsMode});
+  @override
+  List<Object?> get props => [cost, isKidsMode];
+}
+
 // ============================================================================
 // STATE
 // ============================================================================
@@ -194,6 +209,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<ProfileBuyVowlAccessoryRequested>(_onBuyVowlAccessory);
     on<ProfileEquipVowlAccessoryRequested>(_onEquipVowlAccessory);
     on<ProfileEquipStickerRequested>(_onEquipSticker);
+    on<ProfileUpdateKeysRequested>(_onUpdateKeys);
+    on<ProfileBuyKeyRequested>(_onBuyKey);
     on<ProfileClearPurchaseFeedback>(
       (_, emit) => emit(
         state.copyWith(
@@ -478,6 +495,51 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     if (user == null) return;
 
     final updatedUser = user.copyWith(kidsEquippedSticker: event.stickerId);
+    final result = await updateUser(UpdateUserParams(user: updatedUser));
+    result.fold(
+      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (_) => authBloc.add(const AuthReloadUser()),
+    );
+  }
+
+  Future<void> _onUpdateKeys(
+    ProfileUpdateKeysRequested event,
+    Emitter<ProfileState> emit,
+  ) async {
+    if (!_isAuthenticated) return;
+    final user = authBloc.state.user;
+    if (user == null) return;
+
+    final updatedUser = user.copyWith(
+      keys: (user.keys + event.amount).clamp(0, 9999),
+    );
+    final result = await updateUser(UpdateUserParams(user: updatedUser));
+    result.fold(
+      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (_) => authBloc.add(const AuthReloadUser()),
+    );
+  }
+
+  Future<void> _onBuyKey(
+    ProfileBuyKeyRequested event,
+    Emitter<ProfileState> emit,
+  ) async {
+    if (!_isAuthenticated) return;
+    final user = authBloc.state.user;
+    if (user == null) return;
+
+    final currentCoins = event.isKidsMode ? user.kidsCoins : user.coins;
+    if (currentCoins < event.cost) {
+      emit(state.copyWith(message: () => 'Not enough ${event.isKidsMode ? 'toys' : 'coins'}!'));
+      return;
+    }
+
+    final updatedUser = user.copyWith(
+      coins: event.isKidsMode ? user.coins : user.coins - event.cost,
+      kidsCoins: event.isKidsMode ? user.kidsCoins - event.cost : user.kidsCoins,
+      keys: (user.keys + 1).clamp(0, 9999),
+    );
+
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),

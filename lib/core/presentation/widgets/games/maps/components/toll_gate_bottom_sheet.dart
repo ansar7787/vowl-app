@@ -7,10 +7,10 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/usecases/purchase_level_unlock.dart';
-import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 
 class TollGateBottomSheet {
   static void show({
@@ -18,10 +18,6 @@ class TollGateBottomSheet {
     required int level,
     required String gameType,
   }) {
-    final user = context.read<AuthBloc>().state.user;
-    final int userCoins = user?.coins ?? 0;
-    const int cost = 150;
-    
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
@@ -66,121 +62,38 @@ class TollGateBottomSheet {
               ),
               SizedBox(height: 8.h),
               Text(
-                context.tr('games.unlock_level_desc', args: [cost.toString()], fallback: 'You need $cost coins to unlock the next 3 levels.'),
+                "You need 1 Golden Key to unlock the next 3 levels.",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 14.sp, color: Colors.grey.shade500, fontWeight: FontWeight.w500),
               ),
               SizedBox(height: 24.h),
-              ScaleButton(
-                onTap: () async {
-                  if (userCoins < cost) {
-                    Navigator.pop(sheetContext);
-                    showDialog(
-                      context: context,
-                      builder: (ctx) => ModernGameDialog(
-                        title: 'NOT ENOUGH COINS',
-                        description: context.tr('games.not_enough_coins', fallback: 'Not enough coins!'),
-                        buttonText: 'KEEP PLAYING',
-                        isSuccess: false,
-                        onButtonPressed: () => Navigator.of(ctx).pop(),
-                      ),
-                    );
-                    return;
-                  }
-                  Navigator.pop(sheetContext);
-                  final result = await di.sl<PurchaseLevelUnlock>().call(
-                    PurchaseLevelUnlockParams(gameType: gameType, cost: cost)
-                  );
-                  if (result.isRight() && context.mounted) {
-                    showDialog(
-                      context: context,
-                      builder: (ctx) => Material(
-                        type: MaterialType.transparency,
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            ModernGameDialog(
-                              title: 'GATE UNLOCKED!',
-                              description: context.tr('games.level_unlocked_success', fallback: 'Next 3 Levels Unlocked!'),
-                              buttonText: 'AWESOME',
-                              isSuccess: true,
-                              onButtonPressed: () => Navigator.of(ctx).pop(),
-                            ),
-                            const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
-                          ],
-                        ),
-                      ),
-                    );
-                  }
-                },
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 14.h),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: userCoins >= cost 
-                          ? [Colors.amber.shade400, Colors.amber.shade600]
-                          : [Colors.grey.shade400, Colors.grey.shade500],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    borderRadius: BorderRadius.circular(16.r),
-                    boxShadow: [
-                      if (userCoins >= cost)
-                        BoxShadow(
-                          color: Colors.amber.withValues(alpha: 0.3),
-                          blurRadius: 10.r,
-                          offset: Offset(0, 4.h),
-                        ),
-                    ],
-                  ),
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.monetization_on_rounded, color: Colors.white, size: 20.r),
-                      SizedBox(width: 8.w),
-                      Text(
-                        context.tr('games.unlock_button', args: [cost.toString()], fallback: 'Unlock ($cost Coins)'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 12.h),
-              ScaleButton(
-                onTap: () {
-                  final adService = di.sl<AdService>();
-                  if (!adService.isRewardedAdLoaded) {
-                    Navigator.pop(sheetContext);
-                    showDialog(
-                      context: context,
-                      builder: (ctx) => ModernGameDialog(
-                        title: 'AD NOT READY',
-                        description: context.tr('games.ad_not_ready', fallback: 'Ad not ready yet, try again in a moment.'),
-                        buttonText: 'OK',
-                        isSuccess: false,
-                        onButtonPressed: () => Navigator.of(ctx).pop(),
-                        customIcon: Icon(Icons.hourglass_empty_rounded, color: Colors.orange, size: 48.sp),
-                      ),
-                    );
-                    return;
-                  }
-                  Navigator.pop(sheetContext);
-                  adService.showRewardedAd(
-                    isPremium: false,
-                    onUserEarnedReward: (_) async {
-                      // Free unlock via Ad!
+              BlocBuilder<AuthBloc, AuthState>(
+                builder: (context, authState) {
+                  final user = authState.user;
+                  final keys = user?.keys ?? 0;
+                  final bool hasKey = keys >= 1;
+
+                  return ScaleButton(
+                    onTap: () async {
+                      if (!hasKey) {
+                        Navigator.pop(sheetContext);
+                        KeyShopBottomSheet.show(
+                          context: context,
+                          isKidsMode: false,
+                          primaryColor: Colors.amber,
+                        );
+                        return;
+                      }
+                      
+                      Navigator.pop(sheetContext);
                       final result = await di.sl<PurchaseLevelUnlock>().call(
-                        PurchaseLevelUnlockParams(gameType: gameType, cost: 0)
+                        PurchaseLevelUnlockParams(
+                          gameType: gameType,
+                          cost: 1, // 1 Key
+                          isKidsMode: false,
+                        )
                       );
+                      
                       if (result.isRight() && context.mounted) {
                         showDialog(
                           context: context,
@@ -191,7 +104,7 @@ class TollGateBottomSheet {
                               children: [
                                 ModernGameDialog(
                                   title: 'GATE UNLOCKED!',
-                                  description: context.tr('games.level_unlocked_success', args: [level.toString()], fallback: 'Level $level Unlocked!'),
+                                  description: context.tr('games.level_unlocked_success', fallback: 'Next 3 Levels Unlocked!'),
                                   buttonText: 'AWESOME',
                                   isSuccess: true,
                                   onButtonPressed: () => Navigator.of(ctx).pop(),
@@ -203,46 +116,58 @@ class TollGateBottomSheet {
                         );
                       }
                     },
-                    onDismissed: () {},
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(vertical: 14.h),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: hasKey
+                              ? [Colors.amber.shade400, Colors.amber.shade600]
+                              : [Colors.indigo.shade400, Colors.indigo.shade600],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius: BorderRadius.circular(16.r),
+                        boxShadow: [
+                          if (hasKey)
+                            BoxShadow(
+                              color: Colors.amber.withValues(alpha: 0.3),
+                              blurRadius: 10.r,
+                              offset: Offset(0, 4.h),
+                            )
+                          else
+                            BoxShadow(
+                              color: Colors.indigo.withValues(alpha: 0.3),
+                              blurRadius: 10.r,
+                              offset: Offset(0, 4.h),
+                            ),
+                        ],
+                      ),
+                      alignment: Alignment.center,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            hasKey ? Icons.lock_open_rounded : Icons.key_rounded,
+                            color: Colors.white,
+                            size: 20.r,
+                          ),
+                          SizedBox(width: 8.w),
+                          Text(
+                            hasKey ? "USE 1 KEY TO UNLOCK" : "GET A KEY",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   );
                 },
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 14.h),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Colors.indigo.shade400, Colors.indigo.shade600],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    borderRadius: BorderRadius.circular(16.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.indigo.withValues(alpha: 0.3),
-                        blurRadius: 10.r,
-                        offset: Offset(0, 4.h),
-                      ),
-                    ],
-                  ),
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.play_circle_fill_rounded, color: Colors.white, size: 20.r),
-                      SizedBox(width: 8.w),
-                      Text(
-                        context.tr('games.watch_ad_unlock_button', fallback: 'Watch Ad to Unlock'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
               ),
               SizedBox(height: 24.h),
               

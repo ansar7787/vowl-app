@@ -77,6 +77,7 @@ class UserModel extends UserEntity {
     super.adSpinsUsedToday,
     super.kidsOwnedFurniture,
     super.kidsEquippedFurniture,
+    super.keys,
   });
 
   // ---------------------------------------------------------------------------
@@ -146,6 +147,7 @@ class UserModel extends UserEntity {
               map['kidsEquippedFurniture'] as Map<Object?, Object?>,
             )
           : UserGameConstants.kDefaultKidsEquippedFurniture,
+      keys: (map['keys'] as num?)?.toInt() ?? 0,
     );
   }
 
@@ -228,6 +230,7 @@ class UserModel extends UserEntity {
       'adSpinsUsedToday': adSpinsUsedToday,
       'kidsOwnedFurniture': kidsOwnedFurniture,
       'kidsEquippedFurniture': kidsEquippedFurniture,
+      'keys': keys,
     };
   }
 
@@ -266,6 +269,7 @@ class UserModel extends UserEntity {
     List<String>? kidsOwnedFurniture,
     Map<String, String>? kidsEquippedFurniture,
     List<Map<String, dynamic>>? recentActivities,
+    int? keys,
     // Nullable sentinel fields
     Object? displayName = _absent,
     Object? photoUrl = _absent,
@@ -319,6 +323,7 @@ class UserModel extends UserEntity {
       kidsEquippedFurniture:
           kidsEquippedFurniture ?? this.kidsEquippedFurniture,
       recentActivities: recentActivities ?? this.recentActivities,
+      keys: keys ?? this.keys,
       // Sentinel nullable fields
       displayName: identical(displayName, _absent)
           ? this.displayName

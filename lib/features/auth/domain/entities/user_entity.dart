@@ -93,6 +93,7 @@ class UserEntity {
   final int adSpinsUsedToday;
   final List<String> kidsOwnedFurniture;
   final Map<String, String> kidsEquippedFurniture;
+  final int keys;
 
   const UserEntity({
     required this.id,
@@ -144,6 +145,7 @@ class UserEntity {
     this.lastFreeSpinDate,
     this.lastAdSpinDate,
     this.adSpinsUsedToday = 0,
+    this.keys = 0,
   });
 
   // ---------------------------------------------------------------------------
@@ -268,6 +270,7 @@ class UserEntity {
     List<String>? kidsOwnedFurniture,
     Map<String, String>? kidsEquippedFurniture,
     List<Map<String, dynamic>>? recentActivities,
+    int? keys,
 
     // Nullable fields use Object? + _absent sentinel so callers can pass null
     // explicitly to clear the value, or omit entirely to preserve existing.
@@ -324,6 +327,7 @@ class UserEntity {
       kidsEquippedFurniture:
           kidsEquippedFurniture ?? this.kidsEquippedFurniture,
       recentActivities: recentActivities ?? this.recentActivities,
+      keys: keys ?? this.keys,
       // Nullable: sentinel pattern — explicit null clears; absent preserves.
       displayName: identical(displayName, _absent)
           ? this.displayName
@@ -434,7 +438,8 @@ class UserEntity {
         other.lastAdSpinDate == lastAdSpinDate &&
         other.adSpinsUsedToday == adSpinsUsedToday &&
         _listEq.equals(other.kidsOwnedFurniture, kidsOwnedFurniture) &&
-        _mapEq.equals(other.kidsEquippedFurniture, kidsEquippedFurniture);
+        _mapEq.equals(other.kidsEquippedFurniture, kidsEquippedFurniture) &&
+        other.keys == keys;
   }
 
   @override
@@ -492,6 +497,7 @@ class UserEntity {
       adSpinsUsedToday,
       _listEq.hash(kidsOwnedFurniture),
       _mapEq.hash(kidsEquippedFurniture),
+      keys,
     ]);
     return Object.hash(h1, h2, h3);
   }

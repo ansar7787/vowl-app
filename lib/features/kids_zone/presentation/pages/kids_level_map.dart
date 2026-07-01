@@ -25,6 +25,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_star_vault_bottom_sheet.dart';
+import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_toll_gate_bottom_sheet.dart';
 import 'package:vowl/features/kids_zone/presentation/painters/kids_segment_path_painter.dart';
@@ -351,6 +352,13 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                   bottom: 32.h,
                   right: 24.w,
                   child: _buildStarVaultButton(),
+                ),
+                
+                // Golden Keys FAB
+                Positioned(
+                  bottom: 32.h,
+                  left: 24.w,
+                  child: _buildGoldenKeysButton(),
                 ),
               ],
             ),
@@ -918,6 +926,44 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                   Icons.star_rounded,
                   color: const Color(0xFFFFD700),
                   size: 18.sp,
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildGoldenKeysButton() {
+    return BlocBuilder<AuthBloc, AuthState>(
+      builder: (context, state) {
+        final keys = state.user?.keys ?? 0;
+
+        return ScaleButton(
+          onTap: () => KeyShopBottomSheet.show(context: context, isKidsMode: true, primaryColor: widget.primaryColor),
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            decoration: BoxDecoration(
+              color: Colors.amber,
+              borderRadius: BorderRadius.circular(30.r),
+              border: Border.all(color: Colors.white, width: 2),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.amber.withValues(alpha: 0.4),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.key_rounded, color: Colors.white, size: 20.sp),
+                SizedBox(width: 8.w),
+                Text(
+                  "$keys",
+                  style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.white, fontSize: 16.sp),
                 ),
               ],
             ),
