@@ -309,9 +309,18 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
           child: Container(
             padding: EdgeInsets.all(10.r),
             decoration: BoxDecoration(
-              color: buttonBgColor,
+              color: isDark ? const Color(0xFF1E293B) : Colors.white,
               shape: BoxShape.circle,
-              border: Border.all(color: contrastColor.withValues(alpha: 0.1)),
+              border: Border.all(
+                color: isDark ? Colors.blue.shade700 : Colors.blue.shade200, 
+                width: 3.w,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: isDark ? Colors.blue.shade900 : Colors.blue.shade100,
+                  offset: Offset(0, 4.h),
+                ),
+              ],
             ),
             child: Icon(
               Icons.arrow_back_ios_new_rounded,

@@ -107,13 +107,16 @@ class MascotSelectionScreen extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(12.r),
               decoration: BoxDecoration(
-                color: isDark ? Colors.white10 : Colors.white,
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
                 shape: BoxShape.circle,
+                border: Border.all(
+                  color: isDark ? Colors.blue.shade700 : Colors.blue.shade200, 
+                  width: 3.w,
+                ),
                 boxShadow: [
                   BoxShadow(
-                    color: isDark ? Colors.black26 : Colors.black12,
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
+                    color: isDark ? Colors.blue.shade900 : Colors.blue.shade100,
+                    offset: Offset(0, 4.h),
                   ),
                 ],
               ),
