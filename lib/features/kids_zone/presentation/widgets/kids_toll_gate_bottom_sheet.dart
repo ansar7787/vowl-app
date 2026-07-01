@@ -34,7 +34,13 @@ class KidsTollGateBottomSheet {
           decoration: BoxDecoration(
             color: Theme.of(context).brightness == Brightness.dark ? const Color(0xFF1E293B) : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
-            border: Border.all(color: primaryColor.withValues(alpha: 0.5), width: 4.r),
+            border: Border.all(color: primaryColor, width: 4.w),
+            boxShadow: [
+              BoxShadow(
+                color: primaryColor.withValues(alpha: 0.6),
+                offset: Offset(0, -6.h),
+              ),
+            ],
           ),
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
@@ -127,31 +133,27 @@ class KidsTollGateBottomSheet {
                       width: double.infinity,
                       padding: EdgeInsets.symmetric(vertical: 14.h),
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: userCoins >= cost 
-                              ? [Colors.amber.shade400, Colors.amber.shade600]
-                              : [Colors.grey.shade400, Colors.grey.shade500],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
+                        color: userCoins >= cost ? Colors.amber : Colors.grey.shade400,
                         borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(
+                          color: userCoins >= cost ? Colors.amber.shade700 : Colors.grey.shade600,
+                          width: 3.w,
+                        ),
                         boxShadow: [
-                          if (userCoins >= cost)
-                            BoxShadow(
-                              color: Colors.amber.withValues(alpha: 0.3),
-                              blurRadius: 10.r,
-                              offset: Offset(0, 4.h),
-                            ),
+                          BoxShadow(
+                            color: userCoins >= cost ? Colors.amber.shade700 : Colors.grey.shade600,
+                            offset: Offset(0, 4.h),
+                          ),
                         ],
                       ),
                       alignment: Alignment.center,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.toys_rounded, color: Colors.white, size: 20.r),
+                          Icon(Icons.monetization_on_rounded, color: Colors.white, size: 20.r),
                           SizedBox(width: 8.w),
                           Text(
-                            context.tr('games.unlock_button_toys', args: [cost.toString()], fallback: 'Unlock ($cost Toys)'),
+                            context.tr('games.unlock_button_coins', args: [cost.toString()], fallback: 'Unlock ($cost Coins)'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 16.sp,
@@ -221,16 +223,15 @@ class KidsTollGateBottomSheet {
                   width: double.infinity,
                   padding: EdgeInsets.symmetric(vertical: 14.h),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [primaryColor, primaryColor.withValues(alpha: 0.8)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
+                    color: primaryColor,
                     borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: primaryColor.withValues(alpha: 0.8),
+                      width: 3.w,
+                    ),
                     boxShadow: [
                       BoxShadow(
-                        color: primaryColor.withValues(alpha: 0.3),
-                        blurRadius: 10.r,
+                        color: primaryColor.withValues(alpha: 0.8),
                         offset: Offset(0, 4.h),
                       ),
                     ],

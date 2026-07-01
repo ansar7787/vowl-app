@@ -241,17 +241,20 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                 maxHeight: ScreenUtil().screenHeight * 0.85,
               ),
               decoration: BoxDecoration(
-                color: (isDark ? const Color(0xFF1E293B) : Colors.white)
-                    .withValues(alpha: 0.95),
+                color: (isDark ? const Color(0xFF1E293B) : Colors.white).withValues(alpha: 0.95),
                 borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
                 border: Border.all(
-                  color: widget.primaryColor.withValues(alpha: 0.5),
-                  width: 4.r,
+                  color: widget.primaryColor,
+                  width: 4.w,
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: widget.primaryColor.withValues(alpha: 0.6),
+                    offset: Offset(0, -6.h),
+                  ),
+                ],
               ),
-              child: BackdropFilter(
-                filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                child: SingleChildScrollView(
+              child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -595,21 +598,16 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                             width: double.infinity,
                             padding: EdgeInsets.symmetric(vertical: 18.h),
                             decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [Color(0xFFEC4899), Color(0xFFBE185D)],
-                              ),
+                              color: const Color(0xFFEC4899),
                               borderRadius: BorderRadius.circular(30.r),
                               border: Border.all(
-                                color: Colors.white.withValues(alpha: 0.2),
-                                width: 2,
+                                color: const Color(0xFFBE185D),
+                                width: 3.w,
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: const Color(
-                                    0xFFEC4899,
-                                  ).withValues(alpha: 0.4),
-                                  blurRadius: 16,
-                                  offset: const Offset(0, 6),
+                                  color: const Color(0xFFBE185D),
+                                  offset: Offset(0, 6.h),
                                 ),
                               ],
                             ),
@@ -650,7 +648,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                         "Watch Ad for +2 Magic Stars",
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
-                                          fontSize: 18.sp,
+                                          fontSize: 15.sp,
                                           fontWeight: FontWeight.w900,
                                           color: Colors.white,
                                         ),
