@@ -20,7 +20,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 32.h),
+        padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 16.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -62,7 +62,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 32.h),
+            SizedBox(height: 16.h),
             Text(
               'LEARNING ADVENTURES',
               style: TextStyle(

@@ -553,13 +553,8 @@ class _StickerBookScreenState extends State<StickerBookScreen>
               boxShadow: isUnlocked
                   ? [
                       BoxShadow(
-                        color: isMidnight
-                            ? rarityColor.withValues(alpha: 0.3)
-                            : (isDark
-                                  ? Colors.black45
-                                  : Colors.black.withValues(alpha: 0.05)),
-                        blurRadius: level >= 100 ? 20 : 12,
-                        offset: const Offset(0, 8),
+                        color: rarityColor.withValues(alpha: 0.6),
+                        offset: Offset(0, 6.h),
                         spreadRadius: isEquipped ? 2 : 0,
                       ),
                     ]
