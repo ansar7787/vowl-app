@@ -83,8 +83,8 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
           if (targetOffset > 100) {
             _scrollController.animateTo(
               centeredOffset,
-              duration: 1200.milliseconds,
-              curve: Curves.easeInOutCubic,
+              duration: 800.milliseconds,
+              curve: Curves.easeInOutQuart,
             );
           }
         }

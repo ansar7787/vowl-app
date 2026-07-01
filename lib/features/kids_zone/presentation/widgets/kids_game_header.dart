@@ -56,10 +56,10 @@ class KidsGameHeader extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
-                boxShadow: const [
-                  BoxShadow(color: Colors.black12, blurRadius: 8, offset: Offset(0, 4)),
+                border: Border.all(color: Colors.grey.shade300, width: 3.w),
+                boxShadow: [
+                  BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 4.h)),
                 ],
-                border: Border.all(color: Colors.grey.shade200, width: 2),
               ),
               child: Icon(Icons.close_rounded, color: Colors.grey.shade400, size: 20.sp),
             ),
@@ -92,9 +92,9 @@ class KidsGameHeader extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: Colors.grey.shade200, width: 2),
+        border: Border.all(color: Colors.grey.shade300, width: 3.w),
         boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 5, offset: const Offset(0, 2)),
+          BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 4.h)),
         ],
       ),
       child: Stack(
@@ -135,9 +135,9 @@ class KidsGameHeader extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: Colors.grey.shade200, width: 2),
-        boxShadow: const [
-          BoxShadow(color: Colors.black12, blurRadius: 8, offset: Offset(0, 4)),
+        border: Border.all(color: Colors.redAccent.withValues(alpha: 0.3), width: 3.w),
+        boxShadow: [
+          BoxShadow(color: Colors.redAccent.withValues(alpha: 0.2), offset: Offset(0, 4.h)),
         ],
       ),
       child: Row(
@@ -183,11 +183,17 @@ class KidsGameHeader extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
             decoration: BoxDecoration(
-              color: isUsed ? Colors.grey.shade200 : Colors.amber.shade400,
+              color: isUsed ? Colors.grey.shade300 : Colors.amber.shade400,
               borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(color: isUsed ? Colors.grey.shade300 : Colors.amber.shade600, width: 2),
+              border: Border.all(
+                color: isUsed ? Colors.grey.shade400 : Colors.amber.shade600, 
+                width: 3.w,
+              ),
               boxShadow: [
-                if (!isUsed) BoxShadow(color: Colors.amber.shade200, blurRadius: 8, offset: const Offset(0, 4)),
+                BoxShadow(
+                  color: isUsed ? Colors.grey.shade400 : Colors.amber.shade600, 
+                  offset: Offset(0, 4.h),
+                ),
               ],
             ),
             child: Row(
