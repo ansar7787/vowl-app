@@ -13,6 +13,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:confetti/confetti.dart';
+import 'package:vowl/core/utils/subscription_plans_service.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
 
@@ -34,19 +35,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   Timer? _paymentTimeout;
   late ConfettiController _confettiController;
 
-  // NOTE: previously this screen carried its own ad-hoc
-  // `List<Map<String, dynamic>>` of plans, completely separate from the
-  // `SubscriptionPlan` domain entity (and the `PremiumPlanCardV2` widget
-  // built for it). That duplication meant the typed entity existed but was
-  // never actually used on the one screen that needed it, and the legacy
-  // `PremiumPlanCard` had a display bug (see widgets.dart). Plans are now
-  // sourced as typed `SubscriptionPlan`s so the whole premium feature uses
-  // one single source of truth for plan shape and validation.
-  //
-  // TODO(remote-config): once these are served from Firebase Remote
-  // Config / Firestore, replace this constant with a repository call and
-  // surface loading/error states the same way the rest of the app does.
-  static final List<SubscriptionPlan> _plans = [
+  static const List<SubscriptionPlan> _fallbackPlans = [
     SubscriptionPlan(
       id: 'weekly',
       name: 'Weekly',
@@ -79,6 +68,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
     ),
   ];
 
+  List<SubscriptionPlan> _activePlans = _fallbackPlans;
+
   @override
   void initState() {
     super.initState();
@@ -88,6 +79,18 @@ class _PremiumScreenState extends State<PremiumScreen> {
       onFailure: _handlePaymentFailure,
       onExternalWallet: _handleExternalWallet,
     );
+    _loadDynamicPlans();
+  }
+
+  Future<void> _loadDynamicPlans() async {
+    try {
+      final plans = await di.sl<SubscriptionPlansService>().fetchPlans();
+      if (mounted && plans.isNotEmpty) {
+        setState(() => _activePlans = plans);
+      }
+    } catch (e) {
+      di.sl<AppLogger>().warning('Failed to load dynamic plans, falling back to local defaults.');
+    }
   }
 
   void _startPaymentTimeout() {
@@ -123,7 +126,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     try {
       final user = context.read<AuthBloc>().state.user;
       if (user != null) {
-        final selectedPlan = _plans[_selectedPlanIndex];
+        final selectedPlan = _activePlans[_selectedPlanIndex];
         await _paymentService.upgradeToPremium(
           orderId: response.orderId ?? '',
           paymentId: response.paymentId ?? '',
@@ -400,9 +403,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
   Widget _buildPlanList() {
     return Column(
-      children: List.generate(_plans.length, (index) {
+      children: List.generate(_activePlans.length, (index) {
         return PremiumPlanCard(
-          plan: _plans[index],
+          plan: _activePlans[index],
           isSelected: _selectedPlanIndex == index,
           onTap: () {
             di.sl<HapticService>().selection();
@@ -485,7 +488,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     setState(() => _isProcessing = true);
     _startPaymentTimeout();
 
-    final plan = _plans[_selectedPlanIndex];
+    final plan = _activePlans[_selectedPlanIndex];
     _paymentService.purchaseSubscription(
       contact: '', // Empty is safe - Razorpay will use email if needed
       email: user.email,
