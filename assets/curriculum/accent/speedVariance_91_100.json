@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_SPEEDVARIANCE_L91_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "This is honestly the best Saturday I've had in ages!",
+            "textToSpeak": "This is honestly the best Saturday I've had in ages!",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (in 'This is honestly the best Saturday I've had in ages!', genuine excitement about the best Saturday in ages speeds up the pace in a rush of enthusiasm)",
+                "Decelerating (in 'This is honestly the best Saturday I've had in ages!', the speaker slows down to seriously consider the claim)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Accelerating (in 'This is honestly the best Saturday I've had in ages!', genuine excitement about the best Saturday in ages speeds up the pace in a rush of enthusiasm)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 91-1)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'This is honestly the best Saturday I've had in ages!' Does the excitement spill out quickly, or land slowly and seriously?",
+            "explanation": "When a superlative comes from genuine excitement, like the best Saturday in ages, speakers often speed up rather than slow down - the enthusiasm spills out in a quick rush."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L91_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "Sure, sure, I'll clean my room eventually, don't worry about it.",
+            "textToSpeak": "Sure, sure, I'll clean my room eventually, don't worry about it.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (in 'Sure, sure, I'll clean my room eventually, don't worry about it.', the speaker slows down on 'sure, sure' to show genuine sincerity)",
+                "Accelerating (in 'Sure, sure, I'll clean my room eventually, don't worry about it.', the speaker rushes through 'sure, sure' in a quick, dismissive tone that signals they don't really mean it)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Accelerating (in 'Sure, sure, I'll clean my room eventually, don't worry about it.', the speaker rushes through 'sure, sure' in a quick, dismissive tone that signals they don't really mean it)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 91-2)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 1.4,
+            "hint": "Listen to 'Sure, sure, I'll clean my room eventually, don't worry about it.' Is 'sure, sure' said quickly and dismissively, or slowly and sincerely?",
+            "explanation": "This kind of dismissive sarcasm rushes through agreeing words like 'sure, sure' rather than lingering on them, signaling the speaker in 'Sure, sure, I'll clean my room eventually, don't worry about it.' doesn't actually believe what they're saying."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L91_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "I cleaned the whole house, and then the dog rolled in mud.",
+            "textToSpeak": "I cleaned the whole house, and then the dog rolled in mud.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Accelerating (in 'I cleaned the whole house, and then the dog rolled in mud.', the pace speeds up on the punchline, the dog rolled in mud, for sharp comic timing)",
+                "Decelerating (in 'I cleaned the whole house, and then the dog rolled in mud.', the speaker slows down evenly through the whole line for dramatic effect)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Accelerating (in 'I cleaned the whole house, and then the dog rolled in mud.', the pace speeds up on the punchline, the dog rolled in mud, for sharp comic timing)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 91-3)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I cleaned the whole house, and then the dog rolled in mud.' Does the pace speed up right at the punchline?",
+            "explanation": "Punchlines like the dog rolled in mud are often delivered quickly and sharply - the fast pace in 'I cleaned the whole house, and then the dog rolled in mud.' creates the snap of comic timing rather than dragging out the joke."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L92_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "This is honestly the best grade I've ever gotten!",
+            "textToSpeak": "This is honestly the best grade I've ever gotten!",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (in 'This is honestly the best grade I've ever gotten!', genuine excitement about the best grade ever speeds up the pace in a rush of enthusiasm)",
+                "Decelerating (in 'This is honestly the best grade I've ever gotten!', the speaker slows down to seriously consider the claim)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Accelerating (in 'This is honestly the best grade I've ever gotten!', genuine excitement about the best grade ever speeds up the pace in a rush of enthusiasm)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 92-1)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'This is honestly the best grade I've ever gotten!' Does the excitement spill out quickly, or land slowly and seriously?",
+            "explanation": "When a superlative comes from genuine excitement, like the best grade ever, speakers often speed up rather than slow down - the enthusiasm spills out in a quick rush."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L92_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "Yeah, yeah, I'll study tonight, don't worry about it.",
+            "textToSpeak": "Yeah, yeah, I'll study tonight, don't worry about it.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (in 'Yeah, yeah, I'll study tonight, don't worry about it.', the speaker slows down on 'yeah, yeah' to show genuine sincerity)",
+                "Accelerating (in 'Yeah, yeah, I'll study tonight, don't worry about it.', the speaker rushes through 'yeah, yeah' in a quick, dismissive tone that signals they don't really mean it)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
+            "correctAnswer": "Accelerating (in 'Yeah, yeah, I'll study tonight, don't worry about it.', the speaker rushes through 'yeah, yeah' in a quick, dismissive tone that signals they don't really mean it)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 92-2)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "targetSpeed": 1.4,
+            "hint": "Listen to 'Yeah, yeah, I'll study tonight, don't worry about it.' Is 'yeah, yeah' said quickly and dismissively, or slowly and sincerely?",
+            "explanation": "This kind of dismissive sarcasm rushes through agreeing words like 'yeah, yeah' rather than lingering on them, signaling the speaker in 'Yeah, yeah, I'll study tonight, don't worry about it.' doesn't actually believe what they're saying."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L92_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "I studied all night, and then I slept through the exam.",
+            "textToSpeak": "I studied all night, and then I slept through the exam.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'I studied all night, and then I slept through the exam.', the pace speeds up on the punchline, slept through the exam, for sharp comic timing)",
+                "Decelerating (in 'I studied all night, and then I slept through the exam.', the speaker slows down evenly through the whole line for dramatic effect)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Accelerating (in 'I studied all night, and then I slept through the exam.', the pace speeds up on the punchline, slept through the exam, for sharp comic timing)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 92-3)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I studied all night, and then I slept through the exam.' Does the pace speed up right at the punchline?",
+            "explanation": "Punchlines like slept through the exam are often delivered quickly and sharply - the fast pace in 'I studied all night, and then I slept through the exam.' creates the snap of comic timing rather than dragging out the joke."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L93_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "This is honestly the best deal we've ever closed!",
+            "textToSpeak": "This is honestly the best deal we've ever closed!",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (in 'This is honestly the best deal we've ever closed!', genuine excitement about the best deal ever closed speeds up the pace in a rush of enthusiasm)",
+                "Decelerating (in 'This is honestly the best deal we've ever closed!', the speaker slows down to seriously consider the claim)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Accelerating (in 'This is honestly the best deal we've ever closed!', genuine excitement about the best deal ever closed speeds up the pace in a rush of enthusiasm)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 93-1)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'This is honestly the best deal we've ever closed!' Does the excitement spill out quickly, or land slowly and seriously?",
+            "explanation": "When a superlative comes from genuine excitement, like the best deal ever closed, speakers often speed up rather than slow down - the enthusiasm spills out in a quick rush."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L93_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "Okay, okay, I'll finish it by Friday, don't worry about it.",
+            "textToSpeak": "Okay, okay, I'll finish it by Friday, don't worry about it.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (in 'Okay, okay, I'll finish it by Friday, don't worry about it.', the speaker slows down on 'okay, okay' to show genuine sincerity)",
+                "Accelerating (in 'Okay, okay, I'll finish it by Friday, don't worry about it.', the speaker rushes through 'okay, okay' in a quick, dismissive tone that signals they don't really mean it)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 93-2)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "correctAnswer": "Accelerating (in 'Okay, okay, I'll finish it by Friday, don't worry about it.', the speaker rushes through 'okay, okay' in a quick, dismissive tone that signals they don't really mean it)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.4,
+            "hint": "Listen to 'Okay, okay, I'll finish it by Friday, don't worry about it.' Is 'okay, okay' said quickly and dismissively, or slowly and sincerely?",
+            "explanation": "This kind of dismissive sarcasm rushes through agreeing words like 'okay, okay' rather than lingering on them, signaling the speaker in 'Okay, okay, I'll finish it by Friday, don't worry about it.' doesn't actually believe what they're saying."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L93_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "I prepared for hours, and then the projector wouldn't turn on.",
+            "textToSpeak": "I prepared for hours, and then the projector wouldn't turn on.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Accelerating (in 'I prepared for hours, and then the projector wouldn't turn on.', the pace speeds up on the punchline, the projector wouldn't turn on, for sharp comic timing)",
+                "Decelerating (in 'I prepared for hours, and then the projector wouldn't turn on.', the speaker slows down evenly through the whole line for dramatic effect)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 93-3)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Accelerating (in 'I prepared for hours, and then the projector wouldn't turn on.', the pace speeds up on the punchline, the projector wouldn't turn on, for sharp comic timing)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I prepared for hours, and then the projector wouldn't turn on.' Does the pace speed up right at the punchline?",
+            "explanation": "Punchlines like the projector wouldn't turn on are often delivered quickly and sharply - the fast pace in 'I prepared for hours, and then the projector wouldn't turn on.' creates the snap of comic timing rather than dragging out the joke."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L94_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "This is honestly the best vacation I've ever taken!",
+            "textToSpeak": "This is honestly the best vacation I've ever taken!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'This is honestly the best vacation I've ever taken!', genuine excitement about the best vacation ever speeds up the pace in a rush of enthusiasm)",
+                "Decelerating (in 'This is honestly the best vacation I've ever taken!', the speaker slows down to seriously consider the claim)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Accelerating (in 'This is honestly the best vacation I've ever taken!', genuine excitement about the best vacation ever speeds up the pace in a rush of enthusiasm)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 94-1)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'This is honestly the best vacation I've ever taken!' Does the excitement spill out quickly, or land slowly and seriously?",
+            "explanation": "When a superlative comes from genuine excitement, like the best vacation ever, speakers often speed up rather than slow down - the enthusiasm spills out in a quick rush."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L94_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "Fine, fine, we'll make the connection, don't worry about it.",
+            "textToSpeak": "Fine, fine, we'll make the connection, don't worry about it.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Decelerating (in 'Fine, fine, we'll make the connection, don't worry about it.', the speaker slows down on 'fine, fine' to show genuine sincerity)",
+                "Accelerating (in 'Fine, fine, we'll make the connection, don't worry about it.', the speaker rushes through 'fine, fine' in a quick, dismissive tone that signals they don't really mean it)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 94-2)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Accelerating (in 'Fine, fine, we'll make the connection, don't worry about it.', the speaker rushes through 'fine, fine' in a quick, dismissive tone that signals they don't really mean it)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.4,
+            "hint": "Listen to 'Fine, fine, we'll make the connection, don't worry about it.' Is 'fine, fine' said quickly and dismissively, or slowly and sincerely?",
+            "explanation": "This kind of dismissive sarcasm rushes through agreeing words like 'fine, fine' rather than lingering on them, signaling the speaker in 'Fine, fine, we'll make the connection, don't worry about it.' doesn't actually believe what they're saying."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L94_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "We planned the perfect route, and then we got lost anyway.",
+            "textToSpeak": "We planned the perfect route, and then we got lost anyway.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (in 'We planned the perfect route, and then we got lost anyway.', the pace speeds up on the punchline, got lost anyway, for sharp comic timing)",
+                "Decelerating (in 'We planned the perfect route, and then we got lost anyway.', the speaker slows down evenly through the whole line for dramatic effect)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 94-3)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Accelerating (in 'We planned the perfect route, and then we got lost anyway.', the pace speeds up on the punchline, got lost anyway, for sharp comic timing)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'We planned the perfect route, and then we got lost anyway.' Does the pace speed up right at the punchline?",
+            "explanation": "Punchlines like got lost anyway are often delivered quickly and sharply - the fast pace in 'We planned the perfect route, and then we got lost anyway.' creates the snap of comic timing rather than dragging out the joke."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L95_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "This is honestly the best family trip we've ever had!",
+            "textToSpeak": "This is honestly the best family trip we've ever had!",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (in 'This is honestly the best family trip we've ever had!', the speaker slows down to seriously consider the claim)",
+                "Accelerating (in 'This is honestly the best family trip we've ever had!', genuine excitement about the best family trip ever speeds up the pace in a rush of enthusiasm)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 95-1)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Accelerating (in 'This is honestly the best family trip we've ever had!', genuine excitement about the best family trip ever speeds up the pace in a rush of enthusiasm)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'This is honestly the best family trip we've ever had!' Does the excitement spill out quickly, or land slowly and seriously?",
+            "explanation": "When a superlative comes from genuine excitement, like the best family trip ever, speakers often speed up rather than slow down - the enthusiasm spills out in a quick rush."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L95_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "Right, right, I'll call grandma tomorrow, don't worry about it.",
+            "textToSpeak": "Right, right, I'll call grandma tomorrow, don't worry about it.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (in 'Right, right, I'll call grandma tomorrow, don't worry about it.', the speaker rushes through 'right, right' in a quick, dismissive tone that signals they don't really mean it)",
+                "Decelerating (in 'Right, right, I'll call grandma tomorrow, don't worry about it.', the speaker slows down on 'right, right' to show genuine sincerity)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Accelerating (in 'Right, right, I'll call grandma tomorrow, don't worry about it.', the speaker rushes through 'right, right' in a quick, dismissive tone that signals they don't really mean it)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 95-2)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 1.4,
+            "hint": "Listen to 'Right, right, I'll call grandma tomorrow, don't worry about it.' Is 'right, right' said quickly and dismissively, or slowly and sincerely?",
+            "explanation": "This kind of dismissive sarcasm rushes through agreeing words like 'right, right' rather than lingering on them, signaling the speaker in 'Right, right, I'll call grandma tomorrow, don't worry about it.' doesn't actually believe what they're saying."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L95_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "We planned a quiet dinner, and then the twins started a food fight.",
+            "textToSpeak": "We planned a quiet dinner, and then the twins started a food fight.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (in 'We planned a quiet dinner, and then the twins started a food fight.', the speaker slows down evenly through the whole line for dramatic effect)",
+                "Accelerating (in 'We planned a quiet dinner, and then the twins started a food fight.', the pace speeds up on the punchline, the twins started a food fight, for sharp comic timing)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
+            "correctAnswer": "Accelerating (in 'We planned a quiet dinner, and then the twins started a food fight.', the pace speeds up on the punchline, the twins started a food fight, for sharp comic timing)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 95-3)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'We planned a quiet dinner, and then the twins started a food fight.' Does the pace speed up right at the punchline?",
+            "explanation": "Punchlines like the twins started a food fight are often delivered quickly and sharply - the fast pace in 'We planned a quiet dinner, and then the twins started a food fight.' creates the snap of comic timing rather than dragging out the joke."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L96_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "This is honestly the best bargain I've ever found!",
+            "textToSpeak": "This is honestly the best bargain I've ever found!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'This is honestly the best bargain I've ever found!', the speaker slows down to seriously consider the claim)",
+                "Accelerating (in 'This is honestly the best bargain I've ever found!', genuine excitement about the best bargain ever speeds up the pace in a rush of enthusiasm)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 96-1)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Accelerating (in 'This is honestly the best bargain I've ever found!', genuine excitement about the best bargain ever speeds up the pace in a rush of enthusiasm)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'This is honestly the best bargain I've ever found!' Does the excitement spill out quickly, or land slowly and seriously?",
+            "explanation": "When a superlative comes from genuine excitement, like the best bargain ever, speakers often speed up rather than slow down - the enthusiasm spills out in a quick rush."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L96_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "Sure thing, sure thing, I'll return it later, don't worry about it.",
+            "textToSpeak": "Sure thing, sure thing, I'll return it later, don't worry about it.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (in 'Sure thing, sure thing, I'll return it later, don't worry about it.', the speaker rushes through 'sure thing, sure thing' in a quick, dismissive tone that signals they don't really mean it)",
+                "Decelerating (in 'Sure thing, sure thing, I'll return it later, don't worry about it.', the speaker slows down on 'sure thing, sure thing' to show genuine sincerity)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Accelerating (in 'Sure thing, sure thing, I'll return it later, don't worry about it.', the speaker rushes through 'sure thing, sure thing' in a quick, dismissive tone that signals they don't really mean it)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 96-2)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 1.4,
+            "hint": "Listen to 'Sure thing, sure thing, I'll return it later, don't worry about it.' Is 'sure thing, sure thing' said quickly and dismissively, or slowly and sincerely?",
+            "explanation": "This kind of dismissive sarcasm rushes through agreeing words like 'sure thing, sure thing' rather than lingering on them, signaling the speaker in 'Sure thing, sure thing, I'll return it later, don't worry about it.' doesn't actually believe what they're saying."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L96_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "I planned to buy one thing, and then I left with six bags.",
+            "textToSpeak": "I planned to buy one thing, and then I left with six bags.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (in 'I planned to buy one thing, and then I left with six bags.', the speaker slows down evenly through the whole line for dramatic effect)",
+                "Accelerating (in 'I planned to buy one thing, and then I left with six bags.', the pace speeds up on the punchline, left with six bags, for sharp comic timing)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 96-3)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "correctAnswer": "Accelerating (in 'I planned to buy one thing, and then I left with six bags.', the pace speeds up on the punchline, left with six bags, for sharp comic timing)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I planned to buy one thing, and then I left with six bags.' Does the pace speed up right at the punchline?",
+            "explanation": "Punchlines like left with six bags are often delivered quickly and sharply - the fast pace in 'I planned to buy one thing, and then I left with six bags.' creates the snap of comic timing rather than dragging out the joke."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L97_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "This is honestly the best meal I've ever had!",
+            "textToSpeak": "This is honestly the best meal I've ever had!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (in 'This is honestly the best meal I've ever had!', the speaker slows down to seriously consider the claim)",
+                "Accelerating (in 'This is honestly the best meal I've ever had!', genuine excitement about the best meal ever speeds up the pace in a rush of enthusiasm)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Accelerating (in 'This is honestly the best meal I've ever had!', genuine excitement about the best meal ever speeds up the pace in a rush of enthusiasm)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 97-1)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'This is honestly the best meal I've ever had!' Does the excitement spill out quickly, or land slowly and seriously?",
+            "explanation": "When a superlative comes from genuine excitement, like the best meal ever, speakers often speed up rather than slow down - the enthusiasm spills out in a quick rush."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L97_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "Yep, yep, I'll try the vegetables eventually, don't worry about it.",
+            "textToSpeak": "Yep, yep, I'll try the vegetables eventually, don't worry about it.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'Yep, yep, I'll try the vegetables eventually, don't worry about it.', the speaker rushes through 'yep, yep' in a quick, dismissive tone that signals they don't really mean it)",
+                "Decelerating (in 'Yep, yep, I'll try the vegetables eventually, don't worry about it.', the speaker slows down on 'yep, yep' to show genuine sincerity)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Accelerating (in 'Yep, yep, I'll try the vegetables eventually, don't worry about it.', the speaker rushes through 'yep, yep' in a quick, dismissive tone that signals they don't really mean it)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 97-2)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 1.4,
+            "hint": "Listen to 'Yep, yep, I'll try the vegetables eventually, don't worry about it.' Is 'yep, yep' said quickly and dismissively, or slowly and sincerely?",
+            "explanation": "This kind of dismissive sarcasm rushes through agreeing words like 'yep, yep' rather than lingering on them, signaling the speaker in 'Yep, yep, I'll try the vegetables eventually, don't worry about it.' doesn't actually believe what they're saying."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L97_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "I followed the recipe exactly, and then I burned it anyway.",
+            "textToSpeak": "I followed the recipe exactly, and then I burned it anyway.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Decelerating (in 'I followed the recipe exactly, and then I burned it anyway.', the speaker slows down evenly through the whole line for dramatic effect)",
+                "Accelerating (in 'I followed the recipe exactly, and then I burned it anyway.', the pace speeds up on the punchline, burned it anyway, for sharp comic timing)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 97-3)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Accelerating (in 'I followed the recipe exactly, and then I burned it anyway.', the pace speeds up on the punchline, burned it anyway, for sharp comic timing)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I followed the recipe exactly, and then I burned it anyway.' Does the pace speed up right at the punchline?",
+            "explanation": "Punchlines like burned it anyway are often delivered quickly and sharply - the fast pace in 'I followed the recipe exactly, and then I burned it anyway.' creates the snap of comic timing rather than dragging out the joke."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L98_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "This is honestly the best update they've ever released!",
+            "textToSpeak": "This is honestly the best update they've ever released!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (in 'This is honestly the best update they've ever released!', the speaker slows down to seriously consider the claim)",
+                "Accelerating (in 'This is honestly the best update they've ever released!', genuine excitement about the best update ever speeds up the pace in a rush of enthusiasm)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Accelerating (in 'This is honestly the best update they've ever released!', genuine excitement about the best update ever speeds up the pace in a rush of enthusiasm)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 98-1)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'This is honestly the best update they've ever released!' Does the excitement spill out quickly, or land slowly and seriously?",
+            "explanation": "When a superlative comes from genuine excitement, like the best update ever, speakers often speed up rather than slow down - the enthusiasm spills out in a quick rush."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L98_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "No worries, no worries, I'll back up my files eventually.",
+            "textToSpeak": "No worries, no worries, I'll back up my files eventually.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Accelerating (in 'No worries, no worries, I'll back up my files eventually.', the speaker rushes through 'no worries, no worries' in a quick, dismissive tone that signals they don't really mean it)",
+                "Decelerating (in 'No worries, no worries, I'll back up my files eventually.', the speaker slows down on 'no worries, no worries' to show genuine sincerity)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Accelerating (in 'No worries, no worries, I'll back up my files eventually.', the speaker rushes through 'no worries, no worries' in a quick, dismissive tone that signals they don't really mean it)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 98-2)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 1.4,
+            "hint": "Listen to 'No worries, no worries, I'll back up my files eventually.' Is 'no worries, no worries' said quickly and dismissively, or slowly and sincerely?",
+            "explanation": "This kind of dismissive sarcasm rushes through agreeing words like 'no worries, no worries' rather than lingering on them, signaling the speaker in 'No worries, no worries, I'll back up my files eventually.' doesn't actually believe what they're saying."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L98_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "I backed up everything carefully, and then I lost the backup too.",
+            "textToSpeak": "I backed up everything carefully, and then I lost the backup too.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Decelerating (in 'I backed up everything carefully, and then I lost the backup too.', the speaker slows down evenly through the whole line for dramatic effect)",
+                "Accelerating (in 'I backed up everything carefully, and then I lost the backup too.', the pace speeds up on the punchline, lost the backup too, for sharp comic timing)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 98-3)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Accelerating (in 'I backed up everything carefully, and then I lost the backup too.', the pace speeds up on the punchline, lost the backup too, for sharp comic timing)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I backed up everything carefully, and then I lost the backup too.' Does the pace speed up right at the punchline?",
+            "explanation": "Punchlines like lost the backup too are often delivered quickly and sharply - the fast pace in 'I backed up everything carefully, and then I lost the backup too.' creates the snap of comic timing rather than dragging out the joke."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L99_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "This is honestly the best I've felt in months!",
+            "textToSpeak": "This is honestly the best I've felt in months!",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (in 'This is honestly the best I've felt in months!', the speaker slows down to seriously consider the claim)",
+                "Accelerating (in 'This is honestly the best I've felt in months!', genuine excitement about the best I've felt in months speeds up the pace in a rush of enthusiasm)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
+            "correctAnswer": "Accelerating (in 'This is honestly the best I've felt in months!', genuine excitement about the best I've felt in months speeds up the pace in a rush of enthusiasm)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 99-1)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'This is honestly the best I've felt in months!' Does the excitement spill out quickly, or land slowly and seriously?",
+            "explanation": "When a superlative comes from genuine excitement, like the best I've felt in months, speakers often speed up rather than slow down - the enthusiasm spills out in a quick rush."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L99_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "Totally, totally, I'll start exercising soon, don't worry about it.",
+            "textToSpeak": "Totally, totally, I'll start exercising soon, don't worry about it.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'Totally, totally, I'll start exercising soon, don't worry about it.', the speaker rushes through 'totally, totally' in a quick, dismissive tone that signals they don't really mean it)",
+                "Decelerating (in 'Totally, totally, I'll start exercising soon, don't worry about it.', the speaker slows down on 'totally, totally' to show genuine sincerity)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Accelerating (in 'Totally, totally, I'll start exercising soon, don't worry about it.', the speaker rushes through 'totally, totally' in a quick, dismissive tone that signals they don't really mean it)",
             "correctAnswerIndex": 0,
             "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 99-2)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "hint": "Listen to 'Totally, totally, I'll start exercising soon, don't worry about it.' Is 'totally, totally' said quickly and dismissively, or slowly and sincerely?",
+            "explanation": "This kind of dismissive sarcasm rushes through agreeing words like 'totally, totally' rather than lingering on them, signaling the speaker in 'Totally, totally, I'll start exercising soon, don't worry about it.' doesn't actually believe what they're saying."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L99_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "I finally started eating healthy, and then I ate the whole cake.",
+            "textToSpeak": "I finally started eating healthy, and then I ate the whole cake.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Decelerating (in 'I finally started eating healthy, and then I ate the whole cake.', the speaker slows down evenly through the whole line for dramatic effect)",
+                "Accelerating (in 'I finally started eating healthy, and then I ate the whole cake.', the pace speeds up on the punchline, ate the whole cake, for sharp comic timing)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 99-3)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Accelerating (in 'I finally started eating healthy, and then I ate the whole cake.', the pace speeds up on the punchline, ate the whole cake, for sharp comic timing)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I finally started eating healthy, and then I ate the whole cake.' Does the pace speed up right at the punchline?",
+            "explanation": "Punchlines like ate the whole cake are often delivered quickly and sharply - the fast pace in 'I finally started eating healthy, and then I ate the whole cake.' creates the snap of comic timing rather than dragging out the joke."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L100_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "This is honestly the best concert I've ever been to!",
+            "textToSpeak": "This is honestly the best concert I've ever been to!",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (in 'This is honestly the best concert I've ever been to!', the speaker slows down to seriously consider the claim)",
+                "Accelerating (in 'This is honestly the best concert I've ever been to!', genuine excitement about the best concert ever speeds up the pace in a rush of enthusiasm)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 100-1)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "correctAnswer": "Accelerating (in 'This is honestly the best concert I've ever been to!', genuine excitement about the best concert ever speeds up the pace in a rush of enthusiasm)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'This is honestly the best concert I've ever been to!' Does the excitement spill out quickly, or land slowly and seriously?",
+            "explanation": "When a superlative comes from genuine excitement, like the best concert ever, speakers often speed up rather than slow down - the enthusiasm spills out in a quick rush."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L100_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "Of course, of course, I'll watch the sequel eventually.",
+            "textToSpeak": "Of course, of course, I'll watch the sequel eventually.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Accelerating (in 'Of course, of course, I'll watch the sequel eventually.', the speaker rushes through 'of course, of course' in a quick, dismissive tone that signals they don't really mean it)",
+                "Decelerating (in 'Of course, of course, I'll watch the sequel eventually.', the speaker slows down on 'of course, of course' to show genuine sincerity)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 100-2)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Accelerating (in 'Of course, of course, I'll watch the sequel eventually.', the speaker rushes through 'of course, of course' in a quick, dismissive tone that signals they don't really mean it)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.4,
+            "hint": "Listen to 'Of course, of course, I'll watch the sequel eventually.' Is 'of course, of course' said quickly and dismissively, or slowly and sincerely?",
+            "explanation": "This kind of dismissive sarcasm rushes through agreeing words like 'of course, of course' rather than lingering on them, signaling the speaker in 'Of course, of course, I'll watch the sequel eventually.' doesn't actually believe what they're saying."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L100_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "I waited two hours for tickets, and then the show was cancelled.",
+            "textToSpeak": "I waited two hours for tickets, and then the show was cancelled.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'I waited two hours for tickets, and then the show was cancelled.', the speaker slows down evenly through the whole line for dramatic effect)",
+                "Accelerating (in 'I waited two hours for tickets, and then the show was cancelled.', the pace speeds up on the punchline, the show was cancelled, for sharp comic timing)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 100-3)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Accelerating (in 'I waited two hours for tickets, and then the show was cancelled.', the pace speeds up on the punchline, the show was cancelled, for sharp comic timing)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I waited two hours for tickets, and then the show was cancelled.' Does the pace speed up right at the punchline?",
+            "explanation": "Punchlines like the show was cancelled are often delivered quickly and sharply - the fast pace in 'I waited two hours for tickets, and then the show was cancelled.' creates the snap of comic timing rather than dragging out the joke."
         }
     ]
 }

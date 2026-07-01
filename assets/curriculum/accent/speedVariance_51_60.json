@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_SPEEDVARIANCE_L51_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "I was reading quietly when the fire alarm suddenly went off!",
+            "textToSpeak": "I was reading quietly when the fire alarm suddenly went off!",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden fire alarm)",
+                "Decelerating (the pace stays fast throughout the whole sentence from the very first word)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden fire alarm)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 51-1)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 1.28,
+            "hint": "Listen to 'I was reading quietly when the fire alarm suddenly went off!' Does the pace change partway through, or stay constant?",
+            "explanation": "The calm opening sets a relaxed scene, then the pace suddenly speeds up at the turning point to mirror the surprise of the fire alarm."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L51_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "I was hurrying through chores, but then I noticed the time.",
+            "textToSpeak": "I was hurrying through chores, but then I noticed the time.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (the pace stays slow and careful from the very beginning of the sentence)",
+                "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing the time)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing the time)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 51-2)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 0.76,
+            "hint": "Listen to 'I was hurrying through chores, but then I noticed the time.' Does the pace slow down partway through, after 'but'?",
+            "explanation": "The rushed opening matches the hurry, then the pace deliberately slows at the contrast word 'but' to highlight the important detail that follows: noticing the time."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L51_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "We packed, and then we drove, and then we finally arrived!",
+            "textToSpeak": "We packed, and then we drove, and then we finally arrived!",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Accelerating (the pace speeds up a little after each 'and then', building toward the moment of arrival)",
+                "Decelerating (the pace stays exactly the same speed throughout the whole sentence)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Accelerating (the pace speeds up a little after each 'and then', building toward the moment of arrival)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 51-3)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'We packed, and then we drove, and then we finally arrived!' For the pace to build a little faster after each 'and then'.",
+            "explanation": "Each repetition of 'and then' pushes the pace a little faster, building escalating energy toward the moment of arrival."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L52_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "I was sitting calmly when the fire drill bell suddenly rang!",
+            "textToSpeak": "I was sitting calmly when the fire drill bell suddenly rang!",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden fire drill bell)",
+                "Decelerating (the pace stays fast throughout the whole sentence from the very first word)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden fire drill bell)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 52-1)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 1.28,
+            "hint": "Listen to 'I was sitting calmly when the fire drill bell suddenly rang!' Does the pace change partway through, or stay constant?",
+            "explanation": "The calm opening sets a relaxed scene, then the pace suddenly speeds up at the turning point to mirror the surprise of the fire drill bell."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L52_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "I was hurrying to finish the test, but then I noticed I had time left.",
+            "textToSpeak": "I was hurrying to finish the test, but then I noticed I had time left.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Accelerating (the pace stays slow and careful from the very beginning of the sentence)",
+                "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing the extra time)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
+            "correctAnswer": "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing the extra time)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 52-2)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "targetSpeed": 0.76,
+            "hint": "Listen to 'I was hurrying to finish the test, but then I noticed I had time left.' Does the pace slow down partway through, after 'but'?",
+            "explanation": "The rushed opening matches the hurry, then the pace deliberately slows at the contrast word 'but' to highlight the important detail that follows: noticing the extra time."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L52_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "We practiced, and then we improved, and then we finally got it right!",
+            "textToSpeak": "We practiced, and then we improved, and then we finally got it right!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (the pace speeds up a little after each 'and then', building toward finally getting it right)",
+                "Decelerating (the pace stays exactly the same speed throughout the whole sentence)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Accelerating (the pace speeds up a little after each 'and then', building toward finally getting it right)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 52-3)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'We practiced, and then we improved, and then we finally got it right!' For the pace to build a little faster after each 'and then'.",
+            "explanation": "Each repetition of 'and then' pushes the pace a little faster, building escalating energy toward finally getting it right."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L53_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "I was reviewing the budget when an urgent message suddenly arrived!",
+            "textToSpeak": "I was reviewing the budget when an urgent message suddenly arrived!",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden urgent message)",
+                "Decelerating (the pace stays fast throughout the whole sentence from the very first word)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden urgent message)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 53-1)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 1.28,
+            "hint": "Listen to 'I was reviewing the budget when an urgent message suddenly arrived!' Does the pace change partway through, or stay constant?",
+            "explanation": "The calm opening sets a relaxed scene, then the pace suddenly speeds up at the turning point to mirror the surprise of the urgent message."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L53_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "I was hurrying to leave the office, but then I remembered an unfinished task.",
+            "textToSpeak": "I was hurrying to leave the office, but then I remembered an unfinished task.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Accelerating (the pace stays slow and careful from the very beginning of the sentence)",
+                "Decelerating (the pace starts fast, then slows down after 'but' to emphasize remembering the unfinished task)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 53-2)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "correctAnswer": "Decelerating (the pace starts fast, then slows down after 'but' to emphasize remembering the unfinished task)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.76,
+            "hint": "Listen to 'I was hurrying to leave the office, but then I remembered an unfinished task.' Does the pace slow down partway through, after 'but'?",
+            "explanation": "The rushed opening matches the hurry, then the pace deliberately slows at the contrast word 'but' to highlight the important detail that follows: remembering the unfinished task."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L53_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "We brainstormed, and then we tested, and then we finally launched it!",
+            "textToSpeak": "We brainstormed, and then we tested, and then we finally launched it!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Accelerating (the pace speeds up a little after each 'and then', building toward the final launch)",
+                "Decelerating (the pace stays exactly the same speed throughout the whole sentence)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 53-3)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Accelerating (the pace speeds up a little after each 'and then', building toward the final launch)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'We brainstormed, and then we tested, and then we finally launched it!' For the pace to build a little faster after each 'and then'.",
+            "explanation": "Each repetition of 'and then' pushes the pace a little faster, building escalating energy toward the final launch."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L54_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "I was relaxing on the beach when the lifeguard suddenly blew his whistle!",
+            "textToSpeak": "I was relaxing on the beach when the lifeguard suddenly blew his whistle!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden lifeguard's whistle)",
+                "Decelerating (the pace stays fast throughout the whole sentence from the very first word)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden lifeguard's whistle)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 54-1)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 1.28,
+            "hint": "Listen to 'I was relaxing on the beach when the lifeguard suddenly blew his whistle!' Does the pace change partway through, or stay constant?",
+            "explanation": "The calm opening sets a relaxed scene, then the pace suddenly speeds up at the turning point to mirror the surprise of the lifeguard's whistle."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L54_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "I was hurrying to the gate, but then I noticed I still had plenty of time.",
+            "textToSpeak": "I was hurrying to the gate, but then I noticed I still had plenty of time.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (the pace stays slow and careful from the very beginning of the sentence)",
+                "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing how much time was actually left)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 54-2)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing how much time was actually left)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.76,
+            "hint": "Listen to 'I was hurrying to the gate, but then I noticed I still had plenty of time.' Does the pace slow down partway through, after 'but'?",
+            "explanation": "The rushed opening matches the hurry, then the pace deliberately slows at the contrast word 'but' to highlight the important detail that follows: noticing how much time was actually left."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L54_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "We hiked, and then we climbed, and then we finally reached the summit!",
+            "textToSpeak": "We hiked, and then we climbed, and then we finally reached the summit!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (the pace speeds up a little after each 'and then', building toward reaching the summit)",
+                "Decelerating (the pace stays exactly the same speed throughout the whole sentence)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 54-3)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Accelerating (the pace speeds up a little after each 'and then', building toward reaching the summit)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'We hiked, and then we climbed, and then we finally reached the summit!' For the pace to build a little faster after each 'and then'.",
+            "explanation": "Each repetition of 'and then' pushes the pace a little faster, building escalating energy toward reaching the summit."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L55_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "I was reading a story when my little brother suddenly burst into tears!",
+            "textToSpeak": "I was reading a story when my little brother suddenly burst into tears!",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (the pace stays fast throughout the whole sentence from the very first word)",
+                "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden brother's tears)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 55-1)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden brother's tears)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.28,
+            "hint": "Listen to 'I was reading a story when my little brother suddenly burst into tears!' Does the pace change partway through, or stay constant?",
+            "explanation": "The calm opening sets a relaxed scene, then the pace suddenly speeds up at the turning point to mirror the surprise of the brother's tears."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L55_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "I was hurrying to wrap the gifts, but then I noticed I'd run out of tape.",
+            "textToSpeak": "I was hurrying to wrap the gifts, but then I noticed I'd run out of tape.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Decelerating (the pace starts fast, then slows down after 'but' to emphasize running out of tape)",
+                "Accelerating (the pace stays slow and careful from the very beginning of the sentence)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Decelerating (the pace starts fast, then slows down after 'but' to emphasize running out of tape)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 55-2)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 0.76,
+            "hint": "Listen to 'I was hurrying to wrap the gifts, but then I noticed I'd run out of tape.' Does the pace slow down partway through, after 'but'?",
+            "explanation": "The rushed opening matches the hurry, then the pace deliberately slows at the contrast word 'but' to highlight the important detail that follows: running out of tape."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L55_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "We sang, and then we danced, and then we finally celebrated!",
+            "textToSpeak": "We sang, and then we danced, and then we finally celebrated!",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (the pace stays exactly the same speed throughout the whole sentence)",
+                "Accelerating (the pace speeds up a little after each 'and then', building toward the final celebration)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
+            "correctAnswer": "Accelerating (the pace speeds up a little after each 'and then', building toward the final celebration)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 55-3)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'We sang, and then we danced, and then we finally celebrated!' For the pace to build a little faster after each 'and then'.",
+            "explanation": "Each repetition of 'and then' pushes the pace a little faster, building escalating energy toward the final celebration."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L56_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "I was waiting in line when an announcement suddenly interrupted!",
+            "textToSpeak": "I was waiting in line when an announcement suddenly interrupted!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (the pace stays fast throughout the whole sentence from the very first word)",
+                "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden store announcement)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 56-1)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden store announcement)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.28,
+            "hint": "Listen to 'I was waiting in line when an announcement suddenly interrupted!' Does the pace change partway through, or stay constant?",
+            "explanation": "The calm opening sets a relaxed scene, then the pace suddenly speeds up at the turning point to mirror the surprise of the store announcement."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L56_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "I was hurrying to grab everything, but then I noticed my list was incomplete.",
+            "textToSpeak": "I was hurrying to grab everything, but then I noticed my list was incomplete.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing the incomplete list)",
+                "Accelerating (the pace stays slow and careful from the very beginning of the sentence)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing the incomplete list)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 56-2)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 0.76,
+            "hint": "Listen to 'I was hurrying to grab everything, but then I noticed my list was incomplete.' Does the pace slow down partway through, after 'but'?",
+            "explanation": "The rushed opening matches the hurry, then the pace deliberately slows at the contrast word 'but' to highlight the important detail that follows: noticing the incomplete list."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L56_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "We searched, and then we negotiated, and then we finally got a great deal!",
+            "textToSpeak": "We searched, and then we negotiated, and then we finally got a great deal!",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (the pace stays exactly the same speed throughout the whole sentence)",
+                "Accelerating (the pace speeds up a little after each 'and then', building toward getting the great deal)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 56-3)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "correctAnswer": "Accelerating (the pace speeds up a little after each 'and then', building toward getting the great deal)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'We searched, and then we negotiated, and then we finally got a great deal!' For the pace to build a little faster after each 'and then'.",
+            "explanation": "Each repetition of 'and then' pushes the pace a little faster, building escalating energy toward getting the great deal."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L57_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "I was setting the table when the doorbell suddenly rang!",
+            "textToSpeak": "I was setting the table when the doorbell suddenly rang!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (the pace stays fast throughout the whole sentence from the very first word)",
+                "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden doorbell)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden doorbell)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 57-1)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 1.28,
+            "hint": "Listen to 'I was setting the table when the doorbell suddenly rang!' Does the pace change partway through, or stay constant?",
+            "explanation": "The calm opening sets a relaxed scene, then the pace suddenly speeds up at the turning point to mirror the surprise of the doorbell."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L57_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "I was hurrying to plate the food, but then I noticed it needed more time.",
+            "textToSpeak": "I was hurrying to plate the food, but then I noticed it needed more time.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing it needed more time)",
+                "Accelerating (the pace stays slow and careful from the very beginning of the sentence)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing it needed more time)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 57-2)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 0.76,
+            "hint": "Listen to 'I was hurrying to plate the food, but then I noticed it needed more time.' Does the pace slow down partway through, after 'but'?",
+            "explanation": "The rushed opening matches the hurry, then the pace deliberately slows at the contrast word 'but' to highlight the important detail that follows: noticing it needed more time."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L57_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "We mixed, and then we baked, and then we finally tasted success!",
+            "textToSpeak": "We mixed, and then we baked, and then we finally tasted success!",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Decelerating (the pace stays exactly the same speed throughout the whole sentence)",
+                "Accelerating (the pace speeds up a little after each 'and then', building toward tasting success)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 57-3)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Accelerating (the pace speeds up a little after each 'and then', building toward tasting success)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'We mixed, and then we baked, and then we finally tasted success!' For the pace to build a little faster after each 'and then'.",
+            "explanation": "Each repetition of 'and then' pushes the pace a little faster, building escalating energy toward tasting success."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L58_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "I was typing quietly when my computer suddenly crashed!",
+            "textToSpeak": "I was typing quietly when my computer suddenly crashed!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (the pace stays fast throughout the whole sentence from the very first word)",
+                "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden computer crash)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden computer crash)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 58-1)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 1.28,
+            "hint": "Listen to 'I was typing quietly when my computer suddenly crashed!' Does the pace change partway through, or stay constant?",
+            "explanation": "The calm opening sets a relaxed scene, then the pace suddenly speeds up at the turning point to mirror the surprise of the computer crash."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L58_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "I was hurrying to finish the update, but then I noticed it needed a restart.",
+            "textToSpeak": "I was hurrying to finish the update, but then I noticed it needed a restart.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing the needed restart)",
+                "Accelerating (the pace stays slow and careful from the very beginning of the sentence)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing the needed restart)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 58-2)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 0.76,
+            "hint": "Listen to 'I was hurrying to finish the update, but then I noticed it needed a restart.' Does the pace slow down partway through, after 'but'?",
+            "explanation": "The rushed opening matches the hurry, then the pace deliberately slows at the contrast word 'but' to highlight the important detail that follows: noticing the needed restart."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L58_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "We debugged, and then we fixed it, and then we finally celebrated!",
+            "textToSpeak": "We debugged, and then we fixed it, and then we finally celebrated!",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Decelerating (the pace stays exactly the same speed throughout the whole sentence)",
+                "Accelerating (the pace speeds up a little after each 'and then', building toward the moment everything finally worked)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 58-3)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Accelerating (the pace speeds up a little after each 'and then', building toward the moment everything finally worked)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'We debugged, and then we fixed it, and then we finally celebrated!' For the pace to build a little faster after each 'and then'.",
+            "explanation": "Each repetition of 'and then' pushes the pace a little faster, building escalating energy toward the moment everything finally worked."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L59_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "I was sitting quietly when the nurse suddenly called my name!",
+            "textToSpeak": "I was sitting quietly when the nurse suddenly called my name!",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (the pace stays fast throughout the whole sentence from the very first word)",
+                "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden nurse's call)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
+            "correctAnswer": "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden nurse's call)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 59-1)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "targetSpeed": 1.28,
+            "hint": "Listen to 'I was sitting quietly when the nurse suddenly called my name!' Does the pace change partway through, or stay constant?",
+            "explanation": "The calm opening sets a relaxed scene, then the pace suddenly speeds up at the turning point to mirror the surprise of the nurse's call."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L59_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "I was hurrying through my medication, but then I noticed I'd missed a dose.",
+            "textToSpeak": "I was hurrying through my medication, but then I noticed I'd missed a dose.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing the missed dose)",
+                "Accelerating (the pace stays slow and careful from the very beginning of the sentence)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing the missed dose)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 59-2)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "targetSpeed": 0.76,
+            "hint": "Listen to 'I was hurrying through my medication, but then I noticed I'd missed a dose.' Does the pace slow down partway through, after 'but'?",
+            "explanation": "The rushed opening matches the hurry, then the pace deliberately slows at the contrast word 'but' to highlight the important detail that follows: noticing the missed dose."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L59_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "We exercised, and then we rested, and then we finally felt better!",
+            "textToSpeak": "We exercised, and then we rested, and then we finally felt better!",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Decelerating (the pace stays exactly the same speed throughout the whole sentence)",
+                "Accelerating (the pace speeds up a little after each 'and then', building toward finally feeling better)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 59-3)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Accelerating (the pace speeds up a little after each 'and then', building toward finally feeling better)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'We exercised, and then we rested, and then we finally felt better!' For the pace to build a little faster after each 'and then'.",
+            "explanation": "Each repetition of 'and then' pushes the pace a little faster, building escalating energy toward finally feeling better."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L60_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "I was listening quietly when the song suddenly hit the chorus!",
+            "textToSpeak": "I was listening quietly when the song suddenly hit the chorus!",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (the pace stays fast throughout the whole sentence from the very first word)",
+                "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden chorus)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 60-1)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "correctAnswer": "Accelerating (the pace stays calm at first, then accelerates sharply after 'when' to mirror the sudden chorus)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.28,
+            "hint": "Listen to 'I was listening quietly when the song suddenly hit the chorus!' Does the pace change partway through, or stay constant?",
+            "explanation": "The calm opening sets a relaxed scene, then the pace suddenly speeds up at the turning point to mirror the surprise of the chorus."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L60_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "I was hurrying to find a seat, but then I noticed the show hadn't started.",
+            "textToSpeak": "I was hurrying to find a seat, but then I noticed the show hadn't started.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing the delayed start)",
+                "Accelerating (the pace stays slow and careful from the very beginning of the sentence)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 60-2)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Decelerating (the pace starts fast, then slows down after 'but' to emphasize noticing the delayed start)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.76,
+            "hint": "Listen to 'I was hurrying to find a seat, but then I noticed the show hadn't started.' Does the pace slow down partway through, after 'but'?",
+            "explanation": "The rushed opening matches the hurry, then the pace deliberately slows at the contrast word 'but' to highlight the important detail that follows: noticing the delayed start."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L60_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen carefully. Does the pace shift partway through the sentence?",
+            "difficulty": 3,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "We laughed, and then we cried, and then we finally applauded!",
+            "textToSpeak": "We laughed, and then we cried, and then we finally applauded!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (the pace stays exactly the same speed throughout the whole sentence)",
+                "Accelerating (the pace speeds up a little after each 'and then', building toward the final applause)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 60-3)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Accelerating (the pace speeds up a little after each 'and then', building toward the final applause)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.38,
+            "hint": "Listen to 'We laughed, and then we cried, and then we finally applauded!' For the pace to build a little faster after each 'and then'.",
+            "explanation": "Each repetition of 'and then' pushes the pace a little faster, building escalating energy toward the final applause."
         }
     ]
 }

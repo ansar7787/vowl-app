@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_SPEEDVARIANCE_L111_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "Ready, set, go, get moving!",
+            "textToSpeak": "Ready, set, go, get moving!",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Decelerating (in 'Ready, set, go, get moving!', the speaker slows down to carefully announce each number)",
+                "Accelerating (in 'Ready, set, go, get moving!', the countdown speeds up toward getting moving, building momentum)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 111-1)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Accelerating (in 'Ready, set, go, get moving!', the countdown speeds up toward getting moving, building momentum)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'Ready, set, go, get moving!' Does the countdown speed up as it nears the end?",
+            "explanation": "Countdowns like this one accelerate toward getting moving, building momentum and excitement as the final moment approaches."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L111_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "Pack your shoes, your jacket, your charger, and especially your passport.",
+            "textToSpeak": "Pack your shoes, your jacket, your charger, and especially your passport.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (in 'Pack your shoes, your jacket, your charger, and especially your passport.', the pace slows on the final item, the passport, since it's being saved for emphasis)",
+                "Accelerating (in 'Pack your shoes, your jacket, your charger, and especially your passport.', the speaker rushes through the final item just like the others)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 111-2)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Decelerating (in 'Pack your shoes, your jacket, your charger, and especially your passport.', the pace slows on the final item, the passport, since it's being saved for emphasis)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Pack your shoes, your jacket, your charger, and especially your passport.' Does the pace slow down specifically on the last item in the list?",
+            "explanation": "When the most important item in a list comes last, like the passport, the pace often slows down there to give it special emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L111_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "I folded laundry, swept the floor, wiped the counters, and watered the plants.",
+            "textToSpeak": "I folded laundry, swept the floor, wiped the counters, and watered the plants.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (in 'I folded laundry, swept the floor, wiped the counters, and watered the plants.', the speaker slows down on each item to give it individual attention)",
+                "Accelerating (in 'I folded laundry, swept the floor, wiped the counters, and watered the plants.', the routine items (laundry, sweeping, wiping counters, and watering plants) are rushed through quickly since none of them stands out)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 111-3)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Accelerating (in 'I folded laundry, swept the floor, wiped the counters, and watered the plants.', the routine items (laundry, sweeping, wiping counters, and watering plants) are rushed through quickly since none of them stands out)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I folded laundry, swept the floor, wiped the counters, and watered the plants.' Are the listed items rushed through quickly, or given individual attention?",
+            "explanation": "Routine, unremarkable items in a list, like laundry, sweeping, wiping counters, and watering plants, are usually rushed through quickly because none of them needs individual emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L112_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "Ready, set, go, papers down!",
+            "textToSpeak": "Ready, set, go, papers down!",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Decelerating (in 'Ready, set, go, papers down!', the speaker slows down to carefully announce each number)",
+                "Accelerating (in 'Ready, set, go, papers down!', the countdown speeds up toward papers going down, building momentum)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 112-1)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Accelerating (in 'Ready, set, go, papers down!', the countdown speeds up toward papers going down, building momentum)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'Ready, set, go, papers down!' Does the countdown speed up as it nears the end?",
+            "explanation": "Countdowns like this one accelerate toward papers going down, building momentum and excitement as the final moment approaches."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L112_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "Study your notes, the textbook, old quizzes, and especially last year's exam.",
+            "textToSpeak": "Study your notes, the textbook, old quizzes, and especially last year's exam.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (in 'Study your notes, the textbook, old quizzes, and especially last year's exam.', the pace slows on the final item, last year's exam, since it's being saved for emphasis)",
+                "Accelerating (in 'Study your notes, the textbook, old quizzes, and especially last year's exam.', the speaker rushes through the final item just like the others)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 112-2)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Decelerating (in 'Study your notes, the textbook, old quizzes, and especially last year's exam.', the pace slows on the final item, last year's exam, since it's being saved for emphasis)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Study your notes, the textbook, old quizzes, and especially last year's exam.' Does the pace slow down specifically on the last item in the list?",
+            "explanation": "When the most important item in a list comes last, like last year's exam, the pace often slows down there to give it special emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L112_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "I sharpened pencils, organized folders, labeled notebooks, and packed my bag.",
+            "textToSpeak": "I sharpened pencils, organized folders, labeled notebooks, and packed my bag.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'I sharpened pencils, organized folders, labeled notebooks, and packed my bag.', the speaker slows down on each item to give it individual attention)",
+                "Accelerating (in 'I sharpened pencils, organized folders, labeled notebooks, and packed my bag.', the routine items (pencils, folders, notebooks, and packing) are rushed through quickly since none of them stands out)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 112-3)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Accelerating (in 'I sharpened pencils, organized folders, labeled notebooks, and packed my bag.', the routine items (pencils, folders, notebooks, and packing) are rushed through quickly since none of them stands out)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I sharpened pencils, organized folders, labeled notebooks, and packed my bag.' Are the listed items rushed through quickly, or given individual attention?",
+            "explanation": "Routine, unremarkable items in a list, like pencils, folders, notebooks, and packing, are usually rushed through quickly because none of them needs individual emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L113_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "Ready, set, go, send the proposal!",
+            "textToSpeak": "Ready, set, go, send the proposal!",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Decelerating (in 'Ready, set, go, send the proposal!', the speaker slows down to carefully announce each number)",
+                "Accelerating (in 'Ready, set, go, send the proposal!', the countdown speeds up toward sending the proposal, building momentum)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 113-1)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Accelerating (in 'Ready, set, go, send the proposal!', the countdown speeds up toward sending the proposal, building momentum)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'Ready, set, go, send the proposal!' Does the countdown speed up as it nears the end?",
+            "explanation": "Countdowns like this one accelerate toward sending the proposal, building momentum and excitement as the final moment approaches."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L113_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "Check the figures, the formatting, the typos, and especially the final total.",
+            "textToSpeak": "Check the figures, the formatting, the typos, and especially the final total.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (in 'Check the figures, the formatting, the typos, and especially the final total.', the pace slows on the final item, the final total, since it's being saved for emphasis)",
+                "Accelerating (in 'Check the figures, the formatting, the typos, and especially the final total.', the speaker rushes through the final item just like the others)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Decelerating (in 'Check the figures, the formatting, the typos, and especially the final total.', the pace slows on the final item, the final total, since it's being saved for emphasis)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 113-2)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Check the figures, the formatting, the typos, and especially the final total.' Does the pace slow down specifically on the last item in the list?",
+            "explanation": "When the most important item in a list comes last, like the final total, the pace often slows down there to give it special emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L113_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "I answered emails, filed reports, updated the spreadsheet, and tidied my desk.",
+            "textToSpeak": "I answered emails, filed reports, updated the spreadsheet, and tidied my desk.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (in 'I answered emails, filed reports, updated the spreadsheet, and tidied my desk.', the speaker slows down on each item to give it individual attention)",
+                "Accelerating (in 'I answered emails, filed reports, updated the spreadsheet, and tidied my desk.', the routine items (emails, reports, the spreadsheet, and tidying) are rushed through quickly since none of them stands out)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Accelerating (in 'I answered emails, filed reports, updated the spreadsheet, and tidied my desk.', the routine items (emails, reports, the spreadsheet, and tidying) are rushed through quickly since none of them stands out)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 113-3)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I answered emails, filed reports, updated the spreadsheet, and tidied my desk.' Are the listed items rushed through quickly, or given individual attention?",
+            "explanation": "Routine, unremarkable items in a list, like emails, reports, the spreadsheet, and tidying, are usually rushed through quickly because none of them needs individual emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L114_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "Ready, set, go, the taxi's here!",
+            "textToSpeak": "Ready, set, go, the taxi's here!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'Ready, set, go, the taxi's here!', the speaker slows down to carefully announce each number)",
+                "Accelerating (in 'Ready, set, go, the taxi's here!', the countdown speeds up toward the taxi arriving, building momentum)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 114-1)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Accelerating (in 'Ready, set, go, the taxi's here!', the countdown speeds up toward the taxi arriving, building momentum)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'Ready, set, go, the taxi's here!' Does the countdown speed up as it nears the end?",
+            "explanation": "Countdowns like this one accelerate toward the taxi arriving, building momentum and excitement as the final moment approaches."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L114_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "Check your ticket, your seat number, your gate, and especially your boarding time.",
+            "textToSpeak": "Check your ticket, your seat number, your gate, and especially your boarding time.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Decelerating (in 'Check your ticket, your seat number, your gate, and especially your boarding time.', the pace slows on the final item, the boarding time, since it's being saved for emphasis)",
+                "Accelerating (in 'Check your ticket, your seat number, your gate, and especially your boarding time.', the speaker rushes through the final item just like the others)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Decelerating (in 'Check your ticket, your seat number, your gate, and especially your boarding time.', the pace slows on the final item, the boarding time, since it's being saved for emphasis)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 114-2)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Check your ticket, your seat number, your gate, and especially your boarding time.' Does the pace slow down specifically on the last item in the list?",
+            "explanation": "When the most important item in a list comes last, like the boarding time, the pace often slows down there to give it special emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L114_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "I checked the weather, packed my bag, printed the itinerary, and locked the house.",
+            "textToSpeak": "I checked the weather, packed my bag, printed the itinerary, and locked the house.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (in 'I checked the weather, packed my bag, printed the itinerary, and locked the house.', the speaker slows down on each item to give it individual attention)",
+                "Accelerating (in 'I checked the weather, packed my bag, printed the itinerary, and locked the house.', the routine items (weather, packing, the itinerary, and locking up) are rushed through quickly since none of them stands out)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Accelerating (in 'I checked the weather, packed my bag, printed the itinerary, and locked the house.', the routine items (weather, packing, the itinerary, and locking up) are rushed through quickly since none of them stands out)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 114-3)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I checked the weather, packed my bag, printed the itinerary, and locked the house.' Are the listed items rushed through quickly, or given individual attention?",
+            "explanation": "Routine, unremarkable items in a list, like weather, packing, the itinerary, and locking up, are usually rushed through quickly because none of them needs individual emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L115_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "Ready, set, go, race to the car!",
+            "textToSpeak": "Ready, set, go, race to the car!",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Accelerating (in 'Ready, set, go, race to the car!', the countdown speeds up toward racing to the car, building momentum)",
+                "Decelerating (in 'Ready, set, go, race to the car!', the speaker slows down to carefully announce each number)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Accelerating (in 'Ready, set, go, race to the car!', the countdown speeds up toward racing to the car, building momentum)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 115-1)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'Ready, set, go, race to the car!' Does the countdown speed up as it nears the end?",
+            "explanation": "Countdowns like this one accelerate toward racing to the car, building momentum and excitement as the final moment approaches."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L115_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "Bring drinks, snacks, games, and especially the birthday gift.",
+            "textToSpeak": "Bring drinks, snacks, games, and especially the birthday gift.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (in 'Bring drinks, snacks, games, and especially the birthday gift.', the speaker rushes through the final item just like the others)",
+                "Decelerating (in 'Bring drinks, snacks, games, and especially the birthday gift.', the pace slows on the final item, the birthday gift, since it's being saved for emphasis)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 115-2)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Decelerating (in 'Bring drinks, snacks, games, and especially the birthday gift.', the pace slows on the final item, the birthday gift, since it's being saved for emphasis)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Bring drinks, snacks, games, and especially the birthday gift.' Does the pace slow down specifically on the last item in the list?",
+            "explanation": "When the most important item in a list comes last, like the birthday gift, the pace often slows down there to give it special emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L115_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "I set the table, lit candles, poured drinks, and called everyone in.",
+            "textToSpeak": "I set the table, lit candles, poured drinks, and called everyone in.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Accelerating (in 'I set the table, lit candles, poured drinks, and called everyone in.', the routine items (setting the table, candles, drinks, and calling everyone) are rushed through quickly since none of them stands out)",
+                "Decelerating (in 'I set the table, lit candles, poured drinks, and called everyone in.', the speaker slows down on each item to give it individual attention)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 115-3)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Accelerating (in 'I set the table, lit candles, poured drinks, and called everyone in.', the routine items (setting the table, candles, drinks, and calling everyone) are rushed through quickly since none of them stands out)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I set the table, lit candles, poured drinks, and called everyone in.' Are the listed items rushed through quickly, or given individual attention?",
+            "explanation": "Routine, unremarkable items in a list, like setting the table, candles, drinks, and calling everyone, are usually rushed through quickly because none of them needs individual emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L116_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "Ready, set, go, the sale just started!",
+            "textToSpeak": "Ready, set, go, the sale just started!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'Ready, set, go, the sale just started!', the countdown speeds up toward the sale starting, building momentum)",
+                "Decelerating (in 'Ready, set, go, the sale just started!', the speaker slows down to carefully announce each number)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Accelerating (in 'Ready, set, go, the sale just started!', the countdown speeds up toward the sale starting, building momentum)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 116-1)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'Ready, set, go, the sale just started!' Does the countdown speed up as it nears the end?",
+            "explanation": "Countdowns like this one accelerate toward the sale starting, building momentum and excitement as the final moment approaches."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L116_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "Compare the price, the quality, the reviews, and especially the return policy.",
+            "textToSpeak": "Compare the price, the quality, the reviews, and especially the return policy.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (in 'Compare the price, the quality, the reviews, and especially the return policy.', the speaker rushes through the final item just like the others)",
+                "Decelerating (in 'Compare the price, the quality, the reviews, and especially the return policy.', the pace slows on the final item, the return policy, since it's being saved for emphasis)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 116-2)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Decelerating (in 'Compare the price, the quality, the reviews, and especially the return policy.', the pace slows on the final item, the return policy, since it's being saved for emphasis)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Compare the price, the quality, the reviews, and especially the return policy.' Does the pace slow down specifically on the last item in the list?",
+            "explanation": "When the most important item in a list comes last, like the return policy, the pace often slows down there to give it special emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L116_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "I grabbed a basket, walked the aisles, checked my list, and paid at the till.",
+            "textToSpeak": "I grabbed a basket, walked the aisles, checked my list, and paid at the till.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Accelerating (in 'I grabbed a basket, walked the aisles, checked my list, and paid at the till.', the routine items (the basket, the aisles, the list, and paying) are rushed through quickly since none of them stands out)",
+                "Decelerating (in 'I grabbed a basket, walked the aisles, checked my list, and paid at the till.', the speaker slows down on each item to give it individual attention)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Accelerating (in 'I grabbed a basket, walked the aisles, checked my list, and paid at the till.', the routine items (the basket, the aisles, the list, and paying) are rushed through quickly since none of them stands out)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 116-3)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I grabbed a basket, walked the aisles, checked my list, and paid at the till.' Are the listed items rushed through quickly, or given individual attention?",
+            "explanation": "Routine, unremarkable items in a list, like the basket, the aisles, the list, and paying, are usually rushed through quickly because none of them needs individual emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L117_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "Ready, set, go, serve it up!",
+            "textToSpeak": "Ready, set, go, serve it up!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Accelerating (in 'Ready, set, go, serve it up!', the countdown speeds up toward serving it up, building momentum)",
+                "Decelerating (in 'Ready, set, go, serve it up!', the speaker slows down to carefully announce each number)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 117-1)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Accelerating (in 'Ready, set, go, serve it up!', the countdown speeds up toward serving it up, building momentum)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'Ready, set, go, serve it up!' Does the countdown speed up as it nears the end?",
+            "explanation": "Countdowns like this one accelerate toward serving it up, building momentum and excitement as the final moment approaches."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L117_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "Check the heat, the timing, the seasoning, and especially the final taste.",
+            "textToSpeak": "Check the heat, the timing, the seasoning, and especially the final taste.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'Check the heat, the timing, the seasoning, and especially the final taste.', the speaker rushes through the final item just like the others)",
+                "Decelerating (in 'Check the heat, the timing, the seasoning, and especially the final taste.', the pace slows on the final item, the final taste, since it's being saved for emphasis)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 117-2)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Decelerating (in 'Check the heat, the timing, the seasoning, and especially the final taste.', the pace slows on the final item, the final taste, since it's being saved for emphasis)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Check the heat, the timing, the seasoning, and especially the final taste.' Does the pace slow down specifically on the last item in the list?",
+            "explanation": "When the most important item in a list comes last, like the final taste, the pace often slows down there to give it special emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L117_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "I chopped the onions, diced the peppers, sliced the meat, and heated the pan.",
+            "textToSpeak": "I chopped the onions, diced the peppers, sliced the meat, and heated the pan.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (in 'I chopped the onions, diced the peppers, sliced the meat, and heated the pan.', the routine items (onions, peppers, meat, and heating the pan) are rushed through quickly since none of them stands out)",
+                "Decelerating (in 'I chopped the onions, diced the peppers, sliced the meat, and heated the pan.', the speaker slows down on each item to give it individual attention)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Accelerating (in 'I chopped the onions, diced the peppers, sliced the meat, and heated the pan.', the routine items (onions, peppers, meat, and heating the pan) are rushed through quickly since none of them stands out)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 117-3)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I chopped the onions, diced the peppers, sliced the meat, and heated the pan.' Are the listed items rushed through quickly, or given individual attention?",
+            "explanation": "Routine, unremarkable items in a list, like onions, peppers, meat, and heating the pan, are usually rushed through quickly because none of them needs individual emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L118_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "Ready, set, go, hit deploy!",
+            "textToSpeak": "Ready, set, go, hit deploy!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (in 'Ready, set, go, hit deploy!', the countdown speeds up toward hitting deploy, building momentum)",
+                "Decelerating (in 'Ready, set, go, hit deploy!', the speaker slows down to carefully announce each number)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 118-1)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Accelerating (in 'Ready, set, go, hit deploy!', the countdown speeds up toward hitting deploy, building momentum)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'Ready, set, go, hit deploy!' Does the countdown speed up as it nears the end?",
+            "explanation": "Countdowns like this one accelerate toward hitting deploy, building momentum and excitement as the final moment approaches."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L118_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "Check the code, the tests, the logs, and especially the final output.",
+            "textToSpeak": "Check the code, the tests, the logs, and especially the final output.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Accelerating (in 'Check the code, the tests, the logs, and especially the final output.', the speaker rushes through the final item just like the others)",
+                "Decelerating (in 'Check the code, the tests, the logs, and especially the final output.', the pace slows on the final item, the final output, since it's being saved for emphasis)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 118-2)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Decelerating (in 'Check the code, the tests, the logs, and especially the final output.', the pace slows on the final item, the final output, since it's being saved for emphasis)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Check the code, the tests, the logs, and especially the final output.' Does the pace slow down specifically on the last item in the list?",
+            "explanation": "When the most important item in a list comes last, like the final output, the pace often slows down there to give it special emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L118_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "I opened the laptop, logged in, checked emails, and opened the report.",
+            "textToSpeak": "I opened the laptop, logged in, checked emails, and opened the report.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (in 'I opened the laptop, logged in, checked emails, and opened the report.', the routine items (the laptop, logging in, emails, and the report) are rushed through quickly since none of them stands out)",
+                "Decelerating (in 'I opened the laptop, logged in, checked emails, and opened the report.', the speaker slows down on each item to give it individual attention)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Accelerating (in 'I opened the laptop, logged in, checked emails, and opened the report.', the routine items (the laptop, logging in, emails, and the report) are rushed through quickly since none of them stands out)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 118-3)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I opened the laptop, logged in, checked emails, and opened the report.' Are the listed items rushed through quickly, or given individual attention?",
+            "explanation": "Routine, unremarkable items in a list, like the laptop, logging in, emails, and the report, are usually rushed through quickly because none of them needs individual emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L119_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "Ready, set, go, start the treadmill!",
+            "textToSpeak": "Ready, set, go, start the treadmill!",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Accelerating (in 'Ready, set, go, start the treadmill!', the countdown speeds up toward starting the treadmill, building momentum)",
+                "Decelerating (in 'Ready, set, go, start the treadmill!', the speaker slows down to carefully announce each number)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 119-1)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Accelerating (in 'Ready, set, go, start the treadmill!', the countdown speeds up toward starting the treadmill, building momentum)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'Ready, set, go, start the treadmill!' Does the countdown speed up as it nears the end?",
+            "explanation": "Countdowns like this one accelerate toward starting the treadmill, building momentum and excitement as the final moment approaches."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L119_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "Note the symptoms, the duration, the severity, and especially any allergies.",
+            "textToSpeak": "Note the symptoms, the duration, the severity, and especially any allergies.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'Note the symptoms, the duration, the severity, and especially any allergies.', the speaker rushes through the final item just like the others)",
+                "Decelerating (in 'Note the symptoms, the duration, the severity, and especially any allergies.', the pace slows on the final item, any allergies, since it's being saved for emphasis)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 119-2)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Decelerating (in 'Note the symptoms, the duration, the severity, and especially any allergies.', the pace slows on the final item, any allergies, since it's being saved for emphasis)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Note the symptoms, the duration, the severity, and especially any allergies.' Does the pace slow down specifically on the last item in the list?",
+            "explanation": "When the most important item in a list comes last, like any allergies, the pace often slows down there to give it special emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L119_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "I checked his temperature, his pulse, his breathing, and wrote it all down.",
+            "textToSpeak": "I checked his temperature, his pulse, his breathing, and wrote it all down.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (in 'I checked his temperature, his pulse, his breathing, and wrote it all down.', the routine items (temperature, pulse, breathing, and writing it down) are rushed through quickly since none of them stands out)",
+                "Decelerating (in 'I checked his temperature, his pulse, his breathing, and wrote it all down.', the speaker slows down on each item to give it individual attention)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Accelerating (in 'I checked his temperature, his pulse, his breathing, and wrote it all down.', the routine items (temperature, pulse, breathing, and writing it down) are rushed through quickly since none of them stands out)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 119-3)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I checked his temperature, his pulse, his breathing, and wrote it all down.' Are the listed items rushed through quickly, or given individual attention?",
+            "explanation": "Routine, unremarkable items in a list, like temperature, pulse, breathing, and writing it down, are usually rushed through quickly because none of them needs individual emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L120_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "Ready, set, go, curtains up!",
+            "textToSpeak": "Ready, set, go, curtains up!",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Accelerating (in 'Ready, set, go, curtains up!', the countdown speeds up toward the curtains going up, building momentum)",
+                "Decelerating (in 'Ready, set, go, curtains up!', the speaker slows down to carefully announce each number)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Accelerating (in 'Ready, set, go, curtains up!', the countdown speeds up toward the curtains going up, building momentum)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 120-1)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'Ready, set, go, curtains up!' Does the countdown speed up as it nears the end?",
+            "explanation": "Countdowns like this one accelerate toward the curtains going up, building momentum and excitement as the final moment approaches."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L120_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "Check the lighting, the sound, the seating, and especially the final scene.",
+            "textToSpeak": "Check the lighting, the sound, the seating, and especially the final scene.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Accelerating (in 'Check the lighting, the sound, the seating, and especially the final scene.', the speaker rushes through the final item just like the others)",
+                "Decelerating (in 'Check the lighting, the sound, the seating, and especially the final scene.', the pace slows on the final item, the final scene, since it's being saved for emphasis)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Decelerating (in 'Check the lighting, the sound, the seating, and especially the final scene.', the pace slows on the final item, the final scene, since it's being saved for emphasis)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 120-2)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Check the lighting, the sound, the seating, and especially the final scene.' Does the pace slow down specifically on the last item in the list?",
+            "explanation": "When the most important item in a list comes last, like the final scene, the pace often slows down there to give it special emphasis."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L120_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pacing across the list or sequence. What pattern do you hear?",
+            "difficulty": 6,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "I bought popcorn, found a seat, silenced my phone, and settled in.",
+            "textToSpeak": "I bought popcorn, found a seat, silenced my phone, and settled in.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'I bought popcorn, found a seat, silenced my phone, and settled in.', the routine items (popcorn, finding a seat, the phone, and settling in) are rushed through quickly since none of them stands out)",
+                "Decelerating (in 'I bought popcorn, found a seat, silenced my phone, and settled in.', the speaker slows down on each item to give it individual attention)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Accelerating (in 'I bought popcorn, found a seat, silenced my phone, and settled in.', the routine items (popcorn, finding a seat, the phone, and settling in) are rushed through quickly since none of them stands out)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 120-3)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'I bought popcorn, found a seat, silenced my phone, and settled in.' Are the listed items rushed through quickly, or given individual attention?",
+            "explanation": "Routine, unremarkable items in a list, like popcorn, finding a seat, the phone, and settling in, are usually rushed through quickly because none of them needs individual emphasis."
         }
     ]
 }

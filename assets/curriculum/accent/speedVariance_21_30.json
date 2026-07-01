@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_SPEEDVARIANCE_L21_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "I showered, got dressed, ate breakfast, and left.",
+            "textToSpeak": "I showered, got dressed, ate breakfast, and left.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (the routine morning tasks are listed quickly since they're so familiar)",
+                "Decelerating (the speaker decelerates on each task to describe it in detail)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Accelerating (the routine morning tasks are listed quickly since they're so familiar)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 21-1)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 1.35,
+            "hint": "Listen to the list of morning tasks. Does the pace speed up because they're routine?",
+            "explanation": "Familiar, everyday routines are listed at a quick, even pace because there's nothing new to emphasize in any single step."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L21_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "This apartment is absolutely enormous.",
+            "textToSpeak": "This apartment is absolutely enormous.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (the speaker rushes past the adjective since size isn't important)",
+                "Decelerating (the surprising adjective 'enormous' is drawn out to emphasize the speaker's reaction)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Decelerating (the surprising adjective 'enormous' is drawn out to emphasize the speaker's reaction)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 21-2)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'absolutely enormous' at the end. Rushed past, or stretched out for effect?",
+            "explanation": "Strong descriptive adjectives that carry the speaker's reaction are slowed down to let that reaction land."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L21_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "I thought the rent was cheap, but it's actually expensive.",
+            "textToSpeak": "I thought the rent was cheap, but it's actually expensive.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (the contrast word 'expensive' is slowed down to correct the listener's assumption)",
+                "Accelerating (the speaker speeds up since the correction isn't important)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Decelerating (the contrast word 'expensive' is slowed down to correct the listener's assumption)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 21-3)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 0.72,
+            "hint": "Listen to 'expensive' at the end. Does the pace slow to highlight the contrast with 'cheap'?",
+            "explanation": "When a sentence corrects an assumption, the contrasting word is slowed down so the correction clearly registers."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L22_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "We covered grammar, vocabulary, listening, and writing today.",
+            "textToSpeak": "We covered grammar, vocabulary, listening, and writing today.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (the routine list of class topics is delivered quickly since each part is brief and familiar)",
+                "Decelerating (the teacher decelerates on each topic to explain it in depth)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Accelerating (the routine list of class topics is delivered quickly since each part is brief and familiar)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 22-1)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 1.35,
+            "hint": "Listen to the list of class topics. Does the pace speed up since it's just a quick summary?",
+            "explanation": "A quick summary list of routine class topics is delivered fast because no single item needs deep focus here."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L22_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "That final exam question was incredibly difficult.",
+            "textToSpeak": "That final exam question was incredibly difficult.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Accelerating (the speaker rushes past the adjective since the exam is already over)",
+                "Decelerating (the strong adjective 'difficult' is drawn out to emphasize how hard the question was)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
+            "correctAnswer": "Decelerating (the strong adjective 'difficult' is drawn out to emphasize how hard the question was)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 22-2)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'incredibly difficult' at the end. Rushed, or stretched out for emphasis?",
+            "explanation": "Strong adjectives describing a reaction, like how hard a question felt, are slowed down to let that feeling come through."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L22_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "I expected a low grade, but I actually got an A.",
+            "textToSpeak": "I expected a low grade, but I actually got an A.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (the surprising contrast word 'A' is slowed down to highlight the unexpected result)",
+                "Accelerating (the speaker speeds up since the grade doesn't matter anymore)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Decelerating (the surprising contrast word 'A' is slowed down to highlight the unexpected result)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 22-3)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "targetSpeed": 0.72,
+            "hint": "Listen to 'an A' at the end. Does the pace slow to highlight the surprise?",
+            "explanation": "When the outcome contrasts with what was expected, the surprising word is slowed down so the contrast clearly lands."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L23_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "I checked emails, joined the call, and wrote notes.",
+            "textToSpeak": "I checked emails, joined the call, and wrote notes.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (the routine list of work tasks is delivered quickly since each one is ordinary)",
+                "Decelerating (the speaker decelerates on each task to explain it fully)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Accelerating (the routine list of work tasks is delivered quickly since each one is ordinary)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 23-1)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 1.35,
+            "hint": "Listen to this list of work tasks. Does the pace speed up since it's just routine?",
+            "explanation": "A quick rundown of ordinary daily tasks is delivered fast because none of them is the main point of the sentence."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L23_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "The client's feedback was surprisingly positive.",
+            "textToSpeak": "The client's feedback was surprisingly positive.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Accelerating (the speaker rushes past the adjective since feedback isn't important)",
+                "Decelerating (the unexpected adjective 'positive' is drawn out to emphasize the pleasant surprise)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 23-2)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "correctAnswer": "Decelerating (the unexpected adjective 'positive' is drawn out to emphasize the pleasant surprise)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'surprisingly positive' at the end. Rushed, or stretched out for emphasis?",
+            "explanation": "An unexpectedly good result is slowed down on the key adjective so the pleasant surprise comes through clearly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L23_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "We expected a small order, but it's actually huge.",
+            "textToSpeak": "We expected a small order, but it's actually huge.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (the contrast word 'huge' is slowed down to highlight how different reality is from the expectation)",
+                "Accelerating (the speaker speeds up since the order size doesn't matter)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 23-3)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Decelerating (the contrast word 'huge' is slowed down to highlight how different reality is from the expectation)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.72,
+            "hint": "Listen to 'huge' at the end. Does the pace slow to highlight the contrast with 'small'?",
+            "explanation": "When reality contrasts sharply with expectations, the surprising word is slowed down so listeners register the gap."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L24_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "We packed, checked in, boarded, and took off.",
+            "textToSpeak": "We packed, checked in, boarded, and took off.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (the routine sequence of travel steps is delivered quickly since each one is expected)",
+                "Decelerating (the speaker decelerates on each step to describe it fully)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Accelerating (the routine sequence of travel steps is delivered quickly since each one is expected)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 24-1)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 1.35,
+            "hint": "Listen to this list of travel steps. Does the pace speed up since it's just routine?",
+            "explanation": "A quick rundown of expected travel steps is delivered fast because none of them is the main point being made."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L24_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "The mountain scenery was absolutely stunning.",
+            "textToSpeak": "The mountain scenery was absolutely stunning.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (the speaker rushes through the description to keep moving)",
+                "Decelerating (the strong adjective 'stunning' is drawn out to emphasize the reaction to the view)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 24-2)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Decelerating (the strong adjective 'stunning' is drawn out to emphasize the reaction to the view)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'absolutely stunning' at the end. Rushed, or stretched out for emphasis?",
+            "explanation": "Strong reactions to scenery are slowed down on the key adjective so the listener shares in the impression."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L24_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "We expected a short delay, but it's actually hours.",
+            "textToSpeak": "We expected a short delay, but it's actually hours.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (the contrast word 'hours' is slowed down to highlight how much worse the delay is than expected)",
+                "Accelerating (the speaker speeds up since the delay length doesn't matter)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 24-3)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Decelerating (the contrast word 'hours' is slowed down to highlight how much worse the delay is than expected)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.72,
+            "hint": "Listen to 'hours' at the end. Does the pace slow to highlight the contrast with 'short delay'?",
+            "explanation": "When a situation turns out far worse than expected, the surprising word is slowed down so the contrast registers."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L25_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "We hugged, caught up, and shared a big meal.",
+            "textToSpeak": "We hugged, caught up, and shared a big meal.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (the speaker decelerates on each moment to describe it fully)",
+                "Accelerating (the routine sequence of family-visit moments is delivered quickly since each is brief)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 25-1)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Accelerating (the routine sequence of family-visit moments is delivered quickly since each is brief)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.35,
+            "hint": "Listen to this list of visit moments. Does the pace speed up since it's just a quick summary?",
+            "explanation": "A quick summary of a pleasant family visit is delivered fast because no single moment needs deep focus here."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L25_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "My grandmother's garden is absolutely beautiful.",
+            "textToSpeak": "My grandmother's garden is absolutely beautiful.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Decelerating (the strong adjective 'beautiful' is drawn out to emphasize the admiration)",
+                "Accelerating (the speaker rushes through the description to talk about something else)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Decelerating (the strong adjective 'beautiful' is drawn out to emphasize the admiration)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 25-2)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'absolutely beautiful' at the end. Rushed, or stretched out for emphasis?",
+            "explanation": "Strong admiration for something a family member made or grew is slowed down so the praise feels genuine."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L25_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "I expected a quiet weekend, but it's actually chaotic.",
+            "textToSpeak": "I expected a quiet weekend, but it's actually chaotic.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Accelerating (the speaker speeds up since the weekend plans don't matter)",
+                "Decelerating (the contrast word 'chaotic' is slowed down to highlight how different reality turned out to be)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
+            "correctAnswer": "Decelerating (the contrast word 'chaotic' is slowed down to highlight how different reality turned out to be)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 25-3)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "targetSpeed": 0.72,
+            "hint": "Listen to 'chaotic' at the end. Does the pace slow to highlight the contrast with 'quiet'?",
+            "explanation": "When family plans turn out very differently than expected, the surprising word is slowed down so the contrast lands."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L26_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "I browsed, tried things on, and paid at the counter.",
+            "textToSpeak": "I browsed, tried things on, and paid at the counter.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (the speaker decelerates on each step to describe it fully)",
+                "Accelerating (the routine sequence of shopping steps is delivered quickly since each one is expected)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 26-1)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Accelerating (the routine sequence of shopping steps is delivered quickly since each one is expected)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.35,
+            "hint": "Listen to this list of shopping steps. Does the pace speed up since it's just routine?",
+            "explanation": "A quick rundown of an ordinary shopping trip is delivered fast because none of the steps is the main point."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L26_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "This fabric feels absolutely luxurious.",
+            "textToSpeak": "This fabric feels absolutely luxurious.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Decelerating (the strong adjective 'luxurious' is drawn out to emphasize the sensory impression)",
+                "Accelerating (the speaker rushes through the description to check the price)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Decelerating (the strong adjective 'luxurious' is drawn out to emphasize the sensory impression)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 26-2)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'absolutely luxurious' at the end. Rushed, or stretched out for emphasis?",
+            "explanation": "Strong sensory impressions, like how a fabric feels, are slowed down so the listener shares the impression."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L26_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "I expected a discount, but it's actually full price.",
+            "textToSpeak": "I expected a discount, but it's actually full price.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Accelerating (the speaker speeds up since the price doesn't matter)",
+                "Decelerating (the contrast word 'full price' is slowed down to highlight the disappointing surprise)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 26-3)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "correctAnswer": "Decelerating (the contrast word 'full price' is slowed down to highlight the disappointing surprise)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.72,
+            "hint": "Listen to 'full price' at the end. Does the pace slow to highlight the contrast with 'a discount'?",
+            "explanation": "When a price turns out worse than expected, the surprising phrase is slowed down so the disappointment registers."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L27_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "I chopped, mixed, seasoned, and plated the dish.",
+            "textToSpeak": "I chopped, mixed, seasoned, and plated the dish.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (the chef decelerates on each step to explain it fully)",
+                "Accelerating (the routine sequence of cooking steps is delivered quickly since each one is familiar)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Accelerating (the routine sequence of cooking steps is delivered quickly since each one is familiar)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 27-1)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 1.35,
+            "hint": "Listen to this list of cooking steps. Does the pace speed up since it's just routine?",
+            "explanation": "A quick rundown of familiar cooking steps is delivered fast because none of them is the main point of the sentence."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L27_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "This dessert tastes absolutely heavenly.",
+            "textToSpeak": "This dessert tastes absolutely heavenly.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (the strong adjective 'heavenly' is drawn out to emphasize the pleasure of the taste)",
+                "Accelerating (the speaker rushes through the description to keep eating)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Decelerating (the strong adjective 'heavenly' is drawn out to emphasize the pleasure of the taste)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 27-2)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'absolutely heavenly' at the end. Rushed, or stretched out for emphasis?",
+            "explanation": "Strong reactions to taste are slowed down on the key adjective so the listener shares in the pleasure described."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L27_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "I expected it to be mild, but it's actually fiery.",
+            "textToSpeak": "I expected it to be mild, but it's actually fiery.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (the speaker speeds up since the spice level doesn't matter)",
+                "Decelerating (the contrast word 'fiery' is slowed down to highlight the surprising spiciness)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 27-3)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Decelerating (the contrast word 'fiery' is slowed down to highlight the surprising spiciness)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.72,
+            "hint": "Listen to 'fiery' at the end. Does the pace slow to highlight the contrast with 'mild'?",
+            "explanation": "When a dish turns out far spicier than expected, the surprising word is slowed down so the contrast registers."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L28_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "I opened the app, logged in, and checked my messages.",
+            "textToSpeak": "I opened the app, logged in, and checked my messages.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (the speaker decelerates on each step to explain it fully)",
+                "Accelerating (the routine sequence of app actions is delivered quickly since each one is familiar)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Accelerating (the routine sequence of app actions is delivered quickly since each one is familiar)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 28-1)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 1.35,
+            "hint": "Listen to this list of app actions. Does the pace speed up since it's just routine?",
+            "explanation": "A quick rundown of familiar app actions is delivered fast because none of them is the main point of the sentence."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L28_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "This new laptop is incredibly fast.",
+            "textToSpeak": "This new laptop is incredibly fast.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (the strong adjective 'fast' is drawn out to emphasize genuine surprise at the performance)",
+                "Accelerating (the speaker rushes through the description to open another app)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Decelerating (the strong adjective 'fast' is drawn out to emphasize genuine surprise at the performance)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 28-2)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'incredibly fast' at the end. Rushed, or stretched out for emphasis?",
+            "explanation": "Strong reactions to performance are slowed down on the key adjective so the listener shares in the impression."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L28_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "I expected a small update, but it's actually massive.",
+            "textToSpeak": "I expected a small update, but it's actually massive.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (the speaker speeds up since the update size doesn't matter)",
+                "Decelerating (the contrast word 'massive' is slowed down to highlight how much bigger the update turned out to be)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 28-3)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Decelerating (the contrast word 'massive' is slowed down to highlight how much bigger the update turned out to be)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.72,
+            "hint": "Listen to 'massive' at the end. Does the pace slow to highlight the contrast with 'small update'?",
+            "explanation": "When something turns out much bigger than expected, the surprising word is slowed down so the contrast registers."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L29_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "I checked in, gave my details, and waited for my name.",
+            "textToSpeak": "I checked in, gave my details, and waited for my name.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (the speaker decelerates on each step to describe it fully)",
+                "Accelerating (the routine sequence of clinic steps is delivered quickly since each one is familiar)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
+            "correctAnswer": "Accelerating (the routine sequence of clinic steps is delivered quickly since each one is familiar)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 29-1)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "targetSpeed": 1.35,
+            "hint": "Listen to this list of clinic steps. Does the pace speed up since it's just routine?",
+            "explanation": "A quick rundown of an ordinary clinic visit is delivered fast because none of the steps is the main point."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L29_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "The improvement in his condition is truly remarkable.",
+            "textToSpeak": "The improvement in his condition is truly remarkable.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (the strong adjective 'remarkable' is drawn out to emphasize the genuine relief and surprise)",
+                "Accelerating (the speaker rushes through the update to move to the next topic)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Decelerating (the strong adjective 'remarkable' is drawn out to emphasize the genuine relief and surprise)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 29-2)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'truly remarkable' at the end. Rushed, or stretched out for emphasis?",
+            "explanation": "Strong reactions to good health news are slowed down on the key adjective so the relief comes through clearly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L29_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "I expected mild pain, but it's actually severe.",
+            "textToSpeak": "I expected mild pain, but it's actually severe.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (the speaker speeds up since the pain level isn't important)",
+                "Decelerating (the contrast word 'severe' is slowed down to highlight how much worse the pain turned out to be)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 29-3)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Decelerating (the contrast word 'severe' is slowed down to highlight how much worse the pain turned out to be)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.72,
+            "hint": "Listen to 'severe' at the end. Does the pace slow to highlight the contrast with 'mild pain'?",
+            "explanation": "When a symptom turns out far worse than expected, the surprising word is slowed down so the contrast registers clearly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L30_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "I bought tickets, found my seat, and silenced my phone.",
+            "textToSpeak": "I bought tickets, found my seat, and silenced my phone.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (the speaker decelerates on each step to describe it fully)",
+                "Accelerating (the routine sequence of cinema steps is delivered quickly since each one is familiar)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Accelerating (the routine sequence of cinema steps is delivered quickly since each one is familiar)",
+            "correctAnswerIndex": 1,
             "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 30-1)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "hint": "Listen to this list of cinema steps. Does the pace speed up since it's just routine?",
+            "explanation": "A quick rundown of a familiar cinema routine is delivered fast because none of the steps is the main point."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L30_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "That plot twist was genuinely shocking.",
+            "textToSpeak": "That plot twist was genuinely shocking.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (the strong adjective 'shocking' is drawn out to emphasize the genuine surprise)",
+                "Accelerating (the speaker rushes through the reaction to avoid spoilers)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 30-2)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Decelerating (the strong adjective 'shocking' is drawn out to emphasize the genuine surprise)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'genuinely shocking' at the end. Rushed, or stretched out for emphasis?",
+            "explanation": "Strong reactions to a surprising plot moment are slowed down on the key adjective so the shock comes through clearly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L30_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 1,
+            "instruction": "Listen to the pace of the sentence. Where does the speed change happen?",
+            "difficulty": 2,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "I expected a short film, but it's actually three hours.",
+            "textToSpeak": "I expected a short film, but it's actually three hours.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (the speaker speeds up since the runtime doesn't matter)",
+                "Decelerating (the contrast word 'three hours' is slowed down to highlight how much longer the film turned out to be)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 30-3)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Decelerating (the contrast word 'three hours' is slowed down to highlight how much longer the film turned out to be)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.72,
+            "hint": "Listen to 'three hours' at the end. Does the pace slow to highlight the contrast with 'a short film'?",
+            "explanation": "When something turns out much longer than expected, the surprising phrase is slowed down so the contrast registers."
         }
     ]
 }

@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_SPEEDVARIANCE_L81_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "This is, without question, the messiest the kitchen has ever been.",
+            "textToSpeak": "This is, without question, the messiest the kitchen has ever been.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (in 'This is, without question, the messiest the kitchen has ever been.', the speaker speeds up to move past the claim quickly)",
+                "Decelerating (in 'This is, without question, the messiest the kitchen has ever been.', the pace slows deliberately on the extreme claim, the messiest the kitchen has ever been, to make it land with full seriousness)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 81-1)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Decelerating (in 'This is, without question, the messiest the kitchen has ever been.', the pace slows deliberately on the extreme claim, the messiest the kitchen has ever been, to make it land with full seriousness)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'This is, without question, the messiest the kitchen has ever been.' Does the pace slow down seriously on the extreme claim?",
+            "explanation": "Serious superlative claims like the messiest the kitchen has ever been are slowed down deliberately, giving the statement extra weight and sincerity."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L81_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "Oh wonderful, the washing machine broke again.",
+            "textToSpeak": "Oh wonderful, the washing machine broke again.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (in 'Oh wonderful, the washing machine broke again.', the word 'wonderful' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+                "Accelerating (in 'Oh wonderful, the washing machine broke again.', the speaker rushes through 'wonderful' because they genuinely mean it)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 81-2)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Decelerating (in 'Oh wonderful, the washing machine broke again.', the word 'wonderful' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Oh wonderful, the washing machine broke again.' Is 'wonderful' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
+            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'wonderful' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh wonderful, the washing machine broke again.' is the clue."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L81_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "And the surprise guest at dinner tonight is... my old roommate!",
+            "textToSpeak": "And the surprise guest at dinner tonight is... my old roommate!",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Accelerating (in 'And the surprise guest at dinner tonight is... my old roommate!', the speaker rushes evenly through the whole sentence with no build-up)",
+                "Decelerating (in 'And the surprise guest at dinner tonight is... my old roommate!', the pace slows right before the reveal, the old roommate, to build suspense)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 81-3)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Decelerating (in 'And the surprise guest at dinner tonight is... my old roommate!', the pace slows right before the reveal, the old roommate, to build suspense)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'And the surprise guest at dinner tonight is... my old roommate!' Does the pace slow right before the reveal?",
+            "explanation": "Right before a reveal like the old roommate, speakers often slow down to build anticipation, making the moment of revelation in 'And the surprise guest at dinner tonight is... my old roommate!' feel bigger."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L82_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "This is, without question, the hardest exam I've ever taken.",
+            "textToSpeak": "This is, without question, the hardest exam I've ever taken.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (in 'This is, without question, the hardest exam I've ever taken.', the speaker speeds up to move past the claim quickly)",
+                "Decelerating (in 'This is, without question, the hardest exam I've ever taken.', the pace slows deliberately on the extreme claim, the hardest exam ever taken, to make it land with full seriousness)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 82-1)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Decelerating (in 'This is, without question, the hardest exam I've ever taken.', the pace slows deliberately on the extreme claim, the hardest exam ever taken, to make it land with full seriousness)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'This is, without question, the hardest exam I've ever taken.' Does the pace slow down seriously on the extreme claim?",
+            "explanation": "Serious superlative claims like the hardest exam ever taken are slowed down deliberately, giving the statement extra weight and sincerity."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L82_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "Oh fantastic, another pop quiz today.",
+            "textToSpeak": "Oh fantastic, another pop quiz today.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (in 'Oh fantastic, another pop quiz today.', the word 'fantastic' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+                "Accelerating (in 'Oh fantastic, another pop quiz today.', the speaker rushes through 'fantastic' because they genuinely mean it)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 82-2)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Decelerating (in 'Oh fantastic, another pop quiz today.', the word 'fantastic' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Oh fantastic, another pop quiz today.' Is 'fantastic' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
+            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'fantastic' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh fantastic, another pop quiz today.' is the clue."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L82_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "And the student with the highest score is... Maria!",
+            "textToSpeak": "And the student with the highest score is... Maria!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'And the student with the highest score is... Maria!', the speaker rushes evenly through the whole sentence with no build-up)",
+                "Decelerating (in 'And the student with the highest score is... Maria!', the pace slows right before the reveal, Maria, to build suspense)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 82-3)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Decelerating (in 'And the student with the highest score is... Maria!', the pace slows right before the reveal, Maria, to build suspense)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'And the student with the highest score is... Maria!' Does the pace slow right before the reveal?",
+            "explanation": "Right before a reveal like Maria, speakers often slow down to build anticipation, making the moment of revelation in 'And the student with the highest score is... Maria!' feel bigger."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L83_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "This is, without question, the biggest mistake the team has made.",
+            "textToSpeak": "This is, without question, the biggest mistake the team has made.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (in 'This is, without question, the biggest mistake the team has made.', the speaker speeds up to move past the claim quickly)",
+                "Decelerating (in 'This is, without question, the biggest mistake the team has made.', the pace slows deliberately on the extreme claim, the biggest mistake the team has made, to make it land with full seriousness)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 83-1)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Decelerating (in 'This is, without question, the biggest mistake the team has made.', the pace slows deliberately on the extreme claim, the biggest mistake the team has made, to make it land with full seriousness)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'This is, without question, the biggest mistake the team has made.' Does the pace slow down seriously on the extreme claim?",
+            "explanation": "Serious superlative claims like the biggest mistake the team has made are slowed down deliberately, giving the statement extra weight and sincerity."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L83_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "Oh great, another last-minute meeting.",
+            "textToSpeak": "Oh great, another last-minute meeting.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (in 'Oh great, another last-minute meeting.', the word 'great' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+                "Accelerating (in 'Oh great, another last-minute meeting.', the speaker rushes through 'great' because they genuinely mean it)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Decelerating (in 'Oh great, another last-minute meeting.', the word 'great' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 83-2)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Oh great, another last-minute meeting.' Is 'great' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
+            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'great' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh great, another last-minute meeting.' is the clue."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L83_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "And the employee of the month is... David!",
+            "textToSpeak": "And the employee of the month is... David!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Accelerating (in 'And the employee of the month is... David!', the speaker rushes evenly through the whole sentence with no build-up)",
+                "Decelerating (in 'And the employee of the month is... David!', the pace slows right before the reveal, David, to build suspense)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Decelerating (in 'And the employee of the month is... David!', the pace slows right before the reveal, David, to build suspense)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 83-3)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'And the employee of the month is... David!' Does the pace slow right before the reveal?",
+            "explanation": "Right before a reveal like David, speakers often slow down to build anticipation, making the moment of revelation in 'And the employee of the month is... David!' feel bigger."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L84_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "This is, without question, the longest layover I've ever had.",
+            "textToSpeak": "This is, without question, the longest layover I've ever had.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'This is, without question, the longest layover I've ever had.', the speaker speeds up to move past the claim quickly)",
+                "Decelerating (in 'This is, without question, the longest layover I've ever had.', the pace slows deliberately on the extreme claim, the longest layover ever, to make it land with full seriousness)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 84-1)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Decelerating (in 'This is, without question, the longest layover I've ever had.', the pace slows deliberately on the extreme claim, the longest layover ever, to make it land with full seriousness)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'This is, without question, the longest layover I've ever had.' Does the pace slow down seriously on the extreme claim?",
+            "explanation": "Serious superlative claims like the longest layover ever are slowed down deliberately, giving the statement extra weight and sincerity."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L84_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "Oh perfect, another delayed flight.",
+            "textToSpeak": "Oh perfect, another delayed flight.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Decelerating (in 'Oh perfect, another delayed flight.', the word 'perfect' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+                "Accelerating (in 'Oh perfect, another delayed flight.', the speaker rushes through 'perfect' because they genuinely mean it)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Decelerating (in 'Oh perfect, another delayed flight.', the word 'perfect' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 84-2)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Oh perfect, another delayed flight.' Is 'perfect' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
+            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'perfect' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh perfect, another delayed flight.' is the clue."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L84_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "And the mystery destination for this trip is... Iceland!",
+            "textToSpeak": "And the mystery destination for this trip is... Iceland!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (in 'And the mystery destination for this trip is... Iceland!', the speaker rushes evenly through the whole sentence with no build-up)",
+                "Decelerating (in 'And the mystery destination for this trip is... Iceland!', the pace slows right before the reveal, Iceland, to build suspense)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Decelerating (in 'And the mystery destination for this trip is... Iceland!', the pace slows right before the reveal, Iceland, to build suspense)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 84-3)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'And the mystery destination for this trip is... Iceland!' Does the pace slow right before the reveal?",
+            "explanation": "Right before a reveal like Iceland, speakers often slow down to build anticipation, making the moment of revelation in 'And the mystery destination for this trip is... Iceland!' feel bigger."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L85_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "This is, without question, the loudest the house has ever been.",
+            "textToSpeak": "This is, without question, the loudest the house has ever been.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (in 'This is, without question, the loudest the house has ever been.', the pace slows deliberately on the extreme claim, the loudest the house has ever been, to make it land with full seriousness)",
+                "Accelerating (in 'This is, without question, the loudest the house has ever been.', the speaker speeds up to move past the claim quickly)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Decelerating (in 'This is, without question, the loudest the house has ever been.', the pace slows deliberately on the extreme claim, the loudest the house has ever been, to make it land with full seriousness)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 85-1)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'This is, without question, the loudest the house has ever been.' Does the pace slow down seriously on the extreme claim?",
+            "explanation": "Serious superlative claims like the loudest the house has ever been are slowed down deliberately, giving the statement extra weight and sincerity."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L85_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "Oh lovely, another argument about chores.",
+            "textToSpeak": "Oh lovely, another argument about chores.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (in 'Oh lovely, another argument about chores.', the speaker rushes through 'lovely' because they genuinely mean it)",
+                "Decelerating (in 'Oh lovely, another argument about chores.', the word 'lovely' is drawn out slowly and pointedly, signaling the speaker means the opposite)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 85-2)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Decelerating (in 'Oh lovely, another argument about chores.', the word 'lovely' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Oh lovely, another argument about chores.' Is 'lovely' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
+            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'lovely' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh lovely, another argument about chores.' is the clue."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L85_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "And the one who finally fixed the sink is... grandpa!",
+            "textToSpeak": "And the one who finally fixed the sink is... grandpa!",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (in 'And the one who finally fixed the sink is... grandpa!', the pace slows right before the reveal, grandpa, to build suspense)",
+                "Accelerating (in 'And the one who finally fixed the sink is... grandpa!', the speaker rushes evenly through the whole sentence with no build-up)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 85-3)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Decelerating (in 'And the one who finally fixed the sink is... grandpa!', the pace slows right before the reveal, grandpa, to build suspense)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'And the one who finally fixed the sink is... grandpa!' Does the pace slow right before the reveal?",
+            "explanation": "Right before a reveal like grandpa, speakers often slow down to build anticipation, making the moment of revelation in 'And the one who finally fixed the sink is... grandpa!' feel bigger."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L86_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "This is, without question, the longest line I've ever stood in.",
+            "textToSpeak": "This is, without question, the longest line I've ever stood in.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'This is, without question, the longest line I've ever stood in.', the pace slows deliberately on the extreme claim, the longest line ever, to make it land with full seriousness)",
+                "Accelerating (in 'This is, without question, the longest line I've ever stood in.', the speaker speeds up to move past the claim quickly)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Decelerating (in 'This is, without question, the longest line I've ever stood in.', the pace slows deliberately on the extreme claim, the longest line ever, to make it land with full seriousness)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 86-1)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'This is, without question, the longest line I've ever stood in.' Does the pace slow down seriously on the extreme claim?",
+            "explanation": "Serious superlative claims like the longest line ever are slowed down deliberately, giving the statement extra weight and sincerity."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L86_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "Oh brilliant, the one thing I wanted is sold out.",
+            "textToSpeak": "Oh brilliant, the one thing I wanted is sold out.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (in 'Oh brilliant, the one thing I wanted is sold out.', the speaker rushes through 'brilliant' because they genuinely mean it)",
+                "Decelerating (in 'Oh brilliant, the one thing I wanted is sold out.', the word 'brilliant' is drawn out slowly and pointedly, signaling the speaker means the opposite)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 86-2)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Decelerating (in 'Oh brilliant, the one thing I wanted is sold out.', the word 'brilliant' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Oh brilliant, the one thing I wanted is sold out.' Is 'brilliant' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
+            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'brilliant' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh brilliant, the one thing I wanted is sold out.' is the clue."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L86_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "And the lucky winner of today's raffle is... you!",
+            "textToSpeak": "And the lucky winner of today's raffle is... you!",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (in 'And the lucky winner of today's raffle is... you!', the pace slows right before the reveal, you, to build suspense)",
+                "Accelerating (in 'And the lucky winner of today's raffle is... you!', the speaker rushes evenly through the whole sentence with no build-up)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Decelerating (in 'And the lucky winner of today's raffle is... you!', the pace slows right before the reveal, you, to build suspense)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 86-3)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'And the lucky winner of today's raffle is... you!' Does the pace slow right before the reveal?",
+            "explanation": "Right before a reveal like you, speakers often slow down to build anticipation, making the moment of revelation in 'And the lucky winner of today's raffle is... you!' feel bigger."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L87_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "This is, without question, the spiciest dish on the menu.",
+            "textToSpeak": "This is, without question, the spiciest dish on the menu.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (in 'This is, without question, the spiciest dish on the menu.', the pace slows deliberately on the extreme claim, the spiciest dish on the menu, to make it land with full seriousness)",
+                "Accelerating (in 'This is, without question, the spiciest dish on the menu.', the speaker speeds up to move past the claim quickly)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 87-1)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Decelerating (in 'This is, without question, the spiciest dish on the menu.', the pace slows deliberately on the extreme claim, the spiciest dish on the menu, to make it land with full seriousness)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'This is, without question, the spiciest dish on the menu.' Does the pace slow down seriously on the extreme claim?",
+            "explanation": "Serious superlative claims like the spiciest dish on the menu are slowed down deliberately, giving the statement extra weight and sincerity."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L87_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "Oh delightful, they're out of my favorite dish.",
+            "textToSpeak": "Oh delightful, they're out of my favorite dish.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'Oh delightful, they're out of my favorite dish.', the speaker rushes through 'delightful' because they genuinely mean it)",
+                "Decelerating (in 'Oh delightful, they're out of my favorite dish.', the word 'delightful' is drawn out slowly and pointedly, signaling the speaker means the opposite)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 87-2)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Decelerating (in 'Oh delightful, they're out of my favorite dish.', the word 'delightful' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Oh delightful, they're out of my favorite dish.' Is 'delightful' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
+            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'delightful' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh delightful, they're out of my favorite dish.' is the clue."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L87_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "And the secret ingredient in this dish is... cinnamon!",
+            "textToSpeak": "And the secret ingredient in this dish is... cinnamon!",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Decelerating (in 'And the secret ingredient in this dish is... cinnamon!', the pace slows right before the reveal, cinnamon, to build suspense)",
+                "Accelerating (in 'And the secret ingredient in this dish is... cinnamon!', the speaker rushes evenly through the whole sentence with no build-up)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Decelerating (in 'And the secret ingredient in this dish is... cinnamon!', the pace slows right before the reveal, cinnamon, to build suspense)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 87-3)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'And the secret ingredient in this dish is... cinnamon!' Does the pace slow right before the reveal?",
+            "explanation": "Right before a reveal like cinnamon, speakers often slow down to build anticipation, making the moment of revelation in 'And the secret ingredient in this dish is... cinnamon!' feel bigger."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L88_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "This is, without question, the slowest the app has ever run.",
+            "textToSpeak": "This is, without question, the slowest the app has ever run.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (in 'This is, without question, the slowest the app has ever run.', the pace slows deliberately on the extreme claim, the slowest the app has ever run, to make it land with full seriousness)",
+                "Accelerating (in 'This is, without question, the slowest the app has ever run.', the speaker speeds up to move past the claim quickly)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 88-1)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Decelerating (in 'This is, without question, the slowest the app has ever run.', the pace slows deliberately on the extreme claim, the slowest the app has ever run, to make it land with full seriousness)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'This is, without question, the slowest the app has ever run.' Does the pace slow down seriously on the extreme claim?",
+            "explanation": "Serious superlative claims like the slowest the app has ever run are slowed down deliberately, giving the statement extra weight and sincerity."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L88_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "Oh marvelous, another forced restart.",
+            "textToSpeak": "Oh marvelous, another forced restart.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Accelerating (in 'Oh marvelous, another forced restart.', the speaker rushes through 'marvelous' because they genuinely mean it)",
+                "Decelerating (in 'Oh marvelous, another forced restart.', the word 'marvelous' is drawn out slowly and pointedly, signaling the speaker means the opposite)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 88-2)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Decelerating (in 'Oh marvelous, another forced restart.', the word 'marvelous' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Oh marvelous, another forced restart.' Is 'marvelous' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
+            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'marvelous' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh marvelous, another forced restart.' is the clue."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L88_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "And the new feature they finally added is... dark mode!",
+            "textToSpeak": "And the new feature they finally added is... dark mode!",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Decelerating (in 'And the new feature they finally added is... dark mode!', the pace slows right before the reveal, dark mode, to build suspense)",
+                "Accelerating (in 'And the new feature they finally added is... dark mode!', the speaker rushes evenly through the whole sentence with no build-up)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Decelerating (in 'And the new feature they finally added is... dark mode!', the pace slows right before the reveal, dark mode, to build suspense)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 88-3)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'And the new feature they finally added is... dark mode!' Does the pace slow right before the reveal?",
+            "explanation": "Right before a reveal like dark mode, speakers often slow down to build anticipation, making the moment of revelation in 'And the new feature they finally added is... dark mode!' feel bigger."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L89_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "This is, without question, the worst headache I've ever had.",
+            "textToSpeak": "This is, without question, the worst headache I've ever had.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (in 'This is, without question, the worst headache I've ever had.', the pace slows deliberately on the extreme claim, the worst headache ever, to make it land with full seriousness)",
+                "Accelerating (in 'This is, without question, the worst headache I've ever had.', the speaker speeds up to move past the claim quickly)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 89-1)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Decelerating (in 'This is, without question, the worst headache I've ever had.', the pace slows deliberately on the extreme claim, the worst headache ever, to make it land with full seriousness)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'This is, without question, the worst headache I've ever had.' Does the pace slow down seriously on the extreme claim?",
+            "explanation": "Serious superlative claims like the worst headache ever are slowed down deliberately, giving the statement extra weight and sincerity."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L89_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "Oh terrific, another early morning appointment.",
+            "textToSpeak": "Oh terrific, another early morning appointment.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'Oh terrific, another early morning appointment.', the speaker rushes through 'terrific' because they genuinely mean it)",
+                "Decelerating (in 'Oh terrific, another early morning appointment.', the word 'terrific' is drawn out slowly and pointedly, signaling the speaker means the opposite)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 89-2)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Decelerating (in 'Oh terrific, another early morning appointment.', the word 'terrific' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Oh terrific, another early morning appointment.' Is 'terrific' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
+            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'terrific' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh terrific, another early morning appointment.' is the clue."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L89_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "And the cause of all your symptoms turns out to be... stress!",
+            "textToSpeak": "And the cause of all your symptoms turns out to be... stress!",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Decelerating (in 'And the cause of all your symptoms turns out to be... stress!', the pace slows right before the reveal, stress, to build suspense)",
+                "Accelerating (in 'And the cause of all your symptoms turns out to be... stress!', the speaker rushes evenly through the whole sentence with no build-up)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Decelerating (in 'And the cause of all your symptoms turns out to be... stress!', the pace slows right before the reveal, stress, to build suspense)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 89-3)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'And the cause of all your symptoms turns out to be... stress!' Does the pace slow right before the reveal?",
+            "explanation": "Right before a reveal like stress, speakers often slow down to build anticipation, making the moment of revelation in 'And the cause of all your symptoms turns out to be... stress!' feel bigger."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L90_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "This is, without question, the saddest ending I've ever seen.",
+            "textToSpeak": "This is, without question, the saddest ending I've ever seen.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (in 'This is, without question, the saddest ending I've ever seen.', the pace slows deliberately on the extreme claim, the saddest ending ever, to make it land with full seriousness)",
+                "Accelerating (in 'This is, without question, the saddest ending I've ever seen.', the speaker speeds up to move past the claim quickly)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Decelerating (in 'This is, without question, the saddest ending I've ever seen.', the pace slows deliberately on the extreme claim, the saddest ending ever, to make it land with full seriousness)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 90-1)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 0.68,
+            "hint": "Listen to 'This is, without question, the saddest ending I've ever seen.' Does the pace slow down seriously on the extreme claim?",
+            "explanation": "Serious superlative claims like the saddest ending ever are slowed down deliberately, giving the statement extra weight and sincerity."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L90_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "Oh splendid, the show got cancelled again.",
+            "textToSpeak": "Oh splendid, the show got cancelled again.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Accelerating (in 'Oh splendid, the show got cancelled again.', the speaker rushes through 'splendid' because they genuinely mean it)",
+                "Decelerating (in 'Oh splendid, the show got cancelled again.', the word 'splendid' is drawn out slowly and pointedly, signaling the speaker means the opposite)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Decelerating (in 'Oh splendid, the show got cancelled again.', the word 'splendid' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 90-2)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Oh splendid, the show got cancelled again.' Is 'splendid' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
+            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'splendid' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh splendid, the show got cancelled again.' is the clue."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L90_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 3,
+            "instruction": "Listen to the pace. Is the speaker emphasizing or correcting something?",
+            "difficulty": 5,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "And the actor who finally won the award is... Daniel!",
+            "textToSpeak": "And the actor who finally won the award is... Daniel!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'And the actor who finally won the award is... Daniel!', the pace slows right before the reveal, Daniel, to build suspense)",
+                "Accelerating (in 'And the actor who finally won the award is... Daniel!', the speaker rushes evenly through the whole sentence with no build-up)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Decelerating (in 'And the actor who finally won the award is... Daniel!', the pace slows right before the reveal, Daniel, to build suspense)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 90-3)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'And the actor who finally won the award is... Daniel!' Does the pace slow right before the reveal?",
+            "explanation": "Right before a reveal like Daniel, speakers often slow down to build anticipation, making the moment of revelation in 'And the actor who finally won the award is... Daniel!' feel bigger."
         }
     ]
 }

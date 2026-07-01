@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_SPEEDVARIANCE_L121_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "The footsteps got closer, my heart raced, and the door slowly creaked open.",
+            "textToSpeak": "The footsteps got closer, my heart raced, and the door slowly creaked open.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Decelerating (in 'The footsteps got closer, my heart raced, and the door slowly creaked open.', the speaker slows down evenly to build careful suspense)",
+                "Accelerating (in 'The footsteps got closer, my heart raced, and the door slowly creaked open.', the pace builds tension and speeds up toward the door creaking open)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 121-1)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Accelerating (in 'The footsteps got closer, my heart raced, and the door slowly creaked open.', the pace builds tension and speeds up toward the door creaking open)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'The footsteps got closer, my heart raced, and the door slowly creaked open.' Does the pace build and speed up toward the climax?",
+            "explanation": "Storytelling often builds tension by accelerating toward a climax like the door creaking open, mirroring the rising intensity of the moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L121_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "I opened the mysterious package, and inside was... my missing wallet!",
+            "textToSpeak": "I opened the mysterious package, and inside was... my missing wallet!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (in 'I opened the mysterious package, and inside was... my missing wallet!', the pace slows dramatically right before the reveal, the missing wallet)",
+                "Accelerating (in 'I opened the mysterious package, and inside was... my missing wallet!', the pace speeds up evenly with no dramatic pause)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 121-2)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Decelerating (in 'I opened the mysterious package, and inside was... my missing wallet!', the pace slows dramatically right before the reveal, the missing wallet)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.64,
+            "hint": "Listen to 'I opened the mysterious package, and inside was... my missing wallet!' Is there a dramatic pause right before the reveal?",
+            "explanation": "A dramatic pause right before a reveal like the missing wallet builds suspense, making the listener wait just a beat longer before the payoff."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L121_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "I remember sitting on that old porch swing every summer evening.",
+            "textToSpeak": "I remember sitting on that old porch swing every summer evening.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Accelerating (in 'I remember sitting on that old porch swing every summer evening.', the speaker rushes through the memory to get to the present)",
+                "Decelerating (in 'I remember sitting on that old porch swing every summer evening.', the pace slows down reflectively while describing the memory of the old porch swing)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 121-3)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Decelerating (in 'I remember sitting on that old porch swing every summer evening.', the pace slows down reflectively while describing the memory of the old porch swing)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.62,
+            "hint": "Listen to 'I remember sitting on that old porch swing every summer evening.' Does the pace slow down warmly while remembering the past?",
+            "explanation": "Nostalgic memories like the old porch swing are often described at a slower, more reflective pace, letting the listener savor the sentimental moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L122_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "The clock ticked louder, my hand shook, and the exam timer finally buzzed.",
+            "textToSpeak": "The clock ticked louder, my hand shook, and the exam timer finally buzzed.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Decelerating (in 'The clock ticked louder, my hand shook, and the exam timer finally buzzed.', the speaker slows down evenly to build careful suspense)",
+                "Accelerating (in 'The clock ticked louder, my hand shook, and the exam timer finally buzzed.', the pace builds tension and speeds up toward the timer buzzing)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 122-1)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Accelerating (in 'The clock ticked louder, my hand shook, and the exam timer finally buzzed.', the pace builds tension and speeds up toward the timer buzzing)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'The clock ticked louder, my hand shook, and the exam timer finally buzzed.' Does the pace build and speed up toward the climax?",
+            "explanation": "Storytelling often builds tension by accelerating toward a climax like the timer buzzing, mirroring the rising intensity of the moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L122_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "I opened my results, and the final grade was... a perfect score!",
+            "textToSpeak": "I opened my results, and the final grade was... a perfect score!",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (in 'I opened my results, and the final grade was... a perfect score!', the pace slows dramatically right before the reveal, a perfect score)",
+                "Accelerating (in 'I opened my results, and the final grade was... a perfect score!', the pace speeds up evenly with no dramatic pause)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 122-2)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Decelerating (in 'I opened my results, and the final grade was... a perfect score!', the pace slows dramatically right before the reveal, a perfect score)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.64,
+            "hint": "Listen to 'I opened my results, and the final grade was... a perfect score!' Is there a dramatic pause right before the reveal?",
+            "explanation": "A dramatic pause right before a reveal like a perfect score builds suspense, making the listener wait just a beat longer before the payoff."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L122_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "I remember my first day at this school, nervous and excited.",
+            "textToSpeak": "I remember my first day at this school, nervous and excited.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'I remember my first day at this school, nervous and excited.', the speaker rushes through the memory to get to the present)",
+                "Decelerating (in 'I remember my first day at this school, nervous and excited.', the pace slows down reflectively while describing the memory of the first day at school)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 122-3)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Decelerating (in 'I remember my first day at this school, nervous and excited.', the pace slows down reflectively while describing the memory of the first day at school)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.62,
+            "hint": "Listen to 'I remember my first day at this school, nervous and excited.' Does the pace slow down warmly while remembering the past?",
+            "explanation": "Nostalgic memories like the first day at school are often described at a slower, more reflective pace, letting the listener savor the sentimental moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L123_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "The phone rang again, my manager's voice grew tense, and the news finally came.",
+            "textToSpeak": "The phone rang again, my manager's voice grew tense, and the news finally came.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Decelerating (in 'The phone rang again, my manager's voice grew tense, and the news finally came.', the speaker slows down evenly to build careful suspense)",
+                "Accelerating (in 'The phone rang again, my manager's voice grew tense, and the news finally came.', the pace builds tension and speeds up toward the news finally arriving)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 123-1)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Accelerating (in 'The phone rang again, my manager's voice grew tense, and the news finally came.', the pace builds tension and speeds up toward the news finally arriving)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'The phone rang again, my manager's voice grew tense, and the news finally came.' Does the pace build and speed up toward the climax?",
+            "explanation": "Storytelling often builds tension by accelerating toward a climax like the news finally arriving, mirroring the rising intensity of the moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L123_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "I opened the email, and the decision was... they approved the project!",
+            "textToSpeak": "I opened the email, and the decision was... they approved the project!",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (in 'I opened the email, and the decision was... they approved the project!', the pace slows dramatically right before the reveal, project approval)",
+                "Accelerating (in 'I opened the email, and the decision was... they approved the project!', the pace speeds up evenly with no dramatic pause)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Decelerating (in 'I opened the email, and the decision was... they approved the project!', the pace slows dramatically right before the reveal, project approval)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 123-2)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 0.64,
+            "hint": "Listen to 'I opened the email, and the decision was... they approved the project!' Is there a dramatic pause right before the reveal?",
+            "explanation": "A dramatic pause right before a reveal like project approval builds suspense, making the listener wait just a beat longer before the payoff."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L123_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "I remember my very first day at this company, eager and unsure.",
+            "textToSpeak": "I remember my very first day at this company, eager and unsure.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Accelerating (in 'I remember my very first day at this company, eager and unsure.', the speaker rushes through the memory to get to the present)",
+                "Decelerating (in 'I remember my very first day at this company, eager and unsure.', the pace slows down reflectively while describing the memory of the first day at the company)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Decelerating (in 'I remember my very first day at this company, eager and unsure.', the pace slows down reflectively while describing the memory of the first day at the company)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 123-3)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 0.62,
+            "hint": "Listen to 'I remember my very first day at this company, eager and unsure.' Does the pace slow down warmly while remembering the past?",
+            "explanation": "Nostalgic memories like the first day at the company are often described at a slower, more reflective pace, letting the listener savor the sentimental moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L124_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "The gate number flashed, the crowd surged, and the final boarding call rang out.",
+            "textToSpeak": "The gate number flashed, the crowd surged, and the final boarding call rang out.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'The gate number flashed, the crowd surged, and the final boarding call rang out.', the speaker slows down evenly to build careful suspense)",
+                "Accelerating (in 'The gate number flashed, the crowd surged, and the final boarding call rang out.', the pace builds tension and speeds up toward the final boarding call)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 124-1)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Accelerating (in 'The gate number flashed, the crowd surged, and the final boarding call rang out.', the pace builds tension and speeds up toward the final boarding call)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'The gate number flashed, the crowd surged, and the final boarding call rang out.' Does the pace build and speed up toward the climax?",
+            "explanation": "Storytelling often builds tension by accelerating toward a climax like the final boarding call, mirroring the rising intensity of the moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L124_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "I opened the envelope, and our upgrade was... to first class!",
+            "textToSpeak": "I opened the envelope, and our upgrade was... to first class!",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Decelerating (in 'I opened the envelope, and our upgrade was... to first class!', the pace slows dramatically right before the reveal, a first-class upgrade)",
+                "Accelerating (in 'I opened the envelope, and our upgrade was... to first class!', the pace speeds up evenly with no dramatic pause)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Decelerating (in 'I opened the envelope, and our upgrade was... to first class!', the pace slows dramatically right before the reveal, a first-class upgrade)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 124-2)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 0.64,
+            "hint": "Listen to 'I opened the envelope, and our upgrade was... to first class!' Is there a dramatic pause right before the reveal?",
+            "explanation": "A dramatic pause right before a reveal like a first-class upgrade builds suspense, making the listener wait just a beat longer before the payoff."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L124_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "I remember our first family trip to that little seaside town.",
+            "textToSpeak": "I remember our first family trip to that little seaside town.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (in 'I remember our first family trip to that little seaside town.', the speaker rushes through the memory to get to the present)",
+                "Decelerating (in 'I remember our first family trip to that little seaside town.', the pace slows down reflectively while describing the memory of the first family trip)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Decelerating (in 'I remember our first family trip to that little seaside town.', the pace slows down reflectively while describing the memory of the first family trip)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 124-3)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 0.62,
+            "hint": "Listen to 'I remember our first family trip to that little seaside town.' Does the pace slow down warmly while remembering the past?",
+            "explanation": "Nostalgic memories like the first family trip are often described at a slower, more reflective pace, letting the listener savor the sentimental moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L125_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "The phone buzzed, my hands trembled, and the doctor's call finally came through.",
+            "textToSpeak": "The phone buzzed, my hands trembled, and the doctor's call finally came through.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Accelerating (in 'The phone buzzed, my hands trembled, and the doctor's call finally came through.', the pace builds tension and speeds up toward the doctor's call)",
+                "Decelerating (in 'The phone buzzed, my hands trembled, and the doctor's call finally came through.', the speaker slows down evenly to build careful suspense)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Accelerating (in 'The phone buzzed, my hands trembled, and the doctor's call finally came through.', the pace builds tension and speeds up toward the doctor's call)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 125-1)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'The phone buzzed, my hands trembled, and the doctor's call finally came through.' Does the pace build and speed up toward the climax?",
+            "explanation": "Storytelling often builds tension by accelerating toward a climax like the doctor's call, mirroring the rising intensity of the moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L125_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "I opened the card, and the surprise inside was... tickets to see grandma!",
+            "textToSpeak": "I opened the card, and the surprise inside was... tickets to see grandma!",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (in 'I opened the card, and the surprise inside was... tickets to see grandma!', the pace speeds up evenly with no dramatic pause)",
+                "Decelerating (in 'I opened the card, and the surprise inside was... tickets to see grandma!', the pace slows dramatically right before the reveal, tickets to see grandma)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 125-2)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Decelerating (in 'I opened the card, and the surprise inside was... tickets to see grandma!', the pace slows dramatically right before the reveal, tickets to see grandma)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.64,
+            "hint": "Listen to 'I opened the card, and the surprise inside was... tickets to see grandma!' Is there a dramatic pause right before the reveal?",
+            "explanation": "A dramatic pause right before a reveal like tickets to see grandma builds suspense, making the listener wait just a beat longer before the payoff."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L125_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "I remember those quiet Sunday mornings with my grandfather.",
+            "textToSpeak": "I remember those quiet Sunday mornings with my grandfather.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (in 'I remember those quiet Sunday mornings with my grandfather.', the pace slows down reflectively while describing the memory of quiet Sunday mornings with grandfather)",
+                "Accelerating (in 'I remember those quiet Sunday mornings with my grandfather.', the speaker rushes through the memory to get to the present)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 125-3)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Decelerating (in 'I remember those quiet Sunday mornings with my grandfather.', the pace slows down reflectively while describing the memory of quiet Sunday mornings with grandfather)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.62,
+            "hint": "Listen to 'I remember those quiet Sunday mornings with my grandfather.' Does the pace slow down warmly while remembering the past?",
+            "explanation": "Nostalgic memories like quiet Sunday mornings with grandfather are often described at a slower, more reflective pace, letting the listener savor the sentimental moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L126_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "The line grew longer, the shelf emptied faster, and the last item finally appeared.",
+            "textToSpeak": "The line grew longer, the shelf emptied faster, and the last item finally appeared.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'The line grew longer, the shelf emptied faster, and the last item finally appeared.', the pace builds tension and speeds up toward the last item appearing)",
+                "Decelerating (in 'The line grew longer, the shelf emptied faster, and the last item finally appeared.', the speaker slows down evenly to build careful suspense)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Accelerating (in 'The line grew longer, the shelf emptied faster, and the last item finally appeared.', the pace builds tension and speeds up toward the last item appearing)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 126-1)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'The line grew longer, the shelf emptied faster, and the last item finally appeared.' Does the pace build and speed up toward the climax?",
+            "explanation": "Storytelling often builds tension by accelerating toward a climax like the last item appearing, mirroring the rising intensity of the moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L126_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "I opened the bag, and the mystery item inside was... exactly what I wanted!",
+            "textToSpeak": "I opened the bag, and the mystery item inside was... exactly what I wanted!",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (in 'I opened the bag, and the mystery item inside was... exactly what I wanted!', the pace speeds up evenly with no dramatic pause)",
+                "Decelerating (in 'I opened the bag, and the mystery item inside was... exactly what I wanted!', the pace slows dramatically right before the reveal, exactly what was wanted)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 126-2)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Decelerating (in 'I opened the bag, and the mystery item inside was... exactly what I wanted!', the pace slows dramatically right before the reveal, exactly what was wanted)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.64,
+            "hint": "Listen to 'I opened the bag, and the mystery item inside was... exactly what I wanted!' Is there a dramatic pause right before the reveal?",
+            "explanation": "A dramatic pause right before a reveal like exactly what was wanted builds suspense, making the listener wait just a beat longer before the payoff."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L126_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "I remember shopping with my mother in that old corner store.",
+            "textToSpeak": "I remember shopping with my mother in that old corner store.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (in 'I remember shopping with my mother in that old corner store.', the pace slows down reflectively while describing the memory of shopping with mother at the old store)",
+                "Accelerating (in 'I remember shopping with my mother in that old corner store.', the speaker rushes through the memory to get to the present)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Decelerating (in 'I remember shopping with my mother in that old corner store.', the pace slows down reflectively while describing the memory of shopping with mother at the old store)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 126-3)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 0.62,
+            "hint": "Listen to 'I remember shopping with my mother in that old corner store.' Does the pace slow down warmly while remembering the past?",
+            "explanation": "Nostalgic memories like shopping with mother at the old store are often described at a slower, more reflective pace, letting the listener savor the sentimental moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L127_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "The oven timer counted down, the smell grew stronger, and the dish was finally ready.",
+            "textToSpeak": "The oven timer counted down, the smell grew stronger, and the dish was finally ready.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Accelerating (in 'The oven timer counted down, the smell grew stronger, and the dish was finally ready.', the pace builds tension and speeds up toward the dish being ready)",
+                "Decelerating (in 'The oven timer counted down, the smell grew stronger, and the dish was finally ready.', the speaker slows down evenly to build careful suspense)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 127-1)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Accelerating (in 'The oven timer counted down, the smell grew stronger, and the dish was finally ready.', the pace builds tension and speeds up toward the dish being ready)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'The oven timer counted down, the smell grew stronger, and the dish was finally ready.' Does the pace build and speed up toward the climax?",
+            "explanation": "Storytelling often builds tension by accelerating toward a climax like the dish being ready, mirroring the rising intensity of the moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L127_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "I tasted the sauce, and the secret ingredient turned out to be... honey!",
+            "textToSpeak": "I tasted the sauce, and the secret ingredient turned out to be... honey!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'I tasted the sauce, and the secret ingredient turned out to be... honey!', the pace speeds up evenly with no dramatic pause)",
+                "Decelerating (in 'I tasted the sauce, and the secret ingredient turned out to be... honey!', the pace slows dramatically right before the reveal, honey)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 127-2)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Decelerating (in 'I tasted the sauce, and the secret ingredient turned out to be... honey!', the pace slows dramatically right before the reveal, honey)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.64,
+            "hint": "Listen to 'I tasted the sauce, and the secret ingredient turned out to be... honey!' Is there a dramatic pause right before the reveal?",
+            "explanation": "A dramatic pause right before a reveal like honey builds suspense, making the listener wait just a beat longer before the payoff."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L127_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "I remember baking cookies with my grandmother every winter.",
+            "textToSpeak": "I remember baking cookies with my grandmother every winter.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Decelerating (in 'I remember baking cookies with my grandmother every winter.', the pace slows down reflectively while describing the memory of baking cookies with grandmother)",
+                "Accelerating (in 'I remember baking cookies with my grandmother every winter.', the speaker rushes through the memory to get to the present)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Decelerating (in 'I remember baking cookies with my grandmother every winter.', the pace slows down reflectively while describing the memory of baking cookies with grandmother)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 127-3)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 0.62,
+            "hint": "Listen to 'I remember baking cookies with my grandmother every winter.' Does the pace slow down warmly while remembering the past?",
+            "explanation": "Nostalgic memories like baking cookies with grandmother are often described at a slower, more reflective pace, letting the listener savor the sentimental moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L128_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "The progress bar crawled forward, the fan spun louder, and the update finally finished.",
+            "textToSpeak": "The progress bar crawled forward, the fan spun louder, and the update finally finished.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (in 'The progress bar crawled forward, the fan spun louder, and the update finally finished.', the pace builds tension and speeds up toward the update finishing)",
+                "Decelerating (in 'The progress bar crawled forward, the fan spun louder, and the update finally finished.', the speaker slows down evenly to build careful suspense)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 128-1)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Accelerating (in 'The progress bar crawled forward, the fan spun louder, and the update finally finished.', the pace builds tension and speeds up toward the update finishing)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'The progress bar crawled forward, the fan spun louder, and the update finally finished.' Does the pace build and speed up toward the climax?",
+            "explanation": "Storytelling often builds tension by accelerating toward a climax like the update finishing, mirroring the rising intensity of the moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L128_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "I opened the results, and the bug turned out to be... a single missing comma!",
+            "textToSpeak": "I opened the results, and the bug turned out to be... a single missing comma!",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Accelerating (in 'I opened the results, and the bug turned out to be... a single missing comma!', the pace speeds up evenly with no dramatic pause)",
+                "Decelerating (in 'I opened the results, and the bug turned out to be... a single missing comma!', the pace slows dramatically right before the reveal, a single missing comma)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 128-2)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Decelerating (in 'I opened the results, and the bug turned out to be... a single missing comma!', the pace slows dramatically right before the reveal, a single missing comma)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.64,
+            "hint": "Listen to 'I opened the results, and the bug turned out to be... a single missing comma!' Is there a dramatic pause right before the reveal?",
+            "explanation": "A dramatic pause right before a reveal like a single missing comma builds suspense, making the listener wait just a beat longer before the payoff."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L128_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "I remember my very first computer and how slow it used to be.",
+            "textToSpeak": "I remember my very first computer and how slow it used to be.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Decelerating (in 'I remember my very first computer and how slow it used to be.', the pace slows down reflectively while describing the memory of the first computer)",
+                "Accelerating (in 'I remember my very first computer and how slow it used to be.', the speaker rushes through the memory to get to the present)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Decelerating (in 'I remember my very first computer and how slow it used to be.', the pace slows down reflectively while describing the memory of the first computer)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 128-3)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 0.62,
+            "hint": "Listen to 'I remember my very first computer and how slow it used to be.' Does the pace slow down warmly while remembering the past?",
+            "explanation": "Nostalgic memories like the first computer are often described at a slower, more reflective pace, letting the listener savor the sentimental moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L129_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "The monitor beeped faster, the room grew quiet, and the doctor finally spoke.",
+            "textToSpeak": "The monitor beeped faster, the room grew quiet, and the doctor finally spoke.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Accelerating (in 'The monitor beeped faster, the room grew quiet, and the doctor finally spoke.', the pace builds tension and speeds up toward the doctor speaking)",
+                "Decelerating (in 'The monitor beeped faster, the room grew quiet, and the doctor finally spoke.', the speaker slows down evenly to build careful suspense)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 129-1)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Accelerating (in 'The monitor beeped faster, the room grew quiet, and the doctor finally spoke.', the pace builds tension and speeds up toward the doctor speaking)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'The monitor beeped faster, the room grew quiet, and the doctor finally spoke.' Does the pace build and speed up toward the climax?",
+            "explanation": "Storytelling often builds tension by accelerating toward a climax like the doctor speaking, mirroring the rising intensity of the moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L129_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "I opened the test results, and the diagnosis turned out to be... nothing serious!",
+            "textToSpeak": "I opened the test results, and the diagnosis turned out to be... nothing serious!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'I opened the test results, and the diagnosis turned out to be... nothing serious!', the pace speeds up evenly with no dramatic pause)",
+                "Decelerating (in 'I opened the test results, and the diagnosis turned out to be... nothing serious!', the pace slows dramatically right before the reveal, nothing serious)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 129-2)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Decelerating (in 'I opened the test results, and the diagnosis turned out to be... nothing serious!', the pace slows dramatically right before the reveal, nothing serious)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.64,
+            "hint": "Listen to 'I opened the test results, and the diagnosis turned out to be... nothing serious!' Is there a dramatic pause right before the reveal?",
+            "explanation": "A dramatic pause right before a reveal like nothing serious builds suspense, making the listener wait just a beat longer before the payoff."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L129_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "I remember my grandmother's old remedies for every little cold.",
+            "textToSpeak": "I remember my grandmother's old remedies for every little cold.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Decelerating (in 'I remember my grandmother's old remedies for every little cold.', the pace slows down reflectively while describing the memory of grandmother's old remedies)",
+                "Accelerating (in 'I remember my grandmother's old remedies for every little cold.', the speaker rushes through the memory to get to the present)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Decelerating (in 'I remember my grandmother's old remedies for every little cold.', the pace slows down reflectively while describing the memory of grandmother's old remedies)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 129-3)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 0.62,
+            "hint": "Listen to 'I remember my grandmother's old remedies for every little cold.' Does the pace slow down warmly while remembering the past?",
+            "explanation": "Nostalgic memories like grandmother's old remedies are often described at a slower, more reflective pace, letting the listener savor the sentimental moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L130_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "The music swelled louder, the lights dimmed further, and the curtain finally rose.",
+            "textToSpeak": "The music swelled louder, the lights dimmed further, and the curtain finally rose.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Accelerating (in 'The music swelled louder, the lights dimmed further, and the curtain finally rose.', the pace builds tension and speeds up toward the curtain rising)",
+                "Decelerating (in 'The music swelled louder, the lights dimmed further, and the curtain finally rose.', the speaker slows down evenly to build careful suspense)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Accelerating (in 'The music swelled louder, the lights dimmed further, and the curtain finally rose.', the pace builds tension and speeds up toward the curtain rising)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 130-1)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'The music swelled louder, the lights dimmed further, and the curtain finally rose.' Does the pace build and speed up toward the climax?",
+            "explanation": "Storytelling often builds tension by accelerating toward a climax like the curtain rising, mirroring the rising intensity of the moment."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L130_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "I opened the envelope, and the winner of the award turned out to be... her!",
+            "textToSpeak": "I opened the envelope, and the winner of the award turned out to be... her!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Accelerating (in 'I opened the envelope, and the winner of the award turned out to be... her!', the pace speeds up evenly with no dramatic pause)",
+                "Decelerating (in 'I opened the envelope, and the winner of the award turned out to be... her!', the pace slows dramatically right before the reveal, her winning the award)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Decelerating (in 'I opened the envelope, and the winner of the award turned out to be... her!', the pace slows dramatically right before the reveal, her winning the award)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 130-2)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 0.64,
+            "hint": "Listen to 'I opened the envelope, and the winner of the award turned out to be... her!' Is there a dramatic pause right before the reveal?",
+            "explanation": "A dramatic pause right before a reveal like her winning the award builds suspense, making the listener wait just a beat longer before the payoff."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L130_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen to the storytelling pace. Where is the build-up or the pause?",
+            "difficulty": 7,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "I remember watching that old film with my whole family as a kid.",
+            "textToSpeak": "I remember watching that old film with my whole family as a kid.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'I remember watching that old film with my whole family as a kid.', the pace slows down reflectively while describing the memory of watching the old film as a kid)",
+                "Accelerating (in 'I remember watching that old film with my whole family as a kid.', the speaker rushes through the memory to get to the present)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Decelerating (in 'I remember watching that old film with my whole family as a kid.', the pace slows down reflectively while describing the memory of watching the old film as a kid)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 130-3)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 0.62,
+            "hint": "Listen to 'I remember watching that old film with my whole family as a kid.' Does the pace slow down warmly while remembering the past?",
+            "explanation": "Nostalgic memories like watching the old film as a kid are often described at a slower, more reflective pace, letting the listener savor the sentimental moment."
         }
     ]
 }

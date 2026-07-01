@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_SPEEDVARIANCE_L161_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "Residents are kindly reminded that the building inspection will occur on Thursday.",
+            "textToSpeak": "Residents are kindly reminded that the building inspection will occur on Thursday.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (in 'Residents are kindly reminded that the building inspection will occur on Thursday.', the speaker rushes through the formal announcement casually)",
+                "Decelerating (in 'Residents are kindly reminded that the building inspection will occur on Thursday.', the formal, professional context of an official building notice calls for a measured, deliberate pace)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 161-1)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Decelerating (in 'Residents are kindly reminded that the building inspection will occur on Thursday.', the formal, professional context of an official building notice calls for a measured, deliberate pace)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Residents are kindly reminded that the building inspection will occur on Thursday.' Does this sound like a measured, formal announcement, or a quick, casual remark?",
+            "explanation": "Formal contexts like an official building notice call for a slower, more measured pace, which signals professionalism and gives weight to the message in 'Residents are kindly reminded that the building inspection will occur on Thursday.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L161_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "Hey, just so you know, the inspection thing's on Thursday.",
+            "textToSpeak": "Hey, just so you know, the inspection thing's on Thursday.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (in 'Hey, just so you know, the inspection thing's on Thursday.', the casual, relaxed context of a casual heads-up between neighbors allows for a quick, informal pace)",
+                "Decelerating (in 'Hey, just so you know, the inspection thing's on Thursday.', the speaker slows down to sound more formal and serious)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 161-2)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Accelerating (in 'Hey, just so you know, the inspection thing's on Thursday.', the casual, relaxed context of a casual heads-up between neighbors allows for a quick, informal pace)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'Hey, just so you know, the inspection thing's on Thursday.' Does this sound like a relaxed chat between friends, or a formal announcement?",
+            "explanation": "Casual conversations like a casual heads-up between neighbors are often delivered quickly and informally in 'Hey, just so you know, the inspection thing's on Thursday.', without the measured weight of formal speech."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L161_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "I cannot believe the neighbors left their trash out again!",
+            "textToSpeak": "I cannot believe the neighbors left their trash out again!",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (in 'I cannot believe the neighbors left their trash out again!', the speaker slows down to calmly process their feelings)",
+                "Accelerating (in 'I cannot believe the neighbors left their trash out again!', the speaker's frustration about the neighbors' trash produces a tense, clipped, fast delivery)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 161-3)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Accelerating (in 'I cannot believe the neighbors left their trash out again!', the speaker's frustration about the neighbors' trash produces a tense, clipped, fast delivery)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.44,
+            "hint": "Listen to 'I cannot believe the neighbors left their trash out again!' Does this sound tense and clipped, or slow and resigned?",
+            "explanation": "Anger and frustration, like the reaction to the neighbors' trash in 'I cannot believe the neighbors left their trash out again!', often speed up speech into a tense, clipped pace rather than slowing it down."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L162_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "Students are required to submit all assignments by the stated deadline.",
+            "textToSpeak": "Students are required to submit all assignments by the stated deadline.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (in 'Students are required to submit all assignments by the stated deadline.', the speaker rushes through the formal announcement casually)",
+                "Decelerating (in 'Students are required to submit all assignments by the stated deadline.', the formal, professional context of an official school policy statement calls for a measured, deliberate pace)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 162-1)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Decelerating (in 'Students are required to submit all assignments by the stated deadline.', the formal, professional context of an official school policy statement calls for a measured, deliberate pace)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Students are required to submit all assignments by the stated deadline.' Does this sound like a measured, formal announcement, or a quick, casual remark?",
+            "explanation": "Formal contexts like an official school policy statement call for a slower, more measured pace, which signals professionalism and gives weight to the message in 'Students are required to submit all assignments by the stated deadline.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L162_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "Just turn it in whenever, the teacher's pretty chill about it.",
+            "textToSpeak": "Just turn it in whenever, the teacher's pretty chill about it.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Accelerating (in 'Just turn it in whenever, the teacher's pretty chill about it.', the casual, relaxed context of a casual tip between classmates allows for a quick, informal pace)",
+                "Decelerating (in 'Just turn it in whenever, the teacher's pretty chill about it.', the speaker slows down to sound more formal and serious)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 162-2)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Accelerating (in 'Just turn it in whenever, the teacher's pretty chill about it.', the casual, relaxed context of a casual tip between classmates allows for a quick, informal pace)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'Just turn it in whenever, the teacher's pretty chill about it.' Does this sound like a relaxed chat between friends, or a formal announcement?",
+            "explanation": "Casual conversations like a casual tip between classmates are often delivered quickly and informally in 'Just turn it in whenever, the teacher's pretty chill about it.', without the measured weight of formal speech."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L162_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "I cannot believe they cancelled the field trip at the last minute!",
+            "textToSpeak": "I cannot believe they cancelled the field trip at the last minute!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'I cannot believe they cancelled the field trip at the last minute!', the speaker slows down to calmly process their feelings)",
+                "Accelerating (in 'I cannot believe they cancelled the field trip at the last minute!', the speaker's frustration about the cancelled field trip produces a tense, clipped, fast delivery)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 162-3)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Accelerating (in 'I cannot believe they cancelled the field trip at the last minute!', the speaker's frustration about the cancelled field trip produces a tense, clipped, fast delivery)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.44,
+            "hint": "Listen to 'I cannot believe they cancelled the field trip at the last minute!' Does this sound tense and clipped, or slow and resigned?",
+            "explanation": "Anger and frustration, like the reaction to the cancelled field trip in 'I cannot believe they cancelled the field trip at the last minute!', often speed up speech into a tense, clipped pace rather than slowing it down."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L163_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "Employees are advised that the quarterly review will take place next week.",
+            "textToSpeak": "Employees are advised that the quarterly review will take place next week.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (in 'Employees are advised that the quarterly review will take place next week.', the speaker rushes through the formal announcement casually)",
+                "Decelerating (in 'Employees are advised that the quarterly review will take place next week.', the formal, professional context of an official HR announcement calls for a measured, deliberate pace)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 163-1)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Decelerating (in 'Employees are advised that the quarterly review will take place next week.', the formal, professional context of an official HR announcement calls for a measured, deliberate pace)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Employees are advised that the quarterly review will take place next week.' Does this sound like a measured, formal announcement, or a quick, casual remark?",
+            "explanation": "Formal contexts like an official HR announcement call for a slower, more measured pace, which signals professionalism and gives weight to the message in 'Employees are advised that the quarterly review will take place next week.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L163_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "Oh by the way, reviews are happening next week, just so you know.",
+            "textToSpeak": "Oh by the way, reviews are happening next week, just so you know.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Accelerating (in 'Oh by the way, reviews are happening next week, just so you know.', the casual, relaxed context of a casual office heads-up allows for a quick, informal pace)",
+                "Decelerating (in 'Oh by the way, reviews are happening next week, just so you know.', the speaker slows down to sound more formal and serious)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Accelerating (in 'Oh by the way, reviews are happening next week, just so you know.', the casual, relaxed context of a casual office heads-up allows for a quick, informal pace)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 163-2)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'Oh by the way, reviews are happening next week, just so you know.' Does this sound like a relaxed chat between friends, or a formal announcement?",
+            "explanation": "Casual conversations like a casual office heads-up are often delivered quickly and informally in 'Oh by the way, reviews are happening next week, just so you know.', without the measured weight of formal speech."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L163_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "I cannot believe they changed the deadline again without telling us!",
+            "textToSpeak": "I cannot believe they changed the deadline again without telling us!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (in 'I cannot believe they changed the deadline again without telling us!', the speaker slows down to calmly process their feelings)",
+                "Accelerating (in 'I cannot believe they changed the deadline again without telling us!', the speaker's frustration about the last-minute deadline change produces a tense, clipped, fast delivery)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Accelerating (in 'I cannot believe they changed the deadline again without telling us!', the speaker's frustration about the last-minute deadline change produces a tense, clipped, fast delivery)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 163-3)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 1.44,
+            "hint": "Listen to 'I cannot believe they changed the deadline again without telling us!' Does this sound tense and clipped, or slow and resigned?",
+            "explanation": "Anger and frustration, like the reaction to the last-minute deadline change in 'I cannot believe they changed the deadline again without telling us!', often speed up speech into a tense, clipped pace rather than slowing it down."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L164_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "Passengers are requested to proceed to the nearest gate immediately.",
+            "textToSpeak": "Passengers are requested to proceed to the nearest gate immediately.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'Passengers are requested to proceed to the nearest gate immediately.', the speaker rushes through the formal announcement casually)",
+                "Decelerating (in 'Passengers are requested to proceed to the nearest gate immediately.', the formal, professional context of an official airport announcement calls for a measured, deliberate pace)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 164-1)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Decelerating (in 'Passengers are requested to proceed to the nearest gate immediately.', the formal, professional context of an official airport announcement calls for a measured, deliberate pace)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Passengers are requested to proceed to the nearest gate immediately.' Does this sound like a measured, formal announcement, or a quick, casual remark?",
+            "explanation": "Formal contexts like an official airport announcement call for a slower, more measured pace, which signals professionalism and gives weight to the message in 'Passengers are requested to proceed to the nearest gate immediately.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L164_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "Hey, our gate's just down there, come on.",
+            "textToSpeak": "Hey, our gate's just down there, come on.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (in 'Hey, our gate's just down there, come on.', the casual, relaxed context of a casual remark to a travel companion allows for a quick, informal pace)",
+                "Decelerating (in 'Hey, our gate's just down there, come on.', the speaker slows down to sound more formal and serious)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Accelerating (in 'Hey, our gate's just down there, come on.', the casual, relaxed context of a casual remark to a travel companion allows for a quick, informal pace)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 164-2)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'Hey, our gate's just down there, come on.' Does this sound like a relaxed chat between friends, or a formal announcement?",
+            "explanation": "Casual conversations like a casual remark to a travel companion are often delivered quickly and informally in 'Hey, our gate's just down there, come on.', without the measured weight of formal speech."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L164_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "I cannot believe they cancelled our flight without any warning!",
+            "textToSpeak": "I cannot believe they cancelled our flight without any warning!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (in 'I cannot believe they cancelled our flight without any warning!', the speaker slows down to calmly process their feelings)",
+                "Accelerating (in 'I cannot believe they cancelled our flight without any warning!', the speaker's frustration about the cancelled flight produces a tense, clipped, fast delivery)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Accelerating (in 'I cannot believe they cancelled our flight without any warning!', the speaker's frustration about the cancelled flight produces a tense, clipped, fast delivery)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 164-3)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 1.44,
+            "hint": "Listen to 'I cannot believe they cancelled our flight without any warning!' Does this sound tense and clipped, or slow and resigned?",
+            "explanation": "Anger and frustration, like the reaction to the cancelled flight in 'I cannot believe they cancelled our flight without any warning!', often speed up speech into a tense, clipped pace rather than slowing it down."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L165_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "The family would like to formally announce the arrival of their new baby.",
+            "textToSpeak": "The family would like to formally announce the arrival of their new baby.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (in 'The family would like to formally announce the arrival of their new baby.', the formal, professional context of a formal family announcement calls for a measured, deliberate pace)",
+                "Accelerating (in 'The family would like to formally announce the arrival of their new baby.', the speaker rushes through the formal announcement casually)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Decelerating (in 'The family would like to formally announce the arrival of their new baby.', the formal, professional context of a formal family announcement calls for a measured, deliberate pace)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 165-1)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'The family would like to formally announce the arrival of their new baby.' Does this sound like a measured, formal announcement, or a quick, casual remark?",
+            "explanation": "Formal contexts like a formal family announcement call for a slower, more measured pace, which signals professionalism and gives weight to the message in 'The family would like to formally announce the arrival of their new baby.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L165_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "Guess what, the baby's finally here, can you believe it?",
+            "textToSpeak": "Guess what, the baby's finally here, can you believe it?",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Decelerating (in 'Guess what, the baby's finally here, can you believe it?', the speaker slows down to sound more formal and serious)",
+                "Accelerating (in 'Guess what, the baby's finally here, can you believe it?', the casual, relaxed context of a casual excited update among family allows for a quick, informal pace)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 165-2)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Accelerating (in 'Guess what, the baby's finally here, can you believe it?', the casual, relaxed context of a casual excited update among family allows for a quick, informal pace)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'Guess what, the baby's finally here, can you believe it?' Does this sound like a relaxed chat between friends, or a formal announcement?",
+            "explanation": "Casual conversations like a casual excited update among family are often delivered quickly and informally in 'Guess what, the baby's finally here, can you believe it?', without the measured weight of formal speech."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L165_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "I cannot believe he broke his promise to visit again!",
+            "textToSpeak": "I cannot believe he broke his promise to visit again!",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Accelerating (in 'I cannot believe he broke his promise to visit again!', the speaker's frustration about the broken promise produces a tense, clipped, fast delivery)",
+                "Decelerating (in 'I cannot believe he broke his promise to visit again!', the speaker slows down to calmly process their feelings)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 165-3)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Accelerating (in 'I cannot believe he broke his promise to visit again!', the speaker's frustration about the broken promise produces a tense, clipped, fast delivery)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.44,
+            "hint": "Listen to 'I cannot believe he broke his promise to visit again!' Does this sound tense and clipped, or slow and resigned?",
+            "explanation": "Anger and frustration, like the reaction to the broken promise in 'I cannot believe he broke his promise to visit again!', often speed up speech into a tense, clipped pace rather than slowing it down."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L166_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "Customers are advised that all sales are final and non-refundable.",
+            "textToSpeak": "Customers are advised that all sales are final and non-refundable.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'Customers are advised that all sales are final and non-refundable.', the formal, professional context of an official store policy calls for a measured, deliberate pace)",
+                "Accelerating (in 'Customers are advised that all sales are final and non-refundable.', the speaker rushes through the formal announcement casually)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Decelerating (in 'Customers are advised that all sales are final and non-refundable.', the formal, professional context of an official store policy calls for a measured, deliberate pace)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 166-1)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Customers are advised that all sales are final and non-refundable.' Does this sound like a measured, formal announcement, or a quick, casual remark?",
+            "explanation": "Formal contexts like an official store policy call for a slower, more measured pace, which signals professionalism and gives weight to the message in 'Customers are advised that all sales are final and non-refundable.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L166_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "Heads up, you can't return this stuff once you buy it.",
+            "textToSpeak": "Heads up, you can't return this stuff once you buy it.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Decelerating (in 'Heads up, you can't return this stuff once you buy it.', the speaker slows down to sound more formal and serious)",
+                "Accelerating (in 'Heads up, you can't return this stuff once you buy it.', the casual, relaxed context of a casual tip from a friend allows for a quick, informal pace)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 166-2)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Accelerating (in 'Heads up, you can't return this stuff once you buy it.', the casual, relaxed context of a casual tip from a friend allows for a quick, informal pace)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'Heads up, you can't return this stuff once you buy it.' Does this sound like a relaxed chat between friends, or a formal announcement?",
+            "explanation": "Casual conversations like a casual tip from a friend are often delivered quickly and informally in 'Heads up, you can't return this stuff once you buy it.', without the measured weight of formal speech."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L166_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "I cannot believe they charged me twice for the same item!",
+            "textToSpeak": "I cannot believe they charged me twice for the same item!",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Accelerating (in 'I cannot believe they charged me twice for the same item!', the speaker's frustration about being double-charged produces a tense, clipped, fast delivery)",
+                "Decelerating (in 'I cannot believe they charged me twice for the same item!', the speaker slows down to calmly process their feelings)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Accelerating (in 'I cannot believe they charged me twice for the same item!', the speaker's frustration about being double-charged produces a tense, clipped, fast delivery)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 166-3)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 1.44,
+            "hint": "Listen to 'I cannot believe they charged me twice for the same item!' Does this sound tense and clipped, or slow and resigned?",
+            "explanation": "Anger and frustration, like the reaction to being double-charged in 'I cannot believe they charged me twice for the same item!', often speed up speech into a tense, clipped pace rather than slowing it down."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L167_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "Guests are kindly informed that the kitchen closes at ten each evening.",
+            "textToSpeak": "Guests are kindly informed that the kitchen closes at ten each evening.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (in 'Guests are kindly informed that the kitchen closes at ten each evening.', the formal, professional context of a formal restaurant notice calls for a measured, deliberate pace)",
+                "Accelerating (in 'Guests are kindly informed that the kitchen closes at ten each evening.', the speaker rushes through the formal announcement casually)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 167-1)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Decelerating (in 'Guests are kindly informed that the kitchen closes at ten each evening.', the formal, professional context of a formal restaurant notice calls for a measured, deliberate pace)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Guests are kindly informed that the kitchen closes at ten each evening.' Does this sound like a measured, formal announcement, or a quick, casual remark?",
+            "explanation": "Formal contexts like a formal restaurant notice call for a slower, more measured pace, which signals professionalism and gives weight to the message in 'Guests are kindly informed that the kitchen closes at ten each evening.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L167_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "Just a heads up, kitchen shuts at ten, so order soon.",
+            "textToSpeak": "Just a heads up, kitchen shuts at ten, so order soon.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'Just a heads up, kitchen shuts at ten, so order soon.', the speaker slows down to sound more formal and serious)",
+                "Accelerating (in 'Just a heads up, kitchen shuts at ten, so order soon.', the casual, relaxed context of a casual tip from the waiter allows for a quick, informal pace)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 167-2)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Accelerating (in 'Just a heads up, kitchen shuts at ten, so order soon.', the casual, relaxed context of a casual tip from the waiter allows for a quick, informal pace)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'Just a heads up, kitchen shuts at ten, so order soon.' Does this sound like a relaxed chat between friends, or a formal announcement?",
+            "explanation": "Casual conversations like a casual tip from the waiter are often delivered quickly and informally in 'Just a heads up, kitchen shuts at ten, so order soon.', without the measured weight of formal speech."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L167_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "I cannot believe they got my order wrong again!",
+            "textToSpeak": "I cannot believe they got my order wrong again!",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (in 'I cannot believe they got my order wrong again!', the speaker's frustration about the wrong order produces a tense, clipped, fast delivery)",
+                "Decelerating (in 'I cannot believe they got my order wrong again!', the speaker slows down to calmly process their feelings)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Accelerating (in 'I cannot believe they got my order wrong again!', the speaker's frustration about the wrong order produces a tense, clipped, fast delivery)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 167-3)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 1.44,
+            "hint": "Listen to 'I cannot believe they got my order wrong again!' Does this sound tense and clipped, or slow and resigned?",
+            "explanation": "Anger and frustration, like the reaction to the wrong order in 'I cannot believe they got my order wrong again!', often speed up speech into a tense, clipped pace rather than slowing it down."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L168_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "Users are advised that scheduled maintenance will temporarily disable the service.",
+            "textToSpeak": "Users are advised that scheduled maintenance will temporarily disable the service.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (in 'Users are advised that scheduled maintenance will temporarily disable the service.', the formal, professional context of an official system notice calls for a measured, deliberate pace)",
+                "Accelerating (in 'Users are advised that scheduled maintenance will temporarily disable the service.', the speaker rushes through the formal announcement casually)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 168-1)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Decelerating (in 'Users are advised that scheduled maintenance will temporarily disable the service.', the formal, professional context of an official system notice calls for a measured, deliberate pace)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Users are advised that scheduled maintenance will temporarily disable the service.' Does this sound like a measured, formal announcement, or a quick, casual remark?",
+            "explanation": "Formal contexts like an official system notice call for a slower, more measured pace, which signals professionalism and gives weight to the message in 'Users are advised that scheduled maintenance will temporarily disable the service.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L168_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "Heads up, the app's gonna be down for a bit later.",
+            "textToSpeak": "Heads up, the app's gonna be down for a bit later.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (in 'Heads up, the app's gonna be down for a bit later.', the speaker slows down to sound more formal and serious)",
+                "Accelerating (in 'Heads up, the app's gonna be down for a bit later.', the casual, relaxed context of a casual heads-up between users allows for a quick, informal pace)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 168-2)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Accelerating (in 'Heads up, the app's gonna be down for a bit later.', the casual, relaxed context of a casual heads-up between users allows for a quick, informal pace)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'Heads up, the app's gonna be down for a bit later.' Does this sound like a relaxed chat between friends, or a formal announcement?",
+            "explanation": "Casual conversations like a casual heads-up between users are often delivered quickly and informally in 'Heads up, the app's gonna be down for a bit later.', without the measured weight of formal speech."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L168_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "I cannot believe the update deleted all my settings again!",
+            "textToSpeak": "I cannot believe the update deleted all my settings again!",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (in 'I cannot believe the update deleted all my settings again!', the speaker's frustration about the deleted settings produces a tense, clipped, fast delivery)",
+                "Decelerating (in 'I cannot believe the update deleted all my settings again!', the speaker slows down to calmly process their feelings)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Accelerating (in 'I cannot believe the update deleted all my settings again!', the speaker's frustration about the deleted settings produces a tense, clipped, fast delivery)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 168-3)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 1.44,
+            "hint": "Listen to 'I cannot believe the update deleted all my settings again!' Does this sound tense and clipped, or slow and resigned?",
+            "explanation": "Anger and frustration, like the reaction to the deleted settings in 'I cannot believe the update deleted all my settings again!', often speed up speech into a tense, clipped pace rather than slowing it down."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L169_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "Patients are kindly requested to arrive fifteen minutes before their appointment.",
+            "textToSpeak": "Patients are kindly requested to arrive fifteen minutes before their appointment.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (in 'Patients are kindly requested to arrive fifteen minutes before their appointment.', the formal, professional context of an official clinic notice calls for a measured, deliberate pace)",
+                "Accelerating (in 'Patients are kindly requested to arrive fifteen minutes before their appointment.', the speaker rushes through the formal announcement casually)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 169-1)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Decelerating (in 'Patients are kindly requested to arrive fifteen minutes before their appointment.', the formal, professional context of an official clinic notice calls for a measured, deliberate pace)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Patients are kindly requested to arrive fifteen minutes before their appointment.' Does this sound like a measured, formal announcement, or a quick, casual remark?",
+            "explanation": "Formal contexts like an official clinic notice call for a slower, more measured pace, which signals professionalism and gives weight to the message in 'Patients are kindly requested to arrive fifteen minutes before their appointment.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L169_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "Just get there a bit early, they're usually backed up anyway.",
+            "textToSpeak": "Just get there a bit early, they're usually backed up anyway.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'Just get there a bit early, they're usually backed up anyway.', the speaker slows down to sound more formal and serious)",
+                "Accelerating (in 'Just get there a bit early, they're usually backed up anyway.', the casual, relaxed context of a casual tip between patients allows for a quick, informal pace)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 169-2)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Accelerating (in 'Just get there a bit early, they're usually backed up anyway.', the casual, relaxed context of a casual tip between patients allows for a quick, informal pace)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'Just get there a bit early, they're usually backed up anyway.' Does this sound like a relaxed chat between friends, or a formal announcement?",
+            "explanation": "Casual conversations like a casual tip between patients are often delivered quickly and informally in 'Just get there a bit early, they're usually backed up anyway.', without the measured weight of formal speech."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L169_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "I cannot believe they cancelled my appointment without calling first!",
+            "textToSpeak": "I cannot believe they cancelled my appointment without calling first!",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (in 'I cannot believe they cancelled my appointment without calling first!', the speaker's frustration about the cancelled appointment produces a tense, clipped, fast delivery)",
+                "Decelerating (in 'I cannot believe they cancelled my appointment without calling first!', the speaker slows down to calmly process their feelings)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Accelerating (in 'I cannot believe they cancelled my appointment without calling first!', the speaker's frustration about the cancelled appointment produces a tense, clipped, fast delivery)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 169-3)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 1.44,
+            "hint": "Listen to 'I cannot believe they cancelled my appointment without calling first!' Does this sound tense and clipped, or slow and resigned?",
+            "explanation": "Anger and frustration, like the reaction to the cancelled appointment in 'I cannot believe they cancelled my appointment without calling first!', often speed up speech into a tense, clipped pace rather than slowing it down."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L170_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "Patrons are kindly reminded to silence all mobile devices before the performance.",
+            "textToSpeak": "Patrons are kindly reminded to silence all mobile devices before the performance.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (in 'Patrons are kindly reminded to silence all mobile devices before the performance.', the formal, professional context of a formal theater announcement calls for a measured, deliberate pace)",
+                "Accelerating (in 'Patrons are kindly reminded to silence all mobile devices before the performance.', the speaker rushes through the formal announcement casually)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Decelerating (in 'Patrons are kindly reminded to silence all mobile devices before the performance.', the formal, professional context of a formal theater announcement calls for a measured, deliberate pace)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 170-1)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'Patrons are kindly reminded to silence all mobile devices before the performance.' Does this sound like a measured, formal announcement, or a quick, casual remark?",
+            "explanation": "Formal contexts like a formal theater announcement call for a slower, more measured pace, which signals professionalism and gives weight to the message in 'Patrons are kindly reminded to silence all mobile devices before the performance.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L170_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "Hey, put your phone on silent, the show's starting soon.",
+            "textToSpeak": "Hey, put your phone on silent, the show's starting soon.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (in 'Hey, put your phone on silent, the show's starting soon.', the speaker slows down to sound more formal and serious)",
+                "Accelerating (in 'Hey, put your phone on silent, the show's starting soon.', the casual, relaxed context of a casual reminder between friends allows for a quick, informal pace)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Accelerating (in 'Hey, put your phone on silent, the show's starting soon.', the casual, relaxed context of a casual reminder between friends allows for a quick, informal pace)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 170-2)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 1.36,
+            "hint": "Listen to 'Hey, put your phone on silent, the show's starting soon.' Does this sound like a relaxed chat between friends, or a formal announcement?",
+            "explanation": "Casual conversations like a casual reminder between friends are often delivered quickly and informally in 'Hey, put your phone on silent, the show's starting soon.', without the measured weight of formal speech."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L170_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the speaking style. What does the pace reveal about tone or mood?",
+            "difficulty": 9,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "I cannot believe they cancelled the encore at the last second!",
+            "textToSpeak": "I cannot believe they cancelled the encore at the last second!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'I cannot believe they cancelled the encore at the last second!', the speaker's frustration about the cancelled encore produces a tense, clipped, fast delivery)",
+                "Decelerating (in 'I cannot believe they cancelled the encore at the last second!', the speaker slows down to calmly process their feelings)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Accelerating (in 'I cannot believe they cancelled the encore at the last second!', the speaker's frustration about the cancelled encore produces a tense, clipped, fast delivery)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 170-3)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 1.44,
+            "hint": "Listen to 'I cannot believe they cancelled the encore at the last second!' Does this sound tense and clipped, or slow and resigned?",
+            "explanation": "Anger and frustration, like the reaction to the cancelled encore in 'I cannot believe they cancelled the encore at the last second!', often speed up speech into a tense, clipped pace rather than slowing it down."
         }
     ]
 }

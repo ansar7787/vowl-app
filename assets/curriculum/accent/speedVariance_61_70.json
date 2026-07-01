@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_SPEEDVARIANCE_L61_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "The gas smell is getting stronger, get outside now!",
+            "textToSpeak": "The gas smell is getting stronger, get outside now!",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (the genuine danger of a possible gas leak pushes the speaker to accelerate out of real urgency)",
+                "Decelerating (the speaker slows down to calmly describe the situation instead)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Accelerating (the genuine danger of a possible gas leak pushes the speaker to accelerate out of real urgency)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 61-1)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'The gas smell is getting stronger, get outside now!' Is this genuine urgency, or just excited enthusiasm?",
+            "explanation": "This sentence accelerates because of real urgency - a possible gas leak - not because of excitement. Urgency and excitement can sound similarly fast, but urgency comes from genuine risk or time pressure."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L61_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "Don't touch that, the pan is still hot.",
+            "textToSpeak": "Don't touch that, the pan is still hot.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (the speaker speeds up because there's no real time to waste)",
+                "Decelerating (the genuine physical risk of getting burned by the hot pan slows the pace for safety)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Decelerating (the genuine physical risk of getting burned by the hot pan slows the pace for safety)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 61-2)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 0.65,
+            "hint": "Listen to 'Don't touch that, the pan is still hot.' Is this safety caution, or disappointment?",
+            "explanation": "This sentence decelerates because of a real safety concern - getting burned by the hot pan - not because of disappointment. Caution and disappointment can both slow speech down, but caution is about preventing harm."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L61_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "I said the meeting's at SEVEN, not eight.",
+            "textToSpeak": "I said the meeting's at SEVEN, not eight.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (the pace slows on the corrected detail, the corrected time, seven, to make sure it's heard accurately this time)",
+                "Accelerating (the speaker speeds up out of impatience instead of correcting carefully)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Decelerating (the pace slows on the corrected detail, the corrected time, seven, to make sure it's heard accurately this time)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 61-3)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'I said the meeting's at SEVEN, not eight.' Is the speaker correcting a misunderstanding carefully, or just rushing past it?",
+            "explanation": "This sentence decelerates on the corrected detail - the corrected time, seven - so the listener hears the accurate information clearly this time, rather than misunderstanding it again."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L62_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "The fire alarm's going off, line up by the door now!",
+            "textToSpeak": "The fire alarm's going off, line up by the door now!",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (the genuine danger of a real fire alarm emergency pushes the speaker to accelerate out of real urgency)",
+                "Decelerating (the speaker slows down to calmly describe the situation instead)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Accelerating (the genuine danger of a real fire alarm emergency pushes the speaker to accelerate out of real urgency)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 62-1)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'The fire alarm's going off, line up by the door now!' Is this genuine urgency, or just excited enthusiasm?",
+            "explanation": "This sentence accelerates because of real urgency - a real fire alarm emergency - not because of excitement. Urgency and excitement can sound similarly fast, but urgency comes from genuine risk or time pressure."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L62_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "Don't run in the hallway, the floor is slippery.",
+            "textToSpeak": "Don't run in the hallway, the floor is slippery.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Accelerating (the speaker speeds up because there's no real time to waste)",
+                "Decelerating (the genuine physical risk of slipping on the wet floor slows the pace for safety)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
+            "correctAnswer": "Decelerating (the genuine physical risk of slipping on the wet floor slows the pace for safety)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 62-2)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "targetSpeed": 0.65,
+            "hint": "Listen to 'Don't run in the hallway, the floor is slippery.' Is this safety caution, or disappointment?",
+            "explanation": "This sentence decelerates because of a real safety concern - slipping on the wet floor - not because of disappointment. Caution and disappointment can both slow speech down, but caution is about preventing harm."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L62_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "I said page SEVENTEEN, not seven.",
+            "textToSpeak": "I said page SEVENTEEN, not seven.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (the pace slows on the corrected detail, the corrected page number, seventeen, to make sure it's heard accurately this time)",
+                "Accelerating (the speaker speeds up out of impatience instead of correcting carefully)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Decelerating (the pace slows on the corrected detail, the corrected page number, seventeen, to make sure it's heard accurately this time)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 62-3)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'I said page SEVENTEEN, not seven.' Is the speaker correcting a misunderstanding carefully, or just rushing past it?",
+            "explanation": "This sentence decelerates on the corrected detail - the corrected page number, seventeen - so the listener hears the accurate information clearly this time, rather than misunderstanding it again."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L63_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "The server's about to go down, save everything now!",
+            "textToSpeak": "The server's about to go down, save everything now!",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (the genuine danger of an imminent server outage pushes the speaker to accelerate out of real urgency)",
+                "Decelerating (the speaker slows down to calmly describe the situation instead)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Accelerating (the genuine danger of an imminent server outage pushes the speaker to accelerate out of real urgency)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 63-1)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'The server's about to go down, save everything now!' Is this genuine urgency, or just excited enthusiasm?",
+            "explanation": "This sentence accelerates because of real urgency - an imminent server outage - not because of excitement. Urgency and excitement can sound similarly fast, but urgency comes from genuine risk or time pressure."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L63_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "Don't lift that alone, it's too heavy.",
+            "textToSpeak": "Don't lift that alone, it's too heavy.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Accelerating (the speaker speeds up because there's no real time to waste)",
+                "Decelerating (the genuine physical risk of injury from lifting something too heavy slows the pace for safety)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 63-2)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "correctAnswer": "Decelerating (the genuine physical risk of injury from lifting something too heavy slows the pace for safety)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.65,
+            "hint": "Listen to 'Don't lift that alone, it's too heavy.' Is this safety caution, or disappointment?",
+            "explanation": "This sentence decelerates because of a real safety concern - injury from lifting something too heavy - not because of disappointment. Caution and disappointment can both slow speech down, but caution is about preventing harm."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L63_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "I said the deadline's MONDAY, not Friday.",
+            "textToSpeak": "I said the deadline's MONDAY, not Friday.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (the pace slows on the corrected detail, the corrected deadline, Monday, to make sure it's heard accurately this time)",
+                "Accelerating (the speaker speeds up out of impatience instead of correcting carefully)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 63-3)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Decelerating (the pace slows on the corrected detail, the corrected deadline, Monday, to make sure it's heard accurately this time)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'I said the deadline's MONDAY, not Friday.' Is the speaker correcting a misunderstanding carefully, or just rushing past it?",
+            "explanation": "This sentence decelerates on the corrected detail - the corrected deadline, Monday - so the listener hears the accurate information clearly this time, rather than misunderstanding it again."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L64_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "The tide's coming in fast, get off the rocks now!",
+            "textToSpeak": "The tide's coming in fast, get off the rocks now!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (the genuine danger of the rising tide pushes the speaker to accelerate out of real urgency)",
+                "Decelerating (the speaker slows down to calmly describe the situation instead)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Accelerating (the genuine danger of the rising tide pushes the speaker to accelerate out of real urgency)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 64-1)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'The tide's coming in fast, get off the rocks now!' Is this genuine urgency, or just excited enthusiasm?",
+            "explanation": "This sentence accelerates because of real urgency - the rising tide - not because of excitement. Urgency and excitement can sound similarly fast, but urgency comes from genuine risk or time pressure."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L64_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "Don't lean over the railing, it's a long drop.",
+            "textToSpeak": "Don't lean over the railing, it's a long drop.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (the speaker speeds up because there's no real time to waste)",
+                "Decelerating (the genuine physical risk of falling from a great height slows the pace for safety)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 64-2)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Decelerating (the genuine physical risk of falling from a great height slows the pace for safety)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.65,
+            "hint": "Listen to 'Don't lean over the railing, it's a long drop.' Is this safety caution, or disappointment?",
+            "explanation": "This sentence decelerates because of a real safety concern - falling from a great height - not because of disappointment. Caution and disappointment can both slow speech down, but caution is about preventing harm."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L64_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "I said the train's at PLATFORM nine, not platform six.",
+            "textToSpeak": "I said the train's at PLATFORM nine, not platform six.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (the pace slows on the corrected detail, the corrected platform number, nine, to make sure it's heard accurately this time)",
+                "Accelerating (the speaker speeds up out of impatience instead of correcting carefully)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 64-3)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Decelerating (the pace slows on the corrected detail, the corrected platform number, nine, to make sure it's heard accurately this time)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'I said the train's at PLATFORM nine, not platform six.' Is the speaker correcting a misunderstanding carefully, or just rushing past it?",
+            "explanation": "This sentence decelerates on the corrected detail - the corrected platform number, nine - so the listener hears the accurate information clearly this time, rather than misunderstanding it again."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L65_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "The baby's crying, something's really wrong, come now!",
+            "textToSpeak": "The baby's crying, something's really wrong, come now!",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (the speaker slows down to calmly describe the situation instead)",
+                "Accelerating (the genuine danger of the baby's distress pushes the speaker to accelerate out of real urgency)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 65-1)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Accelerating (the genuine danger of the baby's distress pushes the speaker to accelerate out of real urgency)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'The baby's crying, something's really wrong, come now!' Is this genuine urgency, or just excited enthusiasm?",
+            "explanation": "This sentence accelerates because of real urgency - the baby's distress - not because of excitement. Urgency and excitement can sound similarly fast, but urgency comes from genuine risk or time pressure."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L65_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "Don't let go of grandpa's hand near the road.",
+            "textToSpeak": "Don't let go of grandpa's hand near the road.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Decelerating (the genuine physical risk of grandpa stepping into traffic slows the pace for safety)",
+                "Accelerating (the speaker speeds up because there's no real time to waste)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Decelerating (the genuine physical risk of grandpa stepping into traffic slows the pace for safety)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 65-2)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 0.65,
+            "hint": "Listen to 'Don't let go of grandpa's hand near the road.' Is this safety caution, or disappointment?",
+            "explanation": "This sentence decelerates because of a real safety concern - grandpa stepping into traffic - not because of disappointment. Caution and disappointment can both slow speech down, but caution is about preventing harm."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L65_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "I said grandma arrives on the THIRD, not the fourth.",
+            "textToSpeak": "I said grandma arrives on the THIRD, not the fourth.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Accelerating (the speaker speeds up out of impatience instead of correcting carefully)",
+                "Decelerating (the pace slows on the corrected detail, the corrected date, the third, to make sure it's heard accurately this time)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
+            "correctAnswer": "Decelerating (the pace slows on the corrected detail, the corrected date, the third, to make sure it's heard accurately this time)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 65-3)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'I said grandma arrives on the THIRD, not the fourth.' Is the speaker correcting a misunderstanding carefully, or just rushing past it?",
+            "explanation": "This sentence decelerates on the corrected detail - the corrected date, the third - so the listener hears the accurate information clearly this time, rather than misunderstanding it again."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L66_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "The shelf is about to collapse, step back now!",
+            "textToSpeak": "The shelf is about to collapse, step back now!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (the speaker slows down to calmly describe the situation instead)",
+                "Accelerating (the genuine danger of the collapsing shelf pushes the speaker to accelerate out of real urgency)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 66-1)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Accelerating (the genuine danger of the collapsing shelf pushes the speaker to accelerate out of real urgency)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'The shelf is about to collapse, step back now!' Is this genuine urgency, or just excited enthusiasm?",
+            "explanation": "This sentence accelerates because of real urgency - the collapsing shelf - not because of excitement. Urgency and excitement can sound similarly fast, but urgency comes from genuine risk or time pressure."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L66_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "Don't run with that trolley, you'll hit someone.",
+            "textToSpeak": "Don't run with that trolley, you'll hit someone.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Decelerating (the genuine physical risk of hitting another shopper slows the pace for safety)",
+                "Accelerating (the speaker speeds up because there's no real time to waste)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Decelerating (the genuine physical risk of hitting another shopper slows the pace for safety)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 66-2)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 0.65,
+            "hint": "Listen to 'Don't run with that trolley, you'll hit someone.' Is this safety caution, or disappointment?",
+            "explanation": "This sentence decelerates because of a real safety concern - hitting another shopper - not because of disappointment. Caution and disappointment can both slow speech down, but caution is about preventing harm."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L66_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "I said it's on sale for FIFTEEN dollars, not fifty.",
+            "textToSpeak": "I said it's on sale for FIFTEEN dollars, not fifty.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Accelerating (the speaker speeds up out of impatience instead of correcting carefully)",
+                "Decelerating (the pace slows on the corrected detail, the corrected price, fifteen dollars, to make sure it's heard accurately this time)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 66-3)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "correctAnswer": "Decelerating (the pace slows on the corrected detail, the corrected price, fifteen dollars, to make sure it's heard accurately this time)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'I said it's on sale for FIFTEEN dollars, not fifty.' Is the speaker correcting a misunderstanding carefully, or just rushing past it?",
+            "explanation": "This sentence decelerates on the corrected detail - the corrected price, fifteen dollars - so the listener hears the accurate information clearly this time, rather than misunderstanding it again."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L67_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "The oil's about to catch fire, turn off the stove now!",
+            "textToSpeak": "The oil's about to catch fire, turn off the stove now!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (the speaker slows down to calmly describe the situation instead)",
+                "Accelerating (the genuine danger of the kitchen fire risk pushes the speaker to accelerate out of real urgency)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Accelerating (the genuine danger of the kitchen fire risk pushes the speaker to accelerate out of real urgency)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 67-1)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'The oil's about to catch fire, turn off the stove now!' Is this genuine urgency, or just excited enthusiasm?",
+            "explanation": "This sentence accelerates because of real urgency - the kitchen fire risk - not because of excitement. Urgency and excitement can sound similarly fast, but urgency comes from genuine risk or time pressure."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L67_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "Don't touch the pan, it just came out of the oven.",
+            "textToSpeak": "Don't touch the pan, it just came out of the oven.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (the genuine physical risk of burning your hand slows the pace for safety)",
+                "Accelerating (the speaker speeds up because there's no real time to waste)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Decelerating (the genuine physical risk of burning your hand slows the pace for safety)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 67-2)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 0.65,
+            "hint": "Listen to 'Don't touch the pan, it just came out of the oven.' Is this safety caution, or disappointment?",
+            "explanation": "This sentence decelerates because of a real safety concern - burning your hand - not because of disappointment. Caution and disappointment can both slow speech down, but caution is about preventing harm."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L67_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "I said add a TEASPOON, not a tablespoon.",
+            "textToSpeak": "I said add a TEASPOON, not a tablespoon.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (the speaker speeds up out of impatience instead of correcting carefully)",
+                "Decelerating (the pace slows on the corrected detail, the corrected amount, a teaspoon, to make sure it's heard accurately this time)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 67-3)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Decelerating (the pace slows on the corrected detail, the corrected amount, a teaspoon, to make sure it's heard accurately this time)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'I said add a TEASPOON, not a tablespoon.' Is the speaker correcting a misunderstanding carefully, or just rushing past it?",
+            "explanation": "This sentence decelerates on the corrected detail - the corrected amount, a teaspoon - so the listener hears the accurate information clearly this time, rather than misunderstanding it again."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L68_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "The battery's about to die, plug it in now!",
+            "textToSpeak": "The battery's about to die, plug it in now!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (the speaker slows down to calmly describe the situation instead)",
+                "Accelerating (the genuine danger of the dying battery losing unsaved work pushes the speaker to accelerate out of real urgency)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Accelerating (the genuine danger of the dying battery losing unsaved work pushes the speaker to accelerate out of real urgency)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 68-1)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'The battery's about to die, plug it in now!' Is this genuine urgency, or just excited enthusiasm?",
+            "explanation": "This sentence accelerates because of real urgency - the dying battery losing unsaved work - not because of excitement. Urgency and excitement can sound similarly fast, but urgency comes from genuine risk or time pressure."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L68_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "Don't click that link, it looks suspicious.",
+            "textToSpeak": "Don't click that link, it looks suspicious.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (the genuine physical risk of a phishing scam slows the pace for safety)",
+                "Accelerating (the speaker speeds up because there's no real time to waste)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Decelerating (the genuine physical risk of a phishing scam slows the pace for safety)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 68-2)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 0.65,
+            "hint": "Listen to 'Don't click that link, it looks suspicious.' Is this safety caution, or disappointment?",
+            "explanation": "This sentence decelerates because of a real safety concern - a phishing scam - not because of disappointment. Caution and disappointment can both slow speech down, but caution is about preventing harm."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L68_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "I said the password has TEN characters, not eight.",
+            "textToSpeak": "I said the password has TEN characters, not eight.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (the speaker speeds up out of impatience instead of correcting carefully)",
+                "Decelerating (the pace slows on the corrected detail, the corrected length, ten characters, to make sure it's heard accurately this time)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 68-3)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Decelerating (the pace slows on the corrected detail, the corrected length, ten characters, to make sure it's heard accurately this time)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'I said the password has TEN characters, not eight.' Is the speaker correcting a misunderstanding carefully, or just rushing past it?",
+            "explanation": "This sentence decelerates on the corrected detail - the corrected length, ten characters - so the listener hears the accurate information clearly this time, rather than misunderstanding it again."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L69_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "His lips are turning blue, call for help now!",
+            "textToSpeak": "His lips are turning blue, call for help now!",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (the speaker slows down to calmly describe the situation instead)",
+                "Accelerating (the genuine danger of a serious breathing emergency pushes the speaker to accelerate out of real urgency)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
+            "correctAnswer": "Accelerating (the genuine danger of a serious breathing emergency pushes the speaker to accelerate out of real urgency)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 69-1)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'His lips are turning blue, call for help now!' Is this genuine urgency, or just excited enthusiasm?",
+            "explanation": "This sentence accelerates because of real urgency - a serious breathing emergency - not because of excitement. Urgency and excitement can sound similarly fast, but urgency comes from genuine risk or time pressure."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L69_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "Don't skip your medication, it's important for your heart.",
+            "textToSpeak": "Don't skip your medication, it's important for your heart.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (the genuine physical risk of a health complication from skipping medicine slows the pace for safety)",
+                "Accelerating (the speaker speeds up because there's no real time to waste)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Decelerating (the genuine physical risk of a health complication from skipping medicine slows the pace for safety)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 69-2)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "targetSpeed": 0.65,
+            "hint": "Listen to 'Don't skip your medication, it's important for your heart.' Is this safety caution, or disappointment?",
+            "explanation": "This sentence decelerates because of a real safety concern - a health complication from skipping medicine - not because of disappointment. Caution and disappointment can both slow speech down, but caution is about preventing harm."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L69_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "I said take it TWICE a day, not once.",
+            "textToSpeak": "I said take it TWICE a day, not once.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (the speaker speeds up out of impatience instead of correcting carefully)",
+                "Decelerating (the pace slows on the corrected detail, the corrected dosage frequency, twice a day, to make sure it's heard accurately this time)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 69-3)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Decelerating (the pace slows on the corrected detail, the corrected dosage frequency, twice a day, to make sure it's heard accurately this time)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'I said take it TWICE a day, not once.' Is the speaker correcting a misunderstanding carefully, or just rushing past it?",
+            "explanation": "This sentence decelerates on the corrected detail - the corrected dosage frequency, twice a day - so the listener hears the accurate information clearly this time, rather than misunderstanding it again."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L70_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "The stage lights just caught fire, clear the area now!",
+            "textToSpeak": "The stage lights just caught fire, clear the area now!",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (the speaker slows down to calmly describe the situation instead)",
+                "Accelerating (the genuine danger of a fire on stage pushes the speaker to accelerate out of real urgency)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 70-1)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "correctAnswer": "Accelerating (the genuine danger of a fire on stage pushes the speaker to accelerate out of real urgency)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'The stage lights just caught fire, clear the area now!' Is this genuine urgency, or just excited enthusiasm?",
+            "explanation": "This sentence accelerates because of real urgency - a fire on stage - not because of excitement. Urgency and excitement can sound similarly fast, but urgency comes from genuine risk or time pressure."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L70_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "Don't stand so close to the speakers, it'll damage your ears.",
+            "textToSpeak": "Don't stand so close to the speakers, it'll damage your ears.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (the genuine physical risk of hearing damage slows the pace for safety)",
+                "Accelerating (the speaker speeds up because there's no real time to waste)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 70-2)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Decelerating (the genuine physical risk of hearing damage slows the pace for safety)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.65,
+            "hint": "Listen to 'Don't stand so close to the speakers, it'll damage your ears.' Is this safety caution, or disappointment?",
+            "explanation": "This sentence decelerates because of a real safety concern - hearing damage - not because of disappointment. Caution and disappointment can both slow speech down, but caution is about preventing harm."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L70_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 2,
+            "instruction": "Listen to why the speaker's pace changes here. What is driving it?",
+            "difficulty": 4,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "I said the show starts at NINE, not seven.",
+            "textToSpeak": "I said the show starts at NINE, not seven.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (the speaker speeds up out of impatience instead of correcting carefully)",
+                "Decelerating (the pace slows on the corrected detail, the corrected start time, nine, to make sure it's heard accurately this time)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 70-3)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Decelerating (the pace slows on the corrected detail, the corrected start time, nine, to make sure it's heard accurately this time)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "Listen to 'I said the show starts at NINE, not seven.' Is the speaker correcting a misunderstanding carefully, or just rushing past it?",
+            "explanation": "This sentence decelerates on the corrected detail - the corrected start time, nine - so the listener hears the accurate information clearly this time, rather than misunderstanding it again."
         }
     ]
 }

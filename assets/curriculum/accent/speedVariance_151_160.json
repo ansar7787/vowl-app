@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_SPEEDVARIANCE_L151_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "Studies show that small daily habits shape eighty percent of our routines.",
+            "textToSpeak": "Studies show that small daily habits shape eighty percent of our routines.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (in 'Studies show that small daily habits shape eighty percent of our routines.', the speaker rushes past the statistic to move to the next point)",
+                "Decelerating (in 'Studies show that small daily habits shape eighty percent of our routines.', the pace slows deliberately on the key statistic, eighty percent of our routines, to let it sink in)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 151-1)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Decelerating (in 'Studies show that small daily habits shape eighty percent of our routines.', the pace slows deliberately on the key statistic, eighty percent of our routines, to let it sink in)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Studies show that small daily habits shape eighty percent of our routines.' Does the pace slow down on the key number to let it sink in?",
+            "explanation": "Skilled speakers slow down on persuasive statistics like eighty percent of our routines so the audience has time to absorb the impact of the number, as in 'Studies show that small daily habits shape eighty percent of our routines.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L151_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "Beyond the basic schedule, there are a few minor adjustments worth mentioning.",
+            "textToSpeak": "Beyond the basic schedule, there are a few minor adjustments worth mentioning.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (in 'Beyond the basic schedule, there are a few minor adjustments worth mentioning.', the supporting detail, the minor adjustments, is delivered quickly since it isn't the main point)",
+                "Decelerating (in 'Beyond the basic schedule, there are a few minor adjustments worth mentioning.', the speaker slows down on the supporting detail to emphasize it)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 151-2)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Accelerating (in 'Beyond the basic schedule, there are a few minor adjustments worth mentioning.', the supporting detail, the minor adjustments, is delivered quickly since it isn't the main point)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'Beyond the basic schedule, there are a few minor adjustments worth mentioning.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
+            "explanation": "Secondary supporting details like the minor adjustments are often delivered quickly in 'Beyond the basic schedule, there are a few minor adjustments worth mentioning.', keeping the focus on the speaker's main argument rather than minor background information."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L151_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "Better sleep, better focus, better mood, all from one small change.",
+            "textToSpeak": "Better sleep, better focus, better mood, all from one small change.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (in 'Better sleep, better focus, better mood, all from one small change.', the speaker slows down evenly on each example for equal weight)",
+                "Accelerating (in 'Better sleep, better focus, better mood, all from one small change.', the pace builds quickly through the examples toward the conclusion, one small change)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 151-3)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Accelerating (in 'Better sleep, better focus, better mood, all from one small change.', the pace builds quickly through the examples toward the conclusion, one small change)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.42,
+            "hint": "Listen to 'Better sleep, better focus, better mood, all from one small change.' Does the pace build quickly through the examples toward the conclusion?",
+            "explanation": "Rhetorical build-ups like 'Better sleep, better focus, better mood, all from one small change.' often accelerate through a string of examples, gaining momentum toward a persuasive conclusion: one small change."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L152_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "Research shows that note-taking by hand improves memory by thirty percent.",
+            "textToSpeak": "Research shows that note-taking by hand improves memory by thirty percent.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (in 'Research shows that note-taking by hand improves memory by thirty percent.', the speaker rushes past the statistic to move to the next point)",
+                "Decelerating (in 'Research shows that note-taking by hand improves memory by thirty percent.', the pace slows deliberately on the key statistic, thirty percent, to let it sink in)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 152-1)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Decelerating (in 'Research shows that note-taking by hand improves memory by thirty percent.', the pace slows deliberately on the key statistic, thirty percent, to let it sink in)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Research shows that note-taking by hand improves memory by thirty percent.' Does the pace slow down on the key number to let it sink in?",
+            "explanation": "Skilled speakers slow down on persuasive statistics like thirty percent so the audience has time to absorb the impact of the number, as in 'Research shows that note-taking by hand improves memory by thirty percent.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L152_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "Beyond the main method, a few small tweaks can help even more.",
+            "textToSpeak": "Beyond the main method, a few small tweaks can help even more.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Accelerating (in 'Beyond the main method, a few small tweaks can help even more.', the supporting detail, the small tweaks, is delivered quickly since it isn't the main point)",
+                "Decelerating (in 'Beyond the main method, a few small tweaks can help even more.', the speaker slows down on the supporting detail to emphasize it)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 152-2)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Accelerating (in 'Beyond the main method, a few small tweaks can help even more.', the supporting detail, the small tweaks, is delivered quickly since it isn't the main point)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'Beyond the main method, a few small tweaks can help even more.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
+            "explanation": "Secondary supporting details like the small tweaks are often delivered quickly in 'Beyond the main method, a few small tweaks can help even more.', keeping the focus on the speaker's main argument rather than minor background information."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L152_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "Better grades, better memory, better confidence, all from one habit.",
+            "textToSpeak": "Better grades, better memory, better confidence, all from one habit.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'Better grades, better memory, better confidence, all from one habit.', the speaker slows down evenly on each example for equal weight)",
+                "Accelerating (in 'Better grades, better memory, better confidence, all from one habit.', the pace builds quickly through the examples toward the conclusion, one habit)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 152-3)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Accelerating (in 'Better grades, better memory, better confidence, all from one habit.', the pace builds quickly through the examples toward the conclusion, one habit)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.42,
+            "hint": "Listen to 'Better grades, better memory, better confidence, all from one habit.' Does the pace build quickly through the examples toward the conclusion?",
+            "explanation": "Rhetorical build-ups like 'Better grades, better memory, better confidence, all from one habit.' often accelerate through a string of examples, gaining momentum toward a persuasive conclusion: one habit."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L153_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "Studies show that regular feedback boosts performance by fifty percent.",
+            "textToSpeak": "Studies show that regular feedback boosts performance by fifty percent.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (in 'Studies show that regular feedback boosts performance by fifty percent.', the speaker rushes past the statistic to move to the next point)",
+                "Decelerating (in 'Studies show that regular feedback boosts performance by fifty percent.', the pace slows deliberately on the key statistic, fifty percent, to let it sink in)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 153-1)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Decelerating (in 'Studies show that regular feedback boosts performance by fifty percent.', the pace slows deliberately on the key statistic, fifty percent, to let it sink in)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Studies show that regular feedback boosts performance by fifty percent.' Does the pace slow down on the key number to let it sink in?",
+            "explanation": "Skilled speakers slow down on persuasive statistics like fifty percent so the audience has time to absorb the impact of the number, as in 'Studies show that regular feedback boosts performance by fifty percent.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L153_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "Beyond the main strategy, a few smaller adjustments also help.",
+            "textToSpeak": "Beyond the main strategy, a few smaller adjustments also help.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Accelerating (in 'Beyond the main strategy, a few smaller adjustments also help.', the supporting detail, the smaller adjustments, is delivered quickly since it isn't the main point)",
+                "Decelerating (in 'Beyond the main strategy, a few smaller adjustments also help.', the speaker slows down on the supporting detail to emphasize it)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Accelerating (in 'Beyond the main strategy, a few smaller adjustments also help.', the supporting detail, the smaller adjustments, is delivered quickly since it isn't the main point)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 153-2)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'Beyond the main strategy, a few smaller adjustments also help.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
+            "explanation": "Secondary supporting details like the smaller adjustments are often delivered quickly in 'Beyond the main strategy, a few smaller adjustments also help.', keeping the focus on the speaker's main argument rather than minor background information."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L153_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "More clarity, more motivation, more results, all from one meeting.",
+            "textToSpeak": "More clarity, more motivation, more results, all from one meeting.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (in 'More clarity, more motivation, more results, all from one meeting.', the speaker slows down evenly on each example for equal weight)",
+                "Accelerating (in 'More clarity, more motivation, more results, all from one meeting.', the pace builds quickly through the examples toward the conclusion, one meeting)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Accelerating (in 'More clarity, more motivation, more results, all from one meeting.', the pace builds quickly through the examples toward the conclusion, one meeting)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 153-3)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 1.42,
+            "hint": "Listen to 'More clarity, more motivation, more results, all from one meeting.' Does the pace build quickly through the examples toward the conclusion?",
+            "explanation": "Rhetorical build-ups like 'More clarity, more motivation, more results, all from one meeting.' often accelerate through a string of examples, gaining momentum toward a persuasive conclusion: one meeting."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L154_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "Research shows that flexible travelers report sixty percent more enjoyment.",
+            "textToSpeak": "Research shows that flexible travelers report sixty percent more enjoyment.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'Research shows that flexible travelers report sixty percent more enjoyment.', the speaker rushes past the statistic to move to the next point)",
+                "Decelerating (in 'Research shows that flexible travelers report sixty percent more enjoyment.', the pace slows deliberately on the key statistic, sixty percent more enjoyment, to let it sink in)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 154-1)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Decelerating (in 'Research shows that flexible travelers report sixty percent more enjoyment.', the pace slows deliberately on the key statistic, sixty percent more enjoyment, to let it sink in)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Research shows that flexible travelers report sixty percent more enjoyment.' Does the pace slow down on the key number to let it sink in?",
+            "explanation": "Skilled speakers slow down on persuasive statistics like sixty percent more enjoyment so the audience has time to absorb the impact of the number, as in 'Research shows that flexible travelers report sixty percent more enjoyment.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L154_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "Beyond the main itinerary, a few small detours are worth considering.",
+            "textToSpeak": "Beyond the main itinerary, a few small detours are worth considering.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (in 'Beyond the main itinerary, a few small detours are worth considering.', the supporting detail, the small detours, is delivered quickly since it isn't the main point)",
+                "Decelerating (in 'Beyond the main itinerary, a few small detours are worth considering.', the speaker slows down on the supporting detail to emphasize it)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Accelerating (in 'Beyond the main itinerary, a few small detours are worth considering.', the supporting detail, the small detours, is delivered quickly since it isn't the main point)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 154-2)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'Beyond the main itinerary, a few small detours are worth considering.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
+            "explanation": "Secondary supporting details like the small detours are often delivered quickly in 'Beyond the main itinerary, a few small detours are worth considering.', keeping the focus on the speaker's main argument rather than minor background information."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L154_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "Less stress, more adventure, better memories, all from one decision.",
+            "textToSpeak": "Less stress, more adventure, better memories, all from one decision.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (in 'Less stress, more adventure, better memories, all from one decision.', the speaker slows down evenly on each example for equal weight)",
+                "Accelerating (in 'Less stress, more adventure, better memories, all from one decision.', the pace builds quickly through the examples toward the conclusion, one decision)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Accelerating (in 'Less stress, more adventure, better memories, all from one decision.', the pace builds quickly through the examples toward the conclusion, one decision)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 154-3)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 1.42,
+            "hint": "Listen to 'Less stress, more adventure, better memories, all from one decision.' Does the pace build quickly through the examples toward the conclusion?",
+            "explanation": "Rhetorical build-ups like 'Less stress, more adventure, better memories, all from one decision.' often accelerate through a string of examples, gaining momentum toward a persuasive conclusion: one decision."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L155_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "Studies show that regular family time reduces stress by forty percent.",
+            "textToSpeak": "Studies show that regular family time reduces stress by forty percent.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (in 'Studies show that regular family time reduces stress by forty percent.', the pace slows deliberately on the key statistic, forty percent, to let it sink in)",
+                "Accelerating (in 'Studies show that regular family time reduces stress by forty percent.', the speaker rushes past the statistic to move to the next point)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Decelerating (in 'Studies show that regular family time reduces stress by forty percent.', the pace slows deliberately on the key statistic, forty percent, to let it sink in)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 155-1)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Studies show that regular family time reduces stress by forty percent.' Does the pace slow down on the key number to let it sink in?",
+            "explanation": "Skilled speakers slow down on persuasive statistics like forty percent so the audience has time to absorb the impact of the number, as in 'Studies show that regular family time reduces stress by forty percent.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L155_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "Beyond the main routine, a few small traditions can help even more.",
+            "textToSpeak": "Beyond the main routine, a few small traditions can help even more.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Decelerating (in 'Beyond the main routine, a few small traditions can help even more.', the speaker slows down on the supporting detail to emphasize it)",
+                "Accelerating (in 'Beyond the main routine, a few small traditions can help even more.', the supporting detail, the small traditions, is delivered quickly since it isn't the main point)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 155-2)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Accelerating (in 'Beyond the main routine, a few small traditions can help even more.', the supporting detail, the small traditions, is delivered quickly since it isn't the main point)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'Beyond the main routine, a few small traditions can help even more.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
+            "explanation": "Secondary supporting details like the small traditions are often delivered quickly in 'Beyond the main routine, a few small traditions can help even more.', keeping the focus on the speaker's main argument rather than minor background information."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L155_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "Closer bonds, better communication, happier homes, all from one habit.",
+            "textToSpeak": "Closer bonds, better communication, happier homes, all from one habit.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Accelerating (in 'Closer bonds, better communication, happier homes, all from one habit.', the pace builds quickly through the examples toward the conclusion, one habit)",
+                "Decelerating (in 'Closer bonds, better communication, happier homes, all from one habit.', the speaker slows down evenly on each example for equal weight)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 155-3)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Accelerating (in 'Closer bonds, better communication, happier homes, all from one habit.', the pace builds quickly through the examples toward the conclusion, one habit)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.42,
+            "hint": "Listen to 'Closer bonds, better communication, happier homes, all from one habit.' Does the pace build quickly through the examples toward the conclusion?",
+            "explanation": "Rhetorical build-ups like 'Closer bonds, better communication, happier homes, all from one habit.' often accelerate through a string of examples, gaining momentum toward a persuasive conclusion: one habit."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L156_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "Research shows that comparing prices saves shoppers fifteen percent on average.",
+            "textToSpeak": "Research shows that comparing prices saves shoppers fifteen percent on average.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'Research shows that comparing prices saves shoppers fifteen percent on average.', the pace slows deliberately on the key statistic, fifteen percent on average, to let it sink in)",
+                "Accelerating (in 'Research shows that comparing prices saves shoppers fifteen percent on average.', the speaker rushes past the statistic to move to the next point)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Decelerating (in 'Research shows that comparing prices saves shoppers fifteen percent on average.', the pace slows deliberately on the key statistic, fifteen percent on average, to let it sink in)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 156-1)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Research shows that comparing prices saves shoppers fifteen percent on average.' Does the pace slow down on the key number to let it sink in?",
+            "explanation": "Skilled speakers slow down on persuasive statistics like fifteen percent on average so the audience has time to absorb the impact of the number, as in 'Research shows that comparing prices saves shoppers fifteen percent on average.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L156_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "Beyond the obvious savings, comparing also reveals better quality options.",
+            "textToSpeak": "Beyond the obvious savings, comparing also reveals better quality options.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Decelerating (in 'Beyond the obvious savings, comparing also reveals better quality options.', the speaker slows down on the supporting detail to emphasize it)",
+                "Accelerating (in 'Beyond the obvious savings, comparing also reveals better quality options.', the supporting detail, the quality options, is delivered quickly since it isn't the main point)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 156-2)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Accelerating (in 'Beyond the obvious savings, comparing also reveals better quality options.', the supporting detail, the quality options, is delivered quickly since it isn't the main point)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'Beyond the obvious savings, comparing also reveals better quality options.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
+            "explanation": "Secondary supporting details like the quality options are often delivered quickly in 'Beyond the obvious savings, comparing also reveals better quality options.', keeping the focus on the speaker's main argument rather than minor background information."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L156_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "Less waste, more savings, smarter choices, all from one simple habit.",
+            "textToSpeak": "Less waste, more savings, smarter choices, all from one simple habit.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Accelerating (in 'Less waste, more savings, smarter choices, all from one simple habit.', the pace builds quickly through the examples toward the conclusion, one simple habit)",
+                "Decelerating (in 'Less waste, more savings, smarter choices, all from one simple habit.', the speaker slows down evenly on each example for equal weight)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Accelerating (in 'Less waste, more savings, smarter choices, all from one simple habit.', the pace builds quickly through the examples toward the conclusion, one simple habit)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 156-3)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 1.42,
+            "hint": "Listen to 'Less waste, more savings, smarter choices, all from one simple habit.' Does the pace build quickly through the examples toward the conclusion?",
+            "explanation": "Rhetorical build-ups like 'Less waste, more savings, smarter choices, all from one simple habit.' often accelerate through a string of examples, gaining momentum toward a persuasive conclusion: one simple habit."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L157_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "Studies show that meal planning saves families thirty percent on groceries.",
+            "textToSpeak": "Studies show that meal planning saves families thirty percent on groceries.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (in 'Studies show that meal planning saves families thirty percent on groceries.', the pace slows deliberately on the key statistic, thirty percent on groceries, to let it sink in)",
+                "Accelerating (in 'Studies show that meal planning saves families thirty percent on groceries.', the speaker rushes past the statistic to move to the next point)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 157-1)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Decelerating (in 'Studies show that meal planning saves families thirty percent on groceries.', the pace slows deliberately on the key statistic, thirty percent on groceries, to let it sink in)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Studies show that meal planning saves families thirty percent on groceries.' Does the pace slow down on the key number to let it sink in?",
+            "explanation": "Skilled speakers slow down on persuasive statistics like thirty percent on groceries so the audience has time to absorb the impact of the number, as in 'Studies show that meal planning saves families thirty percent on groceries.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L157_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "Beyond the savings, planning also reduces food waste significantly.",
+            "textToSpeak": "Beyond the savings, planning also reduces food waste significantly.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'Beyond the savings, planning also reduces food waste significantly.', the speaker slows down on the supporting detail to emphasize it)",
+                "Accelerating (in 'Beyond the savings, planning also reduces food waste significantly.', the supporting detail, the reduced food waste, is delivered quickly since it isn't the main point)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 157-2)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Accelerating (in 'Beyond the savings, planning also reduces food waste significantly.', the supporting detail, the reduced food waste, is delivered quickly since it isn't the main point)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'Beyond the savings, planning also reduces food waste significantly.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
+            "explanation": "Secondary supporting details like the reduced food waste are often delivered quickly in 'Beyond the savings, planning also reduces food waste significantly.', keeping the focus on the speaker's main argument rather than minor background information."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L157_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "Less waste, more savings, better meals, all from one plan.",
+            "textToSpeak": "Less waste, more savings, better meals, all from one plan.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (in 'Less waste, more savings, better meals, all from one plan.', the pace builds quickly through the examples toward the conclusion, one plan)",
+                "Decelerating (in 'Less waste, more savings, better meals, all from one plan.', the speaker slows down evenly on each example for equal weight)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Accelerating (in 'Less waste, more savings, better meals, all from one plan.', the pace builds quickly through the examples toward the conclusion, one plan)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 157-3)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 1.42,
+            "hint": "Listen to 'Less waste, more savings, better meals, all from one plan.' Does the pace build quickly through the examples toward the conclusion?",
+            "explanation": "Rhetorical build-ups like 'Less waste, more savings, better meals, all from one plan.' often accelerate through a string of examples, gaining momentum toward a persuasive conclusion: one plan."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L158_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "Research shows that strong passwords block eighty percent of common attacks.",
+            "textToSpeak": "Research shows that strong passwords block eighty percent of common attacks.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Decelerating (in 'Research shows that strong passwords block eighty percent of common attacks.', the pace slows deliberately on the key statistic, eighty percent of common attacks, to let it sink in)",
+                "Accelerating (in 'Research shows that strong passwords block eighty percent of common attacks.', the speaker rushes past the statistic to move to the next point)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 158-1)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Decelerating (in 'Research shows that strong passwords block eighty percent of common attacks.', the pace slows deliberately on the key statistic, eighty percent of common attacks, to let it sink in)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Research shows that strong passwords block eighty percent of common attacks.' Does the pace slow down on the key number to let it sink in?",
+            "explanation": "Skilled speakers slow down on persuasive statistics like eighty percent of common attacks so the audience has time to absorb the impact of the number, as in 'Research shows that strong passwords block eighty percent of common attacks.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L158_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "Beyond the main fix, a few smaller settings are worth checking too.",
+            "textToSpeak": "Beyond the main fix, a few smaller settings are worth checking too.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (in 'Beyond the main fix, a few smaller settings are worth checking too.', the speaker slows down on the supporting detail to emphasize it)",
+                "Accelerating (in 'Beyond the main fix, a few smaller settings are worth checking too.', the supporting detail, the smaller settings, is delivered quickly since it isn't the main point)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 158-2)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Accelerating (in 'Beyond the main fix, a few smaller settings are worth checking too.', the supporting detail, the smaller settings, is delivered quickly since it isn't the main point)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'Beyond the main fix, a few smaller settings are worth checking too.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
+            "explanation": "Secondary supporting details like the smaller settings are often delivered quickly in 'Beyond the main fix, a few smaller settings are worth checking too.', keeping the focus on the speaker's main argument rather than minor background information."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L158_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "Less risk, more security, real peace of mind, all from one habit.",
+            "textToSpeak": "Less risk, more security, real peace of mind, all from one habit.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (in 'Less risk, more security, real peace of mind, all from one habit.', the pace builds quickly through the examples toward the conclusion, one habit)",
+                "Decelerating (in 'Less risk, more security, real peace of mind, all from one habit.', the speaker slows down evenly on each example for equal weight)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Accelerating (in 'Less risk, more security, real peace of mind, all from one habit.', the pace builds quickly through the examples toward the conclusion, one habit)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 158-3)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 1.42,
+            "hint": "Listen to 'Less risk, more security, real peace of mind, all from one habit.' Does the pace build quickly through the examples toward the conclusion?",
+            "explanation": "Rhetorical build-ups like 'Less risk, more security, real peace of mind, all from one habit.' often accelerate through a string of examples, gaining momentum toward a persuasive conclusion: one habit."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L159_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "Studies show that good sleep improves immune response by fifty percent.",
+            "textToSpeak": "Studies show that good sleep improves immune response by fifty percent.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (in 'Studies show that good sleep improves immune response by fifty percent.', the pace slows deliberately on the key statistic, fifty percent, to let it sink in)",
+                "Accelerating (in 'Studies show that good sleep improves immune response by fifty percent.', the speaker rushes past the statistic to move to the next point)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 159-1)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Decelerating (in 'Studies show that good sleep improves immune response by fifty percent.', the pace slows deliberately on the key statistic, fifty percent, to let it sink in)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Studies show that good sleep improves immune response by fifty percent.' Does the pace slow down on the key number to let it sink in?",
+            "explanation": "Skilled speakers slow down on persuasive statistics like fifty percent so the audience has time to absorb the impact of the number, as in 'Studies show that good sleep improves immune response by fifty percent.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L159_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "Beyond the main benefit, a few small bedtime habits help even more.",
+            "textToSpeak": "Beyond the main benefit, a few small bedtime habits help even more.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'Beyond the main benefit, a few small bedtime habits help even more.', the speaker slows down on the supporting detail to emphasize it)",
+                "Accelerating (in 'Beyond the main benefit, a few small bedtime habits help even more.', the supporting detail, the small bedtime habits, is delivered quickly since it isn't the main point)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 159-2)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Accelerating (in 'Beyond the main benefit, a few small bedtime habits help even more.', the supporting detail, the small bedtime habits, is delivered quickly since it isn't the main point)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'Beyond the main benefit, a few small bedtime habits help even more.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
+            "explanation": "Secondary supporting details like the small bedtime habits are often delivered quickly in 'Beyond the main benefit, a few small bedtime habits help even more.', keeping the focus on the speaker's main argument rather than minor background information."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L159_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "Better sleep, better focus, better health, all from one routine.",
+            "textToSpeak": "Better sleep, better focus, better health, all from one routine.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (in 'Better sleep, better focus, better health, all from one routine.', the pace builds quickly through the examples toward the conclusion, one routine)",
+                "Decelerating (in 'Better sleep, better focus, better health, all from one routine.', the speaker slows down evenly on each example for equal weight)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Accelerating (in 'Better sleep, better focus, better health, all from one routine.', the pace builds quickly through the examples toward the conclusion, one routine)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 159-3)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 1.42,
+            "hint": "Listen to 'Better sleep, better focus, better health, all from one routine.' Does the pace build quickly through the examples toward the conclusion?",
+            "explanation": "Rhetorical build-ups like 'Better sleep, better focus, better health, all from one routine.' often accelerate through a string of examples, gaining momentum toward a persuasive conclusion: one routine."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L160_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "Research shows that storytelling improves memory recall by seventy percent.",
+            "textToSpeak": "Research shows that storytelling improves memory recall by seventy percent.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (in 'Research shows that storytelling improves memory recall by seventy percent.', the pace slows deliberately on the key statistic, seventy percent, to let it sink in)",
+                "Accelerating (in 'Research shows that storytelling improves memory recall by seventy percent.', the speaker rushes past the statistic to move to the next point)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Decelerating (in 'Research shows that storytelling improves memory recall by seventy percent.', the pace slows deliberately on the key statistic, seventy percent, to let it sink in)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 160-1)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 0.66,
+            "hint": "Listen to 'Research shows that storytelling improves memory recall by seventy percent.' Does the pace slow down on the key number to let it sink in?",
+            "explanation": "Skilled speakers slow down on persuasive statistics like seventy percent so the audience has time to absorb the impact of the number, as in 'Research shows that storytelling improves memory recall by seventy percent.'."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L160_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "Beyond the main story, small details also make a performance memorable.",
+            "textToSpeak": "Beyond the main story, small details also make a performance memorable.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (in 'Beyond the main story, small details also make a performance memorable.', the speaker slows down on the supporting detail to emphasize it)",
+                "Accelerating (in 'Beyond the main story, small details also make a performance memorable.', the supporting detail, the small narrative details, is delivered quickly since it isn't the main point)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Accelerating (in 'Beyond the main story, small details also make a performance memorable.', the supporting detail, the small narrative details, is delivered quickly since it isn't the main point)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 160-2)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 1.32,
+            "hint": "Listen to 'Beyond the main story, small details also make a performance memorable.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
+            "explanation": "Secondary supporting details like the small narrative details are often delivered quickly in 'Beyond the main story, small details also make a performance memorable.', keeping the focus on the speaker's main argument rather than minor background information."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L160_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 4,
+            "instruction": "Listen like a public speaker would. Which idea is the pace highlighting?",
+            "difficulty": 8,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "More joy, more connection, more memories, all from one evening out.",
+            "textToSpeak": "More joy, more connection, more memories, all from one evening out.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'More joy, more connection, more memories, all from one evening out.', the pace builds quickly through the examples toward the conclusion, one evening out)",
+                "Decelerating (in 'More joy, more connection, more memories, all from one evening out.', the speaker slows down evenly on each example for equal weight)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Accelerating (in 'More joy, more connection, more memories, all from one evening out.', the pace builds quickly through the examples toward the conclusion, one evening out)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 160-3)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 1.42,
+            "hint": "Listen to 'More joy, more connection, more memories, all from one evening out.' Does the pace build quickly through the examples toward the conclusion?",
+            "explanation": "Rhetorical build-ups like 'More joy, more connection, more memories, all from one evening out.' often accelerate through a string of examples, gaining momentum toward a persuasive conclusion: one evening out."
         }
     ]
 }

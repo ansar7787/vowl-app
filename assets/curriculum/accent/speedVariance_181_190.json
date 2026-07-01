@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_SPEEDVARIANCE_L181_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "I walked in slowly, then suddenly remembered the oven was on, and dashed back to check.",
+            "textToSpeak": "I walked in slowly, then suddenly remembered the oven was on, and dashed back to check.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Decelerating (in 'I walked in slowly, then suddenly remembered the oven was on, and dashed back to check.', the pace simply stays slow and calm from beginning to end)",
+                "Accelerating (in 'I walked in slowly, then suddenly remembered the oven was on, and dashed back to check.', the pace starts slow and calm, then suddenly accelerates at 'suddenly remembered', staying fast through the dash to check)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 181-1)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "correctAnswer": "Accelerating (in 'I walked in slowly, then suddenly remembered the oven was on, and dashed back to check.', the pace starts slow and calm, then suddenly accelerates at 'suddenly remembered', staying fast through the dash to check)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.3,
+            "hint": "Listen to the full contour of 'I walked in slowly, then suddenly remembered the oven was on, and dashed back to check.' How many separate pacing shifts can you track?",
+            "explanation": "This sentence has a complex pacing contour: the pace starts slow and calm, then suddenly accelerates at 'suddenly remembered', staying fast through the dash to check. Expert listening means tracking every shift, not just forming one overall impression."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L181_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "I grabbed my coat, dashed downstairs, and just barely caught the bus.",
+            "textToSpeak": "I grabbed my coat, dashed downstairs, and just barely caught the bus.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (in 'I grabbed my coat, dashed downstairs, and just barely caught the bus.', the routine 'grabbed my coat' moves quickly, while 'just barely caught' eases very slightly for emphasis before the pace picks back up, creating natural, varied pacing)",
+                "Decelerating (in 'I grabbed my coat, dashed downstairs, and just barely caught the bus.', every word is given exactly the same length and stress, producing a flat, robotic delivery)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 181-2)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Accelerating (in 'I grabbed my coat, dashed downstairs, and just barely caught the bus.', the routine 'grabbed my coat' moves quickly, while 'just barely caught' eases very slightly for emphasis before the pace picks back up, creating natural, varied pacing)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.25,
+            "hint": "Listen to 'I grabbed my coat, dashed downstairs, and just barely caught the bus.' Does the pace vary naturally, or stay perfectly flat and robotic?",
+            "explanation": "Natural speech varies its pace constantly - the routine 'grabbed my coat' moves quickly, while 'just barely caught' eases very slightly for emphasis before the pace picks back up - rather than keeping every word at the same robotic length, as a flat reading of 'I grabbed my coat, dashed downstairs, and just barely caught the bus.' would."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L181_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "It was, I think, a reasonably good day overall.",
+            "textToSpeak": "It was, I think, a reasonably good day overall.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Accelerating (in 'It was, I think, a reasonably good day overall.', the pace drops dramatically and lingers heavily on 'reasonably good' as if it were a huge deal)",
+                "Decelerating (in 'It was, I think, a reasonably good day overall.', the pace dips just slightly on 'reasonably good', a gentle hedge rather than strong emphasis - a small but genuine shift)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 181-3)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "correctAnswer": "Decelerating (in 'It was, I think, a reasonably good day overall.', the pace dips just slightly on 'reasonably good', a gentle hedge rather than strong emphasis - a small but genuine shift)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.92,
+            "hint": "Listen very closely to 'It was, I think, a reasonably good day overall.' This is a subtle shift - can you catch the small change in pace?",
+            "explanation": "This is a subtle, expert-level distinction in 'It was, I think, a reasonably good day overall.': the pace dips just slightly on 'reasonably good', a gentle hedge rather than strong emphasis. The change is real but small, unlike a dramatic, obvious shift."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L182_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "I read the question calmly, then panicked when I saw the time, then forced myself to slow down and think.",
+            "textToSpeak": "I read the question calmly, then panicked when I saw the time, then forced myself to slow down and think.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Accelerating (in 'I read the question calmly, then panicked when I saw the time, then forced myself to slow down and think.', the pace simply accelerates once into panic and stays fast for the rest of the sentence)",
+                "Decelerating (in 'I read the question calmly, then panicked when I saw the time, then forced myself to slow down and think.', the pace starts calm, accelerates sharply at the panic over time, then deliberately decelerates as the student forces calm focus)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 182-1)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Decelerating (in 'I read the question calmly, then panicked when I saw the time, then forced myself to slow down and think.', the pace starts calm, accelerates sharply at the panic over time, then deliberately decelerates as the student forces calm focus)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.74,
+            "hint": "Listen to the full contour of 'I read the question calmly, then panicked when I saw the time, then forced myself to slow down and think.' How many separate pacing shifts can you track?",
+            "explanation": "This sentence has a complex pacing contour: the pace starts calm, accelerates sharply at the panic over time, then deliberately decelerates as the student forces calm focus. Expert listening means tracking every shift, not just forming one overall impression."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L182_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "I skimmed the easy questions fast, but really slowed down on the essay part.",
+            "textToSpeak": "I skimmed the easy questions fast, but really slowed down on the essay part.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (in 'I skimmed the easy questions fast, but really slowed down on the essay part.', the easy questions move quickly, while 'really slowed down' genuinely decelerates for the harder essay section, creating natural, varied pacing)",
+                "Accelerating (in 'I skimmed the easy questions fast, but really slowed down on the essay part.', every word is given exactly the same length and stress, producing a flat, robotic delivery)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 182-2)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Decelerating (in 'I skimmed the easy questions fast, but really slowed down on the essay part.', the easy questions move quickly, while 'really slowed down' genuinely decelerates for the harder essay section, creating natural, varied pacing)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.78,
+            "hint": "Listen to 'I skimmed the easy questions fast, but really slowed down on the essay part.' Does the pace vary naturally, or stay perfectly flat and robotic?",
+            "explanation": "Natural speech varies its pace constantly - the easy questions move quickly, while 'really slowed down' genuinely decelerates for the harder essay section - rather than keeping every word at the same robotic length, as a flat reading of 'I skimmed the easy questions fast, but really slowed down on the essay part.' would."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L182_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "It was, on reflection, a slightly harder test than usual.",
+            "textToSpeak": "It was, on reflection, a slightly harder test than usual.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'It was, on reflection, a slightly harder test than usual.', the pace drops dramatically on 'slightly harder' as if announcing a disaster)",
+                "Decelerating (in 'It was, on reflection, a slightly harder test than usual.', the pace eases back just slightly on 'slightly harder', a mild, measured observation - a small but genuine shift)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 182-3)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Decelerating (in 'It was, on reflection, a slightly harder test than usual.', the pace eases back just slightly on 'slightly harder', a mild, measured observation - a small but genuine shift)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.93,
+            "hint": "Listen very closely to 'It was, on reflection, a slightly harder test than usual.' This is a subtle shift - can you catch the small change in pace?",
+            "explanation": "This is a subtle, expert-level distinction in 'It was, on reflection, a slightly harder test than usual.': the pace eases back just slightly on 'slightly harder', a mild, measured observation. The change is real but small, unlike a dramatic, obvious shift."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L183_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "I answered the email calmly, then realized the client was furious, then carefully chose every word in my reply.",
+            "textToSpeak": "I answered the email calmly, then realized the client was furious, then carefully chose every word in my reply.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Accelerating (in 'I answered the email calmly, then realized the client was furious, then carefully chose every word in my reply.', the pace simply speeds up once and stays fast through writing the reply)",
+                "Decelerating (in 'I answered the email calmly, then realized the client was furious, then carefully chose every word in my reply.', the pace starts calm, accelerates at the realization of anger, then decelerates deliberately while crafting a careful reply)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 183-1)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Decelerating (in 'I answered the email calmly, then realized the client was furious, then carefully chose every word in my reply.', the pace starts calm, accelerates at the realization of anger, then decelerates deliberately while crafting a careful reply)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.74,
+            "hint": "Listen to the full contour of 'I answered the email calmly, then realized the client was furious, then carefully chose every word in my reply.' How many separate pacing shifts can you track?",
+            "explanation": "This sentence has a complex pacing contour: the pace starts calm, accelerates at the realization of anger, then decelerates deliberately while crafting a careful reply. Expert listening means tracking every shift, not just forming one overall impression."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L183_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "I cleared my routine emails fast, but really slowed down on the client's complaint.",
+            "textToSpeak": "I cleared my routine emails fast, but really slowed down on the client's complaint.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (in 'I cleared my routine emails fast, but really slowed down on the client's complaint.', routine emails move quickly, while 'really slowed down' genuinely decelerates for the sensitive complaint, creating natural, varied pacing)",
+                "Accelerating (in 'I cleared my routine emails fast, but really slowed down on the client's complaint.', every word is given exactly the same length and stress, producing a flat, robotic delivery)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Decelerating (in 'I cleared my routine emails fast, but really slowed down on the client's complaint.', routine emails move quickly, while 'really slowed down' genuinely decelerates for the sensitive complaint, creating natural, varied pacing)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 183-2)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 0.79,
+            "hint": "Listen to 'I cleared my routine emails fast, but really slowed down on the client's complaint.' Does the pace vary naturally, or stay perfectly flat and robotic?",
+            "explanation": "Natural speech varies its pace constantly - routine emails move quickly, while 'really slowed down' genuinely decelerates for the sensitive complaint - rather than keeping every word at the same robotic length, as a flat reading of 'I cleared my routine emails fast, but really slowed down on the client's complaint.' would."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L183_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "It was, all things considered, a slightly stressful week.",
+            "textToSpeak": "It was, all things considered, a slightly stressful week.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Accelerating (in 'It was, all things considered, a slightly stressful week.', the pace drops dramatically on 'slightly stressful' as if describing a crisis)",
+                "Decelerating (in 'It was, all things considered, a slightly stressful week.', the pace eases back just slightly on 'slightly stressful', a measured, professional understatement - a small but genuine shift)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Decelerating (in 'It was, all things considered, a slightly stressful week.', the pace eases back just slightly on 'slightly stressful', a measured, professional understatement - a small but genuine shift)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 183-3)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 0.93,
+            "hint": "Listen very closely to 'It was, all things considered, a slightly stressful week.' This is a subtle shift - can you catch the small change in pace?",
+            "explanation": "This is a subtle, expert-level distinction in 'It was, all things considered, a slightly stressful week.': the pace eases back just slightly on 'slightly stressful', a measured, professional understatement. The change is real but small, unlike a dramatic, obvious shift."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L184_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "I waited calmly, then grew anxious when the delay was announced, then sprinted once the new gate was finally called.",
+            "textToSpeak": "I waited calmly, then grew anxious when the delay was announced, then sprinted once the new gate was finally called.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'I waited calmly, then grew anxious when the delay was announced, then sprinted once the new gate was finally called.', the pace simply decelerates once into anxious waiting and stays slow for the rest of the sentence)",
+                "Accelerating (in 'I waited calmly, then grew anxious when the delay was announced, then sprinted once the new gate was finally called.', the pace starts calm, slows further with anxious waiting during the delay, then accelerates sharply once the new gate is finally announced)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 184-1)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "correctAnswer": "Accelerating (in 'I waited calmly, then grew anxious when the delay was announced, then sprinted once the new gate was finally called.', the pace starts calm, slows further with anxious waiting during the delay, then accelerates sharply once the new gate is finally announced)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.34,
+            "hint": "Listen to the full contour of 'I waited calmly, then grew anxious when the delay was announced, then sprinted once the new gate was finally called.' How many separate pacing shifts can you track?",
+            "explanation": "This sentence has a complex pacing contour: the pace starts calm, slows further with anxious waiting during the delay, then accelerates sharply once the new gate is finally announced. Expert listening means tracking every shift, not just forming one overall impression."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L184_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "I'll just grab my bag here, and then, honestly, really hustle to make the connection.",
+            "textToSpeak": "I'll just grab my bag here, and then, honestly, really hustle to make the connection.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Accelerating (in 'I'll just grab my bag here, and then, honestly, really hustle to make the connection.', 'grab my bag' moves at a normal pace, while 'really hustle to make the connection' accelerates noticeably for the urgent connection, creating natural, varied pacing)",
+                "Decelerating (in 'I'll just grab my bag here, and then, honestly, really hustle to make the connection.', every word is given exactly the same length and stress, producing a flat, robotic delivery)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Accelerating (in 'I'll just grab my bag here, and then, honestly, really hustle to make the connection.', 'grab my bag' moves at a normal pace, while 'really hustle to make the connection' accelerates noticeably for the urgent connection, creating natural, varied pacing)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 184-2)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 1.28,
+            "hint": "Listen to 'I'll just grab my bag here, and then, honestly, really hustle to make the connection.' Does the pace vary naturally, or stay perfectly flat and robotic?",
+            "explanation": "Natural speech varies its pace constantly - 'grab my bag' moves at a normal pace, while 'really hustle to make the connection' accelerates noticeably for the urgent connection - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just grab my bag here, and then, honestly, really hustle to make the connection.' would."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L184_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "It was, overall, a slightly longer journey than planned.",
+            "textToSpeak": "It was, overall, a slightly longer journey than planned.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (in 'It was, overall, a slightly longer journey than planned.', the pace drops dramatically on 'slightly longer' as if announcing a major delay)",
+                "Decelerating (in 'It was, overall, a slightly longer journey than planned.', the pace eases back just slightly on 'slightly longer', a mild, measured observation - a small but genuine shift)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
+            "correctAnswer": "Decelerating (in 'It was, overall, a slightly longer journey than planned.', the pace eases back just slightly on 'slightly longer', a mild, measured observation - a small but genuine shift)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 184-3)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "targetSpeed": 0.93,
+            "hint": "Listen very closely to 'It was, overall, a slightly longer journey than planned.' This is a subtle shift - can you catch the small change in pace?",
+            "explanation": "This is a subtle, expert-level distinction in 'It was, overall, a slightly longer journey than planned.': the pace eases back just slightly on 'slightly longer', a mild, measured observation. The change is real but small, unlike a dramatic, obvious shift."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L185_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "Dinner was calm, then the smoke alarm suddenly went off, and now everyone's racing to open every window!",
+            "textToSpeak": "Dinner was calm, then the smoke alarm suddenly went off, and now everyone's racing to open every window!",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Accelerating (in 'Dinner was calm, then the smoke alarm suddenly went off, and now everyone's racing to open every window!', the pace starts calm, accelerates sharply at the alarm, and stays fast right through everyone racing to open windows)",
+                "Decelerating (in 'Dinner was calm, then the smoke alarm suddenly went off, and now everyone's racing to open every window!', the pace simply decelerates once into worry and stays slow through opening the windows)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
+            "correctAnswer": "Accelerating (in 'Dinner was calm, then the smoke alarm suddenly went off, and now everyone's racing to open every window!', the pace starts calm, accelerates sharply at the alarm, and stays fast right through everyone racing to open windows)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 185-1)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "targetSpeed": 1.36,
+            "hint": "Listen to the full contour of 'Dinner was calm, then the smoke alarm suddenly went off, and now everyone's racing to open every window!' How many separate pacing shifts can you track?",
+            "explanation": "This sentence has a complex pacing contour: the pace starts calm, accelerates sharply at the alarm, and stays fast right through everyone racing to open windows. Expert listening means tracking every shift, not just forming one overall impression."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L185_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "I'll just finish this chore here, and then, honestly, really rush to pick up the kids on time.",
+            "textToSpeak": "I'll just finish this chore here, and then, honestly, really rush to pick up the kids on time.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Decelerating (in 'I'll just finish this chore here, and then, honestly, really rush to pick up the kids on time.', every word is given exactly the same length and stress, producing a flat, robotic delivery)",
+                "Accelerating (in 'I'll just finish this chore here, and then, honestly, really rush to pick up the kids on time.', 'finish this chore' moves at a normal pace, while 'really rush to pick up the kids' accelerates for the looming pickup time, creating natural, varied pacing)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 185-2)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "correctAnswer": "Accelerating (in 'I'll just finish this chore here, and then, honestly, really rush to pick up the kids on time.', 'finish this chore' moves at a normal pace, while 'really rush to pick up the kids' accelerates for the looming pickup time, creating natural, varied pacing)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.3,
+            "hint": "Listen to 'I'll just finish this chore here, and then, honestly, really rush to pick up the kids on time.' Does the pace vary naturally, or stay perfectly flat and robotic?",
+            "explanation": "Natural speech varies its pace constantly - 'finish this chore' moves at a normal pace, while 'really rush to pick up the kids' accelerates for the looming pickup time - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just finish this chore here, and then, honestly, really rush to pick up the kids on time.' would."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L185_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "It was, overall, a slightly busier week than usual.",
+            "textToSpeak": "It was, overall, a slightly busier week than usual.",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Decelerating (in 'It was, overall, a slightly busier week than usual.', the pace eases back just slightly on 'slightly busier', a mild, measured observation - a small but genuine shift)",
+                "Accelerating (in 'It was, overall, a slightly busier week than usual.', the pace drops dramatically on 'slightly busier' as if describing total chaos)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 185-3)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Decelerating (in 'It was, overall, a slightly busier week than usual.', the pace eases back just slightly on 'slightly busier', a mild, measured observation - a small but genuine shift)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.93,
+            "hint": "Listen very closely to 'It was, overall, a slightly busier week than usual.' This is a subtle shift - can you catch the small change in pace?",
+            "explanation": "This is a subtle, expert-level distinction in 'It was, overall, a slightly busier week than usual.': the pace eases back just slightly on 'slightly busier', a mild, measured observation. The change is real but small, unlike a dramatic, obvious shift."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L186_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "Browsing was relaxed, then I spotted the last one on the shelf, and now I'm racing another shopper to grab it!",
+            "textToSpeak": "Browsing was relaxed, then I spotted the last one on the shelf, and now I'm racing another shopper to grab it!",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Accelerating (in 'Browsing was relaxed, then I spotted the last one on the shelf, and now I'm racing another shopper to grab it!', the pace starts relaxed, accelerates sharply at spotting the last item, and stays fast through the race to grab it)",
+                "Decelerating (in 'Browsing was relaxed, then I spotted the last one on the shelf, and now I'm racing another shopper to grab it!', the pace simply decelerates once into careful browsing and stays slow through grabbing the item)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
+            "correctAnswer": "Accelerating (in 'Browsing was relaxed, then I spotted the last one on the shelf, and now I'm racing another shopper to grab it!', the pace starts relaxed, accelerates sharply at spotting the last item, and stays fast through the race to grab it)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 186-1)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "targetSpeed": 1.38,
+            "hint": "Listen to the full contour of 'Browsing was relaxed, then I spotted the last one on the shelf, and now I'm racing another shopper to grab it!' How many separate pacing shifts can you track?",
+            "explanation": "This sentence has a complex pacing contour: the pace starts relaxed, accelerates sharply at spotting the last item, and stays fast through the race to grab it. Expert listening means tracking every shift, not just forming one overall impression."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L186_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "I'll just glance at this shelf here, and then, honestly, really hurry before the sale ends.",
+            "textToSpeak": "I'll just glance at this shelf here, and then, honestly, really hurry before the sale ends.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Decelerating (in 'I'll just glance at this shelf here, and then, honestly, really hurry before the sale ends.', every word is given exactly the same length and stress, producing a flat, robotic delivery)",
+                "Accelerating (in 'I'll just glance at this shelf here, and then, honestly, really hurry before the sale ends.', 'glance at this shelf' moves at a normal pace, while 'really hurry before the sale ends' accelerates with urgency, creating natural, varied pacing)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 186-2)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "correctAnswer": "Accelerating (in 'I'll just glance at this shelf here, and then, honestly, really hurry before the sale ends.', 'glance at this shelf' moves at a normal pace, while 'really hurry before the sale ends' accelerates with urgency, creating natural, varied pacing)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.3,
+            "hint": "Listen to 'I'll just glance at this shelf here, and then, honestly, really hurry before the sale ends.' Does the pace vary naturally, or stay perfectly flat and robotic?",
+            "explanation": "Natural speech varies its pace constantly - 'glance at this shelf' moves at a normal pace, while 'really hurry before the sale ends' accelerates with urgency - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just glance at this shelf here, and then, honestly, really hurry before the sale ends.' would."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L186_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "It was, overall, a slightly more expensive trip than planned.",
+            "textToSpeak": "It was, overall, a slightly more expensive trip than planned.",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Decelerating (in 'It was, overall, a slightly more expensive trip than planned.', the pace eases back just slightly on 'slightly more expensive', a mild, measured observation - a small but genuine shift)",
+                "Accelerating (in 'It was, overall, a slightly more expensive trip than planned.', the pace drops dramatically on 'slightly more expensive' as if announcing financial disaster)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Decelerating (in 'It was, overall, a slightly more expensive trip than planned.', the pace eases back just slightly on 'slightly more expensive', a mild, measured observation - a small but genuine shift)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 186-3)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 0.93,
+            "hint": "Listen very closely to 'It was, overall, a slightly more expensive trip than planned.' This is a subtle shift - can you catch the small change in pace?",
+            "explanation": "This is a subtle, expert-level distinction in 'It was, overall, a slightly more expensive trip than planned.': the pace eases back just slightly on 'slightly more expensive', a mild, measured observation. The change is real but small, unlike a dramatic, obvious shift."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L187_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "Cooking was relaxed, then I smelled something burning, and now I'm racing to save the dish!",
+            "textToSpeak": "Cooking was relaxed, then I smelled something burning, and now I'm racing to save the dish!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Accelerating (in 'Cooking was relaxed, then I smelled something burning, and now I'm racing to save the dish!', the pace starts relaxed, accelerates sharply at the smell of burning, and stays fast through racing to save the dish)",
+                "Decelerating (in 'Cooking was relaxed, then I smelled something burning, and now I'm racing to save the dish!', the pace simply decelerates once into worry and stays slow through saving the dish)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 187-1)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "correctAnswer": "Accelerating (in 'Cooking was relaxed, then I smelled something burning, and now I'm racing to save the dish!', the pace starts relaxed, accelerates sharply at the smell of burning, and stays fast through racing to save the dish)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.38,
+            "hint": "Listen to the full contour of 'Cooking was relaxed, then I smelled something burning, and now I'm racing to save the dish!' How many separate pacing shifts can you track?",
+            "explanation": "This sentence has a complex pacing contour: the pace starts relaxed, accelerates sharply at the smell of burning, and stays fast through racing to save the dish. Expert listening means tracking every shift, not just forming one overall impression."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L187_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "I'll just stir this here, and then, honestly, really rush before the guests arrive.",
+            "textToSpeak": "I'll just stir this here, and then, honestly, really rush before the guests arrive.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'I'll just stir this here, and then, honestly, really rush before the guests arrive.', every word is given exactly the same length and stress, producing a flat, robotic delivery)",
+                "Accelerating (in 'I'll just stir this here, and then, honestly, really rush before the guests arrive.', 'stir this' moves at a normal pace, while 'really rush before the guests arrive' accelerates with urgency, creating natural, varied pacing)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Accelerating (in 'I'll just stir this here, and then, honestly, really rush before the guests arrive.', 'stir this' moves at a normal pace, while 'really rush before the guests arrive' accelerates with urgency, creating natural, varied pacing)",
+            "correctAnswerIndex": 1,
             "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 187-2)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "hint": "Listen to 'I'll just stir this here, and then, honestly, really rush before the guests arrive.' Does the pace vary naturally, or stay perfectly flat and robotic?",
+            "explanation": "Natural speech varies its pace constantly - 'stir this' moves at a normal pace, while 'really rush before the guests arrive' accelerates with urgency - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just stir this here, and then, honestly, really rush before the guests arrive.' would."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L187_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Drive carefully through the heavy rain.",
-            "textToSpeak": "Drive carefully through the heavy rain.",
+            "word": "It was, overall, a slightly spicier dish than usual.",
+            "textToSpeak": "It was, overall, a slightly spicier dish than usual.",
             "options": [
-                "Decelerating (Fast start, slow emphasis on 'heavy rain')",
-                "Accelerating (Slow start, fast structural resolution)"
+                "Decelerating (in 'It was, overall, a slightly spicier dish than usual.', the pace eases back just slightly on 'slightly spicier', a mild, measured observation - a small but genuine shift)",
+                "Accelerating (in 'It was, overall, a slightly spicier dish than usual.', the pace drops dramatically on 'slightly spicier' as if warning of extreme heat)"
             ],
-            "correctAnswer": "Decelerating (Fast start, slow emphasis on 'heavy rain')",
+            "correctAnswer": "Decelerating (in 'It was, overall, a slightly spicier dish than usual.', the pace eases back just slightly on 'slightly spicier', a mild, measured observation - a small but genuine shift)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 187-3)",
-            "explanation": "In professional speech coaching, speakers decelerate when presenting core warning adjectives or key elements like 'heavy rain'."
+            "targetSpeed": 0.93,
+            "hint": "Listen very closely to 'It was, overall, a slightly spicier dish than usual.' This is a subtle shift - can you catch the small change in pace?",
+            "explanation": "This is a subtle, expert-level distinction in 'It was, overall, a slightly spicier dish than usual.': the pace eases back just slightly on 'slightly spicier', a mild, measured observation. The change is real but small, unlike a dramatic, obvious shift."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L188_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please repeat that sentence slowly.",
-            "textToSpeak": "Please repeat that sentence slowly.",
+            "word": "The system was stable, then a critical alert suddenly flashed, and now I'm racing to patch it before it spreads!",
+            "textToSpeak": "The system was stable, then a critical alert suddenly flashed, and now I'm racing to patch it before it spreads!",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on the command 'slowly')"
+                "Accelerating (in 'The system was stable, then a critical alert suddenly flashed, and now I'm racing to patch it before it spreads!', the pace starts stable, accelerates sharply at the critical alert, and stays fast through racing to patch it)",
+                "Decelerating (in 'The system was stable, then a critical alert suddenly flashed, and now I'm racing to patch it before it spreads!', the pace simply decelerates once into worry and stays slow through patching it)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on the command 'slowly')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.75,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 188-1)",
-            "explanation": "To highlight the adverbial instruction, the speaker decelerates on 'slowly' to mirror the sentence's meaning."
+            "correctAnswer": "Accelerating (in 'The system was stable, then a critical alert suddenly flashed, and now I'm racing to patch it before it spreads!', the pace starts stable, accelerates sharply at the critical alert, and stays fast through racing to patch it)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.38,
+            "hint": "Listen to the full contour of 'The system was stable, then a critical alert suddenly flashed, and now I'm racing to patch it before it spreads!' How many separate pacing shifts can you track?",
+            "explanation": "This sentence has a complex pacing contour: the pace starts stable, accelerates sharply at the critical alert, and stays fast through racing to patch it. Expert listening means tracking every shift, not just forming one overall impression."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L188_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need to leave immediately!",
-            "textToSpeak": "We need to leave immediately!",
+            "word": "I'll just check this log here, and then, honestly, really hurry before the deadline hits.",
+            "textToSpeak": "I'll just check this log here, and then, honestly, really hurry before the deadline hits.",
             "options": [
-                "Accelerating (Urgent, rapid resolution on 'immediately')",
-                "Decelerating (Deliberate slow final emphasis)"
+                "Decelerating (in 'I'll just check this log here, and then, honestly, really hurry before the deadline hits.', every word is given exactly the same length and stress, producing a flat, robotic delivery)",
+                "Accelerating (in 'I'll just check this log here, and then, honestly, really hurry before the deadline hits.', 'check this log' moves at a normal pace, while 'really hurry before the deadline hits' accelerates with urgency, creating natural, varied pacing)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid resolution on 'immediately')",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Accelerating (in 'I'll just check this log here, and then, honestly, really hurry before the deadline hits.', 'check this log' moves at a normal pace, while 'really hurry before the deadline hits' accelerates with urgency, creating natural, varied pacing)",
+            "correctAnswerIndex": 1,
             "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 188-2)",
-            "explanation": "Urgent instructions demand acceleration (increased tempo) to convey emergency and prompt reaction."
+            "hint": "Listen to 'I'll just check this log here, and then, honestly, really hurry before the deadline hits.' Does the pace vary naturally, or stay perfectly flat and robotic?",
+            "explanation": "Natural speech varies its pace constantly - 'check this log' moves at a normal pace, while 'really hurry before the deadline hits' accelerates with urgency - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just check this log here, and then, honestly, really hurry before the deadline hits.' would."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L188_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk quietly down the dark corridor.",
-            "textToSpeak": "Walk quietly down the dark corridor.",
+            "word": "It was, overall, a slightly buggier release than expected.",
+            "textToSpeak": "It was, overall, a slightly buggier release than expected.",
             "options": [
-                "Decelerating (Slow emphasis on 'dark corridor')",
-                "Accelerating (Fast pacing structural resolution)"
+                "Decelerating (in 'It was, overall, a slightly buggier release than expected.', the pace eases back just slightly on 'slightly buggier', a mild, measured observation - a small but genuine shift)",
+                "Accelerating (in 'It was, overall, a slightly buggier release than expected.', the pace drops dramatically on 'slightly buggier' as if announcing total system failure)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'dark corridor')",
+            "correctAnswer": "Decelerating (in 'It was, overall, a slightly buggier release than expected.', the pace eases back just slightly on 'slightly buggier', a mild, measured observation - a small but genuine shift)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 188-3)",
-            "explanation": "Descriptive warnings slow down (decelerate) on final adjectives to create suspense and emphasize caution."
+            "targetSpeed": 0.93,
+            "hint": "Listen very closely to 'It was, overall, a slightly buggier release than expected.' This is a subtle shift - can you catch the small change in pace?",
+            "explanation": "This is a subtle, expert-level distinction in 'It was, overall, a slightly buggier release than expected.': the pace eases back just slightly on 'slightly buggier', a mild, measured observation. The change is real but small, unlike a dramatic, obvious shift."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L189_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Listen closely to these instructions.",
-            "textToSpeak": "Listen closely to these instructions.",
+            "word": "The check-up was routine, then the monitor suddenly spiked, and now the whole team's rushing to assess him!",
+            "textToSpeak": "The check-up was routine, then the monitor suddenly spiked, and now the whole team's rushing to assess him!",
             "options": [
-                "Accelerating (Fast pacing structural resolution)",
-                "Decelerating (Slow focus on 'instructions')"
+                "Accelerating (in 'The check-up was routine, then the monitor suddenly spiked, and now the whole team's rushing to assess him!', the pace starts routine, accelerates sharply at the monitor spike, and stays fast through the team rushing to assess him)",
+                "Decelerating (in 'The check-up was routine, then the monitor suddenly spiked, and now the whole team's rushing to assess him!', the pace simply decelerates once into concern and stays slow through the assessment)"
             ],
-            "correctAnswer": "Decelerating (Slow focus on 'instructions')",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.85,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 189-1)",
-            "explanation": "To ensure understanding, the speaker decelerates on key nouns like 'instructions'."
+            "correctAnswer": "Accelerating (in 'The check-up was routine, then the monitor suddenly spiked, and now the whole team's rushing to assess him!', the pace starts routine, accelerates sharply at the monitor spike, and stays fast through the team rushing to assess him)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.38,
+            "hint": "Listen to the full contour of 'The check-up was routine, then the monitor suddenly spiked, and now the whole team's rushing to assess him!' How many separate pacing shifts can you track?",
+            "explanation": "This sentence has a complex pacing contour: the pace starts routine, accelerates sharply at the monitor spike, and stays fast through the team rushing to assess him. Expert listening means tracking every shift, not just forming one overall impression."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L189_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Run as fast as you can!",
-            "textToSpeak": "Run as fast as you can!",
+            "word": "I'll just note this symptom here, and then, honestly, really hurry to call the doctor.",
+            "textToSpeak": "I'll just note this symptom here, and then, honestly, really hurry to call the doctor.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching action)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'I'll just note this symptom here, and then, honestly, really hurry to call the doctor.', every word is given exactly the same length and stress, producing a flat, robotic delivery)",
+                "Accelerating (in 'I'll just note this symptom here, and then, honestly, really hurry to call the doctor.', 'note this symptom' moves at a normal pace, while 'really hurry to call the doctor' accelerates with urgency, creating natural, varied pacing)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching action)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.4,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 189-2)",
-            "explanation": "Sentences conveying intense action accelerate to reinforce the command's physical pacing."
+            "correctAnswer": "Accelerating (in 'I'll just note this symptom here, and then, honestly, really hurry to call the doctor.', 'note this symptom' moves at a normal pace, while 'really hurry to call the doctor' accelerates with urgency, creating natural, varied pacing)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.3,
+            "hint": "Listen to 'I'll just note this symptom here, and then, honestly, really hurry to call the doctor.' Does the pace vary naturally, or stay perfectly flat and robotic?",
+            "explanation": "Natural speech varies its pace constantly - 'note this symptom' moves at a normal pace, while 'really hurry to call the doctor' accelerates with urgency - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just note this symptom here, and then, honestly, really hurry to call the doctor.' would."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L189_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The train will arrive shortly.",
-            "textToSpeak": "The train will arrive shortly.",
+            "word": "It was, overall, a slightly higher fever than yesterday.",
+            "textToSpeak": "It was, overall, a slightly higher fever than yesterday.",
             "options": [
-                "Decelerating (Slow emphasis on time element 'shortly')",
-                "Accelerating (Fast structural resolution)"
+                "Decelerating (in 'It was, overall, a slightly higher fever than yesterday.', the pace eases back just slightly on 'slightly higher', a mild, measured clinical observation - a small but genuine shift)",
+                "Accelerating (in 'It was, overall, a slightly higher fever than yesterday.', the pace drops dramatically on 'slightly higher' as if announcing a medical emergency)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on time element 'shortly')",
+            "correctAnswer": "Decelerating (in 'It was, overall, a slightly higher fever than yesterday.', the pace eases back just slightly on 'slightly higher', a mild, measured clinical observation - a small but genuine shift)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.9,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 189-3)",
-            "explanation": "Standard informative announcements slow down on the final temporal adverb 'shortly'."
+            "targetSpeed": 0.93,
+            "hint": "Listen very closely to 'It was, overall, a slightly higher fever than yesterday.' This is a subtle shift - can you catch the small change in pace?",
+            "explanation": "This is a subtle, expert-level distinction in 'It was, overall, a slightly higher fever than yesterday.': the pace eases back just slightly on 'slightly higher', a mild, measured clinical observation. The change is real but small, unlike a dramatic, obvious shift."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L190_Q1",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stop what you are doing right now!",
-            "textToSpeak": "Stop what you are doing right now!",
+            "word": "The show was calm, then the lead actor suddenly missed their cue, and now the whole cast is scrambling to recover!",
+            "textToSpeak": "The show was calm, then the lead actor suddenly missed their cue, and now the whole cast is scrambling to recover!",
             "options": [
-                "Accelerating (Urgent tempo on the command 'right now')",
-                "Decelerating (Slow relaxed resolution)"
+                "Accelerating (in 'The show was calm, then the lead actor suddenly missed their cue, and now the whole cast is scrambling to recover!', the pace starts calm, accelerates sharply at the missed cue, and stays fast through the cast scrambling to recover)",
+                "Decelerating (in 'The show was calm, then the lead actor suddenly missed their cue, and now the whole cast is scrambling to recover!', the pace simply decelerates once into confusion and stays slow through the recovery)"
             ],
-            "correctAnswer": "Accelerating (Urgent tempo on the command 'right now')",
+            "correctAnswer": "Accelerating (in 'The show was calm, then the lead actor suddenly missed their cue, and now the whole cast is scrambling to recover!', the pace starts calm, accelerates sharply at the missed cue, and stays fast through the cast scrambling to recover)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 190-1)",
-            "explanation": "High-authority commands accelerate on the final directive to convey high urgency."
+            "targetSpeed": 1.38,
+            "hint": "Listen to the full contour of 'The show was calm, then the lead actor suddenly missed their cue, and now the whole cast is scrambling to recover!' How many separate pacing shifts can you track?",
+            "explanation": "This sentence has a complex pacing contour: the pace starts calm, accelerates sharply at the missed cue, and stays fast through the cast scrambling to recover. Expert listening means tracking every shift, not just forming one overall impression."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L190_Q2",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Speak clearly during your presentation.",
-            "textToSpeak": "Speak clearly during your presentation.",
+            "word": "I'll just find my seat here, and then, honestly, really hurry before the lights go down.",
+            "textToSpeak": "I'll just find my seat here, and then, honestly, really hurry before the lights go down.",
             "options": [
-                "Accelerating (Fast pacing resolution)",
-                "Decelerating (Slow emphasis on 'presentation')"
+                "Decelerating (in 'I'll just find my seat here, and then, honestly, really hurry before the lights go down.', every word is given exactly the same length and stress, producing a flat, robotic delivery)",
+                "Accelerating (in 'I'll just find my seat here, and then, honestly, really hurry before the lights go down.', 'find my seat' moves at a normal pace, while 'really hurry before the lights go down' accelerates with urgency, creating natural, varied pacing)"
             ],
-            "correctAnswer": "Decelerating (Slow emphasis on 'presentation')",
+            "correctAnswer": "Accelerating (in 'I'll just find my seat here, and then, honestly, really hurry before the lights go down.', 'find my seat' moves at a normal pace, while 'really hurry before the lights go down' accelerates with urgency, creating natural, varied pacing)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 190-2)",
-            "explanation": "Educational advice decelerates on the primary target noun to ensure retention."
+            "targetSpeed": 1.3,
+            "hint": "Listen to 'I'll just find my seat here, and then, honestly, really hurry before the lights go down.' Does the pace vary naturally, or stay perfectly flat and robotic?",
+            "explanation": "Natural speech varies its pace constantly - 'find my seat' moves at a normal pace, while 'really hurry before the lights go down' accelerates with urgency - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just find my seat here, and then, honestly, really hurry before the lights go down.' would."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L190_Q3",
-            "instruction": "IDENTIFY THE SPEED VARIANCE CONTOUR AND PACING INTENT ENUNCIATED",
-            "difficulty": 5,
+            "instruction": "Listen to the full pacing contour. How many shifts can you track?",
+            "difficulty": 10,
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry up, we are late!",
-            "textToSpeak": "Hurry up, we are late!",
+            "word": "It was, overall, a slightly longer film than expected.",
+            "textToSpeak": "It was, overall, a slightly longer film than expected.",
             "options": [
-                "Accelerating (Urgent, rapid pace matching situation)",
-                "Decelerating (Slow deliberate pronunciation)"
+                "Decelerating (in 'It was, overall, a slightly longer film than expected.', the pace eases back just slightly on 'slightly longer', a mild, measured observation - a small but genuine shift)",
+                "Accelerating (in 'It was, overall, a slightly longer film than expected.', the pace drops dramatically on 'slightly longer' as if announcing an exhausting ordeal)"
             ],
-            "correctAnswer": "Accelerating (Urgent, rapid pace matching situation)",
+            "correctAnswer": "Decelerating (in 'It was, overall, a slightly longer film than expected.', the pace eases back just slightly on 'slightly longer', a mild, measured observation - a small but genuine shift)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to the sentence speed. Does the speaker accelerate to show urgency or decelerate for heavy emphasis? (Calibration 190-3)",
-            "explanation": "Urgent announcements accelerate in pace to convey the lack of remaining time."
+            "targetSpeed": 0.93,
+            "hint": "Listen very closely to 'It was, overall, a slightly longer film than expected.' This is a subtle shift - can you catch the small change in pace?",
+            "explanation": "This is a subtle, expert-level distinction in 'It was, overall, a slightly longer film than expected.': the pace eases back just slightly on 'slightly longer', a mild, measured observation. The change is real but small, unlike a dramatic, obvious shift."
         }
     ]
 }
