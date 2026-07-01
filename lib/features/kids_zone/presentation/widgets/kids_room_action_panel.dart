@@ -42,12 +42,12 @@ class KidsRoomActionPanel extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Expanded(child: _buildModernActionButton(context, "Decor", "🎨", Colors.indigo, onDecor)),
-          Expanded(child: _buildModernActionButton(context, "Feed", "🍎", Colors.pink, onFeed)),
+          Expanded(child: _buildModernActionButton(context, "Feed", "🍎", Colors.green, onFeed)),
           Expanded(child: _buildModernActionButton(
             context,
             isSleeping ? "Wake" : "Sleep",
             isSleeping ? "☀️" : "🌙",
-            Colors.amber,
+            Colors.deepPurple,
             onSleepToggle,
           )),
           Expanded(child: _buildModernActionButton(context, "Talk", "💬", Colors.lightBlue, onTalk)),
