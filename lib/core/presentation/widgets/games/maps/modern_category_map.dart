@@ -766,7 +766,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     bool isPremium,
   ) {
     final bool isCompleted = level <= completedLevels;
-    final bool isPlayable = level == completedLevels + 1 && level <= unlockedLevels;
+    final bool isPlayable = level == completedLevels + 1 && (level <= unlockedLevels || isPremium);
     // Hide Toll Gate until user actually reaches it
     final bool isTollGate = level == completedLevels + 1 && level > unlockedLevels && !isPremium;
     final bool isHalfUnlocked = level > completedLevels + 1 && level <= unlockedLevels && unlockedLevels > 10;

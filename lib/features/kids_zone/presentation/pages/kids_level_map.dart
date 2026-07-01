@@ -282,7 +282,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                           final isCompleted = level <= highestCompleted;
                           final isPlayable =
                               level == highestCompleted + 1 &&
-                              level <= unlockedLevel;
+                              (level <= unlockedLevel || isPremium);
                           final isTollGate =
                               level == highestCompleted + 1 &&
                               level > unlockedLevel &&

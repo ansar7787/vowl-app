@@ -14,6 +14,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
+import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 
 // Decoupled sub-widgets
 import 'package:vowl/features/profile/presentation/widgets/profile_header.dart';
@@ -117,6 +118,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                             SizedBox(height: 12.h),
                             const AdRewardCard(margin: EdgeInsets.zero),
+
+                            SizedBox(height: 12.h),
+                            _buildKeyShopBanner(context, user),
 
                             SizedBox(height: 20.h),
                             _buildSectionHeader(
@@ -230,6 +234,94 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       color: isDark ? Colors.white38 : Colors.black38,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: isDark ? Colors.white24 : Colors.black12,
+              size: 16.r,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildKeyShopBanner(BuildContext context, user) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final keys = user.keys ?? 0;
+    
+    return ScaleButton(
+      onTap: () {
+        di.sl<HapticService>().selection();
+        KeyShopBottomSheet.show(
+          context: context,
+          isKidsMode: false,
+        );
+      },
+      child: GlassTile(
+        borderRadius: BorderRadius.circular(24.r),
+        padding: EdgeInsets.all(20.w),
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+              decoration: BoxDecoration(
+                color: Colors.amber.shade400,
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(color: Colors.amber.shade700, width: 2.w),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.amber.shade700,
+                    offset: Offset(0, 4.h),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.key_rounded, color: Colors.white, size: 20.r),
+                  SizedBox(width: 8.w),
+                  Text(
+                    keys.toString(),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(width: 16.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Golden Keys',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                  SizedBox(height: 4.h),
+                  Text(
+                    'Get more keys to unlock gates instantly!',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white60 : Colors.black54,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
                     ),

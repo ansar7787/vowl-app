@@ -5,10 +5,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
-import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class KidsZoneHomeHeader extends StatelessWidget {
   final String mascot;

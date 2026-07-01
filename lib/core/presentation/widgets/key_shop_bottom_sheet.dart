@@ -10,6 +10,8 @@ import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_golden_key.dart';
 import 'package:vowl/features/auth/domain/usecases/add_golden_key.dart';
+import 'package:go_router/go_router.dart';
+import 'package:vowl/core/utils/app_router.dart';
 
 class KeyShopBottomSheet {
   static void show({
@@ -296,6 +298,78 @@ class _KeyShopContent extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(height: 24.h),
+                
+                // Premium bypass info
+                ScaleButton(
+                  onTap: () {
+                    Navigator.pop(context);
+                    parentContext.push(AppRouter.premiumRoute);
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: const Color(0xFFF59E0B).withValues(alpha: 0.5),
+                        width: 1.5.w,
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(8.r),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.workspace_premium_rounded,
+                            color: const Color(0xFFF59E0B),
+                            size: 24.r,
+                          ),
+                        ),
+                        SizedBox(width: 12.w),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Tired of Keys?",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: const Color(0xFFF59E0B),
+                                ),
+                              ),
+                              SizedBox(height: 2.h),
+                              Text(
+                                "Premium users bypass all gates!",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: Theme.of(context).brightness == Brightness.dark 
+                                    ? Colors.white70 
+                                    : Colors.black54,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          color: const Color(0xFFF59E0B),
+                          size: 16.r,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                
                 SizedBox(height: MediaQuery.of(context).padding.bottom),
               ],
             ),
