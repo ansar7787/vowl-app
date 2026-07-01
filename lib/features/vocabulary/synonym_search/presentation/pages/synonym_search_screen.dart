@@ -454,11 +454,13 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                       fit: BoxFit.scaleDown,
                                       child: SynonymInstructionHeader(
                                         color: theme.primaryColor,
+                                        instruction: quest.instruction ?? "WARP THE SYNONYM SHARD",
                                       ),
                                     ),
                                   )
                                 : SynonymInstructionHeader(
                                     color: theme.primaryColor,
+                                    instruction: quest.instruction ?? "WARP THE SYNONYM SHARD",
                                   ),
                           ),
                         ],

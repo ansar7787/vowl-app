@@ -4,10 +4,12 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 class SynonymInstructionHeader extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const SynonymInstructionHeader({
     super.key,
     required this.color,
+    this.instruction = "WARP THE SYNONYM SHARD",
   });
 
   @override
@@ -32,13 +34,13 @@ class SynonymInstructionHeader extends StatelessWidget {
           Icon(Icons.cyclone_rounded, size: 16.r, color: color),
           SizedBox(width: 10.w),
           Text(
-            "WARP THE SYNONYM SHARD",
+            instruction.toUpperCase(),
             style: TextStyle(
               fontFamily: 'RobotoMono',
               fontSize: 12.sp,
               fontWeight: FontWeight.bold,
               color: color,
-              letterSpacing: 2,
+              letterSpacing: 1.5,
               shadows: [
                 Shadow(color: color.withValues(alpha: 0.5), blurRadius: 10),
               ],
