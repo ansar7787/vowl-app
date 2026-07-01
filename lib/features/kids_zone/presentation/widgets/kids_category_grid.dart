@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class KidsCategoryGrid extends StatelessWidget {
   final bool isDark;
@@ -215,46 +214,53 @@ class KidsCategoryGrid extends StatelessWidget {
   ) {
     return ScaleButton(
       onTap: onTap,
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(32.r),
-        borderColor: color.withValues(alpha: 0.3),
-        child: Container(
-          padding: EdgeInsets.all(20.r),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                padding: EdgeInsets.all(12.r),
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(20.r),
+      child: Container(
+        padding: EdgeInsets.all(20.r),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.circular(32.r),
+          border: Border.all(color: color, width: 3.w),
+          boxShadow: [
+            BoxShadow(
+              color: color.withValues(alpha: 0.6),
+              offset: Offset(0, 6.h),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(20.r),
+              ),
+              child: Icon(icon, color: color, size: 32.sp),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(fontFamily: 'Outfit', 
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : const Color(0xFF1E293B),
+                  ),
                 ),
-                child: Icon(icon, color: color, size: 32.sp),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF1E293B),
-                    ),
+                Text(
+                  subtitle,
+                  style: TextStyle(fontFamily: 'Outfit', 
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w500,
+                    color: isDark ? Colors.white60 : Colors.black45,
                   ),
-                  Text(
-                    subtitle,
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w500,
-                      color: isDark ? Colors.white60 : Colors.black45,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

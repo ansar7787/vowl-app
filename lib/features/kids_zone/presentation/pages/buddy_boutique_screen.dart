@@ -117,9 +117,19 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       elevation: 0,
       toolbarHeight: 70.h,
       automaticallyImplyLeading: false,
-      title: GlassTile(
+      title: Container(
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-        borderRadius: BorderRadius.circular(24.r),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(color: isDark ? Colors.blue.shade700 : Colors.blue.shade200, width: 3.w),
+          boxShadow: [
+            BoxShadow(
+              color: isDark ? Colors.blue.shade900 : Colors.blue.shade100,
+              offset: Offset(0, 4.h),
+            ),
+          ],
+        ),
         child: Row(
           children: [
             SizedBox(
@@ -506,66 +516,63 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     required bool isOwned,
     required bool isEquipped,
   }) {
+    final itemColor = item['color'] as Color;
     return ScaleButton(
       onTap: () => _handleItemAction(context, item, isOwned, isEquipped),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(24.r),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-          child: Container(
-            decoration: BoxDecoration(
-              color: isEquipped
-                  ? (item['color'] as Color).withValues(alpha: 0.2)
-                  : (isDark
-                        ? Colors.white.withValues(alpha: 0.05)
-                        : Colors.white.withValues(alpha: 0.6)),
-              borderRadius: BorderRadius.circular(24.r),
-              border: Border.all(
-                color: isEquipped
-                    ? (item['color'] as Color)
-                    : (isDark ? Colors.white10 : Colors.white),
-                width: 2,
+      child: Container(
+        decoration: BoxDecoration(
+          color: isEquipped
+              ? itemColor.withValues(alpha: 0.1)
+              : (isDark ? const Color(0xFF1E293B) : Colors.white),
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(
+            color: itemColor,
+            width: 3.w,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: itemColor.withValues(alpha: 0.5),
+              offset: Offset(0, 4.h),
+            ),
+          ],
+        ),
+        padding: EdgeInsets.all(16.r),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(item['icon'] as String, style: TextStyle(fontSize: 40.sp))
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .scale(
+                  begin: const Offset(1, 1),
+                  end: const Offset(1.1, 1.1),
+                  duration: 2.seconds,
+                ),
+            SizedBox(height: 12.h),
+            Text(
+              item['name'] as String,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w900,
+                color: isDark ? Colors.white : const Color(0xFF1E293B),
               ),
             ),
-            padding: EdgeInsets.all(16.r),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(item['icon'] as String, style: TextStyle(fontSize: 40.sp))
-                    .animate(onPlay: (c) => c.repeat(reverse: true))
-                    .scale(
-                      begin: const Offset(1, 1),
-                      end: const Offset(1.1, 1.1),
-                      duration: 2.seconds,
-                    ),
-                SizedBox(height: 12.h),
-                Text(
-                  item['name'] as String,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF1E293B),
-                  ),
-                ),
-                SizedBox(height: 8.h),
-                if (isEquipped)
-                  _buildItemStatusTag(
-                    "EQUIPPED",
-                    item['color'] as Color,
-                    item['color'] as Color,
-                  )
-                else if (isOwned)
-                  _buildItemStatusTag(
-                    "EQUIP",
-                    isDark ? Colors.white10 : Colors.grey[200]!,
-                    isDark ? Colors.white70 : Colors.black54,
-                  )
-                else
-                  _buildPriceTag(item['price'] as int, item['color'] as Color),
-              ],
-            ),
-          ),
+            SizedBox(height: 8.h),
+            if (isEquipped)
+              _buildItemStatusTag(
+                "EQUIPPED",
+                itemColor,
+                itemColor,
+              )
+            else if (isOwned)
+              _buildItemStatusTag(
+                "EQUIP",
+                isDark ? Colors.white10 : Colors.grey[200]!,
+                isDark ? Colors.white70 : Colors.black54,
+              )
+            else
+              _buildPriceTag(item['price'] as int, itemColor),
+          ],
         ),
       ),
     );
