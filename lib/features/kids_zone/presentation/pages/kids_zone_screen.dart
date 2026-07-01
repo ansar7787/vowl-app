@@ -294,9 +294,6 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
   Widget _buildSlimAppBar(BuildContext context, int coins) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final contrastColor = isDark ? Colors.white : const Color(0xFF1E293B);
-    final buttonBgColor = isDark
-        ? Colors.white10
-        : Colors.indigo.withValues(alpha: 0.08);
 
     return SliverAppBar(
       floating: true,

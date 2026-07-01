@@ -173,28 +173,16 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
           return Container(
             margin: EdgeInsets.fromLTRB(24.w, 30.h, 24.w, 24.h),
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: isDark
-                    ? [
-                        Colors.white.withValues(alpha: 0.1),
-                        Colors.white.withValues(alpha: 0.02),
-                      ]
-                    : [Colors.white, const Color(0xFFF1F5F9)],
-              ),
+              color: isDark ? const Color(0xFF1E293B) : Colors.white,
               borderRadius: BorderRadius.circular(35.r),
               border: Border.all(
-                color: Colors.white.withValues(alpha: 0.2),
-                width: 1.5,
+                color: isDark ? Colors.blue.shade700 : Colors.blue.shade200,
+                width: 3.w,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: (isDark ? Colors.blue : Colors.black).withValues(
-                    alpha: 0.1,
-                  ),
-                  blurRadius: 30,
-                  offset: const Offset(0, 15),
+                  color: isDark ? Colors.blue.shade900 : Colors.blue.shade100,
+                  offset: Offset(0, 8.h),
                 ),
               ],
             ),
@@ -321,15 +309,16 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
             margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
             padding: EdgeInsets.all(24.r),
             decoration: BoxDecoration(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.05)
-                  : Colors.white,
+              color: isDark ? const Color(0xFF1E293B) : Colors.white,
               borderRadius: BorderRadius.circular(32.r),
+              border: Border.all(
+                color: Colors.amber,
+                width: 3.w,
+              ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.05),
-                  blurRadius: 20,
-                  offset: const Offset(0, 10),
+                  color: Colors.amber.shade700,
+                  offset: Offset(0, 8.h),
                 ),
               ],
             ),
@@ -440,8 +429,23 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         decoration: BoxDecoration(
-          color: isSelected ? color : (isDark ? Colors.white10 : Colors.white),
+          color: isSelected ? color : (isDark ? const Color(0xFF1E293B) : Colors.white),
           borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: isSelected ? color : (isDark ? Colors.grey.shade700 : Colors.grey.shade300),
+            width: 2.w,
+          ),
+          boxShadow: isSelected ? [
+            BoxShadow(
+              color: color.withValues(alpha: 0.6),
+              offset: Offset(0, 4.h),
+            ),
+          ] : [
+            BoxShadow(
+              color: isDark ? Colors.grey.shade900 : Colors.grey.shade200,
+              offset: Offset(0, 4.h),
+            ),
+          ],
         ),
         child: Row(
           children: [

@@ -241,13 +241,16 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                             width: 36.r,
                             height: 36.r,
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: isDark ? const Color(0xFF1E293B) : Colors.white,
                               shape: BoxShape.circle,
+                              border: Border.all(
+                                color: isDark ? Colors.blue.shade700 : Colors.blue.shade200, 
+                                width: 3.w,
+                              ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withValues(alpha: 0.1),
-                                  blurRadius: 10,
-                                  offset: const Offset(0, 4),
+                                  color: isDark ? Colors.blue.shade900 : Colors.blue.shade100,
+                                  offset: Offset(0, 4.h),
                                 ),
                               ],
                             ),
@@ -263,7 +266,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
 
                     // 2. The World Portal Header (Part of the Map Journey)
                     SliverToBoxAdapter(
-                      child: _buildGlassMapHeader(state.user, isDark),
+                      child: _buildChunkyMapHeader(state.user, isDark),
                     ),
 
                     // ── Map Segments ──
@@ -696,22 +699,22 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     );
   }
 
-  Widget _buildGlassMapHeader(dynamic user, bool isDark) {
+  Widget _buildChunkyMapHeader(dynamic user, bool isDark) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.08)
-              : Colors.white.withValues(alpha: 0.6),
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(32.r),
-          border: Border.all(color: widget.primaryColor.withValues(alpha: 0.2)),
+          border: Border.all(
+            color: widget.primaryColor,
+            width: 3.w,
+          ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.05),
-              blurRadius: 20,
-              offset: const Offset(0, 10),
+              color: widget.primaryColor.withValues(alpha: 0.6),
+              offset: Offset(0, 6.h),
             ),
           ],
         ),
@@ -772,25 +775,25 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                       vertical: 4.h,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFEF4444).withValues(alpha: 0.1),
+                      color: Colors.amber.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12.r),
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
-                          Icons.toys_rounded,
-                          color: const Color(0xFFEF4444),
-                          size: 10.r,
+                          Icons.monetization_on_rounded,
+                          color: Colors.amber,
+                          size: 14.r,
                         ),
                         SizedBox(width: 4.w),
                         Text(
-                          "${user?.kidsCoins ?? 0} TOYS",
+                          "${user?.kidsCoins ?? 0} COINS",
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 9.sp,
+                            fontSize: 10.sp,
                             fontWeight: FontWeight.w900,
-                            color: const Color(0xFFEF4444),
+                            color: Colors.amber.shade700,
                           ),
                         ),
                       ],
