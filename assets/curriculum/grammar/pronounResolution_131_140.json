@@ -5,573 +5,573 @@
     "quests": [
         {
             "id": "pr_l131_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "Mary gave John his book (unit 13).\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "Mary gave John his book (unit 13).",
+            "question": "The studio approached the actress, whose recent film broke box-office records.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The studio approached the actress, whose recent film broke box-office records.",
             "options": [
-                "book",
-                "John",
-                "gave"
+                "The actress",
+                "studio",
+                "film"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "John",
-            "hint": "Who owns the book in this context? (Log 13 calibration)",
-            "explanation": "'his' refers to John in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The actress",
+            "hint": "Whose film broke records?",
+            "explanation": "'whose' shows possession - the film belongs to 'the actress.'"
         },
         {
             "id": "pr_l131_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The team celebrated its victory (unit 13).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The team celebrated its victory (unit 13).",
+            "question": "Although the pharmacist warned the elderly patient about side effects, she filled the prescription anyway.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Although the pharmacist warned the elderly patient about side effects, she filled the prescription anyway.",
             "options": [
-                "The team",
-                "celebrated",
-                "victory"
+                "The elderly patient",
+                "pharmacist",
+                "prescription"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The team",
-            "hint": "Whose victory? (Log 13 calibration)",
-            "explanation": "'its' refers to 'The team' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswer": "The elderly patient",
+            "hint": "Who filled the prescription despite the warning?",
+            "explanation": "'she' refers to 'the elderly patient' - 'anyway' signals she went ahead despite the pharmacist's warning, making her the one who filled it."
         },
         {
             "id": "pr_l131_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The plant absorbed the water rapidly; it grew quickly (unit 13).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The plant absorbed the water rapidly; it grew quickly (unit 13).",
+            "question": "The district approved a one-week reduction to the upcoming summer break. This upset many families.\nWho or what does 'This' refer to?",
+            "targetWord": "This",
+            "sentence": "The district approved a one-week reduction to the upcoming summer break. This upset many families.",
             "options": [
-                "water",
-                "quickly",
-                "The plant"
+                "The reduction",
+                "district",
+                "families"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The plant",
-            "hint": "What grew? (Log 13 calibration)",
-            "explanation": "'it' refers to 'The plant' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The reduction",
+            "hint": "What upset many families?",
+            "explanation": "'This' refers back to the reduction just approved."
         },
         {
             "id": "pr_l132_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The technician checked the system; it was running (unit 13).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The technician checked the system; it was running (unit 13).",
+            "question": "The recruiter contacted the applicant, whose resume stood out immediately.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The recruiter contacted the applicant, whose resume stood out immediately.",
             "options": [
-                "checked",
-                "running",
-                "The system"
+                "The applicant",
+                "recruiter",
+                "resume"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The system",
-            "hint": "What was running? (Log 13 calibration)",
-            "explanation": "'it' refers to 'The system' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The applicant",
+            "hint": "Whose resume stood out?",
+            "explanation": "'whose' shows possession - the resume belongs to 'the applicant.'"
         },
         {
             "id": "pr_l132_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The signal failed before it reached the station (unit 13).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The signal failed before it reached the station (unit 13).",
+            "question": "Because the local guide warned the tourist about the currents, she avoided that section of beach.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Because the local guide warned the tourist about the currents, she avoided that section of beach.",
             "options": [
-                "The signal",
-                "signal",
-                "failed"
+                "The tourist",
+                "guide",
+                "section"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The signal",
-            "hint": "What failed to reach the station? (Log 13 calibration)",
-            "explanation": "'it' refers to 'The signal' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswer": "The tourist",
+            "hint": "Who avoided the dangerous area?",
+            "explanation": "'she' refers to 'the tourist' - she's the one receiving the warning and acting on it."
         },
         {
             "id": "pr_l132_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The girls carried their heavy bags (unit 13).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The girls carried their heavy bags (unit 13).",
+            "question": "The platform changed its privacy settings without notifying users. This sparked a backlash.\nWho or what does 'This' refer to?",
+            "targetWord": "This",
+            "sentence": "The platform changed its privacy settings without notifying users. This sparked a backlash.",
             "options": [
-                "bags",
-                "heavy",
-                "The girls"
+                "The change",
+                "platform",
+                "backlash"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The girls",
-            "hint": "Whose bags? (Log 13 calibration)",
-            "explanation": "'their' refers to 'The girls' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The change",
+            "hint": "What sparked the backlash?",
+            "explanation": "'This' refers back to the change itself, not to the platform or the backlash it caused."
         },
         {
             "id": "pr_l133_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The researchers published their findings (unit 13).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The researchers published their findings (unit 13).",
+            "question": "The chef trained the apprentice, whose knife skills improved rapidly.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The chef trained the apprentice, whose knife skills improved rapidly.",
             "options": [
-                "researchers",
-                "published",
-                "The researchers"
+                "The apprentice",
+                "chef",
+                "skills"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The researchers",
-            "hint": "Whose findings? (Log 13 calibration)",
-            "explanation": "'their' refers to 'The researchers' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The apprentice",
+            "hint": "Whose knife skills improved?",
+            "explanation": "'whose' shows possession - the knife skills belong to 'the apprentice.'"
         },
         {
             "id": "pr_l133_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The explorers lost their map in the cave (unit 13).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The explorers lost their map in the cave (unit 13).",
+            "question": "Although the aunt spoiled her niece constantly, she never spoiled her own children the same way.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Although the aunt spoiled her niece constantly, she never spoiled her own children the same way.",
             "options": [
-                "The explorers",
-                "cave",
-                "lost"
+                "The aunt",
+                "niece",
+                "children"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The explorers",
-            "hint": "Whose map? (Log 13 calibration)",
-            "explanation": "'their' refers to 'The explorers' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswer": "The aunt",
+            "hint": "Who treated her own kids differently?",
+            "explanation": "'she' refers to 'the aunt' - the sentence contrasts how she treats her niece versus her own children."
         },
         {
             "id": "pr_l133_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The driver told the passenger that he had arrived (unit 13).\nWho or what does 'he' refer to?",
-            "targetWord": "he",
-            "sentence": "The driver told the passenger that he had arrived (unit 13).",
+            "question": "The agency revised its refund policy after customer complaints. This restored public confidence.\nWho or what does 'This' refer to?",
+            "targetWord": "This",
+            "sentence": "The agency revised its refund policy after customer complaints. This restored public confidence.",
             "options": [
-                "passenger",
-                "arrived",
-                "The driver"
+                "The revision",
+                "agency",
+                "confidence"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The driver",
-            "hint": "Who arrived? (Log 13 calibration)",
-            "explanation": "'he' refers to 'The driver' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The revision",
+            "hint": "What restored public confidence?",
+            "explanation": "'This' refers back to the revision just made."
         },
         {
             "id": "pr_l134_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The pilot told the navigator that he was ready (unit 13).\nWho or what does 'he' refer to?",
-            "targetWord": "he",
-            "sentence": "The pilot told the navigator that he was ready (unit 13).",
+            "question": "The buyer negotiated with the seller, whose price seemed unreasonably high.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The buyer negotiated with the seller, whose price seemed unreasonably high.",
             "options": [
-                "told",
-                "pilot",
-                "The pilot"
+                "The seller",
+                "buyer",
+                "price"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The pilot",
-            "hint": "Who is speaking? (Log 13 calibration)",
-            "explanation": "'he' refers to 'The pilot' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The seller",
+            "hint": "Whose price seemed too high?",
+            "explanation": "'whose' shows possession - the price belongs to 'the seller.'"
         },
         {
             "id": "pr_l134_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The engine stopped because it was overheated (unit 13).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The engine stopped because it was overheated (unit 13).",
+            "question": "Because the mentor challenged the trainee constantly, she grew far more confident by the end of the year.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Because the mentor challenged the trainee constantly, she grew far more confident by the end of the year.",
             "options": [
-                "because",
-                "overheated",
-                "The engine"
+                "The trainee",
+                "mentor",
+                "year"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The engine",
-            "hint": "What was overheated? (Log 13 calibration)",
-            "explanation": "'it' refers to 'The engine' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The trainee",
+            "hint": "Who grew more confident?",
+            "explanation": "'she' refers to 'the trainee' - the challenges from the mentor are what built her confidence over time."
         },
         {
             "id": "pr_l134_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The owl caught its prey silently (unit 13).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The owl caught its prey silently (unit 13).",
+            "question": "The festival made cuts to its lineup due to weather concerns. This disappointed thousands of attendees.\nWho or what does 'This' refer to?",
+            "targetWord": "This",
+            "sentence": "The festival made cuts to its lineup due to weather concerns. This disappointed thousands of attendees.",
             "options": [
-                "prey",
-                "silently",
-                "The owl"
+                "The cuts",
+                "festival",
+                "attendees"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The owl",
-            "hint": "Whose prey? (Log 13 calibration)",
-            "explanation": "'its' refers to 'The owl' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The cuts",
+            "hint": "What disappointed attendees?",
+            "explanation": "'This' refers back to the lineup cuts just made."
         },
         {
             "id": "pr_l135_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The dog wagged its tail happily (unit 13).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The dog wagged its tail happily (unit 13).",
+            "question": "The clinic referred the patient to a specialist, whose expertise matched the rare condition.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The clinic referred the patient to a specialist, whose expertise matched the rare condition.",
             "options": [
-                "The dog",
-                "happily",
-                "tail"
+                "The specialist",
+                "clinic",
+                "condition"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The dog",
-            "hint": "Whose tail? (Log 13 calibration)",
-            "explanation": "'its' refers to 'The dog' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswer": "The specialist",
+            "hint": "Whose expertise matched the condition?",
+            "explanation": "'whose' shows possession - the expertise belongs to 'the specialist.'"
         },
         {
             "id": "pr_l135_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The architect showed the client his designs (unit 13).\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "The architect showed the client his designs (unit 13).",
+            "question": "Although the landlord pressured the tenant about the late rent, she remained calm throughout.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Although the landlord pressured the tenant about the late rent, she remained calm throughout.",
             "options": [
-                "The architect",
-                "showed",
-                "architect"
+                "The tenant",
+                "landlord",
+                "rent"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The architect",
-            "hint": "Who made the designs? (Log 13 calibration)",
-            "explanation": "'his' refers to 'The architect' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswer": "The tenant",
+            "hint": "Who stayed calm under pressure?",
+            "explanation": "'she' refers to 'the tenant' - she's the one being pressured and staying composed."
         },
         {
             "id": "pr_l135_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The boys played with their new toys (unit 13).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The boys played with their new toys (unit 13).",
+            "question": "The cruise line canceled three departures due to mechanical issues. This frustrated booked passengers.\nWho or what does 'This' refer to?",
+            "targetWord": "This",
+            "sentence": "The cruise line canceled three departures due to mechanical issues. This frustrated booked passengers.",
             "options": [
-                "toys",
-                "played",
-                "The boys"
+                "The cancellation",
+                "line",
+                "passengers"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The boys",
-            "hint": "Whose toys? (Log 13 calibration)",
-            "explanation": "'their' refers to 'The boys' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The cancellation",
+            "hint": "What frustrated the passengers?",
+            "explanation": "'This' refers back to the cancellation itself."
         },
         {
             "id": "pr_l136_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "She found the keys and put them away (unit 13).\nWho or what does 'them' refer to?",
-            "targetWord": "them",
-            "sentence": "She found the keys and put them away (unit 13).",
+            "question": "The university admitted the applicant, whose research proposal impressed the committee.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The university admitted the applicant, whose research proposal impressed the committee.",
             "options": [
-                "The keys",
-                "away",
-                "keys"
+                "The applicant",
+                "university",
+                "proposal"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The keys",
-            "hint": "What did she put away? (Log 13 calibration)",
-            "explanation": "'them' refers to 'The keys' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswer": "The applicant",
+            "hint": "Whose proposal impressed the committee?",
+            "explanation": "'whose' shows possession - the proposal belongs to 'the applicant.'"
         },
         {
             "id": "pr_l136_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The software updated itself overnight (unit 13).\nWho or what does 'itself' refer to?",
-            "targetWord": "itself",
-            "sentence": "The software updated itself overnight (unit 13).",
+            "question": "Because the supervisor pushed the new hire hard, he exceeded every target within months.\nWho or what does 'he' refer to?",
+            "targetWord": "he",
+            "sentence": "Because the supervisor pushed the new hire hard, he exceeded every target within months.",
             "options": [
-                "software",
-                "overnight",
-                "The software"
+                "The new hire",
+                "supervisor",
+                "target"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The software",
-            "hint": "What updated itself? (Log 13 calibration)",
-            "explanation": "'itself' refers to 'The software' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The new hire",
+            "hint": "Who exceeded every target?",
+            "explanation": "'he' refers to 'the new hire' - he's the one being pushed and the one whose performance is described."
         },
         {
             "id": "pr_l136_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The program corrected itself without help (unit 13).\nWho or what does 'itself' refer to?",
-            "targetWord": "itself",
-            "sentence": "The program corrected itself without help (unit 13).",
+            "question": "The supplier announced a cost increase across every product line. This squeezed restaurant profit margins.\nWho or what does 'This' refer to?",
+            "targetWord": "This",
+            "sentence": "The supplier announced a cost increase across every product line. This squeezed restaurant profit margins.",
             "options": [
-                "help",
-                "corrected",
-                "The program"
+                "The cost increase",
+                "supplier",
+                "margins"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The program",
-            "hint": "What corrected itself? (Log 13 calibration)",
-            "explanation": "'itself' refers to 'The program' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The cost increase",
+            "hint": "What squeezed profit margins?",
+            "explanation": "'This' refers back to the cost increase just announced."
         },
         {
             "id": "pr_l137_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The students love their new teacher (unit 13).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The students love their new teacher (unit 13).",
+            "question": "The label dropped the singer, whose album underperformed badly.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The label dropped the singer, whose album underperformed badly.",
             "options": [
-                "love",
-                "The students",
-                "students"
+                "The singer",
+                "label",
+                "album"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The students",
-            "hint": "Who owns the love? (Log 13 calibration)",
-            "explanation": "'their' refers to 'The students' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The singer",
+            "hint": "Whose album underperformed?",
+            "explanation": "'whose' shows possession - the album belongs to 'the singer.'"
         },
         {
             "id": "pr_l137_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The kids ate their lunch at noon (unit 13).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The kids ate their lunch at noon (unit 13).",
+            "question": "Although the diplomat respected the translator, who urged caution, she pressed forward with the original wording.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Although the diplomat respected the translator, who urged caution, she pressed forward with the original wording.",
             "options": [
-                "kids",
-                "noon",
-                "The kids"
+                "The diplomat",
+                "translator",
+                "wording"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The kids",
-            "hint": "Whose lunch? (Log 13 calibration)",
-            "explanation": "'their' refers to 'The kids' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The diplomat",
+            "hint": "Who pressed forward anyway?",
+            "explanation": "'she' refers to 'the diplomat' - despite respecting the translator's caution, she's the one who made the final call."
         },
         {
             "id": "pr_l137_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "Anna asked Lucy to help her pack (unit 13).\nWho or what does 'her' refer to?",
-            "targetWord": "her",
-            "sentence": "Anna asked Lucy to help her pack (unit 13).",
+            "question": "The agency approved a change to speed up reviews for urgent cases. This saved critical time for patients.\nWho or what does 'This' refer to?",
+            "targetWord": "This",
+            "sentence": "The agency approved a change to speed up reviews for urgent cases. This saved critical time for patients.",
             "options": [
-                "Lucy",
-                "pack",
-                "Anna"
+                "The change",
+                "agency",
+                "patients"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Anna",
-            "hint": "Who needs help? (Log 13 calibration)",
-            "explanation": "'her' refers to Anna in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The change",
+            "hint": "What saved critical time?",
+            "explanation": "'This' refers back to the change just approved."
         },
         {
             "id": "pr_l138_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The AI warned the users that they were in danger (unit 13).\nWho or what does 'they' refer to?",
-            "targetWord": "it",
-            "sentence": "The AI warned the users that they were in danger (unit 13).",
+            "question": "The board interviewed the candidate, whose vision aligned with company goals.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The board interviewed the candidate, whose vision aligned with company goals.",
             "options": [
-                "The users",
-                "warned",
-                "were"
+                "The candidate",
+                "board",
+                "vision"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The users",
-            "hint": "Who is in danger? (Log 13 calibration)",
-            "explanation": "'they' refers to 'The users' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswer": "The candidate",
+            "hint": "Whose vision aligned with the goals?",
+            "explanation": "'whose' shows possession - the vision belongs to 'the candidate.'"
         },
         {
             "id": "pr_l138_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The manager called the workers because they were late (unit 13).\nWho or what does 'they' refer to?",
-            "targetWord": "it",
-            "sentence": "The manager called the workers because they were late (unit 13).",
+            "question": "Because the father trusted his teenage daughter completely, he extended her curfew without hesitation.\nWho or what does 'he' refer to?",
+            "targetWord": "he",
+            "sentence": "Because the father trusted his teenage daughter completely, he extended her curfew without hesitation.",
             "options": [
-                "manager",
-                "because",
-                "The workers"
+                "The father",
+                "daughter",
+                "curfew"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The workers",
-            "hint": "Who was late? (Log 13 calibration)",
-            "explanation": "'they' refers to 'The workers' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The father",
+            "hint": "Who extended the curfew?",
+            "explanation": "'he' refers to 'the father' - he's the one trusting and making the decision about the curfew."
         },
         {
             "id": "pr_l138_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The firm launched its new product line (unit 13).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The firm launched its new product line (unit 13).",
+            "question": "The retailer eliminated free shipping on small orders. This frustrated budget-conscious shoppers.\nWho or what does 'This' refer to?",
+            "targetWord": "This",
+            "sentence": "The retailer eliminated free shipping on small orders. This frustrated budget-conscious shoppers.",
             "options": [
-                "product",
-                "line",
-                "The firm"
+                "The elimination",
+                "retailer",
+                "shoppers"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The firm",
-            "hint": "Whose product line? (Log 13 calibration)",
-            "explanation": "'its' refers to 'The firm' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The elimination",
+            "hint": "What frustrated budget-conscious shoppers?",
+            "explanation": "'This' refers back to the elimination of free shipping."
         },
         {
             "id": "pr_l139_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The robot repaired itself quickly (unit 13).\nWho or what does 'itself' refer to?",
-            "targetWord": "itself",
-            "sentence": "The robot repaired itself quickly (unit 13).",
+            "question": "The investors backed the founder, whose previous startup had sold for millions.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The investors backed the founder, whose previous startup had sold for millions.",
             "options": [
-                "The robot",
-                "quickly",
-                "repaired"
+                "The founder",
+                "investors",
+                "startup"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The robot",
-            "hint": "Who was repaired? (Log 13 calibration)",
-            "explanation": "'itself' refers to 'The robot' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswer": "The founder",
+            "hint": "Whose previous startup sold for millions?",
+            "explanation": "'whose' shows possession - the previous startup belongs to 'the founder.'"
         },
         {
             "id": "pr_l139_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The snake shed its skin yesterday (unit 13).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The snake shed its skin yesterday (unit 13).",
+            "question": "Although the principal supported the methods the new teacher introduced, she faced resistance from some parents.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Although the principal supported the methods the new teacher introduced, she faced resistance from some parents.",
             "options": [
-                "tail",
-                "skin",
-                "The snake"
+                "The new teacher",
+                "principal",
+                "parents"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The snake",
-            "hint": "Whose skin? (Log 13 calibration)",
-            "explanation": "'its' refers to 'The snake' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The new teacher",
+            "hint": "Who faced resistance from parents?",
+            "explanation": "'she' refers to 'the new teacher' - she's the one whose methods are being resisted, despite the principal's support."
         },
         {
             "id": "pr_l139_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The device shut down because it ran out of power (unit 13).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The device shut down because it ran out of power (unit 13).",
+            "question": "The airport opened a new security lane for families. This shortened wait times considerably.\nWho or what does 'This' refer to?",
+            "targetWord": "This",
+            "sentence": "The airport opened a new security lane for families. This shortened wait times considerably.",
             "options": [
-                "power",
-                "shut",
-                "The device"
+                "The new lane",
+                "airport",
+                "families"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The device",
-            "hint": "What ran out of power? (Log 13 calibration)",
-            "explanation": "'it' refers to 'The device' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The new lane",
+            "hint": "What shortened wait times?",
+            "explanation": "'This' refers back to the new security lane just opened."
         },
         {
             "id": "pr_l140_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "Sarah called Jane to tell her the news (unit 13).\nWho or what does 'her' refer to?",
-            "targetWord": "her",
-            "sentence": "Sarah called Jane to tell her the news (unit 13).",
+            "question": "The team recruited the surgeon, whose success rate led the entire region.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The team recruited the surgeon, whose success rate led the entire region.",
             "options": [
-                "called",
-                "Sarah",
-                "Jane"
+                "The surgeon",
+                "team",
+                "rate"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Jane",
-            "hint": "Who received the news? (Log 13 calibration)",
-            "explanation": "'her' refers to Jane in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The surgeon",
+            "hint": "Whose success rate led the region?",
+            "explanation": "'whose' shows possession - the success rate belongs to 'the surgeon.'"
         },
         {
             "id": "pr_l140_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "David gave Sam his pen (unit 13).\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "David gave Sam his pen (unit 13).",
+            "question": "Because the agent negotiated aggressively for her client, she secured an unusually generous contract.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Because the agent negotiated aggressively for her client, she secured an unusually generous contract.",
             "options": [
-                "pen",
-                "Sam",
-                "David"
+                "The agent",
+                "client",
+                "contract"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "David",
-            "hint": "Who owned the pen originally? (Log 13 calibration)",
-            "explanation": "'his' refers to David in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The agent",
+            "hint": "Who secured the generous contract?",
+            "explanation": "'she' refers to 'the agent' - she's the one doing the negotiating on her client's behalf."
         },
         {
             "id": "pr_l140_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 4,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The climbers checked their equipment (unit 13).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The climbers checked their equipment (unit 13).",
+            "question": "The corporation announced a restructuring affecting four departments. This created widespread uncertainty.\nWho or what does 'This' refer to?",
+            "targetWord": "This",
+            "sentence": "The corporation announced a restructuring affecting four departments. This created widespread uncertainty.",
             "options": [
-                "equipment",
-                "checked",
-                "The climbers"
+                "The restructuring",
+                "corporation",
+                "uncertainty"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The climbers",
-            "hint": "Whose equipment? (Log 13 calibration)",
-            "explanation": "'their' refers to 'The climbers' in this sentence. [Verified in calibration unit 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The restructuring",
+            "hint": "What created widespread uncertainty?",
+            "explanation": "'This' refers back to the restructuring just announced."
         }
     ]
 }

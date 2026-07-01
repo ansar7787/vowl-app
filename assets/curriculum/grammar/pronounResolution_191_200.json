@@ -5,573 +5,573 @@
     "quests": [
         {
             "id": "pr_l191_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "Mary gave John his book (unit 19).\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "Mary gave John his book (unit 19).",
+            "question": "The study confirmed a causal link between sleep deprivation and cognitive decline, which health professionals had long suspected but could not prove.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The study confirmed a causal link between sleep deprivation and cognitive decline, which health professionals had long suspected but could not prove.",
             "options": [
-                "book",
-                "John",
-                "gave"
+                "The causal link",
+                "health professionals",
+                "sleep deprivation"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "John",
-            "hint": "Who owns the book in this context? (Log 19 calibration)",
-            "explanation": "'his' refers to John in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The causal link",
+            "hint": "What had health professionals long suspected but not been able to prove?",
+            "explanation": "'which' introduces a non-restrictive clause about 'the causal link' - the finding that professionals had suspected."
         },
         {
             "id": "pr_l191_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The team celebrated its victory (unit 19).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The team celebrated its victory (unit 19).",
+            "question": "Although the senior partner briefed the associate on the case's weaknesses, she chose to argue the stronger points first.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Although the senior partner briefed the associate on the case's weaknesses, she chose to argue the stronger points first.",
             "options": [
-                "The team",
-                "celebrated",
-                "victory"
+                "The associate",
+                "senior partner",
+                "case"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The team",
-            "hint": "Whose victory? (Log 19 calibration)",
-            "explanation": "'its' refers to 'The team' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswer": "The associate",
+            "hint": "Who made the strategic choice about argument order?",
+            "explanation": "'she' refers to 'the associate' - she was briefed by the senior partner but made her own presentational decision."
         },
         {
             "id": "pr_l191_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The plant absorbed the water rapidly; it grew quickly (unit 19).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The plant absorbed the water rapidly; it grew quickly (unit 19).",
+            "question": "One must be willing to revise one's own framework entirely when the evidence demands it, however uncomfortable that process might feel.\nWho or what does 'one' refer to?",
+            "targetWord": "one",
+            "sentence": "One must be willing to revise one's own framework entirely when the evidence demands it, however uncomfortable that process might feel.",
             "options": [
-                "water",
-                "quickly",
-                "The plant"
+                "A person",
+                "framework",
+                "evidence"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The plant",
-            "hint": "What grew? (Log 19 calibration)",
-            "explanation": "'it' refers to 'The plant' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "A person",
+            "hint": "Who must be willing to revise?",
+            "explanation": "'one' is the generic pronoun; the sentence addresses any person whose intellectual framework is challenged by evidence."
         },
         {
             "id": "pr_l192_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The technician checked the system; it was running (unit 19).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The technician checked the system; it was running (unit 19).",
+            "question": "The chancellor reversed the funding decision, which prompted three senior faculty members to withdraw their resignations.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The chancellor reversed the funding decision, which prompted three senior faculty members to withdraw their resignations.",
             "options": [
-                "checked",
-                "running",
-                "The system"
+                "The reversal of the funding decision",
+                "chancellor",
+                "faculty members"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The system",
-            "hint": "What was running? (Log 19 calibration)",
-            "explanation": "'it' refers to 'The system' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The reversal of the funding decision",
+            "hint": "What caused the faculty to withdraw their resignations?",
+            "explanation": "'which' is a sentential relative referring to the entire act of reversal, not to the funding decision itself."
         },
         {
             "id": "pr_l192_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The signal failed before it reached the station (unit 19).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The signal failed before it reached the station (unit 19).",
+            "question": "The physicist, from whose equations the entire theoretical model was derived, published only three papers in her lifetime.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The physicist, from whose equations the entire theoretical model was derived, published only three papers in her lifetime.",
             "options": [
-                "The signal",
-                "signal",
-                "failed"
+                "The physicist",
+                "equations",
+                "model"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The signal",
-            "hint": "What failed to reach the station? (Log 19 calibration)",
-            "explanation": "'it' refers to 'The signal' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswer": "The physicist",
+            "hint": "From whose equations was the model derived?",
+            "explanation": "'whose' follows the preposition 'from,' showing possession - the foundational equations belong to 'the physicist.'"
         },
         {
             "id": "pr_l192_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The girls carried their heavy bags (unit 19).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The girls carried their heavy bags (unit 19).",
+            "question": "They have long treated mental illness as a moral failing rather than a medical condition, a stigma that causes immeasurable harm.\nWho or what does 'they' refer to?",
+            "targetWord": "they",
+            "sentence": "They have long treated mental illness as a moral failing rather than a medical condition, a stigma that causes immeasurable harm.",
             "options": [
-                "bags",
-                "heavy",
-                "The girls"
+                "Society",
+                "mental illness",
+                "stigma"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The girls",
-            "hint": "Whose bags? (Log 19 calibration)",
-            "explanation": "'their' refers to 'The girls' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Society",
+            "hint": "Who has treated mental illness as a moral failing?",
+            "explanation": "'They' is used here as a generic social pronoun referring to 'society' or 'the general population' - an unspecified collective whose attitude is being critiqued."
         },
         {
             "id": "pr_l193_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The researchers published their findings (unit 19).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The researchers published their findings (unit 19).",
+            "question": "The settlement was reached outside court, which spared both parties a costly and public trial.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The settlement was reached outside court, which spared both parties a costly and public trial.",
             "options": [
-                "researchers",
-                "published",
-                "The researchers"
+                "The out-of-court settlement",
+                "court",
+                "trial"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The researchers",
-            "hint": "Whose findings? (Log 19 calibration)",
-            "explanation": "'their' refers to 'The researchers' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The out-of-court settlement",
+            "hint": "What spared both parties a costly trial?",
+            "explanation": "'which' is a sentential relative referring to the settlement being reached outside court - the event, not merely the settlement document."
         },
         {
             "id": "pr_l193_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The explorers lost their map in the cave (unit 19).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The explorers lost their map in the cave (unit 19).",
+            "question": "Although the external reviewer praised the grant proposal overall, she flagged two methodological weaknesses that required clarification.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Although the external reviewer praised the grant proposal overall, she flagged two methodological weaknesses that required clarification.",
             "options": [
-                "The explorers",
-                "cave",
-                "lost"
+                "The external reviewer",
+                "grant proposal",
+                "weaknesses"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The explorers",
-            "hint": "Whose map? (Log 19 calibration)",
-            "explanation": "'their' refers to 'The explorers' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswer": "The external reviewer",
+            "hint": "Who identified the methodological weaknesses?",
+            "explanation": "'she' refers to 'the external reviewer' - she is both the one praising overall and the one identifying weaknesses."
         },
         {
             "id": "pr_l193_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The driver told the passenger that he had arrived (unit 19).\nWho or what does 'he' refer to?",
-            "targetWord": "he",
-            "sentence": "The driver told the passenger that he had arrived (unit 19).",
+            "question": "The political theorist argued that power, once seized, tends to reproduce itself through the very institutions established to constrain it.\nWho or what does 'itself' refer to?",
+            "targetWord": "itself",
+            "sentence": "The political theorist argued that power, once seized, tends to reproduce itself through the very institutions established to constrain it.",
             "options": [
-                "passenger",
-                "arrived",
-                "The driver"
+                "Power",
+                "theorist",
+                "institutions"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The driver",
-            "hint": "Who arrived? (Log 19 calibration)",
-            "explanation": "'he' refers to 'The driver' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Power",
+            "hint": "What tends to reproduce itself?",
+            "explanation": "'itself' is a reflexive pronoun referring to 'power' - the abstract entity that perpetuates its own existence through institutions."
         },
         {
             "id": "pr_l194_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The pilot told the navigator that he was ready (unit 19).\nWho or what does 'he' refer to?",
-            "targetWord": "he",
-            "sentence": "The pilot told the navigator that he was ready (unit 19).",
+            "question": "The treaty was withdrawn at the last moment, which threw the entire peace process into uncertainty.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The treaty was withdrawn at the last moment, which threw the entire peace process into uncertainty.",
             "options": [
-                "told",
-                "pilot",
-                "The pilot"
+                "The withdrawal of the treaty",
+                "peace process",
+                "uncertainty"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The pilot",
-            "hint": "Who is speaking? (Log 19 calibration)",
-            "explanation": "'he' refers to 'The pilot' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The withdrawal of the treaty",
+            "hint": "What threw the peace process into uncertainty?",
+            "explanation": "'which' is a sentential relative referring to the act of withdrawing the treaty at the last moment, not to the treaty itself."
         },
         {
             "id": "pr_l194_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The engine stopped because it was overheated (unit 19).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The engine stopped because it was overheated (unit 19).",
+            "question": "The team, none of whose members had collaborated before, delivered a flawless result.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The team, none of whose members had collaborated before, delivered a flawless result.",
             "options": [
-                "because",
-                "overheated",
-                "The engine"
+                "The team",
+                "members",
+                "result"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The engine",
-            "hint": "What was overheated? (Log 19 calibration)",
-            "explanation": "'it' refers to 'The engine' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The team",
+            "hint": "Whose members had never collaborated before?",
+            "explanation": "'whose' shows possession - the members belong to 'the team.' 'None of whose members' is a partitive construction using the possessive relative."
         },
         {
             "id": "pr_l194_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The owl caught its prey silently (unit 19).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The owl caught its prey silently (unit 19).",
+            "question": "The surgeon, around whom the entire cardiac program was built, trained hundreds of cardiologists over her career.\nWho or what does 'whom' refer to?",
+            "targetWord": "whom",
+            "sentence": "The surgeon, around whom the entire cardiac program was built, trained hundreds of cardiologists over her career.",
             "options": [
-                "prey",
-                "silently",
-                "The owl"
+                "The surgeon",
+                "cardiac program",
+                "cardiologists"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The owl",
-            "hint": "Whose prey? (Log 19 calibration)",
-            "explanation": "'its' refers to 'The owl' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The surgeon",
+            "hint": "Around whom was the cardiac program built?",
+            "explanation": "'whom' follows the preposition 'around,' referring to 'the surgeon' - the central figure whose presence shaped the whole program."
         },
         {
             "id": "pr_l195_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The dog wagged its tail happily (unit 19).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The dog wagged its tail happily (unit 19).",
+            "question": "The lab released interim findings, which several news outlets misrepresented in their coverage.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The lab released interim findings, which several news outlets misrepresented in their coverage.",
             "options": [
-                "The dog",
-                "happily",
-                "tail"
+                "The interim findings",
+                "lab",
+                "news outlets"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The dog",
-            "hint": "Whose tail? (Log 19 calibration)",
-            "explanation": "'its' refers to 'The dog' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswer": "The interim findings",
+            "hint": "What did news outlets misrepresent?",
+            "explanation": "'which' introduces a non-restrictive clause about the interim findings - the specific content that was misreported."
         },
         {
             "id": "pr_l195_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The architect showed the client his designs (unit 19).\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "The architect showed the client his designs (unit 19).",
+            "question": "Although the founding partner retained nominal authority, she had long since ceded day-to-day control to her deputy.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Although the founding partner retained nominal authority, she had long since ceded day-to-day control to her deputy.",
             "options": [
-                "The architect",
-                "showed",
-                "architect"
+                "The founding partner",
+                "deputy",
+                "authority"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The architect",
-            "hint": "Who made the designs? (Log 19 calibration)",
-            "explanation": "'his' refers to 'The architect' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswer": "The founding partner",
+            "hint": "Who had gradually handed over control?",
+            "explanation": "'she' refers to 'the founding partner' - she is the one retaining nominal authority while having already ceded real power."
         },
         {
             "id": "pr_l195_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The boys played with their new toys (unit 19).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The boys played with their new toys (unit 19).",
+            "question": "They have repeatedly argued that market forces alone will solve the housing crisis, a view few economists still hold.\nWho or what does 'they' refer to?",
+            "targetWord": "they",
+            "sentence": "They have repeatedly argued that market forces alone will solve the housing crisis, a view few economists still hold.",
             "options": [
-                "toys",
-                "played",
-                "The boys"
+                "Certain policymakers",
+                "market forces",
+                "housing crisis"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The boys",
-            "hint": "Whose toys? (Log 19 calibration)",
-            "explanation": "'their' refers to 'The boys' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Certain policymakers",
+            "hint": "Who has argued that market forces alone can solve the crisis?",
+            "explanation": "'They' refers generically to 'certain policymakers' or 'those who hold this market-liberal position' - an implied ideological group."
         },
         {
             "id": "pr_l196_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "She found the keys and put them away (unit 19).\nWho or what does 'them' refer to?",
-            "targetWord": "them",
-            "sentence": "She found the keys and put them away (unit 19).",
+            "question": "The proposal was defeated by a single vote, which sparked immediate calls for a recount.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The proposal was defeated by a single vote, which sparked immediate calls for a recount.",
             "options": [
-                "The keys",
-                "away",
-                "keys"
+                "The single-vote defeat",
+                "proposal",
+                "recount"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The keys",
-            "hint": "What did she put away? (Log 19 calibration)",
-            "explanation": "'them' refers to 'The keys' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswer": "The single-vote defeat",
+            "hint": "What sparked the calls for a recount?",
+            "explanation": "'which' is a sentential relative referring to the dramatic manner of the defeat, not to the proposal itself."
         },
         {
             "id": "pr_l196_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The software updated itself overnight (unit 19).\nWho or what does 'itself' refer to?",
-            "targetWord": "itself",
-            "sentence": "The software updated itself overnight (unit 19).",
+            "question": "The philosopher, beneath whose celebrated surface texts lay a radical epistemology, was misread for a century.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The philosopher, beneath whose celebrated surface texts lay a radical epistemology, was misread for a century.",
             "options": [
-                "software",
-                "overnight",
-                "The software"
+                "The philosopher",
+                "surface texts",
+                "epistemology"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The software",
-            "hint": "What updated itself? (Log 19 calibration)",
-            "explanation": "'itself' refers to 'The software' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The philosopher",
+            "hint": "Beneath whose texts lay the radical epistemology?",
+            "explanation": "'whose' follows the preposition 'beneath,' showing possession - the surface texts belong to 'the philosopher.'"
         },
         {
             "id": "pr_l196_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The program corrected itself without help (unit 19).\nWho or what does 'itself' refer to?",
-            "targetWord": "itself",
-            "sentence": "The program corrected itself without help (unit 19).",
+            "question": "One can never fully escape the cultural frameworks within which one was raised, however critical of them one becomes.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "One can never fully escape the cultural frameworks within which one was raised, however critical of them one becomes.",
             "options": [
-                "help",
-                "corrected",
-                "The program"
+                "One",
+                "The cultural frameworks",
+                "cultural frameworks"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The program",
-            "hint": "What corrected itself? (Log 19 calibration)",
-            "explanation": "'itself' refers to 'The program' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The cultural frameworks",
+            "hint": "Within what was one raised?",
+            "explanation": "'which' follows the preposition 'within,' referring to 'the cultural frameworks' - the structures from which escape is never total."
         },
         {
             "id": "pr_l197_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The students love their new teacher (unit 19).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The students love their new teacher (unit 19).",
+            "question": "The landmark judgment established a new constitutional principle, which lower courts would apply for decades to come.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The landmark judgment established a new constitutional principle, which lower courts would apply for decades to come.",
             "options": [
-                "love",
-                "The students",
-                "students"
+                "The new constitutional principle",
+                "landmark judgment",
+                "lower courts"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The students",
-            "hint": "Who owns the love? (Log 19 calibration)",
-            "explanation": "'their' refers to 'The students' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The new constitutional principle",
+            "hint": "What would lower courts apply for decades?",
+            "explanation": "'which' introduces a non-restrictive clause about the new principle itself - the legal standard being established."
         },
         {
             "id": "pr_l197_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The kids ate their lunch at noon (unit 19).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The kids ate their lunch at noon (unit 19).",
+            "question": "Although the lead negotiator conceded ground on three of five points, she secured the most important concession of all.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Although the lead negotiator conceded ground on three of five points, she secured the most important concession of all.",
             "options": [
-                "kids",
-                "noon",
-                "The kids"
+                "The lead negotiator",
+                "negotiator's counterpart",
+                "concession"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The kids",
-            "hint": "Whose lunch? (Log 19 calibration)",
-            "explanation": "'their' refers to 'The kids' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The lead negotiator",
+            "hint": "Who ultimately secured the most important concession?",
+            "explanation": "'she' refers to 'the lead negotiator' - she made sacrifices on lesser points in exchange for the most critical outcome."
         },
         {
             "id": "pr_l197_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "Anna asked Lucy to help her pack (unit 19).\nWho or what does 'her' refer to?",
-            "targetWord": "her",
-            "sentence": "Anna asked Lucy to help her pack (unit 19).",
+            "question": "They have systematically underfunded public transit for decades, then expressed surprise when ridership collapsed.\nWho or what does 'they' refer to?",
+            "targetWord": "they",
+            "sentence": "They have systematically underfunded public transit for decades, then expressed surprise when ridership collapsed.",
             "options": [
-                "Lucy",
-                "pack",
-                "Anna"
+                "Successive governments",
+                "public transit",
+                "ridership"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Anna",
-            "hint": "Who needs help? (Log 19 calibration)",
-            "explanation": "'her' refers to Anna in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Successive governments",
+            "hint": "Who underfunded public transit?",
+            "explanation": "'They' refers generically to 'successive governments' - an implied institutional actor whose decisions over time caused the collapse."
         },
         {
             "id": "pr_l198_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The AI warned the users that they were in danger (unit 19).\nWho or what does 'they' refer to?",
-            "targetWord": "it",
-            "sentence": "The AI warned the users that they were in danger (unit 19).",
+            "question": "The central bank maintained its tightening cycle despite slowing growth, which unsettled equity markets globally.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The central bank maintained its tightening cycle despite slowing growth, which unsettled equity markets globally.",
             "options": [
-                "The users",
-                "warned",
-                "were"
+                "The decision to maintain tightening",
+                "central bank",
+                "equity markets"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The users",
-            "hint": "Who is in danger? (Log 19 calibration)",
-            "explanation": "'they' refers to 'The users' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswer": "The decision to maintain tightening",
+            "hint": "What unsettled global equity markets?",
+            "explanation": "'which' is a sentential relative referring to the bank's decision to maintain its cycle despite warning signs - the action itself, not the policy in isolation."
         },
         {
             "id": "pr_l198_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The manager called the workers because they were late (unit 19).\nWho or what does 'they' refer to?",
-            "targetWord": "it",
-            "sentence": "The manager called the workers because they were late (unit 19).",
+            "question": "The epidemiologist, against whose model the entire containment strategy was designed, later acknowledged significant uncertainties in her projections.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The epidemiologist, against whose model the entire containment strategy was designed, later acknowledged significant uncertainties in her projections.",
             "options": [
-                "manager",
-                "because",
-                "The workers"
+                "The epidemiologist",
+                "model",
+                "strategy"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The workers",
-            "hint": "Who was late? (Log 19 calibration)",
-            "explanation": "'they' refers to 'The workers' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The epidemiologist",
+            "hint": "Against whose model was the strategy designed?",
+            "explanation": "'whose' follows the preposition 'against,' showing possession - the model belongs to 'the epidemiologist.'"
         },
         {
             "id": "pr_l198_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The firm launched its new product line (unit 19).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The firm launched its new product line (unit 19).",
+            "question": "One must hold competing hypotheses simultaneously rather than prematurely collapsing uncertainty into a single preferred explanation.\nWho or what does 'one' refer to?",
+            "targetWord": "one",
+            "sentence": "One must hold competing hypotheses simultaneously rather than prematurely collapsing uncertainty into a single preferred explanation.",
             "options": [
-                "product",
-                "line",
-                "The firm"
+                "A researcher",
+                "hypotheses",
+                "uncertainty"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The firm",
-            "hint": "Whose product line? (Log 19 calibration)",
-            "explanation": "'its' refers to 'The firm' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "A researcher",
+            "hint": "Who must hold competing hypotheses?",
+            "explanation": "'one' here is the impersonal generic pronoun; in academic register it specifically implies 'a researcher' or 'any thinking person.'"
         },
         {
             "id": "pr_l199_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The robot repaired itself quickly (unit 19).\nWho or what does 'itself' refer to?",
-            "targetWord": "itself",
-            "sentence": "The robot repaired itself quickly (unit 19).",
+            "question": "The prime minister's resignation letter was leaked before it was officially released, which destabilized financial markets for two days.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The prime minister's resignation letter was leaked before it was officially released, which destabilized financial markets for two days.",
             "options": [
-                "The robot",
-                "quickly",
-                "repaired"
+                "The premature leak",
+                "resignation letter",
+                "financial markets"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The robot",
-            "hint": "Who was repaired? (Log 19 calibration)",
-            "explanation": "'itself' refers to 'The robot' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswer": "The premature leak",
+            "hint": "What destabilized the markets for two days?",
+            "explanation": "'which' is a sentential relative referring to the premature leaking of the letter, not to the resignation itself or the letter as a document."
         },
         {
             "id": "pr_l199_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The snake shed its skin yesterday (unit 19).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The snake shed its skin yesterday (unit 19).",
+            "question": "Although the board had full confidence in the outgoing CEO, it chose her replacement carefully rather than appointing an obvious successor.\nWho or what does 'her' refer to?",
+            "targetWord": "her",
+            "sentence": "Although the board had full confidence in the outgoing CEO, it chose her replacement carefully rather than appointing an obvious successor.",
             "options": [
-                "tail",
-                "skin",
-                "The snake"
+                "The outgoing CEO",
+                "board",
+                "successor"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The snake",
-            "hint": "Whose skin? (Log 19 calibration)",
-            "explanation": "'its' refers to 'The snake' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The outgoing CEO",
+            "hint": "Whose replacement was chosen carefully?",
+            "explanation": "'her' refers to 'the outgoing CEO' - the board chose the CEO's replacement, meaning the person who would succeed her."
         },
         {
             "id": "pr_l199_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The device shut down because it ran out of power (unit 19).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The device shut down because it ran out of power (unit 19).",
+            "question": "The institution, within whose walls some of the most consequential decisions of the century were made, has since been dissolved.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The institution, within whose walls some of the most consequential decisions of the century were made, has since been dissolved.",
             "options": [
-                "power",
-                "shut",
-                "The device"
+                "The institution",
+                "walls",
+                "decisions"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The device",
-            "hint": "What ran out of power? (Log 19 calibration)",
-            "explanation": "'it' refers to 'The device' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The institution",
+            "hint": "Within whose walls were the decisions made?",
+            "explanation": "'whose' follows the preposition 'within,' showing possession - the walls belong to 'the institution.'"
         },
         {
             "id": "pr_l200_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "Sarah called Jane to tell her the news (unit 19).\nWho or what does 'her' refer to?",
-            "targetWord": "her",
-            "sentence": "Sarah called Jane to tell her the news (unit 19).",
+            "question": "The final report was published three years after the investigation began, which allowed key evidence to become inaccessible.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The final report was published three years after the investigation began, which allowed key evidence to become inaccessible.",
             "options": [
-                "called",
-                "Sarah",
-                "Jane"
+                "The three-year delay",
+                "final report",
+                "investigation"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Jane",
-            "hint": "Who received the news? (Log 19 calibration)",
-            "explanation": "'her' refers to Jane in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The three-year delay",
+            "hint": "What allowed evidence to become inaccessible?",
+            "explanation": "'which' is a sentential relative referring to the three-year delay before publication, not to the report itself or the investigation."
         },
         {
             "id": "pr_l200_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "David gave Sam his pen (unit 19).\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "David gave Sam his pen (unit 19).",
+            "question": "The curriculum, within whose framework every subsequent reform was contained, had been designed in the nineteen fifties.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The curriculum, within whose framework every subsequent reform was contained, had been designed in the nineteen fifties.",
             "options": [
-                "pen",
-                "Sam",
-                "David"
+                "The curriculum",
+                "framework",
+                "reform"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "David",
-            "hint": "Who owned the pen originally? (Log 19 calibration)",
-            "explanation": "'his' refers to David in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The curriculum",
+            "hint": "Within whose framework were all later reforms contained?",
+            "explanation": "'whose' follows the preposition 'within,' showing possession - the framework belongs to 'the curriculum,' making it the master structure that constrained all later changes."
         },
         {
             "id": "pr_l200_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 5,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The climbers checked their equipment (unit 19).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The climbers checked their equipment (unit 19).",
+            "question": "The theorist, from whose marginal annotations an entirely new discipline eventually emerged, published nothing in book form during her lifetime.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The theorist, from whose marginal annotations an entirely new discipline eventually emerged, published nothing in book form during her lifetime.",
             "options": [
-                "equipment",
-                "checked",
-                "The climbers"
+                "The theorist",
+                "annotations",
+                "discipline"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The climbers",
-            "hint": "Whose equipment? (Log 19 calibration)",
-            "explanation": "'their' refers to 'The climbers' in this sentence. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The theorist",
+            "hint": "From whose marginal annotations did the discipline emerge?",
+            "explanation": "'whose' follows the preposition 'from,' showing possession - the marginal annotations belong to 'the theorist' whose influence outlived her publications."
         }
     ]
 }

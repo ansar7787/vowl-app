@@ -5,573 +5,573 @@
     "quests": [
         {
             "id": "pr_l61_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "Mary gave John his book (unit 6).\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "Mary gave John his book (unit 6).",
+            "question": "Everyone at the office received their year-end bonus.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "Everyone at the office received their year-end bonus.",
             "options": [
-                "book",
-                "John",
-                "gave"
+                "Everyone",
+                "office",
+                "bonus"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "John",
-            "hint": "Who owns the book in this context? (Log 6 calibration)",
-            "explanation": "'his' refers to John in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Everyone",
+            "hint": "Whose bonus is this?",
+            "explanation": "'their' is the modern, gender-neutral way to refer back to 'everyone,' even though 'everyone' is grammatically singular."
         },
         {
             "id": "pr_l61_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The team celebrated its victory (unit 6).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The team celebrated its victory (unit 6).",
+            "question": "Although she was exhausted, the flight attendant kept smiling at every passenger.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Although she was exhausted, the flight attendant kept smiling at every passenger.",
             "options": [
-                "The team",
-                "celebrated",
-                "victory"
+                "The flight attendant",
+                "passenger",
+                "exhausted"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The team",
-            "hint": "Whose victory? (Log 6 calibration)",
-            "explanation": "'its' refers to 'The team' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswer": "The flight attendant",
+            "hint": "Who kept smiling despite being tired?",
+            "explanation": "'she' appears before its antecedent here - reading ahead to 'the flight attendant' reveals who the pronoun describes."
         },
         {
             "id": "pr_l61_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The plant absorbed the water rapidly; it grew quickly (unit 6).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The plant absorbed the water rapidly; it grew quickly (unit 6).",
+            "question": "Someone in the meeting left their laptop charger behind.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "Someone in the meeting left their laptop charger behind.",
             "options": [
-                "water",
-                "quickly",
-                "The plant"
+                "Someone",
+                "meeting",
+                "charger"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The plant",
-            "hint": "What grew? (Log 6 calibration)",
-            "explanation": "'it' refers to 'The plant' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Someone",
+            "hint": "Whose charger was forgotten?",
+            "explanation": "'their' refers back to 'someone' - since the person's identity is unknown, English uses 'their' rather than guessing a gender."
         },
         {
             "id": "pr_l62_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The technician checked the system; it was running (unit 6).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The technician checked the system; it was running (unit 6).",
+            "question": "Nobody in the class admitted that they had broken the window.\nWho or what does 'they' refer to?",
+            "targetWord": "they",
+            "sentence": "Nobody in the class admitted that they had broken the window.",
             "options": [
-                "checked",
-                "running",
-                "The system"
+                "Nobody",
+                "class",
+                "window"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The system",
-            "hint": "What was running? (Log 6 calibration)",
-            "explanation": "'it' refers to 'The system' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Nobody",
+            "hint": "Who is being referred to here?",
+            "explanation": "'they' refers back to 'nobody' - English uses this plural-looking pronoun even for one unidentified person."
         },
         {
             "id": "pr_l62_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The signal failed before it reached the station (unit 6).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The signal failed before it reached the station (unit 6).",
+            "question": "The dish, which contained shellfish, surprised several guests.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The dish, which contained shellfish, surprised several guests.",
             "options": [
-                "The signal",
-                "signal",
-                "failed"
+                "The dish",
+                "shellfish",
+                "guests"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The signal",
-            "hint": "What failed to reach the station? (Log 6 calibration)",
-            "explanation": "'it' refers to 'The signal' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswer": "The dish",
+            "hint": "What surprised the guests?",
+            "explanation": "'which' introduces extra information about 'the dish' - used for things, not people."
         },
         {
             "id": "pr_l62_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The girls carried their heavy bags (unit 6).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The girls carried their heavy bags (unit 6).",
+            "question": "Although he seemed calm, the surgeon double-checked every instrument before starting.\nWho or what does 'he' refer to?",
+            "targetWord": "he",
+            "sentence": "Although he seemed calm, the surgeon double-checked every instrument before starting.",
             "options": [
-                "bags",
-                "heavy",
-                "The girls"
+                "The surgeon",
+                "instrument",
+                "calm"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The girls",
-            "hint": "Whose bags? (Log 6 calibration)",
-            "explanation": "'their' refers to 'The girls' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The surgeon",
+            "hint": "Who double-checked the instruments?",
+            "explanation": "'he' comes before its antecedent here; the rest of the sentence reveals it points to 'the surgeon.'"
         },
         {
             "id": "pr_l63_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The researchers published their findings (unit 6).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The researchers published their findings (unit 6).",
+            "question": "Anyone who pays before Friday gets a five percent discount.\nWho or what does 'who' refer to?",
+            "targetWord": "who",
+            "sentence": "Anyone who pays before Friday gets a five percent discount.",
             "options": [
-                "researchers",
-                "published",
-                "The researchers"
+                "Anyone",
+                "Friday",
+                "discount"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The researchers",
-            "hint": "Whose findings? (Log 6 calibration)",
-            "explanation": "'their' refers to 'The researchers' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Anyone",
+            "hint": "Who qualifies for the discount?",
+            "explanation": "'who' introduces a clause describing 'anyone,' the unspecified customer."
         },
         {
             "id": "pr_l63_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The explorers lost their map in the cave (unit 6).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The explorers lost their map in the cave (unit 6).",
+            "question": "The script, which the studio rejected twice, finally became a hit film.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The script, which the studio rejected twice, finally became a hit film.",
             "options": [
-                "The explorers",
-                "cave",
-                "lost"
+                "The script",
+                "studio",
+                "film"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The explorers",
-            "hint": "Whose map? (Log 6 calibration)",
-            "explanation": "'their' refers to 'The explorers' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswer": "The script",
+            "hint": "What got rejected twice?",
+            "explanation": "'which' introduces extra detail about 'the script,' since scripts are things, not people."
         },
         {
             "id": "pr_l63_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The driver told the passenger that he had arrived (unit 6).\nWho or what does 'he' refer to?",
-            "targetWord": "he",
-            "sentence": "The driver told the passenger that he had arrived (unit 6).",
+            "question": "Everybody at the reunion shared their favorite childhood memory.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "Everybody at the reunion shared their favorite childhood memory.",
             "options": [
-                "passenger",
-                "arrived",
-                "The driver"
+                "Everybody",
+                "reunion",
+                "memory"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The driver",
-            "hint": "Who arrived? (Log 6 calibration)",
-            "explanation": "'he' refers to 'The driver' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Everybody",
+            "hint": "Whose memory was shared?",
+            "explanation": "'their' refers back to 'everybody' - although it looks plural, 'everybody' is grammatically singular and commonly paired with 'their.'"
         },
         {
             "id": "pr_l64_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The pilot told the navigator that he was ready (unit 6).\nWho or what does 'he' refer to?",
-            "targetWord": "he",
-            "sentence": "The pilot told the navigator that he was ready (unit 6).",
+            "question": "The landlord, whom tenants rarely see, finally visited the building.\nWho or what does 'whom' refer to?",
+            "targetWord": "whom",
+            "sentence": "The landlord, whom tenants rarely see, finally visited the building.",
             "options": [
-                "told",
-                "pilot",
-                "The pilot"
+                "The landlord",
+                "tenants",
+                "building"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The pilot",
-            "hint": "Who is speaking? (Log 6 calibration)",
-            "explanation": "'he' refers to 'The pilot' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The landlord",
+            "hint": "Who rarely shows up?",
+            "explanation": "'whom' is the object form of 'who' - here it refers to 'the landlord,' the person tenants rarely see."
         },
         {
             "id": "pr_l64_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The engine stopped because it was overheated (unit 6).\nWho or what does 'it' refer to?",
+            "question": "Although it lagged at first, the app eventually loaded every photo.\nWho or what does 'it' refer to?",
             "targetWord": "it",
-            "sentence": "The engine stopped because it was overheated (unit 6).",
+            "sentence": "Although it lagged at first, the app eventually loaded every photo.",
             "options": [
-                "because",
-                "overheated",
-                "The engine"
+                "The app",
+                "photo",
+                "first"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The engine",
-            "hint": "What was overheated? (Log 6 calibration)",
-            "explanation": "'it' refers to 'The engine' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The app",
+            "hint": "What loaded the photos?",
+            "explanation": "'it' appears before its antecedent; reading on reveals it points to 'the app.'"
         },
         {
             "id": "pr_l64_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The owl caught its prey silently (unit 6).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The owl caught its prey silently (unit 6).",
+            "question": "Someone on the team forgot to lock their computer screen.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "Someone on the team forgot to lock their computer screen.",
             "options": [
-                "prey",
-                "silently",
-                "The owl"
+                "Someone",
+                "team",
+                "screen"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The owl",
-            "hint": "Whose prey? (Log 6 calibration)",
-            "explanation": "'its' refers to 'The owl' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Someone",
+            "hint": "Whose screen stayed unlocked?",
+            "explanation": "'their' refers back to the unspecified 'someone' on the team."
         },
         {
             "id": "pr_l65_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The dog wagged its tail happily (unit 6).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The dog wagged its tail happily (unit 6).",
+            "question": "The therapist, whom many patients recommend, has a long waiting list.\nWho or what does 'whom' refer to?",
+            "targetWord": "whom",
+            "sentence": "The therapist, whom many patients recommend, has a long waiting list.",
             "options": [
-                "The dog",
-                "happily",
-                "tail"
+                "The therapist",
+                "patients",
+                "list"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The dog",
-            "hint": "Whose tail? (Log 6 calibration)",
-            "explanation": "'its' refers to 'The dog' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswer": "The therapist",
+            "hint": "Who do patients recommend?",
+            "explanation": "'whom' refers to 'the therapist' - the object of the verb 'recommend.'"
         },
         {
             "id": "pr_l65_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The architect showed the client his designs (unit 6).\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "The architect showed the client his designs (unit 6).",
+            "question": "The hotel, which overlooks the harbor, raised its rates this season.\nWho or what does 'its' refer to?",
+            "targetWord": "its",
+            "sentence": "The hotel, which overlooks the harbor, raised its rates this season.",
             "options": [
-                "The architect",
-                "showed",
-                "architect"
+                "The hotel",
+                "harbor",
+                "season"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The architect",
-            "hint": "Who made the designs? (Log 6 calibration)",
-            "explanation": "'his' refers to 'The architect' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswer": "The hotel",
+            "hint": "Whose rates went up?",
+            "explanation": "'its' shows the rates belong to 'the hotel,' even though 'which overlooks the harbor' sits right before it."
         },
         {
             "id": "pr_l65_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The boys played with their new toys (unit 6).\nWho or what does 'their' refer to?",
+            "question": "Everyone in the lab wore their safety goggles during the experiment.\nWho or what does 'their' refer to?",
             "targetWord": "their",
-            "sentence": "The boys played with their new toys (unit 6).",
+            "sentence": "Everyone in the lab wore their safety goggles during the experiment.",
             "options": [
-                "toys",
-                "played",
-                "The boys"
+                "Everyone",
+                "lab",
+                "experiment"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The boys",
-            "hint": "Whose toys? (Log 6 calibration)",
-            "explanation": "'their' refers to 'The boys' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Everyone",
+            "hint": "Whose goggles?",
+            "explanation": "'their' refers back to 'everyone,' used here for a group of unspecified individuals."
         },
         {
             "id": "pr_l66_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "She found the keys and put them away (unit 6).\nWho or what does 'them' refer to?",
-            "targetWord": "them",
-            "sentence": "She found the keys and put them away (unit 6).",
+            "question": "Although she sounded nervous, the new host introduced every guest smoothly.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Although she sounded nervous, the new host introduced every guest smoothly.",
             "options": [
-                "The keys",
-                "away",
-                "keys"
+                "The new host",
+                "guest",
+                "nervous"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The keys",
-            "hint": "What did she put away? (Log 6 calibration)",
-            "explanation": "'them' refers to 'The keys' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswer": "The new host",
+            "hint": "Who introduced the guests?",
+            "explanation": "'she' precedes its antecedent; reading ahead shows it refers to 'the new host.'"
         },
         {
             "id": "pr_l66_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The software updated itself overnight (unit 6).\nWho or what does 'itself' refer to?",
-            "targetWord": "itself",
-            "sentence": "The software updated itself overnight (unit 6).",
+            "question": "The market, which sells only organic produce, opens at dawn.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The market, which sells only organic produce, opens at dawn.",
             "options": [
-                "software",
-                "overnight",
-                "The software"
+                "The market",
+                "produce",
+                "dawn"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The software",
-            "hint": "What updated itself? (Log 6 calibration)",
-            "explanation": "'itself' refers to 'The software' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The market",
+            "hint": "What opens at dawn?",
+            "explanation": "'which' introduces extra detail about 'the market,' a place, not a person."
         },
         {
             "id": "pr_l66_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The program corrected itself without help (unit 6).\nWho or what does 'itself' refer to?",
-            "targetWord": "itself",
-            "sentence": "The program corrected itself without help (unit 6).",
+            "question": "Nobody in the audience expected that they would be chosen on stage.\nWho or what does 'they' refer to?",
+            "targetWord": "they",
+            "sentence": "Nobody in the audience expected that they would be chosen on stage.",
             "options": [
-                "help",
-                "corrected",
-                "The program"
+                "Nobody",
+                "audience",
+                "stage"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The program",
-            "hint": "What corrected itself? (Log 6 calibration)",
-            "explanation": "'itself' refers to 'The program' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Nobody",
+            "hint": "Who got picked, against expectations?",
+            "explanation": "'they' refers back to 'nobody,' the unspecified person who ended up being selected."
         },
         {
             "id": "pr_l67_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The students love their new teacher (unit 6).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The students love their new teacher (unit 6).",
+            "question": "The uncle, whom the children adore, visits every summer.\nWho or what does 'whom' refer to?",
+            "targetWord": "whom",
+            "sentence": "The uncle, whom the children adore, visits every summer.",
             "options": [
-                "love",
-                "The students",
-                "students"
+                "The uncle",
+                "children",
+                "summer"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The students",
-            "hint": "Who owns the love? (Log 6 calibration)",
-            "explanation": "'their' refers to 'The students' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The uncle",
+            "hint": "Who do the children adore?",
+            "explanation": "'whom' refers to 'the uncle' - he's the object of the verb 'adore.'"
         },
         {
             "id": "pr_l67_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The kids ate their lunch at noon (unit 6).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The kids ate their lunch at noon (unit 6).",
+            "question": "Although it seemed risky, the proposal earned approval from every director.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "Although it seemed risky, the proposal earned approval from every director.",
             "options": [
-                "kids",
-                "noon",
-                "The kids"
+                "The proposal",
+                "director",
+                "risky"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The kids",
-            "hint": "Whose lunch? (Log 6 calibration)",
-            "explanation": "'their' refers to 'The kids' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The proposal",
+            "hint": "What earned approval?",
+            "explanation": "'it' appears early in the sentence, but its antecedent, 'the proposal,' is named afterward."
         },
         {
             "id": "pr_l67_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "Anna asked Lucy to help her pack (unit 6).\nWho or what does 'her' refer to?",
-            "targetWord": "her",
-            "sentence": "Anna asked Lucy to help her pack (unit 6).",
+            "question": "Anybody who returns the item within thirty days gets a full refund.\nWho or what does 'who' refer to?",
+            "targetWord": "who",
+            "sentence": "Anybody who returns the item within thirty days gets a full refund.",
             "options": [
-                "Lucy",
-                "pack",
-                "Anna"
+                "Anybody",
+                "item",
+                "refund"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Anna",
-            "hint": "Who needs help? (Log 6 calibration)",
-            "explanation": "'her' refers to Anna in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Anybody",
+            "hint": "Who qualifies for a refund?",
+            "explanation": "'who' introduces a clause describing 'anybody,' the unspecified customer."
         },
         {
             "id": "pr_l68_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The AI warned the users that they were in danger (unit 6).\nWho or what does 'they' refer to?",
-            "targetWord": "it",
-            "sentence": "The AI warned the users that they were in danger (unit 6).",
+            "question": "The building, whose elevator broke twice this month, needs repairs.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The building, whose elevator broke twice this month, needs repairs.",
             "options": [
-                "The users",
-                "warned",
-                "were"
+                "The building",
+                "elevator",
+                "month"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The users",
-            "hint": "Who is in danger? (Log 6 calibration)",
-            "explanation": "'they' refers to 'The users' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswer": "The building",
+            "hint": "Whose elevator keeps breaking?",
+            "explanation": "'whose' shows possession - the elevator belongs to 'the building.'"
         },
         {
             "id": "pr_l68_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The manager called the workers because they were late (unit 6).\nWho or what does 'they' refer to?",
-            "targetWord": "it",
-            "sentence": "The manager called the workers because they were late (unit 6).",
+            "question": "Someone in the waiting room left their prescription on the chair.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "Someone in the waiting room left their prescription on the chair.",
             "options": [
-                "manager",
-                "because",
-                "The workers"
+                "Someone",
+                "room",
+                "chair"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The workers",
-            "hint": "Who was late? (Log 6 calibration)",
-            "explanation": "'they' refers to 'The workers' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Someone",
+            "hint": "Whose prescription was left behind?",
+            "explanation": "'their' refers back to the unidentified 'someone' in the waiting room."
         },
         {
             "id": "pr_l68_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The firm launched its new product line (unit 6).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The firm launched its new product line (unit 6).",
+            "question": "The server, which crashed during the sale, has since been upgraded.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The server, which crashed during the sale, has since been upgraded.",
             "options": [
-                "product",
-                "line",
-                "The firm"
+                "The server",
+                "sale",
+                "upgraded"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The firm",
-            "hint": "Whose product line? (Log 6 calibration)",
-            "explanation": "'its' refers to 'The firm' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The server",
+            "hint": "What crashed during the sale?",
+            "explanation": "'which' introduces extra detail about 'the server,' a machine, not a person."
         },
         {
             "id": "pr_l69_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The robot repaired itself quickly (unit 6).\nWho or what does 'itself' refer to?",
-            "targetWord": "itself",
-            "sentence": "The robot repaired itself quickly (unit 6).",
+            "question": "Although he looked confident, the rookie actor forgot his only line.\nWho or what does 'he' refer to?",
+            "targetWord": "he",
+            "sentence": "Although he looked confident, the rookie actor forgot his only line.",
             "options": [
-                "The robot",
-                "quickly",
-                "repaired"
+                "The rookie actor",
+                "line",
+                "confident"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The robot",
-            "hint": "Who was repaired? (Log 6 calibration)",
-            "explanation": "'itself' refers to 'The robot' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswer": "The rookie actor",
+            "hint": "Who forgot his line?",
+            "explanation": "'he' comes first here, but the noun it describes, 'the rookie actor,' appears right after."
         },
         {
             "id": "pr_l69_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The snake shed its skin yesterday (unit 6).\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The snake shed its skin yesterday (unit 6).",
+            "question": "Everybody in the dormitory agreed to share their notes before exams.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "Everybody in the dormitory agreed to share their notes before exams.",
             "options": [
-                "tail",
-                "skin",
-                "The snake"
+                "Everybody",
+                "dormitory",
+                "exams"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The snake",
-            "hint": "Whose skin? (Log 6 calibration)",
-            "explanation": "'its' refers to 'The snake' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Everybody",
+            "hint": "Whose notes will be shared?",
+            "explanation": "'their' refers back to 'everybody,' the whole group of students."
         },
         {
             "id": "pr_l69_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The device shut down because it ran out of power (unit 6).\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "The device shut down because it ran out of power (unit 6).",
+            "question": "The driver, whom the company just hired, knows the city well.\nWho or what does 'whom' refer to?",
+            "targetWord": "whom",
+            "sentence": "The driver, whom the company just hired, knows the city well.",
             "options": [
-                "power",
-                "shut",
-                "The device"
+                "The driver",
+                "company",
+                "city"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The device",
-            "hint": "What ran out of power? (Log 6 calibration)",
-            "explanation": "'it' refers to 'The device' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The driver",
+            "hint": "Who did the company hire?",
+            "explanation": "'whom' refers to 'the driver' - the person the company hired."
         },
         {
             "id": "pr_l70_q1",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "Sarah called Jane to tell her the news (unit 6).\nWho or what does 'her' refer to?",
-            "targetWord": "her",
-            "sentence": "Sarah called Jane to tell her the news (unit 6).",
+            "question": "The recipe, which my grandmother wrote by hand, still works perfectly.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The recipe, which my grandmother wrote by hand, still works perfectly.",
             "options": [
-                "called",
-                "Sarah",
-                "Jane"
+                "The recipe",
+                "grandmother",
+                "hand"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Jane",
-            "hint": "Who received the news? (Log 6 calibration)",
-            "explanation": "'her' refers to Jane in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The recipe",
+            "hint": "What still works perfectly?",
+            "explanation": "'which' introduces extra detail about 'the recipe,' an object passed down."
         },
         {
             "id": "pr_l70_q2",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "David gave Sam his pen (unit 6).\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "David gave Sam his pen (unit 6).",
+            "question": "Nobody on the thread realized that their reply had been deleted.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "Nobody on the thread realized that their reply had been deleted.",
             "options": [
-                "pen",
-                "Sam",
-                "David"
+                "Nobody",
+                "thread",
+                "reply"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "David",
-            "hint": "Who owned the pen originally? (Log 6 calibration)",
-            "explanation": "'his' refers to David in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Nobody",
+            "hint": "Whose reply disappeared?",
+            "explanation": "'their' refers back to 'nobody,' the unspecified person whose message vanished."
         },
         {
             "id": "pr_l70_q3",
-            "instruction": "RESOLVE THE PRONOUN",
+            "instruction": "Resolve the pronoun.",
             "difficulty": 2,
             "subtype": "pronounResolution",
             "interactionType": "Laser Aim",
-            "question": "The climbers checked their equipment (unit 6).\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The climbers checked their equipment (unit 6).",
+            "question": "Although it ran long, the presentation answered every question clearly.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "Although it ran long, the presentation answered every question clearly.",
             "options": [
-                "equipment",
-                "checked",
-                "The climbers"
+                "The presentation",
+                "question",
+                "long"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The climbers",
-            "hint": "Whose equipment? (Log 6 calibration)",
-            "explanation": "'their' refers to 'The climbers' in this sentence. [Verified in calibration unit 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The presentation",
+            "hint": "What answered every question?",
+            "explanation": "'it' appears before its antecedent; the rest of the sentence reveals 'the presentation.'"
         }
     ]
 }
