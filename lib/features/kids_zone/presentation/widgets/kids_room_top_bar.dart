@@ -106,7 +106,7 @@ class KidsRoomTopBar extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(Icons.star_rounded, color: Colors.amber, size: 24.sp),
+          Icon(Icons.monetization_on_rounded, color: Colors.amber, size: 24.sp),
           SizedBox(width: 8.w),
           Text(
             "${user.kidsCoins}",
