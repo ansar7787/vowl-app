@@ -235,10 +235,11 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                       fit: BoxFit.scaleDown,
                                       child: _buildInstruction(
                                         theme.primaryColor,
+                                        quest,
                                       ),
                                     ),
                                   )
-                                : _buildInstruction(theme.primaryColor),
+                                : _buildInstruction(theme.primaryColor, quest),
                             SizedBox(height: gapMiddle),
 
                             // Reaction Core
@@ -294,7 +295,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
     );
   }
 
-  Widget _buildInstruction(Color color) {
+  Widget _buildInstruction(Color color, GameQuest? quest) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
@@ -303,7 +304,8 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
         border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Text(
-        "SLIDE FUEL CELLS INTO THE REACTION CORE",
+        (quest?.instruction ?? "SLIDE FUEL CELLS INTO THE REACTION CORE")
+            .toUpperCase(),
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 9.sp,
