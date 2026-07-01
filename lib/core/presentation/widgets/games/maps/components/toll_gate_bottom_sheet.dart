@@ -18,6 +18,7 @@ class TollGateBottomSheet {
     required int level,
     required String gameType,
   }) {
+    final parentContext = context;
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
@@ -94,9 +95,9 @@ class TollGateBottomSheet {
                         )
                       );
                       
-                      if (result.isRight() && context.mounted) {
+                      if (result.isRight() && parentContext.mounted) {
                         showDialog(
-                          context: context,
+                          context: parentContext,
                           builder: (ctx) => Material(
                             type: MaterialType.transparency,
                             child: Stack(

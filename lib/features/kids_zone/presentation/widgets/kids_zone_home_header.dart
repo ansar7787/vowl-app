@@ -31,39 +31,46 @@ class KidsZoneHomeHeader extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Welcome Back!',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white60 : Colors.black45,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          'Little Explorer 🌟',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 28.sp,
-                            fontWeight: FontWeight.w900,
-                            color: isDark
-                                ? Colors.white
-                                : const Color(0xFF1E293B),
-                            height: 1.2,
-                          ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Welcome Back!',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          color: isDark ? Colors.white60 : Colors.black45,
+                          letterSpacing: 1,
                         ),
-                        SizedBox(width: 12.w),
-                        _buildMascotButton(context),
-                      ],
-                    ),
-                  ],
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'Little Explorer 🌟',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 28.sp,
+                                fontWeight: FontWeight.w900,
+                                color: isDark
+                                    ? Colors.white
+                                    : const Color(0xFF1E293B),
+                                height: 1.2,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          SizedBox(width: 8.w),
+                          _buildMascotButton(context),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
+                SizedBox(width: 12.w),
                 _buildKeyShopButton(context),
               ],
             ),
@@ -101,6 +108,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         final keys = state.user?.keys ?? 0;
+        
         return ScaleButton(
           onTap: () {
             KeyShopBottomSheet.show(

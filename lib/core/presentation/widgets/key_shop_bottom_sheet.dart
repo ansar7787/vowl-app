@@ -23,6 +23,7 @@ class KeyShopBottomSheet {
       isScrollControlled: true,
       builder: (sheetContext) {
         return _KeyShopContent(
+          parentContext: context,
           isKidsMode: isKidsMode,
           primaryColor: primaryColor,
         );
@@ -32,10 +33,12 @@ class KeyShopBottomSheet {
 }
 
 class _KeyShopContent extends StatelessWidget {
+  final BuildContext parentContext;
   final bool isKidsMode;
   final Color primaryColor;
 
   const _KeyShopContent({
+    required this.parentContext,
     required this.isKidsMode,
     required this.primaryColor,
   });
@@ -130,10 +133,10 @@ class _KeyShopContent extends StatelessWidget {
                           )
                         );
                         
-                        if (result.isRight() && context.mounted) {
-                          context.read<AuthBloc>().add(const AuthReloadUser());
+                        if (result.isRight() && parentContext.mounted) {
+                          parentContext.read<AuthBloc>().add(const AuthReloadUser());
                           showDialog(
-                            context: context,
+                            context: parentContext,
                             builder: (ctx) => Material(
                               type: MaterialType.transparency,
                               child: Stack(
@@ -209,7 +212,7 @@ class _KeyShopContent extends StatelessWidget {
                     if (!adService.isRewardedAdLoaded) {
                       Navigator.pop(context);
                       showDialog(
-                        context: context,
+                        context: parentContext,
                         builder: (ctx) => ModernGameDialog(
                           title: 'AD NOT READY',
                           description: context.tr('games.ad_not_ready', fallback: 'Ad not ready yet, try again in a moment.'),
@@ -229,10 +232,10 @@ class _KeyShopContent extends StatelessWidget {
                           const AddGoldenKeyParams(amount: 1)
                         );
                         
-                        if (result.isRight() && context.mounted) {
-                          context.read<AuthBloc>().add(const AuthReloadUser());
+                        if (result.isRight() && parentContext.mounted) {
+                          parentContext.read<AuthBloc>().add(const AuthReloadUser());
                           showDialog(
-                            context: context,
+                            context: parentContext,
                             builder: (ctx) => Material(
                               type: MaterialType.transparency,
                               child: Stack(
