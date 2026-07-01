@@ -48,7 +48,9 @@ class KidsGameDialogs {
                     child: Container(
                       padding: EdgeInsets.all(20.w),
                       decoration: BoxDecoration(
-                        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                        color: isDark 
+                            ? Color.lerp(const Color(0xFF1E293B), primaryColor, 0.15)
+                            : Color.lerp(Colors.white, primaryColor, 0.08),
                         borderRadius: BorderRadius.circular(40.r),
                         border: Border.all(color: primaryColor, width: 6.w),
                         boxShadow: [
@@ -390,7 +392,9 @@ class KidsGameDialogs {
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: primaryColor.withValues(alpha: 0.6),
+                                      color: primaryColor.withValues(
+                                        alpha: 0.6,
+                                      ),
                                       offset: Offset(0, 6.h),
                                     ),
                                   ],
@@ -450,7 +454,9 @@ class KidsGameDialogs {
           child: Container(
             padding: EdgeInsets.all(20.w),
             decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF1E293B) : Colors.white,
+              color: isDark 
+                  ? Color.lerp(const Color(0xFF1E293B), primaryColor, 0.15)
+                  : Color.lerp(Colors.white, primaryColor, 0.08),
               borderRadius: BorderRadius.circular(40.r),
               border: Border.all(color: primaryColor, width: 6.w),
               boxShadow: [
@@ -514,10 +520,7 @@ class KidsGameDialogs {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(32.r),
-                        border: Border.all(
-                          color: primaryColor,
-                          width: 4.w,
-                        ),
+                        border: Border.all(color: primaryColor, width: 4.w),
                         boxShadow: [
                           BoxShadow(
                             color: primaryColor.withValues(alpha: 0.6),
