@@ -121,7 +121,12 @@ class _PremiumScreenState extends State<PremiumScreen> {
       final user = context.read<AuthBloc>().state.user;
       if (user != null) {
         final selectedPlan = _plans[_selectedPlanIndex];
-        await _paymentService.upgradeToPremium(user.id, selectedPlan.days);
+        await _paymentService.upgradeToPremium(
+          orderId: response.orderId ?? '',
+          paymentId: response.paymentId ?? '',
+          signature: response.signature ?? '',
+          days: selectedPlan.days,
+        );
 
         if (mounted) {
           // Refresh user state to reflect premium status

@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:vowl/features/auth/domain/usecases/get_current_user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 
 /// Abstract contract defining the payment processing system.
 ///
@@ -44,8 +45,13 @@ abstract class PaymentService {
     required String planName,
   });
 
-  /// Upgrades user subscription validity in backend records.
-  Future<void> upgradeToPremium(String userId, int days);
+  /// Upgrades user subscription validity by calling the secure backend endpoint.
+  Future<void> upgradeToPremium({
+    required String orderId,
+    required String paymentId,
+    required String signature,
+    required int days,
+  });
 
   /// Releases resources, event listeners, and pending transactions.
   void dispose();
@@ -161,35 +167,28 @@ class RazorpayPaymentService implements PaymentService {
   }
 
   @override
-  Future<void> upgradeToPremium(String userId, int days) async {
-    // ──────────────────────────────────────────────────────────────────
-    // CRITICAL SECURITY NOTE — DO NOT REMOVE THIS COMMENT WHEN EDITING:
-    //
-    // This method grants a real paid entitlement (`isPremium: true`) based
-    // solely on a CLIENT-OBSERVED Razorpay success callback. The Razorpay
-    // client SDK's "success" event is NOT cryptographically verified on
-    // device — it can be spoofed by a modified client, a MITM proxy, or by
-    // directly invoking this method. For a production release this MUST be
-    // re-architected so the entitlement is granted by a trusted backend
-    // (e.g. a Cloud Function / webhook) that independently verifies the
-    // Razorpay payment signature server-side using the secret key, which
-    // must never be shipped to the client. The client should call that
-    // verified endpoint (or simply re-read the user doc after the backend
-    // updates it) rather than writing `isPremium` directly from here.
-    //
-    // Left intact functionally (so this PR doesn't silently break premium
-    // purchases) pending that backend work — tracked as a Critical finding
-    // in the accompanying review, not something safe to "fix" blindly
-    // without the corresponding server-side verification endpoint.
-    // ──────────────────────────────────────────────────────────────────
+  Future<void> upgradeToPremium({
+    required String orderId,
+    required String paymentId,
+    required String signature,
+    required int days,
+  }) async {
     try {
-      final expiryDate = DateTime.now().add(Duration(days: days));
-      await firestore.collection('users').doc(userId).update({
-        'isPremium': true,
-        'premiumExpiryDate': Timestamp.fromDate(expiryDate),
+      final callable = FirebaseFunctions.instance.httpsCallable('verifyPayment');
+      final response = await callable.call({
+        'orderId': orderId,
+        'paymentId': paymentId,
+        'signature': signature,
+        'durationDays': days,
       });
+      
+      final data = response.data as Map<String, dynamic>;
+      if (data['success'] != true) {
+        throw Exception('Server rejected the payment verification.');
+      }
+      
       if (kDebugMode) {
-        debugPrint('User subscription upgraded successfully for $days days.');
+        debugPrint('User subscription upgraded securely via Cloud Function.');
       }
     } catch (e) {
       if (kDebugMode) debugPrint('Failed to upgrade user subscription: $e');
