@@ -1,4 +1,4 @@
-import 'dart:ui' as ui;
+
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -667,8 +667,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                   ],
                 ),
               ),
-              ),
-                      ),
+            ),
                     ],
                   ),
                 ),
