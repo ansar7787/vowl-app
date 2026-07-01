@@ -99,21 +99,21 @@ class KidsRoomTopBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: const Color(0xFF10B981), width: 3.w),
+        border: Border.all(color: Colors.amber, width: 3.w),
         boxShadow: [
-          BoxShadow(color: const Color(0xFF047857), offset: Offset(0, 4.h)),
+          BoxShadow(color: Colors.amber.shade700, offset: Offset(0, 4.h)),
         ],
       ),
       child: Row(
         children: [
-          Icon(Icons.monetization_on_rounded, color: const Color(0xFF10B981), size: 20.sp),
+          Icon(Icons.star_rounded, color: Colors.amber, size: 24.sp),
           SizedBox(width: 8.w),
           Text(
             "${user.kidsCoins}",
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 16.sp,
               fontWeight: FontWeight.w900,
-              color: const Color(0xFF047857),
+              color: Colors.amber.shade700,
             ),
           ),
         ],

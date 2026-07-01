@@ -513,15 +513,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
               ),
           ],
         ),
-        if (_currentTheme == 'space')
-           Positioned.fill(
-             child: IgnorePointer(
-               child: const Text("✨", style: TextStyle(fontSize: 10))
-                   .animate(onPlay: (c) => c.repeat())
-                   .moveX(begin: 0, end: 1.sw, duration: 5.seconds)
-                   .moveY(begin: 0, end: 1.sh, duration: 3.seconds),
-             ),
-           ),
         SizedBox(height: 20.h),
         if (_isTalking)
           Container(
