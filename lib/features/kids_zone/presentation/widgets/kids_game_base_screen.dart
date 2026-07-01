@@ -114,9 +114,8 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
         } else if (state is KidsLoaded) {
           if (state.lastAnswerCorrect == true) {
             audio.playSuccessSFX();
-            speakHint("That's right! \${state.currentQuest.hint}");
             final bloc = context.read<KidsBloc>();
-            Future.delayed(const Duration(seconds: 5), () {
+            Future.delayed(const Duration(milliseconds: 1500), () {
               if (mounted && context.mounted && bloc.state == state) bloc.add(NextKidsQuestion());
             });
           } else if (state.lastAnswerCorrect == false) {
@@ -124,7 +123,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             final bloc = context.read<KidsBloc>();
             final isFinalFailure = state.isFinalFailure || state.livesRemaining <= 0;
             
-            Future.delayed(Duration(milliseconds: isFinalFailure ? 2500 : 2000), () {
+            Future.delayed(Duration(milliseconds: isFinalFailure ? 2000 : 1500), () {
               if (mounted && context.mounted && bloc.state == state) {
                 if (isFinalFailure) {
                   bloc.add(NextKidsQuestion());
@@ -373,15 +372,8 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
         } else if (state.lastAnswerCorrect == null) {
           displayMessage = state.currentQuest.instruction;
         } else {
-          displayMessage = MascotMessageHelper.getMessage(
-            context,
-            category: 'kids',
-            mascotId: mascotId,
-            isComplete: isComplete,
-            isAnswered: isAnswered,
-            isCorrect: isCorrect,
-            lives: lives,
-          );
+          // Hide message during feedback overlay
+          displayMessage = "";
         }
 
         return Positioned(
