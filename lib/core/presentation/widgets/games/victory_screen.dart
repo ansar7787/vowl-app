@@ -290,6 +290,7 @@ class _VictoryScreenState extends State<VictoryScreen> {
               final isPremium =
                   context.read<AuthBloc>().state.user?.isPremium ?? false;
               di.sl<AdService>().showRewardedAd(
+                context: context,
                 isPremium: isPremium,
                 onUserEarnedReward: (_) {
                   if (!mounted) return;

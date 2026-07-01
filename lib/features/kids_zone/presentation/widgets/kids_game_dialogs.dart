@@ -257,6 +257,7 @@ class KidsGameDialogs {
                               ScaleButton(
                                     onTap: () {
                                       adService.showRewardedAd(
+                                        context: context,
                                         isPremium: isPremium,
                                         onUserEarnedReward: (_) {
                                           context.read<KidsBloc>().add(
@@ -506,6 +507,7 @@ class KidsGameDialogs {
                   ScaleButton(
                     onTap: () {
                       adService.showRewardedAd(
+                        context: context,
                         isPremium: isPremium,
                         onUserEarnedReward: (_) {
                           context.read<KidsBloc>().add(RestoreKidsLife());

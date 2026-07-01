@@ -124,6 +124,7 @@ class GameDialogHelper {
                         context.read<AuthBloc>().state.user?.isPremium ?? false;
 
                     adService.showRewardedAd(
+                      context: context,
                       isPremium: isPrem,
                       onUserEarnedReward: (_) {
                         if (!context.mounted) return;
@@ -213,6 +214,7 @@ class GameDialogHelper {
                 }
 
                 adService.showRewardedAd(
+                  context: context,
                   isPremium: false,
                   onUserEarnedReward: (_) {
                     onRestore();
@@ -334,6 +336,7 @@ class GameDialogHelper {
 
           Navigator.of(dialogCtx).pop();
           adService.showHintRewardedAd(
+            context: context,
             isPremium: isPremium,
             onHintEarned: () {
               if (!context.mounted) return;

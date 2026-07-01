@@ -1,8 +1,10 @@
 import 'dart:io';
+import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 /// Manages interstitial and rewarded ad lifecycles for Vowl.
 ///
@@ -68,13 +70,13 @@ class AdService {
         _isInitialized = true;
         if (kDebugMode) debugPrint('AdService: MobileAds initialised.');
 
-        // Enforce COPPA/Families Policy compliance globally for all users
-        // This is strictly required to prevent AdMob bans for kids games.
+        // Lessen strict kids-only restrictions to increase ad fill rate and revenue.
+        // NOTE: Make sure your Google Play Console target audience matches this (e.g., 13+).
         MobileAds.instance.updateRequestConfiguration(
           RequestConfiguration(
             testDeviceIds: kDebugMode ? ['6739FCB31DECCBA1A191319DC27E562A'] : null,
-            tagForChildDirectedTreatment: TagForChildDirectedTreatment.yes,
-            maxAdContentRating: MaxAdContentRating.g,
+            tagForChildDirectedTreatment: TagForChildDirectedTreatment.unspecified,
+            maxAdContentRating: MaxAdContentRating.t,
           ),
         );
 
@@ -318,6 +320,7 @@ class AdService {
   }
 
   void showRewardedAd({
+    BuildContext? context,
     required bool isPremium,
     required Function(RewardItem) onUserEarnedReward,
     required VoidCallback onDismissed,
@@ -332,6 +335,13 @@ class AdService {
       if (kDebugMode) {
         debugPrint('AdService: Rewarded ad not loaded yet.');
       }
+      if (context != null && context.mounted) {
+        CustomSnackBar.show(
+          context: context,
+          message: 'Ad is not ready yet. Please wait a few seconds and try again.',
+          type: CustomSnackBarType.error,
+        );
+      }
       onDismissed();
       return;
     }
@@ -345,6 +355,13 @@ class AdService {
       onAdFailedToShowFullScreenContent: (ad, error) {
         if (kDebugMode) {
           debugPrint('AdService: Rewarded failed to show: $error');
+        }
+        if (context != null && context.mounted) {
+          CustomSnackBar.show(
+            context: context,
+            message: 'Failed to show ad. Please check your internet and try again.',
+            type: CustomSnackBarType.error,
+          );
         }
         ad.dispose();
         loadRewardedAd();
@@ -361,11 +378,13 @@ class AdService {
 
   /// Convenience wrapper for hint-based rewarded ad flows.
   void showHintRewardedAd({
+    BuildContext? context,
     required bool isPremium,
     required VoidCallback onHintEarned,
     required VoidCallback onDismissed,
   }) {
     showRewardedAd(
+      context: context,
       isPremium: isPremium,
       onUserEarnedReward: (_) => onHintEarned(),
       onDismissed: onDismissed,

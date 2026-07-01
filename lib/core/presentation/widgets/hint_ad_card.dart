@@ -43,6 +43,7 @@ class _HintAdCardState extends State<HintAdCard> {
 
     try {
       di.sl<AdService>().showHintRewardedAd(
+        context: context,
         isPremium: isPremium,
         onHintEarned: () {
           rewardEarned = true;

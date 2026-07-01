@@ -28,6 +28,7 @@ class KidsWatchEarnCard extends StatelessWidget {
           onTap: () {
             bool rewardEarned = false;
             di.sl<AdService>().showRewardedAd(
+              context: context,
               isPremium: user.isPremium,
               onUserEarnedReward: (reward) {
                 rewardEarned = true;

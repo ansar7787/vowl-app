@@ -44,6 +44,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
 
     try {
       di.sl<AdService>().showRewardedAd(
+        context: context,
         isPremium: isPremium,
         onUserEarnedReward: (reward) {
           rewardEarned = true;

@@ -696,6 +696,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         return ScaleButton(
               onTap: () {
                 di.sl<AdService>().showRewardedAd(
+                  context: context,
                   isPremium: isPremium,
                   onUserEarnedReward: (reward) {
                     di.sl<SoundService>().playCorrect();

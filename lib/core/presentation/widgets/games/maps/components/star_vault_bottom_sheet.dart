@@ -141,6 +141,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
     final isPremium = user?.isPremium ?? false;
 
     adService.showRewardedAd(
+      context: context,
       isPremium: isPremium,
       onUserEarnedReward: (_) async {
         final updateUserRewards = di.sl<UpdateUserRewards>();

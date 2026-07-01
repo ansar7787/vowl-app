@@ -132,6 +132,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
               : () {
                   final adService = di.sl<AdService>();
                   adService.showRewardedAd(
+                    context: context,
                     isPremium: user.isPremium,
                     onDismissed: () {},
                     onUserEarnedReward: (reward) {

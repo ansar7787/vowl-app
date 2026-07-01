@@ -228,6 +228,7 @@ class _KeyShopContent extends StatelessWidget {
                     }
                     Navigator.pop(context);
                     adService.showRewardedAd(
+                      context: context,
                       isPremium: false,
                       onUserEarnedReward: (_) async {
                         final result = await di.sl<AddGoldenKey>().call(
