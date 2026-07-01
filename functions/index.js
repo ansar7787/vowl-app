@@ -122,6 +122,9 @@ exports.sendWeeklyRankings = onSchedule("59 23 * * 0", async (event) => {
                     title: title,
                     body: body
                 },
+                data: {
+                    path: "/leaderboard"
+                },
                 android: {
                     priority: "high",
                     notification: {
@@ -177,6 +180,9 @@ exports.sendStreakReminders = onSchedule("0 20 * * *", async (event) => {
                 notification: {
                     title: 'Your Streak is in Danger! 🔥',
                     body: `Don't lose your ${streak}-day streak! Open Vowl and play a quick quest.`
+                },
+                data: {
+                    path: "/streak"
                 },
                 android: {
                     priority: "high",
