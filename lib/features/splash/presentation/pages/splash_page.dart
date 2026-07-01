@@ -20,13 +20,6 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    // Pre-cache the logo image to prevent any visual "popping"
-    // Once decoded into memory, we remove the Native Splash screen
-    // so the transition to Flutter is absolutely seamless!
-    precacheImage(const AssetImage('assets/images/vowl_logo.webp'), context)
-        .then((_) {
-      FlutterNativeSplash.remove();
-    });
   }
 
   @override
@@ -54,6 +47,12 @@ class _SplashPageState extends State<SplashPage> {
     }
 
     _hasNavigated = true;
+    
+    // INDUSTRY STANDARD: We hold the Android 12 Native Splash Screen over the UI
+    // until we know exactly where the user is going. Once auth resolves, we drop
+    // the native splash and immediately route them. No "double splash" effect!
+    FlutterNativeSplash.remove();
+    
     // GoRouter redirect logic determines whether to land on Home or Login.
     context.go(AppRouter.homeRoute);
   }
@@ -61,7 +60,6 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final primaryColor = Theme.of(context).colorScheme.primary;
     final backgroundColor = isDark ? const Color(0xFF0F172A) : Colors.white;
 
     return BlocListener<AuthBloc, AuthState>(
@@ -83,130 +81,9 @@ class _SplashPageState extends State<SplashPage> {
         ),
         child: Scaffold(
           backgroundColor: backgroundColor,
-          body: Stack(
-            children: [
-              // Localised branding aura
-              Center(
-                child: Container(
-                  width: 300.r,
-                  height: 300.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: RadialGradient(
-                      colors: [
-                        primaryColor.withValues(alpha: isDark ? 0.12 : 0.05),
-                        backgroundColor.withValues(alpha: 0.0),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-
-              // Centre logo
-              Center(
-                child: RepaintBoundary(
-                  child: _SplashLogo(primaryColor: primaryColor),
-                ),
-              ),
-
-              // Footer branding
-              Positioned(
-                bottom: 64.h,
-                left: 0,
-                right: 0,
-                child: _SplashFooter(
-                  primaryColor: primaryColor,
-                  isDark: isDark,
-                ),
-              ),
-            ],
-          ),
+          // Empty body — the Native Splash is completely covering this screen!
+          body: const SizedBox.expand(),
         ),
-      ),
-    );
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Private widgets — kept in file because they are splash-exclusive
-// ---------------------------------------------------------------------------
-
-class _SplashLogo extends StatelessWidget {
-  final Color primaryColor;
-  const _SplashLogo({required this.primaryColor});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 180.r,
-      height: 180.r,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        boxShadow: [
-          BoxShadow(
-            color: primaryColor.withValues(alpha: 0.05),
-            blurRadius: 50,
-            spreadRadius: 5,
-          ),
-        ],
-      ),
-      child: Center(
-        child: Semantics(
-          label: 'Vowl Mascot Logo',
-          image: true,
-          child: Image.asset(
-            'assets/images/vowl_logo.webp',
-            height: 130.r,
-            width: 130.r,
-            fit: BoxFit.contain,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _SplashFooter extends StatelessWidget {
-  final Color primaryColor;
-  final bool isDark;
-  const _SplashFooter({required this.primaryColor, required this.isDark});
-
-  @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      label: 'Vowl App — Your Complete English Quest',
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            'vowl',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 26.sp,
-              fontWeight: FontWeight.w900,
-              color: const Color(0xFFA8E063),
-              letterSpacing: 1.2,
-              shadows: [
-                Shadow(
-                  color: const Color(0xFFA8E063).withValues(alpha: 0.2),
-                  offset: const Offset(0, 4),
-                  blurRadius: 10,
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 6.h),
-          Text(
-            'Your Complete English Quest',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w800,
-              color: isDark ? Colors.white30 : Colors.black26,
-              letterSpacing: 2,
-            ),
-          ),
-        ],
       ),
     );
   }
