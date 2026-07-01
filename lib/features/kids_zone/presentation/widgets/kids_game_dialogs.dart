@@ -47,7 +47,7 @@ class KidsGameDialogs {
                     elevation: 0,
                     insetPadding: EdgeInsets.symmetric(horizontal: 24.w),
                     child: Container(
-                      padding: EdgeInsets.all(24.w),
+                      padding: EdgeInsets.all(20.w),
                       decoration: BoxDecoration(
                         color: isDark ? const Color(0xFF1E293B) : Colors.white,
                         borderRadius: BorderRadius.circular(40.r),
@@ -97,7 +97,7 @@ class KidsGameDialogs {
                               fontFamily: 'Outfit',
                               fontWeight: FontWeight.w900,
                               color: primaryColor,
-                              fontSize: 22.sp,
+                              fontSize: 20.sp,
                               letterSpacing: 1.5,
                             ),
                           ),
@@ -271,7 +271,7 @@ class KidsGameDialogs {
                                                 fontFamily: 'Outfit',
                                                 fontWeight: FontWeight.w900,
                                                 color: const Color(0xFFF59E0B),
-                                                fontSize: 16.sp,
+                                                fontSize: 14.sp,
                                                 letterSpacing: 1,
                                               ),
                                               maxLines: 1,
@@ -336,7 +336,7 @@ class KidsGameDialogs {
                             },
                             child: Container(
                               width: double.infinity,
-                              height: 64.h,
+                              height: 56.h,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(32.r),
@@ -358,7 +358,7 @@ class KidsGameDialogs {
                                     fontFamily: 'Outfit',
                                     fontWeight: FontWeight.w900,
                                     color: const Color(0xFFF59E0B),
-                                    fontSize: 22.sp,
+                                    fontSize: 18.sp,
                                     letterSpacing: 1.5,
                                   ),
                                 ),
@@ -401,7 +401,7 @@ class KidsGameDialogs {
           elevation: 0,
           insetPadding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Container(
-            padding: EdgeInsets.all(24.w),
+            padding: EdgeInsets.all(20.w),
             decoration: BoxDecoration(
               color: isDark ? const Color(0xFF1E293B) : Colors.white,
               borderRadius: BorderRadius.circular(40.r),
@@ -434,7 +434,7 @@ class KidsGameDialogs {
                   fontFamily: 'Outfit',
                   fontWeight: FontWeight.w900,
                   color: Colors.redAccent,
-                  fontSize: 32.sp,
+                  fontSize: 24.sp,
                 ),
               ),
               SizedBox(height: 12.h),
@@ -443,7 +443,7 @@ class KidsGameDialogs {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 16.sp,
+                  fontSize: 14.sp,
                   color: isDark ? Colors.white70 : Colors.black54,
                   fontWeight: FontWeight.w600,
                 ),
@@ -463,7 +463,7 @@ class KidsGameDialogs {
                 },
                   child: Container(
                     width: double.infinity,
-                    height: 64.h,
+                    height: 56.h,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(32.r),
@@ -485,7 +485,7 @@ class KidsGameDialogs {
                               fontFamily: 'Outfit',
                               fontWeight: FontWeight.w900,
                               color: const Color(0xFF10B981),
-                              fontSize: 20.sp,
+                              fontSize: 16.sp,
                               letterSpacing: 1,
                             ),
                           ),
@@ -540,7 +540,7 @@ class KidsGameDialogs {
               elevation: 0,
               insetPadding: EdgeInsets.symmetric(horizontal: 24.w),
               child: Container(
-                padding: EdgeInsets.all(24.w),
+                padding: EdgeInsets.all(20.w),
                 decoration: BoxDecoration(
                   color: isDark ? const Color(0xFF1E293B) : Colors.white,
                   borderRadius: BorderRadius.circular(40.r),
@@ -581,7 +581,7 @@ class KidsGameDialogs {
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontWeight: FontWeight.w900,
-                      fontSize: 22.sp,
+                      fontSize: 20.sp,
                       color: isDark ? Colors.white : const Color(0xFF1E293B),
                     ),
                   ),
@@ -606,7 +606,7 @@ class KidsGameDialogs {
                         child: ScaleButton(
                           onTap: () => Navigator.pop(context, true),
                           child: Container(
-                            height: 60.h,
+                            height: 52.h,
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(30.r),
@@ -626,7 +626,7 @@ class KidsGameDialogs {
                                   fontFamily: 'Outfit',
                                   fontWeight: FontWeight.w900,
                                   color: Colors.grey[600],
-                                  fontSize: 16.sp,
+                                  fontSize: 14.sp,
                                   letterSpacing: 1,
                                 ),
                               ),
@@ -639,7 +639,7 @@ class KidsGameDialogs {
                         child: ScaleButton(
                           onTap: () => Navigator.pop(context, false),
                           child: Container(
-                            height: 60.h,
+                            height: 52.h,
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(30.r),
@@ -659,7 +659,7 @@ class KidsGameDialogs {
                                   fontFamily: 'Outfit',
                                   fontWeight: FontWeight.w900,
                                   color: const Color(0xFF8B5CF6),
-                                  fontSize: 16.sp,
+                                  fontSize: 14.sp,
                                   letterSpacing: 1,
                                 ),
                               ),

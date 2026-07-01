@@ -75,8 +75,8 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
             child: ScaleButton(
               onTap: widget.onTap,
               child: Container(
-                width: 340.w,
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
+                width: 300.w,
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
                 decoration: BoxDecoration(
                   color: primaryColor,
                   borderRadius: BorderRadius.circular(40.r),
@@ -99,7 +99,7 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
                       widget.isCorrect ? context.tr('games.kids_awesome') : context.tr('games.kids_oh_no'),
                       style: TextStyle(
                         fontFamily: 'Outfit', 
-                        fontSize: 48.sp,
+                        fontSize: 36.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
                         letterSpacing: 2,
@@ -131,7 +131,7 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
                              : context.tr('games.kids_try_again_msg')),
                         style: TextStyle(
                           fontFamily: 'Outfit', 
-                          fontSize: 18.sp,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w900,
                           color: primaryColor,
                         ),
@@ -173,7 +173,7 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
                     // MODERN 3D BUTTON
                     Container(
                       width: double.infinity,
-                      height: 64.h,
+                      height: 56.h,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(32.r),
@@ -193,7 +193,7 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
                               context.tr('common.continue_text').toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit', 
-                                fontSize: 24.sp,
+                                fontSize: 20.sp,
                                 fontWeight: FontWeight.w900,
                                 color: primaryColor,
                                 letterSpacing: 1.5,
@@ -246,7 +246,7 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
           ),
           child: VowlMascot(
             isKidsMode: true,
-            size: 110.r,
+            size: 90.r,
             state: widget.isCorrect ? VowlMascotState.happy : VowlMascotState.worried,
             useFloatingAnimation: true,
           ),
