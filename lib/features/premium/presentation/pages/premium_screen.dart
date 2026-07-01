@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:confetti/confetti.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
 
@@ -31,6 +32,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   String? _errorMessage;
   String? _transactionId;
   Timer? _paymentTimeout;
+  late ConfettiController _confettiController;
 
   // NOTE: previously this screen carried its own ad-hoc
   // `List<Map<String, dynamic>>` of plans, completely separate from the
@@ -80,6 +82,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   @override
   void initState() {
     super.initState();
+    _confettiController = ConfettiController(duration: const Duration(seconds: 3));
     _paymentService.init(
       onSuccess: _handlePaymentSuccess,
       onFailure: _handlePaymentFailure,
@@ -133,6 +136,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
           context.read<AuthBloc>().add(AuthReloadUser());
 
           di.sl<HapticService>().success();
+          _confettiController.play();
+          
           setState(() {
             _isProcessing = false;
             _paymentCompleted = true;
@@ -191,6 +196,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
   @override
   void dispose() {
+    _confettiController.dispose();
     _cancelPaymentTimeout();
     _paymentService.dispose();
     super.dispose();
@@ -239,6 +245,23 @@ class _PremiumScreenState extends State<PremiumScreen> {
               ),
               if (_isProcessing) _buildProcessingOverlay(),
               if (_paymentCompleted) _buildCompletedOverlay(),
+              Align(
+                alignment: Alignment.topCenter,
+                child: ConfettiWidget(
+                  confettiController: _confettiController,
+                  blastDirectionality: BlastDirectionality.explosive,
+                  emissionFrequency: 0.05,
+                  numberOfParticles: 50,
+                  gravity: 0.1,
+                  colors: const [
+                    Color(0xFFF59E0B),
+                    Color(0xFFEA580C),
+                    Color(0xFF10B981),
+                    Color(0xFF6366F1),
+                    Color(0xFFF43F5E),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
