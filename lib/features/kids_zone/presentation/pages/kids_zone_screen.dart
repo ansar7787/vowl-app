@@ -331,37 +331,26 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
   }
 
   Widget _buildCoinBadge(BuildContext context, int coins, Color contrastColor) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: isDark
-            ? Colors.white.withValues(alpha: 0.1)
-            : Colors.white.withValues(alpha: 0.6),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: contrastColor.withValues(alpha: isDark ? 0.1 : 0.2),
-        ),
-        boxShadow: isDark
-            ? []
-            : [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.03),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
+        border: Border.all(color: Colors.amber, width: 3.w),
+        boxShadow: [
+          BoxShadow(color: Colors.amber.shade700, offset: Offset(0, 4.h)),
+        ],
       ),
       child: Row(
         children: [
-          Text('🪙', style: TextStyle(fontSize: 20.sp)),
+          Icon(Icons.monetization_on_rounded, color: Colors.amber, size: 24.sp),
           SizedBox(width: 8.w),
           Text(
             coins.toString(),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontWeight: FontWeight.w900,
-              color: contrastColor,
+              color: Colors.amber.shade700,
               fontSize: 16.sp,
             ),
           ),
