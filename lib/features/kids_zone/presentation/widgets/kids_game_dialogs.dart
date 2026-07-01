@@ -75,7 +75,7 @@ class KidsGameDialogs {
                                     padding: EdgeInsets.symmetric(horizontal: 4.w),
                                     child: Icon(
                                       Icons.star_rounded,
-                                      size: index == 1 ? 48.sp : 36.sp,
+                                      size: index == 1 ? 36.sp : 28.sp,
                                       color: isEarned ? const Color(0xFFFFD700) : Colors.black12,
                                     ).animate(delay: (150 * index).ms).scale(
                                       curve: Curves.elasticOut,
