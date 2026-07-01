@@ -292,6 +292,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                         children: [
                           PrefixSuffixMissionControl(
                             primaryColor: theme.primaryColor,
+                            instruction: quest.instruction ?? "Select the correct prefix or suffix",
                           ),
 
                           // Docking Terminals (Options)

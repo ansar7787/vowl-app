@@ -3,10 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 class PrefixSuffixMissionControl extends StatelessWidget {
   final Color primaryColor;
+  final String instruction;
 
   const PrefixSuffixMissionControl({
     super.key,
     required this.primaryColor,
+    required this.instruction,
   });
 
   @override
@@ -28,27 +30,18 @@ class PrefixSuffixMissionControl extends StatelessWidget {
             ],
           ),
           child: Text(
-            "DOCK THE ROVER",
+            instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'RobotoMono', 
-              fontSize: 12.sp,
+              fontSize: 10.sp,
               fontWeight: FontWeight.bold,
               color: Colors.white,
-              letterSpacing: 2,
+              letterSpacing: 1,
             ),
+            textAlign: TextAlign.center,
           ),
         )
             .animate(onPlay: (c) => c.repeat(reverse: true))
             .shimmer(duration: 2.seconds),
-        SizedBox(height: 8.h),
-        Text(
-          "LEXICAL MISSION IN PROGRESS",
-          style: TextStyle(fontFamily: 'Outfit', 
-            fontSize: 8.sp,
-            color: primaryColor.withValues(alpha: 0.5),
-            fontWeight: FontWeight.w800,
-            letterSpacing: 1.5,
-          ),
-        ),
       ],
     );
   }

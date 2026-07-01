@@ -3,422 +3,452 @@
     "quests": [
         {
             "id": "VOC_PREFIXSUFFIX_L1_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To do something again.",
+            "explanation": "RE- means again. RE + DO = REDO.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "REDO",
+            "rootWord": "DO",
+            "options": [
+                "-LY",
+                "-FUL",
+                "-SHIP",
+                "RE-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L1_Q2",
+            "instruction": "Select the correct prefix or suffix.",
             "hint": "To play something again.",
             "explanation": "RE + PLAY = REPLAY.",
             "interactionType": "Root Rover",
             "correctAnswer": "REPLAY",
             "rootWord": "PLAY",
             "options": [
+                "-ARY",
+                "IN-",
                 "RE-",
-                "-ORY",
-                "UN-",
-                "-NESS"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L1_Q2",
-            "hint": "The act of making.",
-            "explanation": "-ION forms a noun from a verb. CREATE + ION = CREATION.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "CREATION",
-            "rootWord": "CREATE",
-            "options": [
-                "-ION",
-                "-ABLE",
-                "-IFY",
-                "PRE-"
+                "-OR"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L1_Q3",
-            "hint": "In a poor way.",
-            "explanation": "BAD + LY = BADLY.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To write something again.",
+            "explanation": "RE + WRITE = REWRITE.",
             "interactionType": "Root Rover",
-            "correctAnswer": "BADLY",
-            "rootWord": "BAD",
+            "correctAnswer": "REWRITE",
+            "rootWord": "WRITE",
             "options": [
-                "-LY",
-                "-IC",
-                "-IVE",
-                "-ENCE"
+                "-WARD",
+                "-ATE",
+                "RE-",
+                "ANTI-"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L2_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To build something again.",
+            "explanation": "RE + BUILD = REBUILD.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "REBUILD",
+            "rootWord": "BUILD",
+            "options": [
+                "-ARY",
+                "SEMI-",
+                "IM-",
+                "RE-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L2_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To fill something again.",
+            "explanation": "RE + FILL = REFILL.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "REFILL",
+            "rootWord": "FILL",
+            "options": [
+                "IM-",
+                "IN-",
+                "-SHIP",
+                "RE-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L2_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To tell a story again.",
+            "explanation": "RE + TELL = RETELL.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "RETELL",
+            "rootWord": "TELL",
+            "options": [
+                "-FOLD",
+                "RE-",
+                "IL-",
+                "SUPER-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L3_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To open something again after it was closed.",
+            "explanation": "RE + OPEN = REOPEN.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "REOPEN",
+            "rootWord": "OPEN",
+            "options": [
+                "FORE-",
+                "RE-",
+                "IM-",
+                "-ER"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L3_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To load something again.",
+            "explanation": "RE + LOAD = RELOAD.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "RELOAD",
+            "rootWord": "LOAD",
+            "options": [
+                "IN-",
+                "RE-",
+                "IM-",
+                "-ENCE"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L3_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Make it the opposite of joyful.",
+            "explanation": "UN- means not. UN + HAPPY = UNHAPPY.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "UNHAPPY",
+            "rootWord": "HAPPY",
+            "options": [
+                "IL-",
+                "-ATE",
+                "OMNI-",
+                "UN-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L4_Q1",
+            "instruction": "Select the correct prefix or suffix.",
             "hint": "Make it the opposite of recognized.",
             "explanation": "UN + KNOWN = UNKNOWN.",
             "interactionType": "Root Rover",
             "correctAnswer": "UNKNOWN",
             "rootWord": "KNOWN",
             "options": [
-                "-IVE",
                 "UN-",
-                "-ION",
-                "IM-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L2_Q2",
-            "hint": "Able to be depended on.",
-            "explanation": "-ABLE means capable of. RELY + ABLE = RELIABLE.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "RELIABLE",
-            "rootWord": "RELY",
-            "options": [
-                "-OR",
-                "-ABLE",
-                "-IFY",
-                "-ER"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L2_Q3",
-            "hint": "Able to be depended on.",
-            "explanation": "-ABLE means capable of. RELY + ABLE = RELIABLE.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "RELIABLE",
-            "rootWord": "RELY",
-            "options": [
-                "DIS-",
-                "-LY",
-                "-ER",
-                "-ABLE"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L3_Q1",
-            "hint": "Without effort.",
-            "explanation": "EASY + LY = EASILY.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "EASILY",
-            "rootWord": "EASY",
-            "options": [
-                "-LY",
-                "UN-",
-                "PRE-",
-                "-OR"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L3_Q2",
-            "hint": "One who acts.",
-            "explanation": "-OR also means a person who does something. ACT + OR = ACTOR.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "ACTOR",
-            "rootWord": "ACT",
-            "options": [
-                "-IFY",
-                "-OR",
-                "-LESS",
-                "MIS-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L3_Q3",
-            "hint": "The act of doing.",
-            "explanation": "ACT + ION = ACTION.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "ACTION",
-            "rootWord": "ACT",
-            "options": [
-                "-OUS",
-                "-ION",
-                "UN-",
-                "IN-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L4_Q1",
-            "hint": "A person who does art.",
-            "explanation": "-IST means a person who practices. ART + IST = ARTIST.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "ARTIST",
-            "rootWord": "ART",
-            "options": [
-                "-IST",
-                "-OR",
-                "UN-",
-                "IN-"
+                "MULTI-",
+                "DE-",
+                "FORE-"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L4_Q2",
-            "hint": "Opposite of agreeing.",
-            "explanation": "DIS + AGREE = DISAGREE.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Make it the opposite of fastened.",
+            "explanation": "UN + LOCK = UNLOCK.",
             "interactionType": "Root Rover",
-            "correctAnswer": "DISAGREE",
-            "rootWord": "AGREE",
+            "correctAnswer": "UNLOCK",
+            "rootWord": "LOCK",
             "options": [
-                "-ION",
-                "DIS-",
-                "NON-",
-                "-OUS"
+                "CO-",
+                "UN-",
+                "IN-",
+                "UNI-"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L4_Q3",
-            "hint": "Without a house.",
-            "explanation": "HOME + LESS = HOMELESS.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Make it the opposite of covered.",
+            "explanation": "UN + WRAP = UNWRAP.",
             "interactionType": "Root Rover",
-            "correctAnswer": "HOMELESS",
-            "rootWord": "HOME",
+            "correctAnswer": "UNWRAP",
+            "rootWord": "WRAP",
             "options": [
-                "-IZE",
-                "IL-",
-                "-ARY",
-                "-LESS"
+                "-IC",
+                "NON-",
+                "UN-",
+                "PRO-"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L5_Q1",
-            "hint": "Opposite of liking.",
-            "explanation": "DIS- means not or opposite. DIS + LIKE = DISLIKE.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To undo a knot.",
+            "explanation": "UN + TIE = UNTIE.",
             "interactionType": "Root Rover",
-            "correctAnswer": "DISLIKE",
-            "rootWord": "LIKE",
+            "correctAnswer": "UNTIE",
+            "rootWord": "TIE",
             "options": [
-                "DIS-",
-                "-MENT",
-                "-ION",
-                "-RY"
+                "UN-",
+                "EX-",
+                "TRANS-",
+                "DE-"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L5_Q2",
-            "hint": "Able to have worth.",
-            "explanation": "VALUE + ABLE = VALUABLE.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To open something that was folded.",
+            "explanation": "UN + FOLD = UNFOLD.",
             "interactionType": "Root Rover",
-            "correctAnswer": "VALUABLE",
-            "rootWord": "VALUE",
+            "correctAnswer": "UNFOLD",
+            "rootWord": "FOLD",
             "options": [
-                "-ANCE",
-                "-ABLE",
-                "-ARY",
-                "-IST"
+                "-ATE",
+                "-IZE",
+                "INTER-",
+                "UN-"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L5_Q3",
-            "hint": "In a poor way.",
-            "explanation": "BAD + LY = BADLY.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To take things out of a suitcase or box.",
+            "explanation": "UN + PACK = UNPACK.",
             "interactionType": "Root Rover",
-            "correctAnswer": "BADLY",
-            "rootWord": "BAD",
+            "correctAnswer": "UNPACK",
+            "rootWord": "PACK",
             "options": [
-                "-ANCE",
-                "IN-",
-                "-LY",
-                "-RY"
+                "UN-",
+                "POST-",
+                "-MENT",
+                "-HOOD"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L6_Q1",
-            "hint": "Not truthful.",
-            "explanation": "DIS + HONEST = DISHONEST.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To remove what is hiding something.",
+            "explanation": "UN + COVER = UNCOVER.",
             "interactionType": "Root Rover",
-            "correctAnswer": "DISHONEST",
-            "rootWord": "HONEST",
+            "correctAnswer": "UNCOVER",
+            "rootWord": "COVER",
             "options": [
-                "-LESS",
-                "-IFY",
-                "DIS-",
-                "-ANCE"
+                "UN-",
+                "-ATE",
+                "-ANCE",
+                "MONO-"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L6_Q2",
-            "hint": "Not right.",
-            "explanation": "IN + CORRECT = INCORRECT.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To open a zipper.",
+            "explanation": "UN + ZIP = UNZIP.",
             "interactionType": "Root Rover",
-            "correctAnswer": "INCORRECT",
-            "rootWord": "CORRECT",
+            "correctAnswer": "UNZIP",
+            "rootWord": "ZIP",
             "options": [
-                "-IVE",
-                "-LESS",
-                "IR-",
+                "INTER-",
+                "DE-",
+                "UN-",
                 "IN-"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L6_Q3",
-            "hint": "One who teaches.",
-            "explanation": "-ER means a person who does something. TEACH + ER = TEACHER.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "TEACHER",
-            "rootWord": "TEACH",
-            "options": [
-                "-ANCE",
-                "-ORY",
-                "-ER",
-                "-TY"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L7_Q1",
-            "hint": "Not straight or immediate.",
-            "explanation": "IN + DIRECT = INDIRECT.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "INDIRECT",
-            "rootWord": "DIRECT",
-            "options": [
-                "-OR",
-                "UN-",
-                "IN-",
-                "-LESS"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L7_Q2",
-            "hint": "To write something again.",
-            "explanation": "RE- means again. RE + WRITE = REWRITE.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "REWRITE",
-            "rootWord": "WRITE",
-            "options": [
-                "-ABLE",
-                "RE-",
-                "IR-",
-                "PRE-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L7_Q3",
-            "hint": "Not able to wait.",
-            "explanation": "IM + PATIENT = IMPATIENT.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "IMPATIENT",
-            "rootWord": "PATIENT",
-            "options": [
-                "UN-",
-                "DIS-",
-                "-ANCE",
-                "IM-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L8_Q1",
-            "hint": "Not right.",
-            "explanation": "IN + CORRECT = INCORRECT.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "INCORRECT",
-            "rootWord": "CORRECT",
-            "options": [
-                "PRE-",
-                "IN-",
-                "-FUL",
-                "-IFY"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L8_Q2",
+            "instruction": "Select the correct prefix or suffix.",
             "hint": "One who works.",
-            "explanation": "WORK + ER = WORKER.",
+            "explanation": "-ER means a person who does something. WORK + ER = WORKER.",
             "interactionType": "Root Rover",
             "correctAnswer": "WORKER",
             "rootWord": "WORK",
             "options": [
-                "-IST",
-                "-MENT",
+                "DE-",
+                "-IZE",
+                "OMNI-",
+                "-ER"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L7_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who teaches.",
+            "explanation": "TEACH + ER = TEACHER.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "TEACHER",
+            "rootWord": "TEACH",
+            "options": [
                 "-ER",
-                "-ARY"
+                "IN-",
+                "MONO-",
+                "NON-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L7_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who sings.",
+            "explanation": "SING + ER = SINGER.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "SINGER",
+            "rootWord": "SING",
+            "options": [
+                "-OR",
+                "MULTI-",
+                "ULTRA-",
+                "-ER"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L7_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who dances.",
+            "explanation": "DANCE + ER = DANCER.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "DANCER",
+            "rootWord": "DANCE",
+            "options": [
+                "-IC",
+                "MID-",
+                "-ER",
+                "-FOLD"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L8_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who drives.",
+            "explanation": "DRIVE + ER = DRIVER.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "DRIVER",
+            "rootWord": "DRIVE",
+            "options": [
+                "-ER",
+                "-LESS",
+                "-FUL",
+                "PRO-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L8_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who paints.",
+            "explanation": "PAINT + ER = PAINTER.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "PAINTER",
+            "rootWord": "PAINT",
+            "options": [
+                "TRANS-",
+                "UNDER-",
+                "DIS-",
+                "-ER"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L8_Q3",
-            "hint": "To see before.",
-            "explanation": "PRE- means before. PRE + VIEW = PREVIEW.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who works on a farm.",
+            "explanation": "FARM + ER = FARMER.",
             "interactionType": "Root Rover",
-            "correctAnswer": "PREVIEW",
-            "rootWord": "VIEW",
+            "correctAnswer": "FARMER",
+            "rootWord": "FARM",
             "options": [
-                "MIS-",
-                "-ARY",
-                "PRE-",
-                "-FUL"
+                "-ER",
+                "IM-",
+                "-IZE",
+                "-WARD"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L9_Q1",
-            "hint": "The act of growing.",
-            "explanation": "-MENT forms a noun from a verb. DEVELOP + MENT = DEVELOPMENT.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who cleans.",
+            "explanation": "CLEAN + ER = CLEANER.",
             "interactionType": "Root Rover",
-            "correctAnswer": "DEVELOPMENT",
-            "rootWord": "DEVELOP",
+            "correctAnswer": "CLEANER",
+            "rootWord": "CLEAN",
             "options": [
-                "NON-",
-                "IL-",
-                "-MENT",
-                "-IC"
+                "OUT-",
+                "ANTI-",
+                "-ER",
+                "-OR"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L9_Q2",
-            "hint": "The act of taking pleasure.",
-            "explanation": "ENJOY + MENT = ENJOYMENT.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who writes books or stories.",
+            "explanation": "WRITE + ER = WRITER.",
             "interactionType": "Root Rover",
-            "correctAnswer": "ENJOYMENT",
-            "rootWord": "ENJOY",
+            "correctAnswer": "WRITER",
+            "rootWord": "WRITE",
             "options": [
-                "-LESS",
-                "-TY",
-                "-MENT",
-                "-LY"
+                "-HOOD",
+                "-ER",
+                "-IFY",
+                "-DOM"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L9_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "In a poor way.",
+            "explanation": "-LY forms an adverb from an adjective. BAD + LY = BADLY.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "BADLY",
+            "rootWord": "BAD",
+            "options": [
+                "-LY",
+                "DIS-",
+                "SUB-",
+                "-ABLE"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L10_Q1",
+            "instruction": "Select the correct prefix or suffix.",
             "hint": "In a low-speed way.",
             "explanation": "SLOW + LY = SLOWLY.",
             "interactionType": "Root Rover",
             "correctAnswer": "SLOWLY",
             "rootWord": "SLOW",
             "options": [
-                "MIS-",
-                "IM-",
-                "-IST",
-                "-LY"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L10_Q1",
-            "hint": "Not related.",
-            "explanation": "IR + RELEVANT = IRRELEVANT.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "IRRELEVANT",
-            "rootWord": "RELEVANT",
-            "options": [
-                "-OUS",
-                "IR-",
-                "-ENCE",
-                "-ION"
+                "-LY",
+                "-ABLE",
+                "ANTI-",
+                "-FUL"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L10_Q2",
-            "hint": "One who edits.",
-            "explanation": "EDIT + OR = EDITOR.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "In a fast way.",
+            "explanation": "QUICK + LY = QUICKLY.",
             "interactionType": "Root Rover",
-            "correctAnswer": "EDITOR",
-            "rootWord": "EDIT",
+            "correctAnswer": "QUICKLY",
+            "rootWord": "QUICK",
             "options": [
-                "PRE-",
-                "-TY",
-                "-OR",
-                "-ENCE"
+                "SUPER-",
+                "OMNI-",
+                "-FOLD",
+                "-LY"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L10_Q3",
-            "hint": "One who teaches.",
-            "explanation": "-ER means a person who does something. TEACH + ER = TEACHER.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Without effort.",
+            "explanation": "EASY + LY = EASILY.",
             "interactionType": "Root Rover",
-            "correctAnswer": "TEACHER",
-            "rootWord": "TEACH",
+            "correctAnswer": "EASILY",
+            "rootWord": "EASY",
             "options": [
-                "-RY",
-                "-IST",
-                "NON-",
-                "-ER"
+                "-WARD",
+                "-ENCE",
+                "-LY",
+                "DE-"
             ]
         }
     ],

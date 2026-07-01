@@ -3,422 +3,452 @@
     "quests": [
         {
             "id": "VOC_PREFIXSUFFIX_L21_Q1",
-            "hint": "Not able to happen.",
-            "explanation": "IM- often means not before 'P'. IM + POSSIBLE = IMPOSSIBLE.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Opposite of agreeing.",
+            "explanation": "DIS- means not or opposite. DIS + AGREE = DISAGREE.",
             "interactionType": "Root Rover",
-            "correctAnswer": "IMPOSSIBLE",
-            "rootWord": "POSSIBLE",
+            "correctAnswer": "DISAGREE",
+            "rootWord": "AGREE",
             "options": [
-                "-ARY",
-                "IM-",
-                "-ION",
-                "-LY"
+                "FORE-",
+                "EX-",
+                "DIS-",
+                "-AL"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L21_Q2",
-            "hint": "To build something again.",
-            "explanation": "RE + BUILD = REBUILD.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "REBUILD",
-            "rootWord": "BUILD",
-            "options": [
-                "RE-",
-                "NON-",
-                "-LY",
-                "-NESS"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L21_Q3",
-            "hint": "Related to the past.",
-            "explanation": "-IC forms an adjective from a noun. HISTORY + IC = HISTORIC.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "HISTORIC",
-            "rootWord": "HISTORY",
-            "options": [
-                "DIS-",
-                "IN-",
-                "-IC",
-                "-TY"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L22_Q1",
-            "hint": "The state of agreeing.",
-            "explanation": "AGREE + MENT = AGREEMENT.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "AGREEMENT",
-            "rootWord": "AGREE",
-            "options": [
-                "-MENT",
-                "-ORY",
-                "-ABLE",
-                "-OR"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L22_Q2",
+            "instruction": "Select the correct prefix or suffix.",
             "hint": "Opposite of liking.",
-            "explanation": "DIS- means not or opposite. DIS + LIKE = DISLIKE.",
+            "explanation": "DIS + LIKE = DISLIKE.",
             "interactionType": "Root Rover",
             "correctAnswer": "DISLIKE",
             "rootWord": "LIKE",
             "options": [
+                "RETRO-",
+                "-FUL",
                 "DIS-",
-                "IN-",
-                "-IFY",
-                "-ION"
+                "PRO-"
             ]
         },
         {
-            "id": "VOC_PREFIXSUFFIX_L22_Q3",
+            "id": "VOC_PREFIXSUFFIX_L21_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not truthful.",
+            "explanation": "DIS + HONEST = DISHONEST.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "DISHONEST",
+            "rootWord": "HONEST",
+            "options": [
+                "-ER",
+                "OVER-",
+                "MID-",
+                "DIS-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L22_Q1",
+            "instruction": "Select the correct prefix or suffix.",
             "hint": "To vanish.",
             "explanation": "DIS + APPEAR = DISAPPEAR.",
             "interactionType": "Root Rover",
             "correctAnswer": "DISAPPEAR",
             "rootWord": "APPEAR",
             "options": [
-                "IR-",
-                "-IFY",
-                "DIS-",
-                "-IVE"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L23_Q1",
-            "hint": "To use incorrectly.",
-            "explanation": "MIS + USE = MISUSE.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "MISUSE",
-            "rootWord": "USE",
-            "options": [
-                "-NESS",
-                "MIS-",
-                "IL-",
-                "IR-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L23_Q2",
-            "hint": "Something fixed before.",
-            "explanation": "PRE + FIX = PREFIX.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "PREFIX",
-            "rootWord": "FIX",
-            "options": [
-                "IR-",
-                "-IFY",
-                "PRE-",
-                "-LESS"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L23_Q3",
-            "hint": "To build something again.",
-            "explanation": "RE + BUILD = REBUILD.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "REBUILD",
-            "rootWord": "BUILD",
-            "options": [
                 "RE-",
-                "-OUS",
-                "-OR",
-                "IM-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L24_Q1",
-            "hint": "Able to be enjoyed.",
-            "explanation": "ENJOY + ABLE = ENJOYABLE.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "ENJOYABLE",
-            "rootWord": "ENJOY",
-            "options": [
-                "-FUL",
-                "-ABLE",
-                "IR-",
-                "-ION"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L24_Q2",
-            "hint": "Something that has no meaning.",
-            "explanation": "NON- means not. NON + SENSE = NONSENSE.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "NONSENSE",
-            "rootWord": "SENSE",
-            "options": [
-                "NON-",
-                "-ANCE",
-                "-TY",
-                "UN-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L24_Q3",
-            "hint": "In a fast way.",
-            "explanation": "-LY forms an adverb from an adjective. QUICK + LY = QUICKLY.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "QUICKLY",
-            "rootWord": "QUICK",
-            "options": [
-                "-LY",
-                "-IST",
-                "-ER",
-                "MIS-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L25_Q1",
-            "hint": "Giving a lot of aid.",
-            "explanation": "-FUL means full of. HELP + FUL = HELPFUL.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "HELPFUL",
-            "rootWord": "HELP",
-            "options": [
-                "-FUL",
-                "-LY",
-                "NON-",
-                "IM-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L25_Q2",
-            "hint": "One who plays.",
-            "explanation": "PLAY + ER = PLAYER.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "PLAYER",
-            "rootWord": "PLAY",
-            "options": [
-                "-ER",
-                "-ABLE",
-                "-LESS",
-                "UN-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L25_Q3",
-            "hint": "Not related.",
-            "explanation": "IR + RELEVANT = IRRELEVANT.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "IRRELEVANT",
-            "rootWord": "RELEVANT",
-            "options": [
-                "IR-",
-                "IN-",
-                "-ANCE",
-                "-ER"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L26_Q1",
-            "hint": "Opposite of agreeing.",
-            "explanation": "DIS + AGREE = DISAGREE.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "DISAGREE",
-            "rootWord": "AGREE",
-            "options": [
-                "MIS-",
-                "IR-",
-                "-TY",
+                "PRO-",
+                "-ENCE",
                 "DIS-"
             ]
         },
         {
-            "id": "VOC_PREFIXSUFFIX_L26_Q2",
-            "hint": "Full of caution.",
-            "explanation": "CARE + FUL = CAREFUL.",
+            "id": "VOC_PREFIXSUFFIX_L22_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To not follow rules.",
+            "explanation": "DIS + OBEY = DISOBEY.",
             "interactionType": "Root Rover",
-            "correctAnswer": "CAREFUL",
-            "rootWord": "CARE",
+            "correctAnswer": "DISOBEY",
+            "rootWord": "OBEY",
             "options": [
-                "-IFY",
-                "-FUL",
-                "-OUS",
-                "-ATE"
+                "PRO-",
+                "-IVE",
+                "-ANCE",
+                "DIS-"
             ]
         },
         {
-            "id": "VOC_PREFIXSUFFIX_L26_Q3",
-            "hint": "To fill something again.",
-            "explanation": "RE + FILL = REFILL.",
+            "id": "VOC_PREFIXSUFFIX_L22_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To stop a link between two things.",
+            "explanation": "DIS + CONNECT = DISCONNECT.",
             "interactionType": "Root Rover",
-            "correctAnswer": "REFILL",
-            "rootWord": "FILL",
+            "correctAnswer": "DISCONNECT",
+            "rootWord": "CONNECT",
             "options": [
+                "PRE-",
+                "-AL",
+                "IM-",
+                "DIS-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L23_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To change or spoil the natural color of something.",
+            "explanation": "DIS + COLOR = DISCOLOR.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "DISCOLOR",
+            "rootWord": "COLOR",
+            "options": [
+                "DIS-",
                 "IR-",
-                "-OUS",
-                "RE-",
-                "-ENCE"
+                "EX-",
+                "MID-"
             ]
         },
         {
-            "id": "VOC_PREFIXSUFFIX_L27_Q1",
-            "hint": "To fill something again.",
-            "explanation": "RE + FILL = REFILL.",
+            "id": "VOC_PREFIXSUFFIX_L23_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "A feeling of being unwell or uneasy.",
+            "explanation": "DIS + COMFORT = DISCOMFORT.",
             "interactionType": "Root Rover",
-            "correctAnswer": "REFILL",
-            "rootWord": "FILL",
+            "correctAnswer": "DISCOMFORT",
+            "rootWord": "COMFORT",
             "options": [
-                "-OUS",
-                "-IZE",
-                "RE-",
-                "-ATE"
+                "BI-",
+                "DIS-",
+                "EX-",
+                "IL-"
             ]
         },
         {
-            "id": "VOC_PREFIXSUFFIX_L27_Q2",
-            "hint": "The act of responding.",
-            "explanation": "REACT + ION = REACTION.",
+            "id": "VOC_PREFIXSUFFIX_L23_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To refuse to accept something as true.",
+            "explanation": "DIS + BELIEVE = DISBELIEVE.",
             "interactionType": "Root Rover",
-            "correctAnswer": "REACTION",
-            "rootWord": "REACT",
+            "correctAnswer": "DISBELIEVE",
+            "rootWord": "BELIEVE",
             "options": [
-                "-TY",
+                "OMNI-",
+                "DIS-",
+                "ULTRA-",
+                "FORE-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L24_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To stop doing or making something.",
+            "explanation": "DIS + CONTINUE = DISCONTINUE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "DISCONTINUE",
+            "rootWord": "CONTINUE",
+            "options": [
+                "BI-",
+                "SUB-",
+                "DIS-",
+                "-FOLD"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L24_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To use incorrectly.",
+            "explanation": "MIS- means wrongly. MIS + USE = MISUSE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "MISUSE",
+            "rootWord": "USE",
+            "options": [
+                "-LY",
                 "MIS-",
-                "-ION",
-                "-IC"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L27_Q3",
-            "hint": "One who teaches.",
-            "explanation": "-ER means a person who does something. TEACH + ER = TEACHER.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "TEACHER",
-            "rootWord": "TEACH",
-            "options": [
-                "-ORY",
-                "-ARY",
-                "-ER",
-                "-TY"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L28_Q1",
-            "hint": "One who plays.",
-            "explanation": "PLAY + ER = PLAYER.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "PLAYER",
-            "rootWord": "PLAY",
-            "options": [
-                "-FUL",
-                "-ER",
-                "-IFY",
-                "NON-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L28_Q2",
-            "hint": "Full of optimism.",
-            "explanation": "HOPE + FUL = HOPEFUL.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "HOPEFUL",
-            "rootWord": "HOPE",
-            "options": [
                 "-ATE",
-                "-NESS",
-                "-FUL",
-                "MIS-"
+                "BI-"
             ]
         },
         {
-            "id": "VOC_PREFIXSUFFIX_L28_Q3",
+            "id": "VOC_PREFIXSUFFIX_L24_Q3",
+            "instruction": "Select the correct prefix or suffix.",
             "hint": "To lead incorrectly.",
             "explanation": "MIS + LEAD = MISLEAD.",
             "interactionType": "Root Rover",
             "correctAnswer": "MISLEAD",
             "rootWord": "LEAD",
             "options": [
+                "MULTI-",
                 "-ION",
-                "RE-",
+                "-LESS",
+                "MIS-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L25_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To behave badly.",
+            "explanation": "MIS + BEHAVE = MISBEHAVE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "MISBEHAVE",
+            "rootWord": "BEHAVE",
+            "options": [
+                "-ITY",
                 "MIS-",
-                "-TY"
+                "ULTRA-",
+                "-FUL"
             ]
         },
         {
-            "id": "VOC_PREFIXSUFFIX_L29_Q1",
-            "hint": "Make it the opposite of covered.",
-            "explanation": "UN + WRAP = UNWRAP.",
+            "id": "VOC_PREFIXSUFFIX_L25_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To put in the wrong place.",
+            "explanation": "MIS + PLACE = MISPLACE.",
             "interactionType": "Root Rover",
-            "correctAnswer": "UNWRAP",
-            "rootWord": "WRAP",
+            "correctAnswer": "MISPLACE",
+            "rootWord": "PLACE",
             "options": [
-                "-IVE",
-                "-OR",
-                "UN-",
-                "-ATE"
+                "POST-",
+                "-ENCE",
+                "MIS-",
+                "-SHIP"
             ]
         },
         {
-            "id": "VOC_PREFIXSUFFIX_L29_Q2",
-            "hint": "Able to be enjoyed.",
-            "explanation": "ENJOY + ABLE = ENJOYABLE.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "ENJOYABLE",
-            "rootWord": "ENJOY",
-            "options": [
-                "-ORY",
-                "IN-",
-                "-ABLE",
-                "NON-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L29_Q3",
+            "id": "VOC_PREFIXSUFFIX_L25_Q3",
+            "instruction": "Select the correct prefix or suffix.",
             "hint": "To understand incorrectly.",
-            "explanation": "MIS- means wrongly. MIS + UNDERSTAND = MISUNDERSTAND.",
+            "explanation": "MIS + UNDERSTAND = MISUNDERSTAND.",
             "interactionType": "Root Rover",
             "correctAnswer": "MISUNDERSTAND",
             "rootWord": "UNDERSTAND",
             "options": [
-                "-ER",
                 "MIS-",
+                "OUT-",
+                "-HOOD",
+                "ANTI-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L26_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To spell a word incorrectly.",
+            "explanation": "MIS + SPELL = MISSPELL.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "MISSPELL",
+            "rootWord": "SPELL",
+            "options": [
+                "-LY",
+                "-IFY",
                 "-NESS",
-                "IR-"
+                "MIS-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L26_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To not trust someone fully.",
+            "explanation": "MIS + TRUST = MISTRUST.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "MISTRUST",
+            "rootWord": "TRUST",
+            "options": [
+                "-MENT",
+                "MIS-",
+                "-AL",
+                "IL-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L26_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To give someone false or wrong information.",
+            "explanation": "MIS + INFORM = MISINFORM.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "MISINFORM",
+            "rootWord": "INFORM",
+            "options": [
+                "-OUS",
+                "MIS-",
+                "EX-",
+                "-MENT"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L27_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To form a wrong opinion about someone.",
+            "explanation": "MIS + JUDGE = MISJUDGE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "MISJUDGE",
+            "rootWord": "JUDGE",
+            "options": [
+                "RE-",
+                "UNDER-",
+                "MIS-",
+                "-ER"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L27_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "To fail to start or work as planned.",
+            "explanation": "MIS + FIRE = MISFIRE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "MISFIRE",
+            "rootWord": "FIRE",
+            "options": [
+                "-IVE",
+                "MIS-",
+                "-ANCE",
+                "-ITY"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L27_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who acts.",
+            "explanation": "-OR means a person who does something. ACT + OR = ACTOR.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "ACTOR",
+            "rootWord": "ACT",
+            "options": [
+                "SUPER-",
+                "-OR",
+                "SEMI-",
+                "BI-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L28_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who edits.",
+            "explanation": "EDIT + OR = EDITOR.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "EDITOR",
+            "rootWord": "EDIT",
+            "options": [
+                "-OR",
+                "IL-",
+                "UNDER-",
+                "EX-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L28_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who visits.",
+            "explanation": "VISIT + OR = VISITOR.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "VISITOR",
+            "rootWord": "VISIT",
+            "options": [
+                "-IVE",
+                "-OR",
+                "-ARY",
+                "-DOM"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L28_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who creates new things.",
+            "explanation": "INVENT + OR = INVENTOR.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "INVENTOR",
+            "rootWord": "INVENT",
+            "options": [
+                "-AL",
+                "MIS-",
+                "-IVE",
+                "-OR"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L29_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who is in charge of a film or company.",
+            "explanation": "DIRECT + OR = DIRECTOR.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "DIRECTOR",
+            "rootWord": "DIRECT",
+            "options": [
+                "SUPER-",
+                "-ISM",
+                "IR-",
+                "-OR"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L29_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who gathers items as a hobby.",
+            "explanation": "COLLECT + OR = COLLECTOR.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "COLLECTOR",
+            "rootWord": "COLLECT",
+            "options": [
+                "-ABLE",
+                "-OR",
+                "COUNTER-",
+                "-MENT"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L29_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One whose job is to check things officially.",
+            "explanation": "INSPECT + OR = INSPECTOR.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "INSPECTOR",
+            "rootWord": "INSPECT",
+            "options": [
+                "OUT-",
+                "FORE-",
+                "-OR",
+                "-ANCE"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L30_Q1",
-            "hint": "In a low-speed way.",
-            "explanation": "SLOW + LY = SLOWLY.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who controls a machine or system.",
+            "explanation": "OPERATE + OR = OPERATOR.",
             "interactionType": "Root Rover",
-            "correctAnswer": "SLOWLY",
-            "rootWord": "SLOW",
+            "correctAnswer": "OPERATOR",
+            "rootWord": "OPERATE",
             "options": [
-                "NON-",
-                "-LY",
-                "-ANCE",
-                "IR-"
+                "-OR",
+                "-ARY",
+                "-IC",
+                "-ITY"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L30_Q2",
-            "hint": "To vanish.",
-            "explanation": "DIS + APPEAR = DISAPPEAR.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who watches over and manages workers.",
+            "explanation": "SUPERVISE + OR = SUPERVISOR.",
             "interactionType": "Root Rover",
-            "correctAnswer": "DISAPPEAR",
-            "rootWord": "APPEAR",
+            "correctAnswer": "SUPERVISOR",
+            "rootWord": "SUPERVISE",
             "options": [
-                "-ORY",
-                "DIS-",
-                "RE-",
+                "-ION",
+                "-OR",
+                "FORE-",
                 "PRE-"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L30_Q3",
-            "hint": "True stories/facts.",
-            "explanation": "NON + FICTION = NONFICTION.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "One who leads an orchestra or collects bus fares.",
+            "explanation": "CONDUCT + OR = CONDUCTOR.",
             "interactionType": "Root Rover",
-            "correctAnswer": "NONFICTION",
-            "rootWord": "FICTION",
+            "correctAnswer": "CONDUCTOR",
+            "rootWord": "CONDUCT",
             "options": [
-                "NON-",
-                "-IFY",
-                "-ANCE",
-                "-LY"
+                "-NESS",
+                "RETRO-",
+                "-IVE",
+                "-OR"
             ]
         }
     ],

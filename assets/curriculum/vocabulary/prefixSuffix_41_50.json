@@ -3,422 +3,452 @@
     "quests": [
         {
             "id": "VOC_PREFIXSUFFIX_L41_Q1",
-            "hint": "To heat before.",
-            "explanation": "PRE + HEAT = PREHEAT.",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not right.",
+            "explanation": "IN- often means not. IN + CORRECT = INCORRECT.",
             "interactionType": "Root Rover",
-            "correctAnswer": "PREHEAT",
-            "rootWord": "HEAT",
+            "correctAnswer": "INCORRECT",
+            "rootWord": "CORRECT",
             "options": [
-                "-IZE",
-                "-RY",
-                "PRE-",
-                "-ANCE"
+                "IN-",
+                "-ION",
+                "OMNI-",
+                "NON-"
             ]
         },
         {
             "id": "VOC_PREFIXSUFFIX_L41_Q2",
-            "hint": "Full of utility.",
-            "explanation": "USE + FUL = USEFUL.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "USEFUL",
-            "rootWord": "USE",
-            "options": [
-                "-FUL",
-                "-IZE",
-                "MIS-",
-                "-MENT"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L41_Q3",
-            "hint": "School before primary school.",
-            "explanation": "PRE + SCHOOL = PRESCHOOL.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "PRESCHOOL",
-            "rootWord": "SCHOOL",
-            "options": [
-                "-ARY",
-                "PRE-",
-                "DIS-",
-                "-LY"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L42_Q1",
-            "hint": "One who plays.",
-            "explanation": "PLAY + ER = PLAYER.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "PLAYER",
-            "rootWord": "PLAY",
-            "options": [
-                "-LY",
-                "-ENCE",
-                "-ER",
-                "-ARY"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L42_Q2",
-            "hint": "The act of responding.",
-            "explanation": "REACT + ION = REACTION.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "REACTION",
-            "rootWord": "REACT",
-            "options": [
-                "-ER",
-                "-ION",
-                "-IFY",
-                "IM-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L42_Q3",
-            "hint": "Make it the opposite of joyful.",
-            "explanation": "UN- means not. UN + HAPPY = UNHAPPY.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "UNHAPPY",
-            "rootWord": "HAPPY",
-            "options": [
-                "-IZE",
-                "UN-",
-                "-LY",
-                "-TY"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L43_Q1",
-            "hint": "The state of being friendly.",
-            "explanation": "-NESS forms a noun from an adjective. KIND + NESS = KINDNESS.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "KINDNESS",
-            "rootWord": "KIND",
-            "options": [
-                "-NESS",
-                "-IVE",
-                "-IST",
-                "-ARY"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L43_Q2",
-            "hint": "Make it the opposite of fastened.",
-            "explanation": "UN + LOCK = UNLOCK.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "UNLOCK",
-            "rootWord": "LOCK",
-            "options": [
-                "PRE-",
-                "-NESS",
-                "UN-",
-                "-OR"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L43_Q3",
-            "hint": "To see before.",
-            "explanation": "PRE- means before. PRE + VIEW = PREVIEW.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "PREVIEW",
-            "rootWord": "VIEW",
-            "options": [
-                "IL-",
-                "PRE-",
-                "NON-",
-                "-IC"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L44_Q1",
-            "hint": "Without caution.",
-            "explanation": "CARE + LESS = CARELESS.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "CARELESS",
-            "rootWord": "CARE",
-            "options": [
-                "-MENT",
-                "MIS-",
-                "-LESS",
-                "-IVE"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L44_Q2",
-            "hint": "To understand incorrectly.",
-            "explanation": "MIS- means wrongly. MIS + UNDERSTAND = MISUNDERSTAND.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "MISUNDERSTAND",
-            "rootWord": "UNDERSTAND",
-            "options": [
-                "IL-",
-                "-ABLE",
-                "-ARY",
-                "MIS-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L44_Q3",
-            "hint": "School before primary school.",
-            "explanation": "PRE + SCHOOL = PRESCHOOL.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "PRESCHOOL",
-            "rootWord": "SCHOOL",
-            "options": [
-                "-LESS",
-                "-LY",
-                "PRE-",
-                "-ENCE"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L45_Q1",
-            "hint": "Not flawless.",
-            "explanation": "IM + PERFECT = IMPERFECT.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "IMPERFECT",
-            "rootWord": "PERFECT",
-            "options": [
-                "-TY",
-                "-RY",
-                "NON-",
-                "IM-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L45_Q2",
-            "hint": "To not follow rules.",
-            "explanation": "DIS + OBEY = DISOBEY.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "DISOBEY",
-            "rootWord": "OBEY",
-            "options": [
-                "-OUS",
-                "-ENCE",
-                "DIS-",
-                "-LY"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L45_Q3",
-            "hint": "School before primary school.",
-            "explanation": "PRE + SCHOOL = PRESCHOOL.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "PRESCHOOL",
-            "rootWord": "SCHOOL",
-            "options": [
-                "-ION",
-                "-IVE",
-                "-ENCE",
-                "PRE-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L46_Q1",
-            "hint": "To do something again.",
-            "explanation": "RE + DO = REDO.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "REDO",
-            "rootWord": "DO",
-            "options": [
-                "-ARY",
-                "-ENCE",
-                "RE-",
-                "-ER"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L46_Q2",
-            "hint": "To lead incorrectly.",
-            "explanation": "MIS + LEAD = MISLEAD.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "MISLEAD",
-            "rootWord": "LEAD",
-            "options": [
-                "-IZE",
-                "MIS-",
-                "-OUS",
-                "RE-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L46_Q3",
-            "hint": "Related to the past.",
-            "explanation": "-IC forms an adjective from a noun. HISTORY + IC = HISTORIC.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "HISTORIC",
-            "rootWord": "HISTORY",
-            "options": [
-                "-ER",
-                "-OR",
-                "-LESS",
-                "-IC"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L47_Q1",
-            "hint": "The state of being friendly.",
-            "explanation": "-NESS forms a noun from an adjective. KIND + NESS = KINDNESS.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "KINDNESS",
-            "rootWord": "KIND",
-            "options": [
-                "-ATE",
-                "IR-",
-                "PRE-",
-                "-NESS"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L47_Q2",
-            "hint": "Not being kind or respectful.",
-            "explanation": "IM + POLITE = IMPOLITE.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "IMPOLITE",
-            "rootWord": "POLITE",
-            "options": [
-                "IM-",
-                "-ARY",
-                "MIS-",
-                "-IVE"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L47_Q3",
+            "instruction": "Select the correct prefix or suffix.",
             "hint": "Not busy or moving.",
             "explanation": "IN + ACTIVE = INACTIVE.",
             "interactionType": "Root Rover",
             "correctAnswer": "INACTIVE",
             "rootWord": "ACTIVE",
             "options": [
-                "DIS-",
-                "-ANCE",
+                "PRO-",
                 "IN-",
-                "-OR"
+                "-ER",
+                "CO-"
             ]
         },
         {
-            "id": "VOC_PREFIXSUFFIX_L48_Q1",
-            "hint": "A person who performs alone.",
-            "explanation": "SOLO + IST = SOLOIST.",
+            "id": "VOC_PREFIXSUFFIX_L41_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not straight or immediate.",
+            "explanation": "IN + DIRECT = INDIRECT.",
             "interactionType": "Root Rover",
-            "correctAnswer": "SOLOIST",
-            "rootWord": "SOLO",
+            "correctAnswer": "INDIRECT",
+            "rootWord": "DIRECT",
             "options": [
-                "RE-",
-                "-ORY",
-                "-IST",
-                "-IVE"
+                "-AL",
+                "IN-",
+                "UNI-",
+                "COUNTER-"
             ]
         },
         {
-            "id": "VOC_PREFIXSUFFIX_L48_Q2",
-            "hint": "Not able to happen.",
-            "explanation": "IM- often means not before 'P'. IM + POSSIBLE = IMPOSSIBLE.",
+            "id": "VOC_PREFIXSUFFIX_L42_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Cannot be seen.",
+            "explanation": "IN + VISIBLE = INVISIBLE.",
             "interactionType": "Root Rover",
-            "correctAnswer": "IMPOSSIBLE",
-            "rootWord": "POSSIBLE",
+            "correctAnswer": "INVISIBLE",
+            "rootWord": "VISIBLE",
             "options": [
-                "IM-",
-                "NON-",
-                "IL-",
-                "-IVE"
+                "BI-",
+                "IN-",
+                "SEMI-",
+                "DIS-"
             ]
         },
         {
-            "id": "VOC_PREFIXSUFFIX_L48_Q3",
-            "hint": "The state of agreeing.",
-            "explanation": "AGREE + MENT = AGREEMENT.",
+            "id": "VOC_PREFIXSUFFIX_L42_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not following strict rules; casual.",
+            "explanation": "IN + FORMAL = INFORMAL.",
             "interactionType": "Root Rover",
-            "correctAnswer": "AGREEMENT",
-            "rootWord": "AGREE",
+            "correctAnswer": "INFORMAL",
+            "rootWord": "FORMAL",
             "options": [
-                "-IVE",
-                "-MENT",
+                "UNDER-",
                 "-ION",
-                "-ORY"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L49_Q1",
-            "hint": "To vanish.",
-            "explanation": "DIS + APPEAR = DISAPPEAR.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "DISAPPEAR",
-            "rootWord": "APPEAR",
-            "options": [
-                "-IST",
-                "-OR",
-                "DIS-",
-                "-ORY"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L49_Q2",
-            "hint": "Make it the opposite of fastened.",
-            "explanation": "UN + LOCK = UNLOCK.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "UNLOCK",
-            "rootWord": "LOCK",
-            "options": [
-                "PRE-",
-                "-IST",
-                "UN-",
-                "-MENT"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L49_Q3",
-            "hint": "True stories/facts.",
-            "explanation": "NON + FICTION = NONFICTION.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "NONFICTION",
-            "rootWord": "FICTION",
-            "options": [
-                "IN-",
-                "-RY",
-                "-IST",
-                "NON-"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L50_Q1",
-            "hint": "Without caution.",
-            "explanation": "CARE + LESS = CARELESS.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "CARELESS",
-            "rootWord": "CARE",
-            "options": [
-                "-ABLE",
-                "-IVE",
-                "-LESS",
-                "-LY"
-            ]
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L50_Q2",
-            "hint": "To play something again.",
-            "explanation": "RE + PLAY = REPLAY.",
-            "interactionType": "Root Rover",
-            "correctAnswer": "REPLAY",
-            "rootWord": "PLAY",
-            "options": [
-                "-TY",
-                "-ARY",
-                "RE-",
+                "UNI-",
                 "IN-"
             ]
         },
         {
-            "id": "VOC_PREFIXSUFFIX_L50_Q3",
-            "hint": "The state of being friendly.",
-            "explanation": "-NESS forms a noun from an adjective. KIND + NESS = KINDNESS.",
+            "id": "VOC_PREFIXSUFFIX_L42_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not feeling safe or confident.",
+            "explanation": "IN + SECURE = INSECURE.",
             "interactionType": "Root Rover",
-            "correctAnswer": "KINDNESS",
-            "rootWord": "KIND",
+            "correctAnswer": "INSECURE",
+            "rootWord": "SECURE",
             "options": [
+                "EX-",
+                "IN-",
+                "-FUL",
+                "POST-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L43_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not finished.",
+            "explanation": "IN + COMPLETE = INCOMPLETE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "INCOMPLETE",
+            "rootWord": "COMPLETE",
+            "options": [
+                "MIS-",
+                "IR-",
+                "IN-",
+                "SEMI-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L43_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not costly.",
+            "explanation": "IN + EXPENSIVE = INEXPENSIVE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "INEXPENSIVE",
+            "rootWord": "EXPENSIVE",
+            "options": [
+                "DE-",
+                "IN-",
+                "-ISM",
+                "UN-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L43_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not aware of other people's feelings.",
+            "explanation": "IN + SENSITIVE = INSENSITIVE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "INSENSITIVE",
+            "rootWord": "SENSITIVE",
+            "options": [
+                "IN-",
+                "-ABLE",
+                "-HOOD",
+                "DE-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L44_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not able to do something.",
+            "explanation": "IN + CAPABLE = INCAPABLE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "INCAPABLE",
+            "rootWord": "CAPABLE",
+            "options": [
+                "IN-",
+                "-WARD",
+                "OVER-",
+                "-FUL"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L44_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not willing or able to change.",
+            "explanation": "IN + FLEXIBLE = INFLEXIBLE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "INFLEXIBLE",
+            "rootWord": "FLEXIBLE",
+            "options": [
+                "-MENT",
+                "SUB-",
+                "-ER",
+                "IN-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L44_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not important enough to notice.",
+            "explanation": "IN + SIGNIFICANT = INSIGNIFICANT.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "INSIGNIFICANT",
+            "rootWord": "SIGNIFICANT",
+            "options": [
+                "-ER",
+                "IN-",
+                "-SHIP",
+                "SUB-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L45_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not able to happen.",
+            "explanation": "IM- often means not before 'P', 'B', or 'M'. IM + POSSIBLE = IMPOSSIBLE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IMPOSSIBLE",
+            "rootWord": "POSSIBLE",
+            "options": [
+                "-IZE",
+                "IM-",
+                "UN-",
+                "POST-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L45_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not flawless.",
+            "explanation": "IM + PERFECT = IMPERFECT.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IMPERFECT",
+            "rootWord": "PERFECT",
+            "options": [
+                "TRANS-",
+                "-OUS",
+                "-SHIP",
+                "IM-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L45_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not being kind or respectful.",
+            "explanation": "IM + POLITE = IMPOLITE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IMPOLITE",
+            "rootWord": "POLITE",
+            "options": [
+                "-IVE",
+                "SUPER-",
                 "PRE-",
-                "-NESS",
-                "NON-",
-                "-ABLE"
+                "IM-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L46_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not able to wait.",
+            "explanation": "IM + PATIENT = IMPATIENT.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IMPATIENT",
+            "rootWord": "PATIENT",
+            "options": [
+                "-ARY",
+                "IM-",
+                "MULTI-",
+                "SUB-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L46_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not behaving in a grown-up way.",
+            "explanation": "IM + MATURE = IMMATURE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IMMATURE",
+            "rootWord": "MATURE",
+            "options": [
+                "ANTI-",
+                "-IST",
+                "IM-",
+                "-IVE"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L46_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "An unequal state between two things.",
+            "explanation": "IM + BALANCE = IMBALANCE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IMBALANCE",
+            "rootWord": "BALANCE",
+            "options": [
+                "ULTRA-",
+                "RE-",
+                "ANTI-",
+                "IM-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L47_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not sensible or realistic to do.",
+            "explanation": "IM + PRACTICAL = IMPRACTICAL.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IMPRACTICAL",
+            "rootWord": "PRACTICAL",
+            "options": [
+                "IL-",
+                "IM-",
+                "ULTRA-",
+                "UNDER-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L47_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not suitable or correct for the situation.",
+            "explanation": "IM + PROPER = IMPROPER.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IMPROPER",
+            "rootWord": "PROPER",
+            "options": [
+                "UNI-",
+                "IM-",
+                "-ARY",
+                "OVER-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L47_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not able to move.",
+            "explanation": "IM + MOBILE = IMMOBILE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IMMOBILE",
+            "rootWord": "MOBILE",
+            "options": [
+                "MONO-",
+                "TRANS-",
+                "IM-",
+                "-IZE"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L48_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Living forever; never dying.",
+            "explanation": "IM + MORTAL = IMMORTAL.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IMMORTAL",
+            "rootWord": "MORTAL",
+            "options": [
+                "IM-",
+                "-WARD",
+                "-HOOD",
+                "COUNTER-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L48_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Too large to be measured.",
+            "explanation": "IM + MEASURABLE = IMMEASURABLE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IMMEASURABLE",
+            "rootWord": "MEASURABLE",
+            "options": [
+                "MONO-",
+                "IM-",
+                "-ITY",
+                "POST-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L48_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not exact or accurate.",
+            "explanation": "IM + PRECISE = IMPRECISE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IMPRECISE",
+            "rootWord": "PRECISE",
+            "options": [
+                "-LESS",
+                "COUNTER-",
+                "IM-",
+                "IL-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L49_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Against the law.",
+            "explanation": "IL- means not before 'L'. IL + LEGAL = ILLEGAL.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "ILLEGAL",
+            "rootWord": "LEGAL",
+            "options": [
+                "IL-",
+                "-ATE",
+                "-HOOD",
+                "MONO-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L49_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not making sense.",
+            "explanation": "IL + LOGICAL = ILLOGICAL.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "ILLOGICAL",
+            "rootWord": "LOGICAL",
+            "options": [
+                "IL-",
+                "BI-",
+                "IM-",
+                "-ISM"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L49_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Unable to read or write.",
+            "explanation": "IL + LITERATE = ILLITERATE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "ILLITERATE",
+            "rootWord": "LITERATE",
+            "options": [
+                "-IFY",
+                "IM-",
+                "IL-",
+                "-FOLD"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L50_Q1",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Too unclear to be read.",
+            "explanation": "IL + LEGIBLE = ILLEGIBLE.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "ILLEGIBLE",
+            "rootWord": "LEGIBLE",
+            "options": [
+                "-DOM",
+                "-MENT",
+                "IL-",
+                "IM-"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L50_Q2",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not related.",
+            "explanation": "IR- means not before 'R'. IR + RELEVANT = IRRELEVANT.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IRRELEVANT",
+            "rootWord": "RELEVANT",
+            "options": [
+                "RETRO-",
+                "IM-",
+                "IR-",
+                "-ITY"
+            ]
+        },
+        {
+            "id": "VOC_PREFIXSUFFIX_L50_Q3",
+            "instruction": "Select the correct prefix or suffix.",
+            "hint": "Not following a pattern.",
+            "explanation": "IR + REGULAR = IRREGULAR.",
+            "interactionType": "Root Rover",
+            "correctAnswer": "IRREGULAR",
+            "rootWord": "REGULAR",
+            "options": [
+                "IR-",
+                "-WARD",
+                "POST-",
+                "-OUS"
             ]
         }
     ],
