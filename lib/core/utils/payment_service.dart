@@ -14,6 +14,7 @@ abstract class PaymentService {
   factory PaymentService({
     required GetCurrentUser getCurrentUser,
     required FirebaseFirestore firestore,
+    required FirebaseFunctions functions,
   }) = RazorpayPaymentService;
 
   /// Initializes payment listener handlers.
@@ -61,12 +62,14 @@ abstract class PaymentService {
 class RazorpayPaymentService implements PaymentService {
   final GetCurrentUser getCurrentUser;
   final FirebaseFirestore firestore;
+  final FirebaseFunctions functions;
 
   Razorpay? _razorpay;
 
   RazorpayPaymentService({
     required this.getCurrentUser,
     required this.firestore,
+    required this.functions,
   });
 
   @override
@@ -136,9 +139,6 @@ class RazorpayPaymentService implements PaymentService {
         if (contact.isNotEmpty) 'contact': contact,
         if (email.isNotEmpty) 'email': email,
       },
-      'external': {
-        'wallets': ['paytm'],
-      },
     };
 
     try {
@@ -174,7 +174,7 @@ class RazorpayPaymentService implements PaymentService {
     required int days,
   }) async {
     try {
-      final callable = FirebaseFunctions.instance.httpsCallable('verifyPayment');
+      final callable = functions.httpsCallable('verifyPayment');
       final response = await callable.call({
         'orderId': orderId,
         'paymentId': paymentId,

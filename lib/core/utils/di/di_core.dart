@@ -7,6 +7,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -46,6 +47,7 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<FirebaseRemoteConfig>(
     () => FirebaseRemoteConfig.instance,
   );
+  sl.registerLazySingleton<FirebaseFunctions>(() => FirebaseFunctions.instance);
 
   // ============================================================
   // LOGGING
@@ -83,6 +85,7 @@ Future<void> initExternalAndCore(GetIt sl) async {
     () => PaymentService(
       getCurrentUser: sl<GetCurrentUser>(),
       firestore: sl<FirebaseFirestore>(),
+      functions: sl<FirebaseFunctions>(),
     ),
   );
   sl.registerLazySingleton<SubscriptionPlansService>(
