@@ -234,9 +234,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(30.r),
-                    border: Border.all(color: Colors.grey.shade200, width: 2),
+                    border: Border.all(color: Colors.grey.shade300, width: 3.w),
                     boxShadow: [
-                      BoxShadow(color: Colors.black12, blurRadius: 10, offset: const Offset(0, 4)),
+                      BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 5.h)),
                     ],
                   ),
                   child: Row(mainAxisSize: MainAxisSize.min, children: [
@@ -313,12 +313,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(30.r),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 20,
-                        offset: Offset(0, 10),
-                      ),
+                    border: Border.all(color: Colors.grey.shade300, width: 3.w),
+                    boxShadow: [
+                      BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 5.h)),
                     ],
                   ),
                   child: Row(
@@ -364,8 +361,6 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
 
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, authState) {
-        final mascotId = authState.user?.kidsMascot ?? 'owly';
-        
         String displayMessage = "";
         if (_hintText != null) {
           displayMessage = _hintText!;
@@ -384,7 +379,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             children: [
               VowlMascot(
                 isKidsMode: true,
-                size: 65.r,
+                size: 85.r,
                 state: mascotState,
                 useFloatingAnimation: true,
               ),
@@ -412,9 +407,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           bottomRight: Radius.circular(20.r),
           bottomLeft: Radius.circular(20.r),
         ),
-        border: Border.all(color: Colors.grey.shade200, width: 2),
-        boxShadow: const [
-          BoxShadow(color: Colors.black12, blurRadius: 10, offset: Offset(0, 4)),
+        border: Border.all(color: Colors.grey.shade300, width: 3.w),
+        boxShadow: [
+          BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 5.h)),
         ],
       ),
       child: Text(
