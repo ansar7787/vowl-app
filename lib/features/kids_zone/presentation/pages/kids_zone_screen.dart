@@ -17,6 +17,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_category_grid.
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_zone_home_header.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 
 class KidsZoneScreen extends StatefulWidget {
   const KidsZoneScreen({super.key});
@@ -328,11 +329,61 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
         ),
       ),
       actions: [
+        Center(child: _buildKeyShopButton(context)),
+        SizedBox(width: 8.w),
         Padding(
           padding: EdgeInsets.only(right: 16.w),
           child: Center(child: _buildCoinBadge(context, coins, contrastColor)),
         ),
       ],
+    );
+  }
+
+  Widget _buildKeyShopButton(BuildContext context) {
+    return BlocBuilder<AuthBloc, AuthState>(
+      builder: (context, state) {
+        final keys = state.user?.keys ?? 0;
+        
+        return ScaleButton(
+          onTap: () {
+            KeyShopBottomSheet.show(
+              context: context,
+              isKidsMode: true,
+              primaryColor: const Color(0xFF6366F1),
+            );
+          },
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+            decoration: BoxDecoration(
+              color: Colors.amber.shade400,
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(color: Colors.amber.shade700, width: 3.w),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.amber.shade700,
+                  offset: Offset(0, 4.h),
+                ),
+              ],
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.key_rounded, color: Colors.white, size: 16.r),
+                SizedBox(width: 6.w),
+                Text(
+                  keys.toString(),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 

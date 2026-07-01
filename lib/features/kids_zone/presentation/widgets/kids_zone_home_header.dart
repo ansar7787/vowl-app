@@ -70,8 +70,6 @@ class KidsZoneHomeHeader extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(width: 12.w),
-                _buildKeyShopButton(context),
               ],
             ),
             SizedBox(height: 16.h),
@@ -104,51 +102,4 @@ class KidsZoneHomeHeader extends StatelessWidget {
     );
   }
 
-  Widget _buildKeyShopButton(BuildContext context) {
-    return BlocBuilder<AuthBloc, AuthState>(
-      builder: (context, state) {
-        final keys = state.user?.keys ?? 0;
-        
-        return ScaleButton(
-          onTap: () {
-            KeyShopBottomSheet.show(
-              context: context,
-              isKidsMode: true,
-              primaryColor: const Color(0xFF6366F1),
-            );
-          },
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-            decoration: BoxDecoration(
-              color: Colors.amber.shade400,
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(color: Colors.amber.shade700, width: 3.w),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.amber.shade700,
-                  offset: Offset(0, 4.h),
-                ),
-              ],
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.key_rounded, color: Colors.white, size: 20.r),
-                SizedBox(width: 6.w),
-                Text(
-                  keys.toString(),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
 }
