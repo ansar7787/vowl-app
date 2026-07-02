@@ -67,7 +67,7 @@ class LeaderboardPodium extends StatelessWidget {
                 const Expanded(child: SizedBox.shrink()),
             ],
           ),
-        ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0);
+        ).animate().fadeIn(duration: 600.ms, curve: Curves.easeOutCirc).slideY(begin: 0.2, end: 0, curve: Curves.easeOutBack, duration: 800.ms);
       },
     );
   }
@@ -135,7 +135,9 @@ class _PodiumSlot extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
+              ).animate(onPlay: (c) => c.repeat(reverse: true))
+               .scaleXY(begin: 1.0, end: isFirst ? 1.08 : 1.0, duration: 1500.ms)
+               .fade(begin: 0.8, end: 1.0),
               // Photo
               Container(
                 width: avatarSize,

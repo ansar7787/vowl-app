@@ -15,7 +15,7 @@ class MinimalPairsPromptCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: 342.w,
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.05 : 0.08),

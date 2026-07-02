@@ -43,29 +43,30 @@ class LeaderboardRankTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(18.r),
           borderColor: isMe
               ? (isDark
-                    ? Colors.white.withValues(alpha: 0.2)
-                    : const Color(0xFF94A3B8))
+                    ? const Color(0xFF3B82F6).withValues(alpha: 0.4)
+                    : const Color(0xFF2563EB).withValues(alpha: 0.3))
               : (isDark
                     ? Colors.white.withValues(alpha: 0.1)
-                    : const Color(0xFFCBD5E1)),
+                    : const Color(0xFFCBD5E1).withValues(alpha: 0.6)),
           color: isDark
-              ? Colors.white.withValues(alpha: 0.05)
-              : Colors.white.withValues(alpha: 0.95),
+              ? Colors.white.withValues(alpha: 0.06)
+              : Colors.white.withValues(alpha: 0.75), // More translucent for frosty effect
           borderWidth: isMe ? 1.5 : 1,
           child: Row(
             children: [
               // Rank number
               SizedBox(
-                width: 36.w,
+                width: 44.w,
                 child: Text(
                   '$rank',
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 18.sp,
+                    fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
+                    letterSpacing: -1,
                     color: isDark
-                        ? tierColor.withValues(alpha: 0.8)
-                        : const Color(0xFF334155),
+                        ? tierColor.withValues(alpha: 0.9)
+                        : tierColor.withValues(alpha: 0.8),
                   ),
                   textAlign: TextAlign.center,
                 ),

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -113,19 +114,26 @@ class _LeaderboardContent extends StatelessWidget {
               child: LeaderboardPodium(top3: state.users.take(3).toList()),
             ),
           ),
-
-          // Current user rank card
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-              child: LeaderboardRankCard(allUsers: state.users),
+          
+          // Sticky Current User Rank (Pins to top when scrolling)
+          SliverPersistentHeader(
+            pinned: true,
+            delegate: _StickyRankCardDelegate(
+              minHeight: 140.h,
+              maxHeight: 140.h,
+              child: Container(
+                color: Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.8), // subtle backdrop for when pinned
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+                alignment: Alignment.center,
+                child: LeaderboardRankCard(allUsers: state.users),
+              ),
             ),
           ),
 
           // Section label
           SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
               child: Text(
                 context.tr('leaderboard.top_challengers'),
                 style: TextStyle(
@@ -133,8 +141,8 @@ class _LeaderboardContent extends StatelessWidget {
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white24
-                      : Colors.black26,
+                      ? Colors.white38
+                      : Colors.black38,
                   letterSpacing: 2.5,
                 ),
               ),
@@ -156,11 +164,10 @@ class _LeaderboardContent extends StatelessWidget {
                   final isMe = currentUser?.id == user.id;
 
                   return RepaintBoundary(
-                    child:
-                        LeaderboardRankTile(user: user, rank: rank, isMe: isMe)
-                            .animate(delay: (40 * index).ms)
-                            .fadeIn(duration: 300.ms)
-                            .slideX(begin: 0.05, end: 0),
+                    child: LeaderboardRankTile(user: user, rank: rank, isMe: isMe)
+                            .animate()
+                            .fadeIn(duration: 250.ms, curve: Curves.easeOut)
+                            .slideX(begin: 0.05, end: 0, curve: Curves.easeOut),
                   );
                 },
                 childCount: state.users.length > 3 ? state.users.length - 3 : 0,
@@ -172,6 +179,40 @@ class _LeaderboardContent extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Sticky Header Delegate for Rank Card
+// ---------------------------------------------------------------------------
+
+class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
+  final double minHeight;
+  final double maxHeight;
+  final Widget child;
+
+  _StickyRankCardDelegate({
+    required this.minHeight,
+    required this.maxHeight,
+    required this.child,
+  });
+
+  @override
+  double get minExtent => minHeight;
+
+  @override
+  double get maxExtent => math.max(maxHeight, minHeight);
+
+  @override
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return SizedBox.expand(child: child);
+  }
+
+  @override
+  bool shouldRebuild(_StickyRankCardDelegate oldDelegate) {
+    return maxHeight != oldDelegate.maxHeight ||
+        minHeight != oldDelegate.minHeight ||
+        child != oldDelegate.child;
   }
 }
 

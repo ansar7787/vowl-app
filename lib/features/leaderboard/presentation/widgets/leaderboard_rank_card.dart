@@ -51,26 +51,25 @@ class LeaderboardRankCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(24.r),
           boxShadow: [
             BoxShadow(
-              color: isDark
-                  ? Colors.black.withValues(alpha: 0.2)
-                  : Colors.black.withValues(alpha: 0.05),
-              blurRadius: 30,
-              spreadRadius: -5,
+              color: const Color(0xFF3B82F6).withValues(alpha: isDark ? 0.25 : 0.15),
+              blurRadius: 32,
+              spreadRadius: 4,
               offset: const Offset(0, 8),
             ),
           ],
         ),
         child: GlassTile(
-          padding: EdgeInsets.all(16.r),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
           borderRadius: BorderRadius.circular(24.r),
           borderColor: isDark
-              ? Colors.white.withValues(alpha: 0.15)
-              : const Color(0xFFCBD5E1),
+              ? const Color(0xFF3B82F6).withValues(alpha: 0.5)
+              : const Color(0xFF2563EB).withValues(alpha: 0.3),
           color: isDark
-              ? Colors.white.withValues(alpha: 0.05)
+              ? const Color(0xFF0F172A).withValues(alpha: 0.75)
               : Colors.white.withValues(alpha: 0.95),
           borderWidth: 1.5,
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 children: [

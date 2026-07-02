@@ -36,7 +36,7 @@ class WordLinkingSentenceField extends StatelessWidget {
     }
 
     return Container(
-      width: double.infinity,
+      width: 342.w,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
       decoration: BoxDecoration(
         color: isDark ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.02),
