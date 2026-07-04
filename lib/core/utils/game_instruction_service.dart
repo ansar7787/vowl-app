@@ -256,7 +256,7 @@ class GameInstructionService {
           "PRO TIP: Sound the word out slowly in your head before tapping the letters.",
     ),
     GameSubtype.accentShadowing: GameBriefing(
-      title: "Accent Shadowing",
+      title: "Shadow Speaker",
       icon: Icons.mic_external_on_rounded,
       objective: "Listen to the speaker and tap the correct dialogue bubble to shadow their voice.",
       rules: [
@@ -1007,12 +1007,12 @@ class GameInstructionService {
 
     // 7. ACCENT
     GameSubtype.minimalPairs: GameBriefing(
-      title: "Minimal Distinctions",
+      title: "Sound Pairs",
       icon: Icons.compare_arrows_rounded,
       objective:
           "Listen to the sound and choose the correct word between two very similar options.",
       rules: ["Listen closely", "Compare the sounds", "Select the correct word"],
-      actionText: "Match Sound",
+      actionText: "Match Word",
       tip: "PRO TIP: Pay attention to how long the vowel sound lasts!",
     ),
     GameSubtype.intonationMimic: GameBriefing(
@@ -1021,7 +1021,7 @@ class GameInstructionService {
       objective:
           "Listen to the voice and use the vertical fader to match if the pitch goes up or down.",
       rules: ["Listen to the pitch", "Use the vertical fader", "Lock your choice"],
-      actionText: "Mimic Now",
+      actionText: "Match Pitch",
       tip: "PRO TIP: Questions usually have a pitch that slides up at the very end!",
     ),
     GameSubtype.syllableStress: GameBriefing(
@@ -1030,12 +1030,12 @@ class GameInstructionService {
       objective:
           "Listen to the word and identify which part of the word is spoken the loudest.",
       rules: ["Listen for the loud part", "Check the length", "Select the stressed part"],
-      actionText: "Spot Stress",
+      actionText: "Find Stress",
       tip:
           "PRO TIP: The stressed part of a word is always louder and slightly longer.",
     ),
     GameSubtype.wordLinking: GameBriefing(
-      title: "Fluid Flow",
+      title: "Connect Words",
       icon: Icons.link_rounded,
       objective:
           "Listen to how two separate words are linked together into one smooth sound.",
@@ -1044,22 +1044,22 @@ class GameInstructionService {
         "Find the linked words",
         "Choose the correct link",
       ],
-      actionText: "Start Glide",
+      actionText: "Link Words",
       tip:
           "PRO TIP: English speakers often push the end of one word into the start of the next.",
     ),
     GameSubtype.shadowingChallenge: GameBriefing(
-      title: "Speed Shadow",
+      title: "Shadow Challenge",
       icon: Icons.bolt_rounded,
       objective:
           "Listen to the speaker and tap the correct dialogue bubble to shadow their voice.",
       rules: ["Listen to the sentence", "Read the chat bubbles", "Tap the exact match"],
-      actionText: "Initiate Shadow",
+      actionText: "Start Shadowing",
       tip:
           "PRO TIP: Don't overthink! Pick the sentence that exactly matches the audio.",
     ),
     GameSubtype.vowelDistinction: GameBriefing(
-      title: "Vowel Vortex",
+      title: "Vowel Sounds",
       icon: Icons.cyclone_rounded,
       objective:
           "Listen to the vowel sound and use the horizontal slider to find the perfect match.",
@@ -1068,7 +1068,7 @@ class GameInstructionService {
         "Slide left or right",
         "Lock your answer",
       ],
-      actionText: "Sort Vowels",
+      actionText: "Find Vowel",
       tip:
           "PRO TIP: Vowels are a spectrum! Slide carefully until you find the exact sound.",
     ),
@@ -1078,7 +1078,7 @@ class GameInstructionService {
       objective:
           "Listen to the sharp consonant sound and tap the correct heavy button on the grid.",
       rules: ["Listen for sharp sounds", "Check the buttons", "Tap your choice"],
-      actionText: "Speak Clearly",
+      actionText: "Find Sound",
       tip:
           "PRO TIP: Consonants are sharp physical clicks! Tap the button that matches the click.",
     ),
@@ -1097,7 +1097,7 @@ class GameInstructionService {
           "PRO TIP: Slide the fader up if the speaker's voice gets higher at the end!",
     ),
     GameSubtype.speedVariance: GameBriefing(
-      title: "Tempo Trainer",
+      title: "Speaking Speed",
       icon: Icons.speed_rounded,
       objective:
           "Listen to the phrase and identify if it was spoken at a fast, medium, or slow tempo.",
@@ -1106,35 +1106,35 @@ class GameInstructionService {
         "Check the options",
         "Select the tempo",
       ],
-      actionText: "Train Tempo",
+      actionText: "Select Speed",
       tip: "PRO TIP: Even when people speak fast, the words still link together smoothly.",
     ),
     GameSubtype.dialectDrill: GameBriefing(
-      title: "Dialect Diver",
+      title: "Guess Accent",
       icon: Icons.public_rounded,
       objective:
           "Listen to the speaker and identify which global English accent they are using.",
       rules: ["Listen to the vowels", "Check the options", "Select the accent"],
-      actionText: "Start Drill",
+      actionText: "Guess Accent",
       tip: "PRO TIP: Pay close attention to how they pronounce their 'R' sounds and vowels.",
     ),
     GameSubtype.connectedSpeech: GameBriefing(
-      title: "Fusion Focus",
+      title: "Connected Speech",
       icon: Icons.settings_input_composite_rounded,
       objective:
           "Listen to the audio and select the floating card that perfectly links the words together.",
       rules: ["Listen to the connection", "Check the floating cards", "Tap the best link"],
-      actionText: "Start Fusion",
+      actionText: "Connect Words",
       tip:
           "PRO TIP: Words like 'want to' often fuse together into 'wanna' in fast speech.",
     ),
     GameSubtype.pitchModulation: GameBriefing(
-      title: "Dynamic Range",
+      title: "Voice Emotion",
       icon: Icons.legend_toggle_rounded,
       objective:
           "Listen to the emotion in the voice and identify the correct pitch change.",
       rules: ["Listen to the emotion", "Check the options", "Select the answer"],
-      actionText: "Modulate Now",
+      actionText: "Select Emotion",
       tip:
           "PRO TIP: People use a high pitch for surprise and a low pitch for calm statements.",
     ),
