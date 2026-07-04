@@ -9,9 +9,7 @@ class GetAccentQuest {
 
   const GetAccentQuest(this.repository);
 
-  Future<Either<Failure, List<AccentQuest>>> call(
-    GetAccentQuestParams params,
-  ) {
+  Future<Either<Failure, List<AccentQuest>>> call(GetAccentQuestParams params) {
     return repository.getAccentQuests(
       gameType: params.gameType,
       level: params.level,

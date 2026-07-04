@@ -26,9 +26,11 @@ class PitchPatternMatchMelodicCanvas extends StatelessWidget {
       height: 80.h,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.02)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white10 : Colors.black12)
+        border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
       ),
       child: Stack(
         children: [
@@ -44,7 +46,11 @@ class PitchPatternMatchMelodicCanvas extends StatelessWidget {
             Center(
               child: CustomPaint(
                 size: Size(0.7.sw, 100.h),
-                painter: _BlueprintPainter(pattern, color, progress: isPreviewing ? previewProgress : 1.0),
+                painter: _BlueprintPainter(
+                  pattern,
+                  color,
+                  progress: isPreviewing ? previewProgress : 1.0,
+                ),
               ),
             ),
         ],
@@ -66,7 +72,7 @@ class _BlueprintPainter extends CustomPainter {
       ..strokeWidth = 6
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
-    
+
     final path = Path();
     if (pattern.isEmpty) return;
 

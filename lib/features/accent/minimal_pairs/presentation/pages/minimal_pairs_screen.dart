@@ -149,6 +149,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
+                      final maxWidth = constraints.maxWidth;
                       final bool isCompact = maxHeight < 580;
 
                       final double estimatedContentHeight =
@@ -198,9 +199,13 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                             height: 32.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: MinimalPairsInstruction(
-                                                color: theme.primaryColor,
-                                            instruction: quest.instruction,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: MinimalPairsInstruction(
+                                                  color: theme.primaryColor,
+                                                  instruction:
+                                                      quest.instruction,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -215,9 +220,12 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                             height: 90.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: MinimalPairsPromptCard(
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: MinimalPairsPromptCard(
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -233,10 +241,13 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                             height: 80.r,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: MinimalPairsSpeakerCore(
-                                                text: quest.textToSpeak ?? "",
-                                                color: theme.primaryColor,
-                                                onPlayTts: _playTts,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: MinimalPairsSpeakerCore(
+                                                  text: quest.textToSpeak ?? "",
+                                                  color: theme.primaryColor,
+                                                  onPlayTts: _playTts,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -256,42 +267,45 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                             height: 110.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  MinimalPairsDroneOption(
-                                                    index: 0,
-                                                    word: quest.word1 ?? "",
-                                                    ipa: quest.ipa1 ?? "",
-                                                    correctIndex:
-                                                        quest
-                                                            .correctAnswerIndex ??
-                                                        0,
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    isAnswered: _isAnswered,
-                                                    selectedDroneIndex:
-                                                        _selectedDroneIndex,
-                                                    onShoot: _onShoot,
-                                                  ),
-                                                  MinimalPairsDroneOption(
-                                                    index: 1,
-                                                    word: quest.word2 ?? "",
-                                                    ipa: quest.ipa2 ?? "",
-                                                    correctIndex:
-                                                        quest
-                                                            .correctAnswerIndex ??
-                                                        0,
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    isAnswered: _isAnswered,
-                                                    selectedDroneIndex:
-                                                        _selectedDroneIndex,
-                                                    onShoot: _onShoot,
-                                                  ),
-                                                ],
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
+                                                  children: [
+                                                    MinimalPairsDroneOption(
+                                                      index: 0,
+                                                      word: quest.word1 ?? "",
+                                                      ipa: quest.ipa1 ?? "",
+                                                      correctIndex:
+                                                          quest
+                                                              .correctAnswerIndex ??
+                                                          0,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      isAnswered: _isAnswered,
+                                                      selectedDroneIndex:
+                                                          _selectedDroneIndex,
+                                                      onShoot: _onShoot,
+                                                    ),
+                                                    MinimalPairsDroneOption(
+                                                      index: 1,
+                                                      word: quest.word2 ?? "",
+                                                      ipa: quest.ipa2 ?? "",
+                                                      correctIndex:
+                                                          quest
+                                                              .correctAnswerIndex ??
+                                                          0,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      isAnswered: _isAnswered,
+                                                      selectedDroneIndex:
+                                                          _selectedDroneIndex,
+                                                      onShoot: _onShoot,
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
                                             ),
                                           )

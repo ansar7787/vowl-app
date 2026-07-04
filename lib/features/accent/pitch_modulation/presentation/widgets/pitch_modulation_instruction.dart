@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class PitchModulationInstruction extends StatelessWidget {
   final Color color;
   final String instruction;
@@ -25,10 +26,11 @@ class PitchModulationInstruction extends StatelessWidget {
           Icon(Icons.settings_voice_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            instruction.trim().isEmpty 
+            instruction.trim().isEmpty
                 ? "IDENTIFY THE PITCH CHANGE"
                 : instruction.toUpperCase(),
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: color,

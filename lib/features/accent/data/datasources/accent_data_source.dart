@@ -38,7 +38,10 @@ class AccentDataSourceImpl implements AccentDataSource {
       if (localData.isNotEmpty) {
         return localData.map((q) {
           final questMap = Map<String, dynamic>.from(q);
-          return AccentQuestModel.fromJson(questMap, questMap['id']?.toString() ?? '');
+          return AccentQuestModel.fromJson(
+            questMap,
+            questMap['id']?.toString() ?? '',
+          );
         }).toList();
       }
 

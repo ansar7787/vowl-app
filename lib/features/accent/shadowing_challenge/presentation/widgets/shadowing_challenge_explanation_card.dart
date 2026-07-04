@@ -27,15 +27,23 @@ class ShadowingChallengeExplanationCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: displayColor.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+        border: Border.all(
+          color: displayColor.withValues(alpha: 0.3),
+          width: 2,
+        ),
       ),
       child: Column(
         children: [
-          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          Icon(
+            correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
+            color: displayColor,
+            size: 36.r,
+          ),
           SizedBox(height: 10.h),
           Text(
             correct ? "CORRECT SHADOW MATCH!" : "INCORRECT SHADOW MATCH",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 15.sp,
               fontWeight: FontWeight.w900,
               color: displayColor,
@@ -47,7 +55,8 @@ class ShadowingChallengeExplanationCard extends StatelessWidget {
             Text(
               quest.explanation!,
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 12.sp,
                 color: isDark ? Colors.white60 : Colors.black54,
               ),

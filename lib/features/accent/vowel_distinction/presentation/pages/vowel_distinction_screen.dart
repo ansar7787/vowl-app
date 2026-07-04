@@ -177,6 +177,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
+                      final maxWidth = constraints.maxWidth;
                       final bool isCompact = maxHeight < 580;
 
                       final double estimatedContentHeight =
@@ -228,11 +229,15 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                             height: 32.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  VowelDistinctionInstruction(
-                                                    color: theme.primaryColor,
-                                                    instruction: quest.instruction,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    VowelDistinctionInstruction(
+                                                      color: theme.primaryColor,
+                                                      instruction:
+                                                          quest.instruction,
+                                                    ),
+                                              ),
                                             ),
                                           )
                                         : VowelDistinctionInstruction(
@@ -246,10 +251,14 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                             height: 90.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: VowelDistinctionPromptCard(
-                                                word: quest.word ?? "",
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    VowelDistinctionPromptCard(
+                                                      word: quest.word ?? "",
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
                                               ),
                                             ),
                                           )
@@ -266,13 +275,17 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                             height: 80.r,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  VowelDistinctionPulseSpeaker(
-                                                    text:
-                                                        quest.textToSpeak ?? "",
-                                                    color: theme.primaryColor,
-                                                    onPlayTts: _playTts,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    VowelDistinctionPulseSpeaker(
+                                                      text:
+                                                          quest.textToSpeak ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      onPlayTts: _playTts,
+                                                    ),
+                                              ),
                                             ),
                                           )
                                         : VowelDistinctionPulseSpeaker(
@@ -291,24 +304,24 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                             height: 110.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  VowelDistinctionSpectralSlider(
-                                                    options: options,
-                                                    correctIndex:
-                                                        quest
-                                                            .correctAnswerIndex ??
-                                                        0,
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    isAnswered: _isAnswered,
-                                                    selectedIndex:
-                                                        _selectedIndex,
-                                                    sliderValue: _sliderValue,
-                                                    onSubmitChoice:
-                                                        _submitChoice,
-                                                    onSliderUpdate:
-                                                        _onSliderUpdate,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: VowelDistinctionSpectralSlider(
+                                                  options: options,
+                                                  correctIndex:
+                                                      quest
+                                                          .correctAnswerIndex ??
+                                                      0,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isAnswered: _isAnswered,
+                                                  selectedIndex: _selectedIndex,
+                                                  sliderValue: _sliderValue,
+                                                  onSubmitChoice: _submitChoice,
+                                                  onSliderUpdate:
+                                                      _onSliderUpdate,
+                                                ),
+                                              ),
                                             ),
                                           )
                                         : VowelDistinctionSpectralSlider(
@@ -330,13 +343,17 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                               height: 110.h,
                                               child: FittedBox(
                                                 fit: BoxFit.scaleDown,
-                                                child:
-                                                    VowelDistinctionExplanationCard(
-                                                      quest: quest,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isCorrect: _isCorrect,
-                                                    ),
+                                                child: SizedBox(
+                                                  width: maxWidth - 48.w,
+                                                  child:
+                                                      VowelDistinctionExplanationCard(
+                                                        quest: quest,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isCorrect: _isCorrect,
+                                                      ),
+                                                ),
                                               ),
                                             )
                                           : VowelDistinctionExplanationCard(

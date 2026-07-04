@@ -186,6 +186,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
+                      final maxWidth = constraints.maxWidth;
                       final bool isCompact = maxHeight < 580;
 
                       final double estimatedContentHeight =
@@ -237,9 +238,13 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                             height: 32.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: SpeedVarianceInstruction(
-                                                color: theme.primaryColor,
-                                            instruction: quest.instruction,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: SpeedVarianceInstruction(
+                                                  color: theme.primaryColor,
+                                                  instruction:
+                                                      quest.instruction,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -254,10 +259,13 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                             height: 90.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: SpeedVariancePromptCard(
-                                                word: quest.word ?? "",
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: SpeedVariancePromptCard(
+                                                  word: quest.word ?? "",
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -274,10 +282,16 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                             height: 80.r,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: SpeedVariancePulseSpeaker(
-                                                text: quest.textToSpeak ?? "",
-                                                color: theme.primaryColor,
-                                                onPlayTts: _playTts,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    SpeedVariancePulseSpeaker(
+                                                      text:
+                                                          quest.textToSpeak ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      onPlayTts: _playTts,
+                                                    ),
                                               ),
                                             ),
                                           )
@@ -297,20 +311,24 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                             height: 110.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: SpeedVarianceTempoDial(
-                                                options: options,
-                                                correctIndex:
-                                                    quest.correctAnswerIndex ??
-                                                    0,
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
-                                                isAnswered: _isAnswered,
-                                                isDragging: _isDragging,
-                                                dialRotation: _dialRotation,
-                                                selectedIndex: _selectedIndex,
-                                                onDialRotate: _onDialRotate,
-                                                onDialRelease: _onDialRelease,
-                                                onSubmitChoice: _submitChoice,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: SpeedVarianceTempoDial(
+                                                  options: options,
+                                                  correctIndex:
+                                                      quest
+                                                          .correctAnswerIndex ??
+                                                      0,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isAnswered: _isAnswered,
+                                                  isDragging: _isDragging,
+                                                  dialRotation: _dialRotation,
+                                                  selectedIndex: _selectedIndex,
+                                                  onDialRotate: _onDialRotate,
+                                                  onDialRelease: _onDialRelease,
+                                                  onSubmitChoice: _submitChoice,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -335,13 +353,17 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                               height: 110.h,
                                               child: FittedBox(
                                                 fit: BoxFit.scaleDown,
-                                                child:
-                                                    SpeedVarianceExplanationCard(
-                                                      quest: quest,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isCorrect: _isCorrect,
-                                                    ),
+                                                child: SizedBox(
+                                                  width: maxWidth - 48.w,
+                                                  child:
+                                                      SpeedVarianceExplanationCard(
+                                                        quest: quest,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isCorrect: _isCorrect,
+                                                      ),
+                                                ),
                                               ),
                                             )
                                           : SpeedVarianceExplanationCard(

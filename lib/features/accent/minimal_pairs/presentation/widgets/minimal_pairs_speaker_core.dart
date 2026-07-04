@@ -19,37 +19,52 @@ class MinimalPairsSpeakerCore extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScaleButton(
       onTap: () => onPlayTts(text),
-      child: Container(
-        width: 130.r,
-        height: 130.r,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: color.withValues(alpha: 0.1),
-          border: Border.all(color: color, width: 3),
-          boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 30, spreadRadius: 2)
-          ],
-        ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.record_voice_over_rounded, color: color, size: 40.r),
-              SizedBox(height: 6.h),
-              Text(
-                "TAP TO PLAY",
-                style: TextStyle(fontFamily: 'RobotoMono', 
-                  color: color,
-                  fontSize: 9.sp,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
-                )
+      child:
+          Container(
+                width: 130.r,
+                height: 130.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: color.withValues(alpha: 0.1),
+                  border: Border.all(color: color, width: 3),
+                  boxShadow: [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.2),
+                      blurRadius: 30,
+                      spreadRadius: 2,
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.record_voice_over_rounded,
+                        color: color,
+                        size: 40.r,
+                      ),
+                      SizedBox(height: 6.h),
+                      Text(
+                        "TAP TO PLAY",
+                        style: TextStyle(
+                          fontFamily: 'RobotoMono',
+                          color: color,
+                          fontSize: 9.sp,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               )
-            ],
-          ),
-        ),
-      ).animate(onPlay: (c) => c.repeat(reverse: true))
-       .scale(begin: const Offset(1.0, 1.0), end: const Offset(1.06, 1.06), duration: 1.5.seconds),
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
+                begin: const Offset(1.0, 1.0),
+                end: const Offset(1.06, 1.06),
+                duration: 1.5.seconds,
+              ),
     );
   }
 }

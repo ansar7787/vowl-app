@@ -212,6 +212,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
+                      final maxWidth = constraints.maxWidth;
                       final bool isCompact = maxHeight < 580;
 
                       final double estimatedContentHeight =
@@ -263,9 +264,14 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                             height: 32.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: IntonationMimicInstruction(
-                                                color: theme.primaryColor,
-                                            instruction: quest.instruction,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    IntonationMimicInstruction(
+                                                      color: theme.primaryColor,
+                                                      instruction:
+                                                          quest.instruction,
+                                                    ),
                                               ),
                                             ),
                                           )
@@ -280,10 +286,14 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                             height: 90.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: IntonationMimicPromptCard(
-                                                word: quest.word ?? "",
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    IntonationMimicPromptCard(
+                                                      word: quest.word ?? "",
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
                                               ),
                                             ),
                                           )
@@ -299,14 +309,18 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                             height: 70.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  IntonationMimicRollercoaster(
-                                                    contour: contour,
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    isRiding: _isRiding,
-                                                    cartPosition: _cartPosition,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    IntonationMimicRollercoaster(
+                                                      contour: contour,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      isRiding: _isRiding,
+                                                      cartPosition:
+                                                          _cartPosition,
+                                                    ),
+                                              ),
                                             ),
                                           )
                                         : IntonationMimicRollercoaster(
@@ -324,13 +338,17 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                             height: 80.r,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  IntonationMimicPulseSpeaker(
-                                                    text:
-                                                        quest.textToSpeak ?? "",
-                                                    color: theme.primaryColor,
-                                                    onPlayTts: _playTts,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    IntonationMimicPulseSpeaker(
+                                                      text:
+                                                          quest.textToSpeak ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      onPlayTts: _playTts,
+                                                    ),
+                                              ),
                                             ),
                                           )
                                         : IntonationMimicPulseSpeaker(
@@ -349,24 +367,24 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                             height: 110.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  IntonationMimicVerticalFader(
-                                                    options: options,
-                                                    correctIndex:
-                                                        quest
-                                                            .correctAnswerIndex ??
-                                                        0,
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    isAnswered: _isAnswered,
-                                                    selectedIndex:
-                                                        _selectedIndex,
-                                                    sliderValue: _sliderValue,
-                                                    onSubmitChoice:
-                                                        _submitChoice,
-                                                    onSliderUpdate:
-                                                        _onSliderUpdate,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: IntonationMimicVerticalFader(
+                                                  options: options,
+                                                  correctIndex:
+                                                      quest
+                                                          .correctAnswerIndex ??
+                                                      0,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isAnswered: _isAnswered,
+                                                  selectedIndex: _selectedIndex,
+                                                  sliderValue: _sliderValue,
+                                                  onSubmitChoice: _submitChoice,
+                                                  onSliderUpdate:
+                                                      _onSliderUpdate,
+                                                ),
+                                              ),
                                             ),
                                           )
                                         : IntonationMimicVerticalFader(
@@ -388,13 +406,17 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                               height: 110.h,
                                               child: FittedBox(
                                                 fit: BoxFit.scaleDown,
-                                                child:
-                                                    IntonationMimicExplanationCard(
-                                                      quest: quest,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isCorrect: _isCorrect,
-                                                    ),
+                                                child: SizedBox(
+                                                  width: maxWidth - 48.w,
+                                                  child:
+                                                      IntonationMimicExplanationCard(
+                                                        quest: quest,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isCorrect: _isCorrect,
+                                                      ),
+                                                ),
                                               ),
                                             )
                                           : IntonationMimicExplanationCard(

@@ -39,7 +39,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  
+
   int? _selectedIndex;
 
   @override
@@ -55,11 +55,10 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
     _soundService.playTts(text);
   }
 
-    void _submitChoice(int index, int correct) {
+  void _submitChoice(int index, int correct) {
     if (_isAnswered) return;
     setState(() {
       _selectedIndex = index;
-      
     });
 
     bool isCorrect = index == correct;
@@ -153,6 +152,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
+                      final maxWidth = constraints.maxWidth;
                       final bool isCompact = maxHeight < 580;
 
                       final double estimatedContentHeight =
@@ -204,12 +204,16 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                             height: 32.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  ConsonantClarityInstruction(
-                                                    primaryColor:
-                                                        theme.primaryColor,
-                                                    instruction: quest.instruction,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    ConsonantClarityInstruction(
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      instruction:
+                                                          quest.instruction,
+                                                    ),
+                                              ),
                                             ),
                                           )
                                         : ConsonantClarityInstruction(
@@ -223,10 +227,14 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                             height: 90.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: ConsonantClarityPromptCard(
-                                                word: quest.word ?? "",
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    ConsonantClarityPromptCard(
+                                                      word: quest.word ?? "",
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
                                               ),
                                             ),
                                           )
@@ -243,13 +251,17 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                             height: 80.r,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  ConsonantClarityPulseSpeaker(
-                                                    text:
-                                                        quest.textToSpeak ?? "",
-                                                    color: theme.primaryColor,
-                                                    onPlayTts: _playTts,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    ConsonantClarityPulseSpeaker(
+                                                      text:
+                                                          quest.textToSpeak ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      onPlayTts: _playTts,
+                                                    ),
+                                              ),
                                             ),
                                           )
                                         : ConsonantClarityPulseSpeaker(
@@ -268,21 +280,21 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                             height: 110.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  ConsonantClarityTactileGrid(
-                                                    options: options,
-                                                    correctIndex:
-                                                        quest
-                                                            .correctAnswerIndex ??
-                                                        0,
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    isAnswered: _isAnswered,
-                                                    selectedIndex:
-                                                        _selectedIndex,
-                                                    onSubmitChoice:
-                                                        _submitChoice,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: ConsonantClarityTactileGrid(
+                                                  options: options,
+                                                  correctIndex:
+                                                      quest
+                                                          .correctAnswerIndex ??
+                                                      0,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isAnswered: _isAnswered,
+                                                  selectedIndex: _selectedIndex,
+                                                  onSubmitChoice: _submitChoice,
+                                                ),
+                                              ),
                                             ),
                                           )
                                         : ConsonantClarityTactileGrid(
@@ -302,13 +314,17 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                               height: 110.h,
                                               child: FittedBox(
                                                 fit: BoxFit.scaleDown,
-                                                child:
-                                                    ConsonantClarityExplanationCard(
-                                                      quest: quest,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isCorrect: _isCorrect,
-                                                    ),
+                                                child: SizedBox(
+                                                  width: maxWidth - 48.w,
+                                                  child:
+                                                      ConsonantClarityExplanationCard(
+                                                        quest: quest,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isCorrect: _isCorrect,
+                                                      ),
+                                                ),
                                               ),
                                             )
                                           : ConsonantClarityExplanationCard(

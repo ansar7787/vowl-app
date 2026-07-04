@@ -211,6 +211,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
+                      final maxWidth = constraints.maxWidth;
                       final bool isCompact = maxHeight < 580;
 
                       final double estimatedContentHeight =
@@ -262,11 +263,15 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                             height: 32.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  PitchPatternMatchInstruction(
-                                                    color: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    PitchPatternMatchInstruction(
+                                                      color: theme.primaryColor,
+                                                      instruction:
+                                                          quest.instruction,
+                                                    ),
+                                              ),
                                             ),
                                           )
                                         : PitchPatternMatchInstruction(
@@ -280,12 +285,15 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                             height: 90.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  PitchPatternMatchPromptCard(
-                                                    word: quest.word ?? "",
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    PitchPatternMatchPromptCard(
+                                                      word: quest.word ?? "",
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
+                                              ),
                                             ),
                                           )
                                         : PitchPatternMatchPromptCard(
@@ -300,16 +308,20 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                             height: 70.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  PitchPatternMatchMelodicCanvas(
-                                                    pattern: pattern,
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    isPreviewing: _isPreviewing,
-                                                    isAnswered: _isAnswered,
-                                                    previewProgress:
-                                                        _previewProgress,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    PitchPatternMatchMelodicCanvas(
+                                                      pattern: pattern,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      isPreviewing:
+                                                          _isPreviewing,
+                                                      isAnswered: _isAnswered,
+                                                      previewProgress:
+                                                          _previewProgress,
+                                                    ),
+                                              ),
                                             ),
                                           )
                                         : PitchPatternMatchMelodicCanvas(
@@ -328,13 +340,17 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                             height: 80.r,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  PitchPatternMatchPulseSpeaker(
-                                                    text:
-                                                        quest.textToSpeak ?? "",
-                                                    color: theme.primaryColor,
-                                                    onPlayTts: _playTts,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    PitchPatternMatchPulseSpeaker(
+                                                      text:
+                                                          quest.textToSpeak ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      onPlayTts: _playTts,
+                                                    ),
+                                              ),
                                             ),
                                           )
                                         : PitchPatternMatchPulseSpeaker(
@@ -353,24 +369,24 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                             height: 110.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  PitchPatternMatchVerticalFader(
-                                                    options: options,
-                                                    correctIndex:
-                                                        quest
-                                                            .correctAnswerIndex ??
-                                                        0,
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    isAnswered: _isAnswered,
-                                                    selectedIndex:
-                                                        _selectedIndex,
-                                                    sliderValue: _sliderValue,
-                                                    onSubmitChoice:
-                                                        _submitChoice,
-                                                    onSliderUpdate:
-                                                        _onSliderUpdate,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: PitchPatternMatchVerticalFader(
+                                                  options: options,
+                                                  correctIndex:
+                                                      quest
+                                                          .correctAnswerIndex ??
+                                                      0,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isAnswered: _isAnswered,
+                                                  selectedIndex: _selectedIndex,
+                                                  sliderValue: _sliderValue,
+                                                  onSubmitChoice: _submitChoice,
+                                                  onSliderUpdate:
+                                                      _onSliderUpdate,
+                                                ),
+                                              ),
                                             ),
                                           )
                                         : PitchPatternMatchVerticalFader(
@@ -392,13 +408,17 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                               height: 110.h,
                                               child: FittedBox(
                                                 fit: BoxFit.scaleDown,
-                                                child:
-                                                    PitchPatternMatchExplanationCard(
-                                                      quest: quest,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isCorrect: _isCorrect,
-                                                    ),
+                                                child: SizedBox(
+                                                  width: maxWidth - 48.w,
+                                                  child:
+                                                      PitchPatternMatchExplanationCard(
+                                                        quest: quest,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isCorrect: _isCorrect,
+                                                      ),
+                                                ),
                                               ),
                                             )
                                           : PitchPatternMatchExplanationCard(

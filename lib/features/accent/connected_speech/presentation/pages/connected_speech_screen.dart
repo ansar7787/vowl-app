@@ -40,7 +40,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  
+
   int? _selectedIndex;
   Timer? _resetTimer;
 
@@ -63,11 +63,10 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     _soundService.playTts(text);
   }
 
-    void _submitChoice(int index, int correct) {
+  void _submitChoice(int index, int correct) {
     if (_isAnswered) return;
     setState(() {
       _selectedIndex = index;
-      
     });
 
     final bool isCorrect = index == correct;
@@ -108,7 +107,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              
+
               _selectedIndex = null;
             });
             // Proactively auto-play sound on question load

@@ -186,6 +186,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
+                      final maxWidth = constraints.maxWidth;
                       final bool isCompact = maxHeight < 580;
 
                       final double estimatedContentHeight =
@@ -237,9 +238,14 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                             height: 32.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: PitchModulationInstruction(
-                                                color: theme.primaryColor,
-                                            instruction: quest.instruction,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    PitchModulationInstruction(
+                                                      color: theme.primaryColor,
+                                                      instruction:
+                                                          quest.instruction,
+                                                    ),
                                               ),
                                             ),
                                           )
@@ -254,10 +260,14 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                             height: 90.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: PitchModulationPromptCard(
-                                                word: quest.word ?? "",
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    PitchModulationPromptCard(
+                                                      word: quest.word ?? "",
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
                                               ),
                                             ),
                                           )
@@ -274,13 +284,17 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                             height: 80.r,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  PitchModulationPulseSpeaker(
-                                                    text:
-                                                        quest.textToSpeak ?? "",
-                                                    color: theme.primaryColor,
-                                                    onPlayTts: _playTts,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    PitchModulationPulseSpeaker(
+                                                      text:
+                                                          quest.textToSpeak ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      onPlayTts: _playTts,
+                                                    ),
+                                              ),
                                             ),
                                           )
                                         : PitchModulationPulseSpeaker(
@@ -299,20 +313,24 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                             height: 110.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: PitchModulationDialControl(
-                                                options: options,
-                                                correctIndex:
-                                                    quest.correctAnswerIndex ??
-                                                    0,
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
-                                                isAnswered: _isAnswered,
-                                                isDragging: _isDragging,
-                                                dialRotation: _dialRotation,
-                                                selectedIndex: _selectedIndex,
-                                                onDialRotate: _onDialRotate,
-                                                onDialRelease: _onDialRelease,
-                                                onSubmitChoice: _submitChoice,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: PitchModulationDialControl(
+                                                  options: options,
+                                                  correctIndex:
+                                                      quest
+                                                          .correctAnswerIndex ??
+                                                      0,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isAnswered: _isAnswered,
+                                                  isDragging: _isDragging,
+                                                  dialRotation: _dialRotation,
+                                                  selectedIndex: _selectedIndex,
+                                                  onDialRotate: _onDialRotate,
+                                                  onDialRelease: _onDialRelease,
+                                                  onSubmitChoice: _submitChoice,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -337,13 +355,17 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                               height: 110.h,
                                               child: FittedBox(
                                                 fit: BoxFit.scaleDown,
-                                                child:
-                                                    PitchModulationExplanationCard(
-                                                      quest: quest,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isCorrect: _isCorrect,
-                                                    ),
+                                                child: SizedBox(
+                                                  width: maxWidth - 48.w,
+                                                  child:
+                                                      PitchModulationExplanationCard(
+                                                        quest: quest,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isCorrect: _isCorrect,
+                                                      ),
+                                                ),
                                               ),
                                             )
                                           : PitchModulationExplanationCard(

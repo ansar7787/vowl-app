@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ShadowingChallengeInstruction extends StatelessWidget {
   final Color color;
   final String instruction;
@@ -25,10 +26,11 @@ class ShadowingChallengeInstruction extends StatelessWidget {
           Icon(Icons.auto_awesome_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            instruction.trim().isEmpty 
+            instruction.trim().isEmpty
                 ? "TAP THE CHAT BUBBLE TO SHADOW THE VOICE"
                 : instruction.toUpperCase(),
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: color,

@@ -43,7 +43,9 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
               spacing: 24.w,
               runSpacing: 24.h,
               children: List.generate(
-                  options.length, (index) => _buildKeycap(options[index], index)),
+                options.length,
+                (index) => _buildKeycap(options[index], index),
+              ),
             ),
     );
   }
@@ -60,13 +62,14 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
     Color borderColor = color.withValues(alpha: 0.3);
     Color textColor = isDark ? Colors.white70 : Colors.black87;
 
-
     // Styling when selected / locked in
     if (showResult) {
       capColor = isCorrect
           ? const Color(0xFF10B981).withValues(alpha: 0.2)
           : const Color(0xFFE11D48).withValues(alpha: 0.2);
-      borderColor = isCorrect ? const Color(0xFF10B981) : const Color(0xFFE11D48);
+      borderColor = isCorrect
+          ? const Color(0xFF10B981)
+          : const Color(0xFFE11D48);
       textColor = isCorrect ? const Color(0xFF10B981) : const Color(0xFFE11D48);
     } else if (isSelected) {
       capColor = color.withValues(alpha: 0.2);
@@ -83,7 +86,9 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
         curve: Curves.easeOutCubic,
         width: 100.r,
         height: 100.r,
-        margin: EdgeInsets.only(top: isSelected ? 6.r : 0.r), // Physical push down effect
+        margin: EdgeInsets.only(
+          top: isSelected ? 6.r : 0.r,
+        ), // Physical push down effect
         decoration: BoxDecoration(
           color: capColor,
           borderRadius: BorderRadius.circular(24.r),
@@ -100,7 +105,7 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
                 color: borderColor.withValues(alpha: 0.3),
                 blurRadius: 20,
                 spreadRadius: 2,
-              )
+              ),
           ],
         ),
         child: Center(

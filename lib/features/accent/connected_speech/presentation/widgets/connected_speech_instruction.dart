@@ -16,7 +16,10 @@ class ConnectedSpeechInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: isCompact ? 6.h : 8.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: 16.w,
+        vertical: isCompact ? 6.h : 8.h,
+      ),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(30.r),
@@ -25,15 +28,19 @@ class ConnectedSpeechInstruction extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.waves_rounded, size: isCompact ? 12.r : 14.r, color: primaryColor),
+          Icon(
+            Icons.waves_rounded,
+            size: isCompact ? 12.r : 14.r,
+            color: primaryColor,
+          ),
           SizedBox(width: isCompact ? 8.w : 12.w),
           Flexible(
             child: Text(
-            instruction.trim().isEmpty 
-                ? "SELECT THE CARD THAT LINKS THE WORDS"
-                : instruction.toUpperCase(),
+              instruction.trim().isEmpty
+                  ? "SELECT THE CARD THAT LINKS THE WORDS"
+                  : instruction.toUpperCase(),
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: isCompact ? 8.sp : 10.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor,

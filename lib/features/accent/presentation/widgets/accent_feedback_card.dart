@@ -43,7 +43,9 @@ class AccentFeedbackCard extends StatelessWidget {
         : const Color(0xFFE11D48);
 
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
-    final title = success ? context.tr('games.excellent') : context.tr('games.not_quite');
+    final title = success
+        ? context.tr('games.excellent')
+        : context.tr('games.not_quite');
 
     // Explanation is shown on correct answers and on the final failure attempt.
     final showExplanation = success || (!success && state.isFinalFailure);
@@ -52,7 +54,9 @@ class AccentFeedbackCard extends StatelessWidget {
     final buttonText = success
         ? context.tr('common.continue_text').toUpperCase()
         : (state.isFinalFailure
-              ? (lives == 0 ? context.tr('games.see_results') : context.tr('common.continue_text').toUpperCase())
+              ? (lives == 0
+                    ? context.tr('games.see_results')
+                    : context.tr('common.continue_text').toUpperCase())
               : context.tr('games.try_again').toUpperCase());
 
     return Container(
@@ -163,14 +167,20 @@ class AccentFeedbackCard extends StatelessWidget {
                         child: SingleChildScrollView(
                           physics: const BouncingScrollPhysics(),
                           child: Semantics(
-                            label: '${context.tr('games.explanation')}: $explanation',
+                            label:
+                                '${context.tr('games.explanation')}: $explanation',
                             child: Text(
-                              explanation ?? (success ? "Excellent listening! You correctly identified the precise sound." : "Keep practicing! Pay close attention to the subtle differences in these sounds."),
+                              explanation ??
+                                  (success
+                                      ? "Excellent listening! You correctly identified the precise sound."
+                                      : "Keep practicing! Pay close attention to the subtle differences in these sounds."),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 15.sp,
                                 fontWeight: FontWeight.w600,
-                                color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF334155),
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.9)
+                                    : const Color(0xFF334155),
                                 height: 1.4,
                               ),
                             ),
@@ -182,7 +192,12 @@ class AccentFeedbackCard extends StatelessWidget {
                 )
                 .animate()
                 .fadeIn(delay: 300.ms)
-                .slideY(begin: 0.2, end: 0, duration: 400.ms, curve: Curves.easeOutBack),
+                .slideY(
+                  begin: 0.2,
+                  end: 0,
+                  duration: 400.ms,
+                  curve: Curves.easeOutBack,
+                ),
           ],
 
           SizedBox(height: 28.h),

@@ -57,8 +57,11 @@ class DialectFeedbackPanel extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      isCorrect ? context.tr('games.correct') : context.tr('games.lets_review'),
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      isCorrect
+                          ? context.tr('games.correct')
+                          : context.tr('games.lets_review'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 22.sp,
                         fontWeight: FontWeight.bold,
                         color: isDark ? Colors.white : Colors.black87,
@@ -66,7 +69,8 @@ class DialectFeedbackPanel extends StatelessWidget {
                     ),
                     Text(
                       context.tr('games.accent_comparison'),
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
                         color: isDark ? Colors.white70 : Colors.black54,
@@ -93,7 +97,8 @@ class DialectFeedbackPanel extends StatelessWidget {
                 Text(
                   word,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 2,
@@ -107,7 +112,8 @@ class DialectFeedbackPanel extends StatelessWidget {
                   children: [
                     Text(
                       "${context.tr('games.british')}: ",
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
                         color: isDark ? Colors.white60 : Colors.black45,
@@ -115,7 +121,8 @@ class DialectFeedbackPanel extends StatelessWidget {
                     ),
                     Text(
                       britishPronunciation,
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w800,
                         color: const Color(
@@ -131,7 +138,8 @@ class DialectFeedbackPanel extends StatelessWidget {
                   children: [
                     Text(
                       "${context.tr('games.american')}: ",
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
                         color: isDark ? Colors.white60 : Colors.black45,
@@ -139,7 +147,8 @@ class DialectFeedbackPanel extends StatelessWidget {
                     ),
                     Text(
                       americanPronunciation,
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w800,
                         color: const Color(0xFF4285F4), // Theme generic blue
@@ -152,7 +161,8 @@ class DialectFeedbackPanel extends StatelessWidget {
                 Text(
                   hint,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 16.sp,
                     fontStyle: FontStyle.italic,
                     color: isDark ? Colors.white70 : Colors.black87,
@@ -214,7 +224,8 @@ class DialectFeedbackPanel extends StatelessWidget {
       icon: Icon(icon, size: 20.r, color: textColor),
       label: Text(
         title,
-        style: TextStyle(fontFamily: 'Outfit', 
+        style: TextStyle(
+          fontFamily: 'Outfit',
           fontSize: 14.sp,
           fontWeight: FontWeight.bold,
           letterSpacing: 1,

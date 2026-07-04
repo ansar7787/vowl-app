@@ -38,22 +38,39 @@ class PitchModulationDialControl extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Expanded(child: _buildConnectedSpeechOrb(options[0], 0, correctIndex, color, isDark)),
+            Expanded(
+              child: _buildConnectedSpeechOrb(
+                options[0],
+                0,
+                correctIndex,
+                color,
+                isDark,
+              ),
+            ),
             SizedBox(width: 12.w),
             _buildChromeDial(correctIndex, color, isDark),
             SizedBox(width: 12.w),
-            Expanded(child: _buildConnectedSpeechOrb(options[1], 1, correctIndex, color, isDark)),
+            Expanded(
+              child: _buildConnectedSpeechOrb(
+                options[1],
+                1,
+                correctIndex,
+                color,
+                isDark,
+              ),
+            ),
           ],
         ),
         SizedBox(height: 24.h),
         Text(
-          isDragging ? "MODULATING TONE..." : "ROTATE DIAL OR TAP PREFERENCE", 
-          style: TextStyle(fontFamily: 'RobotoMono', 
-            fontSize: 10.sp, 
-            fontWeight: FontWeight.bold, 
+          isDragging ? "MODULATING TONE..." : "ROTATE DIAL OR TAP PREFERENCE",
+          style: TextStyle(
+            fontFamily: 'RobotoMono',
+            fontSize: 10.sp,
+            fontWeight: FontWeight.bold,
             color: color.withValues(alpha: 0.8),
-            letterSpacing: 1
-          )
+            letterSpacing: 1,
+          ),
         ),
       ],
     );
@@ -73,16 +90,16 @@ class PitchModulationDialControl extends StatelessWidget {
               shape: BoxShape.circle,
               gradient: RadialGradient(
                 colors: [
-                  isDark ? Colors.grey.shade800 : Colors.grey.shade200, 
-                  isDark ? Colors.black : Colors.grey.shade400
-                ]
+                  isDark ? Colors.grey.shade800 : Colors.grey.shade200,
+                  isDark ? Colors.black : Colors.grey.shade400,
+                ],
               ),
               boxShadow: const [
                 BoxShadow(
-                  color: Colors.black54, 
-                  blurRadius: 10, 
-                  offset: Offset(3, 3)
-                )
+                  color: Colors.black54,
+                  blurRadius: 10,
+                  offset: Offset(3, 3),
+                ),
               ],
               border: Border.all(color: color.withValues(alpha: 0.3), width: 3),
             ),
@@ -92,12 +109,25 @@ class PitchModulationDialControl extends StatelessWidget {
                 height: 50.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: isDark ? Colors.green.withValues(alpha: 0.1) : Colors.green.withValues(alpha: 0.05),
-                  border: Border.all(color: Colors.green.withValues(alpha: 0.4), width: 2),
+                  color: isDark
+                      ? Colors.green.withValues(alpha: 0.1)
+                      : Colors.green.withValues(alpha: 0.05),
+                  border: Border.all(
+                    color: Colors.green.withValues(alpha: 0.4),
+                    width: 2,
+                  ),
                 ),
-                child: Icon(Icons.show_chart_rounded, color: Colors.green, size: 24.r)
-                    .animate(onPlay: (c) => c.repeat(reverse: true))
-                    .scale(begin: const Offset(1,1), end: const Offset(1.2, 1.2)),
+                child:
+                    Icon(
+                          Icons.show_chart_rounded,
+                          color: Colors.green,
+                          size: 24.r,
+                        )
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.2, 1.2),
+                        ),
               ),
             ),
           ),
@@ -106,14 +136,22 @@ class PitchModulationDialControl extends StatelessWidget {
     );
   }
 
-  Widget _buildConnectedSpeechOrb(String text, int index, int correctIndex, Color color, bool isDark) {
+  Widget _buildConnectedSpeechOrb(
+    String text,
+    int index,
+    int correctIndex,
+    Color color,
+    bool isDark,
+  ) {
     final bool isSelected = selectedIndex == index;
     final bool correct = index == correctIndex;
-    
+
     Color orbColor = color.withValues(alpha: 0.1);
     Color textColor = color;
     if (isAnswered && isSelected) {
-      orbColor = correct ? Colors.greenAccent.withValues(alpha: 0.2) : Colors.redAccent.withValues(alpha: 0.2);
+      orbColor = correct
+          ? Colors.greenAccent.withValues(alpha: 0.2)
+          : Colors.redAccent.withValues(alpha: 0.2);
       textColor = correct ? Colors.greenAccent : Colors.redAccent;
     } else if (isSelected) {
       orbColor = color;
@@ -122,41 +160,50 @@ class PitchModulationDialControl extends StatelessWidget {
 
     return ScaleButton(
       onTap: () => onSubmitChoice(index, correctIndex),
-      child: Container(
-        height: 120.h,
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: orbColor,
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: isAnswered && isSelected 
-              ? textColor 
-              : color.withValues(alpha: isSelected ? 1.0 : 0.3), 
-            width: 3
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: isSelected 
-                ? (correct ? Colors.greenAccent.withValues(alpha: 0.3) : color.withValues(alpha: 0.3)) 
-                : Colors.transparent, 
-              blurRadius: 15
-            )
-          ],
-        ),
-        child: Center(
-          child: Text(
-            text, 
-            textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'RobotoMono', 
-              fontSize: 11.sp, 
-              fontWeight: FontWeight.bold, 
-              color: textColor,
-              height: 1.2
-            )
-          ),
-        ),
-      ).animate(onPlay: (c) => c.repeat(reverse: true))
-       .scale(begin: const Offset(1,1), end: const Offset(1.05, 1.05), duration: (2 + index).seconds),
+      child:
+          Container(
+                height: 120.h,
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+                decoration: BoxDecoration(
+                  color: orbColor,
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(
+                    color: isAnswered && isSelected
+                        ? textColor
+                        : color.withValues(alpha: isSelected ? 1.0 : 0.3),
+                    width: 3,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: isSelected
+                          ? (correct
+                                ? Colors.greenAccent.withValues(alpha: 0.3)
+                                : color.withValues(alpha: 0.3))
+                          : Colors.transparent,
+                      blurRadius: 15,
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Text(
+                    text,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.bold,
+                      color: textColor,
+                      height: 1.2,
+                    ),
+                  ),
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.05, 1.05),
+                duration: (2 + index).seconds,
+              ),
     );
   }
 }

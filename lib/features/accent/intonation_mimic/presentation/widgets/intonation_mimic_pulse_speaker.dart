@@ -27,7 +27,7 @@ class IntonationMimicPulseSpeaker extends StatelessWidget {
           color: color.withValues(alpha: 0.1),
           border: Border.all(color: color, width: 3),
           boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20)
+            BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20),
           ],
         ),
         child: Center(
@@ -35,18 +35,22 @@ class IntonationMimicPulseSpeaker extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.graphic_eq_rounded, color: color, size: 36.r)
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2)),
+                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                  .scale(
+                    begin: const Offset(1, 1),
+                    end: const Offset(1.2, 1.2),
+                  ),
               SizedBox(height: 6.h),
               Text(
                 "HEAR RIDE",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   color: color,
                   fontSize: 8.sp,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1,
-                )
-              )
+                ),
+              ),
             ],
           ),
         ),

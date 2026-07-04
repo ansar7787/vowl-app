@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ShadowingChallengeWaveformTrace extends StatelessWidget {
   final Color color;
   final bool isDark;
@@ -22,9 +23,11 @@ class ShadowingChallengeWaveformTrace extends StatelessWidget {
       height: 60.h,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.02)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white10 : Colors.black12)
+        border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
       ),
       child: Stack(
         children: [
@@ -45,7 +48,8 @@ class ShadowingChallengeWaveformTrace extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  width: 8.r, height: 8.r,
+                  width: 8.r,
+                  height: 8.r,
                   decoration: BoxDecoration(
                     color: isPreviewing ? Colors.greenAccent : color,
                     shape: BoxShape.circle,
@@ -54,7 +58,8 @@ class ShadowingChallengeWaveformTrace extends StatelessWidget {
                 SizedBox(width: 8.w),
                 Text(
                   isPreviewing ? "PLAYING PHONETIC WAVE" : "WAVE READY",
-                  style: TextStyle(fontFamily: 'RobotoMono', 
+                  style: TextStyle(
+                    fontFamily: 'RobotoMono',
                     color: isDark ? Colors.white60 : Colors.black54,
                     fontSize: 9.sp,
                     fontWeight: FontWeight.bold,
@@ -81,13 +86,14 @@ class _WaveformPainter extends CustomPainter {
       ..strokeWidth = 3
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
-    
+
     final path = Path();
     double mid = size.height / 2;
     path.moveTo(0, mid);
 
     for (double i = 0; i <= size.width * progress; i += 5) {
-      double y = mid + (math.sin(i / 10.0) * 20.0) + (math.cos(i / 15.0) * 10.0);
+      double y =
+          mid + (math.sin(i / 10.0) * 20.0) + (math.cos(i / 15.0) * 10.0);
       path.lineTo(i, y);
     }
 

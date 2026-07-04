@@ -83,25 +83,39 @@ class AccentQuestModel extends AccentQuest {
       correctAnswer: getString(map['correctAnswer']),
       hint: map['hint'] as String?,
       visualConfig: map['visual_config'] != null
-          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'] as Map))
+          ? VisualConfig.fromJson(
+              Map<String, dynamic>.from(map['visual_config'] as Map),
+            )
           : null,
       word: getString(map['word'] ?? map['targetWord']),
       phoneticHint: getString(map['phoneticHint'] ?? map['phonetic']),
       targetWord: getString(map['targetWord'] ?? map['word']),
-      question: getString(map['question'] ?? map['prompt'] ?? map['instruction']),
-      textToSpeak: getString(map['textToSpeak'] ?? map['text'] ?? map['sentence'] ?? map['word'] ?? map['targetWord']),
+      question: getString(
+        map['question'] ?? map['prompt'] ?? map['instruction'],
+      ),
+      textToSpeak: getString(
+        map['textToSpeak'] ??
+            map['text'] ??
+            map['sentence'] ??
+            map['word'] ??
+            map['targetWord'],
+      ),
       prompt: getString(map['prompt'] ?? map['question'] ?? map['instruction']),
       sampleAnswer: getString(map['sampleAnswer']),
       explanation: getString(map['explanation']),
       audioUrl: getString(map['audioUrl']),
       words: parseStringList(map['words']),
       intonationMap: map['intonationMap'] != null
-          ? (map['intonationMap'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
+          ? (map['intonationMap'] as List)
+                .map((e) => int.tryParse(e.toString()) ?? 0)
+                .toList()
           : null,
       syllables: parseStringList(map['syllables']),
       targetSpeed: (map['targetSpeed'] as num?)?.toDouble(),
       pitchPatterns: map['pitchPatterns'] != null
-          ? (map['pitchPatterns'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
+          ? (map['pitchPatterns'] as List)
+                .map((e) => int.tryParse(e.toString()) ?? 0)
+                .toList()
           : null,
       sentence: getString(map['sentence'] ?? map['text'] ?? map['textToSpeak']),
       stressPattern: getString(map['stressPattern']),

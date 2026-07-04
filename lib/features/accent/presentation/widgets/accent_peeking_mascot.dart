@@ -29,8 +29,6 @@ class AccentPeekingMascot extends StatelessWidget {
     required this.isCorrect,
   });
 
-
-
   @override
   Widget build(BuildContext context) {
     final message = MascotMessageHelper.getMessage(
@@ -94,11 +92,7 @@ class AccentPeekingMascot extends StatelessWidget {
                 ),
 
             // Mascot avatar — bobs up and down continuously
-            VowlMascot(
-                  state: mascotVisualState,
-                  size: 45.r,
-                  mascotId: mascotId,
-                )
+            VowlMascot(state: mascotVisualState, size: 45.r, mascotId: mascotId)
                 .animate(onPlay: (c) => c.repeat(reverse: true))
                 .moveY(
                   begin: 0,

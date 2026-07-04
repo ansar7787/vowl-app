@@ -154,6 +154,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
+                      final maxWidth = constraints.maxWidth;
                       final bool isCompact = maxHeight < 580;
 
                       final double estimatedContentHeight =
@@ -205,9 +206,13 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                             height: 32.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: WordLinkingInstruction(
-                                                color: theme.primaryColor,
-                                            instruction: quest.instruction,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: WordLinkingInstruction(
+                                                  color: theme.primaryColor,
+                                                  instruction:
+                                                      quest.instruction,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -222,9 +227,12 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                             height: 90.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: WordLinkingPromptCard(
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: WordLinkingPromptCard(
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -240,10 +248,13 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                             height: 80.r,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: WordLinkingPulseSpeaker(
-                                                text: quest.textToSpeak ?? "",
-                                                color: theme.primaryColor,
-                                                onPlayTts: _playTts,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: WordLinkingPulseSpeaker(
+                                                  text: quest.textToSpeak ?? "",
+                                                  color: theme.primaryColor,
+                                                  onPlayTts: _playTts,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -263,16 +274,19 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                             height: 110.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: WordLinkingSentenceField(
-                                                words: words,
-                                                correctPair:
-                                                    quest.correctAnswer ?? "",
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
-                                                isAnswered: _isAnswered,
-                                                selectedNodeIndex:
-                                                    _selectedNodeIndex,
-                                                onNodeTap: _onNodeTap,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: WordLinkingSentenceField(
+                                                  words: words,
+                                                  correctPair:
+                                                      quest.correctAnswer ?? "",
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isAnswered: _isAnswered,
+                                                  selectedNodeIndex:
+                                                      _selectedNodeIndex,
+                                                  onNodeTap: _onNodeTap,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -294,13 +308,17 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                               height: 110.h,
                                               child: FittedBox(
                                                 fit: BoxFit.scaleDown,
-                                                child:
-                                                    WordLinkingExplanationCard(
-                                                      quest: quest,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isCorrect: _isCorrect,
-                                                    ),
+                                                child: SizedBox(
+                                                  width: maxWidth - 48.w,
+                                                  child:
+                                                      WordLinkingExplanationCard(
+                                                        quest: quest,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isCorrect: _isCorrect,
+                                                      ),
+                                                ),
                                               ),
                                             )
                                           : WordLinkingExplanationCard(

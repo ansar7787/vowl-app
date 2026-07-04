@@ -20,21 +20,23 @@ class MinimalPairsPromptCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.05 : 0.08),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white12 : Colors.black12, width: 2),
+        border: Border.all(
+          color: isDark ? Colors.white12 : Colors.black12,
+          width: 2,
+        ),
       ),
       child: Stack(
         children: [
-          const Positioned.fill(
-            child: TechPatternOverlay(opacity: 0.05),
-          ),
+          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
           Text(
             "These words sound almost exactly the same except for one small sound. Can you hear the difference?",
             textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 13.sp,
               color: isDark ? Colors.white70 : Colors.black87,
               height: 1.4,
-              fontWeight: FontWeight.w500
+              fontWeight: FontWeight.w500,
             ),
           ),
         ],

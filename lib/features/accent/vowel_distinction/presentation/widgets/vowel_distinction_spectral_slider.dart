@@ -44,14 +44,22 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
     );
   }
 
-  Widget _buildVowelOrb(String text, int index, int correctIndex, Color color, bool isDark) {
+  Widget _buildVowelOrb(
+    String text,
+    int index,
+    int correctIndex,
+    Color color,
+    bool isDark,
+  ) {
     final bool isSelected = selectedIndex == index;
     final bool correct = index == correctIndex;
-    
+
     Color orbColor = color.withValues(alpha: 0.1);
     Color textColor = color;
     if (isAnswered && isSelected) {
-      orbColor = correct ? Colors.greenAccent.withValues(alpha: 0.2) : Colors.redAccent.withValues(alpha: 0.2);
+      orbColor = correct
+          ? Colors.greenAccent.withValues(alpha: 0.2)
+          : Colors.redAccent.withValues(alpha: 0.2);
       textColor = correct ? Colors.greenAccent : Colors.redAccent;
     } else if (isSelected) {
       orbColor = color;
@@ -60,38 +68,48 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
 
     return ScaleButton(
       onTap: () => onSubmitChoice(index, correctIndex),
-      child: Container(
-        width: 100.r, height: 100.r,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: orbColor,
-          border: Border.all(
-            color: isAnswered && isSelected 
-              ? textColor 
-              : color.withValues(alpha: isSelected ? 1.0 : 0.3), 
-            width: 3
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: isSelected 
-                ? (correct ? Colors.greenAccent.withValues(alpha: 0.3) : color.withValues(alpha: 0.3)) 
-                : Colors.transparent, 
-              blurRadius: 15
-            )
-          ],
-        ),
-        child: Center(
-          child: Text(
-            text, 
-            style: TextStyle(fontFamily: 'RobotoMono', 
-              fontSize: 20.sp, 
-              fontWeight: FontWeight.bold, 
-              color: textColor
-            )
-          ),
-        ),
-      ).animate(onPlay: (c) => c.repeat(reverse: true))
-       .scale(begin: const Offset(1,1), end: const Offset(1.05, 1.05), duration: (2 + index).seconds),
+      child:
+          Container(
+                width: 100.r,
+                height: 100.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: orbColor,
+                  border: Border.all(
+                    color: isAnswered && isSelected
+                        ? textColor
+                        : color.withValues(alpha: isSelected ? 1.0 : 0.3),
+                    width: 3,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: isSelected
+                          ? (correct
+                                ? Colors.greenAccent.withValues(alpha: 0.3)
+                                : color.withValues(alpha: 0.3))
+                          : Colors.transparent,
+                      blurRadius: 15,
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Text(
+                    text,
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.bold,
+                      color: textColor,
+                    ),
+                  ),
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.05, 1.05),
+                duration: (2 + index).seconds,
+              ),
     );
   }
 

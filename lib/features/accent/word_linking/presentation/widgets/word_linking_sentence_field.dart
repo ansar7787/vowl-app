@@ -26,10 +26,10 @@ class WordLinkingSentenceField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> children = [];
-    
+
     for (int i = 0; i < words.length; i++) {
       children.add(_buildWordChip(words[i], color, isDark));
-      
+
       if (i < words.length - 1) {
         children.add(_buildLinkNode(i, correctPair, words, color, isDark));
       }
@@ -39,9 +39,11 @@ class WordLinkingSentenceField extends StatelessWidget {
       width: 342.w,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.02)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white10 : Colors.black12)
+        border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
       ),
       child: Center(
         child: Wrap(
@@ -59,27 +61,37 @@ class WordLinkingSentenceField extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.05)
+            : Colors.black.withValues(alpha: 0.03),
         borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: color.withValues(alpha: 0.15))
+        border: Border.all(color: color.withValues(alpha: 0.15)),
       ),
       child: Text(
-        word.toUpperCase(), 
-        style: TextStyle(fontFamily: 'RobotoMono', 
-          fontSize: 15.sp, 
-          fontWeight: FontWeight.bold, 
-          color: isDark ? Colors.white : Colors.black87
-        )
+        word.toUpperCase(),
+        style: TextStyle(
+          fontFamily: 'RobotoMono',
+          fontSize: 15.sp,
+          fontWeight: FontWeight.bold,
+          color: isDark ? Colors.white : Colors.black87,
+        ),
       ),
     );
   }
 
-  Widget _buildLinkNode(int index, String correctPair, List<String> words, Color color, bool isDark) {
+  Widget _buildLinkNode(
+    int index,
+    String correctPair,
+    List<String> words,
+    Color color,
+    bool isDark,
+  ) {
     final bool isSelected = selectedNodeIndex == index;
-    
+
     // Check if this node represents the correct linking pair
-    String selectedPair = "${words[index]} ${words[index+1]}";
-    final bool correct = selectedPair.toLowerCase().trim() == correctPair.toLowerCase().trim();
+    String selectedPair = "${words[index]} ${words[index + 1]}";
+    final bool correct =
+        selectedPair.toLowerCase().trim() == correctPair.toLowerCase().trim();
 
     Color nodeColor = color.withValues(alpha: 0.3);
     if (isAnswered) {
@@ -94,27 +106,35 @@ class WordLinkingSentenceField extends StatelessWidget {
 
     return ScaleButton(
       onTap: () => onNodeTap(index, correctPair, words),
-      child: Container(
-        width: 32.r, height: 32.r,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: isSelected || (isAnswered && correct) 
-            ? nodeColor.withValues(alpha: 0.2) 
-            : Colors.transparent,
-          border: Border.all(color: nodeColor, width: 2),
-          boxShadow: isSelected || (isAnswered && correct)
-            ? [BoxShadow(color: nodeColor.withValues(alpha: 0.4), blurRadius: 10)]
-            : []
-        ),
-        child: Center(
-          child: Icon(
-            Icons.link_rounded, 
-            size: 16.r, 
-            color: nodeColor
-          ),
-        ),
-      ).animate(onPlay: (c) => c.repeat(reverse: true))
-       .scale(begin: const Offset(1,1), end: const Offset(1.15, 1.15), duration: 2.seconds),
+      child:
+          Container(
+                width: 32.r,
+                height: 32.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: isSelected || (isAnswered && correct)
+                      ? nodeColor.withValues(alpha: 0.2)
+                      : Colors.transparent,
+                  border: Border.all(color: nodeColor, width: 2),
+                  boxShadow: isSelected || (isAnswered && correct)
+                      ? [
+                          BoxShadow(
+                            color: nodeColor.withValues(alpha: 0.4),
+                            blurRadius: 10,
+                          ),
+                        ]
+                      : [],
+                ),
+                child: Center(
+                  child: Icon(Icons.link_rounded, size: 16.r, color: nodeColor),
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.15, 1.15),
+                duration: 2.seconds,
+              ),
     );
   }
 }

@@ -150,6 +150,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
+                      final maxWidth = constraints.maxWidth;
                       final bool isCompact = maxHeight < 580;
 
                       final double estimatedContentHeight =
@@ -201,9 +202,14 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                             height: 32.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: SyllableStressInstruction(
-                                                color: theme.primaryColor,
-                                            instruction: quest.instruction,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    SyllableStressInstruction(
+                                                      color: theme.primaryColor,
+                                                      instruction:
+                                                          quest.instruction,
+                                                    ),
                                               ),
                                             ),
                                           )
@@ -218,10 +224,13 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                             height: 90.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: SyllableStressPromptCard(
-                                                word: quest.word ?? "",
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: SyllableStressPromptCard(
+                                                  word: quest.word ?? "",
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -238,10 +247,16 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                             height: 80.r,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: SyllableStressPulseSpeaker(
-                                                text: quest.textToSpeak ?? "",
-                                                color: theme.primaryColor,
-                                                onPlayTts: _playTts,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    SyllableStressPulseSpeaker(
+                                                      text:
+                                                          quest.textToSpeak ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      onPlayTts: _playTts,
+                                                    ),
                                               ),
                                             ),
                                           )
@@ -261,16 +276,20 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                             height: 110.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: SyllableStressDrumConsole(
-                                                syllables: syllables,
-                                                correctIndex:
-                                                    quest.correctAnswerIndex ??
-                                                    0,
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
-                                                isAnswered: _isAnswered,
-                                                selectedIndex: _selectedIndex,
-                                                onPadTap: _onPadTap,
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: SyllableStressDrumConsole(
+                                                  syllables: syllables,
+                                                  correctIndex:
+                                                      quest
+                                                          .correctAnswerIndex ??
+                                                      0,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isAnswered: _isAnswered,
+                                                  selectedIndex: _selectedIndex,
+                                                  onPadTap: _onPadTap,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -291,13 +310,17 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                               height: 110.h,
                                               child: FittedBox(
                                                 fit: BoxFit.scaleDown,
-                                                child:
-                                                    SyllableStressExplanationCard(
-                                                      quest: quest,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isCorrect: _isCorrect,
-                                                    ),
+                                                child: SizedBox(
+                                                  width: maxWidth - 48.w,
+                                                  child:
+                                                      SyllableStressExplanationCard(
+                                                        quest: quest,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isCorrect: _isCorrect,
+                                                      ),
+                                                ),
                                               ),
                                             )
                                           : SyllableStressExplanationCard(

@@ -29,7 +29,10 @@ class ConnectedSpeechExplanationCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: displayColor.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+        border: Border.all(
+          color: displayColor.withValues(alpha: 0.3),
+          width: 2,
+        ),
       ),
       child: Column(
         children: [
@@ -42,7 +45,7 @@ class ConnectedSpeechExplanationCard extends StatelessWidget {
           Text(
             correct ? "CORRECT SPEECH FLOW!" : "INCORRECT SPEECH FLOW",
             style: TextStyle(
-              fontFamily: 'Outfit', 
+              fontFamily: 'Outfit',
               fontSize: isCompact ? 12.sp : 15.sp,
               fontWeight: FontWeight.w900,
               color: displayColor,
@@ -55,7 +58,7 @@ class ConnectedSpeechExplanationCard extends StatelessWidget {
               quest.explanation!,
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontFamily: 'Outfit', 
+                fontFamily: 'Outfit',
                 fontSize: isCompact ? 10.sp : 12.sp,
                 color: isDark ? Colors.white60 : Colors.black54,
               ),

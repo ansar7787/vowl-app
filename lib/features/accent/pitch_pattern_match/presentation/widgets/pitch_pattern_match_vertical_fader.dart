@@ -53,7 +53,7 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
     final bool correct = index == correctIndex;
     final bool showResult = isAnswered && isSelected;
 
-    Color cardColor = isDark 
+    Color cardColor = isDark
         ? const Color(0xFF1E293B).withValues(alpha: 0.7)
         : Colors.white.withValues(alpha: 0.8);
     Color borderColor = color.withValues(alpha: 0.3);
@@ -88,16 +88,12 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
                 color: borderColor.withValues(alpha: 0.3),
                 blurRadius: 15,
                 spreadRadius: 2,
-              )
+              ),
           ],
         ),
         child: Row(
           children: [
-            Icon(
-              iconData,
-              color: textColor.withValues(alpha: 0.8),
-              size: 24.r,
-            ),
+            Icon(iconData, color: textColor.withValues(alpha: 0.8), size: 24.r),
             SizedBox(width: 16.w),
             Expanded(
               child: Text(

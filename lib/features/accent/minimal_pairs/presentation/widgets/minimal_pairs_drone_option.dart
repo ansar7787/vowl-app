@@ -32,7 +32,7 @@ class MinimalPairsDroneOption extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isSelected = selectedDroneIndex == index;
     final bool correct = index == correctIndex;
-    
+
     Color borderColor = color.withValues(alpha: 0.3);
     if (isAnswered && isSelected) {
       borderColor = correct ? Colors.greenAccent : Colors.redAccent;
@@ -45,61 +45,73 @@ class MinimalPairsDroneOption extends StatelessWidget {
       child: Column(
         children: [
           AnimatedContainer(
-            duration: 250.milliseconds,
-            width: 130.w,
-            height: 110.h,
-            decoration: BoxDecoration(
-              color: isDark ? Colors.black45 : Colors.white,
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(color: borderColor, width: 3),
-              boxShadow: [
-                BoxShadow(
-                  color: (isSelected && isAnswered) 
-                    ? (correct ? Colors.greenAccent.withValues(alpha: 0.3) : Colors.redAccent.withValues(alpha: 0.3))
-                    : color.withValues(alpha: isDark ? 0.25 : 0.08), 
-                  blurRadius: 10
-                )
-              ],
-            ),
-            child: Stack(
-              children: [
-                const TechPatternOverlay(opacity: 0.05),
-                Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        word.toUpperCase(), 
-                        style: TextStyle(fontFamily: 'RobotoMono', 
-                          fontSize: 18.sp, 
-                          fontWeight: FontWeight.bold, 
-                          color: isDark ? Colors.white : Colors.black87
-                        )
-                      ),
-                      SizedBox(height: 6.h),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
-                        decoration: BoxDecoration(
-                          color: color.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(6.r)
-                        ),
-                        child: Text(
-                          ipa, 
-                          style: TextStyle(fontFamily: 'RobotoMono', 
-                            fontSize: 11.sp, 
-                            fontWeight: FontWeight.bold,
-                            color: color
-                          )
-                        ),
-                      ),
-                    ],
-                  ),
+                duration: 250.milliseconds,
+                width: 130.w,
+                height: 110.h,
+                decoration: BoxDecoration(
+                  color: isDark ? Colors.black45 : Colors.white,
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(color: borderColor, width: 3),
+                  boxShadow: [
+                    BoxShadow(
+                      color: (isSelected && isAnswered)
+                          ? (correct
+                                ? Colors.greenAccent.withValues(alpha: 0.3)
+                                : Colors.redAccent.withValues(alpha: 0.3))
+                          : color.withValues(alpha: isDark ? 0.25 : 0.08),
+                      blurRadius: 10,
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ).animate(onPlay: (c) => c.repeat(reverse: true))
-           .moveY(begin: 0, end: index == 0 ? 8.h : -8.h, duration: (2 + index).seconds),
-          
+                child: Stack(
+                  children: [
+                    const TechPatternOverlay(opacity: 0.05),
+                    Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            word.toUpperCase(),
+                            style: TextStyle(
+                              fontFamily: 'RobotoMono',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.bold,
+                              color: isDark ? Colors.white : Colors.black87,
+                            ),
+                          ),
+                          SizedBox(height: 6.h),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8.w,
+                              vertical: 3.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: color.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(6.r),
+                            ),
+                            child: Text(
+                              ipa,
+                              style: TextStyle(
+                                fontFamily: 'RobotoMono',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.bold,
+                                color: color,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .moveY(
+                begin: 0,
+                end: index == 0 ? 8.h : -8.h,
+                duration: (2 + index).seconds,
+              ),
+
           if (isAnswered && isSelected) ...[
             SizedBox(height: 10.h),
             Icon(
@@ -107,7 +119,7 @@ class MinimalPairsDroneOption extends StatelessWidget {
               color: correct ? Colors.greenAccent : Colors.redAccent,
               size: 20.r,
             ).animate().scale(),
-          ]
+          ],
         ],
       ),
     );

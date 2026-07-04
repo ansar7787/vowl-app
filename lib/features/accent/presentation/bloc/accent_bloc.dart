@@ -379,4 +379,3 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
     emit(const AccentInitial());
   }
 }
-

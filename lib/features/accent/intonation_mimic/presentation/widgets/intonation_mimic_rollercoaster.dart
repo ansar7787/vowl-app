@@ -25,9 +25,11 @@ class IntonationMimicRollercoaster extends StatelessWidget {
       height: 90.h,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.02)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white10 : Colors.black12)
+        border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
       ),
       child: Stack(
         children: [
@@ -71,7 +73,7 @@ class IntonationMimicRollercoaster extends StatelessWidget {
     int idx = (pos * (contour.length - 1)).floor();
     double subPos = (pos * (contour.length - 1)) - idx;
     if (idx >= contour.length - 1) return contour.last / 3.0;
-    return (contour[idx] + (contour[idx+1] - contour[idx]) * subPos) / 3.0;
+    return (contour[idx] + (contour[idx + 1] - contour[idx]) * subPos) / 3.0;
   }
 }
 
@@ -88,7 +90,7 @@ class _TrackPainter extends CustomPainter {
       ..strokeWidth = 4
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
-    
+
     final path = Path();
     if (contour.isEmpty) return;
 

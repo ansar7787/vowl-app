@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class IntonationMimicInstruction extends StatelessWidget {
   final Color color;
   final String instruction;
@@ -25,10 +26,11 @@ class IntonationMimicInstruction extends StatelessWidget {
           Icon(Icons.waves_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            instruction.trim().isEmpty 
+            instruction.trim().isEmpty
                 ? "MATCH THE PITCH USING THE FADER"
                 : instruction.toUpperCase(),
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: color,
