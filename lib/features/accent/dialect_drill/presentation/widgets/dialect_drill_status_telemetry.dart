@@ -16,38 +16,36 @@ class DialectDrillStatusTelemetry extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 1.sw,
-      padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
+      padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 16.w),
       decoration: BoxDecoration(
         color: isDark
-            ? Colors.white.withValues(alpha: 0.03)
-            : Colors.black.withValues(alpha: 0.01),
+            ? Colors.white.withValues(alpha: 0.02)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.05)
-              : Colors.black.withValues(alpha: 0.05),
-        ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
-            Icons.radar_rounded,
-            color: color.withValues(alpha: 0.7),
-            size: 18.r,
-          ).animate(onPlay: (c) => c.repeat()).rotate(duration: 3.seconds),
-          SizedBox(width: 10.w),
-          Expanded(
+                Icons.touch_app_rounded,
+                color: color.withValues(alpha: 0.8),
+                size: 26.r,
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .slideY(begin: -0.2, end: 0.2),
+          SizedBox(width: 12.w),
+          Flexible(
             child: Text(
-              "PROBE READY FOR REGIONAL ASSIGNMENT",
+              "Drag the pin to match the dialect",
               style: TextStyle(
-                fontFamily: 'RobotoMono',
-                fontSize: 10.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-                letterSpacing: 1,
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600,
+                color: isDark ? Colors.white70 : Colors.black87,
               ),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
             ),
           ),
         ],

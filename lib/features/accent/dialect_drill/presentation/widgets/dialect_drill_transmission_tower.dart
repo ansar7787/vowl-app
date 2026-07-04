@@ -41,103 +41,91 @@ class DialectDrillTransmissionTower extends StatelessWidget {
       towerColor = color.withValues(alpha: 0.35);
     }
 
-    String cleanLabel = label;
-    if (label.contains(' (British)')) {
-      cleanLabel = "[BRITISH] ${label.replaceAll(' (British)', '')}";
-    } else if (label.contains(' (American)')) {
-      cleanLabel = "[AMERICAN] ${label.replaceAll(' (American)', '')}";
+    String displayLabel = label;
+    IconData regionIcon = Icons.public;
+    if (label.toLowerCase().contains('british')) {
+      displayLabel = "British";
+      regionIcon = Icons.language_rounded;
+    } else if (label.toLowerCase().contains('american')) {
+      displayLabel = "American";
+      regionIcon = Icons.public_rounded;
+    } else {
+      displayLabel = label.replaceAll(RegExp(r'\(.*\)'), '').trim();
     }
 
     return Positioned(
-      left: targetX - 80.w,
-      top: targetY - 80.h,
-      child: SizedBox(
-        width: 160.w,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                if (isHovered || (isAnswered && hoveredTowerIndex == index))
-                  Container(
-                        width: 90.r,
-                        height: 90.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: towerColor.withValues(alpha: 0.3),
-                            width: 2,
-                          ),
-                        ),
-                      )
-                      .animate(onPlay: (c) => c.repeat())
-                      .scale(
-                        begin: const Offset(0.8, 0.8),
-                        end: const Offset(1.5, 1.5),
-                        duration: 1.2.seconds,
-                      )
-                      .fadeOut(),
-
-                Container(
-                  padding: EdgeInsets.all(16.r),
+      left: targetX - 70.w,
+      top: targetY - 60.h,
+      child: Stack(
+        alignment: Alignment.center,
+        clipBehavior: Clip.none,
+        children: [
+          if (isHovered || (isAnswered && hoveredTowerIndex == index))
+            Container(
+                  width: 140.w,
+                  height: 140.w,
                   decoration: BoxDecoration(
-                    color: isDark ? Colors.black38 : Colors.white,
                     shape: BoxShape.circle,
-                    border: Border.all(
-                      color: isHovered
-                          ? towerColor
-                          : towerColor.withValues(alpha: 0.2),
-                      width: isHovered ? 2.0 : 1.0,
-                    ),
-                    boxShadow: [
-                      if (isHovered)
-                        BoxShadow(
-                          color: towerColor.withValues(alpha: 0.4),
-                          blurRadius: 12,
-                        ),
-                    ],
+                    color: towerColor.withValues(alpha: 0.1),
                   ),
-                  child: Icon(
-                    Icons.settings_input_antenna_rounded,
-                    size: 42.r,
-                    color: towerColor,
+                )
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .scale(
+                  begin: const Offset(0.8, 0.8),
+                  end: const Offset(1.1, 1.1),
+                  duration: 1.seconds,
+                ),
+
+          Container(
+            width: 140.w,
+            padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+            decoration: BoxDecoration(
+              color: isDark ? Colors.black45 : Colors.white70,
+              borderRadius: BorderRadius.circular(32.r),
+              border: Border.all(
+                color: isHovered
+                    ? towerColor
+                    : towerColor.withValues(alpha: 0.15),
+                width: isHovered ? 2.5 : 1.5,
+              ),
+              boxShadow: [
+                if (isHovered)
+                  BoxShadow(
+                    color: towerColor.withValues(alpha: 0.3),
+                    blurRadius: 20,
+                    spreadRadius: 2,
                   ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  regionIcon,
+                  size: 36.r,
+                  color: isHovered
+                      ? towerColor
+                      : towerColor.withValues(alpha: 0.6),
+                ),
+                SizedBox(height: 8.h),
+                Text(
+                  displayLabel,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.bold,
+                    color: isHovered
+                        ? towerColor
+                        : (isDark ? Colors.white70 : Colors.black87),
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),
-            SizedBox(height: 8.h),
-
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 4.h),
-              decoration: BoxDecoration(
-                color: isHovered
-                    ? towerColor.withValues(alpha: 0.1)
-                    : Colors.transparent,
-                borderRadius: BorderRadius.circular(10.r),
-                border: Border.all(
-                  color: isHovered
-                      ? towerColor.withValues(alpha: 0.3)
-                      : Colors.transparent,
-                ),
-              ),
-              child: Text(
-                cleanLabel,
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontFamily: 'RobotoMono',
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.bold,
-                  color: isHovered
-                      ? towerColor
-                      : towerColor.withValues(alpha: 0.7),
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
