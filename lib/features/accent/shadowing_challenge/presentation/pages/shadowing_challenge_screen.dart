@@ -15,7 +15,7 @@ import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/sh
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_prompt_card.dart';
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_waveform_trace.dart';
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_pulse_speaker.dart';
-import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_spectral_slider.dart';
+import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_dialogue_list.dart';
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_explanation_card.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -42,7 +42,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  double _sliderValue = 0.5;
+  
   int? _selectedIndex;
 
   double _traceProgress = 0.0;
@@ -96,31 +96,11 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
     });
   }
 
-  void _onSliderUpdate(double value, int correct) {
-    if (_isAnswered) return;
-    setState(() => _sliderValue = value);
-    _hapticService.selection();
-
-    // Auto-lock when reaching extremes
-    if (value < 0.1) {
-      _submitChoice(0, correct);
-    } else if (value > 0.9) {
-      _submitChoice(1, correct);
-    }
-  }
-
-  void _onSliderRelease() {
-    if (_isAnswered) return;
-    setState(() {
-      _sliderValue = 0.5;
-    });
-  }
-
-  void _submitChoice(int index, int correct) {
+      void _submitChoice(int index, int correct) {
     if (_isAnswered) return;
     setState(() {
       _selectedIndex = index;
-      _sliderValue = index == 0 ? 0.0 : 1.0;
+      
     });
 
     bool isCorrect = index == correct;
@@ -160,7 +140,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _sliderValue = 0.5;
+              
               _selectedIndex = null;
               _traceProgress = 0.0;
               _isPreviewing = false;
@@ -359,7 +339,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
                                               child:
-                                                  ShadowingChallengeSpectralSlider(
+                                                  ShadowingChallengeDialogueList(
                                                     options: options,
                                                     correctIndex:
                                                         quest
@@ -370,17 +350,12 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                                     isAnswered: _isAnswered,
                                                     selectedIndex:
                                                         _selectedIndex,
-                                                    sliderValue: _sliderValue,
                                                     onSubmitChoice:
                                                         _submitChoice,
-                                                    onSliderUpdate:
-                                                        _onSliderUpdate,
-                                                    onSliderRelease:
-                                                        _onSliderRelease,
                                                   ),
                                             ),
                                           )
-                                        : ShadowingChallengeSpectralSlider(
+                                        : ShadowingChallengeDialogueList(
                                             options: options,
                                             correctIndex:
                                                 quest.correctAnswerIndex ?? 0,
@@ -388,10 +363,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                             isDark: isDark,
                                             isAnswered: _isAnswered,
                                             selectedIndex: _selectedIndex,
-                                            sliderValue: _sliderValue,
                                             onSubmitChoice: _submitChoice,
-                                            onSliderUpdate: _onSliderUpdate,
-                                            onSliderRelease: _onSliderRelease,
                                           ),
                                     if (_isAnswered) ...[
                                       SizedBox(height: gapSlider),
