@@ -15,7 +15,7 @@ import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_instruction.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_prompt_card.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_pulse_speaker.dart';
-import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_spectral_slider.dart';
+import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_linker_cards.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_explanation_card.dart';
 
 class ConnectedSpeechScreen extends StatefulWidget {
@@ -40,7 +40,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  double _sliderValue = 0.5;
+  
   int? _selectedIndex;
   Timer? _resetTimer;
 
@@ -63,23 +63,11 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     _soundService.playTts(text);
   }
 
-  void _onSliderUpdate(double value, int correct) {
-    if (_isAnswered) return;
-    _sliderValue = value;
-
-    // Auto-lock when reaching ends
-    if (value < 0.1) {
-      _submitChoice(0, correct);
-    } else if (value > 0.9) {
-      _submitChoice(1, correct);
-    }
-  }
-
-  void _submitChoice(int index, int correct) {
+    void _submitChoice(int index, int correct) {
     if (_isAnswered) return;
     setState(() {
       _selectedIndex = index;
-      _sliderValue = index == 0 ? 0.0 : 1.0;
+      
     });
 
     final bool isCorrect = index == correct;
@@ -120,7 +108,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _sliderValue = 0.5;
+              
               _selectedIndex = null;
             });
             // Proactively auto-play sound on question load
@@ -250,7 +238,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapSpeaker),
-                                    ConnectedSpeechSpectralSlider(
+                                    ConnectedSpeechLinkerCards(
                                       key: ValueKey(quest.id),
                                       options: options,
                                       correctIndex:
@@ -259,9 +247,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                       isDark: isDark,
                                       isAnswered: _isAnswered,
                                       selectedIndex: _selectedIndex,
-                                      initialSliderValue: _sliderValue,
                                       onSubmitChoice: _submitChoice,
-                                      onSliderUpdate: _onSliderUpdate,
                                       isCompact: isCompact,
                                     ),
                                     if (_isAnswered) ...[
