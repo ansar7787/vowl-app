@@ -42,7 +42,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  
+
   int? _selectedIndex;
 
   double _traceProgress = 0.0;
@@ -96,11 +96,10 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
     });
   }
 
-      void _submitChoice(int index, int correct) {
+  void _submitChoice(int index, int correct) {
     if (_isAnswered) return;
     setState(() {
       _selectedIndex = index;
-      
     });
 
     bool isCorrect = index == correct;
@@ -140,7 +139,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              
+
               _selectedIndex = null;
               _traceProgress = 0.0;
               _isPreviewing = false;
@@ -198,6 +197,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
+                      final maxWidth = constraints.maxWidth;
                       final bool isCompact = maxHeight < 580;
 
                       final double estimatedContentHeight =
@@ -249,11 +249,15 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                             height: 32.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  ShadowingChallengeInstruction(
-                                                    color: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    ShadowingChallengeInstruction(
+                                                      color: theme.primaryColor,
+                                                      instruction:
+                                                          quest.instruction,
+                                                    ),
+                                              ),
                                             ),
                                           )
                                         : ShadowingChallengeInstruction(
@@ -267,13 +271,16 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                             height: 90.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  ShadowingChallengePromptCard(
-                                                    word: quest.word ?? "",
-                                                    ipa: quest.phonetic ?? "",
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child:
+                                                    ShadowingChallengePromptCard(
+                                                      word: quest.word ?? "",
+                                                      ipa: quest.phonetic ?? "",
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
+                                              ),
                                             ),
                                           )
                                         : ShadowingChallengePromptCard(
@@ -338,21 +345,21 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                             height: 110.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child:
-                                                  ShadowingChallengeDialogueList(
-                                                    options: options,
-                                                    correctIndex:
-                                                        quest
-                                                            .correctAnswerIndex ??
-                                                        0,
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    isAnswered: _isAnswered,
-                                                    selectedIndex:
-                                                        _selectedIndex,
-                                                    onSubmitChoice:
-                                                        _submitChoice,
-                                                  ),
+                                              child: SizedBox(
+                                                width: maxWidth - 48.w,
+                                                child: ShadowingChallengeDialogueList(
+                                                  options: options,
+                                                  correctIndex:
+                                                      quest
+                                                          .correctAnswerIndex ??
+                                                      0,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isAnswered: _isAnswered,
+                                                  selectedIndex: _selectedIndex,
+                                                  onSubmitChoice: _submitChoice,
+                                                ),
+                                              ),
                                             ),
                                           )
                                         : ShadowingChallengeDialogueList(
@@ -372,13 +379,17 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                               height: 110.h,
                                               child: FittedBox(
                                                 fit: BoxFit.scaleDown,
-                                                child:
-                                                    ShadowingChallengeExplanationCard(
-                                                      quest: quest,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isCorrect: _isCorrect,
-                                                    ),
+                                                child: SizedBox(
+                                                  width: maxWidth - 48.w,
+                                                  child:
+                                                      ShadowingChallengeExplanationCard(
+                                                        quest: quest,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isCorrect: _isCorrect,
+                                                      ),
+                                                ),
                                               ),
                                             )
                                           : ShadowingChallengeExplanationCard(
