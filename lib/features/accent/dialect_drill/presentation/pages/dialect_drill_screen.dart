@@ -13,7 +13,6 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_feedback_panel.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_instruction.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_hologram_console.dart';
-import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_status_telemetry.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 class DialectDrillScreen extends StatefulWidget {
@@ -185,36 +184,32 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                   ],
                                 ),
                                 SizedBox(height: 32.h),
-                                AnimatedCrossFade(
-                                  firstChild: DialectDrillStatusTelemetry(
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                  ),
-                                  secondChild: DialectFeedbackPanel(
-                                    isCorrect: _isCorrect ?? false,
-                                    word: quest.word ?? "",
-                                    britishPronunciation: brPr.isEmpty
-                                        ? (quest.word ?? "")
-                                        : brPr,
-                                    americanPronunciation: amPr.isEmpty
-                                        ? (quest.word ?? "")
-                                        : amPr,
-                                    hint:
-                                        quest.hint ??
-                                        "Dialect variants represent rich cultural history.",
-                                    isDark: isDark,
-                                    isMidnight: false,
-                                    onPlayAudio: (text, locale) {
-                                      _soundService.playTts(
-                                        text,
-                                        locale: locale,
-                                      );
-                                    },
-                                  ),
-                                  crossFadeState: _isAnswered
-                                      ? CrossFadeState.showSecond
-                                      : CrossFadeState.showFirst,
+                                AnimatedSize(
                                   duration: const Duration(milliseconds: 400),
+                                  curve: Curves.easeOut,
+                                  child: _isAnswered
+                                      ? DialectFeedbackPanel(
+                                          isCorrect: _isCorrect ?? false,
+                                          word: quest.word ?? "",
+                                          britishPronunciation: brPr.isEmpty
+                                              ? (quest.word ?? "")
+                                              : brPr,
+                                          americanPronunciation: amPr.isEmpty
+                                              ? (quest.word ?? "")
+                                              : amPr,
+                                          hint:
+                                              quest.hint ??
+                                              "Dialect variants represent rich cultural history.",
+                                          isDark: isDark,
+                                          isMidnight: false,
+                                          onPlayAudio: (text, locale) {
+                                            _soundService.playTts(
+                                              text,
+                                              locale: locale,
+                                            );
+                                          },
+                                        )
+                                      : const SizedBox(width: double.infinity),
                                 ),
                               ],
                             ),
