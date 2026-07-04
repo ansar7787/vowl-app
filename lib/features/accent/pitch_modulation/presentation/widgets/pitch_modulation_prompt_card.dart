@@ -33,7 +33,7 @@ class PitchModulationPromptCard extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "EMPHASIZED PHRASE", 
+                  "TARGET PHRASE", 
                   style: TextStyle(fontFamily: 'RobotoMono', 
                     fontSize: 10.sp, 
                     fontWeight: FontWeight.bold, 

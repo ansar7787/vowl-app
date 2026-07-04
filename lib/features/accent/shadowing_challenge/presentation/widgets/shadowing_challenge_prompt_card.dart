@@ -35,7 +35,7 @@ class ShadowingChallengePromptCard extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "SHADOW TARGET", 
+                  "TARGET SENTENCE", 
                   style: TextStyle(fontFamily: 'RobotoMono', 
                     fontSize: 10.sp, 
                     fontWeight: FontWeight.bold, 

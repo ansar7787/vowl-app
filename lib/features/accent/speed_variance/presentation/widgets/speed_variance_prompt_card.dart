@@ -33,7 +33,7 @@ class SpeedVariancePromptCard extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "DRILLED SENTENCE", 
+                  "TARGET SENTENCE", 
                   style: TextStyle(fontFamily: 'RobotoMono', 
                     fontSize: 10.sp, 
                     fontWeight: FontWeight.bold, 
