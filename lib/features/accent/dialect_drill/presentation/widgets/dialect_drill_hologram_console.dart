@@ -6,7 +6,6 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'dialect_drill_radar_painter.dart';
 import 'dialect_drill_transmission_tower.dart';
 import 'dialect_drill_data_probe_pin.dart';
 
@@ -143,146 +142,114 @@ class _DialectDrillHologramConsoleState
 
   @override
   Widget build(BuildContext context) {
-    final Color outerGlow = widget.color.withValues(alpha: 0.3);
-
-    return Container(
+    return SizedBox(
       width: 1.sw,
       height: 480.h,
-      decoration: BoxDecoration(
-        color: widget.isDark
-            ? const Color(0xFF0F0F1B)
-            : Colors.white.withValues(alpha: 0.8),
-        borderRadius: BorderRadius.circular(36.r),
-        border: Border.all(
-          color: widget.color.withValues(alpha: 0.2),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(color: outerGlow, blurRadius: 20, spreadRadius: -5),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(36.r),
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            if (!_isPinInitialized) {
-              _pinX = constraints.maxWidth / 2;
-              _pinY = 380.h;
-              _isPinInitialized = true;
-            }
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          if (!_isPinInitialized) {
+            _pinX = constraints.maxWidth / 2;
+            _pinY = 380.h;
+            _isPinInitialized = true;
+          }
 
-            return Stack(
-              children: [
-                AnimatedBuilder(
-                  animation: _radarController,
-                  builder: (context, child) {
-                    return CustomPaint(
-                      painter: HologramRadarPainter(
-                        sweepAngle: _radarController.value * 2 * math.pi,
-                        themeColor: widget.color,
-                        isDark: widget.isDark,
+          return Stack(
+            children: [
+              Center(
+                child: Transform.translate(
+                  offset: Offset(0, -140.h),
+                  child: ScaleButton(
+                    onTap: widget.onPlayTargetAudio,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 32.w,
+                        vertical: 16.h,
                       ),
-                      size: Size(constraints.maxWidth, constraints.maxHeight),
-                    );
-                  },
-                ),
-
-                Center(
-                  child: Transform.translate(
-                    offset: Offset(0, -140.h),
-                    child: ScaleButton(
-                      onTap: widget.onPlayTargetAudio,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 32.w,
-                          vertical: 16.h,
+                      decoration: BoxDecoration(
+                        color: widget.color.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(
+                          color: widget.color.withValues(alpha: 0.3),
                         ),
-                        decoration: BoxDecoration(
-                          color: widget.color.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(20.r),
-                          border: Border.all(
-                            color: widget.color.withValues(alpha: 0.3),
+                        boxShadow: [
+                          BoxShadow(
+                            color: widget.color.withValues(alpha: 0.2),
+                            blurRadius: 12,
                           ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: widget.color.withValues(alpha: 0.2),
-                              blurRadius: 12,
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.volume_up_rounded,
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.volume_up_rounded,
+                            color: widget.color,
+                            size: 28.r,
+                          ),
+                          SizedBox(width: 8.w),
+                          Text(
+                            widget.quest.word ?? "",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 28.sp,
+                              fontWeight: FontWeight.w900,
                               color: widget.color,
-                              size: 28.r,
+                              letterSpacing: 1.5,
                             ),
-                            SizedBox(width: 8.w),
-                            Text(
-                              widget.quest.word ?? "",
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 28.sp,
-                                fontWeight: FontWeight.w900,
-                                color: widget.color,
-                                letterSpacing: 1.5,
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
                 ),
+              ),
 
-                DialectDrillTransmissionTower(
-                  index: 0,
-                  label:
-                      widget.quest.options != null &&
-                          widget.quest.options!.isNotEmpty
-                      ? widget.quest.options![0]
-                      : "TRANS 01",
-                  maxWidth: constraints.maxWidth,
-                  color: widget.color,
-                  isDark: widget.isDark,
-                  isHovered: _hoveredTowerIndex == 0,
-                  isAnswered: widget.isAnswered,
-                  isCorrect: widget.isCorrect,
-                  hoveredTowerIndex: _hoveredTowerIndex,
-                ),
-                DialectDrillTransmissionTower(
-                  index: 1,
-                  label:
-                      widget.quest.options != null &&
-                          widget.quest.options!.length > 1
-                      ? widget.quest.options![1]
-                      : "TRANS 02",
-                  maxWidth: constraints.maxWidth,
-                  color: widget.color,
-                  isDark: widget.isDark,
-                  isHovered: _hoveredTowerIndex == 1,
-                  isAnswered: widget.isAnswered,
-                  isCorrect: widget.isCorrect,
-                  hoveredTowerIndex: _hoveredTowerIndex,
-                ),
+              DialectDrillTransmissionTower(
+                index: 0,
+                label:
+                    widget.quest.options != null &&
+                        widget.quest.options!.isNotEmpty
+                    ? widget.quest.options![0]
+                    : "TRANS 01",
+                maxWidth: constraints.maxWidth,
+                color: widget.color,
+                isDark: widget.isDark,
+                isHovered: _hoveredTowerIndex == 0,
+                isAnswered: widget.isAnswered,
+                isCorrect: widget.isCorrect,
+                hoveredTowerIndex: _hoveredTowerIndex,
+              ),
+              DialectDrillTransmissionTower(
+                index: 1,
+                label:
+                    widget.quest.options != null &&
+                        widget.quest.options!.length > 1
+                    ? widget.quest.options![1]
+                    : "TRANS 02",
+                maxWidth: constraints.maxWidth,
+                color: widget.color,
+                isDark: widget.isDark,
+                isHovered: _hoveredTowerIndex == 1,
+                isAnswered: widget.isAnswered,
+                isCorrect: widget.isCorrect,
+                hoveredTowerIndex: _hoveredTowerIndex,
+              ),
 
-                DialectDrillDataProbePin(
-                  color: widget.color,
-                  isAnswered: widget.isAnswered,
-                  isCorrect: widget.isCorrect,
-                  hasTargetGlow: _hoveredTowerIndex != null,
-                  pinX: _pinX,
-                  pinY: _pinY,
-                  maxWidth: constraints.maxWidth,
-                  correctIndex: widget.quest.correctAnswerIndex ?? 0,
-                  onPinDragUpdate: _onPinDragUpdate,
-                  onPinDragEnd: _onPinDragEnd,
-                ),
-              ],
-            );
-          },
-        ),
+              DialectDrillDataProbePin(
+                color: widget.color,
+                isAnswered: widget.isAnswered,
+                isCorrect: widget.isCorrect,
+                hasTargetGlow: _hoveredTowerIndex != null,
+                pinX: _pinX,
+                pinY: _pinY,
+                maxWidth: constraints.maxWidth,
+                correctIndex: widget.quest.correctAnswerIndex ?? 0,
+                onPinDragUpdate: _onPinDragUpdate,
+                onPinDragEnd: _onPinDragEnd,
+              ),
+            ],
+          );
+        },
       ),
     ).animate().fadeIn(duration: 400.ms).scale(begin: const Offset(0.95, 0.95));
   }
