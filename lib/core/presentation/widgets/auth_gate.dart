@@ -51,10 +51,19 @@ class _LoadingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      key: ValueKey('auth_loading'),
-      backgroundColor: Colors.white,
-      body: Center(
+    // BUG FIX (THEME USAGE): previously hardcoded `Colors.white`
+    // regardless of theme, so dark-mode users saw a jarring white flash
+    // while auth state resolved, inconsistent with the app's full
+    // dark-mode support (AppTheme/ThemeCubit). Uses the exact same dark
+    // scaffold color (Slate 900) already used consistently across this
+    // codebase's other full-screen states (NoInternetPage,
+    // InsecureDeviceScreen, GlobalErrorBoundary) rather than introducing
+    // a new color.
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Scaffold(
+      key: const ValueKey('auth_loading'),
+      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+      body: const Center(
         child: RepaintBoundary(
           child: ShimmerLoading.circular(width: 50, height: 50),
         ),

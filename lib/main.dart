@@ -88,15 +88,16 @@ void main() async {
     }
   }
 
-  // 1. Parallelize non-dependent core initializations
-  final initResults = await Future.wait([
-    safeLoadDotEnv(),
-    safeInitializeFirebase(),
-    safeCheckSecurity(),
-  ]);
+  // 1. Parallelize non-dependent core initializations.
+  // Kick them off together, then await individually so the results stay
+  // strongly typed and reordering the calls can't silently break anything.
+  final dotEnvFuture = safeLoadDotEnv();
+  final firebaseFuture = safeInitializeFirebase();
+  final securityFuture = safeCheckSecurity();
 
-  final firebaseApp = initResults[1] as FirebaseApp?;
-  final bool isSecure = (initResults[2] as bool?) ?? true;
+  await dotEnvFuture;
+  final FirebaseApp? firebaseApp = await firebaseFuture;
+  final bool isSecure = await securityFuture;
 
   if (firebaseApp != null) {
     FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
@@ -292,81 +293,100 @@ class _MyAppState extends State<MyApp> {
                       GlobalCupertinoLocalizations.delegate,
                     ],
                     routerConfig: AppRouter.router,
-                    builder: (context, child) => GlobalErrorBoundary(
-                      child: ConnectivityWrapper(
-                        child: GlobalAudioFeedbackListener(
-                          child: MultiBlocListener(
-                            listeners: [
-                              // Trigger daily streak check on sign-in
-                              BlocListener<AuthBloc, AuthState>(
-                                listenWhen: (prev, curr) =>
-                                    prev.status != AuthStatus.authenticated &&
-                                    curr.status == AuthStatus.authenticated,
-                                listener: (context, _) =>
-                                    context.read<ProgressionBloc>().add(
-                                      const ProgressionCheckDailyStreakRequested(),
-                                    ),
-                              ),
-                              // Global auth message handler (snackbars)
-                              BlocListener<AuthBloc, AuthState>(
-                                listenWhen: (prev, curr) =>
-                                    prev.message != curr.message &&
-                                    curr.message != null,
-                                listener: (context, authState) {
-                                  final msg = authState.message!;
-                                  final isWarning =
-                                      msg.contains('security') ||
-                                      msg.contains('cancelled');
-                                  final isSuccessMsg =
-                                      msg == 'auth.email_verification_sent' ||
-                                      msg == 'settings_dialogs.account_deleted_success';
-                                  CustomSnackBar.show(
-                                    context: context,
-                                    // Localize the message key
-                                    message: context.tr(msg),
-                                    type: isSuccessMsg
-                                        ? CustomSnackBarType.success
-                                        : (authState.status ==
-                                                  AuthStatus.unauthenticated &&
-                                              !isWarning)
-                                        ? CustomSnackBarType.error
-                                        : isWarning
-                                        ? CustomSnackBarType.warning
-                                        : CustomSnackBarType.info,
-                                  );
-                                },
-                              ),
-                            ],
-                            child: BlocBuilder<AuthBloc, AuthState>(
-                              buildWhen: (prev, curr) =>
-                                  prev.status != curr.status,
-                              builder: (context, authState) {
-                                return LoadingOverlay(
-                                  isLoading:
-                                      authState.status == AuthStatus.loggingOut,
-                                  message: context.tr(
-                                    'loading_overlay.securing_data',
-                                  ),
-                                  child: Container(
-                                    color: themeState.isMidnight
-                                        ? Colors.black
-                                        : (isActuallyDark
-                                              ? const Color(0xFF0F172A)
-                                              : const Color(0xFFF8FAFC)),
-                                    child: child!,
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        ),
-                      ),
+                    builder: (context, child) => _AppShell(
+                      isActuallyDark: isActuallyDark,
+                      isMidnight: themeState.isMidnight,
+                      child: child,
                     ),
                   );
                 },
               ),
             );
           },
+        ),
+      ),
+    );
+  }
+}
+
+// ============================================================================
+// App shell — wraps every route with the global error boundary, connectivity,
+// audio feedback, auth listeners, and the logout loading overlay.
+// Extracted from MyApp.build so the widget tree stays flat and testable.
+// ============================================================================
+
+class _AppShell extends StatelessWidget {
+  const _AppShell({
+    required this.isActuallyDark,
+    required this.isMidnight,
+    required this.child,
+  });
+
+  final bool isActuallyDark;
+  final bool isMidnight;
+  final Widget? child;
+
+  @override
+  Widget build(BuildContext context) {
+    return GlobalErrorBoundary(
+      child: ConnectivityWrapper(
+        child: GlobalAudioFeedbackListener(
+          child: MultiBlocListener(
+            listeners: [
+              // Trigger daily streak check on sign-in
+              BlocListener<AuthBloc, AuthState>(
+                listenWhen: (prev, curr) =>
+                    prev.status != AuthStatus.authenticated &&
+                    curr.status == AuthStatus.authenticated,
+                listener: (context, _) => context.read<ProgressionBloc>().add(
+                  const ProgressionCheckDailyStreakRequested(),
+                ),
+              ),
+              // Global auth message handler (snackbars)
+              BlocListener<AuthBloc, AuthState>(
+                listenWhen: (prev, curr) =>
+                    prev.message != curr.message && curr.message != null,
+                listener: (context, authState) {
+                  final msg = authState.message!;
+                  final isWarning =
+                      msg.contains('security') || msg.contains('cancelled');
+                  final isSuccessMsg =
+                      msg == 'auth.email_verification_sent' ||
+                      msg == 'settings_dialogs.account_deleted_success';
+                  CustomSnackBar.show(
+                    context: context,
+                    // Localize the message key
+                    message: context.tr(msg),
+                    type: isSuccessMsg
+                        ? CustomSnackBarType.success
+                        : (authState.status == AuthStatus.unauthenticated &&
+                              !isWarning)
+                        ? CustomSnackBarType.error
+                        : isWarning
+                        ? CustomSnackBarType.warning
+                        : CustomSnackBarType.info,
+                  );
+                },
+              ),
+            ],
+            child: BlocBuilder<AuthBloc, AuthState>(
+              buildWhen: (prev, curr) => prev.status != curr.status,
+              builder: (context, authState) {
+                return LoadingOverlay(
+                  isLoading: authState.status == AuthStatus.loggingOut,
+                  message: context.tr('loading_overlay.securing_data'),
+                  child: Container(
+                    color: isMidnight
+                        ? Colors.black
+                        : (isActuallyDark
+                              ? const Color(0xFF0F172A)
+                              : const Color(0xFFF8FAFC)),
+                    child: child!,
+                  ),
+                );
+              },
+            ),
+          ),
         ),
       ),
     );

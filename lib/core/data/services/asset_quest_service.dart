@@ -31,7 +31,9 @@ List<Map<String, dynamic>> _parseQuestsInIsolate(String jsonString) {
           .toList();
     }
   } catch (e) {
-    debugPrint('AssetQuestService Isolate Error: Failed to parse JSON. Error: $e');
+    debugPrint(
+      'AssetQuestService Isolate Error: Failed to parse JSON. Error: $e',
+    );
   }
   return [];
 }
@@ -168,10 +170,39 @@ class AssetQuestService implements QuestService {
     int level,
     List<Map<String, dynamic>> quests,
   ) {
-    bool filterQuests(dynamic q, int level) {
-      try {
-        final levelStr = level.toString();
+    final levelStr = level.toString();
 
+    // PERF FIX: these patterns depend only on `level`, not on each quest
+    // item, so they must be compiled once per batch (this method call), not
+    // once per quest. The previous implementation constructed 2-3 RegExp
+    // objects *inside* the per-quest closure, causing O(n) redundant regex
+    // compilation for what should be an O(1)-per-item comparison against a
+    // pre-built pattern (n = quests per batch, ~30 per file).
+    final explicitLevelRegex = RegExp(
+      '(?:l|level)0*$levelStr(?![0-9])',
+      caseSensitive: false,
+    );
+    final fallbackRegex = RegExp('(?:^|[^0-9])0*$levelStr(?![0-9])');
+
+    // CORRECTNESS FIX: previously used `id.contains(RegExp('l|level'))` to
+    // decide whether an id "uses" explicit level-prefix naming. That pattern
+    // is unanchored, so it matches the bare letter 'l' *anywhere* in the id
+    // (e.g. "flashcards_5", "collocations_12", "syllableStress_7" all
+    // contain an 'l') - which is true for most ids in this dataset. Any id
+    // that merely contains the letter 'l' was incorrectly forced onto the
+    // strict-only path and, when it didn't match, was silently dropped
+    // instead of falling through to the fallback numeric check - causing
+    // legitimate quests to vanish from a level and trip the
+    // "no quests matched" ServerException below. This anchors the detector
+    // to an actual "l123" / "level123"-style token so it only fires for ids
+    // that genuinely use that naming convention.
+    final usesExplicitLevelPrefix = RegExp(
+      r'(?:^|[_-])(?:l|level)0*[0-9]',
+      caseSensitive: false,
+    );
+
+    bool filterQuests(dynamic q) {
+      try {
         // 1. Explicit level field check (Priority)
         final qLevel = q['level'];
         if (qLevel != null && qLevel.toString() == levelStr) {
@@ -182,19 +213,11 @@ class AssetQuestService implements QuestService {
         final id = q['id']?.toString();
         if (id == null) return false;
 
-        // Robust Regex for level matching with boundary protection
-        final explicitLevelRegex = RegExp(
-          '(?:l|level)0*$levelStr(?![0-9])',
-          caseSensitive: false,
-        );
-
-        if (id.contains(RegExp('l|level', caseSensitive: false))) {
+        if (usesExplicitLevelPrefix.hasMatch(id)) {
           return explicitLevelRegex.hasMatch(id);
         }
 
-        // 3. Fallback: Check if the ID ends with or contains the level number with boundary
-        final fallbackRegex = RegExp('(?:^|[^0-9])0*$levelStr(?![0-9])');
-
+        // 3. Fallback: Check if the ID contains the level number with boundary
         return fallbackRegex.hasMatch(id);
       } catch (e) {
         sl<AppLogger>().error('AssetQuestService: Filter error', error: e);
@@ -202,7 +225,7 @@ class AssetQuestService implements QuestService {
       }
     }
 
-    final filtered = quests.where((q) => filterQuests(q, level)).toList();
+    final filtered = quests.where(filterQuests).toList();
 
     if (filtered.isEmpty && quests.isNotEmpty) {
       final sampleIds = quests

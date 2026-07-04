@@ -57,13 +57,23 @@ class AdService {
 
   bool _isInitialized = false;
 
+  /// Set by [dispose]. Guards every load-completion callback and retry
+  /// against firing after teardown - retries are scheduled via
+  /// `Future.delayed`, which (unlike a `Timer`) cannot be cancelled, so
+  /// without this flag a retry queued right before [dispose] is called
+  /// would still assign a fresh `InterstitialAd`/`RewardedAd` to this
+  /// instance afterwards, effectively reviving a service that's supposed
+  /// to be torn down (relevant now that [dispose] is wired into the DI
+  /// container's teardown hook - see `di_core.dart`).
+  bool _isDisposed = false;
+
   /// Initialises the Google Mobile Ads SDK and begins pre-loading ads.
   ///
   /// Safe to call multiple times — subsequent calls are no-ops.
   /// Non-blocking: SDK init and ad loading run in the background so the
   /// UI thread is never stalled.
   Future<void> init() async {
-    if (kIsWeb || _isInitialized) return;
+    if (kIsWeb || _isInitialized || _isDisposed) return;
 
     try {
       MobileAds.instance.initialize().then((status) {
@@ -74,15 +84,22 @@ class AdService {
         // NOTE: Make sure your Google Play Console target audience matches this (e.g., 13+).
         MobileAds.instance.updateRequestConfiguration(
           RequestConfiguration(
-            testDeviceIds: kDebugMode ? ['6739FCB31DECCBA1A191319DC27E562A'] : null,
-            tagForChildDirectedTreatment: TagForChildDirectedTreatment.unspecified,
+            testDeviceIds: kDebugMode
+                ? ['6739FCB31DECCBA1A191319DC27E562A']
+                : null,
+            tagForChildDirectedTreatment:
+                TagForChildDirectedTreatment.unspecified,
             maxAdContentRating: MaxAdContentRating.t,
           ),
         );
 
         // Stagger ad loading to avoid competing with app startup rendering.
-        Future.delayed(const Duration(seconds: 2), loadInterstitialAd);
-        Future.delayed(const Duration(seconds: 4), loadRewardedAd);
+        Future.delayed(const Duration(seconds: 2), () {
+          if (!_isDisposed) loadInterstitialAd();
+        });
+        Future.delayed(const Duration(seconds: 4), () {
+          if (!_isDisposed) loadRewardedAd();
+        });
       });
     } catch (e) {
       if (kDebugMode) debugPrint('AdService: Initialisation error: $e');
@@ -95,6 +112,7 @@ class AdService {
   /// InterstitialAd and RewardedAd hold platform resources that must be
   /// explicitly released, or they leak until the OS reclaims them.
   void dispose() {
+    _isDisposed = true;
     _interstitialAd?.dispose();
     _interstitialAd = null;
     _rewardedAd?.dispose();
@@ -154,6 +172,12 @@ class AdService {
       request: _adRequest,
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (ad) {
+          if (_isDisposed) {
+            // Service was torn down while this load was in flight; discard
+            // the ad instead of resurrecting a disposed service.
+            ad.dispose();
+            return;
+          }
           if (kDebugMode) debugPrint('AdService: Interstitial loaded.');
           _interstitialAd = ad;
           _numInterstitialLoadAttempts = 0;
@@ -167,14 +191,17 @@ class AdService {
           }
           _numInterstitialLoadAttempts++;
           _interstitialAd = null;
-          if (_numInterstitialLoadAttempts <= _maxFailedLoadAttempts) {
+          if (!_isDisposed &&
+              _numInterstitialLoadAttempts <= _maxFailedLoadAttempts) {
             final delay = Duration(seconds: 2 * _numInterstitialLoadAttempts);
             if (kDebugMode) {
               debugPrint(
                 'AdService: Retrying interstitial in ${delay.inSeconds}s…',
               );
             }
-            Future.delayed(delay, loadInterstitialAd);
+            Future.delayed(delay, () {
+              if (!_isDisposed) loadInterstitialAd();
+            });
           }
         },
       ),
@@ -293,6 +320,10 @@ class AdService {
       request: _adRequest,
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdLoaded: (ad) {
+          if (_isDisposed) {
+            ad.dispose();
+            return;
+          }
           if (kDebugMode) debugPrint('AdService: Rewarded ad loaded.');
           _rewardedAd = ad;
           _numRewardedLoadAttempts = 0;
@@ -305,14 +336,17 @@ class AdService {
           }
           _numRewardedLoadAttempts++;
           _rewardedAd = null;
-          if (_numRewardedLoadAttempts <= _maxFailedLoadAttempts) {
+          if (!_isDisposed &&
+              _numRewardedLoadAttempts <= _maxFailedLoadAttempts) {
             final delay = Duration(seconds: 2 * _numRewardedLoadAttempts);
             if (kDebugMode) {
               debugPrint(
                 'AdService: Retrying rewarded in ${delay.inSeconds}s…',
               );
             }
-            Future.delayed(delay, loadRewardedAd);
+            Future.delayed(delay, () {
+              if (!_isDisposed) loadRewardedAd();
+            });
           }
         },
       ),
@@ -338,7 +372,8 @@ class AdService {
       if (context != null && context.mounted) {
         CustomSnackBar.show(
           context: context,
-          message: 'Ad is not ready yet. Please wait a few seconds and try again.',
+          message:
+              'Ad is not ready yet. Please wait a few seconds and try again.',
           type: CustomSnackBarType.error,
         );
       }
@@ -359,7 +394,8 @@ class AdService {
         if (context != null && context.mounted) {
           CustomSnackBar.show(
             context: context,
-            message: 'Failed to show ad. Please check your internet and try again.',
+            message:
+                'Failed to show ad. Please check your internet and try again.',
             type: CustomSnackBarType.error,
           );
         }

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class PitchModulationInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const PitchModulationInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -23,7 +25,9 @@ class PitchModulationInstruction extends StatelessWidget {
           Icon(Icons.settings_voice_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            "IDENTIFY PITCH MODULATION CONTOUR & EMOTIONAL NUANCE",
+            instruction.trim().isEmpty 
+                ? "IDENTIFY PITCH MODULATION CONTOUR & EMOTIONAL NUANCE"
+                : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,

@@ -13,6 +13,7 @@ import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/local_smart_tutor.dart';
 import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/utils/rewarded_ad_service.dart';
 import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
@@ -69,7 +70,15 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<RemoteConfigService>(
     () => RemoteConfigService(sl<FirebaseRemoteConfig>()),
   );
-  sl.registerLazySingleton<NotificationService>(() => NotificationService());
+  // FIX (HIGH — RESOURCE LEAK): NotificationService.dispose() already
+  // existed (cancels 4 StreamSubscriptions: onMessage, onTokenRefresh,
+  // onMessageOpenedApp, authStateChanges) but nothing in the DI graph ever
+  // called it, so those subscriptions lived for the process lifetime even
+  // across a `sl.reset()`. Wiring `dispose:` here closes that gap.
+  sl.registerLazySingleton<NotificationService>(
+    () => NotificationService(),
+    dispose: (service) => service.dispose(),
+  );
   sl.registerLazySingleton<NetworkInfo>(
     () => NetworkInfoImpl(sl<InternetConnection>()),
   );
@@ -80,13 +89,36 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<SoundService>(() => SoundService(sl<TtsService>()));
   sl.registerLazySingleton<HapticService>(() => HapticService());
   sl.registerLazySingleton<SmartTutor>(() => const LocalSmartTutor());
-  sl.registerLazySingleton<AdService>(() => AdService());
+  // FIX (CRITICAL — RESOURCE LEAK): AdService.dispose() already existed
+  // (releases the platform InterstitialAd/RewardedAd objects — see its own
+  // doc comment: "FIX (CRITICAL-4)") but, like NotificationService above,
+  // was never actually invoked anywhere. A previous review pass added the
+  // method but the DI wiring to call it was the other half of that fix and
+  // was missing. Registering it here completes that fix.
+  sl.registerLazySingleton<AdService>(
+    () => AdService(),
+    dispose: (service) => service.dispose(),
+  );
+  // FIX (CRITICAL — MISSING REGISTRATION): RewardedAdService had a DI-ready
+  // factory constructor (`factory RewardedAdService() = ...`) but was never
+  // actually registered anywhere in this DI graph - any `sl<RewardedAdService>()`
+  // call would have thrown a "type not registered" error at runtime. Now
+  // that its implementation is a real, working ad integration rather than
+  // a stub (see rewarded_ad_service.dart's doc comment), it needs to
+  // actually be reachable via DI to be usable.
+  sl.registerLazySingleton<RewardedAdService>(
+    () => RewardedAdService(),
+    dispose: (service) => service.dispose(),
+  );
   sl.registerLazySingleton<PaymentService>(
     () => PaymentService(
       getCurrentUser: sl<GetCurrentUser>(),
       firestore: sl<FirebaseFirestore>(),
       functions: sl<FirebaseFunctions>(),
     ),
+    // FIX (HIGH — RESOURCE LEAK): PaymentService.dispose() clears the
+    // Razorpay SDK instance and its event listeners; same gap, same fix.
+    dispose: (service) => service.dispose(),
   );
   sl.registerLazySingleton<SubscriptionPlansService>(
     () => SubscriptionPlansService(firestore: sl<FirebaseFirestore>()),

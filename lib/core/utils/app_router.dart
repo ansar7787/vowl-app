@@ -157,8 +157,15 @@ class AppRouter {
 
     // 5. Authenticated + verified — redirect away from auth/verify/root.
     if (isAuthRoute || path == verifyEmailRoute || path == '/') {
-      final currentUser = FirebaseAuth.instance.currentUser;
-      final isNewUser = currentUser != null &&
+      // FIX (TESTABILITY): resolve FirebaseAuth through the DI container,
+      // like every other dependency this method reads (`di.sl<AuthBloc>()`
+      // above), rather than the static `FirebaseAuth.instance` singleton
+      // accessor. Same object at runtime (di_core.dart registers
+      // `FirebaseAuth.instance` under this type), but this path is now
+      // mockable in router/widget tests without needing a real Firebase app.
+      final currentUser = di.sl<FirebaseAuth>().currentUser;
+      final isNewUser =
+          currentUser != null &&
           currentUser.metadata.creationTime != null &&
           currentUser.metadata.lastSignInTime != null &&
           currentUser.metadata.creationTime!
@@ -214,58 +221,76 @@ class _RouterErrorPage extends StatelessWidget {
     final localeService = di.sl<LocaleService>();
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 32.w),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.explore_off_rounded,
-                size: 64.r,
-                color: Theme.of(context).colorScheme.error,
-              ),
-              SizedBox(height: 24.h),
-              Text(
-                localeService.tr('router.error.no_route_defined'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w900,
+        // FIX (RESPONSIVENESS/ACCESSIBILITY/LOCALIZATION): a fixed Column
+        // centered directly in the viewport overflows at large accessibility
+        // text-scale factors (up to 3.0x) or with longer translations of the
+        // error copy, on small phones (320x568) - same class of issue fixed
+        // on the other standalone status pages in this app (NoInternetPage,
+        // InsecureDeviceScreen). LayoutBuilder + SingleChildScrollView +
+        // ConstrainedBox(minHeight) preserves the exact current centered
+        // look whenever content fits, and only scrolls (instead of
+        // overflowing) when it doesn't.
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 24.h),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight: constraints.maxHeight - 48.h,
                 ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 8.h),
-              Text(
-                path,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  color: Theme.of(
-                    context,
-                  ).colorScheme.onSurface.withValues(alpha: 0.5),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.explore_off_rounded,
+                      size: 64.r,
+                      color: Theme.of(context).colorScheme.error,
+                    ),
+                    SizedBox(height: 24.h),
+                    Text(
+                      localeService.tr('router.error.no_route_defined'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w900,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 8.h),
+                    Text(
+                      path,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.onSurface.withValues(alpha: 0.5),
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 40.h),
+                    ElevatedButton.icon(
+                      onPressed: () => context.go(AppRouter.homeRoute),
+                      icon: const Icon(Icons.home_rounded),
+                      label: Text(
+                        localeService.tr('router.error.go_home'),
+                        style: const TextStyle(
+                          fontFamily: 'Outfit',
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(double.infinity, 52.h),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.r),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                textAlign: TextAlign.center,
               ),
-              SizedBox(height: 40.h),
-              ElevatedButton.icon(
-                onPressed: () => context.go(AppRouter.homeRoute),
-                icon: const Icon(Icons.home_rounded),
-                label: Text(
-                  localeService.tr('router.error.go_home'),
-                  style: const TextStyle(
-                    fontFamily: 'Outfit',
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 52.h),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.r),
-                  ),
-                ),
-              ),
-            ],
-          ),
+            );
+          },
         ),
       ),
     );

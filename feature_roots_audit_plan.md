@@ -25,6 +25,7 @@ This plan organizes the 127 files from your main feature directories (Auth, Home
 - lib\features\auth\domain\usecases\award_kids_coins.dart
 - lib\features\auth\domain\usecases\award_kids_sticker.dart
 - lib\features\auth\domain\usecases\buy_kids_accessory.dart
+-------------------------------------------------------------------
 - lib\features\auth\domain\usecases\claim_daily_chest.dart
 - lib\features\auth\domain\usecases\claim_daily_gift.dart
 - lib\features\auth\domain\usecases\claim_kids_daily_reward.dart
@@ -45,6 +46,7 @@ This plan organizes the 127 files from your main feature directories (Auth, Home
 - lib\features\auth\domain\usecases\repair_streak.dart
 - lib\features\auth\domain\usecases\send_email_verification.dart
 - lib\features\auth\domain\usecases\sign_up.dart
+------------------------------------------------------------------
 - lib\features\auth\domain\usecases\update_category_stats.dart
 - lib\features\auth\domain\usecases\update_display_name.dart
 - lib\features\auth\domain\usecases\update_kids_mascot.dart
@@ -65,6 +67,7 @@ This plan organizes the 127 files from your main feature directories (Auth, Home
 - lib\features\auth\presentation\bloc\profile_bloc.dart
 - lib\features\auth\presentation\bloc\progression_bloc.dart
 - lib\features\auth\presentation\bloc\signup_cubit.dart
+------------------------------------------------------------
 - lib\features\auth\presentation\pages\forgot_password_page.dart
 - lib\features\auth\presentation\pages\login_page.dart
 - lib\features\auth\presentation\pages\signup_page.dart
@@ -77,6 +80,8 @@ This plan organizes the 127 files from your main feature directories (Auth, Home
 - lib\features\auth\presentation\widgets\login_widgets.dart
 - lib\features\auth\presentation\widgets\signup_widgets.dart
 - lib\features\auth\presentation\widgets\verify_email_widgets.dart
+
+-------------------------------------------------------------
 
 ## Batch 4: Home Dashboard (Full Feature) (25 files)
 *Contains the home screen layout, widgets, data, and logic.*

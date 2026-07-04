@@ -62,14 +62,44 @@ class TtsServiceImpl implements TtsService {
     final bool isMuted = !(_prefs?.getBool('sound_enabled') ?? true);
     if (isMuted) return;
 
-    // Clean emojis and symbols from text for pristine phonetic engine results
-    final cleanText = text.replaceAll(
-      RegExp(
-        r'[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]',
-        unicode: true,
-      ),
-      '',
-    );
+    // Clean emojis and symbols from text for pristine phonetic engine results.
+    // BUG FIX: the original range list covered the main pictograph blocks
+    // but missed several ranges that commonly appear as PART of composite
+    // emoji: regional-indicator letter pairs (flag emoji, e.g. 🇺🇸 =
+    // U+1F1FA U+1F1F8 - outside every range below), the zero-width joiner
+    // used to combine emoji (e.g. family/profession emoji), skin-tone
+    // modifiers, and variation selectors. Missing these left stray,
+    // unpronounceable characters behind after stripping - the TTS engine
+    // would then try to read out leftover regional-indicator letters or
+    // modifier characters. Given this app ships 18 locales including
+    // several with flag icons in-app (see LocaleService.supportedLocales),
+    // and quest/UI copy elsewhere in this codebase routinely embeds emoji
+    // in strings passed to TTS, this is a real, reachable gap, not a
+    // theoretical one.
+    final cleanText = text
+        .replaceAll(
+          RegExp(
+            r'[\u{1F1E6}-\u{1F1FF}\u{1F300}-\u{1F5FF}\u{1F600}-\u{1F64F}'
+            r'\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}'
+            r'\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}'
+            r'\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}'
+            r'\u{FE0F}\u{200D}\u{1F3FB}-\u{1F3FF}]',
+            unicode: true,
+          ),
+          '',
+        )
+        // Collapse whitespace left behind by the removals above (e.g.
+        // "Great job 🎉 well done" -> "Great job  well done" would
+        // otherwise read as an unnatural double pause).
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .trim();
+
+    // DEFENSIVE FIX: if `text` was entirely emoji/symbols (e.g. a reaction
+    // string like "🎉🎊"), `cleanText` can now legitimately end up empty.
+    // Skip the platform call rather than asking the native TTS engine to
+    // speak an empty string, whose behavior isn't guaranteed identical
+    // across every Android/iOS TTS engine this app may run on.
+    if (cleanText.isEmpty) return;
 
     try {
       if (locale != null) {

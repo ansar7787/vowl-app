@@ -111,45 +111,50 @@ class ModernGameDialog extends StatelessWidget {
                   valueListenable: starsListener!,
                   builder: (context, stars, _) {
                     return Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(3, (index) {
-                        final isEarned = index < stars;
-                        return Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 4.w),
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              // 1. Static grey background placeholder
-                              Icon(
-                                Icons.star_rounded,
-                                size: index == 1 ? 50.r : 40.r,
-                                color: isDark ? Colors.white12 : Colors.black12,
-                              ),
-                              // 2. Golden star that sequentially scales in if earned
-                              if (isEarned)
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: List.generate(3, (index) {
+                            final isEarned = index < stars;
+                            return Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 4.w),
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  // 1. Static grey background placeholder
                                   Icon(
                                     Icons.star_rounded,
                                     size: index == 1 ? 50.r : 40.r,
-                                    color: const Color(0xFFFFD700),
-                                  )
-                                      .animate(key: ValueKey(stars))
-                                      .scale(
-                                        begin: const Offset(0, 0),
-                                        end: const Offset(1, 1),
-                                        duration: 400.ms,
-                                        curve: Curves.elasticOut,
-                                        delay: (500 + index * 150).ms,
-                                      )
-                                      .then()
-                                      .shimmer(
-                                        duration: 800.ms,
-                                        color: Colors.white54,
-                                      ),
-                              ],
-                            ),
-                          );
-                        }),
-                      ).animate().fadeIn(delay: 300.ms, duration: 400.ms).slideY(begin: 0.2);
+                                    color: isDark
+                                        ? Colors.white12
+                                        : Colors.black12,
+                                  ),
+                                  // 2. Golden star that sequentially scales in if earned
+                                  if (isEarned)
+                                    Icon(
+                                          Icons.star_rounded,
+                                          size: index == 1 ? 50.r : 40.r,
+                                          color: const Color(0xFFFFD700),
+                                        )
+                                        .animate(key: ValueKey(stars))
+                                        .scale(
+                                          begin: const Offset(0, 0),
+                                          end: const Offset(1, 1),
+                                          duration: 400.ms,
+                                          curve: Curves.elasticOut,
+                                          delay: (500 + index * 150).ms,
+                                        )
+                                        .then()
+                                        .shimmer(
+                                          duration: 800.ms,
+                                          color: Colors.white54,
+                                        ),
+                                ],
+                              ),
+                            );
+                          }),
+                        )
+                        .animate()
+                        .fadeIn(delay: 300.ms, duration: 400.ms)
+                        .slideY(begin: 0.2);
                   },
                 ),
               ],
@@ -174,7 +179,12 @@ class ModernGameDialog extends StatelessWidget {
                 RepaintBoundary(
                       child: Semantics(
                         button: true,
-                        label: adButtonText ?? 'Triple rewards',
+                        label:
+                            adButtonText ??
+                            context.tr(
+                              'games.triple_coins_button',
+                              fallback: 'Triple rewards',
+                            ),
                         child: ScaleButton(
                           onTap: onAdAction!,
                           child: Container(
@@ -215,7 +225,11 @@ class ModernGameDialog extends StatelessWidget {
                                     ),
                                     SizedBox(width: 8.w),
                                     Text(
-                                      adButtonText ?? 'TRIPLE REWARDS (3X)',
+                                      adButtonText ??
+                                          context.tr(
+                                            'games.triple_coins_button',
+                                            fallback: 'TRIPLE REWARDS (3X)',
+                                          ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 14.sp,

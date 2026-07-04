@@ -166,6 +166,16 @@ class RazorpayPaymentService implements PaymentService {
     );
   }
 
+  /// Bound on the payment-verification round trip. Without this, a bad
+  /// network leaves `await callable.call(...)` pending indefinitely,
+  /// stranding the caller's "confirming your payment" UI with no way to
+  /// resolve - especially damaging here since the user's money has already
+  /// left their account by this point in the flow. Mirrors the same
+  /// defensive timeout pattern already used elsewhere in this codebase
+  /// (`SubscriptionPlansService._fetchTimeout`, `RemoteConfigSettings.
+  /// fetchTimeout`).
+  static const Duration _verifyPaymentTimeout = Duration(seconds: 30);
+
   @override
   Future<void> upgradeToPremium({
     required String orderId,
@@ -175,18 +185,27 @@ class RazorpayPaymentService implements PaymentService {
   }) async {
     try {
       final callable = functions.httpsCallable('verifyPayment');
-      final response = await callable.call({
-        'orderId': orderId,
-        'paymentId': paymentId,
-        'signature': signature,
-        'durationDays': days,
-      });
-      
+      final response = await callable
+          .call({
+            'orderId': orderId,
+            'paymentId': paymentId,
+            'signature': signature,
+            'durationDays': days,
+          })
+          .timeout(
+            _verifyPaymentTimeout,
+            onTimeout: () => throw Exception(
+              'Payment verification timed out. If the amount was debited, '
+              'it will be confirmed automatically - please check your '
+              'account status in a few minutes before retrying.',
+            ),
+          );
+
       final data = response.data as Map<String, dynamic>;
       if (data['success'] != true) {
         throw Exception('Server rejected the payment verification.');
       }
-      
+
       if (kDebugMode) {
         debugPrint('User subscription upgraded securely via Cloud Function.');
       }

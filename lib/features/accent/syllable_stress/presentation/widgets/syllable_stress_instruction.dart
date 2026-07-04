@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SyllableStressInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const SyllableStressInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -23,7 +25,9 @@ class SyllableStressInstruction extends StatelessWidget {
           Icon(Icons.speaker_group_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            "STRIKE THE DRUM PAD CONTAINING THE STRESSED SYLLABLE",
+            instruction.trim().isEmpty 
+                ? "STRIKE THE DRUM PAD CONTAINING THE STRESSED SYLLABLE"
+                : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,

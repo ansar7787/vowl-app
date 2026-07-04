@@ -28,7 +28,7 @@ class MinimalPairsPromptCard extends StatelessWidget {
             child: TechPatternOverlay(opacity: 0.05),
           ),
           Text(
-            "Phonetic contrasts differentiate pairs of words by just one vital vowel or consonant phoneme. Can you distinguish the precise organic difference?",
+            "These words sound almost exactly the same except for one small sound. Can you hear the difference?",
             textAlign: TextAlign.center,
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 13.sp,

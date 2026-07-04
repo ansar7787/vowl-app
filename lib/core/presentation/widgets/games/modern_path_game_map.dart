@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -31,10 +32,20 @@ class ModernPathGameMap extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme(gameType);
-    final authState = context.watch<AuthBloc>().state;
+    // PERF FIX: was `context.watch<AuthBloc>().state`, which rebuilds this
+    // entire screen - including all `totalLevels` (up to 200) node widgets
+    // constructed eagerly below - on *any* AuthState change, even ones
+    // unrelated to this screen (coins, XP, etc.). The sibling
+    // ModernCategoryMap screen already documents and applies this exact
+    // fix for the exact same reason; this screen had the same gap.
+    // context.select narrows rebuilds to only fire when the `user`
+    // reference itself changes.
+    final user = context.select<AuthBloc, UserEntity?>(
+      (bloc) => bloc.state.user,
+    );
 
     // Fallback logic for unlocked levels
-    final int unlockedLevels = authState.user?.unlockedLevels[gameType] ?? 1;
+    final int unlockedLevels = user?.unlockedLevels[gameType] ?? 1;
 
     final List<Offset> points = [];
     for (int i = 0; i < totalLevels; i++) {
@@ -118,7 +129,7 @@ class ModernPathGameMap extends StatelessWidget {
                               isCurrent,
                               isDark,
                               theme,
-                              authState,
+                              user,
                             ),
                           ),
                         ),
@@ -268,7 +279,7 @@ class ModernPathGameMap extends StatelessWidget {
     bool isCurrent,
     bool isDark,
     ThemeResult theme,
-    AuthState authState,
+    UserEntity? user,
   ) {
     final statusLabel = !isUnlocked
         ? context.tr('games.level_locked', fallback: 'Locked')
@@ -324,8 +335,8 @@ class ModernPathGameMap extends StatelessWidget {
                       VowlMascot(
                             state: VowlMascotState.happy,
                             size: 80,
-                            level: authState.user?.level ?? 1,
-                            accessoryId: authState.user?.vowlEquippedAccessory,
+                            level: user?.level ?? 1,
+                            accessoryId: user?.vowlEquippedAccessory,
                           )
                           .animate(onPlay: (c) => c.repeat(reverse: true))
                           .moveY(

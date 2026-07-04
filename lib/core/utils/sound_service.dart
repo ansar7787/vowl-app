@@ -126,11 +126,26 @@ class SoundServiceImpl implements SoundService {
 
   @override
   Future<void> dispose() async {
+    // BUG FIX: previously a single try/catch wrapped both dispose() calls,
+    // so if `_player.dispose()` threw, `_overlayPlayer.dispose()` was
+    // never reached - leaking that AudioPlayer's native platform
+    // resources. Each disposal is now isolated so a failure in one can't
+    // prevent the other from being released.
     try {
       await _player.dispose();
+    } catch (e) {
+      di.sl<AppLogger>().error(
+        'SoundService: Error disposing primary AudioPlayer',
+        error: e,
+      );
+    }
+    try {
       await _overlayPlayer.dispose();
     } catch (e) {
-      di.sl<AppLogger>().error('SoundService: Error disposing AudioPlayers', error: e);
+      di.sl<AppLogger>().error(
+        'SoundService: Error disposing overlay AudioPlayer',
+        error: e,
+      );
     }
   }
 
@@ -159,13 +174,16 @@ class SoundServiceImpl implements SoundService {
       await _player.setSource(AssetSource(assetWrong));
       await _player.resume();
     } catch (e) {
-      di.sl<AppLogger>().error('SoundService: Error playing sound (wrong)', error: e);
+      di.sl<AppLogger>().error(
+        'SoundService: Error playing sound (wrong)',
+        error: e,
+      );
     }
   }
 
   @override
   Future<void> playClick() async {
-    // Intentionally left empty. 
+    // Intentionally left empty.
     // We rely on HapticService for UI tap feedback rather than audio clicks
     // to prevent the app from becoming noisy and annoying.
   }
@@ -179,7 +197,10 @@ class SoundServiceImpl implements SoundService {
       await _player.setSource(AssetSource(assetHint));
       await _player.resume();
     } catch (e) {
-      di.sl<AppLogger>().error('SoundService: Error playing sound (hint)', error: e);
+      di.sl<AppLogger>().error(
+        'SoundService: Error playing sound (hint)',
+        error: e,
+      );
     }
   }
 
@@ -216,7 +237,10 @@ class SoundServiceImpl implements SoundService {
       await _player.setSource(UrlSource(url));
       await _player.resume();
     } catch (e) {
-      di.sl<AppLogger>().error('SoundService: Error playing sound (url)', error: e);
+      di.sl<AppLogger>().error(
+        'SoundService: Error playing sound (url)',
+        error: e,
+      );
     }
   }
 

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class WordLinkingInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const WordLinkingInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -23,7 +25,9 @@ class WordLinkingInstruction extends StatelessWidget {
           Icon(Icons.link_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            "TAP THE CHAIN LINK NODE WHERE CONTEXTUAL WORD LINKING OCCURS",
+            instruction.trim().isEmpty 
+                ? "TAP THE CHAIN LINK NODE WHERE CONTEXTUAL WORD LINKING OCCURS"
+                : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,

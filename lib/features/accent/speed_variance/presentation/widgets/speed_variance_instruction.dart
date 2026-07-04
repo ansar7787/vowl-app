@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SpeedVarianceInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const SpeedVarianceInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -23,7 +25,9 @@ class SpeedVarianceInstruction extends StatelessWidget {
           Icon(Icons.speed_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            "IDENTIFY SPEED VARIANCE CONTOUR & PACING INTENT ENUNCIATED",
+            instruction.trim().isEmpty 
+                ? "IDENTIFY SPEED VARIANCE CONTOUR & PACING INTENT ENUNCIATED"
+                : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,

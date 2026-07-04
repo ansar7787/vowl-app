@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class MinimalPairsInstruction extends StatelessWidget {
   final Color color;
+  final String? instruction;
 
   const MinimalPairsInstruction({
     super.key,
     required this.color,
+    this.instruction,
   });
 
   @override
@@ -23,7 +25,7 @@ class MinimalPairsInstruction extends StatelessWidget {
           Icon(Icons.hearing_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            "LISTEN AND CHOOSE THE MATCHING WORD",
+            instruction?.toUpperCase() ?? "LISTEN AND CHOOSE THE MATCHING WORD",
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,

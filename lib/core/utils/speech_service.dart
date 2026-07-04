@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart' show VoidCallback;
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -61,11 +63,26 @@ class SpeechServiceImpl implements SpeechService {
   VoidCallback? _onDoneCallback;
   Function(String)? _onWordCallback;
 
+  /// RACE-CONDITION FIX: matches the same fix already applied to
+  /// TtsServiceImpl and SoundServiceImpl elsewhere in this codebase.
+  /// `_initTts()` configures language/rate/volume/pitch AND registers the
+  /// playback-state handlers (`setStartHandler`, `setCompletionHandler`,
+  /// `setErrorHandler`, `setCancelHandler`, `setProgressHandler`) that
+  /// `isPlaying` and the karaoke word callback depend on entirely.
+  /// Previously fired from the constructor as a `void async` method with
+  /// nothing awaiting it, so a `speak()` (or `stop()`/`initializeStt()`)
+  /// call made in the brief window before this completed could run before
+  /// those handlers were registered - `_isPlaying` would then never flip
+  /// to `true` for that utterance, silently breaking any UI bound to
+  /// `isPlaying`, and the karaoke word-highlight callback would silently
+  /// never fire for that call. Every public method now awaits this first.
+  late final Future<void> _initFuture;
+
   SpeechServiceImpl() {
-    _initTts();
+    _initFuture = _initTts();
   }
 
-  void _initTts() async {
+  Future<void> _initTts() async {
     try {
       await _tts.setLanguage("en-US");
       await _tts.setSpeechRate(0.5); // Better default for learners
@@ -111,6 +128,7 @@ class SpeechServiceImpl implements SpeechService {
 
   @override
   Future<void> setSpeechRate(double rate) async {
+    await _initFuture;
     await _tts.setSpeechRate(rate);
   }
 
@@ -120,27 +138,36 @@ class SpeechServiceImpl implements SpeechService {
     double rate = 0.5,
     String locale = "en-US",
   }) async {
+    await _initFuture;
     try {
       await _tts.setLanguage(locale);
       await _tts.setSpeechRate(rate);
       await _tts.speak(text);
     } catch (e) {
-      sl<AppLogger>().error('SpeechService: TTS speech execution error', error: e);
+      sl<AppLogger>().error(
+        'SpeechService: TTS speech execution error',
+        error: e,
+      );
     }
   }
 
   @override
   Future<void> stop() async {
+    await _initFuture;
     try {
       await _tts.stop();
       await _stt.stop();
     } catch (e) {
-      sl<AppLogger>().error('SpeechService: Speech stop execution error', error: e);
+      sl<AppLogger>().error(
+        'SpeechService: Speech stop execution error',
+        error: e,
+      );
     }
   }
 
   @override
   Future<bool> initializeStt() async {
+    await _initFuture;
     if (_isSttInitialized) return true;
 
     try {
@@ -150,7 +177,13 @@ class SpeechServiceImpl implements SpeechService {
       }
 
       if (status.isPermanentlyDenied) {
-        openAppSettings();
+        // FIX (CODE CLEANLINESS): explicitly mark this fire-and-forget
+        // Future as intentional (matches the `unawaited()` convention
+        // already used elsewhere in this codebase, e.g. curriculum_
+        // service.dart / review_service.dart) rather than leaving a bare
+        // discarded Future that `flutter analyze`'s unawaited_futures
+        // lint would flag.
+        unawaited(openAppSettings());
         return false;
       }
 

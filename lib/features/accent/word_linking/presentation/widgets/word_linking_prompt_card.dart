@@ -15,8 +15,8 @@ class WordLinkingPromptCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(20.r),
+      width: 342.w,
+      padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.05 : 0.08),
         borderRadius: BorderRadius.circular(24.r),

@@ -27,7 +27,9 @@ class ConnectedSpeechInstruction extends StatelessWidget {
           SizedBox(width: isCompact ? 8.w : 12.w),
           Flexible(
             child: Text(
-              "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED",
+            instruction.trim().isEmpty 
+                ? "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED"
+                : instruction.toUpperCase(),
               style: TextStyle(
                 fontFamily: 'Outfit', 
                 fontSize: isCompact ? 8.sp : 10.sp,

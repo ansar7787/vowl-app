@@ -34,6 +34,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   final _soundService = di.sl<SoundService>();
 
   int _lastProcessedIndex = -1;
+  int? _lastLives;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -85,7 +86,10 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          if (state.currentIndex != _lastProcessedIndex) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -95,6 +99,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           }
+          _lastLives = state.livesRemaining;
         }
         if (state is AccentGameComplete) {
           setState(() => _showConfetti = true);

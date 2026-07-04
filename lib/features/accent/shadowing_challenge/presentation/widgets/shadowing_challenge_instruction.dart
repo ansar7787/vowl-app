@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ShadowingChallengeInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const ShadowingChallengeInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -23,7 +25,9 @@ class ShadowingChallengeInstruction extends StatelessWidget {
           Icon(Icons.auto_awesome_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            "SHADOW SPONTANEOUSLY BLENDING PHONETIC TECHNIQUES",
+            instruction.trim().isEmpty 
+                ? "SHADOW SPONTANEOUSLY BLENDING PHONETIC TECHNIQUES"
+                : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,

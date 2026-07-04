@@ -217,6 +217,21 @@ void initAuthFeature(GetIt sl) {
   // ============================================================
   // PRESENTATION — SINGLETON BLOCS
   // These hold long-lived state shared across the widget tree.
+  //
+  // FIX (CRITICAL — MEMORY LEAK): each of these is a `Bloc`, which owns an
+  // internal `StreamController` that must be `.close()`d. Because these are
+  // provided to the widget tree via `BlocProvider.value` (required for
+  // singletons — a normal `BlocProvider(create: ...)` would create a SECOND
+  // instance), flutter_bloc's provider intentionally never calls `close()`
+  // on them, since it doesn't own their lifecycle. Without a `dispose:`
+  // callback here, nothing ever closes these StreamControllers - they leak
+  // for the lifetime of the process, and if `sl.reset()` /
+  // `sl.unregister<T>()` is ever invoked (full logout, account deletion,
+  // or test teardown), the old, now-unreachable Bloc keeps its stream open
+  // instead of being cleaned up. `dispose:` wires each singleton's
+  // `close()` into GetIt's own teardown hook so this is safe by
+  // construction rather than relying on every call site remembering to do
+  // it manually.
   // ============================================================
   sl.registerLazySingleton<AuthBloc>(
     () => AuthBloc(
@@ -229,6 +244,7 @@ void initAuthFeature(GetIt sl) {
       sendEmailVerification: sl<SendEmailVerification>(),
       networkInfo: sl<NetworkInfo>(),
     ),
+    dispose: (bloc) => bloc.close(),
   );
   sl.registerLazySingleton<EconomyBloc>(
     () => EconomyBloc(
@@ -243,6 +259,7 @@ void initAuthFeature(GetIt sl) {
       useHint: sl<UseHint>(),
       authBloc: sl<AuthBloc>(),
     ),
+    dispose: (bloc) => bloc.close(),
   );
   sl.registerLazySingleton<ProgressionBloc>(
     () => ProgressionBloc(
@@ -253,6 +270,7 @@ void initAuthFeature(GetIt sl) {
       authBloc: sl<AuthBloc>(),
       notificationService: sl<NotificationService>(),
     ),
+    dispose: (bloc) => bloc.close(),
   );
   sl.registerLazySingleton<ProfileBloc>(
     () => ProfileBloc(
@@ -264,6 +282,7 @@ void initAuthFeature(GetIt sl) {
       updateUser: sl<UpdateUser>(),
       authBloc: sl<AuthBloc>(),
     ),
+    dispose: (bloc) => bloc.close(),
   );
 
   // ============================================================
@@ -301,7 +320,14 @@ void initAuthFeature(GetIt sl) {
   //
   // As a LazyRegistration, a single instance is created on first access and
   // reused for the entire app lifetime, correctly sharing theme state.
-  sl.registerLazySingleton<ThemeCubit>(() => ThemeCubit());
+  //
+  // FIX (same memory-lifecycle issue as the Blocs above): Cubit also owns a
+  // StreamController that needs `.close()`; wired through `dispose:` so
+  // GetIt teardown (reset/unregister) closes it correctly.
+  sl.registerLazySingleton<ThemeCubit>(
+    () => ThemeCubit(),
+    dispose: (cubit) => cubit.close(),
+  );
 
   // LeaderboardBloc is correctly a Factory — it is created per-screen and
   // disposed when the Leaderboard screen is popped.

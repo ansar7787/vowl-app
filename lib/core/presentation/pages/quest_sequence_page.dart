@@ -322,7 +322,16 @@ class _QuestCard extends StatelessWidget {
           Text(
             isFinished
                 ? context.tr('quest_sequence.all_parts_done')
-                : quest!.instruction,
+                // BUG FIX: `quest.instruction` holds a *localization key*
+                // (e.g. 'quest_sequences.strengthen_weak_spots'), not
+                // literal display text - see discovery_helper.dart's class
+                // doc comment, which explicitly assigns this presentation
+                // layer the responsibility of calling `context.tr(quest.
+                // instruction)`. This call site was displaying the raw key
+                // string directly, so every quest-sequence card showed
+                // literal untranslated keys instead of instructions, in
+                // every locale including English.
+                : context.tr(quest!.instruction),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 20.sp,

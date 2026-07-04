@@ -111,17 +111,6 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
         _isCorrect = false;
       });
       context.read<AccentBloc>().add(SubmitAnswer(false));
-
-      Future.delayed(2.seconds, () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-            _selectedIndex = null;
-            _dialRotation = 0.0;
-          });
-        }
-      });
     }
   }
 
@@ -250,11 +239,13 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                               fit: BoxFit.scaleDown,
                                               child: SpeedVarianceInstruction(
                                                 color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                               ),
                                             ),
                                           )
                                         : SpeedVarianceInstruction(
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
                                     SizedBox(height: gapInstruction),
 

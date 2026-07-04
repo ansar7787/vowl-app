@@ -61,11 +61,17 @@ class GameDialogHelper {
     final resolvedButtonText =
         buttonText ?? context.tr('common.ok').toUpperCase();
 
-    String coinDesc = 'You earned $xp XP and $coins Coins!';
+    String coinDesc = context.tr(
+      'games.reward_earned_title',
+      args: ['$xp', '$coins'],
+      fallback: 'You earned $xp XP and $coins Coins!',
+    );
     if (hasMultiplier && coins > 0) {
-      coinDesc += '\n✨ XP Level 100 Mastery: 2x Coin Bonus Applied!';
+      coinDesc +=
+          '\n${context.tr('games.mastery_bonus_line', fallback: '✨ XP Level 100 Mastery: 2x Coin Bonus Applied!')}';
     } else if (!hasMultiplier) {
-      coinDesc += '\nWatch an ad to TRIPLE your COINS to ${coins * 3}!';
+      coinDesc +=
+          '\n${context.tr('games.triple_coins_line', args: ['${coins * 3}'], fallback: 'Watch an ad to TRIPLE your COINS to ${coins * 3}!')}';
     }
     final desc = description ?? coinDesc;
 
@@ -149,7 +155,10 @@ class GameDialogHelper {
                     );
                   }
                 : null,
-            adButtonText: 'TRIPLE COINS',
+            adButtonText: context.tr(
+              'games.triple_coins_button',
+              fallback: 'TRIPLE COINS',
+            ),
           ),
           const Positioned.fill(
             child: IgnorePointer(
@@ -169,23 +178,42 @@ class GameDialogHelper {
   ///   should dispatch a `RestoreLife` event to the feature's BLoC.
   static void showGameOver(
     BuildContext context, {
-    String title = 'Game Over',
-    String description = 'Out of hearts. Try again!',
-    String buttonText = 'GIVE UP',
+    String? title,
+    String? description,
+    String? buttonText,
     VoidCallback? onRestore,
-    String adButtonText = 'WATCH AD',
+    String? adButtonText,
     VoidCallback? onTutorPass,
   }) {
     if (!context.mounted) return;
+    // BUG FIX: a matching audio cue (SoundService.playWrong(), which
+    // exists specifically for this) was missing here despite showCompletion
+    // playing both sound AND haptics for its equivalent moment - game-over
+    // only fired haptics. Restored to match the established feedback
+    // pattern.
+    _sound.playWrong();
     _haptic.error();
+
+    final resolvedTitle =
+        title ?? context.tr('games.game_over_title', fallback: 'Game Over');
+    final resolvedDescription =
+        description ??
+        context.tr(
+          'games.game_over_desc',
+          fallback: 'Out of hearts. Try again!',
+        );
+    final resolvedButtonText =
+        buttonText ?? context.tr('games.give_up', fallback: 'GIVE UP');
+    final resolvedAdButtonText =
+        adButtonText ?? context.tr('games.watch_ad', fallback: 'WATCH AD');
 
     showDialog(
       context: context,
       barrierDismissible: false,
       builder: (dialogCtx) => ModernGameDialog(
-        title: title,
-        description: description,
-        buttonText: buttonText,
+        title: resolvedTitle,
+        description: resolvedDescription,
+        buttonText: resolvedButtonText,
         isSuccess: false,
         isRescueLife: onRestore != null,
         onButtonPressed: () {
@@ -224,14 +252,17 @@ class GameDialogHelper {
                 );
               }
             : null,
-        adButtonText: onRestore != null ? adButtonText : null,
+        adButtonText: onRestore != null ? resolvedAdButtonText : null,
         onSecondaryPressed: onTutorPass != null
             ? () {
                 Navigator.of(dialogCtx).pop();
                 onTutorPass();
               }
             : null,
-        secondaryButtonText: 'I SPOKE CORRECTLY! 🌟',
+        secondaryButtonText: context.tr(
+          'games.spoke_correctly_button',
+          fallback: 'I SPOKE CORRECTLY! 🌟',
+        ),
       ),
     );
   }
@@ -242,17 +273,25 @@ class GameDialogHelper {
   static void showExitConfirmation(
     BuildContext context, {
     required VoidCallback onQuit,
-    String title = 'QUIT GAME?',
-    String description =
-        'Your current progress for this level will be lost. Are you sure?',
+    String? title,
+    String? description,
   }) {
+    final resolvedTitle =
+        title ?? context.tr('games.quit_game_title', fallback: 'QUIT GAME?');
+    final resolvedDescription =
+        description ??
+        context.tr(
+          'games.quit_game_desc',
+          fallback:
+              'Your current progress for this level will be lost. Are you sure?',
+        );
     showDialog(
       context: context,
       barrierDismissible: true,
       builder: (dialogCtx) => ModernGameDialog(
-        title: title,
-        description: description,
-        buttonText: 'KEEP PLAYING',
+        title: resolvedTitle,
+        description: resolvedDescription,
+        buttonText: context.tr('games.keep_playing', fallback: 'KEEP PLAYING'),
         isSuccess: true,
         onButtonPressed: () => Navigator.of(dialogCtx).pop(),
         isExitConfirmation: true,
@@ -296,11 +335,43 @@ class GameDialogHelper {
     Duration duration = const Duration(seconds: 3),
   }) {
     if (!context.mounted) return;
+    // BUG FIX: `icon`, `color`, and `duration` were accepted by this
+    // method's signature but never forwarded to CustomSnackBar.show(),
+    // which always received a hardcoded `type: CustomSnackBarType.info`
+    // regardless of what the caller passed. Every call site in this file
+    // requesting a warning/success-styled toast (e.g. "ad not ready" with
+    // an orange hourglass icon, or "coins tripled" with a green sparkle
+    // icon) was silently rendered as a generic blue "info" toast instead,
+    // losing the caller's intended severity signal. CustomSnackBar's
+    // public API themes by a fixed 4-value `type` enum rather than an
+    // arbitrary icon/color pair, so this infers the closest matching type
+    // from the requested `color` instead of changing this method's own
+    // signature, which would be a breaking change for call sites outside
+    // this file.
     CustomSnackBar.show(
       context: context,
       message: message,
-      type: CustomSnackBarType.info,
+      type: _inferSnackBarType(color),
+      duration: duration,
     );
+  }
+
+  /// Maps a caller-provided accent [color] to the closest matching
+  /// [CustomSnackBarType]. Falls back to [CustomSnackBarType.info] for
+  /// `null` or any color that doesn't match one of the four semantic
+  /// accent colors defined in `custom_snack_bar.dart`.
+  static CustomSnackBarType _inferSnackBarType(Color? color) {
+    if (color == null) return CustomSnackBarType.info;
+    if (color == const Color(0xFF10B981) || color == Colors.green) {
+      return CustomSnackBarType.success;
+    }
+    if (color == const Color(0xFFEF4444) || color == Colors.red) {
+      return CustomSnackBarType.error;
+    }
+    if (color == Colors.orange || color == const Color(0xFFF59E0B)) {
+      return CustomSnackBarType.warning;
+    }
+    return CustomSnackBarType.info;
   }
 
   // ─── Hint Ad Dialog ───────────────────────────────────────────────────
@@ -314,9 +385,12 @@ class GameDialogHelper {
     showDialog(
       context: context,
       builder: (dialogCtx) => ModernGameDialog(
-        title: 'NEED A HINT?',
-        description:
-            'You are out of hints! Watch a quick ad to get 1 Strategic Hint for free.',
+        title: context.tr('games.hint_needed_title', fallback: 'NEED A HINT?'),
+        description: context.tr(
+          'games.hint_needed_desc',
+          fallback:
+              'You are out of hints! Watch a quick ad to get 1 Strategic Hint for free.',
+        ),
         buttonText: context.tr('notification_card.not_now').toUpperCase(),
         onButtonPressed: () => Navigator.of(dialogCtx).pop(),
         onAdAction: () {
@@ -347,7 +421,10 @@ class GameDialogHelper {
               }
               showPremiumSnackBar(
                 context,
-                'REWARD EARNED: +1 Strategic Hint!',
+                context.tr(
+                  'games.hint_reward_earned',
+                  fallback: 'REWARD EARNED: +1 Strategic Hint!',
+                ),
                 icon: Icons.lightbulb_rounded,
                 color: const Color(0xFFF59E0B),
               );
@@ -355,7 +432,10 @@ class GameDialogHelper {
             onDismissed: () {},
           );
         },
-        adButtonText: 'WATCH AD FOR HINT',
+        adButtonText: context.tr(
+          'games.watch_ad_for_hint_button',
+          fallback: 'WATCH AD FOR HINT',
+        ),
         isRescueLife: true,
         customIcon: Icon(
           Icons.lightbulb_rounded,
@@ -372,7 +452,10 @@ class GameDialogHelper {
     if (!context.mounted) return;
     CustomSnackBar.show(
       context: context,
-      message: 'HONESTY IS MASTERY 🛡️',
+      message: context.tr(
+        'games.honesty_is_mastery',
+        fallback: 'HONESTY IS MASTERY 🛡️',
+      ),
       type: CustomSnackBarType.warning,
     );
   }

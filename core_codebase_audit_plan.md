@@ -4,7 +4,7 @@ This plan organizes the 95 `lib/core` files into 5 contextually related batches.
 
 ## Batch 1: Foundational Layers (20 Files)
 *This batch contains your app's absolute foundation: constants, themes, domain entities, use cases, error handling, and foundational utilities.*
-
+ 
 - `lib/core/constants/app_constants.dart`
 - `lib/core/constants/badge_constants.dart`
 - `lib/core/data/constants/quest_registry.dart`

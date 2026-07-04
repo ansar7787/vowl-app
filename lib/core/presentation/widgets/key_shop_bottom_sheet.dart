@@ -78,12 +78,18 @@ class _KeyShopContent extends StatelessWidget {
                     color: Colors.amber.withValues(alpha: 0.15),
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(Icons.key_rounded,
-                      size: 56.r, color: Colors.amber.shade600),
+                  child: Icon(
+                    Icons.key_rounded,
+                    size: 56.r,
+                    color: Colors.amber.shade600,
+                  ),
                 ),
                 SizedBox(height: 16.h),
                 Text(
-                  "Golden Keys",
+                  context.tr(
+                    'store.golden_keys_title',
+                    fallback: 'Golden Keys',
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 20.sp,
@@ -94,7 +100,11 @@ class _KeyShopContent extends StatelessWidget {
                 ),
                 SizedBox(height: 8.h),
                 Text(
-                  "Get a Golden Key to unlock Toll Gates on the map!",
+                  context.tr(
+                    'store.golden_keys_desc',
+                    fallback:
+                        'Get a Golden Key to unlock Toll Gates on the map!',
+                  ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 14.sp,
@@ -103,24 +113,61 @@ class _KeyShopContent extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 24.h),
-                
+
                 // Purchase with Coins
                 BlocBuilder<AuthBloc, AuthState>(
                   builder: (context, authState) {
                     final user = authState.user;
-                    final userCoins = isKidsMode ? (user?.kidsCoins ?? 0) : (user?.coins ?? 0);
+                    final userCoins = isKidsMode
+                        ? (user?.kidsCoins ?? 0)
+                        : (user?.coins ?? 0);
                     const int cost = 150;
 
                     return ScaleButton(
                       onTap: () async {
                         if (userCoins < cost) {
                           Navigator.pop(context);
+                          if (!parentContext.mounted) return;
+                          // BUG FIX (STALE CONTEXT): was `context: context`
+                          // (this BlocBuilder's own, sheet-scoped context)
+                          // used right after Navigator.pop deactivated the
+                          // sheet it belongs to. `parentContext` (captured
+                          // before the sheet was shown) is what every other
+                          // dialog in this file correctly uses for this
+                          // exact situation.
                           showDialog(
-                            context: context,
+                            context: parentContext,
                             builder: (ctx) => ModernGameDialog(
-                              title: isKidsMode ? 'NOT ENOUGH TOYS' : 'NOT ENOUGH COINS',
-                              description: 'You need $cost ${isKidsMode ? 'toys' : 'coins'} to get a key!',
-                              buttonText: 'KEEP PLAYING',
+                              title: isKidsMode
+                                  ? context.tr(
+                                      'store.not_enough_toys_title',
+                                      fallback: 'NOT ENOUGH TOYS',
+                                    )
+                                  : context.tr(
+                                      'store.not_enough_coins_title',
+                                      fallback: 'NOT ENOUGH COINS',
+                                    ),
+                              description: context.tr(
+                                'store.not_enough_currency_desc',
+                                args: [
+                                  '$cost',
+                                  isKidsMode
+                                      ? context.tr(
+                                          'store.toys_lower',
+                                          fallback: 'toys',
+                                        )
+                                      : context.tr(
+                                          'store.coins_lower',
+                                          fallback: 'coins',
+                                        ),
+                                ],
+                                fallback:
+                                    'You need $cost ${isKidsMode ? 'toys' : 'coins'} to get a key!',
+                              ),
+                              buttonText: context.tr(
+                                'games.keep_playing',
+                                fallback: 'KEEP PLAYING',
+                              ),
                               isSuccess: false,
                               onButtonPressed: () => Navigator.of(ctx).pop(),
                             ),
@@ -132,31 +179,80 @@ class _KeyShopContent extends StatelessWidget {
                           PurchaseGoldenKeyParams(
                             cost: cost,
                             isKidsMode: isKidsMode,
-                          )
+                          ),
                         );
-                        
-                        if (result.isRight() && parentContext.mounted) {
-                          parentContext.read<AuthBloc>().add(const AuthReloadUser());
-                          showDialog(
-                            context: parentContext,
-                            builder: (ctx) => Material(
-                              type: MaterialType.transparency,
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  ModernGameDialog(
-                                    title: 'GOT A KEY!',
-                                    description: 'You got a Golden Key! 🗝️',
-                                    buttonText: 'AWESOME',
-                                    isSuccess: true,
-                                    onButtonPressed: () => Navigator.of(ctx).pop(),
-                                  ),
-                                  const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
-                                ],
+
+                        if (!parentContext.mounted) return;
+
+                        // BUG FIX (SILENT FAILURE): previously only the
+                        // success branch (`result.isRight()`) was handled -
+                        // if the purchase failed server-side (insufficient
+                        // funds detected server-side, network error,
+                        // concurrent-spend race, etc.), the sheet had
+                        // already closed and NOTHING told the user their
+                        // 150 coins purchase didn't go through. `.fold()`
+                        // now handles both outcomes explicitly.
+                        result.fold(
+                          (failure) {
+                            showDialog(
+                              context: parentContext,
+                              builder: (ctx) => ModernGameDialog(
+                                title: context.tr(
+                                  'store.purchase_failed_title',
+                                  fallback: 'PURCHASE FAILED',
+                                ),
+                                description: context.tr(
+                                  'store.purchase_failed_desc',
+                                  fallback:
+                                      'Something went wrong and your coins were not spent. Please try again.',
+                                ),
+                                buttonText: context
+                                    .tr('common.ok', fallback: 'OK')
+                                    .toUpperCase(),
+                                isSuccess: false,
+                                onButtonPressed: () => Navigator.of(ctx).pop(),
                               ),
-                            ),
-                          );
-                        }
+                            );
+                          },
+                          (_) {
+                            parentContext.read<AuthBloc>().add(
+                              const AuthReloadUser(),
+                            );
+                            showDialog(
+                              context: parentContext,
+                              builder: (ctx) => Material(
+                                type: MaterialType.transparency,
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    ModernGameDialog(
+                                      title: context.tr(
+                                        'store.got_key_title',
+                                        fallback: 'GOT A KEY!',
+                                      ),
+                                      description: context.tr(
+                                        'store.got_key_desc',
+                                        fallback: 'You got a Golden Key! 🗝️',
+                                      ),
+                                      buttonText: context.tr(
+                                        'store.awesome',
+                                        fallback: 'AWESOME',
+                                      ),
+                                      isSuccess: true,
+                                      onButtonPressed: () =>
+                                          Navigator.of(ctx).pop(),
+                                    ),
+                                    const Positioned.fill(
+                                      child: IgnorePointer(
+                                        child: GameConfetti(),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
                       },
                       child: Container(
                         width: double.infinity,
@@ -185,11 +281,18 @@ class _KeyShopContent extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.monetization_on_rounded,
-                                color: Colors.white, size: 20.r),
+                            Icon(
+                              Icons.monetization_on_rounded,
+                              color: Colors.white,
+                              size: 20.r,
+                            ),
                             SizedBox(width: 8.w),
                             Text(
-                              "Buy for $cost",
+                              context.tr(
+                                'store.buy_for',
+                                args: ['$cost'],
+                                fallback: 'Buy for $cost',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 16.sp,
@@ -204,9 +307,9 @@ class _KeyShopContent extends StatelessWidget {
                     );
                   },
                 ),
-                
+
                 SizedBox(height: 12.h),
-                
+
                 // Get with Ad
                 ScaleButton(
                   onTap: () {
@@ -216,47 +319,111 @@ class _KeyShopContent extends StatelessWidget {
                       showDialog(
                         context: parentContext,
                         builder: (ctx) => ModernGameDialog(
-                          title: 'AD NOT READY',
-                          description: context.tr('games.ad_not_ready', fallback: 'Ad not ready yet, try again in a moment.'),
-                          buttonText: 'OK',
+                          title: context.tr(
+                            'store.ad_not_ready_title',
+                            fallback: 'AD NOT READY',
+                          ),
+                          description: context.tr(
+                            'games.ad_not_ready',
+                            fallback:
+                                'Ad not ready yet, try again in a moment.',
+                          ),
+                          buttonText: context.tr('store.ok', fallback: 'OK'),
                           isSuccess: false,
                           onButtonPressed: () => Navigator.of(ctx).pop(),
-                          customIcon: Icon(Icons.hourglass_empty_rounded, color: Colors.orange, size: 48.sp),
+                          customIcon: Icon(
+                            Icons.hourglass_empty_rounded,
+                            color: Colors.orange,
+                            size: 48.sp,
+                          ),
                         ),
                       );
                       return;
                     }
                     Navigator.pop(context);
+                    // BUG FIX (STALE CONTEXT): was `context: context` (the
+                    // just-popped sheet's own context) - AdService only
+                    // uses this to anchor an error snackbar if the ad
+                    // fails to show, but that context was already
+                    // deactivated. `parentContext` matches what the
+                    // callbacks below already correctly use.
                     adService.showRewardedAd(
-                      context: context,
+                      context: parentContext,
                       isPremium: false,
                       onUserEarnedReward: (_) async {
                         final result = await di.sl<AddGoldenKey>().call(
-                          const AddGoldenKeyParams(amount: 1)
+                          const AddGoldenKeyParams(amount: 1),
                         );
-                        
-                        if (result.isRight() && parentContext.mounted) {
-                          parentContext.read<AuthBloc>().add(const AuthReloadUser());
-                          showDialog(
-                            context: parentContext,
-                            builder: (ctx) => Material(
-                              type: MaterialType.transparency,
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  ModernGameDialog(
-                                    title: 'REWARD UNLOCKED!',
-                                    description: 'You got a Golden Key! 🗝️',
-                                    buttonText: 'AWESOME',
-                                    isSuccess: true,
-                                    onButtonPressed: () => Navigator.of(ctx).pop(),
-                                  ),
-                                  const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
-                                ],
+
+                        if (!parentContext.mounted) return;
+
+                        // BUG FIX (SILENT FAILURE): same missing-failure-
+                        // handling issue as the coin-purchase flow above -
+                        // worse here, since the user has already watched a
+                        // full rewarded ad. Silently doing nothing on
+                        // failure would mean "watched an ad, got nothing,
+                        // no explanation why."
+                        result.fold(
+                          (failure) {
+                            showDialog(
+                              context: parentContext,
+                              builder: (ctx) => ModernGameDialog(
+                                title: context.tr(
+                                  'store.reward_failed_title',
+                                  fallback: 'REWARD FAILED',
+                                ),
+                                description: context.tr(
+                                  'store.reward_failed_desc',
+                                  fallback:
+                                      "We couldn't grant your reward. Please contact support if this keeps happening.",
+                                ),
+                                buttonText: context
+                                    .tr('common.ok', fallback: 'OK')
+                                    .toUpperCase(),
+                                isSuccess: false,
+                                onButtonPressed: () => Navigator.of(ctx).pop(),
                               ),
-                            ),
-                          );
-                        }
+                            );
+                          },
+                          (_) {
+                            parentContext.read<AuthBloc>().add(
+                              const AuthReloadUser(),
+                            );
+                            showDialog(
+                              context: parentContext,
+                              builder: (ctx) => Material(
+                                type: MaterialType.transparency,
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    ModernGameDialog(
+                                      title: context.tr(
+                                        'store.reward_unlocked_title',
+                                        fallback: 'REWARD UNLOCKED!',
+                                      ),
+                                      description: context.tr(
+                                        'store.got_key_desc',
+                                        fallback: 'You got a Golden Key! 🗝️',
+                                      ),
+                                      buttonText: context.tr(
+                                        'store.awesome',
+                                        fallback: 'AWESOME',
+                                      ),
+                                      isSuccess: true,
+                                      onButtonPressed: () =>
+                                          Navigator.of(ctx).pop(),
+                                    ),
+                                    const Positioned.fill(
+                                      child: IgnorePointer(
+                                        child: GameConfetti(),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
                       },
                       onDismissed: () {},
                     );
@@ -282,11 +449,17 @@ class _KeyShopContent extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.play_circle_fill_rounded,
-                            color: Colors.white, size: 20.r),
+                        Icon(
+                          Icons.play_circle_fill_rounded,
+                          color: Colors.white,
+                          size: 20.r,
+                        ),
                         SizedBox(width: 8.w),
                         Text(
-                          "Watch Ad for 1 Key",
+                          context.tr(
+                            'store.watch_ad_for_key',
+                            fallback: 'Watch Ad for 1 Key',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,
@@ -300,7 +473,7 @@ class _KeyShopContent extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 24.h),
-                
+
                 // Premium bypass info
                 ScaleButton(
                   onTap: () {
@@ -309,7 +482,10 @@ class _KeyShopContent extends StatelessWidget {
                   },
                   child: Container(
                     width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 16.h,
+                      horizontal: 16.w,
+                    ),
                     decoration: BoxDecoration(
                       color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(16.r),
@@ -323,7 +499,9 @@ class _KeyShopContent extends StatelessWidget {
                         Container(
                           padding: EdgeInsets.all(8.r),
                           decoration: BoxDecoration(
-                            color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
+                            color: const Color(
+                              0xFFF59E0B,
+                            ).withValues(alpha: 0.2),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -338,7 +516,10 @@ class _KeyShopContent extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Tired of Keys?",
+                                context.tr(
+                                  'store.tired_of_keys',
+                                  fallback: 'Tired of Keys?',
+                                ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 16.sp,
@@ -348,14 +529,19 @@ class _KeyShopContent extends StatelessWidget {
                               ),
                               SizedBox(height: 2.h),
                               Text(
-                                "Premium users bypass all gates!",
+                                context.tr(
+                                  'store.premium_bypass_gates',
+                                  fallback: 'Premium users bypass all gates!',
+                                ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Theme.of(context).brightness == Brightness.dark 
-                                    ? Colors.white70 
-                                    : Colors.black54,
+                                  color:
+                                      Theme.of(context).brightness ==
+                                          Brightness.dark
+                                      ? Colors.white70
+                                      : Colors.black54,
                                 ),
                               ),
                             ],
@@ -370,7 +556,7 @@ class _KeyShopContent extends StatelessWidget {
                     ),
                   ),
                 ),
-                
+
                 SizedBox(height: MediaQuery.of(context).padding.bottom),
               ],
             ),

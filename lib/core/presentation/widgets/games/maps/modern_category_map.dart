@@ -66,6 +66,17 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   // changes (i.e. once, when curriculum data finishes loading).
   List<Offset>? _cachedPoints;
   int? _cachedPointsForLevelCount;
+  // BUG FIX: the cache key previously tracked only `_totalLevels`, not
+  // `category`. In the common case (this State's `widget.categoryId` never
+  // changes post-construction) that's harmless. But Flutter can reuse this
+  // exact State object across a `widget` update carrying a *different*
+  // `categoryId` (same type, same tree position, no Key change - standard
+  // element-reuse, with no `didUpdateWidget` override here to catch it) -
+  // and if the new category happens to need the same `_totalLevels` value,
+  // the cache would silently return points generated with the *previous*
+  // category's vertical spacing, since `_generatePoints` depends on both
+  // inputs, not just level count. Tracking both closes that gap outright.
+  GameCategory? _cachedPointsForCategory;
 
   @override
   void initState() {
@@ -232,13 +243,15 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     );
     int unlockedLevels = user?.unlockedLevels[widget.gameType] ?? 1;
     final completedLevelsList = user?.completedLevels[widget.gameType] ?? [];
-    int completedLevels = completedLevelsList.isEmpty ? 0 : completedLevelsList.reduce(math.max);
+    int completedLevels = completedLevelsList.isEmpty
+        ? 0
+        : completedLevelsList.reduce(math.max);
     if (completedLevels == 0 && unlockedLevels > 1) {
       completedLevels = unlockedLevels - 1;
     }
-    
+
     final bool isPremium = user?.isPremium ?? false;
-    
+
     // Auto-correct unlockedLevels for premium users who previously hit a free-tier toll gate
     // and then upgraded, so they don't have to replay the previous level to trigger the unlock.
     if (isPremium && unlockedLevels <= completedLevels) {
@@ -528,14 +541,18 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   }
 
   /// Cached wrapper around [_generatePoints]: recomputes only when
-  /// `_totalLevels` actually changes instead of on every rebuild.
+  /// `_totalLevels` or `category` actually change instead of on every
+  /// rebuild.
   List<Offset> _generatePointsCached(GameCategory category) {
-    if (_cachedPoints != null && _cachedPointsForLevelCount == _totalLevels) {
+    if (_cachedPoints != null &&
+        _cachedPointsForLevelCount == _totalLevels &&
+        _cachedPointsForCategory == category) {
       return _cachedPoints!;
     }
     final points = _generatePoints(category);
     _cachedPoints = points;
     _cachedPointsForLevelCount = _totalLevels;
+    _cachedPointsForCategory = category;
     return points;
   }
 
@@ -569,7 +586,11 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         final totalStars = gameplayStars + magicStars;
 
         return ScaleButton(
-          onTap: () => StarVaultBottomSheet.show(context, widget.gameType, theme.primaryColor),
+          onTap: () => StarVaultBottomSheet.show(
+            context,
+            widget.gameType,
+            theme.primaryColor,
+          ),
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             decoration: BoxDecoration(
@@ -586,14 +607,27 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.lock_outline_rounded, color: Colors.white, size: 20.sp),
+                Icon(
+                  Icons.lock_outline_rounded,
+                  color: Colors.white,
+                  size: 20.sp,
+                ),
                 SizedBox(width: 8.w),
                 Text(
                   "$totalStars",
-                  style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.white, fontSize: 16.sp),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    fontSize: 16.sp,
+                  ),
                 ),
                 SizedBox(width: 4.w),
-                Icon(Icons.star_rounded, color: const Color(0xFFFFD700), size: 18.sp),
+                Icon(
+                  Icons.star_rounded,
+                  color: const Color(0xFFFFD700),
+                  size: 18.sp,
+                ),
               ],
             ),
           ),
@@ -608,7 +642,11 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         final keys = state.user?.keys ?? 0;
 
         return ScaleButton(
-          onTap: () => KeyShopBottomSheet.show(context: context, isKidsMode: false, primaryColor: theme.primaryColor),
+          onTap: () => KeyShopBottomSheet.show(
+            context: context,
+            isKidsMode: false,
+            primaryColor: theme.primaryColor,
+          ),
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             decoration: BoxDecoration(
@@ -629,7 +667,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                 SizedBox(width: 8.w),
                 Text(
                   "$keys",
-                  style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.white, fontSize: 16.sp),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    fontSize: 16.sp,
+                  ),
                 ),
               ],
             ),
@@ -766,13 +809,22 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     bool isPremium,
   ) {
     final bool isCompleted = level <= completedLevels;
-    final bool isPlayable = level == completedLevels + 1 && (level <= unlockedLevels || isPremium);
+    final bool isPlayable =
+        level == completedLevels + 1 && (level <= unlockedLevels || isPremium);
     // Hide Toll Gate until user actually reaches it
-    final bool isTollGate = level == completedLevels + 1 && level > unlockedLevels && !isPremium;
-    final bool isHalfUnlocked = level > completedLevels + 1 && level <= unlockedLevels && unlockedLevels > 10;
+    final bool isTollGate =
+        level == completedLevels + 1 && level > unlockedLevels && !isPremium;
+    final bool isHalfUnlocked =
+        level > completedLevels + 1 &&
+        level <= unlockedLevels &&
+        unlockedLevels > 10;
     // Hide Next Zone until Toll Gate is visible
-    final bool isNextZone = level > unlockedLevels + 1 && level <= unlockedLevels + 3 && !isPremium && completedLevels >= unlockedLevels;
-    
+    final bool isNextZone =
+        level > unlockedLevels + 1 &&
+        level <= unlockedLevels + 3 &&
+        !isPremium &&
+        completedLevels >= unlockedLevels;
+
     // They can only play if they actually reached it sequentially.
     final bool isUnlockedForClick = isCompleted || isPlayable;
     final bool isCurrent = isPlayable || isTollGate;
@@ -791,11 +843,20 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     if (isCompleted) {
       statusLabel = context.tr('games.level_completed', fallback: 'Completed');
     } else if (isPlayable) {
-      statusLabel = context.tr('games.level_current', fallback: 'Current level');
+      statusLabel = context.tr(
+        'games.level_current',
+        fallback: 'Current level',
+      );
     } else if (isTollGate) {
-      statusLabel = context.tr('games.level_locked_toll', fallback: 'Unlock required');
+      statusLabel = context.tr(
+        'games.level_locked_toll',
+        fallback: 'Unlock required',
+      );
     } else if (isHalfUnlocked) {
-      statusLabel = context.tr('games.level_locked_sequence', fallback: 'Complete previous to play');
+      statusLabel = context.tr(
+        'games.level_locked_sequence',
+        fallback: 'Complete previous to play',
+      );
     } else {
       statusLabel = context.tr('games.level_locked', fallback: 'Locked');
     }
@@ -818,33 +879,63 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                     _showLockedFeedback(context, Colors.amber);
                     return;
                   }
-                  TollGateBottomSheet.show(context: context, level: level, gameType: widget.gameType);
+                  TollGateBottomSheet.show(
+                    context: context,
+                    level: level,
+                    gameType: widget.gameType,
+                  );
                   return;
                 }
-                
+
                 if (!isUnlockedForClick) {
                   _showLockedFeedback(context, theme.primaryColor);
                   return;
                 }
 
-                context.push(
-                  '/game?category=${Uri.encodeQueryComponent(theme.category.name)}&gameType=${Uri.encodeQueryComponent(widget.gameType)}&level=$level',
-                ).then((_) {
-                  if (mounted) {
-                    Future.delayed(const Duration(milliseconds: 300), () {
+                context
+                    .push(
+                      // BUG FIX: was `theme.category.name`, which returns the
+                      // raw camelCase GameCategory enum name (e.g.
+                      // 'eliteMastery'). Every other category-key usage in
+                      // this codebase (QuestRegistry's asset folder map,
+                      // StoryService's legacyAdultScripts map) uses the
+                      // lowercase form, and this screen's own sibling,
+                      // ModernPathGameMap, builds this exact same route using
+                      // its own `categoryId` field directly rather than
+                      // re-deriving it from a theme enum. Using
+                      // `widget.categoryId` here matches that established,
+                      // correct pattern and avoids depending on whatever the
+                      // `/game` route's query-param parsing happens to expect
+                      // for case sensitivity.
+                      '/game?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(widget.gameType)}&level=$level',
+                    )
+                    .then((_) {
                       if (mounted) {
-                        _scrollToCurrentLevel(animate: true);
+                        Future.delayed(const Duration(milliseconds: 300), () {
+                          if (mounted) {
+                            _scrollToCurrentLevel(animate: true);
+                          }
+                        });
                       }
                     });
-                  }
-                });
               },
               child: ExcludeSemantics(
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
                     RepaintBoundary(
-                      child: _buildNodeCircle(context, level, isCurrent, isCompleted, isPlayable, isHalfUnlocked, isTollGate, isNextZone, tierColor, isDark),
+                      child: _buildNodeCircle(
+                        context,
+                        level,
+                        isCurrent,
+                        isCompleted,
+                        isPlayable,
+                        isHalfUnlocked,
+                        isTollGate,
+                        isNextZone,
+                        tierColor,
+                        isDark,
+                      ),
                     ),
 
                     PositionedDirectional(
@@ -1033,7 +1124,18 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     );
   }
 
-  Widget _buildNodeCircle(BuildContext context, int level, bool isCurrent, bool isCompleted, bool isPlayable, bool isHalfUnlocked, bool isTollGate, bool isNextZone, Color tierColor, bool isDark) {
+  Widget _buildNodeCircle(
+    BuildContext context,
+    int level,
+    bool isCurrent,
+    bool isCompleted,
+    bool isPlayable,
+    bool isHalfUnlocked,
+    bool isTollGate,
+    bool isNextZone,
+    Color tierColor,
+    bool isDark,
+  ) {
     Widget circleWidget = Container(
       width: isCurrent ? 100.r : 85.r,
       height: isCurrent ? 100.r : 85.r,
@@ -1043,17 +1145,25 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
           colors: (isCompleted || isPlayable || isHalfUnlocked)
               ? [Colors.white, const Color(0xFFF1F5F9)]
               : isTollGate
-                  ? [Colors.amber.shade200, Colors.amber.shade400]
-                  : isNextZone
-                      ? [Colors.amber.withValues(alpha: 0.1), Colors.amber.withValues(alpha: 0.3)]
-                      : [Colors.grey.shade400, Colors.grey.shade600],
+              ? [Colors.amber.shade200, Colors.amber.shade400]
+              : isNextZone
+              ? [
+                  Colors.amber.withValues(alpha: 0.1),
+                  Colors.amber.withValues(alpha: 0.3),
+                ]
+              : [Colors.grey.shade400, Colors.grey.shade600],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         boxShadow: [
           BoxShadow(
-            color: ((isCompleted || isPlayable || isHalfUnlocked) ? tierColor : isTollGate ? Colors.amber : Colors.black)
-                .withValues(alpha: isDark ? 0.4 : 0.2),
+            color:
+                ((isCompleted || isPlayable || isHalfUnlocked)
+                        ? tierColor
+                        : isTollGate
+                        ? Colors.amber
+                        : Colors.black)
+                    .withValues(alpha: isDark ? 0.4 : 0.2),
             offset: Offset(0, 8.h),
             blurRadius: 15.r,
           ),
@@ -1062,10 +1172,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
           color: (isCompleted || isPlayable || isHalfUnlocked)
               ? tierColor
               : isTollGate
-                ? Colors.amber.shade600
-                : isNextZone
-                    ? Colors.amber.withValues(alpha: 0.4)
-                    : Colors.white24,
+              ? Colors.amber.shade600
+              : isNextZone
+              ? Colors.amber.withValues(alpha: 0.4)
+              : Colors.white24,
           width: isCurrent ? 4.r : 3.r,
         ),
       ),
@@ -1086,68 +1196,87 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         child: Center(
           child: isTollGate
               ? Icon(
-                    Icons.lock_rounded,
-                    size: 36.r,
-                    color: Colors.white,
-                    shadows: const [Shadow(color: Colors.black38, offset: Offset(0, 2), blurRadius: 4)],
-                  )
+                  Icons.lock_rounded,
+                  size: 36.r,
+                  color: Colors.white,
+                  shadows: const [
+                    Shadow(
+                      color: Colors.black38,
+                      offset: Offset(0, 2),
+                      blurRadius: 4,
+                    ),
+                  ],
+                )
               : (isCompleted || isPlayable || isHalfUnlocked)
-                  ? Padding(
-                      padding: EdgeInsets.all(4.r),
-                      child: FittedBox(
-                        fit: BoxFit.contain,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              context.tr('home.level_label'),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 8.sp,
-                                fontWeight: FontWeight.w900,
-                                color: tierColor,
-                                letterSpacing: 2,
-                              ),
-                              maxLines: 1,
-                            ),
-                            Text(
-                              "$level",
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: (isPlayable || isCompleted ? 32 : 26).sp,
-                                fontWeight: FontWeight.w900,
-                                color: tierColor,
-                                height: 0.9,
-                                shadows: [
-                                  Shadow(color: Colors.black38, offset: Offset(0, 2.h), blurRadius: 4.r),
-                                ],
-                              ),
-                              maxLines: 1,
-                            ),
-                            if (isCompleted) ...[
-                              SizedBox(height: 2.h),
-                              Builder(
-                                builder: (context) {
-                                  final earnedStars = context.read<AuthBloc>().state.user?.starRatings[widget.gameType]?[level.toString()] ?? 0;
-                                  return Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: List.generate(3, (index) {
-                                      final isEarned = index < earnedStars;
-                                      return Icon(
-                                        Icons.star_rounded, 
-                                        size: index == 1 ? 14.r : 10.r, 
-                                        color: isEarned ? Colors.amber : Colors.black26,
-                                      );
-                                    }),
-                                  );
-                                },
+              ? Padding(
+                  padding: EdgeInsets.all(4.r),
+                  child: FittedBox(
+                    fit: BoxFit.contain,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          context.tr('home.level_label'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 8.sp,
+                            fontWeight: FontWeight.w900,
+                            color: tierColor,
+                            letterSpacing: 2,
+                          ),
+                          maxLines: 1,
+                        ),
+                        Text(
+                          "$level",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: (isPlayable || isCompleted ? 32 : 26).sp,
+                            fontWeight: FontWeight.w900,
+                            color: tierColor,
+                            height: 0.9,
+                            shadows: [
+                              Shadow(
+                                color: Colors.black38,
+                                offset: Offset(0, 2.h),
+                                blurRadius: 4.r,
                               ),
                             ],
-                          ],
+                          ),
+                          maxLines: 1,
                         ),
-                      ),
-                    )
-                  : Icon(Icons.lock_rounded, size: 32.r, color: Colors.white54),
+                        if (isCompleted) ...[
+                          SizedBox(height: 2.h),
+                          Builder(
+                            builder: (context) {
+                              final earnedStars =
+                                  context
+                                      .read<AuthBloc>()
+                                      .state
+                                      .user
+                                      ?.starRatings[widget.gameType]?[level
+                                      .toString()] ??
+                                  0;
+                              return Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: List.generate(3, (index) {
+                                  final isEarned = index < earnedStars;
+                                  return Icon(
+                                    Icons.star_rounded,
+                                    size: index == 1 ? 14.r : 10.r,
+                                    color: isEarned
+                                        ? Colors.amber
+                                        : Colors.black26,
+                                  );
+                                }),
+                              );
+                            },
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                )
+              : Icon(Icons.lock_rounded, size: 32.r, color: Colors.white54),
         ),
       ),
     );

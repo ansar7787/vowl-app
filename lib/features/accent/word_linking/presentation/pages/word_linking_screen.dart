@@ -35,6 +35,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
   final _soundService = di.sl<SoundService>();
 
   int _lastProcessedIndex = -1;
+  int? _lastLives;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -80,16 +81,6 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
         _isCorrect = false;
       });
       context.read<AccentBloc>().add(SubmitAnswer(false));
-
-      Future.delayed(2.seconds, () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-            _selectedNodeIndex = null;
-          });
-        }
-      });
     }
   }
 
@@ -101,7 +92,10 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          if (state.currentIndex != _lastProcessedIndex) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -118,6 +112,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
               });
             }
           }
+          _lastLives = state.livesRemaining;
         }
         if (state is AccentGameComplete) {
           setState(() => _showConfetti = true);
@@ -212,11 +207,13 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                               fit: BoxFit.scaleDown,
                                               child: WordLinkingInstruction(
                                                 color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                               ),
                                             ),
                                           )
                                         : WordLinkingInstruction(
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
                                     SizedBox(height: gapInstruction),
 

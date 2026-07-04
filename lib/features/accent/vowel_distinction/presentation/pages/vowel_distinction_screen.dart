@@ -102,18 +102,6 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
         _isCorrect = false;
       });
       context.read<AccentBloc>().add(SubmitAnswer(false));
-
-      _mismatchResetTimer?.cancel();
-      _mismatchResetTimer = Timer(const Duration(seconds: 2), () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-            _selectedIndex = null;
-            _sliderValue = 0.5;
-          });
-        }
-      });
     }
   }
 
@@ -243,11 +231,13 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                               child:
                                                   VowelDistinctionInstruction(
                                                     color: theme.primaryColor,
+                                                    instruction: quest.instruction,
                                                   ),
                                             ),
                                           )
                                         : VowelDistinctionInstruction(
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
                                     SizedBox(height: gapInstruction),
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Theme-adaptive cached network image with a high-performance shimmer
 /// placeholder. Hardware-isolated repaints during the loading lifecycle.
@@ -40,7 +41,12 @@ class ShimmerImage extends StatelessWidget {
     if (imageUrl.isEmpty) {
       return Semantics(
         image: true,
-        label: semanticsLabel ?? 'Image placeholder',
+        label:
+            semanticsLabel ??
+            context.tr(
+              'common.image_placeholder',
+              fallback: 'Image placeholder',
+            ),
         child: Container(
           width: width,
           height: height,

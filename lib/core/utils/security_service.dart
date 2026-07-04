@@ -48,11 +48,16 @@ class SecurityServiceImpl implements SecurityService {
   @override
   Future<bool> checkDeviceSecurity() async {
     try {
-      // 1. Inspect device for Root/Jailbreak configurations
-      final bool jailbroken = await SafeDevice.isJailBroken;
-
-      // 2. Inspect device for simulated emulator signatures
-      final bool isEmulator = await SafeDevice.isRealDevice == false;
+      // PERF: these two platform-channel checks are independent, so run
+      // them concurrently instead of two sequential round trips - halves
+      // the wall-clock cost of this check, which runs on the app's boot
+      // path (blocking access to paid/economy features until it resolves).
+      final results = await Future.wait([
+        SafeDevice.isJailBroken, // [0] Root/Jailbreak configuration check
+        SafeDevice.isRealDevice, // [1] Simulated emulator signature check
+      ]);
+      final bool jailbroken = results[0];
+      final bool isEmulator = results[1] == false;
 
       // Restrict economy access on jailbroken hardware to secure transactions
       if (jailbroken) return false;

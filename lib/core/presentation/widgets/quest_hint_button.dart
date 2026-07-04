@@ -72,11 +72,26 @@ class QuestHintButton extends StatelessWidget {
         return Semantics(
           button: true,
           enabled: !used,
+          // BUG FIX (LOCALIZATION/ACCESSIBILITY): these labels were
+          // hardcoded English, unlike the snackbar text a few lines above
+          // in this same file which already correctly used context.tr().
+          // Screen-reader users in the other 17 supported locales heard
+          // English-only descriptions for this button.
           label: used
-              ? 'Hint already used'
+              ? context.tr(
+                  'hint.already_used_semantic',
+                  fallback: 'Hint already used',
+                )
               : canUseHint
-              ? 'Use hint ($hintCount remaining)'
-              : 'Watch ad to earn a hint',
+              ? context.tr(
+                  'hint.use_hint_semantic',
+                  args: ['$hintCount'],
+                  fallback: 'Use hint ($hintCount remaining)',
+                )
+              : context.tr(
+                  'hint.watch_ad_semantic',
+                  fallback: 'Watch ad to earn a hint',
+                ),
           child: ScaleButton(
             onTap: () => _handleTap(context, hintCount),
             child: RepaintBoundary(

@@ -15,7 +15,6 @@ import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_prompt_card.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_speaker_core.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_drone_option.dart';
-import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_explanation_card.dart';
 
 class MinimalPairsScreen extends StatefulWidget {
   final int level;
@@ -35,6 +34,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
   final _soundService = di.sl<SoundService>();
 
   int _lastProcessedIndex = -1;
+  int? _lastLives;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -77,16 +77,6 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
         _isCorrect = false;
       });
       context.read<AccentBloc>().add(SubmitAnswer(false));
-
-      Future.delayed(2.seconds, () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-            _selectedDroneIndex = null;
-          });
-        }
-      });
     }
   }
 
@@ -98,7 +88,10 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          if (state.currentIndex != _lastProcessedIndex) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -115,6 +108,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
               });
             }
           }
+          _lastLives = state.livesRemaining;
         }
         if (state is AccentGameComplete) {
           setState(() => _showConfetti = true);
@@ -181,9 +175,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                       final double gapSpeaker = remainingHeight > 0
                           ? (gapUnit * 2).clamp(16.0, 48.0)
                           : 16.0;
-                      final double gapSlider = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(12.0, 40.0)
-                          : 12.0;
+
                       final double gapBottom = remainingHeight > 0
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
@@ -208,11 +200,15 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                               fit: BoxFit.scaleDown,
                                               child: MinimalPairsInstruction(
                                                 color: theme.primaryColor,
+                                            instruction: quest.instruction,
+                                                instruction: quest.instruction,
                                               ),
                                             ),
                                           )
                                         : MinimalPairsInstruction(
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction,
+                                            instruction: quest.instruction,
                                           ),
                                     SizedBox(height: gapInstruction),
 
@@ -335,29 +331,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                               ),
                                             ],
                                           ),
-                                    if (_isAnswered) ...[
-                                      SizedBox(height: gapSlider),
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 110.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child:
-                                                    MinimalPairsExplanationCard(
-                                                      quest: quest,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isCorrect: _isCorrect,
-                                                    ),
-                                              ),
-                                            )
-                                          : MinimalPairsExplanationCard(
-                                              quest: quest,
-                                              color: theme.primaryColor,
-                                              isDark: isDark,
-                                              isCorrect: _isCorrect,
-                                            ),
-                                    ],
+
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),

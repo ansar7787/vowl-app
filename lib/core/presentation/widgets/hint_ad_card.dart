@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
@@ -56,7 +57,10 @@ class _HintAdCardState extends State<HintAdCard> {
           if (rewardEarned && context.mounted) {
             CustomSnackBar.show(
               context: context,
-              message: 'Hint Earned! +1 Strategic Hint',
+              message: context.tr(
+                'games.hint_earned_snack',
+                fallback: 'Hint Earned! +1 Strategic Hint',
+              ),
               type: CustomSnackBarType.success,
             );
           }
@@ -84,7 +88,12 @@ class _HintAdCardState extends State<HintAdCard> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                (widget.title ?? 'WATCH AND EARN HINTS').toUpperCase(),
+                (widget.title ??
+                        context.tr(
+                          'games.watch_earn_hints_title',
+                          fallback: 'WATCH AND EARN HINTS',
+                        ))
+                    .toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
@@ -119,7 +128,11 @@ class _HintAdCardState extends State<HintAdCard> {
                         SizedBox(width: 8.w),
                         Flexible(
                           child: Text(
-                            widget.subtitle ?? '1 STRATEGIC HINT',
+                            widget.subtitle ??
+                                context.tr(
+                                  'games.one_strategic_hint',
+                                  fallback: '1 STRATEGIC HINT',
+                                ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 14.sp,
@@ -144,7 +157,10 @@ class _HintAdCardState extends State<HintAdCard> {
                       return Semantics(
                         button: true,
                         enabled: !loading,
-                        label: 'Watch ad to earn a strategic hint',
+                        label: context.tr(
+                          'games.hint_semantic_label',
+                          fallback: 'Watch ad to earn a strategic hint',
+                        ),
                         child: ScaleButton(
                           onTap: loading ? null : _showHintAd,
                           child: Container(
@@ -199,7 +215,10 @@ class _HintAdCardState extends State<HintAdCard> {
                                       ),
                                       SizedBox(width: 4.w),
                                       Text(
-                                        'WATCH',
+                                        context.tr(
+                                          'games.watch_button',
+                                          fallback: 'WATCH',
+                                        ),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 12.sp,

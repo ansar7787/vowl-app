@@ -625,23 +625,88 @@ class StoryServiceImpl implements StoryService {
     return null;
   }
 
-  String _getBroadCategory(String gameType) {
+  /// Resolves [gameType] to its authoritative [QuestType] category via the
+  /// [GameSubtype] enum, or `null` if it isn't a recognized adult/modern
+  /// subtype id (in which case it's most likely a kids-zone topic id like
+  /// 'animal' or 'food', handled separately via [kidsScripts]).
+  ///
+  /// Shared by [_getBroadCategory], [_getMascotEmoji], and
+  /// [_getCategoryColor] so all three theming lookups agree with each
+  /// other and with the exact category the legacy milestone scripts use -
+  /// see the doc comment on [_getMascotEmoji] for why this matters.
+  QuestType? _resolveQuestType(String gameType) {
     final String id = gameType.toLowerCase();
     final bool isKnownSubtype = GameSubtype.values.any(
       (s) => s.name.toLowerCase() == id,
     );
-    if (!isKnownSubtype) {
-      // Not a recognized adult/modern GameSubtype id (most likely a
-      // kids-zone topic id like 'animal' or 'food', which is handled
-      // earlier in getStoryBeat() via kidsScripts - this path is only
-      // reached as a fallback). No broad adult category applies.
-      return '';
-    }
-    final subtype = GameSubtype.fromString(gameType);
-    return subtype.category.serializedName;
+    if (!isKnownSubtype) return null;
+    return GameSubtype.fromString(gameType).category;
   }
 
+  String _getBroadCategory(String gameType) {
+    // Not a recognized adult/modern GameSubtype id (most likely a
+    // kids-zone topic id like 'animal' or 'food', which is handled
+    // earlier in getStoryBeat() via kidsScripts - this path is only
+    // reached as a fallback). No broad adult category applies.
+    return _resolveQuestType(gameType)?.serializedName ?? '';
+  }
+
+  /// Emoji shown per broad category for every *recognized* adult/modern
+  /// [GameSubtype] id, keyed by the same [QuestType] used for milestone
+  /// script selection (see [legacyAdultScripts]).
+  static const Map<QuestType, String> _categoryEmoji = {
+    QuestType.grammar: '⚖️',
+    QuestType.writing: '✍️',
+    QuestType.speaking: '🗣️',
+    QuestType.listening: '🎧',
+    QuestType.reading: '📖',
+    QuestType.eliteMastery: '🏆',
+    QuestType.accent: '🎙️',
+    QuestType.roleplay: '🎭',
+    QuestType.vocabulary: '📚',
+  };
+
+  /// Theme color per broad category for every *recognized* adult/modern
+  /// [GameSubtype] id. Same key set and rationale as [_categoryEmoji].
+  static const Map<QuestType, Color> _categoryColors = {
+    QuestType.speaking: Color(0xFFE11D48), // Rose 600
+    QuestType.grammar: Color(0xFF0284C7), // Sky 600
+    QuestType.writing: Color(0xFFD97706), // Amber 600
+    QuestType.listening: Color(0xFF4F46E5), // Indigo 600
+    QuestType.accent: Color(0xFFDC2626), // Red 600
+    QuestType.roleplay: Color(0xFF0891B2), // Cyan 600
+    QuestType.reading: Color(0xFF1D4ED8), // Blue 700
+    QuestType.vocabulary: Color(0xFF059669), // Emerald 600
+    QuestType.eliteMastery: Color(0xFFEAB308), // Yellow 500
+  };
+
+  /// BUG FIX: this previously matched *every* id (kids-zone topics AND
+  /// adult/modern GameSubtype ids alike) purely by checking whether the
+  /// lowercased id string *contains* a handful of category substrings, in
+  /// a fixed priority order. That worked by coincidence for ids that happen
+  /// to literally contain their category's keyword, but produced wrong
+  /// results wherever a subtype's name doesn't: e.g. `phrasalVerbs` (a
+  /// **Vocabulary** subtype) contains "verb" and so matched the kids-zone
+  /// "verbs" branch (🏃) instead of a vocabulary emoji; `consonantClarity`,
+  /// `dialectDrill`, `connectedSpeech`, etc. (all **Accent** subtypes)
+  /// don't literally contain "accent" and fell through to the generic
+  /// default; and `accentShadowing` (an **Elite Mastery** subtype)
+  /// contains "accent" and so was themed as plain Accent instead of Elite.
+  /// Vocabulary additionally had no emoji branch at all.
+  ///
+  /// Now, any id that's a recognized [GameSubtype] is themed via the exact
+  /// enum-backed category lookup already used for milestone script
+  /// selection (guaranteed correct, no substring guessing). The original
+  /// substring heuristic is preserved unchanged as the fallback for
+  /// kids-zone topic ids (which aren't part of the [GameSubtype] enum and
+  /// have no authoritative category to look up), so no kids-zone behavior
+  /// changes.
   String _getMascotEmoji(String categoryId) {
+    final resolvedCategory = _resolveQuestType(categoryId);
+    if (resolvedCategory != null) {
+      return _categoryEmoji[resolvedCategory] ?? '🦉';
+    }
+
     final String id = categoryId.toLowerCase();
     if (id.contains('animal')) return '🦁';
     if (id.contains('alphabet')) return '🔠';
@@ -676,35 +741,67 @@ class StoryServiceImpl implements StoryService {
     return '🦉';
   }
 
+  /// BUG FIX: same class of cross-category substring collision as
+  /// [_getMascotEmoji] (see its doc comment for concrete examples) -
+  /// resolved the same way: recognized [GameSubtype] ids are themed via
+  /// the authoritative enum-backed category lookup first; the original
+  /// substring heuristic remains, unchanged, as the fallback for kids-zone
+  /// topic ids.
   Color _getCategoryColor(String categoryId) {
+    final resolvedCategory = _resolveQuestType(categoryId);
+    if (resolvedCategory != null) {
+      return _categoryColors[resolvedCategory] ?? const Color(0xFF4F46E5);
+    }
+
     final String id = categoryId.toLowerCase();
-    
-    if (id.contains('alphabet') || id.contains('speak') || id.contains('bodypart') || id.contains('family')) {
+
+    if (id.contains('alphabet') ||
+        id.contains('speak') ||
+        id.contains('bodypart') ||
+        id.contains('family')) {
       return const Color(0xFFE11D48); // Rose 600
     }
-    if (id.contains('number') || id.contains('grammar') || id.contains('clothing') || id.contains('time')) {
+    if (id.contains('number') ||
+        id.contains('grammar') ||
+        id.contains('clothing') ||
+        id.contains('time')) {
       return const Color(0xFF0284C7); // Sky 600
     }
-    if (id.contains('color') || id.contains('write') || id.contains('shape') || id.contains('home')) {
+    if (id.contains('color') ||
+        id.contains('write') ||
+        id.contains('shape') ||
+        id.contains('home')) {
       return const Color(0xFFD97706); // Amber 600
     }
-    if (id.contains('animal') || id.contains('listen') || id.contains('school') || id.contains('routine')) {
+    if (id.contains('animal') ||
+        id.contains('listen') ||
+        id.contains('school') ||
+        id.contains('routine')) {
       return const Color(0xFF4F46E5); // Indigo 600
     }
-    if (id.contains('fruit') || id.contains('accent') || id.contains('food') || id.contains('opposite')) {
+    if (id.contains('fruit') ||
+        id.contains('accent') ||
+        id.contains('food') ||
+        id.contains('opposite')) {
       return const Color(0xFFDC2626); // Red 600
     }
-    if (id.contains('emotion') || id.contains('roleplay') || id.contains('daynight') || id.contains('verb')) {
+    if (id.contains('emotion') ||
+        id.contains('roleplay') ||
+        id.contains('daynight') ||
+        id.contains('verb')) {
       return const Color(0xFF0891B2); // Cyan 600
     }
-    if (id.contains('transport') || id.contains('read') || id.contains('preposition') || id.contains('phonics')) {
+    if (id.contains('transport') ||
+        id.contains('read') ||
+        id.contains('preposition') ||
+        id.contains('phonics')) {
       return const Color(0xFF1D4ED8); // Blue 700
     }
     if (id.contains('nature') || id.contains('vocab')) {
       return const Color(0xFF059669); // Emerald 600
     }
     if (id.contains('elite')) return const Color(0xFFEAB308); // Yellow 500
-    
+
     return const Color(0xFF4F46E5); // Indigo 600
   }
 }

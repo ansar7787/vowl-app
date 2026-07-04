@@ -36,145 +36,167 @@ class GameErrorWidget extends StatelessWidget {
     final resolvedMessage = message ?? context.tr('game_error.message');
 
     return RepaintBoundary(
-      child: Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 32.w),
-          child: GlassTile(
-            borderRadius: BorderRadius.circular(32.r),
-            padding: EdgeInsets.all(32.r),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // ── Error icon ──────────────────────────────────────
-                Container(
-                  padding: EdgeInsets.all(20.r),
-                  decoration: BoxDecoration(
-                    color: Colors.red.withValues(alpha: 0.1),
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.red.withValues(alpha: 0.2),
-                        blurRadius: 20,
-                        spreadRadius: 5,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          // FIX (RESPONSIVENESS/ACCESSIBILITY): this card stacks an icon,
+          // title, message, and two 48dp+ buttons - genuinely tall content
+          // that can exceed a small/landscape/split-screen viewport at
+          // high accessibility text scale (up to 3.0x) or with longer
+          // translated copy. Same scroll-safe pattern used elsewhere in
+          // this codebase: preserves the exact current centered look when
+          // content fits, and only scrolls (instead of overflowing) when
+          // it doesn't.
+          return SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 24.h),
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: constraints.maxHeight - 48.h,
+              ),
+              child: Center(
+                child: GlassTile(
+                  borderRadius: BorderRadius.circular(32.r),
+                  padding: EdgeInsets.all(32.r),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // ── Error icon ──────────────────────────────────────
+                      Container(
+                        padding: EdgeInsets.all(20.r),
+                        decoration: BoxDecoration(
+                          color: Colors.red.withValues(alpha: 0.1),
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.red.withValues(alpha: 0.2),
+                              blurRadius: 20,
+                              spreadRadius: 5,
+                            ),
+                          ],
+                        ),
+                        child: Icon(
+                          Icons.report_gmailerrorred_rounded,
+                          size: 48.r,
+                          color: Colors.redAccent,
+                        ),
+                      ).animate().scale(
+                        duration: 400.ms,
+                        curve: Curves.easeOutBack,
+                      ),
+
+                      SizedBox(height: 24.h),
+
+                      // ── Title ───────────────────────────────────────────
+                      Text(
+                        resolvedTitle,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 22.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF1E293B),
+                        ),
+                      ),
+
+                      SizedBox(height: 12.h),
+
+                      // ── Message ─────────────────────────────────────────
+                      Text(
+                        resolvedMessage,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
+                          color: isDark ? Colors.white70 : Colors.black54,
+                          height: 1.5,
+                        ),
+                      ),
+
+                      SizedBox(height: 32.h),
+
+                      // ── Retry ────────────────────────────────────────────
+                      Semantics(
+                        button: true,
+                        label: context.tr('games.try_again'),
+                        child: ScaleButton(
+                          onTap: onRetry,
+                          child: Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.symmetric(vertical: 16.h),
+                            constraints: BoxConstraints(minHeight: 48.h),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  primaryColor,
+                                  primaryColor.withValues(alpha: 0.8),
+                                ],
+                              ),
+                              borderRadius: BorderRadius.circular(16.r),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: primaryColor.withValues(alpha: 0.3),
+                                  blurRadius: 12,
+                                  offset: const Offset(0, 4),
+                                ),
+                              ],
+                            ),
+                            child: Text(
+                              context.tr('games.try_again').toUpperCase(),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                                letterSpacing: 1.5,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(height: 12.h),
+
+                      // ── Go back ──────────────────────────────────────────
+                      Semantics(
+                        button: true,
+                        label: context.tr('common.go_back'),
+                        child: ScaleButton(
+                          onTap: onBack,
+                          child: Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.symmetric(vertical: 16.h),
+                            constraints: BoxConstraints(minHeight: 48.h),
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? Colors.white10
+                                  : Colors.black.withValues(alpha: 0.05),
+                              borderRadius: BorderRadius.circular(16.r),
+                            ),
+                            child: Text(
+                              context.tr('common.go_back').toUpperCase(),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w700,
+                                color: isDark ? Colors.white60 : Colors.black54,
+                                letterSpacing: 1,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),
-                  child: Icon(
-                    Icons.report_gmailerrorred_rounded,
-                    size: 48.r,
-                    color: Colors.redAccent,
-                  ),
-                ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
-
-                SizedBox(height: 24.h),
-
-                // ── Title ───────────────────────────────────────────
-                Text(
-                  resolvedTitle,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 22.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF1E293B),
-                  ),
-                ),
-
-                SizedBox(height: 12.h),
-
-                // ── Message ─────────────────────────────────────────
-                Text(
-                  resolvedMessage,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w500,
-                    color: isDark ? Colors.white70 : Colors.black54,
-                    height: 1.5,
-                  ),
-                ),
-
-                SizedBox(height: 32.h),
-
-                // ── Retry ────────────────────────────────────────────
-                Semantics(
-                  button: true,
-                  label: context.tr('games.try_again'),
-                  child: ScaleButton(
-                    onTap: onRetry,
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 16.h),
-                      constraints: BoxConstraints(minHeight: 48.h),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            primaryColor,
-                            primaryColor.withValues(alpha: 0.8),
-                          ],
-                        ),
-                        borderRadius: BorderRadius.circular(16.r),
-                        boxShadow: [
-                          BoxShadow(
-                            color: primaryColor.withValues(alpha: 0.3),
-                            blurRadius: 12,
-                            offset: const Offset(0, 4),
-                          ),
-                        ],
-                      ),
-                      child: Text(
-                        context.tr('games.try_again').toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
-                          letterSpacing: 1.5,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-
-                SizedBox(height: 12.h),
-
-                // ── Go back ──────────────────────────────────────────
-                Semantics(
-                  button: true,
-                  label: context.tr('common.go_back'),
-                  child: ScaleButton(
-                    onTap: onBack,
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 16.h),
-                      constraints: BoxConstraints(minHeight: 48.h),
-                      decoration: BoxDecoration(
-                        color: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        borderRadius: BorderRadius.circular(16.r),
-                      ),
-                      child: Text(
-                        context.tr('common.go_back').toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w700,
-                          color: isDark ? Colors.white60 : Colors.black54,
-                          letterSpacing: 1,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+                ).animate().fadeIn(duration: 400.ms).scale(begin: const Offset(0.9, 0.9)),
+              ),
             ),
-          ),
-        ),
-      ).animate().fadeIn(duration: 400.ms).scale(begin: const Offset(0.9, 0.9)),
+          );
+        },
+      ),
     );
   }
 }

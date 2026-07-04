@@ -111,17 +111,6 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
         _isCorrect = false;
       });
       context.read<AccentBloc>().add(SubmitAnswer(false));
-
-      Future.delayed(2.seconds, () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-            _selectedIndex = null;
-            _dialRotation = 0.0;
-          });
-        }
-      });
     }
   }
 
@@ -250,11 +239,13 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                               fit: BoxFit.scaleDown,
                                               child: PitchModulationInstruction(
                                                 color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                               ),
                                             ),
                                           )
                                         : PitchModulationInstruction(
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
                                     SizedBox(height: gapInstruction),
 

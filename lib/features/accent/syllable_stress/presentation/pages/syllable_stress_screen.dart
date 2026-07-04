@@ -35,6 +35,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
   final _soundService = di.sl<SoundService>();
 
   int _lastProcessedIndex = -1;
+  int? _lastLives;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -76,16 +77,6 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
         _isCorrect = false;
       });
       context.read<AccentBloc>().add(SubmitAnswer(false));
-
-      Future.delayed(2.seconds, () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-            _selectedIndex = null;
-          });
-        }
-      });
     }
   }
 
@@ -97,7 +88,10 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          if (state.currentIndex != _lastProcessedIndex) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -114,6 +108,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
               });
             }
           }
+          _lastLives = state.livesRemaining;
         }
         if (state is AccentGameComplete) {
           setState(() => _showConfetti = true);
@@ -208,11 +203,13 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                               fit: BoxFit.scaleDown,
                                               child: SyllableStressInstruction(
                                                 color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                               ),
                                             ),
                                           )
                                         : SyllableStressInstruction(
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
                                     SizedBox(height: gapInstruction),
 

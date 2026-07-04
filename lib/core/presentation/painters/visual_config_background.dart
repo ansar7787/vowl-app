@@ -129,7 +129,19 @@ class _FrequencyLockWidgetState extends State<_FrequencyLockWidget>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: (4000 / widget.intensity).round()),
+      // BUG FIX (CRASH SAFETY): `widget.intensity` (VisualConfig.
+      // pulseIntensity) comes from unvalidated quest JSON content with no
+      // range enforcement at parse time (VisualConfig.fromJson has no
+      // clamp). A value of exactly 0 previously made this `4000 / 0` =
+      // `double.infinity`, and calling `.round()` on infinity throws -
+      // crashing this widget, and transitively whatever quest screen
+      // renders it, on initState(). A negative value would similarly
+      // produce a nonsensical negative Duration. Clamping here makes this
+      // widget robust against any value this field could ever contain,
+      // without needing to touch the (out-of-scope) JSON parsing layer.
+      duration: Duration(
+        milliseconds: (4000 / widget.intensity.clamp(0.1, 10.0)).round(),
+      ),
     )..repeat();
   }
 

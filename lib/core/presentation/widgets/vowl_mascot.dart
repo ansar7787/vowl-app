@@ -134,6 +134,19 @@ class VowlMascot extends StatelessWidget {
                 colorBlendMode: state == VowlMascotState.sleeping
                     ? BlendMode.dstIn
                     : null,
+                // FIX (CRASH SAFETY): a missing or corrupt VoxBot asset
+                // would previously propagate up to the app's
+                // GlobalErrorBoundary, replacing the ENTIRE screen with a
+                // full "system anomaly" error page over what's ultimately
+                // a cosmetic avatar image. Falling back to the same
+                // emoji rendering used for every other mascot keeps a
+                // failure contained to just this small widget.
+                errorBuilder: (context, error, stackTrace) => Center(
+                  child: Text(
+                    buddyEmoji,
+                    style: TextStyle(fontSize: botSize * 0.6),
+                  ),
+                ),
               )
             : Container(
                 width: botSize,
@@ -207,6 +220,15 @@ class VowlMascot extends StatelessWidget {
           final emoji = accessoryMap[effectiveAccessory]!;
           bot = Stack(
             alignment: Alignment.center,
+            // FIX (VISUAL CORRECTNESS): Stack's default clipBehavior is
+            // Clip.hardEdge, which clips any Positioned child that extends
+            // outside the Stack's own bounds. The crown badge below is
+            // deliberately positioned above the Stack (top: -botSize*0.1,
+            // i.e. y < 0) to hover above the avatar - with the default
+            // clip, that portion would be cut off. Clip.none lets it
+            // render fully, with no effect on any other child here (none
+            // of the others extend past the Stack's bounds).
+            clipBehavior: Clip.none,
             children: [
               bot,
               Positioned(
@@ -224,6 +246,8 @@ class VowlMascot extends StatelessWidget {
         } else if (level >= 100) {
           bot = Stack(
             alignment: Alignment.center,
+            // FIX (VISUAL CORRECTNESS): same reason as above.
+            clipBehavior: Clip.none,
             children: [
               bot,
               Positioned(

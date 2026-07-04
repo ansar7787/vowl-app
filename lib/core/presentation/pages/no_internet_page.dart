@@ -69,73 +69,91 @@ class _NoInternetPageState extends State<NoInternetPage> {
 
           // ── Main content ────────────────────────────────────────────
           SafeArea(
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    RepaintBoundary(
-                      child: _IconPortal(isDark: isDark)
-                          .animate()
-                          .fadeIn(duration: 800.ms)
-                          .scale(
-                            begin: const Offset(0.8, 0.8),
-                            end: const Offset(1.0, 1.0),
-                            curve: Curves.easeOutBack,
-                          ),
+            // FIX (RESPONSIVENESS/ACCESSIBILITY): a fixed Column centered
+            // directly in the viewport overflows at large accessibility
+            // text-scale factors (up to 3.0x) or with longer translations
+            // of these strings, on small phones (320x568). LayoutBuilder +
+            // SingleChildScrollView + ConstrainedBox(minHeight) preserves
+            // the exact current centered look whenever content fits, and
+            // only scrolls (instead of overflowing) when it doesn't.
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return SingleChildScrollView(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24.w,
+                    vertical: 24.h,
+                  ),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: constraints.maxHeight - 48.h,
                     ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        RepaintBoundary(
+                          child: _IconPortal(isDark: isDark)
+                              .animate()
+                              .fadeIn(duration: 800.ms)
+                              .scale(
+                                begin: const Offset(0.8, 0.8),
+                                end: const Offset(1.0, 1.0),
+                                curve: Curves.easeOutBack,
+                              ),
+                        ),
 
-                    SizedBox(height: 48.h),
+                        SizedBox(height: 48.h),
 
-                    Text(
-                          context.tr('connectivity.title'),
+                        Text(
+                              context.tr('connectivity.title'),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 26.sp,
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: 2,
+                                color: isDark
+                                    ? Colors.white
+                                    : const Color(0xFF0F172A),
+                              ),
+                            )
+                            .animate()
+                            .fadeIn(delay: 200.ms, duration: 600.ms)
+                            .moveY(begin: 10, end: 0),
+
+                        SizedBox(height: 16.h),
+
+                        Text(
+                          context.tr('connectivity.subtitle'),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 26.sp,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: 2,
-                            color: isDark
-                                ? Colors.white
-                                : const Color(0xFF0F172A),
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w400,
+                            color: isDark ? Colors.white60 : Colors.black54,
+                            height: 1.5,
                           ),
-                        )
-                        .animate()
-                        .fadeIn(delay: 200.ms, duration: 600.ms)
-                        .moveY(begin: 10, end: 0),
+                        ).animate().fadeIn(delay: 400.ms, duration: 600.ms),
 
-                    SizedBox(height: 16.h),
+                        SizedBox(height: 60.h),
 
-                    Text(
-                      context.tr('connectivity.subtitle'),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w400,
-                        color: isDark ? Colors.white60 : Colors.black54,
-                        height: 1.5,
-                      ),
-                    ).animate().fadeIn(delay: 400.ms, duration: 600.ms),
-
-                    SizedBox(height: 60.h),
-
-                    _RetryButton(
-                          isDark: isDark,
-                          isChecking: _isChecking,
-                          buttonScale: _buttonScale,
-                          onPointerDown: () =>
-                              setState(() => _buttonScale = 0.96),
-                          onPointerUp: () => setState(() => _buttonScale = 1.0),
-                          onTap: _handleRetry,
-                        )
-                        .animate()
-                        .fadeIn(delay: 600.ms, duration: 600.ms)
-                        .moveY(begin: 20, end: 0),
-                  ],
-                ),
-              ),
+                        _RetryButton(
+                              isDark: isDark,
+                              isChecking: _isChecking,
+                              buttonScale: _buttonScale,
+                              onPointerDown: () =>
+                                  setState(() => _buttonScale = 0.96),
+                              onPointerUp: () =>
+                                  setState(() => _buttonScale = 1.0),
+                              onTap: _handleRetry,
+                            )
+                            .animate()
+                            .fadeIn(delay: 600.ms, duration: 600.ms)
+                            .moveY(begin: 20, end: 0),
+                      ],
+                    ),
+                  ),
+                );
+              },
             ),
           ),
         ],
@@ -182,7 +200,10 @@ class _IconPortal extends StatelessWidget {
 
         // Core frosted glass disk
         Semantics(
-          label: 'No internet connection indicator',
+          label: context.tr(
+            'store.no_internet_indicator',
+            fallback: 'No internet connection indicator',
+          ),
           image: true,
           child:
               Container(

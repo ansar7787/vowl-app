@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/app_logger.dart';
 
 // ── BLoCs ─────────────────────────────────────────────────────────────────────
 
@@ -256,6 +257,34 @@ import 'package:vowl/features/vocabulary/collocations/presentation/pages/colloca
 class AppRouterGameResolvers {
   AppRouterGameResolvers._(); // Non-instantiable.
 
+  /// FIX (PRODUCTION READINESS / ERROR HANDLING): every `_getXxxScreenContent`
+  /// switch below has a `default:` branch that silently substitutes a
+  /// different screen within the same category. That fallback is necessary
+  /// because `GameSubtype` is a single flat enum shared across all
+  /// categories - `switch` can't be made exhaustive per-category without
+  /// forcing every resolver to also handle every unrelated category's
+  /// values - but it also means that if a new `GameSubtype` value is ever
+  /// added without updating its resolver (or a category dispatcher sends
+  /// the wrong subtype into the wrong resolver), the result today is a
+  /// silent wrong-screen swap: no crash, no log, just a confusing "I picked
+  /// X but got Y" bug report with nothing in Crashlytics to point at it.
+  /// This helper turns that into a visible, non-fatal diagnostic while
+  /// leaving the actual fallback behavior completely unchanged.
+  static Widget _unhandledSubtype(
+    GameSubtype gameType,
+    String category,
+    Widget fallback,
+  ) {
+    di.sl<AppLogger>().error(
+      'AppRouterGameResolvers: Unhandled GameSubtype "${gameType.name}" '
+      'reached the $category resolver\'s default case - falling back to '
+      '"${fallback.runtimeType}". This means either a new GameSubtype was '
+      'added without a matching case here, or a caller routed the wrong '
+      'subtype into getXxxScreen() for this category.',
+    );
+    return fallback;
+  }
+
   // ── Speaking ────────────────────────────────────────────────────────────────
 
   static Widget getSpeakingScreen(GameSubtype gameType, int level) {
@@ -300,7 +329,11 @@ class AppRouterGameResolvers {
       case GameSubtype.dailyExpression:
         return de_game.DailyExpressionScreen(level: level, gameType: gameType);
       default:
-        return rs_game.RepeatSentenceScreen(level: level, gameType: gameType);
+        return _unhandledSubtype(
+          gameType,
+          'Speaking',
+          rs_game.RepeatSentenceScreen(level: level, gameType: gameType),
+        );
     }
   }
 
@@ -355,7 +388,11 @@ class AppRouterGameResolvers {
           gameType: gameType,
         );
       default:
-        return ra_game.ReadAndAnswerScreen(level: level, gameType: gameType);
+        return _unhandledSubtype(
+          gameType,
+          'Reading',
+          ra_game.ReadAndAnswerScreen(level: level, gameType: gameType),
+        );
     }
   }
 
@@ -402,7 +439,11 @@ class AppRouterGameResolvers {
       case GameSubtype.essayDrafting:
         return ed_game.EssayDraftingScreen(level: level, gameType: gameType);
       default:
-        return sb_game.SentenceBuilderScreen(level: level, gameType: gameType);
+        return _unhandledSubtype(
+          gameType,
+          'Writing',
+          sb_game.SentenceBuilderScreen(level: level, gameType: gameType),
+        );
     }
   }
 
@@ -492,7 +533,11 @@ class AppRouterGameResolvers {
       case GameSubtype.conjunctions:
         return g_cj_game.ConjunctionsScreen(level: level, gameType: gameType);
       default:
-        return gq_game.GrammarQuestScreen(level: level, gameType: gameType);
+        return _unhandledSubtype(
+          gameType,
+          'Grammar',
+          gq_game.GrammarQuestScreen(level: level, gameType: gameType),
+        );
     }
   }
 
@@ -555,9 +600,10 @@ class AppRouterGameResolvers {
       case GameSubtype.ambientId:
         return l_ai_game.AmbientIdScreen(level: level, gameType: gameType);
       default:
-        return l_afb_game.AudioFillBlanksScreen(
-          level: level,
-          gameType: gameType,
+        return _unhandledSubtype(
+          gameType,
+          'Listening',
+          l_afb_game.AudioFillBlanksScreen(level: level, gameType: gameType),
         );
     }
   }
@@ -619,7 +665,11 @@ class AppRouterGameResolvers {
           gameType: gameType,
         );
       default:
-        return a_mp_game.MinimalPairsScreen(level: level, gameType: gameType);
+        return _unhandledSubtype(
+          gameType,
+          'Accent',
+          a_mp_game.MinimalPairsScreen(level: level, gameType: gameType),
+        );
     }
   }
 
@@ -664,9 +714,10 @@ class AppRouterGameResolvers {
       case GameSubtype.emergencyHub:
         return r_eh_game.EmergencyHubScreen(level: level, gameType: gameType);
       default:
-        return r_bd_game.BranchingDialogueScreen(
-          level: level,
-          gameType: gameType,
+        return _unhandledSubtype(
+          gameType,
+          'Roleplay',
+          r_bd_game.BranchingDialogueScreen(level: level, gameType: gameType),
         );
     }
   }
@@ -710,7 +761,11 @@ class AppRouterGameResolvers {
       case GameSubtype.collocations:
         return v_co_game.CollocationsScreen(level: level, gameType: gameType);
       default:
-        return v_fc_game.FlashcardsScreen(level: level, gameType: gameType);
+        return _unhandledSubtype(
+          gameType,
+          'Vocabulary',
+          v_fc_game.FlashcardsScreen(level: level, gameType: gameType),
+        );
     }
   }
 
@@ -740,7 +795,11 @@ class AppRouterGameResolvers {
       case GameSubtype.accentShadowing:
         return as_elite.AccentShadowingScreen(level: level, gameType: gameType);
       default:
-        return sb_elite.StoryBuilderScreen(level: level, gameType: gameType);
+        return _unhandledSubtype(
+          gameType,
+          'EliteMastery',
+          sb_elite.StoryBuilderScreen(level: level, gameType: gameType),
+        );
     }
   }
 }

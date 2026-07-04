@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class IntonationMimicInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const IntonationMimicInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -23,7 +25,9 @@ class IntonationMimicInstruction extends StatelessWidget {
           Icon(Icons.waves_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN PHRASE",
+            instruction.trim().isEmpty 
+                ? "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN PHRASE"
+                : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,

@@ -8,8 +8,25 @@ class GameHelper {
   const GameHelper._(); // Non-instantiable utility class.
 
   /// Returns the parent category name string for a given [subtype].
+  ///
+  /// BUG FIX: previously returned the raw `.name` getter value directly
+  /// (e.g. 'eliteMastery'). That reads fine for every other [QuestType]
+  /// value (all single words: 'speaking', 'grammar', 'accent', ...), but
+  /// once passed through `.toUpperCase()` in [getGameMetadata] it produces
+  /// a squished, hard-to-read result for the one compound-word category -
+  /// "ELITEMASTERY" instead of "ELITE MASTERY". Inserting a space at
+  /// camelCase word boundaries fixes this for eliteMastery today and is a
+  /// no-op for every other (single-word) value, since they have no
+  /// internal boundary to split on.
   static String getCategoryForSubtype(GameSubtype subtype) {
-    return subtype.category.name;
+    return _splitCamelCase(subtype.category.name);
+  }
+
+  static String _splitCamelCase(String value) {
+    return value.replaceAllMapped(
+      RegExp('(?<=[a-z])(?=[A-Z])'),
+      (match) => ' ',
+    );
   }
 
   /// Returns the icon associated with a primary quest [type].
@@ -83,9 +100,10 @@ class GameMetadata {
       identical(this, other) ||
       other is GameMetadata &&
           title == other.title &&
+          icon == other.icon &&
           color == other.color &&
           categoryName == other.categoryName;
 
   @override
-  int get hashCode => Object.hash(title, color, categoryName);
+  int get hashCode => Object.hash(title, icon, color, categoryName);
 }

@@ -100,18 +100,6 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
         _isCorrect = false;
       });
       context.read<AccentBloc>().add(SubmitAnswer(false));
-
-      _resetTimer?.cancel();
-      _resetTimer = Timer(const Duration(seconds: 2), () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-            _selectedIndex = null;
-            _sliderValue = 0.5;
-          });
-        }
-      });
     }
   }
 
@@ -244,6 +232,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                     ConnectedSpeechPromptCard(
                                       word: quest.word ?? "",
                                       color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                       isDark: isDark,
                                       isCompact: isCompact,
                                     ),

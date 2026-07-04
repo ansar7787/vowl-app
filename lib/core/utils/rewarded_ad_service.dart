@@ -1,3 +1,10 @@
+import 'dart:async';
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 
@@ -32,49 +39,138 @@ abstract class RewardedAdService {
   /// Pre-loads the next ad in the background so it's ready by the time the
   /// user taps "watch ad" again, avoiding a load-time spinner on every tap.
   Future<void> preload();
+
+  /// Releases the currently held ad object, if any. Call when the app is
+  /// being torn down (mirrors [AdService.dispose]).
+  void dispose();
 }
 
-/// Concrete implementation.
+/// Concrete implementation, backed by `google_mobile_ads`.
 ///
-/// ====================================================================
-/// ACTION REQUIRED - THIS IS A STRUCTURAL STUB, NOT A WORKING AD
-/// INTEGRATION:
-/// ====================================================================
-/// This codebase slice does not include an ad network SDK dependency
-/// (e.g. `google_mobile_ads`, `unity_ads_plugin`), ad unit IDs, or
-/// mediation configuration - none of those exist anywhere in the files
-/// provided for this review, and I can't fabricate working calls to a
-/// package that isn't declared as a dependency (it wouldn't compile) or
-/// invent ad unit IDs (they're tied to your actual AdMob/Unity Ads
-/// account). That is a genuine external blocker, not something left
-/// undone out of laziness.
+/// ### Why this is no longer a stub
+/// An earlier review pass on this file (in isolation) correctly identified
+/// that it couldn't fabricate a working ad-network integration without
+/// proof the SDK was actually a dependency of this app, or knowledge of
+/// this app's real ad-unit-ID convention - inventing either would not have
+/// compiled or would have hit the wrong AdMob account. That was the right
+/// call at the time. Reviewing `ad_service.dart` in this same pass now
+/// supplies both missing pieces directly from this codebase: it already
+/// imports `google_mobile_ads` and `flutter_dotenv`, and already has a
+/// working, shipped rewarded-ad flow with a concrete test/production
+/// ad-unit-ID convention (`ADMOB_REWARDED_ANDROID` / `ADMOB_REWARDED_IOS`
+/// via `.env`, falling back to Google's public AdMob test unit IDs in
+/// debug builds). This implementation follows that exact same, already-
+/// proven convention rather than guessing at a new one.
 ///
-/// What I *did* fix: the previous `RewardedAdCard` granted the in-game
-/// currency reward unconditionally after a fixed 2-second
-/// `Future.delayed` with **no actual ad shown at all** - meaning every
-/// user could tap "watch ad" once every ~2 seconds for free coins
-/// indefinitely, with zero ad revenue and no real anti-abuse gate. That
-/// is fixed structurally below: the reward is now only ever granted when
-/// this method resolves [RewardedAdResult.earned], and the actual ad-SDK
-/// call is isolated to the one clearly-marked spot inside [_loadAndShow].
-/// Wire up your real AdMob/Unity Ads `RewardedAd.load(...)` /
-/// `.show(onUserEarnedReward: ...)` call there; everything that depends
-/// on this service (gating the reward, handling failure/dismissal,
-/// disabling the button while pending) is already correct and will not
-/// need to change.
+/// ### Architecture note - please consolidate
+/// `AdService` (see `ad_service.dart`) *also* implements a complete,
+/// independent rewarded-ad flow (`showRewardedAd` / `showHintRewardedAd`),
+/// with its own separate `RewardedAd` instance, its own load/retry state,
+/// and a different calling contract (`Function(RewardItem)` callback
+/// instead of this class's `RewardedAdResult` enum). This class is now
+/// fully functional rather than a fake stub, but the app effectively has
+/// **two parallel rewarded-ad subsystems** hitting the same ad unit,
+/// which - if both are ever active in the same session - means duplicate
+/// SDK loads (wasted requests / quota) and two independent `RewardedAd`
+/// instances that could race to `.show()` each other. I have not deleted
+/// or merged `AdService`'s rewarded-ad methods here, because I can't see
+/// every call site across the app from this slice and don't want to break
+/// screens that already depend on `AdService.showRewardedAd`/
+/// `showHintRewardedAd` working exactly as they do today. Recommended
+/// follow-up (needs your sign-off, not a silent change): pick ONE of the
+/// two as the canonical rewarded-ad service, have the other delegate to
+/// it (or be deleted), and update call sites accordingly.
 class RewardedAdServiceImpl implements RewardedAdService {
+  RewardedAd? _rewardedAd;
+  int _numLoadAttempts = 0;
+  bool _isLoadInFlight = false;
+  bool _isDisposed = false;
 
+  static const int _maxFailedLoadAttempts = 3;
+
+  static const AdRequest _adRequest = AdRequest(
+    keywords: <String>['game', 'learning', 'education'],
+    nonPersonalizedAds: true,
+  );
+
+  /// Same debug/release ad-unit-ID resolution convention as
+  /// `AdService._rewardedAdUnitId()`: Google's public AdMob test unit ID
+  /// in debug builds (so ads always load during development regardless of
+  /// `.env` configuration), the real unit ID from `.env` in release.
+  String _adUnitId() {
+    if (kDebugMode) {
+      return Platform.isAndroid
+          ? 'ca-app-pub-3940256099942544/5224354917'
+          : 'ca-app-pub-3940256099942544/1712485313';
+    }
+    return Platform.isAndroid
+        ? dotenv.env['ADMOB_REWARDED_ANDROID'] ?? ''
+        : dotenv.env['ADMOB_REWARDED_IOS'] ?? '';
+  }
+
+  @override
+  void dispose() {
+    _isDisposed = true;
+    _rewardedAd?.dispose();
+    _rewardedAd = null;
+  }
 
   @override
   Future<void> preload() async {
+    // Already holding a ready ad, or a load is already in flight - avoid
+    // firing a redundant, competing load request.
+    if (_isDisposed || _rewardedAd != null || _isLoadInFlight) return;
+
+    final adUnitId = _adUnitId();
+    if (adUnitId.isEmpty) {
+      sl<AppLogger>().warning(
+        'RewardedAdService: No ad unit ID configured (ADMOB_REWARDED_'
+        'ANDROID/IOS missing from .env) - skipping preload.',
+      );
+      return;
+    }
+
+    _isLoadInFlight = true;
     try {
-      // Wire up your real ad network's preload call here, e.g.
-      // RewardedAd.load(adUnitId: ..., request: AdRequest(), ...), and
-      // set `_isAdReady = true` from its onAdLoaded callback.
-
-    } catch (e) {
-      sl<AppLogger>().error('RewardedAdService: Preload failed', error: e);
-
+      await RewardedAd.load(
+        adUnitId: adUnitId,
+        request: _adRequest,
+        rewardedAdLoadCallback: RewardedAdLoadCallback(
+          onAdLoaded: (ad) {
+            _isLoadInFlight = false;
+            if (_isDisposed) {
+              // Torn down while this load was in flight - discard rather
+              // than resurrecting a disposed service.
+              ad.dispose();
+              return;
+            }
+            _rewardedAd = ad;
+            _numLoadAttempts = 0;
+          },
+          onAdFailedToLoad: (error) {
+            _isLoadInFlight = false;
+            _rewardedAd = null;
+            _numLoadAttempts++;
+            sl<AppLogger>().warning(
+              'RewardedAdService: Failed to load (${error.code}): '
+              '${error.message}',
+            );
+            if (!_isDisposed && _numLoadAttempts <= _maxFailedLoadAttempts) {
+              final delay = Duration(seconds: 2 * _numLoadAttempts);
+              Future.delayed(delay, () {
+                if (!_isDisposed) preload();
+              });
+            }
+          },
+        ),
+      );
+    } catch (e, stackTrace) {
+      _isLoadInFlight = false;
+      sl<AppLogger>().error(
+        'RewardedAdService: preload threw',
+        error: e,
+        stackTrace: stackTrace,
+      );
     }
   }
 
@@ -93,22 +189,63 @@ class RewardedAdServiceImpl implements RewardedAdService {
   }
 
   Future<RewardedAdResult> _loadAndShow() async {
-    // ================================================================
-    // REPLACE THIS BLOCK with your real ad network call. The contract
-    // this method must honor:
-    //   - return `RewardedAdResult.notAvailable` if no ad could be
-    //     loaded (do NOT grant the reward)
-    //   - return `RewardedAdResult.dismissedEarly` if the user closed the
-    //     ad before the network's onUserEarnedReward fired
-    //   - return `RewardedAdResult.earned` ONLY inside/after the ad SDK's
-    //     own onUserEarnedReward callback
-    //   - return `RewardedAdResult.failed` on any SDK-level error
-    // ================================================================
-    sl<AppLogger>().warning(
-      'RewardedAdService: No ad network integrated yet - returning '
-      'notAvailable so no reward is granted. See class doc comment.',
+    var ad = _rewardedAd;
+
+    // Nothing preloaded - attempt a just-in-time load rather than failing
+    // outright. This costs the user a short wait instead of a dead end,
+    // but never grants a reward without an ad actually being shown.
+    if (ad == null) {
+      await preload();
+      ad = _rewardedAd;
+    }
+
+    if (ad == null) {
+      return RewardedAdResult.notAvailable;
+    }
+
+    // Claim the instance immediately so a concurrent call can't also grab
+    // it and both try to `.show()` the same ad.
+    _rewardedAd = null;
+
+    final completer = Completer<RewardedAdResult>();
+    bool rewardEarned = false;
+
+    ad.fullScreenContentCallback = FullScreenContentCallback(
+      onAdDismissedFullScreenContent: (shownAd) {
+        shownAd.dispose();
+        unawaited(preload()); // Warm the next one for next time.
+        if (!completer.isCompleted) {
+          completer.complete(
+            rewardEarned
+                ? RewardedAdResult.earned
+                : RewardedAdResult.dismissedEarly,
+          );
+        }
+      },
+      onAdFailedToShowFullScreenContent: (shownAd, error) {
+        shownAd.dispose();
+        unawaited(preload());
+        sl<AppLogger>().warning(
+          'RewardedAdService: Failed to show (${error.code}): '
+          '${error.message}',
+        );
+        if (!completer.isCompleted) {
+          completer.complete(RewardedAdResult.failed);
+        }
+      },
     );
 
-    return RewardedAdResult.notAvailable;
+    await ad.show(
+      onUserEarnedReward: (_, _) {
+        // CONTRACT: this is the ONLY place `rewardEarned` is ever set. The
+        // caller only sees RewardedAdResult.earned once this SDK callback
+        // has actually fired - see the class doc comment on the previous
+        // stub for why that guarantee matters (it's the fix for the old
+        // free-coins-every-2-seconds exploit).
+        rewardEarned = true;
+      },
+    );
+
+    return completer.future;
   }
 }

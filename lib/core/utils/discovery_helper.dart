@@ -156,10 +156,15 @@ class DiscoveryHelper {
   }
 
   static List<GameQuest> _generateGrammarPro(UserEntity user) {
-    // Use a Set to attempt deduplication by subtype.
-    // NOTE: Effective deduplication requires GameQuest to override == by
-    // subtype identity. If GameQuest uses default object equality, all entries
-    // will be distinct and the Set adds no deduplication benefit.
+    // Use a Set to deduplicate by subtype identity.
+    // VERIFIED (previously an open question, now confirmed by reading
+    // game_quest.dart directly): GameQuest extends Equatable with a props
+    // list that includes `subtype` alongside every other field, and
+    // `_getQuestForSubtype` derives every field deterministically from
+    // `subtype` + the user's current level for that subtype - so two
+    // draws of the same subtype always produce fully equal GameQuest
+    // instances. This Set-based dedup therefore works correctly as
+    // written; no additional `==` override is needed on GameQuest.
     final grammarGames = <GameQuest>{};
     int attempts = 0;
     while (grammarGames.length < 3 && attempts < 10) {
@@ -186,9 +191,16 @@ class DiscoveryHelper {
   }
 
   static GameQuest _getRandomGameForCategory(UserEntity user, QuestType type) {
-    final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
+    // CODE CLEANLINESS FIX: previously filtered via
+    // `.where((s) => !s.isLegacy)`. Cross-checked directly against
+    // `GameSubtypeX.isLegacy`'s definition in game_quest.dart: it's
+    // documented there as "Always `false`... no code path can ever set
+    // this to `true`". The filter was therefore a guaranteed no-op -
+    // removing it changes no behavior, just removes dead code that
+    // implied a filtering step that never actually filtered anything.
+    final subtypes = type.subtypes;
     if (subtypes.isEmpty) {
-      final fallback = GameSubtype.values.where((s) => !s.isLegacy).toList();
+      final fallback = GameSubtype.values;
       final subtype = fallback[_random.nextInt(fallback.length)];
       // FIX (HIGH-5): tr() key.
       return _getQuestForSubtype(user, subtype, _kCategorySkillEnhance);

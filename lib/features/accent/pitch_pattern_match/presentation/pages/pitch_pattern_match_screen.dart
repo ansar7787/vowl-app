@@ -133,17 +133,6 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
         _isCorrect = false;
       });
       context.read<AccentBloc>().add(SubmitAnswer(false));
-
-      Future.delayed(2.seconds, () {
-        if (mounted) {
-          setState(() {
-            _isAnswered = false;
-            _isCorrect = null;
-            _selectedIndex = null;
-            _sliderValue = 0.5;
-          });
-        }
-      });
     }
   }
 
@@ -276,12 +265,14 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                               child:
                                                   PitchPatternMatchInstruction(
                                                     color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                                     instruction: quest.instruction,
                                                   ),
                                             ),
                                           )
                                         : PitchPatternMatchInstruction(
                                             color: theme.primaryColor,
+                                            instruction: quest.instruction,
                                             instruction: quest.instruction,
                                           ),
                                     SizedBox(height: gapInstruction),

@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
@@ -52,7 +53,10 @@ class _AdRewardCardState extends State<AdRewardCard> {
           context.read<EconomyBloc>().add(
             EconomyAddCoinsRequested(
               _coinReward,
-              title: 'Watched Rewarded Ad',
+              title: context.tr(
+                'games.watched_rewarded_ad_title',
+                fallback: 'Watched Rewarded Ad',
+              ),
               isEarned: true,
             ),
           );
@@ -61,7 +65,11 @@ class _AdRewardCardState extends State<AdRewardCard> {
           if (rewardEarned && context.mounted) {
             CustomSnackBar.show(
               context: context,
-              message: 'Reward Earned! +$_coinReward Vowl Coins',
+              message: context.tr(
+                'games.coins_reward_earned_snack',
+                args: ['$_coinReward'],
+                fallback: 'Reward Earned! +$_coinReward Vowl Coins',
+              ),
               type: CustomSnackBarType.success,
             );
           }
@@ -89,7 +97,10 @@ class _AdRewardCardState extends State<AdRewardCard> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'WATCH AND EARN COINS',
+              context.tr(
+                'games.watch_earn_coins_title',
+                fallback: 'WATCH AND EARN COINS',
+              ),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
@@ -122,7 +133,11 @@ class _AdRewardCardState extends State<AdRewardCard> {
                       SizedBox(width: 8.w),
                       Flexible(
                         child: Text(
-                          '$_coinReward VOWL COINS',
+                          context.tr(
+                            'games.vowl_coins_amount',
+                            args: ['$_coinReward'],
+                            fallback: '$_coinReward VOWL COINS',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 14.sp,
@@ -147,7 +162,11 @@ class _AdRewardCardState extends State<AdRewardCard> {
                     return Semantics(
                       button: true,
                       enabled: !loading,
-                      label: 'Watch ad to earn $_coinReward coins',
+                      label: context.tr(
+                        'games.coins_semantic_label',
+                        args: ['$_coinReward'],
+                        fallback: 'Watch ad to earn $_coinReward coins',
+                      ),
                       child: ScaleButton(
                         onTap: loading ? null : _showRewardAd,
                         child: Container(
@@ -200,7 +219,10 @@ class _AdRewardCardState extends State<AdRewardCard> {
                                     ),
                                     SizedBox(width: 4.w),
                                     Text(
-                                      'WATCH',
+                                      context.tr(
+                                        'games.watch_button',
+                                        fallback: 'WATCH',
+                                      ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 12.sp,

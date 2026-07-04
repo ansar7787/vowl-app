@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class VowelDistinctionInstruction extends StatelessWidget {
   final Color color;
+  final String instruction;
 
   const VowelDistinctionInstruction({
     super.key,
     required this.color,
+    required this.instruction,
   });
 
   @override
@@ -23,7 +25,9 @@ class VowelDistinctionInstruction extends StatelessWidget {
           Icon(Icons.tune_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            "SLIDE NEEDLE OR TAP THE VOWEL SOUND ORB",
+            instruction.trim().isEmpty 
+                ? "SLIDE OR TAP TO MATCH THE VOWEL SOUND"
+                : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,

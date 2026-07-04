@@ -36,27 +36,43 @@ class GameProgressHeader extends StatelessWidget {
         : const Color(0xFF0F172A).withValues(alpha: 0.7);
     final progressPercent = (progress.clamp(0.0, 1.0) * 100).toInt();
 
+    // BUG FIX (RTL): Icons.arrow_back_ios_new_rounded is a raw
+    // left-pointing glyph, not a direction-aware icon - Flutter only
+    // auto-mirrors icons routed through directional-aware widgets like
+    // AppBar's back button (BackButtonIcon); a raw Icon() never swaps on
+    // its own. In an RTL locale (Arabic), the surrounding Row correctly
+    // moves this button to the visual right side of the header via
+    // ambient Directionality, but the chevron itself kept pointing left -
+    // i.e. towards "forward" for RTL readers - a confusing, mixed-signal
+    // affordance. Resolving the correct directional icon explicitly fixes
+    // this without any layout changes.
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
+    final backIcon = isRtl
+        ? Icons.arrow_forward_ios_rounded
+        : Icons.arrow_back_ios_new_rounded;
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // ── Back button ─────────────────────────────────────────────
+          // BUG FIX (ACCESSIBILITY): 44x44 was below the mandatory 48x48dp
+          // minimum touch target; the IconButton's own constraints
+          // repeated the same 44 value. Both raised to 48 to match the
+          // convention already used correctly elsewhere in this codebase
+          // (e.g. GameErrorWidget's buttons use `minHeight: 48.h`).
           Semantics(
             button: true,
             label: context.tr('common.back'),
             child: SizedBox(
-              width: 44.w,
-              height: 44.h,
+              width: 48.w,
+              height: 48.h,
               child: IconButton(
                 onPressed: onBack,
                 padding: EdgeInsets.zero,
-                constraints: const BoxConstraints(minWidth: 44, minHeight: 44),
-                icon: Icon(
-                  Icons.arrow_back_ios_new_rounded,
-                  color: titleColor,
-                  size: 20.r,
-                ),
+                constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
+                icon: Icon(backIcon, color: titleColor, size: 20.r),
               ),
             ),
           ),

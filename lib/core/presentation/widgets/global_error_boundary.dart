@@ -112,79 +112,96 @@ class _FullErrorScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: const Color(0xFF0F172A),
         body: RepaintBoundary(
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 24.h),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ExcludeSemantics(
-                    child: Text('🛸', style: TextStyle(fontSize: 80.sp)),
+          // FIX (RESPONSIVENESS/ACCESSIBILITY): a fixed Column centered
+          // directly in the viewport overflows at large accessibility
+          // text-scale factors (up to 3.0x) or with longer translations of
+          // the error copy, on small phones (320x568) - the same class of
+          // issue already fixed on this app's other standalone status
+          // pages (NoInternetPage, InsecureDeviceScreen, AppRouter's error
+          // page). LayoutBuilder + SingleChildScrollView +
+          // ConstrainedBox(minHeight) preserves the exact current centered
+          // look whenever content fits, and only scrolls (instead of
+          // overflowing) when it doesn't.
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return SingleChildScrollView(
+                padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 24.h),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: constraints.maxHeight - 48.h,
                   ),
-                  SizedBox(height: 24.h),
-                  Text(
-                    context.tr('error.system_anomaly'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                      letterSpacing: 2,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(height: 16.h),
-                  Text(
-                    truncated,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      color: Colors.redAccent.withValues(alpha: 0.8),
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  SizedBox(height: 16.h),
-                  Text(
-                    context.tr('error.system_anomaly_description'),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      color: Colors.white70,
-                    ),
-                  ),
-                  SizedBox(height: 40.h),
-                  Semantics(
-                    button: true,
-                    label: context.tr('error.return_to_base'),
-                    child: ScaleButton(
-                      onTap: onRetry,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 32.w,
-                          vertical: 16.h,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ExcludeSemantics(
+                        child: Text('🛸', style: TextStyle(fontSize: 80.sp)),
+                      ),
+                      SizedBox(height: 24.h),
+                      Text(
+                        context.tr('error.system_anomaly'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          letterSpacing: 2,
                         ),
-                        constraints: BoxConstraints(minHeight: 48.h),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF6366F1),
-                          borderRadius: BorderRadius.circular(20.r),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(height: 16.h),
+                      Text(
+                        truncated,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          color: Colors.redAccent.withValues(alpha: 0.8),
+                          fontWeight: FontWeight.w600,
                         ),
-                        child: Text(
-                          context.tr('error.return_to_base'),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            color: Colors.white,
-                            fontWeight: FontWeight.w900,
-                            fontSize: 16.sp,
+                      ),
+                      SizedBox(height: 16.h),
+                      Text(
+                        context.tr('error.system_anomaly_description'),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 16.sp,
+                          color: Colors.white70,
+                        ),
+                      ),
+                      SizedBox(height: 40.h),
+                      Semantics(
+                        button: true,
+                        label: context.tr('error.return_to_base'),
+                        child: ScaleButton(
+                          onTap: onRetry,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 32.w,
+                              vertical: 16.h,
+                            ),
+                            constraints: BoxConstraints(minHeight: 48.h),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFF6366F1),
+                              borderRadius: BorderRadius.circular(20.r),
+                            ),
+                            child: Text(
+                              context.tr('error.return_to_base'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 16.sp,
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
-            ),
+                ),
+              );
+            },
           ),
         ),
       ),

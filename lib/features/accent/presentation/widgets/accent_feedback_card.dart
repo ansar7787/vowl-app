@@ -45,8 +45,8 @@ class AccentFeedbackCard extends StatelessWidget {
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
     final title = success ? context.tr('games.excellent') : context.tr('games.not_quite');
 
-    // Explanation is only shown on the second wrong attempt (Mastery Loop).
-    final showExplanation = !success && state.isFinalFailure;
+    // Explanation is shown on correct answers and on the final failure attempt.
+    final showExplanation = success || (!success && state.isFinalFailure);
     final explanation = showExplanation ? state.currentQuest.explanation : null;
 
     final buttonText = success
@@ -56,8 +56,8 @@ class AccentFeedbackCard extends StatelessWidget {
               : context.tr('games.try_again').toUpperCase());
 
     return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(28.r),
+      width: 342.w,
+      padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF0F172A) : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
@@ -116,19 +116,19 @@ class AccentFeedbackCard extends StatelessWidget {
           ),
 
           // ── Explanation (Mastery Loop only) ────────────────────────────
-          if (explanation != null) ...[
+          if (showExplanation) ...[
             SizedBox(height: 16.h),
             Container(
-                  width: double.infinity,
+                  width: 342.w,
                   padding: EdgeInsets.symmetric(
                     horizontal: 20.w,
                     vertical: 14.h,
                   ),
                   decoration: BoxDecoration(
-                    color: shadowColor.withValues(alpha: 0.08),
+                    color: shadowColor.withValues(alpha: isDark ? 0.12 : 0.08),
                     borderRadius: BorderRadius.circular(20.r),
                     border: Border.all(
-                      color: shadowColor.withValues(alpha: 0.2),
+                      color: shadowColor.withValues(alpha: 0.3),
                       width: 1.5,
                     ),
                   ),
@@ -139,9 +139,9 @@ class AccentFeedbackCard extends StatelessWidget {
                         children: [
                           ExcludeSemantics(
                             child: Icon(
-                              Icons.info_outline_rounded,
+                              Icons.lightbulb_outline_rounded,
                               color: shadowColor,
-                              size: 14.r,
+                              size: 16.r,
                             ),
                           ),
                           SizedBox(width: 8.w),
@@ -149,28 +149,31 @@ class AccentFeedbackCard extends StatelessWidget {
                             context.tr('games.explanation_caps'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w800,
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w900,
                               color: shadowColor,
-                              letterSpacing: 1,
+                              letterSpacing: 1.2,
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(height: 4.h),
-                      // maxLines guards against long explanations overflowing on
-                      // small phones or at large accessibility text scale factors.
-                      Semantics(
-                        label: '${context.tr('games.explanation')}: $explanation',
-                        child: Text(
-                          explanation,
-                          maxLines: 4,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w600,
-                            color: isDark ? Colors.white : Colors.black87,
+                      SizedBox(height: 6.h),
+                      ConstrainedBox(
+                        constraints: BoxConstraints(maxHeight: 120.h),
+                        child: SingleChildScrollView(
+                          physics: const BouncingScrollPhysics(),
+                          child: Semantics(
+                            label: '${context.tr('games.explanation')}: $explanation',
+                            child: Text(
+                              explanation ?? (success ? "Excellent listening! You correctly identified the precise sound." : "Keep practicing! Pay close attention to the subtle differences in these sounds."),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w600,
+                                color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF334155),
+                                height: 1.4,
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -179,7 +182,7 @@ class AccentFeedbackCard extends StatelessWidget {
                 )
                 .animate()
                 .fadeIn(delay: 300.ms)
-                .scale(duration: 400.ms, curve: Curves.easeOutBack),
+                .slideY(begin: 0.2, end: 0, duration: 400.ms, curve: Curves.easeOutBack),
           ],
 
           SizedBox(height: 28.h),
@@ -191,7 +194,7 @@ class AccentFeedbackCard extends StatelessWidget {
             child: ScaleButton(
               onTap: onContinue,
               child: Container(
-                width: double.infinity,
+                width: 342.w,
                 height: 65.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.r),
