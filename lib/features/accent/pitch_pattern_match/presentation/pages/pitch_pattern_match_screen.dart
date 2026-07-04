@@ -16,7 +16,7 @@ import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pi
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_prompt_card.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_melodic_canvas.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_pulse_speaker.dart';
-import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_spectral_slider.dart';
+import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_vertical_fader.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_explanation_card.dart';
 
 class PitchPatternMatchScreen extends StatefulWidget {
@@ -354,7 +354,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
                                               child:
-                                                  PitchPatternMatchSpectralSlider(
+                                                  PitchPatternMatchVerticalFader(
                                                     options: options,
                                                     correctIndex:
                                                         quest
@@ -373,7 +373,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                                   ),
                                             ),
                                           )
-                                        : PitchPatternMatchSpectralSlider(
+                                        : PitchPatternMatchVerticalFader(
                                             options: options,
                                             correctIndex:
                                                 quest.correctAnswerIndex ?? 0,

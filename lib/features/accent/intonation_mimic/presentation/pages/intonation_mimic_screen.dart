@@ -16,7 +16,7 @@ import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/inton
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_prompt_card.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_rollercoaster.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_pulse_speaker.dart';
-import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_spectral_slider.dart';
+import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_vertical_fader.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_explanation_card.dart';
 
 class IntonationMimicScreen extends StatefulWidget {
@@ -350,7 +350,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
                                               child:
-                                                  IntonationMimicSpectralSlider(
+                                                  IntonationMimicVerticalFader(
                                                     options: options,
                                                     correctIndex:
                                                         quest
@@ -369,7 +369,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                                   ),
                                             ),
                                           )
-                                        : IntonationMimicSpectralSlider(
+                                        : IntonationMimicVerticalFader(
                                             options: options,
                                             correctIndex:
                                                 quest.correctAnswerIndex ?? 0,
