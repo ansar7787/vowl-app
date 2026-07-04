@@ -36,8 +36,8 @@ class DialectDrillDataProbePin extends StatelessWidget {
     }
 
     return Positioned(
-      left: pinX - 25.w,
-      top: pinY - 25.h,
+      left: pinX - 32.w,
+      top: pinY - 32.h,
       child: GestureDetector(
         onPanUpdate: (details) => onPinDragUpdate(details, maxWidth),
         onPanEnd: (_) => onPinDragEnd(maxWidth, correctIndex),
@@ -48,25 +48,27 @@ class DialectDrillDataProbePin extends StatelessWidget {
             children: [
               if (hasTargetGlow && !isAnswered)
                 Container(
-                  width: 58.r,
-                  height: 58.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: Colors.greenAccent.withValues(alpha: 0.6),
-                      width: 1.5,
-                      style: BorderStyle.solid,
+                      width: 72.r,
+                      height: 72.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.greenAccent.withValues(alpha: 0.6),
+                          width: 1.5,
+                          style: BorderStyle.solid,
+                        ),
+                      ),
+                    )
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .scale(
+                      begin: const Offset(0.9, 0.9),
+                      end: const Offset(1.2, 1.2),
+                      duration: 600.ms,
                     ),
-                  ),
-                ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-                  begin: const Offset(0.9, 0.9),
-                  end: const Offset(1.2, 1.2),
-                  duration: 600.ms,
-                ),
 
               Container(
-                width: 50.r,
-                height: 50.r,
+                width: 64.r,
+                height: 64.r,
                 decoration: BoxDecoration(
                   color: pinColor.withValues(alpha: 0.15),
                   shape: BoxShape.circle,
@@ -79,19 +81,22 @@ class DialectDrillDataProbePin extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: Icon(
-                  isAnswered
-                      ? ((isCorrect ?? false) ? Icons.verified_rounded : Icons.warning_amber_rounded)
-                      : Icons.gps_fixed_rounded,
-                  size: 24.r,
-                  color: pinColor,
-                ).animate(
-                  onPlay: (c) => c.repeat(reverse: true),
-                ).scale(
-                  begin: const Offset(0.9, 0.9),
-                  end: const Offset(1.1, 1.1),
-                  duration: 800.ms,
-                ),
+                child:
+                    Icon(
+                          isAnswered
+                              ? ((isCorrect ?? false)
+                                    ? Icons.verified_rounded
+                                    : Icons.warning_amber_rounded)
+                              : Icons.gps_fixed_rounded,
+                          size: 32.r,
+                          color: pinColor,
+                        )
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .scale(
+                          begin: const Offset(0.9, 0.9),
+                          end: const Offset(1.1, 1.1),
+                          duration: 800.ms,
+                        ),
               ),
             ],
           ),

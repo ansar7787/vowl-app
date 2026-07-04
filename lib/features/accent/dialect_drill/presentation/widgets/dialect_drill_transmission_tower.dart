@@ -29,8 +29,8 @@ class DialectDrillTransmissionTower extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isLeft = index == 0;
-    final double targetX = (maxWidth / 2) + (isLeft ? -90.w : 90.w);
-    final double targetY = 170.h;
+    final double targetX = (maxWidth / 2) + (isLeft ? -110.w : 110.w);
+    final double targetY = 220.h;
 
     Color towerColor = color;
     if (isAnswered && hoveredTowerIndex == index) {
@@ -50,7 +50,7 @@ class DialectDrillTransmissionTower extends StatelessWidget {
 
     return Positioned(
       left: targetX - 80.w,
-      top: targetY - 70.h,
+      top: targetY - 80.h,
       child: SizedBox(
         width: 160.w,
         child: Column(
@@ -61,8 +61,8 @@ class DialectDrillTransmissionTower extends StatelessWidget {
               children: [
                 if (isHovered || (isAnswered && hoveredTowerIndex == index))
                   Container(
-                        width: 72.r,
-                        height: 72.r,
+                        width: 90.r,
+                        height: 90.r,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
@@ -80,7 +80,7 @@ class DialectDrillTransmissionTower extends StatelessWidget {
                       .fadeOut(),
 
                 Container(
-                  padding: EdgeInsets.all(12.r),
+                  padding: EdgeInsets.all(16.r),
                   decoration: BoxDecoration(
                     color: isDark ? Colors.black38 : Colors.white,
                     shape: BoxShape.circle,
@@ -100,7 +100,7 @@ class DialectDrillTransmissionTower extends StatelessWidget {
                   ),
                   child: Icon(
                     Icons.settings_input_antenna_rounded,
-                    size: 32.r,
+                    size: 42.r,
                     color: towerColor,
                   ),
                 ),
@@ -128,7 +128,7 @@ class DialectDrillTransmissionTower extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontFamily: 'RobotoMono',
-                  fontSize: 10.sp,
+                  fontSize: 13.sp,
                   fontWeight: FontWeight.bold,
                   color: isHovered
                       ? towerColor

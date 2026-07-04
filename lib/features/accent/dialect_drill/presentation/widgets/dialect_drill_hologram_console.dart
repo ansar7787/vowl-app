@@ -17,7 +17,8 @@ class DialectDrillHologramConsole extends StatefulWidget {
   final bool isAnswered;
   final bool? isCorrect;
   final VoidCallback onPlayTargetAudio;
-  final Function(int selectedIndex, int correctIndex, double maxWidth) onSubmitAnswer;
+  final Function(int selectedIndex, int correctIndex, double maxWidth)
+  onSubmitAnswer;
 
   const DialectDrillHologramConsole({
     super.key,
@@ -31,13 +32,16 @@ class DialectDrillHologramConsole extends StatefulWidget {
   });
 
   @override
-  State<DialectDrillHologramConsole> createState() => _DialectDrillHologramConsoleState();
+  State<DialectDrillHologramConsole> createState() =>
+      _DialectDrillHologramConsoleState();
 }
 
-class _DialectDrillHologramConsoleState extends State<DialectDrillHologramConsole> with SingleTickerProviderStateMixin {
+class _DialectDrillHologramConsoleState
+    extends State<DialectDrillHologramConsole>
+    with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   late AnimationController _radarController;
-  
+
   bool _isPinInitialized = false;
   double _pinX = 0;
   double _pinY = 0;
@@ -55,17 +59,21 @@ class _DialectDrillHologramConsoleState extends State<DialectDrillHologramConsol
   @override
   void didUpdateWidget(covariant DialectDrillHologramConsole oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.quest != widget.quest || (!widget.isAnswered && oldWidget.isAnswered)) {
+    if (oldWidget.quest != widget.quest ||
+        (!widget.isAnswered && oldWidget.isAnswered)) {
       setState(() {
         _isPinInitialized = false;
         _hoveredTowerIndex = null;
       });
     }
     // When answered, optionally lock pin
-    if (widget.isAnswered && _hoveredTowerIndex != null && MediaQuery.of(context).size.width > 0) {
-      final maxWidth = MediaQuery.of(context).size.width - 32.w; // approx container width
-      _pinX = (maxWidth / 2) + (_hoveredTowerIndex == 0 ? -90.w : 90.w);
-      _pinY = 170.h;
+    if (widget.isAnswered &&
+        _hoveredTowerIndex != null &&
+        MediaQuery.of(context).size.width > 0) {
+      final maxWidth =
+          MediaQuery.of(context).size.width - 32.w; // approx container width
+      _pinX = (maxWidth / 2) + (_hoveredTowerIndex == 0 ? -110.w : 110.w);
+      _pinY = 220.h;
     }
   }
 
@@ -80,22 +88,26 @@ class _DialectDrillHologramConsoleState extends State<DialectDrillHologramConsol
     setState(() {
       _pinX += details.delta.dx;
       _pinY += details.delta.dy;
-      
+
       // Clamp boundaries inside coordinates zone
       _pinX = _pinX.clamp(20.w, maxWidth - 20.w);
-      _pinY = _pinY.clamp(40.h, 380.h);
+      _pinY = _pinY.clamp(40.h, 450.h);
     });
-    
+
     _checkTowerHover(maxWidth);
   }
 
   void _checkTowerHover(double maxWidth) {
-    double leftTargetX = (maxWidth / 2) - 90.w;
-    double rightTargetX = (maxWidth / 2) + 90.w;
-    double targetY = 170.h;
+    double leftTargetX = (maxWidth / 2) - 110.w;
+    double rightTargetX = (maxWidth / 2) + 110.w;
+    double targetY = 220.h;
 
-    double distanceToLeft = math.sqrt(math.pow(_pinX - leftTargetX, 2) + math.pow(_pinY - targetY, 2));
-    double distanceToRight = math.sqrt(math.pow(_pinX - rightTargetX, 2) + math.pow(_pinY - targetY, 2));
+    double distanceToLeft = math.sqrt(
+      math.pow(_pinX - leftTargetX, 2) + math.pow(_pinY - targetY, 2),
+    );
+    double distanceToRight = math.sqrt(
+      math.pow(_pinX - rightTargetX, 2) + math.pow(_pinY - targetY, 2),
+    );
 
     if (distanceToLeft < 60.r) {
       if (_hoveredTowerIndex != 0) {
@@ -121,7 +133,7 @@ class _DialectDrillHologramConsoleState extends State<DialectDrillHologramConsol
       // Return pin to starting position
       setState(() {
         _pinX = maxWidth / 2;
-        _pinY = 320.h;
+        _pinY = 380.h;
       });
       return;
     }
@@ -135,17 +147,18 @@ class _DialectDrillHologramConsoleState extends State<DialectDrillHologramConsol
 
     return Container(
       width: 1.sw,
-      height: 380.h,
+      height: 480.h,
       decoration: BoxDecoration(
-        color: widget.isDark ? const Color(0xFF0F0F1B) : Colors.white.withValues(alpha: 0.8),
+        color: widget.isDark
+            ? const Color(0xFF0F0F1B)
+            : Colors.white.withValues(alpha: 0.8),
         borderRadius: BorderRadius.circular(36.r),
-        border: Border.all(color: widget.color.withValues(alpha: 0.2), width: 1.5),
+        border: Border.all(
+          color: widget.color.withValues(alpha: 0.2),
+          width: 1.5,
+        ),
         boxShadow: [
-          BoxShadow(
-            color: outerGlow,
-            blurRadius: 20,
-            spreadRadius: -5,
-          ),
+          BoxShadow(color: outerGlow, blurRadius: 20, spreadRadius: -5),
         ],
       ),
       child: ClipRRect(
@@ -154,7 +167,7 @@ class _DialectDrillHologramConsoleState extends State<DialectDrillHologramConsol
           builder: (context, constraints) {
             if (!_isPinInitialized) {
               _pinX = constraints.maxWidth / 2;
-              _pinY = 320.h;
+              _pinY = 380.h;
               _isPinInitialized = true;
             }
 
@@ -176,15 +189,20 @@ class _DialectDrillHologramConsoleState extends State<DialectDrillHologramConsol
 
                 Center(
                   child: Transform.translate(
-                    offset: Offset(0, -90.h),
+                    offset: Offset(0, -140.h),
                     child: ScaleButton(
                       onTap: widget.onPlayTargetAudio,
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 32.w,
+                          vertical: 16.h,
+                        ),
                         decoration: BoxDecoration(
                           color: widget.color.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(20.r),
-                          border: Border.all(color: widget.color.withValues(alpha: 0.3)),
+                          border: Border.all(
+                            color: widget.color.withValues(alpha: 0.3),
+                          ),
                           boxShadow: [
                             BoxShadow(
                               color: widget.color.withValues(alpha: 0.2),
@@ -195,12 +213,17 @@ class _DialectDrillHologramConsoleState extends State<DialectDrillHologramConsol
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(Icons.volume_up_rounded, color: widget.color, size: 24.r),
+                            Icon(
+                              Icons.volume_up_rounded,
+                              color: widget.color,
+                              size: 28.r,
+                            ),
                             SizedBox(width: 8.w),
                             Text(
                               widget.quest.word ?? "",
-                              style: TextStyle(fontFamily: 'Outfit', 
-                                fontSize: 22.sp,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 28.sp,
                                 fontWeight: FontWeight.w900,
                                 color: widget.color,
                                 letterSpacing: 1.5,
@@ -215,7 +238,11 @@ class _DialectDrillHologramConsoleState extends State<DialectDrillHologramConsol
 
                 DialectDrillTransmissionTower(
                   index: 0,
-                  label: widget.quest.options != null && widget.quest.options!.isNotEmpty ? widget.quest.options![0] : "TRANS 01",
+                  label:
+                      widget.quest.options != null &&
+                          widget.quest.options!.isNotEmpty
+                      ? widget.quest.options![0]
+                      : "TRANS 01",
                   maxWidth: constraints.maxWidth,
                   color: widget.color,
                   isDark: widget.isDark,
@@ -226,7 +253,11 @@ class _DialectDrillHologramConsoleState extends State<DialectDrillHologramConsol
                 ),
                 DialectDrillTransmissionTower(
                   index: 1,
-                  label: widget.quest.options != null && widget.quest.options!.length > 1 ? widget.quest.options![1] : "TRANS 02",
+                  label:
+                      widget.quest.options != null &&
+                          widget.quest.options!.length > 1
+                      ? widget.quest.options![1]
+                      : "TRANS 02",
                   maxWidth: constraints.maxWidth,
                   color: widget.color,
                   isDark: widget.isDark,
