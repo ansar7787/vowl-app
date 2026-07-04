@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class DialectDrillInstruction extends StatelessWidget {
   final String instruction;
   final Color accentColor;
@@ -22,10 +23,9 @@ class DialectDrillInstruction extends StatelessWidget {
             border: Border.all(color: accentColor.withValues(alpha: 0.2)),
           ),
           child: Text(
-            instruction.trim().isEmpty 
-                ? "IDENTIFY THE REGIONAL DIALECT"
-                : instruction.toUpperCase(),
-            style: TextStyle(fontFamily: 'Outfit', 
+            "REGIONAL DIALECT DRILL",
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: accentColor,
@@ -37,7 +37,8 @@ class DialectDrillInstruction extends StatelessWidget {
         Text(
           instruction,
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 20.sp,
             fontWeight: FontWeight.bold,
             letterSpacing: 0.5,
