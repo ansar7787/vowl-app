@@ -80,7 +80,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                 child:
                     Container(
                           width: 0.85.sw,
-                          padding: EdgeInsets.all(32.r),
+                          padding: EdgeInsets.all(24.r),
                           decoration: BoxDecoration(
                             color: Colors.white.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(40.r),
@@ -105,7 +105,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                               RepaintBoundary(
                                 child:
                                     Container(
-                                          padding: EdgeInsets.all(24.r),
+                                          padding: EdgeInsets.all(16.r),
                                           decoration: BoxDecoration(
                                             gradient: LinearGradient(
                                               colors: [
@@ -130,7 +130,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                           child: Icon(
                                             widget.icon,
                                             color: Colors.white,
-                                            size: 48.r,
+                                            size: 32.r,
                                           ),
                                         )
                                         .animate(
@@ -157,7 +157,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                     .toUpperCase(),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 12.sp,
+                                  fontSize: 11.sp,
                                   fontWeight: FontWeight.w900,
                                   color: widget.primaryColor,
                                   letterSpacing: 4,
@@ -174,7 +174,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: 28.sp,
+                                    fontSize: 22.sp,
                                     fontWeight: FontWeight.w900,
                                     color: Colors.white,
                                   ),
@@ -186,17 +186,17 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                               // Objective
                               Container(
                                 width: double.infinity,
-                                padding: EdgeInsets.all(20.r),
+                                padding: EdgeInsets.all(16.r),
                                 decoration: BoxDecoration(
                                   color: Colors.white.withValues(alpha: 0.05),
-                                  borderRadius: BorderRadius.circular(24.r),
+                                  borderRadius: BorderRadius.circular(20.r),
                                 ),
                                 child: Text(
                                   widget.objective,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: 15.sp,
+                                    fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white.withValues(alpha: 0.9),
                                     height: 1.5,
@@ -213,12 +213,12 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
 
                               // Pro-tip card
                               Container(
-                                    padding: EdgeInsets.all(16.r),
+                                    padding: EdgeInsets.all(12.r),
                                     decoration: BoxDecoration(
                                       color: Colors.amber.withValues(
                                         alpha: 0.1,
                                       ),
-                                      borderRadius: BorderRadius.circular(20.r),
+                                      borderRadius: BorderRadius.circular(16.r),
                                       border: Border.all(
                                         color: Colors.amber.withValues(
                                           alpha: 0.3,
@@ -233,15 +233,15 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                         Icon(
                                           Icons.tips_and_updates_rounded,
                                           color: Colors.amber,
-                                          size: 24.r,
+                                          size: 18.r,
                                         ),
-                                        SizedBox(width: 12.w),
+                                        SizedBox(width: 10.w),
                                         Expanded(
                                           child: Text(
                                             widget.tip,
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
-                                              fontSize: 13.sp,
+                                              fontSize: 12.sp,
                                               color: Colors.white.withValues(
                                                 alpha: 0.8,
                                               ),
@@ -269,7 +269,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                             onTap: _handleStart,
                                             child: Container(
                                               width: double.infinity,
-                                              height: 65.h,
+                                              height: 56.h,
                                               decoration: BoxDecoration(
                                                 gradient: LinearGradient(
                                                   colors: [
@@ -279,7 +279,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                                   ],
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(24.r),
+                                                    BorderRadius.circular(20.r),
                                                 boxShadow: [
                                                   BoxShadow(
                                                     color: widget.primaryColor
@@ -295,10 +295,10 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                                       .toUpperCase(),
                                                   style: TextStyle(
                                                     fontFamily: 'Outfit',
-                                                    fontSize: 18.sp,
+                                                    fontSize: 16.sp,
                                                     fontWeight: FontWeight.w900,
                                                     color: Colors.white,
-                                                    letterSpacing: 2,
+                                                    letterSpacing: 1.5,
                                                   ),
                                                 ),
                                               ),
@@ -348,18 +348,18 @@ class _RuleItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 12.h),
+      padding: EdgeInsets.only(bottom: 10.h),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(Icons.check_circle_rounded, color: primaryColor, size: 18.r),
-          SizedBox(width: 12.w),
+          Icon(Icons.check_circle_rounded, color: primaryColor, size: 16.r),
+          SizedBox(width: 10.w),
           Expanded(
             child: Text(
               rule,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 14.sp,
+                fontSize: 13.sp,
                 color: Colors.white70,
                 fontWeight: FontWeight.w500,
               ),
