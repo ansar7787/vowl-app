@@ -15,6 +15,7 @@ class AccentContentBody extends StatelessWidget {
   final bool isAnswered;
   final String title;
   final String subtitle;
+
   /// The game's accent colour — used for the category label above the subtitle.
   final Color primaryColor;
   final bool isDark;
@@ -39,7 +40,8 @@ class AccentContentBody extends StatelessWidget {
 
   EdgeInsets _padding(BuildContext context) {
     final keyboardBottom = MediaQuery.viewInsetsOf(context).bottom;
-    final horizontal = disablePadding ? 0.0 : 24.w;
+    final horizontal =
+        0.0; // Let individual game screens manage their horizontal padding
     final top = disablePadding ? 0.0 : 20.h;
     final bottom =
         (disablePadding ? 0.0 : (isAnswered ? 200.h : 40.h)) + keyboardBottom;
@@ -53,37 +55,40 @@ class AccentContentBody extends StatelessWidget {
 
   // ── Title + Subtitle ─────────────────────────────────────────────────────
 
-  Widget _titleSection() => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            title,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 4,
-              color: primaryColor,
-            ),
-          ).animate().fadeIn(),
-          SizedBox(height: 8.h),
-          Text(
-            subtitle,
-            textAlign: TextAlign.center,
-            // Prevents overflow on small phones with accessibility text scaling
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 24.sp,
-              fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
-            ),
-          ).animate().fadeIn().slideY(begin: 0.1),
-          SizedBox(height: 32.h),
-        ],
-      );
+  Widget _titleSection() => Padding(
+    padding: EdgeInsets.symmetric(horizontal: 24.w),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(
+          title,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w900,
+            letterSpacing: 4,
+            color: primaryColor,
+          ),
+        ).animate().fadeIn(),
+        SizedBox(height: 8.h),
+        Text(
+          subtitle,
+          textAlign: TextAlign.center,
+          // Prevents overflow on small phones with accessibility text scaling
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 24.sp,
+            fontWeight: FontWeight.w900,
+            color: isDark ? Colors.white : const Color(0xFF0F172A),
+          ),
+        ).animate().fadeIn().slideY(begin: 0.1),
+        SizedBox(height: 32.h),
+      ],
+    ),
+  );
 
   // ── Build ─────────────────────────────────────────────────────────────────
   //
@@ -95,7 +100,6 @@ class AccentContentBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final isTablet = constraints.maxWidth >= 600;
         Widget content;
 
         if (useScrolling) {
@@ -107,10 +111,7 @@ class AccentContentBody extends StatelessWidget {
                 padding: _padding(context),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    _titleSection(),
-                    child,
-                  ],
+                  children: [_titleSection(), child],
                 ),
               ),
             ),
@@ -124,16 +125,6 @@ class AccentContentBody extends StatelessWidget {
                 _titleSection(),
                 Expanded(child: child),
               ],
-            ),
-          );
-        }
-
-        // Tablet: centre and constrain the content column.
-        if (isTablet) {
-          return Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 520),
-              child: content,
             ),
           );
         }
