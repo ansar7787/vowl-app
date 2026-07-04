@@ -23,7 +23,7 @@ class DialectDrillInstruction extends StatelessWidget {
           ),
           child: Text(
             instruction.trim().isEmpty 
-                ? "RADAR FREQUENCY DIALECT SWITCH"
+                ? "IDENTIFY THE REGIONAL DIALECT"
                 : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,

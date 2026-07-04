@@ -30,7 +30,7 @@ class ConnectedSpeechInstruction extends StatelessWidget {
           Flexible(
             child: Text(
             instruction.trim().isEmpty 
-                ? "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED"
+                ? "SELECT THE CARD THAT LINKS THE WORDS"
                 : instruction.toUpperCase(),
               style: TextStyle(
                 fontFamily: 'Outfit', 

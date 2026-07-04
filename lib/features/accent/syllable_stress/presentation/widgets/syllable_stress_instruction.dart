@@ -26,7 +26,7 @@ class SyllableStressInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             instruction.trim().isEmpty 
-                ? "STRIKE THE DRUM PAD CONTAINING THE STRESSED SYLLABLE"
+                ? "TAP THE STRESSED SYLLABLE"
                 : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,

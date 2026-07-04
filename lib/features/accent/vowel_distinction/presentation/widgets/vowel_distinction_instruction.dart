@@ -26,7 +26,7 @@ class VowelDistinctionInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             instruction.trim().isEmpty 
-                ? "SLIDE OR TAP TO MATCH THE VOWEL SOUND"
+                ? "SLIDE TO MATCH THE VOWEL SOUND"
                 : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,

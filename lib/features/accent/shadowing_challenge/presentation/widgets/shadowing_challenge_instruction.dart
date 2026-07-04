@@ -26,7 +26,7 @@ class ShadowingChallengeInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             instruction.trim().isEmpty 
-                ? "SHADOW SPONTANEOUSLY BLENDING PHONETIC TECHNIQUES"
+                ? "TAP THE CHAT BUBBLE TO SHADOW THE VOICE"
                 : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,

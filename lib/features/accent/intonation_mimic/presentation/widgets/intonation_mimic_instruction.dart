@@ -26,7 +26,7 @@ class IntonationMimicInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             instruction.trim().isEmpty 
-                ? "IDENTIFY THE INTONATION CONTOUR ENUNCIATED IN PHRASE"
+                ? "MATCH THE PITCH USING THE FADER"
                 : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,

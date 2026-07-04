@@ -26,7 +26,7 @@ class SpeedVarianceInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             instruction.trim().isEmpty 
-                ? "IDENTIFY SPEED VARIANCE CONTOUR & PACING INTENT ENUNCIATED"
+                ? "IDENTIFY THE SPEAKING SPEED"
                 : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,

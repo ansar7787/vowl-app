@@ -25,7 +25,9 @@ class ConsonantClarityInstruction extends StatelessWidget {
           Icon(Icons.record_voice_over_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
           Text(
-            "IDENTIFY THE TARGET CONSONANT PHONEME DISPLAYED",
+            instruction.trim().isEmpty
+                ? "TAP THE CORRECT CONSONANT SOUND"
+                : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,

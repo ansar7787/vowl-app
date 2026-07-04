@@ -26,7 +26,7 @@ class WordLinkingInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             instruction.trim().isEmpty 
-                ? "TAP THE CHAIN LINK NODE WHERE CONTEXTUAL WORD LINKING OCCURS"
+                ? "IDENTIFY HOW THE WORDS ARE LINKED"
                 : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,

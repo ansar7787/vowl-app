@@ -25,7 +25,9 @@ class MinimalPairsInstruction extends StatelessWidget {
           Icon(Icons.hearing_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            instruction?.toUpperCase() ?? "LISTEN AND CHOOSE THE MATCHING WORD",
+            (instruction?.trim().isEmpty ?? true)
+                ? "LISTEN AND CHOOSE THE MATCHING WORD"
+                : instruction!.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,

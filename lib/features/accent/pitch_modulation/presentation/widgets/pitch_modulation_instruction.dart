@@ -26,7 +26,7 @@ class PitchModulationInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             instruction.trim().isEmpty 
-                ? "IDENTIFY PITCH MODULATION CONTOUR & EMOTIONAL NUANCE"
+                ? "IDENTIFY THE PITCH CHANGE"
                 : instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
