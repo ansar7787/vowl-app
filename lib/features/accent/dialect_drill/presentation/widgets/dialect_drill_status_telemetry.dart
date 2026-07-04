@@ -18,25 +18,36 @@ class DialectDrillStatusTelemetry extends StatelessWidget {
       width: 1.sw,
       padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.01),
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.03)
+            : Colors.black.withValues(alpha: 0.01),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.05)
+              : Colors.black.withValues(alpha: 0.05),
         ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.radar_rounded, color: color.withValues(alpha: 0.7), size: 18.r)
-              .animate(onPlay: (c) => c.repeat())
-              .rotate(duration: 3.seconds),
+          Icon(
+            Icons.radar_rounded,
+            color: color.withValues(alpha: 0.7),
+            size: 18.r,
+          ).animate(onPlay: (c) => c.repeat()).rotate(duration: 3.seconds),
           SizedBox(width: 10.w),
-          Text(
-            "TELEMETRY PROBE READY FOR REGIONAL ASSIGNMENT",
-            style: TextStyle(fontFamily: 'RobotoMono', 
-              fontSize: 10.sp,
-              color: isDark ? Colors.white60 : Colors.black54,
-              letterSpacing: 1,
+          Expanded(
+            child: Text(
+              "PROBE READY FOR REGIONAL ASSIGNMENT",
+              style: TextStyle(
+                fontFamily: 'RobotoMono',
+                fontSize: 10.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+                letterSpacing: 1,
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],
