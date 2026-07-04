@@ -3,11 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ConnectedSpeechInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String instruction;
   final bool isCompact;
 
   const ConnectedSpeechInstruction({
     super.key,
     required this.primaryColor,
+    required this.instruction,
     this.isCompact = false,
   });
 

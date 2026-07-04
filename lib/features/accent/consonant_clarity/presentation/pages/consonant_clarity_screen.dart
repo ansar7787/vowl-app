@@ -221,11 +221,13 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                   ConsonantClarityInstruction(
                                                     primaryColor:
                                                         theme.primaryColor,
+                                                    instruction: quest.instruction,
                                                   ),
                                             ),
                                           )
                                         : ConsonantClarityInstruction(
                                             primaryColor: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
                                     SizedBox(height: gapInstruction),
 
@@ -237,7 +239,6 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                               child: ConsonantClarityPromptCard(
                                                 word: quest.word ?? "",
                                                 color: theme.primaryColor,
-                                            instruction: quest.instruction,
                                                 isDark: isDark,
                                               ),
                                             ),

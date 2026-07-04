@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ConsonantClarityInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String instruction;
 
   const ConsonantClarityInstruction({
     super.key,
     required this.primaryColor,
+    required this.instruction,
   });
 
   @override

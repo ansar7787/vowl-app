@@ -201,13 +201,11 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                               child: MinimalPairsInstruction(
                                                 color: theme.primaryColor,
                                             instruction: quest.instruction,
-                                                instruction: quest.instruction,
                                               ),
                                             ),
                                           )
                                         : MinimalPairsInstruction(
                                             color: theme.primaryColor,
-                                            instruction: quest.instruction,
                                             instruction: quest.instruction,
                                           ),
                                     SizedBox(height: gapInstruction),

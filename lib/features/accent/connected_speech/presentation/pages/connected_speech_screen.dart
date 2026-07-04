@@ -225,6 +225,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                     SizedBox(height: gapTop),
                                     ConnectedSpeechInstruction(
                                       primaryColor: theme.primaryColor,
+                                      instruction: quest.instruction,
                                       isCompact: isCompact,
                                     ),
                                     SizedBox(height: gapInstruction),
@@ -232,7 +233,6 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                     ConnectedSpeechPromptCard(
                                       word: quest.word ?? "",
                                       color: theme.primaryColor,
-                                            instruction: quest.instruction,
                                       isDark: isDark,
                                       isCompact: isCompact,
                                     ),
