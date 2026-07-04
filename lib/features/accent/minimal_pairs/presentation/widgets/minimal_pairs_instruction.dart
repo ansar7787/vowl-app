@@ -23,7 +23,7 @@ class MinimalPairsInstruction extends StatelessWidget {
           Icon(Icons.hearing_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Text(
-            "LISTEN TO TARGET SOUND & IDENTIFY THE DRONE",
+            "LISTEN AND CHOOSE THE MATCHING WORD",
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
