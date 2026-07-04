@@ -96,34 +96,50 @@ class _DialectDrillHologramConsoleState
         ),
         SizedBox(height: 48.h),
         if (!widget.isAnswered)
-          Draggable<int>(
-            data: 0,
-            onDragStarted: () => _hapticService.selection(),
-            onDraggableCanceled: (_, _) => _hapticService.error(),
-            feedback: Material(
-              color: Colors.transparent,
-              child: DialectDrillDataProbePin(
-                color: widget.color,
-                isAnswered: widget.isAnswered,
-                isCorrect: widget.isCorrect,
-                hasTargetGlow: _hoveredTowerIndex != null,
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Draggable<int>(
+                data: 0,
+                onDragStarted: () => _hapticService.selection(),
+                onDraggableCanceled: (_, _) => _hapticService.error(),
+                feedback: Material(
+                  color: Colors.transparent,
+                  child: DialectDrillDataProbePin(
+                    color: widget.color,
+                    isAnswered: widget.isAnswered,
+                    isCorrect: widget.isCorrect,
+                    hasTargetGlow: _hoveredTowerIndex != null,
+                  ),
+                ),
+                childWhenDragging: Opacity(
+                  opacity: 0.3,
+                  child: DialectDrillDataProbePin(
+                    color: widget.color,
+                    isAnswered: widget.isAnswered,
+                    isCorrect: widget.isCorrect,
+                    hasTargetGlow: false,
+                  ),
+                ),
+                child: DialectDrillDataProbePin(
+                  color: widget.color,
+                  isAnswered: widget.isAnswered,
+                  isCorrect: widget.isCorrect,
+                  hasTargetGlow: _hoveredTowerIndex != null,
+                ),
               ),
-            ),
-            childWhenDragging: Opacity(
-              opacity: 0.3,
-              child: DialectDrillDataProbePin(
-                color: widget.color,
-                isAnswered: widget.isAnswered,
-                isCorrect: widget.isCorrect,
-                hasTargetGlow: false,
-              ),
-            ),
-            child: DialectDrillDataProbePin(
-              color: widget.color,
-              isAnswered: widget.isAnswered,
-              isCorrect: widget.isCorrect,
-              hasTargetGlow: _hoveredTowerIndex != null,
-            ),
+              SizedBox(height: 12.h),
+              Text(
+                "DRAG PIN TO SELECT",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2,
+                  color: widget.color.withValues(alpha: 0.6),
+                ),
+              ).animate().fadeIn().slideY(begin: 0.2),
+            ],
           )
         else
           SizedBox(height: 64.r),
