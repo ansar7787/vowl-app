@@ -38,29 +38,29 @@ class StoryServiceImpl implements StoryService {
   static const Map<String, String> modernGameScripts = {
     // Accent
     'consonantClarity':
-        "Precision is power. Let's refine your consonants for crystal-clear communication.",
+        "Tap the exact consonant sound you hear to speak clearly and confidently.",
     'dialectDrill':
-        "Travel with your voice. Mastering this dialect is your passport to authentic speech.",
+        "Listen closely to the speaker to identify where in the world they are from.",
     'intonationMimic':
-        "Music in motion. Capture the natural melody of the language with perfect intonation.",
+        "Follow the voice and slide the fader up or down to match the pitch perfectly.",
     'minimalPairs':
-        "The subtle shift. Distinguish the tiny sounds that make a world of difference.",
+        "Listen carefully to spot the tiny differences between two very similar words.",
     'pitchPatternMatch':
-        "Highs and lows. Match the emotional pitch of native speakers with total accuracy.",
+        "Slide the fader to match the exact melody and rhythm of the sentence.",
     'shadowingChallenge':
-        "The Perfect Echo. Follow the rhythm of a native speaker in real-time.",
+        "Tap the chat bubble that exactly matches the sentence you just heard.",
     'speedVariance':
-        "Control the tempo. Learn to speak with natural speed without losing your clarity.",
+        "Train your ears to understand English whether it's spoken fast, medium, or slow.",
     'syllableStress':
-        "Put the weight where it counts. Master the rhythm of words through perfect stress.",
+        "Listen to the word and find the part that sounds the loudest and longest.",
     'vowelDistinction':
-        "Pure sounds. Learn to distinguish between the most subtle vowel variations.",
+        "Slide left or right to find the exact vowel sound spoken in the audio.",
     'wordLinking':
-        "The Flow of Fluency. Connect your words like a native speaker for a smooth transition.",
+        "Listen to how native speakers link two separate words into one smooth sound.",
     'pitchModulation':
-        "Dynamic range. Control your pitch to convey deep meaning and emotion.",
+        "Learn how changing your pitch can show surprise, excitement, or calm.",
     'connectedSpeech':
-        "The Secret Bridge. Master the art of linking sounds in fast, natural speech.",
+        "Find the floating card that perfectly links the words together.",
 
     // Grammar
     'articleInsertion':
@@ -252,7 +252,7 @@ class StoryServiceImpl implements StoryService {
     'speedSpelling':
         "Unscramble the letters to spell the hidden vocabulary word correctly.",
     'accentShadowing':
-        "Listen to the native speaker and repeat the exact phrase into your microphone to match their pronunciation.",
+        "Tap the chat bubble that exactly matches the sentence you just heard.",
   };
 
   static const Map<String, List<String>> kidsScripts = {
@@ -469,11 +469,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'accent': [
       "",
-      "The melody of your speech is transforming! You're starting to sound like a local.",
-      "Total cultural immersion achieved! Your accent is now a bridge between worlds.",
-      "Perfect phonetic resonance! You are becoming a true chameleon of international language.",
-      "The Global Voice! 100 levels of phonetic excellence and native-level fluency.",
-      "The Accent Architect! You can now speak to anyone, anywhere, with perfect clarity.",
+      "You sound great! Your speaking is getting much clearer and more natural.",
+      "Amazing progress! You are starting to sound just like a local speaker.",
+      "Halfway to 100! Your pronunciation is incredibly smooth and easy to understand.",
+      "Level 100 reached! You can now speak clearly and naturally with anyone in the world.",
+      "Level 200 reached! You have completely mastered clear and natural English pronunciation.",
     ],
     'vocabulary': [
       "",

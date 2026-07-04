@@ -258,15 +258,15 @@ class GameInstructionService {
     GameSubtype.accentShadowing: GameBriefing(
       title: "Accent Shadowing",
       icon: Icons.mic_external_on_rounded,
-      objective: "Listen to the native speaker and repeat the phrase exactly.",
+      objective: "Listen to the speaker and tap the correct dialogue bubble to shadow their voice.",
       rules: [
-        "Listen closely to the audio",
-        "1 mistake loses 1 life",
-        "2 mistakes queues it to the end",
+        "Listen to the sentence",
+        "Read the chat bubbles",
+        "Tap the exact match",
       ],
-      actionText: "Shadow Voice",
+      actionText: "Start Shadowing",
       tip:
-          "PRO TIP: Focus on the pronunciation! Try to mimic their exact tone and stress.",
+          "PRO TIP: Don't overthink! Pick the sentence that exactly matches the audio.",
     ),
 
     // 2. GRAMMAR
@@ -1010,133 +1010,133 @@ class GameInstructionService {
       title: "Minimal Distinctions",
       icon: Icons.compare_arrows_rounded,
       objective:
-          "Distinguish between words with minor sound differences (e.g., live vs leave).",
-      rules: ["Listen to the vowel", "Compare lengths", "Identify the match"],
+          "Listen to the sound and choose the correct word between two very similar options.",
+      rules: ["Listen closely", "Compare the sounds", "Select the correct word"],
       actionText: "Match Sound",
-      tip: "PRO TIP: Pay attention to mouth shape and vowel duration!",
+      tip: "PRO TIP: Pay attention to how long the vowel sound lasts!",
     ),
     GameSubtype.intonationMimic: GameBriefing(
       title: "Pitch Mimic",
       icon: Icons.waves_rounded,
       objective:
-          "Repeat the sentence mimicking the rising and falling native pitch curves.",
-      rules: ["Watch the waveform", "Match the peaks", "3 Hearts left"],
+          "Listen to the voice and use the vertical fader to match if the pitch goes up or down.",
+      rules: ["Listen to the pitch", "Use the vertical fader", "Lock your choice"],
       actionText: "Mimic Now",
-      tip: "PRO TIP: Exaggerate the rising pitch at the end of questions!",
+      tip: "PRO TIP: Questions usually have a pitch that slides up at the very end!",
     ),
     GameSubtype.syllableStress: GameBriefing(
       title: "Stress Spotter",
       icon: Icons.priority_high_rounded,
       objective:
-          "Pinpoint and highlight the primary stressed syllable in the word.",
-      rules: ["Listen for loudness", "Check vowel clarity", "Mark the stress"],
+          "Listen to the word and identify which part of the word is spoken the loudest.",
+      rules: ["Listen for the loud part", "Check the length", "Select the stressed part"],
       actionText: "Spot Stress",
       tip:
-          "PRO TIP: Stressed syllables are louder, higher in pitch, and have longer vowels.",
+          "PRO TIP: The stressed part of a word is always louder and slightly longer.",
     ),
     GameSubtype.wordLinking: GameBriefing(
       title: "Fluid Flow",
       icon: Icons.link_rounded,
       objective:
-          "Master word boundary linking to speak with native fluid rhythms.",
+          "Listen to how two separate words are linked together into one smooth sound.",
       rules: [
-        "Listen for glides",
-        "Connect consonants",
-        "Avoid choppy phrases",
+        "Listen to the gap",
+        "Find the linked words",
+        "Choose the correct link",
       ],
       actionText: "Start Glide",
       tip:
-          "PRO TIP: Push end consonants directly into starting vowels of the next word.",
+          "PRO TIP: English speakers often push the end of one word into the start of the next.",
     ),
     GameSubtype.shadowingChallenge: GameBriefing(
       title: "Speed Shadow",
       icon: Icons.bolt_rounded,
       objective:
-          "Speak along with the native model with minimal delay to train fluency.",
-      rules: ["No delay allowed", "Sync your voice", "3 Hearts left"],
+          "Listen to the speaker and tap the correct dialogue bubble to shadow their voice.",
+      rules: ["Listen to the sentence", "Read the chat bubbles", "Tap the exact match"],
       actionText: "Initiate Shadow",
       tip:
-          "PRO TIP: Don't wait—begin speaking as soon as you hear the first sound!",
+          "PRO TIP: Don't overthink! Pick the sentence that exactly matches the audio.",
     ),
     GameSubtype.vowelDistinction: GameBriefing(
       title: "Vowel Vortex",
       icon: Icons.cyclone_rounded,
       objective:
-          "Isolate and master differences between subtle English vowel phonemes.",
+          "Listen to the vowel sound and use the horizontal slider to find the perfect match.",
       rules: [
-        "Focus on tongue position",
-        "Identify exact sound",
-        "Select match",
+        "Listen to the open sound",
+        "Slide left or right",
+        "Lock your answer",
       ],
       actionText: "Sort Vowels",
       tip:
-          "PRO TIP: Drop your jaw slightly lower for vowels like /æ/ than for /ɛ/.",
+          "PRO TIP: Vowels are a spectrum! Slide carefully until you find the exact sound.",
     ),
     GameSubtype.consonantClarity: GameBriefing(
       title: "Clear Consonants",
       icon: Icons.graphic_eq_rounded,
       objective:
-          "Perfect pronunciation of difficult consonant clusters and friction sounds.",
-      rules: ["Focus on airflow", "Check teeth position", "Record clearly"],
+          "Listen to the sharp consonant sound and tap the correct heavy button on the grid.",
+      rules: ["Listen for sharp sounds", "Check the buttons", "Tap your choice"],
       actionText: "Speak Clearly",
       tip:
-          "PRO TIP: Keep your tongue tip gently between your teeth for the /θ/ ('th') sound.",
+          "PRO TIP: Consonants are sharp physical clicks! Tap the button that matches the click.",
     ),
     GameSubtype.pitchPatternMatch: GameBriefing(
       title: "Musical Melody",
       icon: Icons.music_note_rounded,
       objective:
-          "Replicate the musical timing and pitch contour of the full sentence.",
+          "Listen to the melody of the sentence and use the vertical fader to match the pitch.",
       rules: [
         "Listen to the melody",
-        "Hum first if needed",
-        "Speak with rhythm",
+        "Use the vertical fader",
+        "Lock your choice",
       ],
       actionText: "Match Melody",
       tip:
-          "PRO TIP: Match the speed transitions—unstressed words are fast, stressed are slow.",
+          "PRO TIP: Slide the fader up if the speaker's voice gets higher at the end!",
     ),
     GameSubtype.speedVariance: GameBriefing(
       title: "Tempo Trainer",
       icon: Icons.speed_rounded,
       objective:
-          "Speak the passage at fast, medium, and slow tempos with perfect clarity.",
+          "Listen to the phrase and identify if it was spoken at a fast, medium, or slow tempo.",
       rules: [
-        "Slow for accuracy",
-        "Fast for fluency",
-        "Maintain steady rhythm",
+        "Listen to the speed",
+        "Check the options",
+        "Select the tempo",
       ],
       actionText: "Train Tempo",
-      tip: "PRO TIP: Keep clear boundaries between words even at high speed.",
+      tip: "PRO TIP: Even when people speak fast, the words still link together smoothly.",
     ),
     GameSubtype.dialectDrill: GameBriefing(
       title: "Dialect Diver",
       icon: Icons.public_rounded,
       objective:
-          "Identify and mimic pronunciation variants of major global dialects.",
-      rules: ["Identify region", "Mimic vowel shifts", "3 Hearts left"],
+          "Listen to the speaker and identify which global English accent they are using.",
+      rules: ["Listen to the vowels", "Check the options", "Select the accent"],
       actionText: "Start Drill",
-      tip: "PRO TIP: Pay attention to 'r' dropping and distinct vowel shifts.",
+      tip: "PRO TIP: Pay close attention to how they pronounce their 'R' sounds and vowels.",
     ),
     GameSubtype.connectedSpeech: GameBriefing(
       title: "Fusion Focus",
       icon: Icons.settings_input_composite_rounded,
       objective:
-          "Master kontractions and reductions to speak with casual native speed.",
-      rules: ["Identify reductions", "Speak fluently", "Sound natural"],
+          "Listen to the audio and select the floating card that perfectly links the words together.",
+      rules: ["Listen to the connection", "Check the floating cards", "Tap the best link"],
       actionText: "Start Fusion",
       tip:
-          "PRO TIP: Reduction turns function words like 'to' or 'for' into quick sounds.",
+          "PRO TIP: Words like 'want to' often fuse together into 'wanna' in fast speech.",
     ),
     GameSubtype.pitchModulation: GameBriefing(
       title: "Dynamic Range",
       icon: Icons.legend_toggle_rounded,
       objective:
-          "Shift pitch ranges to express emotions like excitement or surprise.",
-      rules: ["Match the emotion", "Shift your pitch", "3 Hearts left"],
+          "Listen to the emotion in the voice and identify the correct pitch change.",
+      rules: ["Listen to the emotion", "Check the options", "Select the answer"],
       actionText: "Modulate Now",
       tip:
-          "PRO TIP: Exaggerate pitch height for surprise, and lower it for calm authority.",
+          "PRO TIP: People use a high pitch for surprise and a low pitch for calm statements.",
     ),
 
     // 8. ROLEPLAY
