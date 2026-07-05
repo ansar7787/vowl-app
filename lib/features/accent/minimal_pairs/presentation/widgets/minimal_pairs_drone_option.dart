@@ -70,13 +70,18 @@ class MinimalPairsDroneOption extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            word.toUpperCase(),
-                            style: TextStyle(
-                              fontFamily: 'RobotoMono',
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.bold,
-                              color: isDark ? Colors.white : Colors.black87,
+                          Flexible(
+                            child: Text(
+                              word.toUpperCase(),
+                              textAlign: TextAlign.center,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontFamily: 'RobotoMono',
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.bold,
+                                color: isDark ? Colors.white : Colors.black87,
+                              ),
                             ),
                           ),
                           SizedBox(height: 6.h),

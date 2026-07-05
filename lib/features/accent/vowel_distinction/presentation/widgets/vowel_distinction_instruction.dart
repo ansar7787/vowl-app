@@ -25,16 +25,19 @@ class VowelDistinctionInstruction extends StatelessWidget {
         children: [
           Icon(Icons.tune_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
-          Text(
-            instruction.trim().isEmpty
-                ? "SLIDE TO MATCH THE VOWEL SOUND"
-                : instruction.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: color,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              instruction.trim().isEmpty
+                  ? "SLIDE TO MATCH THE VOWEL SOUND"
+                  : instruction.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: color,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

@@ -186,15 +186,13 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
-                      final maxWidth = constraints.maxWidth;
-                      final bool isCompact = maxHeight < 580;
 
                       final double estimatedContentHeight =
                           24.h +
-                          (isCompact ? 90.h : 120.h) +
-                          (isCompact ? 80.h : 110.h) +
-                          (isCompact ? 130.h : 172.h) +
-                          (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
+                          90.h +
+                          80.h +
+                          140.h +
+                          (_isAnswered ? 110.h : 0);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -233,147 +231,52 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 32.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    PitchModulationInstruction(
-                                                      color: theme.primaryColor,
-                                                      instruction:
-                                                          quest.instruction,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : PitchModulationInstruction(
-                                            color: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                          ),
+                                    PitchModulationInstruction(
+                                      color: theme.primaryColor,
+                                      instruction: quest.instruction,
+                                    ),
                                     SizedBox(height: gapInstruction),
 
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 90.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    PitchModulationPromptCard(
-                                                      word: quest.word ?? "",
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : PitchModulationPromptCard(
-                                            word: quest.word ?? "",
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                          ),
+                                    PitchModulationPromptCard(
+                                      word: quest.word ?? "",
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                    ),
                                     SizedBox(height: gapPrompt),
 
-                                    isCompact
-                                        ? SizedBox(
-                                            width: 80.r,
-                                            height: 80.r,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    PitchModulationPulseSpeaker(
-                                                      text:
-                                                          quest.textToSpeak ??
-                                                          "",
-                                                      color: theme.primaryColor,
-                                                      onPlayTts: _playTts,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : PitchModulationPulseSpeaker(
-                                            text: quest.textToSpeak ?? "",
-                                            color: theme.primaryColor,
-                                            onPlayTts: _playTts,
-                                          ),
+                                    PitchModulationPulseSpeaker(
+                                      text: quest.textToSpeak ?? "",
+                                      color: theme.primaryColor,
+                                      onPlayTts: _playTts,
+                                    ),
                                   ],
                                 ),
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapSpeaker),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 110.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child: PitchModulationDialControl(
-                                                  options: options,
-                                                  correctIndex:
-                                                      quest
-                                                          .correctAnswerIndex ??
-                                                      0,
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  isAnswered: _isAnswered,
-                                                  isDragging: _isDragging,
-                                                  dialRotation: _dialRotation,
-                                                  selectedIndex: _selectedIndex,
-                                                  onDialRotate: _onDialRotate,
-                                                  onDialRelease: _onDialRelease,
-                                                  onSubmitChoice: _submitChoice,
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : PitchModulationDialControl(
-                                            options: options,
-                                            correctIndex:
-                                                quest.correctAnswerIndex ?? 0,
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isAnswered: _isAnswered,
-                                            isDragging: _isDragging,
-                                            dialRotation: _dialRotation,
-                                            selectedIndex: _selectedIndex,
-                                            onDialRotate: _onDialRotate,
-                                            onDialRelease: _onDialRelease,
-                                            onSubmitChoice: _submitChoice,
-                                          ),
+                                    PitchModulationDialControl(
+                                      options: options,
+                                      correctIndex:
+                                          quest.correctAnswerIndex ?? 0,
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      isAnswered: _isAnswered,
+                                      isDragging: _isDragging,
+                                      dialRotation: _dialRotation,
+                                      selectedIndex: _selectedIndex,
+                                      onDialRotate: _onDialRotate,
+                                      onDialRelease: _onDialRelease,
+                                      onSubmitChoice: _submitChoice,
+                                    ),
                                     if (_isAnswered) ...[
                                       SizedBox(height: gapSlider),
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 110.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width: maxWidth - 48.w,
-                                                  child:
-                                                      PitchModulationExplanationCard(
-                                                        quest: quest,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        isDark: isDark,
-                                                        isCorrect: _isCorrect,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : PitchModulationExplanationCard(
-                                              quest: quest,
-                                              color: theme.primaryColor,
-                                              isDark: isDark,
-                                              isCorrect: _isCorrect,
-                                            ),
+                                      PitchModulationExplanationCard(
+                                        quest: quest,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        isCorrect: _isCorrect,
+                                      ),
                                     ],
                                     SizedBox(height: gapBottom),
                                   ],

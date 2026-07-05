@@ -155,7 +155,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                       final double estimatedContentHeight =
                           24.h +
                           (isCompact ? 90.h : 120.h) +
-                          (isCompact ? 80.h : 110.h) +
+                          100.h +
                           (isCompact ? 130.h : 172.h) +
                           (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
                       final remainingHeight =
@@ -235,27 +235,11 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                           ),
                                     SizedBox(height: gapPrompt),
 
-                                    isCompact
-                                        ? SizedBox(
-                                            width: 80.r,
-                                            height: 80.r,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child: MinimalPairsSpeakerCore(
-                                                  text: quest.textToSpeak ?? "",
-                                                  color: theme.primaryColor,
-                                                  onPlayTts: _playTts,
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : MinimalPairsSpeakerCore(
-                                            text: quest.textToSpeak ?? "",
-                                            color: theme.primaryColor,
-                                            onPlayTts: _playTts,
-                                          ),
+                                    MinimalPairsSpeakerCore(
+                                      text: quest.textToSpeak ?? "",
+                                      color: theme.primaryColor,
+                                      onPlayTts: _playTts,
+                                    ),
                                   ],
                                 ),
                                 Column(

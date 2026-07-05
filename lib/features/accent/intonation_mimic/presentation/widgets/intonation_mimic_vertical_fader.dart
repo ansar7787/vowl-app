@@ -37,7 +37,7 @@ class IntonationMimicVerticalFader extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               _buildPitchOption(options[0], 0, Icons.arrow_upward_rounded),
-              SizedBox(height: 16.h),
+              SizedBox(height: 12.h),
               _buildPitchOption(options[1], 1, Icons.arrow_downward_rounded),
             ],
           ),
@@ -76,8 +76,7 @@ class IntonationMimicVerticalFader extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         curve: Curves.easeOutCubic,
-        height: 80.h,
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
         decoration: BoxDecoration(
           color: cardColor,
           borderRadius: BorderRadius.circular(20.r),
@@ -100,10 +99,10 @@ class IntonationMimicVerticalFader extends StatelessWidget {
                 text,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 14.sp,
+                  fontSize: 11.sp,
                   fontWeight: FontWeight.w600,
                   color: textColor,
-                  height: 1.3,
+                  height: 1.2,
                 ),
               ),
             ),
@@ -115,7 +114,7 @@ class IntonationMimicVerticalFader extends StatelessWidget {
 
   Widget _buildVerticalSliderBar(int correct, Color color) {
     return Container(
-      height: 176.h,
+      height: 140.h,
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(30.r),

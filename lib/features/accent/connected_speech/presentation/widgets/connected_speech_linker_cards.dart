@@ -73,7 +73,10 @@ class ConnectedSpeechLinkerCards extends StatelessWidget {
             duration: const Duration(milliseconds: 200),
             curve: Curves.easeOutCubic,
             height: isCompact ? 80.h : 110.h,
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+            padding: EdgeInsets.symmetric(
+              horizontal: 12.w,
+              vertical: isCompact ? 6.h : 12.h,
+            ),
             decoration: BoxDecoration(
               color: cardColor,
               borderRadius: BorderRadius.circular(20.r),
@@ -104,16 +107,20 @@ class ConnectedSpeechLinkerCards extends StatelessWidget {
                   color: textColor.withValues(alpha: 0.8),
                   size: isCompact ? 18.r : 24.r,
                 ),
-                SizedBox(height: 8.h),
-                Text(
-                  text,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: isCompact ? 12.sp : 14.sp,
-                    fontWeight: FontWeight.w800,
-                    color: textColor,
-                    height: 1.2,
+                SizedBox(height: isCompact ? 4.h : 8.h),
+                Flexible(
+                  child: Text(
+                    text,
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: isCompact ? 12.sp : 14.sp,
+                      fontWeight: FontWeight.w800,
+                      color: textColor,
+                      height: 1.2,
+                    ),
                   ),
                 ),
               ],

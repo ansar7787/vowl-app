@@ -161,9 +161,10 @@ class PitchModulationDialControl extends StatelessWidget {
     return ScaleButton(
       onTap: () => onSubmitChoice(index, correctIndex),
       child:
-          Container(
-                height: 120.h,
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+          AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                alignment: Alignment.center,
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
                 decoration: BoxDecoration(
                   color: orbColor,
                   borderRadius: BorderRadius.circular(20.r),
@@ -184,17 +185,15 @@ class PitchModulationDialControl extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: Center(
-                  child: Text(
-                    text,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'RobotoMono',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.bold,
-                      color: textColor,
-                      height: 1.2,
-                    ),
+                child: Text(
+                  text,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'RobotoMono',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.bold,
+                    color: textColor,
+                    height: 1.2,
                   ),
                 ),
               )

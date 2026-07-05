@@ -29,16 +29,19 @@ class ConsonantClarityInstruction extends StatelessWidget {
             color: primaryColor,
           ),
           SizedBox(width: 12.w),
-          Text(
-            instruction.trim().isEmpty
-                ? "TAP THE CORRECT CONSONANT SOUND"
-                : instruction.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              instruction.trim().isEmpty
+                  ? "TAP THE CORRECT CONSONANT SOUND"
+                  : instruction.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

@@ -69,7 +69,7 @@ class ShadowingChallengeDialogueList extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeOutCubic,
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         decoration: BoxDecoration(
           color: bubbleColor,
           borderRadius: BorderRadius.only(
@@ -103,7 +103,7 @@ class ShadowingChallengeDialogueList extends StatelessWidget {
                 text,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 14.sp,
+                  fontSize: 11.sp,
                   fontWeight: FontWeight.w600,
                   color: textColor,
                   height: 1.4,

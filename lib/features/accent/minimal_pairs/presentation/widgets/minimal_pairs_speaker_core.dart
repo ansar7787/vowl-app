@@ -21,8 +21,8 @@ class MinimalPairsSpeakerCore extends StatelessWidget {
       onTap: () => onPlayTts(text),
       child:
           Container(
-                width: 130.r,
-                height: 130.r,
+                width: 80.r,
+                height: 80.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: color.withValues(alpha: 0.1),
@@ -42,11 +42,12 @@ class MinimalPairsSpeakerCore extends StatelessWidget {
                       Icon(
                         Icons.record_voice_over_rounded,
                         color: color,
-                        size: 40.r,
+                        size: 28.r,
                       ),
                       SizedBox(height: 6.h),
                       Text(
-                        "TAP TO PLAY",
+                        "TAP TO\nPLAY",
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'RobotoMono',
                           color: color,

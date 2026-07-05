@@ -18,7 +18,7 @@ class PitchModulationPromptCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 342.w,
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.05 : 0.08),
         borderRadius: BorderRadius.circular(24.r),
@@ -37,7 +37,7 @@ class PitchModulationPromptCard extends StatelessWidget {
                   "TARGET PHRASE",
                   style: TextStyle(
                     fontFamily: 'RobotoMono',
-                    fontSize: 10.sp,
+                    fontSize: 8.sp,
                     fontWeight: FontWeight.bold,
                     color: color,
                     letterSpacing: 2,
@@ -49,7 +49,7 @@ class PitchModulationPromptCard extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 24.sp,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : Colors.black87,
                     letterSpacing: 1,

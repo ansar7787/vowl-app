@@ -211,24 +211,21 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
-                      final maxWidth = constraints.maxWidth;
-                      final bool isCompact = maxHeight < 580;
 
                       final double estimatedContentHeight =
                           24.h +
-                          (isCompact ? 90.h : 120.h) +
-                          (isCompact ? 80.h : 110.h) +
-                          (isCompact ? 130.h : 172.h) +
-                          (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
+                          70.h +
+                          (_isAnswered ? 80.h : 0) +
+                          80.h +
+                          140.h +
+                          (_isAnswered ? 110.h : 0);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
                       final double gapUnit = remainingHeight > 0
                           ? remainingHeight / 8
                           : 0;
-                      final double gapTop = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 24.0)
-                          : 8.0;
+
                       final double gapInstruction = remainingHeight > 0
                           ? (gapUnit * 1).clamp(8.0, 24.0)
                           : 8.0;
@@ -257,176 +254,62 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 32.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    PitchPatternMatchInstruction(
-                                                      color: theme.primaryColor,
-                                                      instruction:
-                                                          quest.instruction,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : PitchPatternMatchInstruction(
-                                            color: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                          ),
+                                    PitchPatternMatchInstruction(
+                                      color: theme.primaryColor,
+                                      instruction: quest.instruction,
+                                    ),
                                     SizedBox(height: gapInstruction),
 
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 90.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    PitchPatternMatchPromptCard(
-                                                      word: quest.word ?? "",
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : PitchPatternMatchPromptCard(
-                                            word: quest.word ?? "",
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                          ),
+                                    PitchPatternMatchPromptCard(
+                                      word: quest.word ?? "",
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                    ),
                                     SizedBox(height: gapPrompt),
 
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 70.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    PitchPatternMatchMelodicCanvas(
-                                                      pattern: pattern,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isPreviewing:
-                                                          _isPreviewing,
-                                                      isAnswered: _isAnswered,
-                                                      previewProgress:
-                                                          _previewProgress,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : PitchPatternMatchMelodicCanvas(
-                                            pattern: pattern,
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isPreviewing: _isPreviewing,
-                                            isAnswered: _isAnswered,
-                                            previewProgress: _previewProgress,
-                                          ),
-                                    SizedBox(height: gapSpeaker),
+                                    if (_isAnswered) ...[
+                                      PitchPatternMatchMelodicCanvas(
+                                        pattern: pattern,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        isPreviewing: _isPreviewing,
+                                        isAnswered: _isAnswered,
+                                        previewProgress: _previewProgress,
+                                      ),
+                                      SizedBox(height: gapSpeaker),
+                                    ],
 
-                                    isCompact
-                                        ? SizedBox(
-                                            width: 80.r,
-                                            height: 80.r,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    PitchPatternMatchPulseSpeaker(
-                                                      text:
-                                                          quest.textToSpeak ??
-                                                          "",
-                                                      color: theme.primaryColor,
-                                                      onPlayTts: _playTts,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : PitchPatternMatchPulseSpeaker(
-                                            text: quest.textToSpeak ?? "",
-                                            color: theme.primaryColor,
-                                            onPlayTts: _playTts,
-                                          ),
+                                    PitchPatternMatchPulseSpeaker(
+                                      text: quest.textToSpeak ?? "",
+                                      color: theme.primaryColor,
+                                      onPlayTts: _playTts,
+                                    ),
                                   ],
                                 ),
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapSpeaker),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 110.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child: PitchPatternMatchVerticalFader(
-                                                  options: options,
-                                                  correctIndex:
-                                                      quest
-                                                          .correctAnswerIndex ??
-                                                      0,
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  isAnswered: _isAnswered,
-                                                  selectedIndex: _selectedIndex,
-                                                  sliderValue: _sliderValue,
-                                                  onSubmitChoice: _submitChoice,
-                                                  onSliderUpdate:
-                                                      _onSliderUpdate,
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : PitchPatternMatchVerticalFader(
-                                            options: options,
-                                            correctIndex:
-                                                quest.correctAnswerIndex ?? 0,
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isAnswered: _isAnswered,
-                                            selectedIndex: _selectedIndex,
-                                            sliderValue: _sliderValue,
-                                            onSubmitChoice: _submitChoice,
-                                            onSliderUpdate: _onSliderUpdate,
-                                          ),
+                                    PitchPatternMatchVerticalFader(
+                                      options: options,
+                                      correctIndex:
+                                          quest.correctAnswerIndex ?? 0,
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      isAnswered: _isAnswered,
+                                      selectedIndex: _selectedIndex,
+                                      sliderValue: _sliderValue,
+                                      onSubmitChoice: _submitChoice,
+                                      onSliderUpdate: _onSliderUpdate,
+                                    ),
                                     if (_isAnswered) ...[
                                       SizedBox(height: gapSlider),
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 110.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width: maxWidth - 48.w,
-                                                  child:
-                                                      PitchPatternMatchExplanationCard(
-                                                        quest: quest,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        isDark: isDark,
-                                                        isCorrect: _isCorrect,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : PitchPatternMatchExplanationCard(
-                                              quest: quest,
-                                              color: theme.primaryColor,
-                                              isDark: isDark,
-                                              isCorrect: _isCorrect,
-                                            ),
+                                      PitchPatternMatchExplanationCard(
+                                        quest: quest,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        isCorrect: _isCorrect,
+                                      ),
                                     ],
                                     SizedBox(height: gapBottom),
                                   ],

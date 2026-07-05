@@ -217,10 +217,11 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
 
                       final double estimatedContentHeight =
                           24.h +
-                          (isCompact ? 90.h : 120.h) +
-                          (isCompact ? 80.h : 110.h) +
-                          (isCompact ? 130.h : 172.h) +
-                          (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
+                          70.h +
+                          (_isAnswered ? 60.h : 0) +
+                          80.h +
+                          140.h +
+                          (_isAnswered ? 110.h : 0);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -259,26 +260,10 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 32.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    IntonationMimicInstruction(
-                                                      color: theme.primaryColor,
-                                                      instruction:
-                                                          quest.instruction,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : IntonationMimicInstruction(
-                                            color: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                          ),
+                                    IntonationMimicInstruction(
+                                      color: theme.primaryColor,
+                                      instruction: quest.instruction,
+                                    ),
                                     SizedBox(height: gapInstruction),
 
                                     isCompact
@@ -304,127 +289,48 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                           ),
                                     SizedBox(height: gapPrompt),
 
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 70.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    IntonationMimicRollercoaster(
-                                                      contour: contour,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isRiding: _isRiding,
-                                                      cartPosition:
-                                                          _cartPosition,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : IntonationMimicRollercoaster(
-                                            contour: contour,
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isRiding: _isRiding,
-                                            cartPosition: _cartPosition,
-                                          ),
-                                    SizedBox(height: gapSpeaker),
+                                    if (_isAnswered) ...[
+                                      IntonationMimicRollercoaster(
+                                        contour: contour,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        isRiding: _isRiding,
+                                        cartPosition: _cartPosition,
+                                      ),
+                                      SizedBox(height: gapSpeaker),
+                                    ],
 
-                                    isCompact
-                                        ? SizedBox(
-                                            width: 80.r,
-                                            height: 80.r,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    IntonationMimicPulseSpeaker(
-                                                      text:
-                                                          quest.textToSpeak ??
-                                                          "",
-                                                      color: theme.primaryColor,
-                                                      onPlayTts: _playTts,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : IntonationMimicPulseSpeaker(
-                                            text: quest.textToSpeak ?? "",
-                                            color: theme.primaryColor,
-                                            onPlayTts: _playTts,
-                                          ),
+                                    IntonationMimicPulseSpeaker(
+                                      text: quest.textToSpeak ?? "",
+                                      color: theme.primaryColor,
+                                      onPlayTts: _playTts,
+                                    ),
                                   ],
                                 ),
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapSpeaker),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 110.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child: IntonationMimicVerticalFader(
-                                                  options: options,
-                                                  correctIndex:
-                                                      quest
-                                                          .correctAnswerIndex ??
-                                                      0,
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  isAnswered: _isAnswered,
-                                                  selectedIndex: _selectedIndex,
-                                                  sliderValue: _sliderValue,
-                                                  onSubmitChoice: _submitChoice,
-                                                  onSliderUpdate:
-                                                      _onSliderUpdate,
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : IntonationMimicVerticalFader(
-                                            options: options,
-                                            correctIndex:
-                                                quest.correctAnswerIndex ?? 0,
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isAnswered: _isAnswered,
-                                            selectedIndex: _selectedIndex,
-                                            sliderValue: _sliderValue,
-                                            onSubmitChoice: _submitChoice,
-                                            onSliderUpdate: _onSliderUpdate,
-                                          ),
+                                    IntonationMimicVerticalFader(
+                                      options: options,
+                                      correctIndex:
+                                          quest.correctAnswerIndex ?? 0,
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      isAnswered: _isAnswered,
+                                      selectedIndex: _selectedIndex,
+                                      sliderValue: _sliderValue,
+                                      onSubmitChoice: _submitChoice,
+                                      onSliderUpdate: _onSliderUpdate,
+                                    ),
                                     if (_isAnswered) ...[
                                       SizedBox(height: gapSlider),
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 110.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width: maxWidth - 48.w,
-                                                  child:
-                                                      IntonationMimicExplanationCard(
-                                                        quest: quest,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        isDark: isDark,
-                                                        isCorrect: _isCorrect,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : IntonationMimicExplanationCard(
-                                              quest: quest,
-                                              color: theme.primaryColor,
-                                              isDark: isDark,
-                                              isCorrect: _isCorrect,
-                                            ),
+                                      IntonationMimicExplanationCard(
+                                        quest: quest,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        isCorrect: _isCorrect,
+                                      ),
                                     ],
                                     SizedBox(height: gapBottom),
                                   ],

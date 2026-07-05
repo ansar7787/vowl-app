@@ -22,8 +22,8 @@ class IntonationMimicRollercoaster extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 342.w,
-      height: 90.h,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      height: 60.h,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
       decoration: BoxDecoration(
         color: isDark
             ? Colors.white.withValues(alpha: 0.02)
@@ -57,7 +57,7 @@ class IntonationMimicRollercoaster extends StatelessWidget {
 
   Widget _buildCart(List<int> contour, Color color) {
     double posX = 0.12.sw + (cartPosition * 0.7.sw) - 20.w;
-    double posY = _getYForPosition(cartPosition, contour) * 70.h + 20.h;
+    double posY = _getYForPosition(cartPosition, contour) * 40.h + 10.h;
 
     return Positioned(
       left: posX,

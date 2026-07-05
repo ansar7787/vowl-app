@@ -25,16 +25,19 @@ class WordLinkingInstruction extends StatelessWidget {
         children: [
           Icon(Icons.link_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
-          Text(
-            instruction.trim().isEmpty
-                ? "IDENTIFY HOW THE WORDS ARE LINKED"
-                : instruction.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: color,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              instruction.trim().isEmpty
+                  ? "IDENTIFY THE LINKING"
+                  : instruction.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 8.sp,
+                fontWeight: FontWeight.w900,
+                color: color,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

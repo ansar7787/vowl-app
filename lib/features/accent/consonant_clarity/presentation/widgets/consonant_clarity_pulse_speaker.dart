@@ -20,8 +20,8 @@ class ConsonantClarityPulseSpeaker extends StatelessWidget {
     return ScaleButton(
       onTap: () => onPlayTts(text),
       child: Container(
-        width: 110.r,
-        height: 110.r,
+        width: 100.r,
+        height: 100.r,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: color.withValues(alpha: 0.1),
@@ -34,7 +34,7 @@ class ConsonantClarityPulseSpeaker extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.graphic_eq_rounded, color: color, size: 36.r)
+              Icon(Icons.graphic_eq_rounded, color: color, size: 32.r)
                   .animate(onPlay: (c) => c.repeat(reverse: true))
                   .scale(
                     begin: const Offset(1, 1),

@@ -13,7 +13,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_instruction.dart';
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_prompt_card.dart';
-import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_waveform_trace.dart';
+
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_pulse_speaker.dart';
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_dialogue_list.dart';
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_explanation_card.dart';
@@ -45,9 +45,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
 
   int? _selectedIndex;
 
-  double _traceProgress = 0.0;
-  bool _isPreviewing = false;
-  Timer? _previewTimer;
+
 
   @override
   void initState() {
@@ -59,41 +57,12 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
 
   @override
   void dispose() {
-    _previewTimer?.cancel();
     super.dispose();
   }
 
   void _playTts(String text) {
     _hapticService.selection();
     _soundService.playTts(text);
-    _triggerPreviewWave();
-  }
-
-  void _triggerPreviewWave() {
-    _previewTimer?.cancel();
-    setState(() {
-      _traceProgress = 0.0;
-      _isPreviewing = true;
-    });
-
-    const steps = 30;
-    const interval = Duration(milliseconds: 40);
-    int currentStep = 0;
-
-    _previewTimer = Timer.periodic(interval, (timer) {
-      if (!mounted) {
-        timer.cancel();
-        return;
-      }
-      currentStep++;
-      setState(() {
-        _traceProgress = (currentStep / steps).clamp(0.0, 1.0);
-      });
-      if (currentStep >= steps) {
-        timer.cancel();
-        setState(() => _isPreviewing = false);
-      }
-    });
   }
 
   void _submitChoice(int index, int correct) {
@@ -141,8 +110,6 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
               _isCorrect = null;
 
               _selectedIndex = null;
-              _traceProgress = 0.0;
-              _isPreviewing = false;
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -150,7 +117,6 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
               Future.delayed(500.milliseconds, () {
                 if (mounted) {
                   _soundService.playTts(quest.textToSpeak!);
-                  _triggerPreviewWave();
                 }
               });
             }
@@ -197,15 +163,12 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
-                      final maxWidth = constraints.maxWidth;
-                      final bool isCompact = maxHeight < 580;
-
                       final double estimatedContentHeight =
                           24.h +
-                          (isCompact ? 90.h : 120.h) +
-                          (isCompact ? 80.h : 110.h) +
-                          (isCompact ? 130.h : 172.h) +
-                          (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
+                          90.h +
+                          80.h +
+                          140.h +
+                          (_isAnswered ? 110.h : 0);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -218,9 +181,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                       final double gapInstruction = remainingHeight > 0
                           ? (gapUnit * 1).clamp(8.0, 24.0)
                           : 8.0;
-                      final double gapPrompt = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(12.0, 32.0)
-                          : 12.0;
+
                       final double gapSpeaker = remainingHeight > 0
                           ? (gapUnit * 2).clamp(16.0, 48.0)
                           : 16.0;
@@ -244,160 +205,47 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 32.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    ShadowingChallengeInstruction(
-                                                      color: theme.primaryColor,
-                                                      instruction:
-                                                          quest.instruction,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : ShadowingChallengeInstruction(
-                                            color: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                          ),
+                                    ShadowingChallengeInstruction(
+                                      color: theme.primaryColor,
+                                      instruction: quest.instruction,
+                                    ),
                                     SizedBox(height: gapInstruction),
-
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 90.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    ShadowingChallengePromptCard(
-                                                      word: quest.word ?? "",
-                                                      ipa: quest.phonetic ?? "",
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : ShadowingChallengePromptCard(
-                                            word: quest.word ?? "",
-                                            ipa: quest.phonetic ?? "",
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                          ),
-                                    SizedBox(height: gapPrompt),
-
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 50.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child:
-                                                  ShadowingChallengeWaveformTrace(
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    isPreviewing: _isPreviewing,
-                                                    traceProgress:
-                                                        _traceProgress,
-                                                  ),
-                                            ),
-                                          )
-                                        : ShadowingChallengeWaveformTrace(
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isPreviewing: _isPreviewing,
-                                            traceProgress: _traceProgress,
-                                          ),
+                                    ShadowingChallengePromptCard(
+                                      word: quest.word ?? "",
+                                      ipa: quest.phonetic ?? "",
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                    ),
                                     SizedBox(height: gapSpeaker),
-
-                                    isCompact
-                                        ? SizedBox(
-                                            width: 80.r,
-                                            height: 80.r,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child:
-                                                  ShadowingChallengePulseSpeaker(
-                                                    text:
-                                                        quest.textToSpeak ?? "",
-                                                    color: theme.primaryColor,
-                                                    onPlayTts: _playTts,
-                                                  ),
-                                            ),
-                                          )
-                                        : ShadowingChallengePulseSpeaker(
-                                            text: quest.textToSpeak ?? "",
-                                            color: theme.primaryColor,
-                                            onPlayTts: _playTts,
-                                          ),
+                                    ShadowingChallengePulseSpeaker(
+                                      text: quest.textToSpeak ?? "",
+                                      color: theme.primaryColor,
+                                      onPlayTts: _playTts,
+                                    ),
                                   ],
                                 ),
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapSpeaker),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 110.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child: ShadowingChallengeDialogueList(
-                                                  options: options,
-                                                  correctIndex:
-                                                      quest
-                                                          .correctAnswerIndex ??
-                                                      0,
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  isAnswered: _isAnswered,
-                                                  selectedIndex: _selectedIndex,
-                                                  onSubmitChoice: _submitChoice,
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : ShadowingChallengeDialogueList(
-                                            options: options,
-                                            correctIndex:
-                                                quest.correctAnswerIndex ?? 0,
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isAnswered: _isAnswered,
-                                            selectedIndex: _selectedIndex,
-                                            onSubmitChoice: _submitChoice,
-                                          ),
+                                    ShadowingChallengeDialogueList(
+                                      options: options,
+                                      correctIndex:
+                                          quest.correctAnswerIndex ?? 0,
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      isAnswered: _isAnswered,
+                                      selectedIndex: _selectedIndex,
+                                      onSubmitChoice: _submitChoice,
+                                    ),
                                     if (_isAnswered) ...[
                                       SizedBox(height: gapSlider),
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 110.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width: maxWidth - 48.w,
-                                                  child:
-                                                      ShadowingChallengeExplanationCard(
-                                                        quest: quest,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        isDark: isDark,
-                                                        isCorrect: _isCorrect,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : ShadowingChallengeExplanationCard(
-                                              quest: quest,
-                                              color: theme.primaryColor,
-                                              isDark: isDark,
-                                              isCorrect: _isCorrect,
-                                            ),
+                                      ShadowingChallengeExplanationCard(
+                                        quest: quest,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        isCorrect: _isCorrect,
+                                      ),
                                     ],
                                     SizedBox(height: gapBottom),
                                   ],

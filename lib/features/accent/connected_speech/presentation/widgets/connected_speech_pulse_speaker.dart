@@ -7,20 +7,17 @@ class ConnectedSpeechPulseSpeaker extends StatelessWidget {
   final String text;
   final Color color;
   final Function(String) onPlayTts;
-  final bool isCompact;
-
   const ConnectedSpeechPulseSpeaker({
     super.key,
     required this.text,
     required this.color,
     required this.onPlayTts,
-    this.isCompact = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    final double buttonSize = isCompact ? 80.r : 110.r;
-    final double iconSize = isCompact ? 28.r : 36.r;
+    final double buttonSize = 100.r;
+    final double iconSize = 32.r;
 
     return ScaleButton(
       onTap: () => onPlayTts(text),
@@ -30,11 +27,11 @@ class ConnectedSpeechPulseSpeaker extends StatelessWidget {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: color.withValues(alpha: 0.1),
-          border: Border.all(color: color, width: isCompact ? 2 : 3),
+          border: Border.all(color: color, width: 3),
           boxShadow: [
             BoxShadow(
               color: color.withValues(alpha: 0.15),
-              blurRadius: isCompact ? 12 : 20,
+              blurRadius: 20,
             ),
           ],
         ),
@@ -48,13 +45,13 @@ class ConnectedSpeechPulseSpeaker extends StatelessWidget {
                     begin: const Offset(1, 1),
                     end: const Offset(1.2, 1.2),
                   ),
-              SizedBox(height: isCompact ? 2.h : 6.h),
+              SizedBox(height: 6.h),
               Text(
                 "HEAR PHRASE",
                 style: TextStyle(
                   fontFamily: 'RobotoMono',
                   color: color,
-                  fontSize: isCompact ? 7.sp : 8.sp,
+                  fontSize: 8.sp,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1,
                 ),

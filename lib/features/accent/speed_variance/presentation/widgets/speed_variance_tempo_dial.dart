@@ -151,9 +151,10 @@ class SpeedVarianceTempoDial extends StatelessWidget {
     return ScaleButton(
       onTap: () => onSubmitChoice(index, correctIndex),
       child:
-          Container(
-                height: 120.h,
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+          AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                alignment: Alignment.center,
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
                 decoration: BoxDecoration(
                   color: orbColor,
                   borderRadius: BorderRadius.circular(20.r),

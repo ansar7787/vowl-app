@@ -14,7 +14,7 @@ class IntonationMimicInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(30.r),
@@ -25,16 +25,19 @@ class IntonationMimicInstruction extends StatelessWidget {
         children: [
           Icon(Icons.waves_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
-          Text(
-            instruction.trim().isEmpty
-                ? "MATCH THE PITCH USING THE FADER"
-                : instruction.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: color,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              instruction.trim().isEmpty
+                  ? "IDENTIFY THE INTONATION"
+                  : instruction.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 8.sp,
+                fontWeight: FontWeight.w900,
+                color: color,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],
