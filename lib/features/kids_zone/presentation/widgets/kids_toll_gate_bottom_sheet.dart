@@ -85,8 +85,13 @@ class KidsTollGateBottomSheet {
                     onTap: () async {
                       if (!hasKey) {
                         Navigator.pop(sheetContext);
+                        // FIX: was `context: context` (BlocBuilder's own,
+                        // sheet-scoped context) used right after
+                        // Navigator.pop deactivated the sheet it belongs
+                        // to. `parentContext` is the stable, outer context.
+                        if (!parentContext.mounted) return;
                         KeyShopBottomSheet.show(
-                          context: context,
+                          context: parentContext,
                           isKidsMode: true,
                           primaryColor: primaryColor,
                         );
@@ -102,27 +107,64 @@ class KidsTollGateBottomSheet {
                         )
                       );
                       
-                      if (result.isRight() && parentContext.mounted) {
-                        showDialog(
-                          context: parentContext,
-                          builder: (ctx) => Material(
-                            type: MaterialType.transparency,
-                            child: Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                ModernGameDialog(
-                                  title: 'GATE UNLOCKED!',
-                                  description: context.tr('games.magic_lock_success', fallback: '3 Levels Unlocked! ✨'),
-                                  buttonText: 'AWESOME',
-                                  isSuccess: true,
-                                  onButtonPressed: () => Navigator.of(ctx).pop(),
-                                ),
-                                const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
-                              ],
+                      if (!parentContext.mounted) return;
+
+                      // FIX: Previously only handled `result.isRight()`.
+                      // If the unlock call failed server-side (network
+                      // error, insufficient keys race, etc.), the sheet
+                      // had already closed and NOTHING told the user.
+                      // Now handles both outcomes explicitly with `.fold()`.
+                      result.fold(
+                        (failure) {
+                          showDialog(
+                            context: parentContext,
+                            builder: (ctx) => ModernGameDialog(
+                              title: context.tr(
+                                'store.purchase_failed_title',
+                                fallback: 'UNLOCK FAILED',
+                              ),
+                              description: context.tr(
+                                'store.purchase_failed_desc',
+                                fallback:
+                                    'Something went wrong and your key was not spent. Please try again.',
+                              ),
+                              buttonText: context
+                                  .tr('common.ok', fallback: 'OK')
+                                  .toUpperCase(),
+                              isSuccess: false,
+                              onButtonPressed: () =>
+                                  Navigator.of(ctx).pop(),
                             ),
-                          ),
-                        );
-                      }
+                          );
+                        },
+                        (_) {
+                          // FIX: Refresh user data so the map immediately
+                          // shows the newly unlocked levels without
+                          // requiring a manual reload.
+                          parentContext.read<AuthBloc>().add(
+                            const AuthReloadUser(),
+                          );
+                          showDialog(
+                            context: parentContext,
+                            builder: (ctx) => Material(
+                              type: MaterialType.transparency,
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  ModernGameDialog(
+                                    title: 'GATE UNLOCKED!',
+                                    description: context.tr('games.magic_lock_success', fallback: '3 Levels Unlocked! ✨'),
+                                    buttonText: 'AWESOME',
+                                    isSuccess: true,
+                                    onButtonPressed: () => Navigator.of(ctx).pop(),
+                                  ),
+                                  const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      );
                     },
                     child: Container(
                       width: double.infinity,
@@ -174,7 +216,9 @@ class KidsTollGateBottomSheet {
               ScaleButton(
                 onTap: () {
                   Navigator.pop(sheetContext);
-                  context.push(AppRouter.premiumRoute);
+                  if (parentContext.mounted) {
+                    parentContext.push(AppRouter.premiumRoute);
+                  }
                 },
                 child: Container(
                   width: double.infinity,

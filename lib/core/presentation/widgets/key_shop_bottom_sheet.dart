@@ -314,7 +314,12 @@ class _KeyShopContent extends StatelessWidget {
                 ScaleButton(
                   onTap: () {
                     final adService = di.sl<AdService>();
-                    if (!adService.isRewardedAdLoaded) {
+                    // FIX: Read premium status from AuthBloc instead of
+                    // hardcoding `false`. Premium users who open the key
+                    // shop (e.g. via Kids Zone toll gate) should get the
+                    // premium bypass, not be forced to watch an ad.
+                    final isPremium = parentContext.read<AuthBloc>().state.user?.isPremium ?? false;
+                    if (!isPremium && !adService.isRewardedAdLoaded) {
                       Navigator.pop(context);
                       showDialog(
                         context: parentContext,
@@ -341,15 +346,13 @@ class _KeyShopContent extends StatelessWidget {
                       return;
                     }
                     Navigator.pop(context);
-                    // BUG FIX (STALE CONTEXT): was `context: context` (the
-                    // just-popped sheet's own context) - AdService only
-                    // uses this to anchor an error snackbar if the ad
-                    // fails to show, but that context was already
-                    // deactivated. `parentContext` matches what the
-                    // callbacks below already correctly use.
                     adService.showRewardedAd(
                       context: parentContext,
-                      isPremium: false,
+                      isPremium: isPremium,
+                      // FIX: COPPA compliance — when the key shop is opened
+                      // from Kids Zone (isKidsMode: true), force child-safe
+                      // ad parameters.
+                      childSafe: isKidsMode,
                       onUserEarnedReward: (_) async {
                         final result = await di.sl<AddGoldenKey>().call(
                           const AddGoldenKeyParams(amount: 1),

@@ -163,6 +163,11 @@ class TollGateBottomSheet {
                                 );
                               },
                               (_) {
+                                // FIX: Refresh user data so the map
+                                // immediately shows newly unlocked levels.
+                                parentContext.read<AuthBloc>().add(
+                                  const AuthReloadUser(),
+                                );
                                 showDialog(
                                   context: parentContext,
                                   builder: (ctx) => Material(
@@ -274,7 +279,14 @@ class TollGateBottomSheet {
                     ScaleButton(
                       onTap: () {
                         Navigator.pop(sheetContext);
-                        context.push(AppRouter.premiumRoute);
+                        // FIX: was `context.push(...)` (BlocBuilder's own
+                        // context) — that context is invalidated the moment
+                        // Navigator.pop deactivates the sheet widget tree.
+                        // `parentContext` is the stable, outer context that
+                        // survives the sheet dismissal.
+                        if (parentContext.mounted) {
+                          parentContext.push(AppRouter.premiumRoute);
+                        }
                       },
                       child: Container(
                         width: double.infinity,
