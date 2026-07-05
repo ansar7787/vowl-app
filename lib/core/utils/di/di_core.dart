@@ -13,7 +13,6 @@ import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/local_smart_tutor.dart';
 import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/core/utils/rewarded_ad_service.dart';
 import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
@@ -99,17 +98,10 @@ Future<void> initExternalAndCore(GetIt sl) async {
     () => AdService(),
     dispose: (service) => service.dispose(),
   );
-  // FIX (CRITICAL — MISSING REGISTRATION): RewardedAdService had a DI-ready
-  // factory constructor (`factory RewardedAdService() = ...`) but was never
-  // actually registered anywhere in this DI graph - any `sl<RewardedAdService>()`
-  // call would have thrown a "type not registered" error at runtime. Now
-  // that its implementation is a real, working ad integration rather than
-  // a stub (see rewarded_ad_service.dart's doc comment), it needs to
-  // actually be reachable via DI to be usable.
-  sl.registerLazySingleton<RewardedAdService>(
-    () => RewardedAdService(),
-    dispose: (service) => service.dispose(),
-  );
+  // REMOVED: RewardedAdService registration — the duplicate rewarded-ad
+  // subsystem has been consolidated into AdService (see ad_service.dart).
+  // The sole call site (profile/rewarded_ad_card.dart) now uses AdService
+  // directly, eliminating competing loads against the same ad unit ID.
   sl.registerLazySingleton<PaymentService>(
     () => PaymentService(
       getCurrentUser: sl<GetCurrentUser>(),

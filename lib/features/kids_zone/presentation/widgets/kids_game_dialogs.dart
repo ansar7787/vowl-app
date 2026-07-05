@@ -259,6 +259,7 @@ class KidsGameDialogs {
                                       adService.showRewardedAd(
                                         context: context,
                                         isPremium: isPremium,
+                                        childSafe: true,
                                         onUserEarnedReward: (_) {
                                           context.read<KidsBloc>().add(
                                             ClaimDoubleKidsRewards(
@@ -509,6 +510,7 @@ class KidsGameDialogs {
                       adService.showRewardedAd(
                         context: context,
                         isPremium: isPremium,
+                        childSafe: true,
                         onUserEarnedReward: (_) {
                           context.read<KidsBloc>().add(RestoreKidsLife());
                           Navigator.pop(context);

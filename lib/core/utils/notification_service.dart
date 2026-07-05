@@ -24,6 +24,30 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   }
 }
 
+/// CRITICAL FIX: Top-level handler for local notification taps when the app
+/// is TERMINATED (killed). Without this, tapping a streak/weekly reminder
+/// after swiping the app away does nothing — the Dart isolate cold-starts
+/// but has no callback to process the tap.
+///
+/// This function runs in a FRESH isolate with NO access to the widget tree,
+/// DI container, or AppRouter. The only safe action is to persist the
+/// payload so that the main isolate can pick it up on startup.
+@pragma('vm:entry-point')
+void onDidReceiveBackgroundNotificationResponse(
+  NotificationResponse response,
+) {
+  // We cannot navigate here — no router, no DI, no widget tree.
+  // Instead, persist the payload to SharedPreferences so the main
+  // isolate can read it during init() and set pendingDeepLink.
+  final payload = response.payload;
+  if (payload != null && payload.isNotEmpty) {
+    // SharedPreferences.getInstance() is safe to call from any isolate.
+    SharedPreferences.getInstance().then((prefs) {
+      prefs.setString('pending_notification_route', payload);
+    });
+  }
+}
+
 class NotificationService {
   NotificationService({LocaleService? localeService})
     : _localeService = localeService;
@@ -141,6 +165,13 @@ class NotificationService {
         // through the same validated navigation path.
         _handleNotificationTap(response.payload);
       },
+      // CRITICAL FIX: This is the key callback that production apps register.
+      // When the app is TERMINATED and the user taps a local notification,
+      // flutter_local_notifications cold-starts a background isolate and
+      // invokes this top-level function. It persists the route to
+      // SharedPreferences so the main isolate can navigate on startup.
+      onDidReceiveBackgroundNotificationResponse:
+          onDidReceiveBackgroundNotificationResponse,
     );
 
     // 4. Create Notification Channels (Android 8.0+)
@@ -248,6 +279,30 @@ class NotificationService {
       final path = initialMessage.data['path'] as String?;
       if (path != null && path.isNotEmpty && _isSafeInternalPath(path)) {
         AppRouter.pendingDeepLink = path;
+      }
+    }
+
+    // 10. CRITICAL FIX: Check for pending route from local notification tap
+    //     in terminated state. The background isolate handler wrote the
+    //     payload to SharedPreferences; we read it here and clear it.
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final pendingRoute = prefs.getString('pending_notification_route');
+      if (pendingRoute != null && pendingRoute.isNotEmpty) {
+        await prefs.remove('pending_notification_route');
+        if (_isSafeInternalPath(pendingRoute)) {
+          // Only set if no FCM deep link already claimed priority
+          AppRouter.pendingDeepLink ??= pendingRoute;
+          if (kDebugMode) {
+            debugPrint(
+              'NotificationService: Restored pending route from terminated-state local notification: $pendingRoute',
+            );
+          }
+        }
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('NotificationService: Error reading pending notification route: $e');
       }
     }
   }
@@ -402,8 +457,15 @@ class NotificationService {
           showWhen: true,
         );
 
+    const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+    );
+
     const NotificationDetails platformDetails = NotificationDetails(
       android: androidDetails,
+      iOS: iosDetails,
     );
 
     await _localNotifications.show(
@@ -444,8 +506,15 @@ class NotificationService {
           priority: Priority.high,
         );
 
+    const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+    );
+
     const NotificationDetails platformDetails = NotificationDetails(
       android: androidDetails,
+      iOS: iosDetails,
     );
 
     bool useExact = true;
@@ -534,9 +603,21 @@ class NotificationService {
           priority: Priority.high,
         );
 
+    const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+    );
+
     const NotificationDetails platformDetails = NotificationDetails(
       android: androidDetails,
+      iOS: iosDetails,
     );
+
+    bool useExact = true;
+    if (Platform.isAndroid) {
+      useExact = await Permission.scheduleExactAlarm.isGranted;
+    }
 
     final location = _currentLocation;
 
@@ -552,7 +633,9 @@ class NotificationService {
       ),
       _nextInstanceOfSundaySixThirtyPM(location),
       platformDetails,
-      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+      androidScheduleMode: useExact
+          ? AndroidScheduleMode.exactAllowWhileIdle
+          : AndroidScheduleMode.inexactAllowWhileIdle,
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,

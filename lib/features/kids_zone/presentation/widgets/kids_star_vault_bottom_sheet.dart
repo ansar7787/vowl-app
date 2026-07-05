@@ -150,6 +150,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     adService.showRewardedAd(
       context: context,
       isPremium: isPremium,
+      childSafe: true,
       onUserEarnedReward: (_) async {
         final updateUserRewards = di.sl<UpdateUserRewards>();
         await updateUserRewards(

@@ -30,6 +30,7 @@ class KidsWatchEarnCard extends StatelessWidget {
             di.sl<AdService>().showRewardedAd(
               context: context,
               isPremium: user.isPremium,
+              childSafe: true,
               onUserEarnedReward: (reward) {
                 rewardEarned = true;
               },

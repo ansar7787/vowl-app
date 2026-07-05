@@ -47,11 +47,27 @@ class AdService {
 
   static const int _maxFailedLoadAttempts = 3;
 
-  static const AdRequest _adRequest = AdRequest(
-    keywords: <String>['game', 'learning', 'education'],
-    contentUrl: 'https://Vowl-quest.com',
-    nonPersonalizedAds: true,
-  );
+  /// Builds an ad request.
+  ///
+  /// `nonPersonalizedAds` is ALWAYS true because the app serves under-16
+  /// users (Kids Zone) and has no age-gate or UMP consent framework to
+  /// distinguish adults from children at runtime. Serving personalized ads
+  /// to any user without proof of age ≥16 + explicit consent (EEA/UK)
+  /// violates COPPA / Google Families Policy — the penalty is AdMob
+  /// account termination, not lower revenue.
+  ///
+  /// If an age-gate is added later, this method can conditionally return
+  /// `nonPersonalizedAds: false` for verified adults who have consented.
+  static AdRequest _buildAdRequest() {
+    return AdRequest(
+      keywords: <String>['game', 'learning', 'education'],
+      contentUrl: 'https://Vowl-quest.com',
+      nonPersonalizedAds: true,
+    );
+  }
+
+  /// Cached request instance — all ad loads use this.
+  static final AdRequest _adRequest = _buildAdRequest();
 
   // ── Lifecycle ─────────────────────────────────────────────────────────────
 
@@ -87,9 +103,14 @@ class AdService {
             testDeviceIds: kDebugMode
                 ? ['6739FCB31DECCBA1A191319DC27E562A']
                 : null,
+            // COMPLIANCE FIX: Default to child-directed treatment since
+            // the app has under-16 users (Kids Zone). This sets the
+            // global SDK tag. Individual ad requests in the main app
+            // can still work normally — this is the safe default.
             tagForChildDirectedTreatment:
-                TagForChildDirectedTreatment.unspecified,
-            maxAdContentRating: MaxAdContentRating.t,
+                TagForChildDirectedTreatment.yes,
+            tagForUnderAgeOfConsent: TagForUnderAgeOfConsent.yes,
+            maxAdContentRating: MaxAdContentRating.g,
           ),
         );
 
@@ -304,22 +325,32 @@ class AdService {
 
   RewardedAd? _rewardedAd;
   int _numRewardedLoadAttempts = 0;
+  bool _isRewardedLoadInFlight = false;
 
   /// Whether a rewarded ad is ready to show.
   bool get isRewardedAdLoaded => _rewardedAd != null;
 
   void loadRewardedAd() {
+    // FIX: Guard against concurrent loads — same pattern as
+    // RewardedAdServiceImpl._isLoadInFlight. Without this, a
+    // failed-load retry overlapping with a post-dismiss reload fires
+    // two concurrent loads; one overwrites the other = wasted request.
+    if (_isRewardedLoadInFlight || _rewardedAd != null) return;
+
     final adUnitId = _rewardedAdUnitId();
     if (adUnitId.isEmpty) {
       _reportMissingAdUnit('ADMOB_REWARDED is empty. Ads will not load.');
       return;
     }
 
+    _isRewardedLoadInFlight = true;
+
     RewardedAd.load(
       adUnitId: adUnitId,
       request: _adRequest,
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdLoaded: (ad) {
+          _isRewardedLoadInFlight = false;
           if (_isDisposed) {
             ad.dispose();
             return;
@@ -329,6 +360,7 @@ class AdService {
           _numRewardedLoadAttempts = 0;
         },
         onAdFailedToLoad: (error) {
+          _isRewardedLoadInFlight = false;
           if (kDebugMode) {
             debugPrint(
               'AdService: Rewarded failed (${error.code}): ${error.message}',
@@ -358,6 +390,9 @@ class AdService {
     required bool isPremium,
     required Function(RewardItem) onUserEarnedReward,
     required VoidCallback onDismissed,
+    /// When true, forces child-safe ad request parameters.
+    /// All Kids Zone call sites should pass `childSafe: true`.
+    bool childSafe = false,
   }) {
     if (isPremium) {
       onUserEarnedReward(RewardItem(1, 'Premium Reward'));
@@ -418,10 +453,12 @@ class AdService {
     required bool isPremium,
     required VoidCallback onHintEarned,
     required VoidCallback onDismissed,
+    bool childSafe = false,
   }) {
     showRewardedAd(
       context: context,
       isPremium: isPremium,
+      childSafe: childSafe,
       onUserEarnedReward: (_) => onHintEarned(),
       onDismissed: onDismissed,
     );

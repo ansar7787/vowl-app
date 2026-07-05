@@ -698,6 +698,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                 di.sl<AdService>().showRewardedAd(
                   context: context,
                   isPremium: isPremium,
+                  childSafe: true,
                   onUserEarnedReward: (reward) {
                     di.sl<SoundService>().playCorrect();
                     context.read<EconomyBloc>().add(

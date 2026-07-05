@@ -3,9 +3,10 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/rewarded_ad_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 
@@ -31,30 +32,28 @@ class RewardedAdCard extends StatefulWidget {
 }
 
 class _RewardedAdCardState extends State<RewardedAdCard> {
-  final _adService = di.sl<RewardedAdService>();
+  // CONSOLIDATION FIX: Previously used the duplicate RewardedAdService
+  // which maintained its own independent RewardedAd instance + load/retry
+  // state, hitting the same ad unit ID as AdService — causing wasted SDK
+  // quota and competing loads. Now uses the single canonical AdService.
+  final _adService = di.sl<AdService>();
   bool _isLoading = false;
 
-  @override
-  void initState() {
-    super.initState();
-    _adService.preload();
-  }
-
   Future<void> _handleWatchAd() async {
+    if (_isLoading) return;
     setState(() => _isLoading = true);
 
-    // BUG FIX: the previous implementation always granted the reward
-    // after a fixed `Future.delayed(2 seconds)` with no ad shown at all -
-    // any user could tap this once every couple of seconds for
-    // unlimited free coins, with zero ad revenue and no real gate. The
-    // reward is now strictly conditioned on the ad service reporting
-    // that the user actually watched to completion.
-    final result = await _adService.showRewardedAd();
+    final isPremium =
+        context.read<AuthBloc>().state.user?.isPremium ?? false;
 
-    if (!mounted) return;
+    bool rewardEarned = false;
 
-    switch (result) {
-      case RewardedAdResult.earned:
+    _adService.showRewardedAd(
+      context: context,
+      isPremium: isPremium,
+      onUserEarnedReward: (_) {
+        rewardEarned = true;
+        if (!mounted) return;
         context.read<EconomyBloc>().add(
           EconomyAddCoinsRequested(
             widget.rewardAmount,
@@ -70,31 +69,15 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
           ),
           type: CustomSnackBarType.success,
         );
-        break;
-      case RewardedAdResult.notAvailable:
-        CustomSnackBar.show(
-          context: context,
-          message: context.tr('economy.ad_not_available'),
-          type: CustomSnackBarType.info,
-        );
-        break;
-      case RewardedAdResult.dismissedEarly:
-        // No message - the user intentionally backed out, no need to
-        // nag them about it.
-        break;
-      case RewardedAdResult.failed:
-        CustomSnackBar.show(
-          context: context,
-          message: context.tr('economy.ad_failed'),
-          type: CustomSnackBarType.error,
-        );
-        break;
-    }
-
-    if (!mounted) return;
-    setState(() => _isLoading = false);
-    // Warm up the next ad in the background for the next tap.
-    _adService.preload();
+      },
+      onDismissed: () {
+        if (!mounted) return;
+        if (!rewardEarned) {
+          // No snackbar for early dismissal — user chose to back out.
+        }
+        setState(() => _isLoading = false);
+      },
+    );
   }
 
   @override

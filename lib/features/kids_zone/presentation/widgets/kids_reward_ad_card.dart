@@ -136,6 +136,7 @@ class KidsRewardAdCard extends StatelessWidget {
     di.sl<AdService>().showRewardedAd(
       context: context,
       isPremium: isPremium,
+      childSafe: true,
       onUserEarnedReward: (reward) {
         rewardEarned = true;
         context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(10));

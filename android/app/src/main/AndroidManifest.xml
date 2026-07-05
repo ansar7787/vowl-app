@@ -45,6 +45,14 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5957407699640623~2053836350"/>
 
+        <!-- CRITICAL FIX: Without this, FCM push notifications received when
+             the app is terminated use Android's fallback "Miscellaneous" channel
+             which may have no sound/vibration. Points to the same channel
+             created by NotificationService.init(). -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="high_importance_channel"/>
+
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
