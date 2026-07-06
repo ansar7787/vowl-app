@@ -8,6 +8,7 @@ import 'dart:async';
 
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 // Modular Feature Routes
@@ -37,6 +38,7 @@ class AppRouter {
   static const String forgotPasswordRoute = '/forgot-password';
   static const String trophyRoomRoute = '/trophy-room';
   static const String verifyEmailRoute = '/verify-email';
+  static const String ageGateRoute = '/age-gate';
   static const String levelsRoute = '/levels';
   static const String categoryGamesRoute = '/category-games';
   static const String libraryRoute = '/library';
@@ -125,6 +127,7 @@ class AppRouter {
     final isSignupRoute = path == signupRoute;
     final isForgotPasswordRoute = path == forgotPasswordRoute;
     final isSplashRoute = path == splashRoute;
+    
     final isAuthRoute = isLoginRoute || isSignupRoute || isForgotPasswordRoute;
     final isAllowedUnauth = isAuthRoute || isSplashRoute;
 
@@ -155,8 +158,14 @@ class AppRouter {
       return link;
     }
 
-    // 5. Authenticated + verified — redirect away from auth/verify/root.
-    if (isAuthRoute || path == verifyEmailRoute || path == '/') {
+    // 5. Age Gate check — MUST complete before entering the main app.
+    if (!AgeGateService.isCompletedCached) {
+      if (path != ageGateRoute) return ageGateRoute;
+      return null; // Let them stay on the age gate
+    }
+
+    // 6. Authenticated, verified, and age-gated — redirect away from auth/verify/root/ageGate.
+    if (isAuthRoute || path == verifyEmailRoute || path == ageGateRoute || path == '/') {
       // FIX (TESTABILITY): resolve FirebaseAuth through the DI container,
       // like every other dependency this method reads (`di.sl<AuthBloc>()`
       // above), rather than the static `FirebaseAuth.instance` singleton

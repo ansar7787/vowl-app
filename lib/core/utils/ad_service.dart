@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/age_gate_service.dart';
 
 /// Manages interstitial and rewarded ad lifecycles for Vowl.
 ///
@@ -49,25 +50,25 @@ class AdService {
 
   /// Builds an ad request.
   ///
-  /// `nonPersonalizedAds` is ALWAYS true because the app serves under-16
-  /// users (Kids Zone) and has no age-gate or UMP consent framework to
-  /// distinguish adults from children at runtime. Serving personalized ads
-  /// to any user without proof of age ≥16 + explicit consent (EEA/UK)
-  /// violates COPPA / Google Families Policy — the penalty is AdMob
-  /// account termination, not lower revenue.
+  /// Dynamically returns personalized or non-personalized ads based on
+  /// the age gate result:
+  /// - User said 16+ → personalized ads (2-3x higher eCPM)
+  /// - User said under 16 or hasn't completed age gate → non-personalized
   ///
-  /// If an age-gate is added later, this method can conditionally return
-  /// `nonPersonalizedAds: false` for verified adults who have consented.
-  static AdRequest _buildAdRequest() {
+  /// Individual call sites can still override this with `childSafe: true`
+  /// for Kids Zone contexts (those always force non-personalized).
+  static AdRequest _buildAdRequest({bool forceChildSafe = false}) {
+    final bool useNonPersonalized =
+        forceChildSafe || !AgeGateService.isAdultCached;
     return AdRequest(
       keywords: <String>['game', 'learning', 'education'],
       contentUrl: 'https://Vowl-quest.com',
-      nonPersonalizedAds: true,
+      nonPersonalizedAds: useNonPersonalized,
     );
   }
 
-  /// Cached request instance — all ad loads use this.
-  static final AdRequest _adRequest = _buildAdRequest();
+  /// Cached request instance — rebuilt when age gate state changes.
+  static AdRequest _adRequest = _buildAdRequest();
 
   // ── Lifecycle ─────────────────────────────────────────────────────────────
 
@@ -96,23 +97,10 @@ class AdService {
         _isInitialized = true;
         if (kDebugMode) debugPrint('AdService: MobileAds initialised.');
 
-        // Lessen strict kids-only restrictions to increase ad fill rate and revenue.
-        // NOTE: Make sure your Google Play Console target audience matches this (e.g., 13+).
-        MobileAds.instance.updateRequestConfiguration(
-          RequestConfiguration(
-            testDeviceIds: kDebugMode
-                ? ['6739FCB31DECCBA1A191319DC27E562A']
-                : null,
-            // COMPLIANCE FIX: Default to child-directed treatment since
-            // the app has under-16 users (Kids Zone). This sets the
-            // global SDK tag. Individual ad requests in the main app
-            // can still work normally — this is the safe default.
-            tagForChildDirectedTreatment:
-                TagForChildDirectedTreatment.yes,
-            tagForUnderAgeOfConsent: TagForUnderAgeOfConsent.yes,
-            maxAdContentRating: MaxAdContentRating.g,
-          ),
-        );
+        // Dynamic configuration based on age gate result:
+        // - Adults (16+): unrestricted ads = higher eCPM
+        // - Kids/unknown: child-directed = COPPA compliant
+        _applyRequestConfiguration();
 
         // Stagger ad loading to avoid competing with app startup rendering.
         Future.delayed(const Duration(seconds: 2), () {
@@ -138,6 +126,56 @@ class AdService {
     _interstitialAd = null;
     _rewardedAd?.dispose();
     _rewardedAd = null;
+  }
+
+  /// Applies the correct RequestConfiguration based on the age gate result.
+  ///
+  /// - Under-16 or unknown: child-directed, under-age consent, G-rated only
+  /// - Adult (16+): unspecified (SDK default), no age restriction
+  ///
+  /// This is called once during [init] and can be refreshed via
+  /// [refreshAdConfig] after the age gate is completed mid-session.
+  void _applyRequestConfiguration() {
+    final isAdult = AgeGateService.isAdultCached;
+
+    MobileAds.instance.updateRequestConfiguration(
+      RequestConfiguration(
+        testDeviceIds: kDebugMode
+            ? ['6739FCB31DECCBA1A191319DC27E562A']
+            : null,
+        tagForChildDirectedTreatment: isAdult
+            ? TagForChildDirectedTreatment.unspecified
+            : TagForChildDirectedTreatment.yes,
+        tagForUnderAgeOfConsent: isAdult
+            ? TagForUnderAgeOfConsent.unspecified
+            : TagForUnderAgeOfConsent.yes,
+        maxAdContentRating:
+            isAdult ? MaxAdContentRating.ma : MaxAdContentRating.g,
+      ),
+    );
+
+    if (kDebugMode) {
+      debugPrint(
+        'AdService: RequestConfiguration applied — '
+        'isAdult=$isAdult, personalized=$isAdult',
+      );
+    }
+  }
+
+  /// Re-applies ad configuration after the age gate is completed.
+  ///
+  /// Call this from the age gate screen after [AgeGateService.completeAgeGate]
+  /// to immediately switch to personalized ads for adult users without
+  /// requiring an app restart.
+  void refreshAdConfig() {
+    _adRequest = _buildAdRequest();
+    if (_isInitialized && !_isDisposed) {
+      _applyRequestConfiguration();
+      // Reload ads with the new request configuration so the next ad
+      // shown uses the updated personalization setting.
+      loadInterstitialAd();
+      loadRewardedAd();
+    }
   }
 
   // ── Ad unit resolution ────────────────────────────────────────────────────

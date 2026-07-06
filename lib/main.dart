@@ -26,6 +26,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/remote_config_service.dart';
 import 'package:vowl/core/utils/security_service.dart';
+import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
@@ -94,10 +95,12 @@ void main() async {
   final dotEnvFuture = safeLoadDotEnv();
   final firebaseFuture = safeInitializeFirebase();
   final securityFuture = safeCheckSecurity();
+  final ageGateFuture = AgeGateService.loadCached();
 
   await dotEnvFuture;
   final FirebaseApp? firebaseApp = await firebaseFuture;
   final bool isSecure = await securityFuture;
+  await ageGateFuture;
 
   if (firebaseApp != null) {
     FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
