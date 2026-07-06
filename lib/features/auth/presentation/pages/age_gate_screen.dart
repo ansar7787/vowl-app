@@ -39,7 +39,7 @@ class AgeGateScreen extends StatelessWidget {
     }
 
     if (!context.mounted) return;
-    context.go(AppRouter.homeRoute);
+    context.go('/');
   }
 
   @override
