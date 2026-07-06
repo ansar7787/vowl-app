@@ -73,8 +73,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         if (coins > 0) {
           context.read<EconomyBloc>().add(
             EconomyAddCoinsRequested(
-              amount: coins,
-              source: 'iap_${packName?.replaceAll(' ', '_').toLowerCase() ?? 'store'}',
+              coins,
+              title: 'iap_${packName?.replaceAll(' ', '_').toLowerCase() ?? 'store'}',
             ),
           );
         }
