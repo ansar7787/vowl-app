@@ -12,6 +12,7 @@ import 'package:vowl/features/auth/domain/usecases/purchase_golden_key.dart';
 import 'package:vowl/features/auth/domain/usecases/add_golden_key.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/presentation/widgets/premium_store_bottom_sheet.dart';
 
 class KeyShopBottomSheet {
   static void show({
@@ -475,6 +476,60 @@ class _KeyShopContent extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(height: 16.h),
+                
+                // Open Premium Store
+                ScaleButton(
+                  onTap: () {
+                    Navigator.pop(context);
+                    PremiumStoreBottomSheet.show(
+                      context: parentContext,
+                      isKidsMode: isKidsMode,
+                    );
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(vertical: 14.h),
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: BorderRadius.circular(16.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                          offset: Offset(0, 4.h),
+                          blurRadius: 8,
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.storefront_rounded,
+                          color: Colors.white,
+                          size: 20.r,
+                        ),
+                        SizedBox(width: 8.w),
+                        Text(
+                          'Get More Coins & Keys',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
                 SizedBox(height: 24.h),
 
                 // Premium bypass info
