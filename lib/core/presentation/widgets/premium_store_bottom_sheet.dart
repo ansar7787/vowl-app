@@ -9,6 +9,10 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/iap_service.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/domain/usecases/add_golden_key.dart';
 
 class PremiumStoreBottomSheet extends StatefulWidget {
   final bool isKidsMode;
@@ -54,7 +58,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     }
   }
 
-  void _handlePurchase(BuildContext context, {Package? package, String? packName}) async {
+  void _handlePurchase(BuildContext context, {Package? package, String? packName, required int coins, required int keys}) async {
     if (package != null) {
       CustomSnackBar.show(
         context: context,
@@ -65,12 +69,29 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
       if (!context.mounted) return;
       
       if (success) {
-        CustomSnackBar.show(
-          context: context,
-          message: 'Purchase successful! Enjoy your items.',
-          type: CustomSnackBarType.success,
-        );
-        // Note: Reward granting logic should be handled by a listener or here.
+        // Grant the items!
+        if (coins > 0) {
+          context.read<EconomyBloc>().add(
+            EconomyAddCoinsRequested(
+              amount: coins,
+              source: 'iap_${packName?.replaceAll(' ', '_').toLowerCase() ?? 'store'}',
+            ),
+          );
+        }
+        if (keys > 0) {
+          await di.sl<AddGoldenKey>().call(AddGoldenKeyParams(amount: keys));
+          if (context.mounted) {
+            context.read<AuthBloc>().add(const AuthReloadUser());
+          }
+        }
+
+        if (context.mounted) {
+          CustomSnackBar.show(
+            context: context,
+            message: 'Purchase successful! Enjoy your items.',
+            type: CustomSnackBarType.success,
+          );
+        }
       } else {
         CustomSnackBar.show(
           context: context,
@@ -243,6 +264,20 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                       final package = entry.value;
                       // RevenueCat packages have a StoreProduct
                       final product = package.storeProduct;
+                      final pkgId = package.identifier.toLowerCase();
+                      
+                      int parsedCoins = 0;
+                      int parsedKeys = 0;
+                      
+                      if (pkgId.contains('starter') || pkgId.contains('500') || product.title.toLowerCase().contains('starter')) {
+                        parsedCoins = 500;
+                      } else if (pkgId.contains('explorer') || pkgId.contains('1200') || product.title.toLowerCase().contains('explorer')) {
+                        parsedCoins = 1200;
+                        parsedKeys = 2;
+                      } else if (pkgId.contains('master') || pkgId.contains('4000') || product.title.toLowerCase().contains('master')) {
+                        parsedCoins = 4000;
+                        parsedKeys = 8;
+                      }
                       
                       return Padding(
                         padding: EdgeInsets.only(bottom: 16.h),
@@ -250,8 +285,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                           context: context,
                           isDark: isDark,
                           title: product.title.split('(').first.trim(),
-                          coins: 0, // In reality, fetch from product description or package identifier
-                          keys: 0,
+                          coins: parsedCoins,
+                          keys: parsedKeys,
                           price: product.priceString,
                           icon: Icons.shopping_bag_rounded,
                           color: Colors.amber,
@@ -410,7 +445,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     Package? package,
   }) {
     return ScaleButton(
-      onTap: () => _handlePurchase(context, packName: title, package: package),
+      onTap: () => _handlePurchase(context, packName: title, package: package, coins: coins, keys: keys),
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
