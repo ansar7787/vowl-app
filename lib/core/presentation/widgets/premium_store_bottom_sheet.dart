@@ -6,8 +6,11 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/iap_service.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
 
-class PremiumStoreBottomSheet extends StatelessWidget {
+class PremiumStoreBottomSheet extends StatefulWidget {
   final bool isKidsMode;
 
   const PremiumStoreBottomSheet({
@@ -27,22 +30,70 @@ class PremiumStoreBottomSheet extends StatelessWidget {
     );
   }
 
-  void _handlePurchase(BuildContext context, String packName) {
-    // FIX (IAP_READY): This is where the in_app_purchase or purchases_flutter
-    // logic will go. For now, it shows a polished "Coming Soon" toast.
-    CustomSnackBar.show(
-      context: context,
-      message: 'Processing your purchase...',
-      type: CustomSnackBarType.info,
-    );
-    Future.delayed(const Duration(seconds: 1), () {
-      if (!context.mounted) return;
+  @override
+  State<PremiumStoreBottomSheet> createState() => _PremiumStoreBottomSheetState();
+}
+
+class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
+  Offerings? _offerings;
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchOfferings();
+  }
+
+  Future<void> _fetchOfferings() async {
+    final offerings = await di.sl<IapService>().getOfferings();
+    if (mounted) {
+      setState(() {
+        _offerings = offerings;
+        _isLoading = false;
+      });
+    }
+  }
+
+  void _handlePurchase(BuildContext context, {Package? package, String? packName}) async {
+    if (package != null) {
       CustomSnackBar.show(
         context: context,
-        message: 'Real-money purchases are currently in development!',
-        type: CustomSnackBarType.warning,
+        message: 'Processing purchase...',
+        type: CustomSnackBarType.info,
       );
-    });
+      final success = await di.sl<IapService>().purchasePackage(package);
+      if (!context.mounted) return;
+      
+      if (success) {
+        CustomSnackBar.show(
+          context: context,
+          message: 'Purchase successful! Enjoy your items.',
+          type: CustomSnackBarType.success,
+        );
+        // Note: Reward granting logic should be handled by a listener or here.
+      } else {
+        CustomSnackBar.show(
+          context: context,
+          message: 'Purchase failed or was cancelled.',
+          type: CustomSnackBarType.error,
+        );
+      }
+    } else {
+      // Fallback for UI-only mode
+      CustomSnackBar.show(
+        context: context,
+        message: 'Processing your purchase...',
+        type: CustomSnackBarType.info,
+      );
+      Future.delayed(const Duration(seconds: 1), () {
+        if (!context.mounted) return;
+        CustomSnackBar.show(
+          context: context,
+          message: 'Real-money purchases are currently in development!',
+          type: CustomSnackBarType.warning,
+        );
+      });
+    }
   }
 
   @override
@@ -181,51 +232,80 @@ class PremiumStoreBottomSheet extends StatelessWidget {
                   
                   SizedBox(height: 16.h),
                   
-                  // Pack 1: Starter
-                  _buildPackCard(
-                    context: context,
-                    isDark: isDark,
-                    title: 'Starter Pack',
-                    coins: 500,
-                    keys: 0,
-                    price: '₹49',
-                    icon: Icons.monetization_on_rounded,
-                    color: Colors.amber,
-                    isBestValue: false,
-                    delay: 300,
-                  ),
-                  
-                  SizedBox(height: 16.h),
-                  
-                  // Pack 2: Explorer
-                  _buildPackCard(
-                    context: context,
-                    isDark: isDark,
-                    title: 'Explorer Pack',
-                    coins: 1200,
-                    keys: 2,
-                    price: '₹99',
-                    icon: Icons.explore_rounded,
-                    color: const Color(0xFF3B82F6),
-                    isBestValue: false,
-                    delay: 400,
-                  ),
-                  
-                  SizedBox(height: 16.h),
-                  
-                  // Pack 3: Master (Best Value)
-                  _buildPackCard(
-                    context: context,
-                    isDark: isDark,
-                    title: 'Master Pack',
-                    coins: 4000,
-                    keys: 8,
-                    price: '₹299',
-                    icon: Icons.diamond_rounded,
-                    color: const Color(0xFFEC4899),
-                    isBestValue: true,
-                    delay: 500,
-                  ),
+                  if (_isLoading)
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 40.h),
+                      child: const Center(child: CircularProgressIndicator()),
+                    )
+                  else if (_offerings?.current != null && _offerings!.current!.availablePackages.isNotEmpty)
+                    ..._offerings!.current!.availablePackages.asMap().entries.map((entry) {
+                      final index = entry.key;
+                      final package = entry.value;
+                      // RevenueCat packages have a StoreProduct
+                      final product = package.storeProduct;
+                      
+                      return Padding(
+                        padding: EdgeInsets.only(bottom: 16.h),
+                        child: _buildPackCard(
+                          context: context,
+                          isDark: isDark,
+                          title: product.title.split('(').first.trim(),
+                          coins: 0, // In reality, fetch from product description or package identifier
+                          keys: 0,
+                          price: product.priceString,
+                          icon: Icons.shopping_bag_rounded,
+                          color: Colors.amber,
+                          isBestValue: index == _offerings!.current!.availablePackages.length - 1, // Make last one best value
+                          delay: 300 + (index * 100),
+                          package: package,
+                        ),
+                      );
+                    })
+                  else ...[
+                    // Fallback to placeholder UI if RevenueCat isn't configured yet
+                    _buildPackCard(
+                      context: context,
+                      isDark: isDark,
+                      title: 'Starter Pack',
+                      coins: 500,
+                      keys: 0,
+                      price: '₹49',
+                      icon: Icons.monetization_on_rounded,
+                      color: Colors.amber,
+                      isBestValue: false,
+                      delay: 300,
+                    ),
+                    
+                    SizedBox(height: 16.h),
+                    
+                    _buildPackCard(
+                      context: context,
+                      isDark: isDark,
+                      title: 'Explorer Pack',
+                      coins: 1200,
+                      keys: 2,
+                      price: '₹99',
+                      icon: Icons.explore_rounded,
+                      color: const Color(0xFF3B82F6),
+                      isBestValue: false,
+                      delay: 400,
+                    ),
+                    
+                    SizedBox(height: 16.h),
+                    
+                    _buildPackCard(
+                      context: context,
+                      isDark: isDark,
+                      title: 'Master Pack',
+                      coins: 4000,
+                      keys: 8,
+                      price: '₹299',
+                      icon: Icons.diamond_rounded,
+                      color: const Color(0xFFEC4899),
+                      isBestValue: true,
+                      delay: 500,
+                    ),
+                  ],
 
                   SizedBox(height: 40.h),
                 ],
@@ -327,9 +407,10 @@ class PremiumStoreBottomSheet extends StatelessWidget {
     required Color color,
     required bool isBestValue,
     required int delay,
+    Package? package,
   }) {
     return ScaleButton(
-      onTap: () => _handlePurchase(context, title),
+      onTap: () => _handlePurchase(context, packName: title, package: package),
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
