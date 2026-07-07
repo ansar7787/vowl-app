@@ -1,517 +1,307 @@
 {
-    "gameType": "elevatorPitch",
-    "batchIndex": 1,
-    "levels": "1-10",
-    "quests": [
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 1,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a smart water bottle that tracks cellular hydration dynamically.",
-            "correctAnswer": "It monitors cellular hydration to optimize daily vitality.",
-            "hint": "Focus on the vital health aspect.",
-            "explanation": "Emphasizing cell-level health creates high consumer interest.",
-            "id": "ep_l1_q1",
-            "xpReward": 3,
-            "coinReward": 5,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 1,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch an AI calendar that schedules meetings based on brain wave fatigue.",
-            "correctAnswer": "It syncs calendar invites to match natural mental energy peaks.",
-            "hint": "Mention productivity and cognitive efficiency.",
-            "explanation": "Productivity based on energy is a highly premium concept.",
-            "id": "ep_l1_q2",
-            "xpReward": 3,
-            "coinReward": 5,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 1,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a biodegradable sneaker made fully out of recycled coffee grounds.",
-            "correctAnswer": "Our sneakers transform daily coffee waste into stylish durable footwear.",
-            "hint": "Highlight circular sustainability and fashion.",
-            "explanation": "Unique organic materials create immediate brand distinctiveness.",
-            "id": "ep_l1_q3",
-            "xpReward": 3,
-            "coinReward": 5,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 2,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a micro-lending app for local organic rooftop farmers.",
-            "correctAnswer": "It connects urban farmers directly with neighborhood capital instantly.",
-            "hint": "Focus on local community growth.",
-            "explanation": "Connecting micro-capital directly empowers urban development.",
-            "id": "ep_l2_q1",
-            "xpReward": 6,
-            "coinReward": 10,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 2,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a zero-fee contactless payment smart ring.",
-            "correctAnswer": "A sleek smart ring that replaces bulky wallets forever securely.",
-            "hint": "Emphasize security and convenience.",
-            "explanation": "Simplifying physical hardware drives massive payment adoption.",
-            "id": "ep_l2_q2",
-            "xpReward": 6,
-            "coinReward": 10,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 2,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch an automated tool that cancels unused digital trials.",
-            "correctAnswer": "It audits active subscriptions to save you hundreds monthly automatically.",
-            "hint": "Highlight direct consumer savings.",
-            "explanation": "Automated wallet management solves real everyday leakage.",
-            "id": "ep_l2_q3",
-            "xpReward": 6,
-            "coinReward": 10,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 3,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch an ergonomic office chair that corrects sitting posture dynamically.",
-            "correctAnswer": "It micro-adjusts back supports to prevent chronic spine pain.",
-            "hint": "State physical benefits clearly.",
-            "explanation": "Pre-empting back pain appeals to millions of remote workers.",
-            "id": "ep_l3_q1",
-            "xpReward": 9,
-            "coinReward": 15,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 3,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch an ambient sleep mask that guides breathing using soft light.",
-            "correctAnswer": "Our mask aligns breath rates to induce deep sleep swiftly.",
-            "hint": "Connect sensory light with deep relaxation.",
-            "explanation": "Guiding biometric sleep patterns offers pure relaxation without medication.",
-            "id": "ep_l3_q2",
-            "xpReward": 9,
-            "coinReward": 15,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 3,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a sensor patch that monitors key mineral deficiencies.",
-            "correctAnswer": "A wearable patch providing immediate insights into nutrient intake.",
-            "hint": "Stress continuous nutrition tracking.",
-            "explanation": "Continuous tracking replaces painful blood tests with active diagnostics.",
-            "id": "ep_l3_q3",
-            "xpReward": 9,
-            "coinReward": 15,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 4,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a decorative home wind turbine that blends with gardens.",
-            "correctAnswer": "It harvests clean wind energy through beautiful silent sculpture.",
-            "hint": "Merge aesthetics with sustainable power.",
-            "explanation": "Aesthetic wind energy overcomes noisy industrial grid issues.",
-            "id": "ep_l4_q1",
-            "xpReward": 12,
-            "coinReward": 20,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 4,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a portable solar phone case built from ocean plastics.",
-            "correctAnswer": "It cleans marine waste while charging your device anywhere sustainably.",
-            "hint": "Emphasize environmental cleanup.",
-            "explanation": "Clearing waste while offering utility constructs powerful emotional value.",
-            "id": "ep_l4_q2",
-            "xpReward": 12,
-            "coinReward": 20,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 4,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch an indoor home composter that yields rich soil in three hours.",
-            "correctAnswer": "It processes household waste into pristine fertilizer in hours.",
-            "hint": "Focus on speed and organic output.",
-            "explanation": "Rapid home composting minimizes global landfill emission output.",
-            "id": "ep_l4_q3",
-            "xpReward": 12,
-            "coinReward": 20,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 5,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch an immersive VR platform for interactive science lab tests.",
-            "correctAnswer": "Students perform dangerous chemistry tests inside safe virtual reality.",
-            "hint": "Highlight safety and spatial immersion.",
-            "explanation": "Virtual laboratories democratize expensive experiments globally.",
-            "id": "ep_l5_q1",
-            "xpReward": 15,
-            "coinReward": 25,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 5,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a gamified language app dedicated to elderly cognitive health.",
-            "correctAnswer": "It combines grammar lessons with games to prevent cognitive decline.",
-            "hint": "Link brain exercises with learning.",
-            "explanation": "Mental wellness through learning forms a compelling brand message.",
-            "id": "ep_l5_q2",
-            "xpReward": 15,
-            "coinReward": 25,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 5,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a smart writing tutor providing stylistic feedback.",
-            "correctAnswer": "It gives real-time creative recommendations as you pen novels.",
-            "hint": "Stress creative enhancements.",
-            "explanation": "Guiding styling choices expands writer capabilities.",
-            "id": "ep_l5_q3",
-            "xpReward": 15,
-            "coinReward": 25,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 6,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch autonomous luggage that follows travelers safely.",
-            "correctAnswer": "Smart bags that navigate busy terminals by following you.",
-            "hint": "Highlight hands-free travel experience.",
-            "explanation": "Hands-free navigation reduces travel anxiety completely.",
-            "id": "ep_l6_q1",
-            "xpReward": 18,
-            "coinReward": 30,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 6,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a collaborative platform for renting off-grid vans.",
-            "correctAnswer": "It lets owners lease custom campers to wilderness explorers.",
-            "hint": "Connect owners with adventure seeking users.",
-            "explanation": "Peer camper models offer unique wilderness tours at fair margins.",
-            "id": "ep_l6_q2",
-            "xpReward": 18,
-            "coinReward": 30,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 6,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch an augmented reality headset mapping mountain hiking trails.",
-            "correctAnswer": "It overlays real-time maps and safety details directly onto trails.",
-            "hint": "Focus on safety and exploration maps.",
-            "explanation": "Mapping routes keeps users safe during extreme off-grid ventures.",
-            "id": "ep_l6_q3",
-            "xpReward": 18,
-            "coinReward": 30,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 7,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a voice-activated IDE for hands-free software development.",
-            "correctAnswer": "It enables programmers to speak clean code lines completely hands-free.",
-            "hint": "Connect natural voice speech with syntax compilation.",
-            "explanation": "Hands-free coding expands digital access for differently-abled engineers.",
-            "id": "ep_l7_q1",
-            "xpReward": 21,
-            "coinReward": 35,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 7,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a deep learning bot reviewing pull request safety.",
-            "correctAnswer": "It identifies hidden logical bugs before code hits production.",
-            "hint": "Promote stable releases.",
-            "explanation": "Automated reviews accelerate engineering delivery speeds exponentially.",
-            "id": "ep_l7_q2",
-            "xpReward": 21,
-            "coinReward": 35,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 7,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a collaborative digital blackboard with layout auto-snaps.",
-            "correctAnswer": "It structures messy hand-drawn scribbles into pristine system charts.",
-            "hint": "Focus on design speed.",
-            "explanation": "Auto-structuring sketches saves design hours during brainstorming.",
-            "id": "ep_l7_q3",
-            "xpReward": 21,
-            "coinReward": 35,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 8,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a personalized 3D printer for dietary organic nutrient bars.",
-            "correctAnswer": "It prints protein snacks customized to your active biometrics.",
-            "hint": "Target customized athlete fueling.",
-            "explanation": "Biometric customization fuels performance better than standard foods.",
-            "id": "ep_l8_q1",
-            "xpReward": 24,
-            "coinReward": 40,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 8,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a local food box sourced entirely from urban building roofs.",
-            "correctAnswer": "Fresh vegetables harvested hours ago on your neighborhood roofs.",
-            "hint": "Focus on freshness and micro-proximity.",
-            "explanation": "Rooftop harvesting cuts transportation carbon to absolute zero.",
-            "id": "ep_l8_q2",
-            "xpReward": 24,
-            "coinReward": 40,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 8,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch an allergen testing device that checks food in 5 seconds.",
-            "correctAnswer": "A pocket sensor detecting hidden food allergens instantly.",
-            "hint": "Highlight rapid safety assurances.",
-            "explanation": "Instant safety checks protect kids from severe allergic reactions.",
-            "id": "ep_l8_q3",
-            "xpReward": 24,
-            "coinReward": 40,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 9,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch transparent home windows that function as solar collectors.",
-            "correctAnswer": "They turn ordinary glass panels into clean power sources.",
-            "hint": "Promote self-sustaining buildings.",
-            "explanation": "Solar windows convert high-rise glass spaces into sustainable power grids.",
-            "id": "ep_l9_q1",
-            "xpReward": 27,
-            "coinReward": 45,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 9,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a smart feeder tracking pet nutritional health indicators.",
-            "correctAnswer": "It monitors eating habits to alert owners to potential illnesses.",
-            "hint": "Highlight preventive animal care.",
-            "explanation": "Early habit alerts let owners resolve health issues before they escalate.",
-            "id": "ep_l9_q2",
-            "xpReward": 27,
-            "coinReward": 45,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 9,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch an ambient speaker that adjusts volume to room echoes.",
-            "correctAnswer": "It micro-tunes sound levels to always deliver crystal audio.",
-            "hint": "Promote acoustical clarity.",
-            "explanation": "Self-tuning audio ensures clear listening in noisy rooms.",
-            "id": "ep_l9_q3",
-            "xpReward": 27,
-            "coinReward": 45,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 10,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a modular lunar greenhouse container for space colonists.",
-            "correctAnswer": "It enables astronauts to harvest organic fresh salads on the moon.",
-            "hint": "Promote interplanetary self-sufficiency.",
-            "explanation": "Lunar crops sustain astronauts on long exploration voyages.",
-            "id": "ep_l10_q1",
-            "xpReward": 30,
-            "coinReward": 50,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 10,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a home hydrogen battery that stores power for six months.",
-            "correctAnswer": "It stores clean excess summer power to warm homes during winter.",
-            "hint": "Stress long term storage capabilities.",
-            "explanation": "Hydrogen tech overcomes seasonal solar drops completely.",
-            "id": "ep_l10_q2",
-            "xpReward": 30,
-            "coinReward": 50,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Deliver the pitch before the lift opens.",
-            "difficulty": 10,
-            "subtype": "elevatorPitch",
-            "interactionType": "voice",
-            "prompt": "Pitch a sub-orbital parcel drone delivery network.",
-            "correctAnswer": "Drones delivering critical emergency packages globally in an hour.",
-            "hint": "Promote extreme delivery speeds.",
-            "explanation": "Sub-orbital flight delivers medical cargo anywhere globally in record speeds.",
-            "id": "ep_l10_q3",
-            "xpReward": 30,
-            "coinReward": 50,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        }
-    ]
+  "gameType": "elevatorPitch",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a smart water bottle that tracks cellular hydration dynamically.",
+      "correctAnswer": "It monitors cellular hydration to optimize daily vitality.",
+      "hint": "Focus on the vital health aspect.",
+      "explanation": "Emphasizing cell-level health creates high consumer interest.",
+      "id": "ep_l1_q1"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch an AI calendar that schedules meetings based on brain wave fatigue.",
+      "correctAnswer": "It syncs calendar invites to match natural mental energy peaks.",
+      "hint": "Mention productivity and cognitive efficiency.",
+      "explanation": "Productivity based on energy is a highly premium concept.",
+      "id": "ep_l1_q2"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a biodegradable sneaker made fully out of recycled coffee grounds.",
+      "correctAnswer": "Our sneakers transform daily coffee waste into stylish durable footwear.",
+      "hint": "Highlight circular sustainability and fashion.",
+      "explanation": "Unique organic materials create immediate brand distinctiveness.",
+      "id": "ep_l1_q3"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a micro-lending app for local organic rooftop farmers.",
+      "correctAnswer": "It connects urban farmers directly with neighborhood capital instantly.",
+      "hint": "Focus on local community growth.",
+      "explanation": "Connecting micro-capital directly empowers urban development.",
+      "id": "ep_l2_q1"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a zero-fee contactless payment smart ring.",
+      "correctAnswer": "A sleek smart ring that replaces bulky wallets forever securely.",
+      "hint": "Emphasize security and convenience.",
+      "explanation": "Simplifying physical hardware drives massive payment adoption.",
+      "id": "ep_l2_q2"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch an automated tool that cancels unused digital trials.",
+      "correctAnswer": "It audits active subscriptions to save you hundreds monthly automatically.",
+      "hint": "Highlight direct consumer savings.",
+      "explanation": "Automated wallet management solves real everyday leakage.",
+      "id": "ep_l2_q3"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch an ergonomic office chair that corrects sitting posture dynamically.",
+      "correctAnswer": "It micro-adjusts back supports to prevent chronic spine pain.",
+      "hint": "State physical benefits clearly.",
+      "explanation": "Pre-empting back pain appeals to millions of remote workers.",
+      "id": "ep_l3_q1"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch an ambient sleep mask that guides breathing using soft light.",
+      "correctAnswer": "Our mask aligns breath rates to induce deep sleep swiftly.",
+      "hint": "Connect sensory light with deep relaxation.",
+      "explanation": "Guiding biometric sleep patterns offers pure relaxation without medication.",
+      "id": "ep_l3_q2"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a sensor patch that monitors key mineral deficiencies.",
+      "correctAnswer": "A wearable patch providing immediate insights into nutrient intake.",
+      "hint": "Stress continuous nutrition tracking.",
+      "explanation": "Continuous tracking replaces painful blood tests with active diagnostics.",
+      "id": "ep_l3_q3"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a decorative home wind turbine that blends with gardens.",
+      "correctAnswer": "It harvests clean wind energy through beautiful silent sculpture.",
+      "hint": "Merge aesthetics with sustainable power.",
+      "explanation": "Aesthetic wind energy overcomes noisy industrial grid issues.",
+      "id": "ep_l4_q1"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a portable solar phone case built from ocean plastics.",
+      "correctAnswer": "It cleans marine waste while charging your device anywhere sustainably.",
+      "hint": "Emphasize environmental cleanup.",
+      "explanation": "Clearing waste while offering utility constructs powerful emotional value.",
+      "id": "ep_l4_q2"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch an indoor home composter that yields rich soil in three hours.",
+      "correctAnswer": "It processes household waste into pristine fertilizer in hours.",
+      "hint": "Focus on speed and organic output.",
+      "explanation": "Rapid home composting minimizes global landfill emission output.",
+      "id": "ep_l4_q3"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch an immersive VR platform for interactive science lab tests.",
+      "correctAnswer": "Students perform dangerous chemistry tests inside safe virtual reality.",
+      "hint": "Highlight safety and spatial immersion.",
+      "explanation": "Virtual laboratories democratize expensive experiments globally.",
+      "id": "ep_l5_q1"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a gamified language app dedicated to elderly cognitive health.",
+      "correctAnswer": "It combines grammar lessons with games to prevent cognitive decline.",
+      "hint": "Link brain exercises with learning.",
+      "explanation": "Mental wellness through learning forms a compelling brand message.",
+      "id": "ep_l5_q2"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a smart writing tutor providing stylistic feedback.",
+      "correctAnswer": "It gives real-time creative recommendations as you pen novels.",
+      "hint": "Stress creative enhancements.",
+      "explanation": "Guiding styling choices expands writer capabilities.",
+      "id": "ep_l5_q3"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch autonomous luggage that follows travelers safely.",
+      "correctAnswer": "Smart bags that navigate busy terminals by following you.",
+      "hint": "Highlight hands-free travel experience.",
+      "explanation": "Hands-free navigation reduces travel anxiety completely.",
+      "id": "ep_l6_q1"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a collaborative platform for renting off-grid vans.",
+      "correctAnswer": "It lets owners lease custom campers to wilderness explorers.",
+      "hint": "Connect owners with adventure seeking users.",
+      "explanation": "Peer camper models offer unique wilderness tours at fair margins.",
+      "id": "ep_l6_q2"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch an augmented reality headset mapping mountain hiking trails.",
+      "correctAnswer": "It overlays real-time maps and safety details directly onto trails.",
+      "hint": "Focus on safety and exploration maps.",
+      "explanation": "Mapping routes keeps users safe during extreme off-grid ventures.",
+      "id": "ep_l6_q3"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a voice-activated IDE for hands-free software development.",
+      "correctAnswer": "It enables programmers to speak clean code lines completely hands-free.",
+      "hint": "Connect natural voice speech with syntax compilation.",
+      "explanation": "Hands-free coding expands digital access for differently-abled engineers.",
+      "id": "ep_l7_q1"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a deep learning bot reviewing pull request safety.",
+      "correctAnswer": "It identifies hidden logical bugs before code hits production.",
+      "hint": "Promote stable releases.",
+      "explanation": "Automated reviews accelerate engineering delivery speeds exponentially.",
+      "id": "ep_l7_q2"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a collaborative digital blackboard with layout auto-snaps.",
+      "correctAnswer": "It structures messy hand-drawn scribbles into pristine system charts.",
+      "hint": "Focus on design speed.",
+      "explanation": "Auto-structuring sketches saves design hours during brainstorming.",
+      "id": "ep_l7_q3"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a personalized 3D printer for dietary organic nutrient bars.",
+      "correctAnswer": "It prints protein snacks customized to your active biometrics.",
+      "hint": "Target customized athlete fueling.",
+      "explanation": "Biometric customization fuels performance better than standard foods.",
+      "id": "ep_l8_q1"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a local food box sourced entirely from urban building roofs.",
+      "correctAnswer": "Fresh vegetables harvested hours ago on your neighborhood roofs.",
+      "hint": "Focus on freshness and micro-proximity.",
+      "explanation": "Rooftop harvesting cuts transportation carbon to absolute zero.",
+      "id": "ep_l8_q2"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch an allergen testing device that checks food in 5 seconds.",
+      "correctAnswer": "A pocket sensor detecting hidden food allergens instantly.",
+      "hint": "Highlight rapid safety assurances.",
+      "explanation": "Instant safety checks protect kids from severe allergic reactions.",
+      "id": "ep_l8_q3"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch transparent home windows that function as solar collectors.",
+      "correctAnswer": "They turn ordinary glass panels into clean power sources.",
+      "hint": "Promote self-sustaining buildings.",
+      "explanation": "Solar windows convert high-rise glass spaces into sustainable power grids.",
+      "id": "ep_l9_q1"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a smart feeder tracking pet nutritional health indicators.",
+      "correctAnswer": "It monitors eating habits to alert owners to potential illnesses.",
+      "hint": "Highlight preventive animal care.",
+      "explanation": "Early habit alerts let owners resolve health issues before they escalate.",
+      "id": "ep_l9_q2"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch an ambient speaker that adjusts volume to room echoes.",
+      "correctAnswer": "It micro-tunes sound levels to always deliver crystal audio.",
+      "hint": "Promote acoustical clarity.",
+      "explanation": "Self-tuning audio ensures clear listening in noisy rooms.",
+      "id": "ep_l9_q3"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a modular lunar greenhouse container for space colonists.",
+      "correctAnswer": "It enables astronauts to harvest organic fresh salads on the moon.",
+      "hint": "Promote interplanetary self-sufficiency.",
+      "explanation": "Lunar crops sustain astronauts on long exploration voyages.",
+      "id": "ep_l10_q1"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a home hydrogen battery that stores power for six months.",
+      "correctAnswer": "It stores clean excess summer power to warm homes during winter.",
+      "hint": "Stress long term storage capabilities.",
+      "explanation": "Hydrogen tech overcomes seasonal solar drops completely.",
+      "id": "ep_l10_q2"
+    },
+    {
+      "instruction": "Deliver the pitch before the lift opens.",
+      "subtype": "elevatorPitch",
+      "interactionType": "voice",
+      "prompt": "Pitch a sub-orbital parcel drone delivery network.",
+      "correctAnswer": "Drones delivering critical emergency packages globally in an hour.",
+      "hint": "Promote extreme delivery speeds.",
+      "explanation": "Sub-orbital flight delivers medical cargo anywhere globally in record speeds.",
+      "id": "ep_l10_q3"
+    }
+  ]
 }
