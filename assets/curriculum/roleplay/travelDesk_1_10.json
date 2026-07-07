@@ -5,873 +5,663 @@
     "quests": [
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to pick up some medicine.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Neighborhood Pharmacy",
+                "Neighborhood Post Office",
+                "Neighborhood Tailor Shop",
+                "Neighborhood City Hall"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Pharmacy",
+                "Post Office",
+                "Tailor Shop",
+                "City Hall"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l1_q1",
-            "xpReward": 3,
-            "coinReward": 5,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Think about the place where people usually pick up some medicine.",
+            "explanation": "Pharmacy is correct because it's the place where people pick up some medicine.",
+            "id": "td_l1_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to watch some children play.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Family Daycare Center",
+                "Family Playground",
+                "Family Genealogy Archive",
+                "Family Family Game Center"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Daycare Center",
+                "Playground",
+                "Genealogy Archive",
+                "Family Game Center"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l1_q2",
-            "xpReward": 3,
-            "coinReward": 5,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Think about the place where people usually watch some children play.",
+            "explanation": "Playground is correct because it's the place where people watch some children play.",
+            "id": "td_l1_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to buy groceries for the week.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Marketplace Department Store",
+                "Marketplace Shoe Store",
+                "Marketplace Supermarket",
+                "Marketplace Pet Store"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Department Store",
+                "Shoe Store",
+                "Supermarket",
+                "Pet Store"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l1_q3",
-            "xpReward": 3,
-            "coinReward": 5,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Think about the place where people usually buy groceries for the week.",
+            "explanation": "Supermarket is correct because it's the place where people buy groceries for the week.",
+            "id": "td_l1_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to buy a fresh cake.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Gourmet Deli",
+                "Gourmet Cooking School",
+                "Gourmet Noodle Shop",
+                "Gourmet Bakery"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Deli",
+                "Cooking School",
+                "Noodle Shop",
+                "Bakery"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l2_q1",
-            "xpReward": 6,
-            "coinReward": 10,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "Think about the place where people usually buy a fresh cake.",
+            "explanation": "Bakery is correct because it's the place where people buy a fresh cake.",
+            "id": "td_l2_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to attend an English class.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Scholars' Classroom",
+                "Scholars' Gymnasium",
+                "Scholars' Tutoring Center",
+                "Scholars' Exam Hall"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Classroom",
+                "Gymnasium",
+                "Tutoring Center",
+                "Exam Hall"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l2_q2",
-            "xpReward": 6,
-            "coinReward": 10,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Think about the place where people usually attend an English class.",
+            "explanation": "Classroom is correct because it's the place where people attend an English class.",
+            "id": "td_l2_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to finish a report.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Corporate Conference Center",
+                "Corporate Office",
+                "Corporate Recruitment Agency",
+                "Corporate Call Center"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Conference Center",
+                "Office",
+                "Recruitment Agency",
+                "Call Center"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l2_q3",
-            "xpReward": 6,
-            "coinReward": 10,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Think about the place where people usually finish a report.",
+            "explanation": "Office is correct because it's the place where people finish a report.",
+            "id": "td_l2_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to catch a flight.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Wanderer's Customs Office",
+                "Wanderer's Embassy",
+                "Wanderer's Airport",
+                "Wanderer's Baggage Claim"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Customs Office",
+                "Embassy",
+                "Airport",
+                "Baggage Claim"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l3_q1",
-            "xpReward": 9,
-            "coinReward": 15,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Think about the place where people usually catch a flight.",
+            "explanation": "Airport is correct because it's the place where people catch a flight.",
+            "id": "td_l3_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to get a broken laptop fixed.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Digital Data Center",
+                "Digital App Development Studio",
+                "Digital Cybersecurity Office",
+                "Digital Repair Shop"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Data Center",
+                "App Development Studio",
+                "Cybersecurity Office",
+                "Repair Shop"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l3_q2",
-            "xpReward": 9,
-            "coinReward": 15,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "Think about the place where people usually get a broken laptop fixed.",
+            "explanation": "Repair Shop is correct because it's the place where people get a broken laptop fixed.",
+            "id": "td_l3_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to see a specialist doctor.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Wellness Hospital",
+                "Wellness Emergency Room",
+                "Wellness Rehabilitation Center",
+                "Wellness Health Insurance Office"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Hospital",
+                "Emergency Room",
+                "Rehabilitation Center",
+                "Health Insurance Office"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l3_q3",
-            "xpReward": 9,
-            "coinReward": 15,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Think about the place where people usually see a specialist doctor.",
+            "explanation": "Hospital is correct because it's the place where people see a specialist doctor.",
+            "id": "td_l3_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to watch the new movie.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Spotlight Arcade",
+                "Spotlight Cinema",
+                "Spotlight Karaoke Bar",
+                "Spotlight Board Game Cafe"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Arcade",
+                "Cinema",
+                "Karaoke Bar",
+                "Board Game Cafe"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l4_q1",
-            "xpReward": 12,
-            "coinReward": 20,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Think about the place where people usually watch the new movie.",
+            "explanation": "Cinema is correct because it's the place where people watch the new movie.",
+            "id": "td_l4_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to buy fresh bread.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Neighborhood Tailor Shop",
+                "Neighborhood City Hall",
+                "Neighborhood Bakery",
+                "Neighborhood Hardware Store"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Tailor Shop",
+                "City Hall",
+                "Bakery",
+                "Hardware Store"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l4_q2",
-            "xpReward": 12,
-            "coinReward": 20,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "This is where someone would go to buy fresh bread.",
+            "explanation": "The client wants to buy fresh bread, and a bakery is exactly the place for that.",
+            "id": "td_l4_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to take a child for a check-up.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Family Genealogy Archive",
+                "Family Family Game Center",
+                "Family Photo Studio",
+                "Family Pediatric Clinic"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Genealogy Archive",
+                "Family Game Center",
+                "Photo Studio",
+                "Pediatric Clinic"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l4_q3",
-            "xpReward": 12,
-            "coinReward": 20,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "Think about the place where people usually take a child for a check-up.",
+            "explanation": "Pediatric Clinic is correct because it's the place where people take a child for a check-up.",
+            "id": "td_l4_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to do some shopping.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Marketplace Shopping Mall",
+                "Marketplace Shoe Store",
+                "Marketplace Pet Store",
+                "Marketplace Electronics Store"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Shopping Mall",
+                "Shoe Store",
+                "Pet Store",
+                "Electronics Store"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l5_q1",
-            "xpReward": 15,
-            "coinReward": 25,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Think about the place where people usually do some shopping.",
+            "explanation": "Shopping Mall is correct because it's the place where people do some shopping.",
+            "id": "td_l5_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to have a cup of coffee.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Gourmet Cooking School",
+                "Gourmet Cafe",
+                "Gourmet Noodle Shop",
+                "Gourmet Buffet Hall"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Cooking School",
+                "Cafe",
+                "Noodle Shop",
+                "Buffet Hall"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l5_q2",
-            "xpReward": 15,
-            "coinReward": 25,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Think about the place where people usually have a cup of coffee.",
+            "explanation": "Cafe is correct because it's the place where people have a cup of coffee.",
+            "id": "td_l5_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to borrow some books.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Scholars' Tutoring Center",
+                "Scholars' Exam Hall",
+                "Scholars' Library",
+                "Scholars' Art Studio"
             ],
             "options": [
-                "Observatory",
-                "Factory",
+                "Tutoring Center",
+                "Exam Hall",
                 "Library",
-                "Darkness"
+                "Art Studio"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l5_q3",
-            "xpReward": 15,
-            "coinReward": 25,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Think about the place where people usually borrow some books.",
+            "explanation": "Library is correct because it's the place where people borrow some books.",
+            "id": "td_l5_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to discuss the new project.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Corporate Recruitment Agency",
+                "Corporate Call Center",
+                "Corporate Training Room",
+                "Corporate Meeting Room"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Recruitment Agency",
+                "Call Center",
+                "Training Room",
+                "Meeting Room"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l6_q1",
-            "xpReward": 18,
-            "coinReward": 30,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "Think about the place where people usually discuss the new project.",
+            "explanation": "Meeting Room is correct because it's the place where people discuss the new project.",
+            "id": "td_l6_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to buy a train ticket.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Wanderer's Train Station",
+                "Wanderer's Embassy",
+                "Wanderer's Baggage Claim",
+                "Wanderer's Visa Office"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Train Station",
+                "Embassy",
+                "Baggage Claim",
+                "Visa Office"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l6_q2",
-            "xpReward": 18,
-            "coinReward": 30,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Think about the place where people usually buy a train ticket.",
+            "explanation": "Train Station is correct because it's the place where people buy a train ticket.",
+            "id": "td_l6_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to buy new headphones.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Digital App Development Studio",
+                "Digital Electronics Store",
+                "Digital Cybersecurity Office",
+                "Digital Tech Support Center"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "App Development Studio",
+                "Electronics Store",
+                "Cybersecurity Office",
+                "Tech Support Center"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l6_q3",
-            "xpReward": 18,
-            "coinReward": 30,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Think about the place where people usually buy new headphones.",
+            "explanation": "Electronics Store is correct because it's the place where people buy new headphones.",
+            "id": "td_l6_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to buy some medicine.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Wellness Rehabilitation Center",
+                "Wellness Health Insurance Office",
+                "Wellness Pharmacy",
+                "Wellness Eye Clinic"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Rehabilitation Center",
+                "Health Insurance Office",
+                "Pharmacy",
+                "Eye Clinic"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l7_q1",
-            "xpReward": 21,
-            "coinReward": 35,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "This is where someone would go to buy some medicine.",
+            "explanation": "The client wants to buy some medicine, and a pharmacy is exactly the place for that.",
+            "id": "td_l7_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to see a live play.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Spotlight Karaoke Bar",
+                "Spotlight Board Game Cafe",
+                "Spotlight Comedy Club",
+                "Spotlight Theater"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Karaoke Bar",
+                "Board Game Cafe",
+                "Comedy Club",
+                "Theater"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l7_q2",
-            "xpReward": 21,
-            "coinReward": 35,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "Think about the place where people usually see a live play.",
+            "explanation": "Theater is correct because it's the place where people see a live play.",
+            "id": "td_l7_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to wash some clothes.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Neighborhood Laundromat",
+                "Neighborhood City Hall",
+                "Neighborhood Hardware Store",
+                "Neighborhood Key Shop"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Laundromat",
+                "City Hall",
+                "Hardware Store",
+                "Key Shop"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l7_q3",
-            "xpReward": 21,
-            "coinReward": 35,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Think about the place where people usually wash some clothes.",
+            "explanation": "Laundromat is correct because it's the place where people wash some clothes.",
+            "id": "td_l7_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to have a family dinner.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Family Family Game Center",
+                "Family Family Restaurant",
+                "Family Photo Studio",
+                "Family Family Shelter"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Family Game Center",
+                "Family Restaurant",
+                "Photo Studio",
+                "Family Shelter"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l8_q1",
-            "xpReward": 24,
-            "coinReward": 40,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Think about the place where people usually have a family dinner.",
+            "explanation": "Family Restaurant is correct because it's the place where people have a family dinner.",
+            "id": "td_l8_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to find a unique outfit.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Marketplace Pet Store",
+                "Marketplace Electronics Store",
+                "Marketplace Boutique",
+                "Marketplace Antique Shop"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Pet Store",
+                "Electronics Store",
+                "Boutique",
+                "Antique Shop"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l8_q2",
-            "xpReward": 24,
-            "coinReward": 40,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Think about the place where people usually find a unique outfit.",
+            "explanation": "Boutique is correct because it's the place where people find a unique outfit.",
+            "id": "td_l8_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to enjoy a nice dinner.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Gourmet Noodle Shop",
+                "Gourmet Buffet Hall",
+                "Gourmet Juice Bar",
+                "Gourmet Restaurant"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Noodle Shop",
+                "Buffet Hall",
+                "Juice Bar",
+                "Restaurant"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l8_q3",
-            "xpReward": 24,
-            "coinReward": 40,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "Think about the place where people usually enjoy a nice dinner.",
+            "explanation": "Restaurant is correct because it's the place where people enjoy a nice dinner.",
+            "id": "td_l8_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to do a chemistry experiment.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Scholars' Science Lab",
+                "Scholars' Exam Hall",
+                "Scholars' Art Studio",
+                "Scholars' Dormitory"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Science Lab",
+                "Exam Hall",
+                "Art Studio",
+                "Dormitory"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l9_q1",
-            "xpReward": 27,
-            "coinReward": 45,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Think about the place where people usually do a chemistry experiment.",
+            "explanation": "Science Lab is correct because it's the place where people do a chemistry experiment.",
+            "id": "td_l9_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to take a short break.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Corporate Call Center",
+                "Corporate Break Room",
+                "Corporate Training Room",
+                "Corporate IT Department"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Call Center",
+                "Break Room",
+                "Training Room",
+                "IT Department"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l9_q2",
-            "xpReward": 27,
-            "coinReward": 45,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Think about the place where people usually take a short break.",
+            "explanation": "Break Room is correct because it's the place where people take a short break.",
+            "id": "td_l9_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to check into a hotel room.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Wanderer's Baggage Claim",
+                "Wanderer's Visa Office",
+                "Wanderer's Hotel Lobby",
+                "Wanderer's Cruise Port"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Baggage Claim",
+                "Visa Office",
+                "Hotel Lobby",
+                "Cruise Port"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l9_q3",
-            "xpReward": 27,
-            "coinReward": 45,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Think about the place where people usually check into a hotel room.",
+            "explanation": "Hotel Lobby is correct because it's the place where people check into a hotel room.",
+            "id": "td_l9_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to fix a software problem.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Digital Cybersecurity Office",
+                "Digital Tech Support Center",
+                "Digital Coding Bootcamp",
+                "Digital IT Help Desk"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Cybersecurity Office",
+                "Tech Support Center",
+                "Coding Bootcamp",
+                "IT Help Desk"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l10_q1",
-            "xpReward": 30,
-            "coinReward": 50,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "Think about the place where people usually fix a software problem.",
+            "explanation": "IT Help Desk is correct because it's the place where people fix a software problem.",
+            "id": "td_l10_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to have a dental check-up.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Wellness Dental Clinic",
+                "Wellness Health Insurance Office",
+                "Wellness Eye Clinic",
+                "Wellness Blood Donation Center"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Dental Clinic",
+                "Health Insurance Office",
+                "Eye Clinic",
+                "Blood Donation Center"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l10_q2",
-            "xpReward": 30,
-            "coinReward": 50,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Think about the place where people usually have a dental check-up.",
+            "explanation": "Dental Clinic is correct because it's the place where people have a dental check-up.",
+            "id": "td_l10_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "I want to enjoy a live concert.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Spotlight Board Game Cafe",
+                "Spotlight Concert Hall",
+                "Spotlight Comedy Club",
+                "Spotlight Planetarium"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Board Game Cafe",
+                "Concert Hall",
+                "Comedy Club",
+                "Planetarium"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l10_q3",
-            "xpReward": 30,
-            "coinReward": 50,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Think about the place where people usually enjoy a live concert.",
+            "explanation": "Concert Hall is correct because it's the place where people enjoy a live concert.",
+            "id": "td_l10_q3"
         }
     ]
 }

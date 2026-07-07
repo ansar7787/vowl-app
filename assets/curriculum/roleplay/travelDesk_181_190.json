@@ -5,873 +5,663 @@
     "quests": [
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to print some documents as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Neighborhood Print Shop",
+                "Neighborhood Bakery",
+                "Neighborhood Dry Cleaner",
+                "Neighborhood Lost-And-Found Office"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Print Shop",
+                "Bakery",
+                "Dry Cleaner",
+                "Lost-And-Found Office"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l181_q1",
-            "xpReward": 543,
-            "coinReward": 905,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The correct option is the venue most closely associated with the ability to print some documents.",
+            "explanation": "The phrase 'print some documents' points directly to a print shop, since that is the service or activity it specializes in.",
+            "id": "td_l181_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to start the adoption process as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Family Pediatric Clinic",
+                "Family Adoption Agency",
+                "Family Picnic Area",
+                "Family Nursery"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Pediatric Clinic",
+                "Adoption Agency",
+                "Picnic Area",
+                "Nursery"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l181_q2",
-            "xpReward": 543,
-            "coinReward": 905,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "The correct option is the venue most closely associated with the ability to start the adoption process.",
+            "explanation": "The phrase 'start the adoption process' points directly to a adoption agency, since that is the service or activity it specializes in.",
+            "id": "td_l181_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to buy some new shirts as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Marketplace Shopping Mall",
+                "Marketplace Outlet Store",
+                "Marketplace Clothing Store",
+                "Marketplace Craft Store"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Shopping Mall",
+                "Outlet Store",
+                "Clothing Store",
+                "Craft Store"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l181_q3",
-            "xpReward": 543,
-            "coinReward": 905,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "The correct option is the venue most closely associated with the ability to buy some new shirts.",
+            "explanation": "The phrase 'buy some new shirts' points directly to a clothing store, since that is the service or activity it specializes in.",
+            "id": "td_l181_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to donate some canned food as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Gourmet Cafe",
+                "Gourmet Wine Cellar",
+                "Gourmet Sushi Bar",
+                "Gourmet Food Bank"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Cafe",
+                "Wine Cellar",
+                "Sushi Bar",
+                "Food Bank"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l182_q1",
-            "xpReward": 546,
-            "coinReward": 910,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "The correct option is the venue most closely associated with the ability to donate some canned food.",
+            "explanation": "The phrase 'donate some canned food' points directly to a food bank, since that is the service or activity it specializes in.",
+            "id": "td_l182_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to get a bandage for a scraped knee as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Scholars' School Nurse's Office",
+                "Scholars' Library",
+                "Scholars' Auditorium",
+                "Scholars' Music Room"
             ],
             "options": [
-                "Observatory",
-                "Factory",
+                "School Nurse's Office",
                 "Library",
-                "Darkness"
+                "Auditorium",
+                "Music Room"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l182_q2",
-            "xpReward": 546,
-            "coinReward": 910,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The correct option is the venue most closely associated with the ability to get a bandage for a scraped knee.",
+            "explanation": "The phrase 'get a bandage for a scraped knee' points directly to a school nurse's office, since that is the service or activity it specializes in.",
+            "id": "td_l182_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to discuss a new campaign as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Corporate Meeting Room",
+                "Corporate Marketing Department",
+                "Corporate Coworking Space",
+                "Corporate Loading Dock"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Meeting Room",
+                "Marketing Department",
+                "Coworking Space",
+                "Loading Dock"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l182_q3",
-            "xpReward": 546,
-            "coinReward": 910,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "The correct option is the venue most closely associated with the ability to discuss a new campaign.",
+            "explanation": "The phrase 'discuss a new campaign' points directly to a marketing department, since that is the service or activity it specializes in.",
+            "id": "td_l182_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to rent a car as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Wanderer's Train Station",
+                "Wanderer's Travel Agency",
+                "Wanderer's Car Rental Office",
+                "Wanderer's Duty-Free Shop"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Train Station",
+                "Travel Agency",
+                "Car Rental Office",
+                "Duty-Free Shop"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l183_q1",
-            "xpReward": 549,
-            "coinReward": 915,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "The correct option is the venue most closely associated with the ability to rent a car.",
+            "explanation": "The phrase 'rent a car' points directly to a car rental office, since that is the service or activity it specializes in.",
+            "id": "td_l183_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to see the newest gadgets as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Digital Electronics Store",
+                "Digital Phone Repair Kiosk",
+                "Digital Drone Workshop",
+                "Digital Tech Expo Hall"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Electronics Store",
+                "Phone Repair Kiosk",
+                "Drone Workshop",
+                "Tech Expo Hall"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l183_q2",
-            "xpReward": 549,
-            "coinReward": 915,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "The correct option is the venue most closely associated with the ability to see the newest gadgets.",
+            "explanation": "The phrase 'see the newest gadgets' points directly to a tech expo hall, since that is the service or activity it specializes in.",
+            "id": "td_l183_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to get tested for allergies as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Wellness Allergy Clinic",
+                "Wellness Pharmacy",
+                "Wellness Urgent Care Center",
+                "Wellness Hearing Clinic"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Allergy Clinic",
+                "Pharmacy",
+                "Urgent Care Center",
+                "Hearing Clinic"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l183_q3",
-            "xpReward": 549,
-            "coinReward": 915,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The correct option is the venue most closely associated with the ability to get tested for allergies.",
+            "explanation": "The phrase 'get tested for allergies' points directly to a allergy clinic, since that is the service or activity it specializes in.",
+            "id": "td_l183_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to cool off on a hot day as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Spotlight Theater",
+                "Spotlight Water Park",
+                "Spotlight Music Festival Grounds",
+                "Spotlight Jazz Club"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Theater",
+                "Water Park",
+                "Music Festival Grounds",
+                "Jazz Club"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l184_q1",
-            "xpReward": 552,
-            "coinReward": 920,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "The correct option is the venue most closely associated with the ability to cool off on a hot day.",
+            "explanation": "The phrase 'cool off on a hot day' points directly to a water park, since that is the service or activity it specializes in.",
+            "id": "td_l184_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to exchange some money as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Neighborhood Dry Cleaner",
+                "Neighborhood Lost-And-Found Office",
+                "Neighborhood Currency Exchange",
+                "Neighborhood Barber Shop"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Dry Cleaner",
+                "Lost-And-Found Office",
+                "Currency Exchange",
+                "Barber Shop"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l184_q2",
-            "xpReward": 552,
-            "coinReward": 920,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "The correct option is the venue most closely associated with the ability to exchange some money.",
+            "explanation": "The phrase 'exchange some money' points directly to a currency exchange, since that is the service or activity it specializes in.",
+            "id": "td_l184_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to plan a family wedding as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Family Picnic Area",
+                "Family Nursery",
+                "Family Toy Store",
+                "Family Wedding Planner's Office"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Picnic Area",
+                "Nursery",
+                "Toy Store",
+                "Wedding Planner's Office"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l184_q3",
-            "xpReward": 552,
-            "coinReward": 920,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "The correct option is the venue most closely associated with the ability to plan a family wedding.",
+            "explanation": "The phrase 'plan a family wedding' points directly to a wedding planner's office, since that is the service or activity it specializes in.",
+            "id": "td_l184_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to find cheap household items as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Marketplace Discount Store",
+                "Marketplace Outlet Store",
+                "Marketplace Craft Store",
+                "Marketplace Farmers Market"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Discount Store",
+                "Outlet Store",
+                "Craft Store",
+                "Farmers Market"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l185_q1",
-            "xpReward": 555,
-            "coinReward": 925,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The correct option is the venue most closely associated with the ability to find cheap household items.",
+            "explanation": "The phrase 'find cheap household items' points directly to a discount store, since that is the service or activity it specializes in.",
+            "id": "td_l185_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to buy some exotic spices as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Gourmet Wine Cellar",
+                "Gourmet Spice Market",
+                "Gourmet Sushi Bar",
+                "Gourmet Food Truck"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Wine Cellar",
+                "Spice Market",
+                "Sushi Bar",
+                "Food Truck"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l185_q2",
-            "xpReward": 555,
-            "coinReward": 925,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "The correct option is the venue most closely associated with the ability to buy some exotic spices.",
+            "explanation": "The phrase 'buy some exotic spices' points directly to a spice market, since that is the service or activity it specializes in.",
+            "id": "td_l185_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to practice for a debate as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Scholars' Auditorium",
+                "Scholars' Music Room",
+                "Scholars' Debate Club Room",
+                "Scholars' School Cafeteria"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Auditorium",
+                "Music Room",
+                "Debate Club Room",
+                "School Cafeteria"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l185_q3",
-            "xpReward": 555,
-            "coinReward": 925,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "The correct option is the venue most closely associated with the ability to practice for a debate.",
+            "explanation": "The phrase 'practice for a debate' points directly to a debate club room, since that is the service or activity it specializes in.",
+            "id": "td_l185_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to check the inventory as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Corporate Coworking Space",
+                "Corporate Loading Dock",
+                "Corporate Human Resources Office",
+                "Corporate Warehouse"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Coworking Space",
+                "Loading Dock",
+                "Human Resources Office",
+                "Warehouse"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l186_q1",
-            "xpReward": 558,
-            "coinReward": 930,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "The correct option is the venue most closely associated with the ability to check the inventory.",
+            "explanation": "The phrase 'check the inventory' points directly to a warehouse, since that is the service or activity it specializes in.",
+            "id": "td_l186_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to show a passport as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Wanderer's Border Checkpoint",
+                "Wanderer's Travel Agency",
+                "Wanderer's Duty-Free Shop",
+                "Wanderer's Tour Agency"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Border Checkpoint",
+                "Travel Agency",
+                "Duty-Free Shop",
+                "Tour Agency"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l186_q2",
-            "xpReward": 558,
-            "coinReward": 930,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The correct option is the venue most closely associated with the ability to show a passport.",
+            "explanation": "The phrase 'show a passport' points directly to a border checkpoint, since that is the service or activity it specializes in.",
+            "id": "td_l186_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to try out the newest video games as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Digital Phone Repair Kiosk",
+                "Digital Gaming Lounge",
+                "Digital Drone Workshop",
+                "Digital Software Office"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Phone Repair Kiosk",
+                "Gaming Lounge",
+                "Drone Workshop",
+                "Software Office"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l186_q3",
-            "xpReward": 558,
-            "coinReward": 930,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "The correct option is the venue most closely associated with the ability to try out the newest video games.",
+            "explanation": "The phrase 'try out the newest video games' points directly to a gaming lounge, since that is the service or activity it specializes in.",
+            "id": "td_l186_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to treat a sports injury as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Wellness Urgent Care Center",
+                "Wellness Hearing Clinic",
+                "Wellness Sports Medicine Clinic",
+                "Wellness Physiotherapy Center"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Urgent Care Center",
+                "Hearing Clinic",
+                "Sports Medicine Clinic",
+                "Physiotherapy Center"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l187_q1",
-            "xpReward": 561,
-            "coinReward": 935,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "The correct option is the venue most closely associated with the ability to treat a sports injury.",
+            "explanation": "The phrase 'treat a sports injury' points directly to a sports medicine clinic, since that is the service or activity it specializes in.",
+            "id": "td_l187_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to watch an acrobatic show as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Spotlight Music Festival Grounds",
+                "Spotlight Jazz Club",
+                "Spotlight Amusement Park",
+                "Spotlight Circus Tent"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Music Festival Grounds",
+                "Jazz Club",
+                "Amusement Park",
+                "Circus Tent"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l187_q2",
-            "xpReward": 561,
-            "coinReward": 935,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "The correct option is the venue most closely associated with the ability to watch an acrobatic show.",
+            "explanation": "The phrase 'watch an acrobatic show' points directly to a circus tent, since that is the service or activity it specializes in.",
+            "id": "td_l187_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to report a lost wallet as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Neighborhood Lost-And-Found Office",
+                "Neighborhood Currency Exchange",
+                "Neighborhood Barber Shop",
+                "Neighborhood Notary Office"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Lost-And-Found Office",
+                "Currency Exchange",
+                "Barber Shop",
+                "Notary Office"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l187_q3",
-            "xpReward": 561,
-            "coinReward": 935,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The correct option is the venue most closely associated with the ability to report a lost wallet.",
+            "explanation": "The phrase 'report a lost wallet' points directly to a lost-and-found office, since that is the service or activity it specializes in.",
+            "id": "td_l187_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to enroll a baby in daycare as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Family Wedding Planner's Office",
+                "Family Nursery",
+                "Family Toy Store",
+                "Family Babysitting Agency"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Wedding Planner's Office",
+                "Nursery",
+                "Toy Store",
+                "Babysitting Agency"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l188_q1",
-            "xpReward": 564,
-            "coinReward": 940,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "The correct option is the venue most closely associated with the ability to enroll a baby in daycare.",
+            "explanation": "The phrase 'enroll a baby in daycare' points directly to a nursery, since that is the service or activity it specializes in.",
+            "id": "td_l188_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to buy supplies for a project as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Marketplace Discount Store",
+                "Marketplace Farmers Market",
+                "Marketplace Craft Store",
+                "Marketplace Gift Shop"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Discount Store",
+                "Farmers Market",
+                "Craft Store",
+                "Gift Shop"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l188_q2",
-            "xpReward": 564,
-            "coinReward": 940,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "The correct option is the venue most closely associated with the ability to buy supplies for a project.",
+            "explanation": "The phrase 'buy supplies for a project' points directly to a craft store, since that is the service or activity it specializes in.",
+            "id": "td_l188_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to try some fresh sushi as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Gourmet Spice Market",
+                "Gourmet Food Truck",
+                "Gourmet Seafood Market",
+                "Gourmet Sushi Bar"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Spice Market",
+                "Food Truck",
+                "Seafood Market",
+                "Sushi Bar"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l188_q3",
-            "xpReward": 564,
-            "coinReward": 940,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "The correct option is the venue most closely associated with the ability to try some fresh sushi.",
+            "explanation": "The phrase 'try some fresh sushi' points directly to a sushi bar, since that is the service or activity it specializes in.",
+            "id": "td_l188_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to practice the piano as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Scholars' Music Room",
+                "Scholars' Debate Club Room",
+                "Scholars' School Cafeteria",
+                "Scholars' Admissions Office"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Music Room",
+                "Debate Club Room",
+                "School Cafeteria",
+                "Admissions Office"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l189_q1",
-            "xpReward": 567,
-            "coinReward": 945,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The correct option is the venue most closely associated with the ability to practice the piano.",
+            "explanation": "The phrase 'practice the piano' points directly to a music room, since that is the service or activity it specializes in.",
+            "id": "td_l189_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to pick up a delivery as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Corporate Warehouse",
+                "Corporate Loading Dock",
+                "Corporate Human Resources Office",
+                "Corporate Staff Lounge"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Warehouse",
+                "Loading Dock",
+                "Human Resources Office",
+                "Staff Lounge"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l189_q2",
-            "xpReward": 567,
-            "coinReward": 945,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "The correct option is the venue most closely associated with the ability to pick up a delivery.",
+            "explanation": "The phrase 'pick up a delivery' points directly to a loading dock, since that is the service or activity it specializes in.",
+            "id": "td_l189_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to buy some souvenirs before a flight as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Wanderer's Border Checkpoint",
+                "Wanderer's Tour Agency",
+                "Wanderer's Duty-Free Shop",
+                "Wanderer's Tourist Information Center"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Border Checkpoint",
+                "Tour Agency",
+                "Duty-Free Shop",
+                "Tourist Information Center"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l189_q3",
-            "xpReward": 567,
-            "coinReward": 945,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "The correct option is the venue most closely associated with the ability to buy some souvenirs before a flight.",
+            "explanation": "The phrase 'buy some souvenirs before a flight' points directly to a duty-free shop, since that is the service or activity it specializes in.",
+            "id": "td_l189_q3"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to repair a broken drone as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Digital Gaming Lounge",
+                "Digital Software Office",
+                "Digital Internet Cafe",
+                "Digital Drone Workshop"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Gaming Lounge",
+                "Software Office",
+                "Internet Cafe",
+                "Drone Workshop"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l190_q1",
-            "xpReward": 570,
-            "coinReward": 950,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 3,
+            "hint": "The correct option is the venue most closely associated with the ability to repair a broken drone.",
+            "explanation": "The phrase 'repair a broken drone' points directly to a drone workshop, since that is the service or activity it specializes in.",
+            "id": "td_l190_q1"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to get a hearing test as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Wellness Hearing Clinic",
+                "Wellness Sports Medicine Clinic",
+                "Wellness Physiotherapy Center",
+                "Wellness Nutrition Clinic"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Hearing Clinic",
+                "Sports Medicine Clinic",
+                "Physiotherapy Center",
+                "Nutrition Clinic"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l190_q2",
-            "xpReward": 570,
-            "coinReward": 950,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The correct option is the venue most closely associated with the ability to get a hearing test.",
+            "explanation": "The phrase 'get a hearing test' points directly to a hearing clinic, since that is the service or activity it specializes in.",
+            "id": "td_l190_q2"
         },
         {
             "instruction": "Match the destination to the client's request.",
-            "difficulty": 1,
             "subtype": "travelDesk",
             "interactionType": "match",
-            "prompt": "I want to see the stars up close.",
+            "prompt": "Given my schedule, I need to identify the most suitable place to listen to live jazz as soon as possible.",
             "itinerary": [
-                "Star-Observatory",
-                "Foundry",
-                "Archive",
-                "Void"
+                "Spotlight Circus Tent",
+                "Spotlight Jazz Club",
+                "Spotlight Amusement Park",
+                "Spotlight Bowling Alley"
             ],
             "options": [
-                "Observatory",
-                "Factory",
-                "Library",
-                "Darkness"
+                "Circus Tent",
+                "Jazz Club",
+                "Amusement Park",
+                "Bowling Alley"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Stars are observed from specific points.",
-            "explanation": "Navigation is a skill.",
-            "id": "td_l190_q3",
-            "xpReward": 570,
-            "coinReward": 950,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "The correct option is the venue most closely associated with the ability to listen to live jazz.",
+            "explanation": "The phrase 'listen to live jazz' points directly to a jazz club, since that is the service or activity it specializes in.",
+            "id": "td_l190_q3"
         }
     ]
 }
