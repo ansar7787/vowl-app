@@ -6,602 +6,572 @@
         {
             "id": "pos_l1_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'technician'",
-            "targetWord": "technician",
-            "sentence": "The technician repairs the circuit.",
+            "question": "What part of speech is 'cat' as used in the sentence below?",
+            "targetWord": "cat",
+            "sentence": "She strokes her cat every evening before going to bed.",
             "options": [
                 "Noun",
+                "Verb",
                 "Adjective",
-                "Conjunction",
                 "Adverb"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "Noun",
-            "hint": "Think about what role 'technician' plays in the sentence.",
-            "explanation": "'technician' is a noun because it names something."
+            "hint": "Nouns name people, places, things, or ideas. What animal does 'cat' name here?",
+            "explanation": "'Cat' is a noun - it names a specific animal. Nouns name people, places, things, or ideas and can follow 'the' or 'a'."
         },
         {
             "id": "pos_l1_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'repairs'",
-            "targetWord": "repairs",
-            "sentence": "The technician repairs the circuit.",
+            "question": "What part of speech is 'barked' as used in the sentence below?",
+            "targetWord": "barked",
+            "sentence": "The dog barked loudly at the delivery driver outside.",
             "options": [
                 "Noun",
                 "Verb",
-                "Conjunction",
-                "Adjective"
+                "Adjective",
+                "Adverb"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "Verb",
-            "hint": "Think about what role 'repairs' plays in the sentence.",
-            "explanation": "'repairs' is a verb because it describes an action."
+            "hint": "Verbs show action. What is the dog doing in this sentence?",
+            "explanation": "'Barked' is a verb - it describes the action the dog performed. Past-tense action verbs tell us what someone or something did."
         },
         {
             "id": "pos_l1_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'quickly'",
-            "targetWord": "quickly",
-            "sentence": "He runs very quickly.",
+            "question": "What part of speech is 'soft' as used in the sentence below?",
+            "targetWord": "soft",
+            "sentence": "The baby fell asleep on a soft blanket in the cot.",
             "options": [
                 "Noun",
-                "Adverb",
+                "Verb",
                 "Adjective",
-                "Verb"
+                "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adverb",
-            "hint": "Think about what role 'quickly' plays in the sentence.",
-            "explanation": "'quickly' is a adverb because it modifies an action."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Adjectives describe nouns. Which noun does 'soft' describe?",
+            "explanation": "'Soft' is an adjective - it describes the blanket. Adjectives answer 'what kind?' or 'what does it feel like?'"
         },
         {
             "id": "pos_l2_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'beautiful'",
-            "targetWord": "beautiful",
-            "sentence": "A beautiful sunset painted the sky.",
+            "question": "What part of speech is 'teacher' as used in the sentence below?",
+            "targetWord": "teacher",
+            "sentence": "The teacher wrote the homework on the whiteboard.",
             "options": [
-                "Pronoun",
+                "Noun",
+                "Verb",
                 "Adjective",
-                "Adverb",
-                "Conjunction"
+                "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'beautiful' plays in the sentence.",
-            "explanation": "'beautiful' is a adjective because it describes a noun."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Nouns name people. Is 'teacher' naming a person here?",
+            "explanation": "'Teacher' is a noun - it names a person. Job titles like 'teacher', 'doctor', and 'engineer' are all common nouns."
         },
         {
             "id": "pos_l2_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'She'",
-            "targetWord": "She",
-            "sentence": "She is waiting for you.",
+            "question": "What part of speech is 'slowly' as used in the sentence below?",
+            "targetWord": "slowly",
+            "sentence": "The old man walked slowly down the hospital corridor.",
             "options": [
-                "Pronoun",
-                "Verb",
-                "Conjunction",
-                "Noun"
+                "Adjective",
+                "Noun",
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Pronoun",
-            "hint": "Think about what role 'She' plays in the sentence.",
-            "explanation": "'She' is a pronoun because it replaces a noun to avoid repetition."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Adverbs answer 'how?' Ask: how did the man walk?",
+            "explanation": "'Slowly' is an adverb - it modifies the verb 'walked' and tells us how the action was done. Most manner adverbs end in '-ly'."
         },
         {
             "id": "pos_l2_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'under'",
-            "targetWord": "under",
-            "sentence": "The cat is under the table.",
+            "question": "What part of speech is 'warm' as used in the sentence below?",
+            "targetWord": "warm",
+            "sentence": "She put on a warm coat before going outside.",
             "options": [
-                "Preposition",
-                "Verb",
                 "Noun",
-                "Adjective"
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Preposition",
-            "hint": "Think about what role 'under' plays in the sentence.",
-            "explanation": "'under' is a preposition because it shows the relationship of position."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Adjectives describe nouns. What noun does 'warm' describe?",
+            "explanation": "'Warm' is an adjective - it describes the noun 'coat'. It answers 'what kind of coat?' - a key test for adjectives."
         },
         {
             "id": "pos_l3_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'and'",
-            "targetWord": "and",
-            "sentence": "I like coffee and tea.",
+            "question": "What part of speech is 'park' as used in the sentence below?",
+            "targetWord": "park",
+            "sentence": "We had a picnic in the park on Sunday afternoon.",
             "options": [
-                "Adverb",
-                "Conjunction",
-                "Preposition",
-                "Noun"
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Conjunction",
-            "hint": "Think about what role 'and' plays in the sentence.",
-            "explanation": "'and' is a conjunction because it connects words or phrases together."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Nouns name places. Is 'park' naming a place here?",
+            "explanation": "'Park' is a noun - it names a place. Nouns that name locations (park, city, country) are called place nouns."
         },
         {
             "id": "pos_l3_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'runs'",
-            "targetWord": "runs",
-            "sentence": "The system runs smoothly.",
+            "question": "What part of speech is 'sings' as used in the sentence below?",
+            "targetWord": "sings",
+            "sentence": "Maria sings in the school choir every Thursday evening.",
             "options": [
                 "Noun",
                 "Verb",
-                "Conjunction",
-                "Pronoun"
+                "Adjective",
+                "Adverb"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "Verb",
-            "hint": "Think about what role 'runs' plays in the sentence.",
-            "explanation": "'runs' is a verb because it describes an action."
+            "hint": "Verbs show what someone does. What is Maria doing?",
+            "explanation": "'Sings' is a verb - it expresses Maria's action. Present-tense verbs ending in '-s' agree with a singular subject."
         },
         {
             "id": "pos_l3_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'remote'",
-            "targetWord": "remote",
-            "sentence": "They scanned the remote sector.",
+            "question": "What part of speech is 'happy' as used in the sentence below?",
+            "targetWord": "happy",
+            "sentence": "The children were happy when school finished early.",
             "options": [
                 "Noun",
-                "Pronoun",
-                "Preposition",
-                "Adjective"
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Adjective",
-            "hint": "Think about what role 'remote' plays in the sentence.",
-            "explanation": "'remote' is a adjective because it describes a noun."
+            "hint": "Adjectives describe emotions. What does 'happy' tell us about the children?",
+            "explanation": "'Happy' is an adjective - it describes the emotional state of 'the children'. Adjectives can follow linking verbs like 'were'."
         },
         {
             "id": "pos_l4_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'optimized'",
-            "targetWord": "optimized",
-            "sentence": "The AI optimized the power grid.",
+            "question": "What part of speech is 'book' as used in the sentence below?",
+            "targetWord": "book",
+            "sentence": "He borrowed a book from the library on his way home.",
             "options": [
-                "Adjective",
-                "Preposition",
+                "Noun",
                 "Verb",
-                "Pronoun"
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'optimized' plays in the sentence.",
-            "explanation": "'optimized' is a verb because it describes an action."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Nouns name things. What object does 'book' name here?",
+            "explanation": "'Book' is a noun - it names a physical object. It follows 'a', confirming it is a noun. (In level 49, 'book' appears as a verb.)"
         },
         {
             "id": "pos_l4_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'clearly'",
-            "targetWord": "clearly",
-            "sentence": "He spoke clearly into the mic.",
+            "question": "What part of speech is 'carefully' as used in the sentence below?",
+            "targetWord": "carefully",
+            "sentence": "She carefully placed the hot dish on the table.",
             "options": [
-                "Pronoun",
-                "Adverb",
+                "Noun",
+                "Verb",
                 "Adjective",
-                "Preposition"
+                "Adverb"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Adverb",
-            "hint": "Think about what role 'clearly' plays in the sentence.",
-            "explanation": "'clearly' is a adverb because it modifies an action."
+            "hint": "Adverbs tell us HOW an action is performed. How did she place the dish?",
+            "explanation": "'Carefully' is an adverb - it modifies the verb 'placed'. Most manner adverbs end in '-ly'."
         },
         {
             "id": "pos_l4_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'powerful'",
-            "targetWord": "powerful",
-            "sentence": "A powerful signal was detected.",
+            "question": "What part of speech is 'tall' as used in the sentence below?",
+            "targetWord": "tall",
+            "sentence": "A tall man stood at the back of the room.",
             "options": [
-                "Adverb",
                 "Noun",
-                "Conjunction",
-                "Adjective"
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Adjective",
-            "hint": "Think about what role 'powerful' plays in the sentence.",
-            "explanation": "'powerful' is a adjective because it describes a noun."
+            "hint": "Adjectives describe physical appearance. What noun does 'tall' describe?",
+            "explanation": "'Tall' is an adjective - it describes the noun 'man'. Physical appearance adjectives go before the noun they modify."
         },
         {
             "id": "pos_l5_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'link'",
-            "targetWord": "link",
-            "sentence": "We established a link between nodes.",
+            "question": "What part of speech is 'water' as used in the sentence below?",
+            "targetWord": "water",
+            "sentence": "They drank cold water after the long morning run.",
             "options": [
-                "Preposition",
-                "Verb",
                 "Noun",
-                "Pronoun"
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Noun",
-            "hint": "Think about what role 'link' plays in the sentence.",
-            "explanation": "'link' is a noun because it names something."
+            "hint": "Nouns can name substances. What substance is named here?",
+            "explanation": "'Water' is a noun - it names a substance. Uncountable nouns like 'water', 'milk', and 'air' cannot be individually counted."
         },
         {
             "id": "pos_l5_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'hidden'",
-            "targetWord": "hidden",
-            "sentence": "The explorer discovered a hidden path.",
+            "question": "What part of speech is 'laughed' as used in the sentence below?",
+            "targetWord": "laughed",
+            "sentence": "Everyone laughed at the comedian's opening joke.",
             "options": [
-                "Adverb",
                 "Noun",
+                "Verb",
                 "Adjective",
-                "Pronoun"
+                "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'hidden' plays in the sentence.",
-            "explanation": "'hidden' is a adjective because it describes a noun."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Verbs describe actions and reactions. What did everyone do?",
+            "explanation": "'Laughed' is a verb - it describes the audience's reaction. Intransitive verbs like 'laughed' do not need a direct object."
         },
         {
             "id": "pos_l5_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'protect'",
-            "targetWord": "protect",
-            "sentence": "You must protect the secret core.",
+            "question": "What part of speech is 'loud' as used in the sentence below?",
+            "targetWord": "loud",
+            "sentence": "The loud music made it impossible to concentrate.",
             "options": [
+                "Noun",
                 "Verb",
-                "Conjunction",
-                "Preposition",
-                "Noun"
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'protect' plays in the sentence.",
-            "explanation": "'protect' is a verb because it describes an action."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Adjectives describe qualities of nouns. What quality of 'music' does 'loud' give us?",
+            "explanation": "'Loud' is an adjective - it describes the noun 'music'. Sensory adjectives (loud, bright, soft) describe how something is perceived."
         },
         {
             "id": "pos_l6_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'technician'",
-            "targetWord": "technician",
-            "sentence": "The technician repairs the circuit.",
+            "question": "What part of speech is 'friend' as used in the sentence below?",
+            "targetWord": "friend",
+            "sentence": "My best friend moved to another city last year.",
             "options": [
+                "Noun",
                 "Verb",
                 "Adjective",
-                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Noun",
-            "hint": "Think about what role 'technician' plays in the sentence.",
-            "explanation": "'technician' is a noun because it names something."
+            "hint": "Nouns name people and relationships. Is 'friend' naming a person?",
+            "explanation": "'Friend' is a noun - it names a person through a relationship. Relational nouns (friend, neighbour, colleague) name connections between people."
         },
         {
             "id": "pos_l6_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'repairs'",
-            "targetWord": "repairs",
-            "sentence": "The technician repairs the circuit.",
+            "question": "What part of speech is 'cooked' as used in the sentence below?",
+            "targetWord": "cooked",
+            "sentence": "She cooked a large pot of soup for the whole family.",
             "options": [
+                "Noun",
                 "Verb",
-                "Pronoun",
-                "Conjunction",
+                "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Verb",
-            "hint": "Think about what role 'repairs' plays in the sentence.",
-            "explanation": "'repairs' is a verb because it describes an action."
+            "hint": "Verbs describe actions. What action did she perform?",
+            "explanation": "'Cooked' is a verb - it describes the action performed. Regular past-tense verbs like 'cooked' end in '-ed'."
         },
         {
             "id": "pos_l6_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'quickly'",
+            "question": "What part of speech is 'quickly' as used in the sentence below?",
             "targetWord": "quickly",
-            "sentence": "He runs very quickly.",
+            "sentence": "He quickly finished his homework and went outside to play.",
             "options": [
-                "Preposition",
-                "Conjunction",
-                "Pronoun",
+                "Noun",
+                "Verb",
+                "Adjective",
                 "Adverb"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "Adverb",
-            "hint": "Think about what role 'quickly' plays in the sentence.",
-            "explanation": "'quickly' is a adverb because it modifies an action."
+            "hint": "Adverbs modify verbs. How did he finish his homework?",
+            "explanation": "'Quickly' is an adverb - it modifies the verb 'finished' and tells us how the action was done."
         },
         {
             "id": "pos_l7_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'beautiful'",
-            "targetWord": "beautiful",
-            "sentence": "A beautiful sunset painted the sky.",
+            "question": "What part of speech is 'city' as used in the sentence below?",
+            "targetWord": "city",
+            "sentence": "The city was beautifully decorated for the winter festival.",
             "options": [
                 "Noun",
-                "Pronoun",
-                "Conjunction",
-                "Adjective"
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'beautiful' plays in the sentence.",
-            "explanation": "'beautiful' is a adjective because it describes a noun."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Nouns name places. Is 'city' naming a type of place?",
+            "explanation": "'City' is a noun - it names a place. Geographical nouns like 'city', 'village', and 'country' name specific types of locations."
         },
         {
             "id": "pos_l7_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'She'",
-            "targetWord": "She",
-            "sentence": "She is waiting for you.",
+            "question": "What part of speech is 'tired' as used in the sentence below?",
+            "targetWord": "tired",
+            "sentence": "The tired children fell asleep on the long car journey.",
             "options": [
+                "Noun",
+                "Verb",
                 "Adjective",
-                "Pronoun",
-                "Adverb",
-                "Preposition"
+                "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Pronoun",
-            "hint": "Think about what role 'She' plays in the sentence.",
-            "explanation": "'She' is a pronoun because it replaces a noun to avoid repetition."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Past participles can describe states as adjectives. What does 'tired' describe?",
+            "explanation": "'Tired' is an adjective - it describes the noun 'children'. Past-participle adjectives (tired, excited, bored) describe emotional or physical states."
         },
         {
             "id": "pos_l7_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'under'",
-            "targetWord": "under",
-            "sentence": "The cat is under the table.",
+            "question": "What part of speech is 'smiled' as used in the sentence below?",
+            "targetWord": "smiled",
+            "sentence": "She smiled when she saw the birthday surprise.",
             "options": [
-                "Pronoun",
-                "Adverb",
+                "Noun",
                 "Verb",
-                "Preposition"
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Preposition",
-            "hint": "Think about what role 'under' plays in the sentence.",
-            "explanation": "'under' is a preposition because it shows the relationship of position."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Verbs describe physical reactions. What did she do?",
+            "explanation": "'Smiled' is a verb - it describes a physical action. 'Smile' is an intransitive verb that does not need a direct object."
         },
         {
             "id": "pos_l8_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'and'",
-            "targetWord": "and",
-            "sentence": "I like coffee and tea.",
+            "question": "What part of speech is 'dog' as used in the sentence below?",
+            "targetWord": "dog",
+            "sentence": "The dog wagged its tail when it heard the front door open.",
             "options": [
-                "Pronoun",
-                "Preposition",
-                "Conjunction",
-                "Verb"
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Conjunction",
-            "hint": "Think about what role 'and' plays in the sentence.",
-            "explanation": "'and' is a conjunction because it connects words or phrases together."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Nouns name animals. What animal is named here?",
+            "explanation": "'Dog' is a noun - it names an animal. Animal names are concrete nouns that can be preceded by 'the' or 'a'."
         },
         {
             "id": "pos_l8_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'runs'",
-            "targetWord": "runs",
-            "sentence": "The system runs smoothly.",
+            "question": "What part of speech is 'gently' as used in the sentence below?",
+            "targetWord": "gently",
+            "sentence": "He gently lifted the injured sparrow from the ground.",
             "options": [
+                "Noun",
+                "Verb",
                 "Adjective",
-                "Adverb",
-                "Pronoun",
-                "Verb"
+                "Adverb"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'runs' plays in the sentence.",
-            "explanation": "'runs' is a verb because it describes an action."
+            "correctAnswer": "Adverb",
+            "hint": "Adverbs tell us HOW an action was performed. How did he lift the bird?",
+            "explanation": "'Gently' is an adverb - it modifies the verb 'lifted'. It describes the manner of the action and ends in '-ly'."
         },
         {
             "id": "pos_l8_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'remote'",
-            "targetWord": "remote",
-            "sentence": "They scanned the remote sector.",
+            "question": "What part of speech is 'reads' as used in the sentence below?",
+            "targetWord": "reads",
+            "sentence": "She reads at least two books every single month.",
             "options": [
                 "Noun",
+                "Verb",
                 "Adjective",
-                "Adverb",
-                "Verb"
+                "Adverb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'remote' plays in the sentence.",
-            "explanation": "'remote' is a adjective because it describes a noun."
+            "correctAnswer": "Verb",
+            "hint": "Verbs describe habitual actions. What does she regularly do?",
+            "explanation": "'Reads' is a verb - it expresses a habitual action. Present simple verbs with '-s' (she reads, he walks) express habits."
         },
         {
             "id": "pos_l9_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'optimized'",
-            "targetWord": "optimized",
-            "sentence": "The AI optimized the power grid.",
+            "question": "What part of speech is 'school' as used in the sentence below?",
+            "targetWord": "school",
+            "sentence": "The school closed early because of the heavy snowstorm.",
             "options": [
-                "Conjunction",
-                "Preposition",
+                "Noun",
                 "Verb",
-                "Pronoun"
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'optimized' plays in the sentence.",
-            "explanation": "'optimized' is a verb because it describes an action."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Nouns name institutions and places. What institution is named here?",
+            "explanation": "'School' is a noun - it names an institution. Institutional nouns (school, hospital, office, university) name specific types of buildings or organisations."
         },
         {
             "id": "pos_l9_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'clearly'",
-            "targetWord": "clearly",
-            "sentence": "He spoke clearly into the mic.",
+            "question": "What part of speech is 'bright' as used in the sentence below?",
+            "targetWord": "bright",
+            "sentence": "The bright sunlight made it hard to look at the screen.",
             "options": [
-                "Verb",
-                "Adverb",
                 "Noun",
-                "Pronoun"
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adverb",
-            "hint": "Think about what role 'clearly' plays in the sentence.",
-            "explanation": "'clearly' is a adverb because it modifies an action."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Adjectives describe the quality of nouns. What quality of 'sunlight' does 'bright' describe?",
+            "explanation": "'Bright' is an adjective - it describes the noun 'sunlight'. An attributive adjective appears before the noun it modifies."
         },
         {
             "id": "pos_l9_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'powerful'",
-            "targetWord": "powerful",
-            "sentence": "A powerful signal was detected.",
+            "question": "What part of speech is 'sleeps' as used in the sentence below?",
+            "targetWord": "sleeps",
+            "sentence": "The baby sleeps for twelve hours every single night.",
             "options": [
-                "Adjective",
-                "Conjunction",
                 "Noun",
-                "Pronoun"
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'powerful' plays in the sentence.",
-            "explanation": "'powerful' is a adjective because it describes a noun."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Verbs describe states as well as actions. What state is the baby in?",
+            "explanation": "'Sleeps' is a verb - it describes a repeated state. State verbs (sleep, sit, rest) describe ongoing conditions."
         },
         {
             "id": "pos_l10_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'link'",
-            "targetWord": "link",
-            "sentence": "We established a link between nodes.",
+            "question": "What part of speech is 'mother' as used in the sentence below?",
+            "targetWord": "mother",
+            "sentence": "His mother works as a nurse at the local hospital.",
             "options": [
-                "Verb",
-                "Conjunction",
                 "Noun",
-                "Pronoun"
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Noun",
-            "hint": "Think about what role 'link' plays in the sentence.",
-            "explanation": "'link' is a noun because it names something."
+            "hint": "Nouns name family relationships. Is 'mother' naming a person here?",
+            "explanation": "'Mother' is a noun - it names a person through a family relationship. Family nouns (mother, father, sister, uncle) are relational nouns."
         },
         {
             "id": "pos_l10_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'hidden'",
-            "targetWord": "hidden",
-            "sentence": "The explorer discovered a hidden path.",
+            "question": "What part of speech is 'early' as used in the sentence below?",
+            "targetWord": "early",
+            "sentence": "She always arrives early so she can get a good seat.",
             "options": [
-                "Pronoun",
+                "Noun",
+                "Verb",
                 "Adjective",
-                "Preposition",
                 "Adverb"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'hidden' plays in the sentence.",
-            "explanation": "'hidden' is a adjective because it describes a noun."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adverb",
+            "hint": "Adverbs tell WHEN or HOW SOON something happens. When does she arrive?",
+            "explanation": "'Early' is an adverb here - it modifies the verb 'arrives' and tells us when. ('Early' as an adjective: 'an early start'.)"
         },
         {
             "id": "pos_l10_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'protect'",
-            "targetWord": "protect",
-            "sentence": "You must protect the secret core.",
+            "question": "What part of speech is 'cold' as used in the sentence below?",
+            "targetWord": "cold",
+            "sentence": "A cold wind blew in from the mountains overnight.",
             "options": [
+                "Noun",
                 "Verb",
-                "Adverb",
-                "Conjunction",
-                "Pronoun"
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'protect' plays in the sentence.",
-            "explanation": "'protect' is a verb because it describes an action."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Adjectives describe physical qualities. What quality of 'wind' does 'cold' describe?",
+            "explanation": "'Cold' is an adjective - it describes the noun 'wind'. Temperature adjectives (cold, warm, hot, freezing) describe physical qualities."
         }
     ]
 }

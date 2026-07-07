@@ -6,602 +6,572 @@
         {
             "id": "pos_l121_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'technician'",
-            "targetWord": "technician",
-            "sentence": "The technician repairs the circuit.",
+            "question": "What part of speech is 'hard' as used in the sentence below?",
+            "targetWord": "hard",
+            "sentence": "The stone floor was hard and cold beneath her feet in the early morning.",
             "options": [
-                "Verb",
-                "Adjective",
                 "Noun",
-                "Conjunction"
+                "Adjective",
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Noun",
-            "hint": "Think about what role 'technician' plays in the sentence.",
-            "explanation": "'technician' is a noun because it names something."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Context determines whether 'hard' is an adjective or adverb. What noun does it describe here?",
+            "explanation": "'Hard' is an adjective - it follows the linking verb 'was' as a predicate adjective, describing the physical quality of 'the stone floor'. Compare: 'she worked hard' (adverb) vs. 'a hard floor' (adjective)."
         },
         {
             "id": "pos_l121_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'repairs'",
-            "targetWord": "repairs",
-            "sentence": "The technician repairs the circuit.",
+            "question": "What part of speech is 'principal' as used in the sentence below?",
+            "targetWord": "principal",
+            "sentence": "The school principal gave an inspiring speech at the start of the new academic year.",
             "options": [
-                "Adverb",
-                "Adjective",
                 "Noun",
-                "Verb"
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'repairs' plays in the sentence.",
-            "explanation": "'repairs' is a verb because it describes an action."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Nouns name professional roles. Is 'principal' naming a person's role here?",
+            "explanation": "'Principal' is a noun - it names the head of a school. Note the spelling: 'principal' (noun/adjective = main) vs. 'principle' (noun only = a rule or belief)."
         },
         {
             "id": "pos_l121_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'quickly'",
-            "targetWord": "quickly",
-            "sentence": "He runs very quickly.",
+            "question": "What part of speech is 'overlook' as used in the sentence below?",
+            "targetWord": "overlook",
+            "sentence": "Under pressure, it is surprisingly easy to overlook important details in a complex contract.",
             "options": [
-                "Adverb",
-                "Preposition",
-                "Pronoun",
-                "Adjective"
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Adverb",
-            "hint": "Think about what role 'quickly' plays in the sentence.",
-            "explanation": "'quickly' is a adverb because it modifies an action."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Verbs can describe cognitive failures. What is easy to do unintentionally?",
+            "explanation": "'Overlook' is a verb - it follows 'to' as an infinitive and describes failing to notice something. 'Overlook' can be a noun ('a scenic overlook'), but here it clearly follows 'to'."
         },
         {
             "id": "pos_l122_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'beautiful'",
-            "targetWord": "beautiful",
-            "sentence": "A beautiful sunset painted the sky.",
+            "question": "What part of speech is 'fast' as used in the sentence below?",
+            "targetWord": "fast",
+            "sentence": "She boarded the fast train and arrived in the city well before midday.",
             "options": [
-                "Adjective",
-                "Preposition",
                 "Noun",
+                "Adjective",
+                "Adverb",
                 "Verb"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Adjective",
-            "hint": "Think about what role 'beautiful' plays in the sentence.",
-            "explanation": "'beautiful' is a adjective because it describes a noun."
+            "hint": "Context reveals whether 'fast' modifies a noun (adjective) or a verb (adverb). What noun does 'fast' modify?",
+            "explanation": "'Fast' is an adjective - it comes directly before 'train' in an attributive position. Compare: 'a fast train' (adjective) vs. 'she ran fast' (adverb). ('Fast' returns as a verb in level 184 and noun in level 198.)"
         },
         {
             "id": "pos_l122_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'She'",
-            "targetWord": "She",
-            "sentence": "She is waiting for you.",
+            "question": "What part of speech is 'conduct' as used in the sentence below?",
+            "targetWord": "conduct",
+            "sentence": "The investigation focused closely on his professional conduct during the crisis.",
             "options": [
-                "Pronoun",
                 "Noun",
+                "Verb",
                 "Adjective",
-                "Verb"
+                "Adverb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Pronoun",
-            "hint": "Think about what role 'She' plays in the sentence.",
-            "explanation": "'She' is a pronoun because it modifies an action."
+            "correctAnswer": "Noun",
+            "hint": "Nouns can name abstract concepts like behaviour. Is 'conduct' naming behaviour here?",
+            "explanation": "'Conduct' is a noun - it names someone's behaviour. It follows 'his professional'. Compare: 'to conduct a meeting' (verb) vs. 'professional conduct' (noun). Stress differs: CON-duct (n) vs. con-DUCT (v)."
         },
         {
             "id": "pos_l122_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'under'",
-            "targetWord": "under",
-            "sentence": "The cat is under the table.",
+            "question": "What part of speech is 'well' as used in the sentence below?",
+            "targetWord": "well",
+            "sentence": "She did not feel well enough to attend the important board meeting that morning.",
             "options": [
-                "Preposition",
+                "Noun",
                 "Adjective",
-                "Conjunction",
-                "Noun"
+                "Adverb",
+                "Verb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Preposition",
-            "hint": "Think about what role 'under' plays in the sentence.",
-            "explanation": "'under' is a preposition because it modifies an action."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Context determines whether 'well' is adjective or adverb. Does it describe how she feels or how she acts?",
+            "explanation": "'Well' is an adjective here - it follows the linking verb 'feel' as a predicate adjective describing her health. Compare: 'she performed well' (adverb = manner) vs. 'she felt well' (adjective = state of health)."
         },
         {
             "id": "pos_l123_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'and'",
-            "targetWord": "and",
-            "sentence": "I like coffee and tea.",
+            "question": "What part of speech is 'fine' as used in the sentence below?",
+            "targetWord": "fine",
+            "sentence": "The antique vase was made from exceptionally fine porcelain and was several centuries old.",
             "options": [
+                "Noun",
+                "Adjective",
                 "Adverb",
-                "Verb",
-                "Conjunction",
-                "Pronoun"
+                "Verb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Conjunction",
-            "hint": "Think about what role 'and' plays in the sentence.",
-            "explanation": "'and' is a conjunction because it modifies an action."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Adjectives can describe very high quality. What does 'fine' describe here?",
+            "explanation": "'Fine' is an adjective - it describes the quality of 'porcelain', meaning of very high quality and delicacy. ('Fine' returns as a verb in level 199, meaning to impose a financial penalty.)"
         },
         {
             "id": "pos_l123_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'runs'",
-            "targetWord": "runs",
-            "sentence": "The system runs smoothly.",
+            "question": "What part of speech is 'debate' as used in the sentence below?",
+            "targetWord": "debate",
+            "sentence": "The lengthy public debate about the proposed policy change lasted well into the evening.",
             "options": [
+                "Noun",
                 "Verb",
-                "Adverb",
-                "Pronoun",
-                "Conjunction"
+                "Adjective",
+                "Adverb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'runs' plays in the sentence.",
-            "explanation": "'runs' is a verb because it describes an action."
+            "correctAnswer": "Noun",
+            "hint": "Nouns name formal discussions. Is 'debate' naming a discussion as a concept?",
+            "explanation": "'Debate' is a noun - it follows 'The lengthy public'. Compare: 'they debated the issue' (verb) vs. 'the debate lasted' (noun naming the event itself)."
         },
         {
             "id": "pos_l123_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'remote'",
-            "targetWord": "remote",
-            "sentence": "They scanned the remote sector.",
+            "question": "What part of speech is 'permit' as used in the sentence below?",
+            "targetWord": "permit",
+            "sentence": "Current regulations do not permit the sale of alcohol to any person under the age of eighteen.",
             "options": [
-                "Preposition",
                 "Noun",
+                "Verb",
                 "Adjective",
-                "Pronoun"
+                "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'remote' plays in the sentence.",
-            "explanation": "'remote' is a adjective because it describes a noun."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Legal verbs describe what rules allow or forbid. What do the regulations prevent?",
+            "explanation": "'Permit' is a verb - it follows 'do not' as the main verb. Compare: 'do you have a permit?' (noun = a licence) vs. 'regulations do not permit it' (verb = to allow). Stress: PER-mit (n) vs. per-MIT (v)."
         },
         {
             "id": "pos_l124_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'optimized'",
-            "targetWord": "optimized",
-            "sentence": "The AI optimized the power grid.",
+            "question": "What part of speech is 'long' as used in the sentence below?",
+            "targetWord": "long",
+            "sentence": "She has long been considered the finest violinist of her entire generation.",
             "options": [
-                "Conjunction",
-                "Preposition",
-                "Verb",
-                "Pronoun"
+                "Noun",
+                "Adjective",
+                "Adverb",
+                "Verb"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'optimized' plays in the sentence.",
-            "explanation": "'optimized' is a verb because it describes an action."
+            "correctAnswer": "Adverb",
+            "hint": "Adverbs can describe duration. Does 'long' modify the verb phrase 'been considered'?",
+            "explanation": "'Long' is an adverb - it modifies 'has been considered' and means 'for a long time'. Compare: 'a long journey' (adjective) vs. 'she has long been known for it' (adverb = for a long time)."
         },
         {
             "id": "pos_l124_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'clearly'",
-            "targetWord": "clearly",
-            "sentence": "He spoke clearly into the mic.",
+            "question": "What part of speech is 'transfer' as used in the sentence below?",
+            "targetWord": "transfer",
+            "sentence": "The smooth transfer of power from one government to the next was widely praised.",
             "options": [
-                "Verb",
                 "Noun",
-                "Conjunction",
+                "Verb",
+                "Adjective",
                 "Adverb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Think about what role 'clearly' plays in the sentence.",
-            "explanation": "'clearly' is a adverb because it modifies an action."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Nouns can name processes and transitions. Is 'transfer' naming a process here?",
+            "explanation": "'Transfer' is a noun - it follows 'The smooth'. Compare: 'to transfer files' (verb) vs. 'the transfer of power' (noun). Stress: TRANS-fer (n) vs. trans-FER (v)."
         },
         {
             "id": "pos_l124_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'powerful'",
-            "targetWord": "powerful",
-            "sentence": "A powerful signal was detected.",
+            "question": "What part of speech is 'advocate' as used in the sentence below?",
+            "targetWord": "advocate",
+            "sentence": "She has spent her entire career fighting to advocate for the rights of marginalised communities.",
             "options": [
-                "Pronoun",
-                "Adjective",
                 "Noun",
-                "Preposition"
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'powerful' plays in the sentence.",
-            "explanation": "'powerful' is a adjective because it describes a noun."
+            "correctAnswer": "Verb",
+            "hint": "Verbs describe the act of publicly supporting a cause. What has she spent her career doing?",
+            "explanation": "'Advocate' is a verb - it follows 'to' as an infinitive. Compare: 'a legal advocate' (noun = a person) vs. 'to advocate for change' (verb = to support)."
         },
         {
             "id": "pos_l125_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'link'",
-            "targetWord": "link",
-            "sentence": "We established a link between nodes.",
+            "question": "What part of speech is 'even' as used in the sentence below?",
+            "targetWord": "even",
+            "sentence": "Even the most experienced and seasoned researchers were surprised by the unexpected results.",
             "options": [
                 "Noun",
-                "Conjunction",
-                "Preposition",
-                "Pronoun"
+                "Adjective",
+                "Adverb",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Think about what role 'link' plays in the sentence.",
-            "explanation": "'link' is a noun because it names something."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Adverbs can add emphasis. What does 'even' add here?",
+            "explanation": "'Even' is an adverb - it intensifies the noun phrase 'the most experienced researchers' and emphasises that their surprise was unexpected."
         },
         {
             "id": "pos_l125_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'hidden'",
-            "targetWord": "hidden",
-            "sentence": "The explorer discovered a hidden path.",
+            "question": "What part of speech is 'compound' as used in the sentence below?",
+            "targetWord": "compound",
+            "sentence": "Doctors warned against taking this medicine alongside other compound substances.",
             "options": [
-                "Adjective",
-                "Preposition",
                 "Noun",
-                "Verb"
+                "Adjective",
+                "Verb",
+                "Adverb"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Adjective",
-            "hint": "Think about what role 'hidden' plays in the sentence.",
-            "explanation": "'hidden' is a adjective because it describes a noun."
+            "hint": "Adjectives can describe complex mixtures. What does 'compound' tell us about the substances?",
+            "explanation": "'Compound' is an adjective - it modifies 'substances', meaning they consist of multiple combined elements. 'Compound' can be a noun, adjective, or verb depending on context."
         },
         {
             "id": "pos_l125_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'protect'",
-            "targetWord": "protect",
-            "sentence": "You must protect the secret core.",
+            "question": "What part of speech is 'underlie' as used in the sentence below?",
+            "targetWord": "underlie",
+            "sentence": "Several deeply complex factors underlie the ongoing political instability in the region.",
             "options": [
-                "Adverb",
                 "Noun",
                 "Verb",
-                "Adjective"
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Verb",
-            "hint": "Think about what role 'protect' plays in the sentence.",
-            "explanation": "'protect' is a verb because it describes an action."
+            "hint": "Verbs can describe what forms the basis of something. What do the complex factors do?",
+            "explanation": "'Underlie' is a verb - it is in the present simple and describes the foundational relationship. 'Underlying' is the participial adjective form (the underlying cause)."
         },
         {
             "id": "pos_l126_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'technician'",
-            "targetWord": "technician",
-            "sentence": "The technician repairs the circuit.",
+            "question": "What part of speech is 'just' as used in the sentence below?",
+            "targetWord": "just",
+            "sentence": "The final report was just published, so the initial findings are still being reviewed.",
             "options": [
                 "Noun",
-                "Pronoun",
                 "Adjective",
-                "Preposition"
+                "Adverb",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Noun",
-            "hint": "Think about what role 'technician' plays in the sentence.",
-            "explanation": "'technician' is a noun because it names something."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Adverbs can express that something happened very recently. What does 'just' tell us about when the report was published?",
+            "explanation": "'Just' is an adverb - it modifies 'was published' and means 'very recently'. 'Just' has multiple adverb meanings: recently, exactly, only, barely."
         },
         {
             "id": "pos_l126_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'repairs'",
-            "targetWord": "repairs",
-            "sentence": "The technician repairs the circuit.",
+            "question": "What part of speech is 'supplement' as used in the sentence below?",
+            "targetWord": "supplement",
+            "sentence": "She took a daily vitamin D supplement throughout the long winter months.",
             "options": [
-                "Verb",
                 "Noun",
-                "Conjunction",
+                "Verb",
+                "Adjective",
                 "Adverb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'repairs' plays in the sentence.",
-            "explanation": "'repairs' is a verb because it describes an action."
+            "correctAnswer": "Noun",
+            "hint": "Health nouns name products taken in addition to food. Is 'supplement' naming a product here?",
+            "explanation": "'Supplement' is a noun - it follows 'a daily vitamin D', confirming it is a noun. Compare: 'to supplement her income' (verb) vs. 'a dietary supplement' (noun). Stress: SUP-ple-ment (n) vs. SUP-ple-ment (v)."
         },
         {
             "id": "pos_l126_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'quickly'",
-            "targetWord": "quickly",
-            "sentence": "He runs very quickly.",
+            "question": "What part of speech is 'emerge' as used in the sentence below?",
+            "targetWord": "emerge",
+            "sentence": "New and compelling evidence began to emerge that called the original theory into question.",
             "options": [
+                "Noun",
                 "Verb",
                 "Adjective",
-                "Noun",
                 "Adverb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Think about what role 'quickly' plays in the sentence.",
-            "explanation": "'quickly' is a adverb because it modifies an action."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Verbs describe things becoming visible for the first time. What did new evidence start to do?",
+            "explanation": "'Emerge' is a verb - it follows 'began to'. 'Emergence' is the noun form."
         },
         {
             "id": "pos_l127_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'beautiful'",
-            "targetWord": "beautiful",
-            "sentence": "A beautiful sunset painted the sky.",
+            "question": "What part of speech is 'only' as used in the sentence below?",
+            "targetWord": "only",
+            "sentence": "She had only just arrived when the power cut plunged the entire office into complete darkness.",
             "options": [
                 "Noun",
-                "Verb",
-                "Conjunction",
-                "Adjective"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'beautiful' plays in the sentence.",
-            "explanation": "'beautiful' is a adjective because it describes a noun."
-        },
-        {
-            "id": "pos_l127_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'She'",
-            "targetWord": "She",
-            "sentence": "She is waiting for you.",
-            "options": [
-                "Conjunction",
-                "Adverb",
-                "Noun",
-                "Pronoun"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Pronoun",
-            "hint": "Think about what role 'She' plays in the sentence.",
-            "explanation": "'She' is a pronoun because it modifies an action."
-        },
-        {
-            "id": "pos_l127_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'under'",
-            "targetWord": "under",
-            "sentence": "The cat is under the table.",
-            "options": [
-                "Adjective",
-                "Adverb",
-                "Pronoun",
-                "Preposition"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Preposition",
-            "hint": "Think about what role 'under' plays in the sentence.",
-            "explanation": "'under' is a preposition because it modifies an action."
-        },
-        {
-            "id": "pos_l128_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'and'",
-            "targetWord": "and",
-            "sentence": "I like coffee and tea.",
-            "options": [
-                "Conjunction",
-                "Noun",
-                "Pronoun",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Conjunction",
-            "hint": "Think about what role 'and' plays in the sentence.",
-            "explanation": "'and' is a conjunction because it modifies an action."
-        },
-        {
-            "id": "pos_l128_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'runs'",
-            "targetWord": "runs",
-            "sentence": "The system runs smoothly.",
-            "options": [
-                "Verb",
-                "Pronoun",
-                "Adverb",
-                "Conjunction"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'runs' plays in the sentence.",
-            "explanation": "'runs' is a verb because it describes an action."
-        },
-        {
-            "id": "pos_l128_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'remote'",
-            "targetWord": "remote",
-            "sentence": "They scanned the remote sector.",
-            "options": [
-                "Verb",
-                "Noun",
-                "Adjective",
-                "Pronoun"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'remote' plays in the sentence.",
-            "explanation": "'remote' is a adjective because it describes a noun."
-        },
-        {
-            "id": "pos_l129_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'optimized'",
-            "targetWord": "optimized",
-            "sentence": "The AI optimized the power grid.",
-            "options": [
-                "Preposition",
-                "Pronoun",
-                "Conjunction",
-                "Verb"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'optimized' plays in the sentence.",
-            "explanation": "'optimized' is a verb because it describes an action."
-        },
-        {
-            "id": "pos_l129_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'clearly'",
-            "targetWord": "clearly",
-            "sentence": "He spoke clearly into the mic.",
-            "options": [
-                "Pronoun",
                 "Adjective",
                 "Adverb",
                 "Conjunction"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "Adverb",
-            "hint": "Think about what role 'clearly' plays in the sentence.",
-            "explanation": "'clearly' is a adverb because it modifies an action."
+            "hint": "Adverbs can restrict the meaning of another word. What does 'only' modify here?",
+            "explanation": "'Only' is an adverb - it modifies the adverb 'just' in 'only just', emphasising she had barely arrived in time. 'Only' can be an adverb, adjective, or conjunction depending on context."
+        },
+        {
+            "id": "pos_l127_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'specimen' as used in the sentence below?",
+            "targetWord": "specimen",
+            "sentence": "The museum recently acquired a remarkably rare specimen of an insect thought to be extinct.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Scientific nouns name individual examples. What does 'specimen' name here?",
+            "explanation": "'Specimen' is a noun - it names an individual example collected for scientific study. It follows 'a remarkably rare'."
+        },
+        {
+            "id": "pos_l127_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'eradicate' as used in the sentence below?",
+            "targetWord": "eradicate",
+            "sentence": "The international organisation was founded with the goal to eradicate extreme poverty worldwide.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Verbs describe the complete elimination of problems. What was the organisation's goal?",
+            "explanation": "'Eradicate' is a verb - it follows 'to' as an infinitive. 'Eradication' is the noun form."
+        },
+        {
+            "id": "pos_l128_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'still' as used in the sentence below?",
+            "targetWord": "still",
+            "sentence": "Researchers are still actively searching for an effective and reliable treatment for the condition.",
+            "options": [
+                "Noun",
+                "Adjective",
+                "Adverb",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Adverbs can express continuation. Does 'still' indicate the searching is ongoing?",
+            "explanation": "'Still' is an adverb - it modifies 'are searching' and means the action is continuing. Compare: 'still water' (adjective = not moving) vs. 'still searching' (adverb = continuing)."
+        },
+        {
+            "id": "pos_l128_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'paradigm' as used in the sentence below?",
+            "targetWord": "paradigm",
+            "sentence": "The discovery marked a fundamental and irreversible shift in the accepted scientific paradigm.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Academic nouns name accepted frameworks. What does 'paradigm' name here?",
+            "explanation": "'Paradigm' is a noun - it names the dominant model of understanding within a field. It follows 'the accepted scientific'."
+        },
+        {
+            "id": "pos_l128_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'consolidate' as used in the sentence below?",
+            "targetWord": "consolidate",
+            "sentence": "The primary aim of the merger was to consolidate the company's dominant market position.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Business verbs describe strengthening existing positions. What was the merger's aim?",
+            "explanation": "'Consolidate' is a verb - it follows 'to' as an infinitive. 'Consolidation' is the noun form."
+        },
+        {
+            "id": "pos_l129_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'rather' as used in the sentence below?",
+            "targetWord": "rather",
+            "sentence": "She found the lecture content rather dry, although the visiting professor was clearly engaging.",
+            "options": [
+                "Noun",
+                "Adjective",
+                "Adverb",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Adverbs can modify adjectives to indicate a moderate degree. What does 'rather' modify here?",
+            "explanation": "'Rather' is an adverb - it modifies the adjective 'dry' and suggests a moderate negative quality (somewhat dry). 'Rather' indicates a moderate degree and often softens a criticism."
+        },
+        {
+            "id": "pos_l129_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'consensus' as used in the sentence below?",
+            "targetWord": "consensus",
+            "sentence": "There is now a broad and growing scientific consensus that immediate climate action is essential.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Abstract nouns name states of general agreement. What does 'consensus' name?",
+            "explanation": "'Consensus' is a noun - it names a state of general agreement among a group. It follows 'a broad and growing scientific'."
         },
         {
             "id": "pos_l129_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'powerful'",
-            "targetWord": "powerful",
-            "sentence": "A powerful signal was detected.",
+            "question": "What part of speech is 'perpetuate' as used in the sentence below?",
+            "targetWord": "perpetuate",
+            "sentence": "Such damaging stereotypes only serve to perpetuate deeply harmful misconceptions about the group.",
             "options": [
-                "Adjective",
-                "Adverb",
+                "Noun",
                 "Verb",
-                "Pronoun"
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'powerful' plays in the sentence.",
-            "explanation": "'powerful' is a adjective because it describes a noun."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Verbs describe causing something harmful to continue. What do stereotypes do?",
+            "explanation": "'Perpetuate' is a verb - it follows 'to' in 'serve to perpetuate'. 'Perpetuation' is the noun form."
         },
         {
             "id": "pos_l130_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'link'",
-            "targetWord": "link",
-            "sentence": "We established a link between nodes.",
+            "question": "What part of speech is 'quite' as used in the sentence below?",
+            "targetWord": "quite",
+            "sentence": "The experimental results were quite different from what the research team had initially predicted.",
             "options": [
-                "Conjunction",
-                "Preposition",
-                "Verb",
-                "Noun"
+                "Noun",
+                "Adjective",
+                "Adverb",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Noun",
-            "hint": "Think about what role 'link' plays in the sentence.",
-            "explanation": "'link' is a noun because it names something."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Adverbs can modify adjectives to indicate degree. What does 'quite' modify here?",
+            "explanation": "'Quite' is an adverb - it modifies the adjective 'different'. 'Quite' has two uses: 'fairly/moderately' ('quite good') or 'completely' with absolute adjectives ('quite wrong')."
         },
         {
             "id": "pos_l130_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'hidden'",
-            "targetWord": "hidden",
-            "sentence": "The explorer discovered a hidden path.",
+            "question": "What part of speech is 'catalyst' as used in the sentence below?",
+            "targetWord": "catalyst",
+            "sentence": "The economic crisis acted as a powerful catalyst for sweeping reform of the entire banking system.",
             "options": [
-                "Adverb",
-                "Conjunction",
-                "Pronoun",
-                "Adjective"
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'hidden' plays in the sentence.",
-            "explanation": "'hidden' is a adjective because it describes a noun."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Nouns name agents that cause change. What does 'catalyst' name metaphorically here?",
+            "explanation": "'Catalyst' is a noun - it names something that causes or accelerates change (literally: a chemical substance; metaphorically: any trigger for change). It follows 'a powerful'."
         },
         {
             "id": "pos_l130_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 4,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'protect'",
-            "targetWord": "protect",
-            "sentence": "You must protect the secret core.",
+            "question": "What part of speech is 'scrutinise' as used in the sentence below?",
+            "targetWord": "scrutinise",
+            "sentence": "Independent auditors were brought in specifically to scrutinise the company's entire financial records.",
             "options": [
                 "Noun",
-                "Adverb",
                 "Verb",
-                "Adjective"
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Verb",
-            "hint": "Think about what role 'protect' plays in the sentence.",
-            "explanation": "'protect' is a verb because it describes an action."
+            "hint": "Verbs describe intensive examination. What were the auditors brought in to do?",
+            "explanation": "'Scrutinise' is a verb - it follows 'to' as an infinitive. 'Scrutiny' is the noun form."
         }
     ]
 }

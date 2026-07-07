@@ -6,602 +6,572 @@
         {
             "id": "pos_l21_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'technician'",
-            "targetWord": "technician",
-            "sentence": "The technician repairs the circuit.",
+            "question": "What part of speech is 'she' as used in the sentence below?",
+            "targetWord": "she",
+            "sentence": "She opened the window to let in some fresh air.",
             "options": [
-                "Preposition",
-                "Adjective",
-                "Adverb",
-                "Noun"
+                "Pronoun",
+                "Noun",
+                "Verb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Noun",
-            "hint": "Think about what role 'technician' plays in the sentence.",
-            "explanation": "'technician' is a noun because it names something."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Pronouns replace nouns. Is 'she' standing in for a woman's name?",
+            "explanation": "'She' is a subject pronoun - it replaces a noun (a woman's name). Subject pronouns (I, you, he, she, we, they) act as the subject of a sentence."
         },
         {
             "id": "pos_l21_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'repairs'",
-            "targetWord": "repairs",
-            "sentence": "The technician repairs the circuit.",
+            "question": "What part of speech is 'on' as used in the sentence below?",
+            "targetWord": "on",
+            "sentence": "The book is on the top shelf in the living room.",
             "options": [
                 "Verb",
+                "Preposition",
                 "Adjective",
-                "Adverb",
-                "Conjunction"
+                "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'repairs' plays in the sentence.",
-            "explanation": "'repairs' is a verb because it describes an action."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Preposition",
+            "hint": "Prepositions show location. Does 'on' show the position of the book?",
+            "explanation": "'On' is a preposition - it shows the relationship between 'book' and 'shelf'. Location prepositions (on, in, under, above, beside) indicate where something is."
         },
         {
             "id": "pos_l21_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'quickly'",
-            "targetWord": "quickly",
-            "sentence": "He runs very quickly.",
+            "question": "What part of speech is 'but' as used in the sentence below?",
+            "targetWord": "but",
+            "sentence": "I wanted to go to the concert, but I had too much work.",
             "options": [
-                "Adjective",
-                "Verb",
                 "Noun",
+                "Verb",
+                "Conjunction",
                 "Adverb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Think about what role 'quickly' plays in the sentence.",
-            "explanation": "'quickly' is a adverb because it modifies an action."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Conjunction",
+            "hint": "Conjunctions join clauses. Does 'but' connect two contrasting ideas?",
+            "explanation": "'But' is a coordinating conjunction - it joins two independent clauses expressing contrasting ideas. ('But' returns as a preposition in level 180 and as an adverb in level 181.)"
         },
         {
             "id": "pos_l22_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'beautiful'",
-            "targetWord": "beautiful",
-            "sentence": "A beautiful sunset painted the sky.",
+            "question": "What part of speech is 'he' as used in the sentence below?",
+            "targetWord": "he",
+            "sentence": "He forgot to bring his lunch box to school today.",
             "options": [
+                "Pronoun",
+                "Noun",
                 "Adjective",
-                "Verb",
-                "Adverb",
-                "Pronoun"
+                "Adverb"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'beautiful' plays in the sentence.",
-            "explanation": "'beautiful' is a adjective because it describes a noun."
+            "correctAnswer": "Pronoun",
+            "hint": "Pronouns replace nouns. Is 'he' standing in for a man's name?",
+            "explanation": "'He' is a pronoun - it replaces a noun referring to a male person. It is a third-person singular subject pronoun."
         },
         {
             "id": "pos_l22_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'She'",
-            "targetWord": "She",
-            "sentence": "She is waiting for you.",
+            "question": "What part of speech is 'in' as used in the sentence below?",
+            "targetWord": "in",
+            "sentence": "They met in a small café near the old train station.",
             "options": [
                 "Noun",
-                "Adjective",
-                "Pronoun",
-                "Verb"
+                "Verb",
+                "Preposition",
+                "Adjective"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Pronoun",
-            "hint": "Think about what role 'She' plays in the sentence.",
-            "explanation": "'She' is a pronoun because it modifies an action."
+            "correctAnswer": "Preposition",
+            "hint": "Prepositions show location. Does 'in' show where they met?",
+            "explanation": "'In' is a preposition - it indicates the location of the meeting. 'In' is used for enclosed spaces (in a café, in a room, in the city)."
         },
         {
             "id": "pos_l22_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'under'",
-            "targetWord": "under",
-            "sentence": "The cat is under the table.",
+            "question": "What part of speech is 'and' as used in the sentence below?",
+            "targetWord": "and",
+            "sentence": "She bought milk and eggs at the local supermarket.",
             "options": [
-                "Conjunction",
+                "Noun",
+                "Adjective",
                 "Adverb",
-                "Pronoun",
-                "Preposition"
+                "Conjunction"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Preposition",
-            "hint": "Think about what role 'under' plays in the sentence.",
-            "explanation": "'under' is a preposition because it modifies an action."
+            "correctAnswer": "Conjunction",
+            "hint": "Conjunctions join words. Does 'and' link two things that were bought?",
+            "explanation": "'And' is a coordinating conjunction - it joins two nouns ('milk' and 'eggs'). 'And' adds one thing to another and is the most common English conjunction."
         },
         {
             "id": "pos_l23_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'and'",
-            "targetWord": "and",
-            "sentence": "I like coffee and tea.",
+            "question": "What part of speech is 'we' as used in the sentence below?",
+            "targetWord": "we",
+            "sentence": "We decided to take the scenic route home along the coast.",
             "options": [
-                "Adjective",
+                "Pronoun",
+                "Noun",
                 "Verb",
-                "Conjunction",
-                "Preposition"
+                "Adverb"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Conjunction",
-            "hint": "Think about what role 'and' plays in the sentence.",
-            "explanation": "'and' is a conjunction because it modifies an action."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Pronouns replace noun phrases. Does 'we' stand in for a group including the speaker?",
+            "explanation": "'We' is a pronoun - it replaces a noun phrase referring to a group that includes the speaker. It is a first-person plural subject pronoun."
         },
         {
             "id": "pos_l23_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'runs'",
-            "targetWord": "runs",
-            "sentence": "The system runs smoothly.",
+            "question": "What part of speech is 'after' as used in the sentence below?",
+            "targetWord": "after",
+            "sentence": "She always goes for a walk after dinner to help her relax.",
             "options": [
+                "Noun",
                 "Verb",
-                "Adjective",
-                "Conjunction",
-                "Noun"
+                "Preposition",
+                "Adjective"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'runs' plays in the sentence.",
-            "explanation": "'runs' is a verb because it describes an action."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "Prepositions show time relationships. Does 'after' show when the walk happens?",
+            "explanation": "'After' is a preposition - it shows a time relationship between the walk and dinner. Time prepositions (after, before, during, since) indicate timing."
         },
         {
             "id": "pos_l23_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'remote'",
-            "targetWord": "remote",
-            "sentence": "They scanned the remote sector.",
+            "question": "What part of speech is 'or' as used in the sentence below?",
+            "targetWord": "or",
+            "sentence": "Would you like tea or coffee with your breakfast today?",
             "options": [
-                "Adjective",
+                "Conjunction",
+                "Noun",
                 "Adverb",
-                "Pronoun",
-                "Verb"
+                "Preposition"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'remote' plays in the sentence.",
-            "explanation": "'remote' is a adjective because it describes a noun."
+            "correctAnswer": "Conjunction",
+            "hint": "Conjunctions present alternatives. Does 'or' offer a choice between two options?",
+            "explanation": "'Or' is a coordinating conjunction - it presents alternatives (tea or coffee). It is used in questions and statements offering a choice."
         },
         {
             "id": "pos_l24_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'optimized'",
-            "targetWord": "optimized",
-            "sentence": "The AI optimized the power grid.",
+            "question": "What part of speech is 'they' as used in the sentence below?",
+            "targetWord": "they",
+            "sentence": "They arrived at the hotel just before the restaurant closed.",
             "options": [
-                "Adverb",
-                "Conjunction",
                 "Pronoun",
+                "Noun",
+                "Adjective",
                 "Verb"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'optimized' plays in the sentence.",
-            "explanation": "'optimized' is a verb because it describes an action."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Pronouns replace noun phrases. Does 'they' stand in for a group of people?",
+            "explanation": "'They' is a pronoun - it replaces a noun phrase referring to more than one person. It is a third-person plural subject pronoun."
         },
         {
             "id": "pos_l24_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'clearly'",
-            "targetWord": "clearly",
-            "sentence": "He spoke clearly into the mic.",
+            "question": "What part of speech is 'near' as used in the sentence below?",
+            "targetWord": "near",
+            "sentence": "She sat near the window to make use of the natural light.",
             "options": [
-                "Adverb",
                 "Noun",
-                "Verb",
-                "Adjective"
+                "Preposition",
+                "Adjective",
+                "Adverb"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Adverb",
-            "hint": "Think about what role 'clearly' plays in the sentence.",
-            "explanation": "'clearly' is a adverb because it modifies an action."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Preposition",
+            "hint": "Prepositions show proximity. Does 'near' show where she sat?",
+            "explanation": "'Near' is a preposition - it shows the proximity between 'she' and 'the window'. Proximity prepositions (near, beside, next to, opposite) indicate closeness."
         },
         {
             "id": "pos_l24_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'powerful'",
-            "targetWord": "powerful",
-            "sentence": "A powerful signal was detected.",
+            "question": "What part of speech is 'so' as used in the sentence below?",
+            "targetWord": "so",
+            "sentence": "It was getting very late, so they decided to call a taxi.",
             "options": [
-                "Adjective",
+                "Noun",
                 "Adverb",
-                "Verb",
-                "Preposition"
+                "Preposition",
+                "Conjunction"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'powerful' plays in the sentence.",
-            "explanation": "'powerful' is a adjective because it describes a noun."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "Conjunctions show cause and result. Does 'so' link a reason and its consequence?",
+            "explanation": "'So' is a coordinating conjunction here - it shows a result. It links 'it was getting late' (cause) to 'they called a taxi' (effect)."
         },
         {
             "id": "pos_l25_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'link'",
-            "targetWord": "link",
-            "sentence": "We established a link between nodes.",
+            "question": "What part of speech is 'them' as used in the sentence below?",
+            "targetWord": "them",
+            "sentence": "I handed them the invitations just before the party started.",
             "options": [
-                "Preposition",
-                "Adjective",
+                "Pronoun",
+                "Noun",
                 "Verb",
-                "Noun"
+                "Adjective"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Noun",
-            "hint": "Think about what role 'link' plays in the sentence.",
-            "explanation": "'link' is a noun because it names something."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Object pronouns receive actions. Does 'them' stand in for the people who received the invitations?",
+            "explanation": "'Them' is an object pronoun - it replaces a noun phrase. Object pronouns (me, you, him, her, us, them) receive the action of the verb."
         },
         {
             "id": "pos_l25_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'hidden'",
-            "targetWord": "hidden",
-            "sentence": "The explorer discovered a hidden path.",
+            "question": "What part of speech is 'behind' as used in the sentence below?",
+            "targetWord": "behind",
+            "sentence": "The post office is right behind the supermarket on the high street.",
             "options": [
-                "Preposition",
                 "Verb",
-                "Adjective",
-                "Pronoun"
+                "Noun",
+                "Preposition",
+                "Adverb"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'hidden' plays in the sentence.",
-            "explanation": "'hidden' is a adjective because it describes a noun."
+            "correctAnswer": "Preposition",
+            "hint": "Prepositions show position. Does 'behind' show where the post office is?",
+            "explanation": "'Behind' is a preposition - it shows the position of the post office in relation to the supermarket. It indicates that one object is at the back of another."
         },
         {
             "id": "pos_l25_q3",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'protect'",
-            "targetWord": "protect",
-            "sentence": "You must protect the secret core.",
+            "question": "What part of speech is 'because' as used in the sentence below?",
+            "targetWord": "because",
+            "sentence": "She stayed home because she had developed a bad cold.",
             "options": [
-                "Verb",
-                "Adjective",
+                "Noun",
                 "Adverb",
+                "Conjunction",
                 "Preposition"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'protect' plays in the sentence.",
-            "explanation": "'protect' is a verb because it describes an action."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Conjunction",
+            "hint": "Conjunctions can introduce reasons. Does 'because' explain WHY she stayed home?",
+            "explanation": "'Because' is a subordinating conjunction - it introduces a reason. It joins 'she stayed home' (main clause) to 'she had a bad cold' (reason clause)."
         },
         {
             "id": "pos_l26_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'technician'",
-            "targetWord": "technician",
-            "sentence": "The technician repairs the circuit.",
+            "question": "What part of speech is 'it' as used in the sentence below?",
+            "targetWord": "it",
+            "sentence": "It took three hours to drive to the coast in the summer traffic.",
             "options": [
-                "Adjective",
-                "Preposition",
+                "Pronoun",
                 "Noun",
-                "Adverb"
+                "Verb",
+                "Adjective"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Noun",
-            "hint": "Think about what role 'technician' plays in the sentence.",
-            "explanation": "'technician' is a noun because it names something."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Pronouns can be used as dummy subjects. Is 'it' referring to something specific, or filling the subject slot?",
+            "explanation": "'It' is a pronoun - here it is an impersonal subject pronoun used in time expressions ('it took', 'it is late', 'it rained')."
         },
         {
             "id": "pos_l26_q2",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'repairs'",
-            "targetWord": "repairs",
-            "sentence": "The technician repairs the circuit.",
-            "options": [
-                "Preposition",
-                "Adverb",
-                "Verb",
-                "Pronoun"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'repairs' plays in the sentence.",
-            "explanation": "'repairs' is a verb because it describes an action."
-        },
-        {
-            "id": "pos_l26_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'quickly'",
-            "targetWord": "quickly",
-            "sentence": "He runs very quickly.",
-            "options": [
-                "Adverb",
-                "Preposition",
-                "Pronoun",
-                "Conjunction"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Adverb",
-            "hint": "Think about what role 'quickly' plays in the sentence.",
-            "explanation": "'quickly' is a adverb because it modifies an action."
-        },
-        {
-            "id": "pos_l27_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'beautiful'",
-            "targetWord": "beautiful",
-            "sentence": "A beautiful sunset painted the sky.",
+            "question": "What part of speech is 'through' as used in the sentence below?",
+            "targetWord": "through",
+            "sentence": "They walked through the park on their way to the station.",
             "options": [
                 "Noun",
                 "Verb",
-                "Conjunction",
-                "Adjective"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'beautiful' plays in the sentence.",
-            "explanation": "'beautiful' is a adjective because it describes a noun."
-        },
-        {
-            "id": "pos_l27_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'She'",
-            "targetWord": "She",
-            "sentence": "She is waiting for you.",
-            "options": [
-                "Verb",
                 "Adverb",
-                "Conjunction",
-                "Pronoun"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Pronoun",
-            "hint": "Think about what role 'She' plays in the sentence.",
-            "explanation": "'She' is a pronoun because it modifies an action."
-        },
-        {
-            "id": "pos_l27_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'under'",
-            "targetWord": "under",
-            "sentence": "The cat is under the table.",
-            "options": [
-                "Pronoun",
-                "Verb",
-                "Noun",
                 "Preposition"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "Preposition",
-            "hint": "Think about what role 'under' plays in the sentence.",
-            "explanation": "'under' is a preposition because it modifies an action."
+            "hint": "Prepositions show movement. Does 'through' show the path they walked?",
+            "explanation": "'Through' is a preposition - it shows movement from one side of a space to the other. Movement prepositions (through, across, over, along) describe movement relative to a place."
+        },
+        {
+            "id": "pos_l26_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'yet' as used in the sentence below?",
+            "targetWord": "yet",
+            "sentence": "The exam was extremely difficult, yet she managed to pass.",
+            "options": [
+                "Noun",
+                "Conjunction",
+                "Adverb",
+                "Preposition"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Conjunction",
+            "hint": "Conjunctions connect contrasting ideas. Does 'yet' show a surprising contrast?",
+            "explanation": "'Yet' is a coordinating conjunction - it shows contrast or an unexpected result, similar to 'but'. It emphasises that the outcome is surprising given the circumstances."
+        },
+        {
+            "id": "pos_l27_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'you' as used in the sentence below?",
+            "targetWord": "you",
+            "sentence": "Did you remember to turn off the oven before leaving the house?",
+            "options": [
+                "Noun",
+                "Pronoun",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Pronouns address the listener directly. Is 'you' replacing the name of the person being spoken to?",
+            "explanation": "'You' is a pronoun - it is the second-person pronoun used to address the listener. 'You' is the same in both singular and plural in modern English."
+        },
+        {
+            "id": "pos_l27_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'at' as used in the sentence below?",
+            "targetWord": "at",
+            "sentence": "They arranged to meet at the corner of Park Road at noon.",
+            "options": [
+                "Preposition",
+                "Noun",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Preposition",
+            "hint": "Prepositions show precise location. Does 'at' identify the exact meeting point?",
+            "explanation": "'At' is a preposition - it shows a precise location or point. 'At' is used for specific points (at the corner, at the door), while 'in' is used for enclosed spaces."
+        },
+        {
+            "id": "pos_l27_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'although' as used in the sentence below?",
+            "targetWord": "although",
+            "sentence": "Although it was cold outside, they decided to have a picnic.",
+            "options": [
+                "Noun",
+                "Adverb",
+                "Preposition",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "Conjunctions can introduce contrasting conditions. Does 'although' introduce something surprising about the context?",
+            "explanation": "'Although' is a subordinating conjunction of concession - it introduces a fact that makes the main clause surprising. It is interchangeable with 'even though' and 'though'."
         },
         {
             "id": "pos_l28_q1",
             "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
             "subtype": "partsOfSpeech",
             "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'and'",
-            "targetWord": "and",
-            "sentence": "I like coffee and tea.",
+            "question": "What part of speech is 'his' as used in the sentence below?",
+            "targetWord": "his",
+            "sentence": "He left his umbrella on the train completely by accident.",
             "options": [
+                "Noun",
                 "Pronoun",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Pronouns can show possession. Does 'his' show the umbrella belongs to him?",
+            "explanation": "'His' is a possessive pronoun/determiner - it shows ownership. Possessive pronouns (my, your, his, her, its, our, their) indicate who something belongs to."
+        },
+        {
+            "id": "pos_l28_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'between' as used in the sentence below?",
+            "targetWord": "between",
+            "sentence": "The narrow path ran between the two rows of tall oak trees.",
+            "options": [
+                "Noun",
+                "Adverb",
                 "Preposition",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "Prepositions show spatial relationships. Does 'between' show the position of the path?",
+            "explanation": "'Between' is a preposition - it shows a position in the middle of two things. Use 'between' for two things and 'among' for three or more."
+        },
+        {
+            "id": "pos_l28_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'when' as used in the sentence below?",
+            "targetWord": "when",
+            "sentence": "We left the party when the music finally stopped.",
+            "options": [
+                "Conjunction",
+                "Adverb",
+                "Noun",
+                "Preposition"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Conjunction",
+            "hint": "Conjunctions can link time-based clauses. Does 'when' introduce the time at which an event happened?",
+            "explanation": "'When' is a subordinating conjunction of time - it introduces a time clause that tells us at what point the main action occurred."
+        },
+        {
+            "id": "pos_l29_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'her' as used in the sentence below?",
+            "targetWord": "her",
+            "sentence": "I gave her the keys and asked her to lock up when she left.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Pronoun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Pronoun",
+            "hint": "Object pronouns receive actions. Is 'her' standing in for a woman's name as the receiver of the keys?",
+            "explanation": "'Her' is an object pronoun - it is the object of the verb 'gave'. Object pronouns (me, you, him, her, us, them) receive the action or follow prepositions."
+        },
+        {
+            "id": "pos_l29_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'above' as used in the sentence below?",
+            "targetWord": "above",
+            "sentence": "The plane flew above the clouds for most of the four-hour flight.",
+            "options": [
+                "Noun",
+                "Preposition",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Preposition",
+            "hint": "Prepositions show vertical position. Does 'above' show where the plane was?",
+            "explanation": "'Above' is a preposition - it shows the plane was at a higher position than the clouds. Vertical prepositions (above, below, over, under) describe height relationships."
+        },
+        {
+            "id": "pos_l29_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'while' as used in the sentence below?",
+            "targetWord": "while",
+            "sentence": "She listened to a podcast while she prepared dinner for the family.",
+            "options": [
+                "Noun",
+                "Adverb",
+                "Conjunction",
+                "Preposition"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Conjunction",
+            "hint": "Conjunctions can show simultaneity. Does 'while' indicate that two things happened at the same time?",
+            "explanation": "'While' is a subordinating conjunction of time - it introduces a clause describing an action happening simultaneously with the main action."
+        },
+        {
+            "id": "pos_l30_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'us' as used in the sentence below?",
+            "targetWord": "us",
+            "sentence": "The teacher gave us extra practice questions for the exam.",
+            "options": [
+                "Noun",
+                "Pronoun",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Object pronouns replace group nouns. Is 'us' standing in for the speaker and others?",
+            "explanation": "'Us' is an object pronoun - it is the first-person plural object pronoun. It replaces a noun referring to the speaker and others, and is the object of 'gave'."
+        },
+        {
+            "id": "pos_l30_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'beside' as used in the sentence below?",
+            "targetWord": "beside",
+            "sentence": "She sat beside her brother during the entire school concert.",
+            "options": [
+                "Preposition",
+                "Adverb",
+                "Adjective",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Preposition",
+            "hint": "Prepositions show position next to something. Does 'beside' tell us where she sat?",
+            "explanation": "'Beside' is a preposition - it means 'next to'. Do not confuse 'beside' (next to) with 'besides' (in addition to)."
+        },
+        {
+            "id": "pos_l30_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "Flick Vortex",
+            "question": "What part of speech is 'neither' as used in the sentence below?",
+            "targetWord": "neither",
+            "sentence": "Neither the sun nor the warmth returned for the rest of the week.",
+            "options": [
+                "Noun",
+                "Adjective",
                 "Adverb",
                 "Conjunction"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "Conjunction",
-            "hint": "Think about what role 'and' plays in the sentence.",
-            "explanation": "'and' is a conjunction because it modifies an action."
-        },
-        {
-            "id": "pos_l28_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'runs'",
-            "targetWord": "runs",
-            "sentence": "The system runs smoothly.",
-            "options": [
-                "Adjective",
-                "Verb",
-                "Adverb",
-                "Pronoun"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'runs' plays in the sentence.",
-            "explanation": "'runs' is a verb because it describes an action."
-        },
-        {
-            "id": "pos_l28_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'remote'",
-            "targetWord": "remote",
-            "sentence": "They scanned the remote sector.",
-            "options": [
-                "Conjunction",
-                "Preposition",
-                "Noun",
-                "Adjective"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'remote' plays in the sentence.",
-            "explanation": "'remote' is a adjective because it describes a noun."
-        },
-        {
-            "id": "pos_l29_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'optimized'",
-            "targetWord": "optimized",
-            "sentence": "The AI optimized the power grid.",
-            "options": [
-                "Adverb",
-                "Pronoun",
-                "Verb",
-                "Conjunction"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'optimized' plays in the sentence.",
-            "explanation": "'optimized' is a verb because it describes an action."
-        },
-        {
-            "id": "pos_l29_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'clearly'",
-            "targetWord": "clearly",
-            "sentence": "He spoke clearly into the mic.",
-            "options": [
-                "Adjective",
-                "Noun",
-                "Verb",
-                "Adverb"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Adverb",
-            "hint": "Think about what role 'clearly' plays in the sentence.",
-            "explanation": "'clearly' is a adverb because it modifies an action."
-        },
-        {
-            "id": "pos_l29_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'powerful'",
-            "targetWord": "powerful",
-            "sentence": "A powerful signal was detected.",
-            "options": [
-                "Adjective",
-                "Adverb",
-                "Pronoun",
-                "Noun"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'powerful' plays in the sentence.",
-            "explanation": "'powerful' is a adjective because it describes a noun."
-        },
-        {
-            "id": "pos_l30_q1",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'link'",
-            "targetWord": "link",
-            "sentence": "We established a link between nodes.",
-            "options": [
-                "Verb",
-                "Pronoun",
-                "Conjunction",
-                "Noun"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Noun",
-            "hint": "Think about what role 'link' plays in the sentence.",
-            "explanation": "'link' is a noun because it names something."
-        },
-        {
-            "id": "pos_l30_q2",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'hidden'",
-            "targetWord": "hidden",
-            "sentence": "The explorer discovered a hidden path.",
-            "options": [
-                "Adjective",
-                "Verb",
-                "Conjunction",
-                "Noun"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Adjective",
-            "hint": "Think about what role 'hidden' plays in the sentence.",
-            "explanation": "'hidden' is a adjective because it describes a noun."
-        },
-        {
-            "id": "pos_l30_q3",
-            "instruction": "IDENTIFY THE FUNCTION",
-            "difficulty": 1,
-            "subtype": "partsOfSpeech",
-            "interactionType": "Flick Vortex",
-            "question": "Identify the part of speech for: 'protect'",
-            "targetWord": "protect",
-            "sentence": "You must protect the secret core.",
-            "options": [
-                "Verb",
-                "Adverb",
-                "Pronoun",
-                "Noun"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Verb",
-            "hint": "Think about what role 'protect' plays in the sentence.",
-            "explanation": "'protect' is a verb because it describes an action."
+            "hint": "Conjunctions can join negative alternatives. Is 'neither' part of a pair that introduces two negative possibilities?",
+            "explanation": "'Neither' is a correlative conjunction - it is always paired with 'nor' to join two negative alternatives. 'Neither...nor' is the negative equivalent of 'both...and'."
         }
     ]
 }
