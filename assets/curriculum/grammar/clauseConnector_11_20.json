@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l11_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must wait ____ the engine cools down.",
-            "sentence": "We must wait ____ the engine cools down.",
+            "question": "She stayed at home ____ she had a high temperature.",
+            "sentence": "She stayed at home ____ she had a high temperature.",
             "options": [
-                "until",
+                "and",
+                "so",
                 "because",
-                "although",
-                "unless"
+                "or"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "until",
-            "hint": "Show a time limit or milestone.",
-            "explanation": "'Until' shows time boundary."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "because",
+            "hint": "High temperature is the direct reason for staying home, not the result.",
+            "explanation": "'Because' introduces the reason or cause. The high temperature (cause) explains why she stayed home (effect). 'So' would reverse the logic: 'She had a high temperature, so she stayed home' - the clauses would need to swap."
         },
         {
             "id": "cc_l11_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We aborted the mission ____ the reactor leaked.",
-            "sentence": "We aborted the mission ____ the reactor leaked.",
+            "question": "He always gets nervous ____ he has to speak in public.",
+            "sentence": "He always gets nervous ____ he has to speak in public.",
             "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
+                "and",
+                "but",
+                "if",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "State the cause of aborting.",
-            "explanation": "'Because' introduces a cause."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "when",
+            "hint": "Speaking in public is a regular trigger - this happens every time.",
+            "explanation": "'When' shows a habitual trigger. Every time he has to speak in public (trigger), he gets nervous (response). 'If' would imply it's uncertain whether he speaks in public - 'when' shows it happens regularly."
         },
         {
             "id": "cc_l11_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We will launch ____ it is raining.",
-            "sentence": "We will launch ____ it is raining.",
+            "question": "We can have a picnic ____ the weather stays dry.",
+            "sentence": "We can have a picnic ____ the weather stays dry.",
             "options": [
-                "even though",
-                "because",
-                "unless",
-                "until"
+                "if",
+                "and",
+                "or",
+                "so"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Show concession or obstacle.",
-            "explanation": "'Even though' shows concession."
+            "correctAnswer": "if",
+            "hint": "The picnic depends entirely on one condition being met.",
+            "explanation": "'If' introduces a condition. The picnic will only happen IF (on condition that) the weather stays dry. 'When' would suggest the weather will definitely stay dry - 'if' shows it's uncertain."
         },
         {
             "id": "cc_l12_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crew rested ____ the autopilot was active.",
-            "sentence": "The crew rested ____ the autopilot was active.",
+            "question": "She won the school spelling competition ____ she had practised every day.",
+            "sentence": "She won the school spelling competition ____ she had practised every day.",
             "options": [
-                "while",
-                "unless",
-                "until",
-                "before"
+                "and",
+                "because",
+                "so",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Show simultaneous actions.",
-            "explanation": "'While' shows duration/simultaneous acts."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "because",
+            "hint": "Daily practice is the clear reason for winning.",
+            "explanation": "'Because' gives the direct reason for an achievement. Practising every day (cause) explains winning (effect). 'So' would need the clauses reversed: 'She practised every day, so she won.'"
         },
         {
             "id": "cc_l12_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The shield failed ____ it was hit by a laser.",
-            "sentence": "The shield failed ____ it was hit by a laser.",
+            "question": "He always checks his emails ____ he arrives at the office.",
+            "sentence": "He always checks his emails ____ he arrives at the office.",
             "options": [
-                "since",
-                "unless",
-                "until",
-                "although"
+                "and",
+                "if",
+                "when",
+                "but"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "State a cause or reason.",
-            "explanation": "'Since' acts as because."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "Arriving at the office is a regular trigger for checking emails.",
+            "explanation": "'When' describes a regular habitual sequence. Every time he arrives (trigger), he checks emails (action). 'If' would imply he might not arrive - 'when' shows this happens every day."
         },
         {
             "id": "cc_l12_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The armor held ____ the impact was massive.",
-            "sentence": "The armor held ____ the impact was massive.",
+            "question": "The alarm will go off ____ you open the front door without the key code.",
+            "sentence": "The alarm will go off ____ you open the front door without the key code.",
             "options": [
-                "although",
-                "because",
-                "unless",
-                "while"
+                "and",
+                "so",
+                "but",
+                "if"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession.",
-            "explanation": "'Although' shows concession."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "if",
+            "hint": "Opening the door without the code is the specific trigger for the alarm.",
+            "explanation": "'If' introduces a conditional trigger. The alarm will only activate if (and only if) the door is opened without the correct code. This is a conditional security system."
         },
         {
             "id": "cc_l13_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The signal improved ____ we adjusted the dish.",
-            "sentence": "The signal improved ____ we adjusted the dish.",
+            "question": "The match was postponed ____ the pitch was completely waterlogged.",
+            "sentence": "The match was postponed ____ the pitch was completely waterlogged.",
             "options": [
-                "after",
-                "until",
-                "while",
-                "although"
+                "because",
+                "so",
+                "when",
+                "if"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "after",
-            "hint": "Show action following another.",
-            "explanation": "'After' shows sequential time."
+            "correctAnswer": "because",
+            "hint": "A waterlogged pitch is the practical reason the match couldn't go ahead.",
+            "explanation": "'Because' states the direct cause. The waterlogged pitch (reason) explains why the match was postponed (result). 'So' would require the clauses to be in the reverse order."
         },
         {
             "id": "cc_l13_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They remained indoors ____ the radiation was high.",
-            "sentence": "They remained indoors ____ the radiation was high.",
+            "question": "He forgot to buy milk ____ he had to go back to the shop.",
+            "sentence": "He forgot to buy milk ____ he had to go back to the shop.",
             "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
+                "and",
+                "so",
+                "when",
+                "but"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "State a reason.",
-            "explanation": "'As' can mean because."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "so",
+            "hint": "Forgetting the milk caused an extra trip - that's the consequence.",
+            "explanation": "'So' shows the result. Forgetting the milk (cause) meant he had to return to the shop (consequence). 'And' would just list two events without showing the causal link between them."
         },
         {
             "id": "cc_l13_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He smiled ____ he was in severe pain.",
-            "sentence": "He smiled ____ he was in severe pain.",
+            "question": "She always feels nervous ____ she has to speak in front of the class.",
+            "sentence": "She always feels nervous ____ she has to speak in front of the class.",
             "options": [
-                "though",
-                "because",
-                "unless",
-                "until"
+                "and",
+                "if",
+                "when",
+                "or"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "though",
-            "hint": "Concession.",
-            "explanation": "'Though' is concession."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "Speaking in front of the class happens regularly and triggers nerves.",
+            "explanation": "'When' connects a regular event (speaking in class) to a regular response (feeling nervous). 'If' would imply she sometimes doesn't speak in class - 'when' signals this is a recurring situation."
         },
         {
             "id": "cc_l14_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We landed ____ the sun was setting.",
-            "sentence": "We landed ____ the sun was setting.",
+            "question": "I will lend you my bike ____ you promise to lock it properly.",
+            "sentence": "I will lend you my bike ____ you promise to lock it properly.",
             "options": [
-                "as",
-                "unless",
-                "until",
-                "although"
+                "and",
+                "so",
+                "but",
+                "if"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Show action during a state.",
-            "explanation": "'As' is temporal."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "if",
+            "hint": "There is one specific condition for lending the bike.",
+            "explanation": "'If' introduces the condition that must be met for the lending to happen. The bike can only be borrowed IF the promise is made. 'When' would assume the promise is definitely coming - 'if' shows it's required."
         },
         {
             "id": "cc_l14_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The engine died ____ the fuel filter was clogged.",
-            "sentence": "The engine died ____ the fuel filter was clogged.",
+            "question": "She is exhausted ____ she hasn't slept properly in three days.",
+            "sentence": "She is exhausted ____ she hasn't slept properly in three days.",
             "options": [
+                "and",
+                "so",
                 "because",
-                "although",
-                "unless",
-                "while"
+                "or"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "because",
-            "hint": "Identify cause.",
-            "explanation": "'Because' is correct."
+            "hint": "Three sleepless days are the clear explanation for her exhaustion.",
+            "explanation": "'Because' gives the direct reason for a state. Three days without sleep (cause) explains her exhaustion (effect). 'So' would need the clauses reversed: 'She hasn't slept, so she is exhausted.'"
         },
         {
             "id": "cc_l14_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We kept walking ____ we were exhausted.",
-            "sentence": "We kept walking ____ we were exhausted.",
+            "question": "They finished their homework ____ then watched a film together.",
+            "sentence": "They finished their homework ____ then watched a film together.",
             "options": [
-                "even if",
-                "because",
-                "unless",
-                "until"
+                "and",
+                "but",
+                "so",
+                "when"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "even if",
-            "hint": "Show concession.",
-            "explanation": "'Even if' or 'even though' fits."
+            "correctAnswer": "and",
+            "hint": "Both actions happened - homework first, then the film.",
+            "explanation": "'And' connects two sequential actions done by the same people. Finishing homework and then watching a film are both positive events that happened in order."
         },
         {
             "id": "cc_l15_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He checked the seals ____ he opened the airlock.",
-            "sentence": "He checked the seals ____ he opened the airlock.",
+            "question": "She always drinks a glass of water ____ she wakes up in the morning.",
+            "sentence": "She always drinks a glass of water ____ she wakes up in the morning.",
             "options": [
-                "before",
-                "because",
-                "although",
-                "unless"
+                "and",
+                "when",
+                "if",
+                "but"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "before",
-            "hint": "Preceding safety action.",
-            "explanation": "'Before' shows preceding time."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "when",
+            "hint": "Waking up is the daily trigger for drinking water.",
+            "explanation": "'When' connects a daily trigger (waking up) to a habitual action (drinking water). This is a morning routine - 'if' would imply she might not wake up, which is not the intended meaning."
         },
         {
             "id": "cc_l15_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We succeeded ____ we worked together.",
-            "sentence": "We succeeded ____ we worked together.",
+            "question": "He arrived late to the meeting ____ he apologised to everyone there.",
+            "sentence": "He arrived late to the meeting ____ he apologised to everyone there.",
             "options": [
-                "since",
-                "unless",
-                "until",
-                "although"
+                "and",
+                "so",
+                "if",
+                "or"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "Reason for success.",
-            "explanation": "'Since' introduces reason."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "so",
+            "hint": "Arriving late caused him to apologise - one led to the other.",
+            "explanation": "'So' shows the consequence. Arriving late (cause) led to apologising (result). 'And' would just list two things that happened without explaining why he apologised."
         },
         {
             "id": "cc_l15_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The signal was read ____ it was highly distorted.",
-            "sentence": "The signal was read ____ it was highly distorted.",
+            "question": "You can borrow my book ____ you return it by Friday.",
+            "sentence": "You can borrow my book ____ you return it by Friday.",
             "options": [
-                "although",
-                "because",
-                "unless",
-                "while"
+                "and",
+                "or",
+                "so",
+                "if"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession.",
-            "explanation": "'Although' is correct."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "if",
+            "hint": "Returning the book by Friday is the condition for borrowing it.",
+            "explanation": "'If' introduces the condition. The book can only be borrowed if it is returned on time. This is a conditional offer - 'when' would assume the return will definitely happen."
         },
         {
             "id": "cc_l16_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We started the engines ____ the green light flashed.",
-            "sentence": "We started the engines ____ the green light flashed.",
+            "question": "She wore sunscreen ____ the UV index was very high that day.",
+            "sentence": "She wore sunscreen ____ the UV index was very high that day.",
             "options": [
-                "once",
-                "until",
-                "while",
-                "although"
+                "because",
+                "and",
+                "so",
+                "when"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "once",
-            "hint": "Show immediate action upon trigger.",
-            "explanation": "'Once' shows condition met."
+            "correctAnswer": "because",
+            "hint": "A high UV index is the practical reason for wearing sunscreen.",
+            "explanation": "'Because' gives the direct, factual reason for an action. The high UV (cause) explains why she wore sunscreen (response). This is a logical, cause-driven decision."
         },
         {
             "id": "cc_l16_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She was chosen ____ she had perfect vision.",
-            "sentence": "She was chosen ____ she had perfect vision.",
+            "question": "The museum was fascinating ____ it closed before we could see everything.",
+            "sentence": "The museum was fascinating ____ it closed before we could see everything.",
             "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
+                "and",
+                "but",
+                "or",
+                "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Identify cause.",
-            "explanation": "'Because' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "but",
+            "hint": "Fascinating is positive - the closing was an unfortunate limitation.",
+            "explanation": "'But' contrasts a positive experience (fascinating) with an unfortunate limitation (closing too early). The enjoyment is real, but the time constraint prevented full exploration."
         },
         {
             "id": "cc_l16_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She went out ____ the dome was locked.",
-            "sentence": "She went out ____ the dome was locked.",
+            "question": "He felt very proud ____ he received his degree certificate.",
+            "sentence": "He felt very proud ____ he received his degree certificate.",
             "options": [
-                "even though",
-                "because",
-                "unless",
-                "until"
+                "and",
+                "if",
+                "when",
+                "but"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession.",
-            "explanation": "'Even though' is correct."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "Receiving the certificate is the specific moment that triggered pride.",
+            "explanation": "'When' links a specific moment (receiving the certificate) to an emotion (pride). The emotion arose at that exact moment. 'If' would imply he might not receive it - 'when' shows it definitely happened."
         },
         {
             "id": "cc_l17_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She remained silent ____ the broadcast was playing.",
-            "sentence": "She remained silent ____ the broadcast was playing.",
+            "question": "The bus was completely full ____ she had to stand for the whole journey.",
+            "sentence": "The bus was completely full ____ she had to stand for the whole journey.",
             "options": [
-                "while",
-                "unless",
-                "until",
-                "before"
+                "and",
+                "but",
+                "if",
+                "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Simultaneous duration.",
-            "explanation": "'While' is correct."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "so",
+            "hint": "A full bus meant she had no seat - that's the consequence.",
+            "explanation": "'So' shows the direct result. The full bus (cause) meant she had to stand (consequence). 'And' would link the two facts without explaining why she stood."
         },
         {
             "id": "cc_l17_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We lost contact ____ the satellite was blocked.",
-            "sentence": "We lost contact ____ the satellite was blocked.",
+            "question": "You can stay up later tonight ____ you finish your homework first.",
+            "sentence": "You can stay up later tonight ____ you finish your homework first.",
             "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
+                "if",
+                "and",
+                "or",
+                "but"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Reason or cause.",
-            "explanation": "'As' shows cause."
+            "correctAnswer": "if",
+            "hint": "Finishing homework is the condition for earning the reward of staying up.",
+            "explanation": "'If' sets up a condition. The later bedtime (reward) is only available if the homework is done first (condition). This is a classic conditional offer."
         },
         {
             "id": "cc_l17_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They finished the scan ____ they lacked proper tools.",
-            "sentence": "They finished the scan ____ they lacked proper tools.",
+            "question": "She refused to eat the dish ____ it contained nuts.",
+            "sentence": "She refused to eat the dish ____ it contained nuts.",
             "options": [
-                "although",
+                "and",
                 "because",
-                "unless",
-                "while"
+                "so",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession.",
-            "explanation": "'Although' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "because",
+            "hint": "Containing nuts is the direct, practical reason for the refusal.",
+            "explanation": "'Because' gives the reason for a decision. Nuts in the dish (reason) explain her refusal (action). This is an allergy-related decision - the cause is clear and factual."
         },
         {
             "id": "cc_l18_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We slept ____ the storm was raging outside.",
-            "sentence": "We slept ____ the storm was raging outside.",
+            "question": "He always looks both ways ____ he crosses the road.",
+            "sentence": "He always looks both ways ____ he crosses the road.",
             "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
+                "and",
+                "if",
+                "when",
+                "or"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Simultaneous event.",
-            "explanation": "'As' or 'while' is correct."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "Crossing the road is the regular moment that triggers a safety habit.",
+            "explanation": "'When' connects a regular situation (crossing the road) to a habitual safety action (looking both ways). This is a road safety rule - 'if' would suggest he doesn't always cross roads."
         },
         {
             "id": "cc_l18_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The core melted ____ the coolant line cracked.",
-            "sentence": "The core melted ____ the coolant line cracked.",
+            "question": "She opened the book ____ began reading from the first chapter.",
+            "sentence": "She opened the book ____ began reading from the first chapter.",
             "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
+                "but",
+                "so",
+                "if",
+                "and"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Identify cause.",
-            "explanation": "'Because' is correct."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "and",
+            "hint": "Both actions were done as part of starting to read.",
+            "explanation": "'And' joins two sequential actions that form one activity. Opening the book and beginning to read are natural steps in starting a reading session."
         },
         {
             "id": "cc_l18_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He took the risk ____ he was warned.",
-            "sentence": "He took the risk ____ he was warned.",
+            "question": "It rained all morning ____ the garden looked wonderfully fresh.",
+            "sentence": "It rained all morning ____ the garden looked wonderfully fresh.",
             "options": [
-                "even though",
-                "because",
-                "unless",
-                "until"
+                "so",
+                "but",
+                "and",
+                "when"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession.",
-            "explanation": "'Even though' is correct."
+            "correctAnswer": "so",
+            "hint": "The rain had a direct positive effect on the garden.",
+            "explanation": "'So' shows the result. Heavy morning rain (cause) made the garden look fresh (result). While 'and' could link the clauses, 'so' explicitly shows why the garden looked fresh."
         },
         {
             "id": "cc_l19_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The ship accelerated ____ it cleared the orbit.",
-            "sentence": "The ship accelerated ____ it cleared the orbit.",
+            "question": "The team will win the championship ____ they beat the top side on Saturday.",
+            "sentence": "The team will win the championship ____ they beat the top side on Saturday.",
             "options": [
-                "after",
-                "until",
-                "unless",
-                "although"
+                "and",
+                "if",
+                "but",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "after",
-            "hint": "Sequential event.",
-            "explanation": "'After' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "if",
+            "hint": "Beating the top side is the condition they must meet to win.",
+            "explanation": "'If' introduces the specific condition needed. The championship win is only possible if (on condition that) they beat the top team. 'When' would assume they will definitely win."
         },
         {
             "id": "cc_l19_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was promoted ____ he saved the captain.",
-            "sentence": "He was promoted ____ he saved the captain.",
+            "question": "The library was very quiet ____ all the students were revising for exams.",
+            "sentence": "The library was very quiet ____ all the students were revising for exams.",
             "options": [
-                "since",
-                "unless",
-                "until",
-                "although"
+                "and",
+                "so",
+                "because",
+                "or"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "State reason.",
-            "explanation": "'Since' is correct."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "because",
+            "hint": "Students revising is the reason the library was so quiet.",
+            "explanation": "'Because' explains the reason for a situation. Students revising (reason) explains the unusual quiet (effect). 'So' would need the clauses reversed: 'All students were revising, so it was quiet.'"
         },
         {
             "id": "cc_l19_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We found the base ____ the map was missing.",
-            "sentence": "We found the base ____ the map was missing.",
+            "question": "He loves football ____ he has never watched a live match.",
+            "sentence": "He loves football ____ he has never watched a live match.",
             "options": [
-                "although",
-                "because",
-                "unless",
-                "while"
+                "and",
+                "so",
+                "yet",
+                "but"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession.",
-            "explanation": "'Although' is correct."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "but",
+            "hint": "Loving football but never watching live - that's an unexpected contrast.",
+            "explanation": "'But' highlights a surprising gap between a passion (loving football) and an experience (never attending a match). You would expect a football fan to have been to a live game."
         },
         {
             "id": "cc_l20_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You must exit ____ the timer runs out.",
-            "sentence": "You must exit ____ the timer runs out.",
+            "question": "She always smiles ____ she sees her best friend coming.",
+            "sentence": "She always smiles ____ she sees her best friend coming.",
             "options": [
-                "before",
+                "when",
+                "if",
                 "because",
-                "although",
-                "unless"
+                "and"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "before",
-            "hint": "Action preceding limit.",
-            "explanation": "'Before' is correct."
+            "correctAnswer": "when",
+            "hint": "Seeing her friend is the specific, regular trigger for smiling.",
+            "explanation": "'When' connects a regular trigger (seeing her friend) to an automatic response (smiling). This happens every time - 'when' shows the consistent, habitual relationship."
         },
         {
             "id": "cc_l20_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They arrived late ____ the capsule was delayed.",
-            "sentence": "They arrived late ____ the capsule was delayed.",
+            "question": "The car ran out of petrol ____ they had to push it to the nearest garage.",
+            "sentence": "The car ran out of petrol ____ they had to push it to the nearest garage.",
             "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
+                "and",
+                "so",
+                "but",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "State reason.",
-            "explanation": "'Because' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "so",
+            "hint": "Running out of petrol caused them to push the car.",
+            "explanation": "'So' shows cause and effect. Running out of petrol (cause) meant they had to push the car (result). 'And' would just list two facts without explaining the causal link."
         },
         {
             "id": "cc_l20_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She laughed ____ she was nervous.",
-            "sentence": "She laughed ____ she was nervous.",
+            "question": "She will accept the offer ____ they increase the salary.",
+            "sentence": "She will accept the offer ____ they increase the salary.",
             "options": [
-                "though",
-                "because",
-                "unless",
-                "until"
+                "and",
+                "but",
+                "if",
+                "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "though",
-            "hint": "Concession.",
-            "explanation": "'Though' is correct."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "if",
+            "hint": "A higher salary is her specific condition for accepting.",
+            "explanation": "'If' introduces the condition. She will only accept IF (on condition that) the salary increases. 'When' would presume the salary increase is guaranteed - 'if' shows it must still happen."
         }
     ]
 }

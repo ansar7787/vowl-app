@@ -5,12 +5,11 @@
     "quests": [
         {
             "id": "cc_l1_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The stars are bright ____ the night is clear.",
-            "sentence": "The stars are bright ____ the night is clear.",
+            "question": "She opened the window ____ let in some fresh air.",
+            "sentence": "She opened the window ____ let in some fresh air.",
             "options": [
                 "and",
                 "but",
@@ -19,559 +18,530 @@
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "and",
-            "hint": "Join two related positive thoughts.",
-            "explanation": "'And' connects related independent clauses."
+            "hint": "Both actions are related and happened one after the other.",
+            "explanation": "'And' joins two sequential or related actions. She opened the window AND let in air - both happened, one right after the other. 'And' adds information rather than contrasting it."
         },
         {
             "id": "cc_l1_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The colony needs food ____ the transport is delayed.",
-            "sentence": "The colony needs food ____ the transport is delayed.",
+            "question": "I wanted to go for a walk ____ it was raining too heavily.",
+            "sentence": "I wanted to go for a walk ____ it was raining too heavily.",
             "options": [
-                "but",
                 "and",
-                "so",
-                "or"
+                "but",
+                "or",
+                "so"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "but",
-            "hint": "Contrast demand with lack of supply.",
-            "explanation": "'But' shows contrast."
+            "hint": "The rain blocked or prevented the walk from happening.",
+            "explanation": "'But' introduces a contrast or obstacle. The desire to walk (positive) is blocked by the rain (obstacle). 'But' is used when the second clause contradicts or limits the first."
         },
         {
             "id": "cc_l1_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The scanner detected iron ____ it also found copper.",
-            "sentence": "The scanner detected iron ____ it also found copper.",
+            "question": "You can have tea ____ coffee with your breakfast.",
+            "sentence": "You can have tea ____ coffee with your breakfast.",
             "options": [
                 "and",
                 "but",
-                "so",
-                "nor"
+                "or",
+                "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a similar metal type.",
-            "explanation": "'And' is additive."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "or",
+            "hint": "Two drink options are offered - pick one, not both.",
+            "explanation": "'Or' presents a choice between two alternatives. The person should choose one drink. 'And' would mean having both, but 'or' offers either option."
         },
         {
             "id": "cc_l2_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We wanted to launch ____ the fuel was low.",
-            "sentence": "We wanted to launch ____ the fuel was low.",
+            "question": "The soup was too hot ____ she waited before drinking it.",
+            "sentence": "The soup was too hot ____ she waited before drinking it.",
             "options": [
-                "but",
                 "and",
+                "but",
                 "so",
                 "or"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Show a contrast or obstacle.",
-            "explanation": "'But' shows contrast between two clauses."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "or",
+            "hint": "The heat of the soup directly caused a decision about what to do next.",
+            "explanation": "'So' connects a cause (soup too hot) to its result (she waited). Whenever the second clause is a direct consequence of the first, 'so' is the correct coordinator."
         },
         {
             "id": "cc_l2_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The main grid went dark ____ we flipped the auxiliary switch.",
-            "sentence": "The main grid went dark ____ we flipped the auxiliary switch.",
+            "question": "He packed his bag ____ checked out of the hotel.",
+            "sentence": "He packed his bag ____ checked out of the hotel.",
             "options": [
-                "so",
+                "and",
                 "but",
-                "yet",
-                "nor"
+                "or",
+                "so"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Cause and immediate action.",
-            "explanation": "'So' shows cause-effect relationship."
+            "correctAnswer": "and",
+            "hint": "Two actions were done in order as part of the same departure.",
+            "explanation": "'And' links two consecutive actions done by the same person. Packing the bag and checking out both happened in sequence as part of leaving the hotel."
         },
         {
             "id": "cc_l2_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We can orbit the moon ____ we can land on the plain.",
-            "sentence": "We can orbit the moon ____ we can land on the plain.",
+            "question": "She studied all evening ____ still failed the test.",
+            "sentence": "She studied all evening ____ still failed the test.",
             "options": [
-                "or",
+                "and",
                 "but",
-                "yet",
-                "for"
+                "or",
+                "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Two choices.",
-            "explanation": "'Or' expresses alternative choice."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "but",
+            "hint": "Failing after studying hard is a surprising and disappointing contrast.",
+            "explanation": "'But' highlights an unexpected contrast between effort and outcome. Studying hard would normally lead to passing, so failing is a surprise - 'but' captures that contrast."
         },
         {
             "id": "cc_l3_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You can adjust the valves ____ you can let the core vent.",
-            "sentence": "You can adjust the valves ____ you can let the core vent.",
+            "question": "We can drive there ____ take the train instead.",
+            "sentence": "We can drive there ____ take the train instead.",
             "options": [
-                "or",
-                "but",
                 "and",
-                "for"
+                "but",
+                "or",
+                "so"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "or",
-            "hint": "Present two alternative actions.",
-            "explanation": "'Or' presents choices or alternatives."
+            "hint": "Two transport options are available - only one needs to be chosen.",
+            "explanation": "'Or' offers a choice between two equally possible alternatives. You can drive OR take the train - whichever suits you. 'And' would mean doing both, which doesn't make sense."
         },
         {
             "id": "cc_l3_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They must secure the dome ____ the oxygen will escape.",
-            "sentence": "They must secure the dome ____ the oxygen will escape.",
+            "question": "The roads were flooded ____ we decided to stay home.",
+            "sentence": "The roads were flooded ____ we decided to stay home.",
             "options": [
-                "or",
+                "and",
                 "but",
-                "so",
-                "yet"
+                "or",
+                "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Express alternative danger.",
-            "explanation": "'Or' shows alternative consequence."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "so",
+            "hint": "The flooding directly led to the decision to stay home.",
+            "explanation": "'So' shows cause and effect. The flooded roads (cause) led directly to staying home (effect). 'And' would merely link the two facts without showing why they are connected."
         },
         {
             "id": "cc_l3_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crew worked hard ____ they completed the bridge.",
-            "sentence": "The crew worked hard ____ they completed the bridge.",
+            "question": "She is the youngest member of the team ____ she is the most creative.",
+            "sentence": "She is the youngest member of the team ____ she is the most creative.",
             "options": [
-                "so",
+                "and",
                 "but",
-                "nor",
-                "yet"
+                "yet",
+                "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Result of working hard.",
-            "explanation": "'So' shows result."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "yet",
+            "hint": "Young age and great creativity together might seem like a surprising combination.",
+            "explanation": "'Yet' signals a surprising contrast, similar to 'but' but slightly more emphatic. Being the youngest and the most creative can seem contradictory - 'yet' highlights that unexpected combination."
         },
         {
             "id": "cc_l4_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The reactor overheated ____ the alarm sounded.",
-            "sentence": "The reactor overheated ____ the alarm sounded.",
+            "question": "He never missed a deadline ____ did he ever ask for extra time.",
+            "sentence": "He never missed a deadline ____ did he ever ask for extra time.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "nor"
+                "and",
+                "nor",
+                "or",
+                "for"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Show a cause-and-effect relationship.",
-            "explanation": "'So' connects cause to effect."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "nor",
+            "hint": "Both facts are negative. Notice the inverted word order after the blank.",
+            "explanation": "'Nor' connects two negative clauses and requires subject-auxiliary inversion. 'Nor did he ever ask' follows the pattern: nor + auxiliary + subject. 'And' cannot be used when the second clause also has inverted order."
         },
         {
             "id": "cc_l4_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The explorer found ruins ____ he took several scans.",
-            "sentence": "The explorer found ruins ____ he took several scans.",
+            "question": "She cleaned the kitchen ____ tidied the living room.",
+            "sentence": "She cleaned the kitchen ____ tidied the living room.",
             "options": [
-                "and",
                 "but",
-                "nor",
-                "for"
+                "so",
+                "and",
+                "or"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "and",
-            "hint": "Add a natural subsequent action.",
-            "explanation": "'And' adds subsequent details."
+            "hint": "Two household tasks were both completed - one after the other.",
+            "explanation": "'And' joins two parallel actions. Cleaning the kitchen and tidying the living room are both positive, related tasks done in the same session."
         },
         {
             "id": "cc_l4_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The target was far ____ the sniper hit it.",
-            "sentence": "The target was far ____ the sniper hit it.",
+            "question": "The tickets were expensive ____ they bought them anyway.",
+            "sentence": "The tickets were expensive ____ they bought them anyway.",
             "options": [
-                "yet",
-                "so",
                 "or",
-                "nor"
+                "so",
+                "yet",
+                "but"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Concession.",
-            "explanation": "'Yet' shows contrast."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "but",
+            "hint": "Despite the high cost, they still made the purchase - that's surprising.",
+            "explanation": "'But' introduces a contrast between an obstacle (expensive tickets) and the action taken despite it. 'Yet' would also work here, but 'but' is more natural in everyday speech."
         },
         {
             "id": "cc_l5_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He checked the data thrice ____ he still missed the error.",
-            "sentence": "He checked the data thrice ____ he still missed the error.",
+            "question": "She had worked a twelve-hour shift ____ she agreed to cover for a colleague.",
+            "sentence": "She had worked a twelve-hour shift ____ she agreed to cover for a colleague.",
             "options": [
                 "yet",
-                "so",
                 "or",
-                "for"
+                "because",
+                "so"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "yet",
-            "hint": "Express an unexpected contrast.",
-            "explanation": "'Yet' shows concession or unexpected contrast."
+            "hint": "Agreeing to work more after such a long shift is unexpected.",
+            "explanation": "'Yet' expresses a surprising or unexpected contrast. Working twelve hours and then agreeing to cover someone else seems contradictory - 'yet' captures that surprise. 'But' would also be possible but 'yet' adds more emphasis."
         },
         {
             "id": "cc_l5_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We didn't see the asteroid ____ did we hear the impact.",
-            "sentence": "We didn't see the asteroid ____ did we hear the impact.",
+            "question": "Does your sister prefer coffee ____ does she drink tea?",
+            "sentence": "Does your sister prefer coffee ____ does she drink tea?",
             "options": [
-                "nor",
-                "yet",
-                "so",
-                "but"
+                "and",
+                "or",
+                "but",
+                "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Negative connection requiring subject-auxiliary inversion.",
-            "explanation": "'Nor' is used for negative addition with inversion."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "or",
+            "hint": "You are asking which of two drinks she prefers.",
+            "explanation": "'Or' is used in questions to offer two alternatives and ask which applies. 'And' would suggest she drinks both, but the question implies she prefers one."
         },
         {
             "id": "cc_l5_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was not hungry ____ was he thirsty.",
-            "sentence": "He was not hungry ____ was he thirsty.",
+            "question": "The coat was half price ____ it was still too expensive for me.",
+            "sentence": "The coat was half price ____ it was still too expensive for me.",
             "options": [
-                "nor",
-                "but",
+                "and",
+                "so",
                 "yet",
-                "so"
+                "or"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Add negative condition.",
-            "explanation": "'Nor' requires inversion."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "yet",
+            "hint": "Even with a discount, there was still a problem. That's a surprise.",
+            "explanation": "'Yet' contrasts the discount (positive) with the item still being unaffordable (obstacle). A half-price coat should be affordable, so 'yet' captures the unexpected difficulty."
         },
         {
             "id": "cc_l6_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The sensors were offline ____ the shield was down.",
-            "sentence": "The sensors were offline ____ the shield was down.",
+            "question": "We stopped at the café ____ we hadn't eaten since breakfast.",
+            "sentence": "We stopped at the café ____ we hadn't eaten since breakfast.",
             "options": [
                 "and",
                 "but",
-                "or",
-                "nor"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add similar negative or neutral facts.",
-            "explanation": "'And' adds similar information."
-        },
-        {
-            "id": "cc_l6_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The oxygen levels dropped ____ we wore our masks.",
-            "sentence": "The oxygen levels dropped ____ we wore our masks.",
-            "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Express action taken as a result.",
-            "explanation": "'So' shows result."
-        },
-        {
-            "id": "cc_l6_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The map is old ____ it is still accurate.",
-            "sentence": "The map is old ____ it is still accurate.",
-            "options": [
-                "but",
-                "so",
                 "or",
                 "for"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast age with accuracy.",
-            "explanation": "'But' shows contrast."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "for",
+            "hint": "There was a specific reason for stopping - think of 'for' as a formal 'because'.",
+            "explanation": "'For' is a formal coordinating conjunction meaning 'because'. It introduces a reason or explanation. While rare in everyday speech, it appears in formal and literary writing: 'We stopped, for we were hungry.'"
         },
         {
-            "id": "cc_l7_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "id": "cc_l6_q2",
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must repair the engine ____ we will drift forever.",
-            "sentence": "We must repair the engine ____ we will drift forever.",
+            "question": "He painted the fence ____ planted some flowers along the path.",
+            "sentence": "He painted the fence ____ planted some flowers along the path.",
             "options": [
-                "or",
                 "and",
-                "yet",
+                "but",
+                "or",
                 "so"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Show a consequence of not acting.",
-            "explanation": "'Or' presents the alternative outcome."
+            "correctAnswer": "and",
+            "hint": "Both actions were done to improve the garden - they go together.",
+            "explanation": "'And' connects two parallel positive actions. Painting the fence and planting flowers are both garden improvements done in the same session."
+        },
+        {
+            "id": "cc_l6_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The forecast said sunshine ____ it rained all afternoon.",
+            "sentence": "The forecast said sunshine ____ it rained all afternoon.",
+            "options": [
+                "and",
+                "but",
+                "so",
+                "yet"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "but",
+            "hint": "The forecast and the actual weather were completely different.",
+            "explanation": "'But' highlights the contrast between prediction (sunshine) and reality (rain). 'Yet' could also work but sounds more literary; 'but' is more natural for everyday contrast."
+        },
+        {
+            "id": "cc_l7_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "My grandfather never learned to drive ____ did he ever want to.",
+            "sentence": "My grandfather never learned to drive ____ did he ever want to.",
+            "options": [
+                "but",
+                "so",
+                "nor",
+                "yet"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "nor",
+            "hint": "Both facts are negative - he didn't drive and he didn't want to. Look at the word order.",
+            "explanation": "'Nor' links two negative clauses with inverted word order: 'nor did he ever want to'. The inversion (auxiliary before subject) is required after 'nor'. 'And' cannot trigger this inversion."
         },
         {
             "id": "cc_l7_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She is a top researcher ____ she lacks field experience.",
-            "sentence": "She is a top researcher ____ she lacks field experience.",
+            "question": "You can finish the report tonight ____ leave it until the morning.",
+            "sentence": "You can finish the report tonight ____ leave it until the morning.",
             "options": [
-                "but",
                 "and",
-                "so",
-                "or"
+                "but",
+                "or",
+                "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast skill with lack of experience.",
-            "explanation": "'But' shows contrast."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "so",
+            "hint": "Two possible times to do the same task - choose one.",
+            "explanation": "'Or' gives a choice between two alternative courses of action. Finishing tonight and finishing in the morning are both options for completing the same report."
         },
         {
             "id": "cc_l7_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We should study the stars ____ they hold many secrets.",
-            "sentence": "We should study the stars ____ they hold many secrets.",
+            "question": "The chef added fresh herbs ____ a squeeze of lemon to the dish.",
+            "sentence": "The chef added fresh herbs ____ a squeeze of lemon to the dish.",
+            "options": [
+                "and",
+                "but",
+                "or",
+                "so"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "and",
+            "hint": "Both ingredients were added - it's a list of two things.",
+            "explanation": "'And' joins two items in a list or sequence. Both the herbs and the lemon were added, making this an additive relationship rather than a contrast or choice."
+        },
+        {
+            "id": "cc_l8_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The last bus had already left ____ we walked home.",
+            "sentence": "The last bus had already left ____ we walked home.",
+            "options": [
+                "and",
+                "so",
+                "or",
+                "yet"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "so",
+            "hint": "Missing the bus led directly to a specific outcome.",
+            "explanation": "'So' shows consequence. Missing the last bus (cause) meant they had to walk home (result). 'And' would just list two facts; 'so' explains why they walked."
+        },
+        {
+            "id": "cc_l8_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The exam was extremely difficult ____ most students still passed.",
+            "sentence": "The exam was extremely difficult ____ most students still passed.",
+            "options": [
+                "and",
+                "but",
+                "yet",
+                "so"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "yet",
+            "hint": "Most students passing despite a hard exam is a positive surprise.",
+            "explanation": "'Yet' introduces an unexpected positive outcome. A very difficult exam would normally mean low pass rates, but most students passed - 'yet' signals this surprising contrast."
+        },
+        {
+            "id": "cc_l8_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The shop had a good selection ____ most items were beyond my budget.",
+            "sentence": "The shop had a good selection ____ most items were beyond my budget.",
+            "options": [
+                "and",
+                "or",
+                "so",
+                "but"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "but",
+            "hint": "Good selection is positive - what comes next is a limitation.",
+            "explanation": "'But' introduces a qualifying contrast. The selection was good (positive) but the prices were too high (negative). 'But' signals that the second clause limits or contradicts the first."
+        },
+        {
+            "id": "cc_l9_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She kept the old letters ____ they held precious memories.",
+            "sentence": "She kept the old letters ____ they held precious memories.",
             "options": [
                 "for",
-                "but",
+                "and",
                 "or",
                 "so"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "for",
-            "hint": "Provide a reason (archaic/formal FANBOYS).",
-            "explanation": "'For' is coordinate reason."
+            "hint": "There was a specific reason for keeping the letters. 'For' means 'because' in formal writing.",
+            "explanation": "'For' as a coordinating conjunction gives a formal reason or explanation, equivalent to 'because'. 'She kept the letters, for they held memories' is the same as 'because they held memories'. This is rare in speech but common in literature."
         },
         {
-            "id": "cc_l8_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "id": "cc_l9_q2",
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The probe reached Mars ____ it found no liquid water.",
-            "sentence": "The probe reached Mars ____ it found no liquid water.",
+            "question": "She set her alarm for six ____ laid out her clothes the night before.",
+            "sentence": "She set her alarm for six ____ laid out her clothes the night before.",
             "options": [
                 "but",
-                "so",
-                "for",
-                "nor"
+                "and",
+                "or",
+                "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast success with a limitation.",
-            "explanation": "'But' introduces contrasting information."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "and",
+            "hint": "Both actions were done to prepare for the next morning.",
+            "explanation": "'And' joins two parallel preparatory actions. Setting the alarm and laying out clothes are both done to prepare, so 'and' links them as equal, related activities."
         },
         {
-            "id": "cc_l8_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "id": "cc_l9_q3",
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The thruster fired perfectly ____ the capsule stabilized.",
-            "sentence": "The thruster fired perfectly ____ the capsule stabilized.",
+            "question": "You can call the office ____ send a message online to confirm your place.",
+            "sentence": "You can call the office ____ send a message online to confirm your place.",
             "options": [
                 "and",
                 "but",
                 "or",
                 "nor"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a positive outcome of firing.",
-            "explanation": "'And' adds corresponding clauses."
-        },
-        {
-            "id": "cc_l8_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "They ran out of fuel ____ they landed on an asteroid.",
-            "sentence": "They ran out of fuel ____ they landed on an asteroid.",
-            "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Immediate consequence.",
-            "explanation": "'So' shows consequence."
-        },
-        {
-            "id": "cc_l9_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The hull is double-layered ____ it can withstand debris.",
-            "sentence": "The hull is double-layered ____ it can withstand debris.",
-            "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Show a result of the structural design.",
-            "explanation": "'So' introduces the consequence."
-        },
-        {
-            "id": "cc_l9_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "He did not sleep ____ did he leave his post.",
-            "sentence": "He did not sleep ____ did he leave his post.",
-            "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Connect negative clauses.",
-            "explanation": "'Nor' connects negative independent clauses."
-        },
-        {
-            "id": "cc_l9_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "She did not speak ____ did she look at him.",
-            "sentence": "She did not speak ____ did she look at him.",
-            "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Inversion of negative.",
-            "explanation": "'Nor' is correct."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "or",
+            "hint": "Either action will confirm your place - only one is needed.",
+            "explanation": "'Or' gives a choice between two alternative actions that achieve the same goal. You need only do one - call OR message. 'And' would mean doing both, which is unnecessary."
         },
         {
             "id": "cc_l10_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She was tired from the orbit ____ she kept monitoring.",
-            "sentence": "She was tired from the orbit ____ she kept monitoring.",
+            "question": "She forgot her umbrella ____ got completely soaked in the rain.",
+            "sentence": "She forgot her umbrella ____ got completely soaked in the rain.",
             "options": [
-                "yet",
-                "so",
+                "and",
+                "but",
                 "or",
-                "for"
+                "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Contrast exhaustion with continuation.",
-            "explanation": "'Yet' expresses concession."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "so",
+            "hint": "Forgetting the umbrella had a predictable and direct consequence.",
+            "explanation": "'So' connects cause and effect. Forgetting the umbrella (cause) led directly to getting soaked (result). 'And' would just list two events without showing the causal link."
         },
         {
             "id": "cc_l10_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The weather was bad ____ the shuttle landed safely.",
-            "sentence": "The weather was bad ____ the shuttle landed safely.",
+            "question": "My brother didn't apologise ____ did he offer to help fix things.",
+            "sentence": "My brother didn't apologise ____ did he offer to help fix things.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "nor",
+                "and",
+                "but",
+                "yet"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Concession or surprise.",
-            "explanation": "'Yet' introduces unexpected result."
+            "correctAnswer": "nor",
+            "hint": "Both facts are negative - he did neither. Check the inverted word order.",
+            "explanation": "'Nor' adds a second negative clause with subject-auxiliary inversion: 'nor did he offer'. Use 'nor' when the first clause is negative and you want to add another negative fact. 'And' cannot create this inverted structure."
         },
         {
             "id": "cc_l10_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The storm was fierce ____ the shields held.",
-            "sentence": "The storm was fierce ____ the shields held.",
+            "question": "She had almost no experience ____ she landed a senior role.",
+            "sentence": "She had almost no experience ____ she landed a senior role.",
             "options": [
+                "but",
                 "yet",
-                "so",
                 "or",
                 "for"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "yet",
-            "hint": "Unexpected positive result.",
-            "explanation": "'Yet' shows contrast."
+            "hint": "Getting a senior job with almost no experience is highly unexpected.",
+            "explanation": "'Yet' expresses a surprising or paradoxical outcome. Little experience would normally prevent getting a senior role, so 'yet' captures the unexpectedness. 'But' is also correct and more informal."
         }
     ]
 }

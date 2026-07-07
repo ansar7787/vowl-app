@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l101_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must wait ____ the engine cools down in sector 9.",
-            "sentence": "We must wait ____ the engine cools down in sector 9.",
+            "question": "You won't get a refund ____ you provide the original receipt.",
+            "sentence": "You won't get a refund ____ you provide the original receipt.",
             "options": [
-                "until",
-                "because",
+                "unless",
+                "if",
                 "although",
-                "unless"
+                "since"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "until",
-            "hint": "Show a time limit or milestone. (Sector 9 calibration)",
-            "explanation": "'Until' shows time boundary. [Verified in sector 9]."
+            "correctAnswer": "unless",
+            "hint": "'Unless' means 'except if' - there is only one way to get the refund.",
+            "explanation": "'Unless' means 'except if' or 'if not'. 'You won't get a refund unless you provide the receipt' = 'You will only get a refund if you provide the receipt'. 'Unless' already contains the negation - do NOT write 'unless you don't provide'."
         },
         {
             "id": "cc_l101_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We aborted the mission ____ the reactor leaked in sector 9.",
-            "sentence": "We aborted the mission ____ the reactor leaked in sector 9.",
+            "question": "____ you book early, you may not get a seat on the popular evening train.",
+            "sentence": "____ you book early, you may not get a seat on the popular evening train.",
             "options": [
-                "because",
                 "although",
+                "if",
                 "unless",
-                "while"
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "State the cause of aborting. (Sector 9 calibration)",
-            "explanation": "'Because' introduces a cause. [Verified in sector 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "unless",
+            "hint": "'Unless' at the start means 'except if' - early booking is the only way to guarantee a seat.",
+            "explanation": "'Unless' at the start of a sentence means 'except on condition that'. 'Unless you book early' = 'if you do not book early'. It introduces the one condition that prevents a negative outcome."
         },
         {
             "id": "cc_l101_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We will launch ____ it is raining in sector 9.",
-            "sentence": "We will launch ____ it is raining in sector 9.",
+            "question": "The installation will fail ____ all the required software is already present.",
+            "sentence": "The installation will fail ____ all the required software is already present.",
             "options": [
-                "even though",
-                "because",
+                "if",
                 "unless",
-                "until"
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Show concession or obstacle. (Sector 9 calibration)",
-            "explanation": "'Even though' shows concession. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "'Unless' means 'if not' - the software being present is the only condition for success.",
+            "explanation": "'Unless' introduces the single condition that prevents failure. 'Will fail unless all software is present' = 'will fail if all software is NOT present' = 'will only succeed if all software is there'. Remember: 'unless' = 'if not'."
         },
         {
             "id": "cc_l102_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crew rested ____ the autopilot was active in sector 9.",
-            "sentence": "The crew rested ____ the autopilot was active in sector 9.",
+            "question": "She won't sign the agreement ____ the penalty clause is removed.",
+            "sentence": "She won't sign the agreement ____ the penalty clause is removed.",
             "options": [
-                "while",
+                "although",
                 "unless",
-                "until",
-                "before"
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Show simultaneous actions. (Sector 9 calibration)",
-            "explanation": "'While' shows duration/simultaneous acts. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "Removing the penalty clause is the only condition for her signature.",
+            "explanation": "'Unless' introduces the sole condition for a refusal to change to acceptance. 'Won't sign unless the clause is removed' = 'will only sign if the clause IS removed'. The removal is the one condition that would change her position."
         },
         {
             "id": "cc_l102_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The shield failed ____ it was hit by a laser in sector 9.",
-            "sentence": "The shield failed ____ it was hit by a laser in sector 9.",
+            "question": "____ the client approves the design today, the project will miss its deadline.",
+            "sentence": "____ the client approves the design today, the project will miss its deadline.",
             "options": [
-                "since",
+                "although",
+                "if",
                 "unless",
-                "until",
-                "although"
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "State a cause or reason. (Sector 9 calibration)",
-            "explanation": "'Since' acts as because. [Verified in sector 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "unless",
+            "hint": "'Unless' at the start sets the single condition that would prevent the deadline being missed.",
+            "explanation": "'Unless' at the start introduces the one exception. 'Unless the client approves' = 'if the client does NOT approve'. The project will miss the deadline EXCEPT IF the approval comes today."
         },
         {
             "id": "cc_l102_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The armor held ____ the impact was massive in sector 9.",
-            "sentence": "The armor held ____ the impact was massive in sector 9.",
+            "question": "The discount will be applied automatically ____ the promo code is entered at checkout.",
+            "sentence": "The discount will be applied automatically ____ the promo code is entered at checkout.",
             "options": [
-                "although",
-                "because",
+                "if",
                 "unless",
-                "while"
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 9 calibration)",
-            "explanation": "'Although' shows concession. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "The promo code is the one required step for the discount to work.",
+            "explanation": "'Unless' introduces the exception to a general rule. The discount appears automatically EXCEPT IF the code is not entered. 'Unless the code is entered' = 'if the code is NOT entered'. No code = no discount."
         },
         {
             "id": "cc_l103_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The signal improved ____ we adjusted the dish in sector 9.",
-            "sentence": "The signal improved ____ we adjusted the dish in sector 9.",
+            "question": "He refuses to discuss the matter ____ his lawyer is present.",
+            "sentence": "He refuses to discuss the matter ____ his lawyer is present.",
             "options": [
-                "after",
-                "until",
-                "while",
-                "although"
+                "although",
+                "unless",
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "after",
-            "hint": "Show action following another. (Sector 9 calibration)",
-            "explanation": "'After' shows sequential time. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "His lawyer being there is the only condition under which he will talk.",
+            "explanation": "'Unless' introduces the single condition that would change his refusal to agreement. 'Refuses to discuss unless his lawyer is present' = 'will only discuss if his lawyer IS present'. One condition, one exception."
         },
         {
             "id": "cc_l103_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They remained indoors ____ the radiation was high in sector 9.",
-            "sentence": "They remained indoors ____ the radiation was high in sector 9.",
+            "question": "____ the temperature stays below zero, the pipes are at risk of freezing.",
+            "sentence": "____ the temperature stays below zero, the pipes are at risk of freezing.",
             "options": [
-                "as",
+                "although",
+                "if",
                 "unless",
-                "until",
-                "before"
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "State a reason. (Sector 9 calibration)",
-            "explanation": "'As' can mean because. [Verified in sector 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "unless",
+            "hint": "'Unless' at the start sets the one condition that would prevent the pipes from freezing.",
+            "explanation": "'Unless' introduces the protective condition. 'Unless the temperature stays below zero' = 'if the temperature does NOT stay below zero' - but wait, this needs careful reading. 'Unless temp stays below zero' means 'if temp RISES above zero' the pipes are at risk. This is slightly unusual - but 'unless' still means 'except if'."
         },
         {
             "id": "cc_l103_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He smiled ____ he was in severe pain in sector 9.",
-            "sentence": "He smiled ____ he was in severe pain in sector 9.",
+            "question": "The programme will be cancelled ____ the viewing figures improve significantly next month.",
+            "sentence": "The programme will be cancelled ____ the viewing figures improve significantly next month.",
             "options": [
-                "though",
-                "because",
+                "if",
                 "unless",
-                "until"
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "though",
-            "hint": "Concession. (Sector 9 calibration)",
-            "explanation": "'Though' is concession. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "Improving figures is the one chance to save the programme.",
+            "explanation": "'Unless' is the only connector that expresses 'except if' without adding another negative. 'Will be cancelled unless figures improve' = 'will only survive if figures DO improve'. One condition, one lifeline."
         },
         {
             "id": "cc_l104_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We landed ____ the sun was setting in sector 9.",
-            "sentence": "We landed ____ the sun was setting in sector 9.",
+            "question": "You cannot access the premium content ____ you have a paid subscription.",
+            "sentence": "You cannot access the premium content ____ you have a paid subscription.",
             "options": [
-                "as",
+                "although",
                 "unless",
-                "until",
-                "although"
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Show action during a state. (Sector 9 calibration)",
-            "explanation": "'As' is temporal. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "A paid subscription is the one required condition for access.",
+            "explanation": "'Unless' introduces the sole exception to a restriction. 'Cannot access unless you have a subscription' = 'can only access if you DO have a subscription'. The subscription is the key that unlocks the content."
         },
         {
             "id": "cc_l104_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The engine died ____ the fuel filter was clogged in sector 9.",
-            "sentence": "The engine died ____ the fuel filter was clogged in sector 9.",
+            "question": "____ there is a very strong reason to delay, we should stick to the original schedule.",
+            "sentence": "____ there is a very strong reason to delay, we should stick to the original schedule.",
             "options": [
-                "because",
                 "although",
+                "if",
                 "unless",
-                "while"
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Identify cause. (Sector 9 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "unless",
+            "hint": "'Unless' at the start sets the one exception to following the schedule.",
+            "explanation": "'Unless' introduces the only exception to the default plan. 'Unless there is a strong reason to delay' = 'if there is NOT a strong reason to delay'. The default is to stick to the schedule EXCEPT IF an exceptional reason arises."
         },
         {
             "id": "cc_l104_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We kept walking ____ we were exhausted in sector 9.",
-            "sentence": "We kept walking ____ we were exhausted in sector 9.",
+            "question": "The deal will not be worth pursuing ____ both parties can agree on the pricing.",
+            "sentence": "The deal will not be worth pursuing ____ both parties can agree on the pricing.",
             "options": [
-                "even if",
-                "because",
+                "if",
                 "unless",
-                "until"
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even if",
-            "hint": "Show concession. (Sector 9 calibration)",
-            "explanation": "'Even if' or 'even though' fits. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "Agreement on pricing is the one factor that makes the deal worthwhile.",
+            "explanation": "'Unless' introduces the essential condition. 'Not worth pursuing unless both agree on pricing' = 'only worth pursuing if they DO agree on pricing'. Without pricing agreement, there is no point continuing."
         },
         {
             "id": "cc_l105_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He checked the seals ____ he opened the airlock in sector 9.",
-            "sentence": "He checked the seals ____ he opened the airlock in sector 9.",
+            "question": "She will not authorise the expense ____ the budget committee approves it first.",
+            "sentence": "She will not authorise the expense ____ the budget committee approves it first.",
             "options": [
-                "before",
-                "because",
                 "although",
-                "unless"
+                "unless",
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "before",
-            "hint": "Preceding safety action. (Sector 9 calibration)",
-            "explanation": "'Before' shows preceding time. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "Committee approval is the required prior step for authorisation.",
+            "explanation": "'Unless' introduces the one required condition. 'Will not authorise unless the committee approves' = 'will only authorise if the committee DOES approve'. The committee's decision is the gatekeeper."
         },
         {
             "id": "cc_l105_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We succeeded ____ we worked together in sector 9.",
-            "sentence": "We succeeded ____ we worked together in sector 9.",
+            "question": "____ you can demonstrate measurable impact, securing further funding will be very difficult.",
+            "sentence": "____ you can demonstrate measurable impact, securing further funding will be very difficult.",
             "options": [
-                "since",
+                "although",
+                "if",
                 "unless",
-                "until",
-                "although"
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "Reason for success. (Sector 9 calibration)",
-            "explanation": "'Since' introduces reason. [Verified in sector 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "unless",
+            "hint": "'Unless' at the start sets the key condition for securing funding.",
+            "explanation": "'Unless' introduces the critical condition at the start of the sentence. 'Unless you can demonstrate impact' = 'if you cannot demonstrate impact'. The only way to secure funding is to prove measurable results."
         },
         {
             "id": "cc_l105_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The signal was read ____ it was highly distorted in sector 9.",
-            "sentence": "The signal was read ____ it was highly distorted in sector 9.",
+            "question": "The appeal will not be accepted ____ new and compelling evidence is submitted.",
+            "sentence": "The appeal will not be accepted ____ new and compelling evidence is submitted.",
             "options": [
-                "although",
-                "because",
+                "if",
                 "unless",
-                "while"
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 9 calibration)",
-            "explanation": "'Although' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "New evidence is the one thing that could make the appeal succeed.",
+            "explanation": "'Unless' introduces the single condition that could change the outcome. 'Not accepted unless new evidence is submitted' = 'only accepted if new evidence IS submitted'. No new evidence means rejection."
         },
         {
             "id": "cc_l106_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We started the engines ____ the green light flashed in sector 9.",
-            "sentence": "We started the engines ____ the green light flashed in sector 9.",
+            "question": "He won't invest in the startup ____ he can see a clear exit strategy.",
+            "sentence": "He won't invest in the startup ____ he can see a clear exit strategy.",
             "options": [
-                "once",
-                "until",
-                "while",
-                "although"
+                "although",
+                "unless",
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "once",
-            "hint": "Show immediate action upon trigger. (Sector 9 calibration)",
-            "explanation": "'Once' shows condition met. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "A clear exit strategy is his non-negotiable requirement for investing.",
+            "explanation": "'Unless' introduces the one non-negotiable condition. 'Won't invest unless he sees an exit strategy' = 'will only invest if he CAN see an exit strategy'. Without this one element, there is no investment."
         },
         {
             "id": "cc_l106_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She was chosen ____ she had perfect vision in sector 9.",
-            "sentence": "She was chosen ____ she had perfect vision in sector 9.",
+            "question": "____ both countries agree to the terms, the summit will end without a resolution.",
+            "sentence": "____ both countries agree to the terms, the summit will end without a resolution.",
             "options": [
-                "because",
                 "although",
+                "if",
                 "unless",
-                "while"
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Identify cause. (Sector 9 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "unless",
+            "hint": "'Unless' at the start introduces the one condition that would produce a positive result.",
+            "explanation": "'Unless' at the start introduces the single condition that would change the outcome. 'Unless both agree' = 'if both do NOT agree'. The summit will fail EXCEPT IF both countries reach agreement."
         },
         {
             "id": "cc_l106_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She went out ____ the dome was locked in sector 9.",
-            "sentence": "She went out ____ the dome was locked in sector 9.",
+            "question": "The bridge will not open to traffic ____ the structural survey is completed.",
+            "sentence": "The bridge will not open to traffic ____ the structural survey is completed.",
             "options": [
-                "even though",
-                "because",
+                "if",
                 "unless",
-                "until"
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession. (Sector 9 calibration)",
-            "explanation": "'Even though' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "Completing the survey is the essential safety requirement before the bridge opens.",
+            "explanation": "'Unless' introduces the one essential prerequisite. 'Will not open unless the survey is completed' = 'will only open if the survey IS completed'. The survey must come first - it is the condition for safe opening."
         },
         {
             "id": "cc_l107_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She remained silent ____ the broadcast was playing in sector 9.",
-            "sentence": "She remained silent ____ the broadcast was playing in sector 9.",
+            "question": "She will not settle for less ____ the company meets her full list of requirements.",
+            "sentence": "She will not settle for less ____ the company meets her full list of requirements.",
             "options": [
-                "while",
+                "although",
                 "unless",
-                "until",
-                "before"
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Simultaneous duration. (Sector 9 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "Her full list of requirements is the non-negotiable condition for agreement.",
+            "explanation": "'Unless' introduces a firm, non-negotiable condition. 'Won't settle unless requirements are met' = 'will only settle if ALL requirements ARE met'. This is a clear ultimatum - one condition, no compromise."
         },
         {
             "id": "cc_l107_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We lost contact ____ the satellite was blocked in sector 9.",
-            "sentence": "We lost contact ____ the satellite was blocked in sector 9.",
+            "question": "____ the water level drops significantly, the village will remain flooded.",
+            "sentence": "____ the water level drops significantly, the village will remain flooded.",
             "options": [
-                "as",
+                "although",
+                "if",
                 "unless",
-                "until",
-                "before"
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Reason or cause. (Sector 9 calibration)",
-            "explanation": "'As' shows cause. [Verified in sector 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "unless",
+            "hint": "'Unless' at the start sets the one natural condition for the flooding to end.",
+            "explanation": "'Unless' introduces the sole condition for change. 'Unless the water level drops' = 'if the water level does NOT drop'. The flooding will continue EXCEPT IF the water recedes."
         },
         {
             "id": "cc_l107_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They finished the scan ____ they lacked proper tools in sector 9.",
-            "sentence": "They finished the scan ____ they lacked proper tools in sector 9.",
+            "question": "The contract will not take effect ____ it has been signed by all three directors.",
+            "sentence": "The contract will not take effect ____ it has been signed by all three directors.",
             "options": [
-                "although",
-                "because",
+                "if",
                 "unless",
-                "while"
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 9 calibration)",
-            "explanation": "'Although' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "All three signatures are the legal requirement before the contract becomes binding.",
+            "explanation": "'Unless' introduces the legal condition. 'Will not take effect unless signed by all three' = 'will only take effect if all three DO sign'. All signatures are required - one missing signature means the contract has no legal force."
         },
         {
             "id": "cc_l108_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We slept ____ the storm was raging outside in sector 9.",
-            "sentence": "We slept ____ the storm was raging outside in sector 9.",
+            "question": "He will not leave the negotiating table ____ a fair deal is reached.",
+            "sentence": "He will not leave the negotiating table ____ a fair deal is reached.",
             "options": [
-                "as",
+                "although",
                 "unless",
-                "until",
-                "before"
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Simultaneous event. (Sector 9 calibration)",
-            "explanation": "'As' or 'while' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "A fair deal is the one outcome that would end the negotiation.",
+            "explanation": "'Unless' introduces the one acceptable outcome. 'Won't leave unless a fair deal is reached' = 'will only leave if a fair deal IS reached'. He is committed to staying until the condition is met."
         },
         {
             "id": "cc_l108_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The core melted ____ the coolant line cracked in sector 9.",
-            "sentence": "The core melted ____ the coolant line cracked in sector 9.",
+            "question": "____ the soil conditions are right, even the best seeds will not germinate.",
+            "sentence": "____ the soil conditions are right, even the best seeds will not germinate.",
             "options": [
-                "because",
                 "although",
+                "if",
                 "unless",
-                "while"
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Identify cause. (Sector 9 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "unless",
+            "hint": "'Unless' at the start introduces the essential environmental condition for germination.",
+            "explanation": "'Unless' at the start means 'except if'. 'Unless the soil conditions are right' = 'if the soil conditions are NOT right'. Even quality seeds need the right conditions - 'unless' highlights this essential requirement."
         },
         {
             "id": "cc_l108_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He took the risk ____ he was warned in sector 9.",
-            "sentence": "He took the risk ____ he was warned in sector 9.",
+            "question": "The performance will proceed as scheduled ____ the lead performer is too ill to appear.",
+            "sentence": "The performance will proceed as scheduled ____ the lead performer is too ill to appear.",
             "options": [
-                "even though",
-                "because",
+                "if",
                 "unless",
-                "until"
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession. (Sector 9 calibration)",
-            "explanation": "'Even though' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "The lead performer being too ill is the only thing that would stop the show.",
+            "explanation": "'Unless' introduces the single exceptional circumstance that would change plans. 'Will proceed unless the performer is too ill' = 'will only be cancelled if the performer IS too ill'. Everything else stays as planned."
         },
         {
             "id": "cc_l109_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The ship accelerated ____ it cleared the orbit in sector 9.",
-            "sentence": "The ship accelerated ____ it cleared the orbit in sector 9.",
+            "question": "She refuses to publish the results ____ they have been independently verified.",
+            "sentence": "She refuses to publish the results ____ they have been independently verified.",
             "options": [
-                "after",
-                "until",
+                "although",
                 "unless",
-                "although"
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "after",
-            "hint": "Sequential event. (Sector 9 calibration)",
-            "explanation": "'After' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "Independent verification is the one academic condition for publication.",
+            "explanation": "'Unless' introduces the one required step. 'Refuses to publish unless independently verified' = 'will only publish if they ARE independently verified'. Academic integrity requires this condition to be met first."
         },
         {
             "id": "cc_l109_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was promoted ____ he saved the captain in sector 9.",
-            "sentence": "He was promoted ____ he saved the captain in sector 9.",
+            "question": "____ stricter regulations are introduced, pollution levels will continue to rise.",
+            "sentence": "____ stricter regulations are introduced, pollution levels will continue to rise.",
             "options": [
-                "since",
+                "although",
+                "if",
                 "unless",
-                "until",
-                "although"
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "State reason. (Sector 9 calibration)",
-            "explanation": "'Since' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "unless",
+            "hint": "'Unless' at the start sets the policy condition needed to reverse a trend.",
+            "explanation": "'Unless' introduces the necessary intervention. 'Unless stricter regulations are introduced' = 'if stricter regulations are NOT introduced'. Pollution will keep rising EXCEPT IF policy changes. This is a policy argument structure."
         },
         {
             "id": "cc_l109_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We found the base ____ the map was missing in sector 9.",
-            "sentence": "We found the base ____ the map was missing in sector 9.",
+            "question": "The app will not work correctly ____ your device software is fully up to date.",
+            "sentence": "The app will not work correctly ____ your device software is fully up to date.",
             "options": [
-                "although",
-                "because",
+                "if",
                 "unless",
-                "while"
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 9 calibration)",
-            "explanation": "'Although' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "Being up to date is the technical condition for the app to function.",
+            "explanation": "'Unless' introduces the essential technical requirement. 'Won't work unless software is up to date' = 'will only work if it IS up to date'. Outdated software = the app fails. One technical condition, one outcome."
         },
         {
             "id": "cc_l110_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You must exit ____ the timer runs out in sector 9.",
-            "sentence": "You must exit ____ the timer runs out in sector 9.",
+            "question": "She will not reveal the source ____ the journalist can guarantee complete anonymity.",
+            "sentence": "She will not reveal the source ____ the journalist can guarantee complete anonymity.",
             "options": [
-                "before",
-                "because",
                 "although",
-                "unless"
+                "unless",
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "before",
-            "hint": "Action preceding limit. (Sector 9 calibration)",
-            "explanation": "'Before' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "Guaranteed anonymity is the source's one non-negotiable protection.",
+            "explanation": "'Unless' introduces the single protection condition. 'Will not reveal unless anonymity is guaranteed' = 'will only reveal if anonymity IS guaranteed'. This is a classic source-protection principle in journalism."
         },
         {
             "id": "cc_l110_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They arrived late ____ the capsule was delayed in sector 9.",
-            "sentence": "They arrived late ____ the capsule was delayed in sector 9.",
+            "question": "____ the entire board votes in favour, the resolution cannot pass.",
+            "sentence": "____ the entire board votes in favour, the resolution cannot pass.",
             "options": [
-                "because",
                 "although",
+                "if",
                 "unless",
-                "while"
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "State reason. (Sector 9 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "unless",
+            "hint": "'Unless' at the start sets the voting threshold needed for the resolution to succeed.",
+            "explanation": "'Unless' at the start introduces the sole condition for success. 'Unless the entire board votes in favour' = 'if the entire board does NOT vote in favour'. A unanimous vote is the only path to passing the resolution."
         },
         {
             "id": "cc_l110_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She laughed ____ she was nervous in sector 9.",
-            "sentence": "She laughed ____ she was nervous in sector 9.",
+            "question": "The rescue operation will not be called off ____ all survivors have been accounted for.",
+            "sentence": "The rescue operation will not be called off ____ all survivors have been accounted for.",
             "options": [
-                "though",
-                "because",
+                "if",
                 "unless",
-                "until"
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "though",
-            "hint": "Concession. (Sector 9 calibration)",
-            "explanation": "'Though' is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "Accounting for all survivors is the only condition for ending the search.",
+            "explanation": "'Unless' introduces the sole condition for ending the operation. 'Will not be called off unless all are accounted for' = 'will only end if ALL survivors ARE accounted for'. The search continues until every person is found."
         }
     ]
 }

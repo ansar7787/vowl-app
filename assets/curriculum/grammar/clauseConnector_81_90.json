@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l81_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We will freeze ____ we turn on the heater in sector 7.",
-            "sentence": "We will freeze ____ we turn on the heater in sector 7.",
+            "question": "____ city rents have doubled in the past decade, suburban prices have barely moved.",
+            "sentence": "____ city rents have doubled in the past decade, suburban prices have barely moved.",
             "options": [
-                "unless",
-                "because",
+                "whereas",
+                "while",
                 "although",
-                "while"
+                "since"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "unless",
-            "hint": "State a negative condition (except if). (Sector 7 calibration)",
-            "explanation": "'Unless' introduces a negative condition. [Verified in sector 7]."
+            "correctAnswer": "whereas",
+            "hint": "Two contrasting trends in different areas are being formally compared.",
+            "explanation": "'Whereas' introduces a formal, balanced contrast between two directly opposing situations. City rents doubling versus suburban prices barely moving are two parallel facts placed in direct opposition. 'Whereas' is more formal and balanced than 'while' in this comparative role."
         },
         {
             "id": "cc_l81_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He likes coding ____ his brother prefers art in sector 7.",
-            "sentence": "He likes coding ____ his brother prefers art in sector 7.",
+            "question": "Extroverts tend to recharge by being with others, ____ introverts need time alone.",
+            "sentence": "Extroverts tend to recharge by being with others, ____ introverts need time alone.",
             "options": [
-                "whereas",
                 "because",
-                "unless",
-                "while"
+                "while",
+                "since",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Show direct contrast between preferences. (Sector 7 calibration)",
-            "explanation": "'Whereas' indicates direct contrast. [Verified in sector 7]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "Two opposite personality types are being compared side by side.",
+            "explanation": "'While' in the middle of a sentence can express formal contrast between two groups or situations. Extroverts and introverts recharge in opposite ways - 'while' here means 'on the other hand' or 'whereas', contrasting the two."
         },
         {
             "id": "cc_l81_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must stay indoors ____ the radiation drops in sector 7.",
-            "sentence": "We must stay indoors ____ the radiation drops in sector 7.",
+            "question": "He prefers working late into the night ____ she is most productive early in the morning.",
+            "sentence": "He prefers working late into the night ____ she is most productive early in the morning.",
             "options": [
-                "until",
                 "because",
-                "although",
-                "unless"
+                "since",
+                "whereas",
+                "although"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "until",
-            "hint": "Time limit. (Sector 7 calibration)",
-            "explanation": "'Until' is correct. [Verified in sector 7]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two people with opposite working patterns are being directly contrasted.",
+            "explanation": "'Whereas' is used for a formal, balanced contrast where two opposing facts are placed side by side. His night-owl habits are directly contrasted with her early-morning productivity - 'whereas' makes this comparison formal and clear."
         },
         {
             "id": "cc_l82_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The reactor will blow ____ the temperature rises in sector 7.",
-            "sentence": "The reactor will blow ____ the temperature rises in sector 7.",
+            "question": "Traditional publishing involves lengthy editorial processes, ____ self-publishing offers immediate release.",
+            "sentence": "Traditional publishing involves lengthy editorial processes, ____ self-publishing offers immediate release.",
             "options": [
-                "if",
-                "unless",
-                "until",
-                "although"
+                "because",
+                "while",
+                "since",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "if",
-            "hint": "State a direct condition. (Sector 7 calibration)",
-            "explanation": "'If' introduces conditional clause. [Verified in sector 7]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "Two publishing methods with opposite characteristics are being compared.",
+            "explanation": "'While' in a mid-sentence position expresses formal contrast between two different methods or systems. Traditional publishing (slow process) is contrasted with self-publishing (fast release) - 'while' here means 'whereas' or 'on the other hand'."
         },
         {
             "id": "cc_l82_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They stayed awake ____ we slept soundly in sector 7.",
-            "sentence": "They stayed awake ____ we slept soundly in sector 7.",
+            "question": "____ older generations relied on physical maps, younger people use navigation apps.",
+            "sentence": "____ older generations relied on physical maps, younger people use navigation apps.",
             "options": [
+                "whereas",
                 "while",
-                "unless",
-                "until",
-                "although"
+                "although",
+                "because"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast simultaneous actions. (Sector 7 calibration)",
-            "explanation": "'While' can show contrast. [Verified in sector 7]."
+            "correctAnswer": "whereas",
+            "hint": "Two generations with opposite navigation habits are being formally compared.",
+            "explanation": "'Whereas' at the start of a sentence introduces a formal contrast. Older generations (one group) relied on maps - whereas younger people (opposing group) use apps. 'Whereas' makes this a formal, balanced comparison."
         },
         {
             "id": "cc_l82_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crop died ____ the soil was dry in sector 7.",
-            "sentence": "The crop died ____ the soil was dry in sector 7.",
+            "question": "The northern regions experienced severe flooding, ____ the south remained entirely dry.",
+            "sentence": "The northern regions experienced severe flooding, ____ the south remained entirely dry.",
             "options": [
+                "because",
                 "since",
-                "unless",
-                "until",
-                "although"
+                "although",
+                "whereas"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "Reason. (Sector 7 calibration)",
-            "explanation": "'Since' is correct. [Verified in sector 7]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "whereas",
+            "hint": "Two opposite weather conditions in two different regions are being contrasted.",
+            "explanation": "'Whereas' provides a formal, balanced contrast between two directly opposing situations in different places. Flooding in the north versus dry conditions in the south - 'whereas' places these two contrasting facts side by side."
         },
         {
             "id": "cc_l83_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They will survive ____ they conserve oxygen in sector 7.",
-            "sentence": "They will survive ____ they conserve oxygen in sector 7.",
+            "question": "She tends to make decisions very quickly, ____ her business partner deliberates for days.",
+            "sentence": "She tends to make decisions very quickly, ____ her business partner deliberates for days.",
             "options": [
-                "provided that",
-                "unless",
-                "until",
-                "although"
+                "because",
+                "while",
+                "since",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "provided that",
-            "hint": "State a necessary condition. (Sector 7 calibration)",
-            "explanation": "'Provided that' is conditional. [Verified in sector 7]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "Two people with completely opposite decision-making styles are being compared.",
+            "explanation": "'While' expresses contrast between two people with opposing tendencies. Quick decision-making (her style) versus lengthy deliberation (her partner's style) - 'while' here means 'on the other hand', showing the contrast between them."
         },
         {
             "id": "cc_l83_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She chose physics ____ he opted for biology in sector 7.",
-            "sentence": "She chose physics ____ he opted for biology in sector 7.",
+            "question": "____ the first edition was printed in black and white, the new edition is fully illustrated.",
+            "sentence": "____ the first edition was printed in black and white, the new edition is fully illustrated.",
             "options": [
                 "whereas",
-                "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Direct contrast. (Sector 7 calibration)",
-            "explanation": "'Whereas' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l83_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "She succeeded ____ she worked night and day in sector 7.",
-            "sentence": "She succeeded ____ she worked night and day in sector 7.",
-            "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Reason. (Sector 7 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l84_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "You can enter the core ____ you wear a shield in sector 7.",
-            "sentence": "You can enter the core ____ you wear a shield in sector 7.",
-            "options": [
-                "as long as",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as long as",
-            "hint": "Express conditional duration. (Sector 7 calibration)",
-            "explanation": "'As long as' is conditional. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l84_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We had water ____ they had none in sector 7.",
-            "sentence": "We had water ____ they had none in sector 7.",
-            "options": [
                 "while",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast. (Sector 7 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l84_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "He was happy ____ he won the race in sector 7.",
-            "sentence": "He was happy ____ he won the race in sector 7.",
-            "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Reason. (Sector 7 calibration)",
-            "explanation": "'As' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l85_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We cannot escape ____ the hyperdrive is fixed in sector 7.",
-            "sentence": "We cannot escape ____ the hyperdrive is fixed in sector 7.",
-            "options": [
-                "unless",
-                "if",
-                "because",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "unless",
-            "hint": "Negative condition. (Sector 7 calibration)",
-            "explanation": "'Unless' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l85_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "Gold is heavy ____ aluminum is light in sector 7.",
-            "sentence": "Gold is heavy ____ aluminum is light in sector 7.",
-            "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Contrast. (Sector 7 calibration)",
-            "explanation": "'Whereas' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l85_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We stayed ____ the rain stopped in sector 7.",
-            "sentence": "We stayed ____ the rain stopped in sector 7.",
-            "options": [
-                "until",
-                "because",
                 "although",
-                "unless"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "until",
-            "hint": "Time boundary. (Sector 7 calibration)",
-            "explanation": "'Until' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l86_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The system rebooted ____ the override was pulled in sector 7.",
-            "sentence": "The system rebooted ____ the override was pulled in sector 7.",
-            "options": [
-                "as soon as",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as soon as",
-            "hint": "Immediate consequence of condition. (Sector 7 calibration)",
-            "explanation": "'As soon as' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l86_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The base was warm ____ the valley was freezing in sector 7.",
-            "sentence": "The base was warm ____ the valley was freezing in sector 7.",
-            "options": [
-                "while",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast. (Sector 7 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l86_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The core is safe ____ the shield is active in sector 7.",
-            "sentence": "The core is safe ____ the shield is active in sector 7.",
-            "options": [
-                "as long as",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as long as",
-            "hint": "Condition. (Sector 7 calibration)",
-            "explanation": "'As long as' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l87_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We can win the war ____ we unite in sector 7.",
-            "sentence": "We can win the war ____ we unite in sector 7.",
-            "options": [
-                "if",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "if",
-            "hint": "Condition. (Sector 7 calibration)",
-            "explanation": "'If' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l87_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "She is quiet ____ he is loud in sector 7.",
-            "sentence": "She is quiet ____ he is loud in sector 7.",
-            "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Contrast. (Sector 7 calibration)",
-            "explanation": "'Whereas' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l87_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "You can keep it ____ you return it tomorrow in sector 7.",
-            "sentence": "You can keep it ____ you return it tomorrow in sector 7.",
-            "options": [
-                "provided that",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "provided that",
-            "hint": "Condition. (Sector 7 calibration)",
-            "explanation": "'Provided that' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l88_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The dome remains safe ____ the shields stay up in sector 7.",
-            "sentence": "The dome remains safe ____ the shields stay up in sector 7.",
-            "options": [
-                "provided",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "provided",
-            "hint": "Necessary condition. (Sector 7 calibration)",
-            "explanation": "'Provided' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l88_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The dome is safe ____ the outside is deadly in sector 7.",
-            "sentence": "The dome is safe ____ the outside is deadly in sector 7.",
-            "options": [
-                "while",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast. (Sector 7 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l88_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The fire spread ____ the wind was strong in sector 7.",
-            "sentence": "The fire spread ____ the wind was strong in sector 7.",
-            "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Reason. (Sector 7 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l89_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "You will fail ____ you study hard in sector 7.",
-            "sentence": "You will fail ____ you study hard in sector 7.",
-            "options": [
-                "unless",
-                "if",
-                "because",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "unless",
-            "hint": "Negative condition. (Sector 7 calibration)",
-            "explanation": "'Unless' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l89_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "Mars is dry ____ Earth is wet in sector 7.",
-            "sentence": "Mars is dry ____ Earth is wet in sector 7.",
-            "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Contrast. (Sector 7 calibration)",
-            "explanation": "'Whereas' is correct. [Verified in sector 7]."
-        },
-        {
-            "id": "cc_l89_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "He did not give up ____ the odds were poor in sector 7.",
-            "sentence": "He did not give up ____ the odds were poor in sector 7.",
-            "options": [
-                "even though",
-                "because",
-                "unless",
                 "until"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession. (Sector 7 calibration)",
-            "explanation": "'Even though' is correct. [Verified in sector 7]."
+            "correctAnswer": "whereas",
+            "hint": "Two editions of the same publication with opposite visual characteristics are being contrasted.",
+            "explanation": "'Whereas' introduces a formal comparison between two versions of the same thing. The old edition (black and white) is directly contrasted with the new one (illustrated) - 'whereas' frames this as a clear, formal before-and-after comparison."
+        },
+        {
+            "id": "cc_l83_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "Organic farming avoids synthetic chemicals, ____ conventional farming relies on them heavily.",
+            "sentence": "Organic farming avoids synthetic chemicals, ____ conventional farming relies on them heavily.",
+            "options": [
+                "because",
+                "since",
+                "whereas",
+                "although"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two farming methods with opposite approaches to chemicals are being compared.",
+            "explanation": "'Whereas' provides a formal, balanced contrast between two opposing approaches to the same task. Organic farming (no synthetic chemicals) is directly contrasted with conventional farming (heavy reliance on them)."
+        },
+        {
+            "id": "cc_l84_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The first prototype was fragile and unreliable, ____ the final product is robust and durable.",
+            "sentence": "The first prototype was fragile and unreliable, ____ the final product is robust and durable.",
+            "options": [
+                "because",
+                "while",
+                "since",
+                "when"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "A prototype's weaknesses are being contrasted with the final product's strengths.",
+            "explanation": "'While' expresses formal contrast between two stages of the same product. The fragile prototype is contrasted with the durable final version - 'while' here means 'on the other hand', showing the developmental contrast."
+        },
+        {
+            "id": "cc_l84_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ some employees thrived working from home, others struggled with isolation.",
+            "sentence": "____ some employees thrived working from home, others struggled with isolation.",
+            "options": [
+                "whereas",
+                "while",
+                "although",
+                "until"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "whereas",
+            "hint": "Two groups of workers with opposite experiences are being formally contrasted.",
+            "explanation": "'Whereas' at the start introduces a formal contrast between two groups. Those who thrived (one group) versus those who struggled (opposing group) - 'whereas' makes this a clear, balanced comparison."
+        },
+        {
+            "id": "cc_l84_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "He has a relaxed, easygoing manner in meetings, ____ she is known for being very direct.",
+            "sentence": "He has a relaxed, easygoing manner in meetings, ____ she is known for being very direct.",
+            "options": [
+                "because",
+                "since",
+                "whereas",
+                "although"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two people with contrasting professional styles are being formally compared.",
+            "explanation": "'Whereas' provides a formal, balanced contrast between two people's styles. His relaxed manner versus her directness - 'whereas' places these opposing approaches side by side in a formal comparison."
+        },
+        {
+            "id": "cc_l85_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The printed brochure is expensive to produce, ____ the digital version costs almost nothing.",
+            "sentence": "The printed brochure is expensive to produce, ____ the digital version costs almost nothing.",
+            "options": [
+                "because",
+                "while",
+                "since",
+                "when"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "Two versions of the same material with opposite costs are being contrasted.",
+            "explanation": "'While' expresses formal contrast. The expensive printed version (high cost) is contrasted with the free digital version (zero cost) - 'while' here means 'on the other hand', showing the economic difference."
+        },
+        {
+            "id": "cc_l85_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ the test measures factual recall, the project assesses creative thinking.",
+            "sentence": "____ the test measures factual recall, the project assesses creative thinking.",
+            "options": [
+                "whereas",
+                "while",
+                "although",
+                "because"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "whereas",
+            "hint": "Two assessments measuring completely different skills are being compared.",
+            "explanation": "'Whereas' provides a formal, balanced contrast. The test (measuring one thing) is directly contrasted with the project (measuring something else) - 'whereas' places these two different assessment purposes side by side."
+        },
+        {
+            "id": "cc_l85_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "Cats are largely independent and self-sufficient, ____ dogs typically require constant attention.",
+            "sentence": "Cats are largely independent and self-sufficient, ____ dogs typically require constant attention.",
+            "options": [
+                "because",
+                "since",
+                "whereas",
+                "although"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two pet types with opposite needs and temperaments are being formally contrasted.",
+            "explanation": "'Whereas' provides a formal, balanced contrast between two animals with opposing characteristics. Cats (independent) versus dogs (dependent) - 'whereas' makes this a clear, formal comparison of their different natures."
+        },
+        {
+            "id": "cc_l86_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The government's official report painted a positive picture, ____ independent analysts were far more critical.",
+            "sentence": "The government's official report painted a positive picture, ____ independent analysts were far more critical.",
+            "options": [
+                "because",
+                "while",
+                "since",
+                "when"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "Official and independent views on the same situation are in direct contrast.",
+            "explanation": "'While' expresses formal contrast between two opposing perspectives on the same issue. The official view (positive) is contrasted with the independent assessment (critical) - 'while' here means 'on the other hand'."
+        },
+        {
+            "id": "cc_l86_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ the original version of the recipe uses butter, this healthier adaptation uses olive oil.",
+            "sentence": "____ the original version of the recipe uses butter, this healthier adaptation uses olive oil.",
+            "options": [
+                "whereas",
+                "while",
+                "although",
+                "until"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "whereas",
+            "hint": "Two versions of the same recipe with a key ingredient difference are being compared.",
+            "explanation": "'Whereas' introduces a formal comparison between the original and adapted versions of something. The butter (original) versus olive oil (healthier version) - 'whereas' frames this as a clear substitution contrast."
+        },
+        {
+            "id": "cc_l86_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "Nuclear energy produces no carbon emissions, ____ coal power generates enormous amounts.",
+            "sentence": "Nuclear energy produces no carbon emissions, ____ coal power generates enormous amounts.",
+            "options": [
+                "because",
+                "since",
+                "whereas",
+                "although"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two energy sources with directly opposite environmental impacts are being contrasted.",
+            "explanation": "'Whereas' provides a formal, balanced contrast between two energy sources with opposing environmental profiles. Zero emissions (nuclear) versus enormous emissions (coal) - 'whereas' makes this a clear, formal side-by-side comparison."
+        },
+        {
+            "id": "cc_l87_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "Spring brought warmth and renewal to the valley, ____ the mountain peaks remained frozen.",
+            "sentence": "Spring brought warmth and renewal to the valley, ____ the mountain peaks remained frozen.",
+            "options": [
+                "because",
+                "while",
+                "since",
+                "when"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "Two different locations experiencing opposite seasonal conditions are being contrasted.",
+            "explanation": "'While' expresses spatial contrast. The valley (warm and renewed) is contrasted with the mountain peaks (still frozen) - 'while' here shows two different places with opposite conditions at the same time."
+        },
+        {
+            "id": "cc_l87_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ the first candidate gave very detailed answers, the second kept responses brief.",
+            "sentence": "____ the first candidate gave very detailed answers, the second kept responses brief.",
+            "options": [
+                "whereas",
+                "while",
+                "although",
+                "until"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "whereas",
+            "hint": "Two candidates at the same interview with opposite communication styles are contrasted.",
+            "explanation": "'Whereas' introduces a formal comparison. The first candidate (detailed answers) is directly contrasted with the second (brief responses) - 'whereas' frames this as a balanced, formal side-by-side comparison of styles."
+        },
+        {
+            "id": "cc_l87_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "Her novel focuses on personal relationships, ____ his work examines large-scale social systems.",
+            "sentence": "Her novel focuses on personal relationships, ____ his work examines large-scale social systems.",
+            "options": [
+                "because",
+                "since",
+                "whereas",
+                "although"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two authors with opposite literary focuses are being formally contrasted.",
+            "explanation": "'Whereas' provides a formal, balanced contrast. Personal focus (her novel) versus systemic focus (his work) - 'whereas' is the clearest connector for a formal comparison of two writers' different thematic concerns."
+        },
+        {
+            "id": "cc_l88_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "Manual workers often face physical risks at work, ____ office workers tend to experience different health challenges.",
+            "sentence": "Manual workers often face physical risks at work, ____ office workers tend to experience different health challenges.",
+            "options": [
+                "because",
+                "while",
+                "since",
+                "when"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "Two worker groups with contrasting but equally real health challenges are compared.",
+            "explanation": "'While' expresses formal contrast between two groups facing different risks. Physical dangers (manual workers) versus sedentary health problems (office workers) - 'while' shows these are different but equally real concerns."
+        },
+        {
+            "id": "cc_l88_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ spoken English allows for hesitations and self-correction, written English demands greater precision.",
+            "sentence": "____ spoken English allows for hesitations and self-correction, written English demands greater precision.",
+            "options": [
+                "whereas",
+                "while",
+                "although",
+                "since"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "whereas",
+            "hint": "Two modes of English communication with different demands are being formally contrasted.",
+            "explanation": "'Whereas' introduces a formal contrast between spoken and written English. The forgiveness of speech (hesitations allowed) is directly contrasted with the precision required in writing - 'whereas' makes this a clear, formal linguistic comparison."
+        },
+        {
+            "id": "cc_l88_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "Eastern medicine often focuses on preventing illness, ____ Western medicine has historically emphasised treating it.",
+            "sentence": "Eastern medicine often focuses on preventing illness, ____ Western medicine has historically emphasised treating it.",
+            "options": [
+                "because",
+                "since",
+                "whereas",
+                "although"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two medical traditions with opposite approaches to health are formally contrasted.",
+            "explanation": "'Whereas' is ideal for a formal, balanced contrast between two different systems or philosophies. Prevention (Eastern) versus cure (Western) are directly contrasted in a formal, academic way."
+        },
+        {
+            "id": "cc_l89_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The pilot project showed very promising results, ____ the full rollout has faced numerous challenges.",
+            "sentence": "The pilot project showed very promising results, ____ the full rollout has faced numerous challenges.",
+            "options": [
+                "because",
+                "while",
+                "since",
+                "when"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "The early success of the pilot is contrasted with the difficulties of the full launch.",
+            "explanation": "'While' expresses formal contrast. The promising pilot (early stage success) is contrasted with the challenging rollout (current difficulties) - 'while' here shows how two phases of the same project have had opposing results."
+        },
+        {
+            "id": "cc_l89_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ the morning session covered theoretical frameworks, the afternoon focused entirely on practical exercises.",
+            "sentence": "____ the morning session covered theoretical frameworks, the afternoon focused entirely on practical exercises.",
+            "options": [
+                "whereas",
+                "while",
+                "although",
+                "until"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "whereas",
+            "hint": "Two halves of the same training day with opposite content are being contrasted.",
+            "explanation": "'Whereas' introduces a formal contrast between two parts of the same event. Theory (morning) versus practice (afternoon) - 'whereas' provides a clear, balanced contrast between the two complementary but opposite elements."
+        },
+        {
+            "id": "cc_l89_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "City dwellers often enjoy greater cultural opportunities, ____ rural residents benefit from peace and natural beauty.",
+            "sentence": "City dwellers often enjoy greater cultural opportunities, ____ rural residents benefit from peace and natural beauty.",
+            "options": [
+                "because",
+                "since",
+                "whereas",
+                "although"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two lifestyles with different but equally valid benefits are formally contrasted.",
+            "explanation": "'Whereas' provides a formal, balanced contrast that acknowledges both sides equally. City advantages (culture) are contrasted with rural advantages (peace) - 'whereas' gives equal weight to both without judging which is better."
         },
         {
             "id": "cc_l90_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The alarm goes off ____ the laser is broken in sector 7.",
-            "sentence": "The alarm goes off ____ the laser is broken in sector 7.",
+            "question": "The hardback edition targets a premium market, ____ the paperback is designed to be widely affordable.",
+            "sentence": "The hardback edition targets a premium market, ____ the paperback is designed to be widely affordable.",
             "options": [
-                "if",
-                "unless",
-                "until",
-                "although"
+                "because",
+                "while",
+                "since",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "if",
-            "hint": "Condition. (Sector 7 calibration)",
-            "explanation": "'If' is correct. [Verified in sector 7]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "Two editions of the same book aimed at opposite ends of the market are contrasted.",
+            "explanation": "'While' expresses formal contrast. The premium hardback (high-end market) is contrasted with the affordable paperback (mass market) - 'while' here means 'on the other hand', showing the different commercial strategies."
         },
         {
             "id": "cc_l90_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was confident ____ she was worried in sector 7.",
-            "sentence": "He was confident ____ she was worried in sector 7.",
+            "question": "____ digital photography has made images almost free to produce, film photography remains expensive.",
+            "sentence": "____ digital photography has made images almost free to produce, film photography remains expensive.",
             "options": [
+                "whereas",
                 "while",
-                "unless",
-                "until",
-                "although"
+                "although",
+                "since"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast. (Sector 7 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 7]."
+            "correctAnswer": "whereas",
+            "hint": "Two forms of photography with opposite costs are being formally contrasted.",
+            "explanation": "'Whereas' introduces a formal contrast. Digital photography (nearly free) is directly contrasted with film photography (expensive) - 'whereas' frames this as a clear, formal economic comparison between two technologies."
         },
         {
             "id": "cc_l90_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must run ____ we miss the launch in sector 7.",
-            "sentence": "We must run ____ we miss the launch in sector 7.",
+            "question": "She focuses on long-term strategic goals, ____ her colleague concentrates on daily operational tasks.",
+            "sentence": "She focuses on long-term strategic goals, ____ her colleague concentrates on daily operational tasks.",
             "options": [
-                "lest",
                 "because",
-                "although",
-                "unless"
+                "since",
+                "whereas",
+                "although"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "lest",
-            "hint": "For fear that (formal/archaic condition). (Sector 7 calibration)",
-            "explanation": "'Lest' means for fear that. [Verified in sector 7]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two colleagues with opposite but complementary professional focuses are contrasted.",
+            "explanation": "'Whereas' provides a formal, balanced contrast. Strategic long-term thinking (her focus) versus operational day-to-day work (his focus) - 'whereas' is the clearest connector for this formal professional comparison."
         }
     ]
 }

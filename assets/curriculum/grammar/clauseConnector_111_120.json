@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l111_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We will freeze ____ we turn on the heater in sector 10.",
-            "sentence": "We will freeze ____ we turn on the heater in sector 10.",
+            "question": "____ the software finishes installing, the computer will restart automatically.",
+            "sentence": "____ the software finishes installing, the computer will restart automatically.",
             "options": [
-                "unless",
-                "because",
-                "although",
-                "while"
+                "once",
+                "as soon as",
+                "by the time",
+                "now that"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "unless",
-            "hint": "State a negative condition (except if). (Sector 10 calibration)",
-            "explanation": "'Unless' introduces a negative condition. [Verified in sector 10]."
+            "correctAnswer": "once",
+            "hint": "Finishing installation is the trigger for an automatic restart - think about immediacy.",
+            "explanation": "'Once' introduces a condition that, when complete, triggers the next event. 'Once the software finishes' = 'as soon as it is done'. Both 'once' and 'as soon as' work here, but 'once' implies the trigger is the completion of a process."
         },
         {
             "id": "cc_l111_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He likes coding ____ his brother prefers art in sector 10.",
-            "sentence": "He likes coding ____ his brother prefers art in sector 10.",
+            "question": "She called him ____ she landed at the airport.",
+            "sentence": "She called him ____ she landed at the airport.",
             "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
+                "by the time",
+                "now that",
+                "as soon as",
+                "once"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Show direct contrast between preferences. (Sector 10 calibration)",
-            "explanation": "'Whereas' indicates direct contrast. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as soon as",
+            "hint": "The call came immediately at the moment of landing - no delay.",
+            "explanation": "'As soon as' means 'immediately when'. She called the very moment she landed - there was no gap between landing and calling. 'Once' also works but 'as soon as' emphasises the immediate, no-delay nature of the action."
         },
         {
             "id": "cc_l111_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must stay indoors ____ the radiation drops in sector 10.",
-            "sentence": "We must stay indoors ____ the radiation drops in sector 10.",
+            "question": "____ the holidays are over, it is time to get back into a good routine.",
+            "sentence": "____ the holidays are over, it is time to get back into a good routine.",
             "options": [
-                "until",
-                "because",
-                "although",
-                "unless"
+                "once",
+                "as soon as",
+                "by the time",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "until",
-            "hint": "Time limit. (Sector 10 calibration)",
-            "explanation": "'Until' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "now that",
+            "hint": "The holidays have ended - a new situation exists, and a response is needed.",
+            "explanation": "'Now that' expresses a causal relationship based on a changed circumstance. 'Now that the holidays are over' means 'because the holidays have now ended'. The new situation (end of holidays) justifies the new action (returning to routine)."
         },
         {
             "id": "cc_l112_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The reactor will blow ____ the temperature rises in sector 10.",
-            "sentence": "The reactor will blow ____ the temperature rises in sector 10.",
+            "question": "____ the film starts, please switch your phone to silent.",
+            "sentence": "____ the film starts, please switch your phone to silent.",
             "options": [
-                "if",
-                "unless",
-                "until",
-                "although"
+                "once",
+                "as soon as",
+                "by the time",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "if",
-            "hint": "State a direct condition. (Sector 10 calibration)",
-            "explanation": "'If' introduces conditional clause. [Verified in sector 10]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "as soon as",
+            "hint": "Switching your phone off should happen the instant the film begins.",
+            "explanation": "'As soon as' means 'at the very moment that'. Switch off immediately when the film starts - no delay is acceptable. 'Once' would also work, but 'as soon as' stresses the immediacy of the required action."
         },
         {
             "id": "cc_l112_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They stayed awake ____ we slept soundly in sector 10.",
-            "sentence": "They stayed awake ____ we slept soundly in sector 10.",
+            "question": "____ we arrived at the venue, the opening act had already finished.",
+            "sentence": "____ we arrived at the venue, the opening act had already finished.",
             "options": [
-                "while",
-                "unless",
-                "until",
-                "although"
+                "as soon as",
+                "now that",
+                "by the time",
+                "once"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast simultaneous actions. (Sector 10 calibration)",
-            "explanation": "'While' can show contrast. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "by the time",
+            "hint": "Our arrival came too late - the act had already ended before we got there.",
+            "explanation": "'By the time' is used when one event happens BEFORE another has a chance to occur. We arrived late - by that point in time, the opening act had already ended. 'By the time' shows a deadline that was already passed."
         },
         {
             "id": "cc_l112_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crop died ____ the soil was dry in sector 10.",
-            "sentence": "The crop died ____ the soil was dry in sector 10.",
+            "question": "____ you have mastered the basics, the more advanced concepts become much easier.",
+            "sentence": "____ you have mastered the basics, the more advanced concepts become much easier.",
             "options": [
-                "since",
-                "unless",
-                "until",
-                "although"
+                "as soon as",
+                "by the time",
+                "now that",
+                "once"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "Reason. (Sector 10 calibration)",
-            "explanation": "'Since' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "once",
+            "hint": "Mastering the basics is the prerequisite - then things open up.",
+            "explanation": "'Once' introduces a condition whose completion enables a new, easier phase. 'Once you have mastered the basics' = 'when you have fully learned the foundations'. 'Once' implies the completion of a process enables progress."
         },
         {
             "id": "cc_l113_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They will survive ____ they conserve oxygen in sector 10.",
-            "sentence": "They will survive ____ they conserve oxygen in sector 10.",
+            "question": "____ she received the confirmation email, she immediately booked her travel.",
+            "sentence": "____ she received the confirmation email, she immediately booked her travel.",
             "options": [
-                "provided that",
-                "unless",
-                "until",
-                "although"
+                "by the time",
+                "now that",
+                "once",
+                "as soon as"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "provided that",
-            "hint": "State a necessary condition. (Sector 10 calibration)",
-            "explanation": "'Provided that' is conditional. [Verified in sector 10]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "as soon as",
+            "hint": "Confirmation triggered immediate action - no time was wasted.",
+            "explanation": "'As soon as' means 'immediately after'. She booked travel at the exact moment she got the confirmation - no delay. 'As soon as' is the strongest connector for showing immediate, no-delay sequential action."
         },
         {
             "id": "cc_l113_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She chose physics ____ he opted for biology in sector 10.",
-            "sentence": "She chose physics ____ he opted for biology in sector 10.",
+            "question": "____ the training is finished, employees will be expected to apply what they have learned.",
+            "sentence": "____ the training is finished, employees will be expected to apply what they have learned.",
             "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
+                "as soon as",
+                "by the time",
+                "once",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Direct contrast. (Sector 10 calibration)",
-            "explanation": "'Whereas' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "once",
+            "hint": "Finishing training is the trigger - after that, application is expected.",
+            "explanation": "'Once' introduces a condition whose completion triggers a new expectation. 'Once training is finished' = 'when training has been completed'. The employees are expected to apply their learning immediately after completion."
         },
         {
             "id": "cc_l113_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She succeeded ____ she worked night and day in sector 10.",
-            "sentence": "She succeeded ____ she worked night and day in sector 10.",
+            "question": "____ the new road is open, journey times into the city will drop significantly.",
+            "sentence": "____ the new road is open, journey times into the city will drop significantly.",
             "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
+                "as soon as",
+                "by the time",
+                "now that",
+                "once"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Reason. (Sector 10 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "once",
+            "hint": "The road opening is the trigger - but it's emphasising the changed situation.",
+            "explanation": "'Now that' can also work here, but 'once' is stronger for expressing a clear trigger event. 'Once the road opens' = 'at the point when the road becomes open'. The road opening is the event that triggers the change."
         },
         {
             "id": "cc_l114_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You can enter the core ____ you wear a shield in sector 10.",
-            "sentence": "You can enter the core ____ you wear a shield in sector 10.",
+            "question": "____ we finished setting up the tent, it had started raining heavily.",
+            "sentence": "____ we finished setting up the tent, it had started raining heavily.",
             "options": [
-                "as long as",
-                "unless",
-                "until",
-                "although"
+                "once",
+                "as soon as",
+                "by the time",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as long as",
-            "hint": "Express conditional duration. (Sector 10 calibration)",
-            "explanation": "'As long as' is conditional. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "by the time",
+            "hint": "The rain started while we were setting up - it was already raining when we finished.",
+            "explanation": "'By the time' shows that one event occurred BEFORE another completed. We finished setting up (later event), but by that point, the rain had already started (earlier event). 'By the time' captures this unfortunate timing."
         },
         {
             "id": "cc_l114_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We had water ____ they had none in sector 10.",
-            "sentence": "We had water ____ they had none in sector 10.",
+            "question": "____ the children have settled into bed, the house becomes wonderfully peaceful.",
+            "sentence": "____ the children have settled into bed, the house becomes wonderfully peaceful.",
             "options": [
-                "while",
-                "unless",
-                "until",
-                "although"
+                "as soon as",
+                "by the time",
+                "once",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast. (Sector 10 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "once",
+            "hint": "Children settling is the trigger - then peace follows.",
+            "explanation": "'Once' introduces a completed event that enables a new state. 'Once the children have settled' = 'when the children have finally gone to sleep'. At that point, the new state (peace) begins."
         },
         {
             "id": "cc_l114_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was happy ____ he won the race in sector 10.",
-            "sentence": "He was happy ____ he won the race in sector 10.",
+            "question": "____ you have passed your driving test, you can hire a car with your licence.",
+            "sentence": "____ you have passed your driving test, you can hire a car with your licence.",
             "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
+                "as soon as",
+                "by the time",
+                "once",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Reason. (Sector 10 calibration)",
-            "explanation": "'As' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "now that",
+            "hint": "Passing is the event that makes hiring a car possible - emphasise the changed circumstance.",
+            "explanation": "'Now that' expresses a causal-temporal connection: because you have now passed (changed circumstance), you can now do something new. 'Now that you have passed' = 'because you have passed / given that you have now passed'."
         },
         {
             "id": "cc_l115_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We cannot escape ____ the hyperdrive is fixed in sector 10.",
-            "sentence": "We cannot escape ____ the hyperdrive is fixed in sector 10.",
+            "question": "She signed the documents ____ they were placed in front of her.",
+            "sentence": "She signed the documents ____ they were placed in front of her.",
             "options": [
-                "unless",
-                "if",
-                "because",
-                "while"
+                "by the time",
+                "now that",
+                "once",
+                "as soon as"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "unless",
-            "hint": "Negative condition. (Sector 10 calibration)",
-            "explanation": "'Unless' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "as soon as",
+            "hint": "She signed immediately the moment the documents appeared - no delay.",
+            "explanation": "'As soon as' means 'immediately when'. She signed the instant the documents were available - no hesitation, no delay. 'As soon as' is the clearest connector for this kind of immediate sequential action."
         },
         {
             "id": "cc_l115_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "Gold is heavy ____ aluminum is light in sector 10.",
-            "sentence": "Gold is heavy ____ aluminum is light in sector 10.",
+            "question": "____ the merger is approved, we will need to restructure the entire department.",
+            "sentence": "____ the merger is approved, we will need to restructure the entire department.",
             "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
+                "as soon as",
+                "by the time",
+                "once",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Contrast. (Sector 10 calibration)",
-            "explanation": "'Whereas' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "once",
+            "hint": "Merger approval is the trigger for restructuring - a clear sequence.",
+            "explanation": "'Once' introduces the trigger event (merger approval) that makes a subsequent action necessary (restructuring). 'Once' implies the approval must happen first, and the restructuring will follow."
         },
         {
             "id": "cc_l115_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We stayed ____ the rain stopped in sector 10.",
-            "sentence": "We stayed ____ the rain stopped in sector 10.",
+            "question": "____ everyone has a copy of the agenda, we can begin the meeting.",
+            "sentence": "____ everyone has a copy of the agenda, we can begin the meeting.",
             "options": [
-                "until",
-                "because",
-                "although",
-                "unless"
+                "as soon as",
+                "by the time",
+                "once",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "until",
-            "hint": "Time boundary. (Sector 10 calibration)",
-            "explanation": "'Until' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "once",
+            "hint": "Everyone having a copy is the condition that enables the meeting to start.",
+            "explanation": "'Once' introduces a condition that, when met, enables the next action. 'Once everyone has a copy' = 'when the distribution is complete'. The meeting can begin immediately after this condition is satisfied."
         },
         {
             "id": "cc_l116_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The system rebooted ____ the override was pulled in sector 10.",
-            "sentence": "The system rebooted ____ the override was pulled in sector 10.",
+            "question": "____ they reached the summit, the guide had already begun the descent.",
+            "sentence": "____ they reached the summit, the guide had already begun the descent.",
             "options": [
+                "once",
                 "as soon as",
-                "unless",
-                "until",
-                "although"
+                "by the time",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as soon as",
-            "hint": "Immediate consequence of condition. (Sector 10 calibration)",
-            "explanation": "'As soon as' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "by the time",
+            "hint": "The guide's descent had started before the group even arrived at the top.",
+            "explanation": "'By the time' shows that a second event was already in progress when the first was completed. They reached the summit (later event), but by that point, the guide had already left (earlier event). 'By the time' highlights this timing mismatch."
         },
         {
             "id": "cc_l116_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The base was warm ____ the valley was freezing in sector 10.",
-            "sentence": "The base was warm ____ the valley was freezing in sector 10.",
+            "question": "____ she has handed in her notice, she feels a huge sense of relief.",
+            "sentence": "____ she has handed in her notice, she feels a huge sense of relief.",
             "options": [
-                "while",
-                "unless",
-                "until",
-                "although"
+                "as soon as",
+                "by the time",
+                "once",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast. (Sector 10 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "now that",
+            "hint": "Handing in her notice has already happened - a new situation exists.",
+            "explanation": "'Now that' is used when a recent change creates a new emotional or practical reality. 'Now that she has handed in her notice' = 'because she has now resigned'. The completed action (resignation) has caused the current feeling (relief)."
         },
         {
             "id": "cc_l116_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The core is safe ____ the shield is active in sector 10.",
-            "sentence": "The core is safe ____ the shield is active in sector 10.",
+            "question": "____ the lecture ends, there will be fifteen minutes for questions.",
+            "sentence": "____ the lecture ends, there will be fifteen minutes for questions.",
             "options": [
-                "as long as",
-                "unless",
-                "until",
-                "although"
+                "by the time",
+                "now that",
+                "as soon as",
+                "once"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as long as",
-            "hint": "Condition. (Sector 10 calibration)",
-            "explanation": "'As long as' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "once",
+            "hint": "The end of the lecture is the immediate trigger for the Q&A session.",
+            "explanation": "'As soon as' means 'immediately after'. The Q&A begins the instant the lecture ends - there is no gap. 'Once' would also work here, but 'as soon as' emphasises the immediate transition from lecture to questions."
         },
         {
             "id": "cc_l117_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We can win the war ____ we unite in sector 10.",
-            "sentence": "We can win the war ____ we unite in sector 10.",
+            "question": "____ she started working from home, her productivity increased significantly.",
+            "sentence": "____ she started working from home, her productivity increased significantly.",
             "options": [
-                "if",
-                "unless",
-                "until",
-                "although"
+                "as soon as",
+                "by the time",
+                "once",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "if",
-            "hint": "Condition. (Sector 10 calibration)",
-            "explanation": "'If' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "once",
+            "hint": "Working from home began at a past point - the improvement followed.",
+            "explanation": "'Once' shows that a new situation (working from home) enabled a new, better state (increased productivity). 'Once she started' = 'from the point at which she began'. The change in situation led to the improvement."
         },
         {
             "id": "cc_l117_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She is quiet ____ he is loud in sector 10.",
-            "sentence": "She is quiet ____ he is loud in sector 10.",
+            "question": "____ the guests arrive, the caterers will begin serving the canapés.",
+            "sentence": "____ the guests arrive, the caterers will begin serving the canapés.",
             "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
+                "by the time",
+                "now that",
+                "as soon as",
+                "once"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Contrast. (Sector 10 calibration)",
-            "explanation": "'Whereas' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as soon as",
+            "hint": "Guest arrival is the immediate trigger for serving to begin.",
+            "explanation": "'As soon as' means 'immediately when'. The moment the first guests arrive (trigger), serving begins (immediate response). 'Once' would suggest waiting for all guests to arrive - 'as soon as' implies the very first arrival triggers action."
         },
         {
             "id": "cc_l117_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You can keep it ____ you return it tomorrow in sector 10.",
-            "sentence": "You can keep it ____ you return it tomorrow in sector 10.",
+            "question": "____ the construction is complete, residents can move in and settle.",
+            "sentence": "____ the construction is complete, residents can move in and settle.",
             "options": [
-                "provided that",
-                "unless",
-                "until",
-                "although"
+                "as soon as",
+                "by the time",
+                "now that",
+                "once"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "provided that",
-            "hint": "Condition. (Sector 10 calibration)",
-            "explanation": "'Provided that' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "once",
+            "hint": "Completion is the condition - then residents can begin to settle.",
+            "explanation": "'Once' introduces a completion condition. 'Once the construction is complete' = 'when building work has finished'. At that point, the previously unavailable option (moving in) becomes available."
         },
         {
             "id": "cc_l118_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The dome remains safe ____ the shields stay up in sector 10.",
-            "sentence": "The dome remains safe ____ the shields stay up in sector 10.",
+            "question": "____ they reviewed all the evidence, the investigators had formed a clear conclusion.",
+            "sentence": "____ they reviewed all the evidence, the investigators had formed a clear conclusion.",
             "options": [
-                "provided",
-                "unless",
-                "until",
-                "although"
+                "once",
+                "as soon as",
+                "by the time",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "provided",
-            "hint": "Necessary condition. (Sector 10 calibration)",
-            "explanation": "'Provided' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "by the time",
+            "hint": "A conclusion was reached before or during the evidence review - timing matters.",
+            "explanation": "'By the time' shows an event that occurred before a process was completed. 'By the time they finished reviewing all the evidence' - a conclusion had already formed. 'By the time' highlights timing: the conclusion came early in the process."
         },
         {
             "id": "cc_l118_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The dome is safe ____ the outside is deadly in sector 10.",
-            "sentence": "The dome is safe ____ the outside is deadly in sector 10.",
+            "question": "____ you are ready to proceed, please click the button to confirm your order.",
+            "sentence": "____ you are ready to proceed, please click the button to confirm your order.",
             "options": [
-                "while",
-                "unless",
-                "until",
-                "although"
+                "by the time",
+                "now that",
+                "once",
+                "as soon as"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast. (Sector 10 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "once",
+            "hint": "Being ready is the condition - clicking confirms the decision.",
+            "explanation": "'Once' introduces a readiness condition. 'Once you are ready' = 'when you have made your decision and are satisfied'. At that point, clicking confirm is the appropriate action."
         },
         {
             "id": "cc_l118_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The fire spread ____ the wind was strong in sector 10.",
-            "sentence": "The fire spread ____ the wind was strong in sector 10.",
+            "question": "____ we have a complete picture of all the costs, we can finalise the budget.",
+            "sentence": "____ we have a complete picture of all the costs, we can finalise the budget.",
             "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
+                "as soon as",
+                "by the time",
+                "once",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Reason. (Sector 10 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "once",
+            "hint": "Having all the cost information is the prerequisite for finalising.",
+            "explanation": "'Once' introduces a completeness condition. 'Once we have a complete picture' = 'when all cost information has been gathered'. Only then can the budget be finalised accurately."
         },
         {
             "id": "cc_l119_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You will fail ____ you study hard in sector 10.",
-            "sentence": "You will fail ____ you study hard in sector 10.",
+            "question": "____ he retired, he has found a new passion for painting watercolours.",
+            "sentence": "____ he retired, he has found a new passion for painting watercolours.",
             "options": [
-                "unless",
-                "if",
-                "because",
-                "while"
+                "as soon as",
+                "by the time",
+                "once",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "unless",
-            "hint": "Negative condition. (Sector 10 calibration)",
-            "explanation": "'Unless' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "now that",
+            "hint": "Retirement is the life change that opened up time and space for a new hobby.",
+            "explanation": "'Now that' expresses a changed circumstance as a cause. 'Now that he has retired' = 'because he has now retired'. Retirement (new circumstance) enabled discovering painting (new passion). 'Since' could also work here."
         },
         {
             "id": "cc_l119_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "Mars is dry ____ Earth is wet in sector 10.",
-            "sentence": "Mars is dry ____ Earth is wet in sector 10.",
+            "question": "She will send the invoice ____ the work has been completed and approved.",
+            "sentence": "She will send the invoice ____ the work has been completed and approved.",
             "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
+                "by the time",
+                "now that",
+                "as soon as",
+                "once"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Contrast. (Sector 10 calibration)",
-            "explanation": "'Whereas' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "once",
+            "hint": "Completion and approval are both needed - then the invoice follows immediately.",
+            "explanation": "'As soon as' means 'immediately after'. The invoice will be sent the moment the work is done AND approved - no unnecessary delay. 'As soon as' emphasises prompt action following a completed condition."
         },
         {
             "id": "cc_l119_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He did not give up ____ the odds were poor in sector 10.",
-            "sentence": "He did not give up ____ the odds were poor in sector 10.",
+            "question": "____ the exam period is over, the university will announce the graduation ceremony dates.",
+            "sentence": "____ the exam period is over, the university will announce the graduation ceremony dates.",
             "options": [
-                "even though",
-                "because",
-                "unless",
-                "until"
+                "as soon as",
+                "by the time",
+                "once",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession. (Sector 10 calibration)",
-            "explanation": "'Even though' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "once",
+            "hint": "The end of the exam period is the trigger for the announcement.",
+            "explanation": "'Once' introduces the completion of one phase (exam period ending) that enables the next phase (announcing graduation dates). 'Once' is natural for sequential, phase-based events."
         },
         {
             "id": "cc_l120_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The alarm goes off ____ the laser is broken in sector 10.",
-            "sentence": "The alarm goes off ____ the laser is broken in sector 10.",
+            "question": "____ our partnership was announced, interest in the project doubled overnight.",
+            "sentence": "____ our partnership was announced, interest in the project doubled overnight.",
             "options": [
-                "if",
-                "unless",
-                "until",
-                "although"
+                "as soon as",
+                "by the time",
+                "once",
+                "now that"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "if",
-            "hint": "Condition. (Sector 10 calibration)",
-            "explanation": "'If' is correct. [Verified in sector 10]."
+            "correctAnswer": "as soon as",
+            "hint": "The announcement triggered an immediate public reaction.",
+            "explanation": "'As soon as' means 'immediately after'. The moment the partnership was announced (trigger), interest doubled overnight (immediate result). 'As soon as' shows the immediate, powerful impact of the announcement."
         },
         {
             "id": "cc_l120_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was confident ____ she was worried in sector 10.",
-            "sentence": "He was confident ____ she was worried in sector 10.",
+            "question": "____ you have everything you need, please proceed to the checkout area.",
+            "sentence": "____ you have everything you need, please proceed to the checkout area.",
             "options": [
-                "while",
-                "unless",
-                "until",
-                "although"
+                "by the time",
+                "now that",
+                "once",
+                "as soon as"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast. (Sector 10 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "once",
+            "hint": "Having everything is the readiness condition for proceeding.",
+            "explanation": "'Once' introduces a readiness condition that, when met, enables the next step. 'Once you have everything' = 'when your selection is complete'. At that point, you are ready to pay."
         },
         {
             "id": "cc_l120_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must run ____ we miss the launch in sector 10.",
-            "sentence": "We must run ____ we miss the launch in sector 10.",
+            "question": "____ the children have grown up and left home, many parents rediscover personal interests.",
+            "sentence": "____ the children have grown up and left home, many parents rediscover personal interests.",
             "options": [
-                "lest",
-                "because",
-                "although",
-                "unless"
+                "as soon as",
+                "by the time",
+                "once",
+                "now that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "lest",
-            "hint": "For fear that (formal/archaic condition). (Sector 10 calibration)",
-            "explanation": "'Lest' means for fear that. [Verified in sector 10]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "now that",
+            "hint": "Children leaving home is the life change that creates new space and time.",
+            "explanation": "'Now that' is perfect for a life-stage change that creates new possibilities. 'Now that the children have grown up' = 'because the children have now left'. This life change (children leaving) enables the rediscovery (new interests)."
         }
     ]
 }

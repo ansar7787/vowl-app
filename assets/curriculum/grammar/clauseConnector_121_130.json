@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l121_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The stars are bright ____ the night is clear in sector 11.",
-            "sentence": "The stars are bright ____ the night is clear in sector 11.",
+            "question": "You may borrow the equipment ____ you return it in the same condition.",
+            "sentence": "You may borrow the equipment ____ you return it in the same condition.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "so"
+                "although",
+                "provided that",
+                "unless",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Join two related positive thoughts. (Sector 11 calibration)",
-            "explanation": "'And' connects related independent clauses. [Verified in sector 11]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "provided that",
+            "hint": "There is one specific condition for borrowing - the item must come back undamaged.",
+            "explanation": "'Provided that' introduces a formal condition that must be met for permission to apply. 'You may borrow it provided that you return it undamaged' = 'on the condition that it comes back undamaged'. 'Provided that' is more formal than 'if'."
         },
         {
             "id": "cc_l121_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The colony needs food ____ the transport is delayed in sector 11.",
-            "sentence": "The colony needs food ____ the transport is delayed in sector 11.",
+            "question": "____ the current growth rate continues, profits will double within five years.",
+            "sentence": "____ the current growth rate continues, profits will double within five years.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "although",
+                "unless",
+                "given that",
+                "as long as"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast demand with lack of supply. (Sector 11 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "given that",
+            "hint": "The current growth rate is an acknowledged fact being used as a basis for projection.",
+            "explanation": "'Given that' introduces a premise or acknowledged fact as the basis for a conclusion. 'Given that growth continues at this rate' = 'taking this fact as the basis' or 'because this is true'. It is more formal than 'since' or 'because'."
         },
         {
             "id": "cc_l121_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The scanner detected iron ____ it also found copper in sector 11.",
-            "sentence": "The scanner detected iron ____ it also found copper in sector 11.",
+            "question": "The team can choose any approach ____ the project is delivered on time.",
+            "sentence": "The team can choose any approach ____ the project is delivered on time.",
             "options": [
-                "and",
-                "but",
-                "so",
-                "nor"
+                "although",
+                "provided that",
+                "unless",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a similar metal type. (Sector 11 calibration)",
-            "explanation": "'And' is additive. [Verified in sector 11]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "provided that",
+            "hint": "On-time delivery is the one non-negotiable condition for full creative freedom.",
+            "explanation": "'Provided that' sets a formal condition for permission. 'Any approach is acceptable provided that the deadline is met' = 'on condition that the deadline is met'. The freedom is unlimited EXCEPT FOR the one requirement."
         },
         {
             "id": "cc_l122_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We wanted to launch ____ the fuel was low in sector 11.",
-            "sentence": "We wanted to launch ____ the fuel was low in sector 11.",
+            "question": "She will continue to support the charity ____ her financial situation does not change.",
+            "sentence": "She will continue to support the charity ____ her financial situation does not change.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "although",
+                "as long as",
+                "unless",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Show a contrast or obstacle. (Sector 11 calibration)",
-            "explanation": "'But' shows contrast between two clauses. [Verified in sector 11]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "as long as",
+            "hint": "Her support continues on the condition that her finances stay stable.",
+            "explanation": "'As long as' introduces a continuing condition. 'She will support as long as her situation doesn't change' = 'on the continuing condition that her finances remain stable'. 'As long as' implies the condition must remain true over time."
         },
         {
             "id": "cc_l122_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The main grid went dark ____ we flipped the auxiliary switch in sector 11.",
-            "sentence": "The main grid went dark ____ we flipped the auxiliary switch in sector 11.",
+            "question": "____ the merger creates significant job losses, the union will support it.",
+            "sentence": "____ the merger creates significant job losses, the union will support it.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "nor"
+                "as long as",
+                "unless",
+                "given that",
+                "although"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Cause and immediate action. (Sector 11 calibration)",
-            "explanation": "'So' shows cause-effect relationship. [Verified in sector 11]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "'Unless' - significant job losses are the one thing that would lose union support.",
+            "explanation": "'Unless' introduces the single exception. 'The union will support it unless it creates job losses' = 'the union will only oppose it if it DOES cause job losses'. 'Unless' is the clearest connector for this 'except if' condition."
         },
         {
             "id": "cc_l122_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We can orbit the moon ____ we can land on the plain in sector 11.",
-            "sentence": "We can orbit the moon ____ we can land on the plain in sector 11.",
+            "question": "____ the complexity of the issue, a quick resolution seems unlikely.",
+            "sentence": "____ the complexity of the issue, a quick resolution seems unlikely.",
             "options": [
-                "or",
-                "but",
-                "yet",
-                "for"
+                "although",
+                "provided that",
+                "given that",
+                "as long as"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Two choices. (Sector 11 calibration)",
-            "explanation": "'Or' expresses alternative choice. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "given that",
+            "hint": "The complexity is an acknowledged fact being used to reach a conclusion.",
+            "explanation": "'Given that' introduces an acknowledged premise used as the basis for a logical conclusion. 'Given that the issue is complex' = 'taking the complexity into account' or 'because the issue is so complex'. This formal connector acknowledges a fact and draws a conclusion from it."
         },
         {
             "id": "cc_l123_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You can adjust the valves ____ you can let the core vent in sector 11.",
-            "sentence": "You can adjust the valves ____ you can let the core vent in sector 11.",
+            "question": "The student may retake the exam ____ they submit the application within thirty days.",
+            "sentence": "The student may retake the exam ____ they submit the application within thirty days.",
             "options": [
-                "or",
-                "but",
-                "and",
-                "for"
+                "although",
+                "provided that",
+                "unless",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Present two alternative actions. (Sector 11 calibration)",
-            "explanation": "'Or' presents choices or alternatives. [Verified in sector 11]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "provided that",
+            "hint": "Submitting the application within thirty days is the formal condition for retaking.",
+            "explanation": "'Provided that' sets a formal, administrative condition. 'May retake provided that the application is submitted within thirty days' = 'on the condition that the timing requirement is met'. This is formal language for official conditions."
         },
         {
             "id": "cc_l123_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They must secure the dome ____ the oxygen will escape in sector 11.",
-            "sentence": "They must secure the dome ____ the oxygen will escape in sector 11.",
+            "question": "I am happy to work overtime ____ I receive time off in lieu.",
+            "sentence": "I am happy to work overtime ____ I receive time off in lieu.",
             "options": [
-                "or",
-                "but",
-                "so",
-                "yet"
+                "although",
+                "unless",
+                "as long as",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Express alternative danger. (Sector 11 calibration)",
-            "explanation": "'Or' shows alternative consequence. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as long as",
+            "hint": "Receiving time off in lieu is the ongoing condition for willingness to work overtime.",
+            "explanation": "'As long as' introduces a continuing condition for ongoing agreement. 'Happy to work overtime as long as I receive compensation' = 'on the continuing condition that the compensation is provided'. If the compensation stops, the agreement ends."
         },
         {
             "id": "cc_l123_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crew worked hard ____ they completed the bridge in sector 11.",
-            "sentence": "The crew worked hard ____ they completed the bridge in sector 11.",
+            "question": "____ the candidate's experience, the salary offer seems surprisingly low.",
+            "sentence": "____ the candidate's experience, the salary offer seems surprisingly low.",
             "options": [
-                "so",
-                "but",
-                "nor",
-                "yet"
+                "although",
+                "provided that",
+                "given that",
+                "unless"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Result of working hard. (Sector 11 calibration)",
-            "explanation": "'So' shows result. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "given that",
+            "hint": "The candidate's impressive experience is the acknowledged fact that makes the salary seem wrong.",
+            "explanation": "'Given that' introduces an acknowledged fact used to evaluate a situation. 'Given the candidate's experience' = 'taking into account their experience' or 'considering how experienced they are'. The experience (premise) makes the low salary (conclusion) seem inappropriate."
         },
         {
             "id": "cc_l124_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The reactor overheated ____ the alarm sounded in sector 11.",
-            "sentence": "The reactor overheated ____ the alarm sounded in sector 11.",
+            "question": "The loan will be approved ____ the applicant meets all the eligibility criteria.",
+            "sentence": "The loan will be approved ____ the applicant meets all the eligibility criteria.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "nor"
+                "although",
+                "provided that",
+                "unless",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Show a cause-and-effect relationship. (Sector 11 calibration)",
-            "explanation": "'So' connects cause to effect. [Verified in sector 11]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "provided that",
+            "hint": "Meeting all eligibility criteria is the formal condition for loan approval.",
+            "explanation": "'Provided that' introduces a formal condition in financial or legal language. 'Will be approved provided that criteria are met' = 'on condition that all requirements are satisfied'. This is standard formal conditional language in banking."
         },
         {
             "id": "cc_l124_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The explorer found ruins ____ he took several scans in sector 11.",
-            "sentence": "The explorer found ruins ____ he took several scans in sector 11.",
+            "question": "She will keep the information completely confidential ____ she is asked to disclose it legally.",
+            "sentence": "She will keep the information completely confidential ____ she is asked to disclose it legally.",
             "options": [
-                "and",
-                "but",
-                "nor",
-                "for"
+                "although",
+                "as long as",
+                "unless",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a natural subsequent action. (Sector 11 calibration)",
-            "explanation": "'And' adds subsequent details. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "unless",
+            "hint": "Legal disclosure is the one exception to her confidentiality commitment.",
+            "explanation": "'Unless' introduces the one exceptional circumstance. 'Will keep it confidential unless legally required to disclose' = 'will keep it secret EXCEPT IF the law requires disclosure'. One exception, otherwise absolute confidentiality."
         },
         {
             "id": "cc_l124_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The target was far ____ the sniper hit it in sector 11.",
-            "sentence": "The target was far ____ the sniper hit it in sector 11.",
+            "question": "____ the amount of data available today, machine learning systems can be extraordinarily accurate.",
+            "sentence": "____ the amount of data available today, machine learning systems can be extraordinarily accurate.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "nor"
+                "although",
+                "provided that",
+                "given that",
+                "as long as"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Concession. (Sector 11 calibration)",
-            "explanation": "'Yet' shows contrast. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "given that",
+            "hint": "The abundance of data is the acknowledged fact that makes ML accuracy possible.",
+            "explanation": "'Given that' introduces the premise upon which the conclusion is based. 'Given that enormous amounts of data exist today' = 'because this data is available'. The data (premise) enables the accuracy (conclusion)."
         },
         {
             "id": "cc_l125_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He checked the data thrice ____ he still missed the error in sector 11.",
-            "sentence": "He checked the data thrice ____ he still missed the error in sector 11.",
+            "question": "Staff may work flexible hours ____ core working hours of ten to three are always covered.",
+            "sentence": "Staff may work flexible hours ____ core working hours of ten to three are always covered.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "although",
+                "provided that",
+                "unless",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Express an unexpected contrast. (Sector 11 calibration)",
-            "explanation": "'Yet' shows concession or unexpected contrast. [Verified in sector 11]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "provided that",
+            "hint": "Covering core hours is the non-negotiable condition for flexible working.",
+            "explanation": "'Provided that' sets the formal condition for a workplace agreement. 'May work flexible hours provided that core hours are covered' = 'on condition that the essential hours requirement is always met'. This is typical HR policy language."
         },
         {
             "id": "cc_l125_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We didn't see the asteroid ____ did we hear the impact in sector 11.",
-            "sentence": "We didn't see the asteroid ____ did we hear the impact in sector 11.",
+            "question": "He will maintain his position on the board ____ he retains shareholder confidence.",
+            "sentence": "He will maintain his position on the board ____ he retains shareholder confidence.",
             "options": [
-                "nor",
-                "yet",
-                "so",
-                "but"
+                "although",
+                "unless",
+                "as long as",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Negative connection requiring subject-auxiliary inversion. (Sector 11 calibration)",
-            "explanation": "'Nor' is used for negative addition with inversion. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as long as",
+            "hint": "Shareholder confidence is the ongoing condition for remaining on the board.",
+            "explanation": "'As long as' introduces a continuing condition for an ongoing arrangement. 'Will maintain his position as long as he has shareholder confidence' = 'on the continuing condition that confidence is not lost'. The moment confidence goes, so does the position."
         },
         {
             "id": "cc_l125_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was not hungry ____ was he thirsty in sector 11.",
-            "sentence": "He was not hungry ____ was he thirsty in sector 11.",
+            "question": "____ the patient's age and medical history, the consultant recommended a less invasive treatment.",
+            "sentence": "____ the patient's age and medical history, the consultant recommended a less invasive treatment.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "although",
+                "provided that",
+                "given that",
+                "unless"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Add negative condition. (Sector 11 calibration)",
-            "explanation": "'Nor' requires inversion. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "given that",
+            "hint": "The patient's age and history are the acknowledged factors that shaped the recommendation.",
+            "explanation": "'Given that' introduces the relevant facts that justify a clinical decision. 'Given the patient's age and history' = 'taking these factors into consideration'. The specific circumstances (premise) determine the treatment choice (conclusion)."
         },
         {
             "id": "cc_l126_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The sensors were offline ____ the shield was down in sector 11.",
-            "sentence": "The sensors were offline ____ the shield was down in sector 11.",
+            "question": "The contractor may begin work on Monday ____ all permits are in place by Friday.",
+            "sentence": "The contractor may begin work on Monday ____ all permits are in place by Friday.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "nor"
+                "although",
+                "provided that",
+                "unless",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add similar negative or neutral facts. (Sector 11 calibration)",
-            "explanation": "'And' adds similar information. [Verified in sector 11]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "provided that",
+            "hint": "All permits being in place by Friday is the condition for Monday's work to start.",
+            "explanation": "'Provided that' introduces a formal condition with a deadline. 'May begin on Monday provided that permits are in place by Friday' = 'on the condition that the legal requirements are met before the start date'. Standard contractual language."
         },
         {
             "id": "cc_l126_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The oxygen levels dropped ____ we wore our masks in sector 11.",
-            "sentence": "The oxygen levels dropped ____ we wore our masks in sector 11.",
+            "question": "She will accept the posting abroad ____ her family can accompany her.",
+            "sentence": "She will accept the posting abroad ____ her family can accompany her.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "although",
+                "unless",
+                "as long as",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Express action taken as a result. (Sector 11 calibration)",
-            "explanation": "'So' shows result. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as long as",
+            "hint": "Her family coming with her is the ongoing personal condition for accepting.",
+            "explanation": "'As long as' introduces a personal condition for agreement. 'Will accept the posting as long as her family can come' = 'on the continuing condition that her family is with her'. Without this, she would not go."
         },
         {
             "id": "cc_l126_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The map is old ____ it is still accurate in sector 11.",
-            "sentence": "The map is old ____ it is still accurate in sector 11.",
+            "question": "____ the scale of the damage, the insurance company is likely to declare it a write-off.",
+            "sentence": "____ the scale of the damage, the insurance company is likely to declare it a write-off.",
             "options": [
-                "but",
-                "so",
-                "or",
-                "for"
+                "although",
+                "provided that",
+                "given that",
+                "unless"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast age with accuracy. (Sector 11 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "given that",
+            "hint": "The scale of damage is the acknowledged fact that points to the likely insurance decision.",
+            "explanation": "'Given that' introduces the factual basis for a prediction or conclusion. 'Given the scale of the damage' = 'taking into account how severe the damage is'. The severity (premise) predicts the insurance decision (conclusion)."
         },
         {
             "id": "cc_l127_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must repair the engine ____ we will drift forever in sector 11.",
-            "sentence": "We must repair the engine ____ we will drift forever in sector 11.",
+            "question": "Passengers may carry liquids through security ____ they are in containers of 100ml or less.",
+            "sentence": "Passengers may carry liquids through security ____ they are in containers of 100ml or less.",
             "options": [
-                "or",
-                "and",
-                "yet",
-                "so"
+                "although",
+                "provided that",
+                "unless",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Show a consequence of not acting. (Sector 11 calibration)",
-            "explanation": "'Or' presents the alternative outcome. [Verified in sector 11]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "provided that",
+            "hint": "The 100ml rule is the formal security condition for carrying liquids.",
+            "explanation": "'Provided that' introduces a formal regulatory condition. 'May carry liquids provided that containers are 100ml or less' = 'on condition that the volume restriction is respected'. This is standard security regulation language."
         },
         {
             "id": "cc_l127_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She is a top researcher ____ she lacks field experience in sector 11.",
-            "sentence": "She is a top researcher ____ she lacks field experience in sector 11.",
+            "question": "The company will honour the warranty ____ the product has not been modified or misused.",
+            "sentence": "The company will honour the warranty ____ the product has not been modified or misused.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "although",
+                "unless",
+                "as long as",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast skill with lack of experience. (Sector 11 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as long as",
+            "hint": "Non-modification and non-misuse are the ongoing conditions for the warranty.",
+            "explanation": "'As long as' introduces the conditions for a warranty to remain valid. 'Will honour the warranty as long as the product is not modified or misused' = 'on the continuing condition that the product is used correctly'. Modification or misuse voids the warranty."
         },
         {
             "id": "cc_l127_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We should study the stars ____ they hold many secrets in sector 11.",
-            "sentence": "We should study the stars ____ they hold many secrets in sector 11.",
+            "question": "____ the strong public opposition, proceeding with the development would be politically very risky.",
+            "sentence": "____ the strong public opposition, proceeding with the development would be politically very risky.",
             "options": [
-                "for",
-                "but",
-                "or",
-                "so"
+                "although",
+                "provided that",
+                "given that",
+                "unless"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "for",
-            "hint": "Provide a reason (archaic/formal FANBOYS). (Sector 11 calibration)",
-            "explanation": "'For' is coordinate reason. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "given that",
+            "hint": "Strong public opposition is the acknowledged fact that creates political risk.",
+            "explanation": "'Given that' introduces an acknowledged political reality used as the basis for a strategic assessment. 'Given the strong public opposition' = 'taking into account the public's opposition'. This fact (premise) shapes the risk assessment (conclusion)."
         },
         {
             "id": "cc_l128_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The probe reached Mars ____ it found no liquid water in sector 11.",
-            "sentence": "The probe reached Mars ____ it found no liquid water in sector 11.",
+            "question": "She is allowed to bring one guest ____ the guest's name is submitted in advance.",
+            "sentence": "She is allowed to bring one guest ____ the guest's name is submitted in advance.",
             "options": [
-                "but",
-                "so",
-                "for",
-                "nor"
+                "although",
+                "provided that",
+                "unless",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast success with a limitation. (Sector 11 calibration)",
-            "explanation": "'But' introduces contrasting information. [Verified in sector 11]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "provided that",
+            "hint": "Submitting the name in advance is the formal requirement for bringing a guest.",
+            "explanation": "'Provided that' introduces the formal condition. 'May bring a guest provided that the name is submitted in advance' = 'on condition that the prior registration requirement is met'. Common in event management and venue security."
         },
         {
             "id": "cc_l128_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The thruster fired perfectly ____ the capsule stabilized in sector 11.",
-            "sentence": "The thruster fired perfectly ____ the capsule stabilized in sector 11.",
+            "question": "The research project may continue ____ ethical standards are maintained throughout.",
+            "sentence": "The research project may continue ____ ethical standards are maintained throughout.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "nor"
+                "although",
+                "unless",
+                "as long as",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a positive outcome of firing. (Sector 11 calibration)",
-            "explanation": "'And' adds corresponding clauses. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as long as",
+            "hint": "Maintaining ethical standards is the ongoing condition for the project's continuation.",
+            "explanation": "'As long as' introduces a continuing condition for ongoing permission. 'May continue as long as ethical standards are maintained' = 'on the continuing condition that ethics are not compromised'. Any ethical breach would end the project."
         },
         {
             "id": "cc_l128_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They ran out of fuel ____ they landed on an asteroid in sector 11.",
-            "sentence": "They ran out of fuel ____ they landed on an asteroid in sector 11.",
+            "question": "____ the success of the pilot programme, rolling it out nationally seems like the logical step.",
+            "sentence": "____ the success of the pilot programme, rolling it out nationally seems like the logical step.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "although",
+                "provided that",
+                "given that",
+                "unless"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Immediate consequence. (Sector 11 calibration)",
-            "explanation": "'So' shows consequence. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "given that",
+            "hint": "The pilot's success is the acknowledged fact that makes nationwide expansion logical.",
+            "explanation": "'Given that' introduces a successful outcome as the basis for a logical recommendation. 'Given the success of the pilot' = 'taking into account the positive pilot results'. The success (premise) supports the expansion (logical conclusion)."
         },
         {
             "id": "cc_l129_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The hull is double-layered ____ it can withstand debris in sector 11.",
-            "sentence": "The hull is double-layered ____ it can withstand debris in sector 11.",
+            "question": "Remote working arrangements may continue ____ performance targets are consistently met.",
+            "sentence": "Remote working arrangements may continue ____ performance targets are consistently met.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "although",
+                "provided that",
+                "unless",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Show a result of the structural design. (Sector 11 calibration)",
-            "explanation": "'So' introduces the consequence. [Verified in sector 11]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "provided that",
+            "hint": "Meeting performance targets consistently is the condition for continued remote working.",
+            "explanation": "'Provided that' introduces the formal, HR-style condition for an arrangement. 'May continue provided that targets are met' = 'on condition that performance remains satisfactory'. This is typical workplace policy language."
         },
         {
             "id": "cc_l129_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He did not sleep ____ did he leave his post in sector 11.",
-            "sentence": "He did not sleep ____ did he leave his post in sector 11.",
+            "question": "She will recommend the product to her clients ____ the trial results are positive.",
+            "sentence": "She will recommend the product to her clients ____ the trial results are positive.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "although",
+                "unless",
+                "as long as",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Connect negative clauses. (Sector 11 calibration)",
-            "explanation": "'Nor' connects negative independent clauses. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as long as",
+            "hint": "Positive trial results are the ongoing condition for her professional recommendation.",
+            "explanation": "'As long as' introduces the condition for a continuing professional behaviour. 'Will recommend it as long as trial results are positive' = 'on the continuing condition that evidence supports the recommendation'. If results turn negative, she stops recommending."
         },
         {
             "id": "cc_l129_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She did not speak ____ did she look at him in sector 11.",
-            "sentence": "She did not speak ____ did she look at him in sector 11.",
+            "question": "____ the significant rise in living costs, many households have reduced discretionary spending.",
+            "sentence": "____ the significant rise in living costs, many households have reduced discretionary spending.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "although",
+                "provided that",
+                "given that",
+                "unless"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Inversion of negative. (Sector 11 calibration)",
-            "explanation": "'Nor' is correct. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "given that",
+            "hint": "Rising living costs are the acknowledged economic fact that explains reduced spending.",
+            "explanation": "'Given that' introduces an economic fact as the explanation for a behavioural change. 'Given the significant rise in living costs' = 'because living costs have risen so much'. The economic pressure (premise) explains the spending cuts (conclusion)."
         },
         {
             "id": "cc_l130_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She was tired from the orbit ____ she kept monitoring in sector 11.",
-            "sentence": "She was tired from the orbit ____ she kept monitoring in sector 11.",
+            "question": "The client may request changes to the brief ____ all revisions are submitted before the agreed deadline.",
+            "sentence": "The client may request changes to the brief ____ all revisions are submitted before the agreed deadline.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "although",
+                "provided that",
+                "unless",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Contrast exhaustion with continuation. (Sector 11 calibration)",
-            "explanation": "'Yet' expresses concession. [Verified in sector 11]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "provided that",
+            "hint": "Submitting revisions before the deadline is the condition for changes to be accepted.",
+            "explanation": "'Provided that' sets a formal contractual condition. 'May request changes provided that revisions are submitted before the deadline' = 'on condition that the timing requirement is respected'. Standard freelance and agency contract language."
         },
         {
             "id": "cc_l130_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The weather was bad ____ the shuttle landed safely in sector 11.",
-            "sentence": "The weather was bad ____ the shuttle landed safely in sector 11.",
+            "question": "The new system will perform reliably ____ it is maintained and updated regularly.",
+            "sentence": "The new system will perform reliably ____ it is maintained and updated regularly.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "although",
+                "unless",
+                "as long as",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Concession or surprise. (Sector 11 calibration)",
-            "explanation": "'Yet' introduces unexpected result. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as long as",
+            "hint": "Regular maintenance is the ongoing condition for reliable system performance.",
+            "explanation": "'As long as' introduces the continuing technical condition for reliable performance. 'Will perform reliably as long as it is maintained' = 'on the continuing condition that maintenance is not neglected'. Neglect = unreliable performance."
         },
         {
             "id": "cc_l130_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The storm was fierce ____ the shields held in sector 11.",
-            "sentence": "The storm was fierce ____ the shields held in sector 11.",
+            "question": "____ the lack of concrete evidence, pursuing a criminal prosecution would be inadvisable.",
+            "sentence": "____ the lack of concrete evidence, pursuing a criminal prosecution would be inadvisable.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "although",
+                "provided that",
+                "given that",
+                "unless"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Unexpected positive result. (Sector 11 calibration)",
-            "explanation": "'Yet' shows contrast. [Verified in sector 11]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "given that",
+            "hint": "The lack of evidence is the acknowledged legal reality that makes prosecution risky.",
+            "explanation": "'Given that' introduces the legal fact upon which the advice is based. 'Given the lack of concrete evidence' = 'taking into account the weakness of the evidence base'. This acknowledged fact (premise) justifies the legal recommendation (conclusion)."
         }
     ]
 }

@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l21_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We will freeze ____ we turn on the heater.",
-            "sentence": "We will freeze ____ we turn on the heater.",
+            "question": "Always wash your hands ____ you sit down to eat.",
+            "sentence": "Always wash your hands ____ you sit down to eat.",
             "options": [
-                "unless",
-                "because",
-                "although",
-                "while"
+                "when",
+                "after",
+                "if",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "unless",
-            "hint": "State a negative condition (except if).",
-            "explanation": "'Unless' introduces a negative condition."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "before",
+            "hint": "Washing hands should happen first - before eating, not after.",
+            "explanation": "'Before' shows that one action must happen earlier than another. Washing hands BEFORE eating is a hygiene rule - 'after' would mean eating first, which defeats the purpose."
         },
         {
             "id": "cc_l21_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He likes coding ____ his brother prefers art.",
-            "sentence": "He likes coding ____ his brother prefers art.",
+            "question": "She felt much better ____ she had a long and restful sleep.",
+            "sentence": "She felt much better ____ she had a long and restful sleep.",
             "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
+                "after",
+                "before",
+                "while",
+                "if"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Show direct contrast between preferences.",
-            "explanation": "'Whereas' indicates direct contrast."
+            "correctAnswer": "after",
+            "hint": "The good sleep came first; feeling better followed.",
+            "explanation": "'After' shows that one event follows another. Feeling better (result) came after the restorative sleep (earlier event). 'Before' would reverse the chronology incorrectly."
         },
         {
             "id": "cc_l21_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must stay indoors ____ the radiation drops.",
-            "sentence": "We must stay indoors ____ the radiation drops.",
+            "question": "He read his book ____ he was waiting for his appointment.",
+            "sentence": "He read his book ____ he was waiting for his appointment.",
             "options": [
-                "until",
-                "because",
-                "although",
-                "unless"
+                "and",
+                "while",
+                "before",
+                "after"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "until",
-            "hint": "Time limit.",
-            "explanation": "'Until' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "Two things happened at the same time - reading and waiting occurred together.",
+            "explanation": "'While' shows two simultaneous activities. He was reading AND waiting at the same time - 'while' connects a background activity (waiting) with a foreground action (reading)."
         },
         {
             "id": "cc_l22_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The reactor will blow ____ the temperature rises.",
-            "sentence": "The reactor will blow ____ the temperature rises.",
+            "question": "They searched every pocket ____ they finally found the missing ticket.",
+            "sentence": "They searched every pocket ____ they finally found the missing ticket.",
             "options": [
-                "if",
-                "unless",
+                "while",
+                "before",
                 "until",
-                "although"
+                "after"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "if",
-            "hint": "State a direct condition.",
-            "explanation": "'If' introduces conditional clause."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "until",
+            "hint": "The searching continued right up to the point when the ticket was found.",
+            "explanation": "'Until' shows duration up to a specific endpoint. They kept searching continuously UNTIL the ticket was found (the stopping point). 'When' would describe a single moment, not the duration."
         },
         {
             "id": "cc_l22_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They stayed awake ____ we slept soundly.",
-            "sentence": "They stayed awake ____ we slept soundly.",
+            "question": "Always proofread your work carefully ____ you press send.",
+            "sentence": "Always proofread your work carefully ____ you press send.",
             "options": [
-                "while",
-                "unless",
-                "until",
-                "although"
+                "after",
+                "when",
+                "or",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast simultaneous actions.",
-            "explanation": "'While' can show contrast."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "before",
+            "hint": "Proofreading must come first, before the email is sent.",
+            "explanation": "'Before' shows prior action. Proofreading should happen BEFORE pressing send - doing it after would be too late. 'After' would reverse this important sequence."
         },
         {
             "id": "cc_l22_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crop died ____ the soil was dry.",
-            "sentence": "The crop died ____ the soil was dry.",
+            "question": "She called to say thank you ____ she received the gift.",
+            "sentence": "She called to say thank you ____ she received the gift.",
             "options": [
-                "since",
-                "unless",
-                "until",
-                "although"
+                "after",
+                "while",
+                "before",
+                "until"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "Reason.",
-            "explanation": "'Since' is correct."
+            "correctAnswer": "after",
+            "hint": "Receiving the gift came first; the thank-you call came second.",
+            "explanation": "'After' places the call after receiving the gift - she received it first, then called. 'Before' would mean she called before even getting the gift, which doesn't make sense."
         },
         {
             "id": "cc_l23_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They will survive ____ they conserve oxygen.",
-            "sentence": "They will survive ____ they conserve oxygen.",
+            "question": "The baby slept peacefully ____ her parents tidied the whole house.",
+            "sentence": "The baby slept peacefully ____ her parents tidied the whole house.",
             "options": [
-                "provided that",
-                "unless",
+                "before",
+                "while",
                 "until",
-                "although"
+                "after"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "provided that",
-            "hint": "State a necessary condition.",
-            "explanation": "'Provided that' is conditional."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "The baby's sleeping and the tidying happened at the same time.",
+            "explanation": "'While' connects two simultaneous events. The baby slept (background state) while the parents tidied (foreground activity) - both happened during the same period."
         },
         {
             "id": "cc_l23_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She chose physics ____ he opted for biology.",
-            "sentence": "She chose physics ____ he opted for biology.",
+            "question": "Please wait in the reception area ____ the doctor is ready to see you.",
+            "sentence": "Please wait in the reception area ____ the doctor is ready to see you.",
             "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
+                "before",
+                "after",
+                "until",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Direct contrast.",
-            "explanation": "'Whereas' is correct."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "until",
+            "hint": "Waiting continues right up to the moment the doctor is ready.",
+            "explanation": "'Until' marks the endpoint of a waiting period. The waiting lasts UNTIL the doctor is ready (the stopping point). At that moment, the waiting ends and the appointment begins."
         },
         {
             "id": "cc_l23_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She succeeded ____ she worked night and day.",
-            "sentence": "She succeeded ____ she worked night and day.",
+            "question": "He skipped breakfast ____ he was already running very late.",
+            "sentence": "He skipped breakfast ____ he was already running very late.",
             "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
+                "when",
+                "while",
+                "after",
+                "because"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "because",
-            "hint": "Reason.",
-            "explanation": "'Because' is correct."
+            "hint": "Running late is the reason he skipped breakfast, not a time marker.",
+            "explanation": "'Because' gives the reason. Being late (cause) explains skipping breakfast (result). 'While' would imply the two things happened at the same time, which changes the meaning entirely."
         },
         {
             "id": "cc_l24_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You can enter the core ____ you wear a shield.",
-            "sentence": "You can enter the core ____ you wear a shield.",
+            "question": "She applied sunscreen carefully ____ she went out into the sun.",
+            "sentence": "She applied sunscreen carefully ____ she went out into the sun.",
             "options": [
-                "as long as",
-                "unless",
+                "before",
+                "while",
                 "until",
-                "although"
+                "after"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "as long as",
-            "hint": "Express conditional duration.",
-            "explanation": "'As long as' is conditional."
+            "correctAnswer": "before",
+            "hint": "Sunscreen goes on first - before sun exposure, not during or after.",
+            "explanation": "'Before' shows prior action. Applying sunscreen BEFORE going out is the correct order - sunscreen needs to be on before UV exposure to protect the skin."
         },
         {
             "id": "cc_l24_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We had water ____ they had none.",
-            "sentence": "We had water ____ they had none.",
+            "question": "He stretched for ten minutes ____ he finished his morning run.",
+            "sentence": "He stretched for ten minutes ____ he finished his morning run.",
             "options": [
-                "while",
-                "unless",
-                "until",
-                "although"
+                "and",
+                "after",
+                "before",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast.",
-            "explanation": "'While' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "after",
+            "hint": "Stretching came at the end, after the run was over.",
+            "explanation": "'After' places the stretching following the run. He ran first, then stretched. This is the standard cool-down routine. 'Before' would make it a warm-up instead."
         },
         {
             "id": "cc_l24_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was happy ____ he won the race.",
-            "sentence": "He was happy ____ he won the race.",
+            "question": "She read a novel ____ she was waiting for her delayed train.",
+            "sentence": "She read a novel ____ she was waiting for her delayed train.",
             "options": [
-                "as",
-                "unless",
+                "when",
+                "before",
+                "while",
+                "until"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "while",
+            "hint": "Reading and waiting happened at the same time - she passed the time reading.",
+            "explanation": "'While' shows two simultaneous activities. She read (activity) while she waited (background condition) - both happened during the same period of delay."
+        },
+        {
+            "id": "cc_l25_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "He practised the piano every day ____ he could play the piece fluently.",
+            "sentence": "He practised the piano every day ____ he could play the piece fluently.",
+            "options": [
+                "before",
+                "after",
+                "while",
+                "until"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "until",
+            "hint": "Practice continued right up to the point of being able to play fluently.",
+            "explanation": "'Until' marks the goal or endpoint. He practised UNTIL he achieved fluency (the stopping condition). The practice continued for as long as needed to reach that standard."
+        },
+        {
+            "id": "cc_l25_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She took an umbrella ____ the sky looked very threatening.",
+            "sentence": "She took an umbrella ____ the sky looked very threatening.",
+            "options": [
+                "because",
+                "while",
                 "until",
                 "before"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Reason.",
-            "explanation": "'As' is correct."
-        },
-        {
-            "id": "cc_l25_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We cannot escape ____ the hyperdrive is fixed.",
-            "sentence": "We cannot escape ____ the hyperdrive is fixed.",
-            "options": [
-                "unless",
-                "if",
-                "because",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "unless",
-            "hint": "Negative condition.",
-            "explanation": "'Unless' is correct."
-        },
-        {
-            "id": "cc_l25_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "Gold is heavy ____ aluminum is light.",
-            "sentence": "Gold is heavy ____ aluminum is light.",
-            "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Contrast.",
-            "explanation": "'Whereas' is correct."
+            "correctAnswer": "because",
+            "hint": "The threatening sky is the direct reason she took an umbrella.",
+            "explanation": "'Because' gives the reason for a precautionary action. The threatening sky (cause) explains why she took an umbrella (response). 'While' would suggest both things happened at the same time, not that one caused the other."
         },
         {
             "id": "cc_l25_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We stayed ____ the rain stopped.",
-            "sentence": "We stayed ____ the rain stopped.",
+            "question": "He always waves ____ he sees a neighbour in the street.",
+            "sentence": "He always waves ____ he sees a neighbour in the street.",
             "options": [
-                "until",
-                "because",
-                "although",
-                "unless"
+                "if",
+                "when",
+                "while",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "until",
-            "hint": "Time boundary.",
-            "explanation": "'Until' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "when",
+            "hint": "Seeing a neighbour is the regular trigger for waving.",
+            "explanation": "'When' connects a regular trigger (seeing a neighbour) to a habitual social action (waving). This happens every time - 'if' would imply he might not see neighbours."
         },
         {
             "id": "cc_l26_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The system rebooted ____ the override was pulled.",
-            "sentence": "The system rebooted ____ the override was pulled.",
+            "question": "They had dessert ____ they finished the main course.",
+            "sentence": "They had dessert ____ they finished the main course.",
             "options": [
-                "as soon as",
-                "unless",
-                "until",
-                "although"
+                "before",
+                "while",
+                "after",
+                "if"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as soon as",
-            "hint": "Immediate consequence of condition.",
-            "explanation": "'As soon as' is correct."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "after",
+            "hint": "The main course came first; dessert followed.",
+            "explanation": "'After' shows chronological order. Dessert was eaten AFTER the main course was finished - this is the natural meal sequence. 'Before' would reverse the order."
         },
         {
             "id": "cc_l26_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The base was warm ____ the valley was freezing.",
-            "sentence": "The base was warm ____ the valley was freezing.",
+            "question": "He saved his document ____ he closed his laptop.",
+            "sentence": "He saved his document ____ he closed his laptop.",
             "options": [
+                "after",
+                "when",
                 "while",
-                "unless",
-                "until",
-                "although"
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast.",
-            "explanation": "'While' is correct."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "before",
+            "hint": "Saving first is critical - it must happen before closing.",
+            "explanation": "'Before' shows the necessary prior action. Saving must happen BEFORE closing the laptop - doing it after would mean the work might be lost."
         },
         {
             "id": "cc_l26_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The core is safe ____ the shield is active.",
-            "sentence": "The core is safe ____ the shield is active.",
+            "question": "She kept her phone on silent ____ she was in the cinema.",
+            "sentence": "She kept her phone on silent ____ she was in the cinema.",
             "options": [
-                "as long as",
-                "unless",
+                "while",
                 "until",
-                "although"
+                "before",
+                "after"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "as long as",
-            "hint": "Condition.",
-            "explanation": "'As long as' is correct."
+            "correctAnswer": "while",
+            "hint": "Both events happened at the same time - the phone was silent during the film.",
+            "explanation": "'While' shows a state that lasted for the duration of an event. The phone was on silent throughout the time she was watching the film."
         },
         {
             "id": "cc_l27_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We can win the war ____ we unite.",
-            "sentence": "We can win the war ____ we unite.",
+            "question": "The children played outside ____ it got too dark to see.",
+            "sentence": "The children played outside ____ it got too dark to see.",
             "options": [
-                "if",
-                "unless",
+                "when",
                 "until",
-                "although"
+                "after",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "if",
-            "hint": "Condition.",
-            "explanation": "'If' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "until",
+            "hint": "They played right up to the moment when darkness stopped them.",
+            "explanation": "'Until' marks the natural stopping point. The children played UNTIL it became too dark - the darkness was the endpoint of their outdoor play."
         },
         {
             "id": "cc_l27_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She is quiet ____ he is loud.",
-            "sentence": "She is quiet ____ he is loud.",
+            "question": "You will get a ten-percent discount ____ you show your student card.",
+            "sentence": "You will get a ten-percent discount ____ you show your student card.",
             "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
+                "when",
+                "after",
+                "if",
+                "because"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Contrast.",
-            "explanation": "'Whereas' is correct."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "if",
+            "hint": "Showing the student card is the condition for getting the discount.",
+            "explanation": "'If' introduces a condition. The discount is available IF (and only if) you show the card. 'When' would assume you will definitely show it - 'if' makes it a requirement."
         },
         {
             "id": "cc_l27_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You can keep it ____ you return it tomorrow.",
-            "sentence": "You can keep it ____ you return it tomorrow.",
+            "question": "She felt an enormous wave of relief ____ she posted the letter.",
+            "sentence": "She felt an enormous wave of relief ____ she posted the letter.",
             "options": [
-                "provided that",
-                "unless",
-                "until",
-                "although"
+                "before",
+                "when",
+                "while",
+                "after"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "provided that",
-            "hint": "Condition.",
-            "explanation": "'Provided that' is correct."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "after",
+            "hint": "She posted the letter first; the relief came immediately afterwards.",
+            "explanation": "'After' places the relief following the action. She posted the letter (action) and AFTER doing so, she felt relief. The act of posting caused the relief."
         },
         {
             "id": "cc_l28_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The dome remains safe ____ the shields stay up.",
-            "sentence": "The dome remains safe ____ the shields stay up.",
+            "question": "He always studies the menu carefully ____ he orders.",
+            "sentence": "He always studies the menu carefully ____ he orders.",
             "options": [
-                "provided",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "provided",
-            "hint": "Necessary condition.",
-            "explanation": "'Provided' is correct."
-        },
-        {
-            "id": "cc_l28_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The dome is safe ____ the outside is deadly.",
-            "sentence": "The dome is safe ____ the outside is deadly.",
-            "options": [
+                "before",
+                "after",
                 "while",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast.",
-            "explanation": "'While' is correct."
-        },
-        {
-            "id": "cc_l28_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The fire spread ____ the wind was strong.",
-            "sentence": "The fire spread ____ the wind was strong.",
-            "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Reason.",
-            "explanation": "'Because' is correct."
-        },
-        {
-            "id": "cc_l29_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "You will fail ____ you study hard.",
-            "sentence": "You will fail ____ you study hard.",
-            "options": [
-                "unless",
-                "if",
-                "because",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "unless",
-            "hint": "Negative condition.",
-            "explanation": "'Unless' is correct."
-        },
-        {
-            "id": "cc_l29_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "Mars is dry ____ Earth is wet.",
-            "sentence": "Mars is dry ____ Earth is wet.",
-            "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Contrast.",
-            "explanation": "'Whereas' is correct."
-        },
-        {
-            "id": "cc_l29_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "He did not give up ____ the odds were poor.",
-            "sentence": "He did not give up ____ the odds were poor.",
-            "options": [
-                "even though",
-                "because",
-                "unless",
                 "until"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession.",
-            "explanation": "'Even though' is correct."
+            "correctAnswer": "before",
+            "hint": "Studying the menu happens first, before deciding what to order.",
+            "explanation": "'Before' shows prior action. He studies the menu BEFORE ordering - this is the logical sequence: choose what you want before telling the waiter."
+        },
+        {
+            "id": "cc_l28_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The little girl splashed in puddles ____ her mother chatted with a friend.",
+            "sentence": "The little girl splashed in puddles ____ her mother chatted with a friend.",
+            "options": [
+                "and",
+                "while",
+                "before",
+                "after"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "The splashing and the chatting happened simultaneously.",
+            "explanation": "'While' connects two simultaneous activities. The girl splashed (her activity) while her mother chatted (her activity) - both happened at the same time in the same place."
+        },
+        {
+            "id": "cc_l28_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "They talked on the phone ____ one of them finally said goodbye.",
+            "sentence": "They talked on the phone ____ one of them finally said goodbye.",
+            "options": [
+                "before",
+                "after",
+                "until",
+                "when"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "until",
+            "hint": "The conversation continued right up to the goodbye.",
+            "explanation": "'Until' marks the endpoint. The conversation lasted UNTIL someone said goodbye (the stopping point). At that moment, the call ended."
+        },
+        {
+            "id": "cc_l29_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She returned the dress ____ she discovered it was the wrong size.",
+            "sentence": "She returned the dress ____ she discovered it was the wrong size.",
+            "options": [
+                "after",
+                "while",
+                "before",
+                "because"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "because",
+            "hint": "Discovering the wrong size is the clear reason for returning it.",
+            "explanation": "'Because' gives the reason for an action. Finding the wrong size (cause) explains the return (result). 'After' would show timing but not explain why she returned it."
+        },
+        {
+            "id": "cc_l29_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "Everyone stopped talking ____ the headteacher walked into the hall.",
+            "sentence": "Everyone stopped talking ____ the headteacher walked into the hall.",
+            "options": [
+                "when",
+                "before",
+                "until",
+                "after"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "when",
+            "hint": "The headteacher entering is the specific moment that caused silence.",
+            "explanation": "'When' shows that a specific event (the headteacher entering) triggered an immediate response (silence). The moment of arrival is the trigger - 'before' would mean they went quiet before she arrived."
+        },
+        {
+            "id": "cc_l29_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "He washed all the pots and pans ____ he had cooked a big dinner.",
+            "sentence": "He washed all the pots and pans ____ he had cooked a big dinner.",
+            "options": [
+                "before",
+                "after",
+                "while",
+                "if"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "after",
+            "hint": "Cooking happened first; washing up came afterwards.",
+            "explanation": "'After' shows the chronological order. He cooked first (main activity), then washed up (second activity). 'Before' would mean he cleaned the pots before using them to cook."
         },
         {
             "id": "cc_l30_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The alarm goes off ____ the laser is broken.",
-            "sentence": "The alarm goes off ____ the laser is broken.",
+            "question": "She prepared her slides ____ her colleagues were having lunch.",
+            "sentence": "She prepared her slides ____ her colleagues were having lunch.",
             "options": [
-                "if",
-                "unless",
-                "until",
-                "although"
+                "before",
+                "after",
+                "while",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "if",
-            "hint": "Condition.",
-            "explanation": "'If' is correct."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "while",
+            "hint": "Preparing and lunching happened at the same time.",
+            "explanation": "'While' shows two simultaneous activities happening at the same time. She worked on her slides during the same period her colleagues were at lunch."
         },
         {
             "id": "cc_l30_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was confident ____ she was worried.",
-            "sentence": "He was confident ____ she was worried.",
+            "question": "She didn't feel confident about driving ____ she had completed several lessons.",
+            "sentence": "She didn't feel confident about driving ____ she had completed several lessons.",
             "options": [
+                "before",
                 "while",
-                "unless",
-                "until",
-                "although"
+                "when",
+                "until"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast.",
-            "explanation": "'While' is correct."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "until",
+            "hint": "Confidence only arrived after multiple lessons - right up to that point.",
+            "explanation": "'Until' marks the endpoint of a state. She lacked confidence UNTIL the lessons gave her the skill. The lessons were the turning point - before them, no confidence; after them, confidence."
         },
         {
             "id": "cc_l30_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 1,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must run ____ we miss the launch.",
-            "sentence": "We must run ____ we miss the launch.",
+            "question": "Always read the instructions carefully ____ you start assembling the furniture.",
+            "sentence": "Always read the instructions carefully ____ you start assembling the furniture.",
             "options": [
-                "lest",
-                "because",
-                "although",
-                "unless"
+                "before",
+                "after",
+                "while",
+                "until"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "lest",
-            "hint": "For fear that (formal/archaic condition).",
-            "explanation": "'Lest' means for fear that."
+            "correctAnswer": "before",
+            "hint": "Reading first prevents mistakes - it must come before starting.",
+            "explanation": "'Before' shows the necessary prior action. Instructions should be read BEFORE starting - reading them after you've assembled something incorrectly is useless."
         }
     ]
 }

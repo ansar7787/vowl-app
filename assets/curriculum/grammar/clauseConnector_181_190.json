@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l181_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The stars are bright ____ the night is clear in sector 17.",
-            "sentence": "The stars are bright ____ the night is clear in sector 17.",
+            "question": "No sooner had she submitted the manuscript ____ the editor called to request revisions.",
+            "sentence": "No sooner had she submitted the manuscript ____ the editor called to request revisions.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "so"
+                "when",
+                "than",
+                "as soon as",
+                "until"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Join two related positive thoughts. (Sector 17 calibration)",
-            "explanation": "'And' connects related independent clauses. [Verified in sector 17]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "than",
+            "hint": "'No sooner...than' is a fixed paired structure - 'than' always follows 'no sooner'.",
+            "explanation": "'No sooner...than' is an inverted, formal structure meaning 'immediately after'. The pattern is: No sooner had [subject] [past participle] THAN [subject] [past simple]. 'No sooner had she submitted it than the editor called' = 'the moment she submitted, the editor called'. 'Than' always completes 'no sooner'."
         },
         {
             "id": "cc_l181_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The colony needs food ____ the transport is delayed in sector 17.",
-            "sentence": "The colony needs food ____ the transport is delayed in sector 17.",
+            "question": "____ he had left the building, he realised he had forgotten his laptop.",
+            "sentence": "____ he had left the building, he realised he had forgotten his laptop.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "no sooner...than",
+                "scarcely...when",
+                "the moment",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast demand with lack of supply. (Sector 17 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 17]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "the moment",
+            "hint": "'The moment' introduces an extremely precise, immediate time reference.",
+            "explanation": "'The moment (that)' means 'at the very instant that'. 'The moment he had left the building, he realised' = 'at the precise instant of leaving, realisation struck'. 'The moment' expresses perfect temporal immediacy between two events."
         },
         {
             "id": "cc_l181_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The scanner detected iron ____ it also found copper in sector 17.",
-            "sentence": "The scanner detected iron ____ it also found copper in sector 17.",
+            "question": "The security team was alerted ____ the system detected an unusual access pattern.",
+            "sentence": "The security team was alerted ____ the system detected an unusual access pattern.",
             "options": [
-                "and",
-                "but",
-                "so",
-                "nor"
+                "no sooner",
+                "the moment",
+                "scarcely",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a similar metal type. (Sector 17 calibration)",
-            "explanation": "'And' is additive. [Verified in sector 17]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "the moment",
+            "hint": "'The moment' introduces a precise, immediate trigger in a security context.",
+            "explanation": "'The moment' means 'at the instant that'. 'The team was alerted the moment the system detected' = 'the alert was sent the instant the detection occurred'. 'The moment' captures perfect simultaneity between trigger and response."
         },
         {
             "id": "cc_l182_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We wanted to launch ____ the fuel was low in sector 17.",
-            "sentence": "We wanted to launch ____ the fuel was low in sector 17.",
+            "question": "Scarcely had the ink dried on the agreement ____ the first controversy emerged.",
+            "sentence": "Scarcely had the ink dried on the agreement ____ the first controversy emerged.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "than",
+                "as soon as",
+                "when",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Show a contrast or obstacle. (Sector 17 calibration)",
-            "explanation": "'But' shows contrast between two clauses. [Verified in sector 17]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "'Scarcely...when' is a fixed paired structure - 'when' always follows 'scarcely'.",
+            "explanation": "'Scarcely...when' is an inverted, formal/literary structure meaning 'barely...before'. Pattern: Scarcely had [subject] [past participle] WHEN [subject] [past simple]. 'Scarcely had the ink dried when controversy emerged' = 'almost immediately after signing, controversy arose'. 'When' always completes 'scarcely'."
         },
         {
             "id": "cc_l182_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The main grid went dark ____ we flipped the auxiliary switch in sector 17.",
-            "sentence": "The main grid went dark ____ we flipped the auxiliary switch in sector 17.",
+            "question": "____ had the policy been announced ____ it attracted fierce criticism from opposition parties.",
+            "sentence": "____ had the policy been announced ____ it attracted fierce criticism from opposition parties.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "nor"
+                "the moment...the moment",
+                "no sooner...than",
+                "scarcely...when",
+                "only when...then"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Cause and immediate action. (Sector 17 calibration)",
-            "explanation": "'So' shows cause-effect relationship. [Verified in sector 17]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "no sooner...than",
+            "hint": "'No sooner...than' is the inverted structure that creates the meaning 'immediately after'.",
+            "explanation": "'No sooner...than' is an inverted structure. 'No sooner had the policy been announced THAN it attracted criticism' = 'immediately after the announcement, criticism followed'. Note the inversion: 'no sooner HAD the policy BEEN announced' (auxiliary + subject + past participle)."
         },
         {
             "id": "cc_l182_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We can orbit the moon ____ we can land on the plain in sector 17.",
-            "sentence": "We can orbit the moon ____ we can land on the plain in sector 17.",
+            "question": "____ can the auditors certify the accounts when all supporting documents have been provided.",
+            "sentence": "____ can the auditors certify the accounts when all supporting documents have been provided.",
             "options": [
-                "or",
-                "but",
-                "yet",
-                "for"
+                "the moment",
+                "no sooner",
+                "scarcely",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Two choices. (Sector 17 calibration)",
-            "explanation": "'Or' expresses alternative choice. [Verified in sector 17]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "only when",
+            "hint": "'Only when' restricts certification to a single necessary condition.",
+            "explanation": "'Only when' introduces a restrictive condition. 'Only when all documents have been provided can the auditors certify the accounts' - the word 'only' restricts the action to this one specific condition. Note: 'only when' at the start of a sentence causes inversion: 'can the auditors certify'."
         },
         {
             "id": "cc_l183_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You can adjust the valves ____ you can let the core vent in sector 17.",
-            "sentence": "You can adjust the valves ____ you can let the core vent in sector 17.",
+            "question": "No sooner had the rescue team arrived at the scene ____ a second emergency was reported.",
+            "sentence": "No sooner had the rescue team arrived at the scene ____ a second emergency was reported.",
             "options": [
-                "or",
-                "but",
-                "and",
-                "for"
+                "when",
+                "than",
+                "as soon as",
+                "until"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Present two alternative actions. (Sector 17 calibration)",
-            "explanation": "'Or' presents choices or alternatives. [Verified in sector 17]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "than",
+            "hint": "'No sooner...than' always pairs with 'than' to complete the inverted structure.",
+            "explanation": "'No sooner...than' requires 'than' to complete it. 'No sooner had the team arrived THAN a second emergency was reported' = 'immediately after the team arrived, another crisis began'. This structure always uses 'had + past participle' and 'than'."
         },
         {
             "id": "cc_l183_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They must secure the dome ____ the oxygen will escape in sector 17.",
-            "sentence": "They must secure the dome ____ the oxygen will escape in sector 17.",
+            "question": "Scarcely had the first set of results been published ____ a competing study challenged the methodology.",
+            "sentence": "Scarcely had the first set of results been published ____ a competing study challenged the methodology.",
             "options": [
-                "or",
-                "but",
-                "so",
-                "yet"
+                "than",
+                "as soon as",
+                "when",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Express alternative danger. (Sector 17 calibration)",
-            "explanation": "'Or' shows alternative consequence. [Verified in sector 17]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "'Scarcely...when' always pairs with 'when' - never 'than'.",
+            "explanation": "'Scarcely...when' requires 'when' to complete it. 'Scarcely had the results been published WHEN a competing study challenged them' = 'barely after publication, challenge came'. Note: 'scarcely' uses 'when'; 'no sooner' uses 'than'. They are not interchangeable."
         },
         {
             "id": "cc_l183_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crew worked hard ____ they completed the bridge in sector 17.",
-            "sentence": "The crew worked hard ____ they completed the bridge in sector 17.",
+            "question": "____ she stepped onto the platform, the crowd fell completely silent.",
+            "sentence": "____ she stepped onto the platform, the crowd fell completely silent.",
             "options": [
-                "so",
-                "but",
-                "nor",
-                "yet"
+                "no sooner",
+                "scarcely",
+                "the moment",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Result of working hard. (Sector 17 calibration)",
-            "explanation": "'So' shows result. [Verified in sector 17]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "the moment",
+            "hint": "'The moment' introduces an extremely precise, dramatic time reference.",
+            "explanation": "'The moment' means 'at the very instant'. 'The moment she stepped onto the platform, the crowd fell silent' = 'at the exact instant of stepping forward, silence fell'. 'The moment' is vivid and immediate - perfect for dramatic, significant events."
         },
         {
             "id": "cc_l184_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The reactor overheated ____ the alarm sounded in sector 17.",
-            "sentence": "The reactor overheated ____ the alarm sounded in sector 17.",
+            "question": "No sooner had the company announced the redundancies ____ union representatives demanded a formal meeting.",
+            "sentence": "No sooner had the company announced the redundancies ____ union representatives demanded a formal meeting.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "nor"
+                "when",
+                "than",
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Show a cause-and-effect relationship. (Sector 17 calibration)",
-            "explanation": "'So' connects cause to effect. [Verified in sector 17]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "than",
+            "hint": "'No sooner...than' - 'than' is the required paired connector.",
+            "explanation": "'No sooner...than' requires 'than' to complete the structure. 'No sooner had redundancies been announced THAN the union demanded a meeting' = 'immediately after the announcement, the union responded'. The inverted structure always uses 'had + past participle' and 'than'."
         },
         {
             "id": "cc_l184_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The explorer found ruins ____ he took several scans in sector 17.",
-            "sentence": "The explorer found ruins ____ he took several scans in sector 17.",
+            "question": "Scarcely had the investigation begun ____ new evidence came to light that changed everything.",
+            "sentence": "Scarcely had the investigation begun ____ new evidence came to light that changed everything.",
             "options": [
-                "and",
-                "but",
-                "nor",
-                "for"
+                "than",
+                "as soon as",
+                "when",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a natural subsequent action. (Sector 17 calibration)",
-            "explanation": "'And' adds subsequent details. [Verified in sector 17]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "'Scarcely...when' requires 'when' to complete it - not 'than' (which goes with 'no sooner').",
+            "explanation": "'Scarcely...when' requires 'when'. 'Scarcely had the investigation begun WHEN new evidence emerged' = 'the investigation had barely started before new evidence changed everything'. Remember: 'scarcely' + 'when'; 'no sooner' + 'than'. Do not mix them."
         },
         {
             "id": "cc_l184_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The target was far ____ the sniper hit it in sector 17.",
-            "sentence": "The target was far ____ the sniper hit it in sector 17.",
+            "question": "____ had they reached the safety of the coastal town ____ the storm intensified dramatically.",
+            "sentence": "____ had they reached the safety of the coastal town ____ the storm intensified dramatically.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "nor"
+                "scarcely...when",
+                "the moment...then",
+                "no sooner...than",
+                "only when...did"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Concession. (Sector 17 calibration)",
-            "explanation": "'Yet' shows contrast. [Verified in sector 17]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "no sooner...than",
+            "hint": "'No sooner...than' is the inverted paired structure that fits this dramatic narrative.",
+            "explanation": "'No sooner...than' fits this inverted, dramatic narrative structure. 'No sooner had they reached the town THAN the storm intensified' = 'they had barely reached safety before the storm worsened'. The paired connectors: 'no sooner' must always be followed by 'than'."
         },
         {
             "id": "cc_l185_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He checked the data thrice ____ he still missed the error in sector 17.",
-            "sentence": "He checked the data thrice ____ he still missed the error in sector 17.",
+            "question": "____ the contract has been countersigned by all parties will it become legally binding.",
+            "sentence": "____ the contract has been countersigned by all parties will it become legally binding.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "the moment",
+                "no sooner",
+                "scarcely",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Express an unexpected contrast. (Sector 17 calibration)",
-            "explanation": "'Yet' shows concession or unexpected contrast. [Verified in sector 17]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "only when",
+            "hint": "'Only when' restricts legal validity to the completion of a specific condition.",
+            "explanation": "'Only when' at the start of a sentence creates inversion and restricts the main clause to one specific condition. 'Only when all parties have countersigned WILL it become binding' - the inversion (will + subject) signals 'only when' has fronted. One condition, one legal consequence."
         },
         {
             "id": "cc_l185_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We didn't see the asteroid ____ did we hear the impact in sector 17.",
-            "sentence": "We didn't see the asteroid ____ did we hear the impact in sector 17.",
+            "question": "No sooner had the prime minister spoken ____ analysts began dissecting every word.",
+            "sentence": "No sooner had the prime minister spoken ____ analysts began dissecting every word.",
             "options": [
-                "nor",
-                "yet",
-                "so",
-                "but"
+                "when",
+                "than",
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Negative connection requiring subject-auxiliary inversion. (Sector 17 calibration)",
-            "explanation": "'Nor' is used for negative addition with inversion. [Verified in sector 17]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "than",
+            "hint": "'No sooner...than' - the paired structure requires 'than'.",
+            "explanation": "'No sooner...than' is the inverted structure. 'No sooner had the PM spoken THAN analysts began dissecting' = 'the moment the speech ended, analysis began'. The structure uses 'had + past participle' in the first clause and simple past in the second."
         },
         {
             "id": "cc_l185_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was not hungry ____ was he thirsty in sector 17.",
-            "sentence": "He was not hungry ____ was he thirsty in sector 17.",
+            "question": "Scarcely had the new director taken office ____ she faced a major organisational crisis.",
+            "sentence": "Scarcely had the new director taken office ____ she faced a major organisational crisis.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "than",
+                "as soon as",
+                "when",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Add negative condition. (Sector 17 calibration)",
-            "explanation": "'Nor' requires inversion. [Verified in sector 17]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "'Scarcely...when' requires 'when' - a different connector from 'no sooner...than'.",
+            "explanation": "'Scarcely...when' requires 'when'. 'Scarcely had the new director taken office WHEN she faced a crisis' = 'she had barely started the role before a crisis hit'. Key distinction: 'scarcely' pairs with 'when'; 'no sooner' pairs with 'than'. Never swap them."
         },
         {
             "id": "cc_l186_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The sensors were offline ____ the shield was down in sector 17.",
-            "sentence": "The sensors were offline ____ the shield was down in sector 17.",
+            "question": "____ he saw the results did he realise how serious the situation had become.",
+            "sentence": "____ he saw the results did he realise how serious the situation had become.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "nor"
+                "the moment",
+                "no sooner",
+                "scarcely",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add similar negative or neutral facts. (Sector 17 calibration)",
-            "explanation": "'And' adds similar information. [Verified in sector 17]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "only when",
+            "hint": "'Only when' restricts realisation to the single trigger of seeing the results.",
+            "explanation": "'Only when' creates inversion in the main clause. 'Only when he saw the results DID he realise' - the 'did' inversion signals 'only when' at the start. The realisation came ONLY AT the moment of seeing results - not before, not from any other trigger."
         },
         {
             "id": "cc_l186_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The oxygen levels dropped ____ we wore our masks in sector 17.",
-            "sentence": "The oxygen levels dropped ____ we wore our masks in sector 17.",
+            "question": "No sooner had the first snowflakes appeared ____ children rushed to find their sledges.",
+            "sentence": "No sooner had the first snowflakes appeared ____ children rushed to find their sledges.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "when",
+                "than",
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Express action taken as a result. (Sector 17 calibration)",
-            "explanation": "'So' shows result. [Verified in sector 17]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "than",
+            "hint": "'No sooner...than' - 'than' must complete the inverted structure.",
+            "explanation": "'No sooner...than' requires 'than'. 'No sooner had snowflakes appeared THAN children rushed for sledges' = 'the instant the snow started, children responded'. The immediacy and excitement is captured perfectly by 'no sooner...than'."
         },
         {
             "id": "cc_l186_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The map is old ____ it is still accurate in sector 17.",
-            "sentence": "The map is old ____ it is still accurate in sector 17.",
+            "question": "____ the lights dimmed did the audience truly understand what kind of performance awaited them.",
+            "sentence": "____ the lights dimmed did the audience truly understand what kind of performance awaited them.",
             "options": [
-                "but",
-                "so",
-                "or",
-                "for"
+                "the moment",
+                "no sooner",
+                "scarcely",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast age with accuracy. (Sector 17 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 17]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "only when",
+            "hint": "'Only when' restricts the moment of true understanding to when the lights dimmed.",
+            "explanation": "'Only when' creates inversion: 'Only when the lights dimmed DID the audience understand'. The 'did' inversion confirms 'only when' has fronted. Understanding came at ONE specific moment - not before - which 'only when' captures precisely."
         },
         {
             "id": "cc_l187_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must repair the engine ____ we will drift forever in sector 17.",
-            "sentence": "We must repair the engine ____ we will drift forever in sector 17.",
+            "question": "____ the legislation had been passed ____ the affected communities learned of its implications.",
+            "sentence": "____ the legislation had been passed ____ the affected communities learned of its implications.",
             "options": [
-                "or",
-                "and",
-                "yet",
-                "so"
+                "scarcely...when",
+                "the moment...then",
+                "no sooner...than",
+                "only when...did"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Show a consequence of not acting. (Sector 17 calibration)",
-            "explanation": "'Or' presents the alternative outcome. [Verified in sector 17]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "no sooner...than",
+            "hint": "'No sooner...than' creates an inverted structure showing immediate sequential impact.",
+            "explanation": "'No sooner...than' fits this inverted narrative. 'No sooner had the legislation been passed THAN communities learned of its implications' = 'immediately after passing, the impact became clear'. The 'had + past participle' inversion plus 'than' is the defining pattern."
         },
         {
             "id": "cc_l187_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She is a top researcher ____ she lacks field experience in sector 17.",
-            "sentence": "She is a top researcher ____ she lacks field experience in sector 17.",
+            "question": "Scarcely had the economic recovery begun ____ it was derailed by a new global shock.",
+            "sentence": "Scarcely had the economic recovery begun ____ it was derailed by a new global shock.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "than",
+                "as soon as",
+                "when",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast skill with lack of experience. (Sector 17 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 17]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "'Scarcely...when' - 'when' completes the structure, not 'than'.",
+            "explanation": "'Scarcely...when' requires 'when'. 'Scarcely had the recovery begun WHEN it was derailed' = 'the recovery had barely started before a new shock ended it'. The fragility of the recovery is captured by 'scarcely...when'."
         },
         {
             "id": "cc_l187_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We should study the stars ____ they hold many secrets in sector 17.",
-            "sentence": "We should study the stars ____ they hold many secrets in sector 17.",
+            "question": "____ was the presentation over ____ questions poured in from every corner of the room.",
+            "sentence": "____ was the presentation over ____ questions poured in from every corner of the room.",
             "options": [
-                "for",
-                "but",
-                "or",
-                "so"
+                "the moment...the moment",
+                "no sooner...than",
+                "scarcely...when",
+                "only when...did"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "for",
-            "hint": "Provide a reason (archaic/formal FANBOYS). (Sector 17 calibration)",
-            "explanation": "'For' is coordinate reason. [Verified in sector 17]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "no sooner...than",
+            "hint": "'No sooner...than' creates the inverted structure showing immediate audience engagement.",
+            "explanation": "'No sooner...than' requires 'than'. 'No sooner was the presentation over THAN questions poured in' = 'the instant it ended, questions began'. Note: 'no sooner WAS it over' (inversion with 'was') - inversion can use different auxiliaries depending on the verb."
         },
         {
             "id": "cc_l188_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The probe reached Mars ____ it found no liquid water in sector 17.",
-            "sentence": "The probe reached Mars ____ it found no liquid water in sector 17.",
+            "question": "____ all verification steps have been completed will the system grant access.",
+            "sentence": "____ all verification steps have been completed will the system grant access.",
             "options": [
-                "but",
-                "so",
-                "for",
-                "nor"
+                "the moment",
+                "no sooner",
+                "scarcely",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast success with a limitation. (Sector 17 calibration)",
-            "explanation": "'But' introduces contrasting information. [Verified in sector 17]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "only when",
+            "hint": "'Only when' restricts access to the completion of all verification steps.",
+            "explanation": "'Only when' at the start requires inversion in the main clause. 'Only when all steps are completed WILL the system grant access' - 'will' is inverted before the subject. This structure restricts the action (granting access) to one specific required condition (all steps completed)."
         },
         {
             "id": "cc_l188_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The thruster fired perfectly ____ the capsule stabilized in sector 17.",
-            "sentence": "The thruster fired perfectly ____ the capsule stabilized in sector 17.",
+            "question": "No sooner had the concert ended ____ a standing ovation erupted from the entire auditorium.",
+            "sentence": "No sooner had the concert ended ____ a standing ovation erupted from the entire auditorium.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "nor"
+                "when",
+                "than",
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a positive outcome of firing. (Sector 17 calibration)",
-            "explanation": "'And' adds corresponding clauses. [Verified in sector 17]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "than",
+            "hint": "'No sooner...than' - 'than' always completes 'no sooner'.",
+            "explanation": "'No sooner...than' requires 'than'. 'No sooner had the concert ended THAN a standing ovation erupted' = 'the instant the music stopped, the audience rose as one'. The immediacy and drama of the response is perfectly captured by this structure."
         },
         {
             "id": "cc_l188_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They ran out of fuel ____ they landed on an asteroid in sector 17.",
-            "sentence": "They ran out of fuel ____ they landed on an asteroid in sector 17.",
+            "question": "Scarcely had the diplomat left the summit ____ rumours of a breakdown began to circulate.",
+            "sentence": "Scarcely had the diplomat left the summit ____ rumours of a breakdown began to circulate.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "than",
+                "as soon as",
+                "when",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Immediate consequence. (Sector 17 calibration)",
-            "explanation": "'So' shows consequence. [Verified in sector 17]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "'Scarcely...when' - 'when' completes 'scarcely'; 'than' would be incorrect here.",
+            "explanation": "'Scarcely...when' requires 'when'. 'Scarcely had the diplomat left WHEN rumours circulated' = 'barely after leaving, rumours spread'. The combination 'scarcely...when' shows extreme immediacy. Never use 'than' with 'scarcely' - 'than' belongs only with 'no sooner'."
         },
         {
             "id": "cc_l189_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The hull is double-layered ____ it can withstand debris in sector 17.",
-            "sentence": "The hull is double-layered ____ it can withstand debris in sector 17.",
+            "question": "No sooner had the whistleblower's identity been revealed ____ calls for their protection intensified.",
+            "sentence": "No sooner had the whistleblower's identity been revealed ____ calls for their protection intensified.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "when",
+                "than",
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Show a result of the structural design. (Sector 17 calibration)",
-            "explanation": "'So' introduces the consequence. [Verified in sector 17]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "than",
+            "hint": "'No sooner...than' - 'than' must complete the inverted structure.",
+            "explanation": "'No sooner...than' requires 'than'. 'No sooner had the identity been revealed THAN calls for protection came' = 'the instant the identity became known, the calls began'. The structure: 'no sooner had [subject] [past participle] THAN [subject] [past simple]'."
         },
         {
             "id": "cc_l189_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He did not sleep ____ did he leave his post in sector 17.",
-            "sentence": "He did not sleep ____ did he leave his post in sector 17.",
+            "question": "____ the last piece of evidence was presented did the jury's deliberations truly begin.",
+            "sentence": "____ the last piece of evidence was presented did the jury's deliberations truly begin.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "the moment",
+                "no sooner",
+                "scarcely",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Connect negative clauses. (Sector 17 calibration)",
-            "explanation": "'Nor' connects negative independent clauses. [Verified in sector 17]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "only when",
+            "hint": "'Only when' restricts the start of deliberations to the precise moment all evidence was in.",
+            "explanation": "'Only when' creates inversion: 'Only when the last evidence was presented DID deliberations truly begin'. The 'did' inversion signals fronted 'only when'. Deliberations only started in earnest AFTER this one final condition - not before."
         },
         {
             "id": "cc_l189_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She did not speak ____ did she look at him in sector 17.",
-            "sentence": "She did not speak ____ did she look at him in sector 17.",
+            "question": "Scarcely had the terms of the deal been leaked ____ competitors moved swiftly to take advantage.",
+            "sentence": "Scarcely had the terms of the deal been leaked ____ competitors moved swiftly to take advantage.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "than",
+                "as soon as",
+                "when",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Inversion of negative. (Sector 17 calibration)",
-            "explanation": "'Nor' is correct. [Verified in sector 17]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "'Scarcely...when' - 'when' is the required paired word, not 'than'.",
+            "explanation": "'Scarcely...when' requires 'when'. 'Scarcely had terms been leaked WHEN competitors moved' = 'barely after the leak, competitors responded'. 'Scarcely...when' captures the very rapid, almost simultaneous response. Never use 'than' with 'scarcely'."
         },
         {
             "id": "cc_l190_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She was tired from the orbit ____ she kept monitoring in sector 17.",
-            "sentence": "She was tired from the orbit ____ she kept monitoring in sector 17.",
+            "question": "No sooner had the ceasefire been declared ____ violations were reported on both sides.",
+            "sentence": "No sooner had the ceasefire been declared ____ violations were reported on both sides.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "when",
+                "than",
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Contrast exhaustion with continuation. (Sector 17 calibration)",
-            "explanation": "'Yet' expresses concession. [Verified in sector 17]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "than",
+            "hint": "'No sooner...than' - 'than' is the fixed paired word in this inverted structure.",
+            "explanation": "'No sooner...than' requires 'than'. 'No sooner had the ceasefire been declared THAN violations were reported' = 'the ink on the ceasefire was barely dry before violations began'. The tragic immediacy is captured by 'no sooner...than'."
         },
         {
             "id": "cc_l190_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The weather was bad ____ the shuttle landed safely in sector 17.",
-            "sentence": "The weather was bad ____ the shuttle landed safely in sector 17.",
+            "question": "____ had the shareholders' meeting begun ____ a series of damaging questions emerged from the floor.",
+            "sentence": "____ had the shareholders' meeting begun ____ a series of damaging questions emerged from the floor.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "scarcely...when",
+                "the moment...then",
+                "no sooner...than",
+                "only when...did"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Concession or surprise. (Sector 17 calibration)",
-            "explanation": "'Yet' introduces unexpected result. [Verified in sector 17]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "no sooner...than",
+            "hint": "'No sooner...than' creates the inverted structure showing immediate drama at the meeting.",
+            "explanation": "'No sooner...than' fits this inverted narrative. 'No sooner had the meeting begun THAN damaging questions emerged' = 'immediately after the meeting started, difficult questions arose'. The 'no sooner...than' structure creates a sense of immediate, unavoidable confrontation."
         },
         {
             "id": "cc_l190_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The storm was fierce ____ the shields held in sector 17.",
-            "sentence": "The storm was fierce ____ the shields held in sector 17.",
+            "question": "____ the magnitude of the crisis became clear did the government mobilise emergency resources.",
+            "sentence": "____ the magnitude of the crisis became clear did the government mobilise emergency resources.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "the moment",
+                "no sooner",
+                "scarcely",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Unexpected positive result. (Sector 17 calibration)",
-            "explanation": "'Yet' shows contrast. [Verified in sector 17]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "only when",
+            "hint": "'Only when' restricts the government's response to the specific trigger of understanding the scale.",
+            "explanation": "'Only when' creates inversion and restriction. 'Only when the magnitude became clear DID the government mobilise' - the 'did' inversion signals fronted 'only when'. The response came ONLY when this specific trigger occurred, implying a delayed or reluctant response."
         }
     ]
 }

@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l61_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The stars are bright ____ the night is clear in sector 5.",
-            "sentence": "The stars are bright ____ the night is clear in sector 5.",
+            "question": "She burst into tears ____ she heard the wonderful news.",
+            "sentence": "She burst into tears ____ she heard the wonderful news.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "so"
+                "while",
+                "when",
+                "as",
+                "after"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Join two related positive thoughts. (Sector 5 calibration)",
-            "explanation": "'And' connects related independent clauses. [Verified in sector 5]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "when",
+            "hint": "Hearing the news was the specific single moment that triggered the tears.",
+            "explanation": "'When' marks a specific moment that triggers an immediate reaction. The tears came at the exact moment of hearing the news. 'While' would suggest the crying happened over an extended period of listening, which is less precise."
         },
         {
             "id": "cc_l61_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The colony needs food ____ the transport is delayed in sector 5.",
-            "sentence": "The colony needs food ____ the transport is delayed in sector 5.",
+            "question": "He was reading the news on his phone ____ his wife was preparing dinner.",
+            "sentence": "He was reading the news on his phone ____ his wife was preparing dinner.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "when",
+                "before",
+                "while",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast demand with lack of supply. (Sector 5 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 5]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "while",
+            "hint": "Both activities were happening at the same time in the same household.",
+            "explanation": "'While' connects two simultaneous, ongoing activities. He was reading (one ongoing action) while she was preparing dinner (another ongoing action) - both happened over the same period of time."
         },
         {
             "id": "cc_l61_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The scanner detected iron ____ it also found copper in sector 5.",
-            "sentence": "The scanner detected iron ____ it also found copper in sector 5.",
+            "question": "She smiled warmly ____ she walked out onto the stage.",
+            "sentence": "She smiled warmly ____ she walked out onto the stage.",
             "options": [
-                "and",
-                "but",
-                "so",
-                "nor"
+                "when",
+                "before",
+                "while",
+                "as"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a similar metal type. (Sector 5 calibration)",
-            "explanation": "'And' is additive. [Verified in sector 5]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "as",
+            "hint": "The smile and the walking happened at the very same instant.",
+            "explanation": "'As' is used for two actions that happen at precisely the same moment - especially brief, simultaneous actions. 'As she walked onto the stage' captures the exact simultaneity of the smile and the movement."
         },
         {
             "id": "cc_l62_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We wanted to launch ____ the fuel was low in sector 5.",
-            "sentence": "We wanted to launch ____ the fuel was low in sector 5.",
+            "question": "____ he waited for his connecting flight, he read a few pages of his novel.",
+            "sentence": "____ he waited for his connecting flight, he read a few pages of his novel.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "while",
+                "when",
+                "as",
+                "after"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Show a contrast or obstacle. (Sector 5 calibration)",
-            "explanation": "'But' shows contrast between two clauses. [Verified in sector 5]."
+            "correctAnswer": "while",
+            "hint": "Both the waiting and the reading happened during the same period.",
+            "explanation": "'While' shows two simultaneous activities happening over the same period. The waiting (background condition) and the reading (foreground activity) both happened during the same stretch of time at the airport."
         },
         {
             "id": "cc_l62_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The main grid went dark ____ we flipped the auxiliary switch in sector 5.",
-            "sentence": "The main grid went dark ____ we flipped the auxiliary switch in sector 5.",
+            "question": "He always shakes hands formally ____ he meets a new business contact.",
+            "sentence": "He always shakes hands formally ____ he meets a new business contact.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "nor"
+                "while",
+                "when",
+                "as",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Cause and immediate action. (Sector 5 calibration)",
-            "explanation": "'So' shows cause-effect relationship. [Verified in sector 5]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "when",
+            "hint": "Meeting a new contact is the regular trigger for a handshake.",
+            "explanation": "'When' describes a habitual action triggered by a specific event. Every time he meets someone new (trigger), he shakes hands (response). This happens consistently - 'while' would suggest the handshake is ongoing."
         },
         {
             "id": "cc_l62_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We can orbit the moon ____ we can land on the plain in sector 5.",
-            "sentence": "We can orbit the moon ____ we can land on the plain in sector 5.",
+            "question": "Please do exactly ____ the instructions say and don't try to improvise.",
+            "sentence": "Please do exactly ____ the instructions say and don't try to improvise.",
             "options": [
-                "or",
-                "but",
-                "yet",
-                "for"
+                "when",
+                "before",
+                "as",
+                "if"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Two choices. (Sector 5 calibration)",
-            "explanation": "'Or' expresses alternative choice. [Verified in sector 5]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as",
+            "hint": "Following instructions means doing things in the way they say to do them.",
+            "explanation": "'As' here expresses manner - 'the way that'. 'Do exactly as the instructions say' means 'do it in exactly the way that the instructions describe'. This is a distinct use of 'as' separate from time or cause."
         },
         {
             "id": "cc_l63_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You can adjust the valves ____ you can let the core vent in sector 5.",
-            "sentence": "You can adjust the valves ____ you can let the core vent in sector 5.",
+            "question": "The whole audience fell silent ____ the conductor raised the baton.",
+            "sentence": "The whole audience fell silent ____ the conductor raised the baton.",
             "options": [
-                "or",
-                "but",
-                "and",
-                "for"
+                "as",
+                "while",
+                "before",
+                "after"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Present two alternative actions. (Sector 5 calibration)",
-            "explanation": "'Or' presents choices or alternatives. [Verified in sector 5]."
+            "correctAnswer": "as",
+            "hint": "The silence and the raising of the baton happened at the same precise moment.",
+            "explanation": "'As' captures simultaneous action with great precision. The moment the baton went up (trigger), the silence fell (response) - both happened at the exact same instant. 'When' is also possible but 'as' conveys the immediacy more vividly."
         },
         {
             "id": "cc_l63_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They must secure the dome ____ the oxygen will escape in sector 5.",
-            "sentence": "They must secure the dome ____ the oxygen will escape in sector 5.",
+            "question": "Everyone in the room turned to look at him ____ he walked in late.",
+            "sentence": "Everyone in the room turned to look at him ____ he walked in late.",
             "options": [
-                "or",
-                "but",
-                "so",
-                "yet"
+                "while",
+                "when",
+                "as",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Express alternative danger. (Sector 5 calibration)",
-            "explanation": "'Or' shows alternative consequence. [Verified in sector 5]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "when",
+            "hint": "His arrival was the specific moment that caused everyone to look.",
+            "explanation": "'When' marks the specific moment that triggered the response. The moment he walked in (trigger), everyone looked (reaction). 'While' would imply looking happened during an extended period of walking in."
         },
         {
             "id": "cc_l63_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crew worked hard ____ they completed the bridge in sector 5.",
-            "sentence": "The crew worked hard ____ they completed the bridge in sector 5.",
+            "question": "She became more and more confident ____ she gained more experience in the role.",
+            "sentence": "She became more and more confident ____ she gained more experience in the role.",
             "options": [
-                "so",
-                "but",
-                "nor",
-                "yet"
+                "when",
+                "as",
+                "while",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Result of working hard. (Sector 5 calibration)",
-            "explanation": "'So' shows result. [Verified in sector 5]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "as",
+            "hint": "Confidence grew in proportion to experience - both developed together over time.",
+            "explanation": "'As' expresses parallel development or gradual change. 'As she gained experience' means her confidence grew proportionally at the same rate as her experience - a continuous, parallel process."
         },
         {
             "id": "cc_l64_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The reactor overheated ____ the alarm sounded in sector 5.",
-            "sentence": "The reactor overheated ____ the alarm sounded in sector 5.",
+            "question": "He was daydreaming about his holiday ____ the teacher was explaining the exercise.",
+            "sentence": "He was daydreaming about his holiday ____ the teacher was explaining the exercise.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "nor"
+                "when",
+                "before",
+                "while",
+                "after"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Show a cause-and-effect relationship. (Sector 5 calibration)",
-            "explanation": "'So' connects cause to effect. [Verified in sector 5]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "while",
+            "hint": "Daydreaming and the teacher explaining were two simultaneous activities.",
+            "explanation": "'While' connects two activities happening at the same time. He was daydreaming (his mental activity) while the teacher was explaining (the classroom activity) - both were ongoing at the same moment."
         },
         {
             "id": "cc_l64_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The explorer found ruins ____ he took several scans in sector 5.",
-            "sentence": "The explorer found ruins ____ he took several scans in sector 5.",
+            "question": "She knocked the glass off the desk ____ she stood up too quickly.",
+            "sentence": "She knocked the glass off the desk ____ she stood up too quickly.",
             "options": [
-                "and",
-                "but",
-                "nor",
-                "for"
+                "while",
+                "before",
+                "as",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a natural subsequent action. (Sector 5 calibration)",
-            "explanation": "'And' adds subsequent details. [Verified in sector 5]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "when",
+            "hint": "Standing up too quickly was the single triggering moment for the accident.",
+            "explanation": "'When' marks the specific moment that caused the accident. The glass was knocked off at the exact moment she stood up quickly. 'While' would suggest the knocking happened over an extended period."
         },
         {
             "id": "cc_l64_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The target was far ____ the sniper hit it in sector 5.",
-            "sentence": "The target was far ____ the sniper hit it in sector 5.",
+            "question": "He grew more and more irritated ____ the long delay dragged on.",
+            "sentence": "He grew more and more irritated ____ the long delay dragged on.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "nor"
+                "as",
+                "when",
+                "while",
+                "before"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Concession. (Sector 5 calibration)",
-            "explanation": "'Yet' shows contrast. [Verified in sector 5]."
+            "correctAnswer": "as",
+            "hint": "Irritation grew gradually in proportion to the length of the delay.",
+            "explanation": "'As' shows gradual, parallel change. His irritation increased proportionally as the delay got longer - both developed together. 'While' is also possible here but 'as' better captures the proportional growth."
         },
         {
             "id": "cc_l65_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He checked the data thrice ____ he still missed the error in sector 5.",
-            "sentence": "He checked the data thrice ____ he still missed the error in sector 5.",
+            "question": "She felt a huge wave of relief ____ she saw her name on the pass list.",
+            "sentence": "She felt a huge wave of relief ____ she saw her name on the pass list.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "while",
+                "when",
+                "as",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Express an unexpected contrast. (Sector 5 calibration)",
-            "explanation": "'Yet' shows concession or unexpected contrast. [Verified in sector 5]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "when",
+            "hint": "Seeing her name was the specific moment that triggered the relief.",
+            "explanation": "'When' marks the specific moment that caused an emotional reaction. The relief came at the exact moment of seeing her name. 'As' could also work, but 'when' is more natural for a single discrete moment."
         },
         {
             "id": "cc_l65_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We didn't see the asteroid ____ did we hear the impact in sector 5.",
-            "sentence": "We didn't see the asteroid ____ did we hear the impact in sector 5.",
+            "question": "The family dog stretched and yawned ____ everyone was out at work.",
+            "sentence": "The family dog stretched and yawned ____ everyone was out at work.",
             "options": [
-                "nor",
-                "yet",
-                "so",
-                "but"
+                "when",
+                "before",
+                "while",
+                "after"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Negative connection requiring subject-auxiliary inversion. (Sector 5 calibration)",
-            "explanation": "'Nor' is used for negative addition with inversion. [Verified in sector 5]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "while",
+            "hint": "The stretching and the family being out both happened during the same period.",
+            "explanation": "'While' shows a background condition (family being at work) during which a foreground action (dog stretching) occurred. Both happened over the same time period during the day."
         },
         {
             "id": "cc_l65_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was not hungry ____ was he thirsty in sector 5.",
-            "sentence": "He was not hungry ____ was he thirsty in sector 5.",
+            "question": "He checked his messages ____ he was waiting in the queue at the bank.",
+            "sentence": "He checked his messages ____ he was waiting in the queue at the bank.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "when",
+                "before",
+                "as",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Add negative condition. (Sector 5 calibration)",
-            "explanation": "'Nor' requires inversion. [Verified in sector 5]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "while",
+            "hint": "Checking messages and queuing were simultaneous activities.",
+            "explanation": "'While' connects two simultaneous activities. He used his phone (active choice) while he was in the queue (background condition) - both happened during the same period of waiting."
         },
         {
             "id": "cc_l66_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The sensors were offline ____ the shield was down in sector 5.",
-            "sentence": "The sensors were offline ____ the shield was down in sector 5.",
+            "question": "____ the pianist began to play, the entire audience fell completely silent.",
+            "sentence": "____ the pianist began to play, the entire audience fell completely silent.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "nor"
+                "as",
+                "while",
+                "before",
+                "after"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add similar negative or neutral facts. (Sector 5 calibration)",
-            "explanation": "'And' adds similar information. [Verified in sector 5]."
+            "correctAnswer": "as",
+            "hint": "The pianist starting and the silence falling happened at the very same instant.",
+            "explanation": "'As' introduces perfect simultaneity at the beginning of a sentence. The moment the pianist started (trigger), silence fell (immediate response) - 'as' shows both happened at precisely the same instant."
         },
         {
             "id": "cc_l66_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The oxygen levels dropped ____ we wore our masks in sector 5.",
-            "sentence": "The oxygen levels dropped ____ we wore our masks in sector 5.",
+            "question": "Everyone in the café looked up ____ she walked through the door.",
+            "sentence": "Everyone in the café looked up ____ she walked through the door.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "while",
+                "when",
+                "as",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Express action taken as a result. (Sector 5 calibration)",
-            "explanation": "'So' shows result. [Verified in sector 5]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "when",
+            "hint": "Her entry through the door was the single moment that caused everyone to look.",
+            "explanation": "'When' marks the specific triggering moment. The moment she walked in (trigger), everyone looked up (response). 'As' would be equally correct, but 'when' is more common in everyday usage."
         },
         {
             "id": "cc_l66_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The map is old ____ it is still accurate in sector 5.",
-            "sentence": "The map is old ____ it is still accurate in sector 5.",
+            "question": "She kept her sunglasses on ____ she sat at the outdoor café.",
+            "sentence": "She kept her sunglasses on ____ she sat at the outdoor café.",
             "options": [
-                "but",
-                "so",
-                "or",
-                "for"
+                "when",
+                "before",
+                "while",
+                "after"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast age with accuracy. (Sector 5 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 5]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "while",
+            "hint": "The sunglasses were on for the whole time she was sitting at the café.",
+            "explanation": "'While' shows a state maintained for the duration of an activity. She wore the sunglasses throughout the time she was at the café - 'while' connects the ongoing state (sunglasses on) with the ongoing activity (sitting at the café)."
         },
         {
             "id": "cc_l67_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must repair the engine ____ we will drift forever in sector 5.",
-            "sentence": "We must repair the engine ____ we will drift forever in sector 5.",
+            "question": "He dropped everything and rushed to hospital ____ he heard about the accident.",
+            "sentence": "He dropped everything and rushed to hospital ____ he heard about the accident.",
             "options": [
-                "or",
-                "and",
-                "yet",
-                "so"
+                "while",
+                "before",
+                "as",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Show a consequence of not acting. (Sector 5 calibration)",
-            "explanation": "'Or' presents the alternative outcome. [Verified in sector 5]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "when",
+            "hint": "Hearing about the accident was the precise moment that triggered the rush.",
+            "explanation": "'When' marks the specific moment that caused an immediate, urgent reaction. The moment he heard the news (trigger), he rushed to hospital (response). 'As' would also work, but 'when' is more natural for a sudden reaction."
         },
         {
             "id": "cc_l67_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She is a top researcher ____ she lacks field experience in sector 5.",
-            "sentence": "She is a top researcher ____ she lacks field experience in sector 5.",
+            "question": "The birds began to sing ____ the first light of dawn appeared on the horizon.",
+            "sentence": "The birds began to sing ____ the first light of dawn appeared on the horizon.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "as",
+                "while",
+                "before",
+                "when"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast skill with lack of experience. (Sector 5 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 5]."
+            "correctAnswer": "as",
+            "hint": "The birdsong and the first light appeared at the very same instant.",
+            "explanation": "'As' captures the perfect simultaneity of two natural events. The birds sang at the exact moment the dawn light appeared - both happened simultaneously. 'When' is also possible, but 'as' is preferred for natural, simultaneous events."
         },
         {
             "id": "cc_l67_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We should study the stars ____ they hold many secrets in sector 5.",
-            "sentence": "We should study the stars ____ they hold many secrets in sector 5.",
+            "question": "She was very careful not to make any noise ____ the baby was sleeping.",
+            "sentence": "She was very careful not to make any noise ____ the baby was sleeping.",
             "options": [
-                "for",
-                "but",
-                "or",
-                "so"
+                "when",
+                "while",
+                "before",
+                "as"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "for",
-            "hint": "Provide a reason (archaic/formal FANBOYS). (Sector 5 calibration)",
-            "explanation": "'For' is coordinate reason. [Verified in sector 5]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "She was careful throughout the whole period of the baby's sleep.",
+            "explanation": "'While' shows a state maintained for the duration of another ongoing event. She was careful (continuous behaviour) during the whole time the baby was sleeping (background condition)."
         },
         {
             "id": "cc_l68_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The probe reached Mars ____ it found no liquid water in sector 5.",
-            "sentence": "The probe reached Mars ____ it found no liquid water in sector 5.",
+            "question": "She automatically checks her social media ____ she sits on the bus.",
+            "sentence": "She automatically checks her social media ____ she sits on the bus.",
             "options": [
-                "but",
-                "so",
-                "for",
-                "nor"
+                "while",
+                "before",
+                "when",
+                "as"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast success with a limitation. (Sector 5 calibration)",
-            "explanation": "'But' introduces contrasting information. [Verified in sector 5]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "Sitting on the bus is the regular trigger for checking social media.",
+            "explanation": "'When' describes a habitual action triggered by a regular situation. Every time she sits on the bus (trigger), she checks social media (habitual response). This is a consistent pattern."
         },
         {
             "id": "cc_l68_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The thruster fired perfectly ____ the capsule stabilized in sector 5.",
-            "sentence": "The thruster fired perfectly ____ the capsule stabilized in sector 5.",
+            "question": "He memorised his presentation notes ____ he was commuting to work.",
+            "sentence": "He memorised his presentation notes ____ he was commuting to work.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "nor"
+                "when",
+                "as",
+                "before",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a positive outcome of firing. (Sector 5 calibration)",
-            "explanation": "'And' adds corresponding clauses. [Verified in sector 5]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "while",
+            "hint": "Memorising and commuting were simultaneous activities during the journey.",
+            "explanation": "'While' connects two simultaneous activities. He studied his notes (active task) while commuting (background activity) - both happened during the same journey to work."
         },
         {
             "id": "cc_l68_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They ran out of fuel ____ they landed on an asteroid in sector 5.",
-            "sentence": "They ran out of fuel ____ they landed on an asteroid in sector 5.",
+            "question": "She paused for a moment ____ she chose her words very carefully.",
+            "sentence": "She paused for a moment ____ she chose her words very carefully.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "as",
+                "when",
+                "while",
+                "before"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Immediate consequence. (Sector 5 calibration)",
-            "explanation": "'So' shows consequence. [Verified in sector 5]."
+            "correctAnswer": "as",
+            "hint": "The pause and the careful thinking happened at the very same time.",
+            "explanation": "'As' shows two simultaneous brief actions. The pause (physical action) happened at the same time as the careful thinking (mental action) - 'as' captures the perfect simultaneity of both."
         },
         {
             "id": "cc_l69_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The hull is double-layered ____ it can withstand debris in sector 5.",
-            "sentence": "The hull is double-layered ____ it can withstand debris in sector 5.",
+            "question": "The kettle automatically switches itself off ____ the water reaches boiling point.",
+            "sentence": "The kettle automatically switches itself off ____ the water reaches boiling point.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "while",
+                "when",
+                "as",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Show a result of the structural design. (Sector 5 calibration)",
-            "explanation": "'So' introduces the consequence. [Verified in sector 5]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "when",
+            "hint": "Reaching boiling point is the precise technical trigger for switching off.",
+            "explanation": "'When' marks the specific condition that triggers the automatic response. The kettle switches off at the exact moment the water boils (trigger). This is a mechanical reaction to a specific temperature threshold."
         },
         {
             "id": "cc_l69_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He did not sleep ____ did he leave his post in sector 5.",
-            "sentence": "He did not sleep ____ did he leave his post in sector 5.",
+            "question": "She picked up a magazine ____ she waited to see the dentist.",
+            "sentence": "She picked up a magazine ____ she waited to see the dentist.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "when",
+                "before",
+                "while",
+                "after"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Connect negative clauses. (Sector 5 calibration)",
-            "explanation": "'Nor' connects negative independent clauses. [Verified in sector 5]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "while",
+            "hint": "Reading the magazine and waiting happened at the same time.",
+            "explanation": "'While' connects two simultaneous activities. She read the magazine (foreground activity) during the same time she was waiting (background condition) - both happened in the waiting room."
         },
         {
             "id": "cc_l69_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She did not speak ____ did she look at him in sector 5.",
-            "sentence": "She did not speak ____ did she look at him in sector 5.",
+            "question": "He improved steadily and consistently ____ he practised more and more.",
+            "sentence": "He improved steadily and consistently ____ he practised more and more.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "when",
+                "while",
+                "before",
+                "as"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Inversion of negative. (Sector 5 calibration)",
-            "explanation": "'Nor' is correct. [Verified in sector 5]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "as",
+            "hint": "Improvement grew in direct proportion to practice - both developed together.",
+            "explanation": "'As' expresses parallel, proportional development. His improvement grew at the same rate as his practice - 'as he practised more' shows the two things increased together. This is the parallel-development use of 'as'."
         },
         {
             "id": "cc_l70_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She was tired from the orbit ____ she kept monitoring in sector 5.",
-            "sentence": "She was tired from the orbit ____ she kept monitoring in sector 5.",
+            "question": "____ some people prefer quiet evenings at home, others love going out every night.",
+            "sentence": "____ some people prefer quiet evenings at home, others love going out every night.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "while",
+                "when",
+                "as",
+                "because"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Contrast exhaustion with continuation. (Sector 5 calibration)",
-            "explanation": "'Yet' expresses concession. [Verified in sector 5]."
+            "correctAnswer": "while",
+            "hint": "Two contrasting preferences are being compared - this 'while' is used for contrast.",
+            "explanation": "'While' can express formal contrast between two different situations or groups, similar to 'whereas'. Here it contrasts two lifestyle preferences. This is different from the temporal use of 'while' - this 'while' means 'on the other hand'."
         },
         {
             "id": "cc_l70_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The weather was bad ____ the shuttle landed safely in sector 5.",
-            "sentence": "The weather was bad ____ the shuttle landed safely in sector 5.",
+            "question": "She always double-checks her bag ____ she leaves the house.",
+            "sentence": "She always double-checks her bag ____ she leaves the house.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "while",
+                "when",
+                "as",
+                "before"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Concession or surprise. (Sector 5 calibration)",
-            "explanation": "'Yet' introduces unexpected result. [Verified in sector 5]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "when",
+            "hint": "Leaving the house is the regular trigger for checking her bag.",
+            "explanation": "'When' describes a habitual sequence. Every time she leaves the house (trigger), she checks her bag (habit). 'Before' would also work here, but 'when' is equally natural for a habitual routine."
         },
         {
             "id": "cc_l70_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The storm was fierce ____ the shields held in sector 5.",
-            "sentence": "The storm was fierce ____ the shields held in sector 5.",
+            "question": "He quietly slipped out of the building ____ the meeting was still going on.",
+            "sentence": "He quietly slipped out of the building ____ the meeting was still going on.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "when",
+                "before",
+                "as",
+                "because"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Unexpected positive result. (Sector 5 calibration)",
-            "explanation": "'Yet' shows contrast. [Verified in sector 5]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as",
+            "hint": "Slipping out and the meeting continuing were simultaneous - he left during it.",
+            "explanation": "'As' shows the two things happening at the same time, with one providing the background for the other. He left (foreground action) while the meeting continued (background condition) - 'as' captures this perfectly."
         }
     ]
 }

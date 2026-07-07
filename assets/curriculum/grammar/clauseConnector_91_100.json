@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l91_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The stars are bright ____ the night is clear in sector 8.",
-            "sentence": "The stars are bright ____ the night is clear in sector 8.",
+            "question": "She went to the office ____ she was running a high temperature.",
+            "sentence": "She went to the office ____ she was running a high temperature.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "so"
+                "even if",
+                "even though",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Join two related positive thoughts. (Sector 8 calibration)",
-            "explanation": "'And' connects related independent clauses. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "She actually had a high temperature - this is a real fact, not a hypothesis.",
+            "explanation": "'Even though' is used when the concessive fact is REAL and true. She WAS running a temperature (real fact) - yet she went to work. 'Even if' would imply the temperature is hypothetical. 'Even though' = 'despite the fact that'."
         },
         {
             "id": "cc_l91_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The colony needs food ____ the transport is delayed in sector 8.",
-            "sentence": "The colony needs food ____ the transport is delayed in sector 8.",
+            "question": "____ you practise every single day, reaching professional level still takes years.",
+            "sentence": "____ you practise every single day, reaching professional level still takes years.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "even though",
+                "even if",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast demand with lack of supply. (Sector 8 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even if",
+            "hint": "Daily practice is a possible condition - the outcome is still long-term.",
+            "explanation": "'Even if' is used for a hypothetical or general condition. 'Even if you practise daily' means 'regardless of whether or not you do' - it doesn't confirm that you do practise. 'Even though' would mean you definitely practise daily."
         },
         {
             "id": "cc_l91_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The scanner detected iron ____ it also found copper in sector 8.",
-            "sentence": "The scanner detected iron ____ it also found copper in sector 8.",
+            "question": "He refused to apologise ____ he knew he was in the wrong.",
+            "sentence": "He refused to apologise ____ he knew he was in the wrong.",
             "options": [
-                "and",
-                "but",
-                "so",
-                "nor"
+                "even if",
+                "even though",
+                "although",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a similar metal type. (Sector 8 calibration)",
-            "explanation": "'And' is additive. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "Knowing he was wrong is a real fact - he genuinely knew it.",
+            "explanation": "'Even though' is used when the concessive clause states a real, confirmed fact. He definitely knew he was wrong (real fact) - yet he still refused to apologise. 'Even if' would imply uncertainty about whether he knew."
         },
         {
             "id": "cc_l92_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We wanted to launch ____ the fuel was low in sector 8.",
-            "sentence": "We wanted to launch ____ the fuel was low in sector 8.",
+            "question": "____ the weather is perfect on the day, we will still hold the event indoors.",
+            "sentence": "____ the weather is perfect on the day, we will still hold the event indoors.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "even though",
+                "even if",
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Show a contrast or obstacle. (Sector 8 calibration)",
-            "explanation": "'But' shows contrast between two clauses. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even if",
+            "hint": "Perfect weather on the day is uncertain - it hasn't happened yet.",
+            "explanation": "'Even if' introduces a hypothetical condition. Whether or not the weather is perfect (uncertain future possibility), the decision is already made - the event will be indoors regardless. 'Even though' would mean the weather is definitely perfect."
         },
         {
             "id": "cc_l92_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The main grid went dark ____ we flipped the auxiliary switch in sector 8.",
-            "sentence": "The main grid went dark ____ we flipped the auxiliary switch in sector 8.",
+            "question": "She completed the charity run ____ her knee was causing her serious pain.",
+            "sentence": "She completed the charity run ____ her knee was causing her serious pain.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "nor"
+                "even if",
+                "even though",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Cause and immediate action. (Sector 8 calibration)",
-            "explanation": "'So' shows cause-effect relationship. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "Her knee pain was real and happening - she ran despite it.",
+            "explanation": "'Even though' is used for real, confirmed facts. Her knee was genuinely painful (real fact) - she ran despite it. 'Even if' would suggest the pain was uncertain or hypothetical, which contradicts the clear factual statement."
         },
         {
             "id": "cc_l92_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We can orbit the moon ____ we can land on the plain in sector 8.",
-            "sentence": "We can orbit the moon ____ we can land on the plain in sector 8.",
+            "question": "____ I offered to double his salary, he said he would never return to that company.",
+            "sentence": "____ I offered to double his salary, he said he would never return to that company.",
             "options": [
-                "or",
-                "but",
-                "yet",
-                "for"
+                "even though",
+                "even if",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Two choices. (Sector 8 calibration)",
-            "explanation": "'Or' expresses alternative choice. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even if",
+            "hint": "Doubling his salary is a hypothetical offer - it hasn't actually happened.",
+            "explanation": "'Even if' introduces a hypothetical scenario. The doubled salary is a conditional offer being imagined - 'even if I offered' means 'regardless of whether I did or didn't offer'. 'Even though' would mean the offer has actually been made."
         },
         {
             "id": "cc_l93_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You can adjust the valves ____ you can let the core vent in sector 8.",
-            "sentence": "You can adjust the valves ____ you can let the core vent in sector 8.",
+            "question": "She keeps a positive attitude ____ things are going badly around her.",
+            "sentence": "She keeps a positive attitude ____ things are going badly around her.",
             "options": [
-                "or",
-                "but",
-                "and",
-                "for"
+                "even if",
+                "even though",
+                "although",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Present two alternative actions. (Sector 8 calibration)",
-            "explanation": "'Or' presents choices or alternatives. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "Things going badly is a real, ongoing situation - it's actually happening.",
+            "explanation": "'Even though' is used for a real, ongoing fact. Things ARE going badly (confirmed reality) - yet she maintains her positive attitude. 'Even if' would suggest things going badly is merely a possibility, not confirmed."
         },
         {
             "id": "cc_l93_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They must secure the dome ____ the oxygen will escape in sector 8.",
-            "sentence": "They must secure the dome ____ the oxygen will escape in sector 8.",
+            "question": "____ you disagree with the final decision, you must still follow the agreed process.",
+            "sentence": "____ you disagree with the final decision, you must still follow the agreed process.",
             "options": [
-                "or",
-                "but",
-                "so",
-                "yet"
+                "even though",
+                "even if",
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Express alternative danger. (Sector 8 calibration)",
-            "explanation": "'Or' shows alternative consequence. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even if",
+            "hint": "Disagreement here is a general possibility, not a confirmed fact.",
+            "explanation": "'Even if' addresses a hypothetical situation. 'Even if you disagree' means 'regardless of whether you agree or not' - it doesn't assume disagreement is certain. 'Even though' would imply you definitely disagree."
         },
         {
             "id": "cc_l93_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crew worked hard ____ they completed the bridge in sector 8.",
-            "sentence": "The crew worked hard ____ they completed the bridge in sector 8.",
+            "question": "She admitted her mistake openly ____ it was embarrassing to do so.",
+            "sentence": "She admitted her mistake openly ____ it was embarrassing to do so.",
             "options": [
-                "so",
-                "but",
-                "nor",
-                "yet"
+                "even if",
+                "even though",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Result of working hard. (Sector 8 calibration)",
-            "explanation": "'So' shows result. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "The embarrassment was real - she genuinely found it embarrassing.",
+            "explanation": "'Even though' is used when the concessive fact is real and confirmed. The embarrassment was genuine (real fact) - yet she admitted the mistake openly. This shows courage despite a real emotional difficulty."
         },
         {
             "id": "cc_l94_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The reactor overheated ____ the alarm sounded in sector 8.",
-            "sentence": "The reactor overheated ____ the alarm sounded in sector 8.",
+            "question": "____ he had barely any sleep the night before, he delivered a brilliant presentation.",
+            "sentence": "____ he had barely any sleep the night before, he delivered a brilliant presentation.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "nor"
+                "even if",
+                "even though",
+                "although",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Show a cause-and-effect relationship. (Sector 8 calibration)",
-            "explanation": "'So' connects cause to effect. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "He actually had very little sleep - this is a confirmed real fact.",
+            "explanation": "'Even though' introduces a real, factual concession. He definitely had very little sleep (confirmed real fact) - yet he still delivered brilliantly. 'Even if' would suggest the sleep deprivation is uncertain."
         },
         {
             "id": "cc_l94_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The explorer found ruins ____ he took several scans in sector 8.",
-            "sentence": "The explorer found ruins ____ he took several scans in sector 8.",
+            "question": "____ the negotiations fail completely, we have a contingency plan ready.",
+            "sentence": "____ the negotiations fail completely, we have a contingency plan ready.",
             "options": [
-                "and",
-                "but",
-                "nor",
-                "for"
+                "even though",
+                "even if",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a natural subsequent action. (Sector 8 calibration)",
-            "explanation": "'And' adds subsequent details. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even if",
+            "hint": "The negotiations failing is a possible future scenario, not a confirmed fact.",
+            "explanation": "'Even if' introduces a hypothetical, possible future scenario. The negotiations might fail (possible, not confirmed) - but we are prepared either way. 'Even though' would mean the negotiations have already failed."
         },
         {
             "id": "cc_l94_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The target was far ____ the sniper hit it in sector 8.",
-            "sentence": "The target was far ____ the sniper hit it in sector 8.",
+            "question": "The volunteers kept working through the night ____ they were completely exhausted.",
+            "sentence": "The volunteers kept working through the night ____ they were completely exhausted.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "nor"
+                "even if",
+                "even though",
+                "although",
+                "until"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Concession. (Sector 8 calibration)",
-            "explanation": "'Yet' shows contrast. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "Their exhaustion was real - they were genuinely and completely exhausted.",
+            "explanation": "'Even though' is used for a real, confirmed state. They WERE exhausted (real, confirmed) - yet they continued working. This emphasises their dedication despite a genuine physical limitation."
         },
         {
             "id": "cc_l95_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He checked the data thrice ____ he still missed the error in sector 8.",
-            "sentence": "He checked the data thrice ____ he still missed the error in sector 8.",
+            "question": "____ it costs ten times the price, I would still choose the handmade version.",
+            "sentence": "____ it costs ten times the price, I would still choose the handmade version.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "even though",
+                "even if",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Express an unexpected contrast. (Sector 8 calibration)",
-            "explanation": "'Yet' shows concession or unexpected contrast. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even if",
+            "hint": "Ten times the price is a hypothetical scenario - it hasn't necessarily happened.",
+            "explanation": "'Even if' introduces a hypothetical comparison. The tenfold price difference is a scenario being imagined - 'even if it costs ten times more' means 'regardless of the price difference'. 'Even though' would mean this price difference is confirmed."
         },
         {
             "id": "cc_l95_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We didn't see the asteroid ____ did we hear the impact in sector 8.",
-            "sentence": "We didn't see the asteroid ____ did we hear the impact in sector 8.",
+            "question": "She turned down the job offer ____ the salary was extremely generous.",
+            "sentence": "She turned down the job offer ____ the salary was extremely generous.",
             "options": [
-                "nor",
-                "yet",
-                "so",
-                "but"
+                "even if",
+                "even though",
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Negative connection requiring subject-auxiliary inversion. (Sector 8 calibration)",
-            "explanation": "'Nor' is used for negative addition with inversion. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "The generous salary was real - it was a genuine, confirmed offer.",
+            "explanation": "'Even though' is used when the concessive fact is real. The generous salary WAS offered (confirmed fact) - yet she turned it down. This shows the decision was not made for financial reasons."
         },
         {
             "id": "cc_l95_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was not hungry ____ was he thirsty in sector 8.",
-            "sentence": "He was not hungry ____ was he thirsty in sector 8.",
+            "question": "____ the symptoms are mild at first, you should still seek medical advice.",
+            "sentence": "____ the symptoms are mild at first, you should still seek medical advice.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "even though",
+                "even if",
+                "although",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Add negative condition. (Sector 8 calibration)",
-            "explanation": "'Nor' requires inversion. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even if",
+            "hint": "Mild symptoms are a possible condition, not a confirmed fact about this person.",
+            "explanation": "'Even if' addresses a general, possible condition. 'Even if the symptoms are mild' means 'regardless of how mild or severe' - it's advice for all cases. 'Even though' would assume the symptoms are definitely mild."
         },
         {
             "id": "cc_l96_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The sensors were offline ____ the shield was down in sector 8.",
-            "sentence": "The sensors were offline ____ the shield was down in sector 8.",
+            "question": "She maintained her exercise routine ____ she was recovering from surgery.",
+            "sentence": "She maintained her exercise routine ____ she was recovering from surgery.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "nor"
+                "even if",
+                "even though",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add similar negative or neutral facts. (Sector 8 calibration)",
-            "explanation": "'And' adds similar information. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "She was genuinely recovering from surgery - this is a real, confirmed medical fact.",
+            "explanation": "'Even though' is used for confirmed, real facts. She WAS recovering (real, confirmed) - yet she kept exercising. 'Even if' would suggest the surgery is hypothetical. 'Even though' shows she exercised despite a real physical constraint."
         },
         {
             "id": "cc_l96_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The oxygen levels dropped ____ we wore our masks in sector 8.",
-            "sentence": "The oxygen levels dropped ____ we wore our masks in sector 8.",
+            "question": "____ you find the work challenging at first, keep going - it gets easier.",
+            "sentence": "____ you find the work challenging at first, keep going - it gets easier.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "even though",
+                "even if",
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Express action taken as a result. (Sector 8 calibration)",
-            "explanation": "'So' shows result. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even if",
+            "hint": "Finding it challenging is a possible experience - not confirmed to be true for this person.",
+            "explanation": "'Even if' addresses a hypothetical possibility. 'Even if you find it challenging' means 'regardless of whether you do or don't find it hard' - it gives encouragement for all cases. 'Even though' would assume difficulty is confirmed."
         },
         {
             "id": "cc_l96_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The map is old ____ it is still accurate in sector 8.",
-            "sentence": "The map is old ____ it is still accurate in sector 8.",
+            "question": "He chose to stay in the small village ____ the city offered far more opportunities.",
+            "sentence": "He chose to stay in the small village ____ the city offered far more opportunities.",
             "options": [
-                "but",
-                "so",
-                "or",
-                "for"
+                "even if",
+                "even though",
+                "although",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast age with accuracy. (Sector 8 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "The city's better opportunities are a real, confirmed fact, not a hypothesis.",
+            "explanation": "'Even though' is used for a real, confirmed situation. The city's superior opportunities ARE real (confirmed fact) - yet he chose the village. 'Even if' would imply the opportunities are uncertain."
         },
         {
             "id": "cc_l97_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must repair the engine ____ we will drift forever in sector 8.",
-            "sentence": "We must repair the engine ____ we will drift forever in sector 8.",
+            "question": "____ the price drops significantly, I don't think many people will buy it.",
+            "sentence": "____ the price drops significantly, I don't think many people will buy it.",
             "options": [
-                "or",
-                "and",
-                "yet",
-                "so"
+                "even though",
+                "even if",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Show a consequence of not acting. (Sector 8 calibration)",
-            "explanation": "'Or' presents the alternative outcome. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even if",
+            "hint": "A price drop is a possible future scenario - it hasn't happened yet.",
+            "explanation": "'Even if' introduces a hypothetical future scenario. The price drop is a condition being imagined - 'even if it drops' means 'even in that case, the sales would still be low'. 'Even though' would mean the price has already dropped."
         },
         {
             "id": "cc_l97_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She is a top researcher ____ she lacks field experience in sector 8.",
-            "sentence": "She is a top researcher ____ she lacks field experience in sector 8.",
+            "question": "She continued to believe in the project ____ funding had been cut significantly.",
+            "sentence": "She continued to believe in the project ____ funding had been cut significantly.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "even if",
+                "even though",
+                "although",
+                "until"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast skill with lack of experience. (Sector 8 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "The funding cut was a real event - it actually happened.",
+            "explanation": "'Even though' is used for real, past events. The funding WAS cut (confirmed past fact) - yet she continued to believe. 'Even if' would suggest the cut is hypothetical. 'Even though' shows her belief survived a real setback."
         },
         {
             "id": "cc_l97_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We should study the stars ____ they hold many secrets in sector 8.",
-            "sentence": "We should study the stars ____ they hold many secrets in sector 8.",
+            "question": "____ nobody else agrees with you, stand by what you believe is right.",
+            "sentence": "____ nobody else agrees with you, stand by what you believe is right.",
             "options": [
-                "for",
-                "but",
-                "or",
-                "so"
+                "even though",
+                "even if",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "for",
-            "hint": "Provide a reason (archaic/formal FANBOYS). (Sector 8 calibration)",
-            "explanation": "'For' is coordinate reason. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even if",
+            "hint": "Nobody agreeing is a possible scenario being considered as advice for any situation.",
+            "explanation": "'Even if' is used for a general hypothetical scenario in advice or instructions. 'Even if nobody agrees' means 'regardless of whether people agree or not' - it encourages independence in all cases."
         },
         {
             "id": "cc_l98_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The probe reached Mars ____ it found no liquid water in sector 8.",
-            "sentence": "The probe reached Mars ____ it found no liquid water in sector 8.",
+            "question": "She passed the advanced exam ____ she had only attended the course for two weeks.",
+            "sentence": "She passed the advanced exam ____ she had only attended the course for two weeks.",
             "options": [
-                "but",
-                "so",
-                "for",
-                "nor"
+                "even if",
+                "even though",
+                "although",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast success with a limitation. (Sector 8 calibration)",
-            "explanation": "'But' introduces contrasting information. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "Only two weeks of attendance is a real, confirmed fact.",
+            "explanation": "'Even though' is used for a real, confirmed limitation. She only attended for two weeks (confirmed real fact) - yet she passed. This emphasises how impressive the achievement was given the limited preparation."
         },
         {
             "id": "cc_l98_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The thruster fired perfectly ____ the capsule stabilized in sector 8.",
-            "sentence": "The thruster fired perfectly ____ the capsule stabilized in sector 8.",
+            "question": "____ the technology exists today, implementing it at scale remains extremely complex.",
+            "sentence": "____ the technology exists today, implementing it at scale remains extremely complex.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "nor"
+                "even though",
+                "even if",
+                "although",
+                "while"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a positive outcome of firing. (Sector 8 calibration)",
-            "explanation": "'And' adds corresponding clauses. [Verified in sector 8]."
+            "correctAnswer": "even though",
+            "hint": "The technology existing today is a confirmed, real current fact.",
+            "explanation": "'Even though' is used when the concessive clause states something real and true right now. The technology DOES exist (confirmed present fact) - yet implementation is still complex. 'Even if' would suggest the technology's existence is uncertain."
         },
         {
             "id": "cc_l98_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They ran out of fuel ____ they landed on an asteroid in sector 8.",
-            "sentence": "They ran out of fuel ____ they landed on an asteroid in sector 8.",
+            "question": "He insists on wearing a suit to every meeting ____ the office has a casual dress code.",
+            "sentence": "He insists on wearing a suit to every meeting ____ the office has a casual dress code.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "even if",
+                "even though",
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Immediate consequence. (Sector 8 calibration)",
-            "explanation": "'So' shows consequence. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "The casual dress code is a real, confirmed policy of the office.",
+            "explanation": "'Even though' is used for a real, confirmed situation. The casual dress code IS the policy (confirmed fact) - yet he wears a suit anyway. 'Even if' would imply the dress code is uncertain or hypothetical."
         },
         {
             "id": "cc_l99_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The hull is double-layered ____ it can withstand debris in sector 8.",
-            "sentence": "The hull is double-layered ____ it can withstand debris in sector 8.",
+            "question": "____ she were offered a leading role in a film, she says she would decline it.",
+            "sentence": "____ she were offered a leading role in a film, she says she would decline it.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "even though",
+                "even if",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Show a result of the structural design. (Sector 8 calibration)",
-            "explanation": "'So' introduces the consequence. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even if",
+            "hint": "Being offered a film role is a hypothetical, conditional scenario.",
+            "explanation": "'Even if' introduces a hypothetical scenario, particularly one in the conditional. 'Even if she were offered' (subjunctive) clearly signals this is a hypothetical - something imagined, not real. 'Even though' would mean an offer has actually been made."
         },
         {
             "id": "cc_l99_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He did not sleep ____ did he leave his post in sector 8.",
-            "sentence": "He did not sleep ____ did he leave his post in sector 8.",
+            "question": "He kept his thoughts to himself ____ he strongly disagreed with the approach.",
+            "sentence": "He kept his thoughts to himself ____ he strongly disagreed with the approach.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "even if",
+                "even though",
+                "although",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Connect negative clauses. (Sector 8 calibration)",
-            "explanation": "'Nor' connects negative independent clauses. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "His strong disagreement was real - he genuinely felt it.",
+            "explanation": "'Even though' is used for confirmed, real feelings. He STRONGLY disagreed (real, confirmed) - yet he said nothing. This shows restraint despite a genuine, strong internal reaction."
         },
         {
             "id": "cc_l99_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She did not speak ____ did she look at him in sector 8.",
-            "sentence": "She did not speak ____ did she look at him in sector 8.",
+            "question": "____ the results are not what you hoped for, they still represent real progress.",
+            "sentence": "____ the results are not what you hoped for, they still represent real progress.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "even though",
+                "even if",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Inversion of negative. (Sector 8 calibration)",
-            "explanation": "'Nor' is correct. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even if",
+            "hint": "Disappointing results are a possible experience - general advice for any reader.",
+            "explanation": "'Even if' is used for a general hypothetical scenario in advisory statements. 'Even if the results are disappointing' means 'even in that case, there is still progress' - this is encouragement for anyone in that situation."
         },
         {
             "id": "cc_l100_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She was tired from the orbit ____ she kept monitoring in sector 8.",
-            "sentence": "She was tired from the orbit ____ she kept monitoring in sector 8.",
+            "question": "She attended every rehearsal ____ she was exhausted after full days of work.",
+            "sentence": "She attended every rehearsal ____ she was exhausted after full days of work.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "even if",
+                "even though",
+                "although",
+                "until"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Contrast exhaustion with continuation. (Sector 8 calibration)",
-            "explanation": "'Yet' expresses concession. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even though",
+            "hint": "Her exhaustion after work was real - it was genuinely there every day.",
+            "explanation": "'Even though' is used for a real, ongoing situation. She WAS exhausted (confirmed, real) - yet she attended every rehearsal. 'Even if' would suggest the exhaustion is uncertain or hypothetical, which is not the case."
         },
         {
             "id": "cc_l100_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The weather was bad ____ the shuttle landed safely in sector 8.",
-            "sentence": "The weather was bad ____ the shuttle landed safely in sector 8.",
+            "question": "____ the evidence points overwhelmingly to one conclusion, the jury must remain impartial.",
+            "sentence": "____ the evidence points overwhelmingly to one conclusion, the jury must remain impartial.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "even though",
+                "even if",
+                "although",
+                "while"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Concession or surprise. (Sector 8 calibration)",
-            "explanation": "'Yet' introduces unexpected result. [Verified in sector 8]."
+            "correctAnswer": "even though",
+            "hint": "The evidence strongly pointing one way is real and confirmed.",
+            "explanation": "'Even though' is used when the concessive clause states a real, confirmed fact. The evidence DOES point overwhelmingly (real, confirmed) - yet impartiality must be maintained. 'Even if' would suggest the evidence is uncertain."
         },
         {
             "id": "cc_l100_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 3,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The storm was fierce ____ the shields held in sector 8.",
-            "sentence": "The storm was fierce ____ the shields held in sector 8.",
+            "question": "____ the merger were approved today, it would take years to integrate both companies.",
+            "sentence": "____ the merger were approved today, it would take years to integrate both companies.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "even though",
+                "even if",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Unexpected positive result. (Sector 8 calibration)",
-            "explanation": "'Yet' shows contrast. [Verified in sector 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "even if",
+            "hint": "Merger approval today is a hypothetical, not a confirmed fact.",
+            "explanation": "'Even if' introduces a hypothetical scenario (note: 'were approved' is the conditional form, signalling a hypothesis). 'Even if the merger were approved' = 'even in that hypothetical case, integration would still take years'. 'Even though' would mean it has already been approved."
         }
     ]
 }

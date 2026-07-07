@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l151_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The stars are bright ____ the night is clear in sector 14.",
-            "sentence": "The stars are bright ____ the night is clear in sector 14.",
+            "question": "____ you are already familiar with the software, training will only take half a day.",
+            "sentence": "____ you are already familiar with the software, training will only take half a day.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "so"
+                "although",
+                "since",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Join two related positive thoughts. (Sector 14 calibration)",
-            "explanation": "'And' connects related independent clauses. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "since",
+            "hint": "'Since' here means 'because' - the familiarity is the reason for shorter training.",
+            "explanation": "'Since' used causally at the start of a sentence introduces a known fact as the reason for what follows. 'Since you are already familiar' = 'because you already know the software'. This is more formal and assumed than 'because'."
         },
         {
             "id": "cc_l151_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The colony needs food ____ the transport is delayed in sector 14.",
-            "sentence": "The colony needs food ____ the transport is delayed in sector 14.",
+            "question": "The final draft reads well, ____ several passages could still be tightened.",
+            "sentence": "The final draft reads well, ____ several passages could still be tightened.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "since",
+                "although",
+                "whereas",
+                "as"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast demand with lack of supply. (Sector 14 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "although",
+            "hint": "A well-written draft and passages that need tightening are in mild contrast.",
+            "explanation": "'Although' introduces a concessive qualification. The draft reads well (positive) - although some passages could be improved (qualifier). 'Although' here is used mid-sentence to add a nuance without negating the main positive point."
         },
         {
             "id": "cc_l151_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The scanner detected iron ____ it also found copper in sector 14.",
-            "sentence": "The scanner detected iron ____ it also found copper in sector 14.",
+            "question": "Traditional retailers rely on physical footfall, ____ online competitors depend entirely on digital traffic.",
+            "sentence": "Traditional retailers rely on physical footfall, ____ online competitors depend entirely on digital traffic.",
             "options": [
-                "and",
-                "but",
-                "so",
-                "nor"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a similar metal type. (Sector 14 calibration)",
-            "explanation": "'And' is additive. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two competing business models with opposite customer acquisition methods are contrasted.",
+            "explanation": "'Whereas' provides a formal, balanced contrast between two opposing systems. Physical footfall (traditional) versus digital traffic (online) are placed side by side in a formal comparison of two competing retail approaches."
         },
         {
             "id": "cc_l152_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We wanted to launch ____ the fuel was low in sector 14.",
-            "sentence": "We wanted to launch ____ the fuel was low in sector 14.",
+            "question": "She agreed to the proposal, ____ she had reservations about two specific clauses.",
+            "sentence": "She agreed to the proposal, ____ she had reservations about two specific clauses.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Show a contrast or obstacle. (Sector 14 calibration)",
-            "explanation": "'But' shows contrast between two clauses. [Verified in sector 14]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "even though",
+            "hint": "Her agreement despite genuine reservations is the key tension here.",
+            "explanation": "'Even though' is stronger than 'although' - it emphasises that the reservations were real and significant. 'She agreed EVEN THOUGH she had reservations' stresses the weight of her concerns and makes the agreement more surprising."
         },
         {
             "id": "cc_l152_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The main grid went dark ____ we flipped the auxiliary switch in sector 14.",
-            "sentence": "The main grid went dark ____ we flipped the auxiliary switch in sector 14.",
+            "question": "____ the cost of renewable energy has fallen dramatically, adoption rates remain lower than expected.",
+            "sentence": "____ the cost of renewable energy has fallen dramatically, adoption rates remain lower than expected.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "nor"
+                "although",
+                "since",
+                "whereas",
+                "even though"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Cause and immediate action. (Sector 14 calibration)",
-            "explanation": "'So' shows cause-effect relationship. [Verified in sector 14]."
+            "correctAnswer": "although",
+            "hint": "Falling costs should drive higher adoption - but it hasn't happened as expected.",
+            "explanation": "'Although' introduces a concession at the start. Falling costs (positive development) would normally drive adoption, but rates remain low (unexpected outcome). 'Although' captures this gap between expectation and reality."
         },
         {
             "id": "cc_l152_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We can orbit the moon ____ we can land on the plain in sector 14.",
-            "sentence": "We can orbit the moon ____ we can land on the plain in sector 14.",
+            "question": "He decided to speak plainly, ____ a more diplomatic approach might have caused less offence.",
+            "sentence": "He decided to speak plainly, ____ a more diplomatic approach might have caused less offence.",
             "options": [
-                "or",
-                "but",
-                "yet",
-                "for"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Two choices. (Sector 14 calibration)",
-            "explanation": "'Or' expresses alternative choice. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "although",
+            "hint": "He chose plain speaking even though a diplomatic approach was available.",
+            "explanation": "'Although' introduces a concessive alternative. A diplomatic approach (available option) would have caused less offence (better outcome), yet he chose plain speaking. 'Although' acknowledges the better option existed but was not taken."
         },
         {
             "id": "cc_l153_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You can adjust the valves ____ you can let the core vent in sector 14.",
-            "sentence": "You can adjust the valves ____ you can let the core vent in sector 14.",
+            "question": "____ the candidate performed exceptionally well, the hiring committee still had concerns.",
+            "sentence": "____ the candidate performed exceptionally well, the hiring committee still had concerns.",
             "options": [
-                "or",
-                "but",
-                "and",
-                "for"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Present two alternative actions. (Sector 14 calibration)",
-            "explanation": "'Or' presents choices or alternatives. [Verified in sector 14]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "even though",
+            "hint": "Exceptional performance and ongoing concerns are in strong tension.",
+            "explanation": "'Even though' emphasises the strength of the concession. Exceptional performance (very strong positive) would normally remove all concerns - 'even though' signals that the concerns persist DESPITE this impressive performance. Stronger than 'although'."
         },
         {
             "id": "cc_l153_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They must secure the dome ____ the oxygen will escape in sector 14.",
-            "sentence": "They must secure the dome ____ the oxygen will escape in sector 14.",
+            "question": "The public version of the report is accessible to all, ____ the internal version remains classified.",
+            "sentence": "The public version of the report is accessible to all, ____ the internal version remains classified.",
             "options": [
-                "or",
-                "but",
-                "so",
-                "yet"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Express alternative danger. (Sector 14 calibration)",
-            "explanation": "'Or' shows alternative consequence. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two versions with opposite accessibility status are being formally contrasted.",
+            "explanation": "'Whereas' provides a formal, balanced contrast. Public report (accessible to all) versus internal report (classified) - 'whereas' places these two contrasting access levels side by side in a formal, official register."
         },
         {
             "id": "cc_l153_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crew worked hard ____ they completed the bridge in sector 14.",
-            "sentence": "The crew worked hard ____ they completed the bridge in sector 14.",
+            "question": "The results were strong in the first quarter, ____ performance declined sharply in the second.",
+            "sentence": "The results were strong in the first quarter, ____ performance declined sharply in the second.",
             "options": [
-                "so",
-                "but",
-                "nor",
-                "yet"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Result of working hard. (Sector 14 calibration)",
-            "explanation": "'So' shows result. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "although",
+            "hint": "Two consecutive quarters with opposite performance trends are contrasted.",
+            "explanation": "'Although' contrasts the strong first quarter with the weaker second. 'Although the first quarter was strong, performance declined in the second' - 'although' shows the positive did not continue, introducing a disappointing contrast."
         },
         {
             "id": "cc_l154_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The reactor overheated ____ the alarm sounded in sector 14.",
-            "sentence": "The reactor overheated ____ the alarm sounded in sector 14.",
+            "question": "She refuses to compromise on quality, ____ her competitors frequently cut corners.",
+            "sentence": "She refuses to compromise on quality, ____ her competitors frequently cut corners.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "nor"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Show a cause-and-effect relationship. (Sector 14 calibration)",
-            "explanation": "'So' connects cause to effect. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Her commitment to quality and her competitors' corner-cutting are formally contrasted.",
+            "explanation": "'Whereas' provides a formal contrast between her approach and her competitors'. Her refusal to compromise (one approach) versus their corner-cutting (opposite approach) - 'whereas' makes this a formal side-by-side comparison."
         },
         {
             "id": "cc_l154_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The explorer found ruins ____ he took several scans in sector 14.",
-            "sentence": "The explorer found ruins ____ he took several scans in sector 14.",
+            "question": "He continued to advocate for the policy ____ it had been officially rejected.",
+            "sentence": "He continued to advocate for the policy ____ it had been officially rejected.",
             "options": [
-                "and",
-                "but",
-                "nor",
-                "for"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a natural subsequent action. (Sector 14 calibration)",
-            "explanation": "'And' adds subsequent details. [Verified in sector 14]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "even though",
+            "hint": "Continuing to advocate after official rejection is particularly surprising.",
+            "explanation": "'Even though' emphasises the weight of the concession. Official rejection (very strong barrier) would normally end advocacy - 'even though' shows he persisted DESPITE this significant formal obstacle. Stronger than 'although'."
         },
         {
             "id": "cc_l154_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The target was far ____ the sniper hit it in sector 14.",
-            "sentence": "The target was far ____ the sniper hit it in sector 14.",
+            "question": "____ she had limited resources, she managed to launch a highly successful campaign.",
+            "sentence": "____ she had limited resources, she managed to launch a highly successful campaign.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "nor"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Concession. (Sector 14 calibration)",
-            "explanation": "'Yet' shows contrast. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "although",
+            "hint": "Limited resources are an acknowledged obstacle - but success followed anyway.",
+            "explanation": "'Although' introduces a concessive fact at the start. Limited resources (obstacle) would normally prevent a successful campaign, but she succeeded - 'although' shows the obstacle did not prevent the positive outcome."
         },
         {
             "id": "cc_l155_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He checked the data thrice ____ he still missed the error in sector 14.",
-            "sentence": "He checked the data thrice ____ he still missed the error in sector 14.",
+            "question": "Junior employees are expected to follow the dress code strictly, ____ senior managers have considerably more discretion.",
+            "sentence": "Junior employees are expected to follow the dress code strictly, ____ senior managers have considerably more discretion.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Express an unexpected contrast. (Sector 14 calibration)",
-            "explanation": "'Yet' shows concession or unexpected contrast. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two levels of the hierarchy with different dress code expectations are formally contrasted.",
+            "explanation": "'Whereas' provides a formal contrast between two groups in an organisation. Strict rules (juniors) versus discretion (seniors) - 'whereas' makes this a balanced, formal contrast that highlights the institutional double standard."
         },
         {
             "id": "cc_l155_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We didn't see the asteroid ____ did we hear the impact in sector 14.",
-            "sentence": "We didn't see the asteroid ____ did we hear the impact in sector 14.",
+            "question": "The committee approved the budget, ____ two members had formally objected.",
+            "sentence": "The committee approved the budget, ____ two members had formally objected.",
             "options": [
-                "nor",
-                "yet",
-                "so",
-                "but"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Negative connection requiring subject-auxiliary inversion. (Sector 14 calibration)",
-            "explanation": "'Nor' is used for negative addition with inversion. [Verified in sector 14]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "even though",
+            "hint": "Approval despite formal objections from within the committee is notable.",
+            "explanation": "'Even though' emphasises the significance of the internal opposition. Formal objections from committee members (strong internal barrier) would normally prevent or delay approval - 'even though' shows approval happened despite this significant opposition."
         },
         {
             "id": "cc_l155_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was not hungry ____ was he thirsty in sector 14.",
-            "sentence": "He was not hungry ____ was he thirsty in sector 14.",
+            "question": "She accepted less pay for the role ____ she believed in the organisation's mission.",
+            "sentence": "She accepted less pay for the role ____ she believed in the organisation's mission.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "although",
+                "since",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Add negative condition. (Sector 14 calibration)",
-            "explanation": "'Nor' requires inversion. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "since",
+            "hint": "'Since' here means 'because' - her belief is the reason for accepting lower pay.",
+            "explanation": "'Since' used causally means 'because'. 'She accepted less pay since she believed in the mission' = 'she accepted less pay because she believed'. 'Since' (causal) is appropriate when the reason is presented as a known or established fact."
         },
         {
             "id": "cc_l156_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The sensors were offline ____ the shield was down in sector 14.",
-            "sentence": "The sensors were offline ____ the shield was down in sector 14.",
+            "question": "The experiment confirmed the hypothesis, ____ one anomalous data point remained unexplained.",
+            "sentence": "The experiment confirmed the hypothesis, ____ one anomalous data point remained unexplained.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "nor"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add similar negative or neutral facts. (Sector 14 calibration)",
-            "explanation": "'And' adds similar information. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "although",
+            "hint": "An overall confirmation but with one unexplained anomaly - a minor qualification.",
+            "explanation": "'Although' introduces a minor qualification to an otherwise positive result. The hypothesis was confirmed (main result) - although one anomaly remained (minor qualification). 'Although' acknowledges the imperfection without undermining the main finding."
         },
         {
             "id": "cc_l156_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The oxygen levels dropped ____ we wore our masks in sector 14.",
-            "sentence": "The oxygen levels dropped ____ we wore our masks in sector 14.",
+            "question": "Classical economists favour free markets, ____ Keynesian economists argue for state intervention.",
+            "sentence": "Classical economists favour free markets, ____ Keynesian economists argue for state intervention.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Express action taken as a result. (Sector 14 calibration)",
-            "explanation": "'So' shows result. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two opposing economic schools with contrasting policy prescriptions are formally contrasted.",
+            "explanation": "'Whereas' is ideal for a formal, academic contrast between two competing schools of thought. Classical (free markets) versus Keynesian (state intervention) - 'whereas' places these two positions in a formal, balanced academic comparison."
         },
         {
             "id": "cc_l156_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The map is old ____ it is still accurate in sector 14.",
-            "sentence": "The map is old ____ it is still accurate in sector 14.",
+            "question": "____ she lacked formal qualifications, her practical experience more than compensated.",
+            "sentence": "____ she lacked formal qualifications, her practical experience more than compensated.",
             "options": [
-                "but",
-                "so",
-                "or",
-                "for"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast age with accuracy. (Sector 14 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "although",
+            "hint": "Lacking qualifications is a potential barrier - but experience made up for it.",
+            "explanation": "'Although' introduces a concessive fact at the start. Lacking qualifications (barrier) would normally prevent progression, but experience compensated - 'although' shows the barrier was overcome by an alternative strength."
         },
         {
             "id": "cc_l157_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must repair the engine ____ we will drift forever in sector 14.",
-            "sentence": "We must repair the engine ____ we will drift forever in sector 14.",
+            "question": "He failed to mention the risks in his presentation, ____ they were clearly documented in the report.",
+            "sentence": "He failed to mention the risks in his presentation, ____ they were clearly documented in the report.",
             "options": [
-                "or",
-                "and",
-                "yet",
-                "so"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "Show a consequence of not acting. (Sector 14 calibration)",
-            "explanation": "'Or' presents the alternative outcome. [Verified in sector 14]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "even though",
+            "hint": "Failing to mention clearly documented risks is particularly notable and problematic.",
+            "explanation": "'Even though' emphasises the significance of the omission. The risks were clearly documented (very clear availability) - 'even though' shows the omission was more notable because the information was so readily available."
         },
         {
             "id": "cc_l157_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She is a top researcher ____ she lacks field experience in sector 14.",
-            "sentence": "She is a top researcher ____ she lacks field experience in sector 14.",
+            "question": "____ the two studies used different methodologies, their conclusions were remarkably similar.",
+            "sentence": "____ the two studies used different methodologies, their conclusions were remarkably similar.",
             "options": [
-                "but",
-                "and",
-                "so",
-                "or"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast skill with lack of experience. (Sector 14 calibration)",
-            "explanation": "'But' shows contrast. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "although",
+            "hint": "Different methods leading to similar conclusions is an interesting and surprising finding.",
+            "explanation": "'Although' introduces a concessive contrast. Different methodologies (expected source of different conclusions) led to similar findings (unexpected similarity) - 'although' highlights this surprising convergence."
         },
         {
             "id": "cc_l157_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We should study the stars ____ they hold many secrets in sector 14.",
-            "sentence": "We should study the stars ____ they hold many secrets in sector 14.",
+            "question": "The northern office reports to London, ____ the southern office has its own autonomous structure.",
+            "sentence": "The northern office reports to London, ____ the southern office has its own autonomous structure.",
             "options": [
-                "for",
-                "but",
-                "or",
-                "so"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "for",
-            "hint": "Provide a reason (archaic/formal FANBOYS). (Sector 14 calibration)",
-            "explanation": "'For' is coordinate reason. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two offices with opposite reporting structures are formally contrasted.",
+            "explanation": "'Whereas' provides a formal, balanced organisational contrast. Centralised reporting (north) versus autonomous structure (south) - 'whereas' places these two different management arrangements in a formal, side-by-side comparison."
         },
         {
             "id": "cc_l158_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The probe reached Mars ____ it found no liquid water in sector 14.",
-            "sentence": "The probe reached Mars ____ it found no liquid water in sector 14.",
+            "question": "The charity continued its operations ____ funding had been reduced by forty per cent.",
+            "sentence": "The charity continued its operations ____ funding had been reduced by forty per cent.",
             "options": [
-                "but",
-                "so",
-                "for",
-                "nor"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "but",
-            "hint": "Contrast success with a limitation. (Sector 14 calibration)",
-            "explanation": "'But' introduces contrasting information. [Verified in sector 14]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "even though",
+            "hint": "A forty-percent funding cut is a very significant barrier - yet operations continued.",
+            "explanation": "'Even though' emphasises the weight of the financial obstacle. A forty-percent funding reduction (very significant barrier) would normally force cuts or closure - 'even though' shows the charity maintained operations despite this major financial setback."
         },
         {
             "id": "cc_l158_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The thruster fired perfectly ____ the capsule stabilized in sector 14.",
-            "sentence": "The thruster fired perfectly ____ the capsule stabilized in sector 14.",
+            "question": "Some investors welcome market volatility, ____ others find it deeply unsettling.",
+            "sentence": "Some investors welcome market volatility, ____ others find it deeply unsettling.",
             "options": [
-                "and",
-                "but",
-                "or",
-                "nor"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "and",
-            "hint": "Add a positive outcome of firing. (Sector 14 calibration)",
-            "explanation": "'And' adds corresponding clauses. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two groups of investors with opposite reactions to the same market condition are contrasted.",
+            "explanation": "'Whereas' provides a formal contrast between two opposite investor responses. Welcoming volatility (some investors) versus finding it unsettling (others) - 'whereas' frames this as a balanced, formal contrast between two groups."
         },
         {
             "id": "cc_l158_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They ran out of fuel ____ they landed on an asteroid in sector 14.",
-            "sentence": "They ran out of fuel ____ they landed on an asteroid in sector 14.",
+            "question": "____ the data supports this interpretation, alternative explanations cannot be ruled out.",
+            "sentence": "____ the data supports this interpretation, alternative explanations cannot be ruled out.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Immediate consequence. (Sector 14 calibration)",
-            "explanation": "'So' shows consequence. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "although",
+            "hint": "Supporting data and remaining alternative explanations are in scientific tension.",
+            "explanation": "'Although' introduces a scientific qualification. The data supports the interpretation (main finding) - although alternative explanations remain possible (important qualifier). 'Although' acknowledges the strength of the finding while maintaining appropriate scientific caution."
         },
         {
             "id": "cc_l159_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The hull is double-layered ____ it can withstand debris in sector 14.",
-            "sentence": "The hull is double-layered ____ it can withstand debris in sector 14.",
+            "question": "He agreed to present at the conference ____ it meant travelling abroad for the first time.",
+            "sentence": "He agreed to present at the conference ____ it meant travelling abroad for the first time.",
             "options": [
-                "so",
-                "but",
-                "yet",
-                "or"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "Show a result of the structural design. (Sector 14 calibration)",
-            "explanation": "'So' introduces the consequence. [Verified in sector 14]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "even though",
+            "hint": "First-time international travel can be daunting - agreeing despite this is notable.",
+            "explanation": "'Even though' emphasises the personal challenge involved. Travelling abroad for the first time (significant personal challenge) would normally cause hesitation - 'even though' shows he agreed DESPITE this challenging personal first."
         },
         {
             "id": "cc_l159_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He did not sleep ____ did he leave his post in sector 14.",
-            "sentence": "He did not sleep ____ did he leave his post in sector 14.",
+            "question": "The oral exam is assessed on communication skills, ____ the written paper tests analytical reasoning.",
+            "sentence": "The oral exam is assessed on communication skills, ____ the written paper tests analytical reasoning.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Connect negative clauses. (Sector 14 calibration)",
-            "explanation": "'Nor' connects negative independent clauses. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two assessment components measuring completely different skills are formally contrasted.",
+            "explanation": "'Whereas' provides a formal, balanced academic contrast. Communication skills (oral) versus analytical reasoning (written) - 'whereas' is the ideal connector for a formal, parallel comparison of two assessment components."
         },
         {
             "id": "cc_l159_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She did not speak ____ did she look at him in sector 14.",
-            "sentence": "She did not speak ____ did she look at him in sector 14.",
+            "question": "She chose the longer, more scenic route ____ the motorway would have been significantly faster.",
+            "sentence": "She chose the longer, more scenic route ____ the motorway would have been significantly faster.",
             "options": [
-                "nor",
-                "but",
-                "yet",
-                "so"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "nor",
-            "hint": "Inversion of negative. (Sector 14 calibration)",
-            "explanation": "'Nor' is correct. [Verified in sector 14]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "even though",
+            "hint": "Choosing the scenic route when a faster option exists is a deliberate, notable choice.",
+            "explanation": "'Even though' emphasises the sacrifice involved. A faster motorway (significant advantage) was available - 'even though' shows she chose the slower, more beautiful route DESPITE this clear time-saving alternative."
         },
         {
             "id": "cc_l160_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She was tired from the orbit ____ she kept monitoring in sector 14.",
-            "sentence": "She was tired from the orbit ____ she kept monitoring in sector 14.",
+            "question": "The panel praised his research methodology, ____ they questioned several of his conclusions.",
+            "sentence": "The panel praised his research methodology, ____ they questioned several of his conclusions.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Contrast exhaustion with continuation. (Sector 14 calibration)",
-            "explanation": "'Yet' expresses concession. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "although",
+            "hint": "Praise for methodology but questions about conclusions is a mixed academic review.",
+            "explanation": "'Although' introduces a concessive qualification. The methodology was praised (positive) - although conclusions were questioned (qualification). 'Although' acknowledges both the strength and the weakness of the academic work."
         },
         {
             "id": "cc_l160_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The weather was bad ____ the shuttle landed safely in sector 14.",
-            "sentence": "The weather was bad ____ the shuttle landed safely in sector 14.",
+            "question": "Generation X tends to value job stability, ____ millennials often prioritise work-life balance.",
+            "sentence": "Generation X tends to value job stability, ____ millennials often prioritise work-life balance.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Concession or surprise. (Sector 14 calibration)",
-            "explanation": "'Yet' introduces unexpected result. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whereas",
+            "hint": "Two generations with different workplace priorities are formally contrasted.",
+            "explanation": "'Whereas' provides a formal, balanced generational contrast. Job stability (Generation X) versus work-life balance (millennials) - 'whereas' makes this a formal, side-by-side comparison of different generational workplace values."
         },
         {
             "id": "cc_l160_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 4,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The storm was fierce ____ the shields held in sector 14.",
-            "sentence": "The storm was fierce ____ the shields held in sector 14.",
+            "question": "____ there is no precedent for this, the court must develop new legal principles.",
+            "sentence": "____ there is no precedent for this, the court must develop new legal principles.",
             "options": [
-                "yet",
-                "so",
-                "or",
-                "for"
+                "although",
+                "since",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "yet",
-            "hint": "Unexpected positive result. (Sector 14 calibration)",
-            "explanation": "'Yet' shows contrast. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "since",
+            "hint": "'Since' here means 'because' - the lack of precedent is the reason for developing new principles.",
+            "explanation": "'Since' used causally at the start introduces the factual reason for the conclusion. 'Since there is no precedent' = 'because no precedent exists'. The absence of precedent (reason) necessitates creating new principles (conclusion)."
         }
     ]
 }

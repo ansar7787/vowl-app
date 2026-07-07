@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l71_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must wait ____ the engine cools down in sector 6.",
-            "sentence": "We must wait ____ the engine cools down in sector 6.",
+            "question": "She checked her phone repeatedly ____ she finally got a reply.",
+            "sentence": "She checked her phone repeatedly ____ she finally got a reply.",
             "options": [
-                "until",
+                "when",
+                "while",
                 "because",
-                "although",
-                "unless"
+                "until"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "until",
-            "hint": "Show a time limit or milestone. (Sector 6 calibration)",
-            "explanation": "'Until' shows time boundary. [Verified in sector 6]."
+            "hint": "Checking continued right up to the moment the reply arrived.",
+            "explanation": "'Until' marks the endpoint of a repeated action. She kept checking UNTIL the reply came - at that point, the repeated checking stopped. 'When' describes a single moment, not the ongoing duration."
         },
         {
             "id": "cc_l71_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We aborted the mission ____ the reactor leaked in sector 6.",
-            "sentence": "We aborted the mission ____ the reactor leaked in sector 6.",
+            "question": "He felt much more relaxed ____ he had taken a proper holiday.",
+            "sentence": "He felt much more relaxed ____ he had taken a proper holiday.",
             "options": [
+                "after",
                 "because",
-                "although",
-                "unless",
-                "while"
+                "while",
+                "until"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "State the cause of aborting. (Sector 6 calibration)",
-            "explanation": "'Because' introduces a cause. [Verified in sector 6]."
+            "correctAnswer": "after",
+            "hint": "The holiday came first; the relaxation followed as a result.",
+            "explanation": "'After' shows sequence. He took a holiday (earlier event) and felt more relaxed afterwards (later state). 'Because' would also work logically, but 'after' focuses on the time sequence."
         },
         {
             "id": "cc_l71_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We will launch ____ it is raining in sector 6.",
-            "sentence": "We will launch ____ it is raining in sector 6.",
+            "question": "She brought a light jacket ____ the evenings tend to get cool there.",
+            "sentence": "She brought a light jacket ____ the evenings tend to get cool there.",
             "options": [
-                "even though",
+                "when",
                 "because",
-                "unless",
+                "while",
                 "until"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Show concession or obstacle. (Sector 6 calibration)",
-            "explanation": "'Even though' shows concession. [Verified in sector 6]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "because",
+            "hint": "Knowing that evenings get cool is the reason she brought the jacket.",
+            "explanation": "'Because' gives the practical reason for a precautionary action. Cool evenings (reason) explain bringing a jacket (action). This is a clear, direct cause-and-effect."
         },
         {
             "id": "cc_l72_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crew rested ____ the autopilot was active in sector 6.",
-            "sentence": "The crew rested ____ the autopilot was active in sector 6.",
+            "question": "The food was a little disappointing ____ the restaurant's atmosphere was wonderful.",
+            "sentence": "The food was a little disappointing ____ the restaurant's atmosphere was wonderful.",
             "options": [
-                "while",
-                "unless",
-                "until",
-                "before"
+                "because",
+                "since",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Show simultaneous actions. (Sector 6 calibration)",
-            "explanation": "'While' shows duration/simultaneous acts. [Verified in sector 6]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "although",
+            "hint": "Disappointing food and a wonderful atmosphere seem to contradict each other.",
+            "explanation": "'Although' introduces a concession. The disappointing food (negative aspect) is contrasted with the wonderful atmosphere (positive aspect) - 'although' shows both exist simultaneously, with the positive being the main point."
         },
         {
             "id": "cc_l72_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The shield failed ____ it was hit by a laser in sector 6.",
-            "sentence": "The shield failed ____ it was hit by a laser in sector 6.",
+            "question": "She always waves enthusiastically at the camera ____ she spots one.",
+            "sentence": "She always waves enthusiastically at the camera ____ she spots one.",
             "options": [
-                "since",
-                "unless",
-                "until",
-                "although"
+                "while",
+                "because",
+                "although",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "State a cause or reason. (Sector 6 calibration)",
-            "explanation": "'Since' acts as because. [Verified in sector 6]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "when",
+            "hint": "Spotting a camera is the regular trigger for waving.",
+            "explanation": "'When' connects a habitual trigger (spotting a camera) to a habitual response (waving). This happens every time - 'while' would suggest she waves throughout an extended period of spotting."
         },
         {
             "id": "cc_l72_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The armor held ____ the impact was massive in sector 6.",
-            "sentence": "The armor held ____ the impact was massive in sector 6.",
+            "question": "He has been much more careful with money ____ he lost his job last year.",
+            "sentence": "He has been much more careful with money ____ he lost his job last year.",
             "options": [
-                "although",
+                "since",
                 "because",
-                "unless",
+                "although",
                 "while"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 6 calibration)",
-            "explanation": "'Although' shows concession. [Verified in sector 6]."
+            "correctAnswer": "since",
+            "hint": "Losing his job was the turning point - he has been careful from that moment to now.",
+            "explanation": "'Since' marks the starting point of a continuing behavioural change. He has been careful (present perfect) SINCE he lost his job (specific past event). The present perfect + 'since' is the standard structure for this meaning."
         },
         {
             "id": "cc_l73_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The signal improved ____ we adjusted the dish in sector 6.",
-            "sentence": "The signal improved ____ we adjusted the dish in sector 6.",
+            "question": "He worked on his presentation slides ____ he was on the long train journey.",
+            "sentence": "He worked on his presentation slides ____ he was on the long train journey.",
             "options": [
-                "after",
-                "until",
+                "when",
                 "while",
+                "since",
                 "although"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "after",
-            "hint": "Show action following another. (Sector 6 calibration)",
-            "explanation": "'After' shows sequential time. [Verified in sector 6]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "Working and travelling happened at the same time - he used the journey productively.",
+            "explanation": "'While' connects two simultaneous activities. He worked on slides (foreground task) while travelling by train (background activity) - both happened over the same period of the journey."
         },
         {
             "id": "cc_l73_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They remained indoors ____ the radiation was high in sector 6.",
-            "sentence": "They remained indoors ____ the radiation was high in sector 6.",
+            "question": "Always read the terms and conditions carefully ____ you sign anything.",
+            "sentence": "Always read the terms and conditions carefully ____ you sign anything.",
             "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
+                "although",
+                "when",
+                "before",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "State a reason. (Sector 6 calibration)",
-            "explanation": "'As' can mean because. [Verified in sector 6]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "before",
+            "hint": "Reading must come first - before signing, not after.",
+            "explanation": "'Before' shows the necessary prior action. You should read the terms BEFORE signing - once you have signed, it is too late to reconsider. The order matters here."
         },
         {
             "id": "cc_l73_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He smiled ____ he was in severe pain in sector 6.",
-            "sentence": "He smiled ____ he was in severe pain in sector 6.",
+            "question": "She enjoyed the concert ____ she wasn't at all familiar with the music.",
+            "sentence": "She enjoyed the concert ____ she wasn't at all familiar with the music.",
             "options": [
-                "though",
                 "because",
-                "unless",
-                "until"
+                "since",
+                "while",
+                "though"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "though",
-            "hint": "Concession. (Sector 6 calibration)",
-            "explanation": "'Though' is concession. [Verified in sector 6]."
+            "hint": "Enjoying unfamiliar music is a pleasant and unexpected discovery.",
+            "explanation": "'Though' (informal for 'although') introduces a concession. Being unfamiliar with the music (concessive fact) would normally reduce enjoyment, but she enjoyed it - 'though' shows the expected outcome did not happen."
         },
         {
             "id": "cc_l74_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We landed ____ the sun was setting in sector 6.",
-            "sentence": "We landed ____ the sun was setting in sector 6.",
-            "options": [
-                "as",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Show action during a state. (Sector 6 calibration)",
-            "explanation": "'As' is temporal. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l74_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The engine died ____ the fuel filter was clogged in sector 6.",
-            "sentence": "The engine died ____ the fuel filter was clogged in sector 6.",
-            "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Identify cause. (Sector 6 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l74_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We kept walking ____ we were exhausted in sector 6.",
-            "sentence": "We kept walking ____ we were exhausted in sector 6.",
-            "options": [
-                "even if",
-                "because",
-                "unless",
-                "until"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even if",
-            "hint": "Show concession. (Sector 6 calibration)",
-            "explanation": "'Even if' or 'even though' fits. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l75_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "He checked the seals ____ he opened the airlock in sector 6.",
-            "sentence": "He checked the seals ____ he opened the airlock in sector 6.",
-            "options": [
-                "before",
-                "because",
-                "although",
-                "unless"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "before",
-            "hint": "Preceding safety action. (Sector 6 calibration)",
-            "explanation": "'Before' shows preceding time. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l75_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We succeeded ____ we worked together in sector 6.",
-            "sentence": "We succeeded ____ we worked together in sector 6.",
-            "options": [
-                "since",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "Reason for success. (Sector 6 calibration)",
-            "explanation": "'Since' introduces reason. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l75_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The signal was read ____ it was highly distorted in sector 6.",
-            "sentence": "The signal was read ____ it was highly distorted in sector 6.",
-            "options": [
-                "although",
-                "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 6 calibration)",
-            "explanation": "'Although' is correct. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l76_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We started the engines ____ the green light flashed in sector 6.",
-            "sentence": "We started the engines ____ the green light flashed in sector 6.",
-            "options": [
-                "once",
-                "until",
-                "while",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "once",
-            "hint": "Show immediate action upon trigger. (Sector 6 calibration)",
-            "explanation": "'Once' shows condition met. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l76_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "She was chosen ____ she had perfect vision in sector 6.",
-            "sentence": "She was chosen ____ she had perfect vision in sector 6.",
-            "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Identify cause. (Sector 6 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l76_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "She went out ____ the dome was locked in sector 6.",
-            "sentence": "She went out ____ the dome was locked in sector 6.",
-            "options": [
-                "even though",
-                "because",
-                "unless",
-                "until"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession. (Sector 6 calibration)",
-            "explanation": "'Even though' is correct. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l77_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "She remained silent ____ the broadcast was playing in sector 6.",
-            "sentence": "She remained silent ____ the broadcast was playing in sector 6.",
-            "options": [
-                "while",
-                "unless",
-                "until",
-                "before"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Simultaneous duration. (Sector 6 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l77_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We lost contact ____ the satellite was blocked in sector 6.",
-            "sentence": "We lost contact ____ the satellite was blocked in sector 6.",
-            "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Reason or cause. (Sector 6 calibration)",
-            "explanation": "'As' shows cause. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l77_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "They finished the scan ____ they lacked proper tools in sector 6.",
-            "sentence": "They finished the scan ____ they lacked proper tools in sector 6.",
-            "options": [
-                "although",
-                "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 6 calibration)",
-            "explanation": "'Although' is correct. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l78_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We slept ____ the storm was raging outside in sector 6.",
-            "sentence": "We slept ____ the storm was raging outside in sector 6.",
-            "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Simultaneous event. (Sector 6 calibration)",
-            "explanation": "'As' or 'while' is correct. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l78_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The core melted ____ the coolant line cracked in sector 6.",
-            "sentence": "The core melted ____ the coolant line cracked in sector 6.",
-            "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Identify cause. (Sector 6 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l78_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "He took the risk ____ he was warned in sector 6.",
-            "sentence": "He took the risk ____ he was warned in sector 6.",
-            "options": [
-                "even though",
-                "because",
-                "unless",
-                "until"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession. (Sector 6 calibration)",
-            "explanation": "'Even though' is correct. [Verified in sector 6]."
-        },
-        {
-            "id": "cc_l79_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The ship accelerated ____ it cleared the orbit in sector 6.",
-            "sentence": "The ship accelerated ____ it cleared the orbit in sector 6.",
+            "question": "They celebrated with a meal out ____ they received the fantastic news.",
+            "sentence": "They celebrated with a meal out ____ they received the fantastic news.",
             "options": [
                 "after",
-                "until",
-                "unless",
-                "although"
+                "while",
+                "before",
+                "until"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "after",
-            "hint": "Sequential event. (Sector 6 calibration)",
-            "explanation": "'After' is correct. [Verified in sector 6]."
+            "hint": "The news came first; the celebration followed.",
+            "explanation": "'After' shows chronological sequence. Receiving the news (earlier event) led to celebrating with a meal (later action). 'When' could also work, but 'after' emphasises that the news came first."
         },
         {
-            "id": "cc_l79_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "id": "cc_l74_q2",
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was promoted ____ he saved the captain in sector 6.",
-            "sentence": "He was promoted ____ he saved the captain in sector 6.",
+            "question": "He decided to take a taxi ____ he was already running behind schedule.",
+            "sentence": "He decided to take a taxi ____ he was already running behind schedule.",
             "options": [
-                "since",
-                "unless",
-                "until",
-                "although"
+                "when",
+                "because",
+                "although",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "State reason. (Sector 6 calibration)",
-            "explanation": "'Since' is correct. [Verified in sector 6]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "because",
+            "hint": "Running late is the direct reason for choosing a taxi.",
+            "explanation": "'Because' gives the direct, practical reason for a decision. Being late (reason) explains choosing a taxi (action). 'So' would also work but would require the clauses to be reversed."
         },
         {
-            "id": "cc_l79_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "id": "cc_l74_q3",
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We found the base ____ the map was missing in sector 6.",
-            "sentence": "We found the base ____ the map was missing in sector 6.",
+            "question": "She always feels a little nervous ____ she meets someone new for the first time.",
+            "sentence": "She always feels a little nervous ____ she meets someone new for the first time.",
+            "options": [
+                "while",
+                "before",
+                "when",
+                "since"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "Meeting someone new is the regular social trigger for feeling nervous.",
+            "explanation": "'When' connects a regular trigger (meeting someone new) to a habitual emotional response (feeling nervous). This happens every time - 'before' would suggest she feels nervous before the actual meeting."
+        },
+        {
+            "id": "cc_l75_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The company has grown considerably ____ it launched its online store.",
+            "sentence": "The company has grown considerably ____ it launched its online store.",
+            "options": [
+                "when",
+                "while",
+                "because",
+                "since"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "since",
+            "hint": "The online store launch was the starting point of the company's growth.",
+            "explanation": "'Since' marks the starting point of a continuing trend. The company has grown (present perfect) FROM the time of the launch (specific past event) TO the present. The present perfect + 'since' is the correct structure."
+        },
+        {
+            "id": "cc_l75_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ the journey took far longer than planned, everyone arrived safely in the end.",
+            "sentence": "____ the journey took far longer than planned, everyone arrived safely in the end.",
             "options": [
                 "although",
                 "because",
-                "unless",
-                "while"
+                "until",
+                "since"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "although",
-            "hint": "Concession. (Sector 6 calibration)",
-            "explanation": "'Although' is correct. [Verified in sector 6]."
+            "hint": "A long journey is a drawback - but everyone arriving safely is the positive outcome.",
+            "explanation": "'Although' at the start introduces a concessive fact. The long journey (negative aspect) is acknowledged, but the safe arrival (positive outcome) is the main point - 'although' shows the negative did not prevent the positive."
         },
         {
-            "id": "cc_l80_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "id": "cc_l75_q3",
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You must exit ____ the timer runs out in sector 6.",
-            "sentence": "You must exit ____ the timer runs out in sector 6.",
+            "question": "She drafted her reply ____ she was still in the morning meeting.",
+            "sentence": "She drafted her reply ____ she was still in the morning meeting.",
             "options": [
                 "before",
-                "because",
-                "although",
-                "unless"
+                "while",
+                "when",
+                "until"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "before",
-            "hint": "Action preceding limit. (Sector 6 calibration)",
-            "explanation": "'Before' is correct. [Verified in sector 6]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "while",
+            "hint": "Drafting and being in the meeting were simultaneous activities.",
+            "explanation": "'While' connects two simultaneous activities. She was drafting a reply (background task) during the same time she was supposed to be in the meeting (foreground obligation). Both happened at the same time."
         },
         {
-            "id": "cc_l80_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "id": "cc_l76_q1",
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They arrived late ____ the capsule was delayed in sector 6.",
-            "sentence": "They arrived late ____ the capsule was delayed in sector 6.",
+            "question": "He kept revising his essay ____ he was completely satisfied with it.",
+            "sentence": "He kept revising his essay ____ he was completely satisfied with it.",
             "options": [
+                "when",
                 "because",
-                "although",
-                "unless",
-                "while"
+                "until",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "State reason. (Sector 6 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 6]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "until",
+            "hint": "Revising continued right up to the moment of complete satisfaction.",
+            "explanation": "'Until' marks the endpoint of a repeated effort. He kept revising UNTIL he was happy with the result (the stopping condition). The revision process lasted as long as necessary to reach that standard."
         },
         {
-            "id": "cc_l80_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "id": "cc_l76_q2",
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She laughed ____ she was nervous in sector 6.",
-            "sentence": "She laughed ____ she was nervous in sector 6.",
+            "question": "She accepted the invitation to speak ____ she had very little free time.",
+            "sentence": "She accepted the invitation to speak ____ she had very little free time.",
             "options": [
-                "though",
                 "because",
-                "unless",
+                "since",
+                "while",
+                "though"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "though",
+            "hint": "Accepting when you have no time is a generous but surprising decision.",
+            "explanation": "'Though' introduces a concessive contrast. Having little free time (obstacle) would normally prevent accepting such an invitation, but she accepted anyway - 'though' highlights that she overcame the constraint."
+        },
+        {
+            "id": "cc_l76_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "He called his family straight away ____ he landed at the airport.",
+            "sentence": "He called his family straight away ____ he landed at the airport.",
+            "options": [
+                "after",
+                "before",
+                "while",
                 "until"
             ],
             "correctAnswerIndex": 0,
+            "correctAnswer": "after",
+            "hint": "Landing came first; calling followed immediately afterwards.",
+            "explanation": "'After' shows the sequence. He landed (earlier event) and then called his family (immediate subsequent action). 'When' could also work, but 'after' specifically emphasises that he waited until he had landed."
+        },
+        {
+            "id": "cc_l77_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "They switched off the television ____ they wanted to focus on their conversation.",
+            "sentence": "They switched off the television ____ they wanted to focus on their conversation.",
+            "options": [
+                "when",
+                "because",
+                "while",
+                "although"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "because",
+            "hint": "Wanting to focus is the deliberate reason for switching off the TV.",
+            "explanation": "'Because' gives the deliberate, conscious reason for an action. Wanting to focus (reason) explains switching off the TV (action). This is a purposeful choice made for a clear stated reason."
+        },
+        {
+            "id": "cc_l77_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The dog always barks ____ the postman pushes letters through the door.",
+            "sentence": "The dog always barks ____ the postman pushes letters through the door.",
+            "options": [
+                "while",
+                "before",
+                "when",
+                "since"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "The postman's action is the regular trigger for barking.",
+            "explanation": "'When' connects a habitual trigger (postman pushing letters) to a habitual response (barking). This happens every time - 'while' would suggest ongoing barking throughout an extended postal delivery."
+        },
+        {
+            "id": "cc_l77_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She hasn't left the house much ____ she had her back operation two weeks ago.",
+            "sentence": "She hasn't left the house much ____ she had her back operation two weeks ago.",
+            "options": [
+                "when",
+                "while",
+                "because",
+                "since"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "since",
+            "hint": "The operation was the turning point - she has barely left home since then.",
+            "explanation": "'Since' marks the starting point of an ongoing change in behaviour. She hasn't been going out (present perfect negative) SINCE her operation (specific past event). The present perfect + 'since' shows this has continued from then to now."
+        },
+        {
+            "id": "cc_l78_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ it was a Monday morning, the high street was surprisingly busy.",
+            "sentence": "____ it was a Monday morning, the high street was surprisingly busy.",
+            "options": [
+                "although",
+                "because",
+                "since",
+                "until"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "although",
+            "hint": "A Monday morning would normally be quiet - a busy high street is unexpected.",
+            "explanation": "'Although' at the start introduces a concessive fact. Monday mornings are usually quiet (expected), but the high street was busy (unexpected outcome) - 'although' captures this surprising contrast."
+        },
+        {
+            "id": "cc_l78_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "He grew more and more confident ____ he settled into his new role at work.",
+            "sentence": "He grew more and more confident ____ he settled into his new role at work.",
+            "options": [
+                "when",
+                "as",
+                "while",
+                "although"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "as",
+            "hint": "Confidence developed gradually in proportion to settling into the role.",
+            "explanation": "'As' expresses parallel, proportional development. His confidence grew at the same rate as he settled in - both changed together over time. This is the gradual-change use of 'as'."
+        },
+        {
+            "id": "cc_l78_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She always prepares her key points mentally ____ she walks into a job interview.",
+            "sentence": "She always prepares her key points mentally ____ she walks into a job interview.",
+            "options": [
+                "after",
+                "until",
+                "before",
+                "since"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "before",
+            "hint": "Mental preparation must come before entering - not after.",
+            "explanation": "'Before' shows prior action. She prepares BEFORE walking in - mental preparation needs to happen before the interview starts. 'When' would suggest she prepares at the moment of walking in, which is too late."
+        },
+        {
+            "id": "cc_l79_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She automatically reaches for her phone ____ she hears a notification sound.",
+            "sentence": "She automatically reaches for her phone ____ she hears a notification sound.",
+            "options": [
+                "while",
+                "before",
+                "although",
+                "when"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "when",
+            "hint": "A notification sound is the immediate trigger for reaching for the phone.",
+            "explanation": "'When' marks the specific trigger that causes an automatic response. The sound (trigger) causes the hand movement (response) - this is a habitual, almost reflexive reaction. 'While' would suggest extended reaching."
+        },
+        {
+            "id": "cc_l79_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ she tried several times, she couldn't quite crack the soufflé recipe.",
+            "sentence": "____ she tried several times, she couldn't quite crack the soufflé recipe.",
+            "options": [
+                "though",
+                "because",
+                "while",
+                "since"
+            ],
+            "correctAnswerIndex": 0,
             "correctAnswer": "though",
-            "hint": "Concession. (Sector 6 calibration)",
-            "explanation": "'Though' is correct. [Verified in sector 6]."
+            "hint": "Multiple attempts are acknowledged - but the result was still failure.",
+            "explanation": "'Though' at the start of a sentence introduces the concessive clause first. Several attempts (positive effort) would normally lead to success, but she still couldn't do it - 'though' shows the effort did not produce the expected result."
+        },
+        {
+            "id": "cc_l79_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "They kept searching the whole house ____ they found the missing car keys.",
+            "sentence": "They kept searching the whole house ____ they found the missing car keys.",
+            "options": [
+                "when",
+                "until",
+                "while",
+                "since"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "until",
+            "hint": "Searching continued right up to the moment of finding the keys.",
+            "explanation": "'Until' marks the endpoint of a continuous action. They searched UNTIL the keys were found (the stopping point). At that moment, the search ended."
+        },
+        {
+            "id": "cc_l80_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She has been playing the violin ____ she was six years old.",
+            "sentence": "She has been playing the violin ____ she was six years old.",
+            "options": [
+                "because",
+                "when",
+                "since",
+                "although"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "since",
+            "hint": "Age six was the starting point - she has played from then to now.",
+            "explanation": "'Since' with the present perfect ('has been playing') shows a skill that began at a specific age (six) and has continued to the present. This is a classic 'since + age/time' structure."
+        },
+        {
+            "id": "cc_l80_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "He took a long walk to clear his head ____ he had an argument with his brother.",
+            "sentence": "He took a long walk to clear his head ____ he had an argument with his brother.",
+            "options": [
+                "before",
+                "while",
+                "until",
+                "after"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "after",
+            "hint": "The argument happened first; the walk to recover came afterwards.",
+            "explanation": "'After' shows the chronological sequence. The argument (earlier stressful event) led to the walk (subsequent coping action). He walked to clear his head AFTER the argument."
+        },
+        {
+            "id": "cc_l80_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She keeps a spare key at her neighbour's house ____ she sometimes locks herself out.",
+            "sentence": "She keeps a spare key at her neighbour's house ____ she sometimes locks herself out.",
+            "options": [
+                "because",
+                "although",
+                "when",
+                "since"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "because",
+            "hint": "Occasionally locking herself out is the practical reason for the spare key.",
+            "explanation": "'Because' gives the practical, precautionary reason for an action. The risk of locking herself out (reason) explains keeping a spare key with the neighbour (precaution). This is a clear cause-driven habit."
         }
     ]
 }

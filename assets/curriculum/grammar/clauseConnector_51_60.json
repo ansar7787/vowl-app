@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l51_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We will freeze ____ we turn on the heater in sector 4.",
-            "sentence": "We will freeze ____ we turn on the heater in sector 4.",
+            "question": "She enjoyed the trip ____ the accommodation was very basic.",
+            "sentence": "She enjoyed the trip ____ the accommodation was very basic.",
             "options": [
-                "unless",
                 "because",
-                "although",
-                "while"
+                "since",
+                "while",
+                "although"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "unless",
-            "hint": "State a negative condition (except if). (Sector 4 calibration)",
-            "explanation": "'Unless' introduces a negative condition. [Verified in sector 4]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "although",
+            "hint": "Basic accommodation would normally reduce enjoyment - but she still had a good time.",
+            "explanation": "'Although' introduces a concession: a fact that might prevent or limit the main clause, but does not. She enjoyed the trip ALTHOUGH the accommodation was poor - the expected outcome (not enjoying it) did not happen."
         },
         {
             "id": "cc_l51_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He likes coding ____ his brother prefers art in sector 4.",
-            "sentence": "He likes coding ____ his brother prefers art in sector 4.",
+            "question": "____ the film received terrible reviews, it became a box office success.",
+            "sentence": "____ the film received terrible reviews, it became a box office success.",
             "options": [
-                "whereas",
+                "though",
                 "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Show direct contrast between preferences. (Sector 4 calibration)",
-            "explanation": "'Whereas' indicates direct contrast. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l51_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We must stay indoors ____ the radiation drops in sector 4.",
-            "sentence": "We must stay indoors ____ the radiation drops in sector 4.",
-            "options": [
-                "until",
-                "because",
-                "although",
-                "unless"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "until",
-            "hint": "Time limit. (Sector 4 calibration)",
-            "explanation": "'Until' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l52_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The reactor will blow ____ the temperature rises in sector 4.",
-            "sentence": "The reactor will blow ____ the temperature rises in sector 4.",
-            "options": [
-                "if",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "if",
-            "hint": "State a direct condition. (Sector 4 calibration)",
-            "explanation": "'If' introduces conditional clause. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l52_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "They stayed awake ____ we slept soundly in sector 4.",
-            "sentence": "They stayed awake ____ we slept soundly in sector 4.",
-            "options": [
-                "while",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast simultaneous actions. (Sector 4 calibration)",
-            "explanation": "'While' can show contrast. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l52_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The crop died ____ the soil was dry in sector 4.",
-            "sentence": "The crop died ____ the soil was dry in sector 4.",
-            "options": [
                 "since",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "Reason. (Sector 4 calibration)",
-            "explanation": "'Since' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l53_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "They will survive ____ they conserve oxygen in sector 4.",
-            "sentence": "They will survive ____ they conserve oxygen in sector 4.",
-            "options": [
-                "provided that",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "provided that",
-            "hint": "State a necessary condition. (Sector 4 calibration)",
-            "explanation": "'Provided that' is conditional. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l53_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "She chose physics ____ he opted for biology in sector 4.",
-            "sentence": "She chose physics ____ he opted for biology in sector 4.",
-            "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Direct contrast. (Sector 4 calibration)",
-            "explanation": "'Whereas' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l53_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "She succeeded ____ she worked night and day in sector 4.",
-            "sentence": "She succeeded ____ she worked night and day in sector 4.",
-            "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Reason. (Sector 4 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l54_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "You can enter the core ____ you wear a shield in sector 4.",
-            "sentence": "You can enter the core ____ you wear a shield in sector 4.",
-            "options": [
-                "as long as",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as long as",
-            "hint": "Express conditional duration. (Sector 4 calibration)",
-            "explanation": "'As long as' is conditional. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l54_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We had water ____ they had none in sector 4.",
-            "sentence": "We had water ____ they had none in sector 4.",
-            "options": [
-                "while",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast. (Sector 4 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l54_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "He was happy ____ he won the race in sector 4.",
-            "sentence": "He was happy ____ he won the race in sector 4.",
-            "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Reason. (Sector 4 calibration)",
-            "explanation": "'As' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l55_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We cannot escape ____ the hyperdrive is fixed in sector 4.",
-            "sentence": "We cannot escape ____ the hyperdrive is fixed in sector 4.",
-            "options": [
-                "unless",
-                "if",
-                "because",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "unless",
-            "hint": "Negative condition. (Sector 4 calibration)",
-            "explanation": "'Unless' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l55_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "Gold is heavy ____ aluminum is light in sector 4.",
-            "sentence": "Gold is heavy ____ aluminum is light in sector 4.",
-            "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Contrast. (Sector 4 calibration)",
-            "explanation": "'Whereas' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l55_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We stayed ____ the rain stopped in sector 4.",
-            "sentence": "We stayed ____ the rain stopped in sector 4.",
-            "options": [
-                "until",
-                "because",
-                "although",
-                "unless"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "until",
-            "hint": "Time boundary. (Sector 4 calibration)",
-            "explanation": "'Until' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l56_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The system rebooted ____ the override was pulled in sector 4.",
-            "sentence": "The system rebooted ____ the override was pulled in sector 4.",
-            "options": [
-                "as soon as",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as soon as",
-            "hint": "Immediate consequence of condition. (Sector 4 calibration)",
-            "explanation": "'As soon as' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l56_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The base was warm ____ the valley was freezing in sector 4.",
-            "sentence": "The base was warm ____ the valley was freezing in sector 4.",
-            "options": [
-                "while",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast. (Sector 4 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l56_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The core is safe ____ the shield is active in sector 4.",
-            "sentence": "The core is safe ____ the shield is active in sector 4.",
-            "options": [
-                "as long as",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as long as",
-            "hint": "Condition. (Sector 4 calibration)",
-            "explanation": "'As long as' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l57_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We can win the war ____ we unite in sector 4.",
-            "sentence": "We can win the war ____ we unite in sector 4.",
-            "options": [
-                "if",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "if",
-            "hint": "Condition. (Sector 4 calibration)",
-            "explanation": "'If' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l57_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "She is quiet ____ he is loud in sector 4.",
-            "sentence": "She is quiet ____ he is loud in sector 4.",
-            "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Contrast. (Sector 4 calibration)",
-            "explanation": "'Whereas' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l57_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "You can keep it ____ you return it tomorrow in sector 4.",
-            "sentence": "You can keep it ____ you return it tomorrow in sector 4.",
-            "options": [
-                "provided that",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "provided that",
-            "hint": "Condition. (Sector 4 calibration)",
-            "explanation": "'Provided that' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l58_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The dome remains safe ____ the shields stay up in sector 4.",
-            "sentence": "The dome remains safe ____ the shields stay up in sector 4.",
-            "options": [
-                "provided",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "provided",
-            "hint": "Necessary condition. (Sector 4 calibration)",
-            "explanation": "'Provided' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l58_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The dome is safe ____ the outside is deadly in sector 4.",
-            "sentence": "The dome is safe ____ the outside is deadly in sector 4.",
-            "options": [
-                "while",
-                "unless",
-                "until",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast. (Sector 4 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l58_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The fire spread ____ the wind was strong in sector 4.",
-            "sentence": "The fire spread ____ the wind was strong in sector 4.",
-            "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Reason. (Sector 4 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l59_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "You will fail ____ you study hard in sector 4.",
-            "sentence": "You will fail ____ you study hard in sector 4.",
-            "options": [
-                "unless",
-                "if",
-                "because",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "unless",
-            "hint": "Negative condition. (Sector 4 calibration)",
-            "explanation": "'Unless' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l59_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "Mars is dry ____ Earth is wet in sector 4.",
-            "sentence": "Mars is dry ____ Earth is wet in sector 4.",
-            "options": [
-                "whereas",
-                "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whereas",
-            "hint": "Contrast. (Sector 4 calibration)",
-            "explanation": "'Whereas' is correct. [Verified in sector 4]."
-        },
-        {
-            "id": "cc_l59_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "He did not give up ____ the odds were poor in sector 4.",
-            "sentence": "He did not give up ____ the odds were poor in sector 4.",
-            "options": [
-                "even though",
-                "because",
-                "unless",
                 "until"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession. (Sector 4 calibration)",
-            "explanation": "'Even though' is correct. [Verified in sector 4]."
+            "correctAnswer": "though",
+            "hint": "Bad reviews would normally sink a film - but this one succeeded anyway.",
+            "explanation": "'Though' (informal for 'although') introduces a surprising contrast. Bad reviews (concessive fact) would normally lead to failure, but the film succeeded - 'though' shows the expected outcome did not occur."
+        },
+        {
+            "id": "cc_l51_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "He played brilliantly in the match ____ he hadn't trained all week.",
+            "sentence": "He played brilliantly in the match ____ he hadn't trained all week.",
+            "options": [
+                "and",
+                "although",
+                "because",
+                "since"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "although",
+            "hint": "Playing well without any training is an impressive and surprising result.",
+            "explanation": "'Although' introduces a concession. No training (concessive fact) would normally mean poor performance, but he played brilliantly - 'although' shows the expected outcome was reversed."
+        },
+        {
+            "id": "cc_l52_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She managed to stay completely calm ____ the situation was extremely chaotic.",
+            "sentence": "She managed to stay completely calm ____ the situation was extremely chaotic.",
+            "options": [
+                "because",
+                "while",
+                "though",
+                "until"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "though",
+            "hint": "Staying calm during chaos is unexpected - the two things are in tension.",
+            "explanation": "'Though' (informal for 'although') introduces a concessive contrast. Chaos (concessive fact) would normally cause panic, but she stayed calm - 'though' signals the surprising result."
+        },
+        {
+            "id": "cc_l52_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "They finished the project on time ____ they had very limited resources.",
+            "sentence": "They finished the project on time ____ they had very limited resources.",
+            "options": [
+                "because",
+                "while",
+                "since",
+                "although"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "although",
+            "hint": "Finishing on time with limited resources is a real achievement despite obstacles.",
+            "explanation": "'Although' introduces a concession. Limited resources (obstacle) would normally cause delays, but they finished on time - 'although' shows that the obstacle did not prevent the positive outcome."
+        },
+        {
+            "id": "cc_l52_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ the prices have gone up, the restaurant is still packed every weekend.",
+            "sentence": "____ the prices have gone up, the restaurant is still packed every weekend.",
+            "options": [
+                "although",
+                "while",
+                "because",
+                "since"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "although",
+            "hint": "Higher prices would normally reduce customers - but the restaurant is still busy.",
+            "explanation": "'Although' at the start of a sentence introduces the concessive clause first. Higher prices (concession) would normally reduce customers, but the restaurant remains full - the expected consequence did not happen."
+        },
+        {
+            "id": "cc_l53_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The soup was a little cold, ____ it tasted absolutely delicious.",
+            "sentence": "The soup was a little cold, ____ it tasted absolutely delicious.",
+            "options": [
+                "since",
+                "though",
+                "because",
+                "until"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "though",
+            "hint": "Cold soup is a drawback - but the taste made up for it.",
+            "explanation": "'Though' after a comma in mid-sentence works as a concession meaning 'but despite that' or 'however'. The cold temperature (minor drawback) is acknowledged, but the delicious taste (positive) is the main point."
+        },
+        {
+            "id": "cc_l53_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She went for a morning run ____ she had a slight headache.",
+            "sentence": "She went for a morning run ____ she had a slight headache.",
+            "options": [
+                "because",
+                "since",
+                "although",
+                "until"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "although",
+            "hint": "Running with a headache is uncomfortable - but she went anyway.",
+            "explanation": "'Although' introduces the concession. Having a headache (obstacle) would normally prevent running, but she went anyway - 'although' shows she did not let the headache stop her."
+        },
+        {
+            "id": "cc_l53_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "He said nothing at the meeting ____ he clearly disagreed with the decision.",
+            "sentence": "He said nothing at the meeting ____ he clearly disagreed with the decision.",
+            "options": [
+                "because",
+                "since",
+                "while",
+                "though"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "though",
+            "hint": "Staying silent when you disagree is an interesting contrast in behaviour.",
+            "explanation": "'Though' introduces a concessive contrast. Clearly disagreeing (concessive fact) would normally lead to speaking up, but he said nothing - 'though' shows the expected behaviour did not occur."
+        },
+        {
+            "id": "cc_l54_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ it was raining heavily, the outdoor concert went ahead as planned.",
+            "sentence": "____ it was raining heavily, the outdoor concert went ahead as planned.",
+            "options": [
+                "although",
+                "because",
+                "since",
+                "while"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "although",
+            "hint": "Heavy rain would normally cancel an outdoor event - but this one continued.",
+            "explanation": "'Although' at the start introduces the concessive clause. Heavy rain (obstacle) would normally cancel an outdoor event, but it went ahead - 'although' shows the weather did not prevent the performance."
+        },
+        {
+            "id": "cc_l54_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "He bought the expensive suit ____ he could not really afford it at the time.",
+            "sentence": "He bought the expensive suit ____ he could not really afford it at the time.",
+            "options": [
+                "since",
+                "though",
+                "because",
+                "if"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "though",
+            "hint": "Buying something you can't afford is a surprising or unwise decision.",
+            "explanation": "'Though' introduces a concession. Not being able to afford it (obstacle) would normally prevent the purchase, but he bought it - 'though' highlights that the obstacle was not enough to stop him."
+        },
+        {
+            "id": "cc_l54_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The café is tiny ____ it always attracts a wonderfully loyal crowd.",
+            "sentence": "The café is tiny ____ it always attracts a wonderfully loyal crowd.",
+            "options": [
+                "because",
+                "since",
+                "although",
+                "while"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "although",
+            "hint": "A tiny space would normally limit customers - but this café is always busy.",
+            "explanation": "'Although' introduces a concessive contrast. The small size (limitation) would normally restrict the customer base, but the café is always full - 'although' shows the size is not an obstacle to its success."
+        },
+        {
+            "id": "cc_l55_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She said she was perfectly fine ____ her voice was trembling slightly.",
+            "sentence": "She said she was perfectly fine ____ her voice was trembling slightly.",
+            "options": [
+                "because",
+                "since",
+                "while",
+                "though"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "though",
+            "hint": "Saying you're fine while trembling is a clear contradiction between words and behaviour.",
+            "explanation": "'Though' introduces a concessive contrast. A trembling voice (sign of distress) contradicts the claim of being fine - 'though' highlights this gap between what she said and what her body showed."
+        },
+        {
+            "id": "cc_l55_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ he studied intensively for months, he failed the professional exam.",
+            "sentence": "____ he studied intensively for months, he failed the professional exam.",
+            "options": [
+                "although",
+                "because",
+                "until",
+                "while"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "although",
+            "hint": "Months of studying should lead to passing - but it didn't.",
+            "explanation": "'Although' introduces a concession at the start. Intensive studying (expected reason for success) would normally lead to passing, but he failed - 'although' signals this unexpected and disappointing outcome."
+        },
+        {
+            "id": "cc_l55_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The climb was exhausting, ____ the view from the summit was worth every step.",
+            "sentence": "The climb was exhausting, ____ the view from the summit was worth every step.",
+            "options": [
+                "because",
+                "though",
+                "since",
+                "while"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "though",
+            "hint": "The effort was hard - but the reward made it all worthwhile.",
+            "explanation": "'Though' after a comma introduces a concession or qualification. The exhaustion (negative aspect) is real, but the view (reward) made it worthwhile - 'though' shows that the negative fact does not cancel out the positive outcome."
+        },
+        {
+            "id": "cc_l56_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The doctor was very experienced ____ she still referred the patient to a specialist.",
+            "sentence": "The doctor was very experienced ____ she still referred the patient to a specialist.",
+            "options": [
+                "because",
+                "since",
+                "although",
+                "while"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "although",
+            "hint": "Experienced doctors usually handle cases themselves - referring out is unexpected.",
+            "explanation": "'Although' introduces a concession. Being experienced (positive trait) would normally mean handling the case personally, but she still referred the patient - 'although' shows the referral was surprising given her experience."
+        },
+        {
+            "id": "cc_l56_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "He chose to walk the whole way ____ the metro would have been much quicker.",
+            "sentence": "He chose to walk the whole way ____ the metro would have been much quicker.",
+            "options": [
+                "because",
+                "since",
+                "until",
+                "though"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "though",
+            "hint": "Choosing to walk when the metro is faster is an unexpected or unusual choice.",
+            "explanation": "'Though' introduces a concessive contrast. The faster metro (concessive fact) would normally be the obvious choice, but he walked - 'though' shows he ignored the more convenient option."
+        },
+        {
+            "id": "cc_l56_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ the report was very long, it was written in a clear and readable style.",
+            "sentence": "____ the report was very long, it was written in a clear and readable style.",
+            "options": [
+                "although",
+                "because",
+                "since",
+                "while"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "although",
+            "hint": "A long report would normally be difficult to read - but this one was clear.",
+            "explanation": "'Although' at the start introduces the concessive clause. The length (potential drawback) would normally make reading difficult, but the clear writing style made it accessible - 'although' shows the drawback was overcome."
+        },
+        {
+            "id": "cc_l57_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She ate a full meal at the restaurant, ____ she wasn't particularly hungry.",
+            "sentence": "She ate a full meal at the restaurant, ____ she wasn't particularly hungry.",
+            "options": [
+                "since",
+                "though",
+                "because",
+                "after"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "though",
+            "hint": "Eating a full meal when you're not hungry is a contrast between action and appetite.",
+            "explanation": "'Though' after a comma introduces a mid-sentence concession. She ate the meal (action) even though she wasn't hungry (concessive fact) - 'though' works here as a softer, more informal 'although'."
+        },
+        {
+            "id": "cc_l57_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "They kept playing ____ the score was already very high against them.",
+            "sentence": "They kept playing ____ the score was already very high against them.",
+            "options": [
+                "because",
+                "since",
+                "although",
+                "while"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "although",
+            "hint": "Continuing to play when losing badly shows determination against the odds.",
+            "explanation": "'Although' introduces a concession. A very high score against them (discouraging fact) would normally lead to giving up, but they kept playing - 'although' shows their determination despite the odds."
+        },
+        {
+            "id": "cc_l57_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "He appeared very confident on stage ____ he was absolutely terrified inside.",
+            "sentence": "He appeared very confident on stage ____ he was absolutely terrified inside.",
+            "options": [
+                "because",
+                "since",
+                "while",
+                "though"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "though",
+            "hint": "Looking confident while feeling terrified is a classic performer's contrast.",
+            "explanation": "'Though' introduces a concessive contrast. Inner terror (concessive fact) would normally show through to the audience, but he appeared confident - 'though' highlights the difference between appearance and inner experience."
+        },
+        {
+            "id": "cc_l58_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ the queue was long, the service was remarkably efficient.",
+            "sentence": "____ the queue was long, the service was remarkably efficient.",
+            "options": [
+                "although",
+                "because",
+                "since",
+                "if"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "although",
+            "hint": "A long queue would normally mean slow service - but this was efficient.",
+            "explanation": "'Although' at the start introduces the concessive fact first. A long queue (expected problem) would usually mean slow service, but the efficiency was good - 'although' shows the expected problem did not cause the expected outcome."
+        },
+        {
+            "id": "cc_l58_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The instructions were very complicated, ____ she managed to assemble it perfectly.",
+            "sentence": "The instructions were very complicated, ____ she managed to assemble it perfectly.",
+            "options": [
+                "since",
+                "though",
+                "because",
+                "until"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "though",
+            "hint": "Complicated instructions usually cause assembly errors - but she got it right.",
+            "explanation": "'Though' after a comma introduces a mid-sentence concession. Complicated instructions (obstacle) would normally cause difficulty, but she succeeded - 'though' is used informally in mid-sentence to show a positive result despite the problem."
+        },
+        {
+            "id": "cc_l58_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She answered every question correctly ____ she had barely revised for the test.",
+            "sentence": "She answered every question correctly ____ she had barely revised for the test.",
+            "options": [
+                "because",
+                "since",
+                "although",
+                "while"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "although",
+            "hint": "Getting everything right without revising is an impressive and surprising result.",
+            "explanation": "'Although' introduces a concession. Barely revising (negative preparation) would normally lead to errors, but she answered every question correctly - 'although' captures the surprising positive outcome."
+        },
+        {
+            "id": "cc_l59_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "He kept his voice perfectly steady ____ his hands were trembling noticeably.",
+            "sentence": "He kept his voice perfectly steady ____ his hands were trembling noticeably.",
+            "options": [
+                "because",
+                "since",
+                "while",
+                "though"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "though",
+            "hint": "A steady voice and trembling hands are in direct physical contradiction.",
+            "explanation": "'Though' introduces a concessive contrast. Trembling hands (sign of nerves) would normally affect the voice too, but he kept it steady - 'though' highlights the contrast between his visible and audible presentation."
+        },
+        {
+            "id": "cc_l59_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ it was her very first public performance, she seemed remarkably at ease.",
+            "sentence": "____ it was her very first public performance, she seemed remarkably at ease.",
+            "options": [
+                "although",
+                "because",
+                "since",
+                "when"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "although",
+            "hint": "A first performance would normally cause nerves - but she seemed relaxed.",
+            "explanation": "'Although' at the start introduces the concessive fact. A first performance (cause for nerves) would normally lead to visible anxiety, but she seemed at ease - 'although' captures this unexpected confidence."
+        },
+        {
+            "id": "cc_l59_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The team lost the semi-final, ____ they had played with tremendous spirit throughout.",
+            "sentence": "The team lost the semi-final, ____ they had played with tremendous spirit throughout.",
+            "options": [
+                "because",
+                "though",
+                "since",
+                "while"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "though",
+            "hint": "Losing is the result - but their effort and spirit deserve recognition.",
+            "explanation": "'Though' after a comma introduces a positive concession. Losing (negative outcome) is the main fact, but their spirit (positive attribute) was real - 'though' shows that the positive attribute existed despite the negative result."
         },
         {
             "id": "cc_l60_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The alarm goes off ____ the laser is broken in sector 4.",
-            "sentence": "The alarm goes off ____ the laser is broken in sector 4.",
+            "question": "He completed the full marathon ____ he had only trained for six weeks.",
+            "sentence": "He completed the full marathon ____ he had only trained for six weeks.",
             "options": [
-                "if",
-                "unless",
-                "until",
-                "although"
+                "because",
+                "since",
+                "although",
+                "until"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "if",
-            "hint": "Condition. (Sector 4 calibration)",
-            "explanation": "'If' is correct. [Verified in sector 4]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "although",
+            "hint": "Completing a marathon with only six weeks of training is remarkable.",
+            "explanation": "'Although' introduces a concession. Only six weeks of training (insufficient preparation) would normally mean failing to finish, but he completed it - 'although' shows the achievement was more impressive because of the limited preparation."
         },
         {
             "id": "cc_l60_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was confident ____ she was worried in sector 4.",
-            "sentence": "He was confident ____ she was worried in sector 4.",
+            "question": "She accepted the harsh criticism very gracefully ____ it was largely unfair.",
+            "sentence": "She accepted the harsh criticism very gracefully ____ it was largely unfair.",
             "options": [
+                "because",
+                "since",
                 "while",
-                "unless",
-                "until",
-                "although"
+                "though"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Contrast. (Sector 4 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 4]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "though",
+            "hint": "Accepting unfair criticism gracefully is a mature and surprising response.",
+            "explanation": "'Though' introduces a concessive contrast. Unfair criticism (concessive fact) would normally provoke a defensive response, but she accepted it gracefully - 'though' highlights the gap between the unfairness and her dignified reaction."
         },
         {
             "id": "cc_l60_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must run ____ we miss the launch in sector 4.",
-            "sentence": "We must run ____ we miss the launch in sector 4.",
+            "question": "____ the flat is quite small, it has a stunning view of the entire city.",
+            "sentence": "____ the flat is quite small, it has a stunning view of the entire city.",
             "options": [
-                "lest",
-                "because",
                 "although",
-                "unless"
+                "because",
+                "since",
+                "while"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "lest",
-            "hint": "For fear that (formal/archaic condition). (Sector 4 calibration)",
-            "explanation": "'Lest' means for fear that. [Verified in sector 4]."
+            "correctAnswer": "although",
+            "hint": "Small size is a drawback - but the view is a major compensation.",
+            "explanation": "'Although' at the start introduces the concessive fact first. The small size (drawback) would normally be the dominant characteristic, but the view (positive feature) more than compensates - 'although' sets up this contrast."
         }
     ]
 }

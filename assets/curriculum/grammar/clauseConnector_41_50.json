@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l41_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must wait ____ the engine cools down in sector 3.",
-            "sentence": "We must wait ____ the engine cools down in sector 3.",
+            "question": "She had to resubmit her application ____ she had made several errors in the form.",
+            "sentence": "She had to resubmit her application ____ she had made several errors in the form.",
             "options": [
-                "until",
+                "while",
+                "since",
                 "because",
-                "although",
-                "unless"
+                "as"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "until",
-            "hint": "Show a time limit or milestone. (Sector 3 calibration)",
-            "explanation": "'Until' shows time boundary. [Verified in sector 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "because",
+            "hint": "Errors in the form are the direct cause of the resubmission.",
+            "explanation": "'Because' is the clearest connector for stating a direct reason. The errors (cause) required resubmission (effect). 'Since' can also mean 'because' but is slightly more formal; 'because' is more natural here for a direct causal explanation."
         },
         {
             "id": "cc_l41_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We aborted the mission ____ the reactor leaked in sector 3.",
-            "sentence": "We aborted the mission ____ the reactor leaked in sector 3.",
+            "question": "He has been using a standing desk ____ his doctor recommended it six months ago.",
+            "sentence": "He has been using a standing desk ____ his doctor recommended it six months ago.",
             "options": [
                 "because",
-                "although",
-                "unless",
+                "when",
+                "since",
                 "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "State the cause of aborting. (Sector 3 calibration)",
-            "explanation": "'Because' introduces a cause. [Verified in sector 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "since",
+            "hint": "The doctor's recommendation was the starting point of this new habit.",
+            "explanation": "'Since' is used temporally with the present perfect tense to show an action that began at a specific past moment and continues now. 'He has been using' (present perfect) + 'since' + specific past event (doctor's recommendation) is the correct structure."
         },
         {
             "id": "cc_l41_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We will launch ____ it is raining in sector 3.",
-            "sentence": "We will launch ____ it is raining in sector 3.",
+            "question": "The app is so popular ____ it is completely free to download.",
+            "sentence": "The app is so popular ____ it is completely free to download.",
             "options": [
-                "even though",
-                "because",
-                "unless",
-                "until"
+                "while",
+                "since",
+                "although",
+                "because"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Show concession or obstacle. (Sector 3 calibration)",
-            "explanation": "'Even though' shows concession. [Verified in sector 3]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "because",
+            "hint": "Being free is the direct reason for the app's wide popularity.",
+            "explanation": "'Because' introduces a clear, direct cause. The app's popularity (result) is directly explained by it being free (cause). While 'since' could substitute causally, 'because' is more natural for direct, factual explanations."
         },
         {
             "id": "cc_l42_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crew rested ____ the autopilot was active in sector 3.",
-            "sentence": "The crew rested ____ the autopilot was active in sector 3.",
+            "question": "____ she moved to the new city, she has made many new friends.",
+            "sentence": "____ she moved to the new city, she has made many new friends.",
             "options": [
+                "since",
+                "because",
                 "while",
-                "unless",
-                "until",
-                "before"
+                "as"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Show simultaneous actions. (Sector 3 calibration)",
-            "explanation": "'While' shows duration/simultaneous acts. [Verified in sector 3]."
+            "correctAnswer": "since",
+            "hint": "Moving to the new city is the starting point - think about time, not reason.",
+            "explanation": "'Since' at the start of a sentence marks a starting point in the past. The present perfect 'has made' + 'since' + past event (moving) shows an activity that started when she moved and continues now. 'Because' would give a reason, not a time reference."
         },
         {
             "id": "cc_l42_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The shield failed ____ it was hit by a laser in sector 3.",
-            "sentence": "The shield failed ____ it was hit by a laser in sector 3.",
+            "question": "He chose the window seat ____ he loves watching the scenery go by.",
+            "sentence": "He chose the window seat ____ he loves watching the scenery go by.",
             "options": [
+                "and",
+                "because",
                 "since",
-                "unless",
-                "until",
-                "although"
+                "so"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "State a cause or reason. (Sector 3 calibration)",
-            "explanation": "'Since' acts as because. [Verified in sector 3]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "because",
+            "hint": "His love of the view is the personal reason for choosing that seat.",
+            "explanation": "'Because' directly states a personal motivation. Loving the view (reason) drove the seat choice (action). While 'since' can also mean 'because', 'because' is more natural for explaining personal preferences."
         },
         {
             "id": "cc_l42_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The armor held ____ the impact was massive in sector 3.",
-            "sentence": "The armor held ____ the impact was massive in sector 3.",
+            "question": "She has worked at the same firm ____ she graduated from university.",
+            "sentence": "She has worked at the same firm ____ she graduated from university.",
             "options": [
-                "although",
                 "because",
-                "unless",
-                "while"
+                "after",
+                "since",
+                "until"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 3 calibration)",
-            "explanation": "'Although' shows concession. [Verified in sector 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "since",
+            "hint": "Graduation is a past moment - her employment started then and continues now.",
+            "explanation": "'Since' with the present perfect ('has worked') shows continuous employment from a specific past event (graduation) to the present. 'After' would use the simple past ('worked'), not 'has worked'."
         },
         {
             "id": "cc_l43_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The signal improved ____ we adjusted the dish in sector 3.",
-            "sentence": "The signal improved ____ we adjusted the dish in sector 3.",
+            "question": "The market was much busier than usual ____ a local food festival was taking place.",
+            "sentence": "The market was much busier than usual ____ a local food festival was taking place.",
             "options": [
-                "after",
-                "until",
                 "while",
-                "although"
+                "since",
+                "as",
+                "because"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "after",
-            "hint": "Show action following another. (Sector 3 calibration)",
-            "explanation": "'After' shows sequential time. [Verified in sector 3]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "because",
+            "hint": "The food festival is the specific reason for extra visitors.",
+            "explanation": "'Because' states the clear cause. The food festival (reason) explains the extra business at the market (result). 'Since' might suggest a time period rather than a specific reason in this context."
         },
         {
             "id": "cc_l43_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They remained indoors ____ the radiation was high in sector 3.",
-            "sentence": "They remained indoors ____ the radiation was high in sector 3.",
+            "question": "House prices have risen sharply ____ the new transport links opened.",
+            "sentence": "House prices have risen sharply ____ the new transport links opened.",
             "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
+                "since",
+                "because",
+                "while",
+                "as"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "State a reason. (Sector 3 calibration)",
-            "explanation": "'As' can mean because. [Verified in sector 3]."
+            "correctAnswer": "since",
+            "hint": "The transport links opening was the starting point of rising prices.",
+            "explanation": "'Since' marks the starting point of a continuing trend. Prices have been rising FROM the time the transport links opened (past event) TO the present. The present perfect 'have risen' confirms 'since' is needed."
         },
         {
             "id": "cc_l43_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He smiled ____ he was in severe pain in sector 3.",
-            "sentence": "He smiled ____ he was in severe pain in sector 3.",
+            "question": "She couldn't attend the conference ____ she had a prior commitment.",
+            "sentence": "She couldn't attend the conference ____ she had a prior commitment.",
             "options": [
-                "though",
+                "although",
                 "because",
-                "unless",
-                "until"
+                "since",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "though",
-            "hint": "Concession. (Sector 3 calibration)",
-            "explanation": "'Though' is concession. [Verified in sector 3]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "because",
+            "hint": "A prior commitment is a practical, direct reason for absence.",
+            "explanation": "'Because' gives the straightforward reason for non-attendance. While 'since' can also mean 'because', 'because' is preferred for giving a clear, direct, factual reason for why something happened."
         },
         {
             "id": "cc_l44_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We landed ____ the sun was setting in sector 3.",
-            "sentence": "We landed ____ the sun was setting in sector 3.",
+            "question": "He hasn't visited his home town ____ he left for university five years ago.",
+            "sentence": "He hasn't visited his home town ____ he left for university five years ago.",
             "options": [
-                "as",
-                "unless",
-                "until",
-                "although"
+                "because",
+                "after",
+                "since",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Show action during a state. (Sector 3 calibration)",
-            "explanation": "'As' is temporal. [Verified in sector 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "since",
+            "hint": "Leaving for university was the past moment - he hasn't visited from then until now.",
+            "explanation": "'Since' with the negative present perfect ('hasn't visited') shows an absence that began at a specific past moment (leaving for university) and has continued to the present."
         },
         {
             "id": "cc_l44_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The engine died ____ the fuel filter was clogged in sector 3.",
-            "sentence": "The engine died ____ the fuel filter was clogged in sector 3.",
+            "question": "The company delayed the product launch ____ it needed more consumer testing.",
+            "sentence": "The company delayed the product launch ____ it needed more consumer testing.",
             "options": [
-                "because",
+                "while",
+                "since",
                 "although",
-                "unless",
-                "while"
+                "because"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "because",
-            "hint": "Identify cause. (Sector 3 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 3]."
+            "hint": "More testing is the business reason behind the delay.",
+            "explanation": "'Because' clearly states the reason for a business decision. The need for more testing (reason) caused the delay (result). This is a direct, factual causal relationship."
         },
         {
             "id": "cc_l44_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We kept walking ____ we were exhausted in sector 3.",
-            "sentence": "We kept walking ____ we were exhausted in sector 3.",
+            "question": "She has known how to cook from scratch ____ she was a teenager.",
+            "sentence": "She has known how to cook from scratch ____ she was a teenager.",
             "options": [
-                "even if",
+                "since",
                 "because",
-                "unless",
-                "until"
+                "until",
+                "after"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "even if",
-            "hint": "Show concession. (Sector 3 calibration)",
-            "explanation": "'Even if' or 'even though' fits. [Verified in sector 3]."
+            "correctAnswer": "since",
+            "hint": "Learning to cook as a teenager was the starting point - she still knows how.",
+            "explanation": "'Since' shows that an ability started at a specific past time (teenage years) and has remained true ever since. The present perfect 'has known' confirms the continuous nature of this ability."
         },
         {
             "id": "cc_l45_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He checked the seals ____ he opened the airlock in sector 3.",
-            "sentence": "He checked the seals ____ he opened the airlock in sector 3.",
+            "question": "The heating bills were very high last winter ____ the temperatures were unusually low.",
+            "sentence": "The heating bills were very high last winter ____ the temperatures were unusually low.",
             "options": [
-                "before",
+                "since",
                 "because",
-                "although",
-                "unless"
+                "while",
+                "when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "before",
-            "hint": "Preceding safety action. (Sector 3 calibration)",
-            "explanation": "'Before' shows preceding time. [Verified in sector 3]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "because",
+            "hint": "Unusually low temperatures are the natural reason for high heating costs.",
+            "explanation": "'Because' gives a clear, logical reason. Cold temperatures (cause) explain high heating bills (effect). 'Since' might imply a time period (since some past event), which would change the meaning."
         },
         {
             "id": "cc_l45_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We succeeded ____ we worked together in sector 3.",
-            "sentence": "We succeeded ____ we worked together in sector 3.",
+            "question": "Customer satisfaction has improved significantly ____ the company redesigned its website.",
+            "sentence": "Customer satisfaction has improved significantly ____ the company redesigned its website.",
             "options": [
+                "because",
+                "after",
                 "since",
-                "unless",
-                "until",
-                "although"
+                "so"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "since",
-            "hint": "Reason for success. (Sector 3 calibration)",
-            "explanation": "'Since' introduces reason. [Verified in sector 3]."
+            "hint": "The redesign was the starting point of an improvement that continues now.",
+            "explanation": "'Since' shows that an improvement began after a specific past event (the redesign) and has continued. 'After' would be possible but 'since' + present perfect emphasises the continuing improvement more clearly."
         },
         {
             "id": "cc_l45_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The signal was read ____ it was highly distorted in sector 3.",
-            "sentence": "The signal was read ____ it was highly distorted in sector 3.",
+            "question": "She prefers working from home ____ she is far more productive in her own space.",
+            "sentence": "She prefers working from home ____ she is far more productive in her own space.",
             "options": [
-                "although",
-                "because",
-                "unless",
-                "while"
+                "while",
+                "since",
+                "as",
+                "because"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 3 calibration)",
-            "explanation": "'Although' is correct. [Verified in sector 3]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "because",
+            "hint": "Being more productive is her stated personal reason for the preference.",
+            "explanation": "'Because' is the most direct way to state a personal reason or justification. 'Because' is clearest and most natural in spoken and written English for explaining personal preferences."
         },
         {
             "id": "cc_l46_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We started the engines ____ the green light flashed in sector 3.",
-            "sentence": "We started the engines ____ the green light flashed in sector 3.",
-            "options": [
-                "once",
-                "until",
-                "while",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "once",
-            "hint": "Show immediate action upon trigger. (Sector 3 calibration)",
-            "explanation": "'Once' shows condition met. [Verified in sector 3]."
-        },
-        {
-            "id": "cc_l46_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "She was chosen ____ she had perfect vision in sector 3.",
-            "sentence": "She was chosen ____ she had perfect vision in sector 3.",
-            "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Identify cause. (Sector 3 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 3]."
-        },
-        {
-            "id": "cc_l46_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "She went out ____ the dome was locked in sector 3.",
-            "sentence": "She went out ____ the dome was locked in sector 3.",
-            "options": [
-                "even though",
-                "because",
-                "unless",
-                "until"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession. (Sector 3 calibration)",
-            "explanation": "'Even though' is correct. [Verified in sector 3]."
-        },
-        {
-            "id": "cc_l47_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "She remained silent ____ the broadcast was playing in sector 3.",
-            "sentence": "She remained silent ____ the broadcast was playing in sector 3.",
-            "options": [
-                "while",
-                "unless",
-                "until",
-                "before"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Simultaneous duration. (Sector 3 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 3]."
-        },
-        {
-            "id": "cc_l47_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We lost contact ____ the satellite was blocked in sector 3.",
-            "sentence": "We lost contact ____ the satellite was blocked in sector 3.",
-            "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Reason or cause. (Sector 3 calibration)",
-            "explanation": "'As' shows cause. [Verified in sector 3]."
-        },
-        {
-            "id": "cc_l47_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "They finished the scan ____ they lacked proper tools in sector 3.",
-            "sentence": "They finished the scan ____ they lacked proper tools in sector 3.",
-            "options": [
-                "although",
-                "because",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 3 calibration)",
-            "explanation": "'Although' is correct. [Verified in sector 3]."
-        },
-        {
-            "id": "cc_l48_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "We slept ____ the storm was raging outside in sector 3.",
-            "sentence": "We slept ____ the storm was raging outside in sector 3.",
-            "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Simultaneous event. (Sector 3 calibration)",
-            "explanation": "'As' or 'while' is correct. [Verified in sector 3]."
-        },
-        {
-            "id": "cc_l48_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The core melted ____ the coolant line cracked in sector 3.",
-            "sentence": "The core melted ____ the coolant line cracked in sector 3.",
-            "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Identify cause. (Sector 3 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 3]."
-        },
-        {
-            "id": "cc_l48_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "He took the risk ____ he was warned in sector 3.",
-            "sentence": "He took the risk ____ he was warned in sector 3.",
-            "options": [
-                "even though",
-                "because",
-                "unless",
-                "until"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession. (Sector 3 calibration)",
-            "explanation": "'Even though' is correct. [Verified in sector 3]."
-        },
-        {
-            "id": "cc_l49_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "The ship accelerated ____ it cleared the orbit in sector 3.",
-            "sentence": "The ship accelerated ____ it cleared the orbit in sector 3.",
-            "options": [
-                "after",
-                "until",
-                "unless",
-                "although"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "after",
-            "hint": "Sequential event. (Sector 3 calibration)",
-            "explanation": "'After' is correct. [Verified in sector 3]."
-        },
-        {
-            "id": "cc_l49_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
-            "subtype": "clauseConnector",
-            "interactionType": "Magnetic Snapping",
-            "question": "He was promoted ____ he saved the captain in sector 3.",
-            "sentence": "He was promoted ____ he saved the captain in sector 3.",
+            "question": "He has been on a strict diet ____ his doctor warned him about high cholesterol.",
+            "sentence": "He has been on a strict diet ____ his doctor warned him about high cholesterol.",
             "options": [
                 "since",
-                "unless",
-                "until",
+                "because",
+                "while",
                 "although"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "since",
-            "hint": "State reason. (Sector 3 calibration)",
-            "explanation": "'Since' is correct. [Verified in sector 3]."
+            "hint": "The doctor's warning was the moment that changed his lifestyle.",
+            "explanation": "'Since' shows that the diet started at a specific past point (doctor's warning) and has continued. 'Because' would give a reason without showing that the diet began at that specific moment."
+        },
+        {
+            "id": "cc_l46_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The café was always crowded ____ it had the best coffee on the high street.",
+            "sentence": "The café was always crowded ____ it had the best coffee on the high street.",
+            "options": [
+                "and",
+                "because",
+                "since",
+                "so"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "because",
+            "hint": "Having the best coffee directly explains why crowds gather there.",
+            "explanation": "'Because' introduces the clear reason. The best coffee (cause) explains the constant crowds (effect). While 'since' could substitute causally, 'because' is more natural and direct for this explanation."
+        },
+        {
+            "id": "cc_l46_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She has been passionate about environmental issues ____ she watched a documentary as a child.",
+            "sentence": "She has been passionate about environmental issues ____ she watched a documentary as a child.",
+            "options": [
+                "because",
+                "when",
+                "since",
+                "until"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "since",
+            "hint": "A childhood documentary sparked a passion that has lasted to the present.",
+            "explanation": "'Since' with the present perfect ('has been passionate') shows that interest began at a specific past moment (watching the documentary) and has continued. 'When' would show a simple time relationship, not the ongoing nature."
+        },
+        {
+            "id": "cc_l47_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She kept her phone in her bag during dinner ____ she didn't want to be distracted.",
+            "sentence": "She kept her phone in her bag during dinner ____ she didn't want to be distracted.",
+            "options": [
+                "while",
+                "since",
+                "although",
+                "because"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "because",
+            "hint": "Not wanting distractions is her deliberate, conscious reason.",
+            "explanation": "'Because' explains a deliberate personal choice. The desire not to be distracted (reason) motivated keeping her phone away (action). 'Since' is less natural for explaining a conscious, deliberate decision."
+        },
+        {
+            "id": "cc_l47_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "____ I started keeping a journal, I have been feeling much more organised.",
+            "sentence": "____ I started keeping a journal, I have been feeling much more organised.",
+            "options": [
+                "since",
+                "because",
+                "while",
+                "after"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "since",
+            "hint": "Journalling is a new habit - when did it start, and what's changed since?",
+            "explanation": "'Since' introduces the starting point (keeping a journal) of an ongoing positive change (feeling organised). The present perfect 'have been feeling' confirms this is a change from a specific past point to now."
+        },
+        {
+            "id": "cc_l47_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The flight was cancelled ____ the runway was covered in black ice.",
+            "sentence": "The flight was cancelled ____ the runway was covered in black ice.",
+            "options": [
+                "although",
+                "because",
+                "since",
+                "when"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "because",
+            "hint": "Icy runway conditions are the direct safety reason for the cancellation.",
+            "explanation": "'Because' gives the factual, operational reason for the cancellation. Ice on the runway is the direct cause. 'Since' might imply the ice has been there for a period of time, subtly changing the meaning."
+        },
+        {
+            "id": "cc_l48_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She has been learning Spanish ____ she moved to Barcelona last year.",
+            "sentence": "She has been learning Spanish ____ she moved to Barcelona last year.",
+            "options": [
+                "because",
+                "after",
+                "since",
+                "while"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "since",
+            "hint": "Moving to Barcelona was the event that started her Spanish learning.",
+            "explanation": "'Since' shows the starting point of an ongoing activity. She began learning Spanish when she moved (a specific past event) and is still learning now. 'After' could also work here but 'since' + present perfect emphasises the continuation."
+        },
+        {
+            "id": "cc_l48_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "He always reads online reviews carefully ____ he wants to make the best possible choice.",
+            "sentence": "He always reads online reviews carefully ____ he wants to make the best possible choice.",
+            "options": [
+                "and",
+                "because",
+                "since",
+                "while"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "because",
+            "hint": "Wanting the best outcome is his motivation for reading reviews.",
+            "explanation": "'Because' clearly states a motivation or goal. Wanting the best outcome (reason) drives his review-reading behaviour (action). This is a personal, habitual motivation - 'because' is the most natural connector."
+        },
+        {
+            "id": "cc_l48_q3",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "The neighbourhood has become much safer ____ the new street lighting was installed.",
+            "sentence": "The neighbourhood has become much safer ____ the new street lighting was installed.",
+            "options": [
+                "since",
+                "because",
+                "while",
+                "if"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "since",
+            "hint": "The street lighting was installed at a past moment - conditions have improved since then.",
+            "explanation": "'Since' connects a past infrastructure improvement (installing street lights) to a continuing change in safety (the neighbourhood becoming safer). The present perfect 'has become' signals that 'since' is correct."
+        },
+        {
+            "id": "cc_l49_q1",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "She always arrives early to meetings ____ she hates feeling rushed.",
+            "sentence": "She always arrives early to meetings ____ she hates feeling rushed.",
+            "options": [
+                "and",
+                "because",
+                "since",
+                "while"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "because",
+            "hint": "Hating to feel rushed is the personal driving force behind her habit.",
+            "explanation": "'Because' gives a personal motivation. Disliking the feeling of being rushed (reason) explains always arriving early (habit). 'Since' is less appropriate for explaining a personal characteristic or preference."
+        },
+        {
+            "id": "cc_l49_q2",
+            "instruction": "Select the correct connector.",
+            "subtype": "clauseConnector",
+            "interactionType": "Magnetic Snapping",
+            "question": "They have not spoken to each other ____ they had that argument last month.",
+            "sentence": "They have not spoken to each other ____ they had that argument last month.",
+            "options": [
+                "because",
+                "after",
+                "since",
+                "until"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "since",
+            "hint": "The argument was last month - since when have they not been speaking?",
+            "explanation": "'Since' marks the moment (the argument) from which a situation (not speaking) began and has continued to the present. The negative present perfect 'have not spoken' confirms 'since' is the correct connector."
         },
         {
             "id": "cc_l49_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We found the base ____ the map was missing in sector 3.",
-            "sentence": "We found the base ____ the map was missing in sector 3.",
+            "question": "The shop installed a wheelchair ramp ____ some customers use wheelchairs.",
+            "sentence": "The shop installed a wheelchair ramp ____ some customers use wheelchairs.",
             "options": [
+                "while",
+                "since",
                 "although",
-                "because",
-                "unless",
-                "while"
+                "because"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 3 calibration)",
-            "explanation": "'Although' is correct. [Verified in sector 3]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "because",
+            "hint": "Serving wheelchair users is the direct, practical reason for the ramp.",
+            "explanation": "'Because' states the direct reason for an accessibility improvement. Serving wheelchair-using customers (reason) led to installing the ramp (action). This is a clear cause-and-effect relationship."
         },
         {
             "id": "cc_l50_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You must exit ____ the timer runs out in sector 3.",
-            "sentence": "You must exit ____ the timer runs out in sector 3.",
+            "question": "His English vocabulary has improved considerably ____ he started reading novels.",
+            "sentence": "His English vocabulary has improved considerably ____ he started reading novels.",
             "options": [
-                "before",
+                "since",
                 "because",
-                "although",
-                "unless"
+                "while",
+                "although"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "before",
-            "hint": "Action preceding limit. (Sector 3 calibration)",
-            "explanation": "'Before' is correct. [Verified in sector 3]."
+            "correctAnswer": "since",
+            "hint": "Reading novels began at some past point - his vocabulary has grown from then to now.",
+            "explanation": "'Since' connects the starting point (reading novels) to a continuing result (improved vocabulary). The present perfect 'has improved' confirms 'since' is needed - the improvement began in the past and continues."
         },
         {
             "id": "cc_l50_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They arrived late ____ the capsule was delayed in sector 3.",
-            "sentence": "They arrived late ____ the capsule was delayed in sector 3.",
+            "question": "The outdoor event was moved indoors ____ rain was forecast for the whole day.",
+            "sentence": "The outdoor event was moved indoors ____ rain was forecast for the whole day.",
             "options": [
-                "because",
                 "although",
-                "unless",
+                "because",
+                "since",
                 "while"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "because",
-            "hint": "State reason. (Sector 3 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 3]."
+            "hint": "A rain forecast is the direct, practical reason for moving the event.",
+            "explanation": "'Because' gives the direct, practical reason for a decision. The rain forecast (cause) prompted moving the event indoors (action). 'Since' could suggest a time period rather than a specific reason."
         },
         {
             "id": "cc_l50_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 2,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She laughed ____ she was nervous in sector 3.",
-            "sentence": "She laughed ____ she was nervous in sector 3.",
+            "question": "She has not eaten meat ____ she watched a documentary about the food industry.",
+            "sentence": "She has not eaten meat ____ she watched a documentary about the food industry.",
             "options": [
-                "though",
                 "because",
-                "unless",
-                "until"
+                "after",
+                "since",
+                "while"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "though",
-            "hint": "Concession. (Sector 3 calibration)",
-            "explanation": "'Though' is correct. [Verified in sector 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "since",
+            "hint": "The documentary was a turning point - she hasn't eaten meat from that day to now.",
+            "explanation": "'Since' shows that a lifestyle change began at a specific past moment (watching the documentary) and has continued. 'After' is also possible but 'since' + 'has not eaten' (present perfect negative) emphasises the ongoing change."
         }
     ]
 }

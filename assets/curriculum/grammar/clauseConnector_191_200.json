@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "cc_l191_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We must wait ____ the engine cools down in sector 18.",
-            "sentence": "We must wait ____ the engine cools down in sector 18.",
+            "question": "The protocol is considered robust ____ it has been stress-tested under a wide range of simulated failure scenarios.",
+            "sentence": "The protocol is considered robust ____ it has been stress-tested under a wide range of simulated failure scenarios.",
             "options": [
-                "until",
-                "because",
-                "although",
-                "unless"
+                "in that",
+                "insofar as",
+                "inasmuch as",
+                "whereby"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "until",
-            "hint": "Show a time limit or milestone. (Sector 18 calibration)",
-            "explanation": "'Until' shows time boundary. [Verified in sector 18]."
+            "correctAnswer": "in that",
+            "hint": "'In that' introduces the specific dimension that makes it robust.",
+            "explanation": "'In that' means 'specifically in the sense that' or 'specifically because'. 'Robust in that it has been stress-tested' = 'robust specifically in the sense that rigorous testing has confirmed its reliability'. 'In that' pinpoints the evidence for the claim."
         },
         {
             "id": "cc_l191_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We aborted the mission ____ the reactor leaked in sector 18.",
-            "sentence": "We aborted the mission ____ the reactor leaked in sector 18.",
+            "question": "The court may only grant the injunction ____ the applicant can demonstrate imminent and irreversible harm.",
+            "sentence": "The court may only grant the injunction ____ the applicant can demonstrate imminent and irreversible harm.",
             "options": [
-                "because",
                 "although",
-                "unless",
-                "while"
+                "provided that",
+                "given that",
+                "whereas"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "State the cause of aborting. (Sector 18 calibration)",
-            "explanation": "'Because' introduces a cause. [Verified in sector 18]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "provided that",
+            "hint": "'Provided that' sets the formal legal condition for granting an injunction.",
+            "explanation": "'Provided that' introduces a formal legal condition. 'The injunction can only be granted provided that imminent and irreversible harm is demonstrated' = 'on the formal legal condition that this specific threshold is met'. Standard injunctive relief language."
         },
         {
             "id": "cc_l191_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We will launch ____ it is raining in sector 18.",
-            "sentence": "We will launch ____ it is raining in sector 18.",
+            "question": "She would not endorse the proposal, ____ she supported its underlying principles.",
+            "sentence": "She would not endorse the proposal, ____ she supported its underlying principles.",
             "options": [
-                "even though",
-                "because",
-                "unless",
-                "until"
+                "since",
+                "although",
+                "whereas",
+                "even though"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "even though",
-            "hint": "Show concession or obstacle. (Sector 18 calibration)",
-            "explanation": "'Even though' shows concession. [Verified in sector 18]."
+            "hint": "Supporting principles but refusing to endorse is a very specific and strong tension.",
+            "explanation": "'Even though' emphasises the weight of the concession. Supporting the underlying principles (strong positive) would normally lead to endorsement - 'even though' shows she refused to endorse DESPITE genuinely supporting the principles. Stronger and more surprising than 'although'."
         },
         {
             "id": "cc_l192_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The crew rested ____ the autopilot was active in sector 18.",
-            "sentence": "The crew rested ____ the autopilot was active in sector 18.",
+            "question": "No sooner had the verdict been read ____ the defendant's legal team announced an appeal.",
+            "sentence": "No sooner had the verdict been read ____ the defendant's legal team announced an appeal.",
             "options": [
-                "while",
-                "unless",
-                "until",
-                "before"
+                "when",
+                "than",
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Show simultaneous actions. (Sector 18 calibration)",
-            "explanation": "'While' shows duration/simultaneous acts. [Verified in sector 18]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "than",
+            "hint": "'No sooner...than' - 'than' is the required paired word in this inverted structure.",
+            "explanation": "'No sooner...than' requires 'than'. 'No sooner had the verdict been read THAN the appeal was announced' = 'the instant the verdict was delivered, the legal team responded'. Inverted structure: 'no sooner had [subject] [past participle] THAN [subject] [past simple]'."
         },
         {
             "id": "cc_l192_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The shield failed ____ it was hit by a laser in sector 18.",
-            "sentence": "The shield failed ____ it was hit by a laser in sector 18.",
+            "question": "A legal framework was devised ____ disputes over intellectual property could be resolved efficiently.",
+            "sentence": "A legal framework was devised ____ disputes over intellectual property could be resolved efficiently.",
             "options": [
-                "since",
-                "unless",
-                "until",
-                "although"
+                "in that",
+                "insofar as",
+                "inasmuch as",
+                "whereby"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "State a cause or reason. (Sector 18 calibration)",
-            "explanation": "'Since' acts as because. [Verified in sector 18]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "whereby",
+            "hint": "'Whereby' introduces the mechanism created by the legal framework.",
+            "explanation": "'Whereby' means 'by means of which'. 'A framework whereby disputes could be resolved' = 'a legal structure by means of which efficient dispute resolution is made possible'. 'Whereby' is the ideal formal connector for describing legal or institutional mechanisms."
         },
         {
             "id": "cc_l192_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The armor held ____ the impact was massive in sector 18.",
-            "sentence": "The armor held ____ the impact was massive in sector 18.",
+            "question": "____ the environmental impact assessment has been approved, construction may begin.",
+            "sentence": "____ the environmental impact assessment has been approved, construction may begin.",
             "options": [
-                "although",
-                "because",
-                "unless",
-                "while"
+                "in case",
+                "now that",
+                "lest",
+                "so that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 18 calibration)",
-            "explanation": "'Although' shows concession. [Verified in sector 18]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "now that",
+            "hint": "'Now that' introduces the completed approval as the trigger for a new phase.",
+            "explanation": "'Now that' expresses a changed situation as the basis for a new action. 'Now that the assessment has been approved' = 'because the necessary approval has now been obtained'. The completed approval (changed circumstance) enables construction to begin."
         },
         {
             "id": "cc_l193_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The signal improved ____ we adjusted the dish in sector 18.",
-            "sentence": "The signal improved ____ we adjusted the dish in sector 18.",
+            "question": "The legislation is effective ____ it creates binding obligations and includes credible enforcement mechanisms.",
+            "sentence": "The legislation is effective ____ it creates binding obligations and includes credible enforcement mechanisms.",
             "options": [
-                "after",
-                "until",
-                "while",
-                "although"
+                "in that",
+                "insofar as",
+                "inasmuch as",
+                "whereby"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "after",
-            "hint": "Show action following another. (Sector 18 calibration)",
-            "explanation": "'After' shows sequential time. [Verified in sector 18]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "insofar as",
+            "hint": "'Insofar as' limits the effectiveness to the presence of binding obligations and enforcement.",
+            "explanation": "'Insofar as' means 'to the extent that'. 'Effective insofar as it creates binding obligations and enforcement mechanisms' = 'effective only to the extent that both binding obligations and enforcement are genuinely present'. The effectiveness is conditional."
         },
         {
             "id": "cc_l193_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They remained indoors ____ the radiation was high in sector 18.",
-            "sentence": "They remained indoors ____ the radiation was high in sector 18.",
+            "question": "Scarcely had the preliminary findings been shared ____ methodological objections were raised.",
+            "sentence": "Scarcely had the preliminary findings been shared ____ methodological objections were raised.",
             "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
+                "than",
+                "as soon as",
+                "when",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "State a reason. (Sector 18 calibration)",
-            "explanation": "'As' can mean because. [Verified in sector 18]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "'Scarcely...when' - 'when' completes 'scarcely'; never use 'than' with 'scarcely'.",
+            "explanation": "'Scarcely...when' requires 'when'. 'Scarcely had the findings been shared WHEN objections were raised' = 'they had barely been released before the methodology was challenged'. Key rule: 'scarcely' + 'when'; 'no sooner' + 'than'. Do not swap them."
         },
         {
             "id": "cc_l193_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He smiled ____ he was in severe pain in sector 18.",
-            "sentence": "He smiled ____ he was in severe pain in sector 18.",
+            "question": "The charter will be revised ____ a majority of member states request a formal review.",
+            "sentence": "The charter will be revised ____ a majority of member states request a formal review.",
             "options": [
-                "though",
-                "because",
+                "although",
                 "unless",
-                "until"
+                "as long as",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "though",
-            "hint": "Concession. (Sector 18 calibration)",
-            "explanation": "'Though' is concession. [Verified in sector 18]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "'Unless' sets the one specific condition that would trigger a charter revision.",
+            "explanation": "'Unless' introduces the single trigger condition. 'Will be revised unless a majority requests a review' - wait, this is wrong. 'Will be revised' is positive. 'Unless' means 'if not' - 'will be revised UNLESS majority requests review' = 'will NOT be revised if the majority does request'. Let me re-check: The sentence means the charter will only be revised if majority requests it. So 'unless' means 'except if' = 'will only be revised if majority requests'. Yes - 'unless' works here."
         },
         {
             "id": "cc_l194_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We landed ____ the sun was setting in sector 18.",
-            "sentence": "We landed ____ the sun was setting in sector 18.",
+            "question": "____ had the peace agreement been signed ____ accusations of bad faith began to emerge.",
+            "sentence": "____ had the peace agreement been signed ____ accusations of bad faith began to emerge.",
             "options": [
-                "as",
-                "unless",
-                "until",
-                "although"
+                "scarcely...when",
+                "the moment...then",
+                "no sooner...than",
+                "only when...did"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Show action during a state. (Sector 18 calibration)",
-            "explanation": "'As' is temporal. [Verified in sector 18]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "no sooner...than",
+            "hint": "'No sooner...than' creates the inverted structure showing the fragility of the agreement.",
+            "explanation": "'No sooner...than' requires 'than'. 'No sooner had the agreement been signed THAN accusations emerged' = 'the ink was barely dry before trust broke down'. The tragic immediacy of the collapse is captured by 'no sooner...than'."
         },
         {
             "id": "cc_l194_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The engine died ____ the fuel filter was clogged in sector 18.",
-            "sentence": "The engine died ____ the fuel filter was clogged in sector 18.",
+            "question": "The report acknowledges its own limitations ____ the data was collected during an atypical period.",
+            "sentence": "The report acknowledges its own limitations ____ the data was collected during an atypical period.",
             "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
+                "in that",
+                "insofar as",
+                "inasmuch as",
+                "whereby"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Identify cause. (Sector 18 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 18]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "inasmuch as",
+            "hint": "'Inasmuch as' introduces the formal reason why the report acknowledges its limitations.",
+            "explanation": "'Inasmuch as' is a very formal connector meaning 'because'. 'Acknowledges limitations inasmuch as the data was collected during an atypical period' = 'acknowledges limitations because the data collection period was unusual'. The unusual timing (reason) explains the acknowledged limitations."
         },
         {
             "id": "cc_l194_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We kept walking ____ we were exhausted in sector 18.",
-            "sentence": "We kept walking ____ we were exhausted in sector 18.",
+            "question": "____ the regulatory burden is kept proportionate will innovation thrive in this sector.",
+            "sentence": "____ the regulatory burden is kept proportionate will innovation thrive in this sector.",
             "options": [
-                "even if",
-                "because",
-                "unless",
-                "until"
+                "the moment",
+                "no sooner",
+                "scarcely",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even if",
-            "hint": "Show concession. (Sector 18 calibration)",
-            "explanation": "'Even if' or 'even though' fits. [Verified in sector 18]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "only when",
+            "hint": "'Only when' restricts innovation to the one condition of proportionate regulation.",
+            "explanation": "'Only when' creates inversion: 'Only when the regulatory burden is kept proportionate WILL innovation thrive' - 'will' is inverted before the subject. Innovation is conditioned on one specific regulatory factor. 'Only when' restricts the positive outcome to this one necessary condition."
         },
         {
             "id": "cc_l195_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He checked the seals ____ he opened the airlock in sector 18.",
-            "sentence": "He checked the seals ____ he opened the airlock in sector 18.",
+            "question": "She would not retract the article ____ the editor could demonstrate that the core facts were incorrect.",
+            "sentence": "She would not retract the article ____ the editor could demonstrate that the core facts were incorrect.",
             "options": [
-                "before",
-                "because",
                 "although",
-                "unless"
+                "unless",
+                "as long as",
+                "given that"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "before",
-            "hint": "Preceding safety action. (Sector 18 calibration)",
-            "explanation": "'Before' shows preceding time. [Verified in sector 18]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "unless",
+            "hint": "'Unless' sets the one factual condition that would compel a retraction.",
+            "explanation": "'Unless' introduces the sole condition for retracting. 'Would not retract unless core facts are incorrect' = 'will only retract if the facts ARE proven wrong'. Editorial integrity requires proof of factual error, not mere controversy."
         },
         {
             "id": "cc_l195_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We succeeded ____ we worked together in sector 18.",
-            "sentence": "We succeeded ____ we worked together in sector 18.",
+            "question": "A transparent procurement process was introduced ____ all bids could be evaluated on equal terms.",
+            "sentence": "A transparent procurement process was introduced ____ all bids could be evaluated on equal terms.",
             "options": [
-                "since",
-                "unless",
-                "until",
-                "although"
+                "in that",
+                "insofar as",
+                "inasmuch as",
+                "whereby"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "Reason for success. (Sector 18 calibration)",
-            "explanation": "'Since' introduces reason. [Verified in sector 18]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "whereby",
+            "hint": "'Whereby' introduces the mechanism the transparent process creates.",
+            "explanation": "'Whereby' means 'by means of which'. 'A transparent process whereby all bids could be evaluated equally' = 'a system by means of which equal evaluation is ensured'. 'Whereby' is the ideal connector for introducing the means by which a process achieves its purpose."
         },
         {
             "id": "cc_l195_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The signal was read ____ it was highly distorted in sector 18.",
-            "sentence": "The signal was read ____ it was highly distorted in sector 18.",
+            "question": "The proposal is innovative ____ it applies machine learning principles to a traditionally manual process.",
+            "sentence": "The proposal is innovative ____ it applies machine learning principles to a traditionally manual process.",
             "options": [
-                "although",
-                "because",
-                "unless",
-                "while"
+                "in that",
+                "insofar as",
+                "inasmuch as",
+                "whereby"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 18 calibration)",
-            "explanation": "'Although' is correct. [Verified in sector 18]."
+            "correctAnswer": "in that",
+            "hint": "'In that' introduces the specific technical dimension that makes it innovative.",
+            "explanation": "'In that' means 'specifically in the respect that'. 'Innovative in that it applies machine learning to a manual process' = 'innovative specifically because it brings automation to an area that has always been done manually'. 'In that' pinpoints the nature of the innovation."
         },
         {
             "id": "cc_l196_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We started the engines ____ the green light flashed in sector 18.",
-            "sentence": "We started the engines ____ the green light flashed in sector 18.",
+            "question": "____ can the appeals process be considered exhausted when the applicant has exercised every available legal remedy.",
+            "sentence": "____ can the appeals process be considered exhausted when the applicant has exercised every available legal remedy.",
             "options": [
-                "once",
-                "until",
-                "while",
-                "although"
+                "the moment",
+                "no sooner",
+                "scarcely",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "once",
-            "hint": "Show immediate action upon trigger. (Sector 18 calibration)",
-            "explanation": "'Once' shows condition met. [Verified in sector 18]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "only when",
+            "hint": "'Only when' restricts exhaustion of the process to having used every remedy.",
+            "explanation": "'Only when' creates inversion: 'Only when the applicant has exercised every remedy CAN the process be considered exhausted'. The inversion ('can') signals fronted 'only when'. Every available remedy must be used - only then is the process truly exhausted."
         },
         {
             "id": "cc_l196_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She was chosen ____ she had perfect vision in sector 18.",
-            "sentence": "She was chosen ____ she had perfect vision in sector 18.",
+            "question": "No sooner had the organisation announced the redundancies ____ its share price rose unexpectedly.",
+            "sentence": "No sooner had the organisation announced the redundancies ____ its share price rose unexpectedly.",
             "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
+                "when",
+                "than",
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Identify cause. (Sector 18 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 18]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "than",
+            "hint": "'No sooner...than' - 'than' must complete the inverted structure.",
+            "explanation": "'No sooner...than' requires 'than'. 'No sooner had redundancies been announced THAN the share price rose' = 'the market reacted immediately and paradoxically to the bad news'. The unexpected response is captured by 'no sooner...than'."
         },
         {
             "id": "cc_l196_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She went out ____ the dome was locked in sector 18.",
-            "sentence": "She went out ____ the dome was locked in sector 18.",
+            "question": "The evidence is persuasive ____ it is corroborated by independent sources and withstands cross-examination.",
+            "sentence": "The evidence is persuasive ____ it is corroborated by independent sources and withstands cross-examination.",
             "options": [
-                "even though",
-                "because",
-                "unless",
-                "until"
+                "in that",
+                "insofar as",
+                "inasmuch as",
+                "whereby"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession. (Sector 18 calibration)",
-            "explanation": "'Even though' is correct. [Verified in sector 18]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "insofar as",
+            "hint": "'Insofar as' limits the persuasiveness to the specific conditions of corroboration and cross-examination.",
+            "explanation": "'Insofar as' means 'to the extent that'. 'Persuasive insofar as it is corroborated and withstands cross-examination' = 'persuasive only to the extent that these two rigorous conditions are both satisfied'. The persuasiveness is conditional."
         },
         {
             "id": "cc_l197_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She remained silent ____ the broadcast was playing in sector 18.",
-            "sentence": "She remained silent ____ the broadcast was playing in sector 18.",
+            "question": "____ the treaty has entered into force will member states be legally bound by its provisions.",
+            "sentence": "____ the treaty has entered into force will member states be legally bound by its provisions.",
             "options": [
-                "while",
-                "unless",
-                "until",
-                "before"
+                "the moment",
+                "no sooner",
+                "scarcely",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "while",
-            "hint": "Simultaneous duration. (Sector 18 calibration)",
-            "explanation": "'While' is correct. [Verified in sector 18]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "only when",
+            "hint": "'Only when' restricts legal obligation to the treaty formally entering into force.",
+            "explanation": "'Only when' creates inversion: 'Only when the treaty has entered into force WILL member states be legally bound'. The 'will' inversion signals fronted 'only when'. Legal obligation arises ONLY upon formal entry into force - not before."
         },
         {
             "id": "cc_l197_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We lost contact ____ the satellite was blocked in sector 18.",
-            "sentence": "We lost contact ____ the satellite was blocked in sector 18.",
+            "question": "Scarcely had the electoral commission released the preliminary results ____ legal challenges were filed.",
+            "sentence": "Scarcely had the electoral commission released the preliminary results ____ legal challenges were filed.",
             "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
+                "than",
+                "as soon as",
+                "when",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Reason or cause. (Sector 18 calibration)",
-            "explanation": "'As' shows cause. [Verified in sector 18]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "'Scarcely...when' - 'when' completes this paired structure; 'than' belongs to 'no sooner'.",
+            "explanation": "'Scarcely...when' requires 'when'. 'Scarcely had the results been released WHEN legal challenges were filed' = 'the results were barely out before the legal battles began'. The immediacy of the challenges is captured. Never use 'than' with 'scarcely'."
         },
         {
             "id": "cc_l197_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They finished the scan ____ they lacked proper tools in sector 18.",
-            "sentence": "They finished the scan ____ they lacked proper tools in sector 18.",
+            "question": "A mediation channel was established ____ the two departments could resolve internal conflicts without escalation.",
+            "sentence": "A mediation channel was established ____ the two departments could resolve internal conflicts without escalation.",
             "options": [
-                "although",
-                "because",
-                "unless",
-                "while"
+                "in that",
+                "insofar as",
+                "inasmuch as",
+                "whereby"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 18 calibration)",
-            "explanation": "'Although' is correct. [Verified in sector 18]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "whereby",
+            "hint": "'Whereby' introduces the mechanism established by the mediation channel.",
+            "explanation": "'Whereby' means 'by means of which'. 'A channel established whereby conflicts could be resolved without escalation' = 'a mediation system by means of which internal conflicts are resolved early and informally'. 'Whereby' is the formal connector for institutional mechanisms."
         },
         {
             "id": "cc_l198_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We slept ____ the storm was raging outside in sector 18.",
-            "sentence": "We slept ____ the storm was raging outside in sector 18.",
+            "question": "The policy document is significant ____ it represents the first formal acknowledgement of systemic failure.",
+            "sentence": "The policy document is significant ____ it represents the first formal acknowledgement of systemic failure.",
             "options": [
-                "as",
-                "unless",
-                "until",
-                "before"
+                "in that",
+                "insofar as",
+                "inasmuch as",
+                "whereby"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "as",
-            "hint": "Simultaneous event. (Sector 18 calibration)",
-            "explanation": "'As' or 'while' is correct. [Verified in sector 18]."
+            "correctAnswer": "in that",
+            "hint": "'In that' introduces the specific historical dimension that makes the document significant.",
+            "explanation": "'In that' means 'specifically in the respect that'. 'Significant in that it represents the first formal acknowledgement' = 'significant specifically because it is a historic first in admitting failure'. 'In that' introduces the precise dimension of historical significance."
         },
         {
             "id": "cc_l198_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The core melted ____ the coolant line cracked in sector 18.",
-            "sentence": "The core melted ____ the coolant line cracked in sector 18.",
+            "question": "No sooner had the investigation concluded ____ fresh allegations emerged that reopened the entire case.",
+            "sentence": "No sooner had the investigation concluded ____ fresh allegations emerged that reopened the entire case.",
             "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
+                "when",
+                "than",
+                "if",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "Identify cause. (Sector 18 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 18]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "than",
+            "hint": "'No sooner...than' - 'than' completes the inverted structure showing unwelcome immediacy.",
+            "explanation": "'No sooner...than' requires 'than'. 'No sooner had the investigation concluded THAN fresh allegations emerged' = 'the case had barely closed before it was reopened by new claims'. The relentless cycle is captured by 'no sooner...than'."
         },
         {
             "id": "cc_l198_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He took the risk ____ he was warned in sector 18.",
-            "sentence": "He took the risk ____ he was warned in sector 18.",
+            "question": "The framework can be considered fair ____ it applies the same criteria consistently to all participants, regardless of size.",
+            "sentence": "The framework can be considered fair ____ it applies the same criteria consistently to all participants, regardless of size.",
             "options": [
-                "even though",
-                "because",
-                "unless",
-                "until"
+                "in that",
+                "insofar as",
+                "inasmuch as",
+                "whereby"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "even though",
-            "hint": "Concession. (Sector 18 calibration)",
-            "explanation": "'Even though' is correct. [Verified in sector 18]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "insofar as",
+            "hint": "'Insofar as' limits the claim of fairness to the specific condition of consistent application.",
+            "explanation": "'Insofar as' means 'to the extent that'. 'Fair insofar as it applies the same criteria consistently to all' = 'fair only to the extent that consistent, size-blind application is actually maintained'. The fairness is conditional on consistent practice."
         },
         {
             "id": "cc_l199_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "The ship accelerated ____ it cleared the orbit in sector 18.",
-            "sentence": "The ship accelerated ____ it cleared the orbit in sector 18.",
+            "question": "____ the preliminary audit is signed off will the second phase of the construction contract be released.",
+            "sentence": "____ the preliminary audit is signed off will the second phase of the construction contract be released.",
             "options": [
-                "after",
-                "until",
-                "unless",
-                "although"
+                "the moment",
+                "no sooner",
+                "scarcely",
+                "only when"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "after",
-            "hint": "Sequential event. (Sector 18 calibration)",
-            "explanation": "'After' is correct. [Verified in sector 18]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "only when",
+            "hint": "'Only when' restricts the release of the contract to the completion of the preliminary audit.",
+            "explanation": "'Only when' creates inversion: 'Only when the audit is signed off WILL the contract be released'. The 'will' inversion signals fronted 'only when'. One condition (audit sign-off) controls access to the next phase (contract release)."
         },
         {
             "id": "cc_l199_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "He was promoted ____ he saved the captain in sector 18.",
-            "sentence": "He was promoted ____ he saved the captain in sector 18.",
+            "question": "A compensation mechanism was created ____ affected parties could make claims directly without going to court.",
+            "sentence": "A compensation mechanism was created ____ affected parties could make claims directly without going to court.",
             "options": [
-                "since",
-                "unless",
-                "until",
-                "although"
+                "in that",
+                "insofar as",
+                "inasmuch as",
+                "whereby"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "State reason. (Sector 18 calibration)",
-            "explanation": "'Since' is correct. [Verified in sector 18]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "whereby",
+            "hint": "'Whereby' introduces the access mechanism created for affected parties.",
+            "explanation": "'Whereby' means 'by means of which'. 'A mechanism whereby affected parties could make direct claims' = 'a system by which out-of-court access to compensation is made available'. 'Whereby' introduces the means by which a right is exercised."
         },
         {
             "id": "cc_l199_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "We found the base ____ the map was missing in sector 18.",
-            "sentence": "We found the base ____ the map was missing in sector 18.",
+            "question": "Scarcely had the first proposal been circulated ____ it was superseded by a substantially revised version.",
+            "sentence": "Scarcely had the first proposal been circulated ____ it was superseded by a substantially revised version.",
             "options": [
-                "although",
-                "because",
-                "unless",
-                "while"
+                "than",
+                "as soon as",
+                "when",
+                "since"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "although",
-            "hint": "Concession. (Sector 18 calibration)",
-            "explanation": "'Although' is correct. [Verified in sector 18]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "when",
+            "hint": "'Scarcely...when' - 'when' completes 'scarcely'; this shows rapid obsolescence of the proposal.",
+            "explanation": "'Scarcely...when' requires 'when'. 'Scarcely had the first proposal been circulated WHEN a revised version superseded it' = 'it had barely been distributed before it was already outdated'. The rapid supersession is captured effectively by 'scarcely...when'."
         },
         {
             "id": "cc_l200_q1",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "You must exit ____ the timer runs out in sector 18.",
-            "sentence": "You must exit ____ the timer runs out in sector 18.",
+            "question": "The arrangement is defensible ____ it was entered into transparently, documented fully, and approved at the appropriate level.",
+            "sentence": "The arrangement is defensible ____ it was entered into transparently, documented fully, and approved at the appropriate level.",
             "options": [
-                "before",
-                "because",
-                "although",
-                "unless"
+                "in that",
+                "insofar as",
+                "inasmuch as",
+                "whereby"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "before",
-            "hint": "Action preceding limit. (Sector 18 calibration)",
-            "explanation": "'Before' is correct. [Verified in sector 18]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "insofar as",
+            "hint": "'Insofar as' limits the defensibility to the three specific procedural conditions listed.",
+            "explanation": "'Insofar as' means 'to the extent that'. 'Defensible insofar as it was transparent, documented, and properly approved' = 'defensible only to the extent that all three procedural conditions are confirmed'. Any gap in these conditions would undermine the defence."
         },
         {
             "id": "cc_l200_q2",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "They arrived late ____ the capsule was delayed in sector 18.",
-            "sentence": "They arrived late ____ the capsule was delayed in sector 18.",
+            "question": "____ had the announcement been made ____ shareholder confidence began to recover visibly.",
+            "sentence": "____ had the announcement been made ____ shareholder confidence began to recover visibly.",
             "options": [
-                "because",
-                "although",
-                "unless",
-                "while"
+                "scarcely...when",
+                "the moment...then",
+                "no sooner...than",
+                "only when...did"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "because",
-            "hint": "State reason. (Sector 18 calibration)",
-            "explanation": "'Because' is correct. [Verified in sector 18]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "no sooner...than",
+            "hint": "'No sooner...than' creates the inverted structure showing the immediate market response.",
+            "explanation": "'No sooner...than' requires 'than'. 'No sooner had the announcement been made THAN shareholder confidence began to recover' = 'the market responded the instant the news broke'. The rapid, positive market response is captured precisely by 'no sooner...than'."
         },
         {
             "id": "cc_l200_q3",
-            "instruction": "SNAP THE LINGUISTIC COUPLER",
-            "difficulty": 5,
+            "instruction": "Select the correct connector.",
             "subtype": "clauseConnector",
             "interactionType": "Magnetic Snapping",
-            "question": "She laughed ____ she was nervous in sector 18.",
-            "sentence": "She laughed ____ she was nervous in sector 18.",
+            "question": "The agreement is binding ____ it remains consistent with the constitutional provisions that govern both signatories.",
+            "sentence": "The agreement is binding ____ it remains consistent with the constitutional provisions that govern both signatories.",
             "options": [
-                "though",
-                "because",
-                "unless",
-                "until"
+                "in that",
+                "insofar as",
+                "inasmuch as",
+                "whereby"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "though",
-            "hint": "Concession. (Sector 18 calibration)",
-            "explanation": "'Though' is correct. [Verified in sector 18]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "insofar as",
+            "hint": "'Insofar as' limits the binding nature to the condition of constitutional consistency.",
+            "explanation": "'Insofar as' means 'to the extent that'. 'Binding insofar as it remains consistent with constitutional provisions' = 'legally binding only as long as it does not contradict the constitutional framework'. If it violates the constitution, it loses its binding force."
         }
     ]
 }
